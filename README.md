@@ -216,7 +216,7 @@ docker compose --profile app up
 
 ## 许可证
 
-许可证待定（TBD）。在正式确定前，课程材料仅供教学与学习用途。
+本课程材料以 [Creative Commons Attribution 4.0 International（CC BY 4.0）](LICENSE) 授权发布。你可以自由地共享与改编本材料（包括用于教学与商业用途），但需给予适当署名、提供许可证链接并说明是否作出修改。
 
 ---
 

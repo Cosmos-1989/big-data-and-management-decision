@@ -1,4 +1,4 @@
-# Assignment 02: SQL、KPI 与经营分析
+# Assignment 03: SQL、KPI 与经营分析
 
 ## 任务背景
 

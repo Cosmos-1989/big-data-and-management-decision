@@ -701,12 +701,15 @@ big-data-management-decision/
 
   assignments/
     assignment_01_data_modeling.md
-    assignment_02_sql_kpi.md
-    assignment_03_data_quality.md
-    assignment_04_dashboard.md
-    assignment_05_prediction.md
-    assignment_06_causal_inference.md
-    assignment_07_optimization.md
+    assignment_02_enterprise_data_model.md
+    assignment_03_sql_kpi.md
+    assignment_04_data_quality.md
+    assignment_05_dashboard.md
+    assignment_06_statistical_inference.md
+    assignment_07_prediction.md
+    assignment_09_causality.md
+    assignment_11_optimization.md
+    assignment_12_process_mining.md
     final_project.md
 
   reports/
