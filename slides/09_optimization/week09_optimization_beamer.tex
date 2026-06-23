@@ -1,0 +1,270 @@
+\documentclass[UTF8,fontset=fandol,aspectratio=169,11pt]{ctexbeamer}
+\input{../common/bdm_beamer_preamble.tex}
+
+\title[优化与处方分析]{第9讲：优化与处方分析}
+\subtitle{从预测需求到约束下的可执行补货方案}
+\author{《大数据与管理决策基础》}
+\date{}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+  \begin{center}
+    \small 核心命题：预测告诉我们可能发生什么，优化在资源约束下告诉我们应该选择哪些行动。
+  \end{center}
+\end{frame}
+
+\begin{frame}{本讲学习目标}
+\begin{enumerate}
+  \item 区分预测分析、因果评估和处方分析；
+  \item 将管理问题写成变量、目标和约束；
+  \item 理解可行域、最优解、整数约束和敏感性分析；
+  \item 用离散需求情景计算补货期望净价值；
+  \item 在预算和库容约束下选择补货组合；
+  \item 将最优方案转化为可执行管理建议。
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{课程主线中的第9周}
+\begin{center}
+\resizebox{0.96\linewidth}{!}{%
+\begin{tikzpicture}[
+  node/.style={draw=AcademicBlue!65, fill=AcademicLight, rounded corners=1pt,
+               minimum height=0.85cm, minimum width=2.05cm, align=center},
+  active/.style={draw=AcademicBlue, fill=AcademicBlue, text=white,
+               minimum height=0.9cm, minimum width=2.25cm, align=center},
+  arrow/.style={-{Stealth[length=2mm]}, thick, AcademicTeal}
+]
+\node[node] (data) {可信数据};
+\node[node, right=0.55cm of data] (pred) {预测};
+\node[node, right=0.55cm of pred] (causal) {因果证据};
+\node[active, right=0.55cm of causal] (opt) {优化决策};
+\node[node, right=0.55cm of opt] (feedback) {反馈更新};
+\draw[arrow] (data) -- (pred);
+\draw[arrow] (pred) -- (causal);
+\draw[arrow] (causal) -- (opt);
+\draw[arrow] (opt) -- (feedback);
+\end{tikzpicture}
+}
+\end{center}
+\vspace{0.2cm}
+\small
+第9周回答：在预算、库容和风险约束下，哪些行动组合最值得执行？
+\end{frame}
+
+\begin{frame}{处方分析}
+\[
+  a^*(x)
+  =
+  \operatorname*{arg\,min}_{a\in\mathcal A(x)}
+  \mathbb E[L(Y,a)\mid X=x]+\lambda C(a).
+\]
+\begin{center}
+\begin{tabular}{p{0.25\linewidth}p{0.56\linewidth}}
+\toprule
+分析类型 & 回答的问题\\
+\midrule
+预测分析 & 未来可能发生什么？\\
+因果评估 & 行动是否改变结果？\\
+处方分析 & 在约束下应采取什么行动？\\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{frame}
+
+\begin{frame}{优化模型结构}
+\[
+  \max_x f(x)
+\]
+subject to
+\[
+  g_j(x)\le b_j,\qquad j=1,\ldots,m,
+  \qquad
+  x\in\mathcal X.
+\]
+\begin{itemize}
+  \item \(x\)：决策变量；
+  \item \(f(x)\)：目标函数；
+  \item \(g_j(x)\le b_j\)：资源或业务约束；
+  \item \(\mathcal X\)：变量类型，如连续、整数或二元。
+\end{itemize}
+\end{frame}
+
+\begin{frame}{库存补货目标函数}
+\[
+  \mathbb E[V(q,D)]
+  =
+  m\mathbb E[\min(I+q,D)]
+  -
+  h\mathbb E[(I+q-D)^+]
+  -
+  p\mathbb E[(D-I-q)^+]
+  -
+  cq.
+\]
+\begin{center}
+\begin{tabular}{ll}
+\toprule
+符号 & 含义\\
+\midrule
+\(q\) & 订货量\\
+\(D\) & 随机需求\\
+\(I\) & 当前库存\\
+\(m,h,p,c\) & 毛利、持有成本、缺货惩罚、采购成本\\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{frame}
+
+\begin{frame}{约束比目标更接近执行}
+\begin{itemize}
+  \item 预算约束：采购或运营支出不能超限；
+  \item 库容约束：仓库、货架、冷链或配送空间有限；
+  \item 服务约束：缺货率、准时率或最低覆盖率；
+  \item 业务规则：最小起订量、包装倍数、合同承诺；
+  \item 风险约束：单一供应商、极端库存、合规要求。
+\end{itemize}
+\begin{block}{管理含义}
+不可执行的最优解不是好方案。
+\end{block}
+\end{frame}
+
+\begin{frame}{第9周数据}
+\begin{center}
+\begin{tabular}{p{0.30\linewidth}p{0.52\linewidth}}
+\toprule
+字段 & 含义\\
+\midrule
+unit\_cost & 单位采购成本\\
+contribution\_margin & 单位贡献毛利\\
+holding\_cost & 剩余库存持有成本\\
+stockout\_penalty & 未满足需求惩罚\\
+current\_inventory & 当前库存\\
+storage\_per\_unit & 每件库容占用\\
+demand low/base/high & 三点需求预测\\
+\bottomrule
+\end{tabular}
+\end{center}
+\small
+目标是在预算 2600、库容 95 下选择各 SKU 订货量。
+\end{frame}
+
+\begin{frame}{基准最优补货方案}
+\begin{center}
+\begin{tabular}{lrrrr}
+\toprule
+SKU & 订货量 & 期望销售 & 期望缺货 & 净价值\\
+\midrule
+P01 & 18 & 28.00 & 2.00 & 1102.00\\
+P02 & 16 & 22.40 & 2.00 & 1113.60\\
+P03 & 10 & 27.40 & 6.70 & 877.50\\
+P04 & 8 & 12.25 & 4.00 & 821.50\\
+\bottomrule
+\end{tabular}
+\end{center}
+\vspace{0.2cm}
+\small
+预算使用 2596，库容使用 93，总期望净价值 3914.60。
+\end{frame}
+
+\begin{frame}{边际价值}
+\[
+  \Delta V_k(q)=V_k(q)-V_k(q-1).
+\]
+\begin{center}
+\begin{tabular}{lr}
+\toprule
+SKU & 前几个订货单位边际价值\\
+\midrule
+P01 & 44.00\\
+P02 & 65.00\\
+P03 & 33.00\\
+P04 & 86.00\\
+\bottomrule
+\end{tabular}
+\end{center}
+\small
+边际价值高的产品不一定无限优先，因为预算和库容同时约束。
+\end{frame}
+
+\begin{frame}{影子价格：约束的边际价值}
+\[
+  \frac{z(b+\Delta b)-z(b)}{\Delta b}.
+\]
+\begin{itemize}
+  \item 预算约束影子价格高：额外预算可能显著提升净价值；
+  \item 库容约束影子价格高：扩容或 SKU 结构调整值得讨论；
+  \item 影子价格低：该资源当前不是主要瓶颈；
+  \item 离散问题中通常通过敏感性分析近似理解。
+\end{itemize}
+\end{frame}
+
+\begin{frame}{敏感性分析}
+\begin{center}
+\begin{tabular}{lrrrl}
+\toprule
+情景 & 预算 & 库容 & 净价值 & 订货量\\
+\midrule
+基准 & 2600 & 95 & 3914.60 & (18,16,10,8)\\
+预算收紧 & 2200 & 95 & 3715.85 & (15,16,9,5)\\
+库容收紧 & 2600 & 75 & 3665.60 & (12,16,10,5)\\
+\bottomrule
+\end{tabular}
+\end{center}
+\begin{block}{解释}
+预算收紧和库容收紧压缩的 SKU 不完全相同；约束类型会改变行动组合。
+\end{block}
+\end{frame}
+
+\begin{frame}[fragile]{代码入口}
+\begin{lstlisting}[language=bash]
+PYTHONPATH=src python3 src/bdm_decision/cases/week09_optimization.py
+\end{lstlisting}
+
+\begin{lstlisting}[language=Python]
+from bdm_decision.optimization.inventory_optimization import (
+    load_product_policies, optimize_replenishment
+)
+
+policies = load_product_policies()
+plan = optimize_replenishment(
+    policies, budget_limit=2600, storage_limit=95
+)
+print(plan.total_expected_net_value)
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}{从最优解到执行}
+\begin{itemize}
+  \item 需求预测是否纳入最新促销和订单信息？
+  \item 成本、毛利和缺货惩罚是否由业务确认？
+  \item 供应商提前期和最小起订量是否允许执行？
+  \item SKU 之间是否存在替代或互补关系？
+  \item 方案是否对预算、库容或需求情景过度敏感？
+  \item 执行后是否有反馈数据更新模型？
+\end{itemize}
+\end{frame}
+
+\begin{frame}{课堂讨论}
+\begin{enumerate}
+  \item 为什么预测需求不能直接等同于订货量？
+  \item 缺货惩罚提高时，哪些 SKU 的订货量可能变化？
+  \item 如果 P04 有最小起订量 10，基准方案是否仍可执行？
+  \item 如何把第8周的因果估计接入优惠券预算优化？
+  \item 最优方案应由算法自动执行，还是进入审批流程？
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{本讲小结}
+\begin{itemize}
+  \item 优化把预测、因果证据、成本和约束转化为行动；
+  \item 规范模型需要变量、目标、约束和可行域；
+  \item 补货优化要权衡销售、剩余、缺货和采购成本；
+  \item 约束类型会改变最优行动组合；
+  \item 敏感性分析用于识别方案依赖哪些假设；
+  \item 最优解进入执行前必须经过业务审查和反馈治理。
+\end{itemize}
+\end{frame}
+
+\end{document}

@@ -1,0 +1,181 @@
+% Shared lecture-note preamble for Big Data and Management Decision-Making.
+% Chapter files follow latex_config.md and remain independently compilable.
+
+\usepackage[a4paper,margin=2.6cm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,bm}
+\usepackage{xcolor}
+\usepackage[most]{tcolorbox}
+\usepackage{booktabs,longtable,array}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{caption}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,shapes.geometric}
+
+\newcommand{\BDMFandolPath}{/usr/local/texlive/2025/texmf-dist/fonts/opentype/public/fandol/}
+\setCJKmainfont[
+  Path=\BDMFandolPath,
+  UprightFont=FandolSong-Regular.otf,
+  BoldFont=FandolSong-Regular.otf,
+  ItalicFont=FandolKai-Regular.otf,
+  BoldItalicFont=FandolKai-Regular.otf
+]{FandolSong-Regular.otf}
+\setCJKsansfont[
+  Path=\BDMFandolPath,
+  UprightFont=FandolSong-Regular.otf,
+  BoldFont=FandolSong-Regular.otf
+]{FandolSong-Regular.otf}
+\setCJKmonofont[
+  Path=\BDMFandolPath,
+  UprightFont=FandolSong-Regular.otf,
+  BoldFont=FandolSong-Regular.otf
+]{FandolSong-Regular.otf}
+\setmonofont{Menlo}
+\linespread{1.13}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue!60!black,
+  citecolor=blue!60!black,
+  urlcolor=blue!60!black,
+  pdfauthor={大数据与管理决策基础},
+  pdfsubject={大数据与管理决策基础课程讲义}
+}
+
+\ctexset{
+  chapter = {
+    format = \huge\mdseries,
+    name = {第,讲},
+    number = \arabic{chapter},
+    aftername = \quad
+  },
+  section = {format = \Large\mdseries},
+  subsection = {format = \large\mdseries},
+  subsubsection = {format = \normalsize\mdseries}
+}
+
+\setlist[itemize]{leftmargin=2em,itemsep=0.25em,topsep=0.25em}
+\setlist[enumerate]{leftmargin=2em,itemsep=0.25em,topsep=0.25em}
+
+\definecolor{BDMBlue}{RGB}{22,44,73}
+\definecolor{BDMTeal}{RGB}{22,119,119}
+\definecolor{BDMGray}{RGB}{76,84,95}
+\definecolor{BDMLight}{RGB}{245,247,250}
+\definecolor{BDMAmber}{RGB}{181,111,35}
+\definecolor{CodeBg}{RGB}{248,248,248}
+
+\lstdefinestyle{pythonstyle}{
+  basicstyle=\ttfamily\small,
+  backgroundcolor=\color{CodeBg},
+  keywordstyle=\color{BDMBlue},
+  commentstyle=\color{BDMGray},
+  stringstyle=\color{BDMAmber},
+  showstringspaces=false,
+  breaklines=true,
+  frame=single,
+  rulecolor=\color{black!20},
+  columns=fullflexible
+}
+
+\lstdefinestyle{sqlstyle}{
+  language=SQL,
+  basicstyle=\ttfamily\small,
+  backgroundcolor=\color{CodeBg},
+  keywordstyle=\color{BDMBlue},
+  commentstyle=\color{BDMGray},
+  stringstyle=\color{BDMAmber},
+  showstringspaces=false,
+  breaklines=true,
+  frame=single,
+  rulecolor=\color{black!20},
+  columns=fullflexible
+}
+
+\lstset{style=pythonstyle}
+\renewcommand{\lstlistingname}{代码}
+\renewcommand{\bibname}{参考文献}
+
+\theoremstyle{definition}
+\newtheorem{definition}{定义}[chapter]
+\newtheorem{example}[definition]{例}
+\newtheorem{exercise}[definition]{习题}
+\newtheorem{convention}[definition]{约定}
+
+\theoremstyle{remark}
+\newtheorem{remark}[definition]{评注}
+
+\theoremstyle{plain}
+\newtheorem{theorem}[definition]{定理}
+\newtheorem{proposition}[definition]{命题}
+\newtheorem{lemma}[definition]{引理}
+\newtheorem{corollary}[definition]{推论}
+
+\tcolorboxenvironment{definition}{
+  colback=blue!2!white,
+  colframe=blue!45!black,
+  boxrule=0.4pt,
+  arc=1.2mm,
+  breakable
+}
+
+\tcolorboxenvironment{theorem}{
+  colback=orange!3!white,
+  colframe=orange!55!black,
+  boxrule=0.4pt,
+  arc=1.2mm,
+  breakable
+}
+
+\tcolorboxenvironment{proposition}{
+  colback=orange!2!white,
+  colframe=orange!50!black,
+  boxrule=0.4pt,
+  arc=1.2mm,
+  breakable
+}
+
+\tcolorboxenvironment{lemma}{
+  colback=orange!2!white,
+  colframe=orange!45!black,
+  boxrule=0.4pt,
+  arc=1.2mm,
+  breakable
+}
+
+\tcolorboxenvironment{corollary}{
+  colback=orange!2!white,
+  colframe=orange!45!black,
+  boxrule=0.4pt,
+  arc=1.2mm,
+  breakable
+}
+
+\newtcolorbox{chapterbox}{
+  colback=gray!5!white,
+  colframe=gray!55!black,
+  boxrule=0.4pt,
+  arc=1.2mm,
+  breakable
+}
+
+\newtcolorbox{modernbox}[1][应用接口]{
+  colback=green!3!white,
+  colframe=green!45!black,
+  boxrule=0.4pt,
+  arc=1.2mm,
+  title={#1},
+  fonttitle=\mdseries,
+  breakable
+}
+
+\newcommand{\R}{\mathbb R}
+\newcommand{\N}{\mathbb N}
+\newcommand{\E}{\mathbb E}
+\newcommand{\Prob}{\mathbb P}
+\newcommand{\dd}{\,\mathrm d}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\abs}[1]{\left\lvert #1\right\rvert}
+\newcommand{\norm}[1]{\left\lVert #1\right\rVert}
+\newcommand{\argmin}{\operatorname*{arg\,min}}
+\newcommand{\argmax}{\operatorname*{arg\,max}}

@@ -1,0 +1,5 @@
+product_id,product_name,category,unit_price,unit_cost
+P001,Servo Motor,Automation,1200,820
+P002,Control Panel,Automation,2300,1600
+P003,Industrial Sensor,Electronics,450,260
+P004,Hydraulic Pump,Mechanical,1800,1250

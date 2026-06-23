@@ -1,0 +1,270 @@
+\documentclass[UTF8,fontset=fandol,aspectratio=169,11pt]{ctexbeamer}
+\input{../common/bdm_beamer_preamble.tex}
+
+\title[大数据与管理决策基础]{第1讲：大数据与管理决策导论}
+\subtitle{从经营症状到数据、模型、行动与反馈}
+\author{《大数据与管理决策基础》}
+\date{}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+  \vspace{-0.4cm}
+  \begin{center}
+    \small
+    核心命题：数据分析的终点不是模型准确率，而是可执行、可评估、可反馈的管理行动。
+  \end{center}
+\end{frame}
+
+\begin{frame}{课程定位：方法论与技术桥梁}
+\begin{center}
+\resizebox{0.98\linewidth}{!}{%
+\begin{tikzpicture}[
+  node distance=0.85cm,
+  box/.style={draw=AcademicBlue!45, fill=AcademicLight, rounded corners=1pt,
+              minimum width=2.15cm, minimum height=0.9cm, align=center, font=\small},
+  active/.style={draw=AcademicBlue, fill=AcademicBlue, text=white,
+              minimum width=2.35cm, minimum height=1.0cm, align=center, font=\small},
+  arrow/.style={-{Stealth[length=2mm]}, thick, AcademicTeal}
+]
+\node[box] (c1) {数智化\\运营概论};
+\node[active, right=of c1] (c2) {大数据与\\管理决策基础};
+\node[box, right=of c2] (c3) {企业运营数据\\挖掘与分析};
+\node[box, right=of c3] (c4) {流程优化与\\数理决策};
+\node[box, right=of c4] (c5) {综合实训};
+\draw[arrow] (c1) -- (c2);
+\draw[arrow] (c2) -- (c3);
+\draw[arrow] (c3) -- (c4);
+\draw[arrow] (c4) -- (c5);
+\end{tikzpicture}
+}
+\end{center}
+
+\vspace{0.4cm}
+\begin{block}{本课程承担的角色}
+将企业经营数据、统计建模、因果判断、优化决策与系统部署放入同一条教学主线。
+\end{block}
+\end{frame}
+
+\begin{frame}{从经营症状开始，而不是从算法开始}
+\begin{table}
+\small
+\centering
+\begin{tabular}{p{0.18\linewidth}p{0.34\linewidth}p{0.34\linewidth}}
+\toprule
+经营症状 & 管理追问 & 典型指标\\
+\midrule
+库存积压 & 需求下降、补货过量还是渠道错配？ & 库存周转率、缺货率、滞销金额\\
+交付延期 & 供应商、产能还是物流造成瓶颈？ & 准时交付率、平均延期天数\\
+客户流失 & 哪些客户会流失，干预是否有效？ & 流失率、复购率、客户终身价值\\
+产能瓶颈 & 哪个资源限制了系统吞吐量？ & 吞吐时间、资源利用率、等待时间\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{alertblock}{教学要求}
+任何分析任务都必须说明：谁会依据分析结果，对哪个业务对象，采取什么行动。
+\end{alertblock}
+\end{frame}
+
+\begin{frame}{数据驱动管理决策的基本闭环}
+\begin{center}
+\resizebox{0.98\linewidth}{!}{%
+\begin{tikzpicture}[
+  stage/.style={draw=AcademicBlue!50, fill=AcademicLight, minimum width=1.65cm,
+                minimum height=0.75cm, align=center, font=\small},
+  action/.style={draw=AcademicAmber, fill=AcademicAmber!18, minimum width=1.65cm,
+                minimum height=0.75cm, align=center, font=\small},
+  arrow/.style={-{Stealth[length=2mm]}, thick, AcademicTeal}
+]
+\node[stage] (s1) {业务\\症状};
+\node[stage, right=0.65cm of s1] (s2) {管理\\问题};
+\node[stage, right=0.65cm of s2] (s3) {数据\\表达};
+\node[stage, right=0.65cm of s3] (s4) {指标\\体系};
+\node[stage, right=0.65cm of s4] (s5) {分析\\模型};
+\node[action, right=0.65cm of s5] (s6) {管理\\行动};
+\node[stage, right=0.65cm of s6] (s7) {反馈\\评价};
+\foreach \i/\j in {s1/s2,s2/s3,s3/s4,s4/s5,s5/s6,s6/s7}
+  \draw[arrow] (\i) -- (\j);
+\end{tikzpicture}
+}
+\end{center}
+
+\vspace{0.4cm}
+\[
+\text{业务症状}\rightarrow \text{数据表达}\rightarrow \text{模型判断}\rightarrow
+\text{行动选择}\rightarrow \text{反馈治理}.
+\]
+\end{frame}
+
+\begin{frame}{五类分析回答不同问题}
+\begin{table}
+\small
+\centering
+\begin{tabular}{p{0.15\linewidth}p{0.25\linewidth}p{0.46\linewidth}}
+\toprule
+类型 & 核心问题 & 示例\\
+\midrule
+描述分析 & 发生了什么？ & 本月销售额、订单量、库存水平。\\
+诊断分析 & 为什么发生？ & 哪些区域、产品、供应商造成延期。\\
+预测分析 & 将会发生什么？ & 哪些订单可能延期，哪些客户可能流失。\\
+因果分析 & 行动是否有效？ & 优惠券是否真正降低流失率。\\
+处方分析 & 应该怎么做？ & 在预算约束下给哪些客户发券。\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{block}{边界意识}
+预测分数不是行动建议；相关关系不是因果效应；仪表盘不是完整决策系统。
+\end{block}
+\end{frame}
+
+\begin{frame}{预测、因果与行动的分工}
+\begin{table}
+\small
+\centering
+\begin{tabular}{p{0.24\linewidth}p{0.31\linewidth}p{0.31\linewidth}}
+\toprule
+问题 & 数学对象 & 管理含义\\
+\midrule
+预测 & \(P(Y=1\mid X=x)\) & 哪些对象风险更高。\\
+因果 & \(\mathbb E[Y(a)-Y(a')\mid X=x]\) & 行动是否真的改变结果。\\
+处方 & \(a^*(x)\) & 在成本和约束下选择行动。\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{alertblock}{课堂提醒}
+高风险对象不一定最值得行动；行动优先级还取决于行动效果、对象价值、资源约束和可审计责任。
+\end{alertblock}
+\end{frame}
+
+\begin{frame}{管理决策的统一数学表达}
+给定企业状态 \(X=x\)，在可行行动集合 \(\mathcal A(x)\) 中选择行动：
+\[
+a^*(x)
+=
+\arg\min_{a\in\mathcal A(x)}
+\mathbb E\!\left[L(Y,a)\mid X=x\right]
++
+\lambda C(a).
+\]
+
+\begin{table}
+\small
+\centering
+\begin{tabular}{cl}
+\toprule
+符号 & 含义\\
+\midrule
+\(X\) & 当前企业状态数据：订单、库存、客户、产能、流程日志\\
+\(Y\) & 未来经营结果：延期、流失、需求、利润\\
+\(a\) & 管理行动：加急、补货、发券、重排产能\\
+\(L(Y,a)\) & 行动后产生或避免的业务损失\\
+\(C(a)\) & 行动成本、资源占用或约束惩罚\\
+\bottomrule
+\end{tabular}
+\end{table}
+\end{frame}
+
+\begin{frame}{CRISP-DM 是起点，现代企业还需要治理}
+\begin{columns}[T]
+\begin{column}{0.48\linewidth}
+\begin{block}{CRISP-DM}
+\begin{enumerate}
+  \item Business Understanding
+  \item Data Understanding
+  \item Data Preparation
+  \item Modeling
+  \item Evaluation
+  \item Deployment
+\end{enumerate}
+\end{block}
+\end{column}
+\begin{column}{0.48\linewidth}
+\begin{block}{现代闭环补充}
+\begin{itemize}
+  \item 数据质量与指标治理；
+  \item 元数据、血缘与可复现环境；
+  \item 模型监控、漂移检测与审计；
+  \item 权限控制与 human-in-the-loop；
+  \item 行动日志与反馈回流。
+\end{itemize}
+\end{block}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{案例：制造企业交付延期风险预警}
+\begin{table}
+\small
+\centering
+\begin{tabular}{p{0.18\linewidth}p{0.68\linewidth}}
+\toprule
+层次 & 内容\\
+\midrule
+业务症状 & 准时交付率下降，关键客户投诉增加。\\
+管理问题 & 哪些订单需要提前加急或重排产能？\\
+候选数据 & 订单、供应商、库存、生产排程、物流轨迹、流程日志。\\
+分析模型 & 延期风险评分、瓶颈诊断、产能分配优化。\\
+管理行动 & 加急采购、产能重排、替代物流或客户沟通。\\
+反馈指标 & 准时交付率、加急成本、客户满意度。\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\[
+\text{风险预测}\rightarrow\text{行动推荐}\rightarrow\text{情景比较}\rightarrow\text{行动日志}\rightarrow\text{反馈评价}.
+\]
+\end{frame}
+
+\begin{frame}[fragile]{配套代码：问题框架的结构化表达}
+\begin{lstlisting}[language=Python]
+from dataclasses import dataclass
+
+@dataclass(frozen=True)
+class OperatingSymptom:
+    name: str
+    business_question: str
+    candidate_data: list[str]
+    kpis: list[str]
+    analysis_type: str
+    decision_action: str
+\end{lstlisting}
+
+\begin{block}{运行方式}
+\begin{lstlisting}[language=bash]
+PYTHONPATH=src python3 src/bdm_decision/cases/week01_problem_framing.py
+\end{lstlisting}
+\end{block}
+\end{frame}
+
+\begin{frame}{课堂练习：15 分钟完成问题拆解}
+\begin{enumerate}
+  \item 选择一个业务症状：库存、交付、客户、产能或自选案例；
+  \item 写出一个包含行动对象的管理问题；
+  \item 列出至少四类数据表或事件日志；
+  \item 定义至少五个 KPI，并说明管理含义；
+  \item 判断涉及描述、诊断、预测、因果或处方分析中的哪些类型；
+  \item 提出至少两个可执行管理行动；
+  \item 设计行动后的反馈指标。
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{本周交付与下周衔接}
+\begin{block}{本周交付}
+\begin{itemize}
+  \item 讲义：\texttt{docs/lecture\_notes/01\_intro.tex}
+  \item 课件：\texttt{slides/01\_intro/week01\_data\_driven\_decision\_intro\_beamer.tex}
+  \item 代码：\texttt{src/bdm\_decision/cases/week01\_problem\_framing.py}
+  \item 作业：\texttt{assignments/assignment\_01\_data\_modeling.md}
+\end{itemize}
+\end{block}
+
+\begin{alertblock}{下周主题}
+企业数据与业务对象：从关系表、实体、事件与状态出发，建立订单--客户--产品--库存数据模型。
+\end{alertblock}
+\end{frame}
+
+\end{document}

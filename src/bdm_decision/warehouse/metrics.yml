@@ -1,0 +1,79 @@
+semantic_models:
+  - name: order_enriched
+    description: Order-level semantic model for the week 03 SQL/KPI case.
+    grain: order
+    entities:
+      - name: order
+        type: primary
+        expr: order_id
+      - name: customer
+        type: foreign
+        expr: customer_id
+      - name: product
+        type: foreign
+        expr: product_id
+    dimensions:
+      - name: order_date
+        type: time
+      - name: region
+        type: categorical
+      - name: segment
+        type: categorical
+      - name: category
+        type: categorical
+      - name: channel
+        type: categorical
+      - name: priority
+        type: categorical
+    measures:
+      - name: revenue
+        agg: sum
+        expr: revenue
+      - name: gross_profit
+        agg: sum
+        expr: gross_profit
+      - name: delivered_orders
+        agg: count
+        expr: order_id
+      - name: on_time_orders
+        agg: sum
+        expr: on_time_flag
+      - name: delay_days
+        agg: average
+        expr: delay_days
+
+metrics:
+  - name: revenue
+    label: Revenue
+    type: simple
+    measure: revenue
+    grain: order
+    owner: finance
+    dimensions: [region, segment, category, channel]
+
+  - name: gross_margin
+    label: Gross margin
+    type: ratio
+    numerator: gross_profit
+    denominator: revenue
+    grain: order
+    owner: finance
+    dimensions: [region, segment, category, channel]
+
+  - name: on_time_delivery_rate
+    label: On-time delivery rate
+    type: ratio
+    numerator: on_time_orders
+    denominator: delivered_orders
+    grain: delivered_order
+    owner: operations
+    dimensions: [region, segment, category, channel, priority]
+
+  - name: average_delay_days
+    label: Average delay days
+    type: simple
+    measure: delay_days
+    grain: delivered_order
+    owner: operations
+    dimensions: [region, segment, category, channel, priority]
+

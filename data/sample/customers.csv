@@ -1,0 +1,7 @@
+customer_id,customer_name,region,segment
+C001,Acme Manufacturing,East,Strategic
+C002,Northwind Parts,North,Core
+C003,Blue River Logistics,South,Core
+C004,Evergreen Retail,East,Growth
+C005,Metro Equipment,West,Strategic
+C006,Harbor Components,South,Growth

@@ -1,0 +1,212 @@
+\documentclass[UTF8,fontset=fandol,aspectratio=169,11pt]{ctexbeamer}
+\input{../common/bdm_beamer_preamble.tex}
+
+\title[企业数据与业务对象]{第2讲：企业数据与业务对象}
+\subtitle{关系模型、ER 模型、星型模型与对象映射}
+\author{《大数据与管理决策基础》}
+\date{}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+  \begin{center}
+    \small 核心命题：企业数据建模不是为了画表，而是为了让指标、模型和行动具有稳定对象基础。
+  \end{center}
+\end{frame}
+
+\begin{frame}{本讲学习目标}
+\begin{enumerate}
+  \item 区分实体、属性、关系、事件、状态与指标；
+  \item 设计订单--客户--产品--库存 ER 模型；
+  \item 理解事实表粒度、主键、外键和完整性约束；
+  \item 将关系表组织为星型模型；
+  \item 将表映射为业务对象、关系和可执行行动。
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{企业运营数据的五类基本概念}
+\begin{table}
+\small
+\centering
+\begin{tabular}{p{0.16\linewidth}p{0.34\linewidth}p{0.36\linewidth}}
+\toprule
+类型 & 含义 & 示例\\
+\midrule
+实体 & 具有稳定身份的对象 & 客户、产品、供应商、仓库\\
+属性 & 实体或事件的描述变量 & 地区、类别、单价、客户等级\\
+事件 & 时间上发生的一次业务活动 & 下单、发货、付款、退货\\
+状态 & 某一时点对象的状态快照 & 库存量、订单状态、设备状态\\
+指标 & 对事件或状态的聚合度量 & 销售额、准时交付率\\
+\bottomrule
+\end{tabular}
+\end{table}
+\end{frame}
+
+\begin{frame}{关系模型：表是有限关系}
+若客户集合为 \(C\)，产品集合为 \(P\)，时间集合为 \(T\)，则订单数据可表示为
+\[
+O\subseteq C\times P\times \mathbb N\times T.
+\]
+
+\begin{block}{三个基本约束}
+\begin{enumerate}
+  \item 实体完整性：主键不能为空且唯一；
+  \item 引用完整性：外键必须引用已存在记录；
+  \item 业务完整性：数量、价格、日期满足业务规则。
+\end{enumerate}
+\end{block}
+\end{frame}
+
+\begin{frame}{订单--客户--产品--库存 ER 模型}
+\begin{center}
+\resizebox{0.86\linewidth}{!}{%
+\begin{tikzpicture}[
+  entity/.style={draw=AcademicBlue!60, fill=AcademicLight, rounded corners=1pt,
+                 minimum width=2.7cm, minimum height=0.9cm, align=center},
+  arrow/.style={-{Stealth[length=2mm]}, thick, AcademicTeal}
+]
+\node[entity] (cust) {Customer\\客户};
+\node[entity, right=3cm of cust] (order) {Order\\订单};
+\node[entity, right=3cm of order] (prod) {Product\\产品};
+\node[entity, below=1.5cm of prod] (inv) {Inventory\\库存快照};
+\draw[arrow] (cust) -- node[above]{1:N} (order);
+\draw[arrow] (prod) -- node[above]{1:N} (order);
+\draw[arrow] (prod) -- node[right]{1:N} (inv);
+\end{tikzpicture}
+}
+\end{center}
+\begin{alertblock}{关键问题}
+一行订单事实到底表示“订单头”、还是“订单明细项”？粒度决定后续 KPI 是否可解释。
+\end{alertblock}
+\end{frame}
+
+\begin{frame}{星型模型：面向分析的组织方式}
+\[
+\text{FactOrders}
+\leftarrow
+\{\text{DimCustomer},\text{DimProduct},\text{DimDate},\text{DimChannel}\}.
+\]
+
+\begin{table}
+\small
+\centering
+\begin{tabular}{p{0.22\linewidth}p{0.58\linewidth}}
+\toprule
+组件 & 设计要点\\
+\midrule
+事实表 & 明确粒度，保存度量值和维度外键。\\
+维度表 & 描述分析切片，如客户、产品、日期、渠道。\\
+指标口径 & 基于事实表粒度定义销售额、毛利率、延迟率。\\
+\bottomrule
+\end{tabular}
+\end{table}
+\end{frame}
+
+\begin{frame}{事实表粒度与度量可加性}
+\begin{table}
+\small
+\centering
+\begin{tabular}{p{0.23\linewidth}p{0.34\linewidth}p{0.29\linewidth}}
+\toprule
+概念 & 判断问题 & 示例\\
+\midrule
+粒度 & 一行记录代表什么业务事实？ & 一个订单明细项。\\
+可加度量 & 能否沿所有维度求和？ & 销售金额、数量。\\
+半可加度量 & 是否不能跨时间直接相加？ & 库存余额。\\
+不可加度量 & 是否需要由分子分母重算？ & 准时率、毛利率。\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{alertblock}{建模规范}
+先声明粒度，再选择维度和事实；不同粒度的事实不要混入同一张事实表。
+\end{alertblock}
+\end{frame}
+
+\begin{frame}{事件与状态不能混淆}
+\begin{columns}[T]
+\begin{column}{0.48\linewidth}
+\begin{block}{事件表}
+\begin{itemize}
+  \item 下单、发货、付款；
+  \item 有明确发生时间；
+  \item 适合计算流量、频次、周期。
+\end{itemize}
+\end{block}
+\end{column}
+\begin{column}{0.48\linewidth}
+\begin{block}{状态快照表}
+\begin{itemize}
+  \item 库存余额、订单状态；
+  \item 描述某一时点状态；
+  \item 适合计算存量、风险暴露。
+\end{itemize}
+\end{block}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{从关系表映射为业务对象}
+\begin{table}
+\small
+\centering
+\begin{tabular}{p{0.24\linewidth}p{0.35\linewidth}p{0.28\linewidth}}
+\toprule
+业务对象 & 来源表 & 可支持行动\\
+\midrule
+Customer & customers & 分层运营、优惠券、回访\\
+Product & products & 定价、促销、补货\\
+Order & orders + dimensions & 加急、拆单、客户沟通\\
+InventoryPosition & inventory + products & 补货、调拨、清仓\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\[
+\text{Tables}\rightarrow\text{Objects}\rightarrow\text{Links}\rightarrow\text{Actions}.
+\]
+\end{frame}
+
+\begin{frame}[fragile]{配套代码：生成 DDL 与数据字典}
+\begin{lstlisting}[language=Python]
+@dataclass(frozen=True)
+class Entity:
+    name: str
+    primary_key: str
+    fields: list[Field]
+    description: str
+
+def create_table_sql(entity: Entity) -> str:
+    ...
+\end{lstlisting}
+
+\begin{block}{运行方式}
+\begin{lstlisting}[language=bash]
+PYTHONPATH=src python3 src/bdm_decision/cases/week02_enterprise_data_model.py
+\end{lstlisting}
+\end{block}
+\end{frame}
+
+\begin{frame}{课堂练习}
+以“零售订单--客户--产品--库存”为背景：
+\begin{enumerate}
+  \item 列出至少四个实体及其主键；
+  \item 为每个实体设计至少四个字段；
+  \item 标明实体之间的基数关系；
+  \item 指出一个事实表和至少三个维度表；
+  \item 将至少两个关系表映射为业务对象，并说明可执行行动。
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{常见错误}
+\begin{itemize}
+  \item 不区分订单头与订单明细，导致事实表粒度混乱；
+  \item 使用业务含义不稳定的字段作为主键；
+  \item 只画 ER 图，不说明主外键和完整性约束；
+  \item 将库存快照误认为交易事件；
+  \item 在 KPI 计算前没有定义指标口径和事实表粒度。
+\end{itemize}
+\end{frame}
+
+\end{document}

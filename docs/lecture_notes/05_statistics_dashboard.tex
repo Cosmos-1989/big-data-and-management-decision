@@ -1,0 +1,481 @@
+\documentclass[UTF8,fontset=fandol,openany,zihao=-4]{ctexbook}
+\input{../latex/bdm_lecture_preamble.tex}
+
+\title{《大数据与管理决策基础》\\[0.5em]\large 第5讲：统计描述、经营波动与 Dashboard}
+\author{课程讲义}
+\date{}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\setcounter{chapter}{4}
+\chapter{统计描述、经营波动与 Dashboard}
+\label{ch:week05-statistics-dashboard}
+
+\begin{chapterbox}
+第3讲讨论 KPI 的计算口径，第4讲讨论数据质量如何影响指标可信度。本讲进一步讨论如何把可信指标转化为可解释的经营观察和 dashboard。描述统计不是低阶工具，而是管理分析的第一层证据：中心位置说明典型水平，离散程度说明波动风险，分位数和异常值说明结构差异，时间序列说明经营节奏，图表编码说明人如何理解数据。讲义从均值、中位数、方差、标准差、变异系数、四分位数、IQR、移动平均和简单异常识别出发，说明这些统计量如何支持经营监控；再引入图形感知、可视化语法、dashboard 信息架构和运营节奏，强调 dashboard 应服务于目标、比较、异常、下钻和行动，而不是堆叠图表。
+\end{chapterbox}
+
+\begin{modernbox}[课程接口]
+本讲把可信指标推进到管理沟通层：描述统计和 dashboard 将经营状态组织为可比较、可下钻、可触发行动的信息界面，使管理者能够在波动、异常和趋势之间形成可解释判断。后续预测、实验、因果推断和优化决策都依赖本讲建立的观察基线。
+\end{modernbox}
+
+\section{学习目标}
+
+前四讲已经建立了从管理问题到数据模型、SQL/KPI 和数据质量的基础。第五讲进入“让管理者看见什么”的问题。经营 dashboard 的目标不是把所有数据展示出来，而是帮助特定角色在有限时间内理解经营状态、发现异常、提出下钻问题并触发行动。
+
+完成本讲后，学生应能够：
+\begin{enumerate}
+  \item 解释描述统计在管理决策中的作用，以及它与预测和因果解释的边界；
+  \item 区分均值、中位数、分位数、标准差、IQR 和变异系数的管理含义；
+  \item 使用移动平均、基准线、目标线和简单异常识别描述经营波动；
+  \item 说明比率型指标为什么必须同时展示分子、分母和质量状态；
+  \item 理解图表不是装饰，而是数据字段到视觉通道的编码；
+  \item 区分战略 dashboard、分析 dashboard 和运营 dashboard；
+  \item 基于样例数据生成一个包含 KPI 卡片、趋势、异常和质量提示的 dashboard 原型；
+  \item 写出一页面向管理者的解释，明确哪些结论是描述性发现，哪些问题需要进一步下钻。
+\end{enumerate}
+
+\section{本讲在课程主线中的位置}
+
+第5讲的输入不是原始数据，而是经过第2讲建模、第3讲计算、第4讲质量检查后的可信指标。若数据模型不稳定，图表会展示错误对象；若 KPI 口径不清，dashboard 会展示不可比较数字；若质量门禁缺失，dashboard 会把脏数据包装成漂亮图形。因此，本讲的主线是：
+\[
+\text{可信指标}
+\rightarrow
+\text{描述统计}
+\rightarrow
+\text{图表编码}
+\rightarrow
+\text{经营解释}
+\rightarrow
+\text{管理行动}.
+\]
+
+统计描述和 dashboard 仍然只是分析链条中的一环。它们能告诉管理者“发生了什么”“是否异常”“哪里需要下钻”，但通常不能直接回答“为什么发生”或“采取某行动是否有效”。这些问题将在后续预测、实验、因果推断和优化模块中继续讨论。
+
+\begin{definition}[描述性管理分析]
+描述性管理分析是以可信指标为输入，通过统计摘要、分组比较、时间趋势、异常识别和可视化界面，刻画经营状态并提出后续行动问题的分析活动。
+\end{definition}
+
+这个定义有两个边界。第一，描述性分析可以发现异常，但异常不是因果结论。第二，dashboard 可以触发行动，但行动的有效性仍需要实验、因果推断或优化模型进一步评估。
+
+\section{经营指标作为观测变量}
+
+设某指标在 \(n\) 个日期、客户、区域或产品类别上的观测为
+\[
+x_1,x_2,\ldots,x_n.
+\]
+这些观测可以来自同一对象的时间序列，也可以来自不同对象在同一时间窗口的横截面。时间序列关注经营节奏和变化方向，横截面关注对象之间的差异。二者不能混用。例如，日收入的波动不能直接解释为区域之间的结构差异；区域收入差异也不能直接说明某区域正在改善或恶化。
+
+\begin{convention}[观测单位]
+每个统计摘要都必须声明观测单位。观测单位可以是日期、订单、客户、产品、门店、区域或客户日期组合。若观测单位不清楚，均值、分位数、异常值和趋势都无法被正确解释。
+\end{convention}
+
+本周样例数据 \texttt{daily\_operations.csv} 的观测单位是一行一个经营日期。它适合讨论日收入、日订单、准时交付率、平均延期、待处理订单和质量问题随时间的变化，但不适合直接回答哪个客户贡献了异常收入。要回答客户问题，需要回到订单事实表和客户维度。
+
+\section{中心位置：均值与中位数}
+
+描述统计首先要回答典型水平。样本均值为
+\[
+\bar x=\frac{1}{n}\sum_{i=1}^n x_i.
+\]
+均值适合描述可加指标的平均水平，例如日收入、日订单量或每周质量问题数。它的优点是使用全部观测，并且与总量之间有明确关系：
+\[
+\sum_{i=1}^n x_i=n\bar x.
+\]
+这使得均值非常适合预算、产能和目标差距讨论。
+
+但均值对极端值敏感。若某一天出现大客户订单或一次性促销，均值会被明显拉高。中位数 \(Q_2\) 是排序后位于中间位置的观测，更适合描述典型日或典型客户。经营汇报中常见的稳健写法是同时报告均值和中位数：若均值显著高于中位数，说明分布可能右偏，少数高值正在影响总体平均。
+
+\begin{example}[日收入的中心位置]
+第5周样例中，总收入为 71350，观测天数为 12，平均日收入为 5945.83，中位数为 5100。均值高于中位数，提示收入分布受到高收入日期影响。这个发现本身不说明经营改善，只说明需要下钻到高收入日期对应的订单、客户或产品。
+\end{example}
+
+\section{离散程度：方差、标准差与变异系数}
+
+只有中心位置不足以支持管理判断。两个团队的平均收入可能相同，但一个团队稳定，另一个团队高度波动。样本方差和标准差定义为
+\[
+s^2=\frac{1}{n-1}\sum_{i=1}^n(x_i-\bar x)^2,\qquad s=\sqrt{s^2}.
+\]
+标准差与原指标具有相同单位，因此便于解释为“典型偏离幅度”。若日收入的标准差为 2987.05，则说明日收入围绕均值有较大波动。
+
+当比较不同量纲或不同水平的指标时，可使用变异系数
+\[
+CV=\frac{s}{\bar x}.
+\]
+变异系数描述相对波动。它适合比较收入和订单量，或比较不同区域在不同规模下的稳定性。不过，当均值接近 0 或指标可以取负值时，变异系数会失去稳定解释。
+
+\begin{remark}
+标准差不是风险的全部含义。经营风险还取决于波动发生在什么对象、是否集中在关键客户、是否超出服务承诺、是否触发现金流或库存约束。因此，统计波动需要继续连接业务语境。
+\end{remark}
+
+\section{分位数、IQR 与异常识别}
+
+分位数描述分布结构。设 \(Q_1\)、\(Q_2\)、\(Q_3\) 分别为第一四分位数、中位数和第三四分位数，则四分位距为
+\[
+IQR=Q_3-Q_1.
+\]
+IQR 衡量中间 50\% 观测的跨度，对极端值不敏感。常见经验规则将低于
+\[
+Q_1-1.5IQR
+\]
+或高于
+\[
+Q_3+1.5IQR
+\]
+的观测标记为异常值。
+
+\begin{definition}[描述性异常]
+描述性异常是相对于某个经验规则、目标线、历史基线或业务阈值显得不寻常的观测。异常识别只说明“需要解释”，并不自动说明“原因是什么”。
+\end{definition}
+
+在第5周样例数据中，收入的 \(Q_1=4100\)，\(Q_3=6975\)，因此 \(IQR=2875\)。IQR 规则识别出 13500 为异常高收入日期。管理者应进一步询问：该日期是否有大客户订单？是否有促销活动？是否存在重复入账？是否伴随质量问题或交付延迟？如果没有这些下钻问题，异常值只是一条醒目的数字。
+
+\section{比率指标与分母}
+
+dashboard 中常有准时率、毛利率、缺陷率、转化率等比率型指标。第3讲已经强调，比率指标不能简单平均。本讲进一步强调：dashboard 应尽量同时展示比率、分子和分母。若某区域准时率为 \(100\%\)，但只有 1 个交付订单，它的管理含义不同于 300 个订单上的 \(96\%\)。
+
+设分组 \(g\) 的分子为 \(N_g\)，分母为 \(D_g\)。总体比率应为
+\[
+R=\frac{\sum_g N_g}{\sum_g D_g}.
+\]
+若直接平均各组比率
+\[
+\frac{1}{G}\sum_{g=1}^G \frac{N_g}{D_g},
+\]
+就会把不同分母的组赋予相同权重，从而造成误读。
+
+\begin{longtable}{>{\raggedright\arraybackslash}p{0.24\linewidth}>{\raggedright\arraybackslash}p{0.32\linewidth}>{\raggedright\arraybackslash}p{0.32\linewidth}}
+\caption{比率指标的 dashboard 展示要求}\\
+\toprule
+展示元素 & 作用 & 管理风险\\
+\midrule
+\endfirsthead
+\toprule
+展示元素 & 作用 & 管理风险\\
+\midrule
+\endhead
+比率值 & 显示当前比例水平。 & 单独展示可能造成小样本误读。\\
+分子 & 说明事件发生次数。 & 隐藏分子会掩盖问题规模。\\
+分母 & 说明比较基础。 & 分母太小时比较不稳定。\\
+目标线 & 提供评价基准。 & 没有目标线时难以判断好坏。\\
+质量状态 & 说明是否可发布。 & 质量失败时漂亮图表会放大错误。\\
+\bottomrule
+\end{longtable}
+
+经营沟通中应写清楚：指标是否可加，分子和分母是什么，分母是否足够支持比较，是否存在质量门禁未通过的记录。
+
+\section{经营波动与移动平均}
+
+管理者通常既关心当前水平，也关心趋势。对时间序列 \(x_t\)，简单移动平均可写为
+\[
+MA_t^{(k)}=\frac{1}{k}\sum_{j=0}^{k-1}x_{t-j}.
+\]
+移动平均可以平滑短期波动，使趋势更容易被看见；但它也可能掩盖突发异常。因此，dashboard 中的移动平均应与原始观测同时展示，而不是替代原始数据。
+
+移动平均还有边界效应。序列开始处不足 \(k\) 个历史点时，实际窗口长度小于 \(k\)；序列末端的移动平均会滞后于最新观测。若某天收入突然升高，三日移动平均会把高值扩散到相邻日期。课堂中应让学生同时观察原始柱形图和移动平均线，避免把平滑后的曲线误解为真实经营过程。
+
+\begin{proposition}[平滑与异常并存]
+用于经营监控的时间序列视图应同时保留原始观测、平滑趋势和异常标记。原始观测用于追踪事实，平滑趋势用于识别节奏，异常标记用于触发下钻。
+\end{proposition}
+
+\section{比较基准、目标线与经营解释}
+
+描述统计需要比较基准。没有基准的数字通常没有管理含义。常见基准包括：
+\begin{itemize}
+  \item 历史基准：与上周、上月、去年同期比较；
+  \item 计划基准：与预算、目标、服务水平协议比较；
+  \item 同类基准：与区域、门店、产品类别或客户分层比较；
+  \item 统计基准：与均值、分位数、控制界限或异常阈值比较。
+\end{itemize}
+
+同一个指标在不同基准下可能得到不同解释。收入高于上周并不一定说明达成预算；准时率高于某区域平均也不一定达到客户承诺。dashboard 应明确比较对象，否则读者会自动补充各自心中的基准，导致会议讨论偏离事实。
+
+\begin{longtable}{>{\raggedright\arraybackslash}p{0.22\linewidth}>{\raggedright\arraybackslash}p{0.30\linewidth}>{\raggedright\arraybackslash}p{0.36\linewidth}}
+\caption{经营解释中的常见基准}\\
+\toprule
+基准 & 适用问题 & 风险\\
+\midrule
+\endfirsthead
+\toprule
+基准 & 适用问题 & 风险\\
+\midrule
+\endhead
+上期值 & 是否改善或恶化？ & 季节性和工作日结构可能干扰判断。\\
+目标线 & 是否达成管理承诺？ & 目标若未更新，可能失去约束力。\\
+同类对象 & 哪些区域或产品异常？ & 对象规模、组合和质量状态可能不同。\\
+分位数 & 观测是否罕见？ & 罕见不等于错误，也不等于原因。\\
+质量门禁 & 指标是否可发布？ & 忽略质量状态会造成错误信任。\\
+\bottomrule
+\end{longtable}
+
+\section{图表是视觉编码}
+
+可视化不是把数字“画出来”，而是将数据字段映射到视觉通道。Wilkinson 的 Grammar of Graphics、Wickham 的 layered grammar 和 Vega-Lite 的 encoding 语法都强调：图表由数据、变换、几何标记、编码、尺度和坐标共同构成。
+
+\begin{definition}[视觉编码]
+视觉编码是把数据字段映射到位置、长度、颜色、大小、形状、文本、透明度等视觉通道的过程。图表的解释质量取决于编码是否符合数据类型、比较任务和读者感知能力。
+\end{definition}
+
+\begin{longtable}{>{\raggedright\arraybackslash}p{0.19\linewidth}>{\raggedright\arraybackslash}p{0.33\linewidth}>{\raggedright\arraybackslash}p{0.36\linewidth}}
+\caption{管理分析中的常见图表任务}\\
+\toprule
+任务 & 推荐图表 & 适用场景\\
+\midrule
+\endfirsthead
+\toprule
+任务 & 推荐图表 & 适用场景\\
+\midrule
+\endhead
+时间趋势 & 折线图、柱线组合 & 收入、订单量、待处理订单随时间变化。\\
+类别比较 & 排序条形图 & 区域、客户分层、产品类别比较。\\
+分布形态 & 直方图、箱线图 & 订单金额、交付周期、客单价分布。\\
+目标达成 & 子弹图、目标线 & 收入目标、准时率目标、库存上限。\\
+异常定位 & 散点图、标注点 & 识别高收入低准时率对象。\\
+结构占比 & 堆叠条形图 & 渠道结构、客户分层结构。\\
+\bottomrule
+\end{longtable}
+
+Cleveland and McGill 的图形感知研究提醒我们，不同视觉通道的精确程度不同。通常，沿共同尺度的位置比较比面积、角度或颜色深浅更容易准确判断。因此，管理 dashboard 中应谨慎使用饼图、仪表盘和过度装饰的图形；当需要比较大小时，排序条形图往往比面积图更可靠。
+
+\section{从统计表到 Dashboard}
+
+dashboard 是面向特定角色和任务的信息界面。Shneiderman 的可视化信息寻求原则可概括为：先看整体，再缩放和过滤，最后按需查看细节。将这个原则用于经营 dashboard，可以得到如下结构：
+\[
+\text{Overview}
+\rightarrow
+\text{Compare}
+\rightarrow
+\text{Explain}
+\rightarrow
+\text{Drill down}
+\rightarrow
+\text{Act}.
+\]
+
+一个课程级经营 dashboard 至少应包含：
+\begin{enumerate}
+  \item 顶部 KPI 卡片：显示总收入、准时率、平均延期、待处理订单和质量问题；
+  \item 趋势视图：展示原始时间序列和移动平均；
+  \item 比较视图：按区域、客户分层或产品类别排序；
+  \item 分布或异常视图：显示极端值、分位数和异常标记；
+  \item 质量提示：展示本次刷新是否通过关键质量门禁；
+  \item 下钻入口：能回到订单、客户、产品或质量失败记录。
+\end{enumerate}
+
+\begin{convention}[Dashboard 最小可解释性]
+课程项目中的 dashboard 至少应标注数据范围、刷新时间、指标口径、分子分母、目标线或比较基准、质量状态和下钻路径。没有这些说明，图表即使美观也不可审计。
+\end{convention}
+
+\section{Dashboard 类型}
+
+不同 dashboard 服务不同任务。课程中不鼓励把所有图表放在同一个页面，而是根据用户角色区分信息密度和交互层次。
+
+\begin{table}[htbp]
+\centering
+\caption{Dashboard 类型}
+\begin{tabular}{>{\raggedright\arraybackslash}p{0.20\linewidth}>{\raggedright\arraybackslash}p{0.33\linewidth}>{\raggedright\arraybackslash}p{0.34\linewidth}}
+\toprule
+类型 & 主要问题 & 设计重点\\
+\midrule
+战略型 & 组织目标是否达成？ & 少量高层 KPI、目标线、趋势和预警。\\
+分析型 & 为什么出现差异？ & 分组比较、下钻、过滤、分布和异常。\\
+运营型 & 现在需要处理什么？ & 实时或近实时状态、任务列表、阈值告警。\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+本周实验主要是分析型 dashboard，因为学生需要解释收入波动、准时率和质量问题，而不只是展示静态结果。若将同一数据做成运营型 dashboard，则应更突出待处理订单、质量问题日期和需要人工介入的任务；若做成战略型 dashboard，则应更突出目标达成、累计收入和趋势方向。
+
+\section{Dashboard 的运营节奏}
+
+dashboard 不是一次性页面，而是组织决策节奏的一部分。它至少需要回答：
+\begin{itemize}
+  \item 什么时候刷新，刷新失败如何处理；
+  \item 谁每天或每周查看，谁对异常负责；
+  \item 哪些异常触发工单、会议或自动通知；
+  \item 指标口径变化如何公告和版本化；
+  \item 质量门禁失败时是否阻断发布；
+  \item 管理行动是否被记录并回到后续复盘。
+\end{itemize}
+
+如果 dashboard 只有展示功能，而没有刷新、告警、下钻和复盘机制，它很快会退化为静态报表。管理决策课程强调 dashboard 的行动接口：每个异常都应能够被转化为“谁在什么时候检查什么”的任务。
+
+\section{第5周实验案例}
+
+本周新增数据 \texttt{data/sample/daily\_operations.csv}，粒度为一行一个经营日期，字段包括收入、订单数、交付订单数、准时订单数、平均延期天数、待处理订单数和质量问题数。课程代码分布为：
+\begin{itemize}
+  \item 统计案例：\path{src/bdm_decision/cases/week05_statistics_dashboard.py}；
+  \item dashboard HTML 工具：\path{src/bdm_decision/app/dashboard.py}。
+\end{itemize}
+
+最小运行方式为：
+\begin{lstlisting}[style=pythonstyle,caption={运行第5周统计摘要}]
+import bdm_decision.cases.week05_statistics_dashboard as week05
+
+rows = week05.load_daily_operations()
+revenue = [row.revenue for row in rows]
+
+print(week05.descriptive_summary(revenue))
+print(week05.dashboard_kpis(rows))
+\end{lstlisting}
+
+命令行方式为：
+\begin{lstlisting}[style=pythonstyle,caption={命令行输出统计与 Vega-Lite 配置}]
+PYTHONPATH=src \
+python3 src/bdm_decision/cases/week05_statistics_dashboard.py
+\end{lstlisting}
+
+若需要生成纯 HTML dashboard，可运行：
+\begin{lstlisting}[style=pythonstyle,caption={命令行输出 HTML dashboard}]
+PYTHONPATH=src \
+python3 src/bdm_decision/app/dashboard.py
+\end{lstlisting}
+
+该数据的主要结果为：
+\begin{longtable}{>{\raggedright\arraybackslash}p{0.36\linewidth}>{\raggedright\arraybackslash}p{0.24\linewidth}>{\raggedright\arraybackslash}p{0.28\linewidth}}
+\caption{第5周样例数据的核心摘要}\\
+\toprule
+指标 & 数值 & 管理解释\\
+\midrule
+\endfirsthead
+\toprule
+指标 & 数值 & 管理解释\\
+\midrule
+\endhead
+总收入 & 71350 & 累计经营规模。\\
+平均日收入 & 5945.83 & 日收入典型水平，但受高值影响。\\
+收入中位数 & 5100 & 更稳健的典型日收入。\\
+收入 IQR & 2875 & 中间 50\% 日期的收入跨度。\\
+收入异常值 & 13500 & 需要下钻的高收入日期。\\
+准时交付率 & 0.5833 & 低于常见运营目标，需要解释分子分母。\\
+平均延期天数 & 0.75 & 已交付订单的加权平均延期。\\
+最新待处理订单数 & 10 & 当前运营负荷。\\
+质量问题总数 & 6 & dashboard 必须显示的可信度提示。\\
+\bottomrule
+\end{longtable}
+
+这些数字构成 dashboard 的第一层摘要。第二层应解释：为什么准时率低于管理目标？收入异常高的日期来自哪个客户或产品？质量问题是否集中在延期较高的日期？这些问题需要回到第2讲的业务对象、第3讲的 SQL/KPI 和第4讲的质量失败记录。
+
+\section{一页管理解释模板}
+
+dashboard 的交付不应止于图表。学生还需要写一页管理解释。推荐结构如下：
+\begin{longtable}{>{\raggedright\arraybackslash}p{0.22\linewidth}>{\raggedright\arraybackslash}p{0.64\linewidth}}
+\caption{Dashboard 管理解释模板}\\
+\toprule
+环节 & 内容\\
+\midrule
+\endfirsthead
+\toprule
+环节 & 内容\\
+\midrule
+\endhead
+经营状态 & 当前总量、典型水平、目标达成和质量状态。\\
+关键波动 & 哪些日期、对象或指标显著偏离基准。\\
+下钻问题 & 需要回到哪些订单、客户、产品或质量失败记录。\\
+行动建议 & 哪些行动可以立即执行，哪些需要进一步验证。\\
+解释边界 & 哪些结论只是描述性发现，不能被当作因果结论。\\
+复盘入口 & 后续如何检查行动是否改变指标。\\
+\bottomrule
+\end{longtable}
+
+例如，第5周样例可写为：本期收入存在一个高值日期，平均日收入高于中位数，说明收入分布受单日高值影响；准时交付率为 0.5833，且质量问题总数为 6，因此 dashboard 应提示履约和数据质量共同构成风险；下一步应下钻 2026 年 3 月 14 日的订单构成，并检查质量问题日期是否与延期日期重合。这个解释仍是描述性的，不能直接断言“质量问题导致准时率下降”。
+
+\section{可复核 Dashboard 的最低要求}
+
+课程项目中的 dashboard 应满足以下最低要求：
+\begin{enumerate}
+  \item 每个 KPI 卡片都能追溯到字段、分子、分母和时间窗口；
+  \item 每张图都说明它回答什么问题，以及不能回答什么问题；
+  \item 至少一个图表展示时间趋势，且保留原始观测；
+  \item 至少一个图表支持比较、分布或异常定位；
+  \item 明确显示数据日期范围和质量状态；
+  \item 提供从汇总指标下钻到明细对象的路径；
+  \item 管理解释中区分描述、预测、因果和行动建议。
+\end{enumerate}
+
+\section*{本讲小结}
+\addcontentsline{toc}{section}{本讲小结}
+
+本讲说明了描述统计和 dashboard 在管理决策中的位置。描述统计提供对指标水平、波动、分布和异常的第一层证据；可视化把数据字段映射到视觉通道；dashboard 将 KPI、趋势、比较、异常和质量提示组织为可行动的信息界面。优秀 dashboard 不只是“好看”，更重要的是说明口径、显示分母、提供比较、标注异常、保留质量状态，并支持下钻到业务对象。对管理者而言，一个好的 dashboard 应当让问题更清楚，而不是让图表更多。
+
+\section*{习题}
+\addcontentsline{toc}{section}{习题}
+
+\begin{exercise}
+\begin{enumerate}
+  \item 对 \texttt{daily\_operations.csv} 中的收入计算均值、中位数、标准差、四分位数、IQR 和变异系数。
+  \item 使用 IQR 规则识别收入异常日期，并说明为什么异常不等于因果解释。
+  \item 设计一个准时交付率 KPI 卡片，说明同时展示哪些分母、目标线和质量提示。
+  \item 为同一数据设计一个战略 dashboard 和一个运营 dashboard，说明二者信息密度和交互方式的差别。
+  \item 任选一个图表，写出其数据字段、视觉通道、聚合方式和管理解释。
+  \item 为第5周样例写一页管理解释，明确描述性发现、下钻问题和行动建议。
+\end{enumerate}
+\end{exercise}
+
+\section*{常见误区}
+\addcontentsline{toc}{section}{常见误区}
+
+\begin{enumerate}
+  \item 把 dashboard 当作图表集合，而不是面向角色和任务的信息界面。
+  \item 只展示均值，不展示分布、波动和异常。
+  \item 用百分比比较分组，却隐藏分子、分母和样本量。
+  \item 把相关的趋势共现解释为因果关系。
+  \item 用过多颜色、仪表盘或装饰图形削弱比较精度。
+  \item 不显示数据日期范围、刷新时间和质量门禁状态。
+  \item 只做静态展示，不设计下钻、告警和复盘机制。
+\end{enumerate}
+
+\addcontentsline{toc}{chapter}{参考文献}
+\begin{thebibliography}{99}
+\raggedright
+\bibitem{tukey1977}
+Tukey, J. W. (1977).
+\emph{Exploratory Data Analysis}.
+Addison-Wesley.
+
+\bibitem{cleveland1984}
+Cleveland, W. S., \& McGill, R. (1984).
+Graphical perception: Theory, experimentation, and application to the development of graphical methods.
+\emph{Journal of the American Statistical Association}, 79(387), 531--554.
+
+\bibitem{shneiderman1996}
+Shneiderman, B. (1996).
+The eyes have it: A task by data type taxonomy for information visualizations.
+\emph{IEEE Symposium on Visual Languages}.
+\url{https://www.cs.umd.edu/~ben/papers/Shneiderman1996eyes.pdf}
+
+\bibitem{few2006}
+Few, S. (2006).
+\emph{Information Dashboard Design: The Effective Visual Communication of Data}.
+O'Reilly.
+
+\bibitem{knaflic2015}
+Knaflic, C. N. (2015).
+\emph{Storytelling with Data: A Data Visualization Guide for Business Professionals}.
+Wiley.
+
+\bibitem{wilkinson2005}
+Wilkinson, L. (2005).
+\emph{The Grammar of Graphics} (2nd ed.).
+Springer.
+
+\bibitem{wickham2010}
+Wickham, H. (2010).
+A layered grammar of graphics.
+\emph{Journal of Computational and Graphical Statistics}, 19(1), 3--28.
+
+\bibitem{vegalite-encoding}
+Vega-Lite Project. (n.d.).
+\emph{Encoding}.
+\url{https://vega.github.io/vega-lite/docs/encoding.html}
+
+\bibitem{vegalite-transform}
+Vega-Lite Project. (n.d.).
+\emph{Transformation and aggregation}.
+\url{https://vega.github.io/vega-lite/docs/transform.html}
+\end{thebibliography}
+
+\end{document}

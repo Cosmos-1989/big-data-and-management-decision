@@ -1,0 +1,509 @@
+\documentclass[UTF8,fontset=fandol,openany,zihao=-4]{ctexbook}
+\input{../latex/bdm_lecture_preamble.tex}
+
+\title{《大数据与管理决策基础》\\[0.5em]\large 第1讲：大数据与管理决策导论}
+\author{课程讲义}
+\date{}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\setcounter{chapter}{0}
+\chapter{大数据与管理决策导论}
+\label{ch:week01-intro}
+
+\begin{chapterbox}
+本讲是全课程的概念入口。课程不把大数据理解为单纯的数据规模、编程工具或算法清单，而把它理解为组织在经营环境中形成事实、证据、行动和反馈的能力。本讲首先说明数据驱动管理决策的对象和边界；随后建立从经营症状到管理问题、数据表达、指标体系、分析模型、行动选择和反馈治理的基本链条；再用一个统一的期望损失模型刻画管理决策问题；最后通过制造企业交付延期案例说明如何把现实经营压力转化为可计算、可执行、可评估的分析任务。
+\end{chapterbox}
+
+\begin{modernbox}[课程接口]
+本讲提供后续所有章节共用的语言：业务对象、行动对象、指标口径、分析任务、决策损失、可行行动集合与反馈闭环。后续的企业数据建模、SQL 指标、数据质量、可视化、实验、预测、因果、优化、流程挖掘和 MLOps，都将回到这一框架中说明自身的位置。
+\end{modernbox}
+
+\section{学习目标}
+
+本讲不要求学生已经熟悉企业信息系统，也不要求学生已经能够自然地把管理问题翻译为数据问题。相反，本讲要建立一项基本训练：在接触数据库、统计模型和机器学习算法之前，先说明组织希望改变什么经营状态，谁能够对哪个业务对象采取行动，行动受到哪些成本和约束限制，以及行动之后如何判断系统是否真正改善。
+
+完成本讲后，学生应能够：
+\begin{enumerate}
+  \item 解释数据驱动决策、商业智能、决策支持系统与决策智能之间的关系；
+  \item 从经营症状出发，写出包含行动对象、数据需求、指标口径、分析类型和反馈机制的问题定义；
+  \item 区分描述、诊断、预测、因果和处方分析各自回答的问题及其证据边界；
+  \item 使用简化的期望损失表达式描述管理决策问题，并说明预测模型为什么不能自动等同于行动建议；
+  \item 使用 CRISP-DM 框架描述数据分析项目生命周期，并理解现代企业数据治理、模型治理和行动反馈对该框架的扩展；
+  \item 根据制造企业交付延期案例，形成一个可以继续进入数据建模、SQL 指标计算和预测建模的项目框架。
+\end{enumerate}
+
+\section{导论的核心问题}
+
+大数据管理决策的困难不只在于数据量大、格式多或算法复杂，更在于企业真实问题通常不是以干净的数据集形式出现。管理者最先观察到的往往是经营症状：库存上升、交付延期、客户流失、成本失控、审批拥堵、投诉增加。症状本身并不等于可建模问题。它需要经过一系列概念转换，才能成为可以被数据系统支持的管理决策任务。
+
+\begin{definition}[经营症状]
+经营症状是组织在业务运行中观察到的异常、压力或机会。它通常以自然语言、经验判断、局部指标或部门抱怨的形式出现，尚未明确行动对象、数据边界、评价口径和责任主体。
+\end{definition}
+
+\begin{definition}[管理决策问题]
+管理决策问题是在给定组织目标、业务状态、资源约束和责任边界的条件下，从一组可行行动中选择行动方案，并根据后续结果评价该选择是否改进了业务状态的问题。
+\end{definition}
+
+这两个定义表明，本课程的起点不是“用什么算法”，而是“要改变什么”。例如，“订单延期变多”只是症状；“在承诺交期前 72 小时识别高价值延期风险订单，并在有限加急预算下决定哪些订单进入加急流程”才接近一个管理决策问题。前者描述压力，后者包含行动对象、预测时点、行动集合、资源约束和评价标准。
+
+\begin{remark}
+在企业场景中，若一个分析任务不能说明行动对象和行动路径，它通常只能形成报告，难以形成决策系统。报告可能有价值，但报告不是本课程意义上的完整管理决策闭环。
+\end{remark}
+
+\section{课程的问题边界}
+
+“大数据与管理决策基础”处在信息系统、统计学习与管理科学的交叉处。理解这一位置，有助于避免把课程误解为单纯的编程课、报表课或算法课。
+
+\begin{enumerate}
+  \item 信息系统和商业智能传统关注数据如何被采集、集成、建模、查询和呈现。企业需要把交易系统、流程系统、客户系统和外部环境中的数据组织成可查询、可解释、可治理的信息资源。
+  \item 统计学和机器学习传统关注如何从数据中获得证据，包括描述分布、估计关系、预测未来、识别因果效应和控制不确定性。
+  \item 管理科学和运筹优化传统关注如何在预算、产能、库存、时间、风险和权限约束下选择行动，而不是只停留在观察或预测。
+\end{enumerate}
+
+因此，本课程中的“基础”不是工具入门的同义词，而是指建立共同概念地基。后续章节会不断回到如下主线：
+\[
+\text{业务语境}
+\rightarrow
+\text{数据表达}
+\rightarrow
+\text{分析证据}
+\rightarrow
+\text{行动选择}
+\rightarrow
+\text{反馈治理}.
+\]
+
+这条主线也限定了“数据驱动”的含义。数据驱动并不是让数据替代管理者，也不是让算法自动决定组织行动。它要求组织把经验判断、业务规则、统计证据、模型输出、行动责任和审计反馈放在一个可检查的框架中。
+
+\section{从经营症状到可行动任务}
+
+管理者通常不会以“训练一个模型”作为问题起点。他们面对的是库存压力、交付压力、利润压力和客户压力。若直接进入算法，学生很容易把问题简化为“预测某个标签”或“制作一个 dashboard”。这会跳过更重要的工作：定义问题。
+
+本课程采用如下转换链条：
+\[
+\begin{aligned}
+\text{业务症状}
+&\longrightarrow
+\text{管理问题}
+\longrightarrow
+\text{数据表达}
+\longrightarrow
+\text{指标体系}\\
+&\longrightarrow
+\text{分析模型}
+\longrightarrow
+\text{管理行动}
+\longrightarrow
+\text{反馈评价}.
+\end{aligned}
+\]
+
+\begin{definition}[可行动分析任务]
+一个分析任务称为可行动的，是指它至少同时说明以下六项内容：业务对象、行动对象、预测或评估时点、可行行动集合、评价指标以及行动结果的反馈记录方式。
+\end{definition}
+
+\begin{table}[htbp]
+\centering
+\caption{常见经营症状的初步任务化}
+\begin{tabular}{p{0.17\linewidth}p{0.29\linewidth}p{0.40\linewidth}}
+\toprule
+经营症状 & 管理追问 & 可行动任务示例\\
+\midrule
+库存积压与缺货并存 & 是需求下降、补货过量还是渠道错配？ & 对 SKU-仓库组合识别补货风险，并在预算约束下调整补货量。\\
+订单交付延期 & 瓶颈来自供应商、产能、仓储还是物流？ & 在交期前识别高价值高风险订单，并决定是否加急或重排产能。\\
+客户流失上升 & 哪些客户会流失，营销干预是否有效？ & 在优惠预算下选择最可能被挽回且价值较高的客户。\\
+审批周期过长 & 等待发生在哪些节点，是否存在返工？ & 根据流程日志识别瓶颈节点，并调整审批规则或人员配置。\\
+营销成本增加 & 增量收入是否覆盖补贴成本？ & 通过实验或准实验估计活动的增量效果，再优化投放人群。\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+表中的“任务化”并不意味着问题已经完全解决，而是意味着它已经具备后续分析所需的基本结构。一个成熟的数据项目往往需要多轮迭代：先把症状翻译为问题，再把问题翻译为数据，再把数据翻译为指标和模型，最后把模型翻译为行动。
+
+\section{数据驱动决策的基本对象}
+
+为了让课程讨论保持一致，本节给出几个贯穿全课的基本对象。
+
+\begin{definition}[业务对象]
+业务对象是企业经营中可以被识别、记录、比较和管理的实体或事件，例如客户、订单、产品、供应商、库存批次、工单、审批实例和流程事件。
+\end{definition}
+
+\begin{definition}[行动对象]
+行动对象是管理者能够采取行动的具体业务对象或对象集合。例如，预测模型可以给出所有客户的流失风险，但营销部门真正采取行动的是一部分客户；库存系统可以展示所有 SKU 的库存状态，但补货决策作用于具体 SKU-仓库组合。
+\end{definition}
+
+\begin{definition}[指标口径]
+指标口径是关于一个指标的业务含义、计算公式、数据来源、时间粒度、排除条件、异常处理和责任边界的明确约定。
+\end{definition}
+
+指标口径在管理决策中尤其重要。一个看似简单的“销售额”可以指下单金额、支付金额、发货金额、确认收入金额，也可以指扣除退款、折扣、税费和渠道返利后的净销售额。若口径不清，报表越精细，争议可能越多。指标治理的目标不是让数字变多，而是让组织知道每个数字究竟代表什么。
+
+\begin{table}[htbp]
+\centering
+\caption{指标定义的最小字段}
+\begin{tabular}{p{0.24\linewidth}p{0.58\linewidth}}
+\toprule
+字段 & 说明\\
+\midrule
+指标名称 & 组织中使用的统一名称，避免同名异义或异名同义。\\
+业务定义 & 用自然语言说明该指标刻画的经营含义。\\
+计算公式 & 明确分子、分母、聚合方式、时间窗口和更新频率。\\
+数据来源 & 指明源系统、数据表、关键字段和必要的清洗规则。\\
+适用范围 & 说明适用业务线、地区、产品、客户类型和排除条件。\\
+责任边界 & 明确数据负责人、业务负责人以及指标异常时的处理机制。\\
+行动接口 & 说明指标变化触发何种复盘、预警、审批或业务动作。\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{商业智能、决策支持与决策智能}
+
+数据驱动管理决策并不是一个突然出现的新概念。它继承了商业智能和决策支持系统的传统，也在现代企业平台、机器学习和自动化运营环境中发生了扩展。
+
+商业智能（Business Intelligence, BI）通常关注企业经营事实的汇总、查询与展示，例如月度销售报表、区域经营看板、库存监控和经营驾驶舱。经典 BI 依赖数据仓库、ETL、OLAP、报表系统和可视化前端，其价值在于帮助组织形成共同事实基础。
+
+决策支持系统（Decision Support System, DSS）进一步强调数据、模型与交互式情景分析的结合。DSS 的对象通常是结构化程度不高、条件变化较快的管理问题。它不简单替代管理者，而是帮助管理者组织信息、比较方案、理解假设后果。
+
+决策智能（Decision Intelligence）则要求把数据、模型、业务对象、行动、权限、审计与反馈连接为系统。它关心的不只是“发生了什么”或“将会发生什么”，还包括“谁被允许对哪个对象采取什么行动”“行动结果如何回流”“模型和规则如何被监控与审计”。
+
+\begin{longtable}{p{0.19\linewidth}p{0.27\linewidth}p{0.42\linewidth}}
+\caption{从 BI 到决策智能的层次}\\
+\toprule
+层次 & 核心问题 & 典型输出\\
+\midrule
+\endfirsthead
+\toprule
+层次 & 核心问题 & 典型输出\\
+\midrule
+\endhead
+报表型 BI & 发生了什么？ & 固定报表、KPI 仪表盘、经营快照。\\
+诊断分析 & 为什么发生？ & 分组比较、下钻分析、异常解释。\\
+预测分析 & 接下来会发生什么？ & 风险评分、需求预测、流失预测。\\
+因果分析 & 行动是否有效？ & A/B 测试、准实验、干预效果评估。\\
+处方分析 & 应该采取什么行动？ & 优化方案、行动推荐、情景比较。\\
+决策智能 & 如何让行动可执行、可审计、可反馈？ & 业务对象、权限控制、行动日志、反馈闭环。\\
+\bottomrule
+\end{longtable}
+
+由此可见，本课程不以“模型准确率”为终点，而以“可执行、可评估、可反馈的管理行动”为终点。准确率仍然重要，但它只是决策质量的一部分。一个模型即使离线准确率较高，如果无法解释行动成本、无法区分相关与因果、无法进入审批流程、无法记录行动结果，在管理场景中仍然可能失败。
+
+\section{管理决策问题的形式化表达}
+
+现在将前面的讨论写成一个简化的数学形式。设 \(X=x\) 表示企业当前状态，管理者需要在可行行动集合 \(\mathcal A(x)\) 中选择行动。一个抽象表达为
+\begin{equation}
+a^*(x)
+=
+\arg\min_{a\in\mathcal A(x)}
+\mathbb E\!\left[L(Y,a)\mid X=x\right]
++
+\lambda C(a).
+\label{eq:decision}
+\end{equation}
+
+其中，\(Y\) 表示未来经营结果，\(a\) 表示管理行动，\(L(Y,a)\) 表示行动后产生或避免的业务损失，\(C(a)\) 表示行动成本、资源占用或约束惩罚，\(\lambda\) 刻画成本权重、风险偏好或管理约束强度。
+
+\begin{table}[htbp]
+\centering
+\caption{式 \eqref{eq:decision} 中各符号的管理含义}
+\begin{tabular}{p{0.14\linewidth}p{0.68\linewidth}}
+\toprule
+符号 & 管理含义\\
+\midrule
+\(X\) & 当前企业状态数据，如订单、库存、客户、产能、供应商、流程日志。\\
+\(Y\) & 未来经营结果，如是否延期、是否流失、需求量、利润或投诉。\\
+\(a\) & 管理行动，如加急、补货、发券、重排产能、调整审批规则。\\
+\(\mathcal A(x)\) & 状态 \(x\) 下可行的行动集合，受到预算、权限、资源和制度约束。\\
+\(L(Y,a)\) & 结果与行动共同导致的业务损失或机会损失。\\
+\(C(a)\) & 行动成本、组织摩擦、资源占用或合规风险。\\
+\(\lambda\) & 把行动成本纳入决策目标的权重。\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+式 \eqref{eq:decision} 的教学意义在于，它把预测、因果和优化放在同一个框架下。预测模型通常估计
+\[
+f(x)\approx \mathbb E[Y\mid X=x]
+\quad\text{或}\quad
+P(Y=1\mid X=x),
+\]
+但管理决策还需要考虑行动集合、行动成本、资源约束和组织责任。一个订单延期概率很高，并不自动意味着它应该被加急；只有当该订单价值足够高、加急资源可用、行动成本可接受且权限明确时，加急才可能成为合理行动。
+
+\begin{proposition}[预测分数不等于行动优先级]
+若两个对象 \(i\) 和 \(j\) 的风险满足 \(P(Y_i=1\mid X_i)>P(Y_j=1\mid X_j)\)，并不能推出对象 \(i\) 必然比对象 \(j\) 更应优先行动。行动优先级还取决于对象价值、行动成本、行动效果、资源约束和组织权限。
+\end{proposition}
+
+\begin{remark}
+命题的直观含义是，高风险对象未必可挽回，低风险对象也可能因为价值高、干预便宜或干预效果大而值得行动。因此，从风险排序到行动排序之间必须增加因果效果和成本约束的判断。
+\end{remark}
+
+当问题涉及干预效果时，还必须区分预测和因果。对同一对象 \(i\)，预测问题关心
+\[
+P(Y_i=1\mid X_i=x_i),
+\]
+因果问题关心不同干预下潜在结果的差异：
+\[
+\Delta_i(a,a')
+=
+\mathbb E\!\left[Y_i(a)-Y_i(a')\mid X_i=x_i\right].
+\]
+前者回答“谁更可能出现某种结果”，后者回答“行动是否会改变结果”。将二者混淆，是企业数据分析中最常见也最危险的错误之一。
+
+\section{五类分析任务及其证据边界}
+
+管理分析通常可以分为描述、诊断、预测、因果和处方五类。它们不是相互排斥的技术目录，而是围绕管理问题逐步推进的证据层级。
+
+\begin{table}[htbp]
+\centering
+\caption{五类分析任务}
+\begin{tabular}{p{0.15\linewidth}p{0.24\linewidth}p{0.48\linewidth}}
+\toprule
+类型 & 典型问题 & 示例\\
+\midrule
+描述分析 & 发生了什么？ & 本月销售额、订单量、库存水平、准时交付率。\\
+诊断分析 & 为什么发生？ & 哪些区域、产品、客户或供应商造成指标变化。\\
+预测分析 & 将会发生什么？ & 哪些订单可能延期，哪些客户可能流失。\\
+因果分析 & 行动是否有效？ & 优惠券、加急、补贴或规则调整是否真正改变结果。\\
+处方分析 & 应该怎么做？ & 在预算、产能和风险约束下选择行动组合。\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Shmueli 对解释性建模与预测性建模的区分值得作为本课程的基本警戒。解释性建模服务于理解变量之间的关系，预测性建模服务于对未观察样本的准确判断。二者在变量选择、模型复杂度、评估标准和外推风险上可能不同。管理决策还在此基础上多出一个环节：即使预测正确，也必须回答该预测应如何改变行动。
+
+\begin{table}[htbp]
+\centering
+\caption{分析结论的证据边界}
+\begin{tabular}{p{0.22\linewidth}p{0.32\linewidth}p{0.32\linewidth}}
+\toprule
+结论形式 & 可以支持的说法 & 不应直接推出的说法\\
+\midrule
+描述统计 & 某类订单延期率较高。 & 该类订单延期是某个因素造成的。\\
+相关关系 & 两个变量共同变化。 & 改变其中一个变量一定改变另一个变量。\\
+预测模型 & 某对象未来风险较高。 & 对该对象采取行动一定有效。\\
+实验或准实验 & 某行动具有平均效果。 & 每个对象都应接受同一行动。\\
+优化模型 & 在给定假设下某方案最优。 & 假设变化后仍然最优。\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+对学生而言，最重要的训练不是记住这些分类名称，而是在每次写分析结论时说明证据边界。一个严谨的结论通常应包含适用对象、时间范围、数据口径、方法假设和不能推出的内容。
+
+\section{CRISP-DM 与现代企业闭环}
+
+CRISP-DM 将数据挖掘项目划分为六个阶段：
+\[
+\begin{aligned}
+\text{Business Understanding}
+&\rightarrow
+\text{Data Understanding}
+\rightarrow
+\text{Data Preparation}\\
+&\rightarrow
+\text{Modeling}
+\rightarrow
+\text{Evaluation}
+\rightarrow
+\text{Deployment}.
+\end{aligned}
+\]
+
+该框架的价值在于提醒我们，数据分析项目不是从建模开始，也不是在建模结束。业务理解要求明确经营问题、成功标准和约束；数据理解要求识别数据来源、字段含义和质量风险；数据准备要求构造可复现的数据集；建模要求选择合适方法；评估要求回到业务目标而不只看离线指标；部署要求模型、指标或报告能够进入组织流程。
+
+\begin{table}[htbp]
+\centering
+\caption{CRISP-DM 阶段与课程训练}
+\begin{tabular}{p{0.23\linewidth}p{0.55\linewidth}}
+\toprule
+阶段 & 本课程中的训练重点\\
+\midrule
+业务理解 & 定义行动对象、评价指标、约束和反馈机制。\\
+数据理解 & 识别源系统、表粒度、字段含义和质量风险。\\
+数据准备 & 建立可复现的数据集、指标口径和特征口径。\\
+建模 & 在描述、预测、因果和优化任务中选择恰当方法。\\
+评估 & 同时检查技术指标、业务指标、成本和风险。\\
+部署 & 将结果接入流程、权限、审计、监控和复盘机制。\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+在现代企业数据平台中，仅有 CRISP-DM 仍然不足，还需要补充五类治理能力：
+\begin{enumerate}
+  \item 数据质量管理与指标口径治理；
+  \item 元数据、数据血缘与可复现实验环境；
+  \item 模型监控、漂移检测与模型审计；
+  \item 权限控制、操作日志与 human-in-the-loop；
+  \item 行动反馈数据的回流与持续评估。
+\end{enumerate}
+
+因此，本课程会把 CRISP-DM 看作项目流程骨架，再把数据治理、模型治理和行动反馈作为现代管理决策系统的扩展层。
+
+\section{课堂案例：制造企业交付延期风险预警}
+
+某制造企业发现最近两个月关键客户订单延期明显增加。管理层最初提出的问题是：“能否做一个模型预测哪些订单会延期？”这一表述看似清楚，但还不能直接进入建模，因为它缺少决策语境。预测的目的不是获得一个风险分数，而是帮助企业决定是否加急、是否调整排产、是否更换物流或是否提前通知客户。
+
+将该问题教材化地拆开，可以得到以下层次。
+
+\begin{table}[htbp]
+\centering
+\caption{交付延期问题的任务定义模板}
+\begin{tabular}{p{0.23\linewidth}p{0.60\linewidth}}
+\toprule
+项目要素 & 推荐写法\\
+\midrule
+业务对象 & 订单明细项、关键客户订单、待排产工单。\\
+经营症状 & 准时交付率下降，关键客户投诉增加，加急成本上升。\\
+管理问题 & 哪些订单需要提前进入加急、重排或客户沟通流程？\\
+目标变量 & 是否延期、延期天数、延期造成的合同罚金。\\
+预测时点 & 排产前 48 小时，或承诺交期前 72 小时。\\
+候选数据 & 订单、客户、产品、供应商、库存、生产排程、物流轨迹、流程日志。\\
+可行动集合 & 加急采购、重排产能、替代供应商、升级物流、客户沟通。\\
+主要约束 & 预算、产能、供应商能力、物流时效、审批权限。\\
+评价指标 & 准时交付率、加急成本、客户投诉率、延期损失、行动覆盖率。\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+由此形成如下闭环：
+\[
+\begin{aligned}
+&\text{订单状态}+\text{供应商交期}+\text{产能排程}+\text{物流轨迹}\\
+&\quad\longrightarrow \text{延期风险评分}
+\longrightarrow \text{加急/重排/替代供应商}
+\longrightarrow \text{情景比较}\\
+&\quad\longrightarrow \text{行动日志}
+\longrightarrow \text{准时交付率与成本反馈}.
+\end{aligned}
+\]
+
+这个案例贯穿后续课程。第二讲会把订单、客户、产品、供应商和库存转化为企业数据模型；第三讲会用 SQL 计算准时交付率和延期天数等 KPI；第四讲会检查数据质量问题；第五讲会讨论仪表盘如何展示风险与行动；第七讲会建立延期风险预测模型；第九讲会在有限产能和预算下选择行动；第十讲会用流程日志分析订单履约过程中的瓶颈。
+
+\section{配套代码}
+
+第一周配套代码位于：
+\begin{center}
+\texttt{src/bdm\_decision/cases/week01\_problem\_framing.py}
+\end{center}
+
+代码的目的不是实现复杂算法，而是把本讲的问题框架转化为可执行的结构化表示。其核心数据结构如下：
+\begin{lstlisting}[language=Python,caption={经营症状的数据结构}]
+from dataclasses import dataclass
+
+@dataclass(frozen=True)
+class OperatingSymptom:
+    name: str
+    business_question: str
+    candidate_data: list[str]
+    kpis: list[str]
+    analysis_type: str
+    decision_action: str
+\end{lstlisting}
+
+运行方式：
+\begin{lstlisting}[language=bash,caption={运行第一周案例代码}]
+PYTHONPATH=src python3 src/bdm_decision/cases/week01_problem_framing.py
+\end{lstlisting}
+
+学生阅读代码时应关注两点。第一，代码把自然语言中的经营症状拆分为管理问题、候选数据、KPI、分析类型和行动。第二，这种结构化表示虽然简单，却已经为后续的数据建模、指标计算、预测建模和优化决策提供了接口。
+
+\section*{习题}
+\addcontentsline{toc}{section}{习题}
+
+\begin{exercise}
+请选择库存、交付、客户、产能或自选运营场景，完成一个问题定义文档。文档应包含：
+\begin{enumerate}
+  \item 一个经营症状及其业务背景；
+  \item 一个包含行动对象和预测或评估时点的管理问题；
+  \item 至少五类需要的数据表或事件日志，并说明关键字段；
+  \item 至少八个 KPI 的名称、公式、口径和管理含义；
+  \item 对描述、诊断、预测、因果和处方分析的任务归类；
+  \item 至少三个可执行管理行动，并说明成本或约束；
+  \item 行动后的反馈指标与复盘机制；
+  \item 哪些结论只属于相关或预测，哪些结论需要因果识别。
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+考虑“客户流失率上升”这一症状。请分别写出一个预测问题、一个因果问题和一个处方问题，并说明三者所需数据和评价指标有何不同。
+\end{exercise}
+
+\begin{exercise}
+阅读式 \eqref{eq:decision}。假设某企业只能对 1000 名客户中的 100 名发放优惠券。请说明为什么不能简单选择流失概率最高的 100 名客户，并列出至少四个还需要考虑的因素。
+\end{exercise}
+
+\section*{本讲小结}
+\addcontentsline{toc}{section}{本讲小结}
+
+本讲提出了课程的核心框架。企业数据分析的起点是经营症状，终点是有责任主体、有行动对象、有成本约束、有反馈评价的管理行动。BI 强调共同事实基础，DSS 强调数据和模型对管理者的支持，决策智能进一步强调行动、权限、审计和反馈。描述、诊断、预测、因果和处方分析回答不同问题，其结论具有不同证据边界。CRISP-DM 提供项目生命周期，但现代企业还必须补充数据治理、模型治理和行动反馈。后续课程会沿着这一框架逐步展开企业数据建模、指标计算、数据质量、可视化、预测、因果、优化、流程挖掘和系统部署。
+
+\section*{常见误区}
+\addcontentsline{toc}{section}{常见误区}
+
+\begin{enumerate}
+  \item 将“制作 dashboard”误写为业务目标；
+  \item 只定义技术任务，不定义管理行动；
+  \item 将预测概率直接等同于行动优先级；
+  \item 只报告平均效果，不讨论行动对象之间的异质性；
+  \item 忽视指标口径，例如销售额是否含税、退款是否扣减；
+  \item 忽视行动成本，例如加急物流提升准时率但压缩利润；
+  \item 将相关关系解释为因果关系；
+  \item 只关注算法表现，不关注权限、审计与反馈；
+  \item 把一次性分析报告误认为可持续运行的决策系统。
+\end{enumerate}
+
+\addcontentsline{toc}{chapter}{参考文献}
+\begin{thebibliography}{99}
+\bibitem{brynjolfsson2011}
+Brynjolfsson, E., Hitt, L. M., and Kim, H. H. (2011).
+\newblock Strength in numbers: How does data-driven decisionmaking affect firm performance?
+\newblock Working paper.
+
+\bibitem{chapman2000}
+Chapman, P., Clinton, J., Kerber, R., Khabaza, T., Reinartz, T., Shearer, C., and Wirth, R. (2000).
+\newblock CRISP-DM 1.0: Step-by-step data mining guide.
+
+\bibitem{chen2012}
+Chen, H., Chiang, R. H. L., and Storey, V. C. (2012).
+\newblock Business intelligence and analytics: From big data to big impact.
+\newblock MIS Quarterly, 36(4), 1165--1188.
+
+\bibitem{davenport2007}
+Davenport, T. H., and Harris, J. G. (2007).
+\newblock Competing on Analytics: The New Science of Winning.
+\newblock Harvard Business School Press.
+
+\bibitem{keen1978}
+Keen, P. G. W., and Scott Morton, M. S. (1978).
+\newblock Decision Support Systems: An Organizational Perspective.
+\newblock Addison-Wesley.
+
+\bibitem{little1970}
+Little, J. D. C. (1970).
+\newblock Models and managers: The concept of a decision calculus.
+\newblock Management Science, 16(8), B466--B485.
+
+\bibitem{provost2013}
+Provost, F., and Fawcett, T. (2013).
+\newblock Data Science for Business.
+\newblock O'Reilly Media.
+
+\bibitem{shmueli2010}
+Shmueli, G. (2010).
+\newblock To explain or to predict?
+\newblock Statistical Science, 25(3), 289--310.
+
+\bibitem{simon1977}
+Simon, H. A. (1977).
+\newblock The New Science of Management Decision.
+\newblock Prentice Hall.
+
+\bibitem{sprague1980}
+Sprague, R. H. (1980).
+\newblock A framework for the development of decision support systems.
+\newblock MIS Quarterly, 4(4), 1--26.
+\end{thebibliography}
+
+\end{document}

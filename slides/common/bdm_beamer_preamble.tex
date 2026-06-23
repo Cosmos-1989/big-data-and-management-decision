@@ -1,0 +1,91 @@
+% Shared Beamer preamble for Big Data and Management Decision-Making slides.
+
+\usetheme{Madrid}
+\usecolortheme{default}
+\usefonttheme{professionalfonts}
+
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{booktabs,array}
+\usepackage{tikz}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{xcolor}
+\usetikzlibrary{arrows.meta,positioning,shapes.geometric}
+
+\newcommand{\BDMFandolPath}{/usr/local/texlive/2025/texmf-dist/fonts/opentype/public/fandol/}
+\setCJKmainfont[
+  Path=\BDMFandolPath,
+  UprightFont=FandolSong-Regular.otf,
+  BoldFont=FandolSong-Regular.otf,
+  ItalicFont=FandolKai-Regular.otf,
+  BoldItalicFont=FandolKai-Regular.otf
+]{FandolSong-Regular.otf}
+\setCJKsansfont[
+  Path=\BDMFandolPath,
+  UprightFont=FandolSong-Regular.otf,
+  BoldFont=FandolSong-Regular.otf
+]{FandolSong-Regular.otf}
+\setCJKmonofont[
+  Path=\BDMFandolPath,
+  UprightFont=FandolSong-Regular.otf,
+  BoldFont=FandolSong-Regular.otf
+]{FandolSong-Regular.otf}
+\setmonofont{Menlo}
+
+\definecolor{AcademicBlue}{RGB}{22,44,73}
+\definecolor{AcademicTeal}{RGB}{22,119,119}
+\definecolor{AcademicGray}{RGB}{76,84,95}
+\definecolor{AcademicLight}{RGB}{245,247,250}
+\definecolor{AcademicAmber}{RGB}{181,111,35}
+\definecolor{CodeBg}{RGB}{248,248,248}
+
+\setbeamercolor{structure}{fg=AcademicBlue}
+\setbeamercolor{frametitle}{fg=white,bg=AcademicBlue}
+\setbeamercolor{title}{fg=white,bg=AcademicBlue}
+\setbeamercolor{block title}{fg=white,bg=AcademicBlue}
+\setbeamercolor{block body}{bg=AcademicLight,fg=black}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}[frame number]
+\setbeamertemplate{itemize item}{\raisebox{0.2ex}{\(\blacktriangleright\)}}
+\setbeamerfont{title}{series=\mdseries}
+\setbeamerfont{subtitle}{series=\mdseries}
+\setbeamerfont{frametitle}{series=\mdseries}
+\setbeamerfont{block title}{series=\mdseries}
+\setbeamerfont{section in toc}{series=\mdseries}
+
+\lstdefinestyle{pythonstyle}{
+  basicstyle=\ttfamily\scriptsize,
+  backgroundcolor=\color{CodeBg},
+  keywordstyle=\color{AcademicBlue},
+  commentstyle=\color{AcademicGray},
+  stringstyle=\color{AcademicAmber},
+  showstringspaces=false,
+  breaklines=true,
+  frame=single,
+  rulecolor=\color{black!20},
+  columns=fullflexible
+}
+
+\lstdefinestyle{sqlstyle}{
+  language=SQL,
+  basicstyle=\ttfamily\scriptsize,
+  backgroundcolor=\color{CodeBg},
+  keywordstyle=\color{AcademicBlue},
+  commentstyle=\color{AcademicGray},
+  stringstyle=\color{AcademicAmber},
+  showstringspaces=false,
+  breaklines=true,
+  frame=single,
+  rulecolor=\color{black!20},
+  columns=fullflexible
+}
+
+\lstset{style=pythonstyle}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=AcademicBlue,
+  urlcolor=AcademicTeal,
+  pdfauthor={大数据与管理决策基础},
+  pdfsubject={大数据与管理决策基础课程课件}
+}

@@ -1,0 +1,342 @@
+\documentclass[UTF8,fontset=fandol,openany,zihao=-4]{ctexbook}
+\input{../latex/bdm_lecture_preamble.tex}
+
+\title{《大数据与管理决策基础》\\[0.5em]\large 第10讲：流程数据与过程挖掘}
+\author{课程讲义}
+\date{}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\setcounter{chapter}{9}
+\chapter{流程数据与过程挖掘}
+\label{ch:week10-process-mining}
+
+\begin{chapterbox}
+前几讲已经从指标、统计、预测、因果和优化角度讨论管理决策。本讲转向企业流程。许多经营问题不是单点指标异常，而是跨部门流程中的等待、返工、跳步、重复审批和执行偏差。过程挖掘把信息系统中的事件日志转化为流程证据：每个 case 的活动序列形成 trace，多个 trace 形成 variant，活动之间的相邻关系形成 directly-follows graph，时间戳允许计算吞吐时间和等待时间。讲义首先介绍事件日志的数据模型；随后讨论过程发现、合规检查和流程增强三类任务；再用 order-to-cash 案例说明如何识别瓶颈、返工和流程异常；最后讨论流程数据质量与管理改进边界。
+\end{chapterbox}
+
+\begin{modernbox}[课程接口]
+第9讲把预测和约束转化为最优行动，但行动通常嵌入流程中执行。若流程存在等待、返工或合规例外，最优决策也可能在执行层失效。本讲把“业务流程”变成可度量的数据对象，为现代数据平台、流程治理、自动化系统和企业决策闭环提供基础。
+\end{modernbox}
+
+\section{学习目标}
+
+完成本讲后，学生应能够：
+\begin{enumerate}
+  \item 解释 case id、activity、timestamp、resource、trace 和 variant 的含义；
+  \item 将订单、工单、审批或履约过程整理为事件日志；
+  \item 计算流程变体、吞吐时间、活动频次和 directly-follows graph；
+  \item 区分过程发现、合规检查和流程增强三类过程挖掘任务；
+  \item 使用事件日志识别瓶颈、返工、跳步和活动顺序异常；
+  \item 理解事件时间戳、活动命名、case 边界和日志完整性对结论的影响；
+  \item 将过程挖掘结果写成面向流程改进的管理建议。
+\end{enumerate}
+
+\section{为什么需要流程数据}
+
+传统 dashboard 往往按日期、部门、区域或产品汇总指标。它能告诉管理者“平均履约周期较长”或“准时率下降”，但未必说明延迟发生在流程中的哪一步。过程挖掘关注的是业务对象随时间经过的活动序列。例如 order-to-cash 流程从接收订单开始，经过信用检查、拣货、质检、包装、发货、开票和收款。每一个订单就是一个 case，每个系统记录的活动就是一个 event。
+
+流程问题常具有以下特征：
+\begin{enumerate}
+  \item 跨部门：销售、财务、仓储、物流和客服共同影响结果；
+  \item 时序性：活动顺序和等待时间本身就是证据；
+  \item 多变体：同一流程存在标准路径、跳步路径、返工路径和异常路径；
+  \item 可执行：流程改进通常要求改变职责、系统规则、审批门槛或资源配置。
+\end{enumerate}
+
+因此，流程数据不是普通明细表。它必须保留 case、activity 和 timestamp 三个核心维度，才能支持流程层面的分析。
+
+\section{事件日志的数据模型}
+
+\begin{definition}[事件日志]
+事件日志是由事件组成的数据集合。每个事件至少包含：
+\begin{enumerate}
+  \item case id：事件所属的流程实例；
+  \item activity：事件对应的业务活动；
+  \item timestamp：事件发生或完成的时间；
+  \item resource：执行活动的人、系统、部门或设备，若可得；
+  \item attributes：订单金额、客户分层、区域、产品等业务属性。
+\end{enumerate}
+\end{definition}
+
+对 case \(c\)，将其事件按时间排序得到 trace：
+\[
+  \sigma_c=(a_{c1},a_{c2},\ldots,a_{cm_c}),
+\]
+其中 \(a_{cj}\) 是第 \(j\) 个活动。若两个 case 的活动序列完全相同，则它们属于同一个 variant。variant 用于回答“流程实际有多少种走法”，而不是只依赖制度流程图中的理想路径。
+
+\begin{definition}[吞吐时间]
+case \(c\) 的吞吐时间为最后一个事件与第一个事件之间的时间差：
+\[
+  T_c=t_{c,m_c}-t_{c,1}.
+\]
+活动边 \((a,b)\) 的等待时间通常由相邻事件 \(a\rightarrow b\) 的时间差估计。
+\end{definition}
+
+事件日志的质量直接决定过程挖掘质量。若 case id 错误，多个订单会被拼成一个流程；若 timestamp 缺失或时区混乱，瓶颈结论会失真；若 activity 命名不一致，同一个活动会被错误拆分。
+
+\section{case、event 与属性粒度}
+
+流程数据最常见的错误是粒度混乱。case 是流程实例，event 是流程实例中的一个活动记录，attribute 则描述 case 或 event 的业务属性。订单金额通常是 case 属性，因为它对同一订单的所有事件相同；执行人通常是 event 属性，因为不同活动可能由不同人员或系统执行；区域可能是 case 属性，也可能随配送活动变化，需要根据业务含义确定。
+
+\begin{longtable}{>{\raggedright\arraybackslash}p{0.20\linewidth}>{\raggedright\arraybackslash}p{0.34\linewidth}>{\raggedright\arraybackslash}p{0.34\linewidth}}
+\caption{流程数据粒度示例}\\
+\toprule
+层级 & 示例字段 & 典型用途\\
+\midrule
+\endfirsthead
+\toprule
+层级 & 示例字段 & 典型用途\\
+\midrule
+\endhead
+case & 订单号、客户、订单金额、区域 & 计算吞吐时间、客户影响和高价值订单延迟。\\
+event & 活动名、时间戳、执行资源 & 构造 trace、计算等待时间和资源负载。\\
+variant & 活动序列、case 数、占比 & 识别标准路径、返工路径和例外路径。\\
+\bottomrule
+\end{longtable}
+
+如果粒度不清，过程挖掘会产生误导。例如把一张订单拆成多个履约单后，case 数会增加，吞吐时间会缩短；把多个订单合并为客户级 case，则 trace 会交织多个独立流程。
+
+\section{过程挖掘的三类任务}
+
+过程挖掘通常包含三类任务。
+
+\begin{longtable}{>{\raggedright\arraybackslash}p{0.20\linewidth}>{\raggedright\arraybackslash}p{0.36\linewidth}>{\raggedright\arraybackslash}p{0.32\linewidth}}
+\caption{过程挖掘任务}\\
+\toprule
+任务 & 目标 & 管理问题\\
+\midrule
+\endfirsthead
+\toprule
+任务 & 目标 & 管理问题\\
+\midrule
+\endhead
+过程发现 & 从事件日志自动构造流程模型或 directly-follows graph。 & 实际流程是否与制度流程一致？主要路径和例外路径是什么？\\
+合规检查 & 比较事件日志与参考流程模型。 & 是否存在跳步、反序、缺失审批或违规执行？\\
+流程增强 & 将时间、资源、成本、质量等信息叠加到流程模型。 & 哪些环节最慢、最贵、最容易返工或造成客户影响？\\
+\bottomrule
+\end{longtable}
+
+课程中不要求实现复杂的 Petri net 发现算法，而是从直接跟随关系和流程变体入手。这足以支撑许多管理场景中的第一轮流程诊断。
+
+\section{Directly-Follows Graph}
+
+给定每个 case 的 trace，若活动 \(a\) 在某个 case 中紧接着活动 \(b\)，则记为一条 directly-follows edge：
+\[
+  a \rightarrow b.
+\]
+统计所有 case 中的相邻活动对，可以得到 directly-follows graph。边的频次为
+\[
+  N_{ab}
+  =
+  \sum_c\sum_{j=1}^{m_c-1}
+  \mathbf 1\{a_{cj}=a,\ a_{c,j+1}=b\}.
+\]
+边上的平均耗时可以写为
+\[
+  \overline{\Delta}_{ab}
+  =
+  \frac{1}{N_{ab}}
+  \sum_{c,j:a_{cj}=a,\ a_{c,j+1}=b}
+  (t_{c,j+1}-t_{cj}).
+\]
+
+若某条边频次高且平均耗时长，它通常是流程改进的优先候选；若某条边频次低但业务风险高，例如发货前未质检，也应进入合规审查。过程挖掘的价值不在于画出复杂图，而在于把路径、时间和异常组织成可讨论的事实。
+
+\section{流程变体与返工}
+
+流程变体揭示实际执行并不总是遵循标准路径。标准 order-to-cash trace 可以写成：
+\begin{center}
+\texttt{order\_received} \(\rightarrow\)
+\texttt{credit\_check} \(\rightarrow\)
+\texttt{pick\_items} \(\rightarrow\)
+\texttt{quality\_check} \(\rightarrow\)
+\texttt{pack\_order} \(\rightarrow\)
+\texttt{ship\_order} \(\rightarrow\)
+\texttt{invoice\_sent} \(\rightarrow\)
+\texttt{payment\_received}.
+\end{center}
+若某个 case 出现 \texttt{rework\_pick} 并再次质检，说明存在返工；若缺少 \texttt{credit\_check}，说明可能存在跳步；若 \texttt{invoice\_sent} 出现在发货之前，说明活动顺序可能违反业务规则。
+
+返工不是天然坏事。某些返工可能是质量控制发挥作用的证据。但若返工集中在某类产品、仓库或客户分层，就需要进一步分析根因。流程变体分析的目标不是消灭所有例外，而是识别哪些例外有业务合理性，哪些例外反映系统、组织或数据问题。
+
+\section{瓶颈与流程绩效}
+
+流程绩效至少应同时看三类指标：
+\begin{enumerate}
+  \item case 级指标：吞吐时间、事件数、是否返工、是否异常；
+  \item 活动级指标：活动频次、资源负载、活动持续时间；
+  \item 边级指标：相邻活动之间的等待时间、转移频次和异常跳转。
+\end{enumerate}
+
+瓶颈不一定是活动本身最慢，也可能是活动之间的等待。例如开票后到收款之间的时间差很长，这不是系统处理慢，而可能是账期、催收、客户信用或合同条款问题。过程挖掘帮助管理者定位“时间消失在哪里”，但原因解释仍需要业务上下文。
+
+\section{合规检查与参考流程}
+
+合规检查需要先定义参考流程。参考流程可以来自制度文件、系统配置、审计规则或业务专家共识。常见规则包括：订单必须先完成信用检查再拣货，质检必须发生在包装之前，发货前不能开票，某些高金额订单必须经过额外审批。
+
+\begin{definition}[合规异常]
+合规异常是事件日志中的 trace 与参考流程规则不一致的情况。异常可能是真实违规，也可能是允许的业务例外、系统补录或日志缺失。
+\end{definition}
+
+因此，合规异常不能立即等同于违规。过程挖掘给出的是线索：哪些 case 需要复核，哪些规则经常被绕开，哪些系统记录缺失。最终解释需要结合业务规则、审批记录和访谈。
+
+\section{资源视角与组织改进}
+
+若日志包含 resource 字段，就可以分析资源负载和交接。一个流程可能没有明显活动瓶颈，但在跨部门交接处长期等待；也可能某个团队活动频次不高，却承担大量高价值或高风险订单。资源视角可以回答：
+\begin{enumerate}
+  \item 哪些团队或系统承担了最多活动；
+  \item 哪些资源处理的 case 吞吐时间更长；
+  \item 返工是否集中在某些班组、仓库或产品线；
+  \item 异常路径是否与特定人员、区域或系统版本有关。
+\end{enumerate}
+
+资源分析要避免简单排名。若某个团队处理的是更复杂订单，平均耗时较长未必说明效率低；若某个资源的活动数很少，却负责关键审批，也不能只用吞吐量评价。流程分析应结合订单类型、金额、复杂度和客户影响。
+
+\section{第10周实验案例}
+
+本周样例数据位于：
+\begin{center}
+\path{data/sample/order_to_cash_event_log.csv}
+\end{center}
+数据粒度为一行一个事件，字段包括 \texttt{case\_id}、\texttt{event\_id}、\texttt{activity}、\texttt{timestamp}、\texttt{resource}、\texttt{order\_value} 和 \texttt{region}。
+
+配套代码位于：
+\begin{center}
+\path{src/bdm_decision/cases/week10_process_mining.py}
+\end{center}
+核心过程挖掘工具位于：
+\begin{center}
+\path{src/bdm_decision/process\_mining/event\_log.py}
+\end{center}
+
+最小运行方式为：
+\begin{lstlisting}[language=bash,caption={运行第10周过程挖掘案例}]
+PYTHONPATH=src python3 src/bdm_decision/cases/week10_process_mining.py
+\end{lstlisting}
+
+样例日志包含 67 个事件、8 个 case 和 4 个流程变体。平均吞吐时间为 114.88 小时。前两个变体如下：
+\begin{center}
+\begin{tabular}{lrrr}
+\toprule
+变体 & case 数 & 占比 & 平均吞吐时间\\
+\midrule
+V01 标准路径 & 4 & 50.00\% & 102.75\\
+V02 返工路径 & 2 & 25.00\% & 183.00\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+前若干条 directly-follows edge 为：
+\begin{center}
+\begin{tabular}{lrr}
+\toprule
+边 & 频次 & 平均小时\\
+\midrule
+\texttt{pack\_order} \(\rightarrow\) \texttt{ship\_order} & 8 & 16.25\\
+\texttt{pick\_items} \(\rightarrow\) \texttt{quality\_check} & 8 & 4.50\\
+\texttt{credit\_check} \(\rightarrow\) \texttt{pick\_items} & 7 & 9.29\\
+\texttt{invoice\_sent} \(\rightarrow\) \texttt{payment\_received} & 7 & 71.57\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+最慢的平均边为 \texttt{invoice\_sent} \(\rightarrow\) \texttt{payment\_received}，平均耗时 71.57 小时。返工 case 为 \texttt{O2C003} 和 \texttt{O2C006}。合规异常包括：\texttt{O2C004} 缺少 \texttt{credit\_check}，\texttt{O2C007} 存在活动顺序异常。这些发现指向三个改进方向：收款周期管理、仓储返工根因分析和流程规则执行。
+
+\section{数据质量与解释边界}
+
+过程挖掘对数据质量非常敏感。管理报告应检查：
+\begin{enumerate}
+  \item case 边界是否清晰，一个订单是否可能拆成多个履约单；
+  \item timestamp 表示开始时间还是完成时间；
+  \item 系统时间是否存在时区、批量写入或补录；
+  \item activity 名称是否稳定，是否存在同义词或粒度混乱；
+  \item resource 字段是否真实反映执行者；
+  \item 例外路径是违规、业务规则还是数据缺失；
+  \item 流程发现是否连接到订单金额、客户影响和服务水平。
+\end{enumerate}
+
+过程挖掘不是只看平均吞吐时间。一个流程可以平均时间不长，但存在少数高价值订单长期卡住；也可以总体合规，却在某个区域反复返工。优秀的流程分析应把路径、时间、金额、客户和组织责任结合起来。
+
+\section{从流程发现到流程改进}
+
+过程挖掘报告应避免只展示图和指标。流程改进需要把发现转化为可执行问题：
+\begin{enumerate}
+  \item 若 \texttt{invoice\_sent} 到 \texttt{payment\_received} 最慢，应区分账期、催收、客户信用和发票错误；
+  \item 若返工路径吞吐时间显著更长，应追踪返工原因、产品类别、仓库班组和质检规则；
+  \item 若缺少信用检查，应确认是系统日志缺失、低风险订单允许跳过，还是实际绕开控制；
+  \item 若活动顺序异常，应检查时间戳含义、补录机制和流程规则。
+\end{enumerate}
+
+一个成熟的流程改进闭环包括：发现问题、复核日志、访谈业务、提出规则或资源调整、实施试点、监控新日志、比较改进前后指标。过程挖掘本身不是改进，只有进入组织行动和反馈，才成为管理工具。
+
+\section*{本讲小结}
+\addcontentsline{toc}{section}{本讲小结}
+
+本讲介绍了流程数据与过程挖掘的基础。事件日志通过 case id、activity 和 timestamp 将业务流程转换为可计算对象；trace 和 variant 揭示实际路径；directly-follows graph 展示相邻活动关系；吞吐时间和边耗时用于定位等待和瓶颈；合规检查用于识别缺失、跳步和反序。order-to-cash 案例显示，流程改进应同时关注支付延迟、仓储返工、例外路径和数据质量。
+
+\section*{习题}
+\addcontentsline{toc}{section}{习题}
+
+\begin{exercise}
+围绕 \path{data/sample/order_to_cash_event_log.csv} 完成下列任务：
+\begin{enumerate}
+  \item 统计事件数、case 数和流程变体数；
+  \item 给出前两个流程变体的 case 数、占比和平均吞吐时间；
+  \item 构造 directly-follows edge 表，找出平均耗时最长的边；
+  \item 列出返工 case 和合规异常 case；
+  \item 选择一个合规异常，写出至少两种可能解释；
+  \item 写一段不超过 400 字的管理建议，说明 order-to-cash 流程应优先改进哪些环节。
+\end{enumerate}
+\end{exercise}
+
+\section*{常见误区}
+\addcontentsline{toc}{section}{常见误区}
+
+\begin{enumerate}
+  \item 把事件日志当作普通明细表，忽视 case 边界和活动顺序；
+  \item 只看平均吞吐时间，不看变体、返工和长尾 case；
+  \item 把发现的流程图当作制度流程，而不检查例外路径；
+  \item 不区分活动处理时间和活动之间的等待时间；
+  \item 忽视 timestamp 质量、补录和系统批处理造成的偏差；
+  \item 将所有合规异常都解释为违规，而不确认业务规则和数据缺失；
+  \item 只给出流程图，不连接订单金额、客户影响和责任部门。
+\end{enumerate}
+
+\addcontentsline{toc}{chapter}{参考文献}
+\begin{thebibliography}{99}
+\bibitem{aalst2016}
+van der Aalst, W. M. P. (2016).
+\newblock \emph{Process Mining: Data Science in Action}.
+\newblock Springer.
+
+\bibitem{manifesto2012}
+van der Aalst, W. M. P. et al. (2012).
+\newblock Process mining manifesto.
+\newblock \emph{Business Process Management Workshops}, 169-194.
+
+\bibitem{dumas2018}
+Dumas, M., La Rosa, M., Mendling, J., and Reijers, H. A. (2018).
+\newblock \emph{Fundamentals of Business Process Management}.
+\newblock Springer.
+
+\bibitem{xes2016}
+IEEE Computational Intelligence Society. (2016).
+\newblock IEEE Standard for eXtensible Event Stream (XES) for achieving interoperability in event logs and event streams.
+\newblock IEEE Std 1849-2016.
+
+\bibitem{weske2019}
+Weske, M. (2019).
+\newblock \emph{Business Process Management}.
+\newblock Springer.
+
+\bibitem{munoz2018}
+Munoz-Gama, J. (2018).
+\newblock \emph{Conformance Checking and Diagnosis in Process Mining}.
+\newblock Springer.
+\end{thebibliography}
+
+\end{document}

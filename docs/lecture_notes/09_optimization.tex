@@ -1,0 +1,339 @@
+\documentclass[UTF8,fontset=fandol,openany,zihao=-4]{ctexbook}
+\input{../latex/bdm_lecture_preamble.tex}
+
+\title{《大数据与管理决策基础》\\[0.5em]\large 第9讲：优化与处方分析}
+\author{课程讲义}
+\date{}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\setcounter{chapter}{8}
+\chapter{优化与处方分析}
+\label{ch:week09-optimization}
+
+\begin{chapterbox}
+前几讲分别讨论了指标、统计推断、预测模型和因果推断。它们仍然不能自动回答“现在应该怎么做”。本讲进入优化与处方分析：在给定状态、预测、成本、收益、约束和风险偏好的条件下，如何选择可执行行动。讲义首先区分预测分析、因果评估和处方分析；随后介绍目标函数、决策变量、约束、可行域、线性规划、整数规划、边际价值、影子价格、敏感性分析和鲁棒性；再以库存补货为例，说明如何把需求情景、采购成本、毛利、持有成本、缺货惩罚、预算和库容约束转化为最优订货方案；最后讨论优化模型在企业执行中的治理问题。
+\end{chapterbox}
+
+\begin{modernbox}[课程接口]
+第7讲回答“未来可能发生什么”，第8讲回答“行动是否改变结果”，第9讲回答“在资源约束下应选择哪些行动”。优化不是预测模型的简单后处理，而是把预测、因果证据、成本、收益、业务规则和约束共同组织为一个可审计的决策问题。
+\end{modernbox}
+
+\section{学习目标}
+
+完成本讲后，学生应能够：
+\begin{enumerate}
+  \item 区分描述分析、预测分析、因果评估和处方分析；
+  \item 将管理行动写成决策变量、目标函数和约束；
+  \item 理解线性规划、整数规划、可行域、最优解和求解边界；
+  \item 解释需求预测、处理效应和成本参数如何进入优化模型；
+  \item 计算订货量的期望销售、期望剩余、期望缺货和期望净价值；
+  \item 使用边际价值理解资源分配；
+  \item 解释影子价格、敏感性分析和鲁棒性在管理复盘中的作用；
+  \item 将最优方案转化为包含约束、风险和执行条件的管理建议。
+\end{enumerate}
+
+\section{从预测到处方分析}
+
+预测模型输出未来状态，例如某 SKU 下周需求为 30 件，或某客户流失概率为 0.8。因果推断评估行动效果，例如发放优惠券是否提高留存。优化进一步追问：在预算、库存、产能、人力、服务水平和风险约束下，应该选择哪些行动。
+
+一个抽象的管理决策可以写为
+\[
+  a^*(x)
+  =
+  \argmin_{a\in\mathcal A(x)}
+  \E[L(Y,a)\mid X=x]
+  +
+  \lambda C(a),
+\]
+其中 \(X=x\) 是当前状态，\(Y\) 是未来结果，\(a\) 是行动，\(\mathcal A(x)\) 是可行动集合，\(L(Y,a)\) 是业务损失，\(C(a)\) 是行动成本或约束惩罚。
+
+\begin{definition}[处方分析]
+处方分析是在给定数据、模型、成本、收益和约束的条件下，给出可执行行动建议的分析过程。它不只预测结果，还必须说明选择何种行动、为何可行、使用多少资源、承担什么风险。
+\end{definition}
+
+处方分析的输出可以是补货量、排班计划、产能分配、价格方案、客户触达清单、供应商选择或配送路线。其共同特征是：可选行动有限，资源受到约束，目标函数可以被明确或近似表达，且输出需要被组织执行。
+
+\section{优化模型的基本结构}
+
+一个标准优化问题可以写作：
+\[
+  \max_{x} f(x)
+\]
+subject to
+\[
+  g_j(x)\le b_j,\qquad j=1,\ldots,m,
+\]
+\[
+  x\in\mathcal X.
+\]
+这里 \(x\) 是决策变量，\(f(x)\) 是目标函数，约束 \(g_j(x)\le b_j\) 定义可行域，\(\mathcal X\) 给出变量类型，例如连续、整数或二元。
+
+\begin{definition}[可行解与最优解]
+满足所有约束的 \(x\) 称为可行解。若可行解 \(x^*\) 使目标函数在可行域中达到最大或最小，则称为最优解。
+\end{definition}
+
+线性规划要求目标函数和约束都是线性的：
+\[
+  \max_x c^\top x
+  \quad
+  \text{s.t.}
+  \quad
+  Ax\le b,\quad x\ge 0.
+\]
+若部分变量必须取整数或 0-1 值，则得到整数规划或 0-1 规划。企业决策中常见的排班、选址、补货批量、配送路径和客户触达名额往往具有整数约束。整数约束使问题更贴近业务，也通常使求解更困难。
+
+\section{目标函数不是唯一真理}
+
+优化模型的质量高度依赖目标函数。若目标函数只最大化短期收入，可能牺牲毛利、服务水平或长期客户价值；若只最小化成本，可能造成缺货、延迟和客户流失。因此，目标函数应来自管理问题，而不是从技术工具中自动生成。
+
+库存补货的一个目标可以写为期望净价值：
+\[
+  \E[V(q,D)]
+  =
+  m\E[\min(I+q,D)]
+  -
+  h\E[(I+q-D)^+]
+  -
+  p\E[(D-I-q)^+]
+  -
+  cq.
+\]
+其中 \(q\) 是订货量，\(D\) 是随机需求，\(I\) 是当前库存，\(m\) 是单位贡献毛利，\(h\) 是持有成本，\(p\) 是缺货惩罚，\(c\) 是单位采购成本。
+
+\begin{modernbox}[管理解释]
+同一个需求预测可以导出不同补货决策。若缺货惩罚高，模型会倾向多订；若库容紧张或持有成本高，模型会倾向少订。优化的作用不是消除管理偏好，而是把偏好、成本和约束显式化。
+\end{modernbox}
+
+目标函数还应区分收益和现金流。贡献毛利、采购现金支出、库存占用、缺货惩罚和客户体验损失可能发生在不同时间。若企业现金流紧张，预算约束可能比期望利润更重要；若客户服务水平是战略目标，缺货惩罚应反映长期客户价值，而不只是单次订单损失。
+
+\section{约束与可执行性}
+
+企业优化问题的约束通常比目标函数更接近真实管理过程。常见约束包括：
+\begin{enumerate}
+  \item 预算约束：采购、营销、人工或运输预算不能超限；
+  \item 产能约束：机器、人力、仓库、客服或配送能力有限；
+  \item 服务约束：缺货率、准时率、响应时间或最低覆盖率必须达标；
+  \item 业务规则：最小起订量、整数包装、渠道优先级或合同承诺；
+  \item 风险约束：单一供应商暴露、极端库存、客户公平性或合规要求。
+\end{enumerate}
+
+一个看起来目标值最高但无法执行的方案不是好方案。课程中的补货案例只包含预算和库容两个约束，真实企业还需要纳入采购提前期、供应商产能、最小订货批量、替代品关系、审批流程和需求更新频率。
+
+\section{确定性、随机性与情景}
+
+许多管理输入并不是确定值。需求、到货时间、客户响应率和产能可用性都具有不确定性。若把它们简单替换为平均值，可能得到脆弱方案。例如平均需求为 20 的产品，在缺货惩罚很高时，按均值订货可能远远不够。
+
+课程案例采用离散情景表示需求不确定性。设需求有 \(S\) 个情景，情景 \(s\) 的概率为 \(\pi_s\)，需求为 \(d_s\)，则订货量 \(q\) 的期望净价值为
+\[
+  \sum_{s=1}^{S}\pi_s V(q,d_s).
+\]
+这相当于一个小规模随机规划。真实项目中，情景可以来自历史分布、预测模型、业务专家压力测试或宏观假设。关键不是情景越多越好，而是情景能覆盖对决策有实质影响的不确定性。
+
+\section{边际价值与资源分配}
+
+优化的一个核心直觉是边际价值。若增加一单位资源带来的目标函数改善很高，应优先分配资源；若边际价值已经降低，则应把资源转向其他行动。
+
+对 SKU \(k\)，设订货量为 \(q\)，期望净价值为 \(V_k(q)\)。第 \(q\) 个订货单位的边际价值为
+\[
+  \Delta V_k(q)=V_k(q)-V_k(q-1).
+\]
+在没有联合约束时，可以为每个 SKU 单独选择最大化 \(V_k(q)\) 的订货量；有预算和库容约束时，则需要在 SKU 之间竞争资源。边际价值高但占用库容大的产品不一定总是优先，因为约束维度不止一个。
+
+边际价值还可以帮助解释优化结果。若某个产品前几个单位边际价值很高，但后续单位迅速下降，模型只会补到某个点；若另一个产品边际价值较低但占用预算和库容很少，也可能成为约束紧张时的优先选择。
+
+\section{影子价格与约束价值}
+
+当资源约束变紧时，最优目标值会下降；当资源约束放松时，最优目标值可能上升。影子价格度量“多一单位资源在当前最优附近值多少钱”。在线性规划中，影子价格可以由对偶变量严格刻画；在本课程的小规模离散案例中，可以通过敏感性分析近似理解。
+
+\begin{definition}[影子价格]
+若某约束右端从 \(b\) 放宽为 \(b+\Delta b\)，最优目标值从 \(z(b)\) 变为 \(z(b+\Delta b)\)，则局部影子价格可近似为
+\[
+  \frac{z(b+\Delta b)-z(b)}{\Delta b}.
+\]
+它表示该资源在当前决策环境下的边际价值。
+\end{definition}
+
+影子价格的管理含义非常直接。若预算约束的影子价格很高，说明额外采购预算可能显著提高期望净价值；若库容约束的影子价格很高，说明扩容、临时仓或调整 SKU 结构可能值得讨论。反之，如果放松某约束几乎不改变最优值，该约束当前并不是主要瓶颈。
+
+\section{敏感性分析与鲁棒性}
+
+优化结果常给人一种过度确定感。事实上，需求预测、成本参数、缺货惩罚、预算和库容都可能变化。敏感性分析用于回答：若关键参数改变，最优方案是否稳定？
+
+本讲至少要求检查：
+\begin{itemize}
+  \item 预算上限降低时，哪些 SKU 被压缩；
+  \item 库容上限降低时，是否转向体积更小或边际价值更高的 SKU；
+  \item 缺货惩罚提高时，模型是否增加安全库存；
+  \item 需求高情景概率提高时，补货量是否显著变化；
+  \item 单个参数微小变化是否导致方案大幅跳变。
+\end{itemize}
+
+鲁棒性关注方案在坏情景下是否仍可接受。一个期望值最高的方案可能在高需求或供应延迟情景下损失很大。管理者可以采用保守情景、预算缓冲、服务水平约束或最大后悔值控制风险。鲁棒方案不一定有最高期望收益，但可能更适合执行风险较高的环境。
+
+\section{求解方法与教学案例边界}
+
+小规模离散优化可以枚举所有可行方案。若每个产品只有几十个候选订货量，枚举法直观、可审计，也适合课堂教学。大规模企业问题通常需要线性规划、混合整数规划、动态规划、启发式算法或商业求解器。
+
+选择求解方法时，应同时考虑模型规模、变量类型、约束结构、求解时间和解释需求。一个精确但无法解释的黑箱排班方案，未必比一个稍弱但可被主管理解和调整的方案更可用。课程案例强调可解释性，因此使用纯 Python 枚举展示目标函数和约束如何共同决定方案。
+
+\section{第9周实验案例}
+
+本周样例数据位于：
+\begin{center}
+\path{data/sample/replenishment_planning.csv}
+\end{center}
+数据粒度为一行一个 SKU，包含单位采购成本、贡献毛利、持有成本、缺货惩罚、当前库存、最大订货量、库容占用，以及低、中、高三种需求情景和概率。
+
+配套代码位于：
+\begin{center}
+\path{src/bdm_decision/cases/week09_optimization.py}
+\end{center}
+核心优化工具位于：
+\begin{center}
+\path{src/bdm_decision/optimization/inventory_optimization.py}
+\end{center}
+
+最小运行方式为：
+\begin{lstlisting}[language=bash,caption={运行第9周补货优化案例}]
+PYTHONPATH=src python3 src/bdm_decision/cases/week09_optimization.py
+\end{lstlisting}
+
+在预算上限 2600、库容上限 95 的基准方案下，最优补货计划为：
+\begin{center}
+\begin{tabular}{lrrrr}
+\toprule
+SKU & 订货量 & 期望销售 & 期望缺货 & 期望净价值\\
+\midrule
+P01 AirFilter & 18 & 28.00 & 2.00 & 1102.00\\
+P02 SmartValve & 16 & 22.40 & 2.00 & 1113.60\\
+P03 SensorKit & 10 & 27.40 & 6.70 & 877.50\\
+P04 ControlBox & 8 & 12.25 & 4.00 & 821.50\\
+\bottomrule
+\end{tabular}
+\end{center}
+该方案使用预算 2596，使用库容 93，总期望净价值为 3914.60。
+
+脚本还输出各产品前五个订货单位的边际价值：
+\begin{center}
+\begin{tabular}{lr}
+\toprule
+产品 & 前五个边际价值\\
+\midrule
+P01 AirFilter & 44.00, 44.00, 44.00, 44.00, 44.00\\
+P02 SmartValve & 65.00, 65.00, 65.00, 65.00, 65.00\\
+P03 SensorKit & 33.00, 33.00, 33.00, 33.00, 33.00\\
+P04 ControlBox & 86.00, 86.00, 86.00, 86.00, 86.00\\
+\bottomrule
+\end{tabular}
+\end{center}
+P04 的早期边际价值最高，但它单位采购成本和库容占用也较高，因此基准方案不会无限制地优先补 P04。资源约束使“单品价值排序”变成“组合选择”问题。
+
+\section{从最优方案到管理行动}
+
+优化模型输出的是建议方案，不是自动执行命令。把补货方案提交给运营团队前，应至少检查：
+\begin{enumerate}
+  \item 需求预测是否使用了最新促销、季节和客户订单信息；
+  \item 单位成本、贡献毛利和缺货惩罚是否由业务部门确认；
+  \item 供应商提前期是否允许按建议数量采购；
+  \item 是否存在最小起订量、包装倍数或合同约束；
+  \item SKU 之间是否有替代或互补关系；
+  \item 方案是否对预算、库容和需求情景过度敏感；
+  \item 执行后是否有反馈数据用于更新预测和优化参数。
+\end{enumerate}
+
+优化应被看作一个持续反馈系统：
+\[
+\text{预测}
+\rightarrow
+\text{目标与约束}
+\rightarrow
+\text{求解}
+\rightarrow
+\text{执行}
+\rightarrow
+\text{反馈更新}.
+\]
+若没有反馈，模型会在环境变化后逐渐失效；若没有业务审查，模型可能把错误参数优化得非常彻底。
+
+\section{模型治理与责任边界}
+
+优化模型会影响资源分配，因此需要治理。治理不是阻止模型使用，而是明确谁定义目标、谁确认参数、谁审批约束、谁负责例外处理、谁监控执行结果。若补货模型建议减少某类产品库存，销售团队必须知道这是需求情景、成本参数还是库容约束导致的。
+
+优化报告至少应包含：模型目标、主要约束、输入数据日期、关键参数来源、最优方案、资源使用、敏感性结果、不可建模因素、执行建议和监控指标。对于高风险场景，还应保留人工覆核机制和紧急回退方案。
+
+\section*{本讲小结}
+\addcontentsline{toc}{section}{本讲小结}
+
+本讲说明了优化与处方分析在数据驱动管理决策中的位置。预测模型估计未来状态，因果推断评估行动效果，优化模型在约束下选择行动。一个规范的优化问题必须明确决策变量、目标函数、约束、可行域和输入假设。库存补货案例展示了如何用离散需求情景计算期望净价值，并在预算和库容约束下选择最优订货量。管理上，最优解必须经过敏感性分析、执行条件检查和反馈治理，才能成为可靠行动。
+
+\section*{习题}
+\addcontentsline{toc}{section}{习题}
+
+\begin{exercise}
+围绕 \path{data/sample/replenishment_planning.csv} 完成下列任务：
+\begin{enumerate}
+  \item 写出本案例的决策变量、目标函数和两个主要约束；
+  \item 对 P02 在订货量 16 时计算期望销售、期望缺货和期望净价值；
+  \item 计算 P04 前五个订货单位的边际价值，并解释其管理含义；
+  \item 将预算上限改为 2200，记录新最优方案；
+  \item 将库容上限改为 75，记录新最优方案；
+  \item 写一段不超过 400 字的管理建议，说明是否应直接执行基准方案，以及执行前还应验证哪些业务条件。
+\end{enumerate}
+\end{exercise}
+
+\section*{常见误区}
+\addcontentsline{toc}{section}{常见误区}
+
+\begin{enumerate}
+  \item 把预测结果直接当作决策，不考虑成本和约束；
+  \item 只最大化短期收入，忽视毛利、缺货、持有成本和服务水平；
+  \item 忽视整数、批量、库容、提前期等真实执行约束；
+  \item 认为最优解不需要敏感性分析；
+  \item 把模型输出直接下发执行，而不让业务部门确认参数；
+  \item 用平均需求替代不确定需求，却不检查高需求和低需求情景；
+  \item 忽视优化后的反馈数据，导致模型参数长期不更新。
+\end{enumerate}
+
+\addcontentsline{toc}{chapter}{参考文献}
+\begin{thebibliography}{99}
+\bibitem{dantzig1963}
+Dantzig, G. B. (1963).
+\newblock \emph{Linear Programming and Extensions}.
+\newblock Princeton University Press.
+
+\bibitem{nemhauser1988}
+Nemhauser, G. L., and Wolsey, L. A. (1988).
+\newblock \emph{Integer and Combinatorial Optimization}.
+\newblock Wiley.
+
+\bibitem{bertsimas1997}
+Bertsimas, D., and Tsitsiklis, J. N. (1997).
+\newblock \emph{Introduction to Linear Optimization}.
+\newblock Athena Scientific.
+
+\bibitem{boyd2004}
+Boyd, S., and Vandenberghe, L. (2004).
+\newblock \emph{Convex Optimization}.
+\newblock Cambridge University Press.
+
+\bibitem{hillier2021}
+Hillier, F. S., and Lieberman, G. J. (2021).
+\newblock \emph{Introduction to Operations Research}.
+\newblock McGraw-Hill.
+
+\bibitem{silver2016}
+Silver, E. A., Pyke, D. F., and Thomas, D. J. (2016).
+\newblock \emph{Inventory and Production Management in Supply Chains}.
+\newblock CRC Press.
+
+\bibitem{shapiro2021}
+Shapiro, A., Dentcheva, D., and Ruszczynski, A. (2021).
+\newblock \emph{Lectures on Stochastic Programming}.
+\newblock SIAM.
+\end{thebibliography}
+
+\end{document}

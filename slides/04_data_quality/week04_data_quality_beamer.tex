@@ -1,0 +1,218 @@
+\documentclass[UTF8,fontset=fandol,aspectratio=169,11pt]{ctexbeamer}
+\input{../common/bdm_beamer_preamble.tex}
+
+\title[数据质量与指标可信度]{第4讲：数据质量、数据治理与指标可信度}
+\subtitle{质量维度、失败记录、质量门禁与指标治理}
+\author{《大数据与管理决策基础》}
+\date{}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+  \begin{center}
+    \small 核心命题：指标可信度不是从 SQL 开始，而是从输入数据、规则和责任开始。
+  \end{center}
+\end{frame}
+
+\begin{frame}{本讲学习目标}
+\begin{enumerate}
+  \item 解释数据质量如何影响管理 KPI；
+  \item 区分完整性、唯一性、有效性、一致性、及时性和可追溯性；
+  \item 将质量维度转化为失败记录查询；
+  \item 设计数据剖析报告和质量门禁；
+  \item 说明数据治理与指标治理中的责任分工；
+  \item 生成一个可复核的数据质量报告。
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{从 KPI 公式回到数据假设}
+准时交付率：
+\[
+\text{OTD}=\frac{\sum_i I(a_i\le p_i)}{n}.
+\]
+
+\begin{block}{隐含假设}
+\begin{enumerate}
+  \item 订单唯一且不会重复计数；
+  \item 实际日期和承诺日期有效且可比较；
+  \item 未交付订单没有被误判为准时或延期；
+  \item 时间窗口和分母口径已经被定义。
+\end{enumerate}
+\end{block}
+\end{frame}
+
+\begin{frame}{数据质量的课程定义}
+\[
+\text{Data Quality}
+=
+\text{Fitness for Use}
+\cap
+\text{Conformance to Rules}
+\cap
+\text{Traceability of Evidence}.
+\]
+
+\begin{alertblock}{管理含义}
+数据是否“好”，取决于它能否支持当前指标、模型、行动和审计。
+\end{alertblock}
+\end{frame}
+
+\begin{frame}{常见质量维度}
+\begin{table}
+\small
+\centering
+\begin{tabular}{p{0.17\linewidth}p{0.34\linewidth}p{0.34\linewidth}}
+\toprule
+维度 & 基本问题 & 订单示例\\
+\midrule
+完整性 & 必要字段是否存在？ & 缺少客户编号。\\
+唯一性 & 对象是否重复？ & 订单号重复。\\
+有效性 & 是否满足格式和取值域？ & 渠道值非法。\\
+一致性 & 跨表是否矛盾？ & 客户外键不存在。\\
+及时性 & 数据是否足够新？ & 交付结果延迟入仓。\\
+可追溯性 & 能否追溯来源和版本？ & 指标无法复现。\\
+\bottomrule
+\end{tabular}
+\end{table}
+\end{frame}
+
+\begin{frame}{质量规则：从断言到失败集合}
+设数据表为 \(R=\{r_1,\ldots,r_n\}\)，规则为谓词
+\[
+\phi_j(r_i)\in\{0,1\}.
+\]
+失败集合为
+\[
+F_j=\{r_i\in R:\phi_j(r_i)=0\}.
+\]
+
+\begin{block}{工程化表达}
+质量测试应返回失败记录，而不只是返回一个抽象分数。
+\end{block}
+\end{frame}
+
+\begin{frame}{从质量维度到数据测试}
+\begin{table}
+\small
+\centering
+\begin{tabular}{p{0.22\linewidth}p{0.50\linewidth}}
+\toprule
+测试 & 失败记录含义\\
+\midrule
+not null & 必填字段为空。\\
+unique & 主键或业务键重复。\\
+relationships & 外键无法连接到主数据。\\
+accepted values & 枚举字段出现未治理取值。\\
+range check & 数量、金额或日期超出业务边界。\\
+\bottomrule
+\end{tabular}
+\end{table}
+\end{frame}
+
+\begin{frame}[fragile]{失败记录查询示例}
+\begin{lstlisting}[language=SQL]
+select order_id, count(*) as row_count
+from orders
+group by order_id
+having count(*) > 1;
+
+select o.order_id, o.customer_id
+from orders as o
+left join customers as c
+  on o.customer_id = c.customer_id
+where c.customer_id is null;
+\end{lstlisting}
+
+\begin{alertblock}{复核原则}
+测试失败后，应能定位到具体记录、字段、规则和责任人。
+\end{alertblock}
+\end{frame}
+
+\begin{frame}{数据剖析先于治理}
+\begin{enumerate}
+  \item 行数与字段数；
+  \item 每列缺失数和缺失率；
+  \item 不同值数量；
+  \item 数值字段最小值与最大值；
+  \item 日期字段范围；
+  \item 主键重复与外键不匹配。
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{质量问题如何扭曲 KPI}
+\begin{table}
+\small
+\centering
+\begin{tabular}{p{0.24\linewidth}p{0.36\linewidth}p{0.25\linewidth}}
+\toprule
+问题 & 影响机制 & 指标\\
+\midrule
+订单重复 & 同一事实进入多次。 & 销售额、订单数。\\
+外键缺失 & 内连接丢失事实。 & 区域收入。\\
+数量为负 & 收入和毛利被扭曲。 & 毛利率。\\
+日期错误 & 周期与延期判断失真。 & 准时率。\\
+枚举不一致 & 分组口径不稳定。 & 渠道 KPI。\\
+\bottomrule
+\end{tabular}
+\end{table}
+\end{frame}
+
+\begin{frame}{数据治理与指标治理}
+\begin{table}
+\small
+\centering
+\begin{tabular}{p{0.25\linewidth}p{0.55\linewidth}}
+\toprule
+治理对象 & 关键问题\\
+\midrule
+数据 owner & 谁对业务定义负责？\\
+data steward & 谁维护字段含义和质量规则？\\
+指标字典 & 指标名称、分子分母、时间窗口是否明确？\\
+变更流程 & 口径变化如何审批和版本化？\\
+审计记录 & 指标能否回到输入数据和代码版本？\\
+\bottomrule
+\end{tabular}
+\end{table}
+\end{frame}
+
+\begin{frame}{质量门禁}
+\begin{table}
+\small
+\centering
+\begin{tabular}{p{0.16\linewidth}p{0.40\linewidth}p{0.30\linewidth}}
+\toprule
+级别 & 发布策略 & 示例\\
+\midrule
+Error & 阻止关键表或 KPI 发布。 & 主键重复、核心外键缺失。\\
+Warning & 发布但标记并跟踪。 & 新渠道值、少量缺失。\\
+Info & 记录趋势，用于改进。 & 分布轻微变化。\\
+\bottomrule
+\end{tabular}
+\end{table}
+\end{frame}
+
+\begin{frame}{第4周实验交付}
+\begin{enumerate}
+  \item 对 \texttt{orders\_quality\_issues.csv} 做字段剖析；
+  \item 找出主键重复、外键缺失、非法枚举和日期错误；
+  \item 输出失败记录表；
+  \item 说明每类失败影响哪些 KPI；
+  \item 为准时交付率设计质量门禁；
+  \item 提交一页数据质量报告。
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{本讲小结}
+\begin{enumerate}
+  \item 数据质量是指标可信度的前提；
+  \item 质量维度必须转化为可执行规则；
+  \item 数据测试应返回失败记录；
+  \item 质量问题要连接到 KPI 影响和管理行动；
+  \item 治理的核心是定义、责任、版本和审计；
+  \item 下一讲进入统计描述与 dashboard。
+\end{enumerate}
+\end{frame}
+
+\end{document}
+

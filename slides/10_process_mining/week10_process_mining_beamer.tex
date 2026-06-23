@@ -1,0 +1,239 @@
+\documentclass[UTF8,fontset=fandol,aspectratio=169,11pt]{ctexbeamer}
+\input{../common/bdm_beamer_preamble.tex}
+
+\title[流程数据与过程挖掘]{第10讲：流程数据与过程挖掘}
+\subtitle{从事件日志到变体、瓶颈、返工与合规异常}
+\author{《大数据与管理决策基础》}
+\date{}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+  \begin{center}
+    \small 核心命题：流程不是静态图，而是由 case、activity 和 timestamp 构成的可计算行为证据。
+  \end{center}
+\end{frame}
+
+\begin{frame}{本讲学习目标}
+\begin{enumerate}
+  \item 理解事件日志的基本数据模型；
+  \item 解释 case、activity、timestamp、trace 和 variant；
+  \item 构造 directly-follows graph；
+  \item 计算吞吐时间、边耗时和活动频次；
+  \item 识别返工、瓶颈和合规异常；
+  \item 将过程挖掘结果转化为流程改进建议。
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{课程主线中的第10周}
+\begin{center}
+\resizebox{0.96\linewidth}{!}{%
+\begin{tikzpicture}[
+  node/.style={draw=AcademicBlue!65, fill=AcademicLight, rounded corners=1pt,
+               minimum height=0.85cm, minimum width=2.05cm, align=center},
+  active/.style={draw=AcademicBlue, fill=AcademicBlue, text=white,
+               minimum height=0.9cm, minimum width=2.25cm, align=center},
+  arrow/.style={-{Stealth[length=2mm]}, thick, AcademicTeal}
+]
+\node[node] (decision) {优化决策};
+\node[node, right=0.65cm of decision] (execute) {流程执行};
+\node[active, right=0.65cm of execute] (log) {事件日志};
+\node[node, right=0.65cm of log] (improve) {流程改进};
+\node[node, right=0.65cm of improve] (feedback) {反馈治理};
+\draw[arrow] (decision) -- (execute);
+\draw[arrow] (execute) -- (log);
+\draw[arrow] (log) -- (improve);
+\draw[arrow] (improve) -- (feedback);
+\end{tikzpicture}
+}
+\end{center}
+\small
+优化方案只有进入流程执行后，才会暴露等待、返工、跳步和责任边界。
+\end{frame}
+
+\begin{frame}{事件日志}
+\begin{center}
+\begin{tabular}{p{0.24\linewidth}p{0.58\linewidth}}
+\toprule
+字段 & 含义\\
+\midrule
+case id & 一个流程实例，如订单、工单、申请。\\
+activity & 实际发生的业务活动。\\
+timestamp & 活动发生或完成时间。\\
+resource & 执行人、系统、部门或设备。\\
+attributes & 金额、区域、客户、产品等上下文。\\
+\bottomrule
+\end{tabular}
+\end{center}
+\[
+  \sigma_c=(a_{c1},a_{c2},\ldots,a_{cm_c}).
+\]
+\small
+按时间排序后的活动序列称为 trace。
+\end{frame}
+
+\begin{frame}{过程挖掘三类任务}
+\begin{center}
+\begin{tabular}{p{0.22\linewidth}p{0.34\linewidth}p{0.30\linewidth}}
+\toprule
+任务 & 目标 & 管理问题\\
+\midrule
+过程发现 & 从日志构造流程模型。 & 实际流程怎样运行？\\
+合规检查 & 比较日志与参考流程。 & 是否跳步、反序或缺失？\\
+流程增强 & 叠加时间、资源、成本。 & 哪里慢、贵、易返工？\\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{frame}
+
+\begin{frame}{Directly-Follows Graph}
+若活动 \(a\) 在某个 case 中紧接活动 \(b\)，记为：
+\[
+  a\rightarrow b.
+\]
+\begin{itemize}
+  \item 边频次：路径常见程度；
+  \item 平均耗时：相邻活动之间的等待或处理时间；
+  \item 低频高风险边：可能是例外路径或合规问题；
+  \item 高频长耗时边：通常是流程改进候选。
+\end{itemize}
+\end{frame}
+
+\begin{frame}{流程变体}
+\begin{block}{Variant}
+活动序列完全相同的 case 属于同一个流程变体。
+\end{block}
+\begin{itemize}
+  \item 标准路径：制度流程的主要执行方式；
+  \item 跳步路径：缺少某些活动；
+  \item 返工路径：活动重复或出现 rework；
+  \item 异常路径：活动顺序违反参考流程。
+\end{itemize}
+\small
+变体分析回答：流程实际有多少种走法，哪些路径最常见、最慢、最风险。
+\end{frame}
+
+\begin{frame}{第10周事件日志}
+\begin{center}
+\begin{tabular}{lr}
+\toprule
+指标 & 数值\\
+\midrule
+事件数 & 67\\
+case 数 & 8\\
+流程变体数 & 4\\
+平均吞吐时间 & 114.88 小时\\
+返工 case & O2C003, O2C006\\
+\bottomrule
+\end{tabular}
+\end{center}
+\small
+样例流程为 order-to-cash：接单、信用检查、拣货、质检、包装、发货、开票、收款。
+\end{frame}
+
+\begin{frame}{主要流程变体}
+\begin{center}
+\begin{tabular}{lrrr}
+\toprule
+变体 & case 数 & 占比 & 平均吞吐时间\\
+\midrule
+V01 标准路径 & 4 & 50.00\% & 102.75\\
+V02 返工路径 & 2 & 25.00\% & 183.00\\
+V03 反序异常 & 1 & 12.50\% & 73.00\\
+V04 跳过信用检查 & 1 & 12.50\% & 69.00\\
+\bottomrule
+\end{tabular}
+\end{center}
+\small
+返工路径的平均吞吐时间明显高于标准路径。
+\end{frame}
+
+\begin{frame}{Directly-Follows 结果}
+\begin{center}
+\begin{tabular}{lrr}
+\toprule
+边 & 频次 & 平均小时\\
+\midrule
+pack \(\rightarrow\) ship & 8 & 16.25\\
+pick \(\rightarrow\) quality & 8 & 4.50\\
+credit \(\rightarrow\) pick & 7 & 9.29\\
+invoice \(\rightarrow\) payment & 7 & 71.57\\
+order \(\rightarrow\) credit & 7 & 8.00\\
+\bottomrule
+\end{tabular}
+\end{center}
+\begin{block}{瓶颈候选}
+开票到收款平均 71.57 小时，是最慢的相邻活动边。
+\end{block}
+\end{frame}
+
+\begin{frame}{合规异常}
+\begin{center}
+\begin{tabular}{ll}
+\toprule
+case & 问题\\
+\midrule
+O2C004 & missing credit\_check\\
+O2C007 & activity order violation\\
+\bottomrule
+\end{tabular}
+\end{center}
+\begin{itemize}
+  \item 缺少信用检查可能是低风险快速通道，也可能是规则执行缺口；
+  \item 发票早于发货可能是系统补录、特殊合同或真实流程反序；
+  \item 异常解释必须回到业务规则和数据质量。
+\end{itemize}
+\end{frame}
+
+\begin{frame}{数据质量检查}
+\begin{itemize}
+  \item case id 是否稳定，一张订单是否拆成多个履约单？
+  \item timestamp 是开始时间、完成时间还是补录时间？
+  \item activity 命名是否一致，粒度是否稳定？
+  \item resource 是否表示实际执行者？
+  \item 例外路径是违规、允许路径还是数据缺失？
+  \item 流程发现是否结合订单金额和客户影响？
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{代码入口}
+\begin{lstlisting}[language=bash]
+PYTHONPATH=src python3 src/bdm_decision/cases/week10_process_mining.py
+\end{lstlisting}
+
+\begin{lstlisting}[language=Python]
+from bdm_decision.process_mining.event_log import (
+    load_event_log, summarize_cases, summarize_variants,
+    directly_follows_graph
+)
+
+events = load_event_log()
+cases = summarize_cases(events)
+variants = summarize_variants(cases)
+edges = directly_follows_graph(events)
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}{课堂讨论}
+\begin{enumerate}
+  \item 为什么平均吞吐时间不能单独说明流程健康？
+  \item invoice 到 payment 的长等待应由哪个部门负责？
+  \item O2C004 缺少信用检查一定是违规吗？
+  \item 如何判断返工是质量控制有效还是流程浪费？
+  \item 过程挖掘结果如何进入下一轮优化或自动化？
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{本讲小结}
+\begin{itemize}
+  \item 事件日志将流程转化为 case、activity 和 timestamp；
+  \item trace 和 variant 揭示实际路径；
+  \item directly-follows graph 展示相邻活动关系和等待；
+  \item 过程挖掘包括发现、合规检查和流程增强；
+  \item order-to-cash 案例暴露支付延迟、返工和异常路径；
+  \item 流程结论必须结合时间戳质量、业务规则和客户影响。
+\end{itemize}
+\end{frame}
+
+\end{document}

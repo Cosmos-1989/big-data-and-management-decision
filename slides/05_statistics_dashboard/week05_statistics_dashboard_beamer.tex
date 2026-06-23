@@ -1,0 +1,260 @@
+\documentclass[UTF8,fontset=fandol,aspectratio=169,11pt]{ctexbeamer}
+\input{../common/bdm_beamer_preamble.tex}
+
+\title[统计描述与 Dashboard]{第5讲：统计描述、经营波动与 Dashboard}
+\subtitle{中心、离散、异常、趋势与管理沟通}
+\author{《大数据与管理决策基础》}
+\date{}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+  \begin{center}
+    \small 核心命题：Dashboard 不是图表堆叠，而是可信指标面向管理行动的组织方式。
+  \end{center}
+\end{frame}
+
+\begin{frame}{本讲学习目标}
+\begin{enumerate}
+  \item 解释描述统计在管理决策中的作用；
+  \item 区分均值、中位数、标准差、IQR 和变异系数；
+  \item 使用移动平均描述经营节奏；
+  \item 理解图表是数据到视觉通道的编码；
+  \item 区分战略、分析和运营 dashboard；
+  \item 生成一个可复核的 dashboard 原型。
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{课程主线中的第5周}
+\begin{center}
+\resizebox{0.94\linewidth}{!}{%
+\begin{tikzpicture}[
+  node/.style={draw=AcademicBlue!65, fill=AcademicLight, rounded corners=1pt,
+               minimum height=0.8cm, minimum width=2.2cm, align=center},
+  arrow/.style={-{Stealth[length=2mm]}, thick, AcademicTeal}
+]
+\node[node] (metric) {可信指标};
+\node[node, right=0.9cm of metric] (stat) {描述统计};
+\node[node, right=0.9cm of stat] (vis) {图表编码};
+\node[node, right=0.9cm of vis] (interp) {经营解释};
+\node[node, right=0.9cm of interp] (act) {管理行动};
+\draw[arrow] (metric) -- (stat);
+\draw[arrow] (stat) -- (vis);
+\draw[arrow] (vis) -- (interp);
+\draw[arrow] (interp) -- (act);
+\end{tikzpicture}
+}
+\end{center}
+\end{frame}
+
+\begin{frame}{描述统计回答三个问题}
+\begin{table}
+\small
+\centering
+\begin{tabular}{p{0.24\linewidth}p{0.50\linewidth}}
+\toprule
+问题 & 统计工具\\
+\midrule
+典型水平是多少？ & 均值、中位数、分位数。\\
+波动有多大？ & 方差、标准差、变异系数。\\
+是否存在异常？ & IQR、箱线图、目标线、质量提示。\\
+\bottomrule
+\end{tabular}
+\end{table}
+\end{frame}
+
+\begin{frame}{中心与离散}
+\[
+\bar x=\frac{1}{n}\sum_{i=1}^{n}x_i,
+\qquad
+s^2=\frac{1}{n-1}\sum_{i=1}^{n}(x_i-\bar x)^2.
+\]
+\[
+CV=\frac{s}{\bar x}.
+\]
+
+\begin{block}{管理解释}
+均值描述典型水平，标准差描述绝对波动，变异系数描述相对波动。
+\end{block}
+\end{frame}
+
+\begin{frame}{分位数与 IQR}
+\[
+IQR=Q_3-Q_1.
+\]
+
+\begin{block}{IQR 异常规则}
+若
+\[
+x<Q_1-1.5IQR
+\quad \text{或}\quad
+x>Q_3+1.5IQR,
+\]
+则将其标记为需要下钻的异常观测。
+\end{block}
+
+\begin{alertblock}{注意}
+异常识别不是因果解释，只是提出下钻问题。
+\end{alertblock}
+\end{frame}
+
+\begin{frame}{比率指标必须显示分母}
+总体比率：
+\[
+R=\frac{\sum_g N_g}{\sum_g D_g}.
+\]
+
+\begin{table}
+\small
+\centering
+\begin{tabular}{p{0.30\linewidth}p{0.50\linewidth}}
+\toprule
+Dashboard 显示 & 管理风险\\
+\midrule
+只显示百分比 & 小样本分组可能被误读。\\
+显示百分比和分母 & 能判断比较是否稳定。\\
+显示质量状态 & 能判断指标是否可发布。\\
+\bottomrule
+\end{tabular}
+\end{table}
+\end{frame}
+
+\begin{frame}{移动平均与经营节奏}
+\[
+MA_t^{(k)}=\frac{1}{k}\sum_{j=0}^{k-1}x_{t-j}.
+\]
+
+\begin{block}{实践规则}
+移动平均用于看趋势，但不能替代原始观测；异常值需要同时保留。
+\end{block}
+\end{frame}
+
+\begin{frame}{第5周样例统计结果}
+\begin{table}
+\small
+\centering
+\begin{tabular}{p{0.36\linewidth}p{0.30\linewidth}}
+\toprule
+指标 & 数值\\
+\midrule
+总收入 & 71350\\
+平均日收入 & 5945.83\\
+收入中位数 & 5100\\
+收入 IQR & 2875\\
+准时交付率 & 0.5833\\
+平均延期天数 & 0.75\\
+质量问题数 & 6\\
+\bottomrule
+\end{tabular}
+\end{table}
+\end{frame}
+
+\begin{frame}{图表是视觉编码}
+\begin{table}
+\small
+\centering
+\begin{tabular}{p{0.24\linewidth}p{0.50\linewidth}}
+\toprule
+组成 & 含义\\
+\midrule
+data & 表格记录与字段。\\
+transform & 聚合、过滤、分箱、移动计算。\\
+mark & 点、线、条、文本等图形标记。\\
+encoding & 字段到位置、颜色、大小等通道的映射。\\
+scale/guide & 坐标轴、图例和尺度。\\
+\bottomrule
+\end{tabular}
+\end{table}
+\end{frame}
+
+\begin{frame}{任务与图表选择}
+\begin{table}
+\small
+\centering
+\begin{tabular}{p{0.25\linewidth}p{0.46\linewidth}}
+\toprule
+任务 & 图表\\
+\midrule
+时间趋势 & 折线图、柱线组合。\\
+类别比较 & 排序条形图。\\
+分布形态 & 直方图、箱线图。\\
+目标达成 & 子弹图、目标线。\\
+异常定位 & 散点图、标注点。\\
+\bottomrule
+\end{tabular}
+\end{table}
+\end{frame}
+
+\begin{frame}{Dashboard 信息架构}
+\[
+\text{Overview}
+\rightarrow
+\text{Compare}
+\rightarrow
+\text{Explain}
+\rightarrow
+\text{Drill down}
+\rightarrow
+\text{Act}.
+\]
+
+\begin{block}{最低组成}
+KPI 卡片、趋势视图、比较视图、异常视图、质量提示、下钻入口。
+\end{block}
+\end{frame}
+
+\begin{frame}{Dashboard 类型}
+\begin{table}
+\small
+\centering
+\begin{tabular}{p{0.20\linewidth}p{0.52\linewidth}}
+\toprule
+类型 & 设计重点\\
+\midrule
+战略型 & 目标达成、趋势、少量高层 KPI。\\
+分析型 & 分组比较、下钻、分布和异常解释。\\
+运营型 & 近实时状态、任务队列、阈值告警。\\
+\bottomrule
+\end{tabular}
+\end{table}
+\end{frame}
+
+\begin{frame}[fragile]{代码入口}
+\begin{lstlisting}[language=Python]
+from bdm_decision.cases.week05_statistics_dashboard import (
+    load_daily_operations,
+    descriptive_summary,
+    dashboard_kpis,
+)
+
+rows = load_daily_operations()
+revenue = [row.revenue for row in rows]
+print(descriptive_summary(revenue))
+print(dashboard_kpis(rows))
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}{第5周实验交付}
+\begin{enumerate}
+  \item 计算收入的均值、中位数、标准差、IQR；
+  \item 识别至少一个异常日期；
+  \item 设计包含 4 个以上 KPI 卡片的 dashboard；
+  \item 展示一个趋势视图和一个比较或分布视图；
+  \item 写明口径、分母、数据质量状态和下钻路径；
+  \item 提交一页管理解释。
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{本讲小结}
+\begin{enumerate}
+  \item 描述统计是管理解释的第一层证据；
+  \item dashboard 必须显示趋势、比较、分母、异常和质量状态；
+  \item 图表设计应尊重视觉感知和任务目标；
+  \item 异常不是因果解释，只是下钻入口；
+  \item 下一讲进入统计推断与 A/B 测试。
+\end{enumerate}
+\end{frame}
+
+\end{document}
+

@@ -1,0 +1,2 @@
+"""Warehouse and metrics assets."""
+

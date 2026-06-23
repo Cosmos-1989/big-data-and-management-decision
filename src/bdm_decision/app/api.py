@@ -1,0 +1,2 @@
+"""FastAPI service entry point."""
+

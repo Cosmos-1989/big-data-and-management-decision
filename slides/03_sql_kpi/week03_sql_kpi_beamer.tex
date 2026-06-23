@@ -1,0 +1,248 @@
+\documentclass[UTF8,fontset=fandol,aspectratio=169,11pt]{ctexbeamer}
+\input{../common/bdm_beamer_preamble.tex}
+
+\title[SQL、KPI 与指标层]{第3讲：SQL、KPI 与可审计指标层}
+\subtitle{连接、聚合、窗口函数与管理指标口径}
+\author{《大数据与管理决策基础》}
+\date{}
+
+\lstset{style=sqlstyle}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+  \begin{center}
+    \small 核心命题：SQL 不是取数脚本，而是管理指标口径的可执行表达。
+  \end{center}
+\end{frame}
+
+\begin{frame}{本讲学习目标}
+\begin{enumerate}
+  \item 理解 SQL 查询与关系模型的关系；
+  \item 用连接、过滤和聚合计算经营 KPI；
+  \item 区分事实粒度、分析粒度和展示粒度；
+  \item 正确处理分子、分母和比率型指标；
+  \item 使用窗口函数表达排名、累计和移动窗口；
+  \item 将 SQL 上升为可治理的指标层。
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{课程主线中的第3周}
+\begin{center}
+\resizebox{0.95\linewidth}{!}{%
+\begin{tikzpicture}[
+  node/.style={draw=AcademicBlue!65, fill=AcademicLight, rounded corners=1pt,
+               minimum height=0.8cm, minimum width=2.2cm, align=center},
+  arrow/.style={-{Stealth[length=2mm]}, thick, AcademicTeal}
+]
+\node[node] (obj) {业务对象};
+\node[node, right=0.9cm of obj] (grain) {事实粒度};
+\node[node, right=0.9cm of grain] (sql) {SQL 查询};
+\node[node, right=0.9cm of sql] (kpi) {指标口径};
+\node[node, right=0.9cm of kpi] (act) {行动审计};
+\draw[arrow] (obj) -- (grain);
+\draw[arrow] (grain) -- (sql);
+\draw[arrow] (sql) -- (kpi);
+\draw[arrow] (kpi) -- (act);
+\end{tikzpicture}
+}
+\end{center}
+
+\begin{alertblock}{判断标准}
+查询能运行，只说明语法成立；指标能被复核，才说明管理口径成立。
+\end{alertblock}
+\end{frame}
+
+\begin{frame}[fragile]{一个区域收入查询}
+\begin{lstlisting}
+SELECT
+  c.region,
+  SUM(o.quantity * p.unit_price) AS revenue
+FROM orders AS o
+JOIN customers AS c
+  ON o.customer_id = c.customer_id
+JOIN products AS p
+  ON o.product_id = p.product_id
+WHERE o.order_date >= DATE '2026-03-01'
+  AND o.order_date <  DATE '2026-04-01'
+GROUP BY c.region
+ORDER BY revenue DESC;
+\end{lstlisting}
+
+\begin{block}{需要解释的不是语法，而是口径}
+对象范围、连接键、时间窗口、分组维度、度量公式、排序含义。
+\end{block}
+\end{frame}
+
+\begin{frame}{SQL 的逻辑处理顺序}
+\[
+\texttt{FROM/JOIN}
+\rightarrow
+\texttt{WHERE}
+\rightarrow
+\texttt{GROUP BY}
+\rightarrow
+\texttt{HAVING}
+\rightarrow
+\texttt{SELECT}
+\rightarrow
+\texttt{ORDER BY}.
+\]
+
+\begin{table}
+\small
+\centering
+\begin{tabular}{p{0.24\linewidth}p{0.60\linewidth}}
+\toprule
+子句 & 管理分析含义\\
+\midrule
+FROM/JOIN & 确定事实表与维度来源。\\
+WHERE & 过滤原始事件或对象。\\
+GROUP BY & 声明指标输出粒度。\\
+HAVING & 过滤聚合后的分组结果。\\
+SELECT & 定义最终字段和指标公式。\\
+\bottomrule
+\end{tabular}
+\end{table}
+\end{frame}
+
+\begin{frame}{连接的核心风险：改变事实粒度}
+若产品维度在 \texttt{product\_id} 上唯一，则
+\[
+|\texttt{orders}\Join\texttt{products}|=|\texttt{orders}|.
+\]
+若维度键重复，连接会复制订单事实。
+
+\begin{table}
+\small
+\centering
+\begin{tabular}{p{0.25\linewidth}p{0.55\linewidth}}
+\toprule
+风险 & 指标后果\\
+\midrule
+维度键不唯一 & 销售额、订单数、延期率被放大。\\
+外键缺失 & 内连接会丢失无法匹配的事实。\\
+粒度混合 & 分母不稳定，部门之间不可比较。\\
+\bottomrule
+\end{tabular}
+\end{table}
+\end{frame}
+
+\begin{frame}{KPI 是一组被治理的定义}
+\[
+M=(O,\mathcal G,\mathcal T,N,D,u,\rho).
+\]
+
+\begin{table}
+\small
+\centering
+\begin{tabular}{p{0.14\linewidth}p{0.67\linewidth}}
+\toprule
+符号 & 含义\\
+\midrule
+\(O\) & 被度量的对象或事件集合。\\
+\(\mathcal G\) & 分组维度，如地区、产品类别、客户分层。\\
+\(\mathcal T\) & 时间窗口和时间字段。\\
+\(N,D\) & 分子、分母或可加度量。\\
+\(u,\rho\) & 单位与责任归属。\\
+\bottomrule
+\end{tabular}
+\end{table}
+\end{frame}
+
+\begin{frame}{比率型指标不能直接平均}
+总体毛利率应在目标粒度重新计算：
+\[
+\frac{\sum_g N_g}{\sum_g D_g}
+\ne
+\frac{1}{|\mathcal G|}\sum_g\frac{N_g}{D_g}.
+\]
+
+\begin{block}{实践规则}
+保存销售额、毛利、准时订单数、交付订单数等分子分母；展示百分比时再计算比率。
+\end{block}
+\end{frame}
+
+\begin{frame}[fragile]{条件聚合：区域级 KPI}
+\begin{lstlisting}
+SELECT
+  region,
+  COUNT(*) AS delivered_orders,
+  SUM(revenue) AS revenue,
+  SUM(gross_profit) AS gross_profit,
+  SUM(gross_profit) / NULLIF(SUM(revenue), 0) AS gross_margin,
+  SUM(on_time_flag) * 1.0 / NULLIF(COUNT(*), 0) AS on_time_rate,
+  AVG(delay_days) AS average_delay_days
+FROM order_enriched
+GROUP BY region;
+\end{lstlisting}
+
+\begin{alertblock}{安全除法}
+分母为零不是普通技术错误，而是需要解释的业务状态。
+\end{alertblock}
+\end{frame}
+
+\begin{frame}[fragile]{窗口函数：保留行身份的聚合}
+\begin{lstlisting}
+SELECT
+  customer_id,
+  order_id,
+  order_date,
+  revenue,
+  SUM(revenue) OVER (
+    PARTITION BY customer_id
+    ORDER BY order_date
+    ROWS BETWEEN 2 PRECEDING AND CURRENT ROW
+  ) AS recent_revenue
+FROM order_enriched;
+\end{lstlisting}
+
+\begin{block}{典型用途}
+排名、累计、移动窗口、前后状态比较、客户订单序列。
+\end{block}
+\end{frame}
+
+\begin{frame}{从 SQL 脚本到指标层}
+\begin{table}
+\small
+\centering
+\begin{tabular}{p{0.26\linewidth}p{0.55\linewidth}}
+\toprule
+字段 & 说明\\
+\midrule
+name / label & 稳定名称与展示名称。\\
+grain & 指标对应的事实粒度。\\
+numerator / denominator & 比率型指标的分子分母。\\
+dimensions & 可下钻维度。\\
+time dimension & 时间窗口字段。\\
+owner & 业务解释责任人。\\
+\bottomrule
+\end{tabular}
+\end{table}
+\end{frame}
+
+\begin{frame}{第3周实验交付}
+\begin{enumerate}
+  \item 加载 `data/sample` 中的订单、客户、产品和库存数据；
+  \item 构造订单级收入、毛利、准时标记和延期天数；
+  \item 按区域、客户分层、产品类别和渠道计算 KPI；
+  \item 输出至少一个窗口函数结果；
+  \item 为一个指标补全指标字典记录；
+  \item 用 Python 复核 SQL 结果。
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{本讲小结}
+\begin{enumerate}
+  \item SQL 是管理指标口径的可执行表达；
+  \item 连接前必须检查事实粒度是否保持稳定；
+  \item KPI 需要对象范围、维度、时间、分子、分母和责任；
+  \item 比率型指标应在目标粒度重新计算；
+  \item 窗口函数适合表达经营节奏；
+  \item 下一讲进入数据质量与指标治理。
+\end{enumerate}
+\end{frame}
+
+\end{document}
+

@@ -1,0 +1,275 @@
+\documentclass[UTF8,fontset=fandol,aspectratio=169,11pt]{ctexbeamer}
+\input{../common/bdm_beamer_preamble.tex}
+
+\title[统计推断与 A/B 测试]{第6讲：统计推断、A/B 测试与管理判断}
+\subtitle{从 dashboard 差异到随机实验、置信区间与行动建议}
+\author{《大数据与管理决策基础》}
+\date{}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+  \begin{center}
+    \small 核心命题：指标差异不是行动结论，实验设计和不确定性评估才使差异进入管理决策。
+  \end{center}
+\end{frame}
+
+\begin{frame}{本讲学习目标}
+\begin{enumerate}
+  \item 区分描述统计、统计推断和因果评估；
+  \item 理解样本、估计量、标准误、置信区间和 p 值；
+  \item 设计面向管理行动的 A/B 测试；
+  \item 用差异估计量评估主指标和护栏指标；
+  \item 理解 MDE、功效、样本量和重复窥探风险；
+  \item 将实验结果写成审慎的管理建议。
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{课程主线中的第6周}
+\begin{center}
+\resizebox{0.96\linewidth}{!}{%
+\begin{tikzpicture}[
+  node/.style={draw=AcademicBlue!65, fill=AcademicLight, rounded corners=1pt,
+               minimum height=0.85cm, minimum width=2.25cm, align=center},
+  active/.style={draw=AcademicBlue, fill=AcademicBlue, text=white,
+               minimum height=0.9cm, minimum width=2.35cm, align=center},
+  arrow/.style={-{Stealth[length=2mm]}, thick, AcademicTeal}
+]
+\node[node] (data) {可信指标};
+\node[node, right=0.75cm of data] (dash) {dashboard\\差异};
+\node[active, right=0.75cm of dash] (infer) {统计推断\\随机实验};
+\node[node, right=0.75cm of infer] (causal) {因果识别};
+\node[node, right=0.75cm of causal] (action) {管理行动};
+\draw[arrow] (data) -- (dash);
+\draw[arrow] (dash) -- (infer);
+\draw[arrow] (infer) -- (causal);
+\draw[arrow] (causal) -- (action);
+\end{tikzpicture}
+}
+\end{center}
+\vspace{0.2cm}
+\small
+第5周回答“看起来发生了什么”，第6周回答“观察到的差异是否足以支持改变”。
+\end{frame}
+
+\begin{frame}{从描述差异到推断问题}
+\begin{block}{dashboard 只能给出观察结果}
+某个新版页面转化率更高，某个日期收入异常，某个渠道投诉率上升。
+\end{block}
+\begin{block}{统计推断要回答}
+如果重复观察、扩大样本或推广行动，这种差异是否仍可能存在？
+\end{block}
+\[
+  \bar Y=\frac{1}{n}\sum_{i=1}^{n}Y_i,
+  \qquad
+  \operatorname{SE}(\bar Y)=\frac{s}{\sqrt n}.
+\]
+\small
+样本均值是估计，不是总体本身；管理报告应呈现不确定性。
+\end{frame}
+
+\begin{frame}{A/B 测试的基本结构}
+\begin{center}
+\begin{tabular}{p{0.22\linewidth}p{0.64\linewidth}}
+\toprule
+元素 & 管理含义\\
+\midrule
+实验单元 & 被随机分配的访客、订单、门店、销售人员或客户。\\
+处理与对照 & \(T_i=1\) 为处理组，\(T_i=0\) 为对照组。\\
+主指标 & 决定实验是否达到核心目标，如转化率。\\
+护栏指标 & 防止局部优化损害体验、财务、运营或长期价值。\\
+分析窗口 & 从分配到观察结果的时间边界。\\
+决策规则 & 推广、继续实验、停止实验或回滚。\\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{frame}
+
+\begin{frame}{潜在结果与随机化}
+对实验单元 \(i\)，设：
+\[
+  Y_i(1)=\text{接受处理时的结果},
+  \qquad
+  Y_i(0)=\text{接受对照时的结果}.
+\]
+个体处理效应：
+\[
+  \tau_i=Y_i(1)-Y_i(0).
+\]
+平均处理效应：
+\[
+  \tau=\mathbb E[Y(1)-Y(0)].
+\]
+\begin{block}{随机化的价值}
+若处理分配与潜在结果独立，组间平均差异可以作为处理效果的估计，而不是选择偏差的直接产物。
+\end{block}
+\end{frame}
+
+\begin{frame}{差异估计量}
+\[
+  \hat\tau
+  =\bar Y_1-\bar Y_0
+  =
+  \frac{1}{n_1}\sum_{i:T_i=1}Y_i
+  -
+  \frac{1}{n_0}\sum_{i:T_i=0}Y_i.
+\]
+\[
+  \widehat{\operatorname{SE}}(\hat\tau)
+  =
+  \sqrt{\frac{s_1^2}{n_1}+\frac{s_0^2}{n_0}}.
+\]
+\[
+  \hat\tau \pm z_{1-\alpha/2}\widehat{\operatorname{SE}}(\hat\tau).
+\]
+\small
+二元指标的样本均值就是比例，因此转化率也可以放入同一差异估计框架。
+\end{frame}
+
+\begin{frame}{p 值不是什么}
+\begin{block}{p 值是}
+在原假设成立时，观察到当前统计量或更极端统计量的概率。
+\end{block}
+\begin{block}{p 值不是}
+处理有效的概率，也不是原假设为真的概率，更不是推广决策本身。
+\end{block}
+\begin{itemize}
+  \item 统计显著不等于业务值得推广；
+  \item 不显著不等于没有效果；
+  \item 小样本很容易产生方向正确但证据不足的结果；
+  \item 决策还要看成本、风险、护栏和执行条件。
+\end{itemize}
+\end{frame}
+
+\begin{frame}{MDE 与样本量}
+\small
+MDE 是组织希望实验能够可靠识别的最小业务差异。
+\[
+n
+\approx
+\frac{
+\left[
+z_{1-\alpha/2}\sqrt{2\bar p(1-\bar p)}
++
+z_{1-\beta}\sqrt{p_0(1-p_0)+p_1(1-p_1)}
+\right]^2
+}{
+(p_1-p_0)^2
+}.
+\]
+\begin{block}{管理解释}
+MDE 不是统计软件参数，而是“多大改善值得行动”的管理声明。
+\end{block}
+\end{frame}
+
+\begin{frame}{护栏指标}
+\begin{center}
+\begin{tabular}{p{0.18\linewidth}p{0.36\linewidth}p{0.34\linewidth}}
+\toprule
+类型 & 指标 & 作用\\
+\midrule
+体验 & 页面加载时间、投诉率 & 防止转化提升损害体验。\\
+财务 & 毛利率、补贴成本 & 防止收入来自不可持续成本。\\
+运营 & 履约延迟、人工处理量 & 防止压力转移给运营团队。\\
+长期 & 复购率、取消率 & 防止短期收益伤害长期价值。\\
+\bottomrule
+\end{tabular}
+\end{center}
+\vspace{0.2cm}
+\small
+实验报告必须同时呈现主指标和护栏指标。
+\end{frame}
+
+\begin{frame}{第6周实验数据}
+\begin{center}
+\begin{tabular}{lrrrr}
+\toprule
+组别 & \(n\) & 转化数 & 转化率 & 每访客收入\\
+\midrule
+A & 20 & 7 & 0.3500 & 16.95\\
+B & 20 & 11 & 0.5500 & 31.65\\
+\bottomrule
+\end{tabular}
+\end{center}
+\vspace{0.3cm}
+\begin{block}{第一眼结论}
+B 组看起来转化更高、收入更高。
+\end{block}
+\begin{block}{推断问题}
+这种差异是否足以支持全量推广？
+\end{block}
+\end{frame}
+
+\begin{frame}{实验结果：主指标仍不确定}
+\begin{center}
+\begin{tabular}{lrrrr}
+\toprule
+指标 & A 均值 & B 均值 & 差异 & 95\% CI\\
+\midrule
+转化 & 0.3500 & 0.5500 & 0.2000 & [-0.1099, 0.5099]\\
+每访客收入 & 16.95 & 31.65 & 14.70 & [-2.69, 32.09]\\
+\bottomrule
+\end{tabular}
+\end{center}
+\vspace{0.25cm}
+\small
+方向有吸引力，但置信区间跨越 0。当前样本不足以把“看起来更好”升级为“可以全量推广”。
+\end{frame}
+
+\begin{frame}{护栏结果：页面加载变慢}
+\begin{center}
+\begin{tabular}{lrrrr}
+\toprule
+指标 & A 均值 & B 均值 & 差异 & 95\% CI\\
+\midrule
+页面加载毫秒 & 443.75 & 495.40 & 51.65 & [42.25, 61.05]\\
+客服工单率 & 0.0500 & 0.1500 & 0.1000 & [-0.0690, 0.2690]\\
+\bottomrule
+\end{tabular}
+\end{center}
+\vspace{0.25cm}
+\begin{block}{管理含义}
+即使主指标方向较好，页面加载护栏已经明显恶化；应继续实验或优化方案，而不是立即全量上线。
+\end{block}
+\end{frame}
+
+\begin{frame}[fragile]{代码入口}
+\begin{lstlisting}[language=bash]
+PYTHONPATH=src python3 src/bdm_decision/cases/week06_ab_testing.py
+\end{lstlisting}
+
+\begin{lstlisting}[language=Python]
+from bdm_decision.cases.week06_ab_testing import load_checkout_experiment
+from bdm_decision.causal.ab_test import difference_in_means
+
+records = load_checkout_experiment()
+conversion = difference_in_means(records, "converted")
+page_load = difference_in_means(records, "page_load_ms")
+print(conversion)
+print(page_load)
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}{课堂讨论}
+\begin{enumerate}
+  \item 如果你是产品负责人，是否会推广 B 组？为什么？
+  \item 若只能继续收集一周数据，应优先扩大样本还是修改方案？
+  \item 若 B 组只对新访客有效，是否可以做分层推广？
+  \item 如果每天查看一次 p 值，实验停止规则应如何写？
+  \item 护栏指标和主指标冲突时，谁拥有最终决策权？
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{本讲小结}
+\begin{itemize}
+  \item dashboard 差异需要统计推断才能进入行动判断；
+  \item 随机化使组间差异具备因果解释的设计基础；
+  \item 置信区间比单点估计更适合管理沟通；
+  \item p 值不能替代业务成本、风险和护栏指标；
+  \item MDE 和功效应在实验前确定；
+  \item 第8讲将从随机实验扩展到非实验因果识别。
+\end{itemize}
+\end{frame}
+
+\end{document}

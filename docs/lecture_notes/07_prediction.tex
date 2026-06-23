@@ -1,0 +1,423 @@
+\documentclass[UTF8,fontset=fandol,openany,zihao=-4]{ctexbook}
+\input{../latex/bdm_lecture_preamble.tex}
+
+\title{《大数据与管理决策基础》\\[0.5em]\large 第7讲：预测模型基础}
+\author{课程讲义}
+\date{}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\setcounter{chapter}{6}
+\chapter{预测模型基础}
+\label{ch:week07-prediction}
+
+\begin{chapterbox}
+前六讲已经建立了从管理问题、业务对象、SQL/KPI、数据质量、dashboard 到统计推断和 A/B 测试的基础。本讲进入预测模型。预测模型的任务不是解释某个变量的因果作用，而是在给定当前可观测状态 \(X\) 的条件下，对未来结果 \(Y\) 形成可复用的概率或数值判断。讲义首先从客户流失、需求预测和交付延迟等管理问题出发，给出监督学习的统一表达；随后讨论标签窗口、特征时间点、损失函数、经验风险、训练集/测试集、交叉验证、过拟合和偏差-方差权衡；再介绍分类模型的 confusion matrix、precision、recall、F1、ROC AUC、log loss 和概率校准；最后通过客户流失预测案例说明模型输出如何进入留存行动，而不是停留在准确率报告。
+\end{chapterbox}
+
+\begin{modernbox}[课程接口]
+本讲把“看见差异”和“验证行动”推进到“预测未来状态”。第5讲和第6讲主要处理已观察指标与实验差异，第7讲开始处理尚未发生但需要提前干预的经营结果。预测模型为第8讲的因果推断和后续优化决策提供输入，但预测本身不能自动推出行动有效。
+\end{modernbox}
+
+\section{学习目标}
+
+完成本讲后，学生应能够：
+\begin{enumerate}
+  \item 说明描述分析、统计推断、预测建模和因果推断之间的区别；
+  \item 将客户流失、需求预测、延迟风险等管理问题写成监督学习问题；
+  \item 解释特征、标签、标签窗口、特征时间点、训练集、验证集、测试集、损失函数和经验风险；
+  \item 理解过拟合、欠拟合、偏差-方差权衡和交叉验证的管理含义；
+  \item 对分类模型计算并解释 accuracy、precision、recall、F1、ROC AUC、log loss 和校准表；
+  \item 根据业务成本、行动容量和风险偏好选择预测阈值；
+  \item 将预测概率转化为管理行动候选清单，并识别模型部署前的主要风险。
+\end{enumerate}
+
+\section{从管理预警到预测问题}
+
+企业管理中大量问题都要求提前判断未来状态。例如，哪些客户可能在下月流失，哪些订单可能延期，哪些产品下周需求会上升，哪些设备可能发生故障，哪些供应商可能无法准时履约。这类问题与第6讲 A/B 测试不同。A/B 测试关注某个行动是否造成结果变化；预测模型关注在当前信息下，未来结果最可能是什么。
+
+设 \(X\) 表示当前可观测的企业状态，\(Y\) 表示未来经营结果。预测问题可以写成
+\[
+  Y=f(X)+\varepsilon,
+\]
+其中 \(f\) 是从状态到结果的系统性关系，\(\varepsilon\) 表示未被观测变量、随机冲击和测量误差。预测模型的目标不是证明 \(X_j\) 对 \(Y\) 有因果作用，而是构造一个函数 \(\hat f\)，使它在新样本上的预测误差尽可能小。
+
+\begin{definition}[监督学习]
+监督学习以带标签样本
+\[
+  \mathcal D=\{(x_i,y_i):i=1,\ldots,n\}
+\]
+为输入，学习一个映射 \(\hat f:\mathcal X\rightarrow \mathcal Y\)。当 \(Y\) 为连续数值时称为回归问题；当 \(Y\) 为类别或二元结果时称为分类问题。
+\end{definition}
+
+客户流失预测就是一个二元分类问题。对客户 \(i\)，令 \(Y_i=1\) 表示在未来观察窗口内流失，\(Y_i=0\) 表示未流失。特征 \(X_i\) 可以包括客户关系时长、月消费、客服工单数、折扣率、使用活跃度和履约延迟次数。模型输出通常不是直接行动，而是流失概率
+\[
+  \hat p_i=\widehat{\Prob}(Y_i=1\mid X_i=x_i).
+\]
+管理者随后还需要决定：当 \(\hat p_i\) 多大时需要人工复核、发放优惠、安排客户经理联系，或者暂不行动。
+
+\section{预测、解释与因果的边界}
+
+预测模型可以很有用，但它回答的问题有限。若模型发现“折扣率越高，流失风险越高”，这并不表示提高折扣会导致流失。更合理的解释可能是：高风险客户更常被给予折扣，折扣率只是风险状态的代理变量。这个例子说明预测关系和因果关系必须分开。
+
+\begin{longtable}{>{\raggedright\arraybackslash}p{0.20\linewidth}>{\raggedright\arraybackslash}p{0.36\linewidth}>{\raggedright\arraybackslash}p{0.32\linewidth}}
+\caption{几类分析任务的边界}\\
+\toprule
+任务 & 典型问题 & 主要输出\\
+\midrule
+\endfirsthead
+\toprule
+任务 & 典型问题 & 主要输出\\
+\midrule
+\endhead
+描述分析 & 当前发生了什么？ & KPI、分布、趋势和异常。\\
+统计推断 & 样本差异是否足以支持总体判断？ & 标准误、置信区间和检验。\\
+预测建模 & 哪些对象未来风险更高？ & 分数、概率、排序和误差评估。\\
+因果推断 & 某个行动是否改变结果？ & 处理效应和反事实判断。\\
+优化决策 & 在约束下应采取哪些行动？ & 资源分配和策略方案。\\
+\bottomrule
+\end{longtable}
+
+管理实践中经常把这些任务混在一起。课程要求学生在报告中明确：模型输出是风险排序、概率估计、行动效果估计，还是资源配置建议。只有边界清楚，预测模型才不会被过度解释。
+
+\section{标签窗口、特征时间点与样本粒度}
+
+预测问题首先要定义标签。客户流失可以指“未来 30 天取消订阅”，也可以指“未来 90 天没有任何活跃行为”。交付延迟可以按承诺日期判断，也可以按客户实际收货判断。标签定义不同，模型目标和管理行动就不同。
+
+\begin{definition}[标签窗口与特征时间点]
+标签窗口是用于观察结果 \(Y\) 的未来时间区间；特征时间点是生成特征 \(X\) 时允许使用信息的截止时点。预测任务要求所有特征都在特征时间点之前可获得，标签则在之后被观察。
+\end{definition}
+
+例如，在 2026 年 3 月 1 日预测客户未来 30 天是否流失，则特征只能使用 2026 年 3 月 1 日之前的信息。若使用 3 月 20 日的客服工单预测 3 月内流失，就发生了数据泄漏。预测模型能否上线，常常取决于这个时间边界是否清楚。
+
+样本粒度也必须明确。一个客户可以在多个月份形成多条客户月份样本；一个订单只形成一条订单样本；一个门店每天可以形成门店日期样本。若训练集和测试集中出现同一客户的高度相似记录，评估结果可能过于乐观。
+
+\section{损失函数与经验风险}
+
+模型训练必须定义“预测得好”是什么意思。这个定义由损失函数给出。若真实结果为 \(y\)，预测为 \(\hat y\)，损失函数 \(\ell(y,\hat y)\) 衡量预测错误的代价。
+
+回归任务常用均方误差：
+\[
+  \ell(y,\hat y)=(y-\hat y)^2.
+\]
+分类任务若输出概率 \(\hat p\)，常用二元交叉熵损失：
+\[
+  \ell(y,\hat p)
+  =
+  -y\log(\hat p)-(1-y)\log(1-\hat p).
+\]
+交叉熵不仅惩罚分类错误，也惩罚过度自信的错误概率。例如真实 \(y=1\)，若模型给出 \(\hat p=0.01\)，损失会非常大。
+
+统计学习常把模型训练写成经验风险最小化：
+\[
+  \hat f
+  =
+  \argmin_{f\in\mathcal F}
+  \frac{1}{n}\sum_{i=1}^{n}\ell(y_i,f(x_i))
+  +
+  \lambda\Omega(f).
+\]
+其中 \(\mathcal F\) 是候选模型类，\(\Omega(f)\) 是复杂度惩罚，\(\lambda\) 控制拟合训练数据和限制模型复杂度之间的权衡。
+
+\begin{modernbox}[管理解释]
+损失函数不是纯数学细节。若漏报高风险客户的成本远高于误报，模型评估就不能只看 accuracy；若留存优惠成本较高，模型阈值就应与预期收益和行动容量共同决定。
+\end{modernbox}
+
+\section{训练集、验证集、测试集与数据泄漏}
+
+预测模型必须在未参与训练的数据上评估。若模型只在训练数据上表现好，不能说明它能服务未来管理决策。课程中把数据分为：
+\begin{enumerate}
+  \item 训练集 \(\mathcal D_{\mathrm{train}}\)：用于估计模型参数；
+  \item 验证集 \(\mathcal D_{\mathrm{valid}}\)：用于选择模型、调参和阈值；
+  \item 测试集 \(\mathcal D_{\mathrm{test}}\)：用于最终评估泛化表现。
+\end{enumerate}
+
+本周样例为了简洁，只显式区分训练集和测试集。真实项目中，若样本量足够，应保留验证集或使用交叉验证。对于时间序列和经营过程数据，还应注意训练样本必须早于测试样本，否则可能使用未来信息。
+
+\begin{definition}[数据泄漏]
+数据泄漏是指模型训练或评估过程中使用了在真实预测时不可获得的信息，从而使离线评估高估模型的未来表现。
+\end{definition}
+
+常见数据泄漏包括：用流失之后的客服记录预测流失，用发货之后才知道的实际延迟预测发货风险，用全量数据标准化训练集和测试集，或者在测试集上反复调参。数据泄漏在企业项目中非常危险，因为它会让模型在演示中看似准确，在上线后迅速失效。
+
+\section{过拟合、欠拟合与偏差-方差权衡}
+
+模型太简单时可能欠拟合，即无法捕捉数据中的重要结构；模型太复杂时可能过拟合，即把训练数据中的随机噪声也当成规律。设真实目标函数为 \(f\)，模型预测为 \(\hat f\)。在平方损失下，预测误差可分解为偏差、方差和噪声三部分：
+\[
+  \E[(Y-\hat f(X))^2]
+  =
+  \operatorname{Bias}^2[\hat f(X)]
+  +
+  \operatorname{Var}[\hat f(X)]
+  +
+  \sigma^2.
+\]
+这个分解的直观含义是：过于僵硬的模型偏差大，过于灵活的模型方差大。模型选择不是越复杂越好，而是要使新样本上的误差最低。
+
+\begin{definition}[交叉验证]
+交叉验证将训练数据分成 \(K\) 份，每次用其中 \(K-1\) 份训练、剩余 1 份验证，循环 \(K\) 次后取平均验证误差。它用于估计模型在未见样本上的表现，并辅助模型选择和调参。
+\end{definition}
+
+交叉验证不能替代独立测试集，也不能修复数据泄漏。若样本具有时间顺序、客户重复观测或门店聚类结构，划分方式应尊重业务粒度。例如同一客户的多个观测不应同时出现在训练集和测试集，否则评估会过于乐观。
+
+\section{分类模型的阈值指标}
+
+二元分类模型通常输出概率 \(\hat p_i\)。若选择阈值 \(c\)，则
+\[
+  \hat y_i=
+  \begin{cases}
+    1,& \hat p_i\ge c,\\
+    0,& \hat p_i<c.
+  \end{cases}
+\]
+于是可以得到 confusion matrix：
+
+\begin{center}
+\begin{tabular}{>{\raggedright\arraybackslash}p{0.22\linewidth}>{\centering\arraybackslash}p{0.22\linewidth}>{\centering\arraybackslash}p{0.22\linewidth}}
+\toprule
+ & 预测为正 & 预测为负\\
+\midrule
+实际为正 & TP & FN\\
+实际为负 & FP & TN\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+常用指标为
+\[
+  \operatorname{Accuracy}=\frac{TP+TN}{TP+FP+TN+FN},
+\]
+\[
+  \operatorname{Precision}=\frac{TP}{TP+FP},
+  \qquad
+  \operatorname{Recall}=\frac{TP}{TP+FN},
+\]
+\[
+  F1=
+  \frac{2\cdot \operatorname{Precision}\cdot \operatorname{Recall}}
+       {\operatorname{Precision}+\operatorname{Recall}}.
+\]
+
+accuracy 衡量总体预测正确比例，但在类别不平衡时容易误导。若真实流失客户只有 \(5\%\)，一个永远预测“不流失”的模型也有 \(95\%\) accuracy，却完全无法支持客户留存。precision 衡量被标记为高风险的客户中有多少真的流失，recall 衡量真实流失客户中有多少被模型捕捉。两者体现了误报和漏报之间的管理权衡。
+
+\section{排序指标、概率损失与校准}
+
+有些管理场景不需要立即给出二元判断，而是需要排序。例如客户经理每天只能联系 20 个客户，模型只需把风险最高的客户排在前面。ROC AUC 可以理解为：随机抽取一个正样本和一个负样本，模型给正样本更高分数的概率。AUC 关注排序能力，不依赖某个固定阈值。
+
+但是，AUC 高并不保证概率可直接用于收益计算。若模型把 \(0.60\) 的概率系统性高估为 \(0.90\)，排序可能仍然正确，但预期收益会被夸大。因此分类模型还需要检查 log loss 和概率校准。
+
+\begin{definition}[概率校准]
+若所有被预测为 \(0.7\) 风险的客户中，长期约有 \(70\%\) 真的流失，则称模型在该概率附近是校准的。校准关注预测概率的数值含义，而不仅是排序。
+\end{definition}
+
+校准表通常把预测概率分箱，比较每个箱内的平均预测概率和实际发生率。小样本校准表波动很大，但它能提醒管理者：概率模型进入预算、收益和风险计算前，必须经过概率意义上的检查。
+
+\section{阈值选择与业务损失}
+
+预测模型进入管理流程时，需要把概率转化为行动。若对客户 \(i\) 的留存行动成本为 \(C_i\)，客户未来风险边际价值为 \(M_i\)，行动能够降低流失概率的幅度为 \(r\)，则一个简单的预期净价值为
+\[
+  \operatorname{ENV}_i
+  =
+  \hat p_i \cdot M_i \cdot r - C_i.
+\]
+当 \(\operatorname{ENV}_i>0\) 时，可以将客户纳入行动候选清单。这个规则说明，预测阈值不应只由模型指标决定。高消费客户即使风险略低，也可能值得复核；低消费客户即使风险很高，也未必适合发放高成本优惠。
+
+\begin{modernbox}[从预测到行动]
+预测模型回答“谁更可能发生某结果”，管理决策还要回答“对谁采取什么行动是否值得”。前者是风险排序，后者涉及成本、容量、收益、约束和干预效果。若没有干预效果估计，预测模型只能帮助优先排序，不能证明行动会改变结果。
+\end{modernbox}
+
+\section{模型解释与特征贡献}
+
+业务团队通常会问“模型为什么认为这个客户高风险”。解释模型输出有两类目的：一类是调试模型，检查它是否依赖可疑特征；另一类是支持行动，让客户经理知道应优先处理哪些问题。逻辑回归的系数可以解释为标准化特征对 log-odds 的线性贡献，但这种解释仍然不是因果解释。
+
+\begin{longtable}{>{\raggedright\arraybackslash}p{0.24\linewidth}>{\raggedright\arraybackslash}p{0.34\linewidth}>{\raggedright\arraybackslash}p{0.30\linewidth}}
+\caption{特征解释中的常见问题}\\
+\toprule
+问题 & 合理用途 & 风险\\
+\midrule
+\endfirsthead
+\toprule
+问题 & 合理用途 & 风险\\
+\midrule
+\endhead
+系数方向 & 检查模型是否符合基本业务直觉。 & 把相关关系解释为因果作用。\\
+单客户贡献 & 帮助客户经理理解高风险来源。 & 忽略特征之间的相关性。\\
+重要性排序 & 发现模型主要依赖哪些信息。 & 用不稳定小样本重要性做组织决策。\\
+异常解释 & 发现数据录入或分布漂移。 & 把数据错误当作真实风险。\\
+\bottomrule
+\end{longtable}
+
+在客户流失场景中，客服工单多、使用会话少和履约延迟多可以作为行动线索：客户经理可检查服务问题、产品使用问题和交付问题。但这些行动是否能减少流失，需要后续实验或因果评估验证。
+
+\section{第7周实验案例}
+
+本周样例数据位于：
+\begin{center}
+\path{data/sample/customer_churn.csv}
+\end{center}
+数据粒度为一行一个客户观测。字段包括客户编号、训练/测试划分、客户分层、客户关系时长、月消费、90 天客服工单数、折扣率、30 天使用会话数、90 天履约延迟次数和是否流失。
+
+配套代码位于：
+\begin{center}
+\path{src/bdm_decision/cases/week07_prediction.py}
+\end{center}
+模型工具位于：
+\begin{center}
+\path{src/bdm_decision/models/churn_model.py}
+\qquad
+\path{src/bdm_decision/models/evaluate.py}
+\end{center}
+
+最小运行方式为：
+\begin{lstlisting}[style=pythonstyle,caption={运行第7周预测模型案例}]
+PYTHONPATH=src \
+python3 src/bdm_decision/cases/week07_prediction.py
+\end{lstlisting}
+
+代码使用一个标准化逻辑回归模型：
+\[
+  \hat p_i
+  =
+  \frac{1}{1+\exp[-(\beta_0+\beta^\top z_i)]},
+\]
+其中 \(z_i\) 是标准化后的特征。训练后的主要系数为：
+\begin{center}
+\begin{tabular}{lr}
+\toprule
+特征 & 系数\\
+\midrule
+客户关系时长 & -2.2397\\
+90 天客服工单数 & 1.1511\\
+30 天使用会话数 & -1.0217\\
+折扣率 & 0.8472\\
+90 天履约延迟次数 & 0.6323\\
+月消费 & 0.3712\\
+\bottomrule
+\end{tabular}
+\end{center}
+这些系数的方向符合基本业务直觉：客户关系越短、客服工单越多、使用越不活跃、折扣越高、履约问题越多，流失风险越高。但这些系数仍然只是预测关系，不能直接解释为因果效应。
+
+在测试集上，阈值 \(0.5\) 下得到：
+\begin{itemize}
+  \item 混淆矩阵：TP=5，FP=1，TN=4，FN=0；
+  \item accuracy 为 0.9000；
+  \item precision 为 0.8333；
+  \item recall 为 1.0000；
+  \item F1 为 0.9091；
+  \item ROC AUC 为 1.0000；
+  \item log loss 为 0.1397。
+\end{itemize}
+
+最高风险客户为 C030、C028、C021、C025 和 C023。若进一步考虑月消费、三个月风险毛利、留存行动效果和优惠成本，预期净价值排序最高的客户是 C028、C025、C023 和 C021；C030 虽然风险最高，但月消费较低，按当前成本假设不建议发放同样的优惠。这说明“风险最高”不一定等于“最值得行动”。
+
+\section{模型上线与监控}
+
+预测模型上线后会进入一个新的治理问题：训练时表现良好的模型，是否仍然适用于当前业务环境？客户行为、产品价格、营销活动、竞争环境和数据采集方式都会变化。模型上线后的最低监控包括：
+\begin{enumerate}
+  \item 数据漂移：特征分布是否偏离训练期；
+  \item 标签漂移：流失率、延期率或需求水平是否发生结构变化；
+  \item 性能漂移：precision、recall、log loss 和校准是否变差；
+  \item 行动漂移：模型推荐是否改变了后续数据生成过程；
+  \item 公平性与合规：不同客户分层、地区或渠道是否受到不合理影响；
+  \item 反馈闭环：被干预对象的结果是否被记录，用于评估行动效果。
+\end{enumerate}
+
+模型监控不是只看技术指标。若客户经理只能联系 20 个客户，模型每天推送 200 个高风险客户并不会提升决策质量。上线系统必须同时说明行动容量、责任人、处理时限和复盘机制。
+
+\section{模型风险与治理}
+
+预测模型进入企业流程前，应至少检查以下风险：
+\begin{enumerate}
+  \item 样本量不足：本周数据只是教学样例，不能代表真实客户群体；
+  \item 样本选择偏差：训练客户是否来自特定渠道、地区、时间段或分层；
+  \item 数据泄漏：特征是否包含预测时不可获得的信息；
+  \item 标签定义：流失窗口、暂停、降级、退款和自然到期是否被统一处理；
+  \item 概率校准：预测概率能否用于预算和收益计算；
+  \item 阈值治理：阈值是否由成本、容量、风险偏好和公平性共同决定；
+  \item 反馈闭环：被干预客户的后续结果是否记录，用于评估行动效果；
+  \item 模型漂移：客户行为、产品策略和市场环境变化后，模型是否仍然有效。
+\end{enumerate}
+
+因此，课程中的预测模型报告应包括数据切分、特征字典、模型表达、训练设置、测试指标、校准检查、阈值说明、行动建议和风险备注。只有这样，模型才可能从 notebook 中的算法输出转化为可审计的管理系统组件。
+
+\section*{本讲小结}
+\addcontentsline{toc}{section}{本讲小结}
+
+本讲介绍了预测模型的基本框架。监督学习把带标签历史数据转化为从状态 \(X\) 到未来结果 \(Y\) 的预测函数；损失函数和经验风险定义了模型训练目标；训练集、验证集、测试集和交叉验证用于控制泛化风险；分类模型需要同时报告阈值指标、排序指标、概率损失和校准检查。最重要的是，预测概率不是管理行动本身。行动还需要考虑成本、收益、容量、干预效果、公平性和治理机制。
+
+\section*{习题}
+\addcontentsline{toc}{section}{习题}
+
+\begin{exercise}
+围绕 \path{data/sample/customer_churn.csv} 和 \path{src/bdm_decision/cases/week07_prediction.py} 完成下列任务：
+\begin{enumerate}
+  \item 说明每个特征在客户流失预测中的业务含义，并指出它是否可能存在数据泄漏；
+  \item 运行第7周脚本，记录测试集 confusion matrix、accuracy、precision、recall、F1、ROC AUC 和 log loss；
+  \item 将阈值从 0.50 改为 0.70，比较误报和漏报如何变化；
+  \item 选择 3 个最高风险客户，说明他们是否也一定是最值得留存行动的客户；
+  \item 为该模型设计一张上线监控表，至少包含数据漂移、性能漂移和行动容量；
+  \item 写一段不超过 300 字的管理建议，必须同时提及模型指标、业务成本和模型风险。
+\end{enumerate}
+\end{exercise}
+
+\section*{常见误区}
+\addcontentsline{toc}{section}{常见误区}
+
+\begin{enumerate}
+  \item 把预测模型的变量重要性解释为因果作用；
+  \item 只看训练集表现，不保留测试集；
+  \item 在测试集上反复调参，把测试集变成训练过程的一部分；
+  \item 用 accuracy 评价类别极不平衡的风险模型；
+  \item 把最高预测概率等同于最高行动价值；
+  \item 忽视数据泄漏、概率校准、样本偏差和模型漂移；
+  \item 忽视人工流程和行动容量，认为模型输出可以自动替代管理判断。
+\end{enumerate}
+
+\addcontentsline{toc}{chapter}{参考文献}
+\begin{thebibliography}{99}
+\raggedright
+\bibitem{breiman2001}
+Breiman, L. (2001).
+Statistical modeling: The two cultures.
+\emph{Statistical Science}, 16(3), 199--231.
+
+\bibitem{hastie2009}
+Hastie, T., Tibshirani, R., and Friedman, J. (2009).
+\emph{The Elements of Statistical Learning}.
+Springer.
+
+\bibitem{james2021}
+James, G., Witten, D., Hastie, T., and Tibshirani, R. (2021).
+\emph{An Introduction to Statistical Learning}.
+Springer.
+
+\bibitem{shmueli2010}
+Shmueli, G. (2010).
+To explain or to predict?
+\emph{Statistical Science}, 25(3), 289--310.
+
+\bibitem{bishop2006}
+Bishop, C. M. (2006).
+\emph{Pattern Recognition and Machine Learning}.
+Springer.
+
+\bibitem{murphy2012}
+Murphy, K. P. (2012).
+\emph{Machine Learning: A Probabilistic Perspective}.
+MIT Press.
+
+\bibitem{fawcett2006}
+Fawcett, T. (2006).
+An introduction to ROC analysis.
+\emph{Pattern Recognition Letters}, 27(8), 861--874.
+
+\bibitem{sklearn}
+Pedregosa, F. et al. (2011).
+Scikit-learn: Machine learning in Python.
+\emph{Journal of Machine Learning Research}, 12, 2825--2830.
+\end{thebibliography}
+
+\end{document}

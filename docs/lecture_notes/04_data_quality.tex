@@ -1,0 +1,575 @@
+\documentclass[UTF8,fontset=fandol,openany,zihao=-4]{ctexbook}
+\input{../latex/bdm_lecture_preamble.tex}
+
+\title{《大数据与管理决策基础》\\[0.5em]\large 第4讲：数据质量、数据治理与指标可信度}
+\author{课程讲义}
+\date{}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\setcounter{chapter}{3}
+\chapter{数据质量、数据治理与指标可信度}
+\label{ch:week04-data-quality}
+
+\begin{chapterbox}
+第3讲说明了如何用 SQL 将企业数据模型转化为销售额、毛利率、准时交付率等管理指标。本讲进一步讨论一个更基本的问题：当查询语句写得正确时，输入数据是否足以支持可靠决策？企业数据质量不是抽象的“整洁程度”，而是数据在特定业务过程、指标口径、统计推断和治理责任下能否被信任。本讲先从 KPI 公式回到输入数据假设，再系统讨论完整性、唯一性、有效性、一致性、及时性、准确性和可追溯性等维度；随后将质量维度转化为可执行规则、失败记录、严重级别和质量门禁；最后把数据质量放入数据治理和指标治理框架中，说明 owner、steward、元数据、数据契约和审计记录如何共同支撑指标可信度。
+\end{chapterbox}
+
+\begin{modernbox}[课程接口]
+本讲把指标层推进到可信层。后续统计看板、预测模型、因果评估、流程挖掘和优化建议，都必须首先说明输入数据的质量假设、失败记录、修正机制和责任边界。若质量假设不可复核，模型结果越精细，越可能放大错误事实。
+\end{modernbox}
+
+\section{学习目标}
+
+第一讲建立了管理决策闭环，第二讲说明企业数据如何被建模为实体、事件、状态和事实表，第三讲进入 SQL 指标层。第四讲承接这一链条：在指标已经可以计算之后，我们必须判断指标是否值得被相信。
+
+现实企业系统很少天然满足分析假设。订单编号可能重复，客户主数据可能缺失，产品编码可能在系统迁移中改变，实际交付日期可能为空，渠道字段可能混用旧编码和新编码。若这些问题没有被识别和治理，后续 dashboard、预测模型和优化模型都会建立在不可靠的输入之上。
+
+完成本讲后，学生应能够：
+\begin{enumerate}
+  \item 解释数据质量与管理决策可信度之间的关系；
+  \item 区分完整性、唯一性、有效性、一致性、及时性、准确性和可追溯性等常见质量维度；
+  \item 将质量维度转化为可执行的数据测试、SQL 失败记录查询或 Python 校验函数；
+  \item 识别数据质量问题对销售额、毛利率、准时交付率和客户分层等 KPI 的影响路径；
+  \item 设计基本的数据剖析报告、质量规则、失败记录表、严重级别和质量门禁；
+  \item 理解数据治理中的 owner、data steward、指标口径、元数据、数据契约和审计责任；
+  \item 能够为一个样例订单数据集生成质量报告，并将技术失败解释为管理风险。
+\end{enumerate}
+
+\section{从指标结果回到输入数据}
+
+第3讲中，准时交付率可以写为
+\[
+\mathrm{OTD}
+=
+\frac{\sum_i I(a_i\le p_i)}{n},
+\]
+其中 \(a_i\) 是实际交付日期，\(p_i\) 是承诺交付日期，\(n\) 是被纳入统计的已交付订单数。这个公式看似简单，却隐含多个数据质量假设：
+\begin{itemize}
+  \item 每个订单有唯一且稳定的 \texttt{order\_id}；
+  \item 每个订单能连接到存在的客户和产品；
+  \item \texttt{actual\_date} 和 \texttt{promised\_date} 是可比较的日期；
+  \item 未交付订单没有被错误地当作延期或准时；
+  \item 时间窗口使用订单日期、承诺日期还是实际日期已有明确约定；
+  \item 指标刷新时使用的数据批次、计算代码和业务口径可以被追溯。
+\end{itemize}
+
+若这些假设不成立，SQL 仍可能运行成功，但指标会失真。例如，重复订单会放大销售额；缺失客户外键会使区域收入被低估；错误日期会使准时交付率虚高或虚低；把未交付订单直接计入分母，会混淆“尚无结果”和“结果失败”。因此，数据质量不是在分析之后才做的清洁工作，而是指标定义的一部分。
+
+\begin{definition}[指标可信度]
+一个管理指标具有可信度，是指读者能够明确其事实来源、对象范围、质量假设、计算规则、失败记录、刷新时间和责任边界，并且在指标被质疑时可以回到证据链进行复核。
+\end{definition}
+
+指标可信度可以概括为如下链条：
+\[
+\text{业务过程}
+\rightarrow
+\text{数据生成}
+\rightarrow
+\text{质量规则}
+\rightarrow
+\text{指标计算}
+\rightarrow
+\text{管理解释}
+\rightarrow
+\text{行动复盘}.
+\]
+数据质量的作用，就是在数据生成和指标计算之间建立可检查的信任条件。
+
+\section{数据质量的基本定义}
+
+数据质量很难脱离用途来定义。同一份数据在一种用途下足够好，在另一种用途下可能不足以支持决策。例如，月度销售概览可能可以容忍少量非核心字段缺失，但客户 SLA 违约判断不能容忍战略客户订单的交付日期缺失；趋势分析可以接受一两天的数据入仓延迟，但实时补货调度不能接受这样的延迟。
+
+管理决策中常用的工作定义是：数据是否适合当前业务、分析和行动用途。
+
+ISO/IEC 25012 将数据质量模型用于结构化数据的质量要求、度量和评估；Wang and Strong 从数据消费者角度提出内在质量、情境质量、表征质量和可访问性等信息质量类别；DAMA-DMBOK 则把数据质量放在数据治理、元数据、主数据、数据仓库和商业智能等知识域之间。
+
+本课程采用较工程化的表述：
+\[
+\text{Data Quality}
+=
+\text{Fitness for Use}
+\cap
+\text{Conformance to Rules}
+\cap
+\text{Traceability of Evidence}.
+\]
+第一项强调业务用途；第二项强调可执行规则；第三项强调当指标被质疑时，组织能否回到具体失败记录、输入版本和责任人。
+
+\begin{definition}[用途适配的数据质量]
+给定业务问题 \(B\)、指标或模型 \(M\)、数据集 \(D\) 和质量规则集合 \(\Phi\)，若 \(D\) 在对象范围、字段含义、时间窗口、取值约束、连接关系和证据链上足以支撑 \(M\) 回答 \(B\)，则称 \(D\) 对该用途具有足够的数据质量。
+\end{definition}
+
+这个定义强调两个要点。第一，数据质量不是全局常数，而是相对于用途和风险等级的判断。第二，数据质量不只是“没有错误”，还包括规则是否明确、证据是否可追溯、责任是否可落实。
+
+\section{数据生成过程与质量风险}
+
+质量问题通常不是在数据仓库中突然出现的，而是来自业务过程和系统集成。企业订单数据至少经历如下环节：
+\[
+\begin{aligned}
+\text{客户下单}
+&\rightarrow
+\text{业务系统录入}
+\rightarrow
+\text{主数据匹配}
+\rightarrow
+\text{履约状态更新}\\
+&\rightarrow
+\text{数据抽取与入仓}
+\rightarrow
+\text{指标计算}.
+\end{aligned}
+\]
+每个环节都可能引入质量风险。人工录入会产生空值和拼写错误；系统迁移会产生编码不一致；接口延迟会造成数据不及时；主数据缺失会造成外键无法匹配；指标口径变化若未版本化，会导致同名指标在不同月份不可比较。
+
+\begin{table}[htbp]
+\centering
+\caption{数据生成环节与质量风险}
+\begin{tabular}{>{\raggedright\arraybackslash}p{0.22\linewidth}>{\raggedright\arraybackslash}p{0.35\linewidth}>{\raggedright\arraybackslash}p{0.30\linewidth}}
+\toprule
+环节 & 常见风险 & 管理后果\\
+\midrule
+业务录入 & 必填字段为空、数量录入错误。 & 订单无法归属或金额失真。\\
+主数据维护 & 客户、产品、渠道编码不稳定。 & 分组比较口径变化。\\
+系统集成 & 接口延迟、字段截断、重复发送。 & 数据不及时或重复计数。\\
+仓库建模 & 事实粒度混乱、连接键不唯一。 & KPI 分子或分母错误。\\
+指标发布 & 口径变更未版本化。 & 管理会议中出现无法解释的差异。\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{remark}
+从治理角度看，发现质量问题只是第一步。更重要的是判断问题发生在哪个环节、影响哪些指标、由谁修复、是否需要阻断发布，以及是否需要修改业务流程或数据契约。
+\end{remark}
+
+\section{数据质量维度}
+
+质量维度是把“数据不对”转化为可讨论问题的词汇表。本课程采用七个常见维度：完整性、唯一性、有效性、一致性、及时性、准确性和可追溯性。
+
+\begin{longtable}{>{\raggedright\arraybackslash}p{0.15\linewidth}>{\raggedright\arraybackslash}p{0.28\linewidth}>{\raggedright\arraybackslash}p{0.28\linewidth}>{\raggedright\arraybackslash}p{0.18\linewidth}}
+\caption{常见数据质量维度}\\
+\toprule
+维度 & 基本问题 & 订单数据示例 & 典型测试\\
+\midrule
+\endfirsthead
+\toprule
+维度 & 基本问题 & 订单数据示例 & 典型测试\\
+\midrule
+\endhead
+完整性 & 必要字段是否存在？ & 订单缺少客户编号或实际交付日期。 & not null、缺失率。\\
+唯一性 & 业务对象是否被重复记录？ & 同一 \texttt{order\_id} 出现多行。 & unique、重复键。\\
+有效性 & 字段是否满足取值域和格式？ & 渠道不属于 Direct、Partner、Online。 & accepted values、range check。\\
+一致性 & 跨表、跨字段是否互相矛盾？ & 订单客户编号在客户表中不存在。 & relationships、date order。\\
+及时性 & 数据是否足够新？ & 交付数据延迟两周才进入仓库。 & freshness、延迟分布。\\
+准确性 & 数据是否反映真实世界？ & 实际交付日期录入错误。 & 抽样核验、外部对账。\\
+可追溯性 & 能否追溯来源、规则和版本？ & 指标无法定位输入批次或 SQL 版本。 & lineage、版本记录。\\
+\bottomrule
+\end{longtable}
+
+这些维度不是互斥分类。一个缺失的客户编号同时影响完整性、一致性和可追溯性；一个错误日期既影响有效性，也影响准确性。课堂上使用维度的目的不是机械归类，而是帮助学生把模糊的质量抱怨转化为可检查规则和可执行责任。
+
+\section{质量规则的形式化表达}
+
+设数据表为 \(R=\{r_1,\ldots,r_n\}\)，质量规则可以看作谓词
+\[
+\phi_j(r_i)\in\{0,1\}.
+\]
+当 \(\phi_j(r_i)=0\) 时，记录 \(r_i\) 违反规则 \(j\)。一组规则的失败集合为
+\[
+F_j=\{r_i\in R:\phi_j(r_i)=0\}.
+\]
+若 \(F_j=\varnothing\)，则该规则在当前数据版本上通过；若失败集合不为空，则应记录失败行、规则名称、严重级别、责任人和处理状态。
+
+质量得分可被定义为
+\[
+Q_j(R)=1-\frac{|F_j|}{|R|},
+\]
+但必须谨慎解释。某些规则只要失败一行就可能导致严重后果，例如主键重复或核心外键缺失；某些规则虽然失败比例不高，但集中在关键客户或高价值订单上，管理影响仍然很大。因此，质量治理不应只追求一个总分，而应关注失败记录的业务重要性和修复路径。
+
+\begin{proposition}[失败记录优先原则]
+在管理决策场景中，一个质量测试至少应返回失败记录，而不应只返回通过或不通过。失败记录是修复、归因、审计和复盘的最小证据单位。
+\end{proposition}
+
+失败记录表的最小字段可设计为：
+\begin{longtable}{>{\raggedright\arraybackslash}p{0.22\linewidth}>{\raggedright\arraybackslash}p{0.65\linewidth}}
+\caption{失败记录表的最小字段}\\
+\toprule
+字段 & 说明\\
+\midrule
+\endfirsthead
+\toprule
+字段 & 说明\\
+\midrule
+\endhead
+\texttt{check\_id} & 质量规则的稳定标识，例如 \texttt{unique\_order\_id}。\\
+\texttt{dimension} & 对应质量维度，例如 completeness、validity、consistency。\\
+\texttt{severity} & error、warning 或 info。\\
+\texttt{table} 与 \texttt{column} & 失败发生的数据表和字段。\\
+\texttt{row\_id} & 可定位记录的业务键或行标识。\\
+\texttt{message} & 面向人阅读的失败解释。\\
+\texttt{owner} & 对规则或业务定义负责的角色。\\
+\texttt{detected\_at} & 检测时间或数据批次。\\
+\bottomrule
+\end{longtable}
+
+\section{从质量维度到可执行测试}
+
+现代数据工程工具常把数据质量测试写成“返回失败记录的查询”。这个思想非常适合教学：数据测试不是为了产生抽象分数，而是为了把不满足断言的记录找出来。
+
+\begin{longtable}{>{\raggedright\arraybackslash}p{0.20\linewidth}>{\raggedright\arraybackslash}p{0.30\linewidth}>{\raggedright\arraybackslash}p{0.38\linewidth}}
+\caption{质量规则与失败记录条件}\\
+\toprule
+规则类型 & 管理含义 & 失败记录条件\\
+\midrule
+\endfirsthead
+\toprule
+规则类型 & 管理含义 & 失败记录条件\\
+\midrule
+\endhead
+not null & 必填业务标识存在。 & \texttt{customer\_id is null}\\
+unique & 业务对象不被重复计数。 & 同一 \texttt{order\_id} 的记录数大于 1。\\
+relationships & 外键能连接到主数据。 & 订单客户在客户表中不存在。\\
+accepted values & 字段取值来自约定枚举。 & 渠道不在允许列表中。\\
+range check & 数值满足业务边界。 & 订单数量小于或等于 0。\\
+date order & 时间顺序符合业务过程。 & 承诺交付日期早于下单日期。\\
+freshness & 数据足够新。 & 最新入仓时间超过服务水平约定。\\
+\bottomrule
+\end{longtable}
+
+质量规则应同时包含技术表达和业务解释。技术表达说明如何找出失败记录；业务解释说明失败为什么影响指标、模型或行动。例如，\texttt{customer\_id} 缺失不仅是字段为空，它会使订单无法归属区域和客户分层，从而影响区域收入、客户价值和销售责任评价。
+
+\begin{lstlisting}[style=sqlstyle,caption={主键重复失败记录查询}]
+SELECT
+  order_id,
+  COUNT(*) AS row_count
+FROM orders
+GROUP BY order_id
+HAVING COUNT(*) > 1;
+\end{lstlisting}
+
+\begin{lstlisting}[style=sqlstyle,caption={客户外键失败记录查询}]
+SELECT
+  o.order_id,
+  o.customer_id
+FROM orders AS o
+LEFT JOIN customers AS c
+  ON o.customer_id = c.customer_id
+WHERE o.customer_id IS NOT NULL
+  AND c.customer_id IS NULL;
+\end{lstlisting}
+
+这两个查询体现了失败记录优先原则。第一个查询说明哪些订单编号被重复使用；第二个查询说明哪些订单不能连接到客户主数据。若只报告“唯一性通过率为 98\%”或“外键一致性失败 2 条”，则管理者仍无法判断是否涉及关键客户、是否影响当月收入、是否需要阻断发布。
+
+\section{数据剖析：先观察，再治理}
+
+在制定规则之前，应先进行数据剖析。数据剖析不是清洗数据，而是用统计摘要理解数据的形态、缺失、重复、取值范围和异常模式。最小剖析报告通常包括：
+\begin{itemize}
+  \item 行数与字段数；
+  \item 每列缺失数和缺失率；
+  \item 每列不同值数量；
+  \item 数值字段最小值、最大值和异常值；
+  \item 日期字段范围；
+  \item 主键重复数和外键不匹配数；
+  \item 枚举字段的高频值和未治理新值。
+\end{itemize}
+
+剖析报告的价值在于暴露建模假设。例如，若 \texttt{orders.channel} 出现了 Marketplace，而指标字典只允许 Direct、Partner、Online，则学生必须判断 Marketplace 是新渠道、历史脏值，还是上游系统错误。如果它是新渠道，则应更新元数据和指标口径；如果是错误值，则应修复源数据或建立映射规则。
+
+\begin{definition}[数据剖析]
+数据剖析是对数据集的结构、字段、缺失、取值分布、键约束、时间范围和跨表关系进行系统摘要的过程。它的目标不是立即修改数据，而是发现质量规则和建模假设。
+\end{definition}
+
+剖析与测试的区别在于：剖析偏探索，测试偏断言。剖析会提出问题，例如“这个字段为什么有四种渠道值”；测试会表达规则，例如“渠道字段只能属于 Direct、Partner、Online”。二者应当配合使用。
+
+\section{数据质量如何扭曲 KPI}
+
+质量问题对 KPI 的影响可以沿第3讲的指标公式追踪。设真实事实集合为 \(O\)，被查询到的事实集合为 \(\tilde O\)。若数据质量问题使得 \(\tilde O\ne O\)，则指标估计
+\[
+\hat M(\tilde O)
+\]
+可能偏离真实管理状态 \(M(O)\)。这种偏离有几类常见来源。
+
+\begin{table}[htbp]
+\centering
+\caption{质量问题对 KPI 的影响路径}
+\begin{tabular}{>{\raggedright\arraybackslash}p{0.22\linewidth}>{\raggedright\arraybackslash}p{0.34\linewidth}>{\raggedright\arraybackslash}p{0.30\linewidth}}
+\toprule
+质量问题 & 影响机制 & 受影响指标\\
+\midrule
+订单重复 & 同一事实被重复进入分子或分母。 & 销售额、订单量、延期率。\\
+外键缺失 & 内连接丢失事实，或无法分组归属。 & 区域销售额、客户分层 KPI。\\
+数量为负或零 & 收入和毛利计算失真。 & 销售额、毛利率。\\
+日期顺序错误 & 交付周期和延期判断失真。 & 准时交付率、平均延期天数。\\
+枚举不一致 & 分组口径不稳定。 & 渠道收入、渠道准时率。\\
+数据延迟 & 当前状态被历史数据替代。 & 库存预警、履约监控。\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+若一个质量问题只影响低价值订单，它可能只需要记录并跟踪；若它影响战略客户、财务结算或绩效考核，则必须升级为发布门禁。换言之，质量规则的严重性不是由技术错误本身决定，而是由它对管理行动的后果决定。
+
+\section{质量影响评估}
+
+质量报告应回答三个问题：哪些规则失败了，失败记录是什么，失败对管理判断有什么影响。第三个问题最容易被忽略。为了把失败记录转化为管理解释，可以使用如下模板。
+
+\begin{longtable}{>{\raggedright\arraybackslash}p{0.22\linewidth}>{\raggedright\arraybackslash}p{0.64\linewidth}}
+\caption{质量影响评估模板}\\
+\toprule
+环节 & 需要回答的问题\\
+\midrule
+\endfirsthead
+\toprule
+环节 & 需要回答的问题\\
+\midrule
+\endhead
+失败范围 & 失败记录有多少，集中在哪些客户、产品、区域或时间段？\\
+指标影响 & 它会改变哪些指标的分子、分母、分组或时间窗口？\\
+风险等级 & 是否影响财务披露、客户承诺、绩效考核或自动化动作？\\
+处理方式 & 应阻断发布、带警告发布、补录数据，还是修改规则？\\
+责任边界 & 由源系统、主数据团队、指标 owner 还是数据平台团队处理？\\
+复盘证据 & 修复后如何证明指标已经恢复可信？\\
+\bottomrule
+\end{longtable}
+
+例如，\texttt{O107} 的 \texttt{actual\_date} 为空。如果该订单尚未交付，则空值代表业务状态未完成，准时交付率不应把它简单计为失败；如果该订单已经交付但系统未回写，则它是数据滞后或集成失败，会影响履约监控；如果字段缺失来自人工漏填，则需要补录并检查录入流程。相同的空值在不同业务状态下对应完全不同的处理。
+
+\section{数据治理与指标治理}
+
+数据治理是组织层面的制度安排，用来确保数据被一致、负责、安全、可追溯地管理。它通常涉及数据 owner、data steward、元数据管理、主数据管理、权限、安全、质量规则、变更流程和审计机制。DAMA-DMBOK 将数据治理放在数据管理知识体系的中心，并围绕其组织数据架构、建模、存储、安全、集成、主数据、元数据、数据质量、数据仓库、BI 和数据科学等领域。
+
+指标治理是数据治理在管理分析中的具体化。一个 KPI 不只是 SQL 公式，还需要：
+\begin{enumerate}
+  \item 指标 owner：谁对业务定义负责；
+  \item 数据 steward：谁负责数据源、字段含义和质量规则；
+  \item 技术实现：SQL、语义层或数据产品中的计算逻辑；
+  \item 变更流程：口径变化如何审批、公告和版本化；
+  \item 审计记录：每次指标刷新使用了哪些输入数据和代码版本；
+  \item 异常处理：质量测试失败时是否阻止发布，或以警告形式发布。
+\end{enumerate}
+
+没有治理的指标体系会出现“同名不同义”和“同义不同名”。例如，财务部门的销售额可能以开票为准，运营部门的销售额可能以下单为准，渠道部门的销售额可能以发货为准。三者都有业务理由，但如果不在指标字典中明确，就会在经营会议中制造虚假的分歧。
+
+\begin{convention}[指标治理最小约定]
+课程项目中的每个核心 KPI 至少应声明：指标名称、业务定义、事实范围、分子、分母、时间窗口、维度、单位、刷新频率、质量规则、owner 和审计入口。
+\end{convention}
+
+\section{数据契约、血缘与变更控制}
+
+在跨团队数据系统中，数据质量不能只依赖下游发现问题。上游系统、数据平台和指标使用方之间需要形成数据契约。数据契约并不是复杂文档的代名词，而是对字段、粒度、更新频率、允许取值、破坏性变更和通知流程的最低约定。
+
+\begin{longtable}{>{\raggedright\arraybackslash}p{0.22\linewidth}>{\raggedright\arraybackslash}p{0.63\linewidth}}
+\caption{数据契约的最小内容}\\
+\toprule
+内容 & 说明\\
+\midrule
+\endfirsthead
+\toprule
+内容 & 说明\\
+\midrule
+\endhead
+数据对象 & 表、视图或事件流的名称与业务含义。\\
+粒度 & 一行数据代表什么业务事实。\\
+字段定义 & 字段类型、单位、空值含义和允许取值。\\
+更新约定 & 刷新频率、最大延迟和补数方式。\\
+质量规则 & 必填、唯一、外键、枚举、日期顺序等约束。\\
+变更流程 & 字段删除、类型变化、枚举新增如何通知与审批。\\
+责任人 & 上游 owner、steward 和下游使用方。\\
+\bottomrule
+\end{longtable}
+
+血缘记录回答“指标从哪里来”的问题。一个可信指标至少应能追溯到源表、转换脚本、质量测试、数据批次和发布时间。变更控制回答“口径为什么变”的问题。没有血缘和变更控制，即使当前数值正确，组织也难以解释历史对比中的差异。
+
+\section{质量门禁与严重级别}
+
+质量检查需要行动规则。若所有失败都被视为同等严重，团队会陷入告警疲劳；若所有失败都只是记录日志，关键指标可能在错误数据上发布。本课程建议将规则分为三个级别：
+
+\begin{longtable}{>{\raggedright\arraybackslash}p{0.16\linewidth}>{\raggedright\arraybackslash}p{0.38\linewidth}>{\raggedright\arraybackslash}p{0.34\linewidth}}
+\caption{质量规则严重级别}\\
+\toprule
+级别 & 发布策略 & 示例\\
+\midrule
+\endfirsthead
+\toprule
+级别 & 发布策略 & 示例\\
+\midrule
+\endhead
+Error & 阻止关键表或关键 KPI 发布。 & 主键重复、核心外键缺失、关键日期非法。\\
+Warning & 允许发布但必须标记并跟踪。 & 新渠道值、少量非核心字段缺失。\\
+Info & 记录趋势，用于后续改进。 & 字段分布变化、缺失率轻微波动。\\
+\bottomrule
+\end{longtable}
+
+严重级别不能只由工程师决定。它取决于业务影响。例如，普通订单的地址字段缺失可能只是 warning；战略客户订单的实际交付日期缺失可能应升级为 error，因为它直接影响 SLA、客户沟通和绩效考核。
+
+质量门禁可以表达为函数
+\[
+G(D,\Phi)=
+\begin{cases}
+\text{block}, & \exists j: F_j\ne \varnothing \text{ 且 } s_j=\text{error},\\
+\text{warn}, & \exists j: F_j\ne \varnothing \text{ 且 } s_j=\text{warning},\\
+\text{pass}, & \text{otherwise}.
+\end{cases}
+\]
+其中 \(s_j\) 是规则 \(j\) 的严重级别。实际系统还会考虑失败比例、失败金额、客户等级和是否处于财务关账期等条件。
+
+\section{质量事件响应}
+
+当质量门禁失败时，组织需要一套可重复的事件响应流程。最低流程包括：
+\begin{enumerate}
+  \item 识别：质量测试产生失败记录，并记录数据批次；
+  \item 定级：根据指标影响、客户影响和自动化风险确定严重级别；
+  \item 隔离：暂停受影响指标发布，或在看板上显式标注警告；
+  \item 归因：定位问题发生在源系统、主数据、管道还是指标逻辑；
+  \item 修复：补录、回填、重跑、修改规则或更新数据契约；
+  \item 复盘：记录根因、影响范围、修复证据和预防措施。
+\end{enumerate}
+
+这个流程把数据质量从一次性清洗转化为运营机制。课程项目中的质量报告可以简化，但必须保留失败记录、影响解释和处理建议。
+
+\section{第4周实验案例}
+
+本周新增 \texttt{data/sample/orders\_quality\_issues.csv}，其中包含若干刻意构造的问题：重复订单号、缺失客户编号、未知客户、未知产品、无效渠道、无效优先级、非正数量、承诺日期早于下单日期、实际交付日期缺失。学生需要使用 Python 或 SQL 找出失败记录，并说明每类失败会影响哪些 KPI。
+
+课程代码提供三个层次：
+\begin{itemize}
+  \item \texttt{quality/data\_profile.py}：生成字段级剖析信息；
+  \item \texttt{quality/checks.py}：提供 not null、unique、accepted values、relationships、positive number 和 date order 等检查；
+  \item \texttt{quality/validation\_rules.py}：组合订单样例数据所需的规则；
+  \item \texttt{cases/week04\_data\_quality.py}：加载样例数据并生成质量报告。
+\end{itemize}
+
+最小运行方式为：
+\begin{lstlisting}[style=pythonstyle,caption={运行第4周数据质量案例}]
+import bdm_decision.cases.week04_data_quality as week04
+
+print(week04.render_quality_report_markdown(dirty=True))
+\end{lstlisting}
+
+命令行方式为：
+\begin{lstlisting}[style=pythonstyle,caption={命令行运行案例代码}]
+PYTHONPATH=src python3 src/bdm_decision/cases/week04_data_quality.py
+\end{lstlisting}
+
+实验输出应至少包含列剖析表、失败记录表、按严重级别统计、按质量维度统计，以及每类失败对 KPI 的管理解释。实验目标不是简单修复 CSV，而是训练学生写出可复核的质量规则，并将失败记录解释为管理风险。
+
+\begin{longtable}{>{\raggedright\arraybackslash}p{0.20\linewidth}>{\raggedright\arraybackslash}p{0.28\linewidth}>{\raggedright\arraybackslash}p{0.36\linewidth}}
+\caption{样例数据中的典型失败}\\
+\toprule
+失败类型 & 样例 & 管理解释\\
+\midrule
+\endfirsthead
+\toprule
+失败类型 & 样例 & 管理解释\\
+\midrule
+\endhead
+重复订单 & \texttt{O103} 重复。 & 销售额、订单数和准时率可能被重复计入。\\
+未知客户 & \texttt{C999} 不在客户表中。 & 订单无法归属区域和客户分层。\\
+未知产品 & \texttt{P999} 不在产品表中。 & 价格、成本和毛利无法可靠计算。\\
+非正数量 & \texttt{O102} 数量为 0，\texttt{O109} 数量为负。 & 收入和毛利计算失真。\\
+日期顺序错误 & \texttt{O105} 承诺日期早于下单日期。 & 交付周期和 SLA 判断失真。\\
+未治理枚举 & Marketplace、Urgent。 & 渠道和优先级分组口径不稳定。\\
+\bottomrule
+\end{longtable}
+
+\section{可审计质量报告的最低要求}
+
+一个可审计质量报告应当满足五项最低要求：
+\begin{enumerate}
+  \item 说明数据集、批次、行数和字段数；
+  \item 列出质量规则、维度和严重级别；
+  \item 保留失败记录，而不是只给失败数量；
+  \item 说明失败对指标和管理行动的影响；
+  \item 记录处理状态、责任人和复核入口。
+\end{enumerate}
+
+在企业实践中，质量报告还应与任务调度、指标发布、告警系统和工单系统连接。对于本课程，学生只需用 Markdown、CSV 或 notebook 输出清晰的质量报告，但报告必须能让他人复现失败记录和理解管理后果。
+
+\section*{本讲小结}
+\addcontentsline{toc}{section}{本讲小结}
+
+本讲从第3讲的 KPI 回到输入数据，说明数据质量是指标可信度的前提。数据质量应被理解为用途适配、规则符合和证据可追溯的交集；质量维度需要被转化为可执行测试；测试结果应返回失败记录；失败记录应连接到指标影响、责任人和处理策略。数据治理不是行政口号，而是确保企业数据、指标、模型和行动能够被共同信任的一组制度和工程实践。对管理决策而言，真正重要的问题不是“数据是否完美”，而是“在当前风险水平下，数据是否足以支持这个判断，并且出错时能否被定位、解释和修复”。
+
+\section*{习题}
+\addcontentsline{toc}{section}{习题}
+
+\begin{exercise}
+\begin{enumerate}
+  \item 对 \texttt{orders\_quality\_issues.csv} 做字段剖析，报告每列缺失数、缺失率、不同值数量和日期范围。
+  \item 写出检查 \texttt{order\_id} 唯一性的 SQL，并说明重复订单会如何影响销售额和准时交付率。
+  \item 写出检查订单客户外键的 SQL，并说明外键缺失会如何影响区域级 KPI。
+  \item 将“渠道取值必须属于 Direct、Partner、Online”写成质量规则，并为 Marketplace 取值设计处理方案。
+  \item 为 \(\mathrm{on\_time\_delivery\_rate}\) 设计一组质量门禁，区分 error、warning 和 info。
+  \item 选择一个失败记录，写出其质量维度、影响指标、责任角色、处理方式和复盘证据。
+\end{enumerate}
+\end{exercise}
+
+\section*{常见误区}
+\addcontentsline{toc}{section}{常见误区}
+
+\begin{enumerate}
+  \item 只把数据质量理解为删除缺失值。缺失、重复、无效、跨表不一致、时间滞后和不可追溯都可能影响决策。
+  \item 在没有业务解释的情况下给出质量总分。总分可能掩盖关键客户或关键指标上的严重失败。
+  \item 把数据质量责任完全交给技术团队。指标 owner 和业务 steward 必须共同定义质量规则。
+  \item 只记录失败数量，不保存失败记录。没有失败记录就无法修复、审计和复盘。
+  \item 把所有告警设为同一严重级别。质量门禁需要区分阻断、警告和信息性观察。
+  \item 在未区分业务状态的情况下处理空值。未发生、未完成、未知和不适用对应不同的管理解释。
+\end{enumerate}
+
+\addcontentsline{toc}{chapter}{参考文献}
+\begin{thebibliography}{99}
+\raggedright
+\bibitem{wang1996}
+Wang, R. Y., \& Strong, D. M. (1996).
+Beyond accuracy: What data quality means to data consumers.
+\emph{Journal of Management Information Systems}, 12(4), 5--33.
+
+\bibitem{pipino2002}
+Pipino, L. L., Lee, Y. W., \& Wang, R. Y. (2002).
+Data quality assessment.
+\emph{Communications of the ACM}, 45(4), 211--218.
+
+\bibitem{redman1996}
+Redman, T. C. (1996).
+\emph{Data Quality for the Information Age}.
+Artech House.
+
+\bibitem{english1999}
+English, L. P. (1999).
+\emph{Improving Data Warehouse and Business Information Quality}.
+Wiley.
+
+\bibitem{olson2003}
+Olson, J. E. (2003).
+\emph{Data Quality: The Accuracy Dimension}.
+Morgan Kaufmann.
+
+\bibitem{dama2017}
+DAMA International. (2017).
+\emph{DAMA-DMBOK: Data Management Body of Knowledge} (2nd ed.).
+Technics Publications.
+
+\bibitem{iso25012}
+International Organization for Standardization. (2008).
+\emph{ISO/IEC 25012:2008 Software engineering -- Software product Quality Requirements and Evaluation (SQuaRE) -- Data quality model}.
+\url{https://www.iso.org/standard/35736.html}
+
+\bibitem{iso22400}
+International Organization for Standardization. (2014).
+\emph{ISO 22400-2:2014 Automation systems and integration -- Key performance indicators for manufacturing operations management -- Part 2: Definitions and descriptions}.
+\url{https://www.iso.org/standard/54497.html}
+
+\bibitem{kimball2013}
+Kimball, R., \& Ross, M. (2013).
+\emph{The Data Warehouse Toolkit: The Definitive Guide to Dimensional Modeling} (3rd ed.).
+Wiley.
+
+\bibitem{dbt-tests}
+dbt Labs. (n.d.).
+\emph{Data tests}.
+\url{https://docs.getdbt.com/docs/build/data-tests}
+\end{thebibliography}
+
+\end{document}

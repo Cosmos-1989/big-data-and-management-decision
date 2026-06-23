@@ -1,0 +1,9 @@
+services:
+  course-app:
+    image: python:3.11-slim
+    working_dir: /workspace
+    volumes:
+      - .:/workspace
+    command: ["python", "-m", "bdm_decision.app.api"]
+    profiles: ["app"]
+

@@ -1,0 +1,419 @@
+\documentclass[UTF8,fontset=fandol,openany,zihao=-4]{ctexbook}
+\input{../latex/bdm_lecture_preamble.tex}
+
+\title{《大数据与管理决策基础》\\[0.5em]\large 第8讲：因果推断与管理干预}
+\author{课程讲义}
+\date{}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\setcounter{chapter}{7}
+\chapter{因果推断与管理干预}
+\label{ch:week08-causality}
+
+\begin{chapterbox}
+第7讲讨论了预测模型：在给定当前信息 \(X\) 的条件下，估计未来结果 \(Y\) 的概率或数值。本讲把问题推进一步：如果管理者采取某个行动，结果是否会改变？这是因果推断的核心。预测模型回答“谁更可能流失”，因果推断回答“发放优惠券是否会减少流失”；相关分析回答“变量是否共同变化”，因果推断回答“行动是否造成变化”。本讲从潜在结果、反事实和平均处理效应出发，介绍基本因果问题、混杂、选择偏差和识别假设；随后以随机实验为识别基准，讨论观测性数据中的分层、倾向得分、逆概率加权、平衡诊断和差分中的差分；最后通过优惠券留存案例说明，因果结论必须同时依赖研究设计、业务机制、数据质量和审慎表达。
+\end{chapterbox}
+
+\begin{modernbox}[课程接口]
+本讲连接第6讲 A/B 测试和第7讲预测模型。A/B 测试展示了随机化如何提供清晰的因果识别；预测模型帮助企业找到高风险对象；因果推断则评估行动本身是否有效。第9讲的优化决策需要使用行动收益、成本和约束，其中“行动收益”若没有因果基础，就容易把高风险排序误当成干预效果。
+\end{modernbox}
+
+\section{学习目标}
+
+完成本讲后，学生应能够：
+\begin{enumerate}
+  \item 区分相关关系、预测关系、因果关系和处方决策；
+  \item 使用潜在结果语言定义个体处理效应、ATE、ATT 和条件处理效应；
+  \item 解释反事实缺失、选择偏差、混杂、碰撞变量和中介变量的含义；
+  \item 说明随机实验为何是因果识别的基准设计；
+  \item 解释一致性、SUTVA、条件可交换性和重叠性等识别假设；
+  \item 使用分层、倾向得分和逆概率加权改进观测性比较；
+  \item 使用标准化均值差异检查协变量平衡；
+  \item 使用两期 DID 估计政策或运营干预效果，并说明平行趋势假设；
+  \item 将因果估计写成包含假设、限制、风险和行动建议的管理 memo。
+\end{enumerate}
+
+\section{从预测问题到干预问题}
+
+客户流失预测模型可以输出
+\[
+  \widehat{\Prob}(Y=1\mid X=x),
+\]
+其中 \(Y=1\) 表示客户将在未来窗口内流失，\(X\) 表示客户当前状态。该概率回答的是“在当前管理机制下，这个客户有多大风险”。然而管理者通常更关心另一个问题：
+\[
+  \text{如果给该客户发放优惠券，他的留存概率是否会提高？}
+\]
+这不是同一个问题。高风险客户更可能被客户经理关注，也更可能收到优惠券。如果发券客户的留存率较低，不能直接说明优惠券无效；如果发券客户的留存率较高，也不能直接说明优惠券有效。因为发券与不发券人群在风险、价值、活跃度、客服介入和客户经理努力程度上本来就可能不同。
+
+\begin{definition}[因果问题]
+因果问题关注行动或处理 \(D\) 对结果 \(Y\) 的影响。它不是简单比较
+\[
+  \E[Y\mid D=1]-\E[Y\mid D=0],
+\]
+而是比较同一类对象在接受处理和不接受处理两种状态下的结果差异。
+\end{definition}
+
+管理场景中的因果问题包括：优惠券是否提高留存，新排班规则是否减少延迟，价格调整是否提升毛利，推荐策略是否增加复购，供应商整改是否改善准时率，审批自动化是否缩短周期。它们的共同难点是，组织只能观察已经发生的行动路径，不能同时观察同一对象在另一种行动下的结果。
+
+\section{潜在结果与反事实}
+
+对个体 \(i\)，令 \(D_i\in\{0,1\}\) 表示是否接受处理。潜在结果记为
+\[
+  Y_i(1):\text{接受处理时的结果},
+  \qquad
+  Y_i(0):\text{不接受处理时的结果}.
+\]
+个体处理效应为
+\[
+  \tau_i=Y_i(1)-Y_i(0).
+\]
+但是观察到的结果只有
+\[
+  Y_i=D_iY_i(1)+(1-D_i)Y_i(0).
+\]
+若客户收到了优惠券，只能观察发券后的结果 \(Y_i(1)\)，没有发券时的结果 \(Y_i(0)\) 是反事实；若客户未收到优惠券，则发券后的结果是反事实。这就是 Holland 所称的基本因果问题：同一个体的两个潜在结果不能被同时观察。
+
+\begin{definition}[平均处理效应]
+总体平均处理效应为
+\[
+  ATE=\E[Y(1)-Y(0)].
+\]
+若只关心实际接受处理的人群，则处理组平均处理效应为
+\[
+  ATT=\E[Y(1)-Y(0)\mid D=1].
+\]
+若关心特定协变量取值 \(X=x\) 的人群，则条件平均处理效应为
+\[
+  CATE(x)=\E[Y(1)-Y(0)\mid X=x].
+\]
+\end{definition}
+
+不同估计对象对应不同管理问题。若企业准备全面上线优惠券策略，ATE 更相关；若只想评估已经被运营团队触达的客户，ATT 更相关；若要决定哪些客户最值得触达，CATE 与行动成本一起进入第9讲的优化问题。
+
+\section{相关、预测、因果与处方的边界}
+
+同一个数据集可以服务不同问题，但每类问题的结论不同。
+
+\begin{longtable}{>{\raggedright\arraybackslash}p{0.18\linewidth}>{\raggedright\arraybackslash}p{0.36\linewidth}>{\raggedright\arraybackslash}p{0.34\linewidth}}
+\caption{几类分析问题的区别}\\
+\toprule
+任务 & 典型问题 & 主要风险\\
+\midrule
+\endfirsthead
+\toprule
+任务 & 典型问题 & 主要风险\\
+\midrule
+\endhead
+相关分析 & 客服工单数是否与流失率同向变化？ & 把共同变化解释为行动效果。\\
+预测建模 & 哪些客户未来最可能流失？ & 把预测特征解释为可干预原因。\\
+因果推断 & 发放优惠券是否提高留存？ & 忽视混杂、选择偏差和识别假设。\\
+处方分析 & 在预算约束下应对哪些客户行动？ & 用未经验证的效果估计优化资源。\\
+\bottomrule
+\end{longtable}
+
+例如，折扣率与流失风险可能正相关，因为高风险客户更常获得折扣；这不意味着提高折扣会导致流失。预测模型可以利用折扣率提升排序能力，但因果报告不能把该系数解释为行动效果。课程要求所有管理报告都明确：当前结论是描述性、预测性、因果性，还是处方性。
+
+\section{选择偏差与混杂}
+
+朴素均值差可以写成
+\[
+  \E[Y\mid D=1]-\E[Y\mid D=0].
+\]
+代入潜在结果并整理，可得到
+\[
+\begin{aligned}
+  \E[Y\mid D=1]-\E[Y\mid D=0]
+  &=
+  \E[Y(1)-Y(0)\mid D=1] \\
+  &\quad +
+  \{\E[Y(0)\mid D=1]-\E[Y(0)\mid D=0]\}.
+\end{aligned}
+\]
+第一项是 ATT，第二项是选择偏差。若处理组在没有处理时本来也会有不同结果，朴素差异就不等于处理效应。
+
+\begin{definition}[混杂变量]
+混杂变量是同时影响处理分配 \(D\) 和结果 \(Y\) 的变量。若风险分数既影响运营人员是否发券，也影响客户留存，那么风险分数就是优惠券效果评估中的混杂变量。
+\end{definition}
+
+混杂不同于中介变量和碰撞变量。中介变量位于处理之后，是处理影响结果的路径之一；例如优惠券改变客户使用活跃度，再影响留存。若估计总效果，通常不应控制处理后的中介。碰撞变量则是由两个变量共同影响的变量；错误控制碰撞变量可能引入原本不存在的关联。管理数据中常见的“进入人工复核队列”就可能是碰撞变量，因为它同时受风险评分和客户经理判断影响。
+
+\section{随机实验作为识别基准}
+
+若处理 \(D_i\) 由随机机制决定，并且实验执行稳定，则
+\[
+  D_i\perp (Y_i(1),Y_i(0)).
+\]
+处理组与对照组在期望上可比，因此
+\[
+  \E[Y\mid D=1]-\E[Y\mid D=0]
+  =
+  \E[Y(1)-Y(0)].
+\]
+这正是第6讲 A/B 测试的理论基础。随机化并不保证每次小样本都完全平衡，但它在设计上切断了处理分配与潜在结果之间的系统性联系。
+
+在企业环境中，随机实验还要求处理定义清晰、执行稳定、样本比例正常、结果窗口一致，并尽量避免实验污染。例如客户之间共享优惠券、销售团队绕开分组规则、推荐系统同时改变多个模块，都会削弱随机化带来的识别优势。
+
+\begin{modernbox}[设计优先]
+因果推断首先是研究设计问题，其次才是建模问题。若处理分配机制混乱、干预定义含糊或关键结果无法观察，再复杂的模型也只能给出脆弱的结论。
+\end{modernbox}
+
+\section{观测性研究的识别假设}
+
+许多管理干预不能完全随机化。高价值客户不能被随机拒绝服务，高风险订单不能被随机不处理，价格政策也可能按区域逐步上线。此时需要在观测性数据中构造可比性。常见识别假设如下。
+
+\begin{definition}[一致性]
+若个体实际接受处理 \(D_i=d\)，则观察到的结果等于对应潜在结果：
+\[
+  Y_i=Y_i(d).
+\]
+这要求处理定义足够清晰。例如“发优惠券”必须说明金额、渠道、有效期、触达时间和是否允许叠加。
+\end{definition}
+
+\begin{definition}[SUTVA]
+SUTVA 要求一个个体的潜在结果不受其他个体处理状态影响，且处理没有隐藏版本。若客户之间会转赠优惠券，或不同客户经理执行方式差异很大，SUTVA 可能失败。
+\end{definition}
+
+\begin{definition}[条件可交换性]
+给定可观察协变量 \(X\) 后，处理分配与潜在结果独立：
+\[
+  (Y(1),Y(0))\perp D\mid X.
+\]
+这意味着所有同时影响处理和结果的重要混杂因素都已被观察并纳入调整。
+\end{definition}
+
+\begin{definition}[重叠性]
+对每个协变量取值 \(x\)，处理概率不能为 0 或 1：
+\[
+  0<\Prob(D=1\mid X=x)<1.
+\]
+若某类客户总是被发券，而另一类客户从不发券，就很难从数据中比较他们在两种处理状态下的反事实结果。
+\end{definition}
+
+这些假设不是形式装饰。因果报告必须说明它们为什么在当前业务中相对可信，以及哪些机制可能破坏它们。
+
+\section{分层、匹配与倾向得分}
+
+若混杂变量 \(X\) 可观察，一个直接办法是在相似 \(X\) 的对象之间比较处理和对照。分层法把样本划分为若干层，在层内比较均值差，再按层权重合成总体估计。它的优点是透明，缺点是协变量维度高时层会变得稀疏。
+
+倾向得分是给定协变量后的处理概率：
+\[
+  e(X)=\Prob(D=1\mid X).
+\]
+Rosenbaum and Rubin 的核心结果说明，在条件可交换性成立时，给定倾向得分也能平衡处理组和对照组的协变量分布。直观地说，如果两个客户得到优惠券的概率相近，即使一个实际收到、另一个没有收到，它们在可观察分配机制上更可比。
+
+倾向得分的常见使用方式包括：
+\begin{enumerate}
+  \item 分层：按倾向得分或关键风险分数分层，在层内比较处理和对照；
+  \item 匹配：为每个处理对象寻找倾向得分相近的对照对象；
+  \item 逆概率加权：处理组权重为 \(1/e(X)\)，对照组权重为 \(1/(1-e(X))\)；
+  \item 平衡诊断：比较调整前后协变量分布是否更接近。
+\end{enumerate}
+
+倾向得分不是越准确越好。它的目的不是预测谁会被处理，而是构造可比性。若模型把处理概率估计得非常接近 0 或 1，权重会变大，重叠性会变差，估计反而不稳定。
+
+\section{逆概率加权与平衡诊断}
+
+逆概率加权估计 ATE 的一个形式为
+\[
+  \widehat{ATE}_{IPW}
+  =
+  \frac{1}{n}\sum_{i=1}^{n}
+  \left[
+    \frac{D_iY_i}{\hat e(X_i)}
+    -
+    \frac{(1-D_i)Y_i}{1-\hat e(X_i)}
+  \right].
+\]
+它把样本重新加权为一个“伪总体”：在该伪总体中，处理分配相对于可观察协变量更接近随机。若某个客户本来很少会被发券但实际收到了优惠券，则其权重较大，因为它代表了许多类似但未被处理的对象。
+
+平衡诊断常用标准化均值差异：
+\[
+  SMD(X_j)
+  =
+  \frac{\bar X_{j,T}-\bar X_{j,C}}
+       {\sqrt{(s_{j,T}^{2}+s_{j,C}^{2})/2}}.
+\]
+加权后应重新计算 SMD。若调整后许多协变量仍然严重不平衡，因果解释就应保守。平衡改善只说明可观察变量更可比，不能证明未观察混杂已经消失。
+
+\section{差分中的差分}
+
+有些干预按时间逐步实施。例如部分门店上线新的留存策略，其他门店暂未上线。若能观察处理组和对照组在干预前后的结果，可以使用差分中的差分，简称 DID。
+
+设 \(Y_{gt}\) 表示组 \(g\) 在时期 \(t\) 的平均结果。两期 DID 估计为
+\[
+  \widehat{\tau}_{DID}
+  =
+  (\bar Y_{T,post}-\bar Y_{T,pre})
+  -
+  (\bar Y_{C,post}-\bar Y_{C,pre}).
+\]
+第一项是处理组的前后变化，第二项是对照组的前后变化。DID 的思想是用对照组的同期变化近似处理组在没有干预时的趋势。
+
+\begin{definition}[平行趋势假设]
+若没有干预，处理组和对照组的平均结果变化趋势应相同。形式上，
+\[
+  \E[Y_{T,post}(0)-Y_{T,pre}(0)]
+  =
+  \E[Y_{C,post}(0)-Y_{C,pre}(0)].
+\]
+\end{definition}
+
+平行趋势无法在干预后的反事实中直接验证，但可以通过干预前多期趋势、业务机制、安慰剂检验和分组稳定性来增强可信度。若处理组在干预前就已经快速改善，DID 可能高估干预效果；若处理组同时受到其他政策影响，DID 也会混合多个作用。
+
+\section{异质性、外推与行动边界}
+
+平均处理效应容易掩盖异质性。优惠券可能对高风险客户有效，对低风险客户无效；对高价值客户值得投放，对低价值客户即使有效也不划算。管理者关心的往往不是“平均有效”，而是“对谁有效、何时有效、以什么成本有效”。
+
+因果估计的外推必须谨慎。若样本只包含某一区域、某一渠道或某一风险层，估计结果未必适用于所有客户。若重叠性只在中等风险客户中成立，模型就不能可靠回答极高风险客户的反事实。报告中应明确估计适用人群，而不是把局部证据包装成普遍规律。
+
+\section{第8周实验案例}
+
+本周有两份样例数据。第一份为观测性客户优惠券数据：
+\begin{center}
+\path{data/sample/coupon_retention_observational.csv}
+\end{center}
+第二份为门店层面的两期面板数据：
+\begin{center}
+\path{data/sample/coupon_retention_panel.csv}
+\end{center}
+配套代码位于：
+\begin{center}
+\path{src/bdm_decision/cases/week08_causality.py}
+\end{center}
+
+最小运行方式为：
+\begin{lstlisting}[language=bash,caption={运行第8周因果推断案例}]
+PYTHONPATH=src python3 src/bdm_decision/cases/week08_causality.py
+\end{lstlisting}
+
+观测性优惠券数据包含 24 个客户，其中 12 个收到优惠券，12 个没有收到。由于运营人员更倾向于给高风险客户发券，处理组和对照组并不直接可比。脚本得到：
+\begin{center}
+\begin{tabular}{lrrr}
+\toprule
+方法 & 处理组均值 & 对照组均值 & 效果估计\\
+\midrule
+朴素差异 & 0.7500 & 0.7500 & 0.0000\\
+风险分层 & 0.7500 & 0.7500 & 0.2500\\
+逆概率加权 & NA & NA & 0.2199\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+朴素差异为 0，并不说明优惠券没有效果。它可能只是把高风险客户更多接受处理这一选择机制与处理效果混合在一起。按风险层分层后，估计效果为 0.2500；使用基于风险分数的倾向得分加权后，估计效果为 0.2199。两者都提示优惠券可能提高留存，但它们仍依赖“风险分数充分捕捉关键混杂”的假设。
+
+倾向得分模型中，\texttt{risk\_score} 的系数为 1.0084，说明风险分数越高，越可能收到优惠券。平衡诊断显示，\texttt{risk\_score} 的原始 SMD 为 0.9710，加权后降为 0.2243；\texttt{support\_tickets\_90d} 的 SMD 从 1.0180 降为 0.3257。平衡明显改善，但并未完美平衡，因此管理结论仍需保守。
+
+面板数据的 DID 结果为：
+\begin{center}
+\begin{tabular}{lrrr}
+\toprule
+组别 & 干预前 & 干预后 & 变化\\
+\midrule
+处理门店 & 0.6100 & 0.7025 & 0.0925\\
+对照门店 & 0.7125 & 0.7275 & 0.0150\\
+\bottomrule
+\end{tabular}
+\end{center}
+因此 DID 估计为
+\[
+  0.0925-0.0150=0.0775.
+\]
+这可以解释为：在用对照门店同期变化校正共同时间冲击后，处理门店的留存率额外提高约 7.75 个百分点。这个解释依赖平行趋势假设，不能由两期数据自动保证。
+
+\section{管理复盘与因果 memo}
+
+因果估计进入管理决策前，应至少回答以下问题：
+\begin{enumerate}
+  \item 干预定义是否清晰，是否存在多个版本；
+  \item 处理组和对照组在干预前是否可比；
+  \item 哪些混杂因素已被观察，哪些重要因素可能遗漏；
+  \item 是否存在足够重叠，是否有极端权重；
+  \item DID 是否有干预前多期趋势支持；
+  \item 是否存在溢出效应，例如客户之间转赠优惠券；
+  \item 估计对象是 ATE、ATT 还是某个特定人群的局部效果；
+  \item 统计估计是否足以支持行动成本和实施风险。
+\end{enumerate}
+
+一个规范的因果 memo 通常包含：业务问题、处理定义、结果定义、样本与时间窗口、识别策略、关键假设、估计结果、稳健性检查、不可识别风险、行动建议和后续实验计划。若结论用于扩大全量策略，还应说明预期成本、容量约束、客户公平性和监控指标。
+
+\section*{本讲小结}
+\addcontentsline{toc}{section}{本讲小结}
+
+本讲说明了因果推断在管理干预中的位置。预测模型可以发现风险对象，因果推断评估行动是否改变结果。潜在结果框架把处理效果写成反事实差异；随机实验提供清晰识别基准；观测性研究需要依赖一致性、SUTVA、条件可交换性和重叠性；倾向得分方法通过分层、匹配或加权改善可比性；DID 使用前后变化和对照组趋势校正共同冲击。所有因果估计都必须与识别假设、业务机制、数据质量和管理成本一起报告。
+
+\section*{习题}
+\addcontentsline{toc}{section}{习题}
+
+\begin{exercise}
+围绕第8周样例数据完成下列任务：
+\begin{enumerate}
+  \item 计算优惠券处理组和对照组的朴素留存率差异；
+  \item 按 \texttt{risk\_band} 分层，解释为什么分层估计与朴素估计不同；
+  \item 运行倾向得分加权代码，并解释加权前后标准化均值差异的变化；
+  \item 使用门店面板数据手工计算 DID；
+  \item 写一段不超过 400 字的管理建议，说明是否应扩大优惠券策略，并列出至少三个识别风险。
+\end{enumerate}
+\end{exercise}
+
+\section*{常见误区}
+\addcontentsline{toc}{section}{常见误区}
+
+\begin{enumerate}
+  \item 把预测模型中的高风险特征解释为因果原因；
+  \item 看到处理组和对照组结果不同，就直接归因于处理；
+  \item 控制了处理之后才发生的变量，导致总效果被错误削弱；
+  \item 认为倾向得分调整可以消除未观察混杂；
+  \item 忽视重叠性，在几乎没有可比对照的区域外推；
+  \item 使用 DID 却不讨论平行趋势；
+  \item 把短期留存提升等同于长期客户价值提升；
+  \item 不记录干预版本、触达方式和执行差异，导致处理定义含糊。
+\end{enumerate}
+
+\addcontentsline{toc}{chapter}{参考文献}
+\begin{thebibliography}{99}
+\bibitem{rubin1974}
+Rubin, D. B. (1974).
+\newblock Estimating causal effects of treatments in randomized and nonrandomized studies.
+\newblock \emph{Journal of Educational Psychology}, 66(5), 688-701.
+
+\bibitem{holland1986}
+Holland, P. W. (1986).
+\newblock Statistics and causal inference.
+\newblock \emph{Journal of the American Statistical Association}, 81(396), 945-960.
+
+\bibitem{rosenbaum1983}
+Rosenbaum, P. R., and Rubin, D. B. (1983).
+\newblock The central role of the propensity score in observational studies for causal effects.
+\newblock \emph{Biometrika}, 70(1), 41-55.
+
+\bibitem{imbens2015}
+Imbens, G. W., and Rubin, D. B. (2015).
+\newblock \emph{Causal Inference for Statistics, Social, and Biomedical Sciences}.
+\newblock Cambridge University Press.
+
+\bibitem{hernan2020}
+Hernan, M. A., and Robins, J. M. (2020).
+\newblock \emph{Causal Inference: What If}.
+\newblock Chapman and Hall/CRC.
+
+\bibitem{pearl2009}
+Pearl, J. (2009).
+\newblock \emph{Causality: Models, Reasoning, and Inference} (2nd ed.).
+\newblock Cambridge University Press.
+
+\bibitem{angrist2009}
+Angrist, J. D., and Pischke, J. S. (2009).
+\newblock \emph{Mostly Harmless Econometrics}.
+\newblock Princeton University Press.
+
+\bibitem{card1994}
+Card, D., and Krueger, A. B. (1994).
+\newblock Minimum wages and employment: A case study of the fast-food industry in New Jersey and Pennsylvania.
+\newblock \emph{American Economic Review}, 84(4), 772-793.
+\end{thebibliography}
+
+\end{document}
