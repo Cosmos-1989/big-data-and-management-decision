@@ -60,7 +60,7 @@ def prep(slug,s):
     s=re.sub(r'\\(eqref|ref)\{([^}]+)\}',ref,s)
     # Numbered environments are retained as styled, accessible HTML containers.
     for env,label in {'definition':'定义','theorem':'定理','proposition':'命题','lemma':'引理','corollary':'推论','remark':'说明','example':'例','exercise':'思考与练习','modernbox':'管理解释','proof':'证明'}.items():
-        s=re.sub(r'\\begin\{'+env+r'\}(?:\[([^\]]*)\])?',lambda m:'\nBDMBOXSTART'+env+'BDMTITLE'+label+(' · '+m[1] if m[1] else '')+'BDMENDTITLE\n\n',s)
+        s=re.sub(r'\\begin\{'+env+r'\}(?:\[([^\]]*)\])?',lambda m:'\nBDMBOXSTART'+env+'BDMTITLE'+label+(' · '+m[1] if m[1] and m[1]!=label else '')+'BDMENDTITLE\n\n',s)
         s=s.replace('\\end{'+env+'}','\n\nBDMBOXEND\n')
     return s
 prepared=[(slug,prep(slug,s)) for slug,s in inputs]
