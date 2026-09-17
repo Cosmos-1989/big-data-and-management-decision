@@ -5,7 +5,7 @@ let written=0;
 function send(type,data){postMessage({type,...data});}
 async function initialize(){
   if(runtime)return runtime;
-  send('status',{text:'正在启动 Python，首次加载约 12 MB…'});
+  send('status',{text:'正在准备 Python，请稍候…'});
   runtime=await loadPyodide({indexURL:new URL('./vendor/pyodide/',self.location.href).href});
   const response=await fetch('./data/files.json');if(!response.ok)throw new Error('课程程序和数据加载失败');
   const files=await response.json();
