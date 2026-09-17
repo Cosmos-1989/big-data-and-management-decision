@@ -59,8 +59,22 @@ node scripts/verify-runtime.mjs
 
 ## 发布
 
-`.openai/hosting.json` 记录 Sites 身份和静态目录。发布使用该目录自己的 Git 源版本与 `dist/` 产物；不要提交父课程仓库中尚未审阅的改动。网站默认保持注册时的私人访问范围，公开访问须由课程负责人指定。
+公开课程网站：https://cosmos-1989.github.io/big-data-and-management-decision/
+
+GitHub 使用现有课程仓库 `Cosmos-1989/big-data-and-management-decision`。网站源码单独保存在 `codex/course-website` 分支；`gh-pages` 分支的根目录保存 `dist/` 静态文件。课程仓库 `main` 分支不受网站发布影响。
+
+网站已适配根域名及项目子目录，资源、下载、Python 和 SQL Worker 均使用相对路径。更新网站并完成验证、提交后，可从本网站 Git 仓库执行：
+
+```sh
+git push github HEAD:refs/heads/codex/course-website
+git subtree split --prefix=dist -b codex/pages-dist
+git push github codex/pages-dist:refs/heads/gh-pages
+```
+
+Pages 设置为从 `gh-pages` 分支的根目录发布。`.nojekyll` 保留运行依赖中的下划线文件。首次发布完成后，后续推送自动触发部署。
+
+`.openai/hosting.json` 保留原 Sites 身份及静态目录，可用于同步更新原站。不要提交父课程仓库中尚未审阅的改动。
 
 ## 授权
 
-教学内容由孙振宇编写，采用 CC BY 4.0。网页设计参考 QuantEcon 的阅读结构，未复制其品牌素材。第三方运行组件采用各自许可证，随网站保存于 `dist/vendor/licenses/`。
+数智化企业运营与优化微专业。教学内容采用 CC BY 4.0；原始下载资料保留其来源与授权信息。网页设计参考 QuantEcon 的阅读结构，未复制其品牌素材。第三方运行组件采用各自许可证，随网站保存于 `dist/vendor/licenses/`。

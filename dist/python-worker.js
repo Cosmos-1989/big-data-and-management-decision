@@ -1,13 +1,13 @@
 /* Each visitor gets an isolated, disposable Python process in a Web Worker. */
-importScripts('/vendor/pyodide/pyodide.js');
+importScripts('./vendor/pyodide/pyodide.js');
 let runtime;
 let written=0;
 function send(type,data){postMessage({type,...data});}
 async function initialize(){
   if(runtime)return runtime;
   send('status',{text:'正在启动 Python，首次加载约 12 MB…'});
-  runtime=await loadPyodide({indexURL:'/vendor/pyodide/'});
-  const response=await fetch('/data/files.json');if(!response.ok)throw new Error('课程程序和数据加载失败');
+  runtime=await loadPyodide({indexURL:new URL('./vendor/pyodide/',self.location.href).href});
+  const response=await fetch('./data/files.json');if(!response.ok)throw new Error('课程程序和数据加载失败');
   const files=await response.json();
   for(const [name,source] of Object.entries(files)){
     const p='/course/'+name;runtime.FS.mkdirTree(p.slice(0,p.lastIndexOf('/')));runtime.FS.writeFile(p,source);
@@ -24,7 +24,7 @@ onmessage=async({data})=>{
   try{
     const py=await initialize();send('status',{text:'正在运行…'});
     // Restore source and sample data on every run: edits only affect this execution.
-    const files=await(await fetch('/data/files.json')).json();
+    const files=await(await fetch('./data/files.json')).json();
     for(const [name,source] of Object.entries(files))py.FS.writeFile('/course/'+name,source);
     py.globals.set('_bdm_code',data.code);py.globals.set('_bdm_path',data.path||'/course/experiment.py');py.globals.set('_bdm_source',data.source||'');
     await py.runPythonAsync(`

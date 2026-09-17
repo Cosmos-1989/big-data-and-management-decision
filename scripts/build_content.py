@@ -21,6 +21,16 @@ label_routes={k:slug for slug,s in inputs for k in re.findall(r'\\label\{([^}]+)
 figures=[]; all_programs=[]; snippets=[]; index=[]
 # Preserve math macros used by the source; KaTeX gets the same definitions in the client.
 def prep(slug,s):
+    # Pandoc discards url.sty's path command. Preserve its literal code text.
+    def literal_path(m):
+        value=m[1].replace('\\_', '_')
+        delimiter=next(c for c in '|!+;:' if c not in value)
+        return '\\verb'+delimiter+value+delimiter
+    s=re.sub(r'\\path\{([^}]+)\}',literal_path,s)
+    # A web table has one header, not TeX's repeated page header.
+    s=re.sub(r'\\endfirsthead.*?\\endhead','',s,flags=re.S)
+    if slug=='preface':
+        s=re.sub(r'\\begin\{flushright\}.*?\\end\{flushright\}',r'数智化企业运营与优化微专业',s,flags=re.S)
     def fig(m):
         body=m.group(0); pictures=re.findall(r'\\begin\{tikzpicture\}.*?\\end\{tikzpicture\}',body,re.S)
         if not pictures:return body
@@ -77,7 +87,7 @@ for slug,s in prepared:
     if proc.returncode:raise RuntimeError(proc.stderr)
     h=proc.stdout
     h=re.sub(r'REFROUTE([^" ]+?)REFANCHOR([^" ]+)',r'#/chapter/\1?anchor=\2',h)
-    h=re.sub(r'FIGURE(\d+)',r'/figures/figure-\1.svg',h)
+    h=re.sub(r'FIGURE(\d+)',r'./figures/figure-\1.svg',h)
     h=re.sub(r'<p>BDMBOXSTART(\w+)BDMTITLE(.*?)BDMENDTITLE</p>',r'<aside class="statement \1"><div class="statement-title">\2</div>',h)
     h=h.replace('<p>BDMBOXEND</p>','</aside>')
     soup=BeautifulSoup(h,'html.parser')
@@ -112,6 +122,8 @@ extra=list(sorted((ROOT/'docs/lecture_notes').glob('1[1-4]_*.md')))+[ROOT/'docs/
 extra_meta=[]
 for p in extra:
     slug=('data-guide' if p.name=='README.md' else p.stem);s=p.read_text()
+    # Localize reader-facing assignment labels; keep filenames and code intact.
+    s=re.sub(r'(?im)^(#{1,6}\s+)Assignment\b',r'\1作业',s)
     soup=BeautifulSoup(markdown.markdown(s,extensions=['tables','fenced_code','toc']),'html.parser')
     title=soup.find('h1');t=title.get_text() if title else slug
     if title:title.decompose()
@@ -133,7 +145,7 @@ with zipfile.ZipFile(OUT/'downloads/course-code-data.zip','w',zipfile.ZIP_DEFLAT
     for p,s in files.items():z.writestr(p,s)
     z.write(ROOT/'pyproject.toml','pyproject.toml');z.write(ROOT/'LICENSE','LICENSE')
     z.writestr('README.txt','课程代码与教学数据，源自大数据与管理决策基础课程仓库。安装：pip install -e .\n运行：PYTHONPATH=src python -m bdm_decision.cases.week03_sql_kpi\n部分文件为课程建设中的模板，详见网站程序目录。\n')
-meta={'edition':'2026年9月学术复校版','author':'孙振宇','institution':'东北大学数学与统计学院','chapters':[{'id':slug,'title':BeautifulSoup((OUT/'content'/(slug+'.json')).read_text(),'html.parser').get_text()} for slug,_ in []], 'extras':extra_meta,'programs':all_programs,'snippets':snippets,'index':index,'figures':len(figures),'sourceHash':hashlib.sha256(''.join(s for _,s in inputs).encode()).hexdigest()}
+meta={'edition':'2026年9月学术复校版','program':'数智化企业运营与优化微专业','chapters':[{'id':slug,'title':BeautifulSoup((OUT/'content'/(slug+'.json')).read_text(),'html.parser').get_text()} for slug,_ in []], 'extras':extra_meta,'programs':all_programs,'snippets':snippets,'index':index,'figures':len(figures),'sourceHash':hashlib.sha256(''.join(s for _,s in inputs).encode()).hexdigest()}
 meta['chapters']=[{k:d[k] for k in ['id','title','source','kind']} for slug,_ in prepared for d in [json.loads((OUT/'content'/(slug+'.json')).read_text())]]
 meta['datasets']=[{'name':p.name,'rows':len(p.read_text().splitlines())-1,'bytes':p.stat().st_size} for p in sorted((ROOT/'data/sample').glob('*.csv'))]
 (OUT/'content/catalog.json').write_text(json.dumps(meta,ensure_ascii=False))

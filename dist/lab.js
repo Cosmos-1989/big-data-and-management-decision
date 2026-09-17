@@ -52,9 +52,9 @@ async function runSql(code,gen){
  if(!db){
   status.textContent='正在加载 DuckDB（首次约 39 MB）…';
   const duckdb=await import('./vendor/duckdb/duckdb.js');
-  const myWorker=new Worker('/vendor/duckdb/duckdb-browser-mvp.worker.js');sqlWorker=myWorker;
+  const myWorker=new Worker(new URL('./vendor/duckdb/duckdb-browser-mvp.worker.js',import.meta.url));sqlWorker=myWorker;
   const nextDb=new duckdb.AsyncDuckDB(new duckdb.ConsoleLogger(duckdb.LogLevel.ERROR),myWorker);
-  const chunks=await Promise.all([0,1,2].map(async n=>{const r=await fetch('/vendor/duckdb/duckdb-mvp.part'+n);if(!r.ok)throw new Error('SQL 运行环境加载失败');return r.arrayBuffer();}));
+  const chunks=await Promise.all([0,1,2].map(async n=>{const r=await fetch('./vendor/duckdb/duckdb-mvp.part'+n);if(!r.ok)throw new Error('SQL 运行环境加载失败');return r.arrayBuffer();}));
   const wasmUrl=URL.createObjectURL(new Blob(chunks,{type:'application/wasm'}));
   try{await nextDb.instantiate(wasmUrl);}finally{URL.revokeObjectURL(wasmUrl);}if(gen!==runGeneration){myWorker.terminate();return;}
   await nextDb.open({query:{castBigIntToDouble:true,castDecimalToDouble:true,castTimestampToDate:true}});
@@ -74,7 +74,7 @@ export async function runCurrent(){
  const gen=++runGeneration;timer=setTimeout(()=>{if(gen===runGeneration){stop();status.textContent='超过 120 秒，已停止。可减少计算量后重试。';}},120000);
  try{
   if(current.language==='sql'){await runSql(editor.value,gen);return;}
-  if(!worker){worker=new Worker('/python-worker.js');worker.onerror=e=>finish('运行环境加载失败：'+e.message,true);}
+  if(!worker){worker=new Worker(new URL('./python-worker.js',import.meta.url));worker.onerror=e=>finish('运行环境加载失败：'+e.message,true);}
   worker.onmessage=({data})=>{
    if(gen!==runGeneration)return;
    if(data.type==='status')status.textContent=data.text;
@@ -100,7 +100,7 @@ export async function runCurrent(){
  }catch(e){if(gen===runGeneration){const pre=document.createElement('pre');pre.className='error-output';pre.textContent=String(e.message||e);output.append(pre);finish('运行失败，可以修改代码或重置后重试。',true);}}
 }
 export async function mountLab(container,catalog,id='kpi'){
- cleanupLab();files ||= await(await fetch('/data/files.json')).json();
+ cleanupLab();files ||= await(await fetch('./data/files.json')).json();
  const source=catalog.programs.find(p=>'source-'+p.id===id);
  const snippet=catalog.snippets.find(p=>p.id===id);
  program=source;mode=source?'source':snippet?'snippet':'experiment';

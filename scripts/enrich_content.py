@@ -45,7 +45,7 @@ for p in sorted((OUT/'content').glob('*.json')):
             if target.suffix=='.md':
                 other=next((x for x in meta['extras'] if x['source']==str(target.relative_to(ROOT))),None)
                 if other:a['href']='#/chapter/'+other['id'];continue
-            dest=OUT/'downloads/source'/target.relative_to(ROOT);dest.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(target,dest);a['href']='/'+str(dest.relative_to(OUT))
+            dest=OUT/'downloads/source'/target.relative_to(ROOT);dest.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(target,dest);a['href']='./'+str(dest.relative_to(OUT))
     d['html']=str(soup);p.write_text(json.dumps(d,ensure_ascii=False));documents.append(d)
 # Use descriptive captions and unique numbering for code snippets.
 for chapter in meta['chapters']:
