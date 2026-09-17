@@ -55,7 +55,7 @@ node scripts/verify-math.mjs
 node scripts/verify-runtime.mjs
 ```
 
-验证覆盖内部内容链接、图片、1,110 个数学表达式、14 个 Python 实验、全部已实现 Python 模块，以及阈值敏感性、置信区间宽度和优化约束。浏览器另行验证 SQL、交互操作、错误恢复、WebMCP 和移动布局。
+验证覆盖内部内容链接、图片、超过 1,100 个数学表达式、14 个 Python 实验、全部已实现 Python 模块，以及阈值敏感性、置信区间宽度和优化约束。浏览器另行验证 SQL、交互操作、错误恢复、WebMCP 和移动布局。
 
 ## 发布
 
