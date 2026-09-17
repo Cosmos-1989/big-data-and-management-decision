@@ -1,0 +1,82 @@
+{
+  "runtime": "Pyodide 0.27.7 / CPython 3.12",
+  "experiments": [
+    {
+      "id": "framing",
+      "status": "passed",
+      "outputs": 1
+    },
+    {
+      "id": "model",
+      "status": "passed",
+      "outputs": 2
+    },
+    {
+      "id": "kpi",
+      "status": "passed",
+      "outputs": 3
+    },
+    {
+      "id": "manufacturing",
+      "status": "passed",
+      "outputs": 2
+    },
+    {
+      "id": "quality",
+      "status": "passed",
+      "outputs": 2
+    },
+    {
+      "id": "statistics",
+      "status": "passed",
+      "outputs": 3
+    },
+    {
+      "id": "ab",
+      "status": "passed",
+      "outputs": 2
+    },
+    {
+      "id": "prediction",
+      "status": "passed",
+      "outputs": 3
+    },
+    {
+      "id": "causality",
+      "status": "passed",
+      "outputs": 3
+    },
+    {
+      "id": "optimization",
+      "status": "passed",
+      "outputs": 2
+    },
+    {
+      "id": "process",
+      "status": "passed",
+      "outputs": 3
+    },
+    {
+      "id": "allocation",
+      "status": "passed",
+      "outputs": 1
+    },
+    {
+      "id": "ontology",
+      "status": "passed",
+      "outputs": 6
+    },
+    {
+      "id": "dashboard",
+      "status": "passed",
+      "outputs": 1
+    }
+  ],
+  "implementedPythonModules": 29,
+  "parameterChecks": [
+    "zero budget and capacity",
+    "feasible optimized plans",
+    "classification threshold sensitivity",
+    "confidence interval width"
+  ]
+}
