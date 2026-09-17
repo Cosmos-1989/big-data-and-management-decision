@@ -1,0 +1,64 @@
+{
+  "edition": "2026年9月学术复校版",
+  "sources": [
+    {
+      "path": "docs/textbook/chapters/01_intro.tex",
+      "sha256": "45e48b32d1cd6dd4db2bdf45892735f3705559a74de6a5507e0f8d19e4d1506f"
+    },
+    {
+      "path": "docs/textbook/chapters/02_enterprise_data_model.tex",
+      "sha256": "a940759e66bc5bfa00e79431c58aba108a2c36d4ae45102282fcc6c86f789423"
+    },
+    {
+      "path": "docs/textbook/chapters/03_sql_kpi.tex",
+      "sha256": "87bcdff6b0222bd3c4a4df8307104018f8b52393580f70d7d3f618d6a4fe5094"
+    },
+    {
+      "path": "docs/textbook/chapters/04_data_quality.tex",
+      "sha256": "5dbbcaabd011a40458e0287f8aba736ab7e4156d67ef4bc5056ec2762b5d9e56"
+    },
+    {
+      "path": "docs/textbook/chapters/05_statistics_dashboard.tex",
+      "sha256": "fb57fa3b41ad3bb36426b8f30f9f21a94968bc0523d17be81b03ea121a4c07f2"
+    },
+    {
+      "path": "docs/textbook/chapters/06_ab_testing.tex",
+      "sha256": "0bc7ebf947bb7db2fd0f2da6c74c0d9b942ed076de630ea9609d58ad66ea4107"
+    },
+    {
+      "path": "docs/textbook/chapters/07_prediction.tex",
+      "sha256": "a228ccad1c808404cdc396c3d791628ed03e8f6ee471de7a9a6c65175ec0f63a"
+    },
+    {
+      "path": "docs/textbook/chapters/08_causality.tex",
+      "sha256": "c43ef546114f654aff7c31842ea6c9d2c33eb5383d7c4b8c0e2aaeeed7f7df11"
+    },
+    {
+      "path": "docs/textbook/chapters/09_optimization.tex",
+      "sha256": "e52db283c3d612194bb765439e88f1cb1180c0fcf05648378927c3cb99b53a73"
+    },
+    {
+      "path": "docs/textbook/chapters/10_process_mining.tex",
+      "sha256": "b54c54ec17e43a59337358570d79191a714caca72024e4842d19762ba6fa52ba"
+    },
+    {
+      "path": "docs/textbook/frontmatter.tex",
+      "sha256": "d1f353fb32334f500517b2ea69eada1497b7fac6aee0fd67f5554d5a31721aca"
+    },
+    {
+      "path": "docs/textbook/appendices.tex",
+      "sha256": "ced2fedbb7d9befc41c3e2f73bb01e1377e8ce89918509b55b02172a64ac32a5"
+    },
+    {
+      "path": "docs/textbook/references.bib",
+      "sha256": "72a7d07dfe7c3ad97ab2b97c98a2f3466a7cf3ecd88043a585826e09e16414a6"
+    }
+  ],
+  "counts": {
+    "chapters": 10,
+    "appendices": 3,
+    "figures": 18,
+    "programs": 42,
+    "datasets": 13
+  }
+}

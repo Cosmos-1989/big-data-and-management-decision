@@ -1,0 +1,5 @@
+product_id,product_name,unit_cost,contribution_margin,holding_cost,stockout_penalty,current_inventory,max_order_quantity,storage_per_unit,demand_low,prob_low,demand_base,prob_base,demand_high,prob_high
+P01,AirFilter,42,68,5,18,12,24,1.5,22,0.25,30,0.50,38,0.25
+P02,SmartValve,55,92,7,28,8,22,2.0,16,0.20,24,0.55,32,0.25
+P03,SensorKit,28,46,4,15,18,28,1.0,26,0.30,34,0.45,44,0.25
+P04,ControlBox,85,135,11,36,5,16,3.0,10,0.25,16,0.50,23,0.25

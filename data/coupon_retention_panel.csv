@@ -1,0 +1,17 @@
+unit_id,group,period,retention_rate
+S001,treated,pre,0.62
+S001,treated,post,0.72
+S002,treated,pre,0.60
+S002,treated,post,0.69
+S003,treated,pre,0.64
+S003,treated,post,0.74
+S004,treated,pre,0.58
+S004,treated,post,0.66
+S101,control,pre,0.70
+S101,control,post,0.72
+S102,control,pre,0.68
+S102,control,post,0.70
+S103,control,pre,0.75
+S103,control,post,0.76
+S104,control,pre,0.72
+S104,control,post,0.73
