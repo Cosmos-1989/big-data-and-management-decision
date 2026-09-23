@@ -9,4 +9,4 @@
 
 - 文件：cover_data_decisions.png
 - 来源：本课程最新版正式教材 `docs/textbook/assets/cover_data_decisions.png`
-- 用途：授课 Slides 首页的淡化背景图。
+- 用途：授课幻灯片首页的淡化背景图。
