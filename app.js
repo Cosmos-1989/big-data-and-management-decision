@@ -9,7 +9,7 @@ const home=main.innerHTML;let catalog,currentRoute='',renderVersion=0;
 const macros={'\\E':'\\mathbb E','\\Prob':'\\mathbb P','\\R':'\\mathbb R','\\N':'\\mathbb N','\\eps':'\\varepsilon','\\dd':'\\,\\mathrm d','\\argmin':'\\operatorname*{arg\\,min}','\\argmax':'\\operatorname*{arg\\,max}','\\abs':'\\left\\lvert #1\\right\\rvert','\\norm':'\\left\\lVert #1\\right\\rVert'};
 const cached=new Map();
 let decorationsPromise;
-function chapterDecorations(){return decorationsPromise ||= Promise.all([fetch('./content/lecture-slides.json').then(r=>r.json()),fetch('./content/case-cards.json').then(r=>r.json()),fetch('./content/lab-specs.json').then(r=>r.json())]).then(([slides,cases,specs])=>({slides,cases,snippets:specs.snippets}));}
+function chapterDecorations(){return decorationsPromise ||= Promise.all([fetch('./content/lecture-slides.json?v=20260923-3').then(r=>r.json()),fetch('./content/case-cards.json').then(r=>r.json()),fetch('./content/lab-specs.json').then(r=>r.json())]).then(([slides,cases,specs])=>({slides,cases,snippets:specs.snippets}));}
 async function doc(id){if(!cached.has(id)){const r=await fetch('./content/'+encodeURIComponent(id)+'.json');if(!r.ok)throw new Error('找不到这份课程资料');cached.set(id,await r.json());}return cached.get(id);}
 function chapterLink(c){return `<a href="#/chapter/${c.id}"><span class="chapter-number">${/^\d/.test(c.id)?c.id.slice(0,2):'↗'}</span><span>${esc(c.title)}</span><span class="row-arrow">→</span></a>`;}
 function buildNav(){
@@ -39,8 +39,8 @@ async function chapterPage(id,version){
  const deck=decorations.slides[id]||null;
  title(d.title);const core=catalog.chapters.filter(c=>/^\d/.test(c.id));const idx=core.findIndex(c=>c.id===id);const labs=experiments.filter(e=>e.chapter===id);
  main.innerHTML=`<div class="breadcrumb"><a href="#/">课程讲义</a> / ${d.kind==='textbook'?'课程章节':'课程资料'}</div><div class="chapter-kicker">${/^\d/.test(id)?`第 ${Number(id.slice(0,2))} ${d.kind==='textbook'?'章':'单元'}`:'课程阅读'}</div><h1>${esc(d.title)}</h1><div class="article-actions">${labs.length?`<a href="#/lab/${labs[0].id}">▶ 运行本章实验</a>`:''}${deck?`<a class="slides-launch" href="#/chapter/${id}?anchor=slides">授课 Slides <span>${deck.slides.length} 页</span> ↗</a>`:''}<button class="text-button print-page">打印本页</button></div>${deck?lectureSlidesHtml(deck):''}<article class="prose">${d.html}</article>${labs.length?`<section class="chapter-labs"><h2>本章交互实验</h2>${labs.map(e=>`<a href="#/lab/${e.id}"><span>▶</span><div><strong>${esc(e.title)}</strong><p>${esc(e.description)}</p></div><span>→</span></a>`).join('')}</section>`:''}<div class="chapter-pagination">${idx>0?`<a href="#/chapter/${core[idx-1].id}"><small>上一章</small>${esc(core[idx-1].title)}</a>`:'<span></span>'}${idx>=0&&idx<core.length-1?`<a href="#/chapter/${core[idx+1].id}"><small>下一章 →</small>${esc(core[idx+1].title)}</a>`:''}</div>${footer()}`;
- const article=main.querySelector('.prose');decorateEnterpriseCases(article,id,decorations.cases);initFigureZoom(article,main);initLectureSlides(main.querySelector('.lesson-slides'));
- typeset();main.querySelector('.print-page').onclick=()=>window.print();
+ const article=main.querySelector('.prose');decorateEnterpriseCases(article,id,decorations.cases);initFigureZoom(article,main);
+ typeset();initLectureSlides(main.querySelector('.lesson-slides'));main.querySelector('.print-page').onclick=()=>window.print();
  for(const pre of main.querySelectorAll('pre')){
   const note=decorations.snippets.find(item=>item.id===pre.dataset.snippet);
   if(note?.annotatedCode)pre.textContent=note.annotatedCode;
