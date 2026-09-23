@@ -70,9 +70,14 @@
       "id": "dashboard",
       "status": "passed",
       "outputs": 1
+    },
+    {
+      "id": "ai-capacity",
+      "status": "passed",
+      "outputs": 1
     }
   ],
-  "implementedPythonModules": 29,
+  "implementedPythonModules": 30,
   "parameterChecks": [
     "zero budget and capacity",
     "feasible optimized plans",

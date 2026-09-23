@@ -91,10 +91,19 @@ for slug,s in prepared:
     h=re.sub(r'<p>BDMBOXSTART(\w+)BDMTITLE(.*?)BDMENDTITLE</p>',r'<aside class="statement \1"><div class="statement-title">\2</div>',h)
     h=h.replace('<p>BDMBOXEND</p>','</aside>')
     soup=BeautifulSoup(h,'html.parser')
+    if slug=='appendix-3':
+        for paragraph in soup.find_all('p'):
+            original=paragraph.get_text()
+            if original.startswith('本版沿用并整理截至2026年9月23日的研究材料，'):
+                paragraph.string=original.replace('本版沿用并整理截至2026年9月23日的研究材料，','研究引用材料应核对发表信息与在线访问日期。',1)
     # Heading levels are h1 chapter / h2 section / h3 subsection.
     title=soup.find('h1'); title_text=title.get_text(' ',strip=True) if title else slug
     if title:title.decompose()
-    for img in soup.find_all('img'):img['loading']='lazy';img['alt']=img.get('alt') or '教材原图'
+    for img in soup.find_all('img'):
+        img['loading']='lazy'
+        img['decoding']='async'
+        caption=img.find_parent('figure').find('figcaption') if img.find_parent('figure') else None
+        img['alt']=caption.get_text(' ',strip=True) if caption else '教材图示'
     for i,heading in enumerate(soup.find_all(['h2','h3','h4'])):
         if not heading.get('id'):heading['id']=slug+'-s'+str(i)
     for tag in soup.find_all('a',class_='citation'):
@@ -145,9 +154,9 @@ with zipfile.ZipFile(OUT/'downloads/course-code-data.zip','w',zipfile.ZIP_DEFLAT
     for p,s in files.items():z.writestr(p,s)
     z.write(ROOT/'pyproject.toml','pyproject.toml');z.write(ROOT/'LICENSE','LICENSE')
     z.writestr('README.txt','课程代码与教学数据，源自大数据与管理决策基础课程仓库。安装：pip install -e .\n运行：PYTHONPATH=src python -m bdm_decision.cases.week03_sql_kpi\n部分文件为课程建设中的模板，详见网站程序目录。\n')
-meta={'edition':'2026年9月学术复校版','program':'数智化企业运营与优化微专业','chapters':[{'id':slug,'title':BeautifulSoup((OUT/'content'/(slug+'.json')).read_text(),'html.parser').get_text()} for slug,_ in []], 'extras':extra_meta,'programs':all_programs,'snippets':snippets,'index':index,'figures':len(figures),'sourceHash':hashlib.sha256(''.join(s for _,s in inputs).encode()).hexdigest()}
+meta={'program':'数智化企业运营与优化微专业','chapters':[], 'extras':extra_meta,'programs':all_programs,'snippets':snippets,'index':index,'figures':len(figures),'sourceHash':hashlib.sha256(''.join(s for _,s in inputs).encode()).hexdigest()}
 meta['chapters']=[{k:d[k] for k in ['id','title','source','kind']} for slug,_ in prepared for d in [json.loads((OUT/'content'/(slug+'.json')).read_text())]]
 meta['datasets']=[{'name':p.name,'rows':len(p.read_text().splitlines())-1,'bytes':p.stat().st_size} for p in sorted((ROOT/'data/sample').glob('*.csv'))]
 (OUT/'content/catalog.json').write_text(json.dumps(meta,ensure_ascii=False))
-(OUT/'content/source-manifest.json').write_text(json.dumps({'edition':meta['edition'],'sources':[{'path':str(p.relative_to(ROOT)),'sha256':hashlib.sha256(p.read_bytes()).hexdigest()} for p in chapters+[BOOK/'frontmatter.tex',BOOK/'appendices.tex',BOOK/'references.bib']],'counts':{'chapters':10,'appendices':3,'figures':len(figures),'programs':len(all_programs),'datasets':len(meta['datasets'])}},ensure_ascii=False,indent=2))
+(OUT/'content/source-manifest.json').write_text(json.dumps({'sources':[{'path':str(p.relative_to(ROOT)),'sha256':hashlib.sha256(p.read_bytes()).hexdigest()} for p in chapters+[BOOK/'frontmatter.tex',BOOK/'appendices.tex',BOOK/'references.bib']],'counts':{'chapters':len(chapters),'appendices':sum(slug.startswith('appendix-') for slug,_ in inputs),'figures':len(figures),'programs':len(all_programs),'datasets':len(meta['datasets'])}},ensure_ascii=False,indent=2))
 print(json.dumps({'chapters':len(prepared),'extras':len(extra),'figures':len(figures),'programs':len(all_programs),'snippets':len(snippets)},ensure_ascii=False))
