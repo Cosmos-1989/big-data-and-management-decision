@@ -4,3 +4,9 @@
 - 官方原图：https://www.neu.edu.cn/images/libpic/logo.png
 - 来源页面：https://www.neu.edu.cn/xygk/dxwh.htm
 - 保留原图颜色、比例与透明度；未修改像素。
+
+# 教材封面图
+
+- 文件：cover_data_decisions.png
+- 来源：本课程最新版正式教材 `docs/textbook/assets/cover_data_decisions.png`
+- 用途：授课 Slides 首页的淡化背景图。

@@ -1,64 +1,63 @@
 {
-  "edition": "2026年9月学术复校版",
   "sources": [
     {
       "path": "docs/textbook/chapters/01_intro.tex",
-      "sha256": "45e48b32d1cd6dd4db2bdf45892735f3705559a74de6a5507e0f8d19e4d1506f"
+      "sha256": "0bf7c286c46f2c87c5ac95dc21170ff4c04785165dea04647ee7d403b9689d8c"
     },
     {
       "path": "docs/textbook/chapters/02_enterprise_data_model.tex",
-      "sha256": "a940759e66bc5bfa00e79431c58aba108a2c36d4ae45102282fcc6c86f789423"
+      "sha256": "f7389f32d9578ab94117354a24746a894d4e3034c0dea4350c4ce6a7b0c23c70"
     },
     {
       "path": "docs/textbook/chapters/03_sql_kpi.tex",
-      "sha256": "87bcdff6b0222bd3c4a4df8307104018f8b52393580f70d7d3f618d6a4fe5094"
+      "sha256": "915038afb13f1c850ddc04821dd3638f0aef25f8f836e1a01773d1caeee3a083"
     },
     {
       "path": "docs/textbook/chapters/04_data_quality.tex",
-      "sha256": "5dbbcaabd011a40458e0287f8aba736ab7e4156d67ef4bc5056ec2762b5d9e56"
+      "sha256": "5346054b99fe8f4c1105cc22a3064ee640f3784105a45bb94d70c43afcf3a26a"
     },
     {
       "path": "docs/textbook/chapters/05_statistics_dashboard.tex",
-      "sha256": "fb57fa3b41ad3bb36426b8f30f9f21a94968bc0523d17be81b03ea121a4c07f2"
+      "sha256": "62b1c387fa337f75b031cc12a62e29738bb8b18c7dae6a81fc6c458506e9739d"
     },
     {
       "path": "docs/textbook/chapters/06_ab_testing.tex",
-      "sha256": "0bc7ebf947bb7db2fd0f2da6c74c0d9b942ed076de630ea9609d58ad66ea4107"
+      "sha256": "7118181ccc3fe93b649f2df68109eb0f1054e04ba23d877b3ba56710c8632fae"
     },
     {
       "path": "docs/textbook/chapters/07_prediction.tex",
-      "sha256": "a228ccad1c808404cdc396c3d791628ed03e8f6ee471de7a9a6c65175ec0f63a"
+      "sha256": "460fe998f1caff7ae9d79a32f49271f04a7bb9341549e7896e459c0c527f1014"
     },
     {
       "path": "docs/textbook/chapters/08_causality.tex",
-      "sha256": "c43ef546114f654aff7c31842ea6c9d2c33eb5383d7c4b8c0e2aaeeed7f7df11"
+      "sha256": "e60a5c4a14e0f2814e059f9e7ae1c21aacc9f3fdf304c6b525418e0fccfeb848"
     },
     {
       "path": "docs/textbook/chapters/09_optimization.tex",
-      "sha256": "e52db283c3d612194bb765439e88f1cb1180c0fcf05648378927c3cb99b53a73"
+      "sha256": "fcd34ed2f3a02abf7426b56c62e4c620c1a0a11bcc283809aef6abd942dbb694"
     },
     {
       "path": "docs/textbook/chapters/10_process_mining.tex",
-      "sha256": "b54c54ec17e43a59337358570d79191a714caca72024e4842d19762ba6fa52ba"
+      "sha256": "6a22a33c37b9a74d00df5bfe13ce2ff28133ce904c60d1d6847ba4ab88bb35db"
     },
     {
       "path": "docs/textbook/frontmatter.tex",
-      "sha256": "d1f353fb32334f500517b2ea69eada1497b7fac6aee0fd67f5554d5a31721aca"
+      "sha256": "3cd0a3eca6b1b7f23614075ee2b4e5b69f2d54420918cc2c7f603d80b606d073"
     },
     {
       "path": "docs/textbook/appendices.tex",
-      "sha256": "ced2fedbb7d9befc41c3e2f73bb01e1377e8ce89918509b55b02172a64ac32a5"
+      "sha256": "7b822bdab4ef99b22c43666ad5766d3da6576d24f510815c11ccc9a6b8b03ca1"
     },
     {
       "path": "docs/textbook/references.bib",
-      "sha256": "72a7d07dfe7c3ad97ab2b97c98a2f3466a7cf3ecd88043a585826e09e16414a6"
+      "sha256": "35532cf07ceef12d6837ed420426dd2697937bfc8c3592c168bc028a2a81c591"
     }
   ],
   "counts": {
     "chapters": 10,
-    "appendices": 3,
-    "figures": 18,
-    "programs": 42,
+    "appendices": 4,
+    "figures": 19,
+    "programs": 43,
     "datasets": 13
   }
 }
