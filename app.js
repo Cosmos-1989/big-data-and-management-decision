@@ -2,21 +2,29 @@ import katex from './vendor/katex/katex.mjs';
 import renderMathInElement from './vendor/katex/contrib/auto-render.mjs';
 import {mountLab,cleanupLab,esc,tableHtml} from './lab.js';
 import {experiments} from './experiments.js';
-import {lectureSlidesHtml,initLectureSlides} from './slides.js?v=20260923-6';
+import {lectureSlidesHtml,initLectureSlides} from './slides.js?v=20261006-1';
 import {decorateEnterpriseCases,initFigureZoom} from './cases.js';
+import {initCourseSearch} from './course-search.js?v=20261006-1';
 const main=document.querySelector('main'),sidebar=document.querySelector('.sidebar'),toc=document.querySelector('.toc');
 const home=main.innerHTML;let catalog,currentRoute='',renderVersion=0;
 const macros={'\\E':'\\mathbb E','\\Prob':'\\mathbb P','\\R':'\\mathbb R','\\N':'\\mathbb N','\\eps':'\\varepsilon','\\dd':'\\,\\mathrm d','\\argmin':'\\operatorname*{arg\\,min}','\\argmax':'\\operatorname*{arg\\,max}','\\abs':'\\left\\lvert #1\\right\\rvert','\\norm':'\\left\\lVert #1\\right\\rVert'};
 const cached=new Map();
 let decorationsPromise;
-function chapterDecorations(){return decorationsPromise ||= Promise.all([fetch('./content/lecture-slides.json?v=20260923-6').then(r=>r.json()),fetch('./content/case-cards.json').then(r=>r.json()),fetch('./content/lab-specs.json').then(r=>r.json())]).then(([slides,cases,specs])=>({slides,cases,snippets:specs.snippets}));}
+function chapterDecorations(){return decorationsPromise ||= Promise.all([fetch('./content/lecture-slides.json?v=20261006-1').then(r=>r.json()),fetch('./content/case-cards.json').then(r=>r.json()),fetch('./content/lab-specs.json').then(r=>r.json())]).then(([slides,cases,specs])=>({slides,cases,snippets:specs.snippets}));}
 async function doc(id){if(!cached.has(id)){const r=await fetch('./content/'+encodeURIComponent(id)+'.json');if(!r.ok)throw new Error('找不到这份课程资料');cached.set(id,await r.json());}return cached.get(id);}
 function chapterLink(c){return `<a href="#/chapter/${c.id}"><span class="chapter-number">${/^\d/.test(c.id)?c.id.slice(0,2):'↗'}</span><span>${esc(c.title)}</span><span class="row-arrow">→</span></a>`;}
 function buildNav(){
  const core=catalog.chapters.filter(c=>/^\d/.test(c.id));
  sidebar.innerHTML=`<div class="side-title">课程目录</div><a href="#/">课程首页</a><a href="#/lab">交互实验室</a><a href="#/chapter/preface">前言、全书结构与记号</a>${core.map((c,i)=>(i===0?'<p class="side-label">第一部分 · 决策与数据基础</p>':i===4?'<p class="side-label">第二部分 · 统计分析与效果评价</p>':i===8?'<p class="side-label">第三部分 · 优化与执行</p>':'')+`<a href="#/chapter/${c.id}"><span class="nav-num">${c.id.slice(0,2)}</span>${esc(c.title)}</a>`).join('')}<p class="side-label">专题与综合项目</p>${catalog.extras.filter(c=>/^1[1-4]_/.test(c.id)).map(c=>`<a href="#/chapter/${c.id}">${esc(c.title.replace('第 ','').replace(' 章',''))}</a>`).join('')}<a href="#/chapter/final_project">15–16　综合项目与答辩</a><p class="side-label">附录与检索</p>${catalog.chapters.filter(c=>c.id.startsWith('appendix')).map((c,i)=>`<a href="#/chapter/${c.id}">${String.fromCharCode(65+i)}　${esc(c.title)}</a>`).join('')}<a href="#/index">主题索引</a><a href="#/chapter/bibliography">参考文献</a><a href="#/resources">数据、作业与课程资源</a><div class="side-bottom">数智化企业运营与优化微专业</div>`;
 }
-function setToc(items=[]){toc.innerHTML=`<div>本页内容</div>${items.map(i=>`<a href="${esc(i.href)}" class="${i.level===3?'subtoc':''}">${esc(i.title)}</a>`).join('')}<div class="toc-download"><a href="./downloads/bdm_textbook.pdf" target="_blank">↓ 完整教材 PDF</a></div>`;}
+let tocObserver;
+function setToc(items=[]){tocObserver?.disconnect();toc.innerHTML=`<div>本页内容</div>${items.map(i=>`<a href="${esc(i.href)}" class="${i.level===3?'subtoc':''}">${esc(i.title)}</a>`).join('')}<div class="toc-download"><a href="./downloads/bdm_textbook.pdf" target="_blank">↓ 完整教材 PDF</a></div>`;
+ const links=[...toc.querySelectorAll('a')].filter(a=>a.href.includes('anchor='));
+ const entries=links.map(link=>({link,node:document.getElementById(new URLSearchParams(link.hash.split('?')[1]).get('anchor'))})).filter(x=>x.node);
+ const threshold=parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--header-height'))+28;
+ const activate=()=>{const above=entries.filter(x=>x.node.getBoundingClientRect().top<=threshold+4);const active=above.at(-1)||entries[0];entries.forEach(x=>{x.link.classList.toggle('active',x===active);if(x===active)x.link.setAttribute('aria-current','location');else x.link.removeAttribute('aria-current');});};
+ if(entries.length){tocObserver=new IntersectionObserver(activate,{rootMargin:`-${threshold}px 0px -55% 0px`,threshold:0});entries.forEach(x=>tocObserver.observe(x.node));activate();}
+}
 function footer(){return `<footer class="page-footer"><span>数智化企业运营与优化微专业</span><a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a></footer>`;}
 function title(s){document.title=s+' · 大数据与管理决策基础';}
 function jump(anchor){if(anchor){requestAnimationFrame(()=>{const el=document.getElementById(anchor);if(el)el.scrollIntoView({behavior:'instant',block:'start'});else main.scrollIntoView();});}else window.scrollTo(0,0);}
@@ -65,17 +73,20 @@ function parseCsv(text){const rows=[];let row=[],v='',quote=false;for(let i=0;i<
 function indexPage(){title('主题索引');main.innerHTML=`<div class="breadcrumb">课程讲义 / 主题索引</div><h1>主题索引</h1><p>按拼音与英文字母排列，点击词目返回教材中的对应章节。</p><label class="index-filter">查找概念<input id="index-query" type="search" placeholder="例如：因果、KPI、风险…"></label><div id="index-results" class="index-grid"></div>${footer()}`;const render=()=>{const q=document.querySelector('#index-query').value.toLowerCase();const matches=catalog.index.filter(i=>i.term.toLowerCase().includes(q)||i.sort.toLowerCase().includes(q));document.querySelector('#index-results').innerHTML=matches.length?[...matches].sort((a,b)=>a.sort.localeCompare(b.sort)).map(i=>`<a href="#/chapter/${i.chapter}${i.anchor?'?anchor='+encodeURIComponent(i.anchor):''}">${esc(i.term)}<small>第 ${Number(i.chapter.slice(0,2))} 章 →</small></a>`).join(''):'<p>没有匹配的词目。</p>';};document.querySelector('#index-query').oninput=render;render();setToc([]);}
 async function route(){
  const version=++renderVersion;const raw=location.hash.slice(1)||'/';const [path,query='']=raw.split('?');const anchor=new URLSearchParams(query).get('anchor');
- if(path===currentRoute){jump(anchor);return;}cleanupLab();currentRoute=path;sidebar.classList.remove('open');document.querySelector('.menu').setAttribute('aria-expanded','false');
- document.body.classList.toggle('home-view',path==='/');document.body.classList.toggle('lab-view',path.startsWith('/lab'));document.querySelectorAll('header nav a').forEach(a=>{const href=a.getAttribute('href');const selected=href==='#/lab'?path.startsWith('/lab'):href==='#/resources'?path==='/resources':!path.startsWith('/lab')&&path!=='/resources';if(selected)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current');});sidebar.querySelectorAll('a').forEach(a=>{const selected=a.getAttribute('href')==='#'+path||(a.getAttribute('href')==='#/lab'&&path.startsWith('/lab'));a.classList.toggle('active',selected);if(selected)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current');});
+ if(path===currentRoute){jump(anchor);return;}cleanupLab();currentRoute=path;setSidebarOpen(false);
+ document.body.classList.toggle('home-view',path==='/');document.body.classList.toggle('lab-view',path.startsWith('/lab'));document.querySelectorAll('.primary-nav a').forEach(a=>{const href=a.getAttribute('href');const selected=href==='#/lab'?path.startsWith('/lab'):href==='#/resources'?path==='/resources':!path.startsWith('/lab')&&path!=='/resources';if(selected)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current');});sidebar.querySelectorAll('a').forEach(a=>{const selected=a.getAttribute('href')==='#'+path||(a.getAttribute('href')==='#/lab'&&path.startsWith('/lab'));a.classList.toggle('active',selected);if(selected)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current');});
  try{
  if(path==='/')homePage();else if(path.startsWith('/chapter/'))await chapterPage(decodeURIComponent(path.slice(9)),version);else if(path==='/resources')resourcesPage();else if(path==='/index')indexPage();else if(path.startsWith('/lab')){title('交互实验室');setToc([]);await mountLab(main,catalog,decodeURIComponent(path.split('/')[2]||'kpi'));}else throw new Error('页面不存在');
  if(version===renderVersion)jump(anchor);
  }catch(error){main.innerHTML=`<h1>暂时无法打开</h1><p>${esc(error.message)}</p><a href="#/">返回课程首页</a>`;currentRoute='';}
 }
 document.querySelector('#skip-link').onclick=e=>{e.preventDefault();main.tabIndex=-1;main.focus();};
-document.querySelector('.menu').onclick=()=>{sidebar.classList.toggle('open');document.querySelector('.menu').setAttribute('aria-expanded',sidebar.classList.contains('open'));};
-document.addEventListener('keydown',e=>{if(e.key==='Escape'){sidebar.classList.remove('open');document.querySelector('.menu').setAttribute('aria-expanded','false');}});
-try{const r=await fetch('./content/catalog.json');if(!r.ok)throw new Error('课程目录加载失败，请刷新重试。');catalog=await r.json();buildNav();window.addEventListener('hashchange',route);await route();}catch(e){main.innerHTML=`<h1>课程内容暂时无法加载</h1><p>${esc(e.message)}</p><button onclick="location.reload()">重新加载</button>`;}
+function setSidebarOpen(open){sidebar.classList.toggle('open',open);document.body.classList.toggle('nav-open',open);document.querySelector('.menu').setAttribute('aria-expanded',String(open));document.querySelector('.sidebar-backdrop').hidden=!open;}
+document.querySelector('.menu').onclick=()=>setSidebarOpen(!sidebar.classList.contains('open'));
+document.querySelector('.sidebar-backdrop').onclick=()=>setSidebarOpen(false);
+window.matchMedia('(min-width:981px)').addEventListener('change',e=>{if(e.matches)setSidebarOpen(false);});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){setSidebarOpen(false);}});
+try{const r=await fetch('./content/catalog.json');if(!r.ok)throw new Error('课程目录加载失败，请刷新重试。');catalog=await r.json();buildNav();initCourseSearch(catalog);window.addEventListener('hashchange',route);await route();}catch(e){main.innerHTML=`<h1>课程内容暂时无法加载</h1><p>${esc(e.message)}</p><button onclick="location.reload()">重新加载</button>`;}
 // Optional WebMCP navigation uses the same routes and visible state as the interface.
 const context=document.modelContext;
 if(context?.registerTool){
