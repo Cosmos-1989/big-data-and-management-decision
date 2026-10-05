@@ -2,32 +2,32 @@ import katex from './vendor/katex/katex.mjs';
 import renderMathInElement from './vendor/katex/contrib/auto-render.mjs';
 import {mountLab,cleanupLab,esc,tableHtml} from './lab.js';
 import {experiments} from './experiments.js';
-import {lectureSlidesHtml,initLectureSlides} from './slides.js?v=20261006-1';
+import {lectureSlidesHtml,initLectureSlides} from './slides.js?v=20261006-2';
 import {decorateEnterpriseCases,initFigureZoom} from './cases.js';
-import {initCourseSearch} from './course-search.js?v=20261006-1';
+import {initCourseSearch} from './course-search.js?v=20261006-2';
 const main=document.querySelector('main'),sidebar=document.querySelector('.sidebar'),toc=document.querySelector('.toc');
 const home=main.innerHTML;let catalog,currentRoute='',renderVersion=0;
 const macros={'\\E':'\\mathbb E','\\Prob':'\\mathbb P','\\R':'\\mathbb R','\\N':'\\mathbb N','\\eps':'\\varepsilon','\\dd':'\\,\\mathrm d','\\argmin':'\\operatorname*{arg\\,min}','\\argmax':'\\operatorname*{arg\\,max}','\\abs':'\\left\\lvert #1\\right\\rvert','\\norm':'\\left\\lVert #1\\right\\rVert'};
 const cached=new Map();
 let decorationsPromise;
-function chapterDecorations(){return decorationsPromise ||= Promise.all([fetch('./content/lecture-slides.json?v=20261006-1').then(r=>r.json()),fetch('./content/case-cards.json').then(r=>r.json()),fetch('./content/lab-specs.json').then(r=>r.json())]).then(([slides,cases,specs])=>({slides,cases,snippets:specs.snippets}));}
+function chapterDecorations(){return decorationsPromise ||= Promise.all([fetch('./content/lecture-slides.json?v=20261006-2').then(r=>r.json()),fetch('./content/case-cards.json').then(r=>r.json()),fetch('./content/lab-specs.json').then(r=>r.json())]).then(([slides,cases,specs])=>({slides,cases,snippets:specs.snippets}));}
 async function doc(id){if(!cached.has(id)){const r=await fetch('./content/'+encodeURIComponent(id)+'.json');if(!r.ok)throw new Error('找不到这份课程资料');cached.set(id,await r.json());}return cached.get(id);}
 function chapterLink(c){return `<a href="#/chapter/${c.id}"><span class="chapter-number">${/^\d/.test(c.id)?c.id.slice(0,2):'↗'}</span><span>${esc(c.title)}</span><span class="row-arrow">→</span></a>`;}
 function buildNav(){
  const core=catalog.chapters.filter(c=>/^\d/.test(c.id));
  sidebar.innerHTML=`<div class="side-title">课程目录</div><a href="#/">课程首页</a><a href="#/lab">交互实验室</a><a href="#/chapter/preface">前言、全书结构与记号</a>${core.map((c,i)=>(i===0?'<p class="side-label">第一部分 · 决策与数据基础</p>':i===4?'<p class="side-label">第二部分 · 统计分析与效果评价</p>':i===8?'<p class="side-label">第三部分 · 优化与执行</p>':'')+`<a href="#/chapter/${c.id}"><span class="nav-num">${c.id.slice(0,2)}</span>${esc(c.title)}</a>`).join('')}<p class="side-label">专题与综合项目</p>${catalog.extras.filter(c=>/^1[1-4]_/.test(c.id)).map(c=>`<a href="#/chapter/${c.id}">${esc(c.title.replace('第 ','').replace(' 章',''))}</a>`).join('')}<a href="#/chapter/final_project">15–16　综合项目与答辩</a><p class="side-label">附录与检索</p>${catalog.chapters.filter(c=>c.id.startsWith('appendix')).map((c,i)=>`<a href="#/chapter/${c.id}">${String.fromCharCode(65+i)}　${esc(c.title)}</a>`).join('')}<a href="#/index">主题索引</a><a href="#/chapter/bibliography">参考文献</a><a href="#/resources">数据、作业与课程资源</a><div class="side-bottom">数智化企业运营与优化微专业</div>`;
 }
-let tocObserver;
-function setToc(items=[]){tocObserver?.disconnect();toc.innerHTML=`<div>本页内容</div>${items.map(i=>`<a href="${esc(i.href)}" class="${i.level===3?'subtoc':''}">${esc(i.title)}</a>`).join('')}<div class="toc-download"><a href="./downloads/bdm_textbook.pdf" target="_blank">↓ 完整教材 PDF</a></div>`;
+let syncToc=()=>{},tocFrame;
+window.addEventListener('scroll',()=>{if(!tocFrame)tocFrame=requestAnimationFrame(()=>{tocFrame=null;syncToc();});},{passive:true});
+function setToc(items=[]){syncToc=()=>{};toc.innerHTML=`<div>本页内容</div>${items.map(i=>`<a href="${esc(i.href)}" class="${i.level===3?'subtoc':''}">${esc(i.title)}</a>`).join('')}<div class="toc-download"><a href="./downloads/bdm_textbook.pdf" target="_blank">↓ 完整教材 PDF</a></div>`;
  const links=[...toc.querySelectorAll('a')].filter(a=>a.href.includes('anchor='));
  const entries=links.map(link=>({link,node:document.getElementById(new URLSearchParams(link.hash.split('?')[1]).get('anchor'))})).filter(x=>x.node);
- const threshold=parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--header-height'))+28;
- const activate=()=>{const above=entries.filter(x=>x.node.getBoundingClientRect().top<=threshold+4);const active=above.at(-1)||entries[0];entries.forEach(x=>{x.link.classList.toggle('active',x===active);if(x===active)x.link.setAttribute('aria-current','location');else x.link.removeAttribute('aria-current');});};
- if(entries.length){tocObserver=new IntersectionObserver(activate,{rootMargin:`-${threshold}px 0px -55% 0px`,threshold:0});entries.forEach(x=>tocObserver.observe(x.node));activate();}
+ const activate=()=>{const threshold=parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--header-height'))+28;const above=entries.filter(x=>x.node.getBoundingClientRect().top<=threshold+4);const active=above.at(-1)||entries[0];entries.forEach(x=>{x.link.classList.toggle('active',x===active);if(x===active)x.link.setAttribute('aria-current','location');else x.link.removeAttribute('aria-current');});};
+ if(entries.length){syncToc=activate;activate();}
 }
 function footer(){return `<footer class="page-footer"><span>数智化企业运营与优化微专业</span><a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a></footer>`;}
 function title(s){document.title=s+' · 大数据与管理决策基础';}
-function jump(anchor){if(anchor){requestAnimationFrame(()=>{const el=document.getElementById(anchor);if(el)el.scrollIntoView({behavior:'instant',block:'start'});else main.scrollIntoView();});}else window.scrollTo(0,0);}
+function jump(anchor){if(anchor){requestAnimationFrame(()=>{const el=document.getElementById(anchor);if(el)el.scrollIntoView({behavior:'instant',block:'start'});else main.scrollIntoView();syncToc();});}else window.scrollTo(0,0);}
 function homePage(){
  title('课程首页');main.innerHTML=home;
  const core=catalog.chapters.filter(c=>/^\d/.test(c.id));
