@@ -2,14 +2,14 @@
   "family": "BDM Course Song",
   "upstream": "https://github.com/adobe-fonts/source-han-serif",
   "license": "SIL OFL 1.1",
-  "contentSha256": "11da69319639414bc575a2e12d967ba44cba43ca4a36043b8f9a7debd60d25d3",
-  "requiredCjkCharacters": 1102,
+  "contentSha256": "eaec8994d789b84efcc66a5e6441aac0a299808f7d678d56f45d625330a6b719",
+  "requiredCjkCharacters": 1116,
   "fonts": [
     {
       "weight": 400,
       "file": "course-song-regular.woff2",
-      "bytes": 296584,
-      "sha256": "83f0bac55bd75f63e2fc7ddaf8dc80e02e77c8c8260d01fb244b9e73afa50b35",
+      "bytes": 300228,
+      "sha256": "c0a6df7865ee98a49d1796ce0074e60337d15cae12a38ea5f394fa3d8c606b6d",
       "sourceSha256": "3754ea669c530e2473354f8f6d9f79680a44d7e26ec7d00eeabee4a7e0753c5d",
       "version": "Version 2.003;hotconv 1.1.1;makeotfexe 2.6.0",
       "missingCjk": []
@@ -17,8 +17,8 @@
     {
       "weight": 700,
       "file": "course-song-bold.woff2",
-      "bytes": 306392,
-      "sha256": "aa72b832437f367c067ecc70cb89d9531a04304d29f55d09365769e22ff1eded",
+      "bytes": 310160,
+      "sha256": "604b5b9fd7846172017c6086f4811cc05057e472a69d96e6597116fc9099c4d4",
       "sourceSha256": "4ee555ae58b3d22f6a95c2c494f2c36b7cccfc1d2224635f6461a03756f0e3c1",
       "version": "Version 2.003;hotconv 1.1.1;makeotfexe 2.6.0",
       "missingCjk": []

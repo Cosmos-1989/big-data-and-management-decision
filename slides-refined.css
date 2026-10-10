@@ -1,4 +1,4 @@
-@import url('./assets/fonts/course-song.css?v=20261010-5');
+@import url('./assets/fonts/course-song.css?v=20261010-8');
 /* Lecture canvas: a consistent 1280 × 720 composition, scaled for projection.
    Narrow embedded views retain ordinary reading size instead of shrinking text. */
 .lesson-slides{--slide-scale:1;--deck-ink:#203648;--deck-blue:#386f91;--deck-line:#dce5eb;--slide-song:"BDM Course Song","Songti SC",SimSun,STSong,serif;border-radius:12px;overflow:hidden;background:#fff;font-family:var(--slide-song)}
@@ -105,7 +105,7 @@
 .lesson-slides.is-readable .slide-lead{font-size:17px;line-height:1.5}
 .lesson-slides.is-readable .slide-content{display:block;padding:23px 0}
 .lesson-slides.is-readable .slide-body,.lesson-slides.is-readable .slide-two-paragraphs .slide-body{display:grid;grid-template-columns:1fr;gap:14px}
-.lesson-slides.is-readable .slide-body p{font-size:17px;line-height:1.72}
+.lesson-slides.is-readable .slide-body p{font-size:17px;line-height:1.72;text-align:left}
 .lesson-slides.is-readable .slide-support{display:grid;grid-template-columns:1fr;margin-top:22px;gap:18px}
 .lesson-slides.is-readable .slide-equation,.lesson-slides.is-readable .example-formula{font-size:17px;overflow-x:auto}
 .lesson-slides.is-readable .slide-example{padding:17px}
@@ -163,3 +163,63 @@
 .lesson-slides.is-readable .slide-compact .slide-code pre{font-size:13px;line-height:1.5}
 .lesson-slides.is-readable .slide-compact .slide-prompt{font-size:16px}
 .lesson-slides.is-readable .slide-compact .slide-prompt p{font-size:15px}
+/* Diagrams encode quantities with a common axis and structures with explicit
+   arrows. Their captions identify the source and interpretation of the figure. */
+.lesson-slides .slide-diagram{margin:0;width:100%;min-width:0;font-family:var(--slide-song)}
+.lesson-slides .diagram-heading{position:static;inset:auto;height:auto;min-height:0;width:auto;z-index:auto;background:none;backdrop-filter:none;display:flex;justify-content:space-between;gap:12px;align-items:baseline;padding:0 0 10px;border:0;border-bottom:1px solid #d4e2ea}
+.lesson-slides .diagram-heading>strong{font-size:19px;line-height:1.35;font-weight:700;color:#294f69}
+.lesson-slides .diagram-heading>span{max-width:45%;font-size:12px;line-height:1.4;text-align:right;color:#638092}
+.lesson-slides .diagram-canvas{position:relative;width:100%;height:292px;margin-top:10px}
+.lesson-slides .diagram-canvas>svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.lesson-slides .diagram-axis{stroke:#9bb0be;stroke-width:2;fill:none}
+.lesson-slides .diagram-grid{stroke:#dbe5ec;stroke-width:1.5;fill:none}
+.lesson-slides .diagram-reference{stroke:#aa6c7a;stroke-width:2.5;stroke-dasharray:8 7}
+.lesson-slides .diagram-tick{fill:#617d8e;font-size:32px;font-family:var(--slide-song)}
+.lesson-slides .diagram-label{position:absolute;transform:translate(-50%,-50%);text-align:center;line-height:1.35;font-size:16px;color:#2f556d}
+.lesson-slides .diagram-node{position:absolute;transform:translate(-50%,-50%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;padding:3px 7px;box-sizing:border-box;border:1px solid #a7c4d5;border-radius:6px;background:#f1f7fb;color:#305b76;text-align:center}
+.lesson-slides .diagram-node>strong{font-size:18px;line-height:1.25;font-weight:700}
+.lesson-slides .diagram-node>span{font-size:15px;line-height:1.35}
+.lesson-slides .diagram-node .katex{font-size:1.02em}
+.lesson-slides .diagram-node-circle{border-radius:50%;padding:4px}
+.lesson-slides .diagram-tone-teal{background:#eff8f6;border-color:#a2c7c2;color:#2b6b66}
+.lesson-slides .diagram-tone-muted{background:#f3f5f7;border-color:#c1cdd6;color:#566c7c}
+.lesson-slides .diagram-tone-rose{background:#fbf1f4;border-color:#d9b7c2;color:#92566a}
+.lesson-slides .diagram-edge-label{padding:2px 5px;background:#fdfefe;font-size:14px;color:#537c94;white-space:nowrap}
+.lesson-slides .diagram-row-label{position:absolute;left:0;width:25%;transform:translateY(-50%);display:flex;flex-direction:column;gap:4px;line-height:1.25;padding-right:8px;box-sizing:border-box}
+.lesson-slides .diagram-row-label>strong{font-size:18px;font-weight:700}
+.lesson-slides .diagram-row-label>small{font-size:14px;color:#678293}
+.lesson-slides .diagram-value{font-size:20px;font-weight:700;white-space:nowrap}
+.lesson-slides .diagram-axis-unit{position:absolute;bottom:0;right:0;font-size:14px;line-height:1.35;color:#6c8393}
+.lesson-slides .diagram-range-label{font-size:16px;white-space:nowrap}
+.lesson-slides .diagram-point-label{font-size:14px;padding:1px 3px;background:#fdfefedb;box-sizing:border-box}
+.lesson-slides .diagram-segment-label{font-size:16px;line-height:1.25}
+.lesson-slides .diagram-region-label{font-size:17px;color:#35746c}
+.lesson-slides .diagram-x-title{position:absolute;right:6%;bottom:0;font-size:16px}
+.lesson-slides .diagram-y-title{position:absolute;left:0;top:-3px;font-size:16px}
+.lesson-slides .diagram-legend{position:absolute;top:-3px;right:0;display:flex;gap:12px;font-size:14px}
+.lesson-slides .diagram-legend>span{display:flex;gap:5px;align-items:center}
+.lesson-slides .diagram-legend i{display:inline-block;width:14px;height:3px}
+.lesson-slides .diagram-matrix{border-collapse:separate;border-spacing:6px;width:100%;height:100%;table-layout:fixed;font-size:18px;text-align:center}
+.lesson-slides .diagram-matrix th{font-weight:700;color:#4b687c;padding:8px 4px;font-size:16px}
+.lesson-slides .diagram-matrix th:first-child{width:23%}
+.lesson-slides .diagram-matrix td{border:1px solid #d4e3ec;border-radius:6px;background:color-mix(in srgb,#9cc1d9 var(--cell-weight,25%),#fff);padding:10px 8px}
+.lesson-slides .diagram-matrix td.diagram-tone-rose{background:color-mix(in srgb,#dca4b5 var(--cell-weight,25%),#fff)}
+.lesson-slides .diagram-matrix td.diagram-tone-teal{background:color-mix(in srgb,#9bcac4 var(--cell-weight,25%),#fff)}
+.lesson-slides .diagram-matrix td>strong{display:block;font-size:23px;font-weight:500;line-height:1.4}
+.lesson-slides .diagram-matrix td>small{display:block;font-size:15px;line-height:1.35;color:#547082;margin-top:6px}
+.lesson-slides .diagram-matrix .katex{font-size:1.03em}
+.lesson-slides .slide-diagram figcaption{font-size:16px;line-height:1.42;margin-top:10px;padding-top:9px;border-top:1px solid #dce7ee;color:#4b6a7e}
+.lesson-slides .diagram-description{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.lesson-slides .slide-with-diagram.slide-layout-stack .slide-support{grid-template-columns:1fr}
+.lesson-slides .slide-with-diagram.slide-layout-stack .diagram-canvas{height:230px}
+.lesson-slides .slide-with-diagram.slide-layout-stack .slide-content{gap:12px}
+.lesson-slides.is-readable .slide-diagram{overflow-x:auto;padding-bottom:3px}
+.lesson-slides.is-readable .diagram-canvas{min-width:440px;height:292px}
+.lesson-slides.is-readable .diagram-heading>strong{font-size:16px}
+.lesson-slides.is-readable .diagram-heading>span{font-size:11px}
+.lesson-slides.is-readable .slide-diagram figcaption{font-size:14px}
+.lesson-slides.is-readable .diagram-node>strong{font-size:16px}
+.lesson-slides.is-readable .diagram-node>span{font-size:14px}
+@media(max-width:600px){
+ .lesson-slides.is-readable .slide-diagram::before{content:'左右滑动查看完整图解';display:block;margin-bottom:10px;font-size:12px;color:#6c8393}
+}
