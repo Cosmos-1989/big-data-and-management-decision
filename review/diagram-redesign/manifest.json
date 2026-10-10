@@ -1,0 +1,125 @@
+{
+  "date": "2026-10-10",
+  "slidesSha256": "eaec8994d789b84efcc66a5e6441aac0a299808f7d678d56f45d625330a6b719",
+  "rendererSha256": "bbcd97f636775d7cb176573564eb3649d135eec8e2ee254143e4181a59dafa4e",
+  "cssSha256": "cfd40efad6c55d9c3083ae1aa60dbd49bf50448e9657feff1c866e985076e166",
+  "sources": {
+    "01_intro": "0bf7c286c46f2c87c5ac95dc21170ff4c04785165dea04647ee7d403b9689d8c",
+    "02_enterprise_data_model": "f7389f32d9578ab94117354a24746a894d4e3034c0dea4350c4ce6a7b0c23c70",
+    "03_sql_kpi": "915038afb13f1c850ddc04821dd3638f0aef25f8f836e1a01773d1caeee3a083",
+    "04_data_quality": "5346054b99fe8f4c1105cc22a3064ee640f3784105a45bb94d70c43afcf3a26a",
+    "05_statistics_dashboard": "62b1c387fa337f75b031cc12a62e29738bb8b18c7dae6a81fc6c458506e9739d",
+    "06_ab_testing": "7118181ccc3fe93b649f2df68109eb0f1054e04ba23d877b3ba56710c8632fae",
+    "07_prediction": "460fe998f1caff7ae9d79a32f49271f04a7bb9341549e7896e459c0c527f1014",
+    "08_causality": "e60a5c4a14e0f2814e059f9e7ae1c21aacc9f3fdf304c6b525418e0fccfeb848",
+    "09_optimization": "fcd34ed2f3a02abf7426b56c62e4c620c1a0a11bcc283809aef6abd942dbb694",
+    "10_process_mining": "6a22a33c37b9a74d00df5bfe13ce2ff28133ce904c60d1d6847ba4ab88bb35db"
+  },
+  "counts": {
+    "01_intro": {
+      "pages": 37,
+      "figures": 15
+    },
+    "02_enterprise_data_model": {
+      "pages": 33,
+      "figures": 15
+    },
+    "03_sql_kpi": {
+      "pages": 38,
+      "figures": 14
+    },
+    "04_data_quality": {
+      "pages": 43,
+      "figures": 15
+    },
+    "05_statistics_dashboard": {
+      "pages": 45,
+      "figures": 16
+    },
+    "06_ab_testing": {
+      "pages": 44,
+      "figures": 16
+    },
+    "07_prediction": {
+      "pages": 39,
+      "figures": 16
+    },
+    "08_causality": {
+      "pages": 42,
+      "figures": 15
+    },
+    "09_optimization": {
+      "pages": 37,
+      "figures": 15
+    },
+    "10_process_mining": {
+      "pages": 45,
+      "figures": 15
+    }
+  },
+  "browser": {
+    "logicalSlide": [
+      1280,
+      720
+    ],
+    "contactViewport": [
+      1280,
+      900
+    ],
+    "mobile": [
+      390,
+      844
+    ],
+    "pageIssues": 0,
+    "mathErrors": 0,
+    "diagramIssues": 0,
+    "expandedPromptFailures": 0
+  },
+  "contactSheets": {
+    "contact-00.png": "b749252569541e1275008ea2c5fc7fb3568fd8082fef32fce4af01bc79d86c46",
+    "contact-01.png": "3c2352df0b807c2283dc5d86a774733488ee3ebf686df627b60bc11c6678c567",
+    "contact-02.png": "7e7d35817d9a9029a8ba1bff5b3d59a54941868a5a204d3d32bac09c9206afbb",
+    "contact-03.png": "e09313918c9606634b4347f9035177eb45bddb9edf246da0fa1dce8ea1f4aea2",
+    "contact-04.png": "48881b50013fe1b5e89e243cb859448d56b288fd833d82b4a9be95065781f3c4",
+    "contact-05.png": "2c65382983945eed4a5b1216d9ec19daaec714303a29515427ef67de3c77e4ee",
+    "contact-06.png": "9103ecb7dbc1c1feac9ef53ae9295909c4dbfb4e3f2c8a628c12675cad6a62e6",
+    "contact-07.png": "8175d9f4214e609daaf8cf122b3e4b08b64239578986f4b652b84318d97f9462",
+    "contact-08.png": "bb9061aacaada644f0834d0565cab724d0ba871a9c351230c3a3fc77aa77fa49",
+    "contact-09.png": "0c4d1c60c3dfa4838b7dee832a8fcff6de40c4109568df5fbd13053bcc8de746",
+    "contact-10.png": "5fb230feb35f42f8d8ab471add076c4cd0636d60df17490a987ab9fa602d094a",
+    "contact-11.png": "304f372508294233e295d8f987731927d6d5dff852680df20d661305f112e292",
+    "contact-12.png": "60b6f04e22916ae3e490a9ba4e5244a65816d75e7e47e5820662c816a0847e2b",
+    "contact-13.png": "a22a7b38845abcee48f4dee3c65f772c6c49e1c78683f3fb8146fe6a696a3ce6",
+    "contact-14.png": "2ed68e212cca56e9ae853a00e121bddb76d86a0c564769494acc6a8d5f61bd71",
+    "contact-15.png": "c8b300d5938d9050d0c1c2d801bbce68f5d01b956b4ad22f9b0c086914701d25",
+    "contact-16.png": "5efac4aabf407284aa3e28cb5acc0c3120dc3af2e62b53b0b3346a1a8e65084e",
+    "contact-17.png": "22f07b5ae18a96e26c3f4e847e09a02c7fff19fc1ebe795ca51ae90cf0324566",
+    "contact-18.png": "3b7e35fc062a7b94f321477659671f0660b244761513db647459486de49b4b4c",
+    "contact-19.png": "9e9a9ec215f5690b49185084e4644f7114a6ea71ad5bc14cd3ea4011b90caa88",
+    "contact-20.png": "9a5cfbb4951062c5e259af5aba482d95b63a84079cdd2e5f31d907cd9bced9f8",
+    "contact-21.png": "ca4df97d1f1298a7f0a6e5ae68b4d9461c0f772ed236c837c61aa8ac9d40dfad",
+    "contact-22.png": "ce230ec710174f6ba26bd76be0229390edaee0f26eb28ef259cb2b2d8cbab30c",
+    "contact-23.png": "195f3e18d1c5f4ba7241d05d33f613aab06f03c5951259400d4711d1dace964f",
+    "contact-24.png": "c0a3c467c1f3d297abaa7deba5cf64fba852e62eb3acebf58d79d039d6206fcf",
+    "contact-25.png": "90a44a3da6c2132094bf282c64c63848205e8276e570fdb4cab144dd1bc8cd9a",
+    "contact-26.png": "585084c7cb1160ecbf9a46baafc24c30f6f660429a9d80724a60fe57e4501697",
+    "contact-27.png": "7dfa40192b38d171ea7a2da74056a2ea3bb1f964d6b787d4f5dbc9e1b1ab8bea",
+    "contact-28.png": "1ca99dd0e064d0a9c9af46214f4bdd2b555b209f6af855a6be5d38f15ef3fd2e",
+    "contact-29.png": "3edda5ad72b21fab3b840aadbd8926761404ebd003f4246bf25fea2dfd3f12c0",
+    "contact-30.png": "8bdda4a75a7901ca8e1794fbf3c493ffe93ef0e2bfc33b0ff596ae762c61f2a5",
+    "contact-31.png": "90497bc430668fccddc218b7a304ecfadd9c315d4bf90ace125281a775fd2989",
+    "contact-32.png": "7000146bab0f703e4d3e7ec2ad1d45869ea09f08f94d89c64a008b44c2fe9c00",
+    "contact-33.png": "77b60e11df85bfbc311869fce0790546c856b45c5ceb63fa068435ba71171ba3",
+    "contact-34.png": "13231e360568fe3abf5d7afcf44a5ec967573c5be5230aaed7aa094bc2ff9705",
+    "contact-35.png": "edb4f2642fe8bc9611c0aca813746d7cf8ce3573cf3bd86422a70c93f9a100ab",
+    "contact-36.png": "4d4736a5ce26d6c06ca1a05c017c907940f50c36e80c5d8a002f72f139c7d57b",
+    "contact-37.png": "420db80173d05c164934728c42cfe658c13a9bf050333ceaf8b3b8be88bdb582",
+    "contact-38.png": "9d61dcf5ad9b5e4a7618ab03020dc1a3532f72dcb435b298ef7c6e30ee6dc3e8",
+    "contact-39.png": "10226171144fb3d6216b5da0f920159f9ea120afa63995f7bb177b24a0f01577",
+    "contact-40.png": "481cbf4a657e0a461adc40562df63d14496fb0157d3511b7eed2d67fb415df75",
+    "contact-41.png": "073e31e76559885c0e52818828ceb0b8e8591457af868d4dcab965ca48de0eb4",
+    "contact-42.png": "118e6fb21234d791941538933b0830914fc119cefb607fd85aac2426acfe4674",
+    "contact-43.png": "87236fc8b32256e0bc36b31492b0f6325f0f3dba15cf3aeeb4f76ca6a5549667",
+    "contact-44.png": "844545e50d2fc3ecb5eee3d3fcac98fcf3824229500cf6dc0263d537329b8860"
+  }
+}

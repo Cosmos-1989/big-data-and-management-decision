@@ -96,7 +96,7 @@ for (const chapter of chapters) {
     for (const step of slide.workedExample?.steps || []) checkFormula(step.formula, chapter, page);
     checkInline([
       slide.title, slide.lead, slide.body, slide.points, slide.takeaway, slide.prompts,
-      slide.visual, slide.workedExample?.title, slide.workedExample?.context,
+      slide.visual, slide.diagram, slide.workedExample?.title, slide.workedExample?.context,
       slide.workedExample?.steps?.map(step => [step.label, step.text]),
       slide.workedExample?.result, slide.codeBlock?.caption, ref?.note
     ], chapter, page);

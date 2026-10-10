@@ -1,0 +1,28 @@
+{
+  "mobile": {
+    "figureScrollWidth": 440,
+    "figureWidth": 298,
+    "font": "\"BDM Course Song\", \"Songti SC\", SimSun, STSong, serif",
+    "hint": "\"左右滑动查看完整图解\"",
+    "mathErrors": 0,
+    "pageWidth": 390,
+    "readable": true,
+    "viewport": [
+      390,
+      844
+    ]
+  },
+  "keyboard": {
+    "chapter": "09_optimization",
+    "startPage": 24,
+    "rightPage": 25,
+    "leftPage": 24
+  },
+  "reference": {
+    "chapter": "09_optimization",
+    "page": 24,
+    "anchor": "sec:expedite-choice",
+    "exitedTheatre": true
+  },
+  "localErrors": []
+}

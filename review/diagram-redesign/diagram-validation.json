@@ -1,0 +1,127 @@
+{
+  "figures": 152,
+  "chapters": {
+    "01_intro": {
+      "pages": 37,
+      "figures": 15,
+      "types": {
+        "graph": 6,
+        "bars": 4,
+        "matrix": 2,
+        "plot": 2,
+        "timeline": 1
+      }
+    },
+    "02_enterprise_data_model": {
+      "pages": 33,
+      "figures": 15,
+      "types": {
+        "graph": 10,
+        "timeline": 2,
+        "plot": 2,
+        "bars": 1
+      }
+    },
+    "03_sql_kpi": {
+      "pages": 38,
+      "figures": 14,
+      "types": {
+        "graph": 7,
+        "bars": 4,
+        "plot": 1,
+        "matrix": 1,
+        "timeline": 1
+      }
+    },
+    "04_data_quality": {
+      "pages": 43,
+      "figures": 15,
+      "types": {
+        "graph": 7,
+        "timeline": 1,
+        "bars": 3,
+        "matrix": 1,
+        "intervals": 2,
+        "plot": 1
+      }
+    },
+    "05_statistics_dashboard": {
+      "pages": 45,
+      "figures": 16,
+      "types": {
+        "plot": 5,
+        "bars": 4,
+        "intervals": 1,
+        "matrix": 1,
+        "graph": 4,
+        "timeline": 1
+      }
+    },
+    "06_ab_testing": {
+      "pages": 44,
+      "figures": 16,
+      "types": {
+        "plot": 3,
+        "graph": 3,
+        "matrix": 1,
+        "bars": 5,
+        "intervals": 3,
+        "timeline": 1
+      }
+    },
+    "07_prediction": {
+      "pages": 39,
+      "figures": 16,
+      "types": {
+        "timeline": 2,
+        "bars": 3,
+        "plot": 6,
+        "graph": 2,
+        "matrix": 2,
+        "intervals": 1
+      }
+    },
+    "08_causality": {
+      "pages": 42,
+      "figures": 15,
+      "types": {
+        "graph": 7,
+        "matrix": 3,
+        "bars": 3,
+        "plot": 1,
+        "timeline": 1
+      }
+    },
+    "09_optimization": {
+      "pages": 37,
+      "figures": 15,
+      "types": {
+        "plot": 4,
+        "graph": 4,
+        "matrix": 2,
+        "timeline": 1,
+        "bars": 4
+      }
+    },
+    "10_process_mining": {
+      "pages": 45,
+      "figures": 15,
+      "types": {
+        "graph": 6,
+        "timeline": 1,
+        "bars": 2,
+        "matrix": 2,
+        "plot": 4
+      }
+    }
+  },
+  "types": {
+    "graph": 56,
+    "bars": 33,
+    "matrix": 15,
+    "plot": 29,
+    "timeline": 12,
+    "intervals": 7
+  },
+  "errors": []
+}
