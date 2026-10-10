@@ -2,15 +2,15 @@ import katex from './vendor/katex/katex.mjs';
 import renderMathInElement from './vendor/katex/contrib/auto-render.mjs';
 import {mountLab,cleanupLab,esc,tableHtml} from './lab.js';
 import {experiments} from './experiments.js';
-import {lectureSlidesHtml,initLectureSlides} from './slides.js?v=20261006-2';
+import {lectureSlidesHtml,initLectureSlides} from './slides.js?v=20261010-3';
 import {decorateEnterpriseCases,initFigureZoom} from './cases.js';
-import {initCourseSearch} from './course-search.js?v=20261006-2';
+import {initCourseSearch} from './course-search.js?v=20261010-3';
 const main=document.querySelector('main'),sidebar=document.querySelector('.sidebar'),toc=document.querySelector('.toc');
 const home=main.innerHTML;let catalog,currentRoute='',renderVersion=0;
 const macros={'\\E':'\\mathbb E','\\Prob':'\\mathbb P','\\R':'\\mathbb R','\\N':'\\mathbb N','\\eps':'\\varepsilon','\\dd':'\\,\\mathrm d','\\argmin':'\\operatorname*{arg\\,min}','\\argmax':'\\operatorname*{arg\\,max}','\\abs':'\\left\\lvert #1\\right\\rvert','\\norm':'\\left\\lVert #1\\right\\rVert'};
 const cached=new Map();
 let decorationsPromise;
-function chapterDecorations(){return decorationsPromise ||= Promise.all([fetch('./content/lecture-slides.json?v=20261006-2').then(r=>r.json()),fetch('./content/case-cards.json').then(r=>r.json()),fetch('./content/lab-specs.json').then(r=>r.json())]).then(([slides,cases,specs])=>({slides,cases,snippets:specs.snippets}));}
+function chapterDecorations(){return decorationsPromise ||= Promise.all([fetch('./content/lecture-slides.json?v=20261010-3').then(r=>r.json()),fetch('./content/case-cards.json').then(r=>r.json()),fetch('./content/lab-specs.json').then(r=>r.json())]).then(([slides,cases,specs])=>({slides,cases,snippets:specs.snippets}));}
 async function doc(id){if(!cached.has(id)){const r=await fetch('./content/'+encodeURIComponent(id)+'.json');if(!r.ok)throw new Error('找不到这份课程资料');cached.set(id,await r.json());}return cached.get(id);}
 function chapterLink(c){return `<a href="#/chapter/${c.id}"><span class="chapter-number">${/^\d/.test(c.id)?c.id.slice(0,2):'↗'}</span><span>${esc(c.title)}</span><span class="row-arrow">→</span></a>`;}
 function buildNav(){

@@ -1,0 +1,156 @@
+/* Lecture canvas: a consistent 1280 × 720 composition, scaled for projection.
+   Narrow embedded views retain ordinary reading size instead of shrinking text. */
+.lesson-slides{--slide-scale:1;--deck-ink:#203648;--deck-blue:#386f91;--deck-line:#dce5eb;border-radius:12px;overflow:hidden;background:#fff}
+.lesson-slides .slide-viewport{overflow:hidden;transition:none;background:#edf2f5}
+.lesson-slides .slide-track{align-items:stretch}
+.lesson-slides .lecture-slide{position:relative;min-height:0;height:calc(720px * var(--slide-scale));overflow:hidden;background:#fff}
+.lesson-slides .slide-page{position:absolute;left:50%;top:0;transform:translateX(-50%) scale(var(--slide-scale));transform-origin:top center;display:flex;flex-direction:column;width:1280px;height:720px;min-height:0;box-sizing:border-box;padding:28px 54px 24px;background:#fdfefe;color:var(--deck-ink);font-family:Arial,"PingFang SC","Microsoft YaHei",sans-serif}
+.lesson-slides .slide-kind-opener .slide-page{background:linear-gradient(120deg,#fdfefe 65%,#f3f8fb)}
+.lesson-slides .slide-kind-summary .slide-page{background:#f8fbfd}
+.lesson-slides .slide-heading{position:static;display:block;flex:none;width:auto;height:auto;min-width:0;padding:0;margin:0;background:none;border:0;backdrop-filter:none;z-index:auto}
+.lesson-slides .slide-topline{padding:0 0 12px;margin-bottom:17px;gap:20px;font-size:14px;letter-spacing:.03em;line-height:1.4;color:#657b8a}
+.lesson-slides .slide-chapter{font-weight:500;flex:1;color:#516c7d}
+.lesson-slides .slide-section{max-width:45%;text-align:right}
+.lesson-slides .slide-number{flex:none;font:13px/1.4 ui-monospace,SFMono-Regular,Consolas,monospace;color:#6b8596}
+.lesson-slides .slide-kicker{display:block;margin:0 0 7px;font-size:13px;letter-spacing:.1em;color:#477997}
+.lesson-slides .slide-kicker:before{display:none}
+.lesson-slides .lecture-slide h3,.lesson-slides .slide-kind-opener h3,.lesson-slides:fullscreen .lecture-slide h3{max-width:none;margin:0 0 12px;font-size:40px;font-family:"Songti SC",STSong,"Noto Serif CJK SC",serif;font-weight:700;line-height:1.26;letter-spacing:0;color:#153349}
+.lesson-slides .slide-lead,.lesson-slides:fullscreen .slide-lead,.lesson-slides.is-theatre .slide-lead{margin:0;padding:0 0 0 13px;border-left:3px solid #86afc5;font-size:23px;font-weight:500;line-height:1.42;color:#416277}
+.lesson-slides .slide-content{flex:1;min-height:0;display:grid;grid-template-columns:minmax(0,1.06fr) minmax(0,.94fr);gap:38px;align-content:center;align-items:center;padding:24px 0 21px}
+.lesson-slides .slide-narrative,.lesson-slides .slide-support{min-width:0}
+.lesson-slides .slide-body{display:grid;gap:17px}
+.lesson-slides .slide-body p,.lesson-slides:fullscreen .slide-body p,.lesson-slides.is-theatre .slide-body p{margin:0;color:#354e60;font-size:23px;line-height:1.62;text-align:justify}
+.lesson-slides .slide-body strong{color:#1c4a65;font-weight:700}
+.lesson-slides .slide-body code{background:#edf4f8;font-size:.85em;overflow-wrap:anywhere}
+.lesson-slides .slide-layout-focus .slide-content,.lesson-slides .slide-layout-stack .slide-content{grid-template-columns:1fr;gap:20px;align-content:center}
+.lesson-slides .slide-layout-focus .slide-narrative{width:100%;max-width:1080px;margin:auto}
+.lesson-slides .slide-layout-focus.slide-two-paragraphs .slide-body,.lesson-slides .slide-layout-stack.slide-two-paragraphs .slide-body{grid-template-columns:repeat(2,minmax(0,1fr));gap:34px}
+.lesson-slides .slide-layout-stack .slide-support{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:24px}
+.lesson-slides .slide-support{display:grid;gap:18px}
+.lesson-slides .slide-equation,.lesson-slides .example-formula{margin:19px 0 0;padding:15px 14px;background:#f4f9fc;border-top:1px solid #dae8f0;border-bottom:1px solid #dae8f0;font-size:24px;overflow:visible;text-align:center}
+.lesson-slides .slide-equation .katex-display,.lesson-slides .example-formula .katex-display{margin:0}
+.lesson-slides .slide-equation .katex,.lesson-slides .example-formula .katex{font-size:1.13em}
+.lesson-slides .slide-equation small{font-size:15px;margin-bottom:6px}
+.lesson-slides .slide-example{padding:22px 25px;border-radius:9px;background:#f6fafd;border:1px solid #d8e6ee}
+.lesson-slides .slide-side-label{margin-bottom:15px;font-size:16px;letter-spacing:.04em;color:#386c8b}
+.lesson-slides .slide-example p,.lesson-slides .slide-example li,.lesson-slides:fullscreen .slide-example li,.lesson-slides.is-theatre .slide-example li{font-size:21px;line-height:1.48}
+.lesson-slides .slide-example ol{gap:14px}
+.lesson-slides .slide-example li{grid-template-columns:28px 1fr;gap:3px 11px}
+.lesson-slides .slide-example li:before{font-size:14px;line-height:1.8}
+.lesson-slides .slide-example li strong{font-weight:600;color:#254b66}
+.lesson-slides .slide-example .example-formula{margin:7px 0 0;padding:10px;font-size:21px}
+.lesson-slides .slide-example .example-result{margin-top:15px;padding-top:13px;font-size:20px;line-height:1.4}
+.lesson-slides .example-result span{font-size:14px}
+.lesson-slides .slide-visual{width:100%;gap:0 20px}
+.lesson-slides .slide-visual .visual-node{padding:17px 0;grid-template-columns:28px 1fr;gap:0 12px;border-color:#d3e1e9}
+.lesson-slides .slide-visual .visual-index{font-size:14px;line-height:1.7}
+.lesson-slides .slide-visual .visual-node strong{font-size:23px;line-height:1.4;font-weight:600}
+.lesson-slides .slide-visual .visual-node p{font-size:19px;line-height:1.46;margin-top:7px;color:#566f80}
+.lesson-slides .slide-visual .visual-value,.lesson-slides .slide-visual-metric .visual-value{font-size:32px;line-height:1.3;margin-top:6px}
+.lesson-slides .slide-visual-metric .visual-node strong{font-size:20px}
+.lesson-slides .slide-layout-stack .slide-visual:not(.slide-visual-table){grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:22px}
+.lesson-slides .slide-layout-split .slide-visual-cards,.lesson-slides .slide-layout-split .slide-visual-compare{grid-template-columns:1fr}
+.lesson-slides .slide-table-wrap{overflow:visible;border-top:2px solid #83abc2}
+.lesson-slides .slide-table-wrap table{min-width:0;width:100%;table-layout:fixed;font-size:20px;line-height:1.38;border-collapse:collapse}
+.lesson-slides .slide-table-wrap caption{font-size:17px;margin-bottom:8px;text-align:left}
+.lesson-slides .slide-table-wrap th,.lesson-slides .slide-table-wrap td{padding:12px 13px;overflow-wrap:break-word;border-bottom:1px solid #dae6ed}
+.lesson-slides .slide-table-wrap th{background:#edf5fa;color:#315b74;font-weight:600}
+.lesson-slides .slide-table-wrap .katex{font-size:1.02em}
+.lesson-slides .slide-code{border-radius:9px;box-shadow:none;background:#f7fafc;border-color:#d8e4ec}
+.lesson-slides .slide-code-head{padding:10px 18px;font-size:15px;line-height:1.3;color:#48718a;border-color:#d8e4ec}
+.lesson-slides .slide-code-head small{font-size:13px;color:#628399}
+.lesson-slides .slide-code pre,.lesson-slides:fullscreen .slide-code pre{padding:15px 19px;font-size:19px;line-height:1.48;overflow:visible;color:#2d4e64}
+.lesson-slides .slide-code p{font-size:17px;line-height:1.4;color:#4a697d;padding:10px 18px;border-color:#d8e4ec}
+.lesson-slides .slide-checkpoints{margin-top:17px;padding-top:14px;gap:18px}
+.lesson-slides .slide-checkpoints>span{font-size:15px}
+.lesson-slides .slide-checkpoints ul{font-size:20px;line-height:1.5;gap:7px;color:#486679}
+.lesson-slides .slide-prompt{margin-top:17px;padding:14px 18px;border:1px solid #ccdeea;border-radius:7px;background:#f4f8fb;font-size:20px;line-height:1.45}
+.lesson-slides .slide-prompt summary{cursor:pointer;list-style:none;color:#2b5873;font-weight:600}
+.lesson-slides .slide-prompt summary:after{content:'＋';float:right;font-size:19px;color:#64849a}
+.lesson-slides .slide-prompt[open] summary:after{content:'−'}
+.lesson-slides .slide-prompt summary>span{display:block;margin-bottom:6px;font-size:14px;color:#5d7a8d;font-weight:500}
+.lesson-slides .slide-prompt p{margin:11px 0 0;padding-top:11px;border-top:1px solid #d7e4ed;font-size:19px;line-height:1.5;color:#456274}
+.lesson-slides .slide-bottom{flex:none;min-width:0}
+.lesson-slides .slide-takeaway{display:grid;grid-template-columns:42px 1fr;gap:12px;padding:12px 17px;margin:0 0 10px;background:#edf5fa;border-left:3px solid #75a5c0}
+.lesson-slides .slide-takeaway>span{font-size:14px;line-height:1.65;color:#487e9c}
+.lesson-slides .slide-takeaway>strong{font-size:21px;line-height:1.45;font-weight:600;color:#254e69}
+.lesson-slides .slide-reading{display:flex;gap:16px;padding:0;margin:0;border:0;font-size:14px;line-height:1.45;color:#5f7989}
+.lesson-slides .slide-reading>span{font-size:13px;color:#668292;font-weight:500}
+.lesson-slides .slide-reading a,.lesson-slides .slide-reading strong{font-weight:500;color:#426e89}
+.lesson-slides .slide-reading p{display:inline;margin-left:10px;color:#6a8392}
+.lesson-slides .slide-compact .slide-content{gap:20px;padding-block:16px}
+.lesson-slides .slide-compact .slide-body p{font-size:21px;line-height:1.52}
+.lesson-slides .slide-compact .slide-table-wrap table{font-size:18px}
+.lesson-slides .slide-compact .slide-table-wrap th,.lesson-slides .slide-compact .slide-table-wrap td{padding:9px 12px}
+.lesson-slides .slide-compact .slide-code pre{font-size:17px;line-height:1.38}
+.lesson-slides .slide-compact .visual-node{padding-block:12px}
+.lesson-slides .slide-compact .visual-node strong{font-size:21px}
+.lesson-slides .slide-compact .visual-node p{font-size:18px}
+.lesson-slides:fullscreen,.lesson-slides.is-theatre{background:#edf2f5}
+.lesson-slides:fullscreen .slide-viewport,.lesson-slides.is-theatre .slide-viewport{position:relative;flex:1;min-height:0;height:auto!important}
+.lesson-slides:fullscreen .lecture-slide,.lesson-slides.is-theatre .lecture-slide{height:100%;overflow:hidden;background:#edf2f5}
+.lesson-slides:fullscreen .slide-page,.lesson-slides.is-theatre .slide-page{top:50%;transform:translate(-50%,-50%) scale(var(--slide-scale));transform-origin:center;width:1280px;height:720px;min-height:0;padding:28px 54px 24px}
+.lesson-slides.is-readable .lecture-slide{height:auto;overflow:visible}
+.lesson-slides.is-readable .slide-track{align-items:flex-start}
+.lesson-slides.is-readable .slide-page{position:static;transform:none;width:100%;height:auto;min-height:0;padding:22px;display:flex}
+.lesson-slides.is-readable .slide-topline{font-size:10px;gap:8px;margin-bottom:17px}
+.lesson-slides.is-readable .slide-section{display:none}
+.lesson-slides.is-readable .slide-number{font-size:10px}
+.lesson-slides.is-readable .slide-kicker{font-size:10px}
+.lesson-slides.is-readable .lecture-slide h3{font-size:27px;line-height:1.3;margin-bottom:14px}
+.lesson-slides.is-readable .slide-lead{font-size:17px;line-height:1.5}
+.lesson-slides.is-readable .slide-content{display:block;padding:23px 0}
+.lesson-slides.is-readable .slide-body,.lesson-slides.is-readable .slide-two-paragraphs .slide-body{display:grid;grid-template-columns:1fr;gap:14px}
+.lesson-slides.is-readable .slide-body p{font-size:17px;line-height:1.72}
+.lesson-slides.is-readable .slide-support{display:grid;grid-template-columns:1fr;margin-top:22px;gap:18px}
+.lesson-slides.is-readable .slide-equation,.lesson-slides.is-readable .example-formula{font-size:17px;overflow-x:auto}
+.lesson-slides.is-readable .slide-example{padding:17px}
+.lesson-slides.is-readable .slide-example p,.lesson-slides.is-readable .slide-example li{font-size:16px}
+.lesson-slides.is-readable .slide-example .example-formula{font-size:15px;overflow-x:auto}
+.lesson-slides.is-readable .slide-side-label{font-size:13px}
+.lesson-slides.is-readable .slide-visual .visual-node strong{font-size:18px}
+.lesson-slides.is-readable .slide-visual .visual-node p{font-size:15px}
+.lesson-slides.is-readable .slide-visual .visual-node{padding-block:13px}
+.lesson-slides.is-readable .slide-visual .visual-index{font-size:11px}
+.lesson-slides.is-readable .slide-table-wrap{overflow-x:auto}
+.lesson-slides.is-readable .slide-table-wrap table{font-size:15px;min-width:390px}
+.lesson-slides.is-readable .slide-table-wrap th,.lesson-slides.is-readable .slide-table-wrap td{padding:9px 10px}
+.lesson-slides.is-readable .slide-code pre{font-size:13px;overflow-x:auto}
+.lesson-slides.is-readable .slide-code p{font-size:14px}
+.lesson-slides.is-readable .slide-takeaway{grid-template-columns:1fr;gap:5px}
+.lesson-slides.is-readable .slide-takeaway>strong{font-size:16px}
+.lesson-slides.is-readable .slide-reading{display:block;font-size:12px}
+.lesson-slides.is-readable .slide-reading>span{display:block;margin-bottom:3px}
+.lesson-slides.is-readable .slide-reading p{display:block;margin:3px 0 0}
+.lesson-slides.is-readable .slide-prompt{font-size:16px}
+.lesson-slides.is-readable .slide-prompt p{font-size:15px}
+.lesson-slides.is-readable .slide-checkpoints{grid-template-columns:1fr;gap:6px}
+.lesson-slides.is-readable .slide-checkpoints ul{font-size:16px}
+@media print{.lesson-slides{display:none!important}}
+.lesson-slides .slide-layout-stack .slide-example ol{grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:25px}
+.lesson-slides .slide-layout-stack .slide-example .example-formula{font-size:20px}
+.lesson-slides .slide-layout-stack .slide-example .example-result{font-size:19px;margin-top:13px}
+.lesson-slides .slide-layout-stack .slide-example .example-context{font-size:19px}
+.lesson-slides .slide-layout-stack .slide-example{padding:16px 22px}
+.lesson-slides.is-readable .slide-layout-stack .slide-example ol{grid-template-columns:1fr;gap:15px}
+.lesson-slides .slide-layout-stack .slide-visual-flow .visual-node:not(:last-child):after{content:'→';position:absolute;right:-19px;top:20px;color:#83a7bc;font-size:20px;font-weight:400}
+.lesson-slides.is-readable .slide-layout-stack .slide-visual-flow .visual-node:not(:last-child):after{display:none}
+.lesson-slides .slide-layout-stack .slide-visual-flow .visual-node:not(:last-child){padding-right:25px}
+.lesson-slides .slide-layout-stack .slide-visual-flow .visual-node:not(:last-child):after{right:0;top:20px}
+.lesson-slides .slide-compact .slide-example p,.lesson-slides .slide-compact .slide-example li{font-size:19px;line-height:1.43}
+.lesson-slides .slide-compact .slide-example{padding:17px 21px}
+.lesson-slides .slide-compact .slide-example ol{gap:10px}
+.lesson-slides .slide-compact .slide-example .example-formula{font-size:19px;padding:8px}
+.lesson-slides .slide-compact .slide-example .example-result{font-size:18px;margin-top:12px;padding-top:10px}
+.lesson-slides .slide-compact .slide-prompt{padding:10px 15px;font-size:18px;margin-top:12px}
+.lesson-slides .slide-compact .slide-prompt p{font-size:17px;line-height:1.43;margin-top:8px;padding-top:8px}
+.lesson-slides .slide-compact .slide-equation{font-size:22px;padding:13px;margin-top:15px}
+.lesson-slides .slide-layout-split.slide-with-code .slide-content{grid-template-columns:minmax(0,.44fr) minmax(0,.56fr);gap:24px}
+.lesson-slides.is-readable{overflow:visible}
+.lesson-slides.is-readable .slide-compact .slide-body p{font-size:17px;line-height:1.72}
+.lesson-slides.is-readable .slide-compact .slide-example p,.lesson-slides.is-readable .slide-compact .slide-example li{font-size:16px;line-height:1.5}
+.lesson-slides.is-readable .slide-compact .slide-equation{font-size:17px}
+.lesson-slides.is-readable .slide-compact .slide-example .example-formula{font-size:15px}
+.lesson-slides.is-readable .slide-compact .slide-code pre{font-size:13px;line-height:1.5}
+.lesson-slides.is-readable .slide-compact .slide-prompt{font-size:16px}
+.lesson-slides.is-readable .slide-compact .slide-prompt p{font-size:15px}

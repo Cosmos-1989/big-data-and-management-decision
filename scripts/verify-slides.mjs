@@ -34,6 +34,7 @@ function checkFormula(value, chapter, page) {
 
 function checkInline(value, chapter, page) {
   if (typeof value === 'string') {
+    if (/[\u0000-\u0008\u000b\u000c\u000e-\u001f\r]/.test(value)) report(chapter, page, '正文含意外控制字符或损坏的 TeX 转义');
     const opens = (value.match(/\\\(/g) || []).length;
     const closes = (value.match(/\\\)/g) || []).length;
     if (opens !== closes) report(chapter, page, '行内 TeX 的 \\( 与 \\) 数量不一致');
@@ -77,6 +78,8 @@ for (const chapter of chapters) {
         report(chapter, page, '讲义子节名称与目标锚点不一致');
       }
     }
+    if (!['split','stack','focus'].includes(slide.layout)) report(chapter, page, '缺少经过审核的单页构图');
+    if (slide.prompts && (!Array.isArray(slide.prompts) || slide.prompts.length > 1 || slide.prompts.some(p => !p.question || !p.answer))) report(chapter, page, '课堂思考缺少问题或解析');
     if (slide.visual && !['flow','cards','compare','metric','table'].includes(slide.visual.kind)) {
       report(chapter, page, '视觉组件类型未被渲染器支持');
     }
@@ -92,7 +95,7 @@ for (const chapter of chapters) {
     checkFormula(slide.equation || slide.formula, chapter, page);
     for (const step of slide.workedExample?.steps || []) checkFormula(step.formula, chapter, page);
     checkInline([
-      slide.title, slide.lead, slide.body, slide.points, slide.takeaway,
+      slide.title, slide.lead, slide.body, slide.points, slide.takeaway, slide.prompts,
       slide.visual, slide.workedExample?.title, slide.workedExample?.context,
       slide.workedExample?.steps?.map(step => [step.label, step.text]),
       slide.workedExample?.result, slide.codeBlock?.caption, ref?.note

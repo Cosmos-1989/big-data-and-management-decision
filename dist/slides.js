@@ -66,11 +66,15 @@ function detailRefHtml(ref){
  if(!ref?.section)return '';
  const chapter=String(ref.chapter||'');
  const chapterNumber=/^\d{2}_/.test(chapter)?Number(chapter.slice(0,2)):null;
- const location=`${chapterNumber?`讲义第 ${chapterNumber} 章 · `:'讲义 · '}${ref.section}${ref.subsection?` / ${ref.subsection}`:''}`;
+ const location=`${chapterNumber?`讲义第 ${chapterNumber} 章 · `:'讲义 · '}${ref.section}${ref.subsection&&ref.subsection!==ref.section?` / ${ref.subsection}`:''}`;
  const link=/^\d{2}_[a-z0-9_]+$/.test(chapter)&&ref.anchor
   ?`<a href="#/chapter/${encodeURIComponent(chapter)}?anchor=${encodeURIComponent(ref.anchor)}">${inline(location)} <span aria-hidden="true">↗</span></a>`
   :`<strong>${inline(location)}</strong>`;
  return `<aside class="slide-reading"><span>详细论证与资料</span><div>${link}${ref.note?`<p>${inline(ref.note)}</p>`:''}</div></aside>`;
+}
+
+function promptHtml(prompts){
+ return asArray(prompts).map(item=>`<details class="slide-prompt"><summary><span>课堂思考</span>${inline(item.question)}</summary><p>${inline(item.answer)}</p></details>`).join('');
 }
 
 function slideHtml(slide,index,count,deck){
@@ -78,28 +82,15 @@ function slideHtml(slide,index,count,deck){
  const body=paragraphs(slide.body||slide.explanation);
  const points=asArray(slide.points);
  const formula=formulaHtml(slide.equation||slide.formula);
- const example=workedExampleHtml(slide.workedExample);
- const code=codeBlockHtml(slide.codeBlock);
- const visual=visualHtml(slide.visual);
- const blocks=[example,code,visual].filter(Boolean);
- const aside=blocks[0]||'';
- const companion=blocks.slice(1).join('');
- const reading=detailRefHtml(slide.detailRef);
- const dense=body.join('').length>390?' slide-dense':'';
- const styles=`slide-kind-${kind}${aside?' slide-has-aside':''}${companion?' slide-has-companion':''}${dense}`;
+ const blocks=[workedExampleHtml(slide.workedExample),codeBlockHtml(slide.codeBlock),visualHtml(slide.visual)].filter(Boolean);
+ const layout=slide.layout||(!blocks.length?'focus':slide.codeBlock||slide.visual?.kind==='table'?'stack':'split');
  const labels={opener:'研究问题',goals:'本讲结构',concept:'概念与机制',case:'案例分析',calculation:'推导与计算',derivation:'理论推导',worked:'算例解析',method:'研究方法',contrast:'比较与辨析',closing:'本讲结论',experiment:'实验设计',discussion:'讨论与辨析',summary:'本讲结论'};
- return `<article class="lecture-slide ${styles}" aria-hidden="${index?'true':'false'}"><div class="slide-page">
-  <div class="slide-topline"><span class="slide-chapter">大数据与管理决策</span><span class="slide-section">${inline(slide.section||slide.detailRef?.section||labels[kind]||'课程讲授')}</span></div>
-  <div class="slide-grid"><div class="slide-copy"><span class="slide-kicker">${inline(slide.kicker||labels[kind]||'课程讲授')}</span>
-  <h3>${inline(slide.title||'')}</h3>${slide.lead?`<p class="slide-lead">${inline(slide.lead)}</p>`:''}
-  ${body.length?`<div class="slide-body">${body.map(p=>`<p>${inline(p)}</p>`).join('')}</div>`:''}
-  ${formula}
-  ${points.length?`<div class="slide-checkpoints"><span>判别依据</span><ul>${points.map(p=>`<li>${inline(p)}</li>`).join('')}</ul></div>`:''}
-  </div>${aside?`<div class="slide-aside">${aside}</div>`:''}</div>
-  ${companion?`<div class="slide-companion">${companion}</div>`:''}
-  ${slide.takeaway?`<div class="slide-takeaway"><span>本页结论</span><strong>${inline(slide.takeaway)}</strong></div>`:''}
-  ${reading}
-  <div class="slide-footer"><span>${inline(deck.title)}</span><span>${String(index+1).padStart(2,'0')} / ${String(count).padStart(2,'0')}</span></div>
+ const styles=`slide-kind-${kind} slide-layout-${cleanKind(layout)}${body.length===2?' slide-two-paragraphs':''}${slide.density==='compact'?' slide-compact':''}${slide.codeBlock?' slide-with-code':''}`;
+ return `<article class="lecture-slide ${styles}" data-page="${index+1}" data-layout="${layout}" aria-hidden="${index?'true':'false'}"><div class="slide-page">
+  <header class="slide-heading"><div class="slide-topline"><span class="slide-chapter">${inline(deck.title)}</span><span class="slide-section">${inline(slide.section||slide.detailRef?.section||labels[kind]||'课程讲授')}</span><span class="slide-number">${String(index+1).padStart(2,'0')} / ${String(count).padStart(2,'0')}</span></div>
+  <span class="slide-kicker">${inline(slide.kicker||labels[kind]||'课程讲授')}</span><h3>${inline(slide.title||'')}</h3>${slide.lead?`<p class="slide-lead">${inline(slide.lead)}</p>`:''}</header>
+  <div class="slide-content"><div class="slide-narrative">${body.length?`<div class="slide-body">${body.map(p=>`<p>${inline(p)}</p>`).join('')}</div>`:''}${formula}${points.length?`<div class="slide-checkpoints"><span>分析要点</span><ul>${points.map(p=>`<li>${inline(p)}</li>`).join('')}</ul></div>`:''}${promptHtml(slide.prompts)}</div>${blocks.length?`<div class="slide-support">${blocks.join('')}</div>`:''}</div>
+  <footer class="slide-bottom">${slide.takeaway?`<div class="slide-takeaway"><span>结论</span><strong>${inline(slide.takeaway)}</strong></div>`:''}${detailRefHtml(slide.detailRef)}</footer>
  </div></article>`;
 }
 
@@ -122,12 +113,18 @@ export function initLectureSlides(root){
  const viewport=root.querySelector('.slide-viewport');
  const jump=root.querySelector('.slides-jump');
  const count=slides.length;
- let index=0,start=null,observedSlide=null;
+ let index=0,start=null,observedSlide=null,nativePresentation=false;
  const size=()=>{
-  if(document.fullscreenElement===root||root.classList.contains('is-theatre'))return;
-  viewport.style.height=`${Math.ceil(slides[index].getBoundingClientRect().height)}px`;
+  const expanded=document.fullscreenElement===root||root.classList.contains('is-theatre');
+  const readable=!expanded&&window.matchMedia('(max-width:760px)').matches;
+  root.classList.toggle('is-readable',readable);
+  if(readable){viewport.style.height=`${Math.ceil(slides[index].querySelector('.slide-page').scrollHeight)}px`;return;}
+  const scale=expanded?Math.min(viewport.clientWidth/1280,viewport.clientHeight/720):viewport.clientWidth/1280;
+  root.style.setProperty('--slide-scale',String(scale));
+  if(!expanded)viewport.style.height=`${Math.ceil(720*scale)}px`;
  };
  const resizeObserver=window.ResizeObserver?new ResizeObserver(size):null;
+ resizeObserver?.observe(viewport);
  const updatePresentation=()=>{
   const expanded=document.fullscreenElement===root||root.classList.contains('is-theatre');
   const button=root.querySelector('.slides-fullscreen');
@@ -145,6 +142,7 @@ export function initLectureSlides(root){
   root.querySelector('.slides-progress span').style.width=`${((index+1)/count)*100}%`;
   root.querySelector('.slides-current-section').textContent=slides[index].querySelector('.slide-section')?.textContent||'';
   jump.value=String(index);
+  slides[index].scrollTop=0;
   size();
  };
  root.querySelector('.slides-prev').onclick=()=>show(index-1);
@@ -171,11 +169,12 @@ export function initLectureSlides(root){
  });
  viewport.addEventListener('pointercancel',()=>start=null);
  root.querySelector('.slides-fullscreen').onclick=async()=>{
-  if(document.fullscreenElement===root)await document.exitFullscreen();
+  if(document.fullscreenElement===root){root.classList.remove('is-theatre');await document.exitFullscreen();}
   else if(root.classList.contains('is-theatre'))root.classList.remove('is-theatre');
   else {
-   try { if(!root.requestFullscreen)throw new Error('Fullscreen unavailable');await root.requestFullscreen(); }
-   catch {root.classList.add('is-theatre');}
+   // A viewport presentation also works in embedded browsers without native
+   // fullscreen permission. It keeps navigation and Escape deterministic.
+   root.classList.add('is-theatre');
   }
   updatePresentation();size();root.focus({preventScroll:true});
  };
@@ -186,7 +185,11 @@ export function initLectureSlides(root){
   else {root.classList.remove('is-theatre');updatePresentation();size();}
   location.hash=link.getAttribute('href');
  }));
- document.addEventListener('fullscreenchange',()=>{if(root.isConnected){updatePresentation();size();}},{signal:lifecycle.signal});
+ document.addEventListener('fullscreenchange',()=>{if(root.isConnected){
+  if(document.fullscreenElement===root)nativePresentation=true;
+  else if(nativePresentation){nativePresentation=false;root.classList.remove('is-theatre');}
+  updatePresentation();size();
+ }},{signal:lifecycle.signal});
  window.addEventListener('resize',()=>{if(root.isConnected)size();},{passive:true,signal:lifecycle.signal});
  const cleanupObserver=new MutationObserver(()=>{
   if(root.isConnected)return;
