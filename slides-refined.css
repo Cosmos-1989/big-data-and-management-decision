@@ -142,7 +142,7 @@
 .lesson-slides .slide-compact .slide-example ol{gap:10px}
 .lesson-slides .slide-compact .slide-example .example-formula{font-size:19px;padding:8px}
 .lesson-slides .slide-compact .slide-example .example-result{font-size:18px;margin-top:12px;padding-top:10px}
-.lesson-slides .slide-compact .slide-prompt{padding:10px 15px;font-size:18px;margin-top:12px}
+.lesson-slides .slide-compact .slide-prompt{padding:9px 15px;font-size:18px;margin-top:10px}
 .lesson-slides .slide-compact .slide-prompt p{font-size:17px;line-height:1.43;margin-top:8px;padding-top:8px}
 .lesson-slides .slide-compact .slide-equation{font-size:22px;padding:13px;margin-top:15px}
 .lesson-slides .slide-layout-split.slide-with-code .slide-content{grid-template-columns:minmax(0,.44fr) minmax(0,.56fr);gap:24px}
