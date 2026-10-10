@@ -1,10 +1,14 @@
+@import url('./assets/fonts/course-song.css?v=20261010-5');
 /* Lecture canvas: a consistent 1280 × 720 composition, scaled for projection.
    Narrow embedded views retain ordinary reading size instead of shrinking text. */
-.lesson-slides{--slide-scale:1;--deck-ink:#203648;--deck-blue:#386f91;--deck-line:#dce5eb;border-radius:12px;overflow:hidden;background:#fff}
+.lesson-slides{--slide-scale:1;--deck-ink:#203648;--deck-blue:#386f91;--deck-line:#dce5eb;--slide-song:"BDM Course Song","Songti SC",SimSun,STSong,serif;border-radius:12px;overflow:hidden;background:#fff;font-family:var(--slide-song)}
 .lesson-slides .slide-viewport{overflow:hidden;transition:none;background:#edf2f5}
 .lesson-slides .slide-track{align-items:stretch}
 .lesson-slides .lecture-slide{position:relative;min-height:0;height:calc(720px * var(--slide-scale));overflow:hidden;background:#fff}
-.lesson-slides .slide-page{position:absolute;left:50%;top:0;transform:translateX(-50%) scale(var(--slide-scale));transform-origin:top center;display:flex;flex-direction:column;width:1280px;height:720px;min-height:0;box-sizing:border-box;padding:28px 54px 24px;background:#fdfefe;color:var(--deck-ink);font-family:Arial,"PingFang SC","Microsoft YaHei",sans-serif}
+.lesson-slides .slide-page{position:absolute;left:50%;top:0;transform:translateX(-50%) scale(var(--slide-scale));transform-origin:top center;display:flex;flex-direction:column;width:1280px;height:720px;min-height:0;box-sizing:border-box;padding:28px 54px 24px;background:#fdfefe;color:var(--deck-ink);font-family:var(--slide-song)}
+.lesson-slides button,.lesson-slides select{font-family:var(--slide-song)}
+.lesson-slides .katex .cjk_fallback{font-family:var(--slide-song)}
+.lesson-slides .slide-code pre,.lesson-slides .slide-code code{font-family:ui-monospace,SFMono-Regular,Consolas,var(--slide-song)}
 .lesson-slides .slide-kind-opener .slide-page{background:linear-gradient(120deg,#fdfefe 65%,#f3f8fb)}
 .lesson-slides .slide-kind-summary .slide-page{background:#f8fbfd}
 .lesson-slides .slide-heading{position:static;display:block;flex:none;width:auto;height:auto;min-width:0;padding:0;margin:0;background:none;border:0;backdrop-filter:none;z-index:auto}
@@ -14,7 +18,7 @@
 .lesson-slides .slide-number{flex:none;font:13px/1.4 ui-monospace,SFMono-Regular,Consolas,monospace;color:#6b8596}
 .lesson-slides .slide-kicker{display:block;margin:0 0 7px;font-size:13px;letter-spacing:.1em;color:#477997}
 .lesson-slides .slide-kicker:before{display:none}
-.lesson-slides .lecture-slide h3,.lesson-slides .slide-kind-opener h3,.lesson-slides:fullscreen .lecture-slide h3{max-width:none;margin:0 0 12px;font-size:40px;font-family:"Songti SC",STSong,"Noto Serif CJK SC",serif;font-weight:700;line-height:1.26;letter-spacing:0;color:#153349}
+.lesson-slides .lecture-slide h3,.lesson-slides .slide-kind-opener h3,.lesson-slides:fullscreen .lecture-slide h3{max-width:none;margin:0 0 12px;font-size:40px;font-family:var(--slide-song);font-weight:700;line-height:1.26;letter-spacing:0;color:#153349}
 .lesson-slides .slide-lead,.lesson-slides:fullscreen .slide-lead,.lesson-slides.is-theatre .slide-lead{margin:0;padding:0 0 0 13px;border-left:3px solid #86afc5;font-size:23px;font-weight:500;line-height:1.42;color:#416277}
 .lesson-slides .slide-content{flex:1;min-height:0;display:grid;grid-template-columns:minmax(0,1.06fr) minmax(0,.94fr);gap:38px;align-content:center;align-items:center;padding:24px 0 21px}
 .lesson-slides .slide-narrative,.lesson-slides .slide-support{min-width:0}
@@ -50,7 +54,7 @@
 .lesson-slides .slide-visual-metric .visual-node strong{font-size:20px}
 .lesson-slides .slide-layout-stack .slide-visual:not(.slide-visual-table){grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:22px}
 .lesson-slides .slide-layout-split .slide-visual-cards,.lesson-slides .slide-layout-split .slide-visual-compare{grid-template-columns:1fr}
-.lesson-slides .slide-table-wrap{overflow:visible;border-top:2px solid #83abc2}
+.lesson-slides .slide-table-wrap{overflow:visible;max-height:none;border-top:2px solid #83abc2}
 .lesson-slides .slide-table-wrap table{min-width:0;width:100%;table-layout:fixed;font-size:20px;line-height:1.38;border-collapse:collapse}
 .lesson-slides .slide-table-wrap caption{font-size:17px;margin-bottom:8px;text-align:left}
 .lesson-slides .slide-table-wrap th,.lesson-slides .slide-table-wrap td{padding:12px 13px;overflow-wrap:break-word;border-bottom:1px solid #dae6ed}
@@ -145,6 +149,11 @@
 .lesson-slides .slide-compact .slide-prompt{padding:9px 15px;font-size:18px;margin-top:10px}
 .lesson-slides .slide-compact .slide-prompt p{font-size:17px;line-height:1.43;margin-top:8px;padding-top:8px}
 .lesson-slides .slide-compact .slide-equation{font-size:22px;padding:13px;margin-top:15px}
+/* Dense worked examples retain complete reasoning with less decorative spacing. */
+.lesson-slides .slide-layout-stack.slide-compact .slide-example{padding:12px 18px}
+.lesson-slides .slide-layout-stack.slide-compact .slide-side-label{margin-bottom:9px}
+.lesson-slides .slide-layout-stack.slide-compact .example-formula{font-size:18px;padding:6px}
+.lesson-slides .slide-layout-stack.slide-compact .example-result{margin-top:9px;padding-top:8px}
 .lesson-slides .slide-layout-split.slide-with-code .slide-content{grid-template-columns:minmax(0,.44fr) minmax(0,.56fr);gap:24px}
 .lesson-slides.is-readable{overflow:visible}
 .lesson-slides.is-readable .slide-compact .slide-body p{font-size:17px;line-height:1.72}

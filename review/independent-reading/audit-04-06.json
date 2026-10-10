@@ -1,0 +1,2524 @@
+{
+  "scope": "第 04–06 讲的独立阅读、教育性与严谨性逐页审核；字体和实际渲染交由主任务统一处理。",
+  "authority": "docs/textbook/chapters/04_data_quality.tex、05_statistics_dashboard.tex、06_ab_testing.tex；新增设定明确为教学算例，非企业实测。",
+  "originalPages": 123,
+  "finalPages": 132,
+  "revisedOriginalPages": 52,
+  "addedPages": 9,
+  "perChapter": {
+    "04_data_quality": {
+      "original": 41,
+      "final": 43
+    },
+    "05_statistics_dashboard": {
+      "original": 43,
+      "final": 45
+    },
+    "06_ab_testing": {
+      "original": 39,
+      "final": 44
+    }
+  },
+  "pages": [
+    {
+      "chapter": "04_data_quality",
+      "originalPage": 1,
+      "finalPage": 1,
+      "title": "数据质量：从记录条件到决策证据",
+      "status": "pass",
+      "independentReadingReview": "交代问题、数据生成链和章节论证顺序。",
+      "action": "retained_after_review",
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "stack",
+      "detailRef": {
+        "chapter": "04_data_quality",
+        "section": "输入数据与分析结果",
+        "anchor": "输入数据与分析结果"
+      }
+    },
+    {
+      "chapter": "04_data_quality",
+      "originalPage": 2,
+      "finalPage": 2,
+      "title": "准时交付率的统计对象",
+      "status": "pass",
+      "independentReadingReview": "定义订单、日期、指示函数和两种分母。",
+      "action": "retained_after_review",
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "focus",
+      "detailRef": {
+        "chapter": "04_data_quality",
+        "section": "输入数据与分析结果",
+        "anchor": "输入数据与分析结果"
+      }
+    },
+    {
+      "chapter": "04_data_quality",
+      "originalPage": 3,
+      "finalPage": 3,
+      "title": "指标可信度与证据追溯",
+      "status": "pass",
+      "independentReadingReview": "说明正向计算与反向追溯。",
+      "action": "retained_after_review",
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "stack",
+      "detailRef": {
+        "chapter": "04_data_quality",
+        "section": "输入数据与分析结果",
+        "anchor": "输入数据与分析结果"
+      }
+    },
+    {
+      "chapter": "04_data_quality",
+      "originalPage": 4,
+      "finalPage": 4,
+      "title": "用途适配的数据质量",
+      "status": "pass",
+      "independentReadingReview": "用途定义与两类业务例直接对应。",
+      "action": "revised",
+      "reason": "避免未被后续使用的抽象符号遮蔽用途适配的定义。",
+      "fields": [
+        "body"
+      ],
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "split",
+      "detailRef": {
+        "chapter": "04_data_quality",
+        "section": "数据质量的基本定义",
+        "anchor": "数据质量的基本定义"
+      }
+    },
+    {
+      "chapter": "04_data_quality",
+      "originalPage": 5,
+      "finalPage": 5,
+      "title": "数据生成环节与质量风险",
+      "status": "pass",
+      "independentReadingReview": "来源环节与修复责任完整。",
+      "action": "revised",
+      "reason": "首次解释数据血缘，使追溯方法不依赖后文或口头解释。",
+      "fields": [
+        "body"
+      ],
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "stack",
+      "detailRef": {
+        "chapter": "04_data_quality",
+        "section": "数据生成过程与质量风险",
+        "anchor": "数据生成过程与质量风险"
+      }
+    },
+    {
+      "chapter": "04_data_quality",
+      "originalPage": 6,
+      "finalPage": 6,
+      "title": "规则符合性与记录准确性",
+      "status": "pass",
+      "independentReadingReview": "规则符合、对账、抽查的证据互补。",
+      "action": "retained_after_review",
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "split",
+      "detailRef": {
+        "chapter": "04_data_quality",
+        "section": "规则符合性与记录准确性",
+        "anchor": "规则符合性与记录准确性"
+      }
+    },
+    {
+      "chapter": "04_data_quality",
+      "originalPage": 7,
+      "finalPage": 7,
+      "title": "质量维度：覆盖、取值与关系",
+      "status": "pass",
+      "independentReadingReview": "四维度有问题与规则对应。",
+      "action": "retained_after_review",
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "stack",
+      "detailRef": {
+        "chapter": "04_data_quality",
+        "section": "数据质量维度",
+        "anchor": "数据质量维度"
+      }
+    },
+    {
+      "chapter": "04_data_quality",
+      "originalPage": 8,
+      "finalPage": 8,
+      "title": "质量维度：时间、真实性与来源",
+      "status": "pass",
+      "independentReadingReview": "及时性、真实性、追溯性分别解释。",
+      "action": "retained_after_review",
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "stack",
+      "detailRef": {
+        "chapter": "04_data_quality",
+        "section": "数据质量维度",
+        "anchor": "数据质量维度"
+      }
+    },
+    {
+      "chapter": "04_data_quality",
+      "originalPage": 9,
+      "finalPage": 9,
+      "title": "数据剖析与规则检验",
+      "status": "pass",
+      "independentReadingReview": "剖析与测试有明确区分和枚举处理例。",
+      "action": "retained_after_review",
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "split",
+      "detailRef": {
+        "chapter": "04_data_quality",
+        "section": "数据剖析",
+        "anchor": "数据剖析"
+      }
+    },
+    {
+      "chapter": "04_data_quality",
+      "originalPage": 10,
+      "finalPage": 10,
+      "title": "选择性缺失与均值偏差",
+      "status": "pass",
+      "independentReadingReview": "均值目标、选择指标、偏差推导完整。",
+      "action": "revised",
+      "reason": "明确记录指示的两个值、可积性的含义及协方差展开步骤。",
+      "fields": [
+        "body",
+        "density"
+      ],
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "focus",
+      "detailRef": {
+        "chapter": "04_data_quality",
+        "section": "缺失机制与均值估计",
+        "anchor": "缺失机制与均值估计"
+      }
+    },
+    {
+      "chapter": "04_data_quality",
+      "originalPage": 11,
+      "finalPage": 11,
+      "title": "订单算例：选择性回写低估周期",
+      "status": "pass",
+      "independentReadingReview": "总体与观察均值可从完整数据计算。",
+      "action": "retained_after_review",
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "stack",
+      "detailRef": {
+        "chapter": "04_data_quality",
+        "section": "缺失机制与均值估计",
+        "anchor": "缺失机制与均值估计"
+      }
+    },
+    {
+      "chapter": "04_data_quality",
+      "originalPage": 12,
+      "finalPage": 12,
+      "title": "缺失机制与可用识别条件",
+      "status": "pass",
+      "independentReadingReview": "三类机制的条件及分析含义准确。",
+      "action": "revised",
+      "reason": "将 MAR 的覆盖条件写清，并用后续完整算例承接调整原理。",
+      "fields": [
+        "body"
+      ],
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "stack",
+      "detailRef": {
+        "chapter": "04_data_quality",
+        "section": "缺失机制与均值估计",
+        "anchor": "缺失机制与均值估计"
+      }
+    },
+    {
+      "chapter": "04_data_quality",
+      "originalPage": null,
+      "afterOriginalPage": 12,
+      "finalPage": 13,
+      "title": "按完整类别权重恢复平均周期",
+      "status": "pass",
+      "action": "added",
+      "reason": "以同一订单数据展示条件调整的关键：恢复完整总体的类别权重。",
+      "independentReadingReview": "完整教学设定或由讲义公式直接推得的算例；数据、计算、解释和适用条件均在本讲给出。",
+      "mathematics": "新增数值例另行精确检验，所有数学表达使用 TeX。",
+      "layout": "stack",
+      "detailRef": {
+        "chapter": "04_data_quality",
+        "section": "缺失机制与均值估计",
+        "anchor": "缺失机制与均值估计"
+      }
+    },
+    {
+      "chapter": "04_data_quality",
+      "originalPage": 13,
+      "finalPage": 14,
+      "title": "经典测量误差与斜率衰减",
+      "status": "pass",
+      "independentReadingReview": "变量、噪声假设、斜率计算逻辑完整。",
+      "action": "revised",
+      "reason": "先解释真实解释变量、记录值和噪声，再明确总体回归斜率的含义。",
+      "fields": [
+        "body",
+        "density"
+      ],
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "focus",
+      "detailRef": {
+        "chapter": "04_data_quality",
+        "section": "经典测量误差与衰减偏差",
+        "anchor": "经典测量误差与衰减偏差"
+      }
+    },
+    {
+      "chapter": "04_data_quality",
+      "originalPage": null,
+      "afterOriginalPage": 13,
+      "finalPage": 15,
+      "title": "测量噪声如何影响回归斜率",
+      "status": "pass",
+      "action": "added",
+      "reason": "新增有单位的数值例，直观展示测量噪声为何削弱关系。",
+      "independentReadingReview": "完整教学设定或由讲义公式直接推得的算例；数据、计算、解释和适用条件均在本讲给出。",
+      "mathematics": "新增数值例另行精确检验，所有数学表达使用 TeX。",
+      "layout": "stack",
+      "detailRef": {
+        "chapter": "04_data_quality",
+        "section": "经典测量误差与衰减偏差",
+        "anchor": "经典测量误差与衰减偏差"
+      }
+    },
+    {
+      "chapter": "04_data_quality",
+      "originalPage": 14,
+      "finalPage": 16,
+      "title": "缺失结果的部分识别",
+      "status": "pass",
+      "independentReadingReview": "对象总数、缺失数、值域与边界推导完整。",
+      "action": "retained_after_review",
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "focus",
+      "detailRef": {
+        "chapter": "04_data_quality",
+        "section": "缺失结果的部分识别",
+        "anchor": "缺失结果的部分识别"
+      }
+    },
+    {
+      "chapter": "04_data_quality",
+      "originalPage": 15,
+      "finalPage": 17,
+      "title": "识别区间与达标判断",
+      "status": "pass",
+      "independentReadingReview": "数据、阈值、区间与判断一致。",
+      "action": "retained_after_review",
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "stack",
+      "detailRef": {
+        "chapter": "04_data_quality",
+        "section": "缺失结果的部分识别",
+        "anchor": "缺失结果的部分识别"
+      }
+    },
+    {
+      "chapter": "04_data_quality",
+      "originalPage": 16,
+      "finalPage": 18,
+      "title": "识别边界依赖已经核实的约束",
+      "status": "pass",
+      "independentReadingReview": "值域依据和有限上界必要信息明确。",
+      "action": "revised",
+      "reason": "使识别边界页直接提供完整缺失数量与统计对象。",
+      "fields": [
+        "body"
+      ],
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "focus",
+      "detailRef": {
+        "chapter": "04_data_quality",
+        "section": "缺失结果的部分识别",
+        "anchor": "缺失结果的部分识别"
+      }
+    },
+    {
+      "chapter": "04_data_quality",
+      "originalPage": 17,
+      "finalPage": 19,
+      "title": "比率误差的精确传播",
+      "status": "pass",
+      "independentReadingReview": "分子分母误差与通分推导完整。",
+      "action": "retained_after_review",
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "focus",
+      "detailRef": {
+        "chapter": "04_data_quality",
+        "section": "比率误差的精确传播",
+        "anchor": "比率误差的精确传播"
+      }
+    },
+    {
+      "chapter": "04_data_quality",
+      "originalPage": 18,
+      "finalPage": 20,
+      "title": "比率的保守误差界",
+      "status": "pass",
+      "independentReadingReview": "界限符号、三角不等式及小分母含义明确。",
+      "action": "revised",
+      "reason": "在界限计算页重述必要符号，解释三角不等式的应用位置。",
+      "fields": [
+        "body",
+        "density"
+      ],
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "focus",
+      "detailRef": {
+        "chapter": "04_data_quality",
+        "section": "比率误差的精确传播",
+        "anchor": "比率误差的精确传播"
+      }
+    },
+    {
+      "chapter": "04_data_quality",
+      "originalPage": 19,
+      "finalPage": 21,
+      "title": "良率算例：分母漏记造成偏差",
+      "status": "pass",
+      "independentReadingReview": "真实和漏记计数及百分点变化完整。",
+      "action": "retained_after_review",
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "stack",
+      "detailRef": {
+        "chapter": "04_data_quality",
+        "section": "比率误差的精确传播",
+        "anchor": "比率误差的精确传播"
+      }
+    },
+    {
+      "chapter": "04_data_quality",
+      "originalPage": 20,
+      "finalPage": 22,
+      "title": "质量规则与失败行标识",
+      "status": "pass",
+      "independentReadingReview": "行序列、规则、失败集与零分母有定义。",
+      "action": "retained_after_review",
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "focus",
+      "detailRef": {
+        "chapter": "04_data_quality",
+        "section": "质量规则的形式化表达",
+        "anchor": "质量规则的形式化表达"
+      }
+    },
+    {
+      "chapter": "04_data_quality",
+      "originalPage": 21,
+      "finalPage": 23,
+      "title": "质量规则的业务解释",
+      "status": "pass",
+      "independentReadingReview": "规则条件、失败对象、指标影响对应。",
+      "action": "retained_after_review",
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "stack",
+      "detailRef": {
+        "chapter": "04_data_quality",
+        "section": "质量规则的程序检验",
+        "anchor": "质量规则的程序检验"
+      }
+    },
+    {
+      "chapter": "04_data_quality",
+      "originalPage": 22,
+      "finalPage": 24,
+      "title": "程序示范：定位重复订单编号",
+      "status": "pass",
+      "independentReadingReview": "SQL 从分组到筛选逻辑明确，保留调查依据。",
+      "action": "retained_after_review",
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "split",
+      "detailRef": {
+        "chapter": "04_data_quality",
+        "section": "质量规则的程序检验",
+        "anchor": "质量规则的程序检验"
+      }
+    },
+    {
+      "chapter": "04_data_quality",
+      "originalPage": 23,
+      "finalPage": 25,
+      "title": "从记录失败到管理损失",
+      "status": "pass",
+      "independentReadingReview": "下游影响链与治理优先级有实质联系。",
+      "action": "retained_after_review",
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "stack",
+      "detailRef": {
+        "chapter": "04_data_quality",
+        "section": "质量问题对指标的影响",
+        "anchor": "质量问题对指标的影响"
+      }
+    },
+    {
+      "chapter": "04_data_quality",
+      "originalPage": 24,
+      "finalPage": 26,
+      "title": "实际交付日期为空的状态解释",
+      "status": "pass",
+      "independentReadingReview": "三个空值状态和不同处理依据完整。",
+      "action": "retained_after_review",
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "stack",
+      "detailRef": {
+        "chapter": "04_data_quality",
+        "section": "质量影响评估",
+        "anchor": "质量影响评估"
+      }
+    },
+    {
+      "chapter": "04_data_quality",
+      "originalPage": 25,
+      "finalPage": 27,
+      "title": "发布决策的预期损失比较",
+      "status": "pass",
+      "independentReadingReview": "期限、货币单位、行动损失与阈值完整。",
+      "action": "retained_after_review",
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "focus",
+      "detailRef": {
+        "chapter": "04_data_quality",
+        "section": "发布决策与预期损失",
+        "anchor": "发布决策与预期损失"
+      }
+    },
+    {
+      "chapter": "04_data_quality",
+      "originalPage": 26,
+      "finalPage": 28,
+      "title": "治理预算的风险最小化模型",
+      "status": "pass",
+      "independentReadingReview": "初始风险、治理投入、有效性与预算单位完整。",
+      "action": "revised",
+      "reason": "补齐初始风险与治理有效性参数的业务含义和单位。",
+      "fields": [
+        "body",
+        "density"
+      ],
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "focus",
+      "detailRef": {
+        "chapter": "04_data_quality",
+        "section": "发布决策与预期损失",
+        "anchor": "发布决策与预期损失"
+      }
+    },
+    {
+      "chapter": "04_data_quality",
+      "originalPage": 27,
+      "finalPage": 29,
+      "title": "最优治理投入的边际条件",
+      "status": "pass",
+      "independentReadingReview": "边际条件、共同值和预算假设明确。",
+      "action": "revised",
+      "reason": "定义共同边际收益与预算约束的关系，避免影子价格成为未解释符号。",
+      "fields": [
+        "lead",
+        "body",
+        "density"
+      ],
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "focus",
+      "detailRef": {
+        "chapter": "04_data_quality",
+        "section": "发布决策与预期损失",
+        "anchor": "发布决策与预期损失"
+      }
+    },
+    {
+      "chapter": "04_data_quality",
+      "originalPage": 28,
+      "finalPage": 30,
+      "title": "确定性误差界与可靠排序",
+      "status": "pass",
+      "independentReadingReview": "真值、估计、容限与严格排序条件准确。",
+      "action": "revised",
+      "reason": "说明估计值、真值和误差容限三个符号的对应。",
+      "fields": [
+        "body"
+      ],
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "focus",
+      "detailRef": {
+        "chapter": "04_data_quality",
+        "section": "决策阈值与误差容限",
+        "anchor": "决策阈值与误差容限"
+      }
+    },
+    {
+      "chapter": "04_data_quality",
+      "originalPage": 29,
+      "finalPage": 31,
+      "title": "指标治理：定义、实现与责任",
+      "status": "pass",
+      "independentReadingReview": "定义、确认事件、口径与责任关联。",
+      "action": "retained_after_review",
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "stack",
+      "detailRef": {
+        "chapter": "04_data_quality",
+        "section": "数据治理与指标治理",
+        "anchor": "数据治理与指标治理"
+      }
+    },
+    {
+      "chapter": "04_data_quality",
+      "originalPage": 30,
+      "finalPage": 32,
+      "title": "数据契约、血缘与变更控制",
+      "status": "pass",
+      "independentReadingReview": "契约、血缘、变更控制职责明确。",
+      "action": "retained_after_review",
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "stack",
+      "detailRef": {
+        "chapter": "04_data_quality",
+        "section": "数据契约、血缘与变更控制",
+        "anchor": "数据契约血缘与变更控制"
+      }
+    },
+    {
+      "chapter": "04_data_quality",
+      "originalPage": 31,
+      "finalPage": 33,
+      "title": "发布控制与异常严重级别",
+      "status": "pass",
+      "independentReadingReview": "分级例与实际用途调整原则完整。",
+      "action": "retained_after_review",
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "stack",
+      "detailRef": {
+        "chapter": "04_data_quality",
+        "section": "发布控制与问题分级",
+        "anchor": "发布控制与问题分级"
+      }
+    },
+    {
+      "chapter": "04_data_quality",
+      "originalPage": 32,
+      "finalPage": 34,
+      "title": "数据质量事件响应",
+      "status": "pass",
+      "independentReadingReview": "事件从识别至复核的处置条件明确。",
+      "action": "retained_after_review",
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "stack",
+      "detailRef": {
+        "chapter": "04_data_quality",
+        "section": "质量事件响应",
+        "anchor": "质量事件响应"
+      }
+    },
+    {
+      "chapter": "04_data_quality",
+      "originalPage": 33,
+      "finalPage": 35,
+      "title": "Froedtert 案例：统一定义与责任",
+      "status": "pass",
+      "independentReadingReview": "企业事实与预约等待教学口径区分。",
+      "action": "revised",
+      "reason": "将企业组织事实与教学口径设计明确区分，删去重复消极结论。",
+      "fields": [
+        "takeaway"
+      ],
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "split",
+      "detailRef": {
+        "chapter": "04_data_quality",
+        "section": "Collibra 与 Froedtert 的数据目录",
+        "anchor": "collibra-与-froedtert-的数据目录"
+      }
+    },
+    {
+      "chapter": "04_data_quality",
+      "originalPage": 34,
+      "finalPage": 36,
+      "title": "Assurance 案例：持续质量监测",
+      "status": "pass",
+      "independentReadingReview": "可观测性定义和异常来源的调查逻辑明确。",
+      "action": "revised",
+      "reason": "将可观测性定义为运行特征监测，避免概念仅作为产品标签。",
+      "fields": [
+        "body"
+      ],
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "split",
+      "detailRef": {
+        "chapter": "04_data_quality",
+        "section": "Monte Carlo 与 Assurance 的数据质量监测",
+        "anchor": "monte-carlo-与-assurance-的数据质量监测"
+      }
+    },
+    {
+      "chapter": "04_data_quality",
+      "originalPage": 35,
+      "finalPage": 37,
+      "title": "质量事件持续时间与损失",
+      "status": "pass",
+      "independentReadingReview": "损失率、时长、检测与修复终点明确。",
+      "action": "revised",
+      "reason": "让 MTTD、MTTR 的起终点与损失率单位能够独立理解。",
+      "fields": [
+        "body"
+      ],
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "focus",
+      "detailRef": {
+        "chapter": "04_data_quality",
+        "section": "Monte Carlo 与 Assurance 的数据质量监测",
+        "anchor": "monte-carlo-与-assurance-的数据质量监测"
+      }
+    },
+    {
+      "chapter": "04_data_quality",
+      "originalPage": 36,
+      "finalPage": 38,
+      "title": "数据发现、治理流程与敏感信息识别",
+      "status": "pass",
+      "independentReadingReview": "目录、治理、分类与权限职责清楚。",
+      "action": "retained_after_review",
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "stack",
+      "detailRef": {
+        "chapter": "04_data_quality",
+        "section": "数据目录、治理流程与敏感信息识别",
+        "anchor": "数据目录治理流程与敏感信息识别"
+      }
+    },
+    {
+      "chapter": "04_data_quality",
+      "originalPage": 37,
+      "finalPage": 39,
+      "title": "检索增强生成的证据质量",
+      "status": "pass",
+      "independentReadingReview": "RAG 证据与版本、来源、哈希、权限解释完整。",
+      "action": "revised",
+      "reason": "首次说明哈希作用，解释来源质量与内容一致性区别。",
+      "fields": [
+        "body"
+      ],
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "stack",
+      "detailRef": {
+        "chapter": "04_data_quality",
+        "section": "检索增强生成中的数据质量",
+        "anchor": "检索增强生成中的数据质量"
+      }
+    },
+    {
+      "chapter": "04_data_quality",
+      "originalPage": 38,
+      "finalPage": 40,
+      "title": "实验任务：订单质量报告",
+      "status": "pass",
+      "independentReadingReview": "实验背景、文件、输入规则、输出验收完整。",
+      "action": "retained_after_review",
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "split",
+      "detailRef": {
+        "chapter": "04_data_quality",
+        "section": "数据质量检查实例",
+        "anchor": "数据质量检查实例"
+      }
+    },
+    {
+      "chapter": "04_data_quality",
+      "originalPage": 39,
+      "finalPage": 41,
+      "title": "实验核对：对象、主数据与数量",
+      "status": "pass",
+      "independentReadingReview": "业务键、主数据和数量失败可定位。",
+      "action": "retained_after_review",
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "stack",
+      "detailRef": {
+        "chapter": "04_data_quality",
+        "section": "数据质量检查实例",
+        "anchor": "数据质量检查实例"
+      }
+    },
+    {
+      "chapter": "04_data_quality",
+      "originalPage": 40,
+      "finalPage": 42,
+      "title": "实验核对：枚举、日期与失败计数",
+      "status": "pass",
+      "independentReadingReview": "枚举日期失败与交叠计数可核对。",
+      "action": "retained_after_review",
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "stack",
+      "detailRef": {
+        "chapter": "04_data_quality",
+        "section": "数据质量检查实例",
+        "anchor": "数据质量检查实例"
+      }
+    },
+    {
+      "chapter": "04_data_quality",
+      "originalPage": 41,
+      "finalPage": 43,
+      "title": "质量报告：从发现到决策依据",
+      "status": "pass",
+      "independentReadingReview": "总结用途、误差、责任、复核的论证链。",
+      "action": "retained_after_review",
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "stack",
+      "detailRef": {
+        "chapter": "04_data_quality",
+        "section": "质量报告的核查",
+        "anchor": "质量报告的核查"
+      }
+    },
+    {
+      "chapter": "05_statistics_dashboard",
+      "originalPage": 1,
+      "finalPage": 1,
+      "title": "描述统计与运营解释",
+      "status": "pass",
+      "independentReadingReview": "论证从统计对象到系统约束和管理解释。",
+      "action": "retained_after_review",
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "stack",
+      "detailRef": {
+        "chapter": "05_statistics_dashboard",
+        "section": "经营数据的统计描述",
+        "anchor": "经营数据的统计描述"
+      }
+    },
+    {
+      "chapter": "05_statistics_dashboard",
+      "originalPage": 2,
+      "finalPage": 2,
+      "title": "观测单位决定统计量的含义",
+      "status": "pass",
+      "independentReadingReview": "观测单位与时序、横截面有完整例子。",
+      "action": "retained_after_review",
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "split",
+      "detailRef": {
+        "chapter": "05_statistics_dashboard",
+        "section": "经营指标作为观测变量",
+        "anchor": "经营指标作为观测变量"
+      }
+    },
+    {
+      "chapter": "05_statistics_dashboard",
+      "originalPage": 3,
+      "finalPage": 3,
+      "title": "经验分布函数",
+      "status": "pass",
+      "independentReadingReview": "指示函数、阈值、比例与外推条件完整。",
+      "action": "revised",
+      "reason": "解释指示函数为计数，补齐 n、u 与样本比例之间关系。",
+      "fields": [
+        "body"
+      ],
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "focus",
+      "detailRef": {
+        "chapter": "05_statistics_dashboard",
+        "section": "经验分布与统计量",
+        "anchor": "经验分布与统计量"
+      }
+    },
+    {
+      "chapter": "05_statistics_dashboard",
+      "originalPage": 4,
+      "finalPage": 4,
+      "title": "同一样本的三种服务含义",
+      "status": "pass",
+      "independentReadingReview": "五个观测及三种服务摘要可复算。",
+      "action": "revised",
+      "reason": "去除指代不明确的前三项表述，准确说明每个摘要的对象。",
+      "fields": [
+        "body"
+      ],
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "stack",
+      "detailRef": {
+        "chapter": "05_statistics_dashboard",
+        "section": "经验分布与统计量",
+        "anchor": "经验分布与统计量"
+      }
+    },
+    {
+      "chapter": "05_statistics_dashboard",
+      "originalPage": 5,
+      "finalPage": 5,
+      "title": "均值与中位数的管理用途",
+      "status": "pass",
+      "independentReadingReview": "均值加性和中位数稳健用途清楚。",
+      "action": "retained_after_review",
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "focus",
+      "detailRef": {
+        "chapter": "05_statistics_dashboard",
+        "section": "均值与中位数",
+        "anchor": "均值与中位数"
+      }
+    },
+    {
+      "chapter": "05_statistics_dashboard",
+      "originalPage": 6,
+      "finalPage": 6,
+      "title": "日收入算例：中心位置与高值影响",
+      "status": "pass",
+      "independentReadingReview": "全部收入观测、排序中心和管理问题完整。",
+      "action": "revised",
+      "reason": "把完整观测与管理问题连接，并避免只用解释边界作结。",
+      "fields": [
+        "takeaway"
+      ],
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "split",
+      "detailRef": {
+        "chapter": "05_statistics_dashboard",
+        "section": "均值与中位数",
+        "anchor": "均值与中位数"
+      }
+    },
+    {
+      "chapter": "05_statistics_dashboard",
+      "originalPage": 7,
+      "finalPage": 7,
+      "title": "离散程度与相对波动",
+      "status": "pass",
+      "independentReadingReview": "方差、标准差、变异系数的单位条件明确。",
+      "action": "revised",
+      "reason": "补齐样本方差单位与 n-1 的统计背景，避免统计定义依赖下一讲。",
+      "fields": [
+        "body"
+      ],
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "focus",
+      "detailRef": {
+        "chapter": "05_statistics_dashboard",
+        "section": "方差、标准差与变异系数",
+        "anchor": "方差标准差与变异系数"
+      }
+    },
+    {
+      "chapter": "05_statistics_dashboard",
+      "originalPage": 8,
+      "finalPage": 8,
+      "title": "四分位距与描述性异常",
+      "status": "pass",
+      "independentReadingReview": "四分位位置、约定、IQR 规则和调查意义明确。",
+      "action": "revised",
+      "reason": "先解释四分位数的经验位置，再给出异常规则与计算约定。",
+      "fields": [
+        "body"
+      ],
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "focus",
+      "detailRef": {
+        "chapter": "05_statistics_dashboard",
+        "section": "分位数、IQR 与异常识别",
+        "anchor": "分位数iqr-与异常识别"
+      }
+    },
+    {
+      "chapter": "05_statistics_dashboard",
+      "originalPage": 9,
+      "finalPage": 9,
+      "title": "收入异常算例：从排序到核查",
+      "status": "pass",
+      "independentReadingReview": "排序数据、分位数和阈值可复算。",
+      "action": "retained_after_review",
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "stack",
+      "detailRef": {
+        "chapter": "05_statistics_dashboard",
+        "section": "分位数、IQR 与异常识别",
+        "anchor": "分位数iqr-与异常识别"
+      }
+    },
+    {
+      "chapter": "05_statistics_dashboard",
+      "originalPage": 10,
+      "finalPage": 10,
+      "title": "总体比率与分母权重",
+      "status": "pass",
+      "independentReadingReview": "互斥完整分组、分子分母和权重恒等式清楚。",
+      "action": "revised",
+      "reason": "说明组下标和总量关系，使权重恒等式可逐项理解。",
+      "fields": [
+        "body"
+      ],
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "focus",
+      "detailRef": {
+        "chapter": "05_statistics_dashboard",
+        "section": "比率指标与分母",
+        "anchor": "比率指标与分母"
+      }
+    },
+    {
+      "chapter": "05_statistics_dashboard",
+      "originalPage": 11,
+      "finalPage": 11,
+      "title": "产品组合与总体良率",
+      "status": "pass",
+      "independentReadingReview": "族内水平、占比与总体关系准确。",
+      "action": "retained_after_review",
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "focus",
+      "detailRef": {
+        "chapter": "05_statistics_dashboard",
+        "section": "产品组合与总体指标",
+        "anchor": "产品组合与总体指标"
+      }
+    },
+    {
+      "chapter": "05_statistics_dashboard",
+      "originalPage": 12,
+      "finalPage": 12,
+      "title": "组合反转算例：各族改善而总体下降",
+      "status": "pass",
+      "independentReadingReview": "两期分子分母和反转结果完整。",
+      "action": "retained_after_review",
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "stack",
+      "detailRef": {
+        "chapter": "05_statistics_dashboard",
+        "section": "产品组合与总体指标",
+        "anchor": "产品组合与总体指标"
+      }
+    },
+    {
+      "chapter": "05_statistics_dashboard",
+      "originalPage": 13,
+      "finalPage": 13,
+      "title": "总体变化的精确分解",
+      "status": "pass",
+      "independentReadingReview": "时期、权重、加减项和分解基准明确。",
+      "action": "revised",
+      "reason": "显式说明初期、末期组内良率和权重，使精确分解不依赖记号回忆。",
+      "fields": [
+        "body"
+      ],
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "focus",
+      "detailRef": {
+        "chapter": "05_statistics_dashboard",
+        "section": "产品组合与总体指标",
+        "anchor": "产品组合与总体指标"
+      }
+    },
+    {
+      "chapter": "05_statistics_dashboard",
+      "originalPage": 14,
+      "finalPage": 14,
+      "title": "固定组合算例：量化两类变化",
+      "status": "pass",
+      "independentReadingReview": "完整基准、末期结果、两类变化可复算。",
+      "action": "revised",
+      "reason": "取消“前页数据”依赖，重复算例所需的基准总体与实际末期数值。",
+      "fields": [
+        "lead",
+        "body"
+      ],
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "stack",
+      "detailRef": {
+        "chapter": "05_statistics_dashboard",
+        "section": "产品组合与总体指标",
+        "anchor": "产品组合与总体指标"
+      }
+    },
+    {
+      "chapter": "05_statistics_dashboard",
+      "originalPage": 15,
+      "finalPage": 15,
+      "title": "后向移动平均与原始时间序列",
+      "status": "pass",
+      "independentReadingReview": "窗口、时序、边界与平滑机制明确。",
+      "action": "revised",
+      "reason": "说明 k 的整数条件和 t 的时间顺序，并解释平滑与滞后机制。",
+      "fields": [
+        "body"
+      ],
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "focus",
+      "detailRef": {
+        "chapter": "05_statistics_dashboard",
+        "section": "经营波动与移动平均",
+        "anchor": "经营波动与移动平均"
+      }
+    },
+    {
+      "chapter": "05_statistics_dashboard",
+      "originalPage": 16,
+      "finalPage": 16,
+      "title": "经营目标与统计控制界限",
+      "status": "pass",
+      "independentReadingReview": "二项假设、目标与控制界限分别解释。",
+      "action": "retained_after_review",
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "focus",
+      "detailRef": {
+        "chapter": "05_statistics_dashboard",
+        "section": "统计过程控制图",
+        "anchor": "统计过程控制图"
+      }
+    },
+    {
+      "chapter": "05_statistics_dashboard",
+      "originalPage": 17,
+      "finalPage": 17,
+      "title": "二项模型下的近似控制界限",
+      "status": "pass",
+      "independentReadingReview": "近似界限与样本量关系明确。",
+      "action": "retained_after_review",
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "focus",
+      "detailRef": {
+        "chapter": "05_statistics_dashboard",
+        "section": "统计过程控制图",
+        "anchor": "统计过程控制图"
+      }
+    },
+    {
+      "chapter": "05_statistics_dashboard",
+      "originalPage": 18,
+      "finalPage": 18,
+      "title": "控制图算例：越界后调查什么",
+      "status": "pass",
+      "independentReadingReview": "控制基准、计算、观察及调查顺序完整。",
+      "action": "retained_after_review",
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "stack",
+      "detailRef": {
+        "chapter": "05_statistics_dashboard",
+        "section": "统计过程控制图",
+        "anchor": "统计过程控制图"
+      }
+    },
+    {
+      "chapter": "05_statistics_dashboard",
+      "originalPage": 19,
+      "finalPage": 19,
+      "title": "比较基准与经营判断",
+      "status": "pass",
+      "independentReadingReview": "四类基准和可比条件有实际含义。",
+      "action": "retained_after_review",
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "stack",
+      "detailRef": {
+        "chapter": "05_statistics_dashboard",
+        "section": "比较基准、目标线与经营解释",
+        "anchor": "比较基准目标线与经营解释"
+      }
+    },
+    {
+      "chapter": "05_statistics_dashboard",
+      "originalPage": null,
+      "afterOriginalPage": 19,
+      "finalPage": 20,
+      "title": "同一停留面积的两种计数",
+      "status": "pass",
+      "action": "added",
+      "reason": "用完整有限窗口计数先建立 Little 面积恒等式的直观基础。",
+      "independentReadingReview": "完整教学设定或由讲义公式直接推得的算例；数据、计算、解释和适用条件均在本讲给出。",
+      "mathematics": "新增数值例另行精确检验，所有数学表达使用 TeX。",
+      "layout": "split",
+      "detailRef": {
+        "chapter": "05_statistics_dashboard",
+        "section": "Little 定律的面积证明",
+        "anchor": "little-定律的面积证明"
+      }
+    },
+    {
+      "chapter": "05_statistics_dashboard",
+      "originalPage": 20,
+      "finalPage": 21,
+      "title": "Little 定律的面积论证",
+      "status": "pass",
+      "independentReadingReview": "面积恒等式全部变量和极限条件明确。",
+      "action": "revised",
+      "reason": "补齐 T、N_T、W_i、边界修正的定义，使面积证明能独立复原。",
+      "fields": [
+        "body",
+        "density"
+      ],
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "focus",
+      "detailRef": {
+        "chapter": "05_statistics_dashboard",
+        "section": "Little 定律的面积证明",
+        "anchor": "little-定律的面积证明"
+      }
+    },
+    {
+      "chapter": "05_statistics_dashboard",
+      "originalPage": 21,
+      "finalPage": 22,
+      "title": "在制量、吞吐率与平均周期",
+      "status": "pass",
+      "independentReadingReview": "边界一致、数量单位和周期换算完整。",
+      "action": "retained_after_review",
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "focus",
+      "detailRef": {
+        "chapter": "05_statistics_dashboard",
+        "section": "Little 定律的面积证明",
+        "anchor": "little-定律的面积证明"
+      }
+    },
+    {
+      "chapter": "05_statistics_dashboard",
+      "originalPage": 22,
+      "finalPage": 23,
+      "title": "单服务台模型中的利用率与等待",
+      "status": "pass",
+      "independentReadingReview": "模型名、速率、利用率与两类时间定义完整。",
+      "action": "revised",
+      "reason": "解释模型名称和两种速率单位，区分服务时间、排队时间与系统时间。",
+      "fields": [
+        "lead",
+        "body"
+      ],
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "focus",
+      "detailRef": {
+        "chapter": "05_statistics_dashboard",
+        "section": "利用率与等待时间",
+        "anchor": "利用率与等待时间"
+      }
+    },
+    {
+      "chapter": "05_statistics_dashboard",
+      "originalPage": 23,
+      "finalPage": 24,
+      "title": "稳态在制量的推导",
+      "status": "pass",
+      "independentReadingReview": "流量平衡、归一化、几何级数导数推导完整。",
+      "action": "revised",
+      "reason": "写出几何级数求导的关键一步，而非仅声称“即可”。",
+      "fields": [
+        "body",
+        "equation"
+      ],
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "focus",
+      "detailRef": {
+        "chapter": "05_statistics_dashboard",
+        "section": "利用率与等待时间",
+        "anchor": "利用率与等待时间"
+      }
+    },
+    {
+      "chapter": "05_statistics_dashboard",
+      "originalPage": 24,
+      "finalPage": 25,
+      "title": "负荷算例：利用率与系统时间",
+      "status": "pass",
+      "independentReadingReview": "模型条件、两次负荷与等待四倍结果准确。",
+      "action": "revised",
+      "reason": "重述单服务台到达、服务及无容量上限条件，保留模型适用性。",
+      "fields": [
+        "body"
+      ],
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "stack",
+      "detailRef": {
+        "chapter": "05_statistics_dashboard",
+        "section": "利用率与等待时间",
+        "anchor": "利用率与等待时间"
+      }
+    },
+    {
+      "chapter": "05_statistics_dashboard",
+      "originalPage": 25,
+      "finalPage": 26,
+      "title": "变异性与 Kingman 等待近似",
+      "status": "pass",
+      "independentReadingReview": "一般分布、变异系数、近似与校准清楚。",
+      "action": "revised",
+      "reason": "解释 GI/G/1 中 G 的一般分布含义及两类变异系数。",
+      "fields": [
+        "body"
+      ],
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "focus",
+      "detailRef": {
+        "chapter": "05_statistics_dashboard",
+        "section": "利用率与等待时间",
+        "anchor": "利用率与等待时间"
+      }
+    },
+    {
+      "chapter": "05_statistics_dashboard",
+      "originalPage": null,
+      "afterOriginalPage": 25,
+      "finalPage": 27,
+      "title": "同等负荷下，变异性怎样影响等待",
+      "status": "pass",
+      "action": "added",
+      "reason": "以同均值同负荷算例解释降低波动的运营价值。",
+      "independentReadingReview": "完整教学设定或由讲义公式直接推得的算例；数据、计算、解释和适用条件均在本讲给出。",
+      "mathematics": "新增数值例另行精确检验，所有数学表达使用 TeX。",
+      "layout": "stack",
+      "detailRef": {
+        "chapter": "05_statistics_dashboard",
+        "section": "利用率与等待时间",
+        "anchor": "利用率与等待时间"
+      }
+    },
+    {
+      "chapter": "05_statistics_dashboard",
+      "originalPage": 26,
+      "finalPage": 28,
+      "title": "能力成本与在制成本的权衡",
+      "status": "pass",
+      "independentReadingReview": "能力、在制成本和成本率单位一致。",
+      "action": "revised",
+      "reason": "给出成本率的货币和时间单位，说明 h、k 与 J 的量纲。",
+      "fields": [
+        "body"
+      ],
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "focus",
+      "detailRef": {
+        "chapter": "05_statistics_dashboard",
+        "section": "服务能力的经济分析",
+        "anchor": "sec:queue-cost"
+      }
+    },
+    {
+      "chapter": "05_statistics_dashboard",
+      "originalPage": 27,
+      "finalPage": 29,
+      "title": "连续最优服务能力的推导",
+      "status": "pass",
+      "independentReadingReview": "目标函数、一阶二阶导与边界最优证明完整。",
+      "action": "revised",
+      "reason": "重述优化目标，使求导与唯一性证明均有明确对象。",
+      "fields": [
+        "body"
+      ],
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "focus",
+      "detailRef": {
+        "chapter": "05_statistics_dashboard",
+        "section": "服务能力的经济分析",
+        "anchor": "sec:queue-cost"
+      }
+    },
+    {
+      "chapter": "05_statistics_dashboard",
+      "originalPage": 28,
+      "finalPage": 30,
+      "title": "能力算例：总成本率的比较",
+      "status": "pass",
+      "independentReadingReview": "具体单位和三种能力的成本比较可复算。",
+      "action": "revised",
+      "reason": "把含混“同一成本率单位”替换为可复核的具体单位。",
+      "fields": [
+        "body"
+      ],
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "stack",
+      "detailRef": {
+        "chapter": "05_statistics_dashboard",
+        "section": "服务能力的经济分析",
+        "anchor": "sec:queue-cost"
+      }
+    },
+    {
+      "chapter": "05_statistics_dashboard",
+      "originalPage": 29,
+      "finalPage": 31,
+      "title": "人工智能服务的测量边界",
+      "status": "pass",
+      "independentReadingReview": "请求首输出、响应完成、任务完成三边界清楚。",
+      "action": "retained_after_review",
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "stack",
+      "detailRef": {
+        "chapter": "05_statistics_dashboard",
+        "section": "人工智能服务的运营度量",
+        "anchor": "sec:ai-service-operations"
+      }
+    },
+    {
+      "chapter": "05_statistics_dashboard",
+      "originalPage": 30,
+      "finalPage": 32,
+      "title": "无排队服务时间的构成",
+      "status": "pass",
+      "independentReadingReview": "token、速度、耗时、串行与并行关系完整。",
+      "action": "revised",
+      "reason": "首次解释 token 及速度单位，令时间分解可用量纲检验。",
+      "fields": [
+        "body",
+        "density"
+      ],
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "focus",
+      "detailRef": {
+        "chapter": "05_statistics_dashboard",
+        "section": "人工智能服务的运营度量",
+        "anchor": "sec:ai-service-operations"
+      }
+    },
+    {
+      "chapter": "05_statistics_dashboard",
+      "originalPage": 31,
+      "finalPage": 33,
+      "title": "平均并发与服务位置占用",
+      "status": "pass",
+      "independentReadingReview": "完成时间与服务位置占用边界清楚。",
+      "action": "retained_after_review",
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "focus",
+      "detailRef": {
+        "chapter": "05_statistics_dashboard",
+        "section": "人工智能服务的运营度量",
+        "anchor": "sec:ai-service-operations"
+      }
+    },
+    {
+      "chapter": "05_statistics_dashboard",
+      "originalPage": 32,
+      "finalPage": 34,
+      "title": "请求费用与成功任务成本",
+      "status": "pass",
+      "independentReadingReview": "费用参数和成功成本分母清楚。",
+      "action": "retained_after_review",
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "focus",
+      "detailRef": {
+        "chapter": "05_statistics_dashboard",
+        "section": "人工智能服务的运营度量",
+        "anchor": "sec:ai-service-operations"
+      }
+    },
+    {
+      "chapter": "05_statistics_dashboard",
+      "originalPage": 33,
+      "finalPage": 35,
+      "title": "视觉编码与比较任务",
+      "status": "pass",
+      "independentReadingReview": "图形编码与比较任务对应。",
+      "action": "retained_after_review",
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "stack",
+      "detailRef": {
+        "chapter": "05_statistics_dashboard",
+        "section": "图表的视觉编码",
+        "anchor": "图表的视觉编码"
+      }
+    },
+    {
+      "chapter": "05_statistics_dashboard",
+      "originalPage": 34,
+      "finalPage": 36,
+      "title": "从统计摘要到可下钻看板",
+      "status": "pass",
+      "independentReadingReview": "汇总、下钻、证据与行动有连贯路径。",
+      "action": "retained_after_review",
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "stack",
+      "detailRef": {
+        "chapter": "05_statistics_dashboard",
+        "section": "从统计表到看板",
+        "anchor": "从统计表到看板"
+      }
+    },
+    {
+      "chapter": "05_statistics_dashboard",
+      "originalPage": 35,
+      "finalPage": 37,
+      "title": "看板类型与使用任务",
+      "status": "pass",
+      "independentReadingReview": "三类看板与实验属于分析型的说明明确。",
+      "action": "retained_after_review",
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "stack",
+      "detailRef": {
+        "chapter": "05_statistics_dashboard",
+        "section": "看板类型",
+        "anchor": "看板类型"
+      }
+    },
+    {
+      "chapter": "05_statistics_dashboard",
+      "originalPage": 36,
+      "finalPage": 38,
+      "title": "看板的运营维护与复核",
+      "status": "pass",
+      "independentReadingReview": "刷新、质量、责任、复核和结果记录完整。",
+      "action": "retained_after_review",
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "stack",
+      "detailRef": {
+        "chapter": "05_statistics_dashboard",
+        "section": "看板的运营节奏",
+        "anchor": "看板的运营节奏"
+      }
+    },
+    {
+      "chapter": "05_statistics_dashboard",
+      "originalPage": 37,
+      "finalPage": 39,
+      "title": "Rolls-Royce 案例：服务与备件看板",
+      "status": "pass",
+      "independentReadingReview": "案例事实与教学看板设计分离。",
+      "action": "retained_after_review",
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "stack",
+      "detailRef": {
+        "chapter": "05_statistics_dashboard",
+        "section": "Rolls-Royce 的发动机维护与备件管理",
+        "anchor": "rolls-royce-的发动机维护与备件管理"
+      }
+    },
+    {
+      "chapter": "05_statistics_dashboard",
+      "originalPage": 38,
+      "finalPage": 40,
+      "title": "制造看板的分层分析次序",
+      "status": "pass",
+      "independentReadingReview": "缩写、系统指标、分层和候选机制解释完整。",
+      "action": "revised",
+      "reason": "首次定义 OTD、OEE、WIP 缩写，避免依赖早先讲义或口头补充。",
+      "fields": [
+        "body"
+      ],
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "stack",
+      "detailRef": {
+        "chapter": "05_statistics_dashboard",
+        "section": "半导体制造看板的分析次序",
+        "anchor": "半导体制造看板的分析次序"
+      }
+    },
+    {
+      "chapter": "05_statistics_dashboard",
+      "originalPage": 39,
+      "finalPage": 41,
+      "title": "人工智能辅助图表解释的核查",
+      "status": "pass",
+      "independentReadingReview": "事实、候选机制、验证计划有数值例。",
+      "action": "retained_after_review",
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "stack",
+      "detailRef": {
+        "chapter": "05_statistics_dashboard",
+        "section": "人工智能辅助图表解释",
+        "anchor": "人工智能辅助图表解释"
+      }
+    },
+    {
+      "chapter": "05_statistics_dashboard",
+      "originalPage": 40,
+      "finalPage": 42,
+      "title": "实验任务：日运营统计与看板",
+      "status": "pass",
+      "independentReadingReview": "输入年份、字段、履约口径与完整输出明确。",
+      "action": "revised",
+      "reason": "明确年份、履约分母和实验输出，不把两行样本当作完整输入。",
+      "fields": [
+        "body"
+      ],
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "stack",
+      "detailRef": {
+        "chapter": "05_statistics_dashboard",
+        "section": "描述统计计算",
+        "anchor": "描述统计计算"
+      }
+    },
+    {
+      "chapter": "05_statistics_dashboard",
+      "originalPage": 41,
+      "finalPage": 43,
+      "title": "实验核对：完整样本的预期摘要",
+      "status": "pass",
+      "independentReadingReview": "完整样本摘要、单位与各类聚合规则准确。",
+      "action": "retained_after_review",
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "stack",
+      "detailRef": {
+        "chapter": "05_statistics_dashboard",
+        "section": "描述统计计算",
+        "anchor": "描述统计计算"
+      }
+    },
+    {
+      "chapter": "05_statistics_dashboard",
+      "originalPage": 42,
+      "finalPage": 44,
+      "title": "管理解释的证据层次",
+      "status": "pass",
+      "independentReadingReview": "样本事实、问题计数和验证查询有清楚边界。",
+      "action": "retained_after_review",
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "stack",
+      "detailRef": {
+        "chapter": "05_statistics_dashboard",
+        "section": "由观察形成管理解释",
+        "anchor": "由观察形成管理解释"
+      }
+    },
+    {
+      "chapter": "05_statistics_dashboard",
+      "originalPage": 43,
+      "finalPage": 45,
+      "title": "可复核的运营看板",
+      "status": "pass",
+      "independentReadingReview": "全章统计、系统模型与看板的逻辑总结完整。",
+      "action": "retained_after_review",
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "stack",
+      "detailRef": {
+        "chapter": "05_statistics_dashboard",
+        "section": "看板结果的核查",
+        "anchor": "看板结果的核查"
+      }
+    },
+    {
+      "chapter": "06_ab_testing",
+      "originalPage": 1,
+      "finalPage": 1,
+      "title": "随机实验如何支持推广决策",
+      "status": "pass",
+      "independentReadingReview": "设计、精度、价值的顺序清楚。",
+      "action": "retained_after_review",
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "stack",
+      "detailRef": {
+        "chapter": "06_ab_testing",
+        "section": "经营比较与统计推断",
+        "anchor": "经营比较与统计推断"
+      }
+    },
+    {
+      "chapter": "06_ab_testing",
+      "originalPage": 2,
+      "finalPage": 2,
+      "title": "描述、统计推断、因果评价与决策",
+      "status": "pass",
+      "independentReadingReview": "四研究层次和各自证据要求明确。",
+      "action": "retained_after_review",
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "stack",
+      "detailRef": {
+        "chapter": "06_ab_testing",
+        "section": "经营比较与统计推断",
+        "anchor": "经营比较与统计推断"
+      }
+    },
+    {
+      "chapter": "06_ab_testing",
+      "originalPage": 3,
+      "finalPage": 3,
+      "title": "总体参数、估计量与标准误",
+      "status": "pass",
+      "independentReadingReview": "参数、估计量、标准误和样本标准差清楚。",
+      "action": "revised",
+      "reason": "把一般参数 θ、估计量与均值例子的关系写清。",
+      "fields": [
+        "body"
+      ],
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "focus",
+      "detailRef": {
+        "chapter": "06_ab_testing",
+        "section": "总体、样本、估计量与标准误",
+        "anchor": "总体样本估计量与标准误"
+      }
+    },
+    {
+      "chapter": "06_ab_testing",
+      "originalPage": 4,
+      "finalPage": 4,
+      "title": "样本规模与估计精度",
+      "status": "pass",
+      "independentReadingReview": "四倍样本与精度减半的条件和代数完整。",
+      "action": "retained_after_review",
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "focus",
+      "detailRef": {
+        "chapter": "06_ab_testing",
+        "section": "总体、样本、估计量与标准误",
+        "anchor": "总体样本估计量与标准误"
+      }
+    },
+    {
+      "chapter": "06_ab_testing",
+      "originalPage": 5,
+      "finalPage": 5,
+      "title": "随机实验的基本要素",
+      "status": "pass",
+      "independentReadingReview": "随机单元、版本、窗口和纳入规则明确。",
+      "action": "retained_after_review",
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "stack",
+      "detailRef": {
+        "chapter": "06_ab_testing",
+        "section": "随机实验的基本要素",
+        "anchor": "随机实验的基本要素"
+      }
+    },
+    {
+      "chapter": "06_ab_testing",
+      "originalPage": 6,
+      "finalPage": 6,
+      "title": "潜在结果与平均处理效应",
+      "status": "pass",
+      "independentReadingReview": "二元潜在结果、SUTVA、观察与平均效应完整。",
+      "action": "revised",
+      "reason": "给出二元转化结果的解释，将潜在结果与目标效应直接连接。",
+      "fields": [
+        "body"
+      ],
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "focus",
+      "detailRef": {
+        "chapter": "06_ab_testing",
+        "section": "潜在结果与随机化",
+        "anchor": "潜在结果与随机化"
+      }
+    },
+    {
+      "chapter": "06_ab_testing",
+      "originalPage": 7,
+      "finalPage": 7,
+      "title": "完全随机分配下的差异估计",
+      "status": "pass",
+      "independentReadingReview": "两组均值、差异、目标总体及无偏性定义清楚。",
+      "action": "revised",
+      "reason": "把组内均值与差异的定义同时给出，避免只靠口头补充。",
+      "fields": [
+        "body",
+        "equation"
+      ],
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "focus",
+      "detailRef": {
+        "chapter": "06_ab_testing",
+        "section": "潜在结果与随机化",
+        "anchor": "潜在结果与随机化"
+      }
+    },
+    {
+      "chapter": "06_ab_testing",
+      "originalPage": 8,
+      "finalPage": 8,
+      "title": "无偏性的入组概率证明",
+      "status": "pass",
+      "independentReadingReview": "指示期望、组均值和相减证明完整。",
+      "action": "retained_after_review",
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "focus",
+      "detailRef": {
+        "chapter": "06_ab_testing",
+        "section": "潜在结果与随机化",
+        "anchor": "潜在结果与随机化"
+      }
+    },
+    {
+      "chapter": "06_ab_testing",
+      "originalPage": null,
+      "afterOriginalPage": 8,
+      "finalPage": 9,
+      "title": "四个单元：真效应与可见结果",
+      "status": "pass",
+      "action": "added",
+      "reason": "用明确标为完整教学设定的潜在结果表，解释反事实与一次分配差异。",
+      "independentReadingReview": "完整教学设定或由讲义公式直接推得的算例；数据、计算、解释和适用条件均在本讲给出。",
+      "mathematics": "新增数值例另行精确检验，所有数学表达使用 TeX。",
+      "layout": "split",
+      "detailRef": {
+        "chapter": "06_ab_testing",
+        "section": "潜在结果与随机化",
+        "anchor": "潜在结果与随机化"
+      }
+    },
+    {
+      "chapter": "06_ab_testing",
+      "originalPage": null,
+      "afterOriginalPage": 8,
+      "finalPage": 10,
+      "title": "穷举随机分配，核查无偏性",
+      "status": "pass",
+      "action": "added",
+      "reason": "穷举全部分配，直接验证无偏性而非只宣称设计会平衡。",
+      "independentReadingReview": "完整教学设定或由讲义公式直接推得的算例；数据、计算、解释和适用条件均在本讲给出。",
+      "mathematics": "新增数值例另行精确检验，所有数学表达使用 TeX。",
+      "layout": "split",
+      "detailRef": {
+        "chapter": "06_ab_testing",
+        "section": "潜在结果与随机化",
+        "anchor": "潜在结果与随机化"
+      }
+    },
+    {
+      "chapter": "06_ab_testing",
+      "originalPage": 9,
+      "finalPage": 11,
+      "title": "Neyman 随机化方差",
+      "status": "pass",
+      "independentReadingReview": "潜在方差、随机化来源和保守估计范围明确。",
+      "action": "revised",
+      "reason": "把精确结果明确为有限总体随机化方差，并解释负项的意义。",
+      "fields": [
+        "body"
+      ],
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "focus",
+      "detailRef": {
+        "chapter": "06_ab_testing",
+        "section": "随机化估计量的方差",
+        "anchor": "随机化估计量的方差"
+      }
+    },
+    {
+      "chapter": "06_ab_testing",
+      "originalPage": null,
+      "afterOriginalPage": 9,
+      "finalPage": 12,
+      "title": "同一算例的两种方差计算",
+      "status": "pass",
+      "action": "added",
+      "reason": "通过穷举方差与 Neyman 公式双重核对，加强随机化精度的直观理解。使用对称离均差与两行公式，避免窄步骤卡片中的长分子溢出。",
+      "independentReadingReview": "完整教学设定或由讲义公式直接推得的算例；数据、计算、解释和适用条件均在本讲给出。",
+      "mathematics": "新增数值例另行精确检验，所有数学表达使用 TeX。",
+      "layout": "stack",
+      "detailRef": {
+        "chapter": "06_ab_testing",
+        "section": "随机化估计量的方差",
+        "anchor": "随机化估计量的方差"
+      }
+    },
+    {
+      "chapter": "06_ab_testing",
+      "originalPage": 10,
+      "finalPage": 13,
+      "title": "两组差异的标准误与近似区间",
+      "status": "pass",
+      "independentReadingReview": "组方差、区间半宽和正态分位数有定义。",
+      "action": "revised",
+      "reason": "定义置信区间半宽、显著性及标准正态分位数，杜绝未解释符号。",
+      "fields": [
+        "body"
+      ],
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "focus",
+      "detailRef": {
+        "chapter": "06_ab_testing",
+        "section": "均值差异、置信区间与 p 值",
+        "anchor": "均值差异置信区间与-p-值"
+      }
+    },
+    {
+      "chapter": "06_ab_testing",
+      "originalPage": 11,
+      "finalPage": 14,
+      "title": "p 值的统计含义",
+      "status": "pass",
+      "independentReadingReview": "原假设、极端方向和尾概率意义明确。",
+      "action": "revised",
+      "reason": "将 H0 的含义与例子写明，并强调极端方向由问题规定。",
+      "fields": [
+        "body"
+      ],
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "split",
+      "detailRef": {
+        "chapter": "06_ab_testing",
+        "section": "均值差异、置信区间与 p 值",
+        "anchor": "均值差异置信区间与-p-值"
+      }
+    },
+    {
+      "chapter": "06_ab_testing",
+      "originalPage": 12,
+      "finalPage": 15,
+      "title": "置信水平与区间解释",
+      "status": "pass",
+      "independentReadingReview": "频率覆盖与后验概率的框架区分清楚。",
+      "action": "retained_after_review",
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "focus",
+      "detailRef": {
+        "chapter": "06_ab_testing",
+        "section": "置信区间的解释",
+        "anchor": "置信区间的解释"
+      }
+    },
+    {
+      "chapter": "06_ab_testing",
+      "originalPage": 13,
+      "finalPage": 16,
+      "title": "效应幅度、估计精度与业务阈值",
+      "status": "pass",
+      "independentReadingReview": "两组样本、标准误、区间和业务阈值可复算。",
+      "action": "retained_after_review",
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "stack",
+      "detailRef": {
+        "chapter": "06_ab_testing",
+        "section": "置信区间的解释",
+        "anchor": "置信区间的解释"
+      }
+    },
+    {
+      "chapter": "06_ab_testing",
+      "originalPage": 14,
+      "finalPage": 17,
+      "title": "差异、非劣效与等效性研究",
+      "status": "pass",
+      "independentReadingReview": "差异、非劣效、等效的假设准确。",
+      "action": "retained_after_review",
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "stack",
+      "detailRef": {
+        "chapter": "06_ab_testing",
+        "section": "置信区间的解释",
+        "anchor": "置信区间的解释"
+      }
+    },
+    {
+      "chapter": "06_ab_testing",
+      "originalPage": 15,
+      "finalPage": 18,
+      "title": "显著性水平、功效与可检测效应",
+      "status": "pass",
+      "independentReadingReview": "显著性、功效、MDE 与业务阈值清楚。",
+      "action": "retained_after_review",
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "split",
+      "detailRef": {
+        "chapter": "06_ab_testing",
+        "section": "显著性、功效与最小可检测效应",
+        "anchor": "显著性功效与最小可检测效应"
+      }
+    },
+    {
+      "chapter": "06_ab_testing",
+      "originalPage": 16,
+      "finalPage": 19,
+      "title": "两组比例实验的样本量规划",
+      "status": "pass",
+      "independentReadingReview": "比例、错误率、功效与公式中间项有定义。",
+      "action": "revised",
+      "reason": "明确样本量公式中的 A、B 只是分解项，不是实验版本标签。",
+      "fields": [
+        "body",
+        "density"
+      ],
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "focus",
+      "detailRef": {
+        "chapter": "06_ab_testing",
+        "section": "显著性、功效与最小可检测效应",
+        "anchor": "显著性功效与最小可检测效应"
+      }
+    },
+    {
+      "chapter": "06_ab_testing",
+      "originalPage": 17,
+      "finalPage": 20,
+      "title": "主指标与约束指标",
+      "status": "pass",
+      "independentReadingReview": "主效应与约束指标的用途和风险要求清楚。",
+      "action": "revised",
+      "reason": "按宋体度量把主文与四行约束表格分栏，消除上下堆叠溢出。",
+      "fields": [
+        "layout",
+        "density"
+      ],
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "split",
+      "detailRef": {
+        "chapter": "06_ab_testing",
+        "section": "约束指标与实验决策",
+        "anchor": "约束指标与实验决策"
+      }
+    },
+    {
+      "chapter": "06_ab_testing",
+      "originalPage": 18,
+      "finalPage": 21,
+      "title": "预先规定的推广证据标准",
+      "status": "pass",
+      "independentReadingReview": "效应下界、风险上界和联合控制有明确标准。",
+      "action": "retained_after_review",
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "focus",
+      "detailRef": {
+        "chapter": "06_ab_testing",
+        "section": "约束指标与实验决策",
+        "anchor": "约束指标与实验决策"
+      }
+    },
+    {
+      "chapter": "06_ab_testing",
+      "originalPage": 19,
+      "finalPage": 22,
+      "title": "CUPED：利用实验前信息降低方差",
+      "status": "pass",
+      "independentReadingReview": "处理前协变量、单位换算与效应保留逻辑清楚。",
+      "action": "revised",
+      "reason": "第一次解释 CUPED 名称，明确 X、中心值和 θ 的单位与调整机制。",
+      "fields": [
+        "lead",
+        "body"
+      ],
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "focus",
+      "detailRef": {
+        "chapter": "06_ab_testing",
+        "section": "用实验前协变量降低方差",
+        "anchor": "用实验前协变量降低方差"
+      }
+    },
+    {
+      "chapter": "06_ab_testing",
+      "originalPage": 20,
+      "finalPage": 23,
+      "title": "最优线性调整系数",
+      "status": "pass",
+      "independentReadingReview": "二次式、最优系数及相关系数有定义。",
+      "action": "revised",
+      "reason": "补齐最小化对象与相关系数定义，让二次式及最优系数可读。",
+      "fields": [
+        "body",
+        "density"
+      ],
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "focus",
+      "detailRef": {
+        "chapter": "06_ab_testing",
+        "section": "用实验前协变量降低方差",
+        "anchor": "用实验前协变量降低方差"
+      }
+    },
+    {
+      "chapter": "06_ab_testing",
+      "originalPage": 21,
+      "finalPage": 24,
+      "title": "方差缩减的数量级",
+      "status": "pass",
+      "independentReadingReview": "方差、标准误和样本比例关系条件清楚。",
+      "action": "retained_after_review",
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "focus",
+      "detailRef": {
+        "chapter": "06_ab_testing",
+        "section": "用实验前协变量降低方差",
+        "anchor": "用实验前协变量降低方差"
+      }
+    },
+    {
+      "chapter": "06_ab_testing",
+      "originalPage": 22,
+      "finalPage": 25,
+      "title": "整群随机化与分析层级",
+      "status": "pass",
+      "independentReadingReview": "随机化、观测、推断层级明确。",
+      "action": "retained_after_review",
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "stack",
+      "detailRef": {
+        "chapter": "06_ab_testing",
+        "section": "制造实验的随机化单元",
+        "anchor": "制造实验的随机化单元"
+      }
+    },
+    {
+      "chapter": "06_ab_testing",
+      "originalPage": 23,
+      "finalPage": 26,
+      "title": "集群内相关与设计效应",
+      "status": "pass",
+      "independentReadingReview": "群内相关、方差倍数和信息量解释完整。",
+      "action": "revised",
+      "reason": "先解释群内相关系数，再给出方差倍数和标准误倍数。",
+      "fields": [
+        "body"
+      ],
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "focus",
+      "detailRef": {
+        "chapter": "06_ab_testing",
+        "section": "制造实验的随机化单元",
+        "anchor": "制造实验的随机化单元"
+      }
+    },
+    {
+      "chapter": "06_ab_testing",
+      "originalPage": 24,
+      "finalPage": 27,
+      "title": "实验质量检查",
+      "status": "pass",
+      "independentReadingReview": "分流、跨组、完整窗口和 SRM 说明清楚。",
+      "action": "retained_after_review",
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "stack",
+      "detailRef": {
+        "chapter": "06_ab_testing",
+        "section": "实验质量检查",
+        "anchor": "实验质量检查"
+      }
+    },
+    {
+      "chapter": "06_ab_testing",
+      "originalPage": 25,
+      "finalPage": 28,
+      "title": "重复查看与多重比较",
+      "status": "pass",
+      "independentReadingReview": "反复查看、筛选和整体程序错误率有逻辑。",
+      "action": "retained_after_review",
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "split",
+      "detailRef": {
+        "chapter": "06_ab_testing",
+        "section": "重复检验与多重比较",
+        "anchor": "重复检验与多重比较"
+      }
+    },
+    {
+      "chapter": "06_ab_testing",
+      "originalPage": 26,
+      "finalPage": 29,
+      "title": "置信序列：对持续查看的错误控制",
+      "status": "pass",
+      "independentReadingReview": "时间索引、半径、错误预算和解方程清楚。",
+      "action": "revised",
+      "reason": "明示置信序列的时间索引、样本均值与半径含义。",
+      "fields": [
+        "body",
+        "density"
+      ],
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "focus",
+      "detailRef": {
+        "chapter": "06_ab_testing",
+        "section": "随时有效置信区间",
+        "anchor": "随时有效置信区间"
+      }
+    },
+    {
+      "chapter": "06_ab_testing",
+      "originalPage": 27,
+      "finalPage": 30,
+      "title": "置信序列的并集界证明",
+      "status": "pass",
+      "independentReadingReview": "全路径覆盖、并集界、裁剪和停止保证完整。",
+      "action": "revised",
+      "reason": "重述 r_t 与各时点条件，并准确表述并集关系。",
+      "fields": [
+        "body",
+        "density"
+      ],
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "focus",
+      "detailRef": {
+        "chapter": "06_ab_testing",
+        "section": "随时有效置信区间",
+        "anchor": "随时有效置信区间"
+      }
+    },
+    {
+      "chapter": "06_ab_testing",
+      "originalPage": null,
+      "afterOriginalPage": 27,
+      "finalPage": 31,
+      "title": "持续查看需要怎样的精度代价",
+      "status": "pass",
+      "action": "added",
+      "reason": "用讲义练习的参数比较同一 Hoeffding 依据下的固定与持续监测半径。",
+      "independentReadingReview": "完整教学设定或由讲义公式直接推得的算例；数据、计算、解释和适用条件均在本讲给出。",
+      "mathematics": "新增数值例另行精确检验，所有数学表达使用 TeX。",
+      "layout": "stack",
+      "detailRef": {
+        "chapter": "06_ab_testing",
+        "section": "随时有效置信区间",
+        "anchor": "随时有效置信区间"
+      }
+    },
+    {
+      "chapter": "06_ab_testing",
+      "originalPage": 28,
+      "finalPage": 32,
+      "title": "两臂持续监测的效应区间",
+      "status": "pass",
+      "independentReadingReview": "两臂均值、区间端点、差异与预算明确。",
+      "action": "revised",
+      "reason": "定义各臂区间端点与共同观察索引，取消“前页条件”依赖。",
+      "fields": [
+        "body",
+        "density"
+      ],
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "focus",
+      "detailRef": {
+        "chapter": "06_ab_testing",
+        "section": "随时有效置信区间",
+        "anchor": "随时有效置信区间"
+      }
+    },
+    {
+      "chapter": "06_ab_testing",
+      "originalPage": 29,
+      "finalPage": 33,
+      "title": "统计效应与经济盈亏阈值",
+      "status": "pass",
+      "independentReadingReview": "价值费用单位、盈亏不等式和推广条件完整。",
+      "action": "revised",
+      "reason": "明确价值、费用、效应的单位对应。",
+      "fields": [
+        "body"
+      ],
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "focus",
+      "detailRef": {
+        "chapter": "06_ab_testing",
+        "section": "效应、收益与推广条件",
+        "anchor": "效应收益与推广条件"
+      }
+    },
+    {
+      "chapter": "06_ab_testing",
+      "originalPage": 30,
+      "finalPage": 34,
+      "title": "Microsoft 案例：可信实验的组织条件",
+      "status": "pass",
+      "independentReadingReview": "企业方法与制造设计调整职责清楚。",
+      "action": "retained_after_review",
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "stack",
+      "detailRef": {
+        "chapter": "06_ab_testing",
+        "section": "Microsoft 的实验组织与运行",
+        "anchor": "microsoft-的实验组织与运行"
+      }
+    },
+    {
+      "chapter": "06_ab_testing",
+      "originalPage": 31,
+      "finalPage": 35,
+      "title": "查询系统的成对比较",
+      "status": "pass",
+      "independentReadingReview": "成对成功差值与标准差标准误定义完整。",
+      "action": "revised",
+      "reason": "澄清成功指示的含义和差值标准差，成对设计无需口头补充。",
+      "fields": [
+        "body"
+      ],
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "focus",
+      "detailRef": {
+        "chapter": "06_ab_testing",
+        "section": "自然语言查询系统的比较实验",
+        "anchor": "自然语言查询系统的比较实验"
+      }
+    },
+    {
+      "chapter": "06_ab_testing",
+      "originalPage": 32,
+      "finalPage": 36,
+      "title": "智能体运营试点的分配设计",
+      "status": "pass",
+      "independentReadingReview": "干扰机制、单元、窗口切换和结果约束清楚。",
+      "action": "retained_after_review",
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "stack",
+      "detailRef": {
+        "chapter": "06_ab_testing",
+        "section": "智能体参与运营决策的试点评价",
+        "anchor": "智能体参与运营决策的试点评价"
+      }
+    },
+    {
+      "chapter": "06_ab_testing",
+      "originalPage": 33,
+      "finalPage": 37,
+      "title": "内部有效性与外部适用性",
+      "status": "pass",
+      "independentReadingReview": "试点比较与推广机制要求有具体例。",
+      "action": "retained_after_review",
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "split",
+      "detailRef": {
+        "chapter": "06_ab_testing",
+        "section": "实验结果与推广评价",
+        "anchor": "实验结果与推广评价"
+      }
+    },
+    {
+      "chapter": "06_ab_testing",
+      "originalPage": 34,
+      "finalPage": 38,
+      "title": "结账页实验：输入与分析任务",
+      "status": "pass",
+      "independentReadingReview": "模拟输入、字段、访客单元和全部指标基准明确。",
+      "action": "retained_after_review",
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "stack",
+      "detailRef": {
+        "chapter": "06_ab_testing",
+        "section": "计算实例与结果解释",
+        "anchor": "计算实例与结果解释"
+      }
+    },
+    {
+      "chapter": "06_ab_testing",
+      "originalPage": 35,
+      "finalPage": 39,
+      "title": "结账页实验：转化差异的估计",
+      "status": "pass",
+      "independentReadingReview": "转化基准、绝对差异与相对差异区分清楚。",
+      "action": "revised",
+      "reason": "修复工作示例标题，清楚区分点估计页与下一页的精度计算。",
+      "fields": [
+        "workedExample"
+      ],
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "stack",
+      "detailRef": {
+        "chapter": "06_ab_testing",
+        "section": "计算实例与结果解释",
+        "anchor": "计算实例与结果解释"
+      }
+    },
+    {
+      "chapter": "06_ab_testing",
+      "originalPage": 36,
+      "finalPage": 40,
+      "title": "转化差异的标准误与区间",
+      "status": "pass",
+      "independentReadingReview": "组方差来源、两项分子、分母和区间可复算。",
+      "action": "revised",
+      "reason": "补齐组下标、两组概率与标准误平方来源，使计算可独立复核。",
+      "fields": [
+        "body"
+      ],
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "focus",
+      "detailRef": {
+        "chapter": "06_ab_testing",
+        "section": "计算实例与结果解释",
+        "anchor": "计算实例与结果解释"
+      }
+    },
+    {
+      "chapter": "06_ab_testing",
+      "originalPage": null,
+      "afterOriginalPage": 36,
+      "finalPage": 41,
+      "title": "结账页实验：从差异到双侧 p 值",
+      "status": "pass",
+      "action": "added",
+      "reason": "把先前断言的 p 值变成从假设到统计量再到尾概率的可复算推导。",
+      "independentReadingReview": "完整教学设定或由讲义公式直接推得的算例；数据、计算、解释和适用条件均在本讲给出。",
+      "mathematics": "新增数值例另行精确检验，所有数学表达使用 TeX。",
+      "layout": "stack",
+      "detailRef": {
+        "chapter": "06_ab_testing",
+        "section": "均值差异、置信区间与 p 值",
+        "anchor": "均值差异置信区间与-p-值"
+      }
+    },
+    {
+      "chapter": "06_ab_testing",
+      "originalPage": 37,
+      "finalPage": 42,
+      "title": "结账页实验：收益与风险的完整结果",
+      "status": "pass",
+      "independentReadingReview": "主结果、收入、加载与工单风险完整。",
+      "action": "retained_after_review",
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "stack",
+      "detailRef": {
+        "chapter": "06_ab_testing",
+        "section": "计算实例与结果解释",
+        "anchor": "计算实例与结果解释"
+      }
+    },
+    {
+      "chapter": "06_ab_testing",
+      "originalPage": 38,
+      "finalPage": 43,
+      "title": "结账页实验：下一轮设计",
+      "status": "pass",
+      "independentReadingReview": "产品修复、效应目标、停止规则和所需样本清楚。",
+      "action": "retained_after_review",
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "stack",
+      "detailRef": {
+        "chapter": "06_ab_testing",
+        "section": "计算实例与结果解释",
+        "anchor": "计算实例与结果解释"
+      }
+    },
+    {
+      "chapter": "06_ab_testing",
+      "originalPage": 39,
+      "finalPage": 44,
+      "title": "可信实验报告的论证结构",
+      "status": "pass",
+      "independentReadingReview": "设计、质量、精度、价值和行动的论证总结完整。",
+      "action": "retained_after_review",
+      "mathematics": "条件、符号与结论对应；公式保留 TeX。",
+      "layout": "stack",
+      "detailRef": {
+        "chapter": "06_ab_testing",
+        "section": "实验结果与推广评价",
+        "anchor": "实验结果与推广评价"
+      }
+    }
+  ],
+  "checks": {
+    "structureAndTeX": {
+      "pages": 132,
+      "formulas": 768,
+      "errors": []
+    },
+    "numerical": {
+      "checks": [
+        {
+          "name": "Observed order cycle",
+          "actual": "44/17",
+          "expected": "44/17",
+          "pass": true
+        },
+        {
+          "name": "Category-adjusted cycle",
+          "actual": "4",
+          "expected": "4",
+          "pass": true
+        },
+        {
+          "name": "Measurement attenuation noise=4",
+          "actual": "1",
+          "expected": "1",
+          "pass": true
+        },
+        {
+          "name": "Measurement attenuation noise=1",
+          "actual": "8/5",
+          "expected": "8/5",
+          "pass": true
+        },
+        {
+          "name": "Little time area",
+          "actual": "4",
+          "expected": "4",
+          "pass": true
+        },
+        {
+          "name": "Little object area",
+          "actual": "4",
+          "expected": "4",
+          "pass": true
+        },
+        {
+          "name": "Kingman ca=cs=1",
+          "actual": "2/5",
+          "expected": "2/5",
+          "pass": true
+        },
+        {
+          "name": "Kingman ca=cs=.5",
+          "actual": "1/10",
+          "expected": "1/10",
+          "pass": true
+        },
+        {
+          "name": "Randomization mean",
+          "actual": "1/4",
+          "expected": "1/4",
+          "pass": true
+        },
+        {
+          "name": "Randomization enumeration variance",
+          "actual": "11/48",
+          "expected": "11/48",
+          "pass": true
+        },
+        {
+          "name": "Y0 finite variance",
+          "actual": "1/3",
+          "expected": "1/3",
+          "pass": true
+        },
+        {
+          "name": "Y1 finite variance",
+          "actual": "1/4",
+          "expected": "1/4",
+          "pass": true
+        },
+        {
+          "name": "Effect finite variance",
+          "actual": "1/4",
+          "expected": "1/4",
+          "pass": true
+        },
+        {
+          "name": "Neyman exact variance",
+          "actual": "11/48",
+          "expected": "11/48",
+          "pass": true
+        },
+        {
+          "name": "Omitting effect variance",
+          "actual": "7/24",
+          "expected": "7/24",
+          "pass": true
+        },
+        {
+          "name": "Time-uniform radius",
+          "actual": "0.09487383810763891",
+          "expected": "0.09487383810763891",
+          "pass": true
+        },
+        {
+          "name": "Fixed-time radius",
+          "actual": "0.04294694083467376",
+          "expected": "0.04294694083467376",
+          "pass": true
+        },
+        {
+          "name": "Checkout SE-squared",
+          "actual": "1/40",
+          "expected": "1/40",
+          "pass": true
+        },
+        {
+          "name": "Checkout Wald two-sided p",
+          "actual": "0.2059032107320683",
+          "expected": "0.2059032107320683",
+          "pass": true
+        },
+        {
+          "name": "Cluster SE multiplier",
+          "actual": "2.4289915602982237",
+          "expected": "2.4289915602982237",
+          "pass": true
+        }
+      ],
+      "passed": 20,
+      "total": 20,
+      "all_pass": true,
+      "randomization_differences": [
+        "-1/2",
+        "0",
+        "0",
+        "1/2",
+        "1/2",
+        "1"
+      ]
+    },
+    "sourceAndPresentationBoundary": "局部文件验证未代替真实浏览器布局审查；主任务合并后检查嵌入宋体及全部页面。"
+  }
+}

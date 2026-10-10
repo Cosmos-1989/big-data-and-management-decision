@@ -1,0 +1,935 @@
+{
+  "scope": "01–03 讲逐页独立阅读审核",
+  "criteria": [
+    "首次概念与符号可解释",
+    "题设与数值可追溯",
+    "推导不依赖口头补充",
+    "结论与前提对应",
+    "连续阅读衔接",
+    "布局保持明确"
+  ],
+  "chapters": {
+    "01_intro": {
+      "title": "数据、信息与管理决策",
+      "before_pages": 32,
+      "after_pages": 37,
+      "page_audit": [
+        {
+          "original_page": 1,
+          "final_page": 1,
+          "title": "从经营症状到管理决策",
+          "status": "实质修改",
+          "independent_reading": "经营症状与可行动任务由同一订单案例衔接；行动时点应明确到可执行的时间。",
+          "change_reason": "把模糊的“承诺交期前”改为权威讲义中的 72 小时，给决策时点一个可执行定义。"
+        },
+        {
+          "original_page": 2,
+          "final_page": 2,
+          "title": "决策任务的基本要素",
+          "status": "审核保留",
+          "independent_reading": "任务要素从对象延伸至结果记录，涵盖资格、权限、预算及验收。",
+          "change_reason": "题设、概念、论证及结论在本讲内闭合；未发现必须依赖讲义或口头补充的缺口。"
+        },
+        {
+          "original_page": 3,
+          "final_page": 3,
+          "title": "记录、估计与选择",
+          "status": "审核保留",
+          "independent_reading": "记录、估计、约束下选择分工清楚，避免由预测跳到干预。",
+          "change_reason": "题设、概念、论证及结论在本讲内闭合；未发现必须依赖讲义或口头补充的缺口。"
+        },
+        {
+          "original_page": 4,
+          "final_page": 4,
+          "title": "商业智能、决策支持与决策智能",
+          "status": "审核保留",
+          "independent_reading": "三类系统均有功能定义和订单场景，结论不把功能层次当成严格互斥类别。",
+          "change_reason": "题设、概念、论证及结论在本讲内闭合；未发现必须依赖讲义或口头补充的缺口。"
+        },
+        {
+          "original_page": 5,
+          "final_page": 5,
+          "title": "对象、行动范围与指标口径",
+          "status": "实质修改",
+          "independent_reading": "业务对象、行动对象与口径分别解释；首次出现 KPI 时补中文定义。",
+          "change_reason": "首次说明关键绩效指标，并使“口径”落到具体事件。"
+        },
+        {
+          "original_page": 6,
+          "final_page": 6,
+          "title": "绩效目标与基准策略",
+          "status": "审核保留",
+          "independent_reading": "目标、成本、约束与基准的关系清楚，95% 例子能说明报表改善与业务改善的区别。",
+          "change_reason": "题设、概念、论证及结论在本讲内闭合；未发现必须依赖讲义或口头补充的缺口。"
+        },
+        {
+          "original_page": 7,
+          "final_page": 7,
+          "title": "条件期望损失与行动选择",
+          "status": "实质修改",
+          "independent_reading": "变量、损失、行动成本及最优行动存在条件完整；需解释条件期望与 argmin 的读法。",
+          "change_reason": "补条件期望的含义及潜在结果例子，避免只罗列符号。"
+        },
+        {
+          "original_page": 8,
+          "final_page": 9,
+          "title": "风险预测与干预收益",
+          "status": "实质修改",
+          "independent_reading": "预测与干预区分明确；0/1 行动标记及净收益单位须更直接。",
+          "change_reason": "明确 0/1 表示行动，说明净收益的共同货币单位。"
+        },
+        {
+          "original_page": 9,
+          "final_page": 10,
+          "title": "订单加急：明确比较条件",
+          "status": "审核保留",
+          "independent_reading": "两单概率、损失、费用和选择约束全部给出，无需外查。",
+          "change_reason": "题设、概念、论证及结论在本讲内闭合；未发现必须依赖讲义或口头补充的缺口。"
+        },
+        {
+          "original_page": 10,
+          "final_page": 11,
+          "title": "订单加急：计算预期净收益",
+          "status": "实质修改",
+          "independent_reading": "计算有避免损失、扣费、选择和效果识别解释；补齐概率端点便于回读。",
+          "change_reason": "恢复本页计算使用的概率端点，并明确边际改进来自干预而非风险本身。"
+        },
+        {
+          "original_page": 11,
+          "final_page": 12,
+          "title": "以损失矩阵评价信息",
+          "status": "实质修改",
+          "independent_reading": "状态、行动、损失和单位明确；补 L(θ,a) 的函数对应。",
+          "change_reason": "将表格与后续 L(θ,a) 记号对应。"
+        },
+        {
+          "original_page": 12,
+          "final_page": 13,
+          "title": "从损失矩阵推导行动阈值",
+          "status": "审核保留",
+          "independent_reading": "两项期望损失从损失矩阵展开，阈值和并列边界完整。",
+          "change_reason": "题设、概念、论证及结论在本讲内闭合；未发现必须依赖讲义或口头补充的缺口。"
+        },
+        {
+          "original_page": 13,
+          "final_page": 14,
+          "title": "先验下的最优基准行动",
+          "status": "审核保留",
+          "independent_reading": "先验、损失及基准明确，解释了错误比较基准为何高估信息价值。",
+          "change_reason": "题设、概念、论证及结论在本讲内闭合；未发现必须依赖讲义或口头补充的缺口。"
+        },
+        {
+          "original_page": 14,
+          "final_page": 15,
+          "title": "检测信号的总体概率",
+          "status": "实质修改",
+          "independent_reading": "检测条件概率和先验齐备；定义阳性/阴性符号并增加状态—信号联合概率表。",
+          "change_reason": "定义检测符号，并为贝叶斯更新准备可视化的联合概率表。"
+        },
+        {
+          "original_page": 15,
+          "final_page": 17,
+          "title": "由后验概率选择条件行动",
+          "status": "实质修改",
+          "independent_reading": "贝叶斯分子应展示为可追溯的乘法，后验与阈值比较完整。",
+          "change_reason": "补贝叶斯分子如何由先验和检测特征产生。"
+        },
+        {
+          "original_page": 16,
+          "final_page": 18,
+          "title": "先条件择优，再取平均",
+          "status": "审核保留",
+          "independent_reading": "条件行动、条件损失和总体权重齐备，平均与择优的次序可解释。",
+          "change_reason": "题设、概念、论证及结论在本讲内闭合；未发现必须依赖讲义或口头补充的缺口。"
+        },
+        {
+          "original_page": 17,
+          "final_page": 19,
+          "title": "样本信息价值与完全信息价值",
+          "status": "实质修改",
+          "independent_reading": "EVSI 与 EVPI 的数值及单位完整；完全信息的 5 万元应展开。",
+          "change_reason": "补完全信息期望损失的加权计算，展开两个缩写。"
+        },
+        {
+          "original_page": 18,
+          "final_page": 20,
+          "title": "免费信息价值的非负性",
+          "status": "实质修改",
+          "independent_reading": "免费信息非负性的假设完整；补信号 S 的含义和迭代期望等式。",
+          "change_reason": "定义一般信号 S 并给出迭代期望的完整等式。"
+        },
+        {
+          "original_page": 19,
+          "final_page": 21,
+          "title": "信息采购：净收益与成本结构",
+          "status": "审核保留",
+          "independent_reading": "逐次成本与固定投资区别清晰；例中的 EVSI 回溯明确。",
+          "change_reason": "题设、概念、论证及结论在本讲内闭合；未发现必须依赖讲义或口头补充的缺口。"
+        },
+        {
+          "original_page": 20,
+          "final_page": 22,
+          "title": "更精确信息何时没有决策价值",
+          "status": "实质修改",
+          "independent_reading": "不跨行动阈值为何无价值需要展示期望后验等于先验的关键步。",
+          "change_reason": "展示不改变动作时信息价值为零的关键等式。"
+        },
+        {
+          "original_page": 21,
+          "final_page": 23,
+          "title": "当前行动与未来状态",
+          "status": "审核保留",
+          "independent_reading": "多期状态、行动和扰动有现实解释，连接单期与未来成本。",
+          "change_reason": "题设、概念、论证及结论在本讲内闭合；未发现必须依赖讲义或口头补充的缺口。"
+        },
+        {
+          "original_page": 22,
+          "final_page": 24,
+          "title": "Bellman 递推：从未来回到当前",
+          "status": "实质修改",
+          "independent_reading": "递推条件齐备；马尔可夫性质和状态值函数需用普通学术语言解释，再给手算例。",
+          "change_reason": "解释马尔可夫性质与值函数，并区分零终端成本的建模选择。"
+        },
+        {
+          "original_page": 23,
+          "final_page": 27,
+          "title": "分析任务与证据边界",
+          "status": "审核保留",
+          "independent_reading": "五类任务的目标和证据边界清楚，含干预效果与异质收益的联系。",
+          "change_reason": "题设、概念、论证及结论在本讲内闭合；未发现必须依赖讲义或口头补充的缺口。"
+        },
+        {
+          "original_page": 24,
+          "final_page": 28,
+          "title": "CRISP-DM：组织可检验的迭代",
+          "status": "审核保留",
+          "independent_reading": "六阶段内容完整，重新定义标签的迭代具有具体触发条件。",
+          "change_reason": "题设、概念、论证及结论在本讲内闭合；未发现必须依赖讲义或口头补充的缺口。"
+        },
+        {
+          "original_page": 25,
+          "final_page": 29,
+          "title": "任务规格与分层验收",
+          "status": "审核保留",
+          "independent_reading": "任务规格所有分量解释齐备，计算验收与系统状态验收分开。",
+          "change_reason": "题设、概念、论证及结论在本讲内闭合；未发现必须依赖讲义或口头补充的缺口。"
+        },
+        {
+          "original_page": 26,
+          "final_page": 30,
+          "title": "交付决策的完整证据链",
+          "status": "审核保留",
+          "independent_reading": "事实—估计—选择—执行—反馈链闭合，不由日志直接推因果。",
+          "change_reason": "题设、概念、论证及结论在本讲内闭合；未发现必须依赖讲义或口头补充的缺口。"
+        },
+        {
+          "original_page": 27,
+          "final_page": 31,
+          "title": "Skywise：关联维护事实",
+          "status": "审核保留",
+          "independent_reading": "公开应用事实与教学分析模型区分明确，示例对象和推断路径完整。",
+          "change_reason": "题设、概念、论证及结论在本讲内闭合；未发现必须依赖讲义或口头补充的缺口。"
+        },
+        {
+          "original_page": 28,
+          "final_page": 32,
+          "title": "维护决策的简化成本比较",
+          "status": "实质修改",
+          "independent_reading": "简化模型的变量和假设完整；应显式说明不维护损失 pc_f 来自两状态加权。",
+          "change_reason": "将不维护的期望损失展开为故障/正常两状态加权。"
+        },
+        {
+          "original_page": 29,
+          "final_page": 33,
+          "title": "赛事仿真：比较候选策略",
+          "status": "审核保留",
+          "independent_reading": "仿真的候选策略、情景与适用范围明确。",
+          "change_reason": "题设、概念、论证及结论在本讲内闭合；未发现必须依赖讲义或口头补充的缺口。"
+        },
+        {
+          "original_page": 30,
+          "final_page": 34,
+          "title": "用蒙特卡罗估计策略损失",
+          "status": "实质修改",
+          "independent_reading": "Monte Carlo 输入、样本均值及模型误差边界齐备；增加具体策略样本可帮助理解。",
+          "change_reason": "明确随机样本来自给定情景分布；新增配对手算帮助理解样本均值。"
+        },
+        {
+          "original_page": 31,
+          "final_page": 36,
+          "title": "生产率改善须固定分母与质量",
+          "status": "审核保留",
+          "independent_reading": "质量固定条件、两种分母及完整跨部门成本均可理解。",
+          "change_reason": "题设、概念、论证及结论在本讲内闭合；未发现必须依赖讲义或口头补充的缺口。"
+        },
+        {
+          "original_page": 32,
+          "final_page": 37,
+          "title": "检验一个决策任务是否完整",
+          "status": "实质修改",
+          "independent_reading": "收束与前文的决策、信息价值、执行联系明确；SKU 第一次出现需中文释义。",
+          "change_reason": "解释课堂问题中的 SKU，减少未定义业务缩写。"
+        }
+      ],
+      "added_pages": [
+        {
+          "final_page": 8,
+          "after_original_page": 7,
+          "title": "期望损失公式的读法",
+          "reason": "区分 min 与 argmin，并把抽象优化式转成可操作的求解步骤。",
+          "status": "审核通过",
+          "independent_reading": "状态、未知结果、行动集合和 argmin/min 的区别完整定义；表格逐项解释运算，求解顺序可直接执行。"
+        },
+        {
+          "final_page": 16,
+          "after_original_page": 14,
+          "title": "状态与检测信号的联合概率",
+          "reason": "让全概率与贝叶斯公式具有同一张可核查的状态—信号表。",
+          "status": "审核通过",
+          "independent_reading": "四格概率、行列和、先验及条件概率对应明确；归一化说明直接连接下一页后验推导。"
+        },
+        {
+          "final_page": 25,
+          "after_original_page": 22,
+          "title": "两期维护：把未来成本写进题设",
+          "reason": "用明确的时间顺序、行动费用、转移概率和末期成本解释 Bellman 递推。",
+          "status": "审核通过",
+          "independent_reading": "两期时序、维护费用、故障成本、两种转移概率及末期状态值完整；数值均标为教学模型。"
+        },
+        {
+          "final_page": 26,
+          "after_original_page": 22,
+          "title": "两期维护：从末期反推今日行动",
+          "reason": "完整算出两个行动的当前费用、未来期望和最终选择，避免公式仅靠讲授解释。",
+          "status": "审核通过",
+          "independent_reading": "承接明确题设，列出两行动当前加未来成本、最小值与选择；解释只看当期费用为何得不同方案。"
+        },
+        {
+          "final_page": 35,
+          "after_original_page": 30,
+          "title": "配对仿真：平均时间差的计算",
+          "reason": "把 Monte Carlo 的抽象样本均值落到输入情景、两策略输出、配对差值和估计边界。",
+          "status": "审核通过",
+          "independent_reading": "三情景的两策略输出、逐情景差值、两策略均值和估计限度完整；区分平均优势与逐情景优势。"
+        }
+      ]
+    },
+    "02_enterprise_data_model": {
+      "title": "企业数据模型与治理机制",
+      "before_pages": 31,
+      "after_pages": 33,
+      "page_audit": [
+        {
+          "original_page": 1,
+          "final_page": 1,
+          "title": "统一身份与业务含义",
+          "status": "实质修改",
+          "independent_reading": "跨系统编号与事件含义区别明确；CRM 缩写需首次解释。",
+          "change_reason": "首次出现 CRM 时释义，降低缩写阅读门槛。"
+        },
+        {
+          "original_page": 2,
+          "final_page": 2,
+          "title": "数据模型与治理责任",
+          "status": "实质修改",
+          "independent_reading": "治理责任完整，但事实粒度和血缘在后页详述之前须给简短含义。",
+          "change_reason": "首次说明主键、粒度及血缘，不把后页定义当成默认已有知识。"
+        },
+        {
+          "original_page": 3,
+          "final_page": 3,
+          "title": "企业 AI 系统的六项职能",
+          "status": "审核保留",
+          "independent_reading": "六职能均有职责并连接实际解冻任务。",
+          "change_reason": "题设、概念、论证及结论在本讲内闭合；未发现必须依赖讲义或口头补充的缺口。"
+        },
+        {
+          "original_page": 4,
+          "final_page": 4,
+          "title": "存储、语义与权限",
+          "status": "实质修改",
+          "independent_reading": "存储/语义/操作三契约清楚；尚未定义的 OEE 改为中文示例。",
+          "change_reason": "用已可理解的中文指标避免 OEE 先于定义出现。"
+        },
+        {
+          "original_page": 5,
+          "final_page": 5,
+          "title": "从业务概念到可观察记录",
+          "status": "审核保留",
+          "independent_reading": "拆单、签收、有效版本和补录时间解释齐备。",
+          "change_reason": "题设、概念、论证及结论在本讲内闭合；未发现必须依赖讲义或口头补充的缺口。"
+        },
+        {
+          "original_page": 6,
+          "final_page": 6,
+          "title": "企业数据的六类语义",
+          "status": "实质修改",
+          "independent_reading": "六类语义有定义及对照；首次 OTD 示例应直接用中文。",
+          "change_reason": "把未解释的 OTD 替换为交付指标中文含义。"
+        },
+        {
+          "original_page": 7,
+          "final_page": 7,
+          "title": "关系模式与记录身份",
+          "status": "实质修改",
+          "independent_reading": "模式、属性域与元组抽象定义完整，需加入一条实际元组支持直观理解。",
+          "change_reason": "加入实际关系模式与元组，把符号域解释为记录合法性。"
+        },
+        {
+          "original_page": 8,
+          "final_page": 8,
+          "title": "键与三类完整性约束",
+          "status": "实质修改",
+          "independent_reading": "键的层次明确；“最小”应解释为不可再删属性，外键第一次出现需明确定义。",
+          "change_reason": "解释候选键的最小性与外键含义。"
+        },
+        {
+          "original_page": 9,
+          "final_page": 9,
+          "title": "关系基数与模型层次",
+          "status": "审核保留",
+          "independent_reading": "一对多、可选性与模型层次清楚。",
+          "change_reason": "题设、概念、论证及结论在本讲内闭合；未发现必须依赖讲义或口头补充的缺口。"
+        },
+        {
+          "original_page": 10,
+          "final_page": 10,
+          "title": "制造对象与事件历史",
+          "status": "审核保留",
+          "independent_reading": "制造模型对象、历史与资格关系有完整说明。",
+          "change_reason": "题设、概念、论证及结论在本讲内闭合；未发现必须依赖讲义或口头补充的缺口。"
+        },
+        {
+          "original_page": 11,
+          "final_page": 11,
+          "title": "函数依赖与第三范式",
+          "status": "实质修改",
+          "independent_reading": "3NF 有正式定义，但 F+ 和非平凡依赖须解释，另用真实字段逐条判断。",
+          "change_reason": "正式解释 F+、非平凡依赖及主属性。"
+        },
+        {
+          "original_page": 12,
+          "final_page": 13,
+          "title": "无损连接与历史解释",
+          "status": "实质修改",
+          "independent_reading": "无损重建理由完整；O,L,P,N,Q 需首次释义并承接前页示例。",
+          "change_reason": "补全部模式字母及与分解的对应，确保无损连接说明可单独复读。"
+        },
+        {
+          "original_page": 13,
+          "final_page": 14,
+          "title": "事务模型与星型模型",
+          "status": "审核保留",
+          "independent_reading": "事务模型与分析模型各有目标，维度建模有顺序与例子。",
+          "change_reason": "题设、概念、论证及结论在本讲内闭合；未发现必须依赖讲义或口头补充的缺口。"
+        },
+        {
+          "original_page": 14,
+          "final_page": 15,
+          "title": "事实粒度决定指标范围",
+          "status": "审核保留",
+          "independent_reading": "明细、快照、事件粒度及聚合限制可独立理解。",
+          "change_reason": "题设、概念、论证及结论在本讲内闭合；未发现必须依赖讲义或口头补充的缺口。"
+        },
+        {
+          "original_page": 15,
+          "final_page": 16,
+          "title": "制造 KPI 的事实基础",
+          "status": "实质修改",
+          "independent_reading": "基础事实、边界与粒度清楚；中英文制造缩写需逐一对应。",
+          "change_reason": "给制造指标中文名与缩写一一对应。"
+        },
+        {
+          "original_page": 16,
+          "final_page": 17,
+          "title": "度量的可加性与比率汇总",
+          "status": "实质修改",
+          "independent_reading": "两日数据与总体率齐备；m_d,n_d,r_d 的定义应显式写出。",
+          "change_reason": "定义加权公式全部符号，并保留两种统计目标的区别。"
+        },
+        {
+          "original_page": 17,
+          "final_page": 18,
+          "title": "双时间：历史事实与历史知识",
+          "status": "实质修改",
+          "independent_reading": "业务有效与系统可知时间有迟到补录例子，需明确四个区间端点。",
+          "change_reason": "显式解释双时间区间端点和查询语义。"
+        },
+        {
+          "original_page": 18,
+          "final_page": 19,
+          "title": "授权操作与状态核验",
+          "status": "实质修改",
+          "independent_reading": "角色、范围、状态、批准齐备；版本和幂等术语需要操作例子。",
+          "change_reason": "把版本核验和幂等请求解释为具体行为，不仅罗列术语。"
+        },
+        {
+          "original_page": 19,
+          "final_page": 20,
+          "title": "语义层约束自然语言问数",
+          "status": "审核保留",
+          "independent_reading": "语义层机制和含混查询的必要条件充分。",
+          "change_reason": "题设、概念、论证及结论在本讲内闭合；未发现必须依赖讲义或口头补充的缺口。"
+        },
+        {
+          "original_page": 20,
+          "final_page": 22,
+          "title": "产出信号、合同与风险成本",
+          "status": "实质修改",
+          "independent_reading": "模型数学完整，经理/企业、α/β 和确定性等价含义仍需先定义。",
+          "change_reason": "定义工资参数、噪声、风险厌恶和确定性等价的经济含义。"
+        },
+        {
+          "original_page": 21,
+          "final_page": 23,
+          "title": "确定性等价收入的推导",
+          "status": "实质修改",
+          "independent_reading": "指数矩推导完整，须展示由效用等式到两侧取对数的关键步。",
+          "change_reason": "展示从效用等式取对数得到 CE 的中间等式。"
+        },
+        {
+          "original_page": 22,
+          "final_page": 24,
+          "title": "代理人的最优努力",
+          "status": "审核保留",
+          "independent_reading": "一阶、二阶、非负边界与唯一解齐备。",
+          "change_reason": "题设、概念、论证及结论在本讲内闭合；未发现必须依赖讲义或口头补充的缺口。"
+        },
+        {
+          "original_page": 23,
+          "final_page": 25,
+          "title": "参与约束与企业收益",
+          "status": "实质修改",
+          "independent_reading": "参与约束应显式写成不等式，企业原目标 vE[y]−E[w] 不应略去。",
+          "change_reason": "补参与约束与企业未化简目标，再解释固定工资消去。"
+        },
+        {
+          "original_page": 24,
+          "final_page": 26,
+          "title": "最优线性激励强度",
+          "status": "实质修改",
+          "independent_reading": "企业导数和最优权重齐备，补负二阶导数与噪声权衡。",
+          "change_reason": "负二阶导数明确证实唯一最大值；结论落到风险/努力的取舍。"
+        },
+        {
+          "original_page": 25,
+          "final_page": 27,
+          "title": "测量噪声与合同权重：数值比较",
+          "status": "实质修改",
+          "independent_reading": "参数与两个数值清楚，补努力数值和为何风险成本减少的解释。",
+          "change_reason": "给出对应最优努力数值，使数值比较与经理反应闭合。"
+        },
+        {
+          "original_page": 26,
+          "final_page": 28,
+          "title": "单一奖励与多任务替代",
+          "status": "实质修改",
+          "independent_reading": "多任务替代的前提和解齐备，需展示目标及组织价值的变化。",
+          "change_reason": "写出经理目标和组织价值的变化函数，使替代结论有可追溯推导。"
+        },
+        {
+          "original_page": 27,
+          "final_page": 29,
+          "title": "真实努力与记录操纵",
+          "status": "实质修改",
+          "independent_reading": "真实努力/操纵定义清楚，缺经理优化目标，需补全一阶条件。",
+          "change_reason": "补操纵模型优化目标、两类一阶条件与有限边界解释。"
+        },
+        {
+          "original_page": 28,
+          "final_page": 30,
+          "title": "对象关系与元数据目录",
+          "status": "审核保留",
+          "independent_reading": "对象图与目录区别及公开/教学边界明确。",
+          "change_reason": "题设、概念、论证及结论在本讲内闭合；未发现必须依赖讲义或口头补充的缺口。"
+        },
+        {
+          "original_page": 29,
+          "final_page": 31,
+          "title": "局部加速的总体上界",
+          "status": "实质修改",
+          "independent_reading": "时间分解与总体上界齐备，必须显式定义所有 T 项及 s 的方向。",
+          "change_reason": "为时间分解所有下标命名，明确 s≥1 的加速设定。"
+        },
+        {
+          "original_page": 30,
+          "final_page": 32,
+          "title": "总任务时间与局部加速",
+          "status": "实质修改",
+          "independent_reading": "局部加速数值完整，时间与加速比的分母不同。",
+          "change_reason": "明确总体速度提升与总时间下降不是同一百分比。"
+        },
+        {
+          "original_page": 31,
+          "final_page": 33,
+          "title": "由异常指标复核数据模型",
+          "status": "审核保留",
+          "independent_reading": "模型复核步骤与课堂案例闭合。",
+          "change_reason": "题设、概念、论证及结论在本讲内闭合；未发现必须依赖讲义或口头补充的缺口。"
+        }
+      ],
+      "added_pages": [
+        {
+          "final_page": 12,
+          "after_original_page": 11,
+          "title": "订单行中的名称冗余",
+          "reason": "提供字段释义、候选键、实际重复记录及逐条 3NF 判定。",
+          "status": "审核通过",
+          "independent_reading": "全部字段、唯一候选键、业务函数依赖和具体重复记录齐备；逐条件判定违反 3NF，并解释更新异常。"
+        },
+        {
+          "final_page": 21,
+          "after_original_page": 19,
+          "title": "为何准确记录仍不足以保证合理激励",
+          "reason": "在语义治理转入委托代理之前说明主体、信息不对称和求解顺序。",
+          "status": "审核通过",
+          "independent_reading": "委托人与代理人、不可观测努力、可观测含噪绩效及先求反应再求合同的顺序完整定义，衔接下一页正式模型。"
+        }
+      ]
+    },
+    "03_sql_kpi": {
+      "title": "关系查询、指标计算与语义服务",
+      "before_pages": 35,
+      "after_pages": 38,
+      "page_audit": [
+        {
+          "original_page": 1,
+          "final_page": 1,
+          "title": "查询正确性与业务语义",
+          "status": "审核保留",
+          "independent_reading": "SQL 与业务定义的关系有明确记录单位例子。",
+          "change_reason": "题设、概念、论证及结论在本讲内闭合；未发现必须依赖讲义或口头补充的缺口。"
+        },
+        {
+          "original_page": 2,
+          "final_page": 2,
+          "title": "SQL 的逻辑处理顺序",
+          "status": "审核保留",
+          "independent_reading": "逻辑处理顺序完整，物理执行顺序区别清楚。",
+          "change_reason": "题设、概念、论证及结论在本讲内闭合；未发现必须依赖讲义或口头补充的缺口。"
+        },
+        {
+          "original_page": 3,
+          "final_page": 3,
+          "title": "区域收入查询的业务约定",
+          "status": "实质修改",
+          "independent_reading": "区域查询范围完整，但 q_i、p_i 需释义，输入关系字段需先声明。",
+          "change_reason": "明确定义 q_i、p_i，并用基础模式为下一页查询建立完整输入。"
+        },
+        {
+          "original_page": 4,
+          "final_page": 4,
+          "title": "区域收入查询：逐层核查",
+          "status": "实质修改",
+          "independent_reading": "完整 SQL 可执行且有注释；表别名与 USING 条件应在正文解释。",
+          "change_reason": "解释 SQL 别名、USING 与逻辑层次，避免代码依赖口头逐句解说。"
+        },
+        {
+          "original_page": 5,
+          "final_page": 6,
+          "title": "关系运算与事实集合",
+          "status": "审核保留",
+          "independent_reading": "关系运算有 SQL 对应，但 WHERE/HAVING 的差别需要具体输入与结果。",
+          "change_reason": "题设、概念、论证及结论在本讲内闭合；未发现必须依赖讲义或口头补充的缺口。"
+        },
+        {
+          "original_page": 6,
+          "final_page": 8,
+          "title": "SQL 的重复行语义",
+          "status": "审核保留",
+          "independent_reading": "重复行与独立事实有金额反例，DISTINCT 的错误可手算。",
+          "change_reason": "题设、概念、论证及结论在本讲内闭合；未发现必须依赖讲义或口头补充的缺口。"
+        },
+        {
+          "original_page": 7,
+          "final_page": 9,
+          "title": "事务、分析与展示粒度",
+          "status": "审核保留",
+          "independent_reading": "三层粒度由明细数/订单数具体说明。",
+          "change_reason": "题设、概念、论证及结论在本讲内闭合；未发现必须依赖讲义或口头补充的缺口。"
+        },
+        {
+          "original_page": 8,
+          "final_page": 10,
+          "title": "连接的唯一性与覆盖性",
+          "status": "实质修改",
+          "independent_reading": "唯一、覆盖与行数条件齐备；F、D 首次需释义。",
+          "change_reason": "定义连接公式的 F、D 和集合大小符号。"
+        },
+        {
+          "original_page": 9,
+          "final_page": 11,
+          "title": "连接重复为何放大金额",
+          "status": "实质修改",
+          "independent_reading": "金额扩张例子完整，但“仅在每行一次时”误写必要条件，须纠正。",
+          "change_reason": "将错误必要条件改为正确充分条件，说明合计相等不能证明逐事实匹配正确。"
+        },
+        {
+          "original_page": 10,
+          "final_page": 12,
+          "title": "指标定义的形式化表示",
+          "status": "实质修改",
+          "independent_reading": "指标形式化所有变量定义完整；OTD 缩写需在本讲重释。",
+          "change_reason": "本讲首次 OTD 明确中文名，保留定义元组的全部解释。"
+        },
+        {
+          "original_page": 11,
+          "final_page": 13,
+          "title": "保留可合并的统计状态",
+          "status": "实质修改",
+          "independent_reading": "可合并状态与状态运算有定义，补 n 与⊕的具体含义。",
+          "change_reason": "说明结合运算⊕及计数 n，局部与总体公式可操作。"
+        },
+        {
+          "original_page": 12,
+          "final_page": 14,
+          "title": "产线平均与产品整体良率",
+          "status": "审核保留",
+          "independent_reading": "输入计数、两个结果与抽样单位解释完整。",
+          "change_reason": "题设、概念、论证及结论在本讲内闭合；未发现必须依赖讲义或口头补充的缺口。"
+        },
+        {
+          "original_page": 13,
+          "final_page": 15,
+          "title": "良率与周期的权重",
+          "status": "实质修改",
+          "independent_reading": "计数权重明确，生产周期起终点与单位需更具体。",
+          "change_reason": "解释 CT、起终点与时间单位，并保留未完成队列的边界。"
+        },
+        {
+          "original_page": 14,
+          "final_page": 16,
+          "title": "OEE 的分解与约分",
+          "status": "实质修改",
+          "independent_reading": "OEE 三因子及正分母条件完整，理想节拍需定义为每件理论时间。",
+          "change_reason": "定义 OEE 与理想节拍的中文含义。"
+        },
+        {
+          "original_page": 15,
+          "final_page": 17,
+          "title": "OEE：480 分钟班次算例",
+          "status": "审核保留",
+          "independent_reading": "所有参数和两个核验式齐备，数值准确。",
+          "change_reason": "题设、概念、论证及结论在本讲内闭合；未发现必须依赖讲义或口头补充的缺口。"
+        },
+        {
+          "original_page": 16,
+          "final_page": 18,
+          "title": "多产品 OEE 的工时权重",
+          "status": "实质修改",
+          "independent_reading": "多产品理想工时权重说明完整，补 i、G_i、N_i、T_p,i 定义。",
+          "change_reason": "定义多产品公式所用的索引、数量和时间。"
+        },
+        {
+          "original_page": 17,
+          "final_page": 19,
+          "title": "多节拍 OEE：一个反例",
+          "status": "审核保留",
+          "independent_reading": "数值齐备且反例计算完整，解释权重不兼容。",
+          "change_reason": "题设、概念、论证及结论在本讲内闭合；未发现必须依赖讲义或口头补充的缺口。"
+        },
+        {
+          "original_page": 18,
+          "final_page": 20,
+          "title": "WIP 的时点与时间平均",
+          "status": "实质修改",
+          "independent_reading": "WIP 未在本讲先解释中文语义，需明确状态存量和积分单位。",
+          "change_reason": "定义 WIP 并解释曲线面积/时间的单位。"
+        },
+        {
+          "original_page": 19,
+          "final_page": 21,
+          "title": "不等间隔快照如何平均",
+          "status": "实质修改",
+          "independent_reading": "持续时间与等权的区别可手算，需说明“随机时点”按时间均匀选取。",
+          "change_reason": "把任意时点的平均限定为按时间均匀取点，说明单位。"
+        },
+        {
+          "original_page": 20,
+          "final_page": 22,
+          "title": "OTD 的到期承诺队列",
+          "status": "实质修改",
+          "independent_reading": "到期队列及缺失原因清楚，但 D_on、D_due 的含义应显式写出。",
+          "change_reason": "明确定义 OTD 分子分母符号并保留业务状态区分。"
+        },
+        {
+          "original_page": 21,
+          "final_page": 23,
+          "title": "到期队列：固定对象与截止点",
+          "status": "审核保留",
+          "independent_reading": "四单承诺、交付与截止点齐备，队列概念可理解。",
+          "change_reason": "题设、概念、论证及结论在本讲内闭合；未发现必须依赖讲义或口头补充的缺口。"
+        },
+        {
+          "original_page": 22,
+          "final_page": 24,
+          "title": "同一订单记录的两种准时率",
+          "status": "审核保留",
+          "independent_reading": "两个分母、日期后续变化及口径不可混用说明完整。",
+          "change_reason": "题设、概念、论证及结论在本讲内闭合；未发现必须依赖讲义或口头补充的缺口。"
+        },
+        {
+          "original_page": 23,
+          "final_page": 25,
+          "title": "到期 OTD 的条件聚合",
+          "status": "实质修改",
+          "independent_reading": "到期 SQL 完整；CASE 对 NULL 走 ELSE 和乘 1.0 的作用需解释。",
+          "change_reason": "解释 CASE 中空日期和浮点除法，保持原 SQL 完整且不增加过长代码。"
+        },
+        {
+          "original_page": 24,
+          "final_page": 26,
+          "title": "零分母、零结果与缺失",
+          "status": "审核保留",
+          "independent_reading": "零分母/零分子/事实缺失三类状态完整。",
+          "change_reason": "题设、概念、论证及结论在本讲内闭合；未发现必须依赖讲义或口头补充的缺口。"
+        },
+        {
+          "original_page": 25,
+          "final_page": 27,
+          "title": "NULL 与三值逻辑",
+          "status": "审核保留",
+          "independent_reading": "三值逻辑定义和 COUNT 问题齐备，逻辑条件与业务状态联系明确。",
+          "change_reason": "题设、概念、论证及结论在本讲内闭合；未发现必须依赖讲义或口头补充的缺口。"
+        },
+        {
+          "original_page": 26,
+          "final_page": 28,
+          "title": "分层查询：订单事实与地区聚合",
+          "status": "实质修改",
+          "independent_reading": "CTE 结构与假设齐备；命名中间表、两个金额式、两级聚合衔接可加强。",
+          "change_reason": "解释 CTE 名称和计算变量，而不只列内外层用途。"
+        },
+        {
+          "original_page": 27,
+          "final_page": 29,
+          "title": "毛利率为何使用收入权重",
+          "status": "实质修改",
+          "independent_reading": "权重反例输入和结果齐备，但“整体利润贡献应使用收入权重”应限为毛利率。",
+          "change_reason": "把结果说明限定为总体毛利率，避免混同绝对利润贡献。"
+        },
+        {
+          "original_page": 28,
+          "final_page": 30,
+          "title": "窗口函数与最近三笔订单",
+          "status": "审核保留",
+          "independent_reading": "窗口分区、顺序、框架有说明；需要逐行输出示例直观解释。",
+          "change_reason": "题设、概念、论证及结论在本讲内闭合；未发现必须依赖讲义或口头补充的缺口。"
+        },
+        {
+          "original_page": 29,
+          "final_page": 32,
+          "title": "从 KPI 结果到管理解释",
+          "status": "审核保留",
+          "independent_reading": "事实、解释、行动证据有连贯对应，不由排名推因果。",
+          "change_reason": "题设、概念、论证及结论在本讲内闭合；未发现必须依赖讲义或口头补充的缺口。"
+        },
+        {
+          "original_page": 30,
+          "final_page": 33,
+          "title": "将自然语言规范为查询请求",
+          "status": "实质修改",
+          "independent_reading": "查询形式化要素有说明，变量映射需更逐项且输出条件应有示例。",
+          "change_reason": "逐项定义查询元组，并给输出条件具体例子。"
+        },
+        {
+          "original_page": 31,
+          "final_page": 34,
+          "title": "结果验证与不变量",
+          "status": "实质修改",
+          "independent_reading": "指标不变量有多类检查，n、G、N 范围说明需与具体实例连接。",
+          "change_reason": "为良品约束符号释义，并说明检验目标与输入覆盖。"
+        },
+        {
+          "original_page": 32,
+          "final_page": 35,
+          "title": "受限执行与独立授权",
+          "status": "实质修改",
+          "independent_reading": "权限、资源及日志控制完整；参数绑定与许可映射应解释而非术语罗列。",
+          "change_reason": "解释参数绑定和许可映射，降低系统术语阅读门槛。"
+        },
+        {
+          "original_page": 33,
+          "final_page": 36,
+          "title": "问数产品的可交付率",
+          "status": "实质修改",
+          "independent_reading": "三类有效完成条件完整，但 C_i、P_i、D_i 为 0/1 指示量应明确。",
+          "change_reason": "定义有效完成指示量和任务样本数，乘积公式无需默认统计知识。"
+        },
+        {
+          "original_page": 34,
+          "final_page": 37,
+          "title": "本地部署：位置与资源边界",
+          "status": "实质修改",
+          "independent_reading": "权重容量公式准确，首次 KV 缓存须释义。",
+          "change_reason": "定义 KV 缓存并使本地位置和容量测量含义可理解。"
+        },
+        {
+          "original_page": 35,
+          "final_page": 38,
+          "title": "查询复核的完整路径",
+          "status": "审核保留",
+          "independent_reading": "整讲查询复核路径清晰，结尾与数据质量下一讲衔接自然。",
+          "change_reason": "题设、概念、论证及结论在本讲内闭合；未发现必须依赖讲义或口头补充的缺口。"
+        }
+      ],
+      "added_pages": [
+        {
+          "final_page": 5,
+          "after_original_page": 4,
+          "title": "区域收入：由订单逐步得到结果",
+          "reason": "补完整查询的具体连接后输入、行级金额与分组输出，建立可手算语义。",
+          "status": "审核通过",
+          "independent_reading": "连接后的订单输入、数量、价格、行收入及地区聚合结果齐备；源事实与输出粒度变化可手算。"
+        },
+        {
+          "final_page": 7,
+          "after_original_page": 5,
+          "title": "WHERE 与 HAVING 会保留不同事实",
+          "reason": "用同一输入展示聚合前后筛选的不同输出，避免停留在语法定义。",
+          "status": "审核通过",
+          "independent_reading": "同一三订单数据、单笔阈值/地区阈值两个问题、实际 SQL 条件与不同输出完整对应。"
+        },
+        {
+          "final_page": 31,
+          "after_original_page": 28,
+          "title": "最近三笔窗口：逐行计算",
+          "reason": "补窗口函数的输入序列、首两行边界、移动窗口和逐行输出。",
+          "status": "审核通过",
+          "independent_reading": "四笔有序输入、各行窗口身份、首两笔边界与各行输出齐备；移动和累计结果明确区分。"
+        }
+      ]
+    }
+  },
+  "summary": {
+    "original_pages": 98,
+    "revised_pages": 108,
+    "changed_original_pages": 56,
+    "added_pages": 10
+  },
+  "verification": {
+    "pages": 108,
+    "formulas": 511,
+    "tex_errors": 0,
+    "valid_lecture_anchors": 108,
+    "numeric_and_sql_checks": 57,
+    "all_passed": true,
+    "numeric_report": "/private/tmp/bdm-slide-independent/numeric-01-03.json",
+    "source_hashes": {
+      "01_intro": {
+        "sha256": "0bf7c286c46f2c87c5ac95dc21170ff4c04785165dea04647ee7d403b9689d8c",
+        "file": "/Users/sunzy/big-data/docs/textbook/chapters/01_intro.tex"
+      },
+      "02_enterprise_data_model": {
+        "sha256": "f7389f32d9578ab94117354a24746a894d4e3034c0dea4350c4ce6a7b0c23c70",
+        "file": "/Users/sunzy/big-data/docs/textbook/chapters/02_enterprise_data_model.tex"
+      },
+      "03_sql_kpi": {
+        "sha256": "915038afb13f1c850ddc04821dd3638f0aef25f8f836e1a01773d1caeee3a083",
+        "file": "/Users/sunzy/big-data/docs/textbook/chapters/03_sql_kpi.tex"
+      }
+    },
+    "layout": "保留显式 split/stack/focus 布局；最终宋体渲染逐页审核由主代理统一执行。",
+    "final_readability_review": "原 98 页和新增 10 页均有逐页审核记录；新增算例明确标示教学设定，题设、输入、计算、结论在本讲内闭合。"
+  }
+}

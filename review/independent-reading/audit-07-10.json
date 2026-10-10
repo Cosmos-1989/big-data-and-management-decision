@@ -1,0 +1,2474 @@
+{
+  "scope": "每页独立阅读的概念、推导、例题与结论链条审查；不替代渲染版面检查。",
+  "chapters": [
+    {
+      "chapter": "07_prediction",
+      "title": "预测模型、泛化与不确定性",
+      "beforePages": 31,
+      "afterPages": 39,
+      "changedExistingPages": 9,
+      "addedPages": 8,
+      "pageAudit": [
+        {
+          "finalPage": 1,
+          "originalPage": 1,
+          "title": "预测任务：从当前信息到未来结果",
+          "action": "retained-after-review",
+          "reason": "本页的任务、论证对象和结论能在本讲连续阅读中建立；保留原文。具体教学焦点：预测的统计目标由决策对象、信息时点和错误代价共同确定。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 2,
+          "originalPage": 2,
+          "title": "监督学习的统计对象",
+          "action": "revised",
+          "reason": "首次明确回归与分类的输出类型，补足预测均值的概率含义。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 3,
+          "originalPage": 3,
+          "title": "分析任务及其结论边界",
+          "action": "retained-after-review",
+          "reason": "本页的任务、论证对象和结论能在本讲连续阅读中建立；保留原文。具体教学焦点：描述、推断、预测、因果与优化各自回答不同问题。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 4,
+          "originalPage": 4,
+          "title": "标签窗口与特征截止时点",
+          "action": "retained-after-review",
+          "reason": "本页的任务、论证对象和结论能在本讲连续阅读中建立；保留原文。具体教学焦点：所有输入必须在形成预测的时点可获得。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 5,
+          "originalPage": 5,
+          "title": "损失函数与经验风险",
+          "action": "revised",
+          "reason": "写出总体风险和经验风险的区别，避免仅说样本平均近似而缺少定义。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 6,
+          "title": "同样判为正类，概率损失仍不同",
+          "originalPage": null,
+          "action": "added",
+          "reason": "用二元概率损失实算，说明概率质量为何不能由同一类别判断代替。",
+          "standaloneChecks": {
+            "definitions": true,
+            "reasoning": true,
+            "workedExampleOrMechanism": true,
+            "sourceReference": "valid inherited anchor"
+          }
+        },
+        {
+          "finalPage": 7,
+          "originalPage": 6,
+          "title": "平方损失为何得到条件均值",
+          "action": "retained-after-review",
+          "reason": "本页的任务、论证对象和结论能在本讲连续阅读中建立；保留原文。具体教学焦点：在条件二阶矩有限时，条件均值使平方损失最小。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 8,
+          "originalPage": 7,
+          "title": "对数损失与真实条件概率",
+          "action": "retained-after-review",
+          "reason": "本页的任务、论证对象和结论能在本讲连续阅读中建立；保留原文。具体教学焦点：对数损失在期望意义下奖励报告真实概率。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 9,
+          "originalPage": 8,
+          "title": "逻辑回归：线性分数到事件概率",
+          "action": "revised",
+          "reason": "补充链式导数与参数更新方向，给sigmoid解释，减少靠口头补充。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 10,
+          "originalPage": 9,
+          "title": "服务承诺与条件分位数",
+          "action": "revised",
+          "reason": "定义条件分位数和非对称损失，明确高低估分别的惩罚权重。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 11,
+          "title": "随机森林如何形成多个预测",
+          "originalPage": null,
+          "action": "added",
+          "reason": "补足随机森林中的树、抽样、平均等概念，不从模型名称直接跳到集成方差。",
+          "standaloneChecks": {
+            "definitions": true,
+            "reasoning": true,
+            "workedExampleOrMechanism": true,
+            "sourceReference": "valid inherited anchor"
+          }
+        },
+        {
+          "finalPage": 12,
+          "originalPage": 10,
+          "title": "集成方差与误差相关性",
+          "action": "retained-after-review",
+          "reason": "本页的任务、论证对象和结论能在本讲连续阅读中建立；保留原文。具体教学焦点：平均可以降低波动，但高度相关的误差难以相互抵消。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 13,
+          "originalPage": 11,
+          "title": "梯度提升的逐步更新",
+          "action": "retained-after-review",
+          "reason": "本页的任务、论证对象和结论能在本讲连续阅读中建立；保留原文。具体教学焦点：每一轮以当前损失的负梯度作为新的拟合目标。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 14,
+          "originalPage": 12,
+          "title": "训练、验证与最终测试",
+          "action": "retained-after-review",
+          "reason": "本页的任务、论证对象和结论能在本讲连续阅读中建立；保留原文。具体教学焦点：所有模型选择必须在最终测试之前完成。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 15,
+          "title": "交叉验证：轮换训练与验证",
+          "originalPage": null,
+          "action": "added",
+          "reason": "补足讲义中的交叉验证定义与防泄漏执行顺序。",
+          "standaloneChecks": {
+            "definitions": true,
+            "reasoning": true,
+            "workedExampleOrMechanism": true,
+            "sourceReference": "valid inherited anchor"
+          }
+        },
+        {
+          "finalPage": 16,
+          "originalPage": 13,
+          "title": "时间切分与重复观测",
+          "action": "retained-after-review",
+          "reason": "本页的任务、论证对象和结论能在本讲连续阅读中建立；保留原文。具体教学焦点：数据划分应再现将来真正未知的时间和对象。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 17,
+          "originalPage": 14,
+          "title": "新样本误差的偏差—方差分解",
+          "action": "retained-after-review",
+          "reason": "本页的任务、论证对象和结论能在本讲连续阅读中建立；保留原文。具体教学焦点：区分系统偏离、训练波动与结果噪声。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 18,
+          "originalPage": 15,
+          "title": "分类阈值与混淆矩阵",
+          "action": "revised",
+          "reason": "混淆计数都转为TeX，明示正类及两类错误含义。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 19,
+          "title": "准确率与 F1 的完整复算",
+          "originalPage": null,
+          "action": "added",
+          "reason": "F1首次出现前补定义和完整小算例，将指标对应到十名客户的原始计数。",
+          "standaloneChecks": {
+            "definitions": true,
+            "reasoning": true,
+            "workedExampleOrMechanism": true,
+            "sourceReference": "valid inherited anchor"
+          }
+        },
+        {
+          "finalPage": 20,
+          "originalPage": 16,
+          "title": "排序能力与概率校准",
+          "action": "retained-after-review",
+          "reason": "本页的任务、论证对象和结论能在本讲连续阅读中建立；保留原文。具体教学焦点：排序正确不意味着绝对风险数值可靠。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 21,
+          "title": "校准表如何检查概率的数值意义",
+          "originalPage": null,
+          "action": "added",
+          "reason": "校准从一句定义扩展为可操作分箱与手算示例。",
+          "standaloneChecks": {
+            "definitions": true,
+            "reasoning": true,
+            "workedExampleOrMechanism": true,
+            "sourceReference": "valid inherited anchor"
+          }
+        },
+        {
+          "finalPage": 22,
+          "originalPage": 17,
+          "title": "分类阈值的成本推导",
+          "action": "retained-after-review",
+          "reason": "本页的任务、论证对象和结论能在本讲连续阅读中建立；保留原文。具体教学焦点：对固定状态分类时，比较两类判断的条件期望损失。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 23,
+          "originalPage": 18,
+          "title": "留存行动的预期净价值",
+          "action": "retained-after-review",
+          "reason": "本页的任务、论证对象和结论能在本讲连续阅读中建立；保留原文。具体教学焦点：风险、客户价值、干预效果和费用须分别定义。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 24,
+          "originalPage": 19,
+          "title": "高风险与高净价值的反例",
+          "action": "retained-after-review",
+          "reason": "本页的任务、论证对象和结论能在本讲连续阅读中建立；保留原文。具体教学焦点：固定客户价值和费用，比较可降低的绝对风险。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 25,
+          "originalPage": 20,
+          "title": "分割共形预测的构造",
+          "action": "revised",
+          "reason": "可交换性首次定义，并明确校准残差排序记号。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 26,
+          "title": "覆盖保证来自未来残差的秩",
+          "originalPage": null,
+          "action": "added",
+          "reason": "补覆盖保证的关键秩论证，读者可独立理解n+1修正。",
+          "standaloneChecks": {
+            "definitions": true,
+            "reasoning": true,
+            "workedExampleOrMechanism": true,
+            "sourceReference": "valid inherited anchor"
+          }
+        },
+        {
+          "finalPage": 27,
+          "originalPage": 21,
+          "title": "共形区间的有限样本算例",
+          "action": "retained-after-review",
+          "reason": "本页的任务、论证对象和结论能在本讲连续阅读中建立；保留原文。具体教学焦点：排序位置按未来观测与校准观测的联合秩计算。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 28,
+          "originalPage": 22,
+          "title": "模型解释与因果机制",
+          "action": "retained-after-review",
+          "reason": "本页的任务、论证对象和结论能在本讲连续阅读中建立；保留原文。具体教学焦点：特征贡献描述模型如何计算，干预效应描述业务如何改变。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 29,
+          "originalPage": 23,
+          "title": "基础模型的任务级比较",
+          "action": "retained-after-review",
+          "reason": "本页的任务、论证对象和结论能在本讲连续阅读中建立；保留原文。具体教学焦点：预训练能力仍须在本任务的时间外数据上检验。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 30,
+          "originalPage": 24,
+          "title": "航空备件：四种预测任务",
+          "action": "retained-after-review",
+          "reason": "本页的任务、论证对象和结论能在本讲连续阅读中建立；保留原文。具体教学焦点：同一服务网络的数据，对应不同标签和经济损失。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 31,
+          "originalPage": 25,
+          "title": "自动建模与选择偏差",
+          "action": "retained-after-review",
+          "reason": "本页的任务、论证对象和结论能在本讲连续阅读中建立；保留原文。具体教学焦点：自动尝试也是模型选择，必须遵守数据用途边界。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 32,
+          "originalPage": 26,
+          "title": "推理服务的键值缓存",
+          "action": "revised",
+          "reason": "解释语言模型缓存与本讲部署主题衔接，令token在首次出现定义。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 33,
+          "originalPage": 27,
+          "title": "键值缓存的容量核算",
+          "action": "retained-after-review",
+          "reason": "本页的任务、论证对象和结论能在本讲连续阅读中建立；保留原文。具体教学焦点：教学参数只用于解释负载与资源关系。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 34,
+          "title": "客户流失实验：输入与学习过程",
+          "originalPage": null,
+          "action": "added",
+          "reason": "实验结果前补全样本、特征、标签和拟合步骤，读者不必打开正文才知算法输入。",
+          "standaloneChecks": {
+            "definitions": true,
+            "reasoning": true,
+            "workedExampleOrMechanism": true,
+            "sourceReference": "valid inherited anchor"
+          }
+        },
+        {
+          "finalPage": 35,
+          "originalPage": 28,
+          "title": "客户流失：复算测试指标",
+          "action": "revised",
+          "reason": "去除依赖右侧与前页的指代，明确F1已定义、十人阈值结果为教学输出。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 36,
+          "title": "客户行动价值：收益假设与费用",
+          "originalPage": null,
+          "action": "added",
+          "reason": "补行动排名真正使用的公式和数值参数，避免仅列名单导致不可复算。",
+          "standaloneChecks": {
+            "definitions": true,
+            "reasoning": true,
+            "workedExampleOrMechanism": true,
+            "sourceReference": "valid inherited anchor"
+          }
+        },
+        {
+          "finalPage": 37,
+          "originalPage": 29,
+          "title": "客户名单：风险与行动价值",
+          "action": "retained-after-review",
+          "reason": "本页的任务、论证对象和结论能在本讲连续阅读中建立；保留原文。具体教学焦点：相同预测模型可以对应不同的资源分配顺序。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 38,
+          "originalPage": 30,
+          "title": "行动策略与标签生成机制",
+          "action": "revised",
+          "reason": "定义D与Y二元含义，不假设读者记得其他讲因果符号。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 39,
+          "originalPage": 31,
+          "title": "预测系统的完整证据",
+          "action": "retained-after-review",
+          "reason": "本页的任务、论证对象和结论能在本讲连续阅读中建立；保留原文。具体教学焦点：一个可用模型必须同时说明估计对象、评价结果和运行边界。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        }
+      ]
+    },
+    {
+      "chapter": "08_causality",
+      "title": "因果识别与管理干预",
+      "beforePages": 36,
+      "afterPages": 42,
+      "changedExistingPages": 4,
+      "addedPages": 6,
+      "pageAudit": [
+        {
+          "finalPage": 1,
+          "originalPage": 1,
+          "title": "从观察差异到干预效应",
+          "action": "retained-after-review",
+          "reason": "本页的任务、论证对象和结论能在本讲连续阅读中建立；保留原文。具体教学焦点：比较方法是否可信，取决于处理分配与反事实设计。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 2,
+          "originalPage": 2,
+          "title": "潜在结果与个体效应",
+          "action": "retained-after-review",
+          "reason": "本页的任务、论证对象和结论能在本讲连续阅读中建立；保留原文。具体教学焦点：实际只观察一种处理状态，对照状态的结果是反事实。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 3,
+          "originalPage": 3,
+          "title": "效应参数与目标人群",
+          "action": "retained-after-review",
+          "reason": "本页的任务、论证对象和结论能在本讲连续阅读中建立；保留原文。具体教学焦点：全面推广、评价已处理者和选择未来对象，是不同政策问题。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 4,
+          "title": "同一改进可以具有相反的符号",
+          "originalPage": null,
+          "action": "added",
+          "reason": "补结果编码与效应方向的直观数字，不让效果正负只靠口头解释。",
+          "standaloneChecks": {
+            "definitions": true,
+            "reasoning": true,
+            "workedExampleOrMechanism": true,
+            "sourceReference": "valid inherited anchor"
+          }
+        },
+        {
+          "finalPage": 5,
+          "originalPage": 4,
+          "title": "预测关联与干预效应",
+          "action": "retained-after-review",
+          "reason": "本页的任务、论证对象和结论能在本讲连续阅读中建立；保留原文。具体教学焦点：现行政策下的风险关系不能直接回答改变政策的后果。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 6,
+          "originalPage": 5,
+          "title": "朴素差异的选择偏差分解",
+          "action": "retained-after-review",
+          "reason": "本页的任务、论证对象和结论能在本讲连续阅读中建立；保留原文。具体教学焦点：在一致性下，组间差异可拆成已处理者效应与原有差异。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 7,
+          "originalPage": 6,
+          "title": "调整变量与因果结构",
+          "action": "retained-after-review",
+          "reason": "本页的任务、论证对象和结论能在本讲连续阅读中建立；保留原文。具体教学焦点：调整集合由时间和机制决定，不能依据预测能力机械选择。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 8,
+          "originalPage": 7,
+          "title": "随机实验的识别基准",
+          "action": "retained-after-review",
+          "reason": "本页的任务、论证对象和结论能在本讲连续阅读中建立；保留原文。具体教学焦点：随机分配在设计上建立处理与潜在结果的独立性。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 9,
+          "originalPage": 8,
+          "title": "观测研究的核心识别条件",
+          "action": "retained-after-review",
+          "reason": "本页的任务、论证对象和结论能在本讲连续阅读中建立；保留原文。具体教学焦点：一致性、条件可交换性与重叠性共同支持反事实比较。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 10,
+          "originalPage": 9,
+          "title": "处理版本与个体间干扰",
+          "action": "revised",
+          "reason": "缩写SUTVA首次给中文解释，不把规范名词留为读者外查任务。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 11,
+          "originalPage": 10,
+          "title": "从识别条件到标准化公式",
+          "action": "retained-after-review",
+          "reason": "本页的任务、论证对象和结论能在本讲连续阅读中建立；保留原文。具体教学焦点：先在特征层内建立可比性，再对共同目标总体平均。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 12,
+          "originalPage": 11,
+          "title": "困难订单优先加急：观察数据",
+          "action": "retained-after-review",
+          "reason": "本页的任务、论证对象和结论能在本讲连续阅读中建立；保留原文。具体教学焦点：总体差异同时受到处理效果和难度构成影响。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 13,
+          "originalPage": 12,
+          "title": "标准化到同一难度构成",
+          "action": "retained-after-review",
+          "reason": "本页的任务、论证对象和结论能在本讲连续阅读中建立；保留原文。具体教学焦点：两种行动使用同一目标人群权重。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 14,
+          "originalPage": 13,
+          "title": "目标人群权重与效果异质性",
+          "action": "revised",
+          "reason": "补w取值和总体参数与样本估计区别。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 15,
+          "originalPage": 14,
+          "title": "倾向得分与平衡性质",
+          "action": "retained-after-review",
+          "reason": "本页的任务、论证对象和结论能在本讲连续阅读中建立；保留原文。具体教学焦点：倾向得分估计接受处理的概率，不能直接估计处理效果。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 16,
+          "originalPage": 15,
+          "title": "逆概率加权的识别逻辑",
+          "action": "retained-after-review",
+          "reason": "本页的任务、论证对象和结论能在本讲连续阅读中建立；保留原文。具体教学焦点：加权补偿同特征人群中被观察到的处理概率。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 17,
+          "title": "加权如何还原困难订单算例",
+          "originalPage": null,
+          "action": "added",
+          "reason": "用前述100订单算例直接展示IPW如何还原共同总体，补估计器直观机制。",
+          "standaloneChecks": {
+            "definitions": true,
+            "reasoning": true,
+            "workedExampleOrMechanism": true,
+            "sourceReference": "valid inherited anchor"
+          }
+        },
+        {
+          "finalPage": 18,
+          "originalPage": 16,
+          "title": "平衡诊断与标准化均值差异",
+          "action": "retained-after-review",
+          "reason": "本页的任务、论证对象和结论能在本讲连续阅读中建立；保留原文。具体教学焦点：先检查可比性证据，再解释效应数值。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 19,
+          "originalPage": 17,
+          "title": "权重集中与有效样本量",
+          "action": "retained-after-review",
+          "reason": "本页的任务、论证对象和结论能在本讲连续阅读中建立；保留原文。具体教学焦点：名义样本数不能反映权重是否由少数对象主导。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 20,
+          "title": "四个观测，权重可由一个对象主导",
+          "originalPage": null,
+          "action": "added",
+          "reason": "ESS定义之后补可复算权重集中反例，澄清有效样本不等于实际剩余人数。",
+          "standaloneChecks": {
+            "definitions": true,
+            "reasoning": true,
+            "workedExampleOrMechanism": true,
+            "sourceReference": "valid inherited anchor"
+          }
+        },
+        {
+          "finalPage": 21,
+          "originalPage": 18,
+          "title": "增广逆概率加权估计",
+          "action": "retained-after-review",
+          "reason": "本页的任务、论证对象和结论能在本讲连续阅读中建立；保留原文。具体教学焦点：结果回归给出反事实候选，加权残差校正其偏差。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 22,
+          "originalPage": 19,
+          "title": "单个双重稳健分数为何可超过一",
+          "action": "retained-after-review",
+          "reason": "本页的任务、论证对象和结论能在本讲连续阅读中建立；保留原文。具体教学焦点：分数是总体平均的校正量，并非个体真实效应。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 23,
+          "originalPage": 20,
+          "title": "得分正确时，残差怎样抵消偏差",
+          "action": "revised",
+          "reason": "分别展示两组校正及最终抵消，形成可以独立跟随的第一种证明。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 24,
+          "title": "结果正确时，校正项为何均值为零",
+          "originalPage": null,
+          "action": "added",
+          "reason": "补双重稳健的另一种证明，不把两结果模型正确的机制留在文字断言。",
+          "standaloneChecks": {
+            "definitions": true,
+            "reasoning": true,
+            "workedExampleOrMechanism": true,
+            "sourceReference": "valid inherited anchor"
+          }
+        },
+        {
+          "finalPage": 25,
+          "originalPage": 21,
+          "title": "双重稳健偏差的乘积结构",
+          "action": "retained-after-review",
+          "reason": "本页的任务、论证对象和结论能在本讲连续阅读中建立；保留原文。具体教学焦点：一类误差为零，条件偏差即为零。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 26,
+          "title": "局部正交性：误差以乘积进入",
+          "originalPage": null,
+          "action": "added",
+          "reason": "正交性术语之前给一阶不敏感的具体扰动解释，连接偏差乘积与速率页。",
+          "standaloneChecks": {
+            "definitions": true,
+            "reasoning": true,
+            "workedExampleOrMechanism": true,
+            "sourceReference": "valid inherited anchor"
+          }
+        },
+        {
+          "finalPage": 27,
+          "originalPage": 22,
+          "title": "交叉拟合与辅助模型过拟合",
+          "action": "retained-after-review",
+          "reason": "本页的任务、论证对象和结论能在本讲连续阅读中建立；保留原文。具体教学焦点：每个对象的效应分数使用其他样本拟合的辅助预测。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 28,
+          "originalPage": 23,
+          "title": "正交性与收敛条件",
+          "action": "retained-after-review",
+          "reason": "本页的任务、论证对象和结论能在本讲连续阅读中建立；保留原文。具体教学焦点：交叉拟合解决样本复用，收敛速率决定推断误差能否忽略。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 29,
+          "originalPage": 24,
+          "title": "差分中的差分",
+          "action": "retained-after-review",
+          "reason": "本页的任务、论证对象和结论能在本讲连续阅读中建立；保留原文。具体教学焦点：以对照组同期变化构造处理组的未处理变化参照。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 30,
+          "originalPage": 25,
+          "title": "两期 DID 的识别条件",
+          "action": "retained-after-review",
+          "reason": "本页的任务、论证对象和结论能在本讲连续阅读中建立；保留原文。具体教学焦点：平行趋势涉及未被观察到的处理组反事实变化。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 31,
+          "originalPage": 26,
+          "title": "门店留存率的两期比较",
+          "action": "revised",
+          "reason": "将DID直观化为明确反事实留存率，不止三次减法。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 32,
+          "originalPage": 27,
+          "title": "分期处理与效应异质性",
+          "action": "retained-after-review",
+          "reason": "本页的任务、论证对象和结论能在本讲连续阅读中建立；保留原文。具体教学焦点：效应随批次或处理时长变化时，已处理组可能不是有效对照。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 33,
+          "originalPage": 28,
+          "title": "资格、处理与随访时点",
+          "action": "retained-after-review",
+          "reason": "本页的任务、论证对象和结论能在本讲连续阅读中建立；保留原文。具体教学焦点：用未来状态决定基线分组，会使观察时间系统性不同。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 34,
+          "originalPage": 29,
+          "title": "未测混杂的敏感性范围",
+          "action": "retained-after-review",
+          "reason": "本页的任务、论证对象和结论能在本讲连续阅读中建立；保留原文。具体教学焦点：敏感性分析量化假设变化，不能证明不可检验假设。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 35,
+          "originalPage": 30,
+          "title": "效应异质性与外推范围",
+          "action": "retained-after-review",
+          "reason": "本页的任务、论证对象和结论能在本讲连续阅读中建立；保留原文。具体教学焦点：样本中的可识别效果，不会自动适用于所有对象。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 36,
+          "originalPage": 31,
+          "title": "策略价值与预算约束",
+          "action": "retained-after-review",
+          "reason": "本页的任务、论证对象和结论能在本讲连续阅读中建立；保留原文。具体教学焦点：行动应按因果增量价值选择，并接受独立策略评价。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 37,
+          "originalPage": 32,
+          "title": "数据平台采用的识别设计",
+          "action": "retained-after-review",
+          "reason": "本页的任务、论证对象和结论能在本讲连续阅读中建立；保留原文。具体教学焦点：采用顺序本身可能反映部门原有成熟度。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 38,
+          "originalPage": 33,
+          "title": "个人节时与组织生产率",
+          "action": "retained-after-review",
+          "reason": "本页的任务、论证对象和结论能在本讲连续阅读中建立；保留原文。具体教学焦点：评价范围应包含被转移的复核、返工和交接工作。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 39,
+          "originalPage": 34,
+          "title": "平台组合效应与净现值",
+          "action": "retained-after-review",
+          "reason": "本页的任务、论证对象和结论能在本讲连续阅读中建立；保留原文。具体教学焦点：整套配置上线和单项组件新增，具有不同反事实。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 40,
+          "title": "优惠券实验：研究对象与计算顺序",
+          "originalPage": null,
+          "action": "added",
+          "reason": "教学调整结果前补观测样本字段、任务与计算顺序，避免结果表脱离可识别目标。",
+          "standaloneChecks": {
+            "definitions": true,
+            "reasoning": true,
+            "workedExampleOrMechanism": true,
+            "sourceReference": "valid inherited anchor"
+          }
+        },
+        {
+          "finalPage": 41,
+          "originalPage": 35,
+          "title": "优惠券教学数据：调整与诊断",
+          "action": "retained-after-review",
+          "reason": "本页的任务、论证对象和结论能在本讲连续阅读中建立；保留原文。具体教学焦点：方法间差异需由处理机制和协变量诊断解释。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 42,
+          "originalPage": 36,
+          "title": "因果报告的论证顺序",
+          "action": "retained-after-review",
+          "reason": "本页的任务、论证对象和结论能在本讲连续阅读中建立；保留原文。具体教学焦点：每个效应结论都应能追溯到研究问题与识别依据。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        }
+      ]
+    },
+    {
+      "chapter": "09_optimization",
+      "title": "资源配置、优化与处方决策",
+      "beforePages": 33,
+      "afterPages": 37,
+      "changedExistingPages": 8,
+      "addedPages": 4,
+      "pageAudit": [
+        {
+          "finalPage": 1,
+          "originalPage": 1,
+          "title": "共享资源下的行动选择",
+          "action": "retained-after-review",
+          "reason": "本页的任务、论证对象和结论能在本讲连续阅读中建立；保留原文。具体教学焦点：优化把状态、效果、价值和约束转成整体可行方案。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 2,
+          "originalPage": 2,
+          "title": "变量、目标与可行域",
+          "action": "retained-after-review",
+          "reason": "本页的任务、论证对象和结论能在本讲连续阅读中建立；保留原文。具体教学焦点：可行解满足全部约束，最优解在可行解中达到最优目标。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 3,
+          "originalPage": 3,
+          "title": "库存目标的成本口径",
+          "action": "retained-after-review",
+          "reason": "本页的任务、论证对象和结论能在本讲连续阅读中建立；保留原文。具体教学焦点：销售贡献、持有、缺货与新增采购分别核算。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 4,
+          "originalPage": 4,
+          "title": "约束与可执行性",
+          "action": "retained-after-review",
+          "reason": "本页的任务、论证对象和结论能在本讲连续阅读中建立；保留原文。具体教学焦点：违反硬约束的方案，即使目标更高也不能实施。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 5,
+          "originalPage": 5,
+          "title": "两类任务的资源配置",
+          "action": "retained-after-review",
+          "reason": "本页的任务、论证对象和结论能在本讲连续阅读中建立；保留原文。具体教学焦点：一个候选解需要独立上界才能构成最优性证明。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 6,
+          "originalPage": 6,
+          "title": "弱对偶与最优性证书",
+          "action": "revised",
+          "reason": "首次给A,b,c矩阵的业务含义与维度；拆除需前讲补充的线性代数符号语义。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 7,
+          "originalPage": 7,
+          "title": "影子价格的有效范围",
+          "action": "retained-after-review",
+          "reason": "本页的任务、论证对象和结论能在本讲连续阅读中建立；保留原文。具体教学焦点：局部资源价值取决于当前最优结构是否保持。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 8,
+          "originalPage": 8,
+          "title": "离散资源的有限增量价值",
+          "action": "retained-after-review",
+          "reason": "本页的任务、论证对象和结论能在本讲连续阅读中建立；保留原文。具体教学焦点：整数可行集可能使资源价值呈阶梯变化。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 9,
+          "originalPage": 9,
+          "title": "情景模型与期望目标",
+          "action": "retained-after-review",
+          "reason": "本页的任务、论证对象和结论能在本讲连续阅读中建立；保留原文。具体教学焦点：需求分布及其联合变化是优化模型的明确输入。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 10,
+          "originalPage": 10,
+          "title": "报童模型的临界分位数",
+          "action": "revised",
+          "reason": "定义累计分布F与分位数关系，离散需求明确用不等式而非错误等式。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 11,
+          "originalPage": 11,
+          "title": "缺货惩罚改变目标分位数",
+          "action": "retained-after-review",
+          "reason": "本页的任务、论证对象和结论能在本讲连续阅读中建立；保留原文。具体教学焦点：成本比决定目标概率，需求分布再决定订货数量。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 12,
+          "originalPage": 12,
+          "title": "条件风险价值的变分定义",
+          "action": "revised",
+          "reason": "首次定义VaR与CVaR术语，说明α代表累计分位水平而非失败概率。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 13,
+          "originalPage": 13,
+          "title": "把情景 CVaR 写成可求解约束",
+          "action": "retained-after-review",
+          "reason": "本页的任务、论证对象和结论能在本讲连续阅读中建立；保留原文。具体教学焦点：正部函数可用超额损失变量表示。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 14,
+          "originalPage": 14,
+          "title": "离散 CVaR：分位点质量",
+          "action": "retained-after-review",
+          "reason": "本页的任务、论证对象和结论能在本讲连续阅读中建立；保留原文。具体教学焦点：最坏一半概率质量，不等于分位点以上的全部样本。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 15,
+          "originalPage": 15,
+          "title": "分布鲁棒优化",
+          "action": "retained-after-review",
+          "reason": "本页的任务、论证对象和结论能在本讲连续阅读中建立；保留原文。具体教学焦点：稳健程度由所声明的不确定分布集合决定。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 16,
+          "originalPage": 16,
+          "title": "参数敏感性与方案稳健性",
+          "action": "retained-after-review",
+          "reason": "本页的任务、论证对象和结论能在本讲连续阅读中建立；保留原文。具体教学焦点：同时比较目标值、方案变化与不利情景表现。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 17,
+          "originalPage": 17,
+          "title": "单机排程的互斥约束",
+          "action": "revised",
+          "reason": "big-M示例之前明确时间边界取5来自两任务总长，并定义关闭约束含义。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 18,
+          "originalPage": 18,
+          "title": "加权延期与任务顺序",
+          "action": "retained-after-review",
+          "reason": "本页的任务、论证对象和结论能在本讲连续阅读中建立；保留原文。具体教学焦点：最早交期优先不保证加权总延期最优。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 19,
+          "originalPage": 19,
+          "title": "预测损失与决策后悔",
+          "action": "revised",
+          "reason": "明确regret使用成本最小化而非承接此前收益最大化语境。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 20,
+          "originalPage": 20,
+          "title": "小预测误差也可能选择错误",
+          "action": "retained-after-review",
+          "reason": "本页的任务、论证对象和结论能在本讲连续阅读中建立；保留原文。具体教学焦点：用真实成本比较由两种预测诱导的行动。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 21,
+          "originalPage": 21,
+          "title": "滚动优化与策略仿真",
+          "action": "retained-after-review",
+          "reason": "本页的任务、论证对象和结论能在本讲连续阅读中建立；保留原文。具体教学焦点：计划随状态更新，但近期承诺应保持可执行。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 22,
+          "originalPage": 22,
+          "title": "订单加急的增量净收益",
+          "action": "retained-after-review",
+          "reason": "本页的任务、论证对象和结论能在本讲连续阅读中建立；保留原文。具体教学焦点：先比较行动前后期望损失，再做共享容量下的选择。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 23,
+          "originalPage": 23,
+          "title": "加急组合：风险与净价值",
+          "action": "retained-after-review",
+          "reason": "本页的任务、论证对象和结论能在本讲连续阅读中建立；保留原文。具体教学焦点：容量为两张时，选择可加且为正的最高净收益。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 24,
+          "originalPage": 24,
+          "title": "预算限制与并列方案",
+          "action": "retained-after-review",
+          "reason": "本页的任务、论证对象和结论能在本讲连续阅读中建立；保留原文。具体教学焦点：先满足全部资源约束，再按预先声明的次级标准选择。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 25,
+          "originalPage": 25,
+          "title": "建模、求解与独立验证",
+          "action": "retained-after-review",
+          "reason": "本页的任务、论证对象和结论能在本讲连续阅读中建立；保留原文。具体教学焦点：候选模型的语义正确性与解的数学性质分别核查。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 26,
+          "originalPage": 26,
+          "title": "模型服务的费用交点",
+          "action": "retained-after-review",
+          "reason": "本页的任务、论证对象和结论能在本讲连续阅读中建立；保留原文。具体教学焦点：费用比较先限定同质负载与共同服务条件。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 27,
+          "originalPage": 27,
+          "title": "平均占用约束与尾部时延",
+          "action": "retained-after-review",
+          "reason": "本页的任务、论证对象和结论能在本讲连续阅读中建立；保留原文。具体教学焦点：平均容量可用于筛选方案，不能保证高百分位完成时间。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 28,
+          "originalPage": 28,
+          "title": "服务费用的教学比较",
+          "action": "retained-after-review",
+          "reason": "本页的任务、论证对象和结论能在本讲连续阅读中建立；保留原文。具体教学焦点：费率与速度均为教学设定，并非厂商报价。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 29,
+          "title": "库存实验：四产品的经济参数",
+          "originalPage": null,
+          "action": "added",
+          "reason": "四产品补货结果缺全部输入。新增完整成本表，使独立读者知道经济含义与金额口径。",
+          "standaloneChecks": {
+            "definitions": true,
+            "reasoning": true,
+            "workedExampleOrMechanism": true,
+            "sourceReference": "valid inherited anchor"
+          }
+        },
+        {
+          "finalPage": 30,
+          "title": "库存实验：数量范围与资源占用",
+          "originalPage": null,
+          "action": "added",
+          "reason": "补已有库存、订货上下界和单位库容，说明库容约束只覆盖新增量。",
+          "standaloneChecks": {
+            "definitions": true,
+            "reasoning": true,
+            "workedExampleOrMechanism": true,
+            "sourceReference": "valid inherited anchor"
+          }
+        },
+        {
+          "finalPage": 31,
+          "title": "库存实验：三点需求与概率",
+          "originalPage": null,
+          "action": "added",
+          "reason": "补四产品全部三点需求概率，不让3914.60只可在讲义或代码中查输入。",
+          "standaloneChecks": {
+            "definitions": true,
+            "reasoning": true,
+            "workedExampleOrMechanism": true,
+            "sourceReference": "valid inherited anchor"
+          }
+        },
+        {
+          "finalPage": 32,
+          "title": "库存实验：从输入到整数模型",
+          "originalPage": null,
+          "action": "added",
+          "reason": "把全输入转成完整整数模型，目标V和预算/库容可独立定位。",
+          "standaloneChecks": {
+            "definitions": true,
+            "reasoning": true,
+            "workedExampleOrMechanism": true,
+            "sourceReference": "valid inherited anchor"
+          }
+        },
+        {
+          "finalPage": 33,
+          "originalPage": 29,
+          "title": "库存组合的基准解",
+          "action": "revised",
+          "reason": "结果页用此前完整输入回溯而非泛称允许范围，并补资源重算。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 34,
+          "originalPage": 30,
+          "title": "并列最优与次级选择标准",
+          "action": "revised",
+          "reason": "候选数用各数量上限乘积说明，独立读者可复核候选计数。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 35,
+          "originalPage": 31,
+          "title": "P02 订货十六件的完整核算",
+          "action": "revised",
+          "reason": "期望数值不仅列结果，加入每项情景加权计算式。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 36,
+          "originalPage": 32,
+          "title": "边际价值为何不能单独决定组合",
+          "action": "retained-after-review",
+          "reason": "本页的任务、论证对象和结论能在本讲连续阅读中建立；保留原文。具体教学焦点：一个新增单位可能同时占用多个稀缺资源。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 37,
+          "originalPage": 33,
+          "title": "从数学方案到执行记录",
+          "action": "retained-after-review",
+          "reason": "本页的任务、论证对象和结论能在本讲连续阅读中建立；保留原文。具体教学焦点：最优性结论相对于模型成立，实施可靠性还依赖现实条件。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        }
+      ]
+    },
+    {
+      "chapter": "10_process_mining",
+      "title": "流程挖掘与智能体执行",
+      "beforePages": 39,
+      "afterPages": 45,
+      "changedExistingPages": 9,
+      "addedPages": 6,
+      "pageAudit": [
+        {
+          "finalPage": 1,
+          "originalPage": 1,
+          "title": "从结果指标到过程证据",
+          "action": "retained-after-review",
+          "reason": "本页的任务、论证对象和结论能在本讲连续阅读中建立；保留原文。具体教学焦点：活动记录使路径、间隔、返工和执行状态可以被核查。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 2,
+          "originalPage": 2,
+          "title": "经典事件日志的必需字段",
+          "action": "retained-after-review",
+          "reason": "本页的任务、论证对象和结论能在本讲连续阅读中建立；保留原文。具体教学焦点：实例标识、活动名称与时间戳规定基本分析对象。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 3,
+          "originalPage": 3,
+          "title": "轨迹与流程变体",
+          "action": "retained-after-review",
+          "reason": "本页的任务、论证对象和结论能在本讲连续阅读中建立；保留原文。具体教学焦点：变体由观察到的完整活动序列定义。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 4,
+          "originalPage": 4,
+          "title": "吞吐时间、事件间隔与等待",
+          "action": "retained-after-review",
+          "reason": "本页的任务、论证对象和结论能在本讲连续阅读中建立；保留原文。具体教学焦点：时间差的业务含义由记录边界决定。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 5,
+          "originalPage": 5,
+          "title": "实例、事件与变体的粒度",
+          "action": "retained-after-review",
+          "reason": "本页的任务、论证对象和结论能在本讲连续阅读中建立；保留原文。具体教学焦点：同一字段或计数须说明描述的是哪一种对象。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 6,
+          "originalPage": 6,
+          "title": "日志质量与分析有效性",
+          "action": "retained-after-review",
+          "reason": "本页的任务、论证对象和结论能在本讲连续阅读中建立；保留原文。具体教学焦点：记录缺陷可能被流程模型误解释为实际行为。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 7,
+          "originalPage": 7,
+          "title": "流程挖掘的三类任务",
+          "action": "retained-after-review",
+          "reason": "本页的任务、论证对象和结论能在本讲连续阅读中建立；保留原文。具体教学焦点：观察模型、规则比较与绩效增强具有不同目标。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 8,
+          "originalPage": 8,
+          "title": "直接跟随边的频次",
+          "action": "revised",
+          "reason": "DFG首次出现给出全称，使算法与图结构在本讲独立定义。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 9,
+          "originalPage": 9,
+          "title": "直接跟随边的平均间隔",
+          "action": "retained-after-review",
+          "reason": "本页的任务、论证对象和结论能在本讲连续阅读中建立；保留原文。具体教学焦点：平均间隔只在该边确实出现时有定义。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 10,
+          "title": "微型日志：从时刻到轨迹",
+          "originalPage": null,
+          "action": "added",
+          "reason": "新增完整微型日志，让轨迹、变体、周期和边频次均可脱离外部CSV复算。",
+          "standaloneChecks": {
+            "definitions": true,
+            "reasoning": true,
+            "workedExampleOrMechanism": true,
+            "sourceReference": "valid inherited anchor"
+          }
+        },
+        {
+          "finalPage": 11,
+          "title": "同一条边：三次转移、两个订单",
+          "originalPage": null,
+          "action": "added",
+          "reason": "紧随微型日志手算边计数及平均间隔，区别转移数/订单数/等待时间。",
+          "standaloneChecks": {
+            "definitions": true,
+            "reasoning": true,
+            "workedExampleOrMechanism": true,
+            "sourceReference": "valid inherited anchor"
+          }
+        },
+        {
+          "finalPage": 12,
+          "originalPage": 10,
+          "title": "标准路径与返工变体",
+          "action": "retained-after-review",
+          "reason": "本页的任务、论证对象和结论能在本讲连续阅读中建立；保留原文。具体教学焦点：返工既消耗资源，也可能恢复质量，不能只按次数评价。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 13,
+          "originalPage": 11,
+          "title": "双向边与并行语义",
+          "action": "retained-after-review",
+          "reason": "本页的任务、论证对象和结论能在本讲连续阅读中建立；保留原文。具体教学焦点：观察顺序不等于允许执行的状态规则。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 14,
+          "originalPage": 12,
+          "title": "Petri 网的状态转移",
+          "action": "retained-after-review",
+          "reason": "本页的任务、论证对象和结论能在本讲连续阅读中建立；保留原文。具体教学焦点：令牌表示条件，变迁只有在输入条件满足时才能发生。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 15,
+          "title": "发货变迁：两个条件必须同时满足",
+          "originalPage": null,
+          "action": "added",
+          "reason": "Petri公式后给令牌向量完整例子，将前置条件具象化并可复算。",
+          "standaloneChecks": {
+            "definitions": true,
+            "reasoning": true,
+            "workedExampleOrMechanism": true,
+            "sourceReference": "valid inherited anchor"
+          }
+        },
+        {
+          "finalPage": 16,
+          "originalPage": 13,
+          "title": "返工次数的几何模型",
+          "action": "revised",
+          "reason": "总时间变量T首次给定义，避免直接套用未定义随机和。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 17,
+          "originalPage": 14,
+          "title": "多状态流程的剩余时间",
+          "action": "revised",
+          "reason": "定义马尔可夫性质、矩阵Q为何行和可小于1及谱半径，使矩阵式具备独立解释。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 18,
+          "title": "两状态返工：首步分解可直接求解",
+          "originalPage": null,
+          "action": "added",
+          "reason": "新增两状态剩余时间例子，说明矩阵方程由首步分解而非黑箱逆矩阵得到。",
+          "standaloneChecks": {
+            "definitions": true,
+            "reasoning": true,
+            "workedExampleOrMechanism": true,
+            "sourceReference": "valid inherited anchor"
+          }
+        },
+        {
+          "finalPage": 19,
+          "originalPage": 15,
+          "title": "事件与多个业务对象",
+          "action": "retained-after-review",
+          "reason": "本页的任务、论证对象和结论能在本讲连续阅读中建立；保留原文。具体教学焦点：保留多对多关联，避免复制事件改变物理计数。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 20,
+          "originalPage": 16,
+          "title": "间隔、负荷与产能瓶颈",
+          "action": "retained-after-review",
+          "reason": "本页的任务、论证对象和结论能在本讲连续阅读中建立；保留原文。具体教学焦点：瓶颈指限制系统吞吐的能力，不能只按最长间隔判断。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 21,
+          "originalPage": 17,
+          "title": "一致性检查的规则范围",
+          "action": "retained-after-review",
+          "reason": "本页的任务、论证对象和结论能在本讲连续阅读中建立；保留原文。具体教学焦点：轨迹偏离需绑定对象、制度版本与有效日期。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 22,
+          "originalPage": 18,
+          "title": "教学日志的路径与时间",
+          "action": "revised",
+          "reason": "增加教学大日志的结果统计步骤，去除主要变体与总均值不可回溯的泛指。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 23,
+          "title": "教学日志：边频次与时间对照",
+          "originalPage": null,
+          "action": "added",
+          "reason": "补四条主要边数据并解释是平均间隔而非等待，连接微型手算与全实验结果。",
+          "standaloneChecks": {
+            "definitions": true,
+            "reasoning": true,
+            "workedExampleOrMechanism": true,
+            "sourceReference": "valid inherited anchor"
+          }
+        },
+        {
+          "finalPage": 24,
+          "originalPage": 19,
+          "title": "从异常实例到复核证据",
+          "action": "retained-after-review",
+          "reason": "本页的任务、论证对象和结论能在本讲连续阅读中建立；保留原文。具体教学焦点：同一个日志异常可能对应不同业务解释。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 25,
+          "originalPage": 20,
+          "title": "Celonis 与 Siemens：指标的含义",
+          "action": "retained-after-review",
+          "reason": "本页的任务、论证对象和结论能在本讲连续阅读中建立；保留原文。具体教学焦点：公开案例提供分析机制，净效益仍需本企业研究。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 26,
+          "originalPage": 21,
+          "title": "流程发现与改进试点",
+          "action": "retained-after-review",
+          "reason": "本页的任务、论证对象和结论能在本讲连续阅读中建立；保留原文。具体教学焦点：从描述线索提出可检验机制，再评价行动净效果。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 27,
+          "originalPage": 22,
+          "title": "工作流与智能体",
+          "action": "retained-after-review",
+          "reason": "本页的任务、论证对象和结论能在本讲连续阅读中建立；保留原文。具体教学焦点：预定控制流程和自适应行动策略具有不同作用。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 28,
+          "originalPage": 23,
+          "title": "智能体运行环境",
+          "action": "retained-after-review",
+          "reason": "本页的任务、论证对象和结论能在本讲连续阅读中建立；保留原文。具体教学焦点：将模型能力置于可追溯、可恢复、可停止的任务过程。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 29,
+          "originalPage": 24,
+          "title": "订单加急的任务规格",
+          "action": "retained-after-review",
+          "reason": "本页的任务、论证对象和结论能在本讲连续阅读中建立；保留原文。具体教学焦点：验收应针对对象状态，不能只针对生成文字。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 30,
+          "originalPage": 25,
+          "title": "响应丢失后的幂等恢复",
+          "action": "revised",
+          "reason": "幂等性首次给数学外语缩写之外的定义，减少术语密集。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 31,
+          "originalPage": 26,
+          "title": "执行状态机与不变量",
+          "action": "retained-after-review",
+          "reason": "本页的任务、论证对象和结论能在本讲连续阅读中建立；保留原文。具体教学焦点：允许的转移由前置条件、身份和当前版本决定。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 32,
+          "originalPage": 27,
+          "title": "协议、结构与业务授权",
+          "action": "revised",
+          "reason": "协议缩写明确全称，Schema首次说明字段类型及必需性，不让细节变成自指规范提醒。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 33,
+          "originalPage": 28,
+          "title": "本地服务的职责分层",
+          "action": "retained-after-review",
+          "reason": "本页的任务、论证对象和结论能在本讲连续阅读中建立；保留原文。具体教学焦点：证据、领域计算、模型推理与运行控制明确分工。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 34,
+          "originalPage": 29,
+          "title": "平台组合的任务级比较",
+          "action": "retained-after-review",
+          "reason": "本页的任务、论证对象和结论能在本讲连续阅读中建立；保留原文。具体教学焦点：同一业务任务需要对象、语义、推理和动作服务共同完成。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 35,
+          "title": "检索增强生成：从材料到可核查回答",
+          "originalPage": null,
+          "action": "added",
+          "reason": "RRF之前补RAG完整检索→形成答案→验证链条，不让检索排名孤立成为章节主题。",
+          "standaloneChecks": {
+            "definitions": true,
+            "reasoning": true,
+            "workedExampleOrMechanism": true,
+            "sourceReference": "valid inherited anchor"
+          }
+        },
+        {
+          "finalPage": 36,
+          "originalPage": 30,
+          "title": "证据检索与排名融合",
+          "action": "retained-after-review",
+          "reason": "本页的任务、论证对象和结论能在本讲连续阅读中建立；保留原文。具体教学焦点：访问范围和业务有效期先于相关性排序。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 37,
+          "originalPage": 31,
+          "title": "倒数排名融合的算例",
+          "action": "retained-after-review",
+          "reason": "本页的任务、论证对象和结论能在本讲连续阅读中建立；保留原文。具体教学焦点：只在材料可访问且有效的前提下比较排名。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 38,
+          "originalPage": 32,
+          "title": "设备放行的规则与事实",
+          "action": "revised",
+          "reason": "明确SOP全称并固定模型问答任务与动作执行的边界。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 39,
+          "originalPage": 33,
+          "title": "端到端时延与任务负载",
+          "action": "retained-after-review",
+          "reason": "本页的任务、论证对象和结论能在本讲连续阅读中建立；保留原文。具体教学焦点：任务性能取决于全部环节及其实际依赖关系。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 40,
+          "originalPage": 34,
+          "title": "多步骤任务的成功概率",
+          "action": "retained-after-review",
+          "reason": "本页的任务、论证对象和结论能在本讲连续阅读中建立；保留原文。具体教学焦点：各步条件成功率共同决定全任务可靠性。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 41,
+          "originalPage": 35,
+          "title": "无独立假设的失败上界",
+          "action": "retained-after-review",
+          "reason": "本页的任务、论证对象和结论能在本讲连续阅读中建立；保留原文。具体教学焦点：并集界可在未知依赖关系时提供保守评价。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 42,
+          "originalPage": 36,
+          "title": "至少成功一次与重复可靠性",
+          "action": "retained-after-review",
+          "reason": "本页的任务、论证对象和结论能在本讲连续阅读中建立；保留原文。具体教学焦点：重复尝试的两个目标需要不同统计量。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 43,
+          "originalPage": 37,
+          "title": "单位成功任务成本",
+          "action": "retained-after-review",
+          "reason": "本页的任务、论证对象和结论能在本讲连续阅读中建立；保留原文。具体教学焦点：成本分子包含成功与失败的全部尝试。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 44,
+          "originalPage": 38,
+          "title": "加急组合的决策与执行记录",
+          "action": "revised",
+          "reason": "讲10的跨讲实例补净收益、资源及预算关系，让本讲自身可读，不靠记忆第9讲数字。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        },
+        {
+          "finalPage": 45,
+          "originalPage": 39,
+          "title": "从异常发现到执行确认",
+          "action": "revised",
+          "reason": "综合案例首次明示WIP/OTD中文含义，避免只以英文缩写复述课程链条。",
+          "standaloneChecks": {
+            "definitions": "checked in page or explicit earlier title",
+            "reasoning": "checked for assumptions and missing transitions",
+            "examples": "checked numbers, units and interpretation",
+            "sourceReference": "validated below"
+          }
+        }
+      ]
+    }
+  ],
+  "source": {
+    "slidesSha256": "06332aa6909e2fc52c074365ccf5b48b87944fd855d98c4a138ac4bbefa7c1b2",
+    "textbookFiles": {
+      "07_prediction": "460fe998f1caff7ae9d79a32f49271f04a7bb9341549e7896e459c0c527f1014",
+      "08_causality": "e60a5c4a14e0f2814e059f9e7ae1c21aacc9f3fdf304c6b525418e0fccfeb848",
+      "09_optimization": "fcd34ed2f3a02abf7426b56c62e4c620c1a0a11bcc283809aef6abd942dbb694",
+      "10_process_mining": "6a22a33c37b9a74d00df5bfe13ce2ff28133ce904c60d1d6847ba4ab88bb35db"
+    }
+  },
+  "notes": [
+    "所有新增微型算例明确称教学设定；不是企业实测结论。",
+    "完整案例输入直接取本仓库教学数据，原稿数学边界继续保留。",
+    "扩页用于完成解释与计算链条，不以正文链接代替独立内容。"
+  ],
+  "verification": {
+    "formulaAndAnchorCheck": {
+      "pages": 163,
+      "formulas": 686,
+      "anchors": 163,
+      "errors": [],
+      "counts": {
+        "07_prediction": 39,
+        "08_causality": 42,
+        "09_optimization": 37,
+        "10_process_mining": 45
+      }
+    },
+    "numericCheck": {
+      "independentChecks": 46,
+      "allPassed": true,
+      "items": [
+        {
+          "name": "对数损失报告0.8",
+          "actual": "0.5004024235381879",
+          "expected": "0.5004",
+          "passed": true
+        },
+        {
+          "name": "对数损失报告0.99",
+          "actual": "0.9290743058804194",
+          "expected": "0.9291",
+          "passed": true
+        },
+        {
+          "name": "F1",
+          "actual": "10/11",
+          "expected": "0.9091",
+          "passed": true
+        },
+        {
+          "name": "共形联合秩k",
+          "actual": "8",
+          "expected": "8",
+          "passed": true
+        },
+        {
+          "name": "共形半径",
+          "actual": "5",
+          "expected": "5",
+          "passed": true
+        },
+        {
+          "name": "缓存GiB",
+          "actual": "4.0",
+          "expected": "4",
+          "passed": true
+        },
+        {
+          "name": "训练与测试人数",
+          "actual": "(20, 10)",
+          "expected": "(20, 10)",
+          "passed": true
+        },
+        {
+          "name": "测试混淆计数",
+          "actual": "(5, 1, 4, 0)",
+          "expected": "(5, 1, 4, 0)",
+          "passed": true
+        },
+        {
+          "name": "风险前五",
+          "actual": "['C030', 'C028', 'C021', 'C025', 'C023']",
+          "expected": "['C030', 'C028', 'C021', 'C025', 'C023']",
+          "passed": true
+        },
+        {
+          "name": "正净价值前列",
+          "actual": "['C028', 'C025', 'C023', 'C021']",
+          "expected": "['C028', 'C025', 'C023', 'C021']",
+          "passed": true
+        },
+        {
+          "name": "加权处理均值",
+          "actual": "3/20",
+          "expected": "3/20",
+          "passed": true
+        },
+        {
+          "name": "加权对照均值",
+          "actual": "1/4",
+          "expected": "1/4",
+          "passed": true
+        },
+        {
+          "name": "集中权重ESS",
+          "actual": "25/13",
+          "expected": "25/13",
+          "passed": true
+        },
+        {
+          "name": "DID反事实留存",
+          "actual": "5/8",
+          "expected": "5/8",
+          "passed": true
+        },
+        {
+          "name": "DID效应",
+          "actual": "31/400",
+          "expected": "31/400",
+          "passed": true
+        },
+        {
+          "name": "DR偏差乘积 e=1/5,候选=1/4",
+          "actual": "-1/150",
+          "expected": "-1/150",
+          "passed": true
+        },
+        {
+          "name": "DR偏差乘积 e=1/5,候选=3/4",
+          "actual": "11/30",
+          "expected": "11/30",
+          "passed": true
+        },
+        {
+          "name": "DR偏差乘积 e=1/2,候选=1/4",
+          "actual": "1/30",
+          "expected": "1/30",
+          "passed": true
+        },
+        {
+          "name": "DR偏差乘积 e=1/2,候选=3/4",
+          "actual": "1/6",
+          "expected": "1/6",
+          "passed": true
+        },
+        {
+          "name": "DR偏差乘积 e=4/5,候选=1/4",
+          "actual": "11/150",
+          "expected": "11/150",
+          "passed": true
+        },
+        {
+          "name": "DR偏差乘积 e=4/5,候选=3/4",
+          "actual": "-1/30",
+          "expected": "-1/30",
+          "passed": true
+        },
+        {
+          "name": "库存候选组合数",
+          "actual": "283475",
+          "expected": "283475",
+          "passed": true
+        },
+        {
+          "name": "库存资源可行组合数",
+          "actual": "205511",
+          "expected": "205511",
+          "passed": true
+        },
+        {
+          "name": "库存最高价值",
+          "actual": "19573/5",
+          "expected": "19573/5",
+          "passed": true
+        },
+        {
+          "name": "库存全部并列最优",
+          "actual": "[(18, 16, 10, 8), (18, 16, 13, 7), (18, 16, 16, 6)]",
+          "expected": "[(18, 16, 10, 8), (18, 16, 13, 7), (18, 16, 16, 6)]",
+          "passed": true
+        },
+        {
+          "name": "库存首方案费用",
+          "actual": "2596",
+          "expected": "2596",
+          "passed": true
+        },
+        {
+          "name": "库存首方案库容",
+          "actual": "93",
+          "expected": "93",
+          "passed": true
+        },
+        {
+          "name": "P02期望价值",
+          "actual": "5568/5",
+          "expected": "5568/5",
+          "passed": true
+        },
+        {
+          "name": "P02销售期望",
+          "actual": "112/5",
+          "expected": "112/5",
+          "passed": true
+        },
+        {
+          "name": "P02剩余期望",
+          "actual": "8/5",
+          "expected": "8/5",
+          "passed": true
+        },
+        {
+          "name": "P02缺货期望",
+          "actual": "2",
+          "expected": "2",
+          "passed": true
+        },
+        {
+          "name": "微型日志边频次",
+          "actual": "3",
+          "expected": "3",
+          "passed": true
+        },
+        {
+          "name": "微型日志边平均间隔",
+          "actual": "2",
+          "expected": "2",
+          "passed": true
+        },
+        {
+          "name": "微型日志平均周期",
+          "actual": "6",
+          "expected": "6",
+          "passed": true
+        },
+        {
+          "name": "两状态方程t1",
+          "actual": "110/49",
+          "expected": "110/49",
+          "passed": true
+        },
+        {
+          "name": "两状态方程t2",
+          "actual": "60/49",
+          "expected": "60/49",
+          "passed": true
+        },
+        {
+          "name": "全日志事件、实例、变体",
+          "actual": "(67, 8, 4)",
+          "expected": "(67, 8, 4)",
+          "passed": true
+        },
+        {
+          "name": "全日志平均吞吐",
+          "actual": "114.875",
+          "expected": "114.88",
+          "passed": true
+        },
+        {
+          "name": "pack_order->ship_order频次",
+          "actual": "8",
+          "expected": "8",
+          "passed": true
+        },
+        {
+          "name": "pack_order->ship_order时间",
+          "actual": "16.25",
+          "expected": "16.25",
+          "passed": true
+        },
+        {
+          "name": "pick_items->quality_check频次",
+          "actual": "8",
+          "expected": "8",
+          "passed": true
+        },
+        {
+          "name": "pick_items->quality_check时间",
+          "actual": "4.5",
+          "expected": "4.5",
+          "passed": true
+        },
+        {
+          "name": "credit_check->pick_items频次",
+          "actual": "7",
+          "expected": "7",
+          "passed": true
+        },
+        {
+          "name": "credit_check->pick_items时间",
+          "actual": "9.285714285714286",
+          "expected": "9.29",
+          "passed": true
+        },
+        {
+          "name": "invoice_sent->payment_received频次",
+          "actual": "7",
+          "expected": "7",
+          "passed": true
+        },
+        {
+          "name": "invoice_sent->payment_received时间",
+          "actual": "71.57142857142857",
+          "expected": "71.57",
+          "passed": true
+        }
+      ]
+    }
+  }
+}

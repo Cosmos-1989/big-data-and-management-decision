@@ -1,0 +1,363 @@
+{
+  "numeric_checks": 57,
+  "passed": true,
+  "checks": [
+    {
+      "name": "订单 A 净收益",
+      "result": "1/2",
+      "expected": "1/2",
+      "passed": true
+    },
+    {
+      "name": "订单 B 净收益",
+      "result": "5/2",
+      "expected": "5/2",
+      "passed": true
+    },
+    {
+      "name": "原计划阈值",
+      "result": "1/6",
+      "expected": "1/6",
+      "passed": true
+    },
+    {
+      "name": "先验下原计划损失",
+      "result": "20",
+      "expected": "20",
+      "passed": true
+    },
+    {
+      "name": "先验下转移损失",
+      "result": "17",
+      "expected": "17",
+      "passed": true
+    },
+    {
+      "name": "联合概率四格总和",
+      "result": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "阳性概率",
+      "result": "6/25",
+      "expected": "6/25",
+      "passed": true
+    },
+    {
+      "name": "阴性概率",
+      "result": "19/25",
+      "expected": "19/25",
+      "passed": true
+    },
+    {
+      "name": "阳性中断后验",
+      "result": "2/3",
+      "expected": "2/3",
+      "passed": true
+    },
+    {
+      "name": "阴性中断后验",
+      "result": "1/19",
+      "expected": "1/19",
+      "passed": true
+    },
+    {
+      "name": "检测后期望损失",
+      "result": "46/5",
+      "expected": "46/5",
+      "passed": true
+    },
+    {
+      "name": "样本信息价值",
+      "result": "39/5",
+      "expected": "39/5",
+      "passed": true
+    },
+    {
+      "name": "完全信息期望损失",
+      "result": "5",
+      "expected": "5",
+      "passed": true
+    },
+    {
+      "name": "完全信息价值",
+      "result": "12",
+      "expected": "12",
+      "passed": true
+    },
+    {
+      "name": "检测净收益",
+      "result": "9/5",
+      "expected": "9/5",
+      "passed": true
+    },
+    {
+      "name": "检测与逐次集成净收益",
+      "result": "-1/5",
+      "expected": "-1/5",
+      "passed": true
+    },
+    {
+      "name": "后验平均还原先验",
+      "result": "1/5",
+      "expected": "1/5",
+      "passed": true
+    },
+    {
+      "name": "两期维护不维护总成本",
+      "result": "12",
+      "expected": "12",
+      "passed": true
+    },
+    {
+      "name": "两期维护总成本",
+      "result": "10",
+      "expected": "10",
+      "passed": true
+    },
+    {
+      "name": "策略 A 平均时间",
+      "result": "100",
+      "expected": "100",
+      "passed": true
+    },
+    {
+      "name": "策略 B 平均时间",
+      "result": "98",
+      "expected": "98",
+      "passed": true
+    },
+    {
+      "name": "配对平均时间差",
+      "result": "-2",
+      "expected": "-2",
+      "passed": true
+    },
+    {
+      "name": "任务时间节省率",
+      "result": "2/5",
+      "expected": "2/5",
+      "passed": true
+    },
+    {
+      "name": "任务吞吐提升率",
+      "result": "2/3",
+      "expected": "2/3",
+      "passed": true
+    },
+    {
+      "name": "两日 OTD 等权率",
+      "result": "7/10",
+      "expected": "7/10",
+      "passed": true
+    },
+    {
+      "name": "两日 OTD 总体率",
+      "result": "19/22",
+      "expected": "19/22",
+      "passed": true
+    },
+    {
+      "name": "低精度最优权重与努力",
+      "result": "1/4",
+      "expected": "1/4",
+      "passed": true
+    },
+    {
+      "name": "高精度最优权重与努力",
+      "result": "1/2",
+      "expected": "1/2",
+      "passed": true
+    },
+    {
+      "name": "多任务价值 β=0",
+      "result": "2",
+      "expected": "2",
+      "passed": true
+    },
+    {
+      "name": "多任务价值 β=κ",
+      "result": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "局部加速新时间",
+      "result": "91/100",
+      "expected": "91/100",
+      "passed": true
+    },
+    {
+      "name": "局部加速总体上界",
+      "result": "10/9",
+      "expected": "10/9",
+      "passed": true
+    },
+    {
+      "name": "局部加速总体加速比",
+      "result": "100/91",
+      "expected": "100/91",
+      "passed": true
+    },
+    {
+      "name": "区域收入北区",
+      "result": "190",
+      "expected": "190",
+      "passed": true
+    },
+    {
+      "name": "区域收入南区",
+      "result": "100",
+      "expected": "100",
+      "passed": true
+    },
+    {
+      "name": "产线等权良率",
+      "result": "17/20",
+      "expected": "17/20",
+      "passed": true
+    },
+    {
+      "name": "整体产品良率",
+      "result": "81/100",
+      "expected": "81/100",
+      "passed": true
+    },
+    {
+      "name": "单节拍 OEE 因子乘积",
+      "result": "57/80",
+      "expected": "57/80",
+      "passed": true
+    },
+    {
+      "name": "单节拍 OEE 直接式",
+      "result": "57/80",
+      "expected": "57/80",
+      "passed": true
+    },
+    {
+      "name": "异质节拍件数错误式",
+      "result": "23/40",
+      "expected": "23/40",
+      "passed": true
+    },
+    {
+      "name": "异质节拍理想工时正确式",
+      "result": "19/40",
+      "expected": "19/40",
+      "passed": true
+    },
+    {
+      "name": "WIP 等状态均值",
+      "result": "75",
+      "expected": "75",
+      "passed": true
+    },
+    {
+      "name": "WIP 时间均值",
+      "result": "250/3",
+      "expected": "250/3",
+      "passed": true
+    },
+    {
+      "name": "到期队列 OTD",
+      "result": "1/2",
+      "expected": "1/2",
+      "passed": true
+    },
+    {
+      "name": "已交付队列 OTD",
+      "result": "2/3",
+      "expected": "2/3",
+      "passed": true
+    },
+    {
+      "name": "订单等权毛利率",
+      "result": "3/10",
+      "expected": "3/10",
+      "passed": true
+    },
+    {
+      "name": "总体收入毛利率",
+      "result": "7/50",
+      "expected": "7/50",
+      "passed": true
+    },
+    {
+      "name": "三笔移动窗口",
+      "result": "[100, 300, 600, 900]",
+      "expected": "[100, 300, 600, 900]",
+      "passed": true
+    },
+    {
+      "name": "四笔累计收入",
+      "result": "1000",
+      "expected": "1000",
+      "passed": true
+    },
+    {
+      "name": "WHERE 过滤地区收入",
+      "result": "{'南区': 150.0}",
+      "expected": "{'南区': 150}",
+      "passed": true
+    },
+    {
+      "name": "HAVING 过滤地区收入",
+      "result": "{'北区': 120.0, '南区': 150.0}",
+      "expected": "{'北区': 120, '南区': 150}",
+      "passed": true
+    },
+    {
+      "name": "区域收入 SQL 输出",
+      "result": "[('北区', 190.0), ('南区', 100.0)]",
+      "expected": "[('北区', 190.0), ('南区', 100.0)]",
+      "passed": true
+    },
+    {
+      "name": "CTE 北区毛利率",
+      "result": "0.5263157894736842",
+      "expected": "0.5263157894736842",
+      "passed": true
+    },
+    {
+      "name": "CTE 南区毛利率",
+      "result": "0.4",
+      "expected": "0.4",
+      "passed": true
+    },
+    {
+      "name": "到期条件聚合 SQL 输出",
+      "result": "[(4, 2, 0.5)]",
+      "expected": "[(4, 2, 0.5)]",
+      "passed": true
+    },
+    {
+      "name": "窗口 SQL 逐行结果",
+      "result": "[100.0, 300.0, 600.0, 900.0]",
+      "expected": "[100.0, 300.0, 600.0, 900.0]",
+      "passed": true
+    },
+    {
+      "name": "零到期队列 SQL 返回未定义",
+      "result": "None",
+      "expected": "None",
+      "passed": true
+    }
+  ],
+  "sql_note": "四份原示范查询在 SQLite 内存数据库执行。仅把标准 SQL 的 DATE 字面量改为 ISO 日期字符串；业务条件、连接、聚合和窗口未改。",
+  "authoritative_sources": {
+    "01_intro": {
+      "sha256": "0bf7c286c46f2c87c5ac95dc21170ff4c04785165dea04647ee7d403b9689d8c",
+      "file": "/Users/sunzy/big-data/docs/textbook/chapters/01_intro.tex"
+    },
+    "02_enterprise_data_model": {
+      "sha256": "f7389f32d9578ab94117354a24746a894d4e3034c0dea4350c4ce6a7b0c23c70",
+      "file": "/Users/sunzy/big-data/docs/textbook/chapters/02_enterprise_data_model.tex"
+    },
+    "03_sql_kpi": {
+      "sha256": "915038afb13f1c850ddc04821dd3638f0aef25f8f836e1a01773d1caeee3a083",
+      "file": "/Users/sunzy/big-data/docs/textbook/chapters/03_sql_kpi.tex"
+    }
+  }
+}

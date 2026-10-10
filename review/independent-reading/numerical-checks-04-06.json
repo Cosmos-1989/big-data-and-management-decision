@@ -1,0 +1,135 @@
+{
+  "checks": [
+    {
+      "name": "Observed order cycle",
+      "actual": "44/17",
+      "expected": "44/17",
+      "pass": true
+    },
+    {
+      "name": "Category-adjusted cycle",
+      "actual": "4",
+      "expected": "4",
+      "pass": true
+    },
+    {
+      "name": "Measurement attenuation noise=4",
+      "actual": "1",
+      "expected": "1",
+      "pass": true
+    },
+    {
+      "name": "Measurement attenuation noise=1",
+      "actual": "8/5",
+      "expected": "8/5",
+      "pass": true
+    },
+    {
+      "name": "Little time area",
+      "actual": "4",
+      "expected": "4",
+      "pass": true
+    },
+    {
+      "name": "Little object area",
+      "actual": "4",
+      "expected": "4",
+      "pass": true
+    },
+    {
+      "name": "Kingman ca=cs=1",
+      "actual": "2/5",
+      "expected": "2/5",
+      "pass": true
+    },
+    {
+      "name": "Kingman ca=cs=.5",
+      "actual": "1/10",
+      "expected": "1/10",
+      "pass": true
+    },
+    {
+      "name": "Randomization mean",
+      "actual": "1/4",
+      "expected": "1/4",
+      "pass": true
+    },
+    {
+      "name": "Randomization enumeration variance",
+      "actual": "11/48",
+      "expected": "11/48",
+      "pass": true
+    },
+    {
+      "name": "Y0 finite variance",
+      "actual": "1/3",
+      "expected": "1/3",
+      "pass": true
+    },
+    {
+      "name": "Y1 finite variance",
+      "actual": "1/4",
+      "expected": "1/4",
+      "pass": true
+    },
+    {
+      "name": "Effect finite variance",
+      "actual": "1/4",
+      "expected": "1/4",
+      "pass": true
+    },
+    {
+      "name": "Neyman exact variance",
+      "actual": "11/48",
+      "expected": "11/48",
+      "pass": true
+    },
+    {
+      "name": "Omitting effect variance",
+      "actual": "7/24",
+      "expected": "7/24",
+      "pass": true
+    },
+    {
+      "name": "Time-uniform radius",
+      "actual": "0.09487383810763891",
+      "expected": "0.09487383810763891",
+      "pass": true
+    },
+    {
+      "name": "Fixed-time radius",
+      "actual": "0.04294694083467376",
+      "expected": "0.04294694083467376",
+      "pass": true
+    },
+    {
+      "name": "Checkout SE-squared",
+      "actual": "1/40",
+      "expected": "1/40",
+      "pass": true
+    },
+    {
+      "name": "Checkout Wald two-sided p",
+      "actual": "0.2059032107320683",
+      "expected": "0.2059032107320683",
+      "pass": true
+    },
+    {
+      "name": "Cluster SE multiplier",
+      "actual": "2.4289915602982237",
+      "expected": "2.4289915602982237",
+      "pass": true
+    }
+  ],
+  "passed": 20,
+  "total": 20,
+  "all_pass": true,
+  "randomization_differences": [
+    "-1/2",
+    "0",
+    "0",
+    "1/2",
+    "1/2",
+    "1"
+  ]
+}

@@ -1,0 +1,3928 @@
+{
+  "status": "pass-with-no-required-content-fixes",
+  "scope": "全403页结构、公式及讲义链接复核；核对三组逐页审查记录覆盖；重点复读新增页与关键推导，检查相对代理稿的最终差异。数值结果采用已完成的三组独立复算记录，未重复全量计算。",
+  "slidesPath": "/Users/sunzy/big-data/website/dist/content/lecture-slides.json",
+  "slidesSha256": "11da69319639414bc575a2e12d967ba44cba43ca4a36043b8f9a7debd60d25d3",
+  "counts": {
+    "lectures": 10,
+    "originalPages": 360,
+    "finalPages": 403,
+    "addedPages": 43,
+    "revisedOriginalPagesReported": 138,
+    "perLecture": {
+      "01_intro": 37,
+      "02_enterprise_data_model": 33,
+      "03_sql_kpi": 38,
+      "04_data_quality": 43,
+      "05_statistics_dashboard": 45,
+      "06_ab_testing": 44,
+      "07_prediction": 39,
+      "08_causality": 42,
+      "09_optimization": 37,
+      "10_process_mining": 45
+    },
+    "numericAndSqlChecks": 123,
+    "formulaCount": 1960
+  },
+  "coverage": {
+    "pageAuditRecords": 403,
+    "matchedFinalPageRecords": 403,
+    "validLectureReferences": 403,
+    "allCurrentAuthorityHashesMatchManifest": true
+  },
+  "checks": {
+    "lectures": 10,
+    "pages": 403,
+    "formulas": 1960,
+    "errors": []
+  },
+  "numericEvidence": [
+    {
+      "file": "/private/tmp/bdm-slide-independent/numeric-01-03.json",
+      "count": 57,
+      "allPassed": true
+    },
+    {
+      "file": "/private/tmp/bdm-slide-independent/numerical-checks-04-06.json",
+      "count": 20,
+      "allPassed": true
+    },
+    {
+      "file": "/private/tmp/bdm-slide-independent/numeric-07-10.json",
+      "count": 46,
+      "allPassed": true
+    }
+  ],
+  "authorityHashes": [
+    {
+      "chapter": "01_intro",
+      "path": "docs/textbook/chapters/01_intro.tex",
+      "currentSha256": "0bf7c286c46f2c87c5ac95dc21170ff4c04785165dea04647ee7d403b9689d8c",
+      "manifestSha256": "0bf7c286c46f2c87c5ac95dc21170ff4c04785165dea04647ee7d403b9689d8c",
+      "matches": true
+    },
+    {
+      "chapter": "02_enterprise_data_model",
+      "path": "docs/textbook/chapters/02_enterprise_data_model.tex",
+      "currentSha256": "f7389f32d9578ab94117354a24746a894d4e3034c0dea4350c4ce6a7b0c23c70",
+      "manifestSha256": "f7389f32d9578ab94117354a24746a894d4e3034c0dea4350c4ce6a7b0c23c70",
+      "matches": true
+    },
+    {
+      "chapter": "03_sql_kpi",
+      "path": "docs/textbook/chapters/03_sql_kpi.tex",
+      "currentSha256": "915038afb13f1c850ddc04821dd3638f0aef25f8f836e1a01773d1caeee3a083",
+      "manifestSha256": "915038afb13f1c850ddc04821dd3638f0aef25f8f836e1a01773d1caeee3a083",
+      "matches": true
+    },
+    {
+      "chapter": "04_data_quality",
+      "path": "docs/textbook/chapters/04_data_quality.tex",
+      "currentSha256": "5346054b99fe8f4c1105cc22a3064ee640f3784105a45bb94d70c43afcf3a26a",
+      "manifestSha256": "5346054b99fe8f4c1105cc22a3064ee640f3784105a45bb94d70c43afcf3a26a",
+      "matches": true
+    },
+    {
+      "chapter": "05_statistics_dashboard",
+      "path": "docs/textbook/chapters/05_statistics_dashboard.tex",
+      "currentSha256": "62b1c387fa337f75b031cc12a62e29738bb8b18c7dae6a81fc6c458506e9739d",
+      "manifestSha256": "62b1c387fa337f75b031cc12a62e29738bb8b18c7dae6a81fc6c458506e9739d",
+      "matches": true
+    },
+    {
+      "chapter": "06_ab_testing",
+      "path": "docs/textbook/chapters/06_ab_testing.tex",
+      "currentSha256": "7118181ccc3fe93b649f2df68109eb0f1054e04ba23d877b3ba56710c8632fae",
+      "manifestSha256": "7118181ccc3fe93b649f2df68109eb0f1054e04ba23d877b3ba56710c8632fae",
+      "matches": true
+    },
+    {
+      "chapter": "07_prediction",
+      "path": "docs/textbook/chapters/07_prediction.tex",
+      "currentSha256": "460fe998f1caff7ae9d79a32f49271f04a7bb9341549e7896e459c0c527f1014",
+      "manifestSha256": "460fe998f1caff7ae9d79a32f49271f04a7bb9341549e7896e459c0c527f1014",
+      "matches": true
+    },
+    {
+      "chapter": "08_causality",
+      "path": "docs/textbook/chapters/08_causality.tex",
+      "currentSha256": "e60a5c4a14e0f2814e059f9e7ae1c21aacc9f3fdf304c6b525418e0fccfeb848",
+      "manifestSha256": "e60a5c4a14e0f2814e059f9e7ae1c21aacc9f3fdf304c6b525418e0fccfeb848",
+      "matches": true
+    },
+    {
+      "chapter": "09_optimization",
+      "path": "docs/textbook/chapters/09_optimization.tex",
+      "currentSha256": "fcd34ed2f3a02abf7426b56c62e4c620c1a0a11bcc283809aef6abd942dbb694",
+      "manifestSha256": "fcd34ed2f3a02abf7426b56c62e4c620c1a0a11bcc283809aef6abd942dbb694",
+      "matches": true
+    },
+    {
+      "chapter": "10_process_mining",
+      "path": "docs/textbook/chapters/10_process_mining.tex",
+      "currentSha256": "6a22a33c37b9a74d00df5bfe13ce2ff28133ce904c60d1d6847ba4ab88bb35db",
+      "manifestSha256": "6a22a33c37b9a74d00df5bfe13ce2ff28133ce904c60d1d6847ba4ab88bb35db",
+      "matches": true
+    }
+  ],
+  "finalVersusAgentChanges": [
+    {
+      "chapter": "03_sql_kpi",
+      "page": 15,
+      "title": "良率与周期的权重",
+      "fields": [
+        "density"
+      ]
+    },
+    {
+      "chapter": "05_statistics_dashboard",
+      "page": 14,
+      "title": "固定组合算例：量化两类变化",
+      "fields": [
+        "body"
+      ]
+    },
+    {
+      "chapter": "05_statistics_dashboard",
+      "page": 29,
+      "title": "连续最优服务能力的推导",
+      "fields": [
+        "density"
+      ]
+    },
+    {
+      "chapter": "06_ab_testing",
+      "page": 3,
+      "title": "总体参数、估计量与标准误",
+      "fields": [
+        "density"
+      ]
+    },
+    {
+      "chapter": "06_ab_testing",
+      "page": 7,
+      "title": "完全随机分配下的差异估计",
+      "fields": [
+        "equation"
+      ]
+    },
+    {
+      "chapter": "06_ab_testing",
+      "page": 12,
+      "title": "同一算例的两种方差计算",
+      "fields": [
+        "workedExample"
+      ]
+    },
+    {
+      "chapter": "06_ab_testing",
+      "page": 31,
+      "title": "持续查看需要怎样的精度代价",
+      "fields": [
+        "body"
+      ]
+    },
+    {
+      "chapter": "07_prediction",
+      "page": 19,
+      "title": "准确率与 F1 的完整复算",
+      "fields": [
+        "density"
+      ]
+    },
+    {
+      "chapter": "09_optimization",
+      "page": 29,
+      "title": "库存实验：四产品的经济参数",
+      "fields": [
+        "density"
+      ]
+    },
+    {
+      "chapter": "09_optimization",
+      "page": 30,
+      "title": "库存实验：数量范围与资源占用",
+      "fields": [
+        "density"
+      ]
+    },
+    {
+      "chapter": "09_optimization",
+      "page": 31,
+      "title": "库存实验：三点需求与概率",
+      "fields": [
+        "density"
+      ]
+    },
+    {
+      "chapter": "10_process_mining",
+      "page": 11,
+      "title": "同一条边：三次转移、两个订单",
+      "fields": [
+        "density"
+      ]
+    },
+    {
+      "chapter": "10_process_mining",
+      "page": 15,
+      "title": "发货变迁：两个条件必须同时满足",
+      "fields": [
+        "density"
+      ]
+    },
+    {
+      "chapter": "10_process_mining",
+      "page": 23,
+      "title": "教学日志：边频次与时间对照",
+      "fields": [
+        "density"
+      ]
+    }
+  ],
+  "semanticReview": [
+    {
+      "chapters": "01",
+      "focus": "损失矩阵、联合概率、后验、条件择优及两期维护",
+      "result": "题设、概率、成本单位、阈值和基准策略均明确；EVSI先条件择优再平均，非负性所需可忽略信号/行动不变/期望有限已声明；两期算例从末期反推，可独立复算。"
+    },
+    {
+      "chapters": "02",
+      "focus": "键/函数依赖/第三范式和委托代理推导",
+      "result": "候选键与主属性在名称冗余例前定义；分解同时解释键覆盖与历史版本。正态/CARA、努力约束、参与约束和固定工资无下界等条件均在合同链条中出现，β=0与负权重情形区分清楚。"
+    },
+    {
+      "chapters": "03",
+      "focus": "区域收入、WHERE/HAVING与逐行窗口",
+      "result": "输入小表、聚合对象及输出变换明确；窗口首段与移动/累计区别可直接复算。完整SQL保留注释和业务条件；独立SQL执行证据来自57项复算组。"
+    },
+    {
+      "chapters": "04",
+      "focus": "选择性缺失、类别权重、测量衰减及部分识别",
+      "result": "总体/已记录对象分开，MAR调整需全对象类别信息与正记录机会；测量噪声与X/扰动独立等条件明确；识别区间和抽样区间没有混同。"
+    },
+    {
+      "chapters": "05",
+      "focus": "组合分解、Little面积论证、M/M/1和Kingman、能力成本最优",
+      "result": "固定权重的恒等分解与因果归因区分；面积式保留边界修正及消失条件；排队模型给到达/服务、独立、负荷与稳态条件，等待/系统时间分开。能力目标包含成本单位、凸性与边界发散，算例完整。"
+    },
+    {
+      "chapters": "06",
+      "focus": "有限总体随机化小表、穷举方差、区间/p值及持续监测",
+      "result": "四单元潜在结果与六种等概率分配明确；11页说明Neyman省略项在期望上保守而非逐次保证。最终12页新增的显式穷举式与同页已声明六个差异和11/48一致。序贯区间按全部时点错误预算构造，单臂与双臂条件分开；小样本Wald结果标明近似。"
+    },
+    {
+      "chapters": "07",
+      "focus": "损失、交叉验证、指标/校准、共形覆盖及客户实验",
+      "result": "共形保证补可交换性与联合秩论证，边际覆盖没有写成条件保证。F1、校准表和预测数据步骤可独立理解；客户行动参数明确为额外收益/效果假设。"
+    },
+    {
+      "chapters": "08",
+      "focus": "IPW手算、双重稳健、局部正交性与DID反事实",
+      "result": "两组校正抵消、偏差乘积和小扰动的二阶结构连贯；ESS权重集中算例可复算。DID反事实0.6250与7.75个百分点均对应声明趋势条件；结果编码方向和目标人群平均方式明确。"
+    },
+    {
+      "chapters": "09",
+      "focus": "库存四表与整数模型、对偶/CVaR/决策后悔",
+      "result": "完整四产品经济、数量、资源及需求输入可直接重建模型；线性期望不强加需求独立。三并列最优不误称唯一；尾部分位质量与条件平均区别准确；后悔明确成本最小化和共同可行集。"
+    },
+    {
+      "chapters": "10",
+      "focus": "微型日志、Petri令牌、两状态模型与执行恢复",
+      "result": "全部小日志时刻、相邻转移与分母明确；状态公式后有完整令牌例；Markov性质和Q行和不足的含义已解释，两状态方程可复算。最终设备规范/事实/授权与请求受理/业务确认区分清楚。"
+    }
+  ],
+  "requiredContentFixes": [],
+  "limitations": [
+    "本报告是内容及结构复核；403页实际宋体版面、字体嵌入、手机/授课模式视觉审核由主任务完成。",
+    "逐页深度初审由三个代理完成，本轮跨讲复核重点检查新增和关键推导，不声称再次全面重做所有原始计算。"
+  ],
+  "pageStructureAudit": [
+    {
+      "chapter": "01_intro",
+      "page": 1,
+      "title": "从经营症状到管理决策",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "split"
+    },
+    {
+      "chapter": "01_intro",
+      "page": 2,
+      "title": "决策任务的基本要素",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "split"
+    },
+    {
+      "chapter": "01_intro",
+      "page": 3,
+      "title": "记录、估计与选择",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "split"
+    },
+    {
+      "chapter": "01_intro",
+      "page": 4,
+      "title": "商业智能、决策支持与决策智能",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "split"
+    },
+    {
+      "chapter": "01_intro",
+      "page": 5,
+      "title": "对象、行动范围与指标口径",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "split"
+    },
+    {
+      "chapter": "01_intro",
+      "page": 6,
+      "title": "绩效目标与基准策略",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "split"
+    },
+    {
+      "chapter": "01_intro",
+      "page": 7,
+      "title": "条件期望损失与行动选择",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "01_intro",
+      "page": 8,
+      "title": "期望损失公式的读法",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "01_intro",
+      "page": 9,
+      "title": "风险预测与干预收益",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "01_intro",
+      "page": 10,
+      "title": "订单加急：明确比较条件",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "01_intro",
+      "page": 11,
+      "title": "订单加急：计算预期净收益",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "01_intro",
+      "page": 12,
+      "title": "以损失矩阵评价信息",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "01_intro",
+      "page": 13,
+      "title": "从损失矩阵推导行动阈值",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "01_intro",
+      "page": 14,
+      "title": "先验下的最优基准行动",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "01_intro",
+      "page": 15,
+      "title": "检测信号的总体概率",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "01_intro",
+      "page": 16,
+      "title": "状态与检测信号的联合概率",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "01_intro",
+      "page": 17,
+      "title": "由后验概率选择条件行动",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "01_intro",
+      "page": 18,
+      "title": "先条件择优，再取平均",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "01_intro",
+      "page": 19,
+      "title": "样本信息价值与完全信息价值",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "01_intro",
+      "page": 20,
+      "title": "免费信息价值的非负性",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "01_intro",
+      "page": 21,
+      "title": "信息采购：净收益与成本结构",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "01_intro",
+      "page": 22,
+      "title": "更精确信息何时没有决策价值",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "01_intro",
+      "page": 23,
+      "title": "当前行动与未来状态",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "01_intro",
+      "page": 24,
+      "title": "Bellman 递推：从未来回到当前",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "01_intro",
+      "page": 25,
+      "title": "两期维护：把未来成本写进题设",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "01_intro",
+      "page": 26,
+      "title": "两期维护：从末期反推今日行动",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "01_intro",
+      "page": 27,
+      "title": "分析任务与证据边界",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "01_intro",
+      "page": 28,
+      "title": "CRISP-DM：组织可检验的迭代",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "01_intro",
+      "page": 29,
+      "title": "任务规格与分层验收",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "01_intro",
+      "page": 30,
+      "title": "交付决策的完整证据链",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "split"
+    },
+    {
+      "chapter": "01_intro",
+      "page": 31,
+      "title": "Skywise：关联维护事实",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "split"
+    },
+    {
+      "chapter": "01_intro",
+      "page": 32,
+      "title": "维护决策的简化成本比较",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "01_intro",
+      "page": 33,
+      "title": "赛事仿真：比较候选策略",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "split"
+    },
+    {
+      "chapter": "01_intro",
+      "page": 34,
+      "title": "用蒙特卡罗估计策略损失",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "01_intro",
+      "page": 35,
+      "title": "配对仿真：平均时间差的计算",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "01_intro",
+      "page": 36,
+      "title": "生产率改善须固定分母与质量",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "01_intro",
+      "page": 37,
+      "title": "检验一个决策任务是否完整",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "split"
+    },
+    {
+      "chapter": "02_enterprise_data_model",
+      "page": 1,
+      "title": "统一身份与业务含义",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "split"
+    },
+    {
+      "chapter": "02_enterprise_data_model",
+      "page": 2,
+      "title": "数据模型与治理责任",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "split"
+    },
+    {
+      "chapter": "02_enterprise_data_model",
+      "page": 3,
+      "title": "企业 AI 系统的六项职能",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "02_enterprise_data_model",
+      "page": 4,
+      "title": "存储、语义与权限",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "split"
+    },
+    {
+      "chapter": "02_enterprise_data_model",
+      "page": 5,
+      "title": "从业务概念到可观察记录",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "split"
+    },
+    {
+      "chapter": "02_enterprise_data_model",
+      "page": 6,
+      "title": "企业数据的六类语义",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "02_enterprise_data_model",
+      "page": 7,
+      "title": "关系模式与记录身份",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "02_enterprise_data_model",
+      "page": 8,
+      "title": "键与三类完整性约束",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "split"
+    },
+    {
+      "chapter": "02_enterprise_data_model",
+      "page": 9,
+      "title": "关系基数与模型层次",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "02_enterprise_data_model",
+      "page": 10,
+      "title": "制造对象与事件历史",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "02_enterprise_data_model",
+      "page": 11,
+      "title": "函数依赖与第三范式",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "02_enterprise_data_model",
+      "page": 12,
+      "title": "订单行中的名称冗余",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "02_enterprise_data_model",
+      "page": 13,
+      "title": "无损连接与历史解释",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "02_enterprise_data_model",
+      "page": 14,
+      "title": "事务模型与星型模型",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "split"
+    },
+    {
+      "chapter": "02_enterprise_data_model",
+      "page": 15,
+      "title": "事实粒度决定指标范围",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "02_enterprise_data_model",
+      "page": 16,
+      "title": "制造 KPI 的事实基础",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "02_enterprise_data_model",
+      "page": 17,
+      "title": "度量的可加性与比率汇总",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "02_enterprise_data_model",
+      "page": 18,
+      "title": "双时间：历史事实与历史知识",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "split"
+    },
+    {
+      "chapter": "02_enterprise_data_model",
+      "page": 19,
+      "title": "授权操作与状态核验",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "split"
+    },
+    {
+      "chapter": "02_enterprise_data_model",
+      "page": 20,
+      "title": "语义层约束自然语言问数",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "split"
+    },
+    {
+      "chapter": "02_enterprise_data_model",
+      "page": 21,
+      "title": "为何准确记录仍不足以保证合理激励",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "02_enterprise_data_model",
+      "page": 22,
+      "title": "产出信号、合同与风险成本",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "02_enterprise_data_model",
+      "page": 23,
+      "title": "确定性等价收入的推导",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "02_enterprise_data_model",
+      "page": 24,
+      "title": "代理人的最优努力",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "02_enterprise_data_model",
+      "page": 25,
+      "title": "参与约束与企业收益",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "02_enterprise_data_model",
+      "page": 26,
+      "title": "最优线性激励强度",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "02_enterprise_data_model",
+      "page": 27,
+      "title": "测量噪声与合同权重：数值比较",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "02_enterprise_data_model",
+      "page": 28,
+      "title": "单一奖励与多任务替代",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "02_enterprise_data_model",
+      "page": 29,
+      "title": "真实努力与记录操纵",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "02_enterprise_data_model",
+      "page": 30,
+      "title": "对象关系与元数据目录",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "split"
+    },
+    {
+      "chapter": "02_enterprise_data_model",
+      "page": 31,
+      "title": "局部加速的总体上界",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "02_enterprise_data_model",
+      "page": 32,
+      "title": "总任务时间与局部加速",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "02_enterprise_data_model",
+      "page": 33,
+      "title": "由异常指标复核数据模型",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "split"
+    },
+    {
+      "chapter": "03_sql_kpi",
+      "page": 1,
+      "title": "查询正确性与业务语义",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "split"
+    },
+    {
+      "chapter": "03_sql_kpi",
+      "page": 2,
+      "title": "SQL 的逻辑处理顺序",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "03_sql_kpi",
+      "page": 3,
+      "title": "区域收入查询的业务约定",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "split"
+    },
+    {
+      "chapter": "03_sql_kpi",
+      "page": 4,
+      "title": "区域收入查询：逐层核查",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "split"
+    },
+    {
+      "chapter": "03_sql_kpi",
+      "page": 5,
+      "title": "区域收入：由订单逐步得到结果",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "03_sql_kpi",
+      "page": 6,
+      "title": "关系运算与事实集合",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "03_sql_kpi",
+      "page": 7,
+      "title": "WHERE 与 HAVING 会保留不同事实",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "03_sql_kpi",
+      "page": 8,
+      "title": "SQL 的重复行语义",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "03_sql_kpi",
+      "page": 9,
+      "title": "事务、分析与展示粒度",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "split"
+    },
+    {
+      "chapter": "03_sql_kpi",
+      "page": 10,
+      "title": "连接的唯一性与覆盖性",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "split"
+    },
+    {
+      "chapter": "03_sql_kpi",
+      "page": 11,
+      "title": "连接重复为何放大金额",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "split"
+    },
+    {
+      "chapter": "03_sql_kpi",
+      "page": 12,
+      "title": "指标定义的形式化表示",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "03_sql_kpi",
+      "page": 13,
+      "title": "保留可合并的统计状态",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "split"
+    },
+    {
+      "chapter": "03_sql_kpi",
+      "page": 14,
+      "title": "产线平均与产品整体良率",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "03_sql_kpi",
+      "page": 15,
+      "title": "良率与周期的权重",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "03_sql_kpi",
+      "page": 16,
+      "title": "OEE 的分解与约分",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "03_sql_kpi",
+      "page": 17,
+      "title": "OEE：480 分钟班次算例",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "03_sql_kpi",
+      "page": 18,
+      "title": "多产品 OEE 的工时权重",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "03_sql_kpi",
+      "page": 19,
+      "title": "多节拍 OEE：一个反例",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "03_sql_kpi",
+      "page": 20,
+      "title": "WIP 的时点与时间平均",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "03_sql_kpi",
+      "page": 21,
+      "title": "不等间隔快照如何平均",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "03_sql_kpi",
+      "page": 22,
+      "title": "OTD 的到期承诺队列",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "03_sql_kpi",
+      "page": 23,
+      "title": "到期队列：固定对象与截止点",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "03_sql_kpi",
+      "page": 24,
+      "title": "同一订单记录的两种准时率",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "03_sql_kpi",
+      "page": 25,
+      "title": "到期 OTD 的条件聚合",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "split"
+    },
+    {
+      "chapter": "03_sql_kpi",
+      "page": 26,
+      "title": "零分母、零结果与缺失",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "split"
+    },
+    {
+      "chapter": "03_sql_kpi",
+      "page": 27,
+      "title": "NULL 与三值逻辑",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "03_sql_kpi",
+      "page": 28,
+      "title": "分层查询：订单事实与地区聚合",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "split"
+    },
+    {
+      "chapter": "03_sql_kpi",
+      "page": 29,
+      "title": "毛利率为何使用收入权重",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "03_sql_kpi",
+      "page": 30,
+      "title": "窗口函数与最近三笔订单",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "split"
+    },
+    {
+      "chapter": "03_sql_kpi",
+      "page": 31,
+      "title": "最近三笔窗口：逐行计算",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "03_sql_kpi",
+      "page": 32,
+      "title": "从 KPI 结果到管理解释",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "split"
+    },
+    {
+      "chapter": "03_sql_kpi",
+      "page": 33,
+      "title": "将自然语言规范为查询请求",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "03_sql_kpi",
+      "page": 34,
+      "title": "结果验证与不变量",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "split"
+    },
+    {
+      "chapter": "03_sql_kpi",
+      "page": 35,
+      "title": "受限执行与独立授权",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "split"
+    },
+    {
+      "chapter": "03_sql_kpi",
+      "page": 36,
+      "title": "问数产品的可交付率",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "03_sql_kpi",
+      "page": 37,
+      "title": "本地部署：位置与资源边界",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "03_sql_kpi",
+      "page": 38,
+      "title": "查询复核的完整路径",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "split"
+    },
+    {
+      "chapter": "04_data_quality",
+      "page": 1,
+      "title": "数据质量：从记录条件到决策证据",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "04_data_quality",
+      "page": 2,
+      "title": "准时交付率的统计对象",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "04_data_quality",
+      "page": 3,
+      "title": "指标可信度与证据追溯",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "04_data_quality",
+      "page": 4,
+      "title": "用途适配的数据质量",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "split"
+    },
+    {
+      "chapter": "04_data_quality",
+      "page": 5,
+      "title": "数据生成环节与质量风险",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "04_data_quality",
+      "page": 6,
+      "title": "规则符合性与记录准确性",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "split"
+    },
+    {
+      "chapter": "04_data_quality",
+      "page": 7,
+      "title": "质量维度：覆盖、取值与关系",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "04_data_quality",
+      "page": 8,
+      "title": "质量维度：时间、真实性与来源",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "04_data_quality",
+      "page": 9,
+      "title": "数据剖析与规则检验",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "split"
+    },
+    {
+      "chapter": "04_data_quality",
+      "page": 10,
+      "title": "选择性缺失与均值偏差",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "04_data_quality",
+      "page": 11,
+      "title": "订单算例：选择性回写低估周期",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "04_data_quality",
+      "page": 12,
+      "title": "缺失机制与可用识别条件",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "04_data_quality",
+      "page": 13,
+      "title": "按完整类别权重恢复平均周期",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "04_data_quality",
+      "page": 14,
+      "title": "经典测量误差与斜率衰减",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "04_data_quality",
+      "page": 15,
+      "title": "测量噪声如何影响回归斜率",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "04_data_quality",
+      "page": 16,
+      "title": "缺失结果的部分识别",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "04_data_quality",
+      "page": 17,
+      "title": "识别区间与达标判断",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "04_data_quality",
+      "page": 18,
+      "title": "识别边界依赖已经核实的约束",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "04_data_quality",
+      "page": 19,
+      "title": "比率误差的精确传播",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "04_data_quality",
+      "page": 20,
+      "title": "比率的保守误差界",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "04_data_quality",
+      "page": 21,
+      "title": "良率算例：分母漏记造成偏差",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "04_data_quality",
+      "page": 22,
+      "title": "质量规则与失败行标识",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "04_data_quality",
+      "page": 23,
+      "title": "质量规则的业务解释",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "04_data_quality",
+      "page": 24,
+      "title": "程序示范：定位重复订单编号",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "split"
+    },
+    {
+      "chapter": "04_data_quality",
+      "page": 25,
+      "title": "从记录失败到管理损失",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "04_data_quality",
+      "page": 26,
+      "title": "实际交付日期为空的状态解释",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "04_data_quality",
+      "page": 27,
+      "title": "发布决策的预期损失比较",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "04_data_quality",
+      "page": 28,
+      "title": "治理预算的风险最小化模型",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "04_data_quality",
+      "page": 29,
+      "title": "最优治理投入的边际条件",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "04_data_quality",
+      "page": 30,
+      "title": "确定性误差界与可靠排序",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "04_data_quality",
+      "page": 31,
+      "title": "指标治理：定义、实现与责任",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "04_data_quality",
+      "page": 32,
+      "title": "数据契约、血缘与变更控制",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "04_data_quality",
+      "page": 33,
+      "title": "发布控制与异常严重级别",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "04_data_quality",
+      "page": 34,
+      "title": "数据质量事件响应",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "04_data_quality",
+      "page": 35,
+      "title": "Froedtert 案例：统一定义与责任",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "split"
+    },
+    {
+      "chapter": "04_data_quality",
+      "page": 36,
+      "title": "Assurance 案例：持续质量监测",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "split"
+    },
+    {
+      "chapter": "04_data_quality",
+      "page": 37,
+      "title": "质量事件持续时间与损失",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "04_data_quality",
+      "page": 38,
+      "title": "数据发现、治理流程与敏感信息识别",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "04_data_quality",
+      "page": 39,
+      "title": "检索增强生成的证据质量",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "04_data_quality",
+      "page": 40,
+      "title": "实验任务：订单质量报告",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "split"
+    },
+    {
+      "chapter": "04_data_quality",
+      "page": 41,
+      "title": "实验核对：对象、主数据与数量",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "04_data_quality",
+      "page": 42,
+      "title": "实验核对：枚举、日期与失败计数",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "04_data_quality",
+      "page": 43,
+      "title": "质量报告：从发现到决策依据",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "05_statistics_dashboard",
+      "page": 1,
+      "title": "描述统计与运营解释",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "05_statistics_dashboard",
+      "page": 2,
+      "title": "观测单位决定统计量的含义",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "split"
+    },
+    {
+      "chapter": "05_statistics_dashboard",
+      "page": 3,
+      "title": "经验分布函数",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "05_statistics_dashboard",
+      "page": 4,
+      "title": "同一样本的三种服务含义",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "05_statistics_dashboard",
+      "page": 5,
+      "title": "均值与中位数的管理用途",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "05_statistics_dashboard",
+      "page": 6,
+      "title": "日收入算例：中心位置与高值影响",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "split"
+    },
+    {
+      "chapter": "05_statistics_dashboard",
+      "page": 7,
+      "title": "离散程度与相对波动",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "05_statistics_dashboard",
+      "page": 8,
+      "title": "四分位距与描述性异常",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "05_statistics_dashboard",
+      "page": 9,
+      "title": "收入异常算例：从排序到核查",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "05_statistics_dashboard",
+      "page": 10,
+      "title": "总体比率与分母权重",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "05_statistics_dashboard",
+      "page": 11,
+      "title": "产品组合与总体良率",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "05_statistics_dashboard",
+      "page": 12,
+      "title": "组合反转算例：各族改善而总体下降",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "05_statistics_dashboard",
+      "page": 13,
+      "title": "总体变化的精确分解",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "05_statistics_dashboard",
+      "page": 14,
+      "title": "固定组合算例：量化两类变化",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "05_statistics_dashboard",
+      "page": 15,
+      "title": "后向移动平均与原始时间序列",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "05_statistics_dashboard",
+      "page": 16,
+      "title": "经营目标与统计控制界限",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "05_statistics_dashboard",
+      "page": 17,
+      "title": "二项模型下的近似控制界限",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "05_statistics_dashboard",
+      "page": 18,
+      "title": "控制图算例：越界后调查什么",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "05_statistics_dashboard",
+      "page": 19,
+      "title": "比较基准与经营判断",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "05_statistics_dashboard",
+      "page": 20,
+      "title": "同一停留面积的两种计数",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "split"
+    },
+    {
+      "chapter": "05_statistics_dashboard",
+      "page": 21,
+      "title": "Little 定律的面积论证",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "05_statistics_dashboard",
+      "page": 22,
+      "title": "在制量、吞吐率与平均周期",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "05_statistics_dashboard",
+      "page": 23,
+      "title": "单服务台模型中的利用率与等待",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "05_statistics_dashboard",
+      "page": 24,
+      "title": "稳态在制量的推导",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "05_statistics_dashboard",
+      "page": 25,
+      "title": "负荷算例：利用率与系统时间",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "05_statistics_dashboard",
+      "page": 26,
+      "title": "变异性与 Kingman 等待近似",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "05_statistics_dashboard",
+      "page": 27,
+      "title": "同等负荷下，变异性怎样影响等待",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "05_statistics_dashboard",
+      "page": 28,
+      "title": "能力成本与在制成本的权衡",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "05_statistics_dashboard",
+      "page": 29,
+      "title": "连续最优服务能力的推导",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "05_statistics_dashboard",
+      "page": 30,
+      "title": "能力算例：总成本率的比较",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "05_statistics_dashboard",
+      "page": 31,
+      "title": "人工智能服务的测量边界",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "05_statistics_dashboard",
+      "page": 32,
+      "title": "无排队服务时间的构成",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "05_statistics_dashboard",
+      "page": 33,
+      "title": "平均并发与服务位置占用",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "05_statistics_dashboard",
+      "page": 34,
+      "title": "请求费用与成功任务成本",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "05_statistics_dashboard",
+      "page": 35,
+      "title": "视觉编码与比较任务",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "05_statistics_dashboard",
+      "page": 36,
+      "title": "从统计摘要到可下钻看板",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "05_statistics_dashboard",
+      "page": 37,
+      "title": "看板类型与使用任务",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "05_statistics_dashboard",
+      "page": 38,
+      "title": "看板的运营维护与复核",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "05_statistics_dashboard",
+      "page": 39,
+      "title": "Rolls-Royce 案例：服务与备件看板",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "05_statistics_dashboard",
+      "page": 40,
+      "title": "制造看板的分层分析次序",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "05_statistics_dashboard",
+      "page": 41,
+      "title": "人工智能辅助图表解释的核查",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "05_statistics_dashboard",
+      "page": 42,
+      "title": "实验任务：日运营统计与看板",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "05_statistics_dashboard",
+      "page": 43,
+      "title": "实验核对：完整样本的预期摘要",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "05_statistics_dashboard",
+      "page": 44,
+      "title": "管理解释的证据层次",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "05_statistics_dashboard",
+      "page": 45,
+      "title": "可复核的运营看板",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "06_ab_testing",
+      "page": 1,
+      "title": "随机实验如何支持推广决策",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "06_ab_testing",
+      "page": 2,
+      "title": "描述、统计推断、因果评价与决策",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "06_ab_testing",
+      "page": 3,
+      "title": "总体参数、估计量与标准误",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "06_ab_testing",
+      "page": 4,
+      "title": "样本规模与估计精度",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "06_ab_testing",
+      "page": 5,
+      "title": "随机实验的基本要素",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "06_ab_testing",
+      "page": 6,
+      "title": "潜在结果与平均处理效应",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "06_ab_testing",
+      "page": 7,
+      "title": "完全随机分配下的差异估计",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "06_ab_testing",
+      "page": 8,
+      "title": "无偏性的入组概率证明",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "06_ab_testing",
+      "page": 9,
+      "title": "四个单元：真效应与可见结果",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "split"
+    },
+    {
+      "chapter": "06_ab_testing",
+      "page": 10,
+      "title": "穷举随机分配，核查无偏性",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "split"
+    },
+    {
+      "chapter": "06_ab_testing",
+      "page": 11,
+      "title": "Neyman 随机化方差",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "06_ab_testing",
+      "page": 12,
+      "title": "同一算例的两种方差计算",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "06_ab_testing",
+      "page": 13,
+      "title": "两组差异的标准误与近似区间",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "06_ab_testing",
+      "page": 14,
+      "title": "p 值的统计含义",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "split"
+    },
+    {
+      "chapter": "06_ab_testing",
+      "page": 15,
+      "title": "置信水平与区间解释",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "06_ab_testing",
+      "page": 16,
+      "title": "效应幅度、估计精度与业务阈值",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "06_ab_testing",
+      "page": 17,
+      "title": "差异、非劣效与等效性研究",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "06_ab_testing",
+      "page": 18,
+      "title": "显著性水平、功效与可检测效应",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "split"
+    },
+    {
+      "chapter": "06_ab_testing",
+      "page": 19,
+      "title": "两组比例实验的样本量规划",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "06_ab_testing",
+      "page": 20,
+      "title": "主指标与约束指标",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "split"
+    },
+    {
+      "chapter": "06_ab_testing",
+      "page": 21,
+      "title": "预先规定的推广证据标准",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "06_ab_testing",
+      "page": 22,
+      "title": "CUPED：利用实验前信息降低方差",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "06_ab_testing",
+      "page": 23,
+      "title": "最优线性调整系数",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "06_ab_testing",
+      "page": 24,
+      "title": "方差缩减的数量级",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "06_ab_testing",
+      "page": 25,
+      "title": "整群随机化与分析层级",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "06_ab_testing",
+      "page": 26,
+      "title": "集群内相关与设计效应",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "06_ab_testing",
+      "page": 27,
+      "title": "实验质量检查",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "06_ab_testing",
+      "page": 28,
+      "title": "重复查看与多重比较",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "split"
+    },
+    {
+      "chapter": "06_ab_testing",
+      "page": 29,
+      "title": "置信序列：对持续查看的错误控制",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "06_ab_testing",
+      "page": 30,
+      "title": "置信序列的并集界证明",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "06_ab_testing",
+      "page": 31,
+      "title": "持续查看需要怎样的精度代价",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "06_ab_testing",
+      "page": 32,
+      "title": "两臂持续监测的效应区间",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "06_ab_testing",
+      "page": 33,
+      "title": "统计效应与经济盈亏阈值",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "06_ab_testing",
+      "page": 34,
+      "title": "Microsoft 案例：可信实验的组织条件",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "06_ab_testing",
+      "page": 35,
+      "title": "查询系统的成对比较",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "06_ab_testing",
+      "page": 36,
+      "title": "智能体运营试点的分配设计",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "06_ab_testing",
+      "page": 37,
+      "title": "内部有效性与外部适用性",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "split"
+    },
+    {
+      "chapter": "06_ab_testing",
+      "page": 38,
+      "title": "结账页实验：输入与分析任务",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "06_ab_testing",
+      "page": 39,
+      "title": "结账页实验：转化差异的估计",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "06_ab_testing",
+      "page": 40,
+      "title": "转化差异的标准误与区间",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "06_ab_testing",
+      "page": 41,
+      "title": "结账页实验：从差异到双侧 p 值",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "06_ab_testing",
+      "page": 42,
+      "title": "结账页实验：收益与风险的完整结果",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "06_ab_testing",
+      "page": 43,
+      "title": "结账页实验：下一轮设计",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "06_ab_testing",
+      "page": 44,
+      "title": "可信实验报告的论证结构",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "07_prediction",
+      "page": 1,
+      "title": "预测任务：从当前信息到未来结果",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "07_prediction",
+      "page": 2,
+      "title": "监督学习的统计对象",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "07_prediction",
+      "page": 3,
+      "title": "分析任务及其结论边界",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "07_prediction",
+      "page": 4,
+      "title": "标签窗口与特征截止时点",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "07_prediction",
+      "page": 5,
+      "title": "损失函数与经验风险",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "07_prediction",
+      "page": 6,
+      "title": "同样判为正类，概率损失仍不同",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "07_prediction",
+      "page": 7,
+      "title": "平方损失为何得到条件均值",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "07_prediction",
+      "page": 8,
+      "title": "对数损失与真实条件概率",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "07_prediction",
+      "page": 9,
+      "title": "逻辑回归：线性分数到事件概率",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "07_prediction",
+      "page": 10,
+      "title": "服务承诺与条件分位数",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "07_prediction",
+      "page": 11,
+      "title": "随机森林如何形成多个预测",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "07_prediction",
+      "page": 12,
+      "title": "集成方差与误差相关性",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "07_prediction",
+      "page": 13,
+      "title": "梯度提升的逐步更新",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "07_prediction",
+      "page": 14,
+      "title": "训练、验证与最终测试",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "07_prediction",
+      "page": 15,
+      "title": "交叉验证：轮换训练与验证",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "07_prediction",
+      "page": 16,
+      "title": "时间切分与重复观测",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "split"
+    },
+    {
+      "chapter": "07_prediction",
+      "page": 17,
+      "title": "新样本误差的偏差—方差分解",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "07_prediction",
+      "page": 18,
+      "title": "分类阈值与混淆矩阵",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "07_prediction",
+      "page": 19,
+      "title": "准确率与 F1 的完整复算",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "07_prediction",
+      "page": 20,
+      "title": "排序能力与概率校准",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "07_prediction",
+      "page": 21,
+      "title": "校准表如何检查概率的数值意义",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "07_prediction",
+      "page": 22,
+      "title": "分类阈值的成本推导",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "07_prediction",
+      "page": 23,
+      "title": "留存行动的预期净价值",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "07_prediction",
+      "page": 24,
+      "title": "高风险与高净价值的反例",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "split"
+    },
+    {
+      "chapter": "07_prediction",
+      "page": 25,
+      "title": "分割共形预测的构造",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "07_prediction",
+      "page": 26,
+      "title": "覆盖保证来自未来残差的秩",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "07_prediction",
+      "page": 27,
+      "title": "共形区间的有限样本算例",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "split"
+    },
+    {
+      "chapter": "07_prediction",
+      "page": 28,
+      "title": "模型解释与因果机制",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "split"
+    },
+    {
+      "chapter": "07_prediction",
+      "page": 29,
+      "title": "基础模型的任务级比较",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "07_prediction",
+      "page": 30,
+      "title": "航空备件：四种预测任务",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "07_prediction",
+      "page": 31,
+      "title": "自动建模与选择偏差",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "07_prediction",
+      "page": 32,
+      "title": "推理服务的键值缓存",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "07_prediction",
+      "page": 33,
+      "title": "键值缓存的容量核算",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "07_prediction",
+      "page": 34,
+      "title": "客户流失实验：输入与学习过程",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "07_prediction",
+      "page": 35,
+      "title": "客户流失：复算测试指标",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "split"
+    },
+    {
+      "chapter": "07_prediction",
+      "page": 36,
+      "title": "客户行动价值：收益假设与费用",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "07_prediction",
+      "page": 37,
+      "title": "客户名单：风险与行动价值",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "split"
+    },
+    {
+      "chapter": "07_prediction",
+      "page": 38,
+      "title": "行动策略与标签生成机制",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "07_prediction",
+      "page": 39,
+      "title": "预测系统的完整证据",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "08_causality",
+      "page": 1,
+      "title": "从观察差异到干预效应",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "08_causality",
+      "page": 2,
+      "title": "潜在结果与个体效应",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "08_causality",
+      "page": 3,
+      "title": "效应参数与目标人群",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "08_causality",
+      "page": 4,
+      "title": "同一改进可以具有相反的符号",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "08_causality",
+      "page": 5,
+      "title": "预测关联与干预效应",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "split"
+    },
+    {
+      "chapter": "08_causality",
+      "page": 6,
+      "title": "朴素差异的选择偏差分解",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "08_causality",
+      "page": 7,
+      "title": "调整变量与因果结构",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "08_causality",
+      "page": 8,
+      "title": "随机实验的识别基准",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "08_causality",
+      "page": 9,
+      "title": "观测研究的核心识别条件",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "08_causality",
+      "page": 10,
+      "title": "处理版本与个体间干扰",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "split"
+    },
+    {
+      "chapter": "08_causality",
+      "page": 11,
+      "title": "从识别条件到标准化公式",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "08_causality",
+      "page": 12,
+      "title": "困难订单优先加急：观察数据",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "08_causality",
+      "page": 13,
+      "title": "标准化到同一难度构成",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "08_causality",
+      "page": 14,
+      "title": "目标人群权重与效果异质性",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "08_causality",
+      "page": 15,
+      "title": "倾向得分与平衡性质",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "08_causality",
+      "page": 16,
+      "title": "逆概率加权的识别逻辑",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "08_causality",
+      "page": 17,
+      "title": "加权如何还原困难订单算例",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "08_causality",
+      "page": 18,
+      "title": "平衡诊断与标准化均值差异",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "08_causality",
+      "page": 19,
+      "title": "权重集中与有效样本量",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "08_causality",
+      "page": 20,
+      "title": "四个观测，权重可由一个对象主导",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "08_causality",
+      "page": 21,
+      "title": "增广逆概率加权估计",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "08_causality",
+      "page": 22,
+      "title": "单个双重稳健分数为何可超过一",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "split"
+    },
+    {
+      "chapter": "08_causality",
+      "page": 23,
+      "title": "得分正确时，残差怎样抵消偏差",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "08_causality",
+      "page": 24,
+      "title": "结果正确时，校正项为何均值为零",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "08_causality",
+      "page": 25,
+      "title": "双重稳健偏差的乘积结构",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "08_causality",
+      "page": 26,
+      "title": "局部正交性：误差以乘积进入",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "08_causality",
+      "page": 27,
+      "title": "交叉拟合与辅助模型过拟合",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "08_causality",
+      "page": 28,
+      "title": "正交性与收敛条件",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "08_causality",
+      "page": 29,
+      "title": "差分中的差分",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "08_causality",
+      "page": 30,
+      "title": "两期 DID 的识别条件",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "08_causality",
+      "page": 31,
+      "title": "门店留存率的两期比较",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "split"
+    },
+    {
+      "chapter": "08_causality",
+      "page": 32,
+      "title": "分期处理与效应异质性",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "08_causality",
+      "page": 33,
+      "title": "资格、处理与随访时点",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "08_causality",
+      "page": 34,
+      "title": "未测混杂的敏感性范围",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "08_causality",
+      "page": 35,
+      "title": "效应异质性与外推范围",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "split"
+    },
+    {
+      "chapter": "08_causality",
+      "page": 36,
+      "title": "策略价值与预算约束",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "08_causality",
+      "page": 37,
+      "title": "数据平台采用的识别设计",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "08_causality",
+      "page": 38,
+      "title": "个人节时与组织生产率",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "split"
+    },
+    {
+      "chapter": "08_causality",
+      "page": 39,
+      "title": "平台组合效应与净现值",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "08_causality",
+      "page": 40,
+      "title": "优惠券实验：研究对象与计算顺序",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "08_causality",
+      "page": 41,
+      "title": "优惠券教学数据：调整与诊断",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "split"
+    },
+    {
+      "chapter": "08_causality",
+      "page": 42,
+      "title": "因果报告的论证顺序",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "09_optimization",
+      "page": 1,
+      "title": "共享资源下的行动选择",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "09_optimization",
+      "page": 2,
+      "title": "变量、目标与可行域",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "09_optimization",
+      "page": 3,
+      "title": "库存目标的成本口径",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "09_optimization",
+      "page": 4,
+      "title": "约束与可执行性",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "09_optimization",
+      "page": 5,
+      "title": "两类任务的资源配置",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "split"
+    },
+    {
+      "chapter": "09_optimization",
+      "page": 6,
+      "title": "弱对偶与最优性证书",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "09_optimization",
+      "page": 7,
+      "title": "影子价格的有效范围",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "split"
+    },
+    {
+      "chapter": "09_optimization",
+      "page": 8,
+      "title": "离散资源的有限增量价值",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "09_optimization",
+      "page": 9,
+      "title": "情景模型与期望目标",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "09_optimization",
+      "page": 10,
+      "title": "报童模型的临界分位数",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "09_optimization",
+      "page": 11,
+      "title": "缺货惩罚改变目标分位数",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "split"
+    },
+    {
+      "chapter": "09_optimization",
+      "page": 12,
+      "title": "条件风险价值的变分定义",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "09_optimization",
+      "page": 13,
+      "title": "把情景 CVaR 写成可求解约束",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "09_optimization",
+      "page": 14,
+      "title": "离散 CVaR：分位点质量",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "split"
+    },
+    {
+      "chapter": "09_optimization",
+      "page": 15,
+      "title": "分布鲁棒优化",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "09_optimization",
+      "page": 16,
+      "title": "参数敏感性与方案稳健性",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "09_optimization",
+      "page": 17,
+      "title": "单机排程的互斥约束",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "09_optimization",
+      "page": 18,
+      "title": "加权延期与任务顺序",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "split"
+    },
+    {
+      "chapter": "09_optimization",
+      "page": 19,
+      "title": "预测损失与决策后悔",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "09_optimization",
+      "page": 20,
+      "title": "小预测误差也可能选择错误",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "split"
+    },
+    {
+      "chapter": "09_optimization",
+      "page": 21,
+      "title": "滚动优化与策略仿真",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "09_optimization",
+      "page": 22,
+      "title": "订单加急的增量净收益",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "09_optimization",
+      "page": 23,
+      "title": "加急组合：风险与净价值",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "09_optimization",
+      "page": 24,
+      "title": "预算限制与并列方案",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "09_optimization",
+      "page": 25,
+      "title": "建模、求解与独立验证",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "09_optimization",
+      "page": 26,
+      "title": "模型服务的费用交点",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "09_optimization",
+      "page": 27,
+      "title": "平均占用约束与尾部时延",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "09_optimization",
+      "page": 28,
+      "title": "服务费用的教学比较",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "09_optimization",
+      "page": 29,
+      "title": "库存实验：四产品的经济参数",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "09_optimization",
+      "page": 30,
+      "title": "库存实验：数量范围与资源占用",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "09_optimization",
+      "page": 31,
+      "title": "库存实验：三点需求与概率",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "09_optimization",
+      "page": 32,
+      "title": "库存实验：从输入到整数模型",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "09_optimization",
+      "page": 33,
+      "title": "库存组合的基准解",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "09_optimization",
+      "page": 34,
+      "title": "并列最优与次级选择标准",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "09_optimization",
+      "page": 35,
+      "title": "P02 订货十六件的完整核算",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "09_optimization",
+      "page": 36,
+      "title": "边际价值为何不能单独决定组合",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "09_optimization",
+      "page": 37,
+      "title": "从数学方案到执行记录",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "10_process_mining",
+      "page": 1,
+      "title": "从结果指标到过程证据",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "10_process_mining",
+      "page": 2,
+      "title": "经典事件日志的必需字段",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "10_process_mining",
+      "page": 3,
+      "title": "轨迹与流程变体",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "10_process_mining",
+      "page": 4,
+      "title": "吞吐时间、事件间隔与等待",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "10_process_mining",
+      "page": 5,
+      "title": "实例、事件与变体的粒度",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "10_process_mining",
+      "page": 6,
+      "title": "日志质量与分析有效性",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "10_process_mining",
+      "page": 7,
+      "title": "流程挖掘的三类任务",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "10_process_mining",
+      "page": 8,
+      "title": "直接跟随边的频次",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "10_process_mining",
+      "page": 9,
+      "title": "直接跟随边的平均间隔",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "10_process_mining",
+      "page": 10,
+      "title": "微型日志：从时刻到轨迹",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "10_process_mining",
+      "page": 11,
+      "title": "同一条边：三次转移、两个订单",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "10_process_mining",
+      "page": 12,
+      "title": "标准路径与返工变体",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "split"
+    },
+    {
+      "chapter": "10_process_mining",
+      "page": 13,
+      "title": "双向边与并行语义",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "split"
+    },
+    {
+      "chapter": "10_process_mining",
+      "page": 14,
+      "title": "Petri 网的状态转移",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "10_process_mining",
+      "page": 15,
+      "title": "发货变迁：两个条件必须同时满足",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "split"
+    },
+    {
+      "chapter": "10_process_mining",
+      "page": 16,
+      "title": "返工次数的几何模型",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "10_process_mining",
+      "page": 17,
+      "title": "多状态流程的剩余时间",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "10_process_mining",
+      "page": 18,
+      "title": "两状态返工：首步分解可直接求解",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "10_process_mining",
+      "page": 19,
+      "title": "事件与多个业务对象",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "split"
+    },
+    {
+      "chapter": "10_process_mining",
+      "page": 20,
+      "title": "间隔、负荷与产能瓶颈",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "10_process_mining",
+      "page": 21,
+      "title": "一致性检查的规则范围",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "10_process_mining",
+      "page": 22,
+      "title": "教学日志的路径与时间",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "10_process_mining",
+      "page": 23,
+      "title": "教学日志：边频次与时间对照",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "10_process_mining",
+      "page": 24,
+      "title": "从异常实例到复核证据",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "10_process_mining",
+      "page": 25,
+      "title": "Celonis 与 Siemens：指标的含义",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "split"
+    },
+    {
+      "chapter": "10_process_mining",
+      "page": 26,
+      "title": "流程发现与改进试点",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "10_process_mining",
+      "page": 27,
+      "title": "工作流与智能体",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "split"
+    },
+    {
+      "chapter": "10_process_mining",
+      "page": 28,
+      "title": "智能体运行环境",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "10_process_mining",
+      "page": 29,
+      "title": "订单加急的任务规格",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "10_process_mining",
+      "page": 30,
+      "title": "响应丢失后的幂等恢复",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "10_process_mining",
+      "page": 31,
+      "title": "执行状态机与不变量",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "10_process_mining",
+      "page": 32,
+      "title": "协议、结构与业务授权",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "10_process_mining",
+      "page": 33,
+      "title": "本地服务的职责分层",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "10_process_mining",
+      "page": 34,
+      "title": "平台组合的任务级比较",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "10_process_mining",
+      "page": 35,
+      "title": "检索增强生成：从材料到可核查回答",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "10_process_mining",
+      "page": 36,
+      "title": "证据检索与排名融合",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "10_process_mining",
+      "page": 37,
+      "title": "倒数排名融合的算例",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "split"
+    },
+    {
+      "chapter": "10_process_mining",
+      "page": 38,
+      "title": "设备放行的规则与事实",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "split"
+    },
+    {
+      "chapter": "10_process_mining",
+      "page": 39,
+      "title": "端到端时延与任务负载",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "10_process_mining",
+      "page": 40,
+      "title": "多步骤任务的成功概率",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "10_process_mining",
+      "page": 41,
+      "title": "无独立假设的失败上界",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "10_process_mining",
+      "page": 42,
+      "title": "至少成功一次与重复可靠性",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "10_process_mining",
+      "page": 43,
+      "title": "单位成功任务成本",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "focus"
+    },
+    {
+      "chapter": "10_process_mining",
+      "page": 44,
+      "title": "加急组合的决策与执行记录",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    },
+    {
+      "chapter": "10_process_mining",
+      "page": 45,
+      "title": "从异常发现到执行确认",
+      "auditRecordPresent": true,
+      "auditTitleMatches": true,
+      "validLectureReference": true,
+      "layout": "stack"
+    }
+  ]
+}
