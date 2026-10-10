@@ -1,0 +1,27 @@
+{
+  "family": "BDM Course Song",
+  "upstream": "https://github.com/adobe-fonts/source-han-serif",
+  "license": "SIL OFL 1.1",
+  "contentSha256": "11da69319639414bc575a2e12d967ba44cba43ca4a36043b8f9a7debd60d25d3",
+  "requiredCjkCharacters": 1102,
+  "fonts": [
+    {
+      "weight": 400,
+      "file": "course-song-regular.woff2",
+      "bytes": 296584,
+      "sha256": "83f0bac55bd75f63e2fc7ddaf8dc80e02e77c8c8260d01fb244b9e73afa50b35",
+      "sourceSha256": "3754ea669c530e2473354f8f6d9f79680a44d7e26ec7d00eeabee4a7e0753c5d",
+      "version": "Version 2.003;hotconv 1.1.1;makeotfexe 2.6.0",
+      "missingCjk": []
+    },
+    {
+      "weight": 700,
+      "file": "course-song-bold.woff2",
+      "bytes": 306392,
+      "sha256": "aa72b832437f367c067ecc70cb89d9531a04304d29f55d09365769e22ff1eded",
+      "sourceSha256": "4ee555ae58b3d22f6a95c2c494f2c36b7cccfc1d2224635f6461a03756f0e3c1",
+      "version": "Version 2.003;hotconv 1.1.1;makeotfexe 2.6.0",
+      "missingCjk": []
+    }
+  ]
+}
