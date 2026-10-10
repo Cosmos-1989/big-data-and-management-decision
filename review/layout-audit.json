@@ -4,11 +4,11 @@
     {
       "chapter": "01_intro",
       "contentHeight": 408,
-      "contentScroll": 410,
+      "contentScroll": 408,
       "footerTop": 611.2578125,
       "page": 15,
       "pageHeight": 720,
-      "promptBottom": 612.671875
+      "promptBottom": 610.671875
     },
     {
       "chapter": "01_intro",
@@ -26,7 +26,7 @@
       "footerTop": 611.2578125,
       "page": 32,
       "pageHeight": 720,
-      "promptBottom": 571.4296875
+      "promptBottom": 569.4296875
     },
     {
       "chapter": "02_enterprise_data_model",
@@ -35,7 +35,7 @@
       "footerTop": 611.2578125,
       "page": 31,
       "pageHeight": 720,
-      "promptBottom": 587.390625
+      "promptBottom": 585.390625
     },
     {
       "chapter": "03_sql_kpi",
@@ -62,7 +62,7 @@
       "footerTop": 611.2578125,
       "page": 35,
       "pageHeight": 720,
-      "promptBottom": 571.4375
+      "promptBottom": 569.4375
     },
     {
       "chapter": "04_data_quality",
@@ -71,7 +71,7 @@
       "footerTop": 611.2578125,
       "page": 2,
       "pageHeight": 720,
-      "promptBottom": 582.28125
+      "promptBottom": 580.28125
     },
     {
       "chapter": "04_data_quality",
@@ -80,7 +80,7 @@
       "footerTop": 611.2578125,
       "page": 28,
       "pageHeight": 720,
-      "promptBottom": 572.1953125
+      "promptBottom": 570.1953125
     },
     {
       "chapter": "05_statistics_dashboard",
@@ -89,7 +89,7 @@
       "footerTop": 611.2578125,
       "page": 21,
       "pageHeight": 720,
-      "promptBottom": 585.546875
+      "promptBottom": 583.546875
     },
     {
       "chapter": "06_ab_testing",
@@ -107,7 +107,7 @@
       "footerTop": 611.25,
       "page": 4,
       "pageHeight": 720,
-      "promptBottom": 465.09375
+      "promptBottom": 463.09375
     },
     {
       "chapter": "07_prediction",
@@ -116,7 +116,7 @@
       "footerTop": 611.25,
       "page": 10,
       "pageHeight": 720,
-      "promptBottom": 595.0625
+      "promptBottom": 593.0625
     },
     {
       "chapter": "08_causality",
@@ -125,7 +125,7 @@
       "footerTop": 611.25,
       "page": 25,
       "pageHeight": 720,
-      "promptBottom": 607.625
+      "promptBottom": 605.625
     },
     {
       "chapter": "08_causality",
@@ -134,7 +134,7 @@
       "footerTop": 611.25,
       "page": 29,
       "pageHeight": 720,
-      "promptBottom": 570.875
+      "promptBottom": 568.875
     }
   ],
   "pages": 360,
@@ -751,16 +751,16 @@
           "width": 1172
         },
         {
-          "bottom": 591.078125,
+          "bottom": 589.078125,
           "scrollWidth": 1080,
-          "top": 223.2265625,
+          "top": 225.2265625,
           "type": "slide-narrative",
           "width": 1080
         },
         {
-          "bottom": 504.6875,
+          "bottom": 506.6875,
           "scrollWidth": 1080,
-          "top": 333.96875,
+          "top": 335.96875,
           "type": "slide-equation",
           "width": 1080
         }
@@ -1463,9 +1463,9 @@
           "width": 1172
         },
         {
-          "bottom": 538.625,
+          "bottom": 536.625,
           "scrollWidth": 611,
-          "top": 275.6640625,
+          "top": 277.6640625,
           "type": "slide-narrative",
           "width": 611
         },
@@ -2791,9 +2791,9 @@
           "width": 1172
         },
         {
-          "bottom": 554.5859375,
+          "bottom": 552.5859375,
           "scrollWidth": 611,
-          "top": 259.7109375,
+          "top": 261.7109375,
           "type": "slide-narrative",
           "width": 611
         },
@@ -4324,9 +4324,9 @@
           "width": 1172
         },
         {
-          "bottom": 538.6328125,
+          "bottom": 536.6328125,
           "scrollWidth": 611,
-          "top": 275.671875,
+          "top": 277.671875,
           "type": "slide-narrative",
           "width": 611
         }
@@ -4395,16 +4395,16 @@
           "width": 1172
         },
         {
-          "bottom": 561.6328125,
+          "bottom": 559.6328125,
           "scrollWidth": 1080,
-          "top": 252.671875,
+          "top": 254.671875,
           "type": "slide-narrative",
           "width": 1080
         },
         {
-          "bottom": 475.2421875,
+          "bottom": 477.2421875,
           "scrollWidth": 1080,
-          "top": 365.0546875,
+          "top": 367.0546875,
           "type": "slide-equation",
           "width": 1080
         }
@@ -5521,16 +5521,16 @@
           "width": 1172
         },
         {
-          "bottom": 550.609375,
+          "bottom": 548.609375,
           "scrollWidth": 1080,
-          "top": 263.6953125,
+          "top": 265.6953125,
           "type": "slide-narrative",
           "width": 1080
         },
         {
-          "bottom": 464.21875,
+          "bottom": 466.21875,
           "scrollWidth": 1080,
-          "top": 375.578125,
+          "top": 377.578125,
           "type": "slide-equation",
           "width": 1080
         }
@@ -7001,16 +7001,16 @@
           "width": 1172
         },
         {
-          "bottom": 563.9609375,
+          "bottom": 561.9609375,
           "scrollWidth": 1080,
-          "top": 250.34375,
+          "top": 252.34375,
           "type": "slide-narrative",
           "width": 1080
         },
         {
-          "bottom": 477.5703125,
+          "bottom": 479.5703125,
           "scrollWidth": 1080,
-          "top": 361.0859375,
+          "top": 363.0859375,
           "type": "slide-equation",
           "width": 1080
         }
@@ -9788,16 +9788,16 @@
           "width": 1172
         },
         {
-          "bottom": 444.46875,
+          "bottom": 442.46875,
           "scrollWidth": 1172,
-          "top": 261.1875,
+          "top": 263.1875,
           "type": "slide-narrative",
           "width": 1172
         },
         {
-          "bottom": 553.125,
+          "bottom": 551.125,
           "scrollWidth": 1172,
-          "top": 464.453125,
+          "top": 462.453125,
           "type": "slide-support",
           "width": 1172
         }
@@ -10022,16 +10022,16 @@
           "width": 1172
         },
         {
-          "bottom": 573.46875,
+          "bottom": 571.46875,
           "scrollWidth": 1080,
-          "top": 240.8125,
+          "top": 242.8125,
           "type": "slide-narrative",
           "width": 1080
         },
         {
-          "bottom": 487.09375,
+          "bottom": 489.09375,
           "scrollWidth": 1080,
-          "top": 353.28125,
+          "top": 355.28125,
           "type": "slide-equation",
           "width": 1080
         }
@@ -11858,16 +11858,16 @@
           "width": 1172
         },
         {
-          "bottom": 586.96875,
+          "bottom": 584.96875,
           "scrollWidth": 1080,
-          "top": 227.34375,
+          "top": 229.34375,
           "type": "slide-narrative",
           "width": 1080
         },
         {
-          "bottom": 500.578125,
+          "bottom": 502.578125,
           "scrollWidth": 1080,
-          "top": 370,
+          "top": 372,
           "type": "slide-equation",
           "width": 1080
         }
@@ -12014,16 +12014,16 @@
           "width": 1172
         },
         {
-          "bottom": 550.234375,
+          "bottom": 548.234375,
           "scrollWidth": 1080,
-          "top": 264.0625,
+          "top": 266.0625,
           "type": "slide-narrative",
           "width": 1080
         },
         {
-          "bottom": 463.84375,
+          "bottom": 465.84375,
           "scrollWidth": 1080,
-          "top": 376.515625,
+          "top": 378.515625,
           "type": "slide-equation",
           "width": 1080
         }
