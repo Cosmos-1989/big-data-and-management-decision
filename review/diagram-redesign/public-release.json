@@ -1,0 +1,70 @@
+{
+  "sourceCommit": "15515dd",
+  "pagesCommit": "7dae9c379c70f5e41f146956d3e823dc57fa9153",
+  "run": 38051242563,
+  "files": [
+    {
+      "file": "index.html",
+      "status": 200,
+      "bytes": 5959,
+      "sha256": "0dec35ea7ba12602420f462c0d898ad082ac0ee05d904184b6b841cde5779fb6",
+      "matches": true
+    },
+    {
+      "file": "app.js",
+      "status": 200,
+      "bytes": 17904,
+      "sha256": "f5cf24475cd579b1a95dede9ad61bc7c15c5bf2526edde692ed3bc9cc544d39e",
+      "matches": true
+    },
+    {
+      "file": "slides.js",
+      "status": 200,
+      "bytes": 14101,
+      "sha256": "3c021d2f1ab179cfee35833eeff9f926ae647f51f36b2d7cfd585f444340d49d",
+      "matches": true
+    },
+    {
+      "file": "slide-diagrams.js",
+      "status": 200,
+      "bytes": 9441,
+      "sha256": "bbcd97f636775d7cb176573564eb3649d135eec8e2ee254143e4181a59dafa4e",
+      "matches": true
+    },
+    {
+      "file": "slides-refined.css",
+      "status": 200,
+      "bytes": 22218,
+      "sha256": "cfd40efad6c55d9c3083ae1aa60dbd49bf50448e9657feff1c866e985076e166",
+      "matches": true
+    },
+    {
+      "file": "content/lecture-slides.json",
+      "status": 200,
+      "bytes": 914077,
+      "sha256": "eaec8994d789b84efcc66a5e6441aac0a299808f7d678d56f45d625330a6b719",
+      "matches": true
+    },
+    {
+      "file": "assets/fonts/manifest.json",
+      "status": 200,
+      "bytes": 985,
+      "sha256": "48db2cdc3899fe0ad193dc0fad678de505c02086059426c260584a7ef0820d14",
+      "matches": true
+    },
+    {
+      "file": "assets/fonts/course-song-regular.woff2",
+      "status": 200,
+      "bytes": 300228,
+      "sha256": "c0a6df7865ee98a49d1796ce0074e60337d15cae12a38ea5f394fa3d8c606b6d",
+      "matches": true
+    },
+    {
+      "file": "assets/fonts/course-song-bold.woff2",
+      "status": 200,
+      "bytes": 310160,
+      "sha256": "604b5b9fd7846172017c6086f4811cc05057e472a69d96e6597116fc9099c4d4",
+      "matches": true
+    }
+  ]
+}

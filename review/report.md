@@ -28,6 +28,12 @@
 
 前一轮完整内容与独立阅读记录保留于[宋体与独立阅读审核](report-independent-reading.md)。
 
+## 线上发布验证
+
+GitHub Pages 本次发布流程 [38051242563](https://github.com/Cosmos-1989/big-data-and-management-decision/actions/runs/38051242563) 成功，发布提交为 `7dae9c379c70f5e41f146956d3e823dc57fa9153`。严格HTTPS下载核对9项核心文件（首页、脚本、图解、内容、CSS、字体清单和两字重字体），均为200且与本地成品逐字节一致。[核对记录](diagram-redesign/public-release.json)。线上第1讲已实际加载37页、15幅新增图解，无数学错误与浏览器控制台错误；全屏查看行动阈值曲线。
+
+![线上行动阈值示例](diagram-redesign/public-preview.png)
+
 ## 全部最终画面
 
 - [第1–9页](diagram-redesign/contact-sheets/contact-00.png)
