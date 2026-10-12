@@ -1,0 +1,230 @@
+[
+  {
+    "id": "preface",
+    "protected": {
+      "math": 16,
+      "code": 0,
+      "citations": 0,
+      "images": 1
+    },
+    "oldCharacters": 2899,
+    "newCharacters": 2872,
+    "anchorsPreserved": 4
+  },
+  {
+    "id": "01_intro",
+    "protected": {
+      "math": 95,
+      "code": 1,
+      "citations": 15,
+      "images": 1
+    },
+    "oldCharacters": 14882,
+    "newCharacters": 14684,
+    "anchorsPreserved": 30
+  },
+  {
+    "id": "02_enterprise_data_model",
+    "protected": {
+      "math": 139,
+      "code": 1,
+      "citations": 45,
+      "images": 5
+    },
+    "oldCharacters": 24655,
+    "newCharacters": 24166,
+    "anchorsPreserved": 47
+  },
+  {
+    "id": "03_sql_kpi",
+    "protected": {
+      "math": 82,
+      "code": 4,
+      "citations": 21,
+      "images": 1
+    },
+    "oldCharacters": 15837,
+    "newCharacters": 15501,
+    "anchorsPreserved": 33
+  },
+  {
+    "id": "04_data_quality",
+    "protected": {
+      "math": 97,
+      "code": 3,
+      "citations": 18,
+      "images": 1
+    },
+    "oldCharacters": 16034,
+    "newCharacters": 15862,
+    "anchorsPreserved": 35
+  },
+  {
+    "id": "05_statistics_dashboard",
+    "protected": {
+      "math": 131,
+      "code": 1,
+      "citations": 13,
+      "images": 2
+    },
+    "oldCharacters": 13912,
+    "newCharacters": 13804,
+    "anchorsPreserved": 34
+  },
+  {
+    "id": "06_ab_testing",
+    "protected": {
+      "math": 97,
+      "code": 0,
+      "citations": 12,
+      "images": 1
+    },
+    "oldCharacters": 11516,
+    "newCharacters": 11381,
+    "anchorsPreserved": 28
+  },
+  {
+    "id": "07_prediction",
+    "protected": {
+      "math": 163,
+      "code": 0,
+      "citations": 15,
+      "images": 1
+    },
+    "oldCharacters": 13930,
+    "newCharacters": 13679,
+    "anchorsPreserved": 31
+  },
+  {
+    "id": "08_causality",
+    "protected": {
+      "math": 117,
+      "code": 0,
+      "citations": 15,
+      "images": 1
+    },
+    "oldCharacters": 13594,
+    "newCharacters": 13459,
+    "anchorsPreserved": 34
+  },
+  {
+    "id": "09_optimization",
+    "protected": {
+      "math": 162,
+      "code": 0,
+      "citations": 14,
+      "images": 1
+    },
+    "oldCharacters": 12521,
+    "newCharacters": 12360,
+    "anchorsPreserved": 32
+  },
+  {
+    "id": "10_process_mining",
+    "protected": {
+      "math": 76,
+      "code": 0,
+      "citations": 38,
+      "images": 4
+    },
+    "oldCharacters": 15184,
+    "newCharacters": 14686,
+    "anchorsPreserved": 41
+  },
+  {
+    "id": "appendix-1",
+    "protected": {
+      "math": 19,
+      "code": 0,
+      "citations": 0,
+      "images": 0
+    },
+    "oldCharacters": 1998,
+    "newCharacters": 1996,
+    "anchorsPreserved": 4
+  },
+  {
+    "id": "appendix-2",
+    "protected": {
+      "math": 1,
+      "code": 1,
+      "citations": 0,
+      "images": 0
+    },
+    "oldCharacters": 1449,
+    "newCharacters": 1449,
+    "anchorsPreserved": 2
+  },
+  {
+    "id": "appendix-3",
+    "protected": {
+      "math": 0,
+      "code": 0,
+      "citations": 0,
+      "images": 0
+    },
+    "oldCharacters": 944,
+    "newCharacters": 923,
+    "anchorsPreserved": 3
+  },
+  {
+    "id": "appendix-4",
+    "protected": {
+      "math": 5,
+      "code": 1,
+      "citations": 2,
+      "images": 0
+    },
+    "oldCharacters": 1695,
+    "newCharacters": 1712,
+    "anchorsPreserved": 3
+  },
+  {
+    "id": "11_modern_data_platform",
+    "protected": {
+      "math": 0,
+      "code": 1,
+      "citations": 0,
+      "images": 0
+    },
+    "oldCharacters": 1587,
+    "newCharacters": 1472,
+    "anchorsPreserved": 10
+  },
+  {
+    "id": "syllabus",
+    "protected": {
+      "math": 0,
+      "code": 0,
+      "citations": 0,
+      "images": 0
+    },
+    "oldCharacters": 1770,
+    "newCharacters": 2369,
+    "anchorsPreserved": 6
+  },
+  {
+    "id": "ai_question_to_data_case",
+    "protected": {
+      "math": 0,
+      "code": 1,
+      "citations": 0,
+      "images": 0
+    },
+    "oldCharacters": 720,
+    "newCharacters": 641,
+    "anchorsPreserved": 5
+  },
+  {
+    "id": "semiconductor_kpi_m13_case",
+    "protected": {
+      "math": 0,
+      "code": 1,
+      "citations": 0,
+      "images": 0
+    },
+    "oldCharacters": 1858,
+    "newCharacters": 1825,
+    "anchorsPreserved": 6
+  }
+]

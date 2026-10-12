@@ -1,0 +1,800 @@
+[
+  {
+    "path": "docs/textbook/chapters/05_statistics_dashboard.tex",
+    "before": "本章研究这些统计量及其图形表达。",
+    "after": "",
+    "reason": "删除重复总结与章节意图陈述，首句已明确描述统计用途。"
+  },
+  {
+    "path": "docs/textbook/chapters/05_statistics_dashboard.tex",
+    "before": "论证分为三个层次。第一层描述变量的分布，回答典型水平与离散程度；第二层分解\n结构和时间变化，区分组合、波动与过程信号；第三层利用存量、流量和等待的关系\n检验解释是否符合运营约束。最后讨论怎样在界面中保存这些区别，为下一章的\n统计推断明确哪些现象仍需要进一步证据。",
+    "after": "变量分布反映典型水平与离散程度；结构和时间分解区分组合变化、随机波动与过程\n信号；存量、流量和等待时间的关系限定运营解释。看板应保留这些区别，并注明\n描述性发现及其仍待检验的假设。",
+    "reason": "清理层次安排与“最后讨论”的论证策划，保留统计内容及推断边界。"
+  },
+  {
+    "path": "docs/textbook/chapters/05_statistics_dashboard.tex",
+    "before": "本章使用对象含义、计算方法与质量状况已经说明的观测资料。第2至4章分别提供这些条件；在此基础上，分析按以下次序展开。",
+    "after": "描述统计以对象含义、计算方法与质量状况明确的观测资料为基础。相关条件见第2至4章。指标、图形、解释与行动的关系为：",
+    "reason": "以描述统计的输入条件替代本章展开次序。"
+  },
+  {
+    "path": "docs/textbook/chapters/05_statistics_dashboard.tex",
+    "before": "本书将样本中位数 \\(Q_2\\) 取为排序后的中间值；样本量为偶数时，取中间两个值的平均。",
+    "after": "样本中位数 \\(Q_2\\) 取为排序后的中间值；样本量为偶数时，取中间两个值的平均。",
+    "reason": "去除定义中的本书自指，保留计算约定。"
+  },
+  {
+    "path": "docs/textbook/chapters/05_statistics_dashboard.tex",
+    "before": "看板中常有准时率、毛利率、缺陷率、转化率等比率型指标。第~\\ref{ch:week03-sql-kpi}~章已经强调，比率指标不能简单平均。本章进一步强调：看板应尽量同时展示比率、分子和分母。",
+    "after": "看板中常有准时率、毛利率、缺陷率、转化率等比率型指标。比率指标不能简单平均，计算依据见第~\\ref{ch:week03-sql-kpi}~章。看板应同时展示比率、分子和分母。",
+    "reason": "以计算规则及出处替代“已经强调/进一步强调”的作者话语。"
+  },
+  {
+    "path": "docs/textbook/chapters/05_statistics_dashboard.tex",
+    "before": "没有基准的数字通常没有管理含义。",
+    "after": "基准限定指标的比较和评价含义。",
+    "reason": "修正泛化断语，明确比较基准的用途。"
+  },
+  {
+    "path": "docs/textbook/chapters/05_statistics_dashboard.tex",
+    "before": "看板应明确比较对象，否则读者会自动补充各自心中的基准，导致会议讨论偏离事实。",
+    "after": "看板应明确比较对象，避免不同基准下的判断混用。",
+    "reason": "去除假想读者行为和会议过程叙述，保留基准混用风险。"
+  },
+  {
+    "path": "docs/textbook/chapters/05_statistics_dashboard.tex",
+    "before": "Cleveland and McGill 的图形感知研究提醒我们，不同视觉通道的精确程度不同。",
+    "after": "Cleveland and McGill 的图形感知研究表明，不同视觉通道支持的判断精度不同。",
+    "reason": "去除“提醒我们”的读者劝告，直接陈述研究结论。"
+  },
+  {
+    "path": "docs/textbook/chapters/05_statistics_dashboard.tex",
+    "before": "将这个原则用于经营看板，可以得到如下结构：",
+    "after": "经营看板的信息组织可分为整体概览、比较、解释、明细查询与行动：",
+    "reason": "去除教学思想迁移话语，直接界定信息结构。"
+  },
+  {
+    "path": "docs/textbook/chapters/05_statistics_dashboard.tex",
+    "before": "没有这些说明，图表即使美观也不可审计。",
+    "after": "这些信息构成指标追溯和结果审计的依据。",
+    "reason": "以审计依据替代装饰性对照。"
+  },
+  {
+    "path": "docs/textbook/chapters/05_statistics_dashboard.tex",
+    "before": "本章实验主要是分析型看板，因为读者需要解释收入波动、准时率和质量问题，而不只是展示静态结果。",
+    "after": "收入波动、准时率与质量问题的分析需要分组比较和明细查询，适合采用分析型看板。",
+    "reason": "清理实验策划和假想读者需求，保留看板选型依据。"
+  },
+  {
+    "path": "docs/textbook/chapters/05_statistics_dashboard.tex",
+    "before": "以此为背景设计备件分析看板，可以依次显示发动机服务风险与备件可得率、各地点需求与库存，以及候选调拨和采购方案。",
+    "after": "备件分析看板可显示发动机服务风险与备件可得率、各地点需求与库存，以及候选调拨和采购方案。",
+    "reason": "去除案例编写过程，直接描述备件分析内容；不把拟议结构写成企业已实施事实。"
+  },
+  {
+    "path": "docs/textbook/chapters/05_statistics_dashboard.tex",
+    "before": "将图表交给多模态模型时，最可靠的输入应同时包括原始聚合表、单位、定义与图，而不仅是截图。回答分成观测事实、可能机制和建议验证三段。",
+    "after": "多模态模型的图表解释应以原始聚合表、单位、指标定义和图形为依据，并区分观测事实、候选机制和验证方法。",
+    "reason": "去除无依据最高级与回答编排，保留解释证据和认识层次。"
+  },
+  {
+    "path": "docs/textbook/chapters/05_statistics_dashboard.tex",
+    "before": "例如，第5章样例可写为：本期收入存在一个高值日期，",
+    "after": "第5章样例中，本期收入存在一个高值日期，",
+    "reason": "去除报告代写模板口吻，直接陈述算例结果。"
+  },
+  {
+    "path": "docs/textbook/chapters/05_statistics_dashboard.tex",
+    "before": "图形负责显露分布，排队模型负责\n说相应的运行机制；模型服务的负载分析可参考",
+    "after": "图形用于呈现分布，排队模型描述相应的运行机制；模型服务的负载分析见",
+    "reason": "清理拟人化分工并修复病句，保留文献引导。"
+  },
+  {
+    "path": "docs/textbook/chapters/06_ab_testing.tex",
+    "before": "处理分配机制，使组间比较具有明确的概率依据。本章从实验单元、潜在结果和目标\n参数出发，推导差异估计量及其精度，再讨论实验结果如何用于推广决策。",
+    "after": "处理分配机制，使组间比较具有明确的概率依据。效应估计及其精度取决于实验\n单元、潜在结果和目标参数；推广评价还须结合实施成本与风险。",
+    "reason": "以估计与推广的依据替代章节编排。"
+  },
+  {
+    "path": "docs/textbook/chapters/06_ab_testing.tex",
+    "before": "本章的论证顺序是先设计比较，再分析数据，最后评价推广。随机化支持内部比较，\n方差描述估计精度，功效用于安排样本，风险指标和经济阈值用于评价推广条件。\n协变量调整利用实验前信息，整群设计处理共同接受干预的对象，置信序列适用于\n持续观察结果的实验。各方法均从其对应的分配与观测条件展开。",
+    "after": "随机化为组间效应比较提供概率依据，方差描述估计精度，功效用于确定样本量，\n风险指标和经济阈值限定推广条件。协变量调整利用实验前信息，整群设计以共同\n接受干预的对象为分配单位，置信序列控制持续观察中的覆盖错误。各方法的有效性\n取决于相应的分配与观测条件。",
+    "reason": "去除论证顺序和展开方式，保留方法功能及适用条件。"
+  },
+  {
+    "path": "docs/textbook/chapters/06_ab_testing.tex",
+    "before": "A/B 测试之所以重要，是因为随机化同时服务于两件事：减少选择偏差，并使差异估计量具有可分析的抽样不确定性。",
+    "after": "随机化减少选择偏差，并使差异估计量的抽样不确定性具有可分析的概率依据。",
+    "reason": "去除重要性宣告，直接陈述随机化作用。"
+  },
+  {
+    "path": "docs/textbook/chapters/06_ab_testing.tex",
+    "before": "这个公式给出一个重要管理含义：样本量增加会降低不确定性，其标准误按 \\(1/\\sqrt n\\) 的速度下降。",
+    "after": "在这些条件下，均值标准误按 \\(1/\\sqrt n\\) 的速度随样本量下降。",
+    "reason": "清理引出结论的包装，保留条件和缩放规律。"
+  },
+  {
+    "path": "docs/textbook/chapters/06_ab_testing.tex",
+    "before": "样本量不足时，看板上看起来很大的差异也可能不足以支持推广。",
+    "after": "样本量不足时，较大的观测差异也可能具有较宽的置信区间，不足以支持推广。",
+    "reason": "用估计精度替代“看起来很大”的口语判断。"
+  },
+  {
+    "path": "docs/textbook/chapters/06_ab_testing.tex",
+    "before": "一个实验即使能计算 p 值，也未必是可信实验。质量检查应在分析前完成，至少包括以下内容。",
+    "after": "实验推断要求分配机制、观测资料和分析规则符合研究设计。分析前的质量检查至少包括以下内容。",
+    "reason": "去除设问式否定包装，保留可信推断的前提。"
+  },
+  {
+    "path": "docs/textbook/chapters/06_ab_testing.tex",
+    "before": "每天打开实验看一次结果，若显著就停止，看似谨慎，实际会提高误报率。原因是每次查看都相当于给偶然波动一次“被选中”的机会。",
+    "after": "反复检验并在首次显著时停止，会提高误报率，因为停止规则选择了产生显著结果的随机波动。",
+    "reason": "清理过程性讲述与拟人化比喻，直接解释选择性停止。"
+  },
+  {
+    "path": "docs/textbook/chapters/06_ab_testing.tex",
+    "before": "课程项目中不要求读者掌握复杂校正方法，但必须在报告中说明哪些指标是预先定义的主指标，哪些是探索性分析。",
+    "after": "实验报告应说明哪些指标是预先定义的主指标，哪些属于探索性分析。",
+    "reason": "移除课程要求和假想读者掌握程度，保留研究报告规范。"
+  },
+  {
+    "path": "docs/textbook/chapters/06_ab_testing.tex",
+    "before": "真正重要的成果是一个可复用的学习机制：失败实验同样保存，负面结果不会被删去，事后探索与预先检验分开报告。",
+    "after": "实验记录应保存失败实验和负面结果，并分别报告事后探索与预先规定的检验。",
+    "reason": "去除价值宣告和口号，直接陈述记录规范。"
+  },
+  {
+    "path": "docs/textbook/chapters/06_ab_testing.tex",
+    "before": "课堂练习可以先在同一组封存订单上比较两种系统的任务完成率，再设计两个工作\n中心的试点方案。第一步检验给定输入下的正确性，第二步规定经营效果的处理\n分配与结果窗口；试点规模不足时只演示设计和不确定性，不据此作显著性结论。",
+    "after": "在同一组封存订单上比较两种系统的任务完成率，可以检验给定输入下的正确性；\n工作中心的试点则须规定处理分配与经营结果的观察窗口。两个工作中心的试点\n若规模不足，结果应限于设计与不确定性的分析，不据此作显著性结论。",
+    "reason": "移除课堂策划，保留任务测试、试点设计及极小规模推断边界。"
+  },
+  {
+    "path": "docs/textbook/chapters/06_ab_testing.tex",
+    "before": "从试点到推广还包含一个常被忽略的外推问题。",
+    "after": "试点结果的推广涉及向目标总体外推。",
+    "reason": "去除“常被忽略”的无依据评价。"
+  },
+  {
+    "path": "docs/textbook/chapters/06_ab_testing.tex",
+    "before": "本章将看板中的指标差异转化为统计推断问题。",
+    "after": "指标差异的总体解释需要统计推断。",
+    "reason": "去除小结中的章节自指，直接陈述分析关系。"
+  },
+  {
+    "path": "docs/textbook/chapters/06_ab_testing.tex",
+    "before": "功效和 MDE 帮助实验在开始前形成可执行计划。",
+    "after": "功效和 MDE 限定实验所需的样本规模。",
+    "reason": "以统计设计含义替代空泛可执行计划。"
+  },
+  {
+    "path": "docs/textbook/chapters/06_ab_testing.tex",
+    "before": "提供降低方差与时间一致推断的方法\\cite{cuped06,cs06}；它们扩大了实验工具箱，\n却不改变先定义实验单元、目标效应和错误控制的基本顺序。",
+    "after": "提供降低方差与时间一致推断的方法\\cite{cuped06,cs06}。应用这些方法仍需明确\n实验单元、目标效应和错误控制。",
+    "reason": "清理工具箱比喻与阶段口号，保留方法适用前提。"
+  },
+  {
+    "path": "docs/textbook/chapters/07_prediction.tex",
+    "before": "当前状态判断未来风险。预测模型正是对这种条件关系的近似表达。本章将预测视为\n一个有明确时间边界的统计任务：在什么时点、对哪些对象、使用哪些已知信息、\n预测哪一个结果，并用什么损失评价错误。",
+    "after": "当前状态判断未来风险。预测模型近似表达当前信息与未来结果的条件关系。\n预测任务应明确预测时点、对象、可用信息、目标结果和评价错误的损失函数。",
+    "reason": "清理本章意图和连串口语问句，直接定义任务要素。"
+  },
+  {
+    "path": "docs/textbook/chapters/07_prediction.tex",
+    "before": "明确预测对象与信息时点后，本章依次讨论总体风险、经验风险、逻辑回归与集成学习。\n随后介绍样本划分、概率评价和共形预测区间，并研究模型解释与运行监测。\n预测概率可以进入期望损失计算；对于改变结果的干预，还需估计第8章讨论的处理效应。",
+    "after": "总体风险衡量目标分布下的预测损失，经验风险以样本平均近似该目标；逻辑回归\n与集成学习是常用的预测模型。样本划分、概率评价、预测区间和运行监测用于\n评价模型的泛化及适用范围。预测概率可以进入期望损失计算；改变结果的干预\n则需估计处理效应，见第8章。",
+    "reason": "以方法关系替代依次讨论和随后介绍的章节计划。"
+  },
+  {
+    "path": "docs/textbook/chapters/07_prediction.tex",
+    "before": "管理实践中经常把这些任务混在一起。分析报告应当在报告中明确：模型输出是风险排序、概率估计、行动效果估计，还是资源配置建议。只有边界清楚，预测模型才不会被过度解释。",
+    "after": "分析报告应明确模型输出属于风险排序、概率估计、行动效果估计还是资源配置建议，并按相应任务解释结果。",
+    "reason": "去除泛化责备、重复表述与空泛结语，保留结论分类。"
+  },
+  {
+    "path": "docs/textbook/chapters/07_prediction.tex",
+    "before": "模型训练必须定义“预测得好”是什么意思。这个定义由损失函数给出。",
+    "after": "损失函数规定模型训练的评价目标。",
+    "reason": "以规范术语替代口语设问。"
+  },
+  {
+    "path": "docs/textbook/chapters/07_prediction.tex",
+    "before": "训练数据只是将来任务的有限替代。",
+    "after": "训练数据为目标任务提供有限样本。",
+    "reason": "清理含混比喻，保留有限样本含义。"
+  },
+  {
+    "path": "docs/textbook/chapters/07_prediction.tex",
+    "before": "正则化限制候选函数复杂度。两者回答不同问题：损失定义成功标准，函数类限制能够\n表达的规律，数据决定可以多精确地估计这些规律。",
+    "after": "正则化限制候选函数复杂度。损失函数定义评价标准，函数类限定可表达的关系，\n样本数量和分布影响这些关系的估计精度。",
+    "reason": "修复“两者”后列三项的逻辑瑕疵，去除成功标准和规律的口语化描述。"
+  },
+  {
+    "path": "docs/textbook/chapters/07_prediction.tex",
+    "before": "这里给出最小算法结构，成熟实现还处理分裂增益、正则化、缺失值和计算优化。",
+    "after": "完整实现还需处理分裂增益、正则化、缺失值和计算优化。",
+    "reason": "去除讲义编写范围自述，保留算法扩展要素。"
+  },
+  {
+    "path": "docs/textbook/chapters/07_prediction.tex",
+    "before": "数据泄漏在企业项目中非常危险，因为它会让模型在演示中看似准确，在上线后迅速失效。",
+    "after": "数据泄漏会高估离线表现，模型部署后可能因相应信息不可获得而失效。",
+    "reason": "去除夸张评价和演示过程叙述，明确失效机制。"
+  },
+  {
+    "path": "docs/textbook/chapters/07_prediction.tex",
+    "before": "为准确表达偏差--方差分解，固定输入",
+    "after": "对偏差--方差分解，固定输入",
+    "reason": "去除表达准确性的作者自评，保留推导条件。"
+  },
+  {
+    "path": "docs/textbook/chapters/07_prediction.tex",
+    "before": "小样本校准表波动很大，但它能提醒管理者：概率模型进入预算、收益和风险计算前，必须经过概率意义上的检查。",
+    "after": "小样本校准表波动较大，解释时应考虑估计不确定性。概率模型用于预算、收益和风险计算前，需要检查校准程度。",
+    "reason": "去除“提醒管理者”包装，明确校准及不确定性。"
+  },
+  {
+    "path": "docs/textbook/chapters/07_prediction.tex",
+    "before": "这个规则说明，预测阈值不应只由模型指标决定。",
+    "after": "预测阈值还取决于行动成本和预期收益。",
+    "reason": "去除例后重复的说明包装，直接陈述阈值依据。"
+  },
+  {
+    "path": "docs/textbook/chapters/07_prediction.tex",
+    "before": "业务团队通常会问“模型为什么认为这个客户高风险”。解释模型输出有两类目的：",
+    "after": "客户风险模型的输出解释有两类用途：",
+    "reason": "清理假想读者问句，保留解释用途。"
+  },
+  {
+    "path": "docs/textbook/chapters/07_prediction.tex",
+    "before": "其关键变化是把“在许多任务上学到的预测能力”迁移到一个新表格任务，而不只是为每张表从零拟合模型。",
+    "after": "这类方法将预训练任务中获得的预测能力迁移至新的表格任务。",
+    "reason": "去除重要性宣告和装饰性对照，直接陈述迁移机制。"
+  },
+  {
+    "path": "docs/textbook/chapters/07_prediction.tex",
+    "before": "要把它转成预测模型，至少应区分故障概率、剩余使用寿命、备件需求量和维修周转时间。",
+    "after": "相应的预测任务包括故障概率、剩余使用寿命、备件需求量和维修周转时间。",
+    "reason": "去除案例转写过程，直接界定预测目标。"
+  },
+  {
+    "path": "docs/textbook/chapters/07_prediction.tex",
+    "before": "AI 工具可以生成特征候选、解释报错和辅助实现模型，但最终提交应包括数据切分、特征时间证据、基线、训练配置及独立测试结果。",
+    "after": "AI 工具可以生成特征候选、解释报错和辅助实现模型。模型评价记录应包括数据切分、特征时间证据、基线、训练配置及独立测试结果。",
+    "reason": "去除作业提交口吻，保留独立评价记录。"
+  },
+  {
+    "path": "docs/textbook/chapters/07_prediction.tex",
+    "before": "选模型的过程本身也是学习过程，必须受到验证集与测试集边界约束。",
+    "after": "模型搜索和选择应遵守验证集与测试集的使用边界。",
+    "reason": "清理拟人化学习过程与重复包装，保留数据使用规范。"
+  },
+  {
+    "path": "docs/textbook/chapters/07_prediction.tex",
+    "before": "这说明“风险最高”不一定等于“最值得行动”。",
+    "after": "风险排序与预期净价值排序在该算例中不同。",
+    "reason": "以具体比较结果替代口号式例后结语。"
+  },
+  {
+    "path": "docs/textbook/chapters/07_prediction.tex",
+    "before": "对象留给了未处理组。这一问题自然引向第~\\ref{ch:week08-causality}~章：要比较行动，\n需要把预测关系进一步分解为可以识别的反事实关系。",
+    "after": "对象留给了未处理组。行动效果的比较需要识别相应的反事实关系，识别条件见\n第~\\ref{ch:week08-causality}~章。",
+    "reason": "去除自然引向下一章的叙事，保留因果识别出处。"
+  },
+  {
+    "path": "docs/textbook/chapters/07_prediction.tex",
+    "before": "预测模型上线后会进入一个新的治理问题：训练时表现良好的模型，是否仍然适用于当前业务环境？",
+    "after": "模型部署后的适用性取决于当前业务环境与训练期环境的关系。",
+    "reason": "清理治理问题登场与口语设问，直接陈述分布适用性。"
+  },
+  {
+    "path": "docs/textbook/chapters/07_prediction.tex",
+    "before": "因此，本书的预测模型报告应包括数据切分、特征字典、模型表达、训练设置、测试指标、校准检查、阈值说明、行动建议和风险备注。只有这样，模型才可能从 notebook 中的算法输出转化为可审计的管理系统组件。",
+    "after": "预测模型报告应包括数据切分、特征字典、模型表达、训练设置、测试指标、校准检查、阈值说明、行动建议和风险备注，作为模型审计与运行维护的依据。",
+    "reason": "去除本书自指和转化口号，保留报告要素及用途。"
+  },
+  {
+    "path": "docs/textbook/chapters/07_prediction.tex",
+    "before": "本章介绍了预测模型的基本框架。监督学习把带标签历史数据转化为",
+    "after": "监督学习利用带标签历史数据估计",
+    "reason": "清理小结中的章节内容介绍。"
+  },
+  {
+    "path": "docs/textbook/chapters/07_prediction.tex",
+    "before": "表格基础模型文献应与这些基础结论并读：\n新的模型机制可以改变有限样本表现，但不会取消标签定义、时间切分与部署评价。",
+    "after": "表格基础模型的有限样本表现仍需在明确标签定义、时间切分与部署条件后评价。",
+    "reason": "清理阅读策划和反向否定包装，保留模型评价要求。"
+  },
+  {
+    "path": "docs/textbook/chapters/08_causality.tex",
+    "before": "本章从潜在结果和选择偏差出发，先说明效应的定义，再给出识别所需条件，最后\n讨论估计方法。标准化与加权依赖给定协变量的可比性，差分中的差分依赖未处理结果\n的平行趋势。双重稳健估计结合结果回归与处理概率模型。各节均依次说明目标参数、\n识别条件和样本估计量。",
+    "after": "因果分析须区分目标效应、识别条件与样本估计量。标准化与加权依赖给定协变量\n的可比性，差分中的差分依赖未处理结果的平行趋势。双重稳健估计结合结果回归\n与处理概率模型。观察组间差异与目标效应的偏离需要通过选择机制分析。",
+    "reason": "去除章节顺序和各节安排，直接说明目标、识别与估计的关系。"
+  },
+  {
+    "path": "docs/textbook/chapters/08_causality.tex",
+    "before": "同一个数据集可以服务不同问题，但每类问题的结论不同。",
+    "after": "相关分析、预测、因果推断和处方分析具有不同的目标及解释边界。",
+    "reason": "修正泛泛的提纲式引句，明确分类。"
+  },
+  {
+    "path": "docs/textbook/chapters/08_causality.tex",
+    "before": "因果推断首先是研究设计问题，其次才是建模问题。若处理分配机制混乱、干预定义含糊或关键结果无法观察，再复杂的模型也只能给出脆弱的结论。",
+    "after": "因果识别依赖处理分配机制、明确的干预定义和可观察的结果。估计模型不能弥补关键识别条件的缺失。",
+    "reason": "以识别前提替代先后口号和复杂模型对照。"
+  },
+  {
+    "path": "docs/textbook/chapters/08_causality.tex",
+    "before": "第一步直接比较，得到加急组延期率",
+    "after": "直接比较得到加急组延期率",
+    "reason": "去除算例步骤的主持口吻，保留计算。"
+  },
+  {
+    "path": "docs/textbook/chapters/08_causality.tex",
+    "before": "第二步在相同难度内比较。高难度层的差异为",
+    "after": "在相同难度内比较，高难度层的差异为",
+    "reason": "去除步骤宣告，保留层内比较。"
+  },
+  {
+    "path": "docs/textbook/chapters/08_causality.tex",
+    "before": "第三步明确目标总体。若目标总体高、低难度各占一半，",
+    "after": "若目标总体高、低难度各占一半，",
+    "reason": "去除重复步骤标题，保留标准化总体。"
+  },
+  {
+    "path": "docs/textbook/chapters/08_causality.tex",
+    "before": "第四步才是判断这个结果能否解释为因果效应。",
+    "after": "标准化结果的因果解释还需要识别条件。",
+    "reason": "以识别边界替代分步主持和“才是”包装。"
+  },
+  {
+    "path": "docs/textbook/chapters/08_causality.tex",
+    "before": "这个算例与第~\\ref{ch:week05-statistics-dashboard}~章的组合变化在代数上相近，\n但论证要求更高。描述统计只需说明不同权重造成总体差异；因果推断还必须说明为何\n层内对象可在这些识别条件下提供反事实参照。",
+    "after": "标准化与第~\\ref{ch:week05-statistics-dashboard}~章的组合分解具有相近的加权结构。\n组合分解描述权重变化造成的总体差异；因果标准化还要求层内对象满足反事实比较\n的识别条件。",
+    "reason": "去除论证高低评价，保留方法之间的真实区别。"
+  },
+  {
+    "path": "docs/textbook/chapters/08_causality.tex",
+    "before": "Rosenbaum 与 Rubin 的结果应区分两层。",
+    "after": "Rosenbaum 与 Rubin 的结果包含平衡性质与因果识别两个层次。",
+    "reason": "明确两个层次的学术内容，避免提纲式主持。"
+  },
+  {
+    "path": "docs/textbook/chapters/08_causality.tex",
+    "before": "分母远离零的条件也由此变得清楚。",
+    "after": "候选倾向得分接近0或1时，分母会放大两类估计误差的影响。",
+    "reason": "以具体条件替代作者称清楚的评价。"
+  },
+  {
+    "path": "docs/textbook/chapters/08_causality.tex",
+    "before": "更透明的思路是定义首次处理时点",
+    "after": "可定义首次处理时点",
+    "reason": "去除方法自评；保持原有参数定义。"
+  },
+  {
+    "path": "docs/textbook/chapters/08_causality.tex",
+    "before": "这样处理持续时间就不会被一个无历史的二元标签抹掉。",
+    "after": "该定义保留首次处理时间及处理持续时间。",
+    "reason": "清理口语比喻，直接描述参数记录的时间信息。"
+  },
+  {
+    "path": "docs/textbook/chapters/08_causality.tex",
+    "before": "所有估计公式都必须放回数据产生的过程。首先应写明目标对象是在什么时候满足\n纳入条件的，再定义当时可以采取的行动，最后规定随访结果。",
+    "after": "研究设计应对齐资格判定、可选行动、处理开始和随访结果的观察时点。",
+    "reason": "去除公式放回的口号与主持步骤，保留时间对齐要求。"
+  },
+  {
+    "path": "docs/textbook/chapters/08_causality.tex",
+    "before": "其次，协变量必须按照它在因果结构中的作用选择。",
+    "after": "协变量的选择取决于其在因果结构中的作用。",
+    "reason": "去除段落序列主持。"
+  },
+  {
+    "path": "docs/textbook/chapters/08_causality.tex",
+    "before": "最后，敏感性分析应将无法检验的假设转化为可以讨论的幅度。例如，若分析者愿意\n考虑估计结果相对于目标效应仍可能有绝对值不超过",
+    "after": "敏感性分析可用偏差幅度考察不可检验的识别假设。例如，若假定估计结果相对于\n目标效应仍可能有绝对值不超过",
+    "reason": "清理主持与个人愿意措辞，明确敏感性假设。"
+  },
+  {
+    "path": "docs/textbook/chapters/08_causality.tex",
+    "before": "示例重构为“某制造集团分批部署统一数据目录”。",
+    "after": "考虑“某制造集团分批部署统一数据目录”的假设案例。",
+    "reason": "移除案例编写过程，同时明确虚构边界。"
+  },
+  {
+    "path": "docs/textbook/chapters/08_causality.tex",
+    "before": "一个更完整的评估记录任务难度、首次完成时间、人工复核、返工、质量和最终业务结果。",
+    "after": "AI 应用评估应记录任务难度、首次完成时间、人工复核、返工、质量和最终业务结果。",
+    "reason": "去除评估完整性的自我评价，保留记录变量。"
+  },
+  {
+    "path": "docs/textbook/chapters/08_causality.tex",
+    "before": "一份因果研究报告 通常包含：",
+    "after": "因果研究报告应包含：",
+    "reason": "清理泛化模板口吻与多余空格。"
+  },
+  {
+    "path": "docs/textbook/chapters/08_causality.tex",
+    "before": "本章说明了因果推断在管理干预中的位置。预测模型可以发现风险对象，",
+    "after": "预测模型可以发现风险对象，",
+    "reason": "删除小结的章节内容重复。"
+  },
+  {
+    "path": "docs/textbook/chapters/08_causality.tex",
+    "before": "阅读时应特别检查它们的识别、重叠和收敛条件，而不只记住估计公式。",
+    "after": "这些方法的适用性取决于其识别、重叠和收敛条件。",
+    "reason": "清理对读者学习方式的指导，保留适用条件。"
+  },
+  {
+    "path": "docs/textbook/chapters/09_optimization.tex",
+    "before": "本章先说明可行域、目标和经济解释，再由线性规划展示资源价格与最优性证明。\n随后讨论离散选择、随机库存与尾部风险，并以加急和补货算例说明计算步骤。\n制造排程进一步处理活动先后关系，决策导向学习比较预测误差与行动损失。\n最后说明求解结果的检查、参数敏感性分析及实施条件。",
+    "after": "线性规划对偶给出资源价格与最优性证明；整数约束处理离散选择和活动\n先后关系。随机库存模型与尾部风险度量用于不确定环境下的方案比较，决策导向\n学习则以行动损失评价估计参数。求解结果还需经过可行性检查、参数敏感性分析\n与实施条件核验。",
+    "reason": "将章节计划改为方法功能与评价要求。"
+  },
+  {
+    "path": "docs/textbook/chapters/09_optimization.tex",
+    "before": "优化进一步追问：在预算、库存、产能、人力、服务水平和风险约束下，应该选择哪些行动。",
+    "after": "优化根据预算、库存、产能、人力、服务水平和风险约束选择行动。",
+    "reason": "去除拟人化追问，直接陈述任务。"
+  },
+  {
+    "path": "docs/textbook/chapters/09_optimization.tex",
+    "before": "它不只预测结果，还必须说明选择何种行动、为何可行、使用多少资源、承担什么风险。",
+    "after": "其输出包括行动选择、可行性依据、资源使用和相应风险。",
+    "reason": "将装饰性对照和口语问句改为输出定义。"
+  },
+  {
+    "path": "docs/textbook/chapters/09_optimization.tex",
+    "before": "企业优化问题的约束通常比目标函数更接近真实管理过程。",
+    "after": "企业优化问题的约束描述资源限制、服务要求和业务规则。",
+    "reason": "去除未论证高低比较，明确约束的内容。"
+  },
+  {
+    "path": "docs/textbook/chapters/09_optimization.tex",
+    "before": "仅找到一个可行解还不足以证明最优，下面用对偶价格给出上界。",
+    "after": "该可行解的最优性还需由对偶上界验证。",
+    "reason": "去除“下面用”的讲解过程，保留最优性证明要求。"
+  },
+  {
+    "path": "docs/textbook/chapters/09_optimization.tex",
+    "before": "优化的一个核心直觉是边际价值。若增加一单位资源带来的目标函数改善很高，应优先分配资源；若边际价值已经降低，则应把资源转向其他行动。",
+    "after": "边际价值衡量增加一单位资源带来的目标函数改善，可用于比较不同用途的增量收益。",
+    "reason": "去除核心直觉包装及无条件的分配口号，保留边际比较功能。"
+  },
+  {
+    "path": "docs/textbook/chapters/09_optimization.tex",
+    "before": "影子价格的管理含义非常直接。",
+    "after": "影子价格反映约束资源在适用范围内的增量价值。",
+    "reason": "以有效范围内的经济含义替代作者自评。"
+  },
+  {
+    "path": "docs/textbook/chapters/09_optimization.tex",
+    "before": "需求、到货时间和产能等输入具有不确定性。需求、到货时间、客户响应率和产能可用性都具有不确定性。若把它们简单替换为平均值，可能得到脆弱方案。",
+    "after": "需求、到货时间、客户响应率和产能可用性都具有不确定性。以平均值替代其分布可能低估高损失情景的影响。",
+    "reason": "删除重复句及含混评价，直接说明均值替代的局限。"
+  },
+  {
+    "path": "docs/textbook/chapters/09_optimization.tex",
+    "before": "优化结果常给人一种过度确定感。事实上，需求预测、成本参数、缺货惩罚、预算和库容都可能变化。敏感性分析用于回答：若关键参数改变，最优方案是否稳定？",
+    "after": "需求预测、成本参数、缺货惩罚、预算和库容都可能变化。敏感性分析考察关键参数变化时最优方案的稳定性。",
+    "reason": "清理假想感受、事实上和口语问句，保留敏感性定义。"
+  },
+  {
+    "path": "docs/textbook/chapters/09_optimization.tex",
+    "before": "本章至少要求检查：",
+    "after": "敏感性分析可检查以下变化：",
+    "reason": "清理课程要求，保留参数核查对象。"
+  },
+  {
+    "path": "docs/textbook/chapters/09_optimization.tex",
+    "before": "本例只展示可验证的最小结构。",
+    "after": "该算例未计入这些附加约束。",
+    "reason": "以明确模型范围替代讲义展示意图。"
+  },
+  {
+    "path": "docs/textbook/chapters/09_optimization.tex",
+    "before": "这个例子说明训练目标与决策目标可能不一致。",
+    "after": "两种预测的误差与决策后悔值排序不同。",
+    "reason": "去除例后总结包装，保留具体结果。"
+  },
+  {
+    "path": "docs/textbook/chapters/09_optimization.tex",
+    "before": "制造情境的对应是滚动时域：",
+    "after": "制造排程可采用滚动时域：",
+    "reason": "去除案例迁移的策划语言，直接描述方法。"
+  },
+  {
+    "path": "docs/textbook/chapters/09_optimization.tex",
+    "before": "仿真最优是在模拟世界里的最优，只有经过现场验证和反馈，才能形成可信管理建议。",
+    "after": "仿真最优解依赖模拟模型的结构和参数，其实际效果需经现场验证。",
+    "reason": "清理口号式同义重复，保留仿真边界。"
+  },
+  {
+    "path": "docs/textbook/chapters/09_optimization.tex",
+    "before": "现将风险预测、干预效果和行动约束连接到同一个小问题。",
+    "after": "订单加急组合选择同时需要风险预测、干预效果和行动约束。",
+    "reason": "去除“现将”的讲解过程和小问题口吻。"
+  },
+  {
+    "path": "docs/textbook/chapters/09_optimization.tex",
+    "before": "这个小差异足以说明三个章节的分工：第~\\ref{ch:week07-prediction}~章估计风险，\n第~\\ref{ch:week08-causality}~章支持效果识别，本章在共同约束下选择组合。",
+    "after": "风险预测见第~\\ref{ch:week07-prediction}~章，效果识别见第~\\ref{ch:week08-causality}~章。\n组合优化将这些估计与共同资源约束结合。",
+    "reason": "清理章节分工及例后强调，保留方法出处与联系。"
+  },
+  {
+    "path": "docs/textbook/chapters/09_optimization.tex",
+    "before": "LLM 适合把自然语言约束转成候选模型、补充缺失参数清单和解释求解结果。",
+    "after": "LLM 可辅助将自然语言约束转成候选模型、列出缺失参数和解释求解结果。",
+    "reason": "避免无范围的适合断言，保留辅助用途。"
+  },
+  {
+    "path": "docs/textbook/chapters/09_optimization.tex",
+    "before": "一个可靠流程是：",
+    "after": "优化请求的执行流程包括：",
+    "reason": "去除流程质量自评，直接列出流程。"
+  },
+  {
+    "path": "docs/textbook/chapters/09_optimization.tex",
+    "before": "若每个产品只有几十个候选订货量，枚举法直观、可审计，也适合课堂教学。",
+    "after": "若每个产品只有几十个候选订货量，枚举法可逐项核对目标值与约束。",
+    "reason": "去除课堂教学策划，保留枚举法核查属性。"
+  },
+  {
+    "path": "docs/textbook/chapters/09_optimization.tex",
+    "before": "资源约束使“单品价值排序”变成“组合选择”问题。",
+    "after": "单品边际价值排序不能替代预算和库容约束下的组合比较。",
+    "reason": "以技术区别替代口号式转化。"
+  },
+  {
+    "path": "docs/textbook/chapters/09_optimization.tex",
+    "before": "优化应被看作一个持续反馈系统：",
+    "after": "优化参数随执行反馈更新，形成以下运行过程：",
+    "reason": "去除应被看作的读者认知指令，直接说明反馈机制。"
+  },
+  {
+    "path": "docs/textbook/chapters/09_optimization.tex",
+    "before": "若没有反馈，模型会在环境变化后逐渐失效；若没有业务审查，模型可能把错误参数优化得非常彻底。",
+    "after": "环境变化后，输入参数需要根据反馈更新；未经核查的业务参数可能使求解结果偏离实际目标。",
+    "reason": "清理夸张比喻与口号对仗，保留更新及参数核查风险。"
+  },
+  {
+    "path": "docs/textbook/chapters/09_optimization.tex",
+    "before": "本章说明了优化与处方分析在数据驱动管理决策中的位置。",
+    "after": "",
+    "reason": "删除小结的章节内容重复。"
+  },
+  {
+    "path": "docs/textbook/chapters/09_optimization.tex",
+    "before": "库存补货案例展示了如何用离散需求情景计算期望净价值，并在预算和库容约束下选择最优订货量。管理上，最优解必须经过敏感性分析、执行条件检查和反馈治理，才能成为可靠行动。",
+    "after": "库存补货模型用离散需求情景计算期望净价值，并在预算和库容约束下选择订货量。方案实施前应进行敏感性分析和执行条件检查，实施后根据反馈更新参数。",
+    "reason": "去除案例展示过程和可靠行动口号，保留模型及实施要求。"
+  },
+  {
+    "path": "docs/textbook/chapters/09_optimization.tex",
+    "before": "这些材料说明，学习和优化可以联合设计，但目标函数\n与现实损失之间的对应关系仍需独立论证。",
+    "after": "学习和优化可以联合设计，其目标函数与现实损失之间的对应关系仍需独立论证。",
+    "reason": "去除文献包装，直接陈述研究条件。"
+  },
+  {
+    "path": "docs/textbook/chapters/10_process_mining.tex",
+    "before": "对象与结果，可以分析等待、返工和规则遵循情况。本章研究事件日志及流程模型，\n并说明智能体如何根据业务状态调用工具、提交请求和核对结果。",
+    "after": "对象与结果，为等待、返工和规则遵循分析提供事件日志。流程模型描述活动发生\n的条件；智能体根据业务状态调用工具、提交请求并核对结果。",
+    "reason": "以事件日志与执行机制替代章节研究意图。"
+  },
+  {
+    "path": "docs/textbook/chapters/10_process_mining.tex",
+    "before": "本章先定义事件、轨迹与流程变体，讨论数据质量和流程发现，再研究一致性检查与\n改进方案。随后介绍智能体的任务规格、运行环境、检索增强生成和本地服务，\n讨论不同产品组合的实施条件与完整任务的评价。最后以订单加急案例综合运用\n全书的数据、统计与优化方法。",
+    "after": "事件、轨迹与流程变体概括实际执行过程，流程发现和一致性检查分别用于建立\n模型及核查规则遵循。智能体执行需要任务规格、运行控制、检索证据和业务服务。\n平台组合的实施条件及任务评价须覆盖数据、统计、优化和最终业务状态。",
+    "reason": "清理章节编排和全书综合策划，直接陈述方法关系。"
+  },
+  {
+    "path": "docs/textbook/chapters/10_process_mining.tex",
+    "before": "它能告诉管理者“平均履约周期较长”或“准时率下降”，但未必说明延迟发生在流程中的哪一步。",
+    "after": "这些汇总可反映平均履约周期与准时率，却未必定位发生延迟的具体活动。",
+    "reason": "清理拟人化告知和假想管理者话语。"
+  },
+  {
+    "path": "docs/textbook/chapters/10_process_mining.tex",
+    "before": "优秀的流程分析应把路径、时间、金额、客户和组织责任结合起来。",
+    "after": "流程分析应结合路径、时间、金额、客户和组织责任。",
+    "reason": "去除优秀的价值标签，保留分析变量。"
+  },
+  {
+    "path": "docs/textbook/chapters/10_process_mining.tex",
+    "before": "下面先构造直接跟随图与流程变体，再用 Petri 网表达活动发生的条件。前者概括观察到的相邻活动，后者描述可执行的流程状态与转换。",
+    "after": "直接跟随图概括观察到的相邻活动，流程变体保留完整活动序列；Petri 网描述可执行的流程状态与转换。",
+    "reason": "以三种表达的职责替代讲解顺序。"
+  },
+  {
+    "path": "docs/textbook/chapters/10_process_mining.tex",
+    "before": "流程挖掘的价值不在于画出复杂图，而在于把路径、时间和异常组织成可讨论的事实。",
+    "after": "路径、时间和异常记录共同提供流程调查的依据。",
+    "reason": "清理装饰性否定对照和价值宣告，保留调查证据。"
+  },
+  {
+    "path": "docs/textbook/chapters/10_process_mining.tex",
+    "before": "标准的订单到收款轨迹 可以写成：",
+    "after": "订单到收款的参考轨迹为：",
+    "reason": "规范参考流程措辞并清理多余空格。"
+  },
+  {
+    "path": "docs/textbook/chapters/10_process_mining.tex",
+    "before": "若某个 实例出现",
+    "after": "若某个实例出现",
+    "reason": "修复多余空格。"
+  },
+  {
+    "path": "docs/textbook/chapters/10_process_mining.tex",
+    "before": "这与只看到“检查后发货”的一条频繁边有本质区别。",
+    "after": "直接跟随边只能记录相邻活动，不能单独表达多个前置条件的同时满足。",
+    "reason": "去除本质区别口号，明确模型语义差异。"
+  },
+  {
+    "path": "docs/textbook/chapters/10_process_mining.tex",
+    "before": "本书的示例规则包括：",
+    "after": "假设规则包括：",
+    "reason": "去除本书自指并保留示例规则非通用边界。"
+  },
+  {
+    "path": "docs/textbook/chapters/10_process_mining.tex",
+    "before": "一致性异常是事件日志中的轨迹 与参考流程规则不一致的情况。",
+    "after": "一致性异常是事件日志中的轨迹与参考流程规则不一致的情况。",
+    "reason": "修复定义中的多余空格。"
+  },
+  {
+    "path": "docs/textbook/chapters/10_process_mining.tex",
+    "before": "以“某工站 WIP 升高且 OTD 下降”为输入，读者依次核对指标口径，定位受影响批次，检查数据质量，分解产品结构与队列，提出可检验的根因假设，估计行动收益，再求解有约束的候选方案。最后用流程日志确认方案是否执行、是否产生新返工，并为未来因果评估保留对照或分期信息。",
+    "after": "工站 WIP 升高且 OTD 下降时，分析需要核对指标口径，定位受影响批次，检查数据质量，并分解产品结构与队列。根因假设须经过检验，行动方案须比较收益与资源约束。流程日志用于确认实际执行及新增返工；对照或分期记录用于后续效果评价。",
+    "reason": "清理对读者的综合教学路线，保留业务分析步骤及评价记录。"
+  },
+  {
+    "path": "docs/textbook/chapters/10_process_mining.tex",
+    "before": "8 个实例 和 4 个流程变体。",
+    "after": "8 个实例和 4 个流程变体。",
+    "reason": "修复结果描述中的多余空格。"
+  },
+  {
+    "path": "docs/textbook/chapters/10_process_mining.tex",
+    "before": "返工实例 为",
+    "after": "返工实例为",
+    "reason": "修复正文中的多余空格。"
+  },
+  {
+    "path": "docs/textbook/chapters/10_process_mining.tex",
+    "before": "该案例还给出一个有启发性的指标：每个订单项的人工活动次数。该指标是单位订单项的平均次数，可以大于1。这与第~\\ref{ch:week03-sql-kpi}~章的指标代数相呼应。",
+    "after": "该案例使用每个订单项的人工活动次数，即单位订单项的平均次数，数值可以大于1。其聚合依据见第~\\ref{ch:week03-sql-kpi}~章的指标代数。",
+    "reason": "清理启发性自评与相呼应措辞，保留指标定义及出处。"
+  },
+  {
+    "path": "docs/textbook/chapters/10_process_mining.tex",
+    "before": "将案例重构为封测示例项目，可依次完成四件事：统一批次、工序和设备事件；分解完成周期与未完成批次年龄；寻找反复冻结、返工及跨班组交接；为候选改进建立可评估的试点。冻结次数高的产品可能更复杂，不能直接给班组贴低效率标签。",
+    "after": "封测流程分析可统一批次、工序和设备事件，分别研究完成周期与未完成批次年龄，定位反复冻结、返工及跨班组交接，并通过试点评价改进效果。冻结次数高的产品可能更复杂，班组效率比较需控制相应任务差异。",
+    "reason": "清理案例改写和课堂项目步骤，规范贴标签口语；不把拟议分析写成 Siemens 已实施事实。"
+  },
+  {
+    "path": "docs/textbook/chapters/10_process_mining.tex",
+    "before": "可以按“证据、语义、行动、控制”四层比较平台，而不依据融资额或市场热度作技术排名。",
+    "after": "平台比较可分别考察证据、语义、行动和控制能力。",
+    "reason": "去除未提出的融资热度对照，保留功能比较维度。"
+  },
+  {
+    "path": "docs/textbook/chapters/10_process_mining.tex",
+    "before": "流程挖掘报告应避免只展示图和指标。流程改进需要把发现转化为可执行问题：",
+    "after": "流程改进需要结合日志发现核查业务机制：",
+    "reason": "清理报告劝告和可执行问题包装，直接引出业务核查。"
+  },
+  {
+    "path": "docs/textbook/chapters/10_process_mining.tex",
+    "before": "符合该模式 的“周良率”",
+    "after": "符合该模式的“周良率”",
+    "reason": "修复多余空格。"
+  },
+  {
+    "path": "docs/textbook/chapters/10_process_mining.tex",
+    "before": "将一项企业人工智能应用分解为数据、语义、模型、运行与治理职责，有助于\n说明各项技术对决策的实际贡献。第~\\ref{sec:enterprise-ai-stack}~节给出系统构成，\n第~\\ref{sec:ai-service-operations}~节与附录~\\ref{app:ai-infra-lab}~说明服务量与容量的核算。\n本节进一步检查，这些能力是否使同一笔订单得到可追溯的处理。\n回到第~\\ref{sec:expedite-choice}~节的四张订单。当前容量允许加急两张，效果与成本\n假设支持选择 B、C。这个结论只是起点。若要将它转化为企业中的可执行建议，\n必须能够沿全书的论证逆向追溯，也必须能够在执行后继续向前检验。",
+    "after": "企业人工智能应用中的数据、语义、模型、运行与治理职责共同支持决策追溯。\n系统构成见第~\\ref{sec:enterprise-ai-stack}~节，服务量与容量核算见\n第~\\ref{sec:ai-service-operations}~节和附录~\\ref{app:ai-infra-lab}。\n第~\\ref{sec:expedite-choice}~节的四张订单中，当前容量允许加急两张，效果与成本\n假设支持选择 B、C。该方案的实施记录需要保留事实、模型、授权与执行结果，\n并据此核验其可行性和实际效果。",
+    "reason": "清理本节检查、回到案例、结论起点与全书逆向论证的元话语，保留全部引用和方案条件。"
+  },
+  {
+    "path": "docs/textbook/chapters/10_process_mining.tex",
+    "before": "首先，说明为什么现在需要决策。交付承诺在何时到期，延误会产生什么损失，\n是否仍存在改变结果的时间窗口？这对应第1章的问题定义。其次，确认 B、C 的身份\n及其关联批次，保留当时有效的承诺版本、资源状态和授权主体。这对应第2章的数据模型。\n随后核查 OTD 的到期队列、未完成订单和聚合过程，并记录数据质量状态，分别对应\n第3、4章。若基础事实不稳定，不应把不确定性藏在“模型已计算”之后。",
+    "after": "问题定义需要明确交付承诺的到期时点、延期损失和仍可改变结果的时间窗口，\n见第1章。订单 B、C 及其关联批次的记录应保留当时有效的承诺版本、资源状态和\n授权主体，见第2章的数据模型。OTD 的到期队列、未完成订单、聚合过程和质量状态\n分别依据第3、4章核查。基础事实存在的不确定性应在模型结果中明确说明。",
+    "reason": "去除逐章教学主持和隐藏不确定性比喻，保留问题、对象、口径与质量依据。"
+  },
+  {
+    "path": "docs/textbook/chapters/10_process_mining.tex",
+    "before": "接下来，用第5章的分布和运营关系判断问题的范围：是少数订单长尾、产品组合变化，\n还是系统性拥堵？第6章说明如何用试点评价方案，第7章给出未来风险，第8章追问\n加急是否真能改变结果。三者的数据和假设不可互相冒名。只有在效果、成本和约束\n已经声明后，第9章的组合选择才具有明确含义。",
+    "after": "第5章的分布和运营关系用于区分订单长尾、产品组合变化与系统性拥堵。\n试点效果评价见第6章，风险预测见第7章，加急效果的识别见第8章。各项结论\n须符合相应数据和假设；组合选择还需明确效果、成本与资源约束，见第9章。",
+    "reason": "清理接下来和章节追问、冒名的口语，保留方法之间的证据边界。"
+  },
+  {
+    "path": "docs/textbook/chapters/10_process_mining.tex",
+    "before": "最后，由本章的执行机制把“选择 B、C”转化为申请、验证、批准、提交与确认。",
+    "after": "方案 B、C 的实施依次经过申请、验证、批准、提交与确认。",
+    "reason": "去除章节执行机制自指，保留业务状态转换。"
+  },
+  {
+    "path": "docs/textbook/chapters/10_process_mining.tex",
+    "before": "由此，订单加急问题依次涉及目标定义、对象识别、指标计算、质量检查、统计分析、\n效果估计、约束优化与方案实施。各方法共同服务于同一个决策问题，其联系由信息、\n行动、成本和结果的定义确定。",
+    "after": "",
+    "reason": "删除已由正文和决策记录表充分表达的重复结语。"
+  },
+  {
+    "path": "docs/textbook/chapters/10_process_mining.tex",
+    "before": "流程证据使行动从“已被建议”变成“可以核查是否执行”。",
+    "after": "事件日志和业务状态用于核查行动是否执行。",
+    "reason": "以核查依据替代口号式转化。"
+  },
+  {
+    "path": "docs/textbook/chapters/10_process_mining.tex",
+    "before": "给出前两个流程变体的 实例数",
+    "after": "给出前两个流程变体的实例数",
+    "reason": "修复习题中的多余空格，保留任务。"
+  },
+  {
+    "path": "docs/textbook/chapters/10_process_mining.tex",
+    "before": "列出返工实例 和一致性异常实例；",
+    "after": "列出返工实例和一致性异常实例；",
+    "reason": "修复习题中的多余空格，保留任务。"
+  },
+  {
+    "path": "docs/textbook/chapters/05_statistics_dashboard.tex",
+    "before": "这使得均值非常适合预算、产能和目标差距讨论。",
+    "after": "均值与总量的对应关系可用于预算、产能和目标差距分析。",
+    "reason": "去除适合程度的自评，明确均值用途的依据。"
+  },
+  {
+    "path": "docs/textbook/chapters/05_statistics_dashboard.tex",
+    "before": "没有目标线时难以判断好坏。",
+    "after": "缺少目标线时难以判断达成程度。",
+    "reason": "规范表内评价术语。"
+  },
+  {
+    "path": "docs/textbook/chapters/05_statistics_dashboard.tex",
+    "before": "质量失败时漂亮图表会放大错误。",
+    "after": "质量检查未通过时，图表可能传播错误信息。",
+    "reason": "清理漂亮图表修辞，保留错误传播风险。"
+  },
+  {
+    "path": "docs/textbook/chapters/07_prediction.tex",
+    "before": "损失会非常大。",
+    "after": "交叉熵损失较大。",
+    "reason": "清理夸张程度词，明确损失类型。"
+  },
+  {
+    "path": "docs/textbook/chapters/07_prediction.tex",
+    "before": "这些系数的方向符合基本业务直觉：客户关系越短、客服工单越多、使用越不活跃、折扣越高、履约问题越多，流失风险越高。",
+    "after": "在该模型中，客户关系较短、客服工单较多、使用活跃度较低、折扣较高和履约延迟较多均对应较高的预测流失风险。",
+    "reason": "去除直觉背书，明确系数描述的是给定模型的预测关系。"
+  },
+  {
+    "path": "docs/textbook/chapters/10_process_mining.tex",
+    "before": "流程挖掘对数据质量非常敏感。",
+    "after": "流程挖掘结果取决于事件日志的质量。",
+    "reason": "清理程度强调，明确证据来源。"
+  },
+  {
+    "path": "docs/textbook/chapters/10_process_mining.tex",
+    "before": "存在少数高价值订单长期卡住",
+    "after": "存在少数高价值订单长期未完成",
+    "reason": "规范业务状态表述。"
+  },
+  {
+    "path": "docs/textbook/chapters/09_optimization.tex",
+    "before": "模型只会补到某个点；",
+    "after": "最优订货量受到后续边际价值下降的限制；",
+    "reason": "以经济约束含义替代口语描述。"
+  },
+  {
+    "path": "docs/textbook/chapters/09_optimization.tex",
+    "before": "按均值订货可能远远不够。",
+    "after": "按均值订货可能产生较高缺货损失。",
+    "reason": "清理程度夸张，明确损失机制。"
+  },
+  {
+    "path": "docs/textbook/chapters/09_optimization.tex",
+    "before": "鲁棒性关注方案在坏情景下是否仍可接受。",
+    "after": "鲁棒性关注方案在不利情景下是否仍可接受。",
+    "reason": "规范情景评价术语。"
+  }
+]

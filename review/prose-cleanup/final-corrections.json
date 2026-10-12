@@ -1,0 +1,86 @@
+[
+  {
+    "path": "docs/lecture_notes/14_ai_agent.md",
+    "before": "选场景先看价值，再看证据和风险。可将候选任务放进五列：业务损失或效率机会、资料可用性与有效期、流程标准化程度、失败后果、权限与系统集成难度。",
+    "after": "场景筛选综合考察业务损失或效率机会、资料可用性与有效期、流程标准化程度、失败后果，以及权限与系统集成难度。",
+    "reason": "删除口号和表格布局元话语"
+  },
+  {
+    "path": "docs/lecture_notes/14_ai_agent.md",
+    "before": "它是任务配方，不能授予工具权限，也不能替代业务流程中的审批。",
+    "after": "它规定任务的输入、执行步骤和输出，不授予工具权限，也不替代业务审批。",
+    "reason": "规范Skill的学术表述"
+  },
+  {
+    "path": "docs/lecture_notes/14_ai_agent.md",
+    "before": "可复用任务配方与执行后端如何接受独立授权",
+    "after": "可复用任务规范与执行后端如何接受独立授权",
+    "reason": "去比喻性配方措辞"
+  },
+  {
+    "path": "docs/lecture_notes/14_ai_agent.md",
+    "before": "不能偷换时间窗口",
+    "after": "不得擅自改用其他时间窗口",
+    "reason": "规范语体"
+  },
+  {
+    "path": "docs/lecture_notes/14_ai_agent.md",
+    "before": "而不是依赖模型填空",
+    "after": "不得由模型补入未经确认的默认定义",
+    "reason": "规范缺失口径约束"
+  },
+  {
+    "path": "docs/cases/ai_question_to_data_case.md",
+    "before": "QueryMind 和 DataBot 是企业导师提供的应用示例；以下查询流程在课程样本上复现，不依赖这两个商业系统。",
+    "after": "以下查询与审计过程使用固定样本，不依赖商业问数系统。",
+    "reason": "删除培训身份和产业案例介绍过程"
+  },
+  {
+    "path": "docs/lecture_notes/14_ai_agent.md",
+    "before": "输出“证据不足”或转交制度负责人，比补出看似合理的额度更正确。",
+    "after": "应输出“证据不足”或转交制度负责人，不得在缺少适用资料时补设额度。",
+    "reason": "交叉复查后的正式语体修正"
+  },
+  {
+    "path": "docs/lecture_notes/14_ai_agent.md",
+    "before": "会使审批、异常、重复提交和日志依赖模型自觉",
+    "after": "会使审批、异常、重复提交和日志处理依赖模型是否正确遵循提示",
+    "reason": "交叉复查后的正式语体修正"
+  },
+  {
+    "path": "docs/lecture_notes/14_ai_agent.md",
+    "before": "本课程的样本",
+    "after": "配套样本",
+    "reason": "交叉复查后的正式语体修正"
+  },
+  {
+    "path": "docs/lecture_notes/14_ai_agent.md",
+    "before": "因此必须先说清",
+    "after": "查询请求须明确",
+    "reason": "交叉复查后的正式语体修正"
+  },
+  {
+    "path": "docs/textbook/appendices.tex",
+    "before": "它帮助理解分层、协变量调整以及\n产品组合对总体波动的作用。",
+    "after": "该分解描述分层、协变量调整及产品组合对总体波动的影响。",
+    "reason": "交叉复查后的正式语体修正"
+  },
+  {
+    "path": "docs/textbook/appendices.tex",
+    "before": "在指定的教学负载下",
+    "after": "在指定的假设负载下",
+    "reason": "交叉复查后的正式语体修正"
+  },
+  {
+    "path": "docs/textbook/appendices.tex",
+    "before": "检索长度与请求量变化时的教学估算",
+    "after": "检索长度与请求量变化时的容量与费用估算",
+    "reason": "交叉复查后的正式语体修正"
+  },
+  {
+    "path": "docs/lecture_notes/11_modern_data_platform.md",
+    "before": "若没有语义层和审计，AI 问数会把临时查询包装成确定结论，反而放大管理风险。",
+    "after": "缺少语义定义与审计记录时，临时查询的口径和解释难以复核，AI 问数结果可能增加管理风险。",
+    "reason": "交叉复查后的正式语体修正"
+  }
+]

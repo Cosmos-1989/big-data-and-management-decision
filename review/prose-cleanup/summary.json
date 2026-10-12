@@ -1,0 +1,62 @@
+{
+  "operationRecords": 519,
+  "reviewedWebDocuments": 39,
+  "reviewedSlideDecks": 11,
+  "reviewedSlidePages": 458,
+  "changedSlidePages": 127,
+  "protectedRebuiltContent": {
+    "math": 1200,
+    "code": 15,
+    "citations": 208,
+    "images": 19
+  },
+  "pdf": {
+    "pages": 192,
+    "chapters": 10,
+    "chapter_source_characters": 203442,
+    "figures": 19,
+    "tables": 72,
+    "printed_references": 136,
+    "index_locations": 231,
+    "index_terms": 228,
+    "arabic_pages": 180,
+    "internal_links": 976,
+    "warnings": [],
+    "pdf_sha256": "152d9e8cd36934e1add2ae2201e4282e55f9c0f75061f3e4c77ebde5d507df6d"
+  },
+  "font": {
+    "family": "BDM Course Song",
+    "upstream": "https://github.com/adobe-fonts/source-han-serif",
+    "license": "SIL OFL 1.1",
+    "contentSha256": "3e0205052e91bdc5cbb812ab7d9d721301100f060ba43ad0caee3f4eb2e6aaa8",
+    "requiredCjkCharacters": 1176,
+    "fonts": [
+      {
+        "weight": 400,
+        "file": "course-song-regular.woff2",
+        "bytes": 314732,
+        "sha256": "9caa67f132328fe141779f09844b2f91ef51c3e78932fe94e44468c254af0659",
+        "sourceSha256": "3754ea669c530e2473354f8f6d9f79680a44d7e26ec7d00eeabee4a7e0753c5d",
+        "version": "Version 2.003;hotconv 1.1.1;makeotfexe 2.6.0",
+        "missingCjk": []
+      },
+      {
+        "weight": 700,
+        "file": "course-song-bold.woff2",
+        "bytes": 324880,
+        "sha256": "3382510b8992fb76b9feb59425ec3fe51e6e5587f6dd5ff3c229203af95b4d1a",
+        "sourceSha256": "4ee555ae58b3d22f6a95c2c494f2c36b7cccfc1d2224635f6461a03756f0e3c1",
+        "version": "Version 2.003;hotconv 1.1.1;makeotfexe 2.6.0",
+        "missingCjk": []
+      }
+    ]
+  },
+  "checks": {
+    "math": 1233,
+    "slideTex": 2147,
+    "slideDiagrams": 190,
+    "slidePageOverflow": 0,
+    "diagramCollisions": 0,
+    "residualPatterns": 0
+  }
+}

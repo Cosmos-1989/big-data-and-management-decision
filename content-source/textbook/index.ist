@@ -1,0 +1,7 @@
+headings_flag 1
+heading_prefix "\n\\indexletter{"
+heading_suffix "}\n"
+delim_0 ", "
+delim_1 ", "
+delim_2 ", "
+delim_r "--"

@@ -1,0 +1,40 @@
+{
+  "chapters_reviewed": [
+    "docs/textbook/chapters/05_statistics_dashboard.tex",
+    "docs/textbook/chapters/06_ab_testing.tex",
+    "docs/textbook/chapters/07_prediction.tex",
+    "docs/textbook/chapters/08_causality.tex",
+    "docs/textbook/chapters/09_optimization.tex",
+    "docs/textbook/chapters/10_process_mining.tex"
+  ],
+  "edits": 133,
+  "per_chapter": {
+    "docs/textbook/chapters/05_statistics_dashboard.tex": 18,
+    "docs/textbook/chapters/06_ab_testing.tex": 14,
+    "docs/textbook/chapters/07_prediction.tex": 24,
+    "docs/textbook/chapters/08_causality.tex": 20,
+    "docs/textbook/chapters/09_optimization.tex": 28,
+    "docs/textbook/chapters/10_process_mining.tex": 29
+  },
+  "protected_content_checks": {
+    "inline_math": "pass",
+    "display_math": "pass",
+    "code": "pass",
+    "labels": "pass",
+    "citations": "pass",
+    "headings": "pass",
+    "references": "pass",
+    "figures": "pass"
+  },
+  "retained_conventions": [
+    "教学参数、假设数据和模拟环境边界。",
+    "算例输入、实际算法步骤及报告技术要求。",
+    "章/节引用、文献线索及必要技术对比。",
+    "思考与习题全部任务，标题和锚点未改。"
+  ],
+  "questionable_headings": [],
+  "notes": [
+    "本章算例、本章样例数据等少量自指保留，用于准确标识数据与评价范围。",
+    "读者感知能力是视觉编码定义的对象，非教学策划，保留。"
+  ]
+}

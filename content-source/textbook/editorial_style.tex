@@ -1,0 +1,129 @@
+% Editorial overrides are local to the book; historical lectures stay unchanged.
+\usepackage{colortbl,needspace,microtype}
+\definecolor{BDMBlue}{HTML}{263A3D}
+\definecolor{BDMTeal}{HTML}{216B68}
+\definecolor{BDMGray}{HTML}{505A5C}
+\definecolor{BDMAmber}{HTML}{A54932}
+\definecolor{BDMLight}{HTML}{F4F7F6}
+\definecolor{BDMRule}{HTML}{A9B8B6}
+\definecolor{BDMTableHead}{HTML}{EAF0EF}
+\definecolor{CodeBg}{HTML}{F5F7F7}
+
+\setmonofont{IBMPlexMono-Regular.otf}[
+  BoldFont=IBMPlexMono-Medium.otf,
+  ItalicFont=IBMPlexMono-Italic.otf,
+  BoldItalicFont=IBMPlexMono-MediumItalic.otf,
+  Scale=0.88,Ligatures=NoCommon]
+\setsansfont{texgyreheros-regular.otf}[
+  BoldFont=texgyreheros-bold.otf,ItalicFont=texgyreheros-italic.otf,
+  BoldItalicFont=texgyreheros-bolditalic.otf,Scale=0.92]
+\setCJKsansfont[
+  UprightFont=FandolHei-Regular.otf,BoldFont=FandolHei-Regular.otf
+]{FandolHei-Regular.otf}
+
+\ctexset{
+  part={format=\Huge\mdseries\color{BDMBlue}},
+  chapter={format=\huge\mdseries\color{BDMBlue}},
+  section={format=\Large\mdseries\color{BDMBlue}},
+  subsection={format=\large\mdseries},
+  subsubsection={format=\normalsize\mdseries}
+}
+\setlength{\parskip}{0.16em plus 0.06em minus 0.03em}
+\setlength{\textfloatsep}{16pt plus 3pt minus 3pt}
+\setlength{\intextsep}{14pt plus 3pt minus 3pt}
+\setlength{\floatsep}{12pt plus 2pt minus 2pt}
+\renewcommand{\topfraction}{0.85}
+\renewcommand{\bottomfraction}{0.75}
+\renewcommand{\textfraction}{0.12}
+\renewcommand{\floatpagefraction}{0.8}
+\setcounter{topnumber}{3}
+\setcounter{totalnumber}{4}
+\makeatletter
+\setlength{\@fptop}{16pt}
+\setlength{\@fpsep}{22pt}
+\setlength{\@fpbot}{0pt plus 1fil}
+\makeatother
+\clubpenalty=10000
+\widowpenalty=10000
+\displaywidowpenalty=10000
+\captionsetup{font={small},labelfont={normalfont,color=BDMTeal},
+  textfont={normalfont,color=BDMGray},labelsep=quad,skip=8pt,
+  justification=raggedright,singlelinecheck=true}
+\captionsetup[table]{position=top}
+\captionsetup[lstlisting]{position=top}
+
+\newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcommand{\booktableformat}{%
+  \small\renewcommand{\arraystretch}{1.22}%
+  \setlength{\tabcolsep}{5pt}\arrayrulecolor{BDMRule}%
+  \setlength{\heavyrulewidth}{0.65pt}%
+  \setlength{\lightrulewidth}{0.3pt}}
+\AtBeginEnvironment{table}{\booktableformat}
+\AtBeginEnvironment{longtable}{\booktableformat}
+\setlength{\LTpre}{12pt}
+\setlength{\LTpost}{12pt}
+
+\lstdefinestyle{bookcode}{
+  basicstyle=\ttfamily\small\color{BDMBlue},
+  backgroundcolor=\color{CodeBg},
+  keywordstyle=\color{BDMTeal},
+  commentstyle=\color{BDMGray},
+  stringstyle=\color{BDMAmber},
+  showstringspaces=false,showspaces=false,showtabs=false,
+  keepspaces=true,columns=fullflexible,tabsize=4,
+  breaklines=true,breakatwhitespace=false,
+  frame=l,framerule=0.7pt,rulecolor=\color{BDMRule},
+  xleftmargin=7pt,xrightmargin=4pt,framexleftmargin=5pt,
+  framesep=5pt,aboveskip=13pt,belowskip=13pt,
+  captionpos=t,numbers=none,upquote=true}
+\lstdefinestyle{pythonstyle}{style=bookcode,language=Python}
+\lstdefinestyle{sqlstyle}{style=bookcode,language=SQL}
+\lstset{style=pythonstyle}
+\BeforeBeginEnvironment{lstlisting}{\Needspace{9\baselineskip}}
+
+\tcbset{bookstatement/.style={enhanced,breakable,
+  colback=BDMLight,coltext=black,frame hidden,boxrule=0pt,arc=0pt,
+  borderline west={0.9pt}{0pt}{BDMTeal},
+  left=9pt,right=9pt,top=6pt,bottom=6pt,
+  before skip=11pt,after skip=11pt}}
+\RemoveFromHook{env/definition/before}[tcolorbox]
+\RemoveFromHook{env/definition/after}[tcolorbox]
+\RemoveFromHook{env/theorem/before}[tcolorbox]
+\RemoveFromHook{env/theorem/after}[tcolorbox]
+\RemoveFromHook{env/proposition/before}[tcolorbox]
+\RemoveFromHook{env/proposition/after}[tcolorbox]
+\RemoveFromHook{env/lemma/before}[tcolorbox]
+\RemoveFromHook{env/lemma/after}[tcolorbox]
+\RemoveFromHook{env/corollary/before}[tcolorbox]
+\RemoveFromHook{env/corollary/after}[tcolorbox]
+\tcolorboxenvironment{definition}{bookstatement}
+\tcolorboxenvironment{theorem}{bookstatement,borderline west={0.9pt}{0pt}{BDMAmber}}
+\tcolorboxenvironment{proposition}{bookstatement,borderline west={0.9pt}{0pt}{BDMAmber}}
+\tcolorboxenvironment{lemma}{bookstatement}
+\tcolorboxenvironment{corollary}{bookstatement}
+\renewtcolorbox{chapterbox}{bookstatement}
+\renewtcolorbox{modernbox}[1][应用研究]{bookstatement,
+  title={#1},coltitle=BDMTeal,fonttitle=\mdseries,
+  attach title to upper={\par\smallskip},colbacktitle=BDMLight}
+
+\tikzset{
+  bdmnode/.style={draw=BDMRule,fill=BDMLight,line width=0.55pt,
+    rounded corners=1pt,align=center,text width=2.65cm,
+    minimum height=1.02cm,inner sep=5pt,font=\small\sffamily,
+    text=BDMBlue},
+  bdmarrow/.style={-{Latex[length=1.8mm,width=1.3mm]},
+    line width=0.65pt,draw=BDMTeal,shorten >=1pt,shorten <=1pt},
+  bdmedge/.style={line width=0.65pt,draw=BDMTeal},
+  bdmlabel/.style={font=\footnotesize,fill=white,inner sep=2pt,text=BDMGray},
+  bdmvar/.style={circle,draw=BDMRule,fill=BDMLight,
+    minimum size=8mm,inner sep=1pt,text=BDMBlue}
+}
+\pgfplotsset{every axis/.append style={
+  axis line style={draw=BDMRule,line width=0.4pt},
+  tick style={draw=BDMRule},tick label style={font=\footnotesize},
+  label style={font=\small},
+  grid=major,major grid style={draw=BDMRule!35,line width=0.25pt},
+  legend style={draw=none,fill=white,font=\footnotesize,
+    cells={anchor=west}},
+  every axis plot/.append style={line width=0.85pt},
+  mark size=1.7pt}}

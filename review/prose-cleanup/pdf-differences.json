@@ -1,0 +1,16 @@
+{
+  "pages": 192,
+  "sha256": "152d9e8cd36934e1add2ae2201e4282e55f9c0f75061f3e4c77ebde5d507df6d",
+  "streamDifferencePages": [
+    12,
+    172,
+    176,
+    177,
+    188,
+    189,
+    190,
+    191,
+    192
+  ],
+  "sameContentStreamPages": 183
+}

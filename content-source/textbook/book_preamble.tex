@@ -1,0 +1,64 @@
+% Book-specific typography builds on the reviewed course template.
+\input{../latex/bdm_lecture_preamble.tex}
+\input{editorial_style.tex}
+\usepackage{fancyhdr,multicol,makeidx}
+\usepackage[backend=biber,style=numeric-comp,sorting=nyt,
+  giveninits=true,maxbibnames=8,maxcitenames=2,
+  doi=true,isbn=false,url=true,eprint=false,urldate=iso,seconds=true,
+  backref=true]{biblatex}
+\addbibresource{references.bib}
+\makeindex
+\renewcommand{\indexname}{主题索引}
+\ctexset{
+  chapter={name={第,章},beforeskip=18pt,afterskip=24pt},
+  section={beforeskip=20pt,afterskip=10pt},
+  subsection={beforeskip=14pt,afterskip=7pt}
+}
+\setcounter{tocdepth}{1}
+\setcounter{secnumdepth}{2}
+\setlength{\headheight}{16pt}
+\setlength{\headsep}{18pt}
+\setlength{\footskip}{26pt}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\footnotesize\color{BDMGray} 大数据与管理决策基础}
+\fancyhead[R]{\footnotesize\color{BDMGray}\nouppercase{\leftmark}}
+\fancyfoot[C]{\small\color{BDMGray}\thepage}
+\renewcommand{\headrulewidth}{0.2pt}
+\renewcommand{\chaptermark}[1]{\markboth{\thechapter\quad #1}{}}
+\fancypagestyle{plain}{
+  \fancyhf{}\fancyfoot[C]{\thepage}\renewcommand{\headrulewidth}{0pt}
+}
+\hypersetup{
+  pdftitle={大数据与管理决策基础：数据分析、统计推断与管理决策},
+  pdfauthor={孙振宇；东北大学数学与统计学院},
+  pdfsubject={十章统一教材；公司治理、统计学习、因果推断与决策系统},
+  linkcolor=BDMBlue,citecolor=BDMBlue,urlcolor=BDMTeal,
+  bookmarksnumbered=true,bookmarksopen=false
+}
+\setlength{\bibitemsep}{0.65\baselineskip}
+\setcounter{biburllcpenalty}{7000}
+\setcounter{biburlucpenalty}{8000}
+\setcounter{biburlnumpenalty}{9000}
+\renewcommand*{\bibfont}{\small}
+\AtBeginBibliography{\interlinepenalty=10000\raggedright}
+\DeclareFieldFormat{urldate}{\mkbibbrackets{访问日期：#1}}
+\DefineBibliographyStrings{english}{bibliography={参考文献},references={参考文献},
+  backrefpage={引用页},backrefpages={引用页}}
+\newcommand{\subjectindex}[2]{\index{#1@#2|hyperpage}}
+\newcommand{\indexletter}[1]{\par\Needspace{4\baselineskip}\bigskip\noindent\large\mdseries #1\par\nobreak\smallskip\nobreak\normalsize}
+\makeatletter
+\renewenvironment{theindex}{
+  \clearpage\chapter*{主题索引}\markboth{主题索引}{主题索引}
+  \addcontentsline{toc}{chapter}{主题索引}
+  本索引按中文词目的汉语拼音、英文词目的字母顺序混合排列。
+  页码指向概念的主要定义、推导或应用。
+  英文缩略语与中文术语分别设入口。\par\medskip
+  \begin{multicols}{2}\small\raggedright
+  \setlength{\parindent}{0pt}\setlength{\parskip}{3pt}
+  \let\item\@idxitem
+}{\end{multicols}}
+\makeatother
+\newcommand{\chapterreading}[1]{%
+  \subsection*{文献导读}#1\par
+}

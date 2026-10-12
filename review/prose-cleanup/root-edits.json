@@ -1,0 +1,332 @@
+[
+  {
+    "path": "docs/lecture_notes/14_ai_agent.md",
+    "before": "企业智能体的任务定义需要说明所需证据、可授权的操作，以及必须由人判断的条件。本章以制度问答、办公与研发协作、客户咨询、生产线异常和 AI 问数为连续案例，建立从任务定义、知识检索、流程编排到评测推广的完整方法。文中涉及的企业、人员、制度、订单、设备、阈值和批准号均为课堂虚构资料，不构成真实业务规则或设备控制规范。",
+    "after": "企业智能体的任务定义包括所需证据、可授权的操作，以及必须由人判断的条件。制度问答需要核验知识的适用性，办公与研发协作需要确认资料与审批，客户咨询和生产线异常处理需要明确分流规则，AI 问数需要核对指标口径。以下案例中的企业、人员、制度、订单、设备、阈值和批准号均为虚构设定，不构成真实业务规则或设备控制规范。",
+    "reason": "直接陈述任务及案例问题，删除章节编排自述"
+  },
+  {
+    "path": "docs/lecture_notes/14_ai_agent.md",
+    "before": "本章的网页实验使用固定数据、关键词词典、规则路由和状态机，可以逐步复算；它们**没有调用真实语言模型，也没有连接真实日历、客服、财务或工业控制系统**。理解原理、完成确定性实验与将系统投产，是三个不同层次的学习成果。",
+    "after": "配套实验使用固定数据、关键词词典、规则路由和状态机，输出可按规则复算；实验不调用真实语言模型，也不连接日历、客服、财务或工业控制系统。规则模拟的结果不代表真实模型性能或生产系统的运行效果。",
+    "reason": "保留模拟边界，删除学习成果层次自述"
+  },
+  {
+    "path": "docs/lecture_notes/14_ai_agent.md",
+    "before": "## 1. 学习路径与业务任务\n\n可先查看[主题与实验导航](#/chapter/agent-learning-map)，按职责选择学习重点。\n\n本章面向四类学习者。不同角色关注的问题不同，但应共享同一套任务、证据和责任边界。\n\n| 学习者 | 应能作出的判断 | 建议重点 |\n|---|---|---|\n| 业务与转型负责人 | 场景是否值得做、责任是否明确、收益是否超过总成本与风险 | 第 1、7、12、13 节 |\n| 产品流程与知识运营人员 | 输入输出、知识版本、流程分支与人工接管是否完备 | 第 3—6、9—11 节 |\n| 研发与运维工程师 | 权限、工具契约、运行状态、回滚和可观测性如何实现 | 第 2、5—8、14 节 |\n| 业务应用团队 | 如何核对答案、处理失败、纠正系统并保留证据 | 四个案例和第 15 节 |\n\n建议按两日组织教学。第一天从架构到 RAG 再到 Chatflow，第二天从 Workflow、多智能体推进到生产线综合方案；AI 问数贯穿两日的证据和口径讨论。\n\n| 时段 | 讲授与操作 | 当日可交付成果 |\n|---|---|---|\n| 第一天上午 | 业务任务、Chatbot/Copilot/Agent、运行控制与权限边界 | 一份任务契约：输入、输出、权限、失败状态 |\n| 第一天下午 | 企业知识处理、RAG、制度问答、Chatflow 与办公协作 | 带版本、有效期、引用的问答记录；对话状态图 |\n| 第二天上午 | Workflow、客户分流、多智能体任务调度、安全治理 | 可逐项验收的流程状态机与人工接管规则 |\n| 第二天下午 | 生产线异常综合方案、评测、经济评价、灰度推广与 NL2SQL | 四案例审计表和试点决策书 |\n\n",
+    "after": "## 1. 业务任务与任务契约\n\n",
+    "reason": "培训对象、授课建议及两日安排移至课程大纲"
+  },
+  {
+    "path": "docs/syllabus.md",
+    "before": "",
+    "after": "企业 Agent 专题培训（培训对象和两日安排从讲义移入）",
+    "reason": "授课安排归入课程大纲"
+  },
+  {
+    "path": "docs/lecture_notes/14_ai_agent.md",
+    "before": "**任务契约**比泛泛的“智能助手”描述更可实施。至少写明：",
+    "after": "任务契约应明确：",
+    "reason": "删除泛泛评价，直接定义契约内容"
+  },
+  {
+    "path": "docs/lecture_notes/14_ai_agent.md",
+    "before": "教材第 10 章《流程挖掘与智能体执行》的“智能体及其运行环境”“智能体的可靠性与经济评价”给出了流程日志、状态与成本的基础；本章把这些概念展开为企业课堂案例。",
+    "after": "流程日志、任务状态与成本核算的基础见第 10 章“智能体及其运行环境”和“智能体的可靠性与经济评价”。",
+    "reason": "保留有效交叉引用，删除编写意图"
+  },
+  {
+    "path": "docs/lecture_notes/14_ai_agent.md",
+    "before": "这是**按任务责任和控制方式作的教学区分**，不是给产品贴互斥标签：",
+    "after": "三者按任务责任和控制方式区分，但并非互斥的产品类别：",
+    "reason": "将教学区分改为概念划分及范围"
+  },
+  {
+    "path": "docs/lecture_notes/14_ai_agent.md",
+    "before": "三种模式的区别是**谁取得事实、谁推动状态、谁承担确认责任**，而不是界面是否有聊天框。",
+    "after": "三种模式分别规定事实获取、状态推进和确认责任；聊天界面本身不能确定这些职责。",
+    "reason": "改为直接职责论述"
+  },
+  {
+    "path": "docs/lecture_notes/14_ai_agent.md",
+    "before": "规划不是把一段自述性的“思考过程”当作执行事实。",
+    "after": "规划提出候选步骤，执行事实须由实际调用与状态记录确认。",
+    "reason": "删除设靶式否定"
+  },
+  {
+    "path": "docs/lecture_notes/14_ai_agent.md",
+    "before": "在本章中，Chatflow 指围绕**多轮会话**设计的应用流程：",
+    "after": "Chatflow 是围绕多轮会话设计的应用流程：",
+    "reason": "去除自指性定义引导"
+  },
+  {
+    "path": "docs/lecture_notes/14_ai_agent.md",
+    "before": "这是一些平台采用的设计模式，**不是所有产品必须遵循的通用标准**。",
+    "after": "这一名称用于部分平台的会话流程设计，各平台的实现和术语可能不同。",
+    "reason": "保持非统一标准限定，改正式陈述"
+  },
+  {
+    "path": "docs/lecture_notes/14_ai_agent.md",
+    "before": "一个合格的 Chatflow 应提供可见的来源、明确的“尚不能确定”、纠错入口和人工交接记录。",
+    "after": "Chatflow 的输出应包含来源、未确定事项、纠错入口和人工交接记录。",
+    "reason": "删除评价性合格标签"
+  },
+  {
+    "path": "docs/lecture_notes/14_ai_agent.md",
+    "before": "多智能体的合理动机是**不同职责需要不同上下文、工具或独立复核**，不是让“人数”成为质量指标。",
+    "after": "不同职责所需的上下文、工具和独立复核要求，是划分智能体角色的依据；角色数量本身不能衡量系统质量。",
+    "reason": "学术陈述替代口号式对比"
+  },
+  {
+    "path": "docs/lecture_notes/14_ai_agent.md",
+    "before": "下表是**产品定位与课程适用场景**，并非功能或价格排名；具体部署能力随版本和组织配置变化，投产前须逐项验证。",
+    "after": "各工具的部署能力取决于版本和组织配置，选型时须核验任务适配、权限和运维条件。",
+    "reason": "删除表格编排和课程自述"
+  },
+  {
+    "path": "docs/lecture_notes/14_ai_agent.md",
+    "before": "| 工具 | 官方资料所支持的定位 | 课程中宜用于比较的问题 |",
+    "after": "| 工具 | 产品定位 | 选型检查事项 |",
+    "reason": "表头改为实际对象"
+  },
+  {
+    "path": "docs/lecture_notes/14_ai_agent.md",
+    "before": "目标不是写出一段顺畅文字，而是返回可由制度负责人复核的决定。",
+    "after": "输出的制度判断必须能由制度负责人依据条款复核。",
+    "reason": "删除空泛设靶对比"
+  },
+  {
+    "path": "docs/lecture_notes/14_ai_agent.md",
+    "before": "教学资料如下，金额与时限仅为案例参数。",
+    "after": "金额与时限均为虚构案例参数。",
+    "reason": "保留参数限定，删除表格引导"
+  },
+  {
+    "path": "docs/lecture_notes/14_ai_agent.md",
+    "before": "| 资料 ID | 有效期、权限 | 课堂规则 |",
+    "after": "| 资料 ID | 有效期、权限 | 案例规则 |",
+    "reason": "用明确案例限定替代课堂策划"
+  },
+  {
+    "path": "docs/lecture_notes/14_ai_agent.md",
+    "before": "本地教学状态才可转",
+    "after": "本地模拟状态才可转",
+    "reason": "实验状态正式用语"
+  },
+  {
+    "path": "docs/lecture_notes/14_ai_agent.md",
+    "before": "课堂退货规则：",
+    "after": "退货规则的假定条件为：",
+    "reason": "保持虚构规则语义"
+  },
+  {
+    "path": "docs/lecture_notes/14_ai_agent.md",
+    "before": "课堂数值不是设备设计阈值，不得用于真实产线。",
+    "after": "所设数值仅适用于模拟，不得用作真实产线的设备设计阈值。",
+    "reason": "将课堂描述改为参数适用范围"
+  },
+  {
+    "path": "docs/lecture_notes/14_ai_agent.md",
+    "before": "教学阈值取振动",
+    "after": "模拟阈值取振动",
+    "reason": "保留阈值限定"
+  },
+  {
+    "path": "docs/lecture_notes/14_ai_agent.md",
+    "before": "仅在数据有效时计算课堂分数",
+    "after": "仅在数据有效时计算规则分数",
+    "reason": "准确描述计算量"
+  },
+  {
+    "path": "docs/lecture_notes/14_ai_agent.md",
+    "before": "课堂应显示“PLC 联锁：只读”“设备控制调用数：0”。",
+    "after": "联锁状态作为只读输入，实验程序的设备控制调用数恒为零。",
+    "reason": "将教师界面要求改为程序不变量"
+  },
+  {
+    "path": "docs/lecture_notes/14_ai_agent.md",
+    "before": "评测单位应是**一个完整业务任务**，而非一段话或一次模型调用。",
+    "after": "完整业务任务是系统评测的单位；单次模型调用或文本质量不足以表示任务是否完成。",
+    "reason": "正式解释评价层次"
+  },
+  {
+    "path": "docs/lecture_notes/14_ai_agent.md",
+    "before": "明确一个“不能做”的边界，通常比罗列十个功能更有助于试点。",
+    "after": "试点范围须明确禁止的操作及其执行约束。",
+    "reason": "删除口号和无依据比较"
+  },
+  {
+    "path": "docs/lecture_notes/14_ai_agent.md",
+    "before": "| 原型 | 用固定教学数据、标准答案、只读输出 |",
+    "after": "| 原型 | 固定样本、标准答案、只读输出 |",
+    "reason": "去除教学安排口吻"
+  },
+  {
+    "path": "docs/lecture_notes/14_ai_agent.md",
+    "before": "回滚不是删除系统：",
+    "after": "回滚包括停止新任务、保留已提交状态和恢复原有流程。",
+    "reason": "删除设靶式否定"
+  },
+  {
+    "path": "docs/lecture_notes/14_ai_agent.md",
+    "before": "原有[AI问数审计实验](#/lab/ai-sql-audit)用于连接本章与指标口径训练。",
+    "after": "[AI问数审计实验](#/lab/ai-sql-audit)核查时间窗口、分子分母和查询解释。",
+    "reason": "直接说明实验对象"
+  },
+  {
+    "path": "docs/lecture_notes/14_ai_agent.md",
+    "before": "第 8 节列出的产品链接用于核验各工具当前的官方边界，选型时应重新检查其版本、许可、部署与安全配置。",
+    "after": "工具选型须核验所用版本的许可、部署和安全配置，相关官方文档见第 8 节。",
+    "reason": "删除编排自述，保留有效资料位置"
+  },
+  {
+    "path": "docs/lecture_notes/11_modern_data_platform.md",
+    "before": "建议使用 SiFactory-like 教学抽象：",
+    "after": "制造数据从原始事件到指标服务的处理链为：",
+    "reason": "去除授课建议"
+  },
+  {
+    "path": "docs/lecture_notes/11_modern_data_platform.md",
+    "before": "使用 `data/sample/semiconductor_kpi_daily.csv` 展示：",
+    "after": "样本 `data/sample/semiconductor_kpi_daily.csv` 的分析包括：",
+    "reason": "直接说明分析范围"
+  },
+  {
+    "path": "docs/lecture_notes/11_modern_data_platform.md",
+    "before": "现代数据平台不是为了技术堆叠，而是为了让经营会议中的指标、模型、AI 回答和行动建议共享同一套事实基础。",
+    "after": "现代数据平台为指标计算、模型服务、AI 回答和行动建议提供共同的事实基础。",
+    "reason": "删除口号式对比"
+  },
+  {
+    "path": "docs/cases/ai_question_to_data_case.md",
+    "before": "# AI 问数与 NL2SQL 教学案例",
+    "after": "# AI 问数与 NL2SQL 审计",
+    "reason": "对象标题替代教学标签"
+  },
+  {
+    "path": "docs/cases/ai_question_to_data_case.md",
+    "before": "## 1. 案例定位",
+    "after": "## 1. 业务问题与系统约束",
+    "reason": "标题直接指向内容"
+  },
+  {
+    "path": "docs/cases/ai_question_to_data_case.md",
+    "before": "本案例用于升级第 3 讲 SQL 与管理数据查询，并为第 14 讲 AI Agent / RAG 治理做铺垫。教学目标不是让学生相信 AI 自动生成的 SQL，而是训练学生理解企业级 AI 问数系统必须经过语义、权限、指标口径和结果校验。",
+    "after": "企业 AI 问数系统将自然语言问题转换为候选 SQL。候选查询须经过指标语义、访问权限、时间范围和结果校验，才能用于经营分析。",
+    "reason": "删除版本升级、教学目标与章节铺垫"
+  },
+  {
+    "path": "docs/cases/ai_question_to_data_case.md",
+    "before": "企业导师提到的 QueryMind 和 DataBot 可作为产业案例介绍；课程实现采用可复现的教学流程，不依赖商业系统。",
+    "after": "QueryMind 和 DataBot 是企业导师提供的应用示例；以下查询流程在课程样本上复现，不依赖这两个商业系统。",
+    "reason": "来源限定保留，删除介绍策划"
+  },
+  {
+    "path": "docs/cases/ai_question_to_data_case.md",
+    "before": "## 2. 教学流程",
+    "after": "## 2. 查询与审计流程",
+    "reason": "实际流程标题"
+  },
+  {
+    "path": "docs/cases/ai_question_to_data_case.md",
+    "before": "## 5. 学生提交物",
+    "after": "## 5. 分析报告与提交材料",
+    "reason": "正式对象标题"
+  },
+  {
+    "path": "docs/cases/semiconductor_kpi_m13_case.md",
+    "before": "# 半导体制造 KPI 与 M13 教学案例",
+    "after": "# 半导体制造 KPI 与运营要素诊断",
+    "reason": "明确案例研究对象"
+  },
+  {
+    "path": "docs/cases/semiconductor_kpi_m13_case.md",
+    "before": "## 1. 案例定位",
+    "after": "## 1. 业务对象与分析任务",
+    "reason": "明确内容对象"
+  },
+  {
+    "path": "docs/cases/semiconductor_kpi_m13_case.md",
+    "before": "本案例用于升级第 2 讲、第 3 讲和第 5 讲：\n\n- 第 2 讲：从制造业务对象出发设计企业数据模型；\n- 第 3 讲：用 SQL 计算制造 KPI；\n- 第 5 讲：用 dashboard 展示制造运营状态。",
+    "after": "制造运营分析包括业务对象建模、SQL 指标计算和运营状态展示。批次、设备、工站及订单之间的关系决定记录粒度；指标字典规定汇总方法；看板呈现分布、时间变化及数据质量。",
+    "reason": "删除升级过程叙述，保留分析对象"
+  },
+  {
+    "path": "docs/cases/semiconductor_kpi_m13_case.md",
+    "before": "案例采用半导体封测/制造的教学抽象数据，不使用真实企业敏感数据。字段设计参考企业导师建议中的 Yield、OEE、Cycle Time、WIP 和 OTD，并预留 M13 要素映射。",
+    "after": "案例使用虚构的半导体制造日运营快照，指标包括 Yield、OEE、Cycle Time、WIP 和 OTD。M13 要素用于组织诊断；字段与要素的对应关系须按具体业务核验。",
+    "reason": "来源制作过程替换为数据及分类范围"
+  },
+  {
+    "path": "docs/cases/semiconductor_kpi_m13_case.md",
+    "before": "## 4. 建议 SQL 任务",
+    "after": "## 4. SQL 分析任务",
+    "reason": "去除策划建议"
+  },
+  {
+    "path": "docs/cases/semiconductor_kpi_m13_case.md",
+    "before": "建议 dashboard 至少包含：",
+    "after": "运营看板包括以下指标和视图：",
+    "reason": "直接说明所需视图"
+  },
+  {
+    "path": "docs/cases/semiconductor_kpi_m13_case.md",
+    "before": "学生报告应避免只写“某 KPI 变差”，而应说明它可能关联哪些运营要素、需要进一步查询哪些数据、建议采取什么行动。",
+    "after": "诊断报告应列出指标变化、相关运营要素、待核验的数据及候选行动，并区分观察事实、机制假设和决策建议。",
+    "reason": "删除设靶口吻，明确报告要求"
+  },
+  {
+    "path": "docs/syllabus.md",
+    "before": "## 升级后的课程特色",
+    "after": "## 案例与实验",
+    "reason": "删除修订过程标题"
+  },
+  {
+    "path": "docs/syllabus.md",
+    "before": "本课程服务于“数智化企业运营与优化”微型专业，承担方法论与技术桥梁角色。课程训练学生把企业运营问题转化为数据系统、分析模型和可执行决策之间的闭环。",
+    "after": "本课程属于“数智化企业运营与优化”微专业，内容包括企业数据建模、统计分析、方案优化与受控执行。",
+    "reason": "课程大纲去空泛角色与闭环修辞"
+  },
+  {
+    "path": "docs/textbook/frontmatter.tex",
+    "before": "{\\small\\color{BDMGray} 教材精校修订版\\quad 2026 年 9 月\\par}",
+    "after": "{\\small\\color{BDMGray} 数智化企业运营与优化微专业\\par}",
+    "reason": "封面删除生产版本标签"
+  },
+  {
+    "path": "docs/textbook/frontmatter.tex",
+    "before": "人工智能应用贯穿查询、预测与执行。新增的企业系统分析从计算资源、数据、业务",
+    "after": "人工智能应用涉及查询、预测与执行。企业系统分析从计算资源、数据、业务",
+    "reason": "删除新增修订过程"
+  },
+  {
+    "path": "docs/textbook/frontmatter.tex",
+    "before": "效果评价，第9章研究资源约束，第10章研究任务执行与恢复。新增的容量算例见",
+    "after": "效果评价，第9章研究资源约束，第10章研究任务执行与恢复。模型服务容量分析见",
+    "reason": "删除新增修订过程"
+  },
+  {
+    "path": "docs/textbook/frontmatter.tex",
+    "before": "教材服务于2学分、32学时理论课，但章节不等同于单次授课。基础概念与核心算例\n构成主干，委托代理、置信序列、共形预测、双重稳健与尾部风险等内容按先修条件选读。",
+    "after": "委托代理、置信序列、共形预测、双重稳健与尾部风险的推导分别依赖优化理论、\n概率过程或统计推断的相应先修知识。",
+    "reason": "移除授课组织要求，保留先修条件"
+  },
+  {
+    "path": "docs/textbook/appendices.tex",
+    "before": "本版沿用并整理截至2026年9月23日的研究材料，书目中的访问日期指在线材料核查\n日期，不代替出版日期。",
+    "after": "书目中的访问日期是在线材料的核查日期，不代替出版日期。",
+    "reason": "删除资料整理与版本过程"
+  },
+  {
+    "path": "docs/textbook/appendices.tex",
+    "before": "本附录把第~\\ref{sec:ai-service-operations}~节的服务时间与第~\\ref{ch:week09-optimization}~章的\n部署选择连接起来。案例数值均为教学设定，使读者能够手算、运行程序并识别\n简化假设的影响。",
+    "after": "模型服务的占用时间与部署成本共同约束容量和经济可行性，相关关系见\n第~\\ref{sec:ai-service-operations}~节与第~\\ref{ch:week09-optimization}~章。以下参数均为\n假定值，用于分析指定负载下的服务时间、容量与费用。",
+    "reason": "内容陈述替代附录编排和读者目的"
+  },
+  {
+    "path": "docs/textbook/appendices.tex",
+    "before": "读者应检查服务时间、云端费用和容量界限如何变动。",
+    "after": "服务时间、云端费用和容量界限须按变化后的输入重新计算。",
+    "reason": "去读者指令口吻"
+  }
+]

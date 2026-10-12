@@ -1,0 +1,3635 @@
+[
+  {
+    "path": "docs/textbook/chapters/01_intro.tex",
+    "before": "本章从经营症状开始，逐步构造一个决策问题的基本对象，再引入期望损失与信息价值。\n前者用于比较行动，后者衡量改善信息所带来的预期收益。随后将单期选择推广到多期\n决策，讨论组织目标、分析任务和执行结果。各章分别研究决策所需的数据表达、统计\n估计和方案求解，本章给出它们共同使用的基本概念。",
+    "after": "决策问题的构造需要明确经营症状、业务对象与可行行动。期望损失用于比较行动，\n信息价值衡量改善信息所带来的预期收益。多期决策还需考虑当前行动对未来状态的\n影响，以及组织目标、分析任务和执行结果之间的关系。数据表达、统计估计和方案\n求解均以这些概念为基础。",
+    "reason": "将章节编排叙述改为决策分析对象及概念之间的直接关系。",
+    "ledger": "core-01-04.json"
+  },
+  {
+    "path": "docs/textbook/chapters/01_intro.tex",
+    "before": "为了让课程讨论保持一致，本节给出几个贯穿全书的基本对象。",
+    "after": "业务对象规定记录范围，行动对象规定执行范围，指标口径规定度量规则。",
+    "reason": "删除课程编写意图，直接说明三类基本对象的作用。",
+    "ledger": "core-01-04.json"
+  },
+  {
+    "path": "docs/textbook/chapters/01_intro.tex",
+    "before": "现在将前面的讨论写成一个简化的数学形式。设 \\(X=x\\) 表示企业当前状态，管理者需要在可行行动集合 \\(\\mathcal A(x)\\) 中选择行动。一个抽象表达为",
+    "after": "设 \\(X=x\\) 表示企业当前状态，管理者需要在可行行动集合 \\(\\mathcal A(x)\\) 中选择行动，其最优选择可表示为",
+    "reason": "删除推导前的编排性开场，直接引入状态、行动与最优选择。",
+    "ledger": "core-01-04.json"
+  },
+  {
+    "path": "docs/textbook/chapters/01_intro.tex",
+    "before": "抽象公式必须能够落到一张可核查的表。设一家封测工厂面对明日的设备中断风险，状态 \\(\\theta\\in\\{0,1\\}\\) 分别表示正常和中断，行动 \\(a\\in\\{0,1\\}\\) 分别表示按原计划生产和提前转移批次。下面的数字均为教学设定，单位为万元，已经包含转移、停机和延期成本。",
+    "after": "设一家封测工厂面对明日的设备中断风险，状态 \\(\\theta\\in\\{0,1\\}\\) 分别表示正常和中断，行动 \\(a\\in\\{0,1\\}\\) 分别表示按原计划生产和提前转移批次。损失矩阵中的数字均为假设值，单位为万元，已经包含转移、停机和延期成本。",
+    "reason": "删除口号式引入，并保留损失数据为假设值的边界。",
+    "ledger": "core-01-04.json"
+  },
+  {
+    "path": "docs/textbook/chapters/01_intro.tex",
+    "before": "教学损失矩阵：信息何时值得购买",
+    "after": "设备中断风险下的假设损失矩阵",
+    "reason": "表题改为正式对象名称，保持假设数据边界。",
+    "ledger": "core-01-04.json"
+  },
+  {
+    "path": "docs/textbook/chapters/01_intro.tex",
+    "before": "这也解释了一个重要边界。若所有可能的后验中断概率都高于 \\(1/6\\)，本例在每种信号",
+    "after": "若所有可能的后验中断概率都高于 \\(1/6\\)，本例在每种信号",
+    "reason": "删除无实质信息的强调性过渡。",
+    "ledger": "core-01-04.json"
+  },
+  {
+    "path": "docs/textbook/chapters/01_intro.tex",
+    "before": "Shmueli 对解释性建模与预测性建模的区分值得作为本书的基本警戒。解释性建模服务于理解变量之间的关系，预测性建模服务于对未观察样本的准确判断。二者在变量选择、模型复杂度、评估标准和外推风险上可能不同。管理决策还在此基础上多出一个环节：即使预测正确，也必须回答该预测应如何改变行动。",
+    "after": "Shmueli 区分了解释性建模与预测性建模。解释性建模服务于理解变量之间的关系，预测性建模服务于对未观察样本的准确判断。二者在变量选择、模型复杂度、评估标准和外推风险上可能不同。管理决策还需确定预测结果所对应的可行行动及其预期效果。",
+    "reason": "删除读者警戒与递进包装，保留解释、预测和决策任务的区别。",
+    "ledger": "core-01-04.json"
+  },
+  {
+    "path": "docs/textbook/chapters/01_intro.tex",
+    "before": "CRISP-DM 阶段与课程训练",
+    "after": "CRISP-DM 阶段与分析任务",
+    "reason": "将表题从教学策划转为分析任务。",
+    "ledger": "core-01-04.json"
+  },
+  {
+    "path": "docs/textbook/chapters/01_intro.tex",
+    "before": "阶段 & 本书中的训练重点",
+    "after": "阶段 & 分析任务",
+    "reason": "表头改为正式任务名称。",
+    "ledger": "core-01-04.json"
+  },
+  {
+    "path": "docs/textbook/chapters/01_intro.tex",
+    "before": "蒋炎岩的《生成式软件工程》把任务意图、可检验的规格与实际实现分开讨论，并\n强调通过运行结果修正设计\\cite{gse2026}。将这一教学思想用于管理决策时，\n经营意图通常是“减少延期”或“提高良率”；规格则必须补足对象、时间、指标、\n行动权限及允许的失败方式。",
+    "after": "任务意图、可检验的规格与实际实现分别表达目标、验收条件与实现方式，运行结果\n用于修正设计\\cite{gse2026}。在管理决策中，经营意图通常是“减少延期”或“提高良率”；\n规格须进一步规定对象、时间、指标、行动权限及允许的失败方式。",
+    "reason": "删除“将这一教学思想用于”等教学迁移叙述，直接说明意图、规格与实现的分工。",
+    "ledger": "core-01-04.json"
+  },
+  {
+    "path": "docs/textbook/chapters/01_intro.tex",
+    "before": "这样的课堂练习同时训练问题定义、计算核查与失败诊断，而不以生成代码的长度\n衡量成果。",
+    "after": "验收依据是规格符合情况、计算结果和执行状态。",
+    "reason": "将课堂练习目标与反面口号改为具体验收依据。",
+    "ledger": "core-01-04.json"
+  },
+  {
+    "path": "docs/textbook/chapters/01_intro.tex",
+    "before": "项目要素 & 推荐写法",
+    "after": "项目要素 & 决策要素的具体含义",
+    "reason": "删除写作建议表头，改为内容定义。",
+    "ledger": "core-01-04.json"
+  },
+  {
+    "path": "docs/textbook/chapters/01_intro.tex",
+    "before": "这个案例贯穿后续章节。第~\\ref{ch:week02-enterprise-data-model}~章会把订单、客户、产品、供应商和库存转化为企业数据模型；第~\\ref{ch:week03-sql-kpi}~章会用 SQL 计算准时交付率和延期天数等 KPI；第~\\ref{ch:week04-data-quality}~章会检查数据质量问题；第~\\ref{ch:week05-statistics-dashboard}~章会讨论仪表盘如何展示风险与行动；第~\\ref{ch:week07-prediction}~章以流失预测讲解方法，并讨论其向延期预警迁移的条件；第~\\ref{ch:week09-optimization}~章会在有限资源下选择行动；第~\\ref{ch:week10-process-mining}~章会用流程日志分析订单履约过程中的瓶颈。",
+    "after": "交付分析需要将订单、客户、产品、供应商和库存组织为数据模型（第~\\ref{ch:week02-enterprise-data-model}~章），用 SQL 计算准时交付率和延期天数等 KPI（第~\\ref{ch:week03-sql-kpi}~章），并检查数据质量（第~\\ref{ch:week04-data-quality}~章）。仪表盘呈现风险及行动信息（第~\\ref{ch:week05-statistics-dashboard}~章）；预测模型向延期预警迁移的条件见第~\\ref{ch:week07-prediction}~章的流失预测分析。有限资源下的行动选择涉及约束优化（第~\\ref{ch:week09-optimization}~章），履约瓶颈的定位涉及流程日志分析（第~\\ref{ch:week10-process-mining}~章）。",
+    "reason": "将未来章节路线叙述改为案例的分析依赖关系，保留全部章节引用。",
+    "ledger": "core-01-04.json"
+  },
+  {
+    "path": "docs/textbook/chapters/01_intro.tex",
+    "before": "这一对比告诉读者：所谓业务本体、数字孪生或智能平台，只有进入明确的对象、状态和行动模型之后，才具有可讨论的技术含义。",
+    "after": "业务本体、数字孪生和智能平台的技术分析需要明确其对象、状态与行动模型。",
+    "reason": "删除“告诉读者”“所谓”等口语化概括，保留明确建模对象的要求。",
+    "ledger": "core-01-04.json"
+  },
+  {
+    "path": "docs/textbook/chapters/01_intro.tex",
+    "before": "企业导师提供的研发或办公效率增幅也应记录基线、样本、时间、质量标准和计算方式，确认前仅作为待验证的企业经验陈述。",
+    "after": "企业提供的研发或办公效率增幅也应记录基线、样本、时间、质量标准和计算方式，确认前仅作为待验证的企业经验陈述。",
+    "reason": "删除培训情境中的导师身份，保留企业陈述须验证的边界。",
+    "ledger": "core-01-04.json"
+  },
+  {
+    "path": "docs/textbook/chapters/01_intro.tex",
+    "before": "本章的结构化表示示例位于：",
+    "after": "问题定义的数据类实现位于：",
+    "reason": "以程序对象说明来源，删除章节自指。",
+    "ledger": "core-01-04.json"
+  },
+  {
+    "path": "docs/textbook/chapters/01_intro.tex",
+    "before": "下一章从订单、批次和设备等对象出发，研究数据如何组织，以及指标定义和使用所涉及的治理问题。",
+    "after": "订单、批次和设备等对象的数据组织，还需结合指标定义与使用责任确定。",
+    "reason": "将章节预告改为数据组织的具体要求。",
+    "ledger": "core-01-04.json"
+  },
+  {
+    "path": "docs/textbook/chapters/01_intro.tex",
+    "before": "这些材料共同支持本章的\n立场：方法的价值取决于它进入了什么决策过程，而不仅取决于技术表现。",
+    "after": "方法评价需同时考察技术表现及其在具体决策过程中的作用。",
+    "reason": "删除作者立场总结，直接说明方法评价的两个方面。",
+    "ledger": "core-01-04.json"
+  },
+  {
+    "path": "docs/textbook/chapters/02_enterprise_data_model.tex",
+    "before": "第~\\ref{ch:week01-intro}~章将决策表述为在给定信息下选择行动。企业信息分布于不同\n系统之中。",
+    "after": "管理决策是在给定信息下选择行动（第~\\ref{ch:week01-intro}~章）。企业信息分布于不同\n系统之中。",
+    "reason": "将章节叙述改为概念陈述，并保留引用。",
+    "ledger": "core-01-04.json"
+  },
+  {
+    "path": "docs/textbook/chapters/02_enterprise_data_model.tex",
+    "before": "本章先说明数据建模的组织职责和企业人工智能系统的技术构成，继而从业务\n对象、关系约束和事实粒度出发，研究时间记录、指标定义与元数据。\n委托代理模型随后解释指标进入考核后的努力配置和风险承担。制造与平台案例\n则展示数据定义、访问权限及复核责任在企业中的具体安排。",
+    "after": "数据模型规定业务对象、关系约束和事实粒度，并通过时间记录、指标定义与元数据\n明确记录的含义。治理机制确定数据定义、访问及复核的责任。指标进入考核以后，\n还会影响努力配置和风险承担，这些激励后果可用委托代理模型分析。企业人工智能\n系统的数据与操作服务同样依赖上述定义和责任安排。",
+    "reason": "删除章节展开顺序，直接陈述建模、治理、激励与技术服务之间的关系。",
+    "ledger": "core-01-04.json"
+  },
+  {
+    "path": "docs/textbook/chapters/02_enterprise_data_model.tex",
+    "before": "这些框架虽然出发点不同，但对数据建模提出了相似要求：对象要可识别，指标要可解释，规则要可审计，权限要可控制，异常要可追责。",
+    "after": "这些框架对数据建模的共同要求包括对象识别、指标解释、规则审计、权限控制和异常追责。",
+    "reason": "将口号式“要”排比改为正式要求表述，保留各项内容。",
+    "ledger": "core-01-04.json"
+  },
+  {
+    "path": "docs/textbook/chapters/02_enterprise_data_model.tex",
+    "before": "下文先建立这些职责所针对的数据对象，再分析指标考核中的激励问题。",
+    "after": "",
+    "reason": "删除纯编排性预告，职责和激励内容在正文完整保留。",
+    "ledger": "core-01-04.json"
+  },
+  {
+    "path": "docs/textbook/chapters/02_enterprise_data_model.tex",
+    "before": "治理问题 & 数据建模要求 & 本书的实现",
+    "after": "治理问题 & 数据建模要求 & 对应机制",
+    "reason": "将作者实施叙述表头改为机制名称。",
+    "ledger": "core-01-04.json"
+  },
+  {
+    "path": "docs/textbook/chapters/02_enterprise_data_model.tex",
+    "before": "本书在第~\\ref{sec:ai-service-operations}~节给出管理指标，\n在附录~\\ref{app:ai-infra-lab}~给出可复算的容量与成本算例。",
+    "after": "服务运行指标见第~\\ref{sec:ai-service-operations}~节，\n容量与成本的计算实例见附录~\\ref{app:ai-infra-lab}。",
+    "reason": "保留内容定位功能，删除编写者自指。",
+    "ledger": "core-01-04.json"
+  },
+  {
+    "path": "docs/textbook/chapters/02_enterprise_data_model.tex",
+    "before": "第~\\ref{ch:week10-process-mining}~章\n将为这项操作建立状态机。",
+    "after": "这项操作的状态机见第~\\ref{ch:week10-process-mining}~章。",
+    "reason": "将未来编排叙述改为可查阅的概念定位。",
+    "ledger": "core-01-04.json"
+  },
+  {
+    "path": "docs/textbook/chapters/02_enterprise_data_model.tex",
+    "before": "表中的职责来自各平台公开的产品机制，表中的核查项目是本书为订单加急问题提出\n的分析要求。",
+    "after": "平台职责依据各平台公开的产品机制，核查项目针对订单加急算例的分析要求。",
+    "reason": "删除编写过程说明，保留公开机制与算例要求的来源区别。",
+    "ledger": "core-01-04.json"
+  },
+  {
+    "path": "docs/textbook/chapters/02_enterprise_data_model.tex",
+    "before": "这一区分使质量讨论更加准确。数据库中的日期可能完全符合格式和先后顺序，却与\n客户认可的承诺日期不同；反之，一个尚未录入签收日期的订单，也可能已经交付。",
+    "after": "数据库中的日期可能完全符合格式和先后顺序，却与客户认可的承诺日期不同；\n一个尚未录入签收日期的订单，也可能已经交付。",
+    "reason": "删除泛泛评价，直接陈述规则符合与记录准确的区别。",
+    "ledger": "core-01-04.json"
+  },
+  {
+    "path": "docs/textbook/chapters/02_enterprise_data_model.tex",
+    "before": "第~\\ref{ch:week04-data-quality}~章将进一步区分记录符合规则与记录真实反映业务。\n在此之前，应先把“我们想测量什么”和“系统实际记录什么”分别写清。",
+    "after": "记录符合规则与记录真实反映业务具有不同含义（第~\\ref{ch:week04-data-quality}~章）。\n测量目标与系统实际记录的内容应分别定义。",
+    "reason": "删除章节预告与课堂口语，保留测量目标和实际记录的区分。",
+    "ledger": "core-01-04.json"
+  },
+  {
+    "path": "docs/textbook/chapters/02_enterprise_data_model.tex",
+    "before": "企业运营数据看起来复杂，但从建模角度可以先分为六类。这个分类帮助读者判断一张表的角色：它是在描述一个对象，记录一次业务活动，保存某个时间点的状态，表达对象之间的连接，还是表达一个已经聚合过的指标。",
+    "after": "企业运营数据可按记录含义区分为实体、属性、关系、事件、状态与指标。不同类别分别表达业务对象及其特征、对象间联系、业务活动、时点状态和聚合度量。",
+    "reason": "删除虚构读者困惑与教学作用，直接定义六类语义。",
+    "ledger": "core-01-04.json"
+  },
+  {
+    "path": "docs/textbook/chapters/02_enterprise_data_model.tex",
+    "before": "这个表达式虽简单，却包含了企业数据建模的核心：客户和产品是相对稳定的实体，订单明细是交易事件，数量和时间是事件属性，交付状态可能来自后续物流事件或累计快照。",
+    "after": "客户和产品是相对稳定的实体，订单明细是交易事件，数量和时间是事件属性，交付状态可能来自后续物流事件或累计快照。",
+    "reason": "删除简单/核心的强调性包装，保留表达式解释。",
+    "ledger": "core-01-04.json"
+  },
+  {
+    "path": "docs/textbook/chapters/02_enterprise_data_model.tex",
+    "before": "在数据库设计中，至少需要关注三类约束。它们看起来像技术细节，但实际上直接影响管理分析的可信度。",
+    "after": "实体完整性、引用完整性与业务完整性约束分别保证记录身份、对象引用及字段取值符合建模要求。",
+    "reason": "删除技术与管理的虚拟反差，直接陈述三类约束。",
+    "ledger": "core-01-04.json"
+  },
+  {
+    "path": "docs/textbook/chapters/02_enterprise_data_model.tex",
+    "before": "为了避免配套案例停留在通用零售数据，本章引入半导体制造场景。半导体制造和封测企业通常具有长流程、多设备、多批次、多约束和高质量要求等特点。管理者关心的不只是“卖出了多少”，还关心批次是否按工艺路线流动、设备是否高效运行、在制品是否堆积、良率是否下降、交付承诺是否受影响。这类问题要求数据模型同时刻画对象、流程、设备、质量和交付。",
+    "after": "半导体制造和封测企业通常具有长流程、多设备、多批次、多约束和高质量要求等特点。运营分析需考察批次的工艺路线、设备运行效率、在制品积压、良率变化及交付承诺的履行情况，数据模型因此需要同时表达对象、流程、设备、质量和交付。",
+    "reason": "删除案例编写动机及销量反差，保留制造场景的数据需求。",
+    "ledger": "core-01-04.json"
+  },
+  {
+    "path": "docs/textbook/chapters/02_enterprise_data_model.tex",
+    "before": "在教学抽象中，可以先识别六类核心对象。",
+    "after": "以下简化模型包含六类核心对象。",
+    "reason": "用模型适用范围替代教学过程叙述，保留简化边界。",
+    "ledger": "core-01-04.json"
+  },
+  {
+    "path": "docs/textbook/chapters/02_enterprise_data_model.tex",
+    "before": "此处的重点是理解：制造 KPI 由批次、设备、工序、质量事件和交付承诺共同支撑。",
+    "after": "制造 KPI 由批次、设备、工序、质量事件和交付承诺共同支撑。",
+    "reason": "删除提示学习重点的元话语。",
+    "ledger": "core-01-04.json"
+  },
+  {
+    "path": "docs/textbook/chapters/02_enterprise_data_model.tex",
+    "before": "第二步最容易被忽略。粒度决定了 KPI 的可计算性和可解释性。",
+    "after": "粒度决定了 KPI 的可计算性和可解释性。",
+    "reason": "删除没有证据的学习行为判断。",
+    "ledger": "core-01-04.json"
+  },
+  {
+    "path": "docs/textbook/chapters/02_enterprise_data_model.tex",
+    "before": "半导体制造 KPI 特别适合训练事实表粒度意识。SEMI E10 和 SEMI E79",
+    "after": "SEMI E10 和 SEMI E79",
+    "reason": "删除训练目标，直接讨论行业标准。",
+    "ledger": "core-01-04.json"
+  },
+  {
+    "path": "docs/textbook/chapters/02_enterprise_data_model.tex",
+    "before": "这一映射非常重要。SQL 查询返回的是行和列，而管理者执行的是对订单、客户、产品、库存位置等对象的行动。只有建立从表到对象的映射，后续的风险评分、权限控制、行动推荐和审计日志才有明确载体。",
+    "after": "SQL 查询返回记录，管理行动作用于订单、客户、产品和库存位置等业务对象。表与对象之间的映射确定风险评分、权限控制、行动推荐和审计日志所对应的对象身份。",
+    "reason": "删除空泛的重要性评价，直接说明映射的用途。",
+    "ledger": "core-01-04.json"
+  },
+  {
+    "path": "docs/textbook/chapters/02_enterprise_data_model.tex",
+    "before": "这些要求会在第~\\ref{ch:week10-process-mining}~章的智能体运行环境 中再次出现。",
+    "after": "智能体运行环境中的状态与日志管理见第~\\ref{ch:week10-process-mining}~章。",
+    "reason": "删除内容重复出现的编排叙述，保留检索定位。",
+    "ledger": "core-01-04.json"
+  },
+  {
+    "path": "docs/textbook/chapters/02_enterprise_data_model.tex",
+    "before": "生产指标的变化通常涉及多个业务对象。为组织封测案例，表中将资料分为需求、产品、路线、批次、设备、产能、在制品、质量、维护、物料、交付、成本和行动十三类。该分类由本书为算例编制，编号仅用于表内引用。",
+    "after": "生产指标的变化通常涉及多个业务对象。以下封测算例将运营资料分为需求、产品、路线、批次、设备、产能、在制品、质量、维护、物料、交付、成本和行动十三类，编号仅用于表内引用。",
+    "reason": "删除编制过程说明，保留分类仅用于当前算例的范围。",
+    "ledger": "core-01-04.json"
+  },
+  {
+    "path": "docs/textbook/chapters/02_enterprise_data_model.tex",
+    "before": "数据建模最终必须进入治理机制。DAMA-DMBOK 将数据治理、数据架构、数据建模与设计、数据质量、元数据、数据仓库、BI 和数据科学等看作相互关联的数据管理知识域。对于本书而言，最重要的是理解三类文档。",
+    "after": "DAMA-DMBOK 将数据治理、数据架构、数据建模与设计、数据质量、元数据、数据仓库、BI 和数据科学等看作相互关联的数据管理知识域。数据字典、指标字典和血缘说明分别记录数据结构、计算定义及来源关系。",
+    "reason": "删除作者判断与重要性口号，直接陈述治理文档的分工。",
+    "ledger": "core-01-04.json"
+  },
+  {
+    "path": "docs/textbook/chapters/02_enterprise_data_model.tex",
+    "before": "为了看清机制，先构造一个单任务教学模型。经理选择努力 \\(e\\ge0\\)，可观察产出为",
+    "after": "考虑一个简化的单任务模型。经理选择努力 \\(e\\ge0\\)，可观察产出为",
+    "reason": "删除教学目的性开场，保留简化模型的范围。",
+    "ledger": "core-01-04.json"
+  },
+  {
+    "path": "docs/textbook/chapters/02_enterprise_data_model.tex",
+    "before": "最后一项是承担工资波动所要求的风险补偿。在正态分布与指数效用的设定下，可按以下步骤推导该项。\n\n这一表达式可以直接验证。记扣除努力成本后的收入为 \\(Z=w-ce^2/2\\)，",
+    "after": "最后一项是承担工资波动所要求的风险补偿。记扣除努力成本后的收入为 \\(Z=w-ce^2/2\\)，",
+    "reason": "删除重复的推导介绍，直接进入确定性等价的计算。",
+    "ledger": "core-01-04.json"
+  },
+  {
+    "path": "docs/textbook/chapters/02_enterprise_data_model.tex",
+    "before": "这可以与本章的关系模型作精确比较：订单表提供记录，业务对象统一身份和含义，关系支持跨对象导航，行动定义状态改变的入口。",
+    "after": "订单表提供记录，业务对象统一身份和含义，关系支持跨对象导航，行动定义状态改变的入口。",
+    "reason": "删除自指性比较提示，保留技术对应关系。",
+    "ledger": "core-01-04.json"
+  },
+  {
+    "path": "docs/textbook/chapters/02_enterprise_data_model.tex",
+    "before": "教学重构以封测批次为中心。将 \\texttt{Lot} 与",
+    "after": "以下封测算例以批次为中心。将 \\texttt{Lot} 与",
+    "reason": "以算例明确非实际企业实施的边界，删除教学重构过程。",
+    "ledger": "core-01-04.json"
+  },
+  {
+    "path": "docs/textbook/chapters/02_enterprise_data_model.tex",
+    "before": "上述封测设计使用本章的对象和约束定义。",
+    "after": "",
+    "reason": "删除对本文设计方法的重复自述。",
+    "ledger": "core-01-04.json"
+  },
+  {
+    "path": "docs/textbook/chapters/02_enterprise_data_model.tex",
+    "before": "为了理解这种组合为什么有效，可以将示例中的一个“查询良率”任务拆开：SQL 引擎回答数值，转换模型决定口径，监控解释是否发生数据事故，目录说明谁负责及如何追溯。这四种职责可以由不同产品完成。采购一个覆盖更多功能的平台，也不会消除逻辑上的职责分工。比较平台时，可分别检查查询、转换、监测和目录管理的职责。",
+    "after": "以封测工厂的“查询良率”任务为例，SQL 引擎计算数值，转换模型规定计算口径，监控识别数据事故，目录记录责任及来源。这四种职责可以由不同产品承担；平台比较应分别核查查询、转换、监测和目录管理的能力。",
+    "reason": "删除学习目的和未经独立评价的“有效”暗示，保留任务职责分析。",
+    "ledger": "core-01-04.json"
+  },
+  {
+    "path": "docs/textbook/chapters/02_enterprise_data_model.tex",
+    "before": "这样才能把前述激励理论中的委托关系转成明确的权责关系。",
+    "after": "这些记录明确指标定义、审批、解释和行动选择的权责关系。",
+    "reason": "删除保证式转承，直接说明记录内容与权责。",
+    "ledger": "core-01-04.json"
+  },
+  {
+    "path": "docs/textbook/chapters/02_enterprise_data_model.tex",
+    "before": "这种细分会在第~\\ref{ch:week10-process-mining}~章成为受控 AI 执行的基本结构。",
+    "after": "受控 AI 执行中的职责分工见第~\\ref{ch:week10-process-mining}~章。",
+    "reason": "将后续章节预告改为内容定位。",
+    "ledger": "core-01-04.json"
+  },
+  {
+    "path": "docs/textbook/chapters/02_enterprise_data_model.tex",
+    "before": "虽然该代码将在第~\\ref{ch:week03-sql-kpi}~章正式运行，但本章要求读者先阅读字段和粒度说明：每一行究竟代表什么对象组合，哪些字段是分子分母，哪些字段是状态快照，哪些字段需要与设备、lot 或订单明细进一步连接。",
+    "after": "样例字段的解释需明确每行对应的对象组合，区分分子分母与状态快照，并确定与设备、lot 或订单明细的连接关系。指标计算实例见第~\\ref{ch:week03-sql-kpi}~章。",
+    "reason": "删除教学时序与读者指令，保留字段解释要求和计算定位。",
+    "ledger": "core-01-04.json"
+  },
+  {
+    "path": "docs/textbook/chapters/02_enterprise_data_model.tex",
+    "before": "下一章以已定义的对象、粒度和指标为基础，研究关系查询及其聚合运算。",
+    "after": "关系查询及其聚合运算以明确的对象、粒度和指标定义为前提。",
+    "reason": "将章节预告改为查询与建模的依赖关系。",
+    "ledger": "core-01-04.json"
+  },
+  {
+    "path": "docs/textbook/chapters/03_sql_kpi.tex",
+    "before": "本章研究如何由已定义的数据模型构造这些查询。\n\n本章先介绍关系运算及其 SQL 表达，再讨论比率、快照和窗口统计的汇总方法。\n制造指标用于说明数量、时间和对象范围的选择。最后研究自然语言查询如何确定\n指标定义、生成 SQL 并检验结果，以及数据库执行所需的权限和资源控制。",
+    "after": "比率、快照和窗口统计采用不同的汇总方法；制造指标还需明确数量、时间与对象\n范围。自然语言查询须依据这些定义生成 SQL、检验结果，并满足数据库执行的\n权限和资源限制。",
+    "reason": "删除章节编排顺序，保留查询与汇总的研究对象和执行条件。",
+    "ledger": "core-01-04.json"
+  },
+  {
+    "path": "docs/textbook/chapters/03_sql_kpi.tex",
+    "before": "第~\\ref{ch:week02-enterprise-data-model}~章强调事实表粒度。第~\\ref{ch:week03-sql-kpi}~章继续使用同一原则。",
+    "after": "事实表粒度决定记录与计数单位，其定义见第~\\ref{ch:week02-enterprise-data-model}~章。",
+    "reason": "删除本章对自身章节编号的引用及过程性承接。",
+    "ledger": "core-01-04.json"
+  },
+  {
+    "path": "docs/textbook/chapters/03_sql_kpi.tex",
+    "before": "在管理场景中，一个 SQL 结果是否“正确”，不仅取决于语法是否能运行，还取决于它是否回答了正确的业务问题，是否使用稳定的数据范围，是否保留了分子分母，是否允许他人复核。",
+    "after": "管理指标查询的正确性包括语法有效、业务问题匹配、数据范围一致、分子分母明确以及结果可复核。",
+    "reason": "将问答式正确性陈述改为正式条件表述。",
+    "ledger": "core-01-04.json"
+  },
+  {
+    "path": "docs/textbook/chapters/03_sql_kpi.tex",
+    "before": "SQL 之所以适合作为指标层语言，是因为它建立在关系模型和集合运算之上。虽然读者在实践中主要书写 SQL 语句，但理解其关系代数含义有助于判断查询是否改变了事实集合、是否丢失对象、是否重复计数。",
+    "after": "SQL 建立在关系模型和集合运算之上。关系代数可以描述查询对事实集合的变换，用于检查对象遗漏和重复计数。",
+    "reason": "删除读者实践假设与教学价值包装，保留关系代数的核查用途。",
+    "ledger": "core-01-04.json"
+  },
+  {
+    "path": "docs/textbook/chapters/03_sql_kpi.tex",
+    "before": "SQL 的声明式特征使查询可以被复核：读者能够从查询中识别事实来源、过滤条件、连接键、分组维度和聚合方式。因此，清晰的 SQL 本身就是指标审计的一部分。",
+    "after": "声明式 SQL 明确事实来源、过滤条件、连接键、分组维度和聚合方式，查询文本因此构成指标审计的依据。",
+    "reason": "将读者视角和笼统清晰性要求改为可审计的具体内容。",
+    "ledger": "core-01-04.json"
+  },
+  {
+    "path": "docs/textbook/chapters/03_sql_kpi.tex",
+    "before": "理解一条聚合查询时，可以依次问四个问题：哪些记录进入候选范围；连接后每条事实\n出现几次；哪些记录被分到同一组；每组保留哪些统计状态。这四个问题分别对应范围、\n基数、粒度和聚合。",
+    "after": "聚合查询的核查包括四项：候选记录的范围、连接后的事实匹配次数、分组所确定的\n结果粒度，以及每组保留的统计状态。",
+    "reason": "删除学习过程提问，直接列出复核对象。",
+    "ledger": "core-01-04.json"
+  },
+  {
+    "path": "docs/textbook/chapters/03_sql_kpi.tex",
+    "before": "指标计算首先要声明粒度。粒度不清，是 KPI 错误的根源之一。",
+    "after": "指标计算需分别声明源记录、分析结果与展示结果的粒度。",
+    "reason": "将笼统错误归因改为三种粒度的直接要求。",
+    "ledger": "core-01-04.json"
+  },
+  {
+    "path": "docs/textbook/chapters/03_sql_kpi.tex",
+    "before": "连接是 SQL 中最容易产生管理分析错误的操作。内连接保留两张表中能够匹配的记录，左连接保留左表全部记录并补充右表信息，外连接可用于识别匹配与未匹配的边界。语法本身不难，真正困难的是判断连接是否改变了事实表粒度。",
+    "after": "内连接保留两张表中能够匹配的记录，左连接保留左表全部记录并补充右表信息，外连接可用于识别匹配与未匹配的范围。连接可能复制或遗漏事实记录，因此需要核查其对事实表粒度的影响。",
+    "reason": "删除“最容易”“不难/真正困难”的读者判断，保留连接语义与风险。",
+    "ledger": "core-01-04.json"
+  },
+  {
+    "path": "docs/textbook/chapters/03_sql_kpi.tex",
+    "before": "因此，在写任何管理指标 SQL 前，应先回答三个问题：事实表一行代表什么？连接后的行数是否仍代表同一事实？被连接的维度表在连接键上是否唯一？",
+    "after": "管理指标查询的连接复核需确认事实表的记录单位、连接后的事实覆盖及维度键的唯一性。",
+    "reason": "将教学追问改为正式核查条件。",
+    "ledger": "core-01-04.json"
+  },
+  {
+    "path": "docs/textbook/chapters/03_sql_kpi.tex",
+    "before": "本章主张把 OTD 的分母优先写成“窗口内到期且属于统计范围的订单”。",
+    "after": "采用到期承诺口径时，OTD 的分母是窗口内到期且属于统计范围的订单数。",
+    "reason": "删除作者主张，直接规定所采用口径的分母。",
+    "ledger": "core-01-04.json"
+  },
+  {
+    "path": "docs/textbook/chapters/03_sql_kpi.tex",
+    "before": "这一例子还说明了为什么需要保留指标的中间状态。只保存50\\%无法判断样本量，\n也无法检查迟到数据；保存到期订单数、准时数、未交付数和数据截止时点，则可以\n说明后续重算改变了什么。读者应将它与\n第~\\ref{ch:week04-data-quality}~章的缺失选择问题联系起来：尚未完成的对象仍属于相应统计范围，其当前状态与已完成结果需要分别记录。",
+    "after": "只保存50\\%无法判断样本量，也无法检查迟到数据；同时保存到期订单数、准时数、\n未交付数和数据截止时点，可以核对后续重算的变化。尚未完成的对象仍属于相应\n统计范围，其当前状态与已完成结果需要分别记录。缺失选择的影响见\n第~\\ref{ch:week04-data-quality}~章。",
+    "reason": "删除例子意义的重复总结及读者联想指令，保留中间状态与缺失选择的关系。",
+    "ledger": "core-01-04.json"
+  },
+  {
+    "path": "docs/textbook/chapters/03_sql_kpi.tex",
+    "before": "聚合查询会把多行压缩为一行。窗口函数则不同，它在保留行身份的同时，对与当前行相关的一组行进行计算。这个思想非常适合经营分析，因为管理者既需要看到每个订单，也需要知道它在客户历史、区域排名或时间趋势中的位置。",
+    "after": "聚合查询将同组多行压缩为一行，窗口函数在保留行身份的同时，对与当前行相关的一组行进行计算。经营分析由此可以同时保留单个订单及其在客户历史、区域排名或时间趋势中的位置。",
+    "reason": "删除“思想非常适合”的评价，直接说明窗口函数支持的分析结构。",
+    "ledger": "core-01-04.json"
+  },
+  {
+    "path": "docs/textbook/chapters/03_sql_kpi.tex",
+    "before": "SQL 生成的是结果表，管理者需要的是解释和行动。一个指标结果进入经营会议前，至少应完成六步解释。",
+    "after": "指标结果的管理解释应明确事实范围、比较基准、计算口径、异常位置、可行行动及复核依据。",
+    "reason": "删除展示结果与管理需要的口号式对照，保留六类实际解释内容。",
+    "ledger": "core-01-04.json"
+  },
+  {
+    "path": "docs/textbook/chapters/03_sql_kpi.tex",
+    "before": "教学系统应优先提供由服务端维护的参数化查询模板、只读数据快照、许可表、行数和时间预算，以及受限文件系统与网络环境。",
+    "after": "查询服务宜采用由服务端维护的参数化查询模板、只读数据快照、许可表、行数和时间预算，以及受限文件系统与网络环境。",
+    "reason": "将教学系统策划语言改为查询服务的具体执行条件。",
+    "ledger": "core-01-04.json"
+  },
+  {
+    "path": "docs/textbook/chapters/03_sql_kpi.tex",
+    "before": "在本书的示例中，可以为“周良率”“到期 OTD”“日均 WIP”分别保存查询请求定义、SQL 和小型反例数据。",
+    "after": "“周良率”“到期 OTD”“日均 WIP”的查询验证可分别保存请求定义、SQL 和小型反例数据。",
+    "reason": "删除作者示例自指，直接说明查询验证材料。",
+    "ledger": "core-01-04.json"
+  },
+  {
+    "path": "docs/textbook/chapters/03_sql_kpi.tex",
+    "before": "第三周 Python 复核代码位于：",
+    "after": "订单指标的 Python 复核代码位于：",
+    "reason": "删除授课时序标识，按程序对象命名。",
+    "ledger": "core-01-04.json"
+  },
+  {
+    "path": "docs/textbook/chapters/03_sql_kpi.tex",
+    "before": "便于读者把讲义中的 SQL 逻辑与可运行实验对应起来。",
+    "after": "用于复现前述 SQL 查询。",
+    "reason": "删除读者便利性和讲义生产叙述，保留程序用途。",
+    "ledger": "core-01-04.json"
+  },
+  {
+    "path": "docs/textbook/chapters/03_sql_kpi.tex",
+    "before": "下一章从数据生成过程出发，进一步研究记录缺失、测量误差与规则违反对统计结论的影响。",
+    "after": "记录缺失、测量误差与规则违反均可能改变统计结论，需要结合数据生成过程分析。",
+    "reason": "删除章节预告，直接陈述输入条件失效的后果。",
+    "ledger": "core-01-04.json"
+  },
+  {
+    "path": "docs/textbook/chapters/03_sql_kpi.tex",
+    "before": "Spider 2.0 与 BIRD-INTERACT 则帮助读者理解企业问数评价为何超出\n单条 SQL 的文本匹配\\cite{spider03,bird03}。",
+    "after": "Spider 2.0 与 BIRD-INTERACT 研究多步任务及交互查询的评价，评价对象超出\n单条 SQL 的文本匹配\\cite{spider03,bird03}。",
+    "reason": "将阅读效果描述改为研究对象和评价范围。",
+    "ledger": "core-01-04.json"
+  },
+  {
+    "path": "docs/textbook/chapters/04_data_quality.tex",
+    "before": "本章先定义质量要求并介绍数据剖析，再推导缺失、测量误差和比率误差的影响。\n随后将业务要求写成检查规则，根据预计损失确定修复与发布策略。质量管理由此与\n第~\\ref{ch:week01-intro}~章的决策分析相联系，并为统计推断明确输入条件。",
+    "after": "质量要求由数据用途确定，数据剖析描述记录的结构与分布，缺失、测量误差和比率\n误差则影响统计结论。业务要求可转化为检查规则，修复与发布策略需依据预计损失\n选择（第~\\ref{ch:week01-intro}~章）。质量分析同时规定统计推断的输入条件。",
+    "reason": "删除章节展开步骤，直接陈述数据用途、误差、规则与损失评价的关系。",
+    "ledger": "core-01-04.json"
+  },
+  {
+    "path": "docs/textbook/chapters/04_data_quality.tex",
+    "before": "这个公式看似简单，却隐含多个数据质量假设：",
+    "after": "该计算依赖以下数据质量假设：",
+    "reason": "删除简单/隐含的强调包装。",
+    "ledger": "core-01-04.json"
+  },
+  {
+    "path": "docs/textbook/chapters/04_data_quality.tex",
+    "before": "一个管理指标具有可信度，是指读者能够明确其事实来源、对象范围、质量假设、计算规则、失败记录、刷新时间和责任边界，并且在指标被质疑时可以根据来源记录进行复核。",
+    "after": "一个管理指标具有可信度，是指其事实来源、对象范围、质量假设、计算规则、失败记录、刷新时间和责任边界明确，并且可根据来源记录复核。",
+    "reason": "将读者行为与质疑情境改为指标的可复核条件。",
+    "ledger": "core-01-04.json"
+  },
+  {
+    "path": "docs/textbook/chapters/04_data_quality.tex",
+    "before": "数据质量的作用，就是在数据生成和指标计算之间建立可检查的信任条件。",
+    "after": "质量规则规定数据生成与指标计算之间的可检验条件。",
+    "reason": "删除信任隐喻与强调性语气，保留规则检验关系。",
+    "ledger": "core-01-04.json"
+  },
+  {
+    "path": "docs/textbook/chapters/04_data_quality.tex",
+    "before": "每个环节都可能引入质量风险。人工录入会产生空值和拼写错误；",
+    "after": "人工录入会产生空值和拼写错误；",
+    "reason": "删除前一段已说明的重复结论。",
+    "ledger": "core-01-04.json"
+  },
+  {
+    "path": "docs/textbook/chapters/04_data_quality.tex",
+    "before": "从治理角度看，发现质量问题只是第一步。更重要的是判断问题发生在哪个环节、影响哪些指标、由谁修复、是否需要阻断发布，以及是否需要修改业务流程或数据契约。",
+    "after": "质量事件响应需定位产生误差的环节，确定受影响的指标与修复责任，并决定发布控制、业务流程及数据契约的调整方式。",
+    "reason": "删除“第一步/更重要”的过程性强调，保留治理任务。",
+    "ledger": "core-01-04.json"
+  },
+  {
+    "path": "docs/textbook/chapters/04_data_quality.tex",
+    "before": "三者没有谁能单独覆盖所有错误。\n结构规则便于规模化运行，对账依赖参照来源本身可信，人工复核则受成本和样本选择\n限制。数据治理的实质，是在这些限制下建立足以支持特定行动的证据组合。",
+    "after": "各类证据的覆盖范围均有限。\n结构规则便于规模化运行，对账依赖参照来源本身可信，人工复核则受成本和样本选择\n限制。特定行动所需的证据组合应结合这些限制确定。",
+    "reason": "删除口语化全称和“实质”包装，保留三类证据的限制与组合要求。",
+    "ledger": "core-01-04.json"
+  },
+  {
+    "path": "docs/textbook/chapters/04_data_quality.tex",
+    "before": "质量维度是把“数据不对”转化为可讨论问题的词汇表。本书采用七个常见维度：完整性、唯一性、有效性、一致性、及时性、准确性和可追溯性。",
+    "after": "常见数据质量维度包括完整性、唯一性、有效性、一致性、及时性、准确性和可追溯性。",
+    "reason": "删除词汇表隐喻与作者选择叙述，直接列出质量维度。",
+    "ledger": "core-01-04.json"
+  },
+  {
+    "path": "docs/textbook/chapters/04_data_quality.tex",
+    "before": "剖析报告的价值在于暴露建模假设。例如，若 \\texttt{orders.channel} 出现了 Marketplace，而指标字典只允许 Direct、Partner、Online，则读者必须判断 Marketplace 是新渠道、历史脏值，还是上游系统错误。",
+    "after": "剖析结果可用于核对建模假设。例如，若 \\texttt{orders.channel} 出现了 Marketplace，而指标字典只允许 Direct、Partner、Online，则需调查 Marketplace 是新渠道、历史错误值，还是上游系统错误。",
+    "reason": "将价值评价和读者要求改为剖析用途与实际调查任务。",
+    "ledger": "core-01-04.json"
+  },
+  {
+    "path": "docs/textbook/chapters/04_data_quality.tex",
+    "before": "证明只需将协方差展开为 \\(\\E[YR]-\\E[Y]\\E[R]\\)，再利用 \\(\\E[YR]=\\Prob(R=1)\\E[Y\\mid R=1]\\)。",
+    "after": "将协方差展开为 \\(\\E[YR]-\\E[Y]\\E[R]\\)，再利用 \\(\\E[YR]=\\Prob(R=1)\\E[Y\\mid R=1]\\)，即可得到该恒等式。",
+    "reason": "删除对证明难度的评价，保留完整推导依据。",
+    "ledger": "core-01-04.json"
+  },
+  {
+    "path": "docs/textbook/chapters/04_data_quality.tex",
+    "before": "质量报告应回答三个问题：哪些规则失败了，失败记录是什么，失败对管理判断有什么影响。第三个问题最容易被忽略。为了把失败记录转化为管理解释，可以使用如下模板。",
+    "after": "质量影响评估包括违规规则、具体记录及其对管理判断的影响，需明确失败范围、指标影响、风险等级、处理方式、责任边界及修复证据。",
+    "reason": "删除读者忽略假设和模板编写目的，保留评估项目。",
+    "ledger": "core-01-04.json"
+  },
+  {
+    "path": "docs/textbook/chapters/04_data_quality.tex",
+    "before": "第9章将以约束优化\n的形式解释该条件。",
+    "after": "该条件的约束优化推导见第9章。",
+    "reason": "将未来章节讲解叙述改为推导定位。",
+    "ledger": "core-01-04.json"
+  },
+  {
+    "path": "docs/textbook/chapters/04_data_quality.tex",
+    "before": "所谓“数据足够好”，应始终补上\n“足以支持哪一种比较或行动”。这一思想将在第~\\ref{ch:week09-optimization}~章中\n扩展为敏感性分析与稳健决策。",
+    "after": "数据质量的误差容限需依据所支持的比较或行动确定。\n误差对最优方案的影响可通过敏感性分析与稳健决策研究\n（第~\\ref{ch:week09-optimization}~章）。",
+    "reason": "删除口号式引语与思想扩展预告，保留误差容限及方法联系。",
+    "ledger": "core-01-04.json"
+  },
+  {
+    "path": "docs/textbook/chapters/04_data_quality.tex",
+    "before": "一个 KPI 不只是 SQL 公式，还需要：",
+    "after": "KPI 治理包括计算实现、职责分工、变更控制、审计及异常处理：",
+    "reason": "将“不只是”修辞改为具体治理范围。",
+    "ledger": "core-01-04.json"
+  },
+  {
+    "path": "docs/textbook/chapters/04_data_quality.tex",
+    "before": "本书建议将规则分为三个级别：",
+    "after": "按发布策略，质量规则可分为三个级别：",
+    "reason": "删除作者建议自指，保留分类依据。",
+    "ledger": "core-01-04.json"
+  },
+  {
+    "path": "docs/textbook/chapters/04_data_quality.tex",
+    "before": "问题级别依据业务影响确定。它取决于业务影响。",
+    "after": "问题级别依据业务影响确定。",
+    "reason": "删除相邻句的完全重复。",
+    "ledger": "core-01-04.json"
+  },
+  {
+    "path": "docs/textbook/chapters/04_data_quality.tex",
+    "before": "这个流程把数据质量从一次性清洗转化为运营机制。分析项目中的质量报告可以简化，但必须保留失败记录、影响解释和处理建议。",
+    "after": "质量事件响应持续记录问题发现、处置与修复情况。分析项目中的质量报告可以简化，但必须保留失败记录、影响解释和处理建议。",
+    "reason": "删除口号式转化陈述，保留持续管理与报告内容要求。",
+    "ledger": "core-01-04.json"
+  },
+  {
+    "path": "docs/textbook/chapters/04_data_quality.tex",
+    "before": "把这一治理机制移植到教学工厂，可以按三步进行。首先列出“良品”在首检、返工后终检和客户验收三个环节的含义，保留差异而不强行合并。其次指定业务定义负责人，让数仓实现与定义绑定。最后用变更单记录定义从何时生效、历史是否重算及下游使用者是否收到通知。",
+    "after": "在封测算例中，“良品”需分别按首检、返工后终检和客户验收三个环节定义。业务定义负责人确认各项口径，数仓实现采用对应定义；变更单记录生效时间、历史重算规则及下游通知情况。",
+    "reason": "删除教学迁移与编排步骤，保留算例边界和治理职责。",
+    "ledger": "core-01-04.json"
+  },
+  {
+    "path": "docs/textbook/chapters/04_data_quality.tex",
+    "before": "这提示我们：传统字段规则与运行过程监测有不同作用。",
+    "after": "字段规则检验与运行过程监测承担不同职责。",
+    "reason": "删除提示读者的元话语，直接陈述职能区别。",
+    "ledger": "core-01-04.json"
+  },
+  {
+    "path": "docs/textbook/chapters/04_data_quality.tex",
+    "before": "读者需要使用 Python 或 SQL 找出失败记录，并说明每类失败会影响哪些 KPI。",
+    "after": "实验任务是使用 Python 或 SQL 找出违规记录，并分析每类违规对 KPI 的影响。",
+    "reason": "将读者指令改为明确的实验任务。",
+    "ledger": "core-01-04.json"
+  },
+  {
+    "path": "docs/textbook/chapters/04_data_quality.tex",
+    "before": "对于本书，读者只需用 Markdown、CSV 或 notebook 输出清晰的质量报告，但报告必须能让他人复现失败记录和理解管理后果。",
+    "after": "实验报告可采用 Markdown、CSV 或 notebook，须保留可复现的违规记录及其管理影响。",
+    "reason": "删除作者限定与泛泛清晰性要求，保留实验格式和可复现性要求。",
+    "ledger": "core-01-04.json"
+  },
+  {
+    "path": "docs/textbook/chapters/04_data_quality.tex",
+    "before": "完成这些检查后，下一章研究如何利用统计摘要和图形描述数据中的经营特征。",
+    "after": "统计摘要与图形对经营特征的描述，同样以数据来源及质量条件明确为前提。",
+    "reason": "将章节时序预告改为描述分析的数据前提。",
+    "ledger": "core-01-04.json"
+  },
+  {
+    "path": "docs/textbook/chapters/01_intro.tex",
+    "before": "局部指标或部门抱怨的形式出现",
+    "after": "局部指标或部门反馈的形式出现",
+    "reason": "以正式组织反馈替代口语化评价。",
+    "ledger": "core-01-04.json"
+  },
+  {
+    "path": "docs/textbook/chapters/01_intro.tex",
+    "before": "但营销部门真正采取行动的是一部分客户",
+    "after": "但营销行动作用于其中一部分客户",
+    "reason": "删除强调副词并明确行动范围。",
+    "ledger": "core-01-04.json"
+  },
+  {
+    "path": "docs/textbook/chapters/01_intro.tex",
+    "before": "其价值在于帮助组织形成共同事实基础。",
+    "after": "它为组织提供共同的经营事实基础。",
+    "reason": "将价值包装改为功能陈述。",
+    "ledger": "core-01-04.json"
+  },
+  {
+    "path": "docs/textbook/chapters/01_intro.tex",
+    "before": "先验、检测特征和业务损失分别承担不同角色，不能用“模型很准确”代替其中任何一项。",
+    "after": "先验概率、检测特征和业务损失分别决定后验判断与行动选择，需要独立确定。",
+    "reason": "删除虚拟口语反驳，保留三项条件的不可替代性。",
+    "ledger": "core-01-04.json"
+  },
+  {
+    "path": "docs/textbook/chapters/01_intro.tex",
+    "before": "优惠券、加急、补贴或规则调整是否真正改变结果。",
+    "after": "优惠券、加急、补贴或规则调整是否改变结果。",
+    "reason": "删除无信息增量的强调副词。",
+    "ledger": "core-01-04.json"
+  },
+  {
+    "path": "docs/textbook/chapters/02_enterprise_data_model.tex",
+    "before": "“已经完成的订单”看似是客观对象，实际上包含至少三个约定。首先，完成指生产完成、\n发运完成还是客户签收？其次，一张订单被拆为两个批次时，是第一批完成还是全部完成\n才算完成？最后，系统迟到的补录应改变历史结果，还是只影响当前掌握的信息？\n这些问题没有一个能够由字段类型自动回答。数据模型的首要职责，是让这些约定显性化。",
+    "after": "订单完成状态需要三项约定：采用生产完成、发运完成还是客户签收作为完成事件；\n订单拆为多个批次时，以首批完成还是全部完成作为判断条件；迟到补录是否改变历史\n结果，或仅更新当前可用信息。字段类型无法确定这些业务含义，数据模型须明确\n相应的记录规则。",
+    "reason": "删除看似/实质的修辞和课堂追问，保留完成事件、批次条件与补录规则。",
+    "ledger": "core-01-04.json"
+  },
+  {
+    "path": "docs/textbook/chapters/02_enterprise_data_model.tex",
+    "before": "关系模型的重要优点是声明性。",
+    "after": "关系查询具有声明性。",
+    "reason": "删除泛泛的重要性评价。",
+    "ledger": "core-01-04.json"
+  },
+  {
+    "path": "docs/textbook/chapters/02_enterprise_data_model.tex",
+    "before": "封测对象关系的教学抽象。",
+    "after": "封测对象关系的简化模型。",
+    "reason": "图题按模型范围命名，保留简化边界。",
+    "ledger": "core-01-04.json"
+  },
+  {
+    "path": "docs/textbook/chapters/02_enterprise_data_model.tex",
+    "before": "分解是否可靠与主键、外键约束是同一个问题的两面。",
+    "after": "分解后的无损重建依赖主键唯一性与外键覆盖条件。",
+    "reason": "以具体约束替代“两面”比喻。",
+    "ledger": "core-01-04.json"
+  },
+  {
+    "path": "docs/textbook/chapters/02_enterprise_data_model.tex",
+    "before": "因此，现代企业决策系统关注",
+    "after": "企业决策系统的对象与操作可按以下依赖关系组织：",
+    "reason": "删除泛指现代系统的强调语，明确图式含义。",
+    "ledger": "core-01-04.json"
+  },
+  {
+    "path": "docs/textbook/chapters/02_enterprise_data_model.tex",
+    "before": "在模型中，应记录的不只是“谁拥有这张表”，还包括谁有权修改交期定义、谁批准质量阈值、谁解释历史重算，以及谁在模型建议与实际行动冲突时作最终选择。",
+    "after": "模型中的职责记录应包含表的维护责任、交期定义的修改权、质量阈值的批准权、历史重算的解释责任，以及模型建议与实际行动发生冲突时的最终决策权。",
+    "reason": "将口语化所有权对照与连续追问改为明确的职责类型。",
+    "ledger": "core-01-04.json"
+  },
+  {
+    "path": "docs/textbook/chapters/02_enterprise_data_model.tex",
+    "before": "本章的结构化建模代码位于：",
+    "after": "实体与关系的结构化建模代码位于：",
+    "reason": "按程序对象说明来源，删除章节自指。",
+    "ledger": "core-01-04.json"
+  },
+  {
+    "path": "docs/textbook/chapters/02_enterprise_data_model.tex",
+    "before": "Date 的数据库教材帮助理解约束与规范化，",
+    "after": "Date 的数据库教材讨论约束与规范化，",
+    "reason": "删除假想读者的阅读效果描述。",
+    "ledger": "core-01-04.json"
+  },
+  {
+    "path": "docs/textbook/chapters/02_enterprise_data_model.tex",
+    "before": "本章的线性报酬算例采用正态噪声、指数效用和二次努力成本，",
+    "after": "线性报酬算例采用正态噪声、指数效用和二次努力成本，",
+    "reason": "保留算例假设，删除章节自指。",
+    "ledger": "core-01-04.json"
+  },
+  {
+    "path": "docs/textbook/chapters/03_sql_kpi.tex",
+    "before": "本教学数据假定每张订单只有一种产品",
+    "after": "样例数据假定每张订单只有一种产品",
+    "reason": "保留数据简化假设，以样例范围替代教学情境。",
+    "ledger": "core-01-04.json"
+  },
+  {
+    "path": "docs/textbook/chapters/03_sql_kpi.tex",
+    "before": "却会误删真正相同金额的不同订单。",
+    "after": "却会误删金额相同的不同订单。",
+    "reason": "删除无信息增量的强调副词。",
+    "ledger": "core-01-04.json"
+  },
+  {
+    "path": "docs/textbook/chapters/03_sql_kpi.tex",
+    "before": "日期、订单和数值均为教学构造，",
+    "after": "日期、订单和数值均为假设值，",
+    "reason": "保留案例非实际企业记录的边界，使用正式假设语言。",
+    "ledger": "core-01-04.json"
+  },
+  {
+    "path": "docs/textbook/chapters/03_sql_kpi.tex",
+    "before": "本章样例数据位于",
+    "after": "订单指标的样例数据位于",
+    "reason": "按数据用途命名，删除章节自指。",
+    "ledger": "core-01-04.json"
+  },
+  {
+    "path": "docs/textbook/chapters/04_data_quality.tex",
+    "before": "数据质量很难脱离用途来定义。同一份数据在一种用途下足够好，在另一种用途下可能不足以支持决策。",
+    "after": "数据质量依据用途定义。同一份数据可能满足一种用途的质量要求，同时无法满足另一种用途的要求。",
+    "reason": "将足够好与困难等泛泛评价改为用途依赖的正式定义。",
+    "ledger": "core-01-04.json"
+  },
+  {
+    "path": "docs/textbook/chapters/04_data_quality.tex",
+    "before": "本章开头的已交付样本 OTD 必须与第~\\ref{ch:week03-sql-kpi}~章的到期口径明确区分。",
+    "after": "已交付订单准时率须与到期承诺口径的 OTD 明确区分（第~\\ref{ch:week03-sql-kpi}~章）。",
+    "reason": "删除页面位置自指，按不同统计对象明确指标名称。",
+    "ledger": "core-01-04.json"
+  },
+  {
+    "path": "docs/textbook/chapters/04_data_quality.tex",
+    "before": "这些是教学参数，现实还应区分误报、漏报、恢复时间和已知替代数据。",
+    "after": "这些数值为假设参数，实际评价还应区分误报、漏报、恢复时间和已知替代数据。",
+    "reason": "保留假设算例与实际评价的边界，去除教学过程表述。",
+    "ledger": "core-01-04.json"
+  },
+  {
+    "path": "docs/textbook/chapters/01_intro.tex",
+    "before": "模型自动生成程序时，独立的手算和业务系统状态尤其重要。\n验收依据是规格符合情况、计算结果和执行状态。",
+    "after": "模型自动生成程序时，计算结果和执行状态须通过独立手算与业务系统记录复核。",
+    "reason": "将重要性评价与重复结语合并为独立复核的具体要求。",
+    "ledger": "core-01-04.json"
+  },
+  {
+    "path": "docs/textbook/chapters/05_statistics_dashboard.tex",
+    "before": "本章研究这些统计量及其图形表达。",
+    "after": "",
+    "reason": "删除重复总结与章节意图陈述，首句已明确描述统计用途。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/05_statistics_dashboard.tex",
+    "before": "论证分为三个层次。第一层描述变量的分布，回答典型水平与离散程度；第二层分解\n结构和时间变化，区分组合、波动与过程信号；第三层利用存量、流量和等待的关系\n检验解释是否符合运营约束。最后讨论怎样在界面中保存这些区别，为下一章的\n统计推断明确哪些现象仍需要进一步证据。",
+    "after": "变量分布反映典型水平与离散程度；结构和时间分解区分组合变化、随机波动与过程\n信号；存量、流量和等待时间的关系限定运营解释。看板应保留这些区别，并注明\n描述性发现及其仍待检验的假设。",
+    "reason": "清理层次安排与“最后讨论”的论证策划，保留统计内容及推断边界。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/05_statistics_dashboard.tex",
+    "before": "本章使用对象含义、计算方法与质量状况已经说明的观测资料。第2至4章分别提供这些条件；在此基础上，分析按以下次序展开。",
+    "after": "描述统计以对象含义、计算方法与质量状况明确的观测资料为基础。相关条件见第2至4章。指标、图形、解释与行动的关系为：",
+    "reason": "以描述统计的输入条件替代本章展开次序。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/05_statistics_dashboard.tex",
+    "before": "本书将样本中位数 \\(Q_2\\) 取为排序后的中间值；样本量为偶数时，取中间两个值的平均。",
+    "after": "样本中位数 \\(Q_2\\) 取为排序后的中间值；样本量为偶数时，取中间两个值的平均。",
+    "reason": "去除定义中的本书自指，保留计算约定。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/05_statistics_dashboard.tex",
+    "before": "看板中常有准时率、毛利率、缺陷率、转化率等比率型指标。第~\\ref{ch:week03-sql-kpi}~章已经强调，比率指标不能简单平均。本章进一步强调：看板应尽量同时展示比率、分子和分母。",
+    "after": "看板中常有准时率、毛利率、缺陷率、转化率等比率型指标。比率指标不能简单平均，计算依据见第~\\ref{ch:week03-sql-kpi}~章。看板应同时展示比率、分子和分母。",
+    "reason": "以计算规则及出处替代“已经强调/进一步强调”的作者话语。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/05_statistics_dashboard.tex",
+    "before": "没有基准的数字通常没有管理含义。",
+    "after": "基准限定指标的比较和评价含义。",
+    "reason": "修正泛化断语，明确比较基准的用途。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/05_statistics_dashboard.tex",
+    "before": "看板应明确比较对象，否则读者会自动补充各自心中的基准，导致会议讨论偏离事实。",
+    "after": "看板应明确比较对象，避免不同基准下的判断混用。",
+    "reason": "去除假想读者行为和会议过程叙述，保留基准混用风险。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/05_statistics_dashboard.tex",
+    "before": "Cleveland and McGill 的图形感知研究提醒我们，不同视觉通道的精确程度不同。",
+    "after": "Cleveland and McGill 的图形感知研究表明，不同视觉通道支持的判断精度不同。",
+    "reason": "去除“提醒我们”的读者劝告，直接陈述研究结论。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/05_statistics_dashboard.tex",
+    "before": "将这个原则用于经营看板，可以得到如下结构：",
+    "after": "经营看板的信息组织可分为整体概览、比较、解释、明细查询与行动：",
+    "reason": "去除教学思想迁移话语，直接界定信息结构。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/05_statistics_dashboard.tex",
+    "before": "没有这些说明，图表即使美观也不可审计。",
+    "after": "这些信息构成指标追溯和结果审计的依据。",
+    "reason": "以审计依据替代装饰性对照。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/05_statistics_dashboard.tex",
+    "before": "本章实验主要是分析型看板，因为读者需要解释收入波动、准时率和质量问题，而不只是展示静态结果。",
+    "after": "收入波动、准时率与质量问题的分析需要分组比较和明细查询，适合采用分析型看板。",
+    "reason": "清理实验策划和假想读者需求，保留看板选型依据。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/05_statistics_dashboard.tex",
+    "before": "以此为背景设计备件分析看板，可以依次显示发动机服务风险与备件可得率、各地点需求与库存，以及候选调拨和采购方案。",
+    "after": "备件分析看板可显示发动机服务风险与备件可得率、各地点需求与库存，以及候选调拨和采购方案。",
+    "reason": "去除案例编写过程，直接描述备件分析内容；不把拟议结构写成企业已实施事实。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/05_statistics_dashboard.tex",
+    "before": "将图表交给多模态模型时，最可靠的输入应同时包括原始聚合表、单位、定义与图，而不仅是截图。回答分成观测事实、可能机制和建议验证三段。",
+    "after": "多模态模型的图表解释应以原始聚合表、单位、指标定义和图形为依据，并区分观测事实、候选机制和验证方法。",
+    "reason": "去除无依据最高级与回答编排，保留解释证据和认识层次。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/05_statistics_dashboard.tex",
+    "before": "例如，第5章样例可写为：本期收入存在一个高值日期，",
+    "after": "第5章样例中，本期收入存在一个高值日期，",
+    "reason": "去除报告代写模板口吻，直接陈述算例结果。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/05_statistics_dashboard.tex",
+    "before": "图形负责显露分布，排队模型负责\n说相应的运行机制；模型服务的负载分析可参考",
+    "after": "图形用于呈现分布，排队模型描述相应的运行机制；模型服务的负载分析见",
+    "reason": "清理拟人化分工并修复病句，保留文献引导。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/06_ab_testing.tex",
+    "before": "处理分配机制，使组间比较具有明确的概率依据。本章从实验单元、潜在结果和目标\n参数出发，推导差异估计量及其精度，再讨论实验结果如何用于推广决策。",
+    "after": "处理分配机制，使组间比较具有明确的概率依据。效应估计及其精度取决于实验\n单元、潜在结果和目标参数；推广评价还须结合实施成本与风险。",
+    "reason": "以估计与推广的依据替代章节编排。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/06_ab_testing.tex",
+    "before": "本章的论证顺序是先设计比较，再分析数据，最后评价推广。随机化支持内部比较，\n方差描述估计精度，功效用于安排样本，风险指标和经济阈值用于评价推广条件。\n协变量调整利用实验前信息，整群设计处理共同接受干预的对象，置信序列适用于\n持续观察结果的实验。各方法均从其对应的分配与观测条件展开。",
+    "after": "随机化为组间效应比较提供概率依据，方差描述估计精度，功效用于确定样本量，\n风险指标和经济阈值限定推广条件。协变量调整利用实验前信息，整群设计以共同\n接受干预的对象为分配单位，置信序列控制持续观察中的覆盖错误。各方法的有效性\n取决于相应的分配与观测条件。",
+    "reason": "去除论证顺序和展开方式，保留方法功能及适用条件。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/06_ab_testing.tex",
+    "before": "A/B 测试之所以重要，是因为随机化同时服务于两件事：减少选择偏差，并使差异估计量具有可分析的抽样不确定性。",
+    "after": "随机化减少选择偏差，并使差异估计量的抽样不确定性具有可分析的概率依据。",
+    "reason": "去除重要性宣告，直接陈述随机化作用。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/06_ab_testing.tex",
+    "before": "这个公式给出一个重要管理含义：样本量增加会降低不确定性，其标准误按 \\(1/\\sqrt n\\) 的速度下降。",
+    "after": "在这些条件下，均值标准误按 \\(1/\\sqrt n\\) 的速度随样本量下降。",
+    "reason": "清理引出结论的包装，保留条件和缩放规律。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/06_ab_testing.tex",
+    "before": "样本量不足时，看板上看起来很大的差异也可能不足以支持推广。",
+    "after": "样本量不足时，较大的观测差异也可能具有较宽的置信区间，不足以支持推广。",
+    "reason": "用估计精度替代“看起来很大”的口语判断。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/06_ab_testing.tex",
+    "before": "一个实验即使能计算 p 值，也未必是可信实验。质量检查应在分析前完成，至少包括以下内容。",
+    "after": "实验推断要求分配机制、观测资料和分析规则符合研究设计。分析前的质量检查至少包括以下内容。",
+    "reason": "去除设问式否定包装，保留可信推断的前提。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/06_ab_testing.tex",
+    "before": "每天打开实验看一次结果，若显著就停止，看似谨慎，实际会提高误报率。原因是每次查看都相当于给偶然波动一次“被选中”的机会。",
+    "after": "反复检验并在首次显著时停止，会提高误报率，因为停止规则选择了产生显著结果的随机波动。",
+    "reason": "清理过程性讲述与拟人化比喻，直接解释选择性停止。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/06_ab_testing.tex",
+    "before": "课程项目中不要求读者掌握复杂校正方法，但必须在报告中说明哪些指标是预先定义的主指标，哪些是探索性分析。",
+    "after": "实验报告应说明哪些指标是预先定义的主指标，哪些属于探索性分析。",
+    "reason": "移除课程要求和假想读者掌握程度，保留研究报告规范。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/06_ab_testing.tex",
+    "before": "真正重要的成果是一个可复用的学习机制：失败实验同样保存，负面结果不会被删去，事后探索与预先检验分开报告。",
+    "after": "实验记录应保存失败实验和负面结果，并分别报告事后探索与预先规定的检验。",
+    "reason": "去除价值宣告和口号，直接陈述记录规范。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/06_ab_testing.tex",
+    "before": "课堂练习可以先在同一组封存订单上比较两种系统的任务完成率，再设计两个工作\n中心的试点方案。第一步检验给定输入下的正确性，第二步规定经营效果的处理\n分配与结果窗口；试点规模不足时只演示设计和不确定性，不据此作显著性结论。",
+    "after": "在同一组封存订单上比较两种系统的任务完成率，可以检验给定输入下的正确性；\n工作中心的试点则须规定处理分配与经营结果的观察窗口。两个工作中心的试点\n若规模不足，结果应限于设计与不确定性的分析，不据此作显著性结论。",
+    "reason": "移除课堂策划，保留任务测试、试点设计及极小规模推断边界。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/06_ab_testing.tex",
+    "before": "从试点到推广还包含一个常被忽略的外推问题。",
+    "after": "试点结果的推广涉及向目标总体外推。",
+    "reason": "去除“常被忽略”的无依据评价。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/06_ab_testing.tex",
+    "before": "本章将看板中的指标差异转化为统计推断问题。",
+    "after": "指标差异的总体解释需要统计推断。",
+    "reason": "去除小结中的章节自指，直接陈述分析关系。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/06_ab_testing.tex",
+    "before": "功效和 MDE 帮助实验在开始前形成可执行计划。",
+    "after": "功效和 MDE 限定实验所需的样本规模。",
+    "reason": "以统计设计含义替代空泛可执行计划。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/06_ab_testing.tex",
+    "before": "提供降低方差与时间一致推断的方法\\cite{cuped06,cs06}；它们扩大了实验工具箱，\n却不改变先定义实验单元、目标效应和错误控制的基本顺序。",
+    "after": "提供降低方差与时间一致推断的方法\\cite{cuped06,cs06}。应用这些方法仍需明确\n实验单元、目标效应和错误控制。",
+    "reason": "清理工具箱比喻与阶段口号，保留方法适用前提。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/07_prediction.tex",
+    "before": "当前状态判断未来风险。预测模型正是对这种条件关系的近似表达。本章将预测视为\n一个有明确时间边界的统计任务：在什么时点、对哪些对象、使用哪些已知信息、\n预测哪一个结果，并用什么损失评价错误。",
+    "after": "当前状态判断未来风险。预测模型近似表达当前信息与未来结果的条件关系。\n预测任务应明确预测时点、对象、可用信息、目标结果和评价错误的损失函数。",
+    "reason": "清理本章意图和连串口语问句，直接定义任务要素。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/07_prediction.tex",
+    "before": "明确预测对象与信息时点后，本章依次讨论总体风险、经验风险、逻辑回归与集成学习。\n随后介绍样本划分、概率评价和共形预测区间，并研究模型解释与运行监测。\n预测概率可以进入期望损失计算；对于改变结果的干预，还需估计第8章讨论的处理效应。",
+    "after": "总体风险衡量目标分布下的预测损失，经验风险以样本平均近似该目标；逻辑回归\n与集成学习是常用的预测模型。样本划分、概率评价、预测区间和运行监测用于\n评价模型的泛化及适用范围。预测概率可以进入期望损失计算；改变结果的干预\n则需估计处理效应，见第8章。",
+    "reason": "以方法关系替代依次讨论和随后介绍的章节计划。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/07_prediction.tex",
+    "before": "管理实践中经常把这些任务混在一起。分析报告应当在报告中明确：模型输出是风险排序、概率估计、行动效果估计，还是资源配置建议。只有边界清楚，预测模型才不会被过度解释。",
+    "after": "分析报告应明确模型输出属于风险排序、概率估计、行动效果估计还是资源配置建议，并按相应任务解释结果。",
+    "reason": "去除泛化责备、重复表述与空泛结语，保留结论分类。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/07_prediction.tex",
+    "before": "模型训练必须定义“预测得好”是什么意思。这个定义由损失函数给出。",
+    "after": "损失函数规定模型训练的评价目标。",
+    "reason": "以规范术语替代口语设问。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/07_prediction.tex",
+    "before": "训练数据只是将来任务的有限替代。",
+    "after": "训练数据为目标任务提供有限样本。",
+    "reason": "清理含混比喻，保留有限样本含义。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/07_prediction.tex",
+    "before": "正则化限制候选函数复杂度。两者回答不同问题：损失定义成功标准，函数类限制能够\n表达的规律，数据决定可以多精确地估计这些规律。",
+    "after": "正则化限制候选函数复杂度。损失函数定义评价标准，函数类限定可表达的关系，\n样本数量和分布影响这些关系的估计精度。",
+    "reason": "修复“两者”后列三项的逻辑瑕疵，去除成功标准和规律的口语化描述。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/07_prediction.tex",
+    "before": "这里给出最小算法结构，成熟实现还处理分裂增益、正则化、缺失值和计算优化。",
+    "after": "完整实现还需处理分裂增益、正则化、缺失值和计算优化。",
+    "reason": "去除讲义编写范围自述，保留算法扩展要素。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/07_prediction.tex",
+    "before": "数据泄漏在企业项目中非常危险，因为它会让模型在演示中看似准确，在上线后迅速失效。",
+    "after": "数据泄漏会高估离线表现，模型部署后可能因相应信息不可获得而失效。",
+    "reason": "去除夸张评价和演示过程叙述，明确失效机制。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/07_prediction.tex",
+    "before": "为准确表达偏差--方差分解，固定输入",
+    "after": "对偏差--方差分解，固定输入",
+    "reason": "去除表达准确性的作者自评，保留推导条件。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/07_prediction.tex",
+    "before": "小样本校准表波动很大，但它能提醒管理者：概率模型进入预算、收益和风险计算前，必须经过概率意义上的检查。",
+    "after": "小样本校准表波动较大，解释时应考虑估计不确定性。概率模型用于预算、收益和风险计算前，需要检查校准程度。",
+    "reason": "去除“提醒管理者”包装，明确校准及不确定性。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/07_prediction.tex",
+    "before": "这个规则说明，预测阈值不应只由模型指标决定。",
+    "after": "预测阈值还取决于行动成本和预期收益。",
+    "reason": "去除例后重复的说明包装，直接陈述阈值依据。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/07_prediction.tex",
+    "before": "业务团队通常会问“模型为什么认为这个客户高风险”。解释模型输出有两类目的：",
+    "after": "客户风险模型的输出解释有两类用途：",
+    "reason": "清理假想读者问句，保留解释用途。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/07_prediction.tex",
+    "before": "其关键变化是把“在许多任务上学到的预测能力”迁移到一个新表格任务，而不只是为每张表从零拟合模型。",
+    "after": "这类方法将预训练任务中获得的预测能力迁移至新的表格任务。",
+    "reason": "去除重要性宣告和装饰性对照，直接陈述迁移机制。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/07_prediction.tex",
+    "before": "要把它转成预测模型，至少应区分故障概率、剩余使用寿命、备件需求量和维修周转时间。",
+    "after": "相应的预测任务包括故障概率、剩余使用寿命、备件需求量和维修周转时间。",
+    "reason": "去除案例转写过程，直接界定预测目标。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/07_prediction.tex",
+    "before": "AI 工具可以生成特征候选、解释报错和辅助实现模型，但最终提交应包括数据切分、特征时间证据、基线、训练配置及独立测试结果。",
+    "after": "AI 工具可以生成特征候选、解释报错和辅助实现模型。模型评价记录应包括数据切分、特征时间证据、基线、训练配置及独立测试结果。",
+    "reason": "去除作业提交口吻，保留独立评价记录。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/07_prediction.tex",
+    "before": "选模型的过程本身也是学习过程，必须受到验证集与测试集边界约束。",
+    "after": "模型搜索和选择应遵守验证集与测试集的使用边界。",
+    "reason": "清理拟人化学习过程与重复包装，保留数据使用规范。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/07_prediction.tex",
+    "before": "这说明“风险最高”不一定等于“最值得行动”。",
+    "after": "风险排序与预期净价值排序在该算例中不同。",
+    "reason": "以具体比较结果替代口号式例后结语。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/07_prediction.tex",
+    "before": "对象留给了未处理组。这一问题自然引向第~\\ref{ch:week08-causality}~章：要比较行动，\n需要把预测关系进一步分解为可以识别的反事实关系。",
+    "after": "对象留给了未处理组。行动效果的比较需要识别相应的反事实关系，识别条件见\n第~\\ref{ch:week08-causality}~章。",
+    "reason": "去除自然引向下一章的叙事，保留因果识别出处。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/07_prediction.tex",
+    "before": "预测模型上线后会进入一个新的治理问题：训练时表现良好的模型，是否仍然适用于当前业务环境？",
+    "after": "模型部署后的适用性取决于当前业务环境与训练期环境的关系。",
+    "reason": "清理治理问题登场与口语设问，直接陈述分布适用性。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/07_prediction.tex",
+    "before": "因此，本书的预测模型报告应包括数据切分、特征字典、模型表达、训练设置、测试指标、校准检查、阈值说明、行动建议和风险备注。只有这样，模型才可能从 notebook 中的算法输出转化为可审计的管理系统组件。",
+    "after": "预测模型报告应包括数据切分、特征字典、模型表达、训练设置、测试指标、校准检查、阈值说明、行动建议和风险备注，作为模型审计与运行维护的依据。",
+    "reason": "去除本书自指和转化口号，保留报告要素及用途。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/07_prediction.tex",
+    "before": "本章介绍了预测模型的基本框架。监督学习把带标签历史数据转化为",
+    "after": "监督学习利用带标签历史数据估计",
+    "reason": "清理小结中的章节内容介绍。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/07_prediction.tex",
+    "before": "表格基础模型文献应与这些基础结论并读：\n新的模型机制可以改变有限样本表现，但不会取消标签定义、时间切分与部署评价。",
+    "after": "表格基础模型的有限样本表现仍需在明确标签定义、时间切分与部署条件后评价。",
+    "reason": "清理阅读策划和反向否定包装，保留模型评价要求。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/08_causality.tex",
+    "before": "本章从潜在结果和选择偏差出发，先说明效应的定义，再给出识别所需条件，最后\n讨论估计方法。标准化与加权依赖给定协变量的可比性，差分中的差分依赖未处理结果\n的平行趋势。双重稳健估计结合结果回归与处理概率模型。各节均依次说明目标参数、\n识别条件和样本估计量。",
+    "after": "因果分析须区分目标效应、识别条件与样本估计量。标准化与加权依赖给定协变量\n的可比性，差分中的差分依赖未处理结果的平行趋势。双重稳健估计结合结果回归\n与处理概率模型。观察组间差异与目标效应的偏离需要通过选择机制分析。",
+    "reason": "去除章节顺序和各节安排，直接说明目标、识别与估计的关系。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/08_causality.tex",
+    "before": "同一个数据集可以服务不同问题，但每类问题的结论不同。",
+    "after": "相关分析、预测、因果推断和处方分析具有不同的目标及解释边界。",
+    "reason": "修正泛泛的提纲式引句，明确分类。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/08_causality.tex",
+    "before": "因果推断首先是研究设计问题，其次才是建模问题。若处理分配机制混乱、干预定义含糊或关键结果无法观察，再复杂的模型也只能给出脆弱的结论。",
+    "after": "因果识别依赖处理分配机制、明确的干预定义和可观察的结果。估计模型不能弥补关键识别条件的缺失。",
+    "reason": "以识别前提替代先后口号和复杂模型对照。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/08_causality.tex",
+    "before": "第一步直接比较，得到加急组延期率",
+    "after": "直接比较得到加急组延期率",
+    "reason": "去除算例步骤的主持口吻，保留计算。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/08_causality.tex",
+    "before": "第二步在相同难度内比较。高难度层的差异为",
+    "after": "在相同难度内比较，高难度层的差异为",
+    "reason": "去除步骤宣告，保留层内比较。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/08_causality.tex",
+    "before": "第三步明确目标总体。若目标总体高、低难度各占一半，",
+    "after": "若目标总体高、低难度各占一半，",
+    "reason": "去除重复步骤标题，保留标准化总体。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/08_causality.tex",
+    "before": "第四步才是判断这个结果能否解释为因果效应。",
+    "after": "标准化结果的因果解释还需要识别条件。",
+    "reason": "以识别边界替代分步主持和“才是”包装。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/08_causality.tex",
+    "before": "这个算例与第~\\ref{ch:week05-statistics-dashboard}~章的组合变化在代数上相近，\n但论证要求更高。描述统计只需说明不同权重造成总体差异；因果推断还必须说明为何\n层内对象可在这些识别条件下提供反事实参照。",
+    "after": "标准化与第~\\ref{ch:week05-statistics-dashboard}~章的组合分解具有相近的加权结构。\n组合分解描述权重变化造成的总体差异；因果标准化还要求层内对象满足反事实比较\n的识别条件。",
+    "reason": "去除论证高低评价，保留方法之间的真实区别。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/08_causality.tex",
+    "before": "Rosenbaum 与 Rubin 的结果应区分两层。",
+    "after": "Rosenbaum 与 Rubin 的结果包含平衡性质与因果识别两个层次。",
+    "reason": "明确两个层次的学术内容，避免提纲式主持。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/08_causality.tex",
+    "before": "分母远离零的条件也由此变得清楚。",
+    "after": "候选倾向得分接近0或1时，分母会放大两类估计误差的影响。",
+    "reason": "以具体条件替代作者称清楚的评价。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/08_causality.tex",
+    "before": "更透明的思路是定义首次处理时点",
+    "after": "可定义首次处理时点",
+    "reason": "去除方法自评；保持原有参数定义。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/08_causality.tex",
+    "before": "这样处理持续时间就不会被一个无历史的二元标签抹掉。",
+    "after": "该定义保留首次处理时间及处理持续时间。",
+    "reason": "清理口语比喻，直接描述参数记录的时间信息。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/08_causality.tex",
+    "before": "所有估计公式都必须放回数据产生的过程。首先应写明目标对象是在什么时候满足\n纳入条件的，再定义当时可以采取的行动，最后规定随访结果。",
+    "after": "研究设计应对齐资格判定、可选行动、处理开始和随访结果的观察时点。",
+    "reason": "去除公式放回的口号与主持步骤，保留时间对齐要求。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/08_causality.tex",
+    "before": "其次，协变量必须按照它在因果结构中的作用选择。",
+    "after": "协变量的选择取决于其在因果结构中的作用。",
+    "reason": "去除段落序列主持。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/08_causality.tex",
+    "before": "最后，敏感性分析应将无法检验的假设转化为可以讨论的幅度。例如，若分析者愿意\n考虑估计结果相对于目标效应仍可能有绝对值不超过",
+    "after": "敏感性分析可用偏差幅度考察不可检验的识别假设。例如，若假定估计结果相对于\n目标效应仍可能有绝对值不超过",
+    "reason": "清理主持与个人愿意措辞，明确敏感性假设。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/08_causality.tex",
+    "before": "示例重构为“某制造集团分批部署统一数据目录”。",
+    "after": "考虑“某制造集团分批部署统一数据目录”的假设案例。",
+    "reason": "移除案例编写过程，同时明确虚构边界。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/08_causality.tex",
+    "before": "一个更完整的评估记录任务难度、首次完成时间、人工复核、返工、质量和最终业务结果。",
+    "after": "AI 应用评估应记录任务难度、首次完成时间、人工复核、返工、质量和最终业务结果。",
+    "reason": "去除评估完整性的自我评价，保留记录变量。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/08_causality.tex",
+    "before": "一份因果研究报告 通常包含：",
+    "after": "因果研究报告应包含：",
+    "reason": "清理泛化模板口吻与多余空格。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/08_causality.tex",
+    "before": "本章说明了因果推断在管理干预中的位置。预测模型可以发现风险对象，",
+    "after": "预测模型可以发现风险对象，",
+    "reason": "删除小结的章节内容重复。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/08_causality.tex",
+    "before": "阅读时应特别检查它们的识别、重叠和收敛条件，而不只记住估计公式。",
+    "after": "这些方法的适用性取决于其识别、重叠和收敛条件。",
+    "reason": "清理对读者学习方式的指导，保留适用条件。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/09_optimization.tex",
+    "before": "本章先说明可行域、目标和经济解释，再由线性规划展示资源价格与最优性证明。\n随后讨论离散选择、随机库存与尾部风险，并以加急和补货算例说明计算步骤。\n制造排程进一步处理活动先后关系，决策导向学习比较预测误差与行动损失。\n最后说明求解结果的检查、参数敏感性分析及实施条件。",
+    "after": "线性规划对偶给出资源价格与最优性证明；整数约束处理离散选择和活动\n先后关系。随机库存模型与尾部风险度量用于不确定环境下的方案比较，决策导向\n学习则以行动损失评价估计参数。求解结果还需经过可行性检查、参数敏感性分析\n与实施条件核验。",
+    "reason": "将章节计划改为方法功能与评价要求。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/09_optimization.tex",
+    "before": "优化进一步追问：在预算、库存、产能、人力、服务水平和风险约束下，应该选择哪些行动。",
+    "after": "优化根据预算、库存、产能、人力、服务水平和风险约束选择行动。",
+    "reason": "去除拟人化追问，直接陈述任务。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/09_optimization.tex",
+    "before": "它不只预测结果，还必须说明选择何种行动、为何可行、使用多少资源、承担什么风险。",
+    "after": "其输出包括行动选择、可行性依据、资源使用和相应风险。",
+    "reason": "将装饰性对照和口语问句改为输出定义。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/09_optimization.tex",
+    "before": "企业优化问题的约束通常比目标函数更接近真实管理过程。",
+    "after": "企业优化问题的约束描述资源限制、服务要求和业务规则。",
+    "reason": "去除未论证高低比较，明确约束的内容。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/09_optimization.tex",
+    "before": "仅找到一个可行解还不足以证明最优，下面用对偶价格给出上界。",
+    "after": "该可行解的最优性还需由对偶上界验证。",
+    "reason": "去除“下面用”的讲解过程，保留最优性证明要求。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/09_optimization.tex",
+    "before": "优化的一个核心直觉是边际价值。若增加一单位资源带来的目标函数改善很高，应优先分配资源；若边际价值已经降低，则应把资源转向其他行动。",
+    "after": "边际价值衡量增加一单位资源带来的目标函数改善，可用于比较不同用途的增量收益。",
+    "reason": "去除核心直觉包装及无条件的分配口号，保留边际比较功能。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/09_optimization.tex",
+    "before": "影子价格的管理含义非常直接。",
+    "after": "影子价格反映约束资源在适用范围内的增量价值。",
+    "reason": "以有效范围内的经济含义替代作者自评。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/09_optimization.tex",
+    "before": "需求、到货时间和产能等输入具有不确定性。需求、到货时间、客户响应率和产能可用性都具有不确定性。若把它们简单替换为平均值，可能得到脆弱方案。",
+    "after": "需求、到货时间、客户响应率和产能可用性都具有不确定性。以平均值替代其分布可能低估高损失情景的影响。",
+    "reason": "删除重复句及含混评价，直接说明均值替代的局限。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/09_optimization.tex",
+    "before": "优化结果常给人一种过度确定感。事实上，需求预测、成本参数、缺货惩罚、预算和库容都可能变化。敏感性分析用于回答：若关键参数改变，最优方案是否稳定？",
+    "after": "需求预测、成本参数、缺货惩罚、预算和库容都可能变化。敏感性分析考察关键参数变化时最优方案的稳定性。",
+    "reason": "清理假想感受、事实上和口语问句，保留敏感性定义。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/09_optimization.tex",
+    "before": "本章至少要求检查：",
+    "after": "敏感性分析可检查以下变化：",
+    "reason": "清理课程要求，保留参数核查对象。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/09_optimization.tex",
+    "before": "本例只展示可验证的最小结构。",
+    "after": "该算例未计入这些附加约束。",
+    "reason": "以明确模型范围替代讲义展示意图。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/09_optimization.tex",
+    "before": "这个例子说明训练目标与决策目标可能不一致。",
+    "after": "两种预测的误差与决策后悔值排序不同。",
+    "reason": "去除例后总结包装，保留具体结果。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/09_optimization.tex",
+    "before": "制造情境的对应是滚动时域：",
+    "after": "制造排程可采用滚动时域：",
+    "reason": "去除案例迁移的策划语言，直接描述方法。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/09_optimization.tex",
+    "before": "仿真最优是在模拟世界里的最优，只有经过现场验证和反馈，才能形成可信管理建议。",
+    "after": "仿真最优解依赖模拟模型的结构和参数，其实际效果需经现场验证。",
+    "reason": "清理口号式同义重复，保留仿真边界。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/09_optimization.tex",
+    "before": "现将风险预测、干预效果和行动约束连接到同一个小问题。",
+    "after": "订单加急组合选择同时需要风险预测、干预效果和行动约束。",
+    "reason": "去除“现将”的讲解过程和小问题口吻。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/09_optimization.tex",
+    "before": "这个小差异足以说明三个章节的分工：第~\\ref{ch:week07-prediction}~章估计风险，\n第~\\ref{ch:week08-causality}~章支持效果识别，本章在共同约束下选择组合。",
+    "after": "风险预测见第~\\ref{ch:week07-prediction}~章，效果识别见第~\\ref{ch:week08-causality}~章。\n组合优化将这些估计与共同资源约束结合。",
+    "reason": "清理章节分工及例后强调，保留方法出处与联系。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/09_optimization.tex",
+    "before": "LLM 适合把自然语言约束转成候选模型、补充缺失参数清单和解释求解结果。",
+    "after": "LLM 可辅助将自然语言约束转成候选模型、列出缺失参数和解释求解结果。",
+    "reason": "避免无范围的适合断言，保留辅助用途。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/09_optimization.tex",
+    "before": "一个可靠流程是：",
+    "after": "优化请求的执行流程包括：",
+    "reason": "去除流程质量自评，直接列出流程。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/09_optimization.tex",
+    "before": "若每个产品只有几十个候选订货量，枚举法直观、可审计，也适合课堂教学。",
+    "after": "若每个产品只有几十个候选订货量，枚举法可逐项核对目标值与约束。",
+    "reason": "去除课堂教学策划，保留枚举法核查属性。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/09_optimization.tex",
+    "before": "资源约束使“单品价值排序”变成“组合选择”问题。",
+    "after": "单品边际价值排序不能替代预算和库容约束下的组合比较。",
+    "reason": "以技术区别替代口号式转化。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/09_optimization.tex",
+    "before": "优化应被看作一个持续反馈系统：",
+    "after": "优化参数随执行反馈更新，形成以下运行过程：",
+    "reason": "去除应被看作的读者认知指令，直接说明反馈机制。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/09_optimization.tex",
+    "before": "若没有反馈，模型会在环境变化后逐渐失效；若没有业务审查，模型可能把错误参数优化得非常彻底。",
+    "after": "环境变化后，输入参数需要根据反馈更新；未经核查的业务参数可能使求解结果偏离实际目标。",
+    "reason": "清理夸张比喻与口号对仗，保留更新及参数核查风险。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/09_optimization.tex",
+    "before": "本章说明了优化与处方分析在数据驱动管理决策中的位置。",
+    "after": "",
+    "reason": "删除小结的章节内容重复。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/09_optimization.tex",
+    "before": "库存补货案例展示了如何用离散需求情景计算期望净价值，并在预算和库容约束下选择最优订货量。管理上，最优解必须经过敏感性分析、执行条件检查和反馈治理，才能成为可靠行动。",
+    "after": "库存补货模型用离散需求情景计算期望净价值，并在预算和库容约束下选择订货量。方案实施前应进行敏感性分析和执行条件检查，实施后根据反馈更新参数。",
+    "reason": "去除案例展示过程和可靠行动口号，保留模型及实施要求。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/09_optimization.tex",
+    "before": "这些材料说明，学习和优化可以联合设计，但目标函数\n与现实损失之间的对应关系仍需独立论证。",
+    "after": "学习和优化可以联合设计，其目标函数与现实损失之间的对应关系仍需独立论证。",
+    "reason": "去除文献包装，直接陈述研究条件。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/10_process_mining.tex",
+    "before": "对象与结果，可以分析等待、返工和规则遵循情况。本章研究事件日志及流程模型，\n并说明智能体如何根据业务状态调用工具、提交请求和核对结果。",
+    "after": "对象与结果，为等待、返工和规则遵循分析提供事件日志。流程模型描述活动发生\n的条件；智能体根据业务状态调用工具、提交请求并核对结果。",
+    "reason": "以事件日志与执行机制替代章节研究意图。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/10_process_mining.tex",
+    "before": "本章先定义事件、轨迹与流程变体，讨论数据质量和流程发现，再研究一致性检查与\n改进方案。随后介绍智能体的任务规格、运行环境、检索增强生成和本地服务，\n讨论不同产品组合的实施条件与完整任务的评价。最后以订单加急案例综合运用\n全书的数据、统计与优化方法。",
+    "after": "事件、轨迹与流程变体概括实际执行过程，流程发现和一致性检查分别用于建立\n模型及核查规则遵循。智能体执行需要任务规格、运行控制、检索证据和业务服务。\n平台组合的实施条件及任务评价须覆盖数据、统计、优化和最终业务状态。",
+    "reason": "清理章节编排和全书综合策划，直接陈述方法关系。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/10_process_mining.tex",
+    "before": "它能告诉管理者“平均履约周期较长”或“准时率下降”，但未必说明延迟发生在流程中的哪一步。",
+    "after": "这些汇总可反映平均履约周期与准时率，却未必定位发生延迟的具体活动。",
+    "reason": "清理拟人化告知和假想管理者话语。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/10_process_mining.tex",
+    "before": "优秀的流程分析应把路径、时间、金额、客户和组织责任结合起来。",
+    "after": "流程分析应结合路径、时间、金额、客户和组织责任。",
+    "reason": "去除优秀的价值标签，保留分析变量。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/10_process_mining.tex",
+    "before": "下面先构造直接跟随图与流程变体，再用 Petri 网表达活动发生的条件。前者概括观察到的相邻活动，后者描述可执行的流程状态与转换。",
+    "after": "直接跟随图概括观察到的相邻活动，流程变体保留完整活动序列；Petri 网描述可执行的流程状态与转换。",
+    "reason": "以三种表达的职责替代讲解顺序。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/10_process_mining.tex",
+    "before": "流程挖掘的价值不在于画出复杂图，而在于把路径、时间和异常组织成可讨论的事实。",
+    "after": "路径、时间和异常记录共同提供流程调查的依据。",
+    "reason": "清理装饰性否定对照和价值宣告，保留调查证据。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/10_process_mining.tex",
+    "before": "标准的订单到收款轨迹 可以写成：",
+    "after": "订单到收款的参考轨迹为：",
+    "reason": "规范参考流程措辞并清理多余空格。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/10_process_mining.tex",
+    "before": "若某个 实例出现",
+    "after": "若某个实例出现",
+    "reason": "修复多余空格。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/10_process_mining.tex",
+    "before": "这与只看到“检查后发货”的一条频繁边有本质区别。",
+    "after": "直接跟随边只能记录相邻活动，不能单独表达多个前置条件的同时满足。",
+    "reason": "去除本质区别口号，明确模型语义差异。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/10_process_mining.tex",
+    "before": "本书的示例规则包括：",
+    "after": "假设规则包括：",
+    "reason": "去除本书自指并保留示例规则非通用边界。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/10_process_mining.tex",
+    "before": "一致性异常是事件日志中的轨迹 与参考流程规则不一致的情况。",
+    "after": "一致性异常是事件日志中的轨迹与参考流程规则不一致的情况。",
+    "reason": "修复定义中的多余空格。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/10_process_mining.tex",
+    "before": "以“某工站 WIP 升高且 OTD 下降”为输入，读者依次核对指标口径，定位受影响批次，检查数据质量，分解产品结构与队列，提出可检验的根因假设，估计行动收益，再求解有约束的候选方案。最后用流程日志确认方案是否执行、是否产生新返工，并为未来因果评估保留对照或分期信息。",
+    "after": "工站 WIP 升高且 OTD 下降时，分析需要核对指标口径，定位受影响批次，检查数据质量，并分解产品结构与队列。根因假设须经过检验，行动方案须比较收益与资源约束。流程日志用于确认实际执行及新增返工；对照或分期记录用于后续效果评价。",
+    "reason": "清理对读者的综合教学路线，保留业务分析步骤及评价记录。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/10_process_mining.tex",
+    "before": "8 个实例 和 4 个流程变体。",
+    "after": "8 个实例和 4 个流程变体。",
+    "reason": "修复结果描述中的多余空格。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/10_process_mining.tex",
+    "before": "返工实例 为",
+    "after": "返工实例为",
+    "reason": "修复正文中的多余空格。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/10_process_mining.tex",
+    "before": "该案例还给出一个有启发性的指标：每个订单项的人工活动次数。该指标是单位订单项的平均次数，可以大于1。这与第~\\ref{ch:week03-sql-kpi}~章的指标代数相呼应。",
+    "after": "该案例使用每个订单项的人工活动次数，即单位订单项的平均次数，数值可以大于1。其聚合依据见第~\\ref{ch:week03-sql-kpi}~章的指标代数。",
+    "reason": "清理启发性自评与相呼应措辞，保留指标定义及出处。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/10_process_mining.tex",
+    "before": "将案例重构为封测示例项目，可依次完成四件事：统一批次、工序和设备事件；分解完成周期与未完成批次年龄；寻找反复冻结、返工及跨班组交接；为候选改进建立可评估的试点。冻结次数高的产品可能更复杂，不能直接给班组贴低效率标签。",
+    "after": "封测流程分析可统一批次、工序和设备事件，分别研究完成周期与未完成批次年龄，定位反复冻结、返工及跨班组交接，并通过试点评价改进效果。冻结次数高的产品可能更复杂，班组效率比较需控制相应任务差异。",
+    "reason": "清理案例改写和课堂项目步骤，规范贴标签口语；不把拟议分析写成 Siemens 已实施事实。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/10_process_mining.tex",
+    "before": "可以按“证据、语义、行动、控制”四层比较平台，而不依据融资额或市场热度作技术排名。",
+    "after": "平台比较可分别考察证据、语义、行动和控制能力。",
+    "reason": "去除未提出的融资热度对照，保留功能比较维度。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/10_process_mining.tex",
+    "before": "流程挖掘报告应避免只展示图和指标。流程改进需要把发现转化为可执行问题：",
+    "after": "流程改进需要结合日志发现核查业务机制：",
+    "reason": "清理报告劝告和可执行问题包装，直接引出业务核查。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/10_process_mining.tex",
+    "before": "符合该模式 的“周良率”",
+    "after": "符合该模式的“周良率”",
+    "reason": "修复多余空格。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/10_process_mining.tex",
+    "before": "将一项企业人工智能应用分解为数据、语义、模型、运行与治理职责，有助于\n说明各项技术对决策的实际贡献。第~\\ref{sec:enterprise-ai-stack}~节给出系统构成，\n第~\\ref{sec:ai-service-operations}~节与附录~\\ref{app:ai-infra-lab}~说明服务量与容量的核算。\n本节进一步检查，这些能力是否使同一笔订单得到可追溯的处理。\n回到第~\\ref{sec:expedite-choice}~节的四张订单。当前容量允许加急两张，效果与成本\n假设支持选择 B、C。这个结论只是起点。若要将它转化为企业中的可执行建议，\n必须能够沿全书的论证逆向追溯，也必须能够在执行后继续向前检验。",
+    "after": "企业人工智能应用中的数据、语义、模型、运行与治理职责共同支持决策追溯。\n系统构成见第~\\ref{sec:enterprise-ai-stack}~节，服务量与容量核算见\n第~\\ref{sec:ai-service-operations}~节和附录~\\ref{app:ai-infra-lab}。\n第~\\ref{sec:expedite-choice}~节的四张订单中，当前容量允许加急两张，效果与成本\n假设支持选择 B、C。该方案的实施记录需要保留事实、模型、授权与执行结果，\n并据此核验其可行性和实际效果。",
+    "reason": "清理本节检查、回到案例、结论起点与全书逆向论证的元话语，保留全部引用和方案条件。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/10_process_mining.tex",
+    "before": "首先，说明为什么现在需要决策。交付承诺在何时到期，延误会产生什么损失，\n是否仍存在改变结果的时间窗口？这对应第1章的问题定义。其次，确认 B、C 的身份\n及其关联批次，保留当时有效的承诺版本、资源状态和授权主体。这对应第2章的数据模型。\n随后核查 OTD 的到期队列、未完成订单和聚合过程，并记录数据质量状态，分别对应\n第3、4章。若基础事实不稳定，不应把不确定性藏在“模型已计算”之后。",
+    "after": "问题定义需要明确交付承诺的到期时点、延期损失和仍可改变结果的时间窗口，\n见第1章。订单 B、C 及其关联批次的记录应保留当时有效的承诺版本、资源状态和\n授权主体，见第2章的数据模型。OTD 的到期队列、未完成订单、聚合过程和质量状态\n分别依据第3、4章核查。基础事实存在的不确定性应在模型结果中明确说明。",
+    "reason": "去除逐章教学主持和隐藏不确定性比喻，保留问题、对象、口径与质量依据。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/10_process_mining.tex",
+    "before": "接下来，用第5章的分布和运营关系判断问题的范围：是少数订单长尾、产品组合变化，\n还是系统性拥堵？第6章说明如何用试点评价方案，第7章给出未来风险，第8章追问\n加急是否真能改变结果。三者的数据和假设不可互相冒名。只有在效果、成本和约束\n已经声明后，第9章的组合选择才具有明确含义。",
+    "after": "第5章的分布和运营关系用于区分订单长尾、产品组合变化与系统性拥堵。\n试点效果评价见第6章，风险预测见第7章，加急效果的识别见第8章。各项结论\n须符合相应数据和假设；组合选择还需明确效果、成本与资源约束，见第9章。",
+    "reason": "清理接下来和章节追问、冒名的口语，保留方法之间的证据边界。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/10_process_mining.tex",
+    "before": "最后，由本章的执行机制把“选择 B、C”转化为申请、验证、批准、提交与确认。",
+    "after": "方案 B、C 的实施依次经过申请、验证、批准、提交与确认。",
+    "reason": "去除章节执行机制自指，保留业务状态转换。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/10_process_mining.tex",
+    "before": "由此，订单加急问题依次涉及目标定义、对象识别、指标计算、质量检查、统计分析、\n效果估计、约束优化与方案实施。各方法共同服务于同一个决策问题，其联系由信息、\n行动、成本和结果的定义确定。",
+    "after": "",
+    "reason": "删除已由正文和决策记录表充分表达的重复结语。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/10_process_mining.tex",
+    "before": "流程证据使行动从“已被建议”变成“可以核查是否执行”。",
+    "after": "事件日志和业务状态用于核查行动是否执行。",
+    "reason": "以核查依据替代口号式转化。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/10_process_mining.tex",
+    "before": "给出前两个流程变体的 实例数",
+    "after": "给出前两个流程变体的实例数",
+    "reason": "修复习题中的多余空格，保留任务。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/10_process_mining.tex",
+    "before": "列出返工实例 和一致性异常实例；",
+    "after": "列出返工实例和一致性异常实例；",
+    "reason": "修复习题中的多余空格，保留任务。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/05_statistics_dashboard.tex",
+    "before": "这使得均值非常适合预算、产能和目标差距讨论。",
+    "after": "均值与总量的对应关系可用于预算、产能和目标差距分析。",
+    "reason": "去除适合程度的自评，明确均值用途的依据。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/05_statistics_dashboard.tex",
+    "before": "没有目标线时难以判断好坏。",
+    "after": "缺少目标线时难以判断达成程度。",
+    "reason": "规范表内评价术语。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/05_statistics_dashboard.tex",
+    "before": "质量失败时漂亮图表会放大错误。",
+    "after": "质量检查未通过时，图表可能传播错误信息。",
+    "reason": "清理漂亮图表修辞，保留错误传播风险。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/07_prediction.tex",
+    "before": "损失会非常大。",
+    "after": "交叉熵损失较大。",
+    "reason": "清理夸张程度词，明确损失类型。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/07_prediction.tex",
+    "before": "这些系数的方向符合基本业务直觉：客户关系越短、客服工单越多、使用越不活跃、折扣越高、履约问题越多，流失风险越高。",
+    "after": "在该模型中，客户关系较短、客服工单较多、使用活跃度较低、折扣较高和履约延迟较多均对应较高的预测流失风险。",
+    "reason": "去除直觉背书，明确系数描述的是给定模型的预测关系。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/10_process_mining.tex",
+    "before": "流程挖掘对数据质量非常敏感。",
+    "after": "流程挖掘结果取决于事件日志的质量。",
+    "reason": "清理程度强调，明确证据来源。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/10_process_mining.tex",
+    "before": "存在少数高价值订单长期卡住",
+    "after": "存在少数高价值订单长期未完成",
+    "reason": "规范业务状态表述。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/09_optimization.tex",
+    "before": "模型只会补到某个点；",
+    "after": "最优订货量受到后续边际价值下降的限制；",
+    "reason": "以经济约束含义替代口语描述。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/09_optimization.tex",
+    "before": "按均值订货可能远远不够。",
+    "after": "按均值订货可能产生较高缺货损失。",
+    "reason": "清理程度夸张，明确损失机制。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "docs/textbook/chapters/09_optimization.tex",
+    "before": "鲁棒性关注方案在坏情景下是否仍可接受。",
+    "after": "鲁棒性关注方案在不利情景下是否仍可接受。",
+    "reason": "规范情景评价术语。",
+    "ledger": "core-05-10.json"
+  },
+  {
+    "path": "/01_intro/slides/24/title",
+    "before": "两期维护：把未来成本写进题设",
+    "after": "两期维护：当期成本与未来故障损失",
+    "reason": "用模型内容替代题设编写指令。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/01_intro/slides/30/body/0",
+    "before": "Airbus 在 \\(2017\\) 年发布 Skywise，并披露与 Palantir 合作，将航空领域知识与数据整合能力结合，用于航空公司及内部运营。此为讲义引用的公开事实。",
+    "after": "Airbus 在 \\(2017\\) 年发布 Skywise，并披露与 Palantir 合作，将航空领域知识与数据整合能力结合，用于航空公司及内部运营。",
+    "reason": "移除正文的授课编排或编写叙述，直接陈述研究对象及其条件。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/01_intro/slides/30/body/1",
+    "before": "教学上可把飞机、部件、飞行小时和维护事件关联到统一对象，形成某维护窗口的资料，再估计故障风险并比较行动。右图为教学分析链，未声称是企业公开的具体算法。",
+    "after": "飞机、部件、飞行小时和维护事件通过统一对象身份关联，形成指定维护窗口的资料，用于估计故障风险及比较维护行动。该关联结构与行动比较是依据公开背景构造的分析示例，不代表企业内部具体算法。",
+    "reason": "移除正文的授课编排或编写叙述，直接陈述研究对象及其条件。 保留模型重构的证据限定，不推断企业内部信息的公开状况。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/01_intro/slides/30/diagram/description",
+    "before": "飞机和部件的统一身份关联飞行小时与维护事件；库存和维修能力限定可行维护行动。图为Skywise公开背景下的教学模型，不代表公开内部算法。",
+    "after": "飞机和部件的统一身份关联飞行小时与维护事件；库存和维修能力限定可行维护行动。此结构是依据 Skywise 公开应用背景构造的分析示例，不代表企业内部算法。",
+    "reason": "移除正文的授课编排或编写叙述，直接陈述研究对象及其条件。 保留模型重构的证据限定。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/01_intro/slides/30/diagram/note",
+    "before": "企业背景为公开事实；对象关联和行动模型为教学重构。",
+    "after": "企业应用背景依据公开资料；对象关联与行动模型属于分析示例。",
+    "reason": "移除正文的授课编排或编写叙述，直接陈述研究对象及其条件。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/01_intro/slides/31/lead",
+    "before": "以公开背景构造教学模型。",
+    "after": "简化比较假定立即维护能够消除本期故障风险。",
+    "reason": "移除正文的授课编排或编写叙述，直接陈述研究对象及其条件。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/01_intro/slides/32/body/0",
+    "before": "Oracle 的 \\(2025\\) 年公告披露 Red Bull Racing 使用 OCI 仿真，响应车辆、赛道及对手变化。公开资料支持该应用方向，未提供本讲教学模型的内部参数。",
+    "after": "Oracle 的 \\(2025\\) 年公告披露 Red Bull Racing 使用 OCI 仿真，响应车辆、赛道及对手变化。该公告说明了应用方向，但未提供相关内部参数。",
+    "reason": "移除正文的授课编排或编写叙述，直接陈述研究对象及其条件。 限定于所述公告的证据范围。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/01_intro/slides/32/body/1",
+    "before": "教学中可在共同天气和对手情景下配对比较进站策略，便于识别模拟器内的方案差异。向真实赛事外推仍须校准情景分布和模拟器，并评价不利情景。",
+    "after": "在共同天气和对手情景下配对比较进站策略，可以识别模拟器内的方案差异。向真实赛事外推仍须校准情景分布和模拟器，并评价不利情景。",
+    "reason": "移除正文的授课编排或编写叙述，直接陈述研究对象及其条件。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/01_intro/slides/36/section",
+    "before": "课堂收束",
+    "after": "决策任务的完整性",
+    "reason": "用研究对象替代授课结束的编排标签。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/01_intro/slides/36/body/1",
+    "before": "这些检查共同连接问题定义、期望损失、信息价值和可执行行动。下一讲研究如何用对象、键、关系与时间记录表达所需信息。",
+    "after": "问题定义规定可比较的行动，期望损失评价行动后果，信息价值衡量信息改进带来的收益。对象、键、关系与时间记录共同表达这些分析所需的事实。",
+    "reason": "移除正文的授课编排或编写叙述，直接陈述研究对象及其条件。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/02_enterprise_data_model/slides/15/body/1",
+    "before": "各指标的分子、分母和时间须对应同一观察范围。日指标定位异常，并不单独识别原因；下一讲将分别构造数量、时间和队列的聚合规则。",
+    "after": "各指标的分子、分母和时间须对应同一观察范围。数量、时间和队列采用不同的聚合规则；日指标可定位异常，原因识别还须追溯具体事件和状态。",
+    "reason": "移除正文的授课编排或编写叙述，直接陈述研究对象及其条件。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/02_enterprise_data_model/slides/20/body/1",
+    "before": "固定工资保证经理愿意参与，绩效权重鼓励努力，却使经理承担随机工资风险。接下来的单任务模型依次求经理对合同的反应，再求企业愿意设置的合同权重。",
+    "after": "固定工资满足经理的参与要求，绩效权重鼓励努力，却使经理承担随机工资风险。单任务合同模型包含两层选择：经理选择给定合同下的努力，企业依据该反应选择合同权重。",
+    "reason": "移除正文的授课编排或编写叙述，直接陈述研究对象及其条件。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/02_enterprise_data_model/slides/23/body/1",
+    "before": "本讲限定 \\(\\beta\\ge0\\)，因此 \\(e^*=\\beta/c\\)；\\(\\beta=0\\) 时 \\(e^*=0\\) 为边界解。若允许负权重，非负努力约束下的解为 \\(\\max\\{0,\\beta/c\\}\\)。",
+    "after": "假定 \\(\\beta\\ge0\\)，因此 \\(e^*=\\beta/c\\)；\\(\\beta=0\\) 时 \\(e^*=0\\) 为边界解。若允许负权重，非负努力约束下的解为 \\(\\max\\{0,\\beta/c\\}\\)。",
+    "reason": "移除正文的授课编排或编写叙述，直接陈述研究对象及其条件。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/02_enterprise_data_model/slides/29/body/0",
+    "before": "Palantir 的公开 Ontology 机制联结对象、属性、关系与行动。教学中可沿设备、工序、批次及订单追踪停机影响，并按订单身份去重；实际封测设计是教学重构。",
+    "after": "Palantir 的公开 Ontology 机制联结对象、属性、关系与行动。沿设备、工序、批次及订单关联可以追踪停机影响，并按订单身份去重；此封测对象结构是依据公开背景构造的分析示例，不代表该企业实际设计。",
+    "reason": "移除正文的授课编排或编写叙述，直接陈述研究对象及其条件。 保留模型重构限定，不扩大对企业内部资料的判断。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/02_enterprise_data_model/slides/32/section",
+    "before": "课堂收束",
+    "after": "数据模型的复核",
+    "reason": "用学术内容替代授课编排标签。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/03_sql_kpi/slides/1/body/1",
+    "before": "查询优化器可以采用不同物理顺序，但必须保持结果语义。阅读时逐层核查：哪些行进入、每条事实出现几次、如何分组、保留哪些统计状态。",
+    "after": "查询优化器可以采用不同物理顺序，但必须保持结果语义。查询复核须确认纳入的行、每条事实的出现次数、分组方式及保留的统计状态。",
+    "reason": "移除正文的授课编排或编写叙述，直接陈述研究对象及其条件。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/03_sql_kpi/slides/4/body/0",
+    "before": "下面是依据唯一客户号、产品号连接后的三张 3 月订单，金额单位为元。每行仍是一张订单，收入等于数量乘标准价。",
+    "after": "依据唯一客户号、产品号连接三张 3 月订单，金额单位为元。每行仍是一张订单，收入等于数量乘标准价。",
+    "reason": "移除正文的授课编排或编写叙述，直接陈述研究对象及其条件。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/03_sql_kpi/slides/22/lead",
+    "before": "教学窗口为 9 月 1–7 日到期承诺，截止于 9 月 8 日结束。",
+    "after": "算例窗口为 9 月 1–7 日到期承诺，统计截止点为 9 月 8 日结束。",
+    "reason": "保留算例的时间范围，用规范表述替代教学编排用语。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/03_sql_kpi/slides/37/title",
+    "before": "查询复核的完整路径",
+    "after": "查询复核的依据与步骤",
+    "reason": "标题直接命名查询复核内容。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/03_sql_kpi/slides/37/body/1",
+    "before": "这些条件共同支持 SQL、人工复核及自然语言问数。下一讲将研究缺失、测量误差和规则违反如何改变记录及统计结论。",
+    "after": "这些条件共同支持 SQL 查询、人工复核及自然语言问数。缺失、测量误差和规则违反可能改变纳入的记录、聚合权重及统计结论，因此查询复核还需结合数据质量检查。",
+    "reason": "移除正文的授课编排或编写叙述，直接陈述研究对象及其条件。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/04_data_quality/slides/0/body/0",
+    "before": "准时交付率不仅依赖计算公式，还依赖订单是否唯一、交付日期的业务含义、统计窗口和数据批次。重复或漏录会改变分子、分母及对象权重，使正确执行的程序产生失真的指标。",
+    "after": "准时交付率的含义由计算公式、订单唯一性、交付日期的业务定义、统计窗口和数据批次共同确定。重复或漏录会改变分子、分母及对象权重，使正确执行的程序产生失真的指标。",
+    "reason": "删除强化语气的递进结构，保留指标依赖条件。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/04_data_quality/slides/0/body/1",
+    "before": "本讲以订单数据为线索：先界定质量要求，再分析缺失和测量误差，随后制定检查规则，最后依据错误发布的损失安排修复与发布。",
+    "after": "订单数据的质量要求来自分析用途与容许误差。缺失和测量误差可能改变统计结论，检查规则用于定位违反约定的记录；修复与发布决策还须比较错误发布的损失和暂停成本。",
+    "reason": "移除正文的授课编排或编写叙述，直接陈述研究对象及其条件。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/04_data_quality/slides/6/body/0",
+    "before": "质量维度提供常见检验问题。本页列示完整性、唯一性、有效性和一致性，分别关注覆盖、重复、取值约定以及跨字段或跨表关系。每项规则仍须依照用途确定。",
+    "after": "完整性、唯一性、有效性和一致性分别关注覆盖、重复、取值约定以及跨字段或跨表关系。每项检查规则须依照具体用途确定。",
+    "reason": "移除正文的授课编排或编写叙述，直接陈述研究对象及其条件。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/04_data_quality/slides/8/takeaway",
+    "before": "不要把尚未审定的业务变化直接判为脏数据。",
+    "after": "未经审定的新取值可能来自业务变化，也可能来自记录错误，应先核查来源。",
+    "reason": "以判断依据替代口语化命令与“脏数据”标签。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/04_data_quality/slides/11/takeaway",
+    "before": "缺失类型规定分析条件，而不是提供自动修复方法。",
+    "after": "缺失机制描述记录机会与相关变量的关系，修复方法还需相应识别条件。",
+    "reason": "直接表述缺失机制与修复的逻辑关系。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/04_data_quality/slides/20/body/1",
+    "before": "观测分母缩至 \\(900\\)，错误良率为 \\(900/900=1\\)，高出 \\(10\\) 个百分点。生产过程没有变化；应补核全部受检对象，而不是将记录缺陷解释为绩效提升。",
+    "after": "观测分母缩至 \\(900\\)，错误良率为 \\(900/900=1\\)，高出 \\(10\\) 个百分点。生产过程没有变化；指标偏差来自不良件漏记，应补核全部受检对象。",
+    "reason": "保留真实过程与记录误差的区别，删除劝诫式对照。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/04_data_quality/slides/24/takeaway",
+    "before": "处理优先级依据可避免的业务损失，而不仅依据失败行数。",
+    "after": "处理优先级应综合可避免的业务损失、失败规模及受影响对象。",
+    "reason": "直接陈述排序依据，避免空泛否定句。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/04_data_quality/slides/28/takeaway",
+    "before": "应比较下一单位预算的风险降低量，而不是平均历史收益。",
+    "after": "最优投入比较增加下一单位预算能够减少的预期损失。",
+    "reason": "用边际比较的数学含义替代修辞性对照。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/04_data_quality/slides/32/body/0",
+    "before": "主键重复、关键外键失配或核心日期非法可以阻断受影响关键指标；少量非核心缺失可在标记后发布；轻微分布变化可先用于趋势监测。表中列示的是教学默认策略。",
+    "after": "在示例发布策略中，主键重复、关键外键失配或核心日期非法可阻断受影响关键指标；少量非核心缺失可在标记后发布；轻微分布变化可用于趋势监测。",
+    "reason": "移除正文的授课编排或编写叙述，直接陈述研究对象及其条件。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/04_data_quality/slides/33/takeaway",
+    "before": "质量事件结束的条件是影响得到核验和处置，而不只是程序重新成功运行。",
+    "after": "质量事件结束须确认影响已核验、已处置，且相关程序及下游数值已复核。",
+    "reason": "用完整处置条件替代口号式对照。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/04_data_quality/slides/34/body/1",
+    "before": "教学分析以预约等待为例：请求日至最早可预约日反映服务供给，请求日至患者选择日反映实际等待。两种定义应分别命名、指定负责人并审批变更；不将其混成一个口径。",
+    "after": "预约请求日至最早可预约日反映服务供给，请求日至患者选择日反映实际等待。两种指标应分别命名、指定负责人并审批变更，保持各自的业务定义。",
+    "reason": "移除正文的授课编排或编写叙述，直接陈述研究对象及其条件。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/05_statistics_dashboard/slides/0/body/1",
+    "before": "本讲依次研究观测单位与经验分布、结构与时间变化、存量流量和排队关系，最后组织为可下钻看板。描述性发现提出线索，干预效果仍需研究设计检验。",
+    "after": "观测单位与经验分布确定统计描述的对象；结构与时间比较区分组合变化和过程变化；存量、流量及排队关系约束运营解释。可下钻看板将这些统计量连接到明细记录；干预效果仍须由研究设计检验。",
+    "reason": "移除正文的授课编排或编写叙述，直接陈述研究对象及其条件。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/05_statistics_dashboard/slides/1/body/1",
+    "before": "时间序列记录同一系统随时间变化，横截面比较同一窗口内不同对象。本章样例按经营日期汇总，不能直接确定高收入来自哪位客户，须回到订单和客户表下钻。",
+    "after": "时间序列记录同一系统随时间变化，横截面比较同一窗口内不同对象。经营日期汇总样例不能直接确定高收入来自哪位客户，客户贡献须通过订单和客户表下钻核查。",
+    "reason": "移除正文的授课编排或编写叙述，直接陈述研究对象及其条件。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/05_statistics_dashboard/slides/7/body/1",
+    "before": "本章用上下半样本中位数法，奇数样本先排除整体中位数。异常可能来自真实大额交易、对象差异或记录错误，应查业务资料；不同软件比较前须统一分位数约定。",
+    "after": "四分位数采用上下半样本中位数法，奇数样本先排除整体中位数。异常可能来自真实大额交易、对象差异或记录错误，应查业务资料；不同软件比较前须统一分位数约定。",
+    "reason": "移除正文的授课编排或编写叙述，直接陈述研究对象及其条件。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/05_statistics_dashboard/slides/8/body/0",
+    "before": "本程序按上下半样本中位数法计算：\\(Q_1=(3600+4600)/2=4100\\) 元、\\(Q_3=(6750+7200)/2=6975\\) 元，因此 \\(IQR=2875\\) 元。",
+    "after": "采用上下半样本中位数法计算：\\(Q_1=(3600+4600)/2=4100\\) 元、\\(Q_3=(6750+7200)/2=6975\\) 元，因此 \\(IQR=2875\\) 元。",
+    "reason": "移除正文的授课编排或编写叙述，直接陈述研究对象及其条件。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/05_statistics_dashboard/slides/16/body/1",
+    "before": "小样本、批内相关、基准漂移或历史估计不稳定会使该近似失效，可改用精确二项界限或其他过程模型。长期反复查看还产生累计误报，下一讲将讨论时间一致推断。",
+    "after": "小样本、批内相关、基准漂移或历史估计不稳定会使该近似失效，可改用精确二项界限或其他过程模型。长期反复查看还产生累计误报，持续监测须采用与查看机制相容的错误控制。",
+    "reason": "移除正文的授课编排或编写叙述，直接陈述研究对象及其条件。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/05_statistics_dashboard/slides/36/body/1",
+    "before": "本章实验属于分析型：比较收入分布、履约表现和质量问题，形成需要下钻的调查问题。所谓解释差异包括提出候选机制，不表示图表已经证明原因。",
+    "after": "收入分布、履约表现与质量问题的比较属于分析型任务，可产生需要下钻核查的候选机制。图表中的差异提供描述性线索，其原因仍须由进一步证据检验。",
+    "reason": "移除正文的授课编排或编写叙述，直接陈述研究对象及其条件。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/05_statistics_dashboard/slides/38/body/1",
+    "before": "据此设计教学看板，可先显示服务风险与备件可得率，再列地点需求、库存和运输时延，最后比较调拨或采购。该结构是课程设计示例，需求预测与资源选择分别需要后续模型。",
+    "after": "在此应用背景下，服务与备件看板可依次呈现服务风险、备件可得率、地点需求、库存及运输时延，并支持调拨或采购比较。该结构属于分析示例；需求预测与资源选择还需各自的模型与输入依据。",
+    "reason": "移除正文的授课编排或编写叙述，直接陈述研究对象及其条件。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/05_statistics_dashboard/slides/44/takeaway",
+    "before": "图表提出经营问题，下一讲用随机实验研究干预效果。",
+    "after": "图表提供描述性线索，随机实验在设计条件下识别干预效果。",
+    "reason": "移除正文的授课编排或编写叙述，直接陈述研究对象及其条件。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/06_ab_testing/slides/0/body/1",
+    "before": "本讲先规定实验单元、潜在结果与分配机制，再推导效应估计、标准误和区间，最后评价风险、净收益和推广人群。各统计保证都对应明确的设计条件。",
+    "after": "实验单元、潜在结果与分配机制共同规定效应参数及其估计依据。标准误和区间量化指定设计下的不确定性；推广决策还须结合风险、净收益及目标人群。各项统计保证均有明确条件。",
+    "reason": "移除正文的授课编排或编写叙述，直接陈述研究对象及其条件。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/06_ab_testing/slides/8/body/1",
+    "before": "本次新版分给 \\(1,4\\)，旧版分给 \\(2,3\\)。两组可见结果都是 \\((0,1)\\)，估计差为 \\(0\\)。教学已知的反事实用于说明随机波动，不能在真实实验中直接读取。",
+    "after": "本次新版分给 \\(1,4\\)，旧版分给 \\(2,3\\)。两组可见结果都是 \\((0,1)\\)，估计差为 \\(0\\)。算例预设的反事实用于计算随机化分布，真实实验不能同时观察同一个体的两种结果。",
+    "reason": "移除正文的授课编排或编写叙述，直接陈述研究对象及其条件。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/06_ab_testing/slides/8/diagram/note",
+    "before": "每格列出该组两人的结果；反事实仅属于教学设定，真实实验不可同时观测。",
+    "after": "每格列出该组两人的结果；反事实为算例预设值，真实实验不可同时观测。",
+    "reason": "移除正文的授课编排或编写叙述，直接陈述研究对象及其条件。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/06_ab_testing/slides/22/body/1",
+    "before": "为显示结构，将 \\(X,Y\\) 标准化并采用教材 \\(\\rho_{XY}=0.6\\) 算例：方差为 \\(1+\\theta^2-1.2\\theta\\)，在 \\(\\theta=0.6\\) 处最小 \\(0.64\\)。实际结果仍需控制系数估计误差。",
+    "after": "将 \\(X,Y\\) 标准化，并取 \\(\\rho_{XY}=0.6\\)：方差为 \\(1+\\theta^2-1.2\\theta\\)，在 \\(\\theta=0.6\\) 处最小 \\(0.64\\)。实际估计还需控制系数估计误差。",
+    "reason": "移除正文的授课编排或编写叙述，直接陈述研究对象及其条件。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/06_ab_testing/slides/27/body/1",
+    "before": "应预设终点和中期规则，或使用有时间一致保证的方法。同时搜索多个指标、分组和窗口也需要整体错误控制；探索发现用于后续独立确认。",
+    "after": "应预设终点和中期规则，或使用有时间一致保证的方法。同时搜索多个指标、分组和窗口也需要整体错误控制；探索性发现须由独立研究确认。",
+    "reason": "移除正文的授课编排或编写叙述，直接陈述研究对象及其条件。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/06_ab_testing/slides/30/body/1",
+    "before": "本讲持续监测按 \\(\\alpha_t=6\\alpha/(\\pi^2t^2)\\) 分摊预算，半径 \\(\\sqrt{\\log(\\pi^2\\cdot10^6/0.15)/2000}\\approx0.09487\\)。这是同一有界均值的比较，尚非两组效应区间，也非所有序贯方法的最低代价。",
+    "after": "持续监测按 \\(\\alpha_t=6\\alpha/(\\pi^2t^2)\\) 分摊预算，半径 \\(\\sqrt{\\log(\\pi^2\\cdot10^6/0.15)/2000}\\approx0.09487\\)。这是同一有界均值的比较，尚非两组效应区间，也非所有序贯方法的最低代价。",
+    "reason": "移除正文的授课编排或编写叙述，直接陈述研究对象及其条件。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/06_ab_testing/slides/30/diagram/description",
+    "before": "独立有界结果的均值在alpha0.05、t1000下，固定终点Hoeffding半径约0.04295，本讲置信序列半径约0.09487；以样本均值为共同零点展示宽度。",
+    "after": "独立有界结果均值在 alpha 为 0.05、t 为 1000 时，固定终点 Hoeffding 半径约 0.04295，按平方倒数分摊错误预算的置信序列半径约 0.09487；两者以样本均值为共同零点比较宽度。",
+    "reason": "移除正文的授课编排或编写叙述，直接陈述研究对象及其条件。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/06_ab_testing/slides/42/body/1",
+    "before": "教学规划以 \\(p_0=0.35\\)、\\(p_1=0.45\\)、双侧 \\(\\alpha=0.05\\)、功效 \\(0.80\\) 为目标，近似每组 \\(376\\) 人。它只规划转化检出能力，还需满足体验风险与推广成本要求。",
+    "after": "样本量规划取 \\(p_0=0.35\\)、\\(p_1=0.45\\)、双侧 \\(\\alpha=0.05\\)、功效 \\(0.80\\)，近似每组 \\(376\\) 人。该人数只对应转化效应的检出要求，还需满足体验风险与推广成本要求。",
+    "reason": "移除正文的授课编排或编写叙述，直接陈述研究对象及其条件。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/07_prediction/slides/0/body/1",
+    "before": "一个完整任务应说明预测谁、何时预测、当时能知道什么、未来观察什么，以及如何评价错误。本讲沿着任务定义、模型学习、独立评价和行动接口展开，再讨论部署条件变化。",
+    "after": "预测任务须明确目标对象、预测时点、当时可得信息、结果窗口及错误代价。损失函数规定学习目标，独立评价检验模型的泛化；部署条件变化可能改变预测性能及行动接口的适用性。",
+    "reason": "移除正文的授课编排或编写叙述，直接陈述研究对象及其条件。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/07_prediction/slides/10/body/1",
+    "before": "随机森林在不同自助样本上建树，并在分裂时只考察随机选取的部分特征。回归通常平均树的数值预测，分类可平均概率或汇总投票。这些随机化使树的误差不完全相同，下面研究平均如何降低波动。",
+    "after": "随机森林在不同自助样本上建树，并在分裂时只考察随机选取的部分特征。回归通常平均树的数值预测，分类可平均概率或汇总投票。这些随机化降低树间误差相关性，使平均预测具有降低方差的可能。",
+    "reason": "移除正文的授课编排或编写叙述，直接陈述研究对象及其条件。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/07_prediction/slides/29/body/0",
+    "before": "Rolls-Royce 公开案例提供发动机服务与库存规划的应用背景。课堂将其拆解为四类预测任务；下表是分析设计，不是对企业私有模型或业绩的复现。",
+    "after": "Rolls-Royce 公开案例提供发动机服务与库存规划的应用背景。故障概率、剩余寿命、备件需求和维修周转对应不同的预测任务；该划分属于分析示例，不代表企业私有模型或业绩。",
+    "reason": "移除正文的授课编排或编写叙述，直接陈述研究对象及其条件。 按原表格准确列出四项任务，保留非复现限定。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/07_prediction/slides/38/body/0",
+    "before": "本讲从信息时点和结果窗口定义预测，借助损失函数说明模型学什么，再通过独立测试、排序与校准判断其能否泛化。区间预测还必须给出覆盖条件与适用范围。",
+    "after": "信息时点和结果窗口定义预测任务，损失函数规定学习目标，独立测试、排序和校准评价泛化性能。区间预测还必须给出覆盖条件与适用范围。",
+    "reason": "移除正文的授课编排或编写叙述，直接陈述研究对象及其条件。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/07_prediction/slides/38/body/1",
+    "before": "部署报告应记录阈值依据、错误成本、处理容量和漂移监测。预测可定位高风险对象，但无法单独回答行动能降低多少风险；下一讲以潜在结果和识别设计研究这一增量变化。",
+    "after": "部署报告应记录阈值依据、错误成本、处理容量和漂移监测。预测可定位高风险对象，但行动能够降低多少风险属于干预效应问题，需要潜在结果定义及相应识别设计。",
+    "reason": "移除正文的授课编排或编写叙述，直接陈述研究对象及其条件。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/08_causality/slides/0/body/1",
+    "before": "本讲先固定处理、结果与目标人群，再以潜在结果定义效应，分析选择偏差及识别条件。随后讲授标准化、加权、双重稳健和时间比较，并把效应与价值、费用和资源约束连接。",
+    "after": "处理版本、结果与目标人群定义因果效应。观察差异的解释取决于分配机制、选择偏差与识别条件；标准化、加权、双重稳健和时间比较各有适用条件。行动选择还须将效应与价值、费用及资源约束结合。",
+    "reason": "移除正文的授课编排或编写叙述，直接陈述研究对象及其条件。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/08_causality/slides/23/body/0",
+    "before": "现在令两种结果候选都正确，即 \\(\\tilde m_d=m_d\\)，倾向候选 \\(\\tilde e(x)\\) 则可能有误，但严格位于零与一之间。给定处理状态与特征，\\(Y-m_d(x)\\) 的条件均值为零。",
+    "after": "若两种结果候选均正确，即 \\(\\tilde m_d=m_d\\)，倾向候选 \\(\\tilde e(x)\\) 可以有误，但须严格位于零与一之间。给定处理状态与特征，\\(Y-m_d(x)\\) 的条件均值为零。",
+    "reason": "移除正文的授课编排或编写叙述，直接陈述研究对象及其条件。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/08_causality/slides/36/body/0",
+    "before": "将研究重构为某集团分批部署统一数据目录：处理时点为部门开始使用指定指标服务的日期，目标对象为可比团队，结果包括固定分析任务总工时、复核错误率及争议解决时间。",
+    "after": "设某集团分批部署统一数据目录。处理时点为部门开始使用指定指标服务的日期，目标对象为可比团队，结果包括固定分析任务总工时、复核错误率及争议解决时间。",
+    "reason": "以研究设定替代“重构研究”的编写过程。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/08_causality/slides/41/body/1",
+    "before": "报告效应、区间、平衡和重叠诊断，并说明敏感性、外推范围与费用。若证据尚不足，应提出更可信试点或补充资料；下一讲在已声明的效果和成本条件下讨论预算中的组合选择。",
+    "after": "报告效应、区间、平衡和重叠诊断，并说明敏感性、外推范围与费用。证据不足时，可通过更可信的试点或补充资料改善识别；预算中的组合选择还须明确效果、成本及资源条件。",
+    "reason": "移除正文的授课编排或编写叙述，直接陈述研究对象及其条件。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/09_optimization/slides/0/body/1",
+    "before": "本讲先明确变量、目标与可行域，用线性规划解释上界证明和局部资源价值，再研究离散选择、随机库存与尾部风险。排程和加急例题连接分析与执行，敏感性与反馈检验方案的适用边界。",
+    "after": "决策变量、目标与可行域规定优化问题。线性规划的对偶上界支持最优性证明，影子价格描述局部资源价值；离散选择、随机库存与尾部风险需要相应约束和概率模型。排程及加急方案的适用性还须接受敏感性分析与执行核查。",
+    "reason": "移除正文的授课编排或编写叙述，直接陈述研究对象及其条件。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/09_optimization/slides/4/body/1",
+    "before": "交点 \\((1,3)\\) 可行且收益九。下一页给出所有可行方案共同的上界，从而证实全局最优。",
+    "after": "交点 \\((1,3)\\) 可行且收益九。证明全局最优还须建立对所有可行方案成立的共同上界，并确认该方案达到此上界。",
+    "reason": "移除正文的授课编排或编写叙述，直接陈述研究对象及其条件。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/09_optimization/slides/11/body/1",
+    "before": "CVaR平均最差 \\(1-\\alpha\\) 的概率质量。图展示正式变分构造；离散分位点处仅选需要的份额，不能简单用条件期望 \\(\\mathbb E[L\\mid L\\ge\\mathrm{VaR}_\\alpha]\\)。",
+    "after": "CVaR 平均最差 \\(1-\\alpha\\) 的概率质量。变分定义在离散分位点处仅选所需的份额，不能简单用条件期望 \\(\\mathbb E[L\\mid L\\ge\\mathrm{VaR}_\\alpha]\\)。",
+    "reason": "移除正文的授课编排或编写叙述，直接陈述研究对象及其条件。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/09_optimization/slides/12/title",
+    "before": "把情景 CVaR 写成可求解约束",
+    "after": "情景 CVaR 的线性化表示",
+    "reason": "直接命名数学构造，避免写作指令。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/09_optimization/slides/16/body/1",
+    "before": "\\(z=1\\) 时第一式要求 \\(S_B\\ge C_A\\)，第二式放宽；\\(z=0\\) 时相反。在下页两任务中总处理时长为五，可限制 \\(0\\le S_i\\le C_i\\le H=5\\)，取 \\(M=H\\) 足够。一般须从有效时间界推导，任意极大值会损害数值稳定性。",
+    "after": "\\(z=1\\) 时第一式要求 \\(S_B\\ge C_A\\)，第二式放宽；\\(z=0\\) 时相反。两任务算例的总处理时长为五，可限制 \\(0\\le S_i\\le C_i\\le H=5\\)，取 \\(M=H\\) 足够。一般须从有效时间界推导，任意极大值会损害数值稳定性。",
+    "reason": "移除正文的授课编排或编写叙述，直接陈述研究对象及其条件。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/09_optimization/slides/18/body/0",
+    "before": "此处采用成本最小化。给定共同可行集 \\(\\mathcal X\\)，\\(x^*(c)\\in\\operatorname*{arg\\,min}_{x\\in\\mathcal X}c^\\top x\\) 是真实成本下的最优决策，\\(x^*(\\hat c)\\) 则由预测成本诱导。将两者都按真实成本评价，差额定义决策后悔。",
+    "after": "在成本最小化问题中，给定共同可行集 \\(\\mathcal X\\)，\\(x^*(c)\\in\\operatorname*{arg\\,min}_{x\\in\\mathcal X}c^\\top x\\) 是真实成本下的最优决策，\\(x^*(\\hat c)\\) 则由预测成本诱导。将两者都按真实成本评价，差额定义决策后悔。",
+    "reason": "移除正文的授课编排或编写叙述，直接陈述研究对象及其条件。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/09_optimization/slides/27/title",
+    "before": "服务费用的教学比较",
+    "after": "服务费用的假设算例",
+    "reason": "保留假设费用的证据性质，移除教学制作标签。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/09_optimization/slides/27/lead",
+    "before": "费率与速度均为教学设定，并非厂商报价。",
+    "after": "费率与速度均为算例假设，并非厂商报价。",
+    "reason": "以模型假设说明数据性质。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/09_optimization/slides/27/body/0",
+    "before": "教学费率：云端 \\(0.0029\\) 美元/请求；本地每小时固定三美元，每请求 \\(0.0002\\)。交点约 \\(1111\\) 请求/小时。",
+    "after": "假设费率：云端 \\(0.0029\\) 美元/请求；本地每小时固定三美元，每请求 \\(0.0002\\)。交点约 \\(1111\\) 请求/小时。",
+    "reason": "移除正文的授课编排或编写叙述，直接陈述研究对象及其条件。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/09_optimization/slides/28/body/0",
+    "before": "四产品按单个规划期选择整数补货量 \\(q_k\\)。以下金额采用样例的同一计价单位，\\(m_k\\) 为尚未扣本次采购的单位销售收入，\\(c_k\\) 为采购费，\\(h_k\\) 为期末持有费，\\(p_k\\) 为缺货惩罚。",
+    "after": "四产品按单个规划期选择整数补货量 \\(q_k\\)。金额采用样例的同一计价单位，\\(m_k\\) 为尚未扣本次采购的单位销售收入，\\(c_k\\) 为采购费，\\(h_k\\) 为期末持有费，\\(p_k\\) 为缺货惩罚。",
+    "reason": "移除正文的授课编排或编写叙述，直接陈述研究对象及其条件。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/09_optimization/slides/28/body/1",
+    "before": "已有库存采购视为沉没成本，期末残值为零。每种产品按本讲“库存目标的成本口径”计算价值；这里的数据是教学参数，不能把字段名“贡献毛利”再解释为已扣采购费。",
+    "after": "已有库存采购视为沉没成本，期末残值为零。期望净价值由销售收入扣除持有费、缺货费和新增采购费得到；数据是算例参数，字段名“贡献毛利”不表示已扣采购费。",
+    "reason": "移除正文的授课编排或编写叙述，直接陈述研究对象及其条件。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/09_optimization/slides/32/body/1",
+    "before": "采购 \\(18(42)+16(55)+10(28)+8(85)=2596\\)；库容 \\(18(1.5)+16(2)+10+8(3)=93\\)。价值合计 \\(3914.60\\)，还需保留随后列出的并列方案。",
+    "after": "采购 \\(18(42)+16(55)+10(28)+8(85)=2596\\)；库容 \\(18(1.5)+16(2)+10+8(3)=93\\)。价值合计 \\(3914.60\\)，该最优值由多组配置达到，须同时保留全部并列解。",
+    "reason": "移除正文的授课编排或编写叙述，直接陈述研究对象及其条件。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/09_optimization/slides/36/body/1",
+    "before": "实施前核对提前期、最小批量、设备资格、当前授权与备选方案；执行后记录偏离及经营结果，更新风险、效果和资源条件。下一讲用事件日志和状态验证，检查选择的行动是否真正执行。",
+    "after": "实施前核对提前期、最小批量、设备资格、当前授权与备选方案；执行后记录偏离及经营结果，更新风险、效果和资源条件。事件日志与状态核验用于确认所选行动的实际执行情况。",
+    "reason": "移除正文的授课编排或编写叙述，直接陈述研究对象及其条件。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/10_process_mining/slides/0/body/1",
+    "before": "本讲先定义实例、轨迹和流程模型，再分析时间、返工与规则偏离；随后研究智能体如何在授权范围内检索证据、调用工具和恢复故障。日志不是无遗漏的事实全集，最终执行与经营效果仍需分别验证。",
+    "after": "实例、轨迹及流程模型规定路径、时间、返工和规则偏离的分析对象。智能体在授权范围内检索证据、调用工具并恢复故障，执行结果须由日志与业务状态共同核验；经营效果还需独立评价。日志的遗漏也须纳入证据审查。",
+    "reason": "移除正文的授课编排或编写叙述，直接陈述研究对象及其条件。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/10_process_mining/slides/12/body/1",
+    "before": "更有结构的模型用状态和前置条件定义可执行行为。例如发货可能同时要求信用通过与库存锁定；一条频繁的“信用检查后发货”边不能证明库存条件满足。下一页用 Petri 网说明这一差别。",
+    "after": "状态模型通过前置条件定义可执行行为。例如发货可能同时要求信用通过与库存锁定；一条频繁的“信用检查后发货”边不能证明库存条件满足。Petri 网以条件、令牌和变迁表达这些状态约束。",
+    "reason": "移除正文的授课编排或编写叙述，直接陈述研究对象及其条件。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/10_process_mining/slides/14/lead",
+    "before": "状态不是一个文字结论，而是一组可检验的条件计数。",
+    "after": "Petri 网标识以各库所的令牌数表达当前条件。",
+    "reason": "以定义替代修辞性对照。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/10_process_mining/slides/21/body/1",
+    "before": "样例得六十七个事件、八个实例、四个变体，实例平均吞吐为 \\(114.88\\) 小时。表中两种主要变体共六单，其余两单属其他变体。开票至收款共七次相邻转移，平均 \\(71.57\\) 小时；下页进一步核查异常编号。",
+    "after": "样例得六十七个事件、八个实例、四个变体，实例平均吞吐为 \\(114.88\\) 小时。表中两种主要变体共六单，其余两单属其他变体。开票至收款共七次相邻转移，平均 \\(71.57\\) 小时；异常核查还须追溯具体实例及其活动记录。",
+    "reason": "移除正文的授课编排或编写叙述，直接陈述研究对象及其条件。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/10_process_mining/slides/24/body/0",
+    "before": "讲义引用的公开案例展示流程挖掘从审计扩展至物流、财务、采购和销售，并跟踪自动化、返工与每订单项人工活动次数。人工次数是总活动次数除以订单项数，可以大于一。",
+    "after": "Celonis 与 Siemens 的公开案例涉及流程挖掘在审计、物流、财务、采购和销售中的应用，并跟踪自动化、返工与每订单项人工活动次数。人工次数是总活动次数除以订单项数，可以大于一。",
+    "reason": "移除正文的授课编排或编写叙述，直接陈述研究对象及其条件。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/10_process_mining/slides/33/body/0",
+    "before": "讲义案例比较对象与行动层、目录与访问层、语义问答与工具编排层的组合方式。下表概括其实现侧重，功能可有交叠，不构成互斥分类或技术排名。",
+    "after": "对象与行动层、目录与访问层、语义问答与工具编排层可以组成不同的平台配置。各实现的功能侧重可以交叠，不能视为互斥分类，也不能直接构成技术排名。",
+    "reason": "移除正文的授课编排或编写叙述，直接陈述研究对象及其条件。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/10_process_mining/slides/44/lead",
+    "before": "同一管理问题贯通事实、推断、选择和实施。",
+    "after": "同一管理问题需要衔接事实、推断、行动选择与实施记录。",
+    "reason": "用具体论证关系替代口号式“贯通”。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/10_process_mining/slides/44/takeaway",
+    "before": "可靠课程实践应同时保存计算证据、行动条件与实际结果。",
+    "after": "管理决策的复核须保存计算证据、行动条件与实际结果。",
+    "reason": "移除课程策划措辞，直接陈述复核要求。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/14_ai_agent/slides/0/section",
+    "before": "学习路径与业务任务",
+    "after": "业务任务与任务契约",
+    "reason": "同步讲义的正式节名。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/14_ai_agent/slides/1/section",
+    "before": "学习路径与业务任务",
+    "after": "业务任务与任务契约",
+    "reason": "同步讲义的正式节名。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/14_ai_agent/slides/2/section",
+    "before": "学习路径与业务任务",
+    "after": "业务任务与任务契约",
+    "reason": "同步讲义的正式节名。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/14_ai_agent/slides/0/detailRef/section",
+    "before": "1. 学习路径与业务任务",
+    "after": "业务任务与任务契约",
+    "reason": "同步讲义节名，锚点不变。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/14_ai_agent/slides/1/detailRef/section",
+    "before": "1. 学习路径与业务任务",
+    "after": "业务任务与任务契约",
+    "reason": "同步讲义节名，锚点不变。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/14_ai_agent/slides/2/detailRef/section",
+    "before": "1. 学习路径与业务任务",
+    "after": "业务任务与任务契约",
+    "reason": "同步讲义节名，锚点不变。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/14_ai_agent/slides/0/body/1",
+    "before": "本讲依次讨论架构、知识处理、对话与工作流、协作和治理，并用制度问答、办公研发、客户分流、生产异常四个虚构案例复算。实验以确定性规则模拟控制过程，不调用模型或外部业务系统。",
+    "after": "架构、知识处理、对话、工作流、协作和治理共同支持受控执行。制度问答、办公研发、客户分流及生产异常四个虚构案例分别呈现证据选择、状态控制和人工交接；实验用确定性规则模拟，不调用模型或外部业务系统。",
+    "reason": "移除正文的授课编排或编写叙述，直接陈述研究对象及其条件。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/14_ai_agent/slides/0/diagram/title",
+    "before": "任务契约贯穿整个过程",
+    "after": "任务契约约束证据、状态与执行",
+    "reason": "用具体作用替代“贯穿过程”的空泛表述。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/14_ai_agent/slides/1/lead",
+    "before": "把愿望改写为可检验的输入、输出与完成条件。",
+    "after": "任务契约规定可检验的输入、输出与完成条件。",
+    "reason": "用任务定义替代“改写愿望”的口語。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/14_ai_agent/slides/2/diagram/note",
+    "before": "这是教学分类；产品能力可以重叠。",
+    "after": "分类依据是主要产物与控制方式；同一产品可以具备多种能力。",
+    "reason": "移除正文的授课编排或编写叙述，直接陈述研究对象及其条件。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/14_ai_agent/slides/3/title",
+    "before": "六项功能组成一个任务系统",
+    "after": "任务系统的六项功能",
+    "reason": "标题直接命名分析对象。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/14_ai_agent/slides/4/body/0",
+    "before": "计划不是列出动作名称，而是规定何种证据或批准使下一步可执行。会议任务必须先知道参与人和可读日历范围，再求共同空档；写入邀请必须等待组织者确认，不能把审批放到发送之后。",
+    "after": "可执行计划须规定每一步所需的证据、批准及依赖。会议任务必须先确定参与人和可读日历范围，再求共同空档；写入邀请必须等待组织者确认，审批不能晚于发送。",
+    "reason": "删除口号式对照，直接规定计划的前置条件。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/14_ai_agent/slides/4/diagram/note",
+    "before": "课堂实验在本地模拟提交，不发送日历邀请。",
+    "after": "实验仅模拟本地提交，不发送日历邀请。",
+    "reason": "移除正文的授课编排或编写叙述，直接陈述研究对象及其条件。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/14_ai_agent/slides/5/title",
+    "before": "Memory：保存什么与相信什么",
+    "after": "Memory：信息类型、来源与有效性",
+    "reason": "以术语明确记忆管理的对象，替代口语化问句。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/14_ai_agent/slides/7/title",
+    "before": "Skills：把稳定方法变成可复用约定",
+    "after": "Skills：可复用的操作知识与适用条件",
+    "reason": "标题直接描述技能的技术内容。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/14_ai_agent/slides/13/body/1",
+    "before": "若有效条款根本没有进入候选集，重排不能凭空恢复它。排序靠前的旧版或无权限文件也不能使用。故应先过滤有效性，再比较召回与重排结果，最后核对引用是否真正支持当前结论。",
+    "after": "若有效条款没有进入候选集，重排无法恢复它。排序靠前的旧版或无权限文件也不能使用。应先过滤有效性，再比较召回与重排结果，最后核对引用是否支持当前结论。",
+    "reason": "去掉夸张修辞与无信息的强调。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/14_ai_agent/slides/17/section",
+    "before": "Workflow与流程闭环",
+    "after": "Workflow与业务状态",
+    "reason": "用可核验的状态对象替代泛化的闭环口号。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/14_ai_agent/slides/18/section",
+    "before": "Workflow与流程闭环",
+    "after": "Workflow与业务状态",
+    "reason": "用可核验的状态对象替代泛化的闭环口号。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/14_ai_agent/slides/17/takeaway",
+    "before": "流程闭环以已确认状态为依据，而非以调用次数为依据。",
+    "after": "业务完成须由最终状态确认，调用次数不能替代完成证据。",
+    "reason": "把“闭环”具体化为业务完成判据。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/14_ai_agent/slides/18/lead",
+    "before": "对话补足任务，工作流落实可测试的状态迁移。",
+    "after": "对话澄清任务条件，工作流实施可测试的状态迁移。",
+    "reason": "避免“补足任务”等含混搭配。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/14_ai_agent/slides/22/title",
+    "before": "私有化：先画数据与调用的边界",
+    "after": "私有化部署：数据流与调用范围",
+    "reason": "用部署对象替代“先画边界”的操作口语。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/14_ai_agent/slides/22/body/0",
+    "before": "私有化可能指模型推理、知识索引、领域工具或整个控制面在企业网络中运行。只把应用部署到内网，不能推断模型请求、插件参数、日志和备份也都留在内网；应逐条画出实际数据流。",
+    "after": "私有化可能指模型推理、知识索引、领域工具或整个控制面在企业网络中运行。应用位于内网不能保证模型请求、插件参数、日志和备份也位于内网；实际部署须明确每条数据流的来源、去向及访问范围。",
+    "reason": "移除正文的授课编排或编写叙述，直接陈述研究对象及其条件。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/14_ai_agent/slides/23/body/1",
+    "before": "日志和中间产物也可能保存受限片段，应与原资料一样管理访问与删除。工具密钥不交给无关角色，版本变更后复测越权、冲突和失败分支。治理不是一个“安全”提示词，而是各层可验证的控制。",
+    "after": "日志和中间产物也可能保存受限片段，应与原资料一样管理访问与删除。工具密钥仅提供给授权角色；版本变更后须复测越权、冲突和失败分支。访问控制与状态约束必须在各执行层实际生效。",
+    "reason": "移除正文的授课编排或编写叙述，直接陈述研究对象及其条件。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/14_ai_agent/slides/24/title",
+    "before": "上线前检查：故障也属于业务输入",
+    "after": "上线前验证：故障与异常分支",
+    "reason": "标题明确验证对象，替代“故障属于输入”的修辞。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/14_ai_agent/slides/24/takeaway",
+    "before": "验证失败分支和恢复路径，才算验证完整任务。",
+    "after": "完整任务验证须覆盖正常结果、失败分支及恢复路径。",
+    "reason": "删除口语化“才算”。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/14_ai_agent/slides/25/diagram/description",
+    "before": "依据官方公开资料比较定位和治理表面，不给出性能或价格名次。",
+    "after": "依据官方公开资料比较入口、记忆与工具执行的职责及控制要求，不比较性能或价格排名。",
+    "reason": "用具体控制对象替代生造搭配“治理表面”。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/14_ai_agent/slides/27/body/0",
+    "before": "Dify和Coze均提供可视化流程，以Chatflow支持多轮对话，以Workflow组织功能任务。Dify有官方自部署指南；Coze另有开源Studio。课程可在相同输入、证据与允许动作下比较状态表达和异常分支。",
+    "after": "Dify和Coze均提供可视化流程，以Chatflow支持多轮对话，以Workflow组织功能任务。Dify有官方自部署指南；Coze另有开源Studio。在相同输入、证据与允许动作下，可以比较两者的状态表达及异常分支。",
+    "reason": "移除正文的授课编排或编写叙述，直接陈述研究对象及其条件。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/14_ai_agent/slides/28/body/1",
+    "before": "住宿旧版的普通额度为\\(350\\)元、预审上限为\\(500\\)元，新版分别为\\(400\\)和\\(600\\)元。发票普通提交窗口为\\(30\\)个自然日；薪资属于受限主题。本案例参数仅用于课堂，不是现实企业制度。",
+    "after": "住宿旧版的普通额度为\\(350\\)元、预审上限为\\(500\\)元，新版分别为\\(400\\)和\\(600\\)元。发票普通提交窗口为\\(30\\)个自然日；薪资属于受限主题。这些参数属于虚构企业的模拟制度。",
+    "reason": "保留虚构限定，删除课堂编制叙述。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/14_ai_agent/slides/32/body/1",
+    "before": "会议在2026-10-13仅考虑三个半小时槽位：上午九点、十点和下午两点，依次记为S1、S2、S3。下面固定空档表构成全部排期数据；界面不连接真实日历，也不发送邀请。",
+    "after": "会议在2026-10-13仅考虑三个半小时槽位：上午九点、十点和下午两点，依次记为S1、S2、S3。参与人的空档集合构成全部排期输入；实验不连接真实日历，也不发送邀请。",
+    "reason": "移除正文的授课编排或编写叙述，直接陈述研究对象及其条件。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/14_ai_agent/slides/34/body/1",
+    "before": "本地演示的committed只是模拟提交，未写入外部日历。任务和身份范围内完全相同的请求可回放；同事件号但参与人、槽位或版本改变时进入冲突。会话中的“请照旧”不能绕过重新核验。",
+    "after": "本地实验的committed表示模拟提交，未写入外部日历。任务和身份范围内完全相同的请求可回放；同事件号但参与人、槽位或版本改变时进入冲突。历史会话不能替代变更提案的身份和批准核验。",
+    "reason": "移除正文的授课编排或编写叙述，直接陈述研究对象及其条件。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/14_ai_agent/slides/37/title",
+    "before": "咨询优先级：安全先于便利",
+    "after": "咨询路由：安全事件的优先级",
+    "reason": "技术标题直接说明路由规则，替代“安全先于便利”的口号。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/14_ai_agent/slides/38/body/1",
+    "before": "缺失或未知订单号须补充，核验标志必须是真实布尔输入；字符串或其他类型不能进入已授权分支。工具返回只应包含此任务必要字段，输出还需保存订单证据编号，便于核对归属规则是否真正实施。",
+    "after": "缺失或未知订单号须补充，核验标志必须是真实布尔输入；字符串或其他类型不能进入已授权分支。工具返回只应包含此任务必要字段，输出还需保存订单证据编号，以核对归属规则的执行情况。",
+    "reason": "移除正文的授课编排或编写叙述，直接陈述研究对象及其条件。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/14_ai_agent/slides/43/title",
+    "before": "异常算例：三项命中仍只形成草稿",
+    "after": "异常算例：评分结果与待审草稿",
+    "reason": "标题直接陈述计算产物与状态。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/14_ai_agent/slides/50/body/0",
+    "before": "越权、漏升级、无审批写入、审计缺失或成本质量门槛失守时，应停止接收新自动任务，保留事件、版本及未完成状态，恢复既有人工路径。已提交的业务结果须核查，不可通过删除日志假装撤销。",
+    "after": "越权、漏升级、无审批写入、审计缺失或成本质量门槛失守时，应停止接收新自动任务，保留事件、版本及未完成状态，恢复既有人工路径。已提交的业务结果须核查；删除日志不能撤销业务事务。",
+    "reason": "移除正文的授课编排或编写叙述，直接陈述研究对象及其条件。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/14_ai_agent/slides/54/body/0",
+    "before": "选择四案例之一作为主线，提交任务契约、资料版本、权限、状态图、正常与至少三个失败分支、人工交接及证据轨迹。至少有一个手算和一个反例，说明Skill在哪一步复用，Harness如何限制状态迁移。",
+    "after": "选择一个案例，提交任务契约、资料版本、权限、状态图、正常与至少三个失败分支、人工交接及证据轨迹。至少提供一个手算和一个反例，明确Skill复用的步骤与Harness限制的状态迁移。",
+    "reason": "项目要求保留为直接的提交规范，删除“主线”和讲解策划口吻。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/01_intro/slides/9/lead",
+    "before": "教学设定：两单均可加急，但最多选择一单。",
+    "after": "算例条件：两单均可加急，但最多选择一单。",
+    "reason": "用算例、模拟样本或模型假设表述资料性质，保留虚构或简化限定。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/01_intro/slides/9/body/0",
+    "before": "两单的延期损失均为 \\(10\\) 万元，加急费均为 \\(0.5\\) 万元。表中概率视为已知教学参数，且假定两项行动的效果互不影响。",
+    "after": "两单的延期损失均为 \\(10\\) 万元，加急费均为 \\(0.5\\) 万元。表中概率视为已知算例参数，且假定两项行动的效果互不影响。",
+    "reason": "用算例、模拟样本或模型假设表述资料性质，保留虚构或简化限定。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/01_intro/slides/10/body/0",
+    "before": "两单互不影响、均可加急且资源占用相同，最多选择一单。延期损失均为 \\(10\\) 万元，加急费均为 \\(0.5\\) 万元；概率视为已知教学参数。",
+    "after": "两单互不影响、均可加急且资源占用相同，最多选择一单。延期损失均为 \\(10\\) 万元，加急费均为 \\(0.5\\) 万元；概率视为已知算例参数。",
+    "reason": "用算例、模拟样本或模型假设表述资料性质，保留虚构或简化限定。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/01_intro/slides/17/body/0",
+    "before": "教学损失以万元计：原计划正常为 \\(0\\)、中断为 \\(100\\)，转移正常为 \\(15\\)、中断为 \\(25\\)。阳性、阴性后验分别为 \\(2/3\\)、\\(1/19\\)，信号概率分别为 \\(0.24\\)、\\(0.76\\)。",
+    "after": "算例损失以万元计：原计划正常为 \\(0\\)、中断为 \\(100\\)，转移正常为 \\(15\\)、中断为 \\(25\\)。阳性、阴性后验分别为 \\(2/3\\)、\\(1/19\\)，信号概率分别为 \\(0.24\\)、\\(0.76\\)。",
+    "reason": "用算例、模拟样本或模型假设表述资料性质，保留虚构或简化限定。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/01_intro/slides/24/body/0",
+    "before": "两期教学模型中，设备今日可正常运行。今日可不维护或维护；维护费为 8 万元。明日若故障必须修复，成本为 40 万元，正常则为零；明日之后无成本。",
+    "after": "两期简化模型中，设备今日可正常运行。今日可不维护或维护；维护费为 8 万元。明日若故障必须修复，成本为 40 万元，正常则为零；明日之后无成本。",
+    "reason": "用算例、模拟样本或模型假设表述资料性质，保留虚构或简化限定。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/01_intro/slides/25/body/0",
+    "before": "两期教学模型中，今日可不维护或付 \\(8\\) 万元维护。明日故障须修复，成本 \\(40\\) 万元，正常为零；明日之后无成本。不维护与维护的故障概率分别为 \\(0.30\\)、\\(0.05\\)。",
+    "after": "两期简化模型中，今日可不维护或付 \\(8\\) 万元维护。明日故障须修复，成本 \\(40\\) 万元，正常为零；明日之后无成本。不维护与维护的故障概率分别为 \\(0.30\\)、\\(0.05\\)。",
+    "reason": "用算例、模拟样本或模型假设表述资料性质，保留虚构或简化限定。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/01_intro/slides/31/body/1",
+    "before": "维护成本严格较低时应立即维护，相等时两者并列。这一教学模型仅比较本期两项行动；停场费用、维护后剩余风险和资源竞争须按问题另行计入。",
+    "after": "维护成本严格较低时应立即维护，相等时两者并列。这一简化模型仅比较本期两项行动；停场费用、维护后剩余风险和资源竞争须按问题另行计入。",
+    "reason": "用算例、模拟样本或模型假设表述资料性质，保留虚构或简化限定。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/01_intro/slides/34/body/0",
+    "before": "三组数值为教学模拟输出，每组对相同天气与对手情景分别运行策略 \\(\\mathrm A\\)、\\(\\mathrm B\\)。配对差值为 \\(4,-2,-8\\) 分钟，平均为 \\(-2\\) 分钟。",
+    "after": "三组数值为模拟输出，每组对相同天气与对手情景分别运行策略 \\(\\mathrm A\\)、\\(\\mathrm B\\)。配对差值为 \\(4,-2,-8\\) 分钟，平均为 \\(-2\\) 分钟。",
+    "reason": "用算例、模拟样本或模型假设表述资料性质，保留虚构或简化限定。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/02_enterprise_data_model/slides/9/body/0",
+    "before": "教学模型包含产品族、路线工序、批次、设备、质量事件和订单承诺。批次当前所在工序是状态，历史流转须保存过站事件，不能用当前字段覆盖。",
+    "after": "简化模型包含产品族、路线工序、批次、设备、质量事件和订单承诺。批次当前所在工序是状态，历史流转须保存过站事件，不能用当前字段覆盖。",
+    "reason": "用算例、模拟样本或模型假设表述资料性质，保留虚构或简化限定。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/02_enterprise_data_model/slides/15/body/0",
+    "before": "教学日快照的联合粒度是日期、制造区域、工作中心和产品族，适合比较汇总表现。批次等待、设备停机和订单拆分则须追溯明细。",
+    "after": "示例日快照的联合粒度是日期、制造区域、工作中心和产品族，适合比较汇总表现。批次等待、设备停机和订单拆分则须追溯明细。",
+    "reason": "用算例、模拟样本或模型假设表述资料性质，保留虚构或简化限定。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/03_sql_kpi/slides/2/body/0",
+    "before": "教学输入含订单表 orders、客户表 customers 和产品表 products。每单一种产品；订单存客户号、产品号、数量 \\(q_i\\) 和日期，客户表存地区，产品表存期内固定标准价 \\(p_i\\)。",
+    "after": "示例输入含订单表 orders、客户表 customers 和产品表 products。每单一种产品；订单存客户号、产品号、数量 \\(q_i\\) 和日期，客户表存地区，产品表存期内固定标准价 \\(p_i\\)。",
+    "reason": "用算例、模拟样本或模型假设表述资料性质，保留虚构或简化限定。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/03_sql_kpi/slides/3/lead",
+    "before": "示例查询仅使用教学标准价。",
+    "after": "示例查询仅使用示例标准价。",
+    "reason": "用算例、模拟样本或模型假设表述资料性质，保留虚构或简化限定。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/03_sql_kpi/slides/16/body/0",
+    "before": "教学设定：计划 \\(480\\) 分钟，运行 \\(400\\) 分钟，加工 \\(180\\) 件，其中良品 \\(171\\) 件，理想单件时间 \\(2\\) 分钟。",
+    "after": "算例条件：计划 \\(480\\) 分钟，运行 \\(400\\) 分钟，加工 \\(180\\) 件，其中良品 \\(171\\) 件，理想单件时间 \\(2\\) 分钟。",
+    "reason": "用算例、模拟样本或模型假设表述资料性质，保留虚构或简化限定。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/03_sql_kpi/slides/29/body/1",
+    "before": "“三笔”按行数定义，并非最近七日。教学收入采用固定标准价；真实历史计算使用成交价，且查询还应指定输出排序。",
+    "after": "“三笔”按行数定义，并非最近七日。示例收入采用固定标准价；真实历史计算使用成交价，且查询还应指定输出排序。",
+    "reason": "用算例、模拟样本或模型假设表述资料性质，保留虚构或简化限定。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/04_data_quality/slides/14/body/0",
+    "before": "教学设定：真实加工时间 \\(X\\) 的方差为 \\(4\\) 小时平方，加工成本 \\(Y\\) 对时间的真实斜率为 \\(\\beta=2\\) 百元/小时。测量噪声独立、零均值，满足经典误差模型。",
+    "after": "算例条件：真实加工时间 \\(X\\) 的方差为 \\(4\\) 小时平方，加工成本 \\(Y\\) 对时间的真实斜率为 \\(\\beta=2\\) 百元/小时。测量噪声独立、零均值，满足经典误差模型。",
+    "reason": "用算例、模拟样本或模型假设表述资料性质，保留虚构或简化限定。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/04_data_quality/slides/39/body/0",
+    "before": "订单表本应一行一个订单；教学文件 `orders_quality_issues.csv` 含 \\(9\\) 条故意构造的异常记录，并提供客户、产品主数据及允许枚举。任务是检验业务键、外键、数量、枚举和日期规则。",
+    "after": "订单表本应一行一个订单；模拟数据文件 `orders_quality_issues.csv` 含 \\(9\\) 条故意构造的异常记录，并提供客户、产品主数据及允许枚举。任务是检验业务键、外键、数量、枚举和日期规则。",
+    "reason": "用算例、模拟样本或模型假设表述资料性质，保留虚构或简化限定。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/04_data_quality/slides/40/body/0",
+    "before": "教学样例的对象标识、客户产品引用和数量规则产生下列典型失败。重复编号可能对应两条不同原始行，必须保留其行标识以支持复核。",
+    "after": "模拟样例的对象标识、客户产品引用和数量规则产生下列典型失败。重复编号可能对应两条不同原始行，必须保留其行标识以支持复核。",
+    "reason": "用算例、模拟样本或模型假设表述资料性质，保留虚构或简化限定。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/05_statistics_dashboard/slides/17/body/0",
+    "before": "经审核的教学基准为 \\(p_0=0.05\\)，每天检验 \\(500\\) 件。稳定独立二项近似给出 \\(U=0.05+3\\sqrt{0.05(0.95)/500}\\approx0.0792\\)、下界约 \\(0.0208\\)。",
+    "after": "经审核的算例基准为 \\(p_0=0.05\\)，每天检验 \\(500\\) 件。稳定独立二项近似给出 \\(U=0.05+3\\sqrt{0.05(0.95)/500}\\approx0.0792\\)、下界约 \\(0.0208\\)。",
+    "reason": "用算例、模拟样本或模型假设表述资料性质，保留虚构或简化限定。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/05_statistics_dashboard/slides/19/body/0",
+    "before": "教学窗口为第 \\(0\\) 至 \\(3\\) 天。批次 \\(A\\) 在第 \\(0\\) 天进入、第 \\(2\\) 天离开；批次 \\(B\\) 在第 \\(1\\) 天进入、第 \\(3\\) 天离开，没有其他批次。两批的完整停留时间均为 \\(2\\) 天。",
+    "after": "算例窗口为第 \\(0\\) 至 \\(3\\) 天。批次 \\(A\\) 在第 \\(0\\) 天进入、第 \\(2\\) 天离开；批次 \\(B\\) 在第 \\(1\\) 天进入、第 \\(3\\) 天离开，没有其他批次。两批的完整停留时间均为 \\(2\\) 天。",
+    "reason": "用算例、模拟样本或模型假设表述资料性质，保留虚构或简化限定。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/05_statistics_dashboard/slides/29/body/0",
+    "before": "教学参数：\\(\\lambda=8\\) 批/小时、在制成本 \\(h=1\\) 元/(批小时)、能力系数 \\(k=2\\) 元/批。总成本率为 \\(J(\\mu)=2\\mu+8/(\\mu-8)\\)，稳态须 \\(\\mu>8\\)。",
+    "after": "算例参数：\\(\\lambda=8\\) 批/小时、在制成本 \\(h=1\\) 元/(批小时)、能力系数 \\(k=2\\) 元/批。总成本率为 \\(J(\\mu)=2\\mu+8/(\\mu-8)\\)，稳态须 \\(\\mu>8\\)。",
+    "reason": "用算例、模拟样本或模型假设表述资料性质，保留虚构或简化限定。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/05_statistics_dashboard/slides/33/body/1",
+    "before": "完整任务可能多次请求并需返工，应将所有尝试和复核费用汇总后除以成功任务数。价格随服务与合同变化，教学参数仅说明成本结构。",
+    "after": "完整任务可能多次请求并需返工，应将所有尝试和复核费用汇总后除以成功任务数。价格随服务与合同变化，算例参数仅说明成本结构。",
+    "reason": "用算例、模拟样本或模型假设表述资料性质，保留虚构或简化限定。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/05_statistics_dashboard/slides/42/takeaway",
+    "before": "这些是教学样例的描述结果，不代表未来运营水平。",
+    "after": "这些是模拟样例的描述结果，不代表未来运营水平。",
+    "reason": "用算例、模拟样本或模型假设表述资料性质，保留虚构或简化限定。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/06_ab_testing/slides/37/body/1",
+    "before": "任务是核对编号与分流，按相同结果窗口计算主指标和风险，再报告效应、近似区间与推广条件。该文件是教学模拟；数值用于方法验算，不是实际商业上线证据。",
+    "after": "任务是核对编号与分流，按相同结果窗口计算主指标和风险，再报告效应、近似区间与推广条件。该文件是模拟实验；数值用于方法验算，不是实际商业上线证据。",
+    "reason": "用算例、模拟样本或模型假设表述资料性质，保留虚构或简化限定。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/06_ab_testing/slides/38/body/1",
+    "before": "差异估计 \\(\\hat\\tau=0.55-0.35=0.20\\)，即 \\(20\\) 个百分点；相对变化 \\(0.20/0.35\\approx57.1\\%\\)。这只是教学模拟的点估计，仍需报告不确定性及体验风险。",
+    "after": "差异估计 \\(\\hat\\tau=0.55-0.35=0.20\\)，即 \\(20\\) 个百分点；相对变化 \\(0.20/0.35\\approx57.1\\%\\)。这只是模拟实验的点估计，仍需报告不确定性及体验风险。",
+    "reason": "用算例、模拟样本或模型假设表述资料性质，保留虚构或简化限定。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/06_ab_testing/slides/39/body/1",
+    "before": "标准误 \\(\\sqrt{0.025}\\approx0.1581\\)，近似 \\(95\\%\\) 区间 \\(0.20\\pm1.96(0.1581)\\approx[-0.1099,0.5099]\\)。小样本应另核查覆盖或使用适当方法；该区间用于教学演示。",
+    "after": "标准误 \\(\\sqrt{0.025}\\approx0.1581\\)，近似 \\(95\\%\\) 区间 \\(0.20\\pm1.96(0.1581)\\approx[-0.1099,0.5099]\\)。小样本应另核查覆盖或使用适当方法；该区间用于算例验算。",
+    "reason": "用算例、模拟样本或模型假设表述资料性质，保留虚构或简化限定。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/06_ab_testing/slides/39/diagram/description",
+    "before": "教学模拟两组各20人，转化差为0.20，使用无偏样本方差的标准误sqrt0.025，95%Wald近似区间跨过零。",
+    "after": "模拟实验两组各20人，转化差为0.20，使用无偏样本方差的标准误sqrt0.025，95%Wald近似区间跨过零。",
+    "reason": "用算例、模拟样本或模型假设表述资料性质，保留虚构或简化限定。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/06_ab_testing/slides/40/body/0",
+    "before": "检验 \\(H_0:\\tau=0\\)。教学模拟差异 \\(\\hat\\tau=0.20\\)、标准误 \\(\\sqrt{0.025}\\)；未合并 Wald 正态近似统计量 \\(Z=0.20/\\sqrt{0.025}\\approx1.2649\\)。",
+    "after": "检验 \\(H_0:\\tau=0\\)。模拟实验差异 \\(\\hat\\tau=0.20\\)、标准误 \\(\\sqrt{0.025}\\)；未合并 Wald 正态近似统计量 \\(Z=0.20/\\sqrt{0.025}\\approx1.2649\\)。",
+    "reason": "用算例、模拟样本或模型假设表述资料性质，保留虚构或简化限定。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/07_prediction/slides/7/diagram/note",
+    "before": "图取教学参数 \\(p=0.8\\)；曲线由公式计算。",
+    "after": "图取算例参数 \\(p=0.8\\)；曲线由公式计算。",
+    "reason": "用算例、模拟样本或模型假设表述资料性质，保留虚构或简化限定。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/07_prediction/slides/18/body/0",
+    "before": "取十名测试客户的教学计数：\\(TP=5,FP=1,TN=4,FN=0\\)。准确率按全部客户计算；F1 是精准率与召回率的调和平均，也可直接按三种相关计数计算。",
+    "after": "取十名测试客户的算例计数：\\(TP=5,FP=1,TN=4,FN=0\\)。准确率按全部客户计算；F1 是精准率与召回率的调和平均，也可直接按三种相关计数计算。",
+    "reason": "用算例、模拟样本或模型假设表述资料性质，保留虚构或简化限定。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/07_prediction/slides/32/lead",
+    "before": "教学参数只用于解释负载与资源关系。",
+    "after": "算例参数只用于解释负载与资源关系。",
+    "reason": "用算例、模拟样本或模型假设表述资料性质，保留虚构或简化限定。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/07_prediction/slides/35/body/0",
+    "before": "教学方案取三个月收益窗口、毛利率 \\(0.45\\)、优惠费用 \\(35\\) 元，并假设流失风险按相同比例 \\(r=0.35\\) 降低。月消费为 \\(s_i\\) 元时，避免流失的三个月毛利为 \\(M_i=3s_i\\times0.45\\)。",
+    "after": "算例方案取三个月收益窗口、毛利率 \\(0.45\\)、优惠费用 \\(35\\) 元，并假设流失风险按相同比例 \\(r=0.35\\) 降低。月消费为 \\(s_i\\) 元时，避免流失的三个月毛利为 \\(M_i=3s_i\\times0.45\\)。",
+    "reason": "用算例、模拟样本或模型假设表述资料性质，保留虚构或简化限定。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/07_prediction/slides/36/body/0",
+    "before": "在教学样例中，流失风险前五名为 C030、C028、C021、C025、C023。加入三个月风险毛利、留存效果及优惠成本后，净价值前列为 C028、C025、C023、C021。",
+    "after": "在模拟样例中，流失风险前五名为 C030、C028、C021、C025、C023。加入三个月风险毛利、留存效果及优惠成本后，净价值前列为 C028、C025、C023、C021。",
+    "reason": "用算例、模拟样本或模型假设表述资料性质，保留虚构或简化限定。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/08_causality/slides/11/body/0",
+    "before": "一百张教学订单，高低难度各五十；加急与未加急各五十。图中订单数显示，加急组高难度占 \\(80\\%\\)，未加急组仅 \\(20\\%\\)。",
+    "after": "一百张模拟订单，高低难度各五十；加急与未加急各五十。图中订单数显示，加急组高难度占 \\(80\\%\\)，未加急组仅 \\(20\\%\\)。",
+    "reason": "用算例、模拟样本或模型假设表述资料性质，保留虚构或简化限定。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/08_causality/slides/40/title",
+    "before": "优惠券教学数据：调整与诊断",
+    "after": "优惠券模拟数据：调整与诊断",
+    "reason": "用算例、模拟样本或模型假设表述资料性质，保留虚构或简化限定。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/09_optimization/slides/22/body/0",
+    "before": "金额均为千元，数值为教学假设。A基线风险最高；各风险为 \\(0.60,0.40,0.30,0.10\\)。图按绝对降幅乘延期损失再减费用计算净收益。",
+    "after": "金额均为千元，数值为算例假设。A基线风险最高；各风险为 \\(0.60,0.40,0.30,0.10\\)。图按绝对降幅乘延期损失再减费用计算净收益。",
+    "reason": "用算例、模拟样本或模型假设表述资料性质，保留虚构或简化限定。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/09_optimization/slides/32/body/0",
+    "before": "依教学三点需求与数量范围枚举四个补货量，预算上限 \\(2600\\)，新增库容上限 \\(95\\)。图示达到最高目标的一组解。",
+    "after": "依示例三点需求与数量范围枚举四个补货量，预算上限 \\(2600\\)，新增库容上限 \\(95\\)。图示达到最高目标的一组解。",
+    "reason": "用算例、模拟样本或模型假设表述资料性质，保留虚构或简化限定。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/09_optimization/slides/34/takeaway",
+    "before": "教学参数与目标口径确定后，每个产品的期望价值应能独立复算。",
+    "after": "算例参数与目标口径确定后，每个产品的期望价值应能独立复算。",
+    "reason": "用算例、模拟样本或模型假设表述资料性质，保留虚构或简化限定。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/10_process_mining/slides/7/body/0",
+    "before": "两条教学轨迹为 \\(A,B,A,B,C\\) 与 \\(A,B,C\\)，相邻活动形成直接跟随边。按每个实例及相邻位置计数，得到图中三条边。",
+    "after": "两条示例轨迹为 \\(A,B,A,B,C\\) 与 \\(A,B,C\\)，相邻活动形成直接跟随边。按每个实例及相邻位置计数，得到图中三条边。",
+    "reason": "用算例、模拟样本或模型假设表述资料性质，保留虚构或简化限定。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/10_process_mining/slides/7/diagram/title",
+    "before": "从教学轨迹到直接跟随图",
+    "after": "从示例轨迹到直接跟随图",
+    "reason": "用算例、模拟样本或模型假设表述资料性质，保留虚构或简化限定。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/10_process_mining/slides/9/lead",
+    "before": "用两条完整教学轨迹，逐项核对统计对象。",
+    "after": "用两条完整示例轨迹，逐项核对统计对象。",
+    "reason": "用算例、模拟样本或模型假设表述资料性质，保留虚构或简化限定。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/10_process_mining/slides/21/title",
+    "before": "教学日志的路径与时间",
+    "after": "模拟日志的路径与时间",
+    "reason": "用算例、模拟样本或模型假设表述资料性质，保留虚构或简化限定。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/10_process_mining/slides/21/body/0",
+    "before": "教学订单到收款日志一行一个事件，含实例编号、唯一事件编号、活动、时间、资源及订单金额。先按实例归集并按可信顺序排列，再计算首末时间差、完整序列和各相邻转移。",
+    "after": "模拟订单到收款日志一行一个事件，含实例编号、唯一事件编号、活动、时间、资源及订单金额。先按实例归集并按可信顺序排列，再计算首末时间差、完整序列和各相邻转移。",
+    "reason": "用算例、模拟样本或模型假设表述资料性质，保留虚构或简化限定。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/10_process_mining/slides/22/title",
+    "before": "教学日志：边频次与时间对照",
+    "after": "模拟日志：边频次与时间对照",
+    "reason": "用算例、模拟样本或模型假设表述资料性质，保留虚构或简化限定。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/02_enterprise_data_model/slides/2/body/1",
+    "before": "治理与安全贯穿各项职能。解除批次冻结时，模型可提供建议，运行程序保存任务状态，业务服务核验权限并确认最终状态；一个产品可同时承担多项职责。",
+    "after": "各项职能均须实施治理与安全控制。解除批次冻结时，模型可提供建议，运行程序保存任务状态，业务服务核验权限并确认最终状态；一个产品可同时承担多项职责。",
+    "reason": "用直接、规范的学术表述替代授课或编写元话语。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/05_statistics_dashboard/slides/17/diagram/description",
+    "before": "教学序列每天500件，8日不良率为4%、5%、6%、4.4%、5.6%、10%、5.2%、4.8%，第6日超过二项基准上界。",
+    "after": "模拟序列每天500件，8日不良率为4%、5%、6%、4.4%、5.6%、10%、5.2%、4.8%，第6日超过二项基准上界。",
+    "reason": "以模拟序列说明图中数据的性质。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/05_statistics_dashboard/slides/40/body/0",
+    "before": "“第 \\(6\\) 天 \\(50/500=10\\%\\)，超过教学控制上界”是可核对事实；“设备或产品组合可能变化”是候选机制；“查询维护日志和同日产线构成”是验证计划。",
+    "after": "“第 \\(6\\) 天 \\(50/500=10\\%\\)，超过算例控制上界”是可核对事实；“设备或产品组合可能变化”是候选机制；“查询维护日志和同日产线构成”是验证计划。",
+    "reason": "用直接、规范的学术表述替代授课或编写元话语。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/06_ab_testing/slides/41/takeaway",
+    "before": "现有教学资料未满足明确正向收益且风险可接受的推广要求。",
+    "after": "现有模拟资料未满足明确正向收益且风险可接受的推广要求。",
+    "reason": "保留样本性质与推广证据不足的结论。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/07_prediction/slides/20/diagram/description",
+    "before": "横轴平均预测概率，纵轴观察事件比例，理想校准线为两者相等。教学箱十人平均预测0.7，实际流失4人，点在0.7、0.4。",
+    "after": "横轴平均预测概率，纵轴观察事件比例，理想校准线为两者相等。示例分箱含十人，平均预测0.7，实际流失4人，点在0.7、0.4。",
+    "reason": "用直接、规范的学术表述替代授课或编写元话语。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/07_prediction/slides/20/diagram/note",
+    "before": "单点来自十人的教学箱，偏离不是长期失准的统计证明。",
+    "after": "单点来自十人的示例分箱，偏离不足以证明长期校准失准。",
+    "reason": "用直接、规范的学术表述替代授课或编写元话语。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/07_prediction/slides/33/lead",
+    "before": "教学任务从历史客户特征学习流失概率，再评价保留测试集。",
+    "after": "示例任务从历史客户特征学习流失概率，并用保留测试集评价。",
+    "reason": "用直接、规范的学术表述替代授课或编写元话语。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/08_causality/slides/26/diagram/description",
+    "before": "教学两折示意中，第1轮在折B拟合辅助模型，折A计算效应分数；第2轮反过来。每个对象的分数由其他折模型提供预测。",
+    "after": "两折交叉拟合示例中，第1轮在折B拟合辅助模型，折A计算效应分数；第2轮反过来。每个对象的分数由其他折模型提供预测。",
+    "reason": "用直接、规范的学术表述替代授课或编写元话语。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/09_optimization/slides/27/diagram/description",
+    "before": "教学云端每请求0.0029美元，本地固定3美元每小时、可变0.0002美元每请求，两线交于1111.11请求每小时。",
+    "after": "假设云端每请求0.0029美元，本地固定3美元每小时、可变0.0002美元每请求，两线交于1111.11请求每小时。",
+    "reason": "保留费率假设与数值，不作为厂商报价。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/14_ai_agent/slides/0/sourceSection",
+    "before": "学习路径与业务任务",
+    "after": "业务任务与任务契约",
+    "reason": "同步正式节名，引用锚点保持。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/14_ai_agent/slides/1/sourceSection",
+    "before": "学习路径与业务任务",
+    "after": "业务任务与任务契约",
+    "reason": "同步正式节名，引用锚点保持。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/14_ai_agent/slides/2/sourceSection",
+    "before": "学习路径与业务任务",
+    "after": "业务任务与任务契约",
+    "reason": "同步正式节名，引用锚点保持。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/14_ai_agent/slides/51/body/0",
+    "before": "问题是“最近三天哪个工作中心OEE最低，其WIP和OTD是否也异常”。课程CSV覆盖2026-04-01至04-05，应先确认用户指数据内最近三个业务日，还是询问当日的三天；后者没有当前证据时须明确说明。",
+    "after": "问题是“最近三天哪个工作中心OEE最低，其WIP和OTD是否也异常”。样例CSV覆盖2026-04-01至04-05，应先确认用户指数据内最近三个业务日，还是询问当日的三天；后者没有当前证据时须明确说明。",
+    "reason": "用直接、规范的学术表述替代授课或编写元话语。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "/14_ai_agent/slides/51/diagram/note",
+    "before": "数据中的最近日期不能偷换成现实当前日期。",
+    "after": "数据中的最近日期不等同于现实当前日期。",
+    "reason": "以准确区别替代带评价色彩的“偷换”。",
+    "ledger": "slides.json"
+  },
+  {
+    "path": "docs/lecture_notes/14_ai_agent.md",
+    "before": "企业智能体的任务定义需要说明所需证据、可授权的操作，以及必须由人判断的条件。本章以制度问答、办公与研发协作、客户咨询、生产线异常和 AI 问数为连续案例，建立从任务定义、知识检索、流程编排到评测推广的完整方法。文中涉及的企业、人员、制度、订单、设备、阈值和批准号均为课堂虚构资料，不构成真实业务规则或设备控制规范。",
+    "after": "企业智能体的任务定义包括所需证据、可授权的操作，以及必须由人判断的条件。制度问答需要核验知识的适用性，办公与研发协作需要确认资料与审批，客户咨询和生产线异常处理需要明确分流规则，AI 问数需要核对指标口径。以下案例中的企业、人员、制度、订单、设备、阈值和批准号均为虚构设定，不构成真实业务规则或设备控制规范。",
+    "reason": "直接陈述任务及案例问题，删除章节编排自述",
+    "ledger": "root-edits.json"
+  },
+  {
+    "path": "docs/lecture_notes/14_ai_agent.md",
+    "before": "本章的网页实验使用固定数据、关键词词典、规则路由和状态机，可以逐步复算；它们**没有调用真实语言模型，也没有连接真实日历、客服、财务或工业控制系统**。理解原理、完成确定性实验与将系统投产，是三个不同层次的学习成果。",
+    "after": "配套实验使用固定数据、关键词词典、规则路由和状态机，输出可按规则复算；实验不调用真实语言模型，也不连接日历、客服、财务或工业控制系统。规则模拟的结果不代表真实模型性能或生产系统的运行效果。",
+    "reason": "保留模拟边界，删除学习成果层次自述",
+    "ledger": "root-edits.json"
+  },
+  {
+    "path": "docs/lecture_notes/14_ai_agent.md",
+    "before": "## 1. 学习路径与业务任务\n\n可先查看[主题与实验导航](#/chapter/agent-learning-map)，按职责选择学习重点。\n\n本章面向四类学习者。不同角色关注的问题不同，但应共享同一套任务、证据和责任边界。\n\n| 学习者 | 应能作出的判断 | 建议重点 |\n|---|---|---|\n| 业务与转型负责人 | 场景是否值得做、责任是否明确、收益是否超过总成本与风险 | 第 1、7、12、13 节 |\n| 产品流程与知识运营人员 | 输入输出、知识版本、流程分支与人工接管是否完备 | 第 3—6、9—11 节 |\n| 研发与运维工程师 | 权限、工具契约、运行状态、回滚和可观测性如何实现 | 第 2、5—8、14 节 |\n| 业务应用团队 | 如何核对答案、处理失败、纠正系统并保留证据 | 四个案例和第 15 节 |\n\n建议按两日组织教学。第一天从架构到 RAG 再到 Chatflow，第二天从 Workflow、多智能体推进到生产线综合方案；AI 问数贯穿两日的证据和口径讨论。\n\n| 时段 | 讲授与操作 | 当日可交付成果 |\n|---|---|---|\n| 第一天上午 | 业务任务、Chatbot/Copilot/Agent、运行控制与权限边界 | 一份任务契约：输入、输出、权限、失败状态 |\n| 第一天下午 | 企业知识处理、RAG、制度问答、Chatflow 与办公协作 | 带版本、有效期、引用的问答记录；对话状态图 |\n| 第二天上午 | Workflow、客户分流、多智能体任务调度、安全治理 | 可逐项验收的流程状态机与人工接管规则 |\n| 第二天下午 | 生产线异常综合方案、评测、经济评价、灰度推广与 NL2SQL | 四案例审计表和试点决策书 |\n\n",
+    "after": "## 1. 业务任务与任务契约\n\n",
+    "reason": "培训对象、授课建议及两日安排移至课程大纲",
+    "ledger": "root-edits.json"
+  },
+  {
+    "path": "docs/syllabus.md",
+    "before": "",
+    "after": "企业 Agent 专题培训（培训对象和两日安排从讲义移入）",
+    "reason": "授课安排归入课程大纲",
+    "ledger": "root-edits.json"
+  },
+  {
+    "path": "docs/lecture_notes/14_ai_agent.md",
+    "before": "**任务契约**比泛泛的“智能助手”描述更可实施。至少写明：",
+    "after": "任务契约应明确：",
+    "reason": "删除泛泛评价，直接定义契约内容",
+    "ledger": "root-edits.json"
+  },
+  {
+    "path": "docs/lecture_notes/14_ai_agent.md",
+    "before": "教材第 10 章《流程挖掘与智能体执行》的“智能体及其运行环境”“智能体的可靠性与经济评价”给出了流程日志、状态与成本的基础；本章把这些概念展开为企业课堂案例。",
+    "after": "流程日志、任务状态与成本核算的基础见第 10 章“智能体及其运行环境”和“智能体的可靠性与经济评价”。",
+    "reason": "保留有效交叉引用，删除编写意图",
+    "ledger": "root-edits.json"
+  },
+  {
+    "path": "docs/lecture_notes/14_ai_agent.md",
+    "before": "这是**按任务责任和控制方式作的教学区分**，不是给产品贴互斥标签：",
+    "after": "三者按任务责任和控制方式区分，但并非互斥的产品类别：",
+    "reason": "将教学区分改为概念划分及范围",
+    "ledger": "root-edits.json"
+  },
+  {
+    "path": "docs/lecture_notes/14_ai_agent.md",
+    "before": "三种模式的区别是**谁取得事实、谁推动状态、谁承担确认责任**，而不是界面是否有聊天框。",
+    "after": "三种模式分别规定事实获取、状态推进和确认责任；聊天界面本身不能确定这些职责。",
+    "reason": "改为直接职责论述",
+    "ledger": "root-edits.json"
+  },
+  {
+    "path": "docs/lecture_notes/14_ai_agent.md",
+    "before": "规划不是把一段自述性的“思考过程”当作执行事实。",
+    "after": "规划提出候选步骤，执行事实须由实际调用与状态记录确认。",
+    "reason": "删除设靶式否定",
+    "ledger": "root-edits.json"
+  },
+  {
+    "path": "docs/lecture_notes/14_ai_agent.md",
+    "before": "在本章中，Chatflow 指围绕**多轮会话**设计的应用流程：",
+    "after": "Chatflow 是围绕多轮会话设计的应用流程：",
+    "reason": "去除自指性定义引导",
+    "ledger": "root-edits.json"
+  },
+  {
+    "path": "docs/lecture_notes/14_ai_agent.md",
+    "before": "这是一些平台采用的设计模式，**不是所有产品必须遵循的通用标准**。",
+    "after": "这一名称用于部分平台的会话流程设计，各平台的实现和术语可能不同。",
+    "reason": "保持非统一标准限定，改正式陈述",
+    "ledger": "root-edits.json"
+  },
+  {
+    "path": "docs/lecture_notes/14_ai_agent.md",
+    "before": "一个合格的 Chatflow 应提供可见的来源、明确的“尚不能确定”、纠错入口和人工交接记录。",
+    "after": "Chatflow 的输出应包含来源、未确定事项、纠错入口和人工交接记录。",
+    "reason": "删除评价性合格标签",
+    "ledger": "root-edits.json"
+  },
+  {
+    "path": "docs/lecture_notes/14_ai_agent.md",
+    "before": "多智能体的合理动机是**不同职责需要不同上下文、工具或独立复核**，不是让“人数”成为质量指标。",
+    "after": "不同职责所需的上下文、工具和独立复核要求，是划分智能体角色的依据；角色数量本身不能衡量系统质量。",
+    "reason": "学术陈述替代口号式对比",
+    "ledger": "root-edits.json"
+  },
+  {
+    "path": "docs/lecture_notes/14_ai_agent.md",
+    "before": "下表是**产品定位与课程适用场景**，并非功能或价格排名；具体部署能力随版本和组织配置变化，投产前须逐项验证。",
+    "after": "各工具的部署能力取决于版本和组织配置，选型时须核验任务适配、权限和运维条件。",
+    "reason": "删除表格编排和课程自述",
+    "ledger": "root-edits.json"
+  },
+  {
+    "path": "docs/lecture_notes/14_ai_agent.md",
+    "before": "| 工具 | 官方资料所支持的定位 | 课程中宜用于比较的问题 |",
+    "after": "| 工具 | 产品定位 | 选型检查事项 |",
+    "reason": "表头改为实际对象",
+    "ledger": "root-edits.json"
+  },
+  {
+    "path": "docs/lecture_notes/14_ai_agent.md",
+    "before": "目标不是写出一段顺畅文字，而是返回可由制度负责人复核的决定。",
+    "after": "输出的制度判断必须能由制度负责人依据条款复核。",
+    "reason": "删除空泛设靶对比",
+    "ledger": "root-edits.json"
+  },
+  {
+    "path": "docs/lecture_notes/14_ai_agent.md",
+    "before": "教学资料如下，金额与时限仅为案例参数。",
+    "after": "金额与时限均为虚构案例参数。",
+    "reason": "保留参数限定，删除表格引导",
+    "ledger": "root-edits.json"
+  },
+  {
+    "path": "docs/lecture_notes/14_ai_agent.md",
+    "before": "| 资料 ID | 有效期、权限 | 课堂规则 |",
+    "after": "| 资料 ID | 有效期、权限 | 案例规则 |",
+    "reason": "用明确案例限定替代课堂策划",
+    "ledger": "root-edits.json"
+  },
+  {
+    "path": "docs/lecture_notes/14_ai_agent.md",
+    "before": "本地教学状态才可转",
+    "after": "本地模拟状态才可转",
+    "reason": "实验状态正式用语",
+    "ledger": "root-edits.json"
+  },
+  {
+    "path": "docs/lecture_notes/14_ai_agent.md",
+    "before": "课堂退货规则：",
+    "after": "退货规则的假定条件为：",
+    "reason": "保持虚构规则语义",
+    "ledger": "root-edits.json"
+  },
+  {
+    "path": "docs/lecture_notes/14_ai_agent.md",
+    "before": "课堂数值不是设备设计阈值，不得用于真实产线。",
+    "after": "所设数值仅适用于模拟，不得用作真实产线的设备设计阈值。",
+    "reason": "将课堂描述改为参数适用范围",
+    "ledger": "root-edits.json"
+  },
+  {
+    "path": "docs/lecture_notes/14_ai_agent.md",
+    "before": "教学阈值取振动",
+    "after": "模拟阈值取振动",
+    "reason": "保留阈值限定",
+    "ledger": "root-edits.json"
+  },
+  {
+    "path": "docs/lecture_notes/14_ai_agent.md",
+    "before": "仅在数据有效时计算课堂分数",
+    "after": "仅在数据有效时计算规则分数",
+    "reason": "准确描述计算量",
+    "ledger": "root-edits.json"
+  },
+  {
+    "path": "docs/lecture_notes/14_ai_agent.md",
+    "before": "课堂应显示“PLC 联锁：只读”“设备控制调用数：0”。",
+    "after": "联锁状态作为只读输入，实验程序的设备控制调用数恒为零。",
+    "reason": "将教师界面要求改为程序不变量",
+    "ledger": "root-edits.json"
+  },
+  {
+    "path": "docs/lecture_notes/14_ai_agent.md",
+    "before": "评测单位应是**一个完整业务任务**，而非一段话或一次模型调用。",
+    "after": "完整业务任务是系统评测的单位；单次模型调用或文本质量不足以表示任务是否完成。",
+    "reason": "正式解释评价层次",
+    "ledger": "root-edits.json"
+  },
+  {
+    "path": "docs/lecture_notes/14_ai_agent.md",
+    "before": "明确一个“不能做”的边界，通常比罗列十个功能更有助于试点。",
+    "after": "试点范围须明确禁止的操作及其执行约束。",
+    "reason": "删除口号和无依据比较",
+    "ledger": "root-edits.json"
+  },
+  {
+    "path": "docs/lecture_notes/14_ai_agent.md",
+    "before": "| 原型 | 用固定教学数据、标准答案、只读输出 |",
+    "after": "| 原型 | 固定样本、标准答案、只读输出 |",
+    "reason": "去除教学安排口吻",
+    "ledger": "root-edits.json"
+  },
+  {
+    "path": "docs/lecture_notes/14_ai_agent.md",
+    "before": "回滚不是删除系统：",
+    "after": "回滚包括停止新任务、保留已提交状态和恢复原有流程。",
+    "reason": "删除设靶式否定",
+    "ledger": "root-edits.json"
+  },
+  {
+    "path": "docs/lecture_notes/14_ai_agent.md",
+    "before": "原有[AI问数审计实验](#/lab/ai-sql-audit)用于连接本章与指标口径训练。",
+    "after": "[AI问数审计实验](#/lab/ai-sql-audit)核查时间窗口、分子分母和查询解释。",
+    "reason": "直接说明实验对象",
+    "ledger": "root-edits.json"
+  },
+  {
+    "path": "docs/lecture_notes/14_ai_agent.md",
+    "before": "第 8 节列出的产品链接用于核验各工具当前的官方边界，选型时应重新检查其版本、许可、部署与安全配置。",
+    "after": "工具选型须核验所用版本的许可、部署和安全配置，相关官方文档见第 8 节。",
+    "reason": "删除编排自述，保留有效资料位置",
+    "ledger": "root-edits.json"
+  },
+  {
+    "path": "docs/lecture_notes/11_modern_data_platform.md",
+    "before": "建议使用 SiFactory-like 教学抽象：",
+    "after": "制造数据从原始事件到指标服务的处理链为：",
+    "reason": "去除授课建议",
+    "ledger": "root-edits.json"
+  },
+  {
+    "path": "docs/lecture_notes/11_modern_data_platform.md",
+    "before": "使用 `data/sample/semiconductor_kpi_daily.csv` 展示：",
+    "after": "样本 `data/sample/semiconductor_kpi_daily.csv` 的分析包括：",
+    "reason": "直接说明分析范围",
+    "ledger": "root-edits.json"
+  },
+  {
+    "path": "docs/lecture_notes/11_modern_data_platform.md",
+    "before": "现代数据平台不是为了技术堆叠，而是为了让经营会议中的指标、模型、AI 回答和行动建议共享同一套事实基础。",
+    "after": "现代数据平台为指标计算、模型服务、AI 回答和行动建议提供共同的事实基础。",
+    "reason": "删除口号式对比",
+    "ledger": "root-edits.json"
+  },
+  {
+    "path": "docs/cases/ai_question_to_data_case.md",
+    "before": "# AI 问数与 NL2SQL 教学案例",
+    "after": "# AI 问数与 NL2SQL 审计",
+    "reason": "对象标题替代教学标签",
+    "ledger": "root-edits.json"
+  },
+  {
+    "path": "docs/cases/ai_question_to_data_case.md",
+    "before": "## 1. 案例定位",
+    "after": "## 1. 业务问题与系统约束",
+    "reason": "标题直接指向内容",
+    "ledger": "root-edits.json"
+  },
+  {
+    "path": "docs/cases/ai_question_to_data_case.md",
+    "before": "本案例用于升级第 3 讲 SQL 与管理数据查询，并为第 14 讲 AI Agent / RAG 治理做铺垫。教学目标不是让学生相信 AI 自动生成的 SQL，而是训练学生理解企业级 AI 问数系统必须经过语义、权限、指标口径和结果校验。",
+    "after": "企业 AI 问数系统将自然语言问题转换为候选 SQL。候选查询须经过指标语义、访问权限、时间范围和结果校验，才能用于经营分析。",
+    "reason": "删除版本升级、教学目标与章节铺垫",
+    "ledger": "root-edits.json"
+  },
+  {
+    "path": "docs/cases/ai_question_to_data_case.md",
+    "before": "企业导师提到的 QueryMind 和 DataBot 可作为产业案例介绍；课程实现采用可复现的教学流程，不依赖商业系统。",
+    "after": "QueryMind 和 DataBot 是企业导师提供的应用示例；以下查询流程在课程样本上复现，不依赖这两个商业系统。",
+    "reason": "来源限定保留，删除介绍策划",
+    "ledger": "root-edits.json"
+  },
+  {
+    "path": "docs/cases/ai_question_to_data_case.md",
+    "before": "## 2. 教学流程",
+    "after": "## 2. 查询与审计流程",
+    "reason": "实际流程标题",
+    "ledger": "root-edits.json"
+  },
+  {
+    "path": "docs/cases/ai_question_to_data_case.md",
+    "before": "## 5. 学生提交物",
+    "after": "## 5. 分析报告与提交材料",
+    "reason": "正式对象标题",
+    "ledger": "root-edits.json"
+  },
+  {
+    "path": "docs/cases/semiconductor_kpi_m13_case.md",
+    "before": "# 半导体制造 KPI 与 M13 教学案例",
+    "after": "# 半导体制造 KPI 与运营要素诊断",
+    "reason": "明确案例研究对象",
+    "ledger": "root-edits.json"
+  },
+  {
+    "path": "docs/cases/semiconductor_kpi_m13_case.md",
+    "before": "## 1. 案例定位",
+    "after": "## 1. 业务对象与分析任务",
+    "reason": "明确内容对象",
+    "ledger": "root-edits.json"
+  },
+  {
+    "path": "docs/cases/semiconductor_kpi_m13_case.md",
+    "before": "本案例用于升级第 2 讲、第 3 讲和第 5 讲：\n\n- 第 2 讲：从制造业务对象出发设计企业数据模型；\n- 第 3 讲：用 SQL 计算制造 KPI；\n- 第 5 讲：用 dashboard 展示制造运营状态。",
+    "after": "制造运营分析包括业务对象建模、SQL 指标计算和运营状态展示。批次、设备、工站及订单之间的关系决定记录粒度；指标字典规定汇总方法；看板呈现分布、时间变化及数据质量。",
+    "reason": "删除升级过程叙述，保留分析对象",
+    "ledger": "root-edits.json"
+  },
+  {
+    "path": "docs/cases/semiconductor_kpi_m13_case.md",
+    "before": "案例采用半导体封测/制造的教学抽象数据，不使用真实企业敏感数据。字段设计参考企业导师建议中的 Yield、OEE、Cycle Time、WIP 和 OTD，并预留 M13 要素映射。",
+    "after": "案例使用虚构的半导体制造日运营快照，指标包括 Yield、OEE、Cycle Time、WIP 和 OTD。M13 要素用于组织诊断；字段与要素的对应关系须按具体业务核验。",
+    "reason": "来源制作过程替换为数据及分类范围",
+    "ledger": "root-edits.json"
+  },
+  {
+    "path": "docs/cases/semiconductor_kpi_m13_case.md",
+    "before": "## 4. 建议 SQL 任务",
+    "after": "## 4. SQL 分析任务",
+    "reason": "去除策划建议",
+    "ledger": "root-edits.json"
+  },
+  {
+    "path": "docs/cases/semiconductor_kpi_m13_case.md",
+    "before": "建议 dashboard 至少包含：",
+    "after": "运营看板包括以下指标和视图：",
+    "reason": "直接说明所需视图",
+    "ledger": "root-edits.json"
+  },
+  {
+    "path": "docs/cases/semiconductor_kpi_m13_case.md",
+    "before": "学生报告应避免只写“某 KPI 变差”，而应说明它可能关联哪些运营要素、需要进一步查询哪些数据、建议采取什么行动。",
+    "after": "诊断报告应列出指标变化、相关运营要素、待核验的数据及候选行动，并区分观察事实、机制假设和决策建议。",
+    "reason": "删除设靶口吻，明确报告要求",
+    "ledger": "root-edits.json"
+  },
+  {
+    "path": "docs/syllabus.md",
+    "before": "## 升级后的课程特色",
+    "after": "## 案例与实验",
+    "reason": "删除修订过程标题",
+    "ledger": "root-edits.json"
+  },
+  {
+    "path": "docs/syllabus.md",
+    "before": "本课程服务于“数智化企业运营与优化”微型专业，承担方法论与技术桥梁角色。课程训练学生把企业运营问题转化为数据系统、分析模型和可执行决策之间的闭环。",
+    "after": "本课程属于“数智化企业运营与优化”微专业，内容包括企业数据建模、统计分析、方案优化与受控执行。",
+    "reason": "课程大纲去空泛角色与闭环修辞",
+    "ledger": "root-edits.json"
+  },
+  {
+    "path": "docs/textbook/frontmatter.tex",
+    "before": "{\\small\\color{BDMGray} 教材精校修订版\\quad 2026 年 9 月\\par}",
+    "after": "{\\small\\color{BDMGray} 数智化企业运营与优化微专业\\par}",
+    "reason": "封面删除生产版本标签",
+    "ledger": "root-edits.json"
+  },
+  {
+    "path": "docs/textbook/frontmatter.tex",
+    "before": "人工智能应用贯穿查询、预测与执行。新增的企业系统分析从计算资源、数据、业务",
+    "after": "人工智能应用涉及查询、预测与执行。企业系统分析从计算资源、数据、业务",
+    "reason": "删除新增修订过程",
+    "ledger": "root-edits.json"
+  },
+  {
+    "path": "docs/textbook/frontmatter.tex",
+    "before": "效果评价，第9章研究资源约束，第10章研究任务执行与恢复。新增的容量算例见",
+    "after": "效果评价，第9章研究资源约束，第10章研究任务执行与恢复。模型服务容量分析见",
+    "reason": "删除新增修订过程",
+    "ledger": "root-edits.json"
+  },
+  {
+    "path": "docs/textbook/frontmatter.tex",
+    "before": "教材服务于2学分、32学时理论课，但章节不等同于单次授课。基础概念与核心算例\n构成主干，委托代理、置信序列、共形预测、双重稳健与尾部风险等内容按先修条件选读。",
+    "after": "委托代理、置信序列、共形预测、双重稳健与尾部风险的推导分别依赖优化理论、\n概率过程或统计推断的相应先修知识。",
+    "reason": "移除授课组织要求，保留先修条件",
+    "ledger": "root-edits.json"
+  },
+  {
+    "path": "docs/textbook/appendices.tex",
+    "before": "本版沿用并整理截至2026年9月23日的研究材料，书目中的访问日期指在线材料核查\n日期，不代替出版日期。",
+    "after": "书目中的访问日期是在线材料的核查日期，不代替出版日期。",
+    "reason": "删除资料整理与版本过程",
+    "ledger": "root-edits.json"
+  },
+  {
+    "path": "docs/textbook/appendices.tex",
+    "before": "本附录把第~\\ref{sec:ai-service-operations}~节的服务时间与第~\\ref{ch:week09-optimization}~章的\n部署选择连接起来。案例数值均为教学设定，使读者能够手算、运行程序并识别\n简化假设的影响。",
+    "after": "模型服务的占用时间与部署成本共同约束容量和经济可行性，相关关系见\n第~\\ref{sec:ai-service-operations}~节与第~\\ref{ch:week09-optimization}~章。以下参数均为\n假定值，用于分析指定负载下的服务时间、容量与费用。",
+    "reason": "内容陈述替代附录编排和读者目的",
+    "ledger": "root-edits.json"
+  },
+  {
+    "path": "docs/textbook/appendices.tex",
+    "before": "读者应检查服务时间、云端费用和容量界限如何变动。",
+    "after": "服务时间、云端费用和容量界限须按变化后的输入重新计算。",
+    "reason": "去读者指令口吻",
+    "ledger": "root-edits.json"
+  },
+  {
+    "path": "/case-cards/0/sourceCaveat",
+    "before": "Skywise 合作与用途来自 Airbus 公告；维护决策的变量、模型和步骤是教材据此构造的算例，不能表述为 Airbus 的实际算法或收益。",
+    "after": "Skywise 合作与用途来自 Airbus 公告；维护决策的变量、模型和步骤为假定条件，不代表 Airbus 的实际算法或收益。",
+    "reason": "直接说明机制、对象和案例适用范围，删除制作与教学自述",
+    "ledger": "cards.json"
+  },
+  {
+    "path": "/case-cards/1/context",
+    "before": "Oracle 公告介绍 Red Bull Racing 使用 OCI 进行赛前与赛中的情景仿真。教材以进站时机为行动，示范如何比较天气与对手策略变化下的结果。",
+    "after": "Oracle 公告介绍 Red Bull Racing 使用 OCI 进行赛前与赛中的情景仿真。进站决策可按天气与对手策略设定情景，比较不同进站时机对应的完赛结果。",
+    "reason": "直接说明机制、对象和案例适用范围，删除制作与教学自述",
+    "ledger": "cards.json"
+  },
+  {
+    "path": "/case-cards/1/sourceCaveat",
+    "before": "仿真用途来自 Oracle 公告；进站决策模型和情景比较是教学重构，不表示车队公开了实际模型、参数或成绩。",
+    "after": "仿真用途来自 Oracle 公告；进站决策模型和情景参数均为假定条件，不代表车队的实际模型、参数或成绩。",
+    "reason": "直接说明机制、对象和案例适用范围，删除制作与教学自述",
+    "ledger": "cards.json"
+  },
+  {
+    "path": "/case-cards/2/organization",
+    "before": "Palantir；封测工厂为教学情境",
+    "after": "Palantir；封测工厂为假想场景",
+    "reason": "直接说明机制、对象和案例适用范围，删除制作与教学自述",
+    "ledger": "cards.json"
+  },
+  {
+    "path": "/case-cards/2/context",
+    "before": "Palantir 文档以对象类型、属性、关系和行动描述 Ontology。教材把这一结构迁移到封测批次、设备、工序和订单，以回答设备停机影响哪些交付承诺。",
+    "after": "Palantir 文档以对象类型、属性、关系和行动描述 Ontology。封测批次、设备、工序和订单之间的关系，可用于追踪设备停机所影响的交付承诺。",
+    "reason": "直接说明机制、对象和案例适用范围，删除制作与教学自述",
+    "ledger": "cards.json"
+  },
+  {
+    "path": "/case-cards/2/sourceCaveat",
+    "before": "对象与行动组件来自 Palantir 公开文档；封测批次 E7 的追踪和执行流程是教材教学重构，不是 Palantir 客户实施记录。",
+    "after": "对象与行动组件来自 Palantir 公开文档；封测设备 E7 的追踪和执行流程为虚构算例，不是客户实施记录。",
+    "reason": "直接说明机制、对象和案例适用范围，删除制作与教学自述",
+    "ledger": "cards.json"
+  },
+  {
+    "path": "/case-cards/3/sourceCaveat",
+    "before": "平台组合与内部调查来自 Atlan 的客户案例；教材的耗时分解和加速算式为说明机制，不是 Nasdaq 的实测收益或因果评价。",
+    "after": "平台组合与内部调查来自 Atlan 的客户案例；耗时分解和加速算式为假定计算，不是 Nasdaq 的实测收益或因果评价。",
+    "reason": "直接说明机制、对象和案例适用范围，删除制作与教学自述",
+    "ledger": "cards.json"
+  },
+  {
+    "path": "/case-cards/5/organization",
+    "before": "Databricks Genie × Snowflake Cortex；比较方案为教学设计",
+    "after": "Databricks Genie × Snowflake Cortex；假定比较方案",
+    "reason": "直接说明机制、对象和案例适用范围，删除制作与教学自述",
+    "ledger": "cards.json"
+  },
+  {
+    "path": "/case-cards/5/context",
+    "before": "教材根据公开产品文档，把企业问数采购转成可复核的比较任务：同一批问题、数据库快照、用户角色和正确答案。",
+    "after": "企业问数系统的比较需固定问题集、数据库快照、用户角色与正确答案，再分别核对结果、权限和完成时间。",
+    "reason": "直接说明机制、对象和案例适用范围，删除制作与教学自述",
+    "ledger": "cards.json"
+  },
+  {
+    "path": "/case-cards/5/sourceCaveat",
+    "before": "产品职责见公开文档；比较协议是教材提出的评价设计，并无两款产品在本案例中的实测排名。",
+    "after": "产品职责见公开文档；以下为比较协议的假定方案，不包含两款产品的实测排名。",
+    "reason": "直接说明机制、对象和案例适用范围，删除制作与教学自述",
+    "ledger": "cards.json"
+  },
+  {
+    "path": "/case-cards/6/sourceCaveat",
+    "before": "机构平台实践来自 Collibra 案例；预约等待天数的定义比较与工厂良率迁移是教学说明，不是该机构的实际结果数字。",
+    "after": "机构平台实践来自 Collibra 案例；预约等待天数的定义和工厂良率分析为假定算例，不是该机构的实际结果。",
+    "reason": "直接说明机制、对象和案例适用范围，删除制作与教学自述",
+    "ledger": "cards.json"
+  },
+  {
+    "path": "/case-cards/7/context",
+    "before": "供应商案例介绍 Assurance 在业务增长中引入数据可观测性；教材据此区分预先声明的字段规则与持续监测的数据运行状态。",
+    "after": "供应商案例介绍 Assurance 在业务增长中引入数据可观测性。字段规则检查预先声明的约束，持续监测则检查数据量、分布、更新时间与血缘等运行状态。",
+    "reason": "直接说明机制、对象和案例适用范围，删除制作与教学自述",
+    "ledger": "cards.json"
+  },
+  {
+    "path": "/case-cards/7/sourceCaveat",
+    "before": "引入监测的事实来自供应商案例；事件损失模型和监测步骤为教材分析，不能读作 Assurance 的已测量收益。",
+    "after": "引入监测的事实来自供应商案例；事件损失模型和监测步骤为分析方案，不代表 Assurance 的实测收益。",
+    "reason": "直接说明机制、对象和案例适用范围，删除制作与教学自述",
+    "ledger": "cards.json"
+  },
+  {
+    "path": "/case-cards/8/context",
+    "before": "Databricks 制造业新闻稿介绍该企业利用发动机及服务网络数据支持库存规划和备件位置安排。教材由此设计服务风险与备件调配看板。",
+    "after": "Databricks 制造业新闻稿介绍该企业利用发动机及服务网络数据支持库存规划和备件位置安排。服务风险、备件需求、库存和运输时延共同构成备件调配的分析条件。",
+    "reason": "直接说明机制、对象和案例适用范围，删除制作与教学自述",
+    "ledger": "cards.json"
+  },
+  {
+    "path": "/case-cards/8/takeaway",
+    "before": "看板要把风险、备件和服务能力放在同一决策视野，不能只展示单个指标。",
+    "after": "备件调配分析需联合观察故障风险、库存位置和服务能力。",
+    "reason": "直接说明机制、对象和案例适用范围，删除制作与教学自述",
+    "ledger": "cards.json"
+  },
+  {
+    "path": "/case-cards/8/sourceCaveat",
+    "before": "公开材料支持数据整合与规划用途；此处的看板结构及评价指标是教学设计，不宣称 Rolls-Royce 已采用这些具体图表或实现了特定绩效改善。",
+    "after": "公开材料支持数据整合与规划用途；看板结构及评价指标为假定方案，不代表 Rolls-Royce 使用了这些具体图表或取得相应绩效。",
+    "reason": "直接说明机制、对象和案例适用范围，删除制作与教学自述",
+    "ledger": "cards.json"
+  },
+  {
+    "path": "/case-cards/9/organization",
+    "before": "Microsoft；工厂试点为教学迁移",
+    "after": "Microsoft；工厂试点为假定场景",
+    "reason": "直接说明机制、对象和案例适用范围，删除制作与教学自述",
+    "ledger": "cards.json"
+  },
+  {
+    "path": "/case-cards/9/context",
+    "before": "Microsoft Research 的在线实验研究展示了随机分配、质量检查与结果报告所需的组织和工程条件。教材把这些原则迁移到生产试点。",
+    "after": "Microsoft Research 的在线实验研究说明随机分配、质量检查与结果报告所需的组织和工程条件。生产试点同样需要明确随机化单元、结果指标和取数窗口。",
+    "reason": "直接说明机制、对象和案例适用范围，删除制作与教学自述",
+    "ledger": "cards.json"
+  },
+  {
+    "path": "/case-cards/9/takeaway",
+    "before": "可信实验需要可重复的组织程序，不能只比较两张结果报表。",
+    "after": "实验可信度取决于分配、质量检查和结果报告程序的可复现性。",
+    "reason": "直接说明机制、对象和案例适用范围，删除制作与教学自述",
+    "ledger": "cards.json"
+  },
+  {
+    "path": "/case-cards/9/sourceCaveat",
+    "before": "Microsoft 的材料说明在线实验实践；工厂部门分工和制造指标是教材类比，不是 Microsoft 的制造案例。",
+    "after": "Microsoft 的材料说明在线实验实践；工厂部门分工和制造指标为假定方案，不是 Microsoft 的制造案例。",
+    "reason": "直接说明机制、对象和案例适用范围，删除制作与教学自述",
+    "ledger": "cards.json"
+  },
+  {
+    "path": "/case-cards/10/organization",
+    "before": "Rolls-Royce 背景；预测方案为教学重构",
+    "after": "Rolls-Royce 背景；假定预测方案",
+    "reason": "直接说明机制、对象和案例适用范围，删除制作与教学自述",
+    "ledger": "cards.json"
+  },
+  {
+    "path": "/case-cards/10/context",
+    "before": "前章公开案例说明发动机与服务网络数据可支持库存规划。本章将“预测备件”拆成故障概率、剩余寿命、需求量和维修周转时间等不同任务。",
+    "after": "发动机与服务网络数据可用于库存规划。故障概率、剩余寿命、需求量和维修周转时间对应不同预测任务，各任务须分别定义结果变量、观测时点和损失函数。",
+    "reason": "直接说明机制、对象和案例适用范围，删除制作与教学自述",
+    "ledger": "cards.json"
+  },
+  {
+    "path": "/case-cards/10/sourceCaveat",
+    "before": "企业资料仅支持数据用于服务网络与库存规划；具体预测任务和样本定义是教材构造，不是该企业公开的模型细节。",
+    "after": "企业资料支持数据用于服务网络与库存规划；具体预测任务和样本定义为假定方案，不代表该企业公开的模型细节。",
+    "reason": "直接说明机制、对象和案例适用范围，删除制作与教学自述",
+    "ledger": "cards.json"
+  },
+  {
+    "path": "/case-cards/11/organization",
+    "before": "制造集团（教学情境）",
+    "after": "制造集团（假想场景）",
+    "reason": "直接说明机制、对象和案例适用范围，删除制作与教学自述",
+    "ledger": "cards.json"
+  },
+  {
+    "path": "/case-cards/11/sourceCaveat",
+    "before": "这是教材构造的识别练习，引用企业平台案例仅说明实施路径；卡片不代表任何企业已被估计出净效果。",
+    "after": "制造集团和识别方案均为假定条件。企业平台引用只支持实施路径，不能据此报告企业的净效果。",
+    "reason": "直接说明机制、对象和案例适用范围，删除制作与教学自述",
+    "ledger": "cards.json"
+  },
+  {
+    "path": "/case-cards/12/organization",
+    "before": "制造工厂（教学情境）",
+    "after": "制造工厂（假想场景）",
+    "reason": "直接说明机制、对象和案例适用范围，删除制作与教学自述",
+    "ledger": "cards.json"
+  },
+  {
+    "path": "/case-cards/12/context",
+    "before": "工厂面临多张可能延期的订单，但最多只能加急两张。教材给出风险、加急效果、延期损失和费用，用来说明如何选择受约束的行动组合。",
+    "after": "工厂最多只能加急两张可能延期的订单。各订单的延期风险、加急效果、延期损失和费用共同决定受约束的最优组合。",
+    "reason": "直接说明机制、对象和案例适用范围，删除制作与教学自述",
+    "ledger": "cards.json"
+  },
+  {
+    "path": "/case-cards/12/sourceCaveat",
+    "before": "订单和数值全部为教材设定；风险与效果在真实工厂均须用相应数据估计，方案实施还需批准与可行性检查。",
+    "after": "订单和数值全部为假定条件；真实工厂的风险与效果须按相应数据估计，方案实施还需批准与可行性检查。",
+    "reason": "直接说明机制、对象和案例适用范围，删除制作与教学自述",
+    "ledger": "cards.json"
+  },
+  {
+    "path": "/case-cards/13/takeaway",
+    "before": "减少人工触达不是唯一目标；删掉必要质量控制可能损害整体结果。",
+    "after": "人工活动包括返工、必要控制与合理例外；减少人工触达须同时检查质量和合规后果。",
+    "reason": "直接说明机制、对象和案例适用范围，删除制作与教学自述",
+    "ledger": "cards.json"
+  },
+  {
+    "path": "/case-cards/13/sourceCaveat",
+    "before": "公开案例支持应用范围与指标类别；封测工厂的批次和工序分析为教材重构，不能将其图表或推断写成 Siemens 的实测数据。",
+    "after": "公开案例支持应用范围与指标类别；封测工厂的批次和工序分析为假定算例，其图表与推断不是 Siemens 的实测数据。",
+    "reason": "直接说明机制、对象和案例适用范围，删除制作与教学自述",
+    "ledger": "cards.json"
+  },
+  {
+    "path": "/case-cards/14/organization",
+    "before": "制造工厂（教学情境）",
+    "after": "制造工厂（假想场景）",
+    "reason": "直接说明机制、对象和案例适用范围，删除制作与教学自述",
+    "ledger": "cards.json"
+  },
+  {
+    "path": "/case-cards/14/context",
+    "before": "教材以订单 O17、相关批次和设备 E7 的队列构造受控加急任务。计算出建议只是开始，还须验证授权、提交动作并确认真实状态。",
+    "after": "订单 O17 与批次、设备 E7 的队列状态共同定义加急任务。候选方案须通过授权核验、操作提交与结果回查，任务完成以实际状态为准。",
+    "reason": "直接说明机制、对象和案例适用范围，删除制作与教学自述",
+    "ledger": "cards.json"
+  },
+  {
+    "path": "/case-cards/14/takeaway",
+    "before": "任务完成的证据是可核查的业务状态和记录，不能只看模型给出的建议。",
+    "after": "业务状态和执行记录共同证明任务完成。",
+    "reason": "直接说明机制、对象和案例适用范围，删除制作与教学自述",
+    "ledger": "cards.json"
+  },
+  {
+    "path": "/case-cards/14/sourceCaveat",
+    "before": "O17、E7 与步骤均属教学模拟；真实系统中的权限、审批和执行副作用必须由实际业务服务控制。",
+    "after": "O17、E7 与执行步骤均属虚构模拟；真实系统中的权限、审批和副作用须由业务服务控制。",
+    "reason": "直接说明机制、对象和案例适用范围，删除制作与教学自述",
+    "ledger": "cards.json"
+  },
+  {
+    "path": "docs/lecture_notes/14_ai_agent.md",
+    "before": "选场景先看价值，再看证据和风险。可将候选任务放进五列：业务损失或效率机会、资料可用性与有效期、流程标准化程度、失败后果、权限与系统集成难度。",
+    "after": "场景筛选综合考察业务损失或效率机会、资料可用性与有效期、流程标准化程度、失败后果，以及权限与系统集成难度。",
+    "reason": "删除口号和表格布局元话语",
+    "ledger": "final-corrections.json"
+  },
+  {
+    "path": "docs/lecture_notes/14_ai_agent.md",
+    "before": "它是任务配方，不能授予工具权限，也不能替代业务流程中的审批。",
+    "after": "它规定任务的输入、执行步骤和输出，不授予工具权限，也不替代业务审批。",
+    "reason": "规范Skill的学术表述",
+    "ledger": "final-corrections.json"
+  },
+  {
+    "path": "docs/lecture_notes/14_ai_agent.md",
+    "before": "可复用任务配方与执行后端如何接受独立授权",
+    "after": "可复用任务规范与执行后端如何接受独立授权",
+    "reason": "去比喻性配方措辞",
+    "ledger": "final-corrections.json"
+  },
+  {
+    "path": "docs/lecture_notes/14_ai_agent.md",
+    "before": "不能偷换时间窗口",
+    "after": "不得擅自改用其他时间窗口",
+    "reason": "规范语体",
+    "ledger": "final-corrections.json"
+  },
+  {
+    "path": "docs/lecture_notes/14_ai_agent.md",
+    "before": "而不是依赖模型填空",
+    "after": "不得由模型补入未经确认的默认定义",
+    "reason": "规范缺失口径约束",
+    "ledger": "final-corrections.json"
+  },
+  {
+    "path": "docs/cases/ai_question_to_data_case.md",
+    "before": "QueryMind 和 DataBot 是企业导师提供的应用示例；以下查询流程在课程样本上复现，不依赖这两个商业系统。",
+    "after": "以下查询与审计过程使用固定样本，不依赖商业问数系统。",
+    "reason": "删除培训身份和产业案例介绍过程",
+    "ledger": "final-corrections.json"
+  },
+  {
+    "path": "docs/lecture_notes/14_ai_agent.md",
+    "before": "输出“证据不足”或转交制度负责人，比补出看似合理的额度更正确。",
+    "after": "应输出“证据不足”或转交制度负责人，不得在缺少适用资料时补设额度。",
+    "reason": "交叉复查后的正式语体修正",
+    "ledger": "final-corrections.json"
+  },
+  {
+    "path": "docs/lecture_notes/14_ai_agent.md",
+    "before": "会使审批、异常、重复提交和日志依赖模型自觉",
+    "after": "会使审批、异常、重复提交和日志处理依赖模型是否正确遵循提示",
+    "reason": "交叉复查后的正式语体修正",
+    "ledger": "final-corrections.json"
+  },
+  {
+    "path": "docs/lecture_notes/14_ai_agent.md",
+    "before": "本课程的样本",
+    "after": "配套样本",
+    "reason": "交叉复查后的正式语体修正",
+    "ledger": "final-corrections.json"
+  },
+  {
+    "path": "docs/lecture_notes/14_ai_agent.md",
+    "before": "因此必须先说清",
+    "after": "查询请求须明确",
+    "reason": "交叉复查后的正式语体修正",
+    "ledger": "final-corrections.json"
+  },
+  {
+    "path": "docs/textbook/appendices.tex",
+    "before": "它帮助理解分层、协变量调整以及\n产品组合对总体波动的作用。",
+    "after": "该分解描述分层、协变量调整及产品组合对总体波动的影响。",
+    "reason": "交叉复查后的正式语体修正",
+    "ledger": "final-corrections.json"
+  },
+  {
+    "path": "docs/textbook/appendices.tex",
+    "before": "在指定的教学负载下",
+    "after": "在指定的假设负载下",
+    "reason": "交叉复查后的正式语体修正",
+    "ledger": "final-corrections.json"
+  },
+  {
+    "path": "docs/textbook/appendices.tex",
+    "before": "检索长度与请求量变化时的教学估算",
+    "after": "检索长度与请求量变化时的容量与费用估算",
+    "reason": "交叉复查后的正式语体修正",
+    "ledger": "final-corrections.json"
+  },
+  {
+    "path": "docs/lecture_notes/11_modern_data_platform.md",
+    "before": "若没有语义层和审计，AI 问数会把临时查询包装成确定结论，反而放大管理风险。",
+    "after": "缺少语义定义与审计记录时，临时查询的口径和解释难以复核，AI 问数结果可能增加管理风险。",
+    "reason": "交叉复查后的正式语体修正",
+    "ledger": "final-corrections.json"
+  },
+  {
+    "path": "docs/lecture_notes/14_ai_agent.md",
+    "before": "这里的企业 Agent 指在限定任务、状态与权限内，利用模型或规则选择下一步，并通过受控工具取得信息或提出操作的系统。它的价值必须由**完整任务结果**检验：答复是否有证据，流程是否真的到达确认状态，错误能否发现并恢复。",
+    "after": "企业 Agent 在限定任务、状态与权限内，利用模型或规则选择下一步，并通过受控工具取得信息或提出操作。评价以完整任务结果为单位，分别核验答复的证据、流程的最终状态，以及错误发现与恢复能力。",
+    "reason": "删除这里的等自指和价值宣告，直接说明系统功能及评测对象",
+    "ledger": "final-manual-review"
+  }
+]

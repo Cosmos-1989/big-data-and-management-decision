@@ -1,0 +1,86 @@
+{
+  "date": "2026-10-12",
+  "scope": {
+    "webDocuments": 39,
+    "coreChapters": 10,
+    "supplementalLectures": 4,
+    "appendices": 4,
+    "decks": 11,
+    "slidePages": 458,
+    "enterpriseCaseCards": 15
+  },
+  "sources": [
+    {
+      "path": "content-source/textbook/appendices.tex",
+      "sha256": "e17d6b6760e114cf9e85ca92d2f9969991479fb55e6e6a6958377c613c90d874"
+    },
+    {
+      "path": "content-source/textbook/assets/cover_data_decisions.png",
+      "sha256": "ba6f64d14b1be344b85a146830bb83abc9795089f239e96f863ae8e5c78acdec"
+    },
+    {
+      "path": "content-source/textbook/book_preamble.tex",
+      "sha256": "7cc1cc7ac79701189239e7f8718bebb40842c0cf6812ca90495038220b53b4e1"
+    },
+    {
+      "path": "content-source/textbook/chapters/01_intro.tex",
+      "sha256": "d2a0e7a11088525fcb0040592e2e6e722f9c7a75267f52363fd83db76d849927"
+    },
+    {
+      "path": "content-source/textbook/chapters/02_enterprise_data_model.tex",
+      "sha256": "1c414ec58f5c7f99e2660a408f44352154dfcfbc09f258860d7ccd2e7e67e98b"
+    },
+    {
+      "path": "content-source/textbook/chapters/03_sql_kpi.tex",
+      "sha256": "53ed9e2aa5965c95c5e80b215f2bde9e966b04f7aa85a1af9a4fca17fde50409"
+    },
+    {
+      "path": "content-source/textbook/chapters/04_data_quality.tex",
+      "sha256": "a104eacd30c00828d6c7ae1241b032756db105f104de7ef91a4907d994786b18"
+    },
+    {
+      "path": "content-source/textbook/chapters/05_statistics_dashboard.tex",
+      "sha256": "4ec5ff129c70906ede34ca3fec6ca8c22b39b3346164f69f2b54f7b67b21e132"
+    },
+    {
+      "path": "content-source/textbook/chapters/06_ab_testing.tex",
+      "sha256": "cd79ba0e299bb969f98d2c7e93c7a36c062ab1cf9d9ee9197d28479f3de2db0d"
+    },
+    {
+      "path": "content-source/textbook/chapters/07_prediction.tex",
+      "sha256": "724771b42201f8e5d1f20a5ab5437b4800506759c4f220051e158a60db2453d0"
+    },
+    {
+      "path": "content-source/textbook/chapters/08_causality.tex",
+      "sha256": "b7d9a392827acc1be209c1deb22f2d5c25c18b01e7c732e01c153dae12d86f63"
+    },
+    {
+      "path": "content-source/textbook/chapters/09_optimization.tex",
+      "sha256": "c7ef6331cd20bfcadb1601dcda84853ef9089f50d89bdcb2cffa34066116f2be"
+    },
+    {
+      "path": "content-source/textbook/chapters/10_process_mining.tex",
+      "sha256": "f7b2fbc1960325e18f3bccd5b42e003f794ee516624eb734c4614b482483c307"
+    },
+    {
+      "path": "content-source/textbook/editorial_style.tex",
+      "sha256": "41163af2549d7d7c9f915e10be1ab02763523f073038daa047fcd2d8f9d79bc6"
+    },
+    {
+      "path": "content-source/textbook/frontmatter.tex",
+      "sha256": "e04e4155ce83fdca147bca02414f7328b47cff1f668cbb1e88373a26a782da47"
+    },
+    {
+      "path": "content-source/textbook/index.ist",
+      "sha256": "095e821a431c9bcee50a04d67151704848ddc3eff10683ae2d4d7a6074995458"
+    },
+    {
+      "path": "content-source/textbook/main.tex",
+      "sha256": "c3df4ec70968751533942303150b8c06681deb05618c390bbb151b078a9af3b7"
+    },
+    {
+      "path": "content-source/textbook/references.bib",
+      "sha256": "35532cf07ceef12d6837ed420426dd2697937bfc8c3592c168bc028a2a81c591"
+    }
+  ]
+}

@@ -210,13 +210,13 @@
     },
     {
       "id": "ai_question_to_data_case",
-      "title": "AI 问数与 NL2SQL 教学案例",
+      "title": "AI 问数与 NL2SQL 审计",
       "source": "docs/cases/ai_question_to_data_case.md",
       "kind": "supplement"
     },
     {
       "id": "semiconductor_kpi_m13_case",
-      "title": "半导体制造 KPI 与 M13 教学案例",
+      "title": "半导体制造 KPI 与运营要素诊断",
       "source": "docs/cases/semiconductor_kpi_m13_case.md",
       "kind": "supplement"
     },
@@ -2283,7 +2283,7 @@
     }
   ],
   "figures": 19,
-  "sourceHash": "fc5bc868fd01a20f9648c9ec7805910817eea1751828e81a904084b12deb46eb",
+  "sourceHash": "333e85c8ff80ee1af44e97ece1aa020d0715f5eb96f906d8d4770df984c1afb2",
   "datasets": [
     {
       "name": "ab_test_checkout.csv",

@@ -1,0 +1,714 @@
+{
+  "reviewed": [
+    "docs/textbook/chapters/01_intro.tex",
+    "docs/textbook/chapters/02_enterprise_data_model.tex",
+    "docs/textbook/chapters/03_sql_kpi.tex",
+    "docs/textbook/chapters/04_data_quality.tex"
+  ],
+  "changes": [
+    {
+      "path": "docs/textbook/chapters/01_intro.tex",
+      "before": "本章从经营症状开始，逐步构造一个决策问题的基本对象，再引入期望损失与信息价值。\n前者用于比较行动，后者衡量改善信息所带来的预期收益。随后将单期选择推广到多期\n决策，讨论组织目标、分析任务和执行结果。各章分别研究决策所需的数据表达、统计\n估计和方案求解，本章给出它们共同使用的基本概念。",
+      "after": "决策问题的构造需要明确经营症状、业务对象与可行行动。期望损失用于比较行动，\n信息价值衡量改善信息所带来的预期收益。多期决策还需考虑当前行动对未来状态的\n影响，以及组织目标、分析任务和执行结果之间的关系。数据表达、统计估计和方案\n求解均以这些概念为基础。",
+      "reason": "将章节编排叙述改为决策分析对象及概念之间的直接关系。"
+    },
+    {
+      "path": "docs/textbook/chapters/01_intro.tex",
+      "before": "为了让课程讨论保持一致，本节给出几个贯穿全书的基本对象。",
+      "after": "业务对象规定记录范围，行动对象规定执行范围，指标口径规定度量规则。",
+      "reason": "删除课程编写意图，直接说明三类基本对象的作用。"
+    },
+    {
+      "path": "docs/textbook/chapters/01_intro.tex",
+      "before": "现在将前面的讨论写成一个简化的数学形式。设 \\(X=x\\) 表示企业当前状态，管理者需要在可行行动集合 \\(\\mathcal A(x)\\) 中选择行动。一个抽象表达为",
+      "after": "设 \\(X=x\\) 表示企业当前状态，管理者需要在可行行动集合 \\(\\mathcal A(x)\\) 中选择行动，其最优选择可表示为",
+      "reason": "删除推导前的编排性开场，直接引入状态、行动与最优选择。"
+    },
+    {
+      "path": "docs/textbook/chapters/01_intro.tex",
+      "before": "抽象公式必须能够落到一张可核查的表。设一家封测工厂面对明日的设备中断风险，状态 \\(\\theta\\in\\{0,1\\}\\) 分别表示正常和中断，行动 \\(a\\in\\{0,1\\}\\) 分别表示按原计划生产和提前转移批次。下面的数字均为教学设定，单位为万元，已经包含转移、停机和延期成本。",
+      "after": "设一家封测工厂面对明日的设备中断风险，状态 \\(\\theta\\in\\{0,1\\}\\) 分别表示正常和中断，行动 \\(a\\in\\{0,1\\}\\) 分别表示按原计划生产和提前转移批次。损失矩阵中的数字均为假设值，单位为万元，已经包含转移、停机和延期成本。",
+      "reason": "删除口号式引入，并保留损失数据为假设值的边界。"
+    },
+    {
+      "path": "docs/textbook/chapters/01_intro.tex",
+      "before": "教学损失矩阵：信息何时值得购买",
+      "after": "设备中断风险下的假设损失矩阵",
+      "reason": "表题改为正式对象名称，保持假设数据边界。"
+    },
+    {
+      "path": "docs/textbook/chapters/01_intro.tex",
+      "before": "这也解释了一个重要边界。若所有可能的后验中断概率都高于 \\(1/6\\)，本例在每种信号",
+      "after": "若所有可能的后验中断概率都高于 \\(1/6\\)，本例在每种信号",
+      "reason": "删除无实质信息的强调性过渡。"
+    },
+    {
+      "path": "docs/textbook/chapters/01_intro.tex",
+      "before": "Shmueli 对解释性建模与预测性建模的区分值得作为本书的基本警戒。解释性建模服务于理解变量之间的关系，预测性建模服务于对未观察样本的准确判断。二者在变量选择、模型复杂度、评估标准和外推风险上可能不同。管理决策还在此基础上多出一个环节：即使预测正确，也必须回答该预测应如何改变行动。",
+      "after": "Shmueli 区分了解释性建模与预测性建模。解释性建模服务于理解变量之间的关系，预测性建模服务于对未观察样本的准确判断。二者在变量选择、模型复杂度、评估标准和外推风险上可能不同。管理决策还需确定预测结果所对应的可行行动及其预期效果。",
+      "reason": "删除读者警戒与递进包装，保留解释、预测和决策任务的区别。"
+    },
+    {
+      "path": "docs/textbook/chapters/01_intro.tex",
+      "before": "CRISP-DM 阶段与课程训练",
+      "after": "CRISP-DM 阶段与分析任务",
+      "reason": "将表题从教学策划转为分析任务。"
+    },
+    {
+      "path": "docs/textbook/chapters/01_intro.tex",
+      "before": "阶段 & 本书中的训练重点",
+      "after": "阶段 & 分析任务",
+      "reason": "表头改为正式任务名称。"
+    },
+    {
+      "path": "docs/textbook/chapters/01_intro.tex",
+      "before": "蒋炎岩的《生成式软件工程》把任务意图、可检验的规格与实际实现分开讨论，并\n强调通过运行结果修正设计\\cite{gse2026}。将这一教学思想用于管理决策时，\n经营意图通常是“减少延期”或“提高良率”；规格则必须补足对象、时间、指标、\n行动权限及允许的失败方式。",
+      "after": "任务意图、可检验的规格与实际实现分别表达目标、验收条件与实现方式，运行结果\n用于修正设计\\cite{gse2026}。在管理决策中，经营意图通常是“减少延期”或“提高良率”；\n规格须进一步规定对象、时间、指标、行动权限及允许的失败方式。",
+      "reason": "删除“将这一教学思想用于”等教学迁移叙述，直接说明意图、规格与实现的分工。"
+    },
+    {
+      "path": "docs/textbook/chapters/01_intro.tex",
+      "before": "这样的课堂练习同时训练问题定义、计算核查与失败诊断，而不以生成代码的长度\n衡量成果。",
+      "after": "验收依据是规格符合情况、计算结果和执行状态。",
+      "reason": "将课堂练习目标与反面口号改为具体验收依据。"
+    },
+    {
+      "path": "docs/textbook/chapters/01_intro.tex",
+      "before": "项目要素 & 推荐写法",
+      "after": "项目要素 & 决策要素的具体含义",
+      "reason": "删除写作建议表头，改为内容定义。"
+    },
+    {
+      "path": "docs/textbook/chapters/01_intro.tex",
+      "before": "这个案例贯穿后续章节。第~\\ref{ch:week02-enterprise-data-model}~章会把订单、客户、产品、供应商和库存转化为企业数据模型；第~\\ref{ch:week03-sql-kpi}~章会用 SQL 计算准时交付率和延期天数等 KPI；第~\\ref{ch:week04-data-quality}~章会检查数据质量问题；第~\\ref{ch:week05-statistics-dashboard}~章会讨论仪表盘如何展示风险与行动；第~\\ref{ch:week07-prediction}~章以流失预测讲解方法，并讨论其向延期预警迁移的条件；第~\\ref{ch:week09-optimization}~章会在有限资源下选择行动；第~\\ref{ch:week10-process-mining}~章会用流程日志分析订单履约过程中的瓶颈。",
+      "after": "交付分析需要将订单、客户、产品、供应商和库存组织为数据模型（第~\\ref{ch:week02-enterprise-data-model}~章），用 SQL 计算准时交付率和延期天数等 KPI（第~\\ref{ch:week03-sql-kpi}~章），并检查数据质量（第~\\ref{ch:week04-data-quality}~章）。仪表盘呈现风险及行动信息（第~\\ref{ch:week05-statistics-dashboard}~章）；预测模型向延期预警迁移的条件见第~\\ref{ch:week07-prediction}~章的流失预测分析。有限资源下的行动选择涉及约束优化（第~\\ref{ch:week09-optimization}~章），履约瓶颈的定位涉及流程日志分析（第~\\ref{ch:week10-process-mining}~章）。",
+      "reason": "将未来章节路线叙述改为案例的分析依赖关系，保留全部章节引用。"
+    },
+    {
+      "path": "docs/textbook/chapters/01_intro.tex",
+      "before": "这一对比告诉读者：所谓业务本体、数字孪生或智能平台，只有进入明确的对象、状态和行动模型之后，才具有可讨论的技术含义。",
+      "after": "业务本体、数字孪生和智能平台的技术分析需要明确其对象、状态与行动模型。",
+      "reason": "删除“告诉读者”“所谓”等口语化概括，保留明确建模对象的要求。"
+    },
+    {
+      "path": "docs/textbook/chapters/01_intro.tex",
+      "before": "企业导师提供的研发或办公效率增幅也应记录基线、样本、时间、质量标准和计算方式，确认前仅作为待验证的企业经验陈述。",
+      "after": "企业提供的研发或办公效率增幅也应记录基线、样本、时间、质量标准和计算方式，确认前仅作为待验证的企业经验陈述。",
+      "reason": "删除培训情境中的导师身份，保留企业陈述须验证的边界。"
+    },
+    {
+      "path": "docs/textbook/chapters/01_intro.tex",
+      "before": "本章的结构化表示示例位于：",
+      "after": "问题定义的数据类实现位于：",
+      "reason": "以程序对象说明来源，删除章节自指。"
+    },
+    {
+      "path": "docs/textbook/chapters/01_intro.tex",
+      "before": "下一章从订单、批次和设备等对象出发，研究数据如何组织，以及指标定义和使用所涉及的治理问题。",
+      "after": "订单、批次和设备等对象的数据组织，还需结合指标定义与使用责任确定。",
+      "reason": "将章节预告改为数据组织的具体要求。"
+    },
+    {
+      "path": "docs/textbook/chapters/01_intro.tex",
+      "before": "这些材料共同支持本章的\n立场：方法的价值取决于它进入了什么决策过程，而不仅取决于技术表现。",
+      "after": "方法评价需同时考察技术表现及其在具体决策过程中的作用。",
+      "reason": "删除作者立场总结，直接说明方法评价的两个方面。"
+    },
+    {
+      "path": "docs/textbook/chapters/02_enterprise_data_model.tex",
+      "before": "第~\\ref{ch:week01-intro}~章将决策表述为在给定信息下选择行动。企业信息分布于不同\n系统之中。",
+      "after": "管理决策是在给定信息下选择行动（第~\\ref{ch:week01-intro}~章）。企业信息分布于不同\n系统之中。",
+      "reason": "将章节叙述改为概念陈述，并保留引用。"
+    },
+    {
+      "path": "docs/textbook/chapters/02_enterprise_data_model.tex",
+      "before": "本章先说明数据建模的组织职责和企业人工智能系统的技术构成，继而从业务\n对象、关系约束和事实粒度出发，研究时间记录、指标定义与元数据。\n委托代理模型随后解释指标进入考核后的努力配置和风险承担。制造与平台案例\n则展示数据定义、访问权限及复核责任在企业中的具体安排。",
+      "after": "数据模型规定业务对象、关系约束和事实粒度，并通过时间记录、指标定义与元数据\n明确记录的含义。治理机制确定数据定义、访问及复核的责任。指标进入考核以后，\n还会影响努力配置和风险承担，这些激励后果可用委托代理模型分析。企业人工智能\n系统的数据与操作服务同样依赖上述定义和责任安排。",
+      "reason": "删除章节展开顺序，直接陈述建模、治理、激励与技术服务之间的关系。"
+    },
+    {
+      "path": "docs/textbook/chapters/02_enterprise_data_model.tex",
+      "before": "这些框架虽然出发点不同，但对数据建模提出了相似要求：对象要可识别，指标要可解释，规则要可审计，权限要可控制，异常要可追责。",
+      "after": "这些框架对数据建模的共同要求包括对象识别、指标解释、规则审计、权限控制和异常追责。",
+      "reason": "将口号式“要”排比改为正式要求表述，保留各项内容。"
+    },
+    {
+      "path": "docs/textbook/chapters/02_enterprise_data_model.tex",
+      "before": "下文先建立这些职责所针对的数据对象，再分析指标考核中的激励问题。",
+      "after": "",
+      "reason": "删除纯编排性预告，职责和激励内容在正文完整保留。"
+    },
+    {
+      "path": "docs/textbook/chapters/02_enterprise_data_model.tex",
+      "before": "治理问题 & 数据建模要求 & 本书的实现",
+      "after": "治理问题 & 数据建模要求 & 对应机制",
+      "reason": "将作者实施叙述表头改为机制名称。"
+    },
+    {
+      "path": "docs/textbook/chapters/02_enterprise_data_model.tex",
+      "before": "本书在第~\\ref{sec:ai-service-operations}~节给出管理指标，\n在附录~\\ref{app:ai-infra-lab}~给出可复算的容量与成本算例。",
+      "after": "服务运行指标见第~\\ref{sec:ai-service-operations}~节，\n容量与成本的计算实例见附录~\\ref{app:ai-infra-lab}。",
+      "reason": "保留内容定位功能，删除编写者自指。"
+    },
+    {
+      "path": "docs/textbook/chapters/02_enterprise_data_model.tex",
+      "before": "第~\\ref{ch:week10-process-mining}~章\n将为这项操作建立状态机。",
+      "after": "这项操作的状态机见第~\\ref{ch:week10-process-mining}~章。",
+      "reason": "将未来编排叙述改为可查阅的概念定位。"
+    },
+    {
+      "path": "docs/textbook/chapters/02_enterprise_data_model.tex",
+      "before": "表中的职责来自各平台公开的产品机制，表中的核查项目是本书为订单加急问题提出\n的分析要求。",
+      "after": "平台职责依据各平台公开的产品机制，核查项目针对订单加急算例的分析要求。",
+      "reason": "删除编写过程说明，保留公开机制与算例要求的来源区别。"
+    },
+    {
+      "path": "docs/textbook/chapters/02_enterprise_data_model.tex",
+      "before": "这一区分使质量讨论更加准确。数据库中的日期可能完全符合格式和先后顺序，却与\n客户认可的承诺日期不同；反之，一个尚未录入签收日期的订单，也可能已经交付。",
+      "after": "数据库中的日期可能完全符合格式和先后顺序，却与客户认可的承诺日期不同；\n一个尚未录入签收日期的订单，也可能已经交付。",
+      "reason": "删除泛泛评价，直接陈述规则符合与记录准确的区别。"
+    },
+    {
+      "path": "docs/textbook/chapters/02_enterprise_data_model.tex",
+      "before": "第~\\ref{ch:week04-data-quality}~章将进一步区分记录符合规则与记录真实反映业务。\n在此之前，应先把“我们想测量什么”和“系统实际记录什么”分别写清。",
+      "after": "记录符合规则与记录真实反映业务具有不同含义（第~\\ref{ch:week04-data-quality}~章）。\n测量目标与系统实际记录的内容应分别定义。",
+      "reason": "删除章节预告与课堂口语，保留测量目标和实际记录的区分。"
+    },
+    {
+      "path": "docs/textbook/chapters/02_enterprise_data_model.tex",
+      "before": "企业运营数据看起来复杂，但从建模角度可以先分为六类。这个分类帮助读者判断一张表的角色：它是在描述一个对象，记录一次业务活动，保存某个时间点的状态，表达对象之间的连接，还是表达一个已经聚合过的指标。",
+      "after": "企业运营数据可按记录含义区分为实体、属性、关系、事件、状态与指标。不同类别分别表达业务对象及其特征、对象间联系、业务活动、时点状态和聚合度量。",
+      "reason": "删除虚构读者困惑与教学作用，直接定义六类语义。"
+    },
+    {
+      "path": "docs/textbook/chapters/02_enterprise_data_model.tex",
+      "before": "这个表达式虽简单，却包含了企业数据建模的核心：客户和产品是相对稳定的实体，订单明细是交易事件，数量和时间是事件属性，交付状态可能来自后续物流事件或累计快照。",
+      "after": "客户和产品是相对稳定的实体，订单明细是交易事件，数量和时间是事件属性，交付状态可能来自后续物流事件或累计快照。",
+      "reason": "删除简单/核心的强调性包装，保留表达式解释。"
+    },
+    {
+      "path": "docs/textbook/chapters/02_enterprise_data_model.tex",
+      "before": "在数据库设计中，至少需要关注三类约束。它们看起来像技术细节，但实际上直接影响管理分析的可信度。",
+      "after": "实体完整性、引用完整性与业务完整性约束分别保证记录身份、对象引用及字段取值符合建模要求。",
+      "reason": "删除技术与管理的虚拟反差，直接陈述三类约束。"
+    },
+    {
+      "path": "docs/textbook/chapters/02_enterprise_data_model.tex",
+      "before": "为了避免配套案例停留在通用零售数据，本章引入半导体制造场景。半导体制造和封测企业通常具有长流程、多设备、多批次、多约束和高质量要求等特点。管理者关心的不只是“卖出了多少”，还关心批次是否按工艺路线流动、设备是否高效运行、在制品是否堆积、良率是否下降、交付承诺是否受影响。这类问题要求数据模型同时刻画对象、流程、设备、质量和交付。",
+      "after": "半导体制造和封测企业通常具有长流程、多设备、多批次、多约束和高质量要求等特点。运营分析需考察批次的工艺路线、设备运行效率、在制品积压、良率变化及交付承诺的履行情况，数据模型因此需要同时表达对象、流程、设备、质量和交付。",
+      "reason": "删除案例编写动机及销量反差，保留制造场景的数据需求。"
+    },
+    {
+      "path": "docs/textbook/chapters/02_enterprise_data_model.tex",
+      "before": "在教学抽象中，可以先识别六类核心对象。",
+      "after": "以下简化模型包含六类核心对象。",
+      "reason": "用模型适用范围替代教学过程叙述，保留简化边界。"
+    },
+    {
+      "path": "docs/textbook/chapters/02_enterprise_data_model.tex",
+      "before": "此处的重点是理解：制造 KPI 由批次、设备、工序、质量事件和交付承诺共同支撑。",
+      "after": "制造 KPI 由批次、设备、工序、质量事件和交付承诺共同支撑。",
+      "reason": "删除提示学习重点的元话语。"
+    },
+    {
+      "path": "docs/textbook/chapters/02_enterprise_data_model.tex",
+      "before": "第二步最容易被忽略。粒度决定了 KPI 的可计算性和可解释性。",
+      "after": "粒度决定了 KPI 的可计算性和可解释性。",
+      "reason": "删除没有证据的学习行为判断。"
+    },
+    {
+      "path": "docs/textbook/chapters/02_enterprise_data_model.tex",
+      "before": "半导体制造 KPI 特别适合训练事实表粒度意识。SEMI E10 和 SEMI E79",
+      "after": "SEMI E10 和 SEMI E79",
+      "reason": "删除训练目标，直接讨论行业标准。"
+    },
+    {
+      "path": "docs/textbook/chapters/02_enterprise_data_model.tex",
+      "before": "这一映射非常重要。SQL 查询返回的是行和列，而管理者执行的是对订单、客户、产品、库存位置等对象的行动。只有建立从表到对象的映射，后续的风险评分、权限控制、行动推荐和审计日志才有明确载体。",
+      "after": "SQL 查询返回记录，管理行动作用于订单、客户、产品和库存位置等业务对象。表与对象之间的映射确定风险评分、权限控制、行动推荐和审计日志所对应的对象身份。",
+      "reason": "删除空泛的重要性评价，直接说明映射的用途。"
+    },
+    {
+      "path": "docs/textbook/chapters/02_enterprise_data_model.tex",
+      "before": "这些要求会在第~\\ref{ch:week10-process-mining}~章的智能体运行环境 中再次出现。",
+      "after": "智能体运行环境中的状态与日志管理见第~\\ref{ch:week10-process-mining}~章。",
+      "reason": "删除内容重复出现的编排叙述，保留检索定位。"
+    },
+    {
+      "path": "docs/textbook/chapters/02_enterprise_data_model.tex",
+      "before": "生产指标的变化通常涉及多个业务对象。为组织封测案例，表中将资料分为需求、产品、路线、批次、设备、产能、在制品、质量、维护、物料、交付、成本和行动十三类。该分类由本书为算例编制，编号仅用于表内引用。",
+      "after": "生产指标的变化通常涉及多个业务对象。以下封测算例将运营资料分为需求、产品、路线、批次、设备、产能、在制品、质量、维护、物料、交付、成本和行动十三类，编号仅用于表内引用。",
+      "reason": "删除编制过程说明，保留分类仅用于当前算例的范围。"
+    },
+    {
+      "path": "docs/textbook/chapters/02_enterprise_data_model.tex",
+      "before": "数据建模最终必须进入治理机制。DAMA-DMBOK 将数据治理、数据架构、数据建模与设计、数据质量、元数据、数据仓库、BI 和数据科学等看作相互关联的数据管理知识域。对于本书而言，最重要的是理解三类文档。",
+      "after": "DAMA-DMBOK 将数据治理、数据架构、数据建模与设计、数据质量、元数据、数据仓库、BI 和数据科学等看作相互关联的数据管理知识域。数据字典、指标字典和血缘说明分别记录数据结构、计算定义及来源关系。",
+      "reason": "删除作者判断与重要性口号，直接陈述治理文档的分工。"
+    },
+    {
+      "path": "docs/textbook/chapters/02_enterprise_data_model.tex",
+      "before": "为了看清机制，先构造一个单任务教学模型。经理选择努力 \\(e\\ge0\\)，可观察产出为",
+      "after": "考虑一个简化的单任务模型。经理选择努力 \\(e\\ge0\\)，可观察产出为",
+      "reason": "删除教学目的性开场，保留简化模型的范围。"
+    },
+    {
+      "path": "docs/textbook/chapters/02_enterprise_data_model.tex",
+      "before": "最后一项是承担工资波动所要求的风险补偿。在正态分布与指数效用的设定下，可按以下步骤推导该项。\n\n这一表达式可以直接验证。记扣除努力成本后的收入为 \\(Z=w-ce^2/2\\)，",
+      "after": "最后一项是承担工资波动所要求的风险补偿。记扣除努力成本后的收入为 \\(Z=w-ce^2/2\\)，",
+      "reason": "删除重复的推导介绍，直接进入确定性等价的计算。"
+    },
+    {
+      "path": "docs/textbook/chapters/02_enterprise_data_model.tex",
+      "before": "这可以与本章的关系模型作精确比较：订单表提供记录，业务对象统一身份和含义，关系支持跨对象导航，行动定义状态改变的入口。",
+      "after": "订单表提供记录，业务对象统一身份和含义，关系支持跨对象导航，行动定义状态改变的入口。",
+      "reason": "删除自指性比较提示，保留技术对应关系。"
+    },
+    {
+      "path": "docs/textbook/chapters/02_enterprise_data_model.tex",
+      "before": "教学重构以封测批次为中心。将 \\texttt{Lot} 与",
+      "after": "以下封测算例以批次为中心。将 \\texttt{Lot} 与",
+      "reason": "以算例明确非实际企业实施的边界，删除教学重构过程。"
+    },
+    {
+      "path": "docs/textbook/chapters/02_enterprise_data_model.tex",
+      "before": "上述封测设计使用本章的对象和约束定义。",
+      "after": "",
+      "reason": "删除对本文设计方法的重复自述。"
+    },
+    {
+      "path": "docs/textbook/chapters/02_enterprise_data_model.tex",
+      "before": "为了理解这种组合为什么有效，可以将示例中的一个“查询良率”任务拆开：SQL 引擎回答数值，转换模型决定口径，监控解释是否发生数据事故，目录说明谁负责及如何追溯。这四种职责可以由不同产品完成。采购一个覆盖更多功能的平台，也不会消除逻辑上的职责分工。比较平台时，可分别检查查询、转换、监测和目录管理的职责。",
+      "after": "以封测工厂的“查询良率”任务为例，SQL 引擎计算数值，转换模型规定计算口径，监控识别数据事故，目录记录责任及来源。这四种职责可以由不同产品承担；平台比较应分别核查查询、转换、监测和目录管理的能力。",
+      "reason": "删除学习目的和未经独立评价的“有效”暗示，保留任务职责分析。"
+    },
+    {
+      "path": "docs/textbook/chapters/02_enterprise_data_model.tex",
+      "before": "这样才能把前述激励理论中的委托关系转成明确的权责关系。",
+      "after": "这些记录明确指标定义、审批、解释和行动选择的权责关系。",
+      "reason": "删除保证式转承，直接说明记录内容与权责。"
+    },
+    {
+      "path": "docs/textbook/chapters/02_enterprise_data_model.tex",
+      "before": "这种细分会在第~\\ref{ch:week10-process-mining}~章成为受控 AI 执行的基本结构。",
+      "after": "受控 AI 执行中的职责分工见第~\\ref{ch:week10-process-mining}~章。",
+      "reason": "将后续章节预告改为内容定位。"
+    },
+    {
+      "path": "docs/textbook/chapters/02_enterprise_data_model.tex",
+      "before": "虽然该代码将在第~\\ref{ch:week03-sql-kpi}~章正式运行，但本章要求读者先阅读字段和粒度说明：每一行究竟代表什么对象组合，哪些字段是分子分母，哪些字段是状态快照，哪些字段需要与设备、lot 或订单明细进一步连接。",
+      "after": "样例字段的解释需明确每行对应的对象组合，区分分子分母与状态快照，并确定与设备、lot 或订单明细的连接关系。指标计算实例见第~\\ref{ch:week03-sql-kpi}~章。",
+      "reason": "删除教学时序与读者指令，保留字段解释要求和计算定位。"
+    },
+    {
+      "path": "docs/textbook/chapters/02_enterprise_data_model.tex",
+      "before": "下一章以已定义的对象、粒度和指标为基础，研究关系查询及其聚合运算。",
+      "after": "关系查询及其聚合运算以明确的对象、粒度和指标定义为前提。",
+      "reason": "将章节预告改为查询与建模的依赖关系。"
+    },
+    {
+      "path": "docs/textbook/chapters/03_sql_kpi.tex",
+      "before": "本章研究如何由已定义的数据模型构造这些查询。\n\n本章先介绍关系运算及其 SQL 表达，再讨论比率、快照和窗口统计的汇总方法。\n制造指标用于说明数量、时间和对象范围的选择。最后研究自然语言查询如何确定\n指标定义、生成 SQL 并检验结果，以及数据库执行所需的权限和资源控制。",
+      "after": "比率、快照和窗口统计采用不同的汇总方法；制造指标还需明确数量、时间与对象\n范围。自然语言查询须依据这些定义生成 SQL、检验结果，并满足数据库执行的\n权限和资源限制。",
+      "reason": "删除章节编排顺序，保留查询与汇总的研究对象和执行条件。"
+    },
+    {
+      "path": "docs/textbook/chapters/03_sql_kpi.tex",
+      "before": "第~\\ref{ch:week02-enterprise-data-model}~章强调事实表粒度。第~\\ref{ch:week03-sql-kpi}~章继续使用同一原则。",
+      "after": "事实表粒度决定记录与计数单位，其定义见第~\\ref{ch:week02-enterprise-data-model}~章。",
+      "reason": "删除本章对自身章节编号的引用及过程性承接。"
+    },
+    {
+      "path": "docs/textbook/chapters/03_sql_kpi.tex",
+      "before": "在管理场景中，一个 SQL 结果是否“正确”，不仅取决于语法是否能运行，还取决于它是否回答了正确的业务问题，是否使用稳定的数据范围，是否保留了分子分母，是否允许他人复核。",
+      "after": "管理指标查询的正确性包括语法有效、业务问题匹配、数据范围一致、分子分母明确以及结果可复核。",
+      "reason": "将问答式正确性陈述改为正式条件表述。"
+    },
+    {
+      "path": "docs/textbook/chapters/03_sql_kpi.tex",
+      "before": "SQL 之所以适合作为指标层语言，是因为它建立在关系模型和集合运算之上。虽然读者在实践中主要书写 SQL 语句，但理解其关系代数含义有助于判断查询是否改变了事实集合、是否丢失对象、是否重复计数。",
+      "after": "SQL 建立在关系模型和集合运算之上。关系代数可以描述查询对事实集合的变换，用于检查对象遗漏和重复计数。",
+      "reason": "删除读者实践假设与教学价值包装，保留关系代数的核查用途。"
+    },
+    {
+      "path": "docs/textbook/chapters/03_sql_kpi.tex",
+      "before": "SQL 的声明式特征使查询可以被复核：读者能够从查询中识别事实来源、过滤条件、连接键、分组维度和聚合方式。因此，清晰的 SQL 本身就是指标审计的一部分。",
+      "after": "声明式 SQL 明确事实来源、过滤条件、连接键、分组维度和聚合方式，查询文本因此构成指标审计的依据。",
+      "reason": "将读者视角和笼统清晰性要求改为可审计的具体内容。"
+    },
+    {
+      "path": "docs/textbook/chapters/03_sql_kpi.tex",
+      "before": "理解一条聚合查询时，可以依次问四个问题：哪些记录进入候选范围；连接后每条事实\n出现几次；哪些记录被分到同一组；每组保留哪些统计状态。这四个问题分别对应范围、\n基数、粒度和聚合。",
+      "after": "聚合查询的核查包括四项：候选记录的范围、连接后的事实匹配次数、分组所确定的\n结果粒度，以及每组保留的统计状态。",
+      "reason": "删除学习过程提问，直接列出复核对象。"
+    },
+    {
+      "path": "docs/textbook/chapters/03_sql_kpi.tex",
+      "before": "指标计算首先要声明粒度。粒度不清，是 KPI 错误的根源之一。",
+      "after": "指标计算需分别声明源记录、分析结果与展示结果的粒度。",
+      "reason": "将笼统错误归因改为三种粒度的直接要求。"
+    },
+    {
+      "path": "docs/textbook/chapters/03_sql_kpi.tex",
+      "before": "连接是 SQL 中最容易产生管理分析错误的操作。内连接保留两张表中能够匹配的记录，左连接保留左表全部记录并补充右表信息，外连接可用于识别匹配与未匹配的边界。语法本身不难，真正困难的是判断连接是否改变了事实表粒度。",
+      "after": "内连接保留两张表中能够匹配的记录，左连接保留左表全部记录并补充右表信息，外连接可用于识别匹配与未匹配的范围。连接可能复制或遗漏事实记录，因此需要核查其对事实表粒度的影响。",
+      "reason": "删除“最容易”“不难/真正困难”的读者判断，保留连接语义与风险。"
+    },
+    {
+      "path": "docs/textbook/chapters/03_sql_kpi.tex",
+      "before": "因此，在写任何管理指标 SQL 前，应先回答三个问题：事实表一行代表什么？连接后的行数是否仍代表同一事实？被连接的维度表在连接键上是否唯一？",
+      "after": "管理指标查询的连接复核需确认事实表的记录单位、连接后的事实覆盖及维度键的唯一性。",
+      "reason": "将教学追问改为正式核查条件。"
+    },
+    {
+      "path": "docs/textbook/chapters/03_sql_kpi.tex",
+      "before": "本章主张把 OTD 的分母优先写成“窗口内到期且属于统计范围的订单”。",
+      "after": "采用到期承诺口径时，OTD 的分母是窗口内到期且属于统计范围的订单数。",
+      "reason": "删除作者主张，直接规定所采用口径的分母。"
+    },
+    {
+      "path": "docs/textbook/chapters/03_sql_kpi.tex",
+      "before": "这一例子还说明了为什么需要保留指标的中间状态。只保存50\\%无法判断样本量，\n也无法检查迟到数据；保存到期订单数、准时数、未交付数和数据截止时点，则可以\n说明后续重算改变了什么。读者应将它与\n第~\\ref{ch:week04-data-quality}~章的缺失选择问题联系起来：尚未完成的对象仍属于相应统计范围，其当前状态与已完成结果需要分别记录。",
+      "after": "只保存50\\%无法判断样本量，也无法检查迟到数据；同时保存到期订单数、准时数、\n未交付数和数据截止时点，可以核对后续重算的变化。尚未完成的对象仍属于相应\n统计范围，其当前状态与已完成结果需要分别记录。缺失选择的影响见\n第~\\ref{ch:week04-data-quality}~章。",
+      "reason": "删除例子意义的重复总结及读者联想指令，保留中间状态与缺失选择的关系。"
+    },
+    {
+      "path": "docs/textbook/chapters/03_sql_kpi.tex",
+      "before": "聚合查询会把多行压缩为一行。窗口函数则不同，它在保留行身份的同时，对与当前行相关的一组行进行计算。这个思想非常适合经营分析，因为管理者既需要看到每个订单，也需要知道它在客户历史、区域排名或时间趋势中的位置。",
+      "after": "聚合查询将同组多行压缩为一行，窗口函数在保留行身份的同时，对与当前行相关的一组行进行计算。经营分析由此可以同时保留单个订单及其在客户历史、区域排名或时间趋势中的位置。",
+      "reason": "删除“思想非常适合”的评价，直接说明窗口函数支持的分析结构。"
+    },
+    {
+      "path": "docs/textbook/chapters/03_sql_kpi.tex",
+      "before": "SQL 生成的是结果表，管理者需要的是解释和行动。一个指标结果进入经营会议前，至少应完成六步解释。",
+      "after": "指标结果的管理解释应明确事实范围、比较基准、计算口径、异常位置、可行行动及复核依据。",
+      "reason": "删除展示结果与管理需要的口号式对照，保留六类实际解释内容。"
+    },
+    {
+      "path": "docs/textbook/chapters/03_sql_kpi.tex",
+      "before": "教学系统应优先提供由服务端维护的参数化查询模板、只读数据快照、许可表、行数和时间预算，以及受限文件系统与网络环境。",
+      "after": "查询服务宜采用由服务端维护的参数化查询模板、只读数据快照、许可表、行数和时间预算，以及受限文件系统与网络环境。",
+      "reason": "将教学系统策划语言改为查询服务的具体执行条件。"
+    },
+    {
+      "path": "docs/textbook/chapters/03_sql_kpi.tex",
+      "before": "在本书的示例中，可以为“周良率”“到期 OTD”“日均 WIP”分别保存查询请求定义、SQL 和小型反例数据。",
+      "after": "“周良率”“到期 OTD”“日均 WIP”的查询验证可分别保存请求定义、SQL 和小型反例数据。",
+      "reason": "删除作者示例自指，直接说明查询验证材料。"
+    },
+    {
+      "path": "docs/textbook/chapters/03_sql_kpi.tex",
+      "before": "第三周 Python 复核代码位于：",
+      "after": "订单指标的 Python 复核代码位于：",
+      "reason": "删除授课时序标识，按程序对象命名。"
+    },
+    {
+      "path": "docs/textbook/chapters/03_sql_kpi.tex",
+      "before": "便于读者把讲义中的 SQL 逻辑与可运行实验对应起来。",
+      "after": "用于复现前述 SQL 查询。",
+      "reason": "删除读者便利性和讲义生产叙述，保留程序用途。"
+    },
+    {
+      "path": "docs/textbook/chapters/03_sql_kpi.tex",
+      "before": "下一章从数据生成过程出发，进一步研究记录缺失、测量误差与规则违反对统计结论的影响。",
+      "after": "记录缺失、测量误差与规则违反均可能改变统计结论，需要结合数据生成过程分析。",
+      "reason": "删除章节预告，直接陈述输入条件失效的后果。"
+    },
+    {
+      "path": "docs/textbook/chapters/03_sql_kpi.tex",
+      "before": "Spider 2.0 与 BIRD-INTERACT 则帮助读者理解企业问数评价为何超出\n单条 SQL 的文本匹配\\cite{spider03,bird03}。",
+      "after": "Spider 2.0 与 BIRD-INTERACT 研究多步任务及交互查询的评价，评价对象超出\n单条 SQL 的文本匹配\\cite{spider03,bird03}。",
+      "reason": "将阅读效果描述改为研究对象和评价范围。"
+    },
+    {
+      "path": "docs/textbook/chapters/04_data_quality.tex",
+      "before": "本章先定义质量要求并介绍数据剖析，再推导缺失、测量误差和比率误差的影响。\n随后将业务要求写成检查规则，根据预计损失确定修复与发布策略。质量管理由此与\n第~\\ref{ch:week01-intro}~章的决策分析相联系，并为统计推断明确输入条件。",
+      "after": "质量要求由数据用途确定，数据剖析描述记录的结构与分布，缺失、测量误差和比率\n误差则影响统计结论。业务要求可转化为检查规则，修复与发布策略需依据预计损失\n选择（第~\\ref{ch:week01-intro}~章）。质量分析同时规定统计推断的输入条件。",
+      "reason": "删除章节展开步骤，直接陈述数据用途、误差、规则与损失评价的关系。"
+    },
+    {
+      "path": "docs/textbook/chapters/04_data_quality.tex",
+      "before": "这个公式看似简单，却隐含多个数据质量假设：",
+      "after": "该计算依赖以下数据质量假设：",
+      "reason": "删除简单/隐含的强调包装。"
+    },
+    {
+      "path": "docs/textbook/chapters/04_data_quality.tex",
+      "before": "一个管理指标具有可信度，是指读者能够明确其事实来源、对象范围、质量假设、计算规则、失败记录、刷新时间和责任边界，并且在指标被质疑时可以根据来源记录进行复核。",
+      "after": "一个管理指标具有可信度，是指其事实来源、对象范围、质量假设、计算规则、失败记录、刷新时间和责任边界明确，并且可根据来源记录复核。",
+      "reason": "将读者行为与质疑情境改为指标的可复核条件。"
+    },
+    {
+      "path": "docs/textbook/chapters/04_data_quality.tex",
+      "before": "数据质量的作用，就是在数据生成和指标计算之间建立可检查的信任条件。",
+      "after": "质量规则规定数据生成与指标计算之间的可检验条件。",
+      "reason": "删除信任隐喻与强调性语气，保留规则检验关系。"
+    },
+    {
+      "path": "docs/textbook/chapters/04_data_quality.tex",
+      "before": "每个环节都可能引入质量风险。人工录入会产生空值和拼写错误；",
+      "after": "人工录入会产生空值和拼写错误；",
+      "reason": "删除前一段已说明的重复结论。"
+    },
+    {
+      "path": "docs/textbook/chapters/04_data_quality.tex",
+      "before": "从治理角度看，发现质量问题只是第一步。更重要的是判断问题发生在哪个环节、影响哪些指标、由谁修复、是否需要阻断发布，以及是否需要修改业务流程或数据契约。",
+      "after": "质量事件响应需定位产生误差的环节，确定受影响的指标与修复责任，并决定发布控制、业务流程及数据契约的调整方式。",
+      "reason": "删除“第一步/更重要”的过程性强调，保留治理任务。"
+    },
+    {
+      "path": "docs/textbook/chapters/04_data_quality.tex",
+      "before": "三者没有谁能单独覆盖所有错误。\n结构规则便于规模化运行，对账依赖参照来源本身可信，人工复核则受成本和样本选择\n限制。数据治理的实质，是在这些限制下建立足以支持特定行动的证据组合。",
+      "after": "各类证据的覆盖范围均有限。\n结构规则便于规模化运行，对账依赖参照来源本身可信，人工复核则受成本和样本选择\n限制。特定行动所需的证据组合应结合这些限制确定。",
+      "reason": "删除口语化全称和“实质”包装，保留三类证据的限制与组合要求。"
+    },
+    {
+      "path": "docs/textbook/chapters/04_data_quality.tex",
+      "before": "质量维度是把“数据不对”转化为可讨论问题的词汇表。本书采用七个常见维度：完整性、唯一性、有效性、一致性、及时性、准确性和可追溯性。",
+      "after": "常见数据质量维度包括完整性、唯一性、有效性、一致性、及时性、准确性和可追溯性。",
+      "reason": "删除词汇表隐喻与作者选择叙述，直接列出质量维度。"
+    },
+    {
+      "path": "docs/textbook/chapters/04_data_quality.tex",
+      "before": "剖析报告的价值在于暴露建模假设。例如，若 \\texttt{orders.channel} 出现了 Marketplace，而指标字典只允许 Direct、Partner、Online，则读者必须判断 Marketplace 是新渠道、历史脏值，还是上游系统错误。",
+      "after": "剖析结果可用于核对建模假设。例如，若 \\texttt{orders.channel} 出现了 Marketplace，而指标字典只允许 Direct、Partner、Online，则需调查 Marketplace 是新渠道、历史错误值，还是上游系统错误。",
+      "reason": "将价值评价和读者要求改为剖析用途与实际调查任务。"
+    },
+    {
+      "path": "docs/textbook/chapters/04_data_quality.tex",
+      "before": "证明只需将协方差展开为 \\(\\E[YR]-\\E[Y]\\E[R]\\)，再利用 \\(\\E[YR]=\\Prob(R=1)\\E[Y\\mid R=1]\\)。",
+      "after": "将协方差展开为 \\(\\E[YR]-\\E[Y]\\E[R]\\)，再利用 \\(\\E[YR]=\\Prob(R=1)\\E[Y\\mid R=1]\\)，即可得到该恒等式。",
+      "reason": "删除对证明难度的评价，保留完整推导依据。"
+    },
+    {
+      "path": "docs/textbook/chapters/04_data_quality.tex",
+      "before": "质量报告应回答三个问题：哪些规则失败了，失败记录是什么，失败对管理判断有什么影响。第三个问题最容易被忽略。为了把失败记录转化为管理解释，可以使用如下模板。",
+      "after": "质量影响评估包括违规规则、具体记录及其对管理判断的影响，需明确失败范围、指标影响、风险等级、处理方式、责任边界及修复证据。",
+      "reason": "删除读者忽略假设和模板编写目的，保留评估项目。"
+    },
+    {
+      "path": "docs/textbook/chapters/04_data_quality.tex",
+      "before": "第9章将以约束优化\n的形式解释该条件。",
+      "after": "该条件的约束优化推导见第9章。",
+      "reason": "将未来章节讲解叙述改为推导定位。"
+    },
+    {
+      "path": "docs/textbook/chapters/04_data_quality.tex",
+      "before": "所谓“数据足够好”，应始终补上\n“足以支持哪一种比较或行动”。这一思想将在第~\\ref{ch:week09-optimization}~章中\n扩展为敏感性分析与稳健决策。",
+      "after": "数据质量的误差容限需依据所支持的比较或行动确定。\n误差对最优方案的影响可通过敏感性分析与稳健决策研究\n（第~\\ref{ch:week09-optimization}~章）。",
+      "reason": "删除口号式引语与思想扩展预告，保留误差容限及方法联系。"
+    },
+    {
+      "path": "docs/textbook/chapters/04_data_quality.tex",
+      "before": "一个 KPI 不只是 SQL 公式，还需要：",
+      "after": "KPI 治理包括计算实现、职责分工、变更控制、审计及异常处理：",
+      "reason": "将“不只是”修辞改为具体治理范围。"
+    },
+    {
+      "path": "docs/textbook/chapters/04_data_quality.tex",
+      "before": "本书建议将规则分为三个级别：",
+      "after": "按发布策略，质量规则可分为三个级别：",
+      "reason": "删除作者建议自指，保留分类依据。"
+    },
+    {
+      "path": "docs/textbook/chapters/04_data_quality.tex",
+      "before": "问题级别依据业务影响确定。它取决于业务影响。",
+      "after": "问题级别依据业务影响确定。",
+      "reason": "删除相邻句的完全重复。"
+    },
+    {
+      "path": "docs/textbook/chapters/04_data_quality.tex",
+      "before": "这个流程把数据质量从一次性清洗转化为运营机制。分析项目中的质量报告可以简化，但必须保留失败记录、影响解释和处理建议。",
+      "after": "质量事件响应持续记录问题发现、处置与修复情况。分析项目中的质量报告可以简化，但必须保留失败记录、影响解释和处理建议。",
+      "reason": "删除口号式转化陈述，保留持续管理与报告内容要求。"
+    },
+    {
+      "path": "docs/textbook/chapters/04_data_quality.tex",
+      "before": "把这一治理机制移植到教学工厂，可以按三步进行。首先列出“良品”在首检、返工后终检和客户验收三个环节的含义，保留差异而不强行合并。其次指定业务定义负责人，让数仓实现与定义绑定。最后用变更单记录定义从何时生效、历史是否重算及下游使用者是否收到通知。",
+      "after": "在封测算例中，“良品”需分别按首检、返工后终检和客户验收三个环节定义。业务定义负责人确认各项口径，数仓实现采用对应定义；变更单记录生效时间、历史重算规则及下游通知情况。",
+      "reason": "删除教学迁移与编排步骤，保留算例边界和治理职责。"
+    },
+    {
+      "path": "docs/textbook/chapters/04_data_quality.tex",
+      "before": "这提示我们：传统字段规则与运行过程监测有不同作用。",
+      "after": "字段规则检验与运行过程监测承担不同职责。",
+      "reason": "删除提示读者的元话语，直接陈述职能区别。"
+    },
+    {
+      "path": "docs/textbook/chapters/04_data_quality.tex",
+      "before": "读者需要使用 Python 或 SQL 找出失败记录，并说明每类失败会影响哪些 KPI。",
+      "after": "实验任务是使用 Python 或 SQL 找出违规记录，并分析每类违规对 KPI 的影响。",
+      "reason": "将读者指令改为明确的实验任务。"
+    },
+    {
+      "path": "docs/textbook/chapters/04_data_quality.tex",
+      "before": "对于本书，读者只需用 Markdown、CSV 或 notebook 输出清晰的质量报告，但报告必须能让他人复现失败记录和理解管理后果。",
+      "after": "实验报告可采用 Markdown、CSV 或 notebook，须保留可复现的违规记录及其管理影响。",
+      "reason": "删除作者限定与泛泛清晰性要求，保留实验格式和可复现性要求。"
+    },
+    {
+      "path": "docs/textbook/chapters/04_data_quality.tex",
+      "before": "完成这些检查后，下一章研究如何利用统计摘要和图形描述数据中的经营特征。",
+      "after": "统计摘要与图形对经营特征的描述，同样以数据来源及质量条件明确为前提。",
+      "reason": "将章节时序预告改为描述分析的数据前提。"
+    },
+    {
+      "path": "docs/textbook/chapters/01_intro.tex",
+      "before": "局部指标或部门抱怨的形式出现",
+      "after": "局部指标或部门反馈的形式出现",
+      "reason": "以正式组织反馈替代口语化评价。"
+    },
+    {
+      "path": "docs/textbook/chapters/01_intro.tex",
+      "before": "但营销部门真正采取行动的是一部分客户",
+      "after": "但营销行动作用于其中一部分客户",
+      "reason": "删除强调副词并明确行动范围。"
+    },
+    {
+      "path": "docs/textbook/chapters/01_intro.tex",
+      "before": "其价值在于帮助组织形成共同事实基础。",
+      "after": "它为组织提供共同的经营事实基础。",
+      "reason": "将价值包装改为功能陈述。"
+    },
+    {
+      "path": "docs/textbook/chapters/01_intro.tex",
+      "before": "先验、检测特征和业务损失分别承担不同角色，不能用“模型很准确”代替其中任何一项。",
+      "after": "先验概率、检测特征和业务损失分别决定后验判断与行动选择，需要独立确定。",
+      "reason": "删除虚拟口语反驳，保留三项条件的不可替代性。"
+    },
+    {
+      "path": "docs/textbook/chapters/01_intro.tex",
+      "before": "优惠券、加急、补贴或规则调整是否真正改变结果。",
+      "after": "优惠券、加急、补贴或规则调整是否改变结果。",
+      "reason": "删除无信息增量的强调副词。"
+    },
+    {
+      "path": "docs/textbook/chapters/02_enterprise_data_model.tex",
+      "before": "“已经完成的订单”看似是客观对象，实际上包含至少三个约定。首先，完成指生产完成、\n发运完成还是客户签收？其次，一张订单被拆为两个批次时，是第一批完成还是全部完成\n才算完成？最后，系统迟到的补录应改变历史结果，还是只影响当前掌握的信息？\n这些问题没有一个能够由字段类型自动回答。数据模型的首要职责，是让这些约定显性化。",
+      "after": "订单完成状态需要三项约定：采用生产完成、发运完成还是客户签收作为完成事件；\n订单拆为多个批次时，以首批完成还是全部完成作为判断条件；迟到补录是否改变历史\n结果，或仅更新当前可用信息。字段类型无法确定这些业务含义，数据模型须明确\n相应的记录规则。",
+      "reason": "删除看似/实质的修辞和课堂追问，保留完成事件、批次条件与补录规则。"
+    },
+    {
+      "path": "docs/textbook/chapters/02_enterprise_data_model.tex",
+      "before": "关系模型的重要优点是声明性。",
+      "after": "关系查询具有声明性。",
+      "reason": "删除泛泛的重要性评价。"
+    },
+    {
+      "path": "docs/textbook/chapters/02_enterprise_data_model.tex",
+      "before": "封测对象关系的教学抽象。",
+      "after": "封测对象关系的简化模型。",
+      "reason": "图题按模型范围命名，保留简化边界。"
+    },
+    {
+      "path": "docs/textbook/chapters/02_enterprise_data_model.tex",
+      "before": "分解是否可靠与主键、外键约束是同一个问题的两面。",
+      "after": "分解后的无损重建依赖主键唯一性与外键覆盖条件。",
+      "reason": "以具体约束替代“两面”比喻。"
+    },
+    {
+      "path": "docs/textbook/chapters/02_enterprise_data_model.tex",
+      "before": "因此，现代企业决策系统关注",
+      "after": "企业决策系统的对象与操作可按以下依赖关系组织：",
+      "reason": "删除泛指现代系统的强调语，明确图式含义。"
+    },
+    {
+      "path": "docs/textbook/chapters/02_enterprise_data_model.tex",
+      "before": "在模型中，应记录的不只是“谁拥有这张表”，还包括谁有权修改交期定义、谁批准质量阈值、谁解释历史重算，以及谁在模型建议与实际行动冲突时作最终选择。",
+      "after": "模型中的职责记录应包含表的维护责任、交期定义的修改权、质量阈值的批准权、历史重算的解释责任，以及模型建议与实际行动发生冲突时的最终决策权。",
+      "reason": "将口语化所有权对照与连续追问改为明确的职责类型。"
+    },
+    {
+      "path": "docs/textbook/chapters/02_enterprise_data_model.tex",
+      "before": "本章的结构化建模代码位于：",
+      "after": "实体与关系的结构化建模代码位于：",
+      "reason": "按程序对象说明来源，删除章节自指。"
+    },
+    {
+      "path": "docs/textbook/chapters/02_enterprise_data_model.tex",
+      "before": "Date 的数据库教材帮助理解约束与规范化，",
+      "after": "Date 的数据库教材讨论约束与规范化，",
+      "reason": "删除假想读者的阅读效果描述。"
+    },
+    {
+      "path": "docs/textbook/chapters/02_enterprise_data_model.tex",
+      "before": "本章的线性报酬算例采用正态噪声、指数效用和二次努力成本，",
+      "after": "线性报酬算例采用正态噪声、指数效用和二次努力成本，",
+      "reason": "保留算例假设，删除章节自指。"
+    },
+    {
+      "path": "docs/textbook/chapters/03_sql_kpi.tex",
+      "before": "本教学数据假定每张订单只有一种产品",
+      "after": "样例数据假定每张订单只有一种产品",
+      "reason": "保留数据简化假设，以样例范围替代教学情境。"
+    },
+    {
+      "path": "docs/textbook/chapters/03_sql_kpi.tex",
+      "before": "却会误删真正相同金额的不同订单。",
+      "after": "却会误删金额相同的不同订单。",
+      "reason": "删除无信息增量的强调副词。"
+    },
+    {
+      "path": "docs/textbook/chapters/03_sql_kpi.tex",
+      "before": "日期、订单和数值均为教学构造，",
+      "after": "日期、订单和数值均为假设值，",
+      "reason": "保留案例非实际企业记录的边界，使用正式假设语言。"
+    },
+    {
+      "path": "docs/textbook/chapters/03_sql_kpi.tex",
+      "before": "本章样例数据位于",
+      "after": "订单指标的样例数据位于",
+      "reason": "按数据用途命名，删除章节自指。"
+    },
+    {
+      "path": "docs/textbook/chapters/04_data_quality.tex",
+      "before": "数据质量很难脱离用途来定义。同一份数据在一种用途下足够好，在另一种用途下可能不足以支持决策。",
+      "after": "数据质量依据用途定义。同一份数据可能满足一种用途的质量要求，同时无法满足另一种用途的要求。",
+      "reason": "将足够好与困难等泛泛评价改为用途依赖的正式定义。"
+    },
+    {
+      "path": "docs/textbook/chapters/04_data_quality.tex",
+      "before": "本章开头的已交付样本 OTD 必须与第~\\ref{ch:week03-sql-kpi}~章的到期口径明确区分。",
+      "after": "已交付订单准时率须与到期承诺口径的 OTD 明确区分（第~\\ref{ch:week03-sql-kpi}~章）。",
+      "reason": "删除页面位置自指，按不同统计对象明确指标名称。"
+    },
+    {
+      "path": "docs/textbook/chapters/04_data_quality.tex",
+      "before": "这些是教学参数，现实还应区分误报、漏报、恢复时间和已知替代数据。",
+      "after": "这些数值为假设参数，实际评价还应区分误报、漏报、恢复时间和已知替代数据。",
+      "reason": "保留假设算例与实际评价的边界，去除教学过程表述。"
+    },
+    {
+      "path": "docs/textbook/chapters/01_intro.tex",
+      "before": "模型自动生成程序时，独立的手算和业务系统状态尤其重要。\n验收依据是规格符合情况、计算结果和执行状态。",
+      "after": "模型自动生成程序时，计算结果和执行状态须通过独立手算与业务系统记录复核。",
+      "reason": "将重要性评价与重复结语合并为独立复核的具体要求。"
+    }
+  ],
+  "counts": {
+    "docs/textbook/chapters/01_intro.tex": 24,
+    "docs/textbook/chapters/02_enterprise_data_model.tex": 41,
+    "docs/textbook/chapters/03_sql_kpi.tex": 23,
+    "docs/textbook/chapters/04_data_quality.tex": 25
+  },
+  "integrity": "All inline/display math, listings, citations, labels, subject index entries, chapter/section/subsection titles unchanged",
+  "title_review": [],
+  "source_hashes": {
+    "docs/textbook/chapters/01_intro.tex": {
+      "before": "0bf7c286c46f2c87c5ac95dc21170ff4c04785165dea04647ee7d403b9689d8c",
+      "after": "d2a0e7a11088525fcb0040592e2e6e722f9c7a75267f52363fd83db76d849927"
+    },
+    "docs/textbook/chapters/02_enterprise_data_model.tex": {
+      "before": "f7389f32d9578ab94117354a24746a894d4e3034c0dea4350c4ce6a7b0c23c70",
+      "after": "1c414ec58f5c7f99e2660a408f44352154dfcfbc09f258860d7ccd2e7e67e98b"
+    },
+    "docs/textbook/chapters/03_sql_kpi.tex": {
+      "before": "915038afb13f1c850ddc04821dd3638f0aef25f8f836e1a01773d1caeee3a083",
+      "after": "53ed9e2aa5965c95c5e80b215f2bde9e966b04f7aa85a1af9a4fca17fde50409"
+    },
+    "docs/textbook/chapters/04_data_quality.tex": {
+      "before": "5346054b99fe8f4c1105cc22a3064ee640f3784105a45bb94d70c43afcf3a26a",
+      "after": "a104eacd30c00828d6c7ae1241b032756db105f104de7ef91a4907d994786b18"
+    }
+  }
+}

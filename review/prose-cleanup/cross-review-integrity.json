@@ -1,0 +1,44 @@
+[
+  {
+    "path": "docs/lecture_notes/14_ai_agent.md",
+    "protected_equal": true,
+    "old_n": 41,
+    "new_n": 41,
+    "hash": "93221a479cbc83369090761abae1910c3f2029561af39d63f7325194a97f597c"
+  },
+  {
+    "path": "docs/lecture_notes/11_modern_data_platform.md",
+    "protected_equal": true,
+    "old_n": 1,
+    "new_n": 1,
+    "hash": "282f25fe105c2888341abd9dee82214fe537def83720d00483a10d815118774e"
+  },
+  {
+    "path": "docs/textbook/frontmatter.tex",
+    "protected_equal": true,
+    "old_n": 17,
+    "new_n": 17,
+    "hash": "e04e4155ce83fdca147bca02414f7328b47cff1f668cbb1e88373a26a782da47"
+  },
+  {
+    "path": "docs/textbook/appendices.tex",
+    "protected_equal": true,
+    "old_n": 33,
+    "new_n": 33,
+    "hash": "f95c54464c1394804d1bbead37b7466aff98ea9ed2878a5b393da44b8a7cb9a1"
+  },
+  {
+    "path": "docs/cases/ai_question_to_data_case.md",
+    "protected_equal": true,
+    "old_n": 1,
+    "new_n": 1,
+    "hash": "4461606c2aab2bcb1c3b1032982520ef83e5be1c1d8aa3ed06c02941996bfaa9"
+  },
+  {
+    "path": "docs/cases/semiconductor_kpi_m13_case.md",
+    "protected_equal": true,
+    "old_n": 1,
+    "new_n": 1,
+    "hash": "3e8433f9b8a79d73e688e2c940edfd09e24752bc41c1b12f265538cb0f058e7e"
+  }
+]

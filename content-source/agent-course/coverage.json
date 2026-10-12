@@ -10,7 +10,7 @@
     "kit": "website/content-source/agent-course/kit",
     "official_source_audit": "/private/tmp/bdm-agent-extension/sources.md"
   },
-  "source_sha256": "0eab2bbb5a506c78797880e9515660446ddf22778eb7dc019ddb2a1524f157f4",
+  "source_sha256": "10167276aac52b155773ac3dcc35e8cfd1f3d75773fb1dd8fe6b4f3eca58189f",
   "slides_observed_count": 55,
   "slides_status": "仅对已存在且标题精确匹配的幻灯片记录确认，缺项不填写虚构页号。",
   "coverage_basis": "教学内容覆盖与生产实证分开；34项均可在新章或教材找到明确教学内容，所有真实部署、模型表现与企业效果仍需独立试点。",
@@ -93,7 +93,7 @@
       "specific_content": "LLM生成语言和候选动作，外部证据、确定性计算与执行回读验证结果；完整任务而非文本流畅度定义成功。",
       "experiment_ids": [],
       "slide_titles_confirmed": [
-        "六项功能组成一个任务系统",
+        "任务系统的六项功能",
         "RAG原模型：检索与生成的组合"
       ],
       "slide_titles_pending": [],
@@ -162,7 +162,7 @@
       "specific_content": "区分会话字段、检查点、长期知识和用户偏好，规定来源、过期、删除与最新输入优先。",
       "experiment_ids": [],
       "slide_titles_confirmed": [
-        "Memory：保存什么与相信什么"
+        "Memory：信息类型、来源与有效性"
       ],
       "slide_titles_pending": [],
       "kit_paths": [],
@@ -254,7 +254,7 @@
         "agent-production"
       ],
       "slide_titles_confirmed": [
-        "Skills：把稳定方法变成可复用约定"
+        "Skills：可复用的操作知识与适用条件"
       ],
       "slide_titles_pending": [],
       "kit_paths": [
@@ -671,7 +671,7 @@
       "specific_content": "私有化分层、数据流/网络/密钥/容量/备份与责任；另有部署检查表和中立工作流契约。",
       "experiment_ids": [],
       "slide_titles_confirmed": [
-        "私有化：先画数据与调用的边界"
+        "私有化部署：数据流与调用范围"
       ],
       "slide_titles_pending": [],
       "kit_paths": [
@@ -729,7 +729,7 @@
       ],
       "slide_titles_confirmed": [
         "治理：读取、写入与审批分层实施",
-        "上线前检查：故障也属于业务输入"
+        "上线前验证：故障与异常分支"
       ],
       "slide_titles_pending": [],
       "kit_paths": [
@@ -877,7 +877,7 @@
         "agent-routing"
       ],
       "slide_titles_confirmed": [
-        "咨询优先级：安全先于便利",
+        "咨询路由：安全事件的优先级",
         "订单隐私：身份与归属同时成立",
         "退货审核、产品答复与重复请求"
       ],
@@ -915,7 +915,7 @@
       "slide_titles_confirmed": [
         "先检查联锁，再判断资料可用性",
         "规则评分：异常条件的计数",
-        "异常算例：三项命中仍只形成草稿",
+        "异常算例：评分结果与待审草稿",
         "工单幂等：回放须保持请求一致"
       ],
       "slide_titles_pending": [],
@@ -934,7 +934,7 @@
       "section_refs": [
         {
           "section": 1,
-          "title": "学习路径与业务任务",
+          "title": "业务任务与任务契约",
           "anchor": "agent-route",
           "source_line": 7
         },
@@ -992,7 +992,7 @@
         "agent-production"
       ],
       "slide_titles_confirmed": [
-        "上线前检查：故障也属于业务输入"
+        "上线前验证：故障与异常分支"
       ],
       "slide_titles_pending": [],
       "kit_paths": [

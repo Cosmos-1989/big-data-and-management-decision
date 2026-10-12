@@ -62,10 +62,10 @@ await save(path.join(out,'content/lecture-slides.json'),decks);
 for(const d of [agent,project]){const item=catalog.extras.find(e=>e.id===d.id);if(item)Object.assign(item,{title:d.title,source:d.source,kind:d.kind});}
 catalog.extras.find(e=>e.id==='14_ai_agent').hasSlides=true;
 const links={
- '10_process_mining':['enterprise-agent-path','从受控执行到企业智能体方案','本章给出运行环境、检索、状态机与可靠性的基础。企业制度、办公协作、客户分流和生产线异常的完整任务设计、工具选型及试点方法，见企业AI Agent专题。','agent-route'],
+ '10_process_mining':['enterprise-agent-path','从受控执行到企业智能体方案','运行环境管理知识检索、任务状态与可靠性。企业制度、办公协作、客户分流和生产线异常处理，还需明确业务对象、工具契约及试点验收条件；相应分析见企业AI Agent专题。','agent-route'],
  '11_modern_data_platform':['enterprise-agent-data','智能体知识与服务的数据基础','知识片段、向量索引和关系摘要须继承数据的权限、版本及有效期。将语义层中的指标约定用于受控工具，将原始文档和可检索证据分开治理，见企业RAG和部署设计。','agent-rag'],
- '12_mlops':['enterprise-agent-lifecycle','智能体的版本、评测与运行维护','对模型、Prompt、Skill、检索配置、业务规则和工具服务登记版本；用同一固定任务集做回归测试，并记录轨迹、权限符合性、延迟、人工复核时间与恢复行为。专题给出从沙盒到灰度和回滚的完整验收路径。','agent-evaluation'],
- '13_ontology_action_scenario':['enterprise-agent-actions','对象状态、行动契约与智能体编排','审批应绑定业务对象及版本，工具前后置条件决定允许的状态转移。模型和多角色的中间建议由运行环境核验，最终完成以业务系统状态为准。生产线综合案例展示这种分工。','agent-production-case']
+ '12_mlops':['enterprise-agent-lifecycle','智能体的版本、评测与运行维护','模型、Prompt、Skill、检索配置、业务规则和工具服务均须登记版本。回归测试使用固定任务集，并记录轨迹、权限符合性、延迟、人工复核时间与恢复行为；沙盒、灰度和回滚分别设置验收条件。','agent-evaluation'],
+ '13_ontology_action_scenario':['enterprise-agent-actions','对象状态、行动契约与智能体编排','审批应绑定业务对象及版本，工具前后置条件决定允许的状态转移。模型和多角色的中间建议由运行环境核验，最终完成以业务系统状态为准；生产线异常处理中的分析、核查与维护审批具有不同职责。','agent-production-case']
 };
 for(const [id,[anchor,title,body,target]] of Object.entries(links)){
  const p=path.join(out,`content/${id}.json`),d=await read(p);
