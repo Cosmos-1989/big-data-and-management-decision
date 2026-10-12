@@ -1,4 +1,141 @@
 {
-  "status": "pending",
-  "url": "https://cosmos-1989.github.io/big-data-and-management-decision/"
+  "status": "verified",
+  "checkedAt": "2026-10-12T14:13:46.086109+00:00",
+  "url": "https://cosmos-1989.github.io/big-data-and-management-decision/",
+  "sourceCommit": "6f675a4",
+  "pagesCommit": "5eac1717fc1f00685883a1df934cd8a23024605e",
+  "actions": {
+    "id": 38261146578,
+    "conclusion": "success",
+    "url": "https://github.com/Cosmos-1989/big-data-and-management-decision/actions/runs/38261146578"
+  },
+  "strictHttps": true,
+  "files": [
+    {
+      "path": "index.html",
+      "bytes": 6021,
+      "expectedSha256": "50823db1a4afef63738955c38902e21edb8df0a198cc85492c96d3a3801bfc63",
+      "observedSha256": "50823db1a4afef63738955c38902e21edb8df0a198cc85492c96d3a3801bfc63",
+      "matches": true
+    },
+    {
+      "path": "app.js",
+      "bytes": 18175,
+      "expectedSha256": "9e8adb597262c8f25908e6877724cf33f0d1f79552ed68e06d98c132b4b1d0a7",
+      "observedSha256": "9e8adb597262c8f25908e6877724cf33f0d1f79552ed68e06d98c132b4b1d0a7",
+      "matches": true
+    },
+    {
+      "path": "lab.js",
+      "bytes": 19027,
+      "expectedSha256": "7da597c0b714eaf053e271a430c12645fcaccf317f236de176fafb9c6445aa12",
+      "observedSha256": "7da597c0b714eaf053e271a430c12645fcaccf317f236de176fafb9c6445aa12",
+      "matches": true
+    },
+    {
+      "path": "experiments.js",
+      "bytes": 13705,
+      "expectedSha256": "b43d5a2ecfa9fcca9bacbff261e42c6ae26acac254faeb1119d5bc510514f918",
+      "observedSha256": "b43d5a2ecfa9fcca9bacbff261e42c6ae26acac254faeb1119d5bc510514f918",
+      "matches": true
+    },
+    {
+      "path": "agent-experiments.js",
+      "bytes": 7883,
+      "expectedSha256": "08a4ff5c2368a8d36b3fe6e9767b72024dfa6c47cfc844a72115b47fd4cda42f",
+      "observedSha256": "08a4ff5c2368a8d36b3fe6e9767b72024dfa6c47cfc844a72115b47fd4cda42f",
+      "matches": true
+    },
+    {
+      "path": "agent-course.css",
+      "bytes": 5672,
+      "expectedSha256": "cc58453a4ee2c6a1f6dc43e58f40298bcea8b00bebd5f3656da70f7db30f1263",
+      "observedSha256": "cc58453a4ee2c6a1f6dc43e58f40298bcea8b00bebd5f3656da70f7db30f1263",
+      "matches": true
+    },
+    {
+      "path": "slides-refined.css",
+      "bytes": 22709,
+      "expectedSha256": "6b9d4e1fce25970ecdc70c2c8251069ce0e424283b41697149bcdad6482aa68d",
+      "observedSha256": "6b9d4e1fce25970ecdc70c2c8251069ce0e424283b41697149bcdad6482aa68d",
+      "matches": true
+    },
+    {
+      "path": "content/14_ai_agent.json",
+      "bytes": 77856,
+      "expectedSha256": "8180c7c5684a60e8be5d748034bc96981c25096cc72965d815732f1c9af33ba7",
+      "observedSha256": "8180c7c5684a60e8be5d748034bc96981c25096cc72965d815732f1c9af33ba7",
+      "matches": true
+    },
+    {
+      "path": "content/lecture-slides.json",
+      "bytes": 1066835,
+      "expectedSha256": "7d78caa3d058225fc7b03bcd5f5025e94e59a080e203f4011a2d1a6a9bf46d17",
+      "observedSha256": "7d78caa3d058225fc7b03bcd5f5025e94e59a080e203f4011a2d1a6a9bf46d17",
+      "matches": true
+    },
+    {
+      "path": "content/lab-specs.json",
+      "bytes": 62705,
+      "expectedSha256": "fd081e3826c081dcc79140f4df3ab2a0802b8446c0075ee738515342e1a40640",
+      "observedSha256": "fd081e3826c081dcc79140f4df3ab2a0802b8446c0075ee738515342e1a40640",
+      "matches": true
+    },
+    {
+      "path": "content/agent-learning-map.json",
+      "bytes": 11228,
+      "expectedSha256": "16691f303ce5d9295b0baa7d115dfed8570f648930cf3a7aa84bf195acbd040c",
+      "observedSha256": "16691f303ce5d9295b0baa7d115dfed8570f648930cf3a7aa84bf195acbd040c",
+      "matches": true
+    },
+    {
+      "path": "content/catalog.json",
+      "bytes": 254820,
+      "expectedSha256": "67db0c45316d53727772b0f871522808776711eadb86c9be4224fc01bfbb2905",
+      "observedSha256": "67db0c45316d53727772b0f871522808776711eadb86c9be4224fc01bfbb2905",
+      "matches": true
+    },
+    {
+      "path": "data/files.json",
+      "bytes": 206888,
+      "expectedSha256": "73379f3784f77d10000dd1966d8edbd26cbd864a45253949a3c3832a1d07731f",
+      "observedSha256": "73379f3784f77d10000dd1966d8edbd26cbd864a45253949a3c3832a1d07731f",
+      "matches": true
+    },
+    {
+      "path": "downloads/enterprise-agent-kit.zip",
+      "bytes": 76847,
+      "expectedSha256": "8d3e4322021e663552a3c9b16945c554f0ff25d413220334ab6e2e6cbaadc670",
+      "observedSha256": "8d3e4322021e663552a3c9b16945c554f0ff25d413220334ab6e2e6cbaadc670",
+      "matches": true
+    },
+    {
+      "path": "downloads/enterprise-agent-course.md",
+      "bytes": 46869,
+      "expectedSha256": "0eab2bbb5a506c78797880e9515660446ddf22778eb7dc019ddb2a1524f157f4",
+      "observedSha256": "0eab2bbb5a506c78797880e9515660446ddf22778eb7dc019ddb2a1524f157f4",
+      "matches": true
+    },
+    {
+      "path": "downloads/enterprise-agent-experiments.py",
+      "bytes": 36296,
+      "expectedSha256": "191268253ba6d68df1208093bc863a54edf9f31dd2df97751183b019d16f902e",
+      "observedSha256": "191268253ba6d68df1208093bc863a54edf9f31dd2df97751183b019d16f902e",
+      "matches": true
+    },
+    {
+      "path": "assets/fonts/course-song-regular.woff2",
+      "bytes": 315596,
+      "expectedSha256": "92c1ecb2636699c7259d29610ec48670acf988e31f5daa606709238782aeafee",
+      "observedSha256": "92c1ecb2636699c7259d29610ec48670acf988e31f5daa606709238782aeafee",
+      "matches": true
+    },
+    {
+      "path": "assets/fonts/course-song-bold.woff2",
+      "bytes": 326144,
+      "expectedSha256": "36ee9dc8a52baf02d4487a7322919178200030fa05a272ab9699ab63ce3ddf98",
+      "observedSha256": "36ee9dc8a52baf02d4487a7322919178200030fa05a272ab9699ab63ce3ddf98",
+      "matches": true
+    }
+  ]
 }

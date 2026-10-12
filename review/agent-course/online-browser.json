@@ -1,0 +1,6 @@
+{
+  "url": "https://cosmos-1989.github.io/big-data-and-management-decision/#/lab/agent-production",
+  "status": "运行完成",
+  "output": "产线异常复核\n横轴\n事件\n路由\n状态\n风险分数\n命中信号\n本地工单\n设备控制调用数\n数值\n风险分数\n设备控制调用数\n图形\n柱状图\n折线图\n0\n0.25\n0.5\n0.75\n1\nE-DEMO\n事件　/　风险分数\n事件\t路由\t状态\t风险分数\t命中信号\t本地工单\t设备控制调用数\nE-DEMO\twarning_review\tproposed\t1\tvibration\t未建立\t0\n命中 1 项教学异常条件；只生成调查建议。\n",
+  "consoleErrors": []
+}
