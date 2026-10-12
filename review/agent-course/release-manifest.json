@@ -1,0 +1,70 @@
+{
+  "date": "2026-10-12",
+  "counts": {
+    "topics": 34,
+    "sections": 15,
+    "newSlides": 55,
+    "newSlideDiagrams": 38,
+    "newChapterFigures": 8,
+    "newExperiments": 4,
+    "allSlides": 458,
+    "allSlideDiagrams": 190
+  },
+  "validation": {
+    "standardChecks": 48,
+    "invariantChecks": 159,
+    "pythonExperiments": 19,
+    "texChecks": 2147,
+    "layoutErrors": 0,
+    "mathErrors": 0,
+    "diagramCollisions": 0,
+    "mobilePageOverflow": 0
+  },
+  "files": [
+    {
+      "path": "content-source/agent-course/14_ai_agent.md",
+      "bytes": 46869,
+      "sha256": "0eab2bbb5a506c78797880e9515660446ddf22778eb7dc019ddb2a1524f157f4"
+    },
+    {
+      "path": "content-source/agent-course/slides.json",
+      "bytes": 152698,
+      "sha256": "66cba4fe73b5cd9ba08f617c073b9b3626984dd8413f316b636ea757f7f7e92c"
+    },
+    {
+      "path": "content-source/agent-course/week14_enterprise_agents.py",
+      "bytes": 36296,
+      "sha256": "191268253ba6d68df1208093bc863a54edf9f31dd2df97751183b019d16f902e"
+    },
+    {
+      "path": "content-source/agent-course/experiments.json",
+      "bytes": 16734,
+      "sha256": "ef6d06f89f9f393fd245284dc45f92986ca141f128e48a4210ebfdef18471a19"
+    },
+    {
+      "path": "dist/content/14_ai_agent.json",
+      "bytes": 77856,
+      "sha256": "8180c7c5684a60e8be5d748034bc96981c25096cc72965d815732f1c9af33ba7"
+    },
+    {
+      "path": "dist/content/lecture-slides.json",
+      "bytes": 1066835,
+      "sha256": "7d78caa3d058225fc7b03bcd5f5025e94e59a080e203f4011a2d1a6a9bf46d17"
+    },
+    {
+      "path": "dist/data/files.json",
+      "bytes": 206888,
+      "sha256": "73379f3784f77d10000dd1966d8edbd26cbd864a45253949a3c3832a1d07731f"
+    },
+    {
+      "path": "dist/downloads/enterprise-agent-kit.zip",
+      "bytes": 76847,
+      "sha256": "8d3e4322021e663552a3c9b16945c554f0ff25d413220334ab6e2e6cbaadc670"
+    },
+    {
+      "path": "dist/assets/fonts/manifest.json",
+      "bytes": 985,
+      "sha256": "c27caaa36b158ffa23459e8f49591a09d3d43c8b02cae0f4c2785dcf520a237a"
+    }
+  ]
+}

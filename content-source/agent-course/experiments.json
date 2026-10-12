@@ -1,0 +1,150 @@
+[
+  {
+    "id": "agent-rag",
+    "title": "企业制度可信问答",
+    "chapter": "14_ai_agent",
+    "description": "按关键词、日期、角色和制度版本给出可追溯答复；缺证据时拒答或转人工。",
+    "language": "python",
+    "code": "# 固定关键词和制度版本过滤，模拟可信问答；此处没有语言模型。\nfrom bdm_decision.cases.week14_enterprise_agents import answer_policy, policy_threshold_rows\n\namount_yuan = 450\nemployee_access = True\n# 访客角色不得看到员工制度正文；金额滑块可触发不同审批分支。\nrole = 'employee' if employee_access else 'guest'\nresult = answer_policy('国内住宿报销额度', role=role, as_of='2026-10-10',\n                       region='domestic', amount_yuan=amount_yuan)\ndisplay([{'判定': result['decision'], '状态': result['state'],\n          '证据': '、'.join(result['evidence_ids']) or '无',\n          '理由': result['reason'], '下一处理人': result['next_actor']}], '制度问答与来源')\n# 仅在已授权时展示教学制度额度，不向访客泄露员工文件。\nif employee_access:\n    display(policy_threshold_rows(), '版本与额度（教学数据）', x='版本', y='自动额度')\n",
+    "params": [
+      {
+        "name": "amount_yuan",
+        "label": "每晚住宿金额 / 元",
+        "min": 0,
+        "max": 750,
+        "step": 25,
+        "value": 450
+      },
+      {
+        "name": "employee_access",
+        "label": "具有员工制度访问权限",
+        "type": "bool",
+        "value": true
+      }
+    ],
+    "spec": {
+      "background": "虚构企业保存多版差旅制度。员工提问时必须引用在询问日期有效且本人可读的条款。",
+      "problem": "给定角色、日期与金额，确定可直接按条款办理、须经理预审、超出条款或需要拒答，并显示证据版本。",
+      "input": "固定问题“国内住宿报销额度”；日期 2026-10-10；金额由滑块给出；访问开关决定员工或访客角色。",
+      "output": "判定、状态、制度 ID、理由、下一处理人；已授权时显示两版教学制度的额度。",
+      "constraints": "只按固定关键词和教学政策计算；不会访问真实制度。经理预审并非已批准。访客不得看到受限正文。",
+      "example": "员工查询 450 元：HOTEL-v3 自动额度 400 元、预审上限 600 元，因此须部门经理预审。",
+      "evaluation": "核对有效期、版本、角色、金额边界与证据 ID；缺证据或越权答复数应为零。",
+      "annotatedCode": "# 固定关键词和制度版本过滤，模拟可信问答；此处没有语言模型。\nfrom bdm_decision.cases.week14_enterprise_agents import answer_policy, policy_threshold_rows\n\namount_yuan = 450\nemployee_access = True\n# 访客角色不得看到员工制度正文；金额滑块可触发不同审批分支。\nrole = 'employee' if employee_access else 'guest'\nresult = answer_policy('国内住宿报销额度', role=role, as_of='2026-10-10',\n                       region='domestic', amount_yuan=amount_yuan)\ndisplay([{'判定': result['decision'], '状态': result['state'],\n          '证据': '、'.join(result['evidence_ids']) or '无',\n          '理由': result['reason'], '下一处理人': result['next_actor']}], '制度问答与来源')\n# 仅在已授权时展示教学制度额度，不向访客泄露员工文件。\nif employee_access:\n    display(policy_threshold_rows(), '版本与额度（教学数据）', x='版本', y='自动额度')\n"
+    },
+    "sourcePath": "src/bdm_decision/cases/week14_enterprise_agents.py"
+  },
+  {
+    "id": "agent-office",
+    "title": "办公数字员工与研发助手",
+    "chapter": "14_ai_agent",
+    "description": "计算共同会议空档，并仅引用角色可见的已批准最新版研发资料。",
+    "language": "python",
+    "code": "# 用固定日历求交集，用已批准资料的权限与版本筛选回答。\nfrom bdm_decision.cases.week14_enterprise_agents import (\n    office_assist, approve_meeting, research_answer\n)\n\napprove = False\nengineer_access = False\nledger = {}  # 内存账本只服务本次浏览器运行，不发送真实会议邀请。\nmeeting = office_assist('meeting', event_id='MEET-1', participants=['李', '王'], ledger=ledger)\n# 组织者审批是独立状态转移；未审批时始终只是提案。\nif approve:\n    meeting = approve_meeting('MEET-1', approval_id='ORG-1',\n                              organizer_authenticated=True, ledger=ledger)\nrole = 'engineer' if engineer_access else 'employee'\nresearch = research_answer('芯片接口', role=role)\npublic_note = research_answer('泵振动', role='employee')\ndisplay([{'任务': '会议排期', '判定': meeting['decision'],\n          '结果': meeting.get('proposal_time', '无共同空档'), '状态': meeting['state']},\n         {'任务': '受限研发资料', '判定': research['decision'],\n          '结果': research.get('answer_fact') or '不显示正文', '状态': research['state']},\n         {'任务': '公开研发资料', '判定': public_note['decision'],\n          '结果': public_note.get('answer_fact'), '状态': public_note['state']}],\n        '办公与研发助手')\n",
+    "params": [
+      {
+        "name": "approve",
+        "label": "组织者批准会议提案",
+        "type": "bool",
+        "value": false
+      },
+      {
+        "name": "engineer_access",
+        "label": "具有研发工程师权限",
+        "type": "bool",
+        "value": false
+      }
+    ],
+    "spec": {
+      "background": "排期和资料检索都是常见的办公室重复任务，但日历提交与受限研发资料需要不同权限。",
+      "problem": "给李、王求最早共同空档；经组织者模拟审批后才确认本地提案。查询芯片接口和泵振动资料时过滤未批准版本与角色。",
+      "input": "固定日历 S1=09:00、S2=10:00、S3=14:00；两个布尔开关分别控制组织者模拟审批与工程师访问资格。",
+      "output": "会议提案或本地确认状态、研发资料答复或权限拒绝、每项状态。",
+      "constraints": "不会发送真实会议邀请，也不会读取外部研发库；草稿与过期资料不可用于答复。",
+      "example": "李有 S1/S2，王有 S2/S3，共同最早是 S2=10:00；未审批只能显示 proposed。",
+      "evaluation": "共同空档、版本、访问角色与审批状态均应正确；无审批提交和草稿引用数为零。",
+      "annotatedCode": "# 用固定日历求交集，用已批准资料的权限与版本筛选回答。\nfrom bdm_decision.cases.week14_enterprise_agents import (\n    office_assist, approve_meeting, research_answer\n)\n\napprove = False\nengineer_access = False\nledger = {}  # 内存账本只服务本次浏览器运行，不发送真实会议邀请。\nmeeting = office_assist('meeting', event_id='MEET-1', participants=['李', '王'], ledger=ledger)\n# 组织者审批是独立状态转移；未审批时始终只是提案。\nif approve:\n    meeting = approve_meeting('MEET-1', approval_id='ORG-1',\n                              organizer_authenticated=True, ledger=ledger)\nrole = 'engineer' if engineer_access else 'employee'\nresearch = research_answer('芯片接口', role=role)\npublic_note = research_answer('泵振动', role='employee')\ndisplay([{'任务': '会议排期', '判定': meeting['decision'],\n          '结果': meeting.get('proposal_time', '无共同空档'), '状态': meeting['state']},\n         {'任务': '受限研发资料', '判定': research['decision'],\n          '结果': research.get('answer_fact') or '不显示正文', '状态': research['state']},\n         {'任务': '公开研发资料', '判定': public_note['decision'],\n          '结果': public_note.get('answer_fact'), '状态': public_note['state']}],\n        '办公与研发助手')\n"
+    },
+    "sourcePath": "src/bdm_decision/cases/week14_enterprise_agents.py"
+  },
+  {
+    "id": "agent-routing",
+    "title": "客户咨询分流工作流",
+    "chapter": "14_ai_agent",
+    "description": "按安全、退货、订单、产品优先级分流；身份和订单归属检查先于展示状态。",
+    "language": "python",
+    "code": "# 固定词典和优先级实现客服分流；不会退款或查询真实订单。\nfrom bdm_decision.cases.week14_enterprise_agents import route_customer\n\nverified = False\nsafety_message = False\nmessage = '设备冒烟，O100 物流怎样？' if safety_message else 'O100 物流怎样？'\nledger = {}  # 完整账本保存请求指纹；首次调用和重试都使用它。\nresult = route_customer('CASE-1', customer_id='U1', verified=verified,\n                        message=message, order_id='O100', ledger=ledger)\ndisplay([{'消息': message, '路由': result['route'], '状态': result['state'],\n          '可显示事实': result.get('visible_fact') or '无',\n          '下一处理人': result['next_actor'],\n          '命中意图': '、'.join(result['matched_keywords']) or '无'}], '客户咨询分流')\n# 同一事件号再次提交只复用结果，不新增客服动作。\nreplay = route_customer('CASE-1', customer_id='U1', verified=verified,\n                        message=message, order_id='O100', ledger=ledger)\nprint('重复提交复用前次结果：', replay.get('replayed', False))\n",
+    "params": [
+      {
+        "name": "verified",
+        "label": "客户身份已核验",
+        "type": "bool",
+        "value": false
+      },
+      {
+        "name": "safety_message",
+        "label": "消息包含设备冒烟",
+        "type": "bool",
+        "value": false
+      }
+    ],
+    "spec": {
+      "background": "虚构客服同时处理订单进度、退货、产品资料与安全消息；错误分流可能泄露订单或延迟人工响应。",
+      "problem": "对客户 U1 关于 O100 的消息给出唯一路由。安全词优先；订单状态只在身份与归属均核对后显示。",
+      "input": "固定客户 U1、订单 O100；身份与安全词由开关控制，消息由代码按开关生成。",
+      "output": "路由、状态、可显示事实、下一处理人、命中意图以及重复提交是否复用。",
+      "constraints": "不执行退款或修改订单；十四日只是虚构教学规则。身份未核验时不得显示订单状态。",
+      "example": "U1 未核验问 O100 物流，结果为 verify_identity；核验后显示“已发货”；消息含“冒烟”则安全升级优先。",
+      "evaluation": "高优先级安全分支不能漏分流，越权订单状态不得泄露，重复提交不能产生新动作。",
+      "annotatedCode": "# 固定词典和优先级实现客服分流；不会退款或查询真实订单。\nfrom bdm_decision.cases.week14_enterprise_agents import route_customer\n\nverified = False\nsafety_message = False\nmessage = '设备冒烟，O100 物流怎样？' if safety_message else 'O100 物流怎样？'\nledger = {}  # 完整账本保存请求指纹；首次调用和重试都使用它。\nresult = route_customer('CASE-1', customer_id='U1', verified=verified,\n                        message=message, order_id='O100', ledger=ledger)\ndisplay([{'消息': message, '路由': result['route'], '状态': result['state'],\n          '可显示事实': result.get('visible_fact') or '无',\n          '下一处理人': result['next_actor'],\n          '命中意图': '、'.join(result['matched_keywords']) or '无'}], '客户咨询分流')\n# 同一事件号再次提交只复用结果，不新增客服动作。\nreplay = route_customer('CASE-1', customer_id='U1', verified=verified,\n                        message=message, order_id='O100', ledger=ledger)\nprint('重复提交复用前次结果：', replay.get('replayed', False))\n"
+    },
+    "sourcePath": "src/bdm_decision/cases/week14_enterprise_agents.py"
+  },
+  {
+    "id": "agent-production",
+    "title": "生产线异常处理综合方案",
+    "chapter": "14_ai_agent",
+    "description": "以只读传感器和 PLC 联锁状态生成调查建议；审批后仅建立本地模拟工单。",
+    "language": "python",
+    "code": "# 只读教学事件：PLC 联锁状态只能输入，代码没有任何停启机调用。\nfrom bdm_decision.cases.week14_enterprise_agents import (\n    handle_production_event, approve_production_event\n)\n\nvibration_mm_s = 8.0\nstale_reading = False\ninterlock_trip = False\napprove_ticket = False\nledger = {}  # 本地账本用于工单审批和事件去重。\nresult = handle_production_event('E-DEMO', vibration_mm_s=vibration_mm_s,\n                                 temperature_c=79.0, quality_flag='good',\n                                 sensor_age_s=61 if stale_reading else 20,\n                                 interlock_trip=interlock_trip, ledger=ledger)\n# 只有有效异常草稿可被维护负责人批准；仍然不触及设备。\nif approve_ticket and result['state'] == 'proposed':\n    result = approve_production_event('E-DEMO', approval_by='maintenance_lead',\n                                      ledger=ledger)\ndisplay([{'事件': 'E-DEMO', '路由': result['route'], '状态': result['state'],\n          '风险分数': result['risk_score'],\n          '命中信号': '、'.join(result['matched_signals']) or '无',\n          '本地工单': result.get('ticket_id') or '未建立',\n          '设备控制调用数': len(result['control_commands'])}], '产线异常复核')\nprint(result['reason'])\n",
+    "params": [
+      {
+        "name": "vibration_mm_s",
+        "label": "振动值 / mm·s⁻¹",
+        "min": 0,
+        "max": 12,
+        "step": 0.5,
+        "value": 8.0
+      },
+      {
+        "name": "stale_reading",
+        "label": "传感器读数已过期",
+        "type": "bool",
+        "value": false
+      },
+      {
+        "name": "interlock_trip",
+        "label": "PLC 已上报安全联锁",
+        "type": "bool",
+        "value": false
+      },
+      {
+        "name": "approve_ticket",
+        "label": "维护负责人批准模拟工单",
+        "type": "bool",
+        "value": false
+      }
+    ],
+    "spec": {
+      "background": "虚构封测线 M01 上报振动、温度与批次质量。AI 只读复核，现场 PLC 和有资质人员负责设备安全。",
+      "problem": "先处理联锁，再验证读数新鲜度；有效数据按阈值计算风险分数，形成维护调查草稿并记录审批与幂等。",
+      "input": "默认振动 8.0 mm/s、温度 79°C、质量 good、年龄 20 秒；滑块和开关控制振动、过期、联锁与本地审批。",
+      "output": "路由、状态、风险分数、触发信号、本地工单 ID 和设备控制调用数。",
+      "constraints": "联锁只读且最高优先级；模型绝不停机、开机、复位或调参。读数过期时不判正常，未审批不创建正式工单。",
+      "example": "振动恰为 8.0 时风险分数为 1，输出 warning_review；若联锁触发则直接人工安全响应，设备控制调用数恒为 0。",
+      "evaluation": "标准样本的阈值、优先级和幂等结果须全部正确；漏升级、无审批工单与设备控制调用数均为零。",
+      "annotatedCode": "# 只读教学事件：PLC 联锁状态只能输入，代码没有任何停启机调用。\nfrom bdm_decision.cases.week14_enterprise_agents import (\n    handle_production_event, approve_production_event\n)\n\nvibration_mm_s = 8.0\nstale_reading = False\ninterlock_trip = False\napprove_ticket = False\nledger = {}  # 本地账本用于工单审批和事件去重。\nresult = handle_production_event('E-DEMO', vibration_mm_s=vibration_mm_s,\n                                 temperature_c=79.0, quality_flag='good',\n                                 sensor_age_s=61 if stale_reading else 20,\n                                 interlock_trip=interlock_trip, ledger=ledger)\n# 只有有效异常草稿可被维护负责人批准；仍然不触及设备。\nif approve_ticket and result['state'] == 'proposed':\n    result = approve_production_event('E-DEMO', approval_by='maintenance_lead',\n                                      ledger=ledger)\ndisplay([{'事件': 'E-DEMO', '路由': result['route'], '状态': result['state'],\n          '风险分数': result['risk_score'],\n          '命中信号': '、'.join(result['matched_signals']) or '无',\n          '本地工单': result.get('ticket_id') or '未建立',\n          '设备控制调用数': len(result['control_commands'])}], '产线异常复核')\nprint(result['reason'])\n"
+    },
+    "sourcePath": "src/bdm_decision/cases/week14_enterprise_agents.py"
+  }
+]

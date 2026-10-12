@@ -1,0 +1,4923 @@
+{
+  "batches": 7,
+  "bodyFont": "\"BDM Course Song\", \"Songti SC\", SimSun, STSong, serif",
+  "diagramIssues": [],
+  "expandedReport": [],
+  "fonts": [
+    {
+      "family": "BDM Course Song",
+      "status": "loaded",
+      "weight": "400"
+    },
+    {
+      "family": "BDM Course Song",
+      "status": "loaded",
+      "weight": "700"
+    }
+  ],
+  "pages": 55,
+  "report": [
+    {
+      "chapter": "14_ai_agent",
+      "contentHeight": 408,
+      "contentScroll": 408,
+      "footerTop": 611.2578125,
+      "issues": [],
+      "layout": "split",
+      "mathErrors": 0,
+      "nodes": [
+        {
+          "bottom": 158.390625,
+          "height": 50,
+          "scrollHeight": 54,
+          "scrollWidth": 1172,
+          "top": 107.9921875,
+          "type": "H3",
+          "width": 1172
+        },
+        {
+          "bottom": 511.390625,
+          "height": 208,
+          "scrollHeight": 208,
+          "scrollWidth": 611,
+          "top": 302.90625,
+          "type": "slide-narrative",
+          "width": 611
+        },
+        {
+          "bottom": 597.8359375,
+          "height": 381,
+          "scrollHeight": 381,
+          "scrollWidth": 541,
+          "top": 216.46875,
+          "type": "slide-support",
+          "width": 541
+        },
+        {
+          "bottom": 597.8359375,
+          "height": 381,
+          "scrollHeight": 381,
+          "scrollWidth": 541,
+          "top": 216.46875,
+          "type": "slide-diagram diagram-graph",
+          "width": 541
+        },
+        {
+          "bottom": 375.53515625,
+          "height": 77,
+          "scrollHeight": 77,
+          "scrollWidth": 144,
+          "top": 296.69921875,
+          "type": "diagram-node diagram-tone-blue ",
+          "width": 144
+        },
+        {
+          "bottom": 375.53515625,
+          "height": 77,
+          "scrollHeight": 77,
+          "scrollWidth": 144,
+          "top": 296.69921875,
+          "type": "diagram-node diagram-tone-blue ",
+          "width": 144
+        },
+        {
+          "bottom": 375.53515625,
+          "height": 77,
+          "scrollHeight": 77,
+          "scrollWidth": 144,
+          "top": 296.69921875,
+          "type": "diagram-node diagram-tone-blue ",
+          "width": 144
+        },
+        {
+          "bottom": 521.53515625,
+          "height": 77,
+          "scrollHeight": 77,
+          "scrollWidth": 144,
+          "top": 442.69921875,
+          "type": "diagram-node diagram-tone-blue ",
+          "width": 144
+        },
+        {
+          "bottom": 521.53515625,
+          "height": 77,
+          "scrollHeight": 77,
+          "scrollWidth": 144,
+          "top": 442.69921875,
+          "type": "diagram-node diagram-tone-blue ",
+          "width": 144
+        },
+        {
+          "bottom": 521.53515625,
+          "height": 77,
+          "scrollHeight": 77,
+          "scrollWidth": 144,
+          "top": 442.69921875,
+          "type": "diagram-node diagram-tone-blue ",
+          "width": 144
+        }
+      ],
+      "page": 1,
+      "pageHeight": 720,
+      "title": "企业智能体：从任务到受控结果",
+      "titleHeight": 50
+    },
+    {
+      "chapter": "14_ai_agent",
+      "contentHeight": 408,
+      "contentScroll": 410,
+      "footerTop": 611.2578125,
+      "issues": [],
+      "layout": "stack",
+      "mathErrors": 0,
+      "nodes": [
+        {
+          "bottom": 158.390625,
+          "height": 50,
+          "scrollHeight": 54,
+          "scrollWidth": 1172,
+          "top": 107.9921875,
+          "type": "H3",
+          "width": 1172
+        },
+        {
+          "bottom": 328.4765625,
+          "height": 128,
+          "scrollHeight": 128,
+          "scrollWidth": 1172,
+          "top": 200.8203125,
+          "type": "slide-narrative",
+          "width": 1172
+        },
+        {
+          "bottom": 613.4921875,
+          "height": 265,
+          "scrollHeight": 265,
+          "scrollWidth": 1172,
+          "top": 348.4765625,
+          "type": "slide-support",
+          "width": 1172
+        },
+        {
+          "bottom": 613.4921875,
+          "height": 263,
+          "scrollHeight": 263,
+          "scrollWidth": 1172,
+          "top": 348.4765625,
+          "type": "slide-table-wrap",
+          "width": 1172
+        }
+      ],
+      "page": 2,
+      "pageHeight": 720,
+      "title": "任务契约如何消除歧义",
+      "titleHeight": 50
+    },
+    {
+      "chapter": "14_ai_agent",
+      "contentHeight": 408,
+      "contentScroll": 408,
+      "footerTop": 611.2578125,
+      "issues": [],
+      "layout": "split",
+      "mathErrors": 0,
+      "nodes": [
+        {
+          "bottom": 158.390625,
+          "height": 50,
+          "scrollHeight": 54,
+          "scrollWidth": 1172,
+          "top": 107.9921875,
+          "type": "H3",
+          "width": 1172
+        },
+        {
+          "bottom": 527.3515625,
+          "height": 240,
+          "scrollHeight": 240,
+          "scrollWidth": 611,
+          "top": 286.953125,
+          "type": "slide-narrative",
+          "width": 611
+        },
+        {
+          "bottom": 597.8359375,
+          "height": 381,
+          "scrollHeight": 381,
+          "scrollWidth": 541,
+          "top": 216.46875,
+          "type": "slide-support",
+          "width": 541
+        },
+        {
+          "bottom": 597.8359375,
+          "height": 381,
+          "scrollHeight": 381,
+          "scrollWidth": 541,
+          "top": 216.46875,
+          "type": "slide-diagram diagram-matrix",
+          "width": 541
+        },
+        {
+          "bottom": 387.2421875,
+          "height": 76,
+          "scrollHeight": 76,
+          "scrollWidth": 200,
+          "top": 309.3125,
+          "type": "diagram-tone-blue",
+          "width": 200
+        },
+        {
+          "bottom": 387.2421875,
+          "height": 76,
+          "scrollHeight": 76,
+          "scrollWidth": 200,
+          "top": 309.3125,
+          "type": "diagram-tone-blue",
+          "width": 200
+        },
+        {
+          "bottom": 469.171875,
+          "height": 76,
+          "scrollHeight": 76,
+          "scrollWidth": 200,
+          "top": 391.2421875,
+          "type": "diagram-tone-blue",
+          "width": 200
+        },
+        {
+          "bottom": 469.171875,
+          "height": 76,
+          "scrollHeight": 76,
+          "scrollWidth": 200,
+          "top": 391.2421875,
+          "type": "diagram-tone-blue",
+          "width": 200
+        },
+        {
+          "bottom": 551.1171875,
+          "height": 76,
+          "scrollHeight": 76,
+          "scrollWidth": 200,
+          "top": 473.171875,
+          "type": "diagram-tone-blue",
+          "width": 200
+        },
+        {
+          "bottom": 551.1171875,
+          "height": 76,
+          "scrollHeight": 76,
+          "scrollWidth": 200,
+          "top": 473.171875,
+          "type": "diagram-tone-blue",
+          "width": 200
+        }
+      ],
+      "page": 3,
+      "pageHeight": 720,
+      "title": "对话、协助与执行的控制差异",
+      "titleHeight": 50
+    },
+    {
+      "chapter": "14_ai_agent",
+      "contentHeight": 408,
+      "contentScroll": 408,
+      "footerTop": 611.2578125,
+      "issues": [],
+      "layout": "split",
+      "mathErrors": 0,
+      "nodes": [
+        {
+          "bottom": 158.390625,
+          "height": 50,
+          "scrollHeight": 54,
+          "scrollWidth": 1172,
+          "top": 107.9921875,
+          "type": "H3",
+          "width": 1172
+        },
+        {
+          "bottom": 527.3515625,
+          "height": 240,
+          "scrollHeight": 240,
+          "scrollWidth": 611,
+          "top": 286.953125,
+          "type": "slide-narrative",
+          "width": 611
+        },
+        {
+          "bottom": 597.8359375,
+          "height": 381,
+          "scrollHeight": 381,
+          "scrollWidth": 541,
+          "top": 216.46875,
+          "type": "slide-support",
+          "width": 541
+        },
+        {
+          "bottom": 597.8359375,
+          "height": 381,
+          "scrollHeight": 381,
+          "scrollWidth": 541,
+          "top": 216.46875,
+          "type": "slide-diagram diagram-graph",
+          "width": 541
+        },
+        {
+          "bottom": 375.53515625,
+          "height": 77,
+          "scrollHeight": 77,
+          "scrollWidth": 144,
+          "top": 296.69921875,
+          "type": "diagram-node diagram-tone-blue ",
+          "width": 144
+        },
+        {
+          "bottom": 375.53515625,
+          "height": 77,
+          "scrollHeight": 77,
+          "scrollWidth": 144,
+          "top": 296.69921875,
+          "type": "diagram-node diagram-tone-blue ",
+          "width": 144
+        },
+        {
+          "bottom": 375.53515625,
+          "height": 77,
+          "scrollHeight": 77,
+          "scrollWidth": 144,
+          "top": 296.69921875,
+          "type": "diagram-node diagram-tone-blue ",
+          "width": 144
+        },
+        {
+          "bottom": 521.53515625,
+          "height": 77,
+          "scrollHeight": 77,
+          "scrollWidth": 144,
+          "top": 442.69921875,
+          "type": "diagram-node diagram-tone-blue ",
+          "width": 144
+        },
+        {
+          "bottom": 521.53515625,
+          "height": 77,
+          "scrollHeight": 77,
+          "scrollWidth": 144,
+          "top": 442.69921875,
+          "type": "diagram-node diagram-tone-blue ",
+          "width": 144
+        },
+        {
+          "bottom": 521.53515625,
+          "height": 77,
+          "scrollHeight": 77,
+          "scrollWidth": 144,
+          "top": 442.69921875,
+          "type": "diagram-node diagram-tone-blue ",
+          "width": 144
+        }
+      ],
+      "page": 4,
+      "pageHeight": 720,
+      "title": "六项功能组成一个任务系统",
+      "titleHeight": 50
+    },
+    {
+      "chapter": "14_ai_agent",
+      "contentHeight": 408,
+      "contentScroll": 408,
+      "footerTop": 611.2578125,
+      "issues": [],
+      "layout": "split",
+      "mathErrors": 0,
+      "nodes": [
+        {
+          "bottom": 158.390625,
+          "height": 50,
+          "scrollHeight": 54,
+          "scrollWidth": 1172,
+          "top": 107.9921875,
+          "type": "H3",
+          "width": 1172
+        },
+        {
+          "bottom": 511.390625,
+          "height": 208,
+          "scrollHeight": 208,
+          "scrollWidth": 611,
+          "top": 302.90625,
+          "type": "slide-narrative",
+          "width": 611
+        },
+        {
+          "bottom": 597.8359375,
+          "height": 381,
+          "scrollHeight": 381,
+          "scrollWidth": 541,
+          "top": 216.46875,
+          "type": "slide-support",
+          "width": 541
+        },
+        {
+          "bottom": 597.8359375,
+          "height": 381,
+          "scrollHeight": 381,
+          "scrollWidth": 541,
+          "top": 216.46875,
+          "type": "slide-diagram diagram-graph",
+          "width": 541
+        },
+        {
+          "bottom": 375.53515625,
+          "height": 77,
+          "scrollHeight": 77,
+          "scrollWidth": 144,
+          "top": 296.69921875,
+          "type": "diagram-node diagram-tone-blue ",
+          "width": 144
+        },
+        {
+          "bottom": 375.53515625,
+          "height": 77,
+          "scrollHeight": 77,
+          "scrollWidth": 144,
+          "top": 296.69921875,
+          "type": "diagram-node diagram-tone-blue ",
+          "width": 144
+        },
+        {
+          "bottom": 375.53515625,
+          "height": 77,
+          "scrollHeight": 77,
+          "scrollWidth": 144,
+          "top": 296.69921875,
+          "type": "diagram-node diagram-tone-blue ",
+          "width": 144
+        },
+        {
+          "bottom": 521.53515625,
+          "height": 77,
+          "scrollHeight": 77,
+          "scrollWidth": 144,
+          "top": 442.69921875,
+          "type": "diagram-node diagram-tone-blue ",
+          "width": 144
+        },
+        {
+          "bottom": 521.53515625,
+          "height": 77,
+          "scrollHeight": 77,
+          "scrollWidth": 144,
+          "top": 442.69921875,
+          "type": "diagram-node diagram-tone-blue ",
+          "width": 144
+        },
+        {
+          "bottom": 521.53515625,
+          "height": 77,
+          "scrollHeight": 77,
+          "scrollWidth": 144,
+          "top": 442.69921875,
+          "type": "diagram-node diagram-tone-blue ",
+          "width": 144
+        }
+      ],
+      "page": 5,
+      "pageHeight": 720,
+      "title": "Planning：顺序由依赖与约束决定",
+      "titleHeight": 50
+    },
+    {
+      "chapter": "14_ai_agent",
+      "contentHeight": 408,
+      "contentScroll": 408,
+      "footerTop": 611.2578125,
+      "issues": [],
+      "layout": "split",
+      "mathErrors": 0,
+      "nodes": [
+        {
+          "bottom": 158.390625,
+          "height": 50,
+          "scrollHeight": 54,
+          "scrollWidth": 1172,
+          "top": 107.9921875,
+          "type": "H3",
+          "width": 1172
+        },
+        {
+          "bottom": 511.390625,
+          "height": 208,
+          "scrollHeight": 208,
+          "scrollWidth": 611,
+          "top": 302.90625,
+          "type": "slide-narrative",
+          "width": 611
+        },
+        {
+          "bottom": 597.8359375,
+          "height": 381,
+          "scrollHeight": 381,
+          "scrollWidth": 541,
+          "top": 216.46875,
+          "type": "slide-support",
+          "width": 541
+        },
+        {
+          "bottom": 597.8359375,
+          "height": 381,
+          "scrollHeight": 381,
+          "scrollWidth": 541,
+          "top": 216.46875,
+          "type": "slide-diagram diagram-matrix",
+          "width": 541
+        },
+        {
+          "bottom": 387.2421875,
+          "height": 76,
+          "scrollHeight": 76,
+          "scrollWidth": 200,
+          "top": 309.3125,
+          "type": "diagram-tone-blue",
+          "width": 200
+        },
+        {
+          "bottom": 387.2421875,
+          "height": 76,
+          "scrollHeight": 76,
+          "scrollWidth": 200,
+          "top": 309.3125,
+          "type": "diagram-tone-blue",
+          "width": 200
+        },
+        {
+          "bottom": 469.171875,
+          "height": 76,
+          "scrollHeight": 76,
+          "scrollWidth": 200,
+          "top": 391.2421875,
+          "type": "diagram-tone-blue",
+          "width": 200
+        },
+        {
+          "bottom": 469.171875,
+          "height": 76,
+          "scrollHeight": 76,
+          "scrollWidth": 200,
+          "top": 391.2421875,
+          "type": "diagram-tone-blue",
+          "width": 200
+        },
+        {
+          "bottom": 551.1171875,
+          "height": 76,
+          "scrollHeight": 76,
+          "scrollWidth": 200,
+          "top": 473.171875,
+          "type": "diagram-tone-blue",
+          "width": 200
+        },
+        {
+          "bottom": 551.1171875,
+          "height": 76,
+          "scrollHeight": 76,
+          "scrollWidth": 200,
+          "top": 473.171875,
+          "type": "diagram-tone-blue",
+          "width": 200
+        }
+      ],
+      "page": 6,
+      "pageHeight": 720,
+      "title": "Memory：保存什么与相信什么",
+      "titleHeight": 50
+    },
+    {
+      "chapter": "14_ai_agent",
+      "contentHeight": 408,
+      "contentScroll": 408,
+      "footerTop": 611.2578125,
+      "issues": [],
+      "layout": "split",
+      "mathErrors": 0,
+      "nodes": [
+        {
+          "bottom": 158.390625,
+          "height": 50,
+          "scrollHeight": 54,
+          "scrollWidth": 1172,
+          "top": 107.9921875,
+          "type": "H3",
+          "width": 1172
+        },
+        {
+          "bottom": 584.1796875,
+          "height": 354,
+          "scrollHeight": 354,
+          "scrollWidth": 611,
+          "top": 230.1171875,
+          "type": "slide-narrative",
+          "width": 611
+        },
+        {
+          "bottom": 584.1796875,
+          "height": 129,
+          "scrollHeight": 129,
+          "scrollWidth": 611,
+          "top": 453.6015625,
+          "type": "slide-equation",
+          "width": 611
+        },
+        {
+          "bottom": 554.9921875,
+          "height": 296,
+          "scrollHeight": 296,
+          "scrollWidth": 541,
+          "top": 259.3046875,
+          "type": "slide-support",
+          "width": 541
+        },
+        {
+          "bottom": 554.9921875,
+          "height": 294,
+          "scrollHeight": 294,
+          "scrollWidth": 541,
+          "top": 259.3046875,
+          "type": "slide-table-wrap",
+          "width": 541
+        }
+      ],
+      "page": 7,
+      "pageHeight": 720,
+      "title": "Tools：接口契约先于工具调用",
+      "titleHeight": 50
+    },
+    {
+      "chapter": "14_ai_agent",
+      "contentHeight": 408,
+      "contentScroll": 408,
+      "footerTop": 611.2578125,
+      "issues": [],
+      "layout": "split",
+      "mathErrors": 0,
+      "nodes": [
+        {
+          "bottom": 158.390625,
+          "height": 50,
+          "scrollHeight": 54,
+          "scrollWidth": 1172,
+          "top": 107.9921875,
+          "type": "H3",
+          "width": 1172
+        },
+        {
+          "bottom": 511.390625,
+          "height": 208,
+          "scrollHeight": 208,
+          "scrollWidth": 611,
+          "top": 302.90625,
+          "type": "slide-narrative",
+          "width": 611
+        },
+        {
+          "bottom": 597.8359375,
+          "height": 381,
+          "scrollHeight": 381,
+          "scrollWidth": 541,
+          "top": 216.46875,
+          "type": "slide-support",
+          "width": 541
+        },
+        {
+          "bottom": 597.8359375,
+          "height": 381,
+          "scrollHeight": 381,
+          "scrollWidth": 541,
+          "top": 216.46875,
+          "type": "slide-diagram diagram-matrix",
+          "width": 541
+        },
+        {
+          "bottom": 387.2421875,
+          "height": 76,
+          "scrollHeight": 76,
+          "scrollWidth": 200,
+          "top": 309.3125,
+          "type": "diagram-tone-blue",
+          "width": 200
+        },
+        {
+          "bottom": 387.2421875,
+          "height": 76,
+          "scrollHeight": 76,
+          "scrollWidth": 200,
+          "top": 309.3125,
+          "type": "diagram-tone-blue",
+          "width": 200
+        },
+        {
+          "bottom": 469.171875,
+          "height": 76,
+          "scrollHeight": 76,
+          "scrollWidth": 200,
+          "top": 391.2421875,
+          "type": "diagram-tone-blue",
+          "width": 200
+        },
+        {
+          "bottom": 469.171875,
+          "height": 76,
+          "scrollHeight": 76,
+          "scrollWidth": 200,
+          "top": 391.2421875,
+          "type": "diagram-tone-blue",
+          "width": 200
+        },
+        {
+          "bottom": 551.1171875,
+          "height": 76,
+          "scrollHeight": 76,
+          "scrollWidth": 200,
+          "top": 473.171875,
+          "type": "diagram-tone-blue",
+          "width": 200
+        },
+        {
+          "bottom": 551.1171875,
+          "height": 76,
+          "scrollHeight": 76,
+          "scrollWidth": 200,
+          "top": 473.171875,
+          "type": "diagram-tone-blue",
+          "width": 200
+        }
+      ],
+      "page": 8,
+      "pageHeight": 720,
+      "title": "Skills：把稳定方法变成可复用约定",
+      "titleHeight": 50
+    },
+    {
+      "chapter": "14_ai_agent",
+      "contentHeight": 408,
+      "contentScroll": 408,
+      "footerTop": 611.2578125,
+      "issues": [],
+      "layout": "split",
+      "mathErrors": 0,
+      "nodes": [
+        {
+          "bottom": 158.390625,
+          "height": 50,
+          "scrollHeight": 54,
+          "scrollWidth": 1172,
+          "top": 107.9921875,
+          "type": "H3",
+          "width": 1172
+        },
+        {
+          "bottom": 527.3515625,
+          "height": 240,
+          "scrollHeight": 240,
+          "scrollWidth": 611,
+          "top": 286.953125,
+          "type": "slide-narrative",
+          "width": 611
+        },
+        {
+          "bottom": 597.8359375,
+          "height": 381,
+          "scrollHeight": 381,
+          "scrollWidth": 541,
+          "top": 216.46875,
+          "type": "slide-support",
+          "width": 541
+        },
+        {
+          "bottom": 597.8359375,
+          "height": 381,
+          "scrollHeight": 381,
+          "scrollWidth": 541,
+          "top": 216.46875,
+          "type": "slide-diagram diagram-graph",
+          "width": 541
+        },
+        {
+          "bottom": 375.53515625,
+          "height": 77,
+          "scrollHeight": 77,
+          "scrollWidth": 144,
+          "top": 296.69921875,
+          "type": "diagram-node diagram-tone-blue ",
+          "width": 144
+        },
+        {
+          "bottom": 375.53515625,
+          "height": 77,
+          "scrollHeight": 77,
+          "scrollWidth": 144,
+          "top": 296.69921875,
+          "type": "diagram-node diagram-tone-blue ",
+          "width": 144
+        },
+        {
+          "bottom": 375.53515625,
+          "height": 77,
+          "scrollHeight": 77,
+          "scrollWidth": 144,
+          "top": 296.69921875,
+          "type": "diagram-node diagram-tone-blue ",
+          "width": 144
+        },
+        {
+          "bottom": 521.53515625,
+          "height": 77,
+          "scrollHeight": 77,
+          "scrollWidth": 144,
+          "top": 442.69921875,
+          "type": "diagram-node diagram-tone-blue ",
+          "width": 144
+        },
+        {
+          "bottom": 521.53515625,
+          "height": 77,
+          "scrollHeight": 77,
+          "scrollWidth": 144,
+          "top": 442.69921875,
+          "type": "diagram-node diagram-tone-blue ",
+          "width": 144
+        },
+        {
+          "bottom": 521.53515625,
+          "height": 77,
+          "scrollHeight": 77,
+          "scrollWidth": 144,
+          "top": 442.69921875,
+          "type": "diagram-node diagram-tone-blue ",
+          "width": 144
+        }
+      ],
+      "page": 9,
+      "pageHeight": 720,
+      "title": "Harness：保持状态与执行不变量",
+      "titleHeight": 50
+    },
+    {
+      "chapter": "14_ai_agent",
+      "contentHeight": 408,
+      "contentScroll": 408,
+      "footerTop": 611.2578125,
+      "issues": [],
+      "layout": "split",
+      "mathErrors": 0,
+      "nodes": [
+        {
+          "bottom": 158.390625,
+          "height": 50,
+          "scrollHeight": 54,
+          "scrollWidth": 1172,
+          "top": 107.9921875,
+          "type": "H3",
+          "width": 1172
+        },
+        {
+          "bottom": 511.390625,
+          "height": 208,
+          "scrollHeight": 208,
+          "scrollWidth": 611,
+          "top": 302.90625,
+          "type": "slide-narrative",
+          "width": 611
+        },
+        {
+          "bottom": 609.1953125,
+          "height": 404,
+          "scrollHeight": 404,
+          "scrollWidth": 541,
+          "top": 205.109375,
+          "type": "slide-support",
+          "width": 541
+        },
+        {
+          "bottom": 609.1953125,
+          "height": 404,
+          "scrollHeight": 404,
+          "scrollWidth": 541,
+          "top": 205.109375,
+          "type": "slide-diagram diagram-graph",
+          "width": 541
+        },
+        {
+          "bottom": 364.17578125,
+          "height": 77,
+          "scrollHeight": 77,
+          "scrollWidth": 144,
+          "top": 285.33984375,
+          "type": "diagram-node diagram-tone-blue ",
+          "width": 144
+        },
+        {
+          "bottom": 364.17578125,
+          "height": 77,
+          "scrollHeight": 77,
+          "scrollWidth": 144,
+          "top": 285.33984375,
+          "type": "diagram-node diagram-tone-blue ",
+          "width": 144
+        },
+        {
+          "bottom": 364.17578125,
+          "height": 77,
+          "scrollHeight": 77,
+          "scrollWidth": 144,
+          "top": 285.33984375,
+          "type": "diagram-node diagram-tone-blue ",
+          "width": 144
+        },
+        {
+          "bottom": 510.17578125,
+          "height": 77,
+          "scrollHeight": 77,
+          "scrollWidth": 144,
+          "top": 431.33984375,
+          "type": "diagram-node diagram-tone-blue ",
+          "width": 144
+        },
+        {
+          "bottom": 510.17578125,
+          "height": 77,
+          "scrollHeight": 77,
+          "scrollWidth": 144,
+          "top": 431.33984375,
+          "type": "diagram-node diagram-tone-blue ",
+          "width": 144
+        },
+        {
+          "bottom": 510.17578125,
+          "height": 77,
+          "scrollHeight": 77,
+          "scrollWidth": 144,
+          "top": 431.33984375,
+          "type": "diagram-node diagram-tone-blue ",
+          "width": 144
+        }
+      ],
+      "page": 10,
+      "pageHeight": 720,
+      "title": "RAG：将外部证据引入回答",
+      "titleHeight": 50
+    },
+    {
+      "chapter": "14_ai_agent",
+      "contentHeight": 408,
+      "contentScroll": 408,
+      "footerTop": 611.2578125,
+      "issues": [],
+      "layout": "split",
+      "mathErrors": 0,
+      "nodes": [
+        {
+          "bottom": 158.390625,
+          "height": 50,
+          "scrollHeight": 54,
+          "scrollWidth": 1172,
+          "top": 107.9921875,
+          "type": "H3",
+          "width": 1172
+        },
+        {
+          "bottom": 527.3515625,
+          "height": 240,
+          "scrollHeight": 240,
+          "scrollWidth": 611,
+          "top": 286.953125,
+          "type": "slide-narrative",
+          "width": 611
+        },
+        {
+          "bottom": 597.8359375,
+          "height": 381,
+          "scrollHeight": 381,
+          "scrollWidth": 541,
+          "top": 216.46875,
+          "type": "slide-support",
+          "width": 541
+        },
+        {
+          "bottom": 597.8359375,
+          "height": 381,
+          "scrollHeight": 381,
+          "scrollWidth": 541,
+          "top": 216.46875,
+          "type": "slide-diagram diagram-graph",
+          "width": 541
+        },
+        {
+          "bottom": 375.53515625,
+          "height": 77,
+          "scrollHeight": 77,
+          "scrollWidth": 144,
+          "top": 296.69921875,
+          "type": "diagram-node diagram-tone-blue ",
+          "width": 144
+        },
+        {
+          "bottom": 375.53515625,
+          "height": 77,
+          "scrollHeight": 77,
+          "scrollWidth": 144,
+          "top": 296.69921875,
+          "type": "diagram-node diagram-tone-blue ",
+          "width": 144
+        },
+        {
+          "bottom": 375.53515625,
+          "height": 77,
+          "scrollHeight": 77,
+          "scrollWidth": 144,
+          "top": 296.69921875,
+          "type": "diagram-node diagram-tone-blue ",
+          "width": 144
+        },
+        {
+          "bottom": 521.53515625,
+          "height": 77,
+          "scrollHeight": 77,
+          "scrollWidth": 144,
+          "top": 442.69921875,
+          "type": "diagram-node diagram-tone-blue ",
+          "width": 144
+        },
+        {
+          "bottom": 521.53515625,
+          "height": 77,
+          "scrollHeight": 77,
+          "scrollWidth": 144,
+          "top": 442.69921875,
+          "type": "diagram-node diagram-tone-blue ",
+          "width": 144
+        },
+        {
+          "bottom": 521.53515625,
+          "height": 77,
+          "scrollHeight": 77,
+          "scrollWidth": 144,
+          "top": 442.69921875,
+          "type": "diagram-node diagram-tone-blue ",
+          "width": 144
+        }
+      ],
+      "page": 11,
+      "pageHeight": 720,
+      "title": "解析：保留条款、表格与来源位置",
+      "titleHeight": 50
+    },
+    {
+      "chapter": "14_ai_agent",
+      "contentHeight": 408,
+      "contentScroll": 408,
+      "footerTop": 611.2578125,
+      "issues": [],
+      "layout": "stack",
+      "mathErrors": 0,
+      "nodes": [
+        {
+          "bottom": 158.390625,
+          "height": 50,
+          "scrollHeight": 54,
+          "scrollWidth": 1172,
+          "top": 107.9921875,
+          "type": "H3",
+          "width": 1172
+        },
+        {
+          "bottom": 350.390625,
+          "height": 128,
+          "scrollHeight": 128,
+          "scrollWidth": 1172,
+          "top": 222.734375,
+          "type": "slide-narrative",
+          "width": 1172
+        },
+        {
+          "bottom": 591.5703125,
+          "height": 221,
+          "scrollHeight": 221,
+          "scrollWidth": 1172,
+          "top": 370.390625,
+          "type": "slide-support",
+          "width": 1172
+        },
+        {
+          "bottom": 591.5703125,
+          "height": 219,
+          "scrollHeight": 219,
+          "scrollWidth": 1172,
+          "top": 370.390625,
+          "type": "slide-table-wrap",
+          "width": 1172
+        }
+      ],
+      "page": 12,
+      "pageHeight": 720,
+      "title": "切分：保护语义条件的完整性",
+      "titleHeight": 50
+    },
+    {
+      "chapter": "14_ai_agent",
+      "contentHeight": 408,
+      "contentScroll": 408,
+      "footerTop": 611.2578125,
+      "issues": [],
+      "layout": "split",
+      "mathErrors": 0,
+      "nodes": [
+        {
+          "bottom": 158.390625,
+          "height": 50,
+          "scrollHeight": 54,
+          "scrollWidth": 1172,
+          "top": 107.9921875,
+          "type": "H3",
+          "width": 1172
+        },
+        {
+          "bottom": 511.390625,
+          "height": 208,
+          "scrollHeight": 208,
+          "scrollWidth": 611,
+          "top": 302.90625,
+          "type": "slide-narrative",
+          "width": 611
+        },
+        {
+          "bottom": 597.8359375,
+          "height": 381,
+          "scrollHeight": 381,
+          "scrollWidth": 541,
+          "top": 216.46875,
+          "type": "slide-support",
+          "width": 541
+        },
+        {
+          "bottom": 597.8359375,
+          "height": 381,
+          "scrollHeight": 381,
+          "scrollWidth": 541,
+          "top": 216.46875,
+          "type": "slide-diagram diagram-matrix",
+          "width": 541
+        },
+        {
+          "bottom": 387.2421875,
+          "height": 76,
+          "scrollHeight": 76,
+          "scrollWidth": 200,
+          "top": 309.3125,
+          "type": "diagram-tone-blue",
+          "width": 200
+        },
+        {
+          "bottom": 387.2421875,
+          "height": 76,
+          "scrollHeight": 76,
+          "scrollWidth": 200,
+          "top": 309.3125,
+          "type": "diagram-tone-blue",
+          "width": 200
+        },
+        {
+          "bottom": 469.171875,
+          "height": 76,
+          "scrollHeight": 76,
+          "scrollWidth": 200,
+          "top": 391.2421875,
+          "type": "diagram-tone-blue",
+          "width": 200
+        },
+        {
+          "bottom": 469.171875,
+          "height": 76,
+          "scrollHeight": 76,
+          "scrollWidth": 200,
+          "top": 391.2421875,
+          "type": "diagram-tone-blue",
+          "width": 200
+        },
+        {
+          "bottom": 551.1171875,
+          "height": 76,
+          "scrollHeight": 76,
+          "scrollWidth": 200,
+          "top": 473.171875,
+          "type": "diagram-tone-blue",
+          "width": 200
+        },
+        {
+          "bottom": 551.1171875,
+          "height": 76,
+          "scrollHeight": 76,
+          "scrollWidth": 200,
+          "top": 473.171875,
+          "type": "diagram-tone-blue",
+          "width": 200
+        }
+      ],
+      "page": 13,
+      "pageHeight": 720,
+      "title": "向量、词法与结构化查询",
+      "titleHeight": 50
+    },
+    {
+      "chapter": "14_ai_agent",
+      "contentHeight": 408,
+      "contentScroll": 408,
+      "footerTop": 611.2578125,
+      "issues": [],
+      "layout": "split",
+      "mathErrors": 0,
+      "nodes": [
+        {
+          "bottom": 158.390625,
+          "height": 50,
+          "scrollHeight": 54,
+          "scrollWidth": 1172,
+          "top": 107.9921875,
+          "type": "H3",
+          "width": 1172
+        },
+        {
+          "bottom": 511.390625,
+          "height": 208,
+          "scrollHeight": 208,
+          "scrollWidth": 611,
+          "top": 302.90625,
+          "type": "slide-narrative",
+          "width": 611
+        },
+        {
+          "bottom": 597.8359375,
+          "height": 381,
+          "scrollHeight": 381,
+          "scrollWidth": 541,
+          "top": 216.46875,
+          "type": "slide-support",
+          "width": 541
+        },
+        {
+          "bottom": 597.8359375,
+          "height": 381,
+          "scrollHeight": 381,
+          "scrollWidth": 541,
+          "top": 216.46875,
+          "type": "slide-diagram diagram-graph",
+          "width": 541
+        },
+        {
+          "bottom": 375.53515625,
+          "height": 77,
+          "scrollHeight": 77,
+          "scrollWidth": 144,
+          "top": 296.69921875,
+          "type": "diagram-node diagram-tone-blue ",
+          "width": 144
+        },
+        {
+          "bottom": 375.53515625,
+          "height": 77,
+          "scrollHeight": 77,
+          "scrollWidth": 144,
+          "top": 296.69921875,
+          "type": "diagram-node diagram-tone-blue ",
+          "width": 144
+        },
+        {
+          "bottom": 375.53515625,
+          "height": 77,
+          "scrollHeight": 77,
+          "scrollWidth": 144,
+          "top": 296.69921875,
+          "type": "diagram-node diagram-tone-blue ",
+          "width": 144
+        },
+        {
+          "bottom": 521.53515625,
+          "height": 77,
+          "scrollHeight": 77,
+          "scrollWidth": 144,
+          "top": 442.69921875,
+          "type": "diagram-node diagram-tone-blue ",
+          "width": 144
+        },
+        {
+          "bottom": 521.53515625,
+          "height": 77,
+          "scrollHeight": 77,
+          "scrollWidth": 144,
+          "top": 442.69921875,
+          "type": "diagram-node diagram-tone-blue ",
+          "width": 144
+        },
+        {
+          "bottom": 521.53515625,
+          "height": 77,
+          "scrollHeight": 77,
+          "scrollWidth": 144,
+          "top": 442.69921875,
+          "type": "diagram-node diagram-tone-blue ",
+          "width": 144
+        }
+      ],
+      "page": 14,
+      "pageHeight": 720,
+      "title": "Rerank：在候选集中重新排序",
+      "titleHeight": 50
+    },
+    {
+      "chapter": "14_ai_agent",
+      "contentHeight": 408,
+      "contentScroll": 408,
+      "footerTop": 611.2578125,
+      "issues": [],
+      "layout": "split",
+      "mathErrors": 0,
+      "nodes": [
+        {
+          "bottom": 158.390625,
+          "height": 50,
+          "scrollHeight": 54,
+          "scrollWidth": 1172,
+          "top": 107.9921875,
+          "type": "H3",
+          "width": 1172
+        },
+        {
+          "bottom": 581.890625,
+          "height": 349,
+          "scrollHeight": 349,
+          "scrollWidth": 611,
+          "top": 232.40625,
+          "type": "slide-narrative",
+          "width": 611
+        },
+        {
+          "bottom": 581.890625,
+          "height": 118,
+          "scrollHeight": 118,
+          "scrollWidth": 611,
+          "top": 462.1015625,
+          "type": "slide-equation",
+          "width": 611
+        },
+        {
+          "bottom": 597.8359375,
+          "height": 381,
+          "scrollHeight": 381,
+          "scrollWidth": 541,
+          "top": 216.46875,
+          "type": "slide-support",
+          "width": 541
+        },
+        {
+          "bottom": 597.8359375,
+          "height": 381,
+          "scrollHeight": 381,
+          "scrollWidth": 541,
+          "top": 216.46875,
+          "type": "slide-diagram diagram-graph",
+          "width": 541
+        },
+        {
+          "bottom": 375.53515625,
+          "height": 77,
+          "scrollHeight": 77,
+          "scrollWidth": 193,
+          "top": 296.69921875,
+          "type": "diagram-node diagram-tone-blue ",
+          "width": 193
+        },
+        {
+          "bottom": 375.53515625,
+          "height": 77,
+          "scrollHeight": 77,
+          "scrollWidth": 193,
+          "top": 296.69921875,
+          "type": "diagram-node diagram-tone-blue ",
+          "width": 193
+        },
+        {
+          "bottom": 521.53515625,
+          "height": 77,
+          "scrollHeight": 77,
+          "scrollWidth": 193,
+          "top": 442.69921875,
+          "type": "diagram-node diagram-tone-blue ",
+          "width": 193
+        },
+        {
+          "bottom": 521.53515625,
+          "height": 77,
+          "scrollHeight": 77,
+          "scrollWidth": 193,
+          "top": 442.69921875,
+          "type": "diagram-node diagram-tone-blue ",
+          "width": 193
+        }
+      ],
+      "page": 15,
+      "pageHeight": 720,
+      "title": "RAG原模型：检索与生成的组合",
+      "titleHeight": 50
+    },
+    {
+      "chapter": "14_ai_agent",
+      "contentHeight": 408,
+      "contentScroll": 408,
+      "footerTop": 611.2578125,
+      "issues": [],
+      "layout": "split",
+      "mathErrors": 0,
+      "nodes": [
+        {
+          "bottom": 158.390625,
+          "height": 50,
+          "scrollHeight": 54,
+          "scrollWidth": 1172,
+          "top": 107.9921875,
+          "type": "H3",
+          "width": 1172
+        },
+        {
+          "bottom": 511.390625,
+          "height": 208,
+          "scrollHeight": 208,
+          "scrollWidth": 611,
+          "top": 302.90625,
+          "type": "slide-narrative",
+          "width": 611
+        },
+        {
+          "bottom": 597.8359375,
+          "height": 381,
+          "scrollHeight": 381,
+          "scrollWidth": 541,
+          "top": 216.46875,
+          "type": "slide-support",
+          "width": 541
+        },
+        {
+          "bottom": 597.8359375,
+          "height": 381,
+          "scrollHeight": 381,
+          "scrollWidth": 541,
+          "top": 216.46875,
+          "type": "slide-diagram diagram-graph",
+          "width": 541
+        },
+        {
+          "bottom": 375.53515625,
+          "height": 77,
+          "scrollHeight": 77,
+          "scrollWidth": 144,
+          "top": 296.69921875,
+          "type": "diagram-node diagram-tone-blue ",
+          "width": 144
+        },
+        {
+          "bottom": 375.53515625,
+          "height": 77,
+          "scrollHeight": 77,
+          "scrollWidth": 144,
+          "top": 296.69921875,
+          "type": "diagram-node diagram-tone-blue ",
+          "width": 144
+        },
+        {
+          "bottom": 375.53515625,
+          "height": 77,
+          "scrollHeight": 77,
+          "scrollWidth": 144,
+          "top": 296.69921875,
+          "type": "diagram-node diagram-tone-blue ",
+          "width": 144
+        },
+        {
+          "bottom": 521.53515625,
+          "height": 77,
+          "scrollHeight": 77,
+          "scrollWidth": 144,
+          "top": 442.69921875,
+          "type": "diagram-node diagram-tone-blue ",
+          "width": 144
+        },
+        {
+          "bottom": 521.53515625,
+          "height": 77,
+          "scrollHeight": 77,
+          "scrollWidth": 144,
+          "top": 442.69921875,
+          "type": "diagram-node diagram-tone-blue ",
+          "width": 144
+        },
+        {
+          "bottom": 521.53515625,
+          "height": 77,
+          "scrollHeight": 77,
+          "scrollWidth": 144,
+          "top": 442.69921875,
+          "type": "diagram-node diagram-tone-blue ",
+          "width": 144
+        }
+      ],
+      "page": 16,
+      "pageHeight": 720,
+      "title": "GraphRAG：关系追踪与主题汇总",
+      "titleHeight": 50
+    },
+    {
+      "chapter": "14_ai_agent",
+      "contentHeight": 408,
+      "contentScroll": 408,
+      "footerTop": 611.2578125,
+      "issues": [],
+      "layout": "split",
+      "mathErrors": 0,
+      "nodes": [
+        {
+          "bottom": 158.390625,
+          "height": 50,
+          "scrollHeight": 54,
+          "scrollWidth": 1172,
+          "top": 107.9921875,
+          "type": "H3",
+          "width": 1172
+        },
+        {
+          "bottom": 527.3515625,
+          "height": 240,
+          "scrollHeight": 240,
+          "scrollWidth": 611,
+          "top": 286.953125,
+          "type": "slide-narrative",
+          "width": 611
+        },
+        {
+          "bottom": 597.8359375,
+          "height": 381,
+          "scrollHeight": 381,
+          "scrollWidth": 541,
+          "top": 216.46875,
+          "type": "slide-support",
+          "width": 541
+        },
+        {
+          "bottom": 597.8359375,
+          "height": 381,
+          "scrollHeight": 381,
+          "scrollWidth": 541,
+          "top": 216.46875,
+          "type": "slide-diagram diagram-graph",
+          "width": 541
+        },
+        {
+          "bottom": 375.53515625,
+          "height": 77,
+          "scrollHeight": 77,
+          "scrollWidth": 144,
+          "top": 296.69921875,
+          "type": "diagram-node diagram-tone-blue ",
+          "width": 144
+        },
+        {
+          "bottom": 375.53515625,
+          "height": 77,
+          "scrollHeight": 77,
+          "scrollWidth": 144,
+          "top": 296.69921875,
+          "type": "diagram-node diagram-tone-blue ",
+          "width": 144
+        },
+        {
+          "bottom": 375.53515625,
+          "height": 77,
+          "scrollHeight": 77,
+          "scrollWidth": 144,
+          "top": 296.69921875,
+          "type": "diagram-node diagram-tone-blue ",
+          "width": 144
+        },
+        {
+          "bottom": 521.53515625,
+          "height": 77,
+          "scrollHeight": 77,
+          "scrollWidth": 144,
+          "top": 442.69921875,
+          "type": "diagram-node diagram-tone-blue ",
+          "width": 144
+        },
+        {
+          "bottom": 521.53515625,
+          "height": 77,
+          "scrollHeight": 77,
+          "scrollWidth": 144,
+          "top": 442.69921875,
+          "type": "diagram-node diagram-tone-blue ",
+          "width": 144
+        },
+        {
+          "bottom": 521.53515625,
+          "height": 77,
+          "scrollHeight": 77,
+          "scrollWidth": 144,
+          "top": 442.69921875,
+          "type": "diagram-node diagram-tone-blue ",
+          "width": 144
+        }
+      ],
+      "page": 17,
+      "pageHeight": 720,
+      "title": "Chatflow：会话状态支持逐轮澄清",
+      "titleHeight": 50
+    },
+    {
+      "chapter": "14_ai_agent",
+      "contentHeight": 408,
+      "contentScroll": 408,
+      "footerTop": 611.2578125,
+      "issues": [],
+      "layout": "split",
+      "mathErrors": 0,
+      "nodes": [
+        {
+          "bottom": 158.390625,
+          "height": 50,
+          "scrollHeight": 54,
+          "scrollWidth": 1172,
+          "top": 107.9921875,
+          "type": "H3",
+          "width": 1172
+        },
+        {
+          "bottom": 511.390625,
+          "height": 208,
+          "scrollHeight": 208,
+          "scrollWidth": 611,
+          "top": 302.90625,
+          "type": "slide-narrative",
+          "width": 611
+        },
+        {
+          "bottom": 609.1953125,
+          "height": 404,
+          "scrollHeight": 404,
+          "scrollWidth": 541,
+          "top": 205.109375,
+          "type": "slide-support",
+          "width": 541
+        },
+        {
+          "bottom": 609.1953125,
+          "height": 404,
+          "scrollHeight": 404,
+          "scrollWidth": 541,
+          "top": 205.109375,
+          "type": "slide-diagram diagram-graph",
+          "width": 541
+        },
+        {
+          "bottom": 364.17578125,
+          "height": 77,
+          "scrollHeight": 77,
+          "scrollWidth": 144,
+          "top": 285.33984375,
+          "type": "diagram-node diagram-tone-blue ",
+          "width": 144
+        },
+        {
+          "bottom": 364.17578125,
+          "height": 77,
+          "scrollHeight": 77,
+          "scrollWidth": 144,
+          "top": 285.33984375,
+          "type": "diagram-node diagram-tone-blue ",
+          "width": 144
+        },
+        {
+          "bottom": 364.17578125,
+          "height": 77,
+          "scrollHeight": 77,
+          "scrollWidth": 144,
+          "top": 285.33984375,
+          "type": "diagram-node diagram-tone-blue ",
+          "width": 144
+        },
+        {
+          "bottom": 510.17578125,
+          "height": 77,
+          "scrollHeight": 77,
+          "scrollWidth": 144,
+          "top": 431.33984375,
+          "type": "diagram-node diagram-tone-blue ",
+          "width": 144
+        },
+        {
+          "bottom": 510.17578125,
+          "height": 77,
+          "scrollHeight": 77,
+          "scrollWidth": 144,
+          "top": 431.33984375,
+          "type": "diagram-node diagram-tone-blue ",
+          "width": 144
+        },
+        {
+          "bottom": 510.17578125,
+          "height": 77,
+          "scrollHeight": 77,
+          "scrollWidth": 144,
+          "top": 431.33984375,
+          "type": "diagram-node diagram-tone-blue ",
+          "width": 144
+        }
+      ],
+      "page": 18,
+      "pageHeight": 720,
+      "title": "Workflow：完成条件属于业务状态",
+      "titleHeight": 50
+    },
+    {
+      "chapter": "14_ai_agent",
+      "contentHeight": 408,
+      "contentScroll": 408,
+      "footerTop": 611.2578125,
+      "issues": [],
+      "layout": "stack",
+      "mathErrors": 0,
+      "nodes": [
+        {
+          "bottom": 158.390625,
+          "height": 50,
+          "scrollHeight": 54,
+          "scrollWidth": 1172,
+          "top": 107.9921875,
+          "type": "H3",
+          "width": 1172
+        },
+        {
+          "bottom": 350.390625,
+          "height": 128,
+          "scrollHeight": 128,
+          "scrollWidth": 1172,
+          "top": 222.734375,
+          "type": "slide-narrative",
+          "width": 1172
+        },
+        {
+          "bottom": 591.5703125,
+          "height": 221,
+          "scrollHeight": 221,
+          "scrollWidth": 1172,
+          "top": 370.390625,
+          "type": "slide-support",
+          "width": 1172
+        },
+        {
+          "bottom": 591.5703125,
+          "height": 219,
+          "scrollHeight": 219,
+          "scrollWidth": 1172,
+          "top": 370.390625,
+          "type": "slide-table-wrap",
+          "width": 1172
+        }
+      ],
+      "page": 19,
+      "pageHeight": 720,
+      "title": "Chatflow与Workflow如何组合",
+      "titleHeight": 50
+    },
+    {
+      "chapter": "14_ai_agent",
+      "contentHeight": 408,
+      "contentScroll": 408,
+      "footerTop": 611.2578125,
+      "issues": [],
+      "layout": "split",
+      "mathErrors": 0,
+      "nodes": [
+        {
+          "bottom": 158.390625,
+          "height": 50,
+          "scrollHeight": 54,
+          "scrollWidth": 1172,
+          "top": 107.9921875,
+          "type": "H3",
+          "width": 1172
+        },
+        {
+          "bottom": 511.390625,
+          "height": 208,
+          "scrollHeight": 208,
+          "scrollWidth": 611,
+          "top": 302.90625,
+          "type": "slide-narrative",
+          "width": 611
+        },
+        {
+          "bottom": 609.1953125,
+          "height": 404,
+          "scrollHeight": 404,
+          "scrollWidth": 541,
+          "top": 205.109375,
+          "type": "slide-support",
+          "width": 541
+        },
+        {
+          "bottom": 609.1953125,
+          "height": 404,
+          "scrollHeight": 404,
+          "scrollWidth": 541,
+          "top": 205.109375,
+          "type": "slide-diagram diagram-graph",
+          "width": 541
+        },
+        {
+          "bottom": 333.5078125,
+          "height": 62,
+          "scrollHeight": 62,
+          "scrollWidth": 204,
+          "top": 269.2734375,
+          "type": "diagram-node diagram-tone-blue ",
+          "width": 204
+        },
+        {
+          "bottom": 429.875,
+          "height": 62,
+          "scrollHeight": 62,
+          "scrollWidth": 182,
+          "top": 365.640625,
+          "type": "diagram-node diagram-tone-blue ",
+          "width": 182
+        },
+        {
+          "bottom": 429.875,
+          "height": 62,
+          "scrollHeight": 62,
+          "scrollWidth": 182,
+          "top": 365.640625,
+          "type": "diagram-node diagram-tone-blue ",
+          "width": 182
+        },
+        {
+          "bottom": 526.234375,
+          "height": 62,
+          "scrollHeight": 62,
+          "scrollWidth": 204,
+          "top": 462,
+          "type": "diagram-node diagram-tone-blue ",
+          "width": 204
+        }
+      ],
+      "page": 20,
+      "pageHeight": 720,
+      "title": "多角色协作：由职责差异决定分工",
+      "titleHeight": 50
+    },
+    {
+      "chapter": "14_ai_agent",
+      "contentHeight": 408,
+      "contentScroll": 408,
+      "footerTop": 611.2578125,
+      "issues": [],
+      "layout": "split",
+      "mathErrors": 0,
+      "nodes": [
+        {
+          "bottom": 158.390625,
+          "height": 50,
+          "scrollHeight": 54,
+          "scrollWidth": 1172,
+          "top": 107.9921875,
+          "type": "H3",
+          "width": 1172
+        },
+        {
+          "bottom": 527.3515625,
+          "height": 240,
+          "scrollHeight": 240,
+          "scrollWidth": 611,
+          "top": 286.953125,
+          "type": "slide-narrative",
+          "width": 611
+        },
+        {
+          "bottom": 597.8359375,
+          "height": 381,
+          "scrollHeight": 381,
+          "scrollWidth": 541,
+          "top": 216.46875,
+          "type": "slide-support",
+          "width": 541
+        },
+        {
+          "bottom": 597.8359375,
+          "height": 381,
+          "scrollHeight": 381,
+          "scrollWidth": 541,
+          "top": 216.46875,
+          "type": "slide-diagram diagram-matrix",
+          "width": 541
+        },
+        {
+          "bottom": 387.2421875,
+          "height": 76,
+          "scrollHeight": 76,
+          "scrollWidth": 200,
+          "top": 309.3125,
+          "type": "diagram-tone-blue",
+          "width": 200
+        },
+        {
+          "bottom": 387.2421875,
+          "height": 76,
+          "scrollHeight": 76,
+          "scrollWidth": 200,
+          "top": 309.3125,
+          "type": "diagram-tone-blue",
+          "width": 200
+        },
+        {
+          "bottom": 469.171875,
+          "height": 76,
+          "scrollHeight": 76,
+          "scrollWidth": 200,
+          "top": 391.2421875,
+          "type": "diagram-tone-blue",
+          "width": 200
+        },
+        {
+          "bottom": 469.171875,
+          "height": 76,
+          "scrollHeight": 76,
+          "scrollWidth": 200,
+          "top": 391.2421875,
+          "type": "diagram-tone-blue",
+          "width": 200
+        },
+        {
+          "bottom": 551.1171875,
+          "height": 76,
+          "scrollHeight": 76,
+          "scrollWidth": 200,
+          "top": 473.171875,
+          "type": "diagram-tone-blue",
+          "width": 200
+        },
+        {
+          "bottom": 551.1171875,
+          "height": 76,
+          "scrollHeight": 76,
+          "scrollWidth": 200,
+          "top": 473.171875,
+          "type": "diagram-tone-blue",
+          "width": 200
+        }
+      ],
+      "page": 21,
+      "pageHeight": 720,
+      "title": "管理者调用与控制权移交",
+      "titleHeight": 50
+    },
+    {
+      "chapter": "14_ai_agent",
+      "contentHeight": 408,
+      "contentScroll": 408,
+      "footerTop": 611.2578125,
+      "issues": [],
+      "layout": "stack",
+      "mathErrors": 0,
+      "nodes": [
+        {
+          "bottom": 158.390625,
+          "height": 50,
+          "scrollHeight": 54,
+          "scrollWidth": 1172,
+          "top": 107.9921875,
+          "type": "H3",
+          "width": 1172
+        },
+        {
+          "bottom": 350.390625,
+          "height": 128,
+          "scrollHeight": 128,
+          "scrollWidth": 1172,
+          "top": 222.734375,
+          "type": "slide-narrative",
+          "width": 1172
+        },
+        {
+          "bottom": 591.5703125,
+          "height": 221,
+          "scrollHeight": 221,
+          "scrollWidth": 1172,
+          "top": 370.390625,
+          "type": "slide-support",
+          "width": 1172
+        },
+        {
+          "bottom": 591.5703125,
+          "height": 219,
+          "scrollHeight": 219,
+          "scrollWidth": 1172,
+          "top": 370.390625,
+          "type": "slide-table-wrap",
+          "width": 1172
+        }
+      ],
+      "page": 22,
+      "pageHeight": 720,
+      "title": "调度：并行必须尊重证据依赖",
+      "titleHeight": 50
+    },
+    {
+      "chapter": "14_ai_agent",
+      "contentHeight": 408,
+      "contentScroll": 408,
+      "footerTop": 611.2578125,
+      "issues": [],
+      "layout": "split",
+      "mathErrors": 0,
+      "nodes": [
+        {
+          "bottom": 158.390625,
+          "height": 50,
+          "scrollHeight": 54,
+          "scrollWidth": 1172,
+          "top": 107.9921875,
+          "type": "H3",
+          "width": 1172
+        },
+        {
+          "bottom": 511.390625,
+          "height": 208,
+          "scrollHeight": 208,
+          "scrollWidth": 611,
+          "top": 302.90625,
+          "type": "slide-narrative",
+          "width": 611
+        },
+        {
+          "bottom": 597.8359375,
+          "height": 381,
+          "scrollHeight": 381,
+          "scrollWidth": 541,
+          "top": 216.46875,
+          "type": "slide-support",
+          "width": 541
+        },
+        {
+          "bottom": 597.8359375,
+          "height": 381,
+          "scrollHeight": 381,
+          "scrollWidth": 541,
+          "top": 216.46875,
+          "type": "slide-diagram diagram-graph",
+          "width": 541
+        },
+        {
+          "bottom": 327.34765625,
+          "height": 51,
+          "scrollHeight": 51,
+          "scrollWidth": 458,
+          "top": 274.79296875,
+          "type": "diagram-node diagram-tone-blue ",
+          "width": 458
+        },
+        {
+          "bottom": 400.34765625,
+          "height": 51,
+          "scrollHeight": 51,
+          "scrollWidth": 458,
+          "top": 347.79296875,
+          "type": "diagram-node diagram-tone-blue ",
+          "width": 458
+        },
+        {
+          "bottom": 473.34765625,
+          "height": 51,
+          "scrollHeight": 51,
+          "scrollWidth": 458,
+          "top": 420.79296875,
+          "type": "diagram-node diagram-tone-blue ",
+          "width": 458
+        },
+        {
+          "bottom": 546.34765625,
+          "height": 51,
+          "scrollHeight": 51,
+          "scrollWidth": 458,
+          "top": 493.79296875,
+          "type": "diagram-node diagram-tone-blue ",
+          "width": 458
+        }
+      ],
+      "page": 23,
+      "pageHeight": 720,
+      "title": "私有化：先画数据与调用的边界",
+      "titleHeight": 50
+    },
+    {
+      "chapter": "14_ai_agent",
+      "contentHeight": 408,
+      "contentScroll": 408,
+      "footerTop": 611.2578125,
+      "issues": [],
+      "layout": "split",
+      "mathErrors": 0,
+      "nodes": [
+        {
+          "bottom": 158.390625,
+          "height": 50,
+          "scrollHeight": 54,
+          "scrollWidth": 1172,
+          "top": 107.9921875,
+          "type": "H3",
+          "width": 1172
+        },
+        {
+          "bottom": 511.390625,
+          "height": 208,
+          "scrollHeight": 208,
+          "scrollWidth": 611,
+          "top": 302.90625,
+          "type": "slide-narrative",
+          "width": 611
+        },
+        {
+          "bottom": 597.8359375,
+          "height": 381,
+          "scrollHeight": 381,
+          "scrollWidth": 541,
+          "top": 216.46875,
+          "type": "slide-support",
+          "width": 541
+        },
+        {
+          "bottom": 597.8359375,
+          "height": 381,
+          "scrollHeight": 381,
+          "scrollWidth": 541,
+          "top": 216.46875,
+          "type": "slide-diagram diagram-matrix",
+          "width": 541
+        },
+        {
+          "bottom": 366.7578125,
+          "height": 55,
+          "scrollHeight": 55,
+          "scrollWidth": 200,
+          "top": 309.3125,
+          "type": "diagram-tone-blue",
+          "width": 200
+        },
+        {
+          "bottom": 366.7578125,
+          "height": 55,
+          "scrollHeight": 55,
+          "scrollWidth": 200,
+          "top": 309.3125,
+          "type": "diagram-tone-blue",
+          "width": 200
+        },
+        {
+          "bottom": 428.203125,
+          "height": 55,
+          "scrollHeight": 55,
+          "scrollWidth": 200,
+          "top": 370.7578125,
+          "type": "diagram-tone-blue",
+          "width": 200
+        },
+        {
+          "bottom": 428.203125,
+          "height": 55,
+          "scrollHeight": 55,
+          "scrollWidth": 200,
+          "top": 370.7578125,
+          "type": "diagram-tone-blue",
+          "width": 200
+        },
+        {
+          "bottom": 489.6484375,
+          "height": 55,
+          "scrollHeight": 55,
+          "scrollWidth": 200,
+          "top": 432.203125,
+          "type": "diagram-tone-blue",
+          "width": 200
+        },
+        {
+          "bottom": 489.6484375,
+          "height": 55,
+          "scrollHeight": 55,
+          "scrollWidth": 200,
+          "top": 432.203125,
+          "type": "diagram-tone-blue",
+          "width": 200
+        },
+        {
+          "bottom": 551.1171875,
+          "height": 55,
+          "scrollHeight": 55,
+          "scrollWidth": 200,
+          "top": 493.6484375,
+          "type": "diagram-tone-blue",
+          "width": 200
+        },
+        {
+          "bottom": 551.1171875,
+          "height": 55,
+          "scrollHeight": 55,
+          "scrollWidth": 200,
+          "top": 493.6484375,
+          "type": "diagram-tone-blue",
+          "width": 200
+        }
+      ],
+      "page": 24,
+      "pageHeight": 720,
+      "title": "治理：读取、写入与审批分层实施",
+      "titleHeight": 50
+    },
+    {
+      "chapter": "14_ai_agent",
+      "contentHeight": 408,
+      "contentScroll": 410,
+      "footerTop": 611.2578125,
+      "issues": [],
+      "layout": "stack",
+      "mathErrors": 0,
+      "nodes": [
+        {
+          "bottom": 158.390625,
+          "height": 50,
+          "scrollHeight": 54,
+          "scrollWidth": 1172,
+          "top": 107.9921875,
+          "type": "H3",
+          "width": 1172
+        },
+        {
+          "bottom": 328.4765625,
+          "height": 128,
+          "scrollHeight": 128,
+          "scrollWidth": 1172,
+          "top": 200.8203125,
+          "type": "slide-narrative",
+          "width": 1172
+        },
+        {
+          "bottom": 613.4921875,
+          "height": 265,
+          "scrollHeight": 265,
+          "scrollWidth": 1172,
+          "top": 348.4765625,
+          "type": "slide-support",
+          "width": 1172
+        },
+        {
+          "bottom": 613.4921875,
+          "height": 263,
+          "scrollHeight": 263,
+          "scrollWidth": 1172,
+          "top": 348.4765625,
+          "type": "slide-table-wrap",
+          "width": 1172
+        }
+      ],
+      "page": 25,
+      "pageHeight": 720,
+      "title": "上线前检查：故障也属于业务输入",
+      "titleHeight": 50
+    },
+    {
+      "chapter": "14_ai_agent",
+      "contentHeight": 408,
+      "contentScroll": 408,
+      "footerTop": 611.2578125,
+      "issues": [],
+      "layout": "split",
+      "mathErrors": 0,
+      "nodes": [
+        {
+          "bottom": 158.390625,
+          "height": 50,
+          "scrollHeight": 54,
+          "scrollWidth": 1172,
+          "top": 107.9921875,
+          "type": "H3",
+          "width": 1172
+        },
+        {
+          "bottom": 527.3515625,
+          "height": 240,
+          "scrollHeight": 240,
+          "scrollWidth": 611,
+          "top": 286.953125,
+          "type": "slide-narrative",
+          "width": 611
+        },
+        {
+          "bottom": 597.8359375,
+          "height": 381,
+          "scrollHeight": 381,
+          "scrollWidth": 541,
+          "top": 216.46875,
+          "type": "slide-support",
+          "width": 541
+        },
+        {
+          "bottom": 597.8359375,
+          "height": 381,
+          "scrollHeight": 381,
+          "scrollWidth": 541,
+          "top": 216.46875,
+          "type": "slide-diagram diagram-matrix",
+          "width": 541
+        },
+        {
+          "bottom": 387.2421875,
+          "height": 76,
+          "scrollHeight": 76,
+          "scrollWidth": 200,
+          "top": 309.3125,
+          "type": "diagram-tone-blue",
+          "width": 200
+        },
+        {
+          "bottom": 387.2421875,
+          "height": 76,
+          "scrollHeight": 76,
+          "scrollWidth": 200,
+          "top": 309.3125,
+          "type": "diagram-tone-blue",
+          "width": 200
+        },
+        {
+          "bottom": 469.171875,
+          "height": 76,
+          "scrollHeight": 76,
+          "scrollWidth": 200,
+          "top": 391.2421875,
+          "type": "diagram-tone-blue",
+          "width": 200
+        },
+        {
+          "bottom": 469.171875,
+          "height": 76,
+          "scrollHeight": 76,
+          "scrollWidth": 200,
+          "top": 391.2421875,
+          "type": "diagram-tone-blue",
+          "width": 200
+        },
+        {
+          "bottom": 551.1171875,
+          "height": 76,
+          "scrollHeight": 76,
+          "scrollWidth": 200,
+          "top": 473.171875,
+          "type": "diagram-tone-blue",
+          "width": 200
+        },
+        {
+          "bottom": 551.1171875,
+          "height": 76,
+          "scrollHeight": 76,
+          "scrollWidth": 200,
+          "top": 473.171875,
+          "type": "diagram-tone-blue",
+          "width": 200
+        }
+      ],
+      "page": 26,
+      "pageHeight": 720,
+      "title": "OpenClaw与Hermes：持续任务入口",
+      "titleHeight": 50
+    },
+    {
+      "chapter": "14_ai_agent",
+      "contentHeight": 408,
+      "contentScroll": 408,
+      "footerTop": 611.2578125,
+      "issues": [],
+      "layout": "stack",
+      "mathErrors": 0,
+      "nodes": [
+        {
+          "bottom": 158.390625,
+          "height": 50,
+          "scrollHeight": 54,
+          "scrollWidth": 1172,
+          "top": 107.9921875,
+          "type": "H3",
+          "width": 1172
+        },
+        {
+          "bottom": 372.3046875,
+          "height": 128,
+          "scrollHeight": 128,
+          "scrollWidth": 1172,
+          "top": 244.6484375,
+          "type": "slide-narrative",
+          "width": 1172
+        },
+        {
+          "bottom": 569.6484375,
+          "height": 177,
+          "scrollHeight": 177,
+          "scrollWidth": 1172,
+          "top": 392.3046875,
+          "type": "slide-support",
+          "width": 1172
+        },
+        {
+          "bottom": 569.6484375,
+          "height": 175,
+          "scrollHeight": 175,
+          "scrollWidth": 1172,
+          "top": 392.3046875,
+          "type": "slide-table-wrap",
+          "width": 1172
+        }
+      ],
+      "page": 27,
+      "pageHeight": 720,
+      "title": "Claude Code、Codex与TRAE",
+      "titleHeight": 50
+    },
+    {
+      "chapter": "14_ai_agent",
+      "contentHeight": 408,
+      "contentScroll": 408,
+      "footerTop": 611.2578125,
+      "issues": [],
+      "layout": "stack",
+      "mathErrors": 0,
+      "nodes": [
+        {
+          "bottom": 158.390625,
+          "height": 50,
+          "scrollHeight": 54,
+          "scrollWidth": 1172,
+          "top": 107.9921875,
+          "type": "H3",
+          "width": 1172
+        },
+        {
+          "bottom": 350.390625,
+          "height": 128,
+          "scrollHeight": 128,
+          "scrollWidth": 1172,
+          "top": 222.734375,
+          "type": "slide-narrative",
+          "width": 1172
+        },
+        {
+          "bottom": 591.5703125,
+          "height": 221,
+          "scrollHeight": 221,
+          "scrollWidth": 1172,
+          "top": 370.390625,
+          "type": "slide-support",
+          "width": 1172
+        },
+        {
+          "bottom": 591.5703125,
+          "height": 219,
+          "scrollHeight": 219,
+          "scrollWidth": 1172,
+          "top": 370.390625,
+          "type": "slide-table-wrap",
+          "width": 1172
+        }
+      ],
+      "page": 28,
+      "pageHeight": 720,
+      "title": "Dify与Coze：显式编排应用",
+      "titleHeight": 50
+    },
+    {
+      "chapter": "14_ai_agent",
+      "contentHeight": 408,
+      "contentScroll": 408,
+      "footerTop": 611.2578125,
+      "issues": [],
+      "layout": "stack",
+      "mathErrors": 0,
+      "nodes": [
+        {
+          "bottom": 158.390625,
+          "height": 50,
+          "scrollHeight": 54,
+          "scrollWidth": 1172,
+          "top": 107.9921875,
+          "type": "H3",
+          "width": 1172
+        },
+        {
+          "bottom": 349.34375,
+          "height": 128,
+          "scrollHeight": 128,
+          "scrollWidth": 1172,
+          "top": 221.6875,
+          "type": "slide-narrative",
+          "width": 1172
+        },
+        {
+          "bottom": 592.609375,
+          "height": 223,
+          "scrollHeight": 223,
+          "scrollWidth": 1172,
+          "top": 369.34375,
+          "type": "slide-support",
+          "width": 1172
+        },
+        {
+          "bottom": 592.609375,
+          "height": 221,
+          "scrollHeight": 221,
+          "scrollWidth": 1172,
+          "top": 369.34375,
+          "type": "slide-table-wrap",
+          "width": 1172
+        }
+      ],
+      "page": 29,
+      "pageHeight": 720,
+      "title": "案例一：制度问答的完整任务",
+      "titleHeight": 50
+    },
+    {
+      "chapter": "14_ai_agent",
+      "contentHeight": 408,
+      "contentScroll": 408,
+      "footerTop": 611.2578125,
+      "issues": [],
+      "layout": "split",
+      "mathErrors": 0,
+      "nodes": [
+        {
+          "bottom": 158.390625,
+          "height": 50,
+          "scrollHeight": 54,
+          "scrollWidth": 1172,
+          "top": 107.9921875,
+          "type": "H3",
+          "width": 1172
+        },
+        {
+          "bottom": 511.4296875,
+          "height": 209,
+          "scrollHeight": 209,
+          "scrollWidth": 611,
+          "top": 302.875,
+          "type": "slide-narrative",
+          "width": 611
+        },
+        {
+          "bottom": 597.8359375,
+          "height": 381,
+          "scrollHeight": 381,
+          "scrollWidth": 541,
+          "top": 216.46875,
+          "type": "slide-support",
+          "width": 541
+        },
+        {
+          "bottom": 597.8359375,
+          "height": 381,
+          "scrollHeight": 381,
+          "scrollWidth": 541,
+          "top": 216.46875,
+          "type": "slide-diagram diagram-matrix",
+          "width": 541
+        },
+        {
+          "bottom": 452.453125,
+          "height": 141,
+          "scrollHeight": 141,
+          "scrollWidth": 200,
+          "top": 309.3125,
+          "type": "diagram-tone-blue",
+          "width": 200
+        },
+        {
+          "bottom": 452.453125,
+          "height": 141,
+          "scrollHeight": 141,
+          "scrollWidth": 200,
+          "top": 309.3125,
+          "type": "diagram-tone-blue",
+          "width": 200
+        },
+        {
+          "bottom": 551.1171875,
+          "height": 93,
+          "scrollHeight": 93,
+          "scrollWidth": 200,
+          "top": 456.453125,
+          "type": "diagram-tone-blue",
+          "width": 200
+        },
+        {
+          "bottom": 551.1171875,
+          "height": 93,
+          "scrollHeight": 93,
+          "scrollWidth": 200,
+          "top": 456.453125,
+          "type": "diagram-tone-blue",
+          "width": 200
+        }
+      ],
+      "page": 30,
+      "pageHeight": 720,
+      "title": "日期筛选先于相似度排序",
+      "titleHeight": 50
+    },
+    {
+      "chapter": "14_ai_agent",
+      "contentHeight": 408,
+      "contentScroll": 408,
+      "footerTop": 611.2578125,
+      "issues": [],
+      "layout": "split",
+      "mathErrors": 0,
+      "nodes": [
+        {
+          "bottom": 158.390625,
+          "height": 50,
+          "scrollHeight": 54,
+          "scrollWidth": 1172,
+          "top": 107.9921875,
+          "type": "H3",
+          "width": 1172
+        },
+        {
+          "bottom": 579.40625,
+          "height": 345,
+          "scrollHeight": 345,
+          "scrollWidth": 611,
+          "top": 234.8984375,
+          "type": "slide-narrative",
+          "width": 611
+        },
+        {
+          "bottom": 579.40625,
+          "height": 87,
+          "scrollHeight": 87,
+          "scrollWidth": 611,
+          "top": 490.578125,
+          "type": "slide-equation",
+          "width": 611
+        },
+        {
+          "bottom": 597.8359375,
+          "height": 381,
+          "scrollHeight": 381,
+          "scrollWidth": 541,
+          "top": 216.46875,
+          "type": "slide-support",
+          "width": 541
+        },
+        {
+          "bottom": 597.8359375,
+          "height": 381,
+          "scrollHeight": 381,
+          "scrollWidth": 541,
+          "top": 216.46875,
+          "type": "slide-diagram diagram-graph",
+          "width": 541
+        },
+        {
+          "bottom": 375.53515625,
+          "height": 77,
+          "scrollHeight": 77,
+          "scrollWidth": 193,
+          "top": 296.69921875,
+          "type": "diagram-node diagram-tone-blue ",
+          "width": 193
+        },
+        {
+          "bottom": 375.53515625,
+          "height": 77,
+          "scrollHeight": 77,
+          "scrollWidth": 193,
+          "top": 296.69921875,
+          "type": "diagram-node diagram-tone-blue ",
+          "width": 193
+        },
+        {
+          "bottom": 521.53515625,
+          "height": 77,
+          "scrollHeight": 77,
+          "scrollWidth": 193,
+          "top": 442.69921875,
+          "type": "diagram-node diagram-tone-blue ",
+          "width": 193
+        },
+        {
+          "bottom": 521.53515625,
+          "height": 77,
+          "scrollHeight": 77,
+          "scrollWidth": 193,
+          "top": 442.69921875,
+          "type": "diagram-node diagram-tone-blue ",
+          "width": 193
+        }
+      ],
+      "page": 31,
+      "pageHeight": 720,
+      "title": "住宿算例：判断与批准分开",
+      "titleHeight": 50
+    },
+    {
+      "chapter": "14_ai_agent",
+      "contentHeight": 408,
+      "contentScroll": 411,
+      "footerTop": 611.2578125,
+      "issues": [],
+      "layout": "stack",
+      "mathErrors": 0,
+      "nodes": [
+        {
+          "bottom": 158.390625,
+          "height": 50,
+          "scrollHeight": 54,
+          "scrollWidth": 1172,
+          "top": 107.9921875,
+          "type": "H3",
+          "width": 1172
+        },
+        {
+          "bottom": 327.8125,
+          "height": 128,
+          "scrollHeight": 128,
+          "scrollWidth": 1172,
+          "top": 200.0859375,
+          "type": "slide-narrative",
+          "width": 1172
+        },
+        {
+          "bottom": 614.21875,
+          "height": 266,
+          "scrollHeight": 266,
+          "scrollWidth": 1172,
+          "top": 347.8125,
+          "type": "slide-support",
+          "width": 1172
+        },
+        {
+          "bottom": 614.21875,
+          "height": 264,
+          "scrollHeight": 264,
+          "scrollWidth": 1172,
+          "top": 347.8125,
+          "type": "slide-table-wrap",
+          "width": 1172
+        }
+      ],
+      "page": 32,
+      "pageHeight": 720,
+      "title": "制度问答：正确地拒答与转交",
+      "titleHeight": 50
+    },
+    {
+      "chapter": "14_ai_agent",
+      "contentHeight": 408,
+      "contentScroll": 408,
+      "footerTop": 611.2578125,
+      "issues": [],
+      "layout": "split",
+      "mathErrors": 0,
+      "nodes": [
+        {
+          "bottom": 158.390625,
+          "height": 50,
+          "scrollHeight": 54,
+          "scrollWidth": 1172,
+          "top": 107.9921875,
+          "type": "H3",
+          "width": 1172
+        },
+        {
+          "bottom": 511.390625,
+          "height": 208,
+          "scrollHeight": 208,
+          "scrollWidth": 611,
+          "top": 302.90625,
+          "type": "slide-narrative",
+          "width": 611
+        },
+        {
+          "bottom": 597.8359375,
+          "height": 381,
+          "scrollHeight": 381,
+          "scrollWidth": 541,
+          "top": 216.46875,
+          "type": "slide-support",
+          "width": 541
+        },
+        {
+          "bottom": 597.8359375,
+          "height": 381,
+          "scrollHeight": 381,
+          "scrollWidth": 541,
+          "top": 216.46875,
+          "type": "slide-diagram diagram-matrix",
+          "width": 541
+        },
+        {
+          "bottom": 387.2421875,
+          "height": 76,
+          "scrollHeight": 76,
+          "scrollWidth": 132,
+          "top": 309.3125,
+          "type": "diagram-tone-blue",
+          "width": 132
+        },
+        {
+          "bottom": 387.2421875,
+          "height": 76,
+          "scrollHeight": 76,
+          "scrollWidth": 132,
+          "top": 309.3125,
+          "type": "diagram-tone-blue",
+          "width": 132
+        },
+        {
+          "bottom": 387.2421875,
+          "height": 76,
+          "scrollHeight": 76,
+          "scrollWidth": 132,
+          "top": 309.3125,
+          "type": "diagram-tone-blue",
+          "width": 132
+        },
+        {
+          "bottom": 469.171875,
+          "height": 76,
+          "scrollHeight": 76,
+          "scrollWidth": 132,
+          "top": 391.2421875,
+          "type": "diagram-tone-blue",
+          "width": 132
+        },
+        {
+          "bottom": 469.171875,
+          "height": 76,
+          "scrollHeight": 76,
+          "scrollWidth": 132,
+          "top": 391.2421875,
+          "type": "diagram-tone-blue",
+          "width": 132
+        },
+        {
+          "bottom": 469.171875,
+          "height": 76,
+          "scrollHeight": 76,
+          "scrollWidth": 132,
+          "top": 391.2421875,
+          "type": "diagram-tone-blue",
+          "width": 132
+        },
+        {
+          "bottom": 551.1171875,
+          "height": 76,
+          "scrollHeight": 76,
+          "scrollWidth": 132,
+          "top": 473.171875,
+          "type": "diagram-tone-blue",
+          "width": 132
+        },
+        {
+          "bottom": 551.1171875,
+          "height": 76,
+          "scrollHeight": 76,
+          "scrollWidth": 132,
+          "top": 473.171875,
+          "type": "diagram-tone-blue",
+          "width": 132
+        },
+        {
+          "bottom": 551.1171875,
+          "height": 76,
+          "scrollHeight": 76,
+          "scrollWidth": 132,
+          "top": 473.171875,
+          "type": "diagram-tone-blue",
+          "width": 132
+        }
+      ],
+      "page": 33,
+      "pageHeight": 720,
+      "title": "案例二：会议与研发任务共享控制层",
+      "titleHeight": 50
+    },
+    {
+      "chapter": "14_ai_agent",
+      "contentHeight": 408,
+      "contentScroll": 408,
+      "footerTop": 611.2578125,
+      "issues": [],
+      "layout": "split",
+      "mathErrors": 0,
+      "nodes": [
+        {
+          "bottom": 158.390625,
+          "height": 50,
+          "scrollHeight": 54,
+          "scrollWidth": 1172,
+          "top": 107.9921875,
+          "type": "H3",
+          "width": 1172
+        },
+        {
+          "bottom": 563.59375,
+          "height": 313,
+          "scrollHeight": 313,
+          "scrollWidth": 611,
+          "top": 250.7109375,
+          "type": "slide-narrative",
+          "width": 611
+        },
+        {
+          "bottom": 563.59375,
+          "height": 85,
+          "scrollHeight": 85,
+          "scrollWidth": 611,
+          "top": 476.265625,
+          "type": "slide-equation",
+          "width": 611
+        },
+        {
+          "bottom": 530.15625,
+          "height": 246,
+          "scrollHeight": 246,
+          "scrollWidth": 541,
+          "top": 284.140625,
+          "type": "slide-support",
+          "width": 541
+        },
+        {
+          "bottom": 530.15625,
+          "height": 244,
+          "scrollHeight": 244,
+          "scrollWidth": 541,
+          "top": 284.140625,
+          "type": "slide-table-wrap",
+          "width": 541
+        }
+      ],
+      "page": 34,
+      "pageHeight": 720,
+      "title": "会议排期：交集定义共同可用性",
+      "titleHeight": 50
+    },
+    {
+      "chapter": "14_ai_agent",
+      "contentHeight": 408,
+      "contentScroll": 408,
+      "footerTop": 611.2578125,
+      "issues": [],
+      "layout": "split",
+      "mathErrors": 0,
+      "nodes": [
+        {
+          "bottom": 158.390625,
+          "height": 50,
+          "scrollHeight": 54,
+          "scrollWidth": 1172,
+          "top": 107.9921875,
+          "type": "H3",
+          "width": 1172
+        },
+        {
+          "bottom": 511.390625,
+          "height": 208,
+          "scrollHeight": 208,
+          "scrollWidth": 611,
+          "top": 302.90625,
+          "type": "slide-narrative",
+          "width": 611
+        },
+        {
+          "bottom": 597.8359375,
+          "height": 381,
+          "scrollHeight": 381,
+          "scrollWidth": 541,
+          "top": 216.46875,
+          "type": "slide-support",
+          "width": 541
+        },
+        {
+          "bottom": 597.8359375,
+          "height": 381,
+          "scrollHeight": 381,
+          "scrollWidth": 541,
+          "top": 216.46875,
+          "type": "slide-diagram diagram-graph",
+          "width": 541
+        },
+        {
+          "bottom": 375.53515625,
+          "height": 77,
+          "scrollHeight": 77,
+          "scrollWidth": 193,
+          "top": 296.69921875,
+          "type": "diagram-node diagram-tone-blue ",
+          "width": 193
+        },
+        {
+          "bottom": 375.53515625,
+          "height": 77,
+          "scrollHeight": 77,
+          "scrollWidth": 193,
+          "top": 296.69921875,
+          "type": "diagram-node diagram-tone-blue ",
+          "width": 193
+        },
+        {
+          "bottom": 521.53515625,
+          "height": 77,
+          "scrollHeight": 77,
+          "scrollWidth": 193,
+          "top": 442.69921875,
+          "type": "diagram-node diagram-tone-blue ",
+          "width": 193
+        },
+        {
+          "bottom": 521.53515625,
+          "height": 77,
+          "scrollHeight": 77,
+          "scrollWidth": 193,
+          "top": 442.69921875,
+          "type": "diagram-node diagram-tone-blue ",
+          "width": 193
+        }
+      ],
+      "page": 35,
+      "pageHeight": 720,
+      "title": "排期审批：必须绑定具体提案",
+      "titleHeight": 50
+    },
+    {
+      "chapter": "14_ai_agent",
+      "contentHeight": 408,
+      "contentScroll": 408,
+      "footerTop": 611.2578125,
+      "issues": [],
+      "layout": "stack",
+      "mathErrors": 0,
+      "nodes": [
+        {
+          "bottom": 158.390625,
+          "height": 50,
+          "scrollHeight": 54,
+          "scrollWidth": 1172,
+          "top": 107.9921875,
+          "type": "H3",
+          "width": 1172
+        },
+        {
+          "bottom": 350.078125,
+          "height": 128,
+          "scrollHeight": 128,
+          "scrollWidth": 1172,
+          "top": 222.3515625,
+          "type": "slide-narrative",
+          "width": 1172
+        },
+        {
+          "bottom": 591.953125,
+          "height": 222,
+          "scrollHeight": 222,
+          "scrollWidth": 1172,
+          "top": 370.078125,
+          "type": "slide-support",
+          "width": 1172
+        },
+        {
+          "bottom": 591.953125,
+          "height": 220,
+          "scrollHeight": 220,
+          "scrollWidth": 1172,
+          "top": 370.078125,
+          "type": "slide-table-wrap",
+          "width": 1172
+        }
+      ],
+      "page": 36,
+      "pageHeight": 720,
+      "title": "研发查询：批准状态优先于版本号",
+      "titleHeight": 50
+    },
+    {
+      "chapter": "14_ai_agent",
+      "contentHeight": 408,
+      "contentScroll": 408,
+      "footerTop": 611.2578125,
+      "issues": [],
+      "layout": "split",
+      "mathErrors": 0,
+      "nodes": [
+        {
+          "bottom": 158.390625,
+          "height": 50,
+          "scrollHeight": 54,
+          "scrollWidth": 1172,
+          "top": 107.9921875,
+          "type": "H3",
+          "width": 1172
+        },
+        {
+          "bottom": 511.4609375,
+          "height": 209,
+          "scrollHeight": 209,
+          "scrollWidth": 611,
+          "top": 302.8359375,
+          "type": "slide-narrative",
+          "width": 611
+        },
+        {
+          "bottom": 609.1953125,
+          "height": 404,
+          "scrollHeight": 404,
+          "scrollWidth": 541,
+          "top": 205.109375,
+          "type": "slide-support",
+          "width": 541
+        },
+        {
+          "bottom": 609.1953125,
+          "height": 404,
+          "scrollHeight": 404,
+          "scrollWidth": 541,
+          "top": 205.109375,
+          "type": "slide-diagram diagram-graph",
+          "width": 541
+        },
+        {
+          "bottom": 364.17578125,
+          "height": 77,
+          "scrollHeight": 77,
+          "scrollWidth": 144,
+          "top": 285.33984375,
+          "type": "diagram-node diagram-tone-blue ",
+          "width": 144
+        },
+        {
+          "bottom": 364.17578125,
+          "height": 77,
+          "scrollHeight": 77,
+          "scrollWidth": 144,
+          "top": 285.33984375,
+          "type": "diagram-node diagram-tone-blue ",
+          "width": 144
+        },
+        {
+          "bottom": 364.17578125,
+          "height": 77,
+          "scrollHeight": 77,
+          "scrollWidth": 144,
+          "top": 285.33984375,
+          "type": "diagram-node diagram-tone-blue ",
+          "width": 144
+        },
+        {
+          "bottom": 510.17578125,
+          "height": 77,
+          "scrollHeight": 77,
+          "scrollWidth": 144,
+          "top": 431.33984375,
+          "type": "diagram-node diagram-tone-blue ",
+          "width": 144
+        },
+        {
+          "bottom": 510.17578125,
+          "height": 77,
+          "scrollHeight": 77,
+          "scrollWidth": 144,
+          "top": 431.33984375,
+          "type": "diagram-node diagram-tone-blue ",
+          "width": 144
+        },
+        {
+          "bottom": 510.17578125,
+          "height": 77,
+          "scrollHeight": 77,
+          "scrollWidth": 144,
+          "top": 431.33984375,
+          "type": "diagram-node diagram-tone-blue ",
+          "width": 144
+        }
+      ],
+      "page": 37,
+      "pageHeight": 720,
+      "title": "案例三：客户咨询分流的输入与任务",
+      "titleHeight": 50
+    },
+    {
+      "chapter": "14_ai_agent",
+      "contentHeight": 408,
+      "contentScroll": 408,
+      "footerTop": 611.2578125,
+      "issues": [],
+      "layout": "split",
+      "mathErrors": 0,
+      "nodes": [
+        {
+          "bottom": 158.390625,
+          "height": 50,
+          "scrollHeight": 54,
+          "scrollWidth": 1172,
+          "top": 107.9921875,
+          "type": "H3",
+          "width": 1172
+        },
+        {
+          "bottom": 511.390625,
+          "height": 208,
+          "scrollHeight": 208,
+          "scrollWidth": 611,
+          "top": 302.90625,
+          "type": "slide-narrative",
+          "width": 611
+        },
+        {
+          "bottom": 597.8359375,
+          "height": 381,
+          "scrollHeight": 381,
+          "scrollWidth": 541,
+          "top": 216.46875,
+          "type": "slide-support",
+          "width": 541
+        },
+        {
+          "bottom": 597.8359375,
+          "height": 381,
+          "scrollHeight": 381,
+          "scrollWidth": 541,
+          "top": 216.46875,
+          "type": "slide-diagram diagram-matrix",
+          "width": 541
+        },
+        {
+          "bottom": 366.7578125,
+          "height": 55,
+          "scrollHeight": 55,
+          "scrollWidth": 200,
+          "top": 309.3125,
+          "type": "diagram-tone-blue",
+          "width": 200
+        },
+        {
+          "bottom": 366.7578125,
+          "height": 55,
+          "scrollHeight": 55,
+          "scrollWidth": 200,
+          "top": 309.3125,
+          "type": "diagram-tone-blue",
+          "width": 200
+        },
+        {
+          "bottom": 428.203125,
+          "height": 55,
+          "scrollHeight": 55,
+          "scrollWidth": 200,
+          "top": 370.7578125,
+          "type": "diagram-tone-blue",
+          "width": 200
+        },
+        {
+          "bottom": 428.203125,
+          "height": 55,
+          "scrollHeight": 55,
+          "scrollWidth": 200,
+          "top": 370.7578125,
+          "type": "diagram-tone-blue",
+          "width": 200
+        },
+        {
+          "bottom": 489.6484375,
+          "height": 55,
+          "scrollHeight": 55,
+          "scrollWidth": 200,
+          "top": 432.203125,
+          "type": "diagram-tone-blue",
+          "width": 200
+        },
+        {
+          "bottom": 489.6484375,
+          "height": 55,
+          "scrollHeight": 55,
+          "scrollWidth": 200,
+          "top": 432.203125,
+          "type": "diagram-tone-blue",
+          "width": 200
+        },
+        {
+          "bottom": 551.1171875,
+          "height": 55,
+          "scrollHeight": 55,
+          "scrollWidth": 200,
+          "top": 493.6484375,
+          "type": "diagram-tone-blue",
+          "width": 200
+        },
+        {
+          "bottom": 551.1171875,
+          "height": 55,
+          "scrollHeight": 55,
+          "scrollWidth": 200,
+          "top": 493.6484375,
+          "type": "diagram-tone-blue",
+          "width": 200
+        }
+      ],
+      "page": 38,
+      "pageHeight": 720,
+      "title": "咨询优先级：安全先于便利",
+      "titleHeight": 50
+    },
+    {
+      "chapter": "14_ai_agent",
+      "contentHeight": 408,
+      "contentScroll": 408,
+      "footerTop": 611.2578125,
+      "issues": [],
+      "layout": "split",
+      "mathErrors": 0,
+      "nodes": [
+        {
+          "bottom": 158.390625,
+          "height": 50,
+          "scrollHeight": 54,
+          "scrollWidth": 1172,
+          "top": 107.9921875,
+          "type": "H3",
+          "width": 1172
+        },
+        {
+          "bottom": 527.3515625,
+          "height": 240,
+          "scrollHeight": 240,
+          "scrollWidth": 611,
+          "top": 286.953125,
+          "type": "slide-narrative",
+          "width": 611
+        },
+        {
+          "bottom": 597.8359375,
+          "height": 381,
+          "scrollHeight": 381,
+          "scrollWidth": 541,
+          "top": 216.46875,
+          "type": "slide-support",
+          "width": 541
+        },
+        {
+          "bottom": 597.8359375,
+          "height": 381,
+          "scrollHeight": 381,
+          "scrollWidth": 541,
+          "top": 216.46875,
+          "type": "slide-diagram diagram-matrix",
+          "width": 541
+        },
+        {
+          "bottom": 376.5078125,
+          "height": 65,
+          "scrollHeight": 65,
+          "scrollWidth": 132,
+          "top": 309.3125,
+          "type": "diagram-tone-blue",
+          "width": 132
+        },
+        {
+          "bottom": 376.5078125,
+          "height": 65,
+          "scrollHeight": 65,
+          "scrollWidth": 132,
+          "top": 309.3125,
+          "type": "diagram-tone-blue",
+          "width": 132
+        },
+        {
+          "bottom": 376.5078125,
+          "height": 65,
+          "scrollHeight": 65,
+          "scrollWidth": 132,
+          "top": 309.3125,
+          "type": "diagram-tone-blue",
+          "width": 132
+        },
+        {
+          "bottom": 479.90625,
+          "height": 97,
+          "scrollHeight": 97,
+          "scrollWidth": 132,
+          "top": 380.5078125,
+          "type": "diagram-tone-blue",
+          "width": 132
+        },
+        {
+          "bottom": 479.90625,
+          "height": 97,
+          "scrollHeight": 97,
+          "scrollWidth": 132,
+          "top": 380.5078125,
+          "type": "diagram-tone-blue",
+          "width": 132
+        },
+        {
+          "bottom": 479.90625,
+          "height": 97,
+          "scrollHeight": 97,
+          "scrollWidth": 132,
+          "top": 380.5078125,
+          "type": "diagram-tone-blue",
+          "width": 132
+        },
+        {
+          "bottom": 551.1171875,
+          "height": 65,
+          "scrollHeight": 65,
+          "scrollWidth": 132,
+          "top": 483.90625,
+          "type": "diagram-tone-blue",
+          "width": 132
+        },
+        {
+          "bottom": 551.1171875,
+          "height": 65,
+          "scrollHeight": 65,
+          "scrollWidth": 132,
+          "top": 483.90625,
+          "type": "diagram-tone-blue",
+          "width": 132
+        },
+        {
+          "bottom": 551.1171875,
+          "height": 65,
+          "scrollHeight": 65,
+          "scrollWidth": 132,
+          "top": 483.90625,
+          "type": "diagram-tone-blue",
+          "width": 132
+        }
+      ],
+      "page": 39,
+      "pageHeight": 720,
+      "title": "订单隐私：身份与归属同时成立",
+      "titleHeight": 50
+    },
+    {
+      "chapter": "14_ai_agent",
+      "contentHeight": 408,
+      "contentScroll": 408,
+      "footerTop": 611.2578125,
+      "issues": [],
+      "layout": "split",
+      "mathErrors": 0,
+      "nodes": [
+        {
+          "bottom": 158.390625,
+          "height": 50,
+          "scrollHeight": 54,
+          "scrollWidth": 1172,
+          "top": 107.9921875,
+          "type": "H3",
+          "width": 1172
+        },
+        {
+          "bottom": 543.375,
+          "height": 272,
+          "scrollHeight": 272,
+          "scrollWidth": 611,
+          "top": 270.921875,
+          "type": "slide-narrative",
+          "width": 611
+        },
+        {
+          "bottom": 540.6953125,
+          "height": 267,
+          "scrollHeight": 267,
+          "scrollWidth": 541,
+          "top": 273.59375,
+          "type": "slide-support",
+          "width": 541
+        },
+        {
+          "bottom": 540.6953125,
+          "height": 265,
+          "scrollHeight": 265,
+          "scrollWidth": 541,
+          "top": 273.59375,
+          "type": "slide-table-wrap",
+          "width": 541
+        }
+      ],
+      "page": 40,
+      "pageHeight": 720,
+      "title": "退货审核、产品答复与重复请求",
+      "titleHeight": 50
+    },
+    {
+      "chapter": "14_ai_agent",
+      "contentHeight": 408,
+      "contentScroll": 408,
+      "footerTop": 611.2578125,
+      "issues": [],
+      "layout": "split",
+      "mathErrors": 0,
+      "nodes": [
+        {
+          "bottom": 158.390625,
+          "height": 50,
+          "scrollHeight": 54,
+          "scrollWidth": 1172,
+          "top": 107.9921875,
+          "type": "H3",
+          "width": 1172
+        },
+        {
+          "bottom": 527.3515625,
+          "height": 240,
+          "scrollHeight": 240,
+          "scrollWidth": 611,
+          "top": 286.953125,
+          "type": "slide-narrative",
+          "width": 611
+        },
+        {
+          "bottom": 597.8359375,
+          "height": 381,
+          "scrollHeight": 381,
+          "scrollWidth": 541,
+          "top": 216.46875,
+          "type": "slide-support",
+          "width": 541
+        },
+        {
+          "bottom": 597.8359375,
+          "height": 381,
+          "scrollHeight": 381,
+          "scrollWidth": 541,
+          "top": 216.46875,
+          "type": "slide-diagram diagram-graph",
+          "width": 541
+        },
+        {
+          "bottom": 375.53515625,
+          "height": 77,
+          "scrollHeight": 77,
+          "scrollWidth": 144,
+          "top": 296.69921875,
+          "type": "diagram-node diagram-tone-blue ",
+          "width": 144
+        },
+        {
+          "bottom": 375.53515625,
+          "height": 77,
+          "scrollHeight": 77,
+          "scrollWidth": 144,
+          "top": 296.69921875,
+          "type": "diagram-node diagram-tone-blue ",
+          "width": 144
+        },
+        {
+          "bottom": 375.53515625,
+          "height": 77,
+          "scrollHeight": 77,
+          "scrollWidth": 144,
+          "top": 296.69921875,
+          "type": "diagram-node diagram-tone-blue ",
+          "width": 144
+        },
+        {
+          "bottom": 521.53515625,
+          "height": 77,
+          "scrollHeight": 77,
+          "scrollWidth": 144,
+          "top": 442.69921875,
+          "type": "diagram-node diagram-tone-blue ",
+          "width": 144
+        },
+        {
+          "bottom": 521.53515625,
+          "height": 77,
+          "scrollHeight": 77,
+          "scrollWidth": 144,
+          "top": 442.69921875,
+          "type": "diagram-node diagram-tone-blue ",
+          "width": 144
+        },
+        {
+          "bottom": 521.53515625,
+          "height": 77,
+          "scrollHeight": 77,
+          "scrollWidth": 144,
+          "top": 442.69921875,
+          "type": "diagram-node diagram-tone-blue ",
+          "width": 144
+        }
+      ],
+      "page": 41,
+      "pageHeight": 720,
+      "title": "案例四：生产线异常调查",
+      "titleHeight": 50
+    },
+    {
+      "chapter": "14_ai_agent",
+      "contentHeight": 408,
+      "contentScroll": 408,
+      "footerTop": 611.2578125,
+      "issues": [],
+      "layout": "split",
+      "mathErrors": 0,
+      "nodes": [
+        {
+          "bottom": 158.390625,
+          "height": 50,
+          "scrollHeight": 54,
+          "scrollWidth": 1172,
+          "top": 107.9921875,
+          "type": "H3",
+          "width": 1172
+        },
+        {
+          "bottom": 527.421875,
+          "height": 241,
+          "scrollHeight": 241,
+          "scrollWidth": 611,
+          "top": 286.8828125,
+          "type": "slide-narrative",
+          "width": 611
+        },
+        {
+          "bottom": 597.8359375,
+          "height": 381,
+          "scrollHeight": 381,
+          "scrollWidth": 541,
+          "top": 216.46875,
+          "type": "slide-support",
+          "width": 541
+        },
+        {
+          "bottom": 597.8359375,
+          "height": 381,
+          "scrollHeight": 381,
+          "scrollWidth": 541,
+          "top": 216.46875,
+          "type": "slide-diagram diagram-matrix",
+          "width": 541
+        },
+        {
+          "bottom": 360.609375,
+          "height": 49,
+          "scrollHeight": 49,
+          "scrollWidth": 200,
+          "top": 309.3125,
+          "type": "diagram-tone-blue",
+          "width": 200
+        },
+        {
+          "bottom": 360.609375,
+          "height": 49,
+          "scrollHeight": 49,
+          "scrollWidth": 200,
+          "top": 309.3125,
+          "type": "diagram-tone-blue",
+          "width": 200
+        },
+        {
+          "bottom": 440.5,
+          "height": 74,
+          "scrollHeight": 74,
+          "scrollWidth": 200,
+          "top": 364.609375,
+          "type": "diagram-tone-blue",
+          "width": 200
+        },
+        {
+          "bottom": 440.5,
+          "height": 74,
+          "scrollHeight": 74,
+          "scrollWidth": 200,
+          "top": 364.609375,
+          "type": "diagram-tone-blue",
+          "width": 200
+        },
+        {
+          "bottom": 495.796875,
+          "height": 49,
+          "scrollHeight": 49,
+          "scrollWidth": 200,
+          "top": 444.5,
+          "type": "diagram-tone-blue",
+          "width": 200
+        },
+        {
+          "bottom": 495.796875,
+          "height": 49,
+          "scrollHeight": 49,
+          "scrollWidth": 200,
+          "top": 444.5,
+          "type": "diagram-tone-blue",
+          "width": 200
+        },
+        {
+          "bottom": 551.1171875,
+          "height": 49,
+          "scrollHeight": 49,
+          "scrollWidth": 200,
+          "top": 499.796875,
+          "type": "diagram-tone-blue",
+          "width": 200
+        },
+        {
+          "bottom": 551.1171875,
+          "height": 49,
+          "scrollHeight": 49,
+          "scrollWidth": 200,
+          "top": 499.796875,
+          "type": "diagram-tone-blue",
+          "width": 200
+        }
+      ],
+      "page": 42,
+      "pageHeight": 720,
+      "title": "先检查联锁，再判断资料可用性",
+      "titleHeight": 50
+    },
+    {
+      "chapter": "14_ai_agent",
+      "contentHeight": 408,
+      "contentScroll": 408,
+      "footerTop": 611.2578125,
+      "issues": [],
+      "layout": "split",
+      "mathErrors": 0,
+      "nodes": [
+        {
+          "bottom": 158.390625,
+          "height": 50,
+          "scrollHeight": 54,
+          "scrollWidth": 1172,
+          "top": 107.9921875,
+          "type": "H3",
+          "width": 1172
+        },
+        {
+          "bottom": 580.8671875,
+          "height": 347,
+          "scrollHeight": 347,
+          "scrollWidth": 611,
+          "top": 233.4296875,
+          "type": "slide-narrative",
+          "width": 611
+        },
+        {
+          "bottom": 580.8671875,
+          "height": 86,
+          "scrollHeight": 86,
+          "scrollWidth": 611,
+          "top": 493.0390625,
+          "type": "slide-equation",
+          "width": 611
+        },
+        {
+          "bottom": 597.8359375,
+          "height": 381,
+          "scrollHeight": 381,
+          "scrollWidth": 541,
+          "top": 216.46875,
+          "type": "slide-support",
+          "width": 541
+        },
+        {
+          "bottom": 597.8359375,
+          "height": 381,
+          "scrollHeight": 381,
+          "scrollWidth": 541,
+          "top": 216.46875,
+          "type": "slide-diagram diagram-bars",
+          "width": 541
+        },
+        {
+          "bottom": 340.3515625,
+          "height": 23,
+          "scrollHeight": 24,
+          "scrollWidth": 135,
+          "top": 317.8515625,
+          "type": "diagram-row-label",
+          "width": 135
+        },
+        {
+          "bottom": 392.9140625,
+          "height": 23,
+          "scrollHeight": 24,
+          "scrollWidth": 135,
+          "top": 370.4140625,
+          "type": "diagram-row-label",
+          "width": 135
+        },
+        {
+          "bottom": 445.4765625,
+          "height": 23,
+          "scrollHeight": 24,
+          "scrollWidth": 135,
+          "top": 422.9765625,
+          "type": "diagram-row-label",
+          "width": 135
+        },
+        {
+          "bottom": 498.0390625,
+          "height": 23,
+          "scrollHeight": 24,
+          "scrollWidth": 135,
+          "top": 475.5390625,
+          "type": "diagram-row-label",
+          "width": 135
+        }
+      ],
+      "page": 43,
+      "pageHeight": 720,
+      "title": "规则评分：异常条件的计数",
+      "titleHeight": 50
+    },
+    {
+      "chapter": "14_ai_agent",
+      "contentHeight": 408,
+      "contentScroll": 408,
+      "footerTop": 611.2578125,
+      "issues": [],
+      "layout": "split",
+      "mathErrors": 0,
+      "nodes": [
+        {
+          "bottom": 158.390625,
+          "height": 50,
+          "scrollHeight": 54,
+          "scrollWidth": 1172,
+          "top": 107.9921875,
+          "type": "H3",
+          "width": 1172
+        },
+        {
+          "bottom": 566.125,
+          "height": 318,
+          "scrollHeight": 318,
+          "scrollWidth": 611,
+          "top": 248.171875,
+          "type": "slide-narrative",
+          "width": 611
+        },
+        {
+          "bottom": 566.125,
+          "height": 88,
+          "scrollHeight": 88,
+          "scrollWidth": 611,
+          "top": 475.796875,
+          "type": "slide-equation",
+          "width": 611
+        },
+        {
+          "bottom": 542.5703125,
+          "height": 271,
+          "scrollHeight": 271,
+          "scrollWidth": 541,
+          "top": 271.71875,
+          "type": "slide-support",
+          "width": 541
+        },
+        {
+          "bottom": 542.5703125,
+          "height": 269,
+          "scrollHeight": 269,
+          "scrollWidth": 541,
+          "top": 271.71875,
+          "type": "slide-table-wrap",
+          "width": 541
+        }
+      ],
+      "page": 44,
+      "pageHeight": 720,
+      "title": "异常算例：三项命中仍只形成草稿",
+      "titleHeight": 50
+    },
+    {
+      "chapter": "14_ai_agent",
+      "contentHeight": 408,
+      "contentScroll": 408,
+      "footerTop": 611.2578125,
+      "issues": [],
+      "layout": "split",
+      "mathErrors": 0,
+      "nodes": [
+        {
+          "bottom": 158.390625,
+          "height": 50,
+          "scrollHeight": 54,
+          "scrollWidth": 1172,
+          "top": 107.9921875,
+          "type": "H3",
+          "width": 1172
+        },
+        {
+          "bottom": 543.3046875,
+          "height": 272,
+          "scrollHeight": 272,
+          "scrollWidth": 611,
+          "top": 270.9921875,
+          "type": "slide-narrative",
+          "width": 611
+        },
+        {
+          "bottom": 597.8359375,
+          "height": 381,
+          "scrollHeight": 381,
+          "scrollWidth": 541,
+          "top": 216.46875,
+          "type": "slide-support",
+          "width": 541
+        },
+        {
+          "bottom": 597.8359375,
+          "height": 381,
+          "scrollHeight": 381,
+          "scrollWidth": 541,
+          "top": 216.46875,
+          "type": "slide-diagram diagram-graph",
+          "width": 541
+        },
+        {
+          "bottom": 375.53515625,
+          "height": 77,
+          "scrollHeight": 77,
+          "scrollWidth": 193,
+          "top": 296.69921875,
+          "type": "diagram-node diagram-tone-blue ",
+          "width": 193
+        },
+        {
+          "bottom": 375.53515625,
+          "height": 77,
+          "scrollHeight": 77,
+          "scrollWidth": 193,
+          "top": 296.69921875,
+          "type": "diagram-node diagram-tone-blue ",
+          "width": 193
+        },
+        {
+          "bottom": 521.53515625,
+          "height": 77,
+          "scrollHeight": 77,
+          "scrollWidth": 193,
+          "top": 442.69921875,
+          "type": "diagram-node diagram-tone-blue ",
+          "width": 193
+        },
+        {
+          "bottom": 521.53515625,
+          "height": 77,
+          "scrollHeight": 77,
+          "scrollWidth": 193,
+          "top": 442.69921875,
+          "type": "diagram-node diagram-tone-blue ",
+          "width": 193
+        }
+      ],
+      "page": 45,
+      "pageHeight": 720,
+      "title": "工单幂等：回放须保持请求一致",
+      "titleHeight": 50
+    },
+    {
+      "chapter": "14_ai_agent",
+      "contentHeight": 408,
+      "contentScroll": 408,
+      "footerTop": 611.2578125,
+      "issues": [],
+      "layout": "split",
+      "mathErrors": 0,
+      "nodes": [
+        {
+          "bottom": 158.390625,
+          "height": 50,
+          "scrollHeight": 54,
+          "scrollWidth": 1172,
+          "top": 107.9921875,
+          "type": "H3",
+          "width": 1172
+        },
+        {
+          "bottom": 527.3515625,
+          "height": 240,
+          "scrollHeight": 240,
+          "scrollWidth": 611,
+          "top": 286.953125,
+          "type": "slide-narrative",
+          "width": 611
+        },
+        {
+          "bottom": 597.8359375,
+          "height": 381,
+          "scrollHeight": 381,
+          "scrollWidth": 541,
+          "top": 216.46875,
+          "type": "slide-support",
+          "width": 541
+        },
+        {
+          "bottom": 597.8359375,
+          "height": 381,
+          "scrollHeight": 381,
+          "scrollWidth": 541,
+          "top": 216.46875,
+          "type": "slide-diagram diagram-matrix",
+          "width": 541
+        },
+        {
+          "bottom": 366.7578125,
+          "height": 55,
+          "scrollHeight": 55,
+          "scrollWidth": 200,
+          "top": 309.3125,
+          "type": "diagram-tone-blue",
+          "width": 200
+        },
+        {
+          "bottom": 366.7578125,
+          "height": 55,
+          "scrollHeight": 55,
+          "scrollWidth": 200,
+          "top": 309.3125,
+          "type": "diagram-tone-blue",
+          "width": 200
+        },
+        {
+          "bottom": 428.203125,
+          "height": 55,
+          "scrollHeight": 55,
+          "scrollWidth": 200,
+          "top": 370.7578125,
+          "type": "diagram-tone-blue",
+          "width": 200
+        },
+        {
+          "bottom": 428.203125,
+          "height": 55,
+          "scrollHeight": 55,
+          "scrollWidth": 200,
+          "top": 370.7578125,
+          "type": "diagram-tone-blue",
+          "width": 200
+        },
+        {
+          "bottom": 489.6484375,
+          "height": 55,
+          "scrollHeight": 55,
+          "scrollWidth": 200,
+          "top": 432.203125,
+          "type": "diagram-tone-blue",
+          "width": 200
+        },
+        {
+          "bottom": 489.6484375,
+          "height": 55,
+          "scrollHeight": 55,
+          "scrollWidth": 200,
+          "top": 432.203125,
+          "type": "diagram-tone-blue",
+          "width": 200
+        },
+        {
+          "bottom": 551.1171875,
+          "height": 55,
+          "scrollHeight": 55,
+          "scrollWidth": 200,
+          "top": 493.6484375,
+          "type": "diagram-tone-blue",
+          "width": 200
+        },
+        {
+          "bottom": 551.1171875,
+          "height": 55,
+          "scrollHeight": 55,
+          "scrollWidth": 200,
+          "top": 493.6484375,
+          "type": "diagram-tone-blue",
+          "width": 200
+        }
+      ],
+      "page": 46,
+      "pageHeight": 720,
+      "title": "评测单位：一个完整任务",
+      "titleHeight": 50
+    },
+    {
+      "chapter": "14_ai_agent",
+      "contentHeight": 408,
+      "contentScroll": 408,
+      "footerTop": 611.2578125,
+      "issues": [],
+      "layout": "split",
+      "mathErrors": 0,
+      "nodes": [
+        {
+          "bottom": 158.390625,
+          "height": 50,
+          "scrollHeight": 54,
+          "scrollWidth": 1172,
+          "top": 107.9921875,
+          "type": "H3",
+          "width": 1172
+        },
+        {
+          "bottom": 587.09375,
+          "height": 360,
+          "scrollHeight": 360,
+          "scrollWidth": 611,
+          "top": 227.203125,
+          "type": "slide-narrative",
+          "width": 611
+        },
+        {
+          "bottom": 587.09375,
+          "height": 130,
+          "scrollHeight": 130,
+          "scrollWidth": 611,
+          "top": 454.8984375,
+          "type": "slide-equation",
+          "width": 611
+        },
+        {
+          "bottom": 597.8359375,
+          "height": 381,
+          "scrollHeight": 381,
+          "scrollWidth": 541,
+          "top": 216.46875,
+          "type": "slide-support",
+          "width": 541
+        },
+        {
+          "bottom": 597.8359375,
+          "height": 381,
+          "scrollHeight": 381,
+          "scrollWidth": 541,
+          "top": 216.46875,
+          "type": "slide-diagram diagram-plot",
+          "width": 541
+        }
+      ],
+      "page": 47,
+      "pageHeight": 720,
+      "title": "多步骤可靠性：条件成功率相乘",
+      "titleHeight": 50
+    },
+    {
+      "chapter": "14_ai_agent",
+      "contentHeight": 408,
+      "contentScroll": 408,
+      "footerTop": 611.2578125,
+      "issues": [],
+      "layout": "split",
+      "mathErrors": 0,
+      "nodes": [
+        {
+          "bottom": 158.390625,
+          "height": 50,
+          "scrollHeight": 54,
+          "scrollWidth": 1172,
+          "top": 107.9921875,
+          "type": "H3",
+          "width": 1172
+        },
+        {
+          "bottom": 590.1484375,
+          "height": 366,
+          "scrollHeight": 366,
+          "scrollWidth": 611,
+          "top": 224.15625,
+          "type": "slide-narrative",
+          "width": 611
+        },
+        {
+          "bottom": 590.1484375,
+          "height": 109,
+          "scrollHeight": 109,
+          "scrollWidth": 611,
+          "top": 479.5546875,
+          "type": "slide-equation",
+          "width": 611
+        },
+        {
+          "bottom": 517.7421875,
+          "height": 221,
+          "scrollHeight": 221,
+          "scrollWidth": 541,
+          "top": 296.5625,
+          "type": "slide-support",
+          "width": 541
+        },
+        {
+          "bottom": 517.7421875,
+          "height": 219,
+          "scrollHeight": 219,
+          "scrollWidth": 541,
+          "top": 296.5625,
+          "type": "slide-table-wrap",
+          "width": 541
+        }
+      ],
+      "page": 48,
+      "pageHeight": 720,
+      "title": "经济评价：按确认成功任务计成本",
+      "titleHeight": 50
+    },
+    {
+      "chapter": "14_ai_agent",
+      "contentHeight": 408,
+      "contentScroll": 408,
+      "footerTop": 611.2578125,
+      "issues": [],
+      "layout": "split",
+      "mathErrors": 0,
+      "nodes": [
+        {
+          "bottom": 158.390625,
+          "height": 50,
+          "scrollHeight": 54,
+          "scrollWidth": 1172,
+          "top": 107.9921875,
+          "type": "H3",
+          "width": 1172
+        },
+        {
+          "bottom": 511.390625,
+          "height": 208,
+          "scrollHeight": 208,
+          "scrollWidth": 611,
+          "top": 302.90625,
+          "type": "slide-narrative",
+          "width": 611
+        },
+        {
+          "bottom": 609.1953125,
+          "height": 404,
+          "scrollHeight": 404,
+          "scrollWidth": 541,
+          "top": 205.109375,
+          "type": "slide-support",
+          "width": 541
+        },
+        {
+          "bottom": 609.1953125,
+          "height": 404,
+          "scrollHeight": 404,
+          "scrollWidth": 541,
+          "top": 205.109375,
+          "type": "slide-diagram diagram-graph",
+          "width": 541
+        },
+        {
+          "bottom": 364.17578125,
+          "height": 77,
+          "scrollHeight": 77,
+          "scrollWidth": 144,
+          "top": 285.33984375,
+          "type": "diagram-node diagram-tone-blue ",
+          "width": 144
+        },
+        {
+          "bottom": 364.17578125,
+          "height": 77,
+          "scrollHeight": 77,
+          "scrollWidth": 144,
+          "top": 285.33984375,
+          "type": "diagram-node diagram-tone-blue ",
+          "width": 144
+        },
+        {
+          "bottom": 364.17578125,
+          "height": 77,
+          "scrollHeight": 77,
+          "scrollWidth": 144,
+          "top": 285.33984375,
+          "type": "diagram-node diagram-tone-blue ",
+          "width": 144
+        },
+        {
+          "bottom": 510.17578125,
+          "height": 77,
+          "scrollHeight": 77,
+          "scrollWidth": 144,
+          "top": 431.33984375,
+          "type": "diagram-node diagram-tone-blue ",
+          "width": 144
+        },
+        {
+          "bottom": 510.17578125,
+          "height": 77,
+          "scrollHeight": 77,
+          "scrollWidth": 144,
+          "top": 431.33984375,
+          "type": "diagram-node diagram-tone-blue ",
+          "width": 144
+        },
+        {
+          "bottom": 510.17578125,
+          "height": 77,
+          "scrollHeight": 77,
+          "scrollWidth": 144,
+          "top": 431.33984375,
+          "type": "diagram-node diagram-tone-blue ",
+          "width": 144
+        }
+      ],
+      "page": 49,
+      "pageHeight": 720,
+      "title": "推广路径：阶段有证据门槛",
+      "titleHeight": 50
+    },
+    {
+      "chapter": "14_ai_agent",
+      "contentHeight": 408,
+      "contentScroll": 408,
+      "footerTop": 611.2578125,
+      "issues": [],
+      "layout": "split",
+      "mathErrors": 0,
+      "nodes": [
+        {
+          "bottom": 158.390625,
+          "height": 50,
+          "scrollHeight": 54,
+          "scrollWidth": 1172,
+          "top": 107.9921875,
+          "type": "H3",
+          "width": 1172
+        },
+        {
+          "bottom": 511.390625,
+          "height": 208,
+          "scrollHeight": 208,
+          "scrollWidth": 611,
+          "top": 302.90625,
+          "type": "slide-narrative",
+          "width": 611
+        },
+        {
+          "bottom": 597.8359375,
+          "height": 381,
+          "scrollHeight": 381,
+          "scrollWidth": 541,
+          "top": 216.46875,
+          "type": "slide-support",
+          "width": 541
+        },
+        {
+          "bottom": 597.8359375,
+          "height": 381,
+          "scrollHeight": 381,
+          "scrollWidth": 541,
+          "top": 216.46875,
+          "type": "slide-diagram diagram-matrix",
+          "width": 541
+        },
+        {
+          "bottom": 366.7578125,
+          "height": 55,
+          "scrollHeight": 55,
+          "scrollWidth": 200,
+          "top": 309.3125,
+          "type": "diagram-tone-blue",
+          "width": 200
+        },
+        {
+          "bottom": 366.7578125,
+          "height": 55,
+          "scrollHeight": 55,
+          "scrollWidth": 200,
+          "top": 309.3125,
+          "type": "diagram-tone-blue",
+          "width": 200
+        },
+        {
+          "bottom": 428.203125,
+          "height": 55,
+          "scrollHeight": 55,
+          "scrollWidth": 200,
+          "top": 370.7578125,
+          "type": "diagram-tone-blue",
+          "width": 200
+        },
+        {
+          "bottom": 428.203125,
+          "height": 55,
+          "scrollHeight": 55,
+          "scrollWidth": 200,
+          "top": 370.7578125,
+          "type": "diagram-tone-blue",
+          "width": 200
+        },
+        {
+          "bottom": 489.6484375,
+          "height": 55,
+          "scrollHeight": 55,
+          "scrollWidth": 200,
+          "top": 432.203125,
+          "type": "diagram-tone-blue",
+          "width": 200
+        },
+        {
+          "bottom": 489.6484375,
+          "height": 55,
+          "scrollHeight": 55,
+          "scrollWidth": 200,
+          "top": 432.203125,
+          "type": "diagram-tone-blue",
+          "width": 200
+        },
+        {
+          "bottom": 551.1171875,
+          "height": 55,
+          "scrollHeight": 55,
+          "scrollWidth": 200,
+          "top": 493.6484375,
+          "type": "diagram-tone-blue",
+          "width": 200
+        },
+        {
+          "bottom": 551.1171875,
+          "height": 55,
+          "scrollHeight": 55,
+          "scrollWidth": 200,
+          "top": 493.6484375,
+          "type": "diagram-tone-blue",
+          "width": 200
+        }
+      ],
+      "page": 50,
+      "pageHeight": 720,
+      "title": "影子运行与灰度试点的区别",
+      "titleHeight": 50
+    },
+    {
+      "chapter": "14_ai_agent",
+      "contentHeight": 408,
+      "contentScroll": 408,
+      "footerTop": 611.2578125,
+      "issues": [],
+      "layout": "split",
+      "mathErrors": 0,
+      "nodes": [
+        {
+          "bottom": 158.390625,
+          "height": 50,
+          "scrollHeight": 54,
+          "scrollWidth": 1172,
+          "top": 107.9921875,
+          "type": "H3",
+          "width": 1172
+        },
+        {
+          "bottom": 527.3515625,
+          "height": 240,
+          "scrollHeight": 240,
+          "scrollWidth": 611,
+          "top": 286.953125,
+          "type": "slide-narrative",
+          "width": 611
+        },
+        {
+          "bottom": 597.8359375,
+          "height": 381,
+          "scrollHeight": 381,
+          "scrollWidth": 541,
+          "top": 216.46875,
+          "type": "slide-support",
+          "width": 541
+        },
+        {
+          "bottom": 597.8359375,
+          "height": 381,
+          "scrollHeight": 381,
+          "scrollWidth": 541,
+          "top": 216.46875,
+          "type": "slide-diagram diagram-graph",
+          "width": 541
+        },
+        {
+          "bottom": 375.53515625,
+          "height": 77,
+          "scrollHeight": 77,
+          "scrollWidth": 144,
+          "top": 296.69921875,
+          "type": "diagram-node diagram-tone-blue ",
+          "width": 144
+        },
+        {
+          "bottom": 375.53515625,
+          "height": 77,
+          "scrollHeight": 77,
+          "scrollWidth": 144,
+          "top": 296.69921875,
+          "type": "diagram-node diagram-tone-blue ",
+          "width": 144
+        },
+        {
+          "bottom": 375.53515625,
+          "height": 77,
+          "scrollHeight": 77,
+          "scrollWidth": 144,
+          "top": 296.69921875,
+          "type": "diagram-node diagram-tone-blue ",
+          "width": 144
+        },
+        {
+          "bottom": 521.53515625,
+          "height": 77,
+          "scrollHeight": 77,
+          "scrollWidth": 144,
+          "top": 442.69921875,
+          "type": "diagram-node diagram-tone-blue ",
+          "width": 144
+        },
+        {
+          "bottom": 521.53515625,
+          "height": 77,
+          "scrollHeight": 77,
+          "scrollWidth": 144,
+          "top": 442.69921875,
+          "type": "diagram-node diagram-tone-blue ",
+          "width": 144
+        },
+        {
+          "bottom": 521.53515625,
+          "height": 77,
+          "scrollHeight": 77,
+          "scrollWidth": 144,
+          "top": 442.69921875,
+          "type": "diagram-node diagram-tone-blue ",
+          "width": 144
+        }
+      ],
+      "page": 51,
+      "pageHeight": 720,
+      "title": "回滚：保留证据，恢复可用流程",
+      "titleHeight": 50
+    },
+    {
+      "chapter": "14_ai_agent",
+      "contentHeight": 408,
+      "contentScroll": 408,
+      "footerTop": 611.2578125,
+      "issues": [],
+      "layout": "split",
+      "mathErrors": 0,
+      "nodes": [
+        {
+          "bottom": 158.390625,
+          "height": 50,
+          "scrollHeight": 54,
+          "scrollWidth": 1172,
+          "top": 107.9921875,
+          "type": "H3",
+          "width": 1172
+        },
+        {
+          "bottom": 527.3515625,
+          "height": 240,
+          "scrollHeight": 240,
+          "scrollWidth": 611,
+          "top": 286.953125,
+          "type": "slide-narrative",
+          "width": 611
+        },
+        {
+          "bottom": 597.8359375,
+          "height": 381,
+          "scrollHeight": 381,
+          "scrollWidth": 541,
+          "top": 216.46875,
+          "type": "slide-support",
+          "width": 541
+        },
+        {
+          "bottom": 597.8359375,
+          "height": 381,
+          "scrollHeight": 381,
+          "scrollWidth": 541,
+          "top": 216.46875,
+          "type": "slide-diagram diagram-graph",
+          "width": 541
+        },
+        {
+          "bottom": 375.53515625,
+          "height": 77,
+          "scrollHeight": 77,
+          "scrollWidth": 144,
+          "top": 296.69921875,
+          "type": "diagram-node diagram-tone-blue ",
+          "width": 144
+        },
+        {
+          "bottom": 375.53515625,
+          "height": 77,
+          "scrollHeight": 77,
+          "scrollWidth": 144,
+          "top": 296.69921875,
+          "type": "diagram-node diagram-tone-blue ",
+          "width": 144
+        },
+        {
+          "bottom": 375.53515625,
+          "height": 77,
+          "scrollHeight": 77,
+          "scrollWidth": 144,
+          "top": 296.69921875,
+          "type": "diagram-node diagram-tone-blue ",
+          "width": 144
+        },
+        {
+          "bottom": 521.53515625,
+          "height": 77,
+          "scrollHeight": 77,
+          "scrollWidth": 144,
+          "top": 442.69921875,
+          "type": "diagram-node diagram-tone-blue ",
+          "width": 144
+        },
+        {
+          "bottom": 521.53515625,
+          "height": 77,
+          "scrollHeight": 77,
+          "scrollWidth": 144,
+          "top": 442.69921875,
+          "type": "diagram-node diagram-tone-blue ",
+          "width": 144
+        },
+        {
+          "bottom": 521.53515625,
+          "height": 77,
+          "scrollHeight": 77,
+          "scrollWidth": 144,
+          "top": 442.69921875,
+          "type": "diagram-node diagram-tone-blue ",
+          "width": 144
+        }
+      ],
+      "page": 52,
+      "pageHeight": 720,
+      "title": "AI问数：先澄清日期与指标",
+      "titleHeight": 50
+    },
+    {
+      "chapter": "14_ai_agent",
+      "contentHeight": 408,
+      "contentScroll": 408,
+      "footerTop": 611.2578125,
+      "issues": [],
+      "layout": "split",
+      "mathErrors": 0,
+      "nodes": [
+        {
+          "bottom": 158.390625,
+          "height": 50,
+          "scrollHeight": 54,
+          "scrollWidth": 1172,
+          "top": 107.9921875,
+          "type": "H3",
+          "width": 1172
+        },
+        {
+          "bottom": 578.7890625,
+          "height": 343,
+          "scrollHeight": 343,
+          "scrollWidth": 611,
+          "top": 235.5078125,
+          "type": "slide-narrative",
+          "width": 611
+        },
+        {
+          "bottom": 578.7890625,
+          "height": 116,
+          "scrollHeight": 116,
+          "scrollWidth": 611,
+          "top": 461.1328125,
+          "type": "slide-equation",
+          "width": 611
+        },
+        {
+          "bottom": 554.9921875,
+          "height": 296,
+          "scrollHeight": 296,
+          "scrollWidth": 541,
+          "top": 259.3046875,
+          "type": "slide-support",
+          "width": 541
+        },
+        {
+          "bottom": 554.9921875,
+          "height": 294,
+          "scrollHeight": 294,
+          "scrollWidth": 541,
+          "top": 259.3046875,
+          "type": "slide-table-wrap",
+          "width": 541
+        }
+      ],
+      "page": 53,
+      "pageHeight": 720,
+      "title": "窗口指标：总分子除以总分母",
+      "titleHeight": 50
+    },
+    {
+      "chapter": "14_ai_agent",
+      "contentHeight": 408,
+      "contentScroll": 408,
+      "footerTop": 611.2578125,
+      "issues": [],
+      "layout": "stack",
+      "mathErrors": 0,
+      "nodes": [
+        {
+          "bottom": 158.390625,
+          "height": 50,
+          "scrollHeight": 54,
+          "scrollWidth": 1172,
+          "top": 107.9921875,
+          "type": "H3",
+          "width": 1172
+        },
+        {
+          "bottom": 371.265625,
+          "height": 128,
+          "scrollHeight": 128,
+          "scrollWidth": 1172,
+          "top": 243.609375,
+          "type": "slide-narrative",
+          "width": 1172
+        },
+        {
+          "bottom": 570.6953125,
+          "height": 179,
+          "scrollHeight": 179,
+          "scrollWidth": 1172,
+          "top": 391.265625,
+          "type": "slide-support",
+          "width": 1172
+        },
+        {
+          "bottom": 570.6953125,
+          "height": 177,
+          "scrollHeight": 177,
+          "scrollWidth": 1172,
+          "top": 391.265625,
+          "type": "slide-table-wrap",
+          "width": 1172
+        }
+      ],
+      "page": 54,
+      "pageHeight": 720,
+      "title": "样本结果：共现不证明因果",
+      "titleHeight": 50
+    },
+    {
+      "chapter": "14_ai_agent",
+      "contentHeight": 408,
+      "contentScroll": 408,
+      "footerTop": 611.2578125,
+      "issues": [],
+      "layout": "split",
+      "mathErrors": 0,
+      "nodes": [
+        {
+          "bottom": 158.390625,
+          "height": 50,
+          "scrollHeight": 54,
+          "scrollWidth": 1172,
+          "top": 107.9921875,
+          "type": "H3",
+          "width": 1172
+        },
+        {
+          "bottom": 543.3046875,
+          "height": 272,
+          "scrollHeight": 272,
+          "scrollWidth": 611,
+          "top": 270.9921875,
+          "type": "slide-narrative",
+          "width": 611
+        },
+        {
+          "bottom": 597.8359375,
+          "height": 381,
+          "scrollHeight": 381,
+          "scrollWidth": 541,
+          "top": 216.46875,
+          "type": "slide-support",
+          "width": 541
+        },
+        {
+          "bottom": 597.8359375,
+          "height": 381,
+          "scrollHeight": 381,
+          "scrollWidth": 541,
+          "top": 216.46875,
+          "type": "slide-diagram diagram-matrix",
+          "width": 541
+        },
+        {
+          "bottom": 366.7578125,
+          "height": 55,
+          "scrollHeight": 55,
+          "scrollWidth": 200,
+          "top": 309.3125,
+          "type": "diagram-tone-blue",
+          "width": 200
+        },
+        {
+          "bottom": 366.7578125,
+          "height": 55,
+          "scrollHeight": 55,
+          "scrollWidth": 200,
+          "top": 309.3125,
+          "type": "diagram-tone-blue",
+          "width": 200
+        },
+        {
+          "bottom": 428.203125,
+          "height": 55,
+          "scrollHeight": 55,
+          "scrollWidth": 200,
+          "top": 370.7578125,
+          "type": "diagram-tone-blue",
+          "width": 200
+        },
+        {
+          "bottom": 428.203125,
+          "height": 55,
+          "scrollHeight": 55,
+          "scrollWidth": 200,
+          "top": 370.7578125,
+          "type": "diagram-tone-blue",
+          "width": 200
+        },
+        {
+          "bottom": 489.6484375,
+          "height": 55,
+          "scrollHeight": 55,
+          "scrollWidth": 200,
+          "top": 432.203125,
+          "type": "diagram-tone-blue",
+          "width": 200
+        },
+        {
+          "bottom": 489.6484375,
+          "height": 55,
+          "scrollHeight": 55,
+          "scrollWidth": 200,
+          "top": 432.203125,
+          "type": "diagram-tone-blue",
+          "width": 200
+        },
+        {
+          "bottom": 551.1171875,
+          "height": 55,
+          "scrollHeight": 55,
+          "scrollWidth": 200,
+          "top": 493.6484375,
+          "type": "diagram-tone-blue",
+          "width": 200
+        },
+        {
+          "bottom": 551.1171875,
+          "height": 55,
+          "scrollHeight": 55,
+          "scrollWidth": 200,
+          "top": 493.6484375,
+          "type": "diagram-tone-blue",
+          "width": 200
+        }
+      ],
+      "page": 55,
+      "pageHeight": 720,
+      "title": "综合项目：提交可独立复核的方案",
+      "titleHeight": 50
+    }
+  ]
+}

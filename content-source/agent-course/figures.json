@@ -1,0 +1,695 @@
+{
+  "architecture": {
+    "type": "graph",
+    "title": "从候选推理到可验证执行",
+    "encoding": "职责与信息流示意",
+    "description": "模型结合有权限的证据与可复用技能提出候选。Harness核验任务、权限和预算，工具执行允许的操作，以实际结果更新任务状态。模型输出不能直接取得执行权限。",
+    "note": "箭头表示信息或调用关系；权限、预算与批准由运行环境及业务服务实施。",
+    "nodes": [
+      {
+        "id": "model",
+        "x": 17,
+        "y": 25,
+        "w": 27,
+        "h": 27,
+        "label": "模型与计划",
+        "detail": "生成候选步骤"
+      },
+      {
+        "id": "context",
+        "x": 50,
+        "y": 25,
+        "w": 27,
+        "h": 27,
+        "label": "证据与记忆",
+        "detail": "来源、版本、任务状态"
+      },
+      {
+        "id": "skill",
+        "x": 83,
+        "y": 25,
+        "w": 27,
+        "h": 27,
+        "label": "Skills",
+        "detail": "配方、资源、失败约定"
+      },
+      {
+        "id": "harness",
+        "x": 17,
+        "y": 75,
+        "w": 27,
+        "h": 27,
+        "label": "Harness",
+        "detail": "核验、调度与停止"
+      },
+      {
+        "id": "tools",
+        "x": 50,
+        "y": 75,
+        "w": 27,
+        "h": 27,
+        "label": "领域工具",
+        "detail": "类型化调用与权限"
+      },
+      {
+        "id": "state",
+        "x": 83,
+        "y": 75,
+        "w": 27,
+        "h": 27,
+        "label": "真实结果",
+        "detail": "状态确认与审计"
+      }
+    ],
+    "edges": [
+      {
+        "from": "context",
+        "to": "model"
+      },
+      {
+        "from": "skill",
+        "to": "model",
+        "via": [
+          {
+            "x": 83,
+            "y": 3
+          },
+          {
+            "x": 17,
+            "y": 3
+          }
+        ]
+      },
+      {
+        "from": "model",
+        "to": "harness"
+      },
+      {
+        "from": "harness",
+        "to": "tools"
+      },
+      {
+        "from": "tools",
+        "to": "state"
+      },
+      {
+        "from": "state",
+        "to": "harness",
+        "via": [
+          {
+            "x": 83,
+            "y": 50
+          },
+          {
+            "x": 17,
+            "y": 50
+          }
+        ],
+        "dashed": true
+      }
+    ]
+  },
+  "rag": {
+    "type": "graph",
+    "title": "可信问答中的证据处理链",
+    "encoding": "处理次序与必要检查",
+    "description": "文档解析保留表格、章节和页码；片段继承权限与版本。先过滤适用性，再检索和重排，回答引用证据，并独立核对结论与引用。",
+    "note": "相关性排序不能替代有效期、访问控制或事实核查；缺证据时请求补充或转人工。",
+    "nodes": [
+      {
+        "id": "parse",
+        "x": 17,
+        "y": 25,
+        "w": 27,
+        "h": 27,
+        "label": "解析与切分",
+        "detail": "结构、页码、单位"
+      },
+      {
+        "id": "filter",
+        "x": 50,
+        "y": 25,
+        "w": 27,
+        "h": 27,
+        "label": "适用性过滤",
+        "detail": "权限、版本、日期"
+      },
+      {
+        "id": "retrieve",
+        "x": 83,
+        "y": 25,
+        "w": 27,
+        "h": 27,
+        "label": "检索候选",
+        "detail": "词法、向量与图"
+      },
+      {
+        "id": "rerank",
+        "x": 83,
+        "y": 75,
+        "w": 27,
+        "h": 27,
+        "label": "证据重排",
+        "detail": "问题与片段相关性"
+      },
+      {
+        "id": "answer",
+        "x": 50,
+        "y": 75,
+        "w": 27,
+        "h": 27,
+        "label": "有据答复",
+        "detail": "引用与适用边界"
+      },
+      {
+        "id": "verify",
+        "x": 17,
+        "y": 75,
+        "w": 27,
+        "h": 27,
+        "label": "独立核查",
+        "detail": "冲突、缺失、误引"
+      }
+    ],
+    "edges": [
+      {
+        "from": "parse",
+        "to": "filter"
+      },
+      {
+        "from": "filter",
+        "to": "retrieve"
+      },
+      {
+        "from": "retrieve",
+        "to": "rerank"
+      },
+      {
+        "from": "rerank",
+        "to": "answer"
+      },
+      {
+        "from": "answer",
+        "to": "verify"
+      }
+    ]
+  },
+  "chatflow": {
+    "type": "graph",
+    "title": "对话状态与行动权限分开维护",
+    "encoding": "Chatflow教学模式",
+    "description": "每轮询问先结合已确认槽位和角色范围，补齐信息、检索证据并形成候选。核查决定答复、澄清或转人工；形成文稿不等于发送或批准。",
+    "note": "会话历史提供上下文，不创造业务授权；高风险操作进入明确的审批流程。",
+    "nodes": [
+      {
+        "id": "ask",
+        "x": 17,
+        "y": 25,
+        "w": 27,
+        "h": 27,
+        "label": "用户询问",
+        "detail": "意图与缺失信息"
+      },
+      {
+        "id": "role",
+        "x": 50,
+        "y": 25,
+        "w": 27,
+        "h": 27,
+        "label": "角色与槽位",
+        "detail": "已确认任务范围"
+      },
+      {
+        "id": "evidence",
+        "x": 83,
+        "y": 25,
+        "w": 27,
+        "h": 27,
+        "label": "工具与证据",
+        "detail": "有权限的资料"
+      },
+      {
+        "id": "draft",
+        "x": 83,
+        "y": 75,
+        "w": 27,
+        "h": 27,
+        "label": "候选答复",
+        "detail": "事实与建议分开"
+      },
+      {
+        "id": "check",
+        "x": 50,
+        "y": 75,
+        "w": 27,
+        "h": 27,
+        "label": "独立核查",
+        "detail": "来源、条件、完整性"
+      },
+      {
+        "id": "response",
+        "x": 17,
+        "y": 75,
+        "w": 27,
+        "h": 27,
+        "label": "答复或转交",
+        "detail": "澄清、答复、审批"
+      }
+    ],
+    "edges": [
+      {
+        "from": "ask",
+        "to": "role"
+      },
+      {
+        "from": "role",
+        "to": "evidence"
+      },
+      {
+        "from": "evidence",
+        "to": "draft"
+      },
+      {
+        "from": "draft",
+        "to": "check"
+      },
+      {
+        "from": "check",
+        "to": "response"
+      }
+    ]
+  },
+  "workflow": {
+    "type": "graph",
+    "title": "分流规则须有明确优先级",
+    "encoding": "客户咨询流程示意",
+    "description": "输入先校验对象与必要字段，然后按预先规定的优先级路由。敏感或紧急事件优先转授权人员，低风险咨询可用已批准知识回答，证据不足或意图未能确定进入人工队列。",
+    "note": "本案例采用固定词典；转交记录、人工接收和业务完成是不同状态。",
+    "nodes": [
+      {
+        "id": "event",
+        "x": 17,
+        "y": 25,
+        "w": 27,
+        "h": 27,
+        "label": "咨询事件",
+        "detail": "事件键与对象"
+      },
+      {
+        "id": "validate",
+        "x": 50,
+        "y": 25,
+        "w": 27,
+        "h": 27,
+        "label": "输入校验",
+        "detail": "必要字段与权限"
+      },
+      {
+        "id": "route",
+        "x": 83,
+        "y": 25,
+        "w": 27,
+        "h": 27,
+        "label": "有序分流",
+        "detail": "风险优先于便捷"
+      },
+      {
+        "id": "human",
+        "x": 17,
+        "y": 75,
+        "w": 27,
+        "h": 27,
+        "label": "人工接管",
+        "detail": "敏感、缺失、不确定"
+      },
+      {
+        "id": "service",
+        "x": 50,
+        "y": 75,
+        "w": 27,
+        "h": 27,
+        "label": "专责服务",
+        "detail": "授权处理与确认"
+      },
+      {
+        "id": "faq",
+        "x": 83,
+        "y": 75,
+        "w": 27,
+        "h": 27,
+        "label": "知识答复",
+        "detail": "低风险且有依据"
+      }
+    ],
+    "edges": [
+      {
+        "from": "event",
+        "to": "validate"
+      },
+      {
+        "from": "validate",
+        "to": "route"
+      },
+      {
+        "from": "route",
+        "to": "human",
+        "via": [
+          {
+            "x": 83,
+            "y": 50
+          },
+          {
+            "x": 17,
+            "y": 50
+          }
+        ]
+      },
+      {
+        "from": "route",
+        "to": "service",
+        "via": [
+          {
+            "x": 83,
+            "y": 50
+          },
+          {
+            "x": 50,
+            "y": 50
+          }
+        ]
+      },
+      {
+        "from": "route",
+        "to": "faq"
+      }
+    ]
+  },
+  "multi": {
+    "type": "graph",
+    "title": "分工、汇合与独立核查",
+    "encoding": "任务依赖图示意",
+    "description": "管理角色根据同一任务规格拆分工作；检索与分析角色提交可追溯中间产物；评审角色核对证据及约束。存在冲突时返回明确状态，不以投票替代验证。",
+    "note": "角色可由同一模型、不同模型或确定性程序实现；增加角色本身不保证质量。",
+    "nodes": [
+      {
+        "id": "manager",
+        "x": 50,
+        "y": 17,
+        "w": 38,
+        "h": 22,
+        "label": "管理角色",
+        "detail": "任务规格、预算、依赖"
+      },
+      {
+        "id": "retrieval",
+        "x": 22,
+        "y": 50,
+        "w": 34,
+        "h": 22,
+        "label": "检索与工具角色",
+        "detail": "证据、版本、调用结果"
+      },
+      {
+        "id": "analysis",
+        "x": 78,
+        "y": 50,
+        "w": 34,
+        "h": 22,
+        "label": "执行与分析角色",
+        "detail": "计算、约束、候选方案"
+      },
+      {
+        "id": "review",
+        "x": 50,
+        "y": 83,
+        "w": 38,
+        "h": 22,
+        "label": "评审与汇合",
+        "detail": "独立检验、冲突与接管"
+      }
+    ],
+    "edges": [
+      {
+        "from": "manager",
+        "to": "retrieval"
+      },
+      {
+        "from": "manager",
+        "to": "analysis"
+      },
+      {
+        "from": "retrieval",
+        "to": "review"
+      },
+      {
+        "from": "analysis",
+        "to": "review"
+      }
+    ]
+  },
+  "deployment": {
+    "type": "graph",
+    "title": "部署边界与服务职责",
+    "encoding": "企业部署分层示意",
+    "description": "用户通过身份与运行控制访问推理和领域服务。数据层保存结构化事实、文件、索引与日志；运行控制管理审批、预算、恢复及路由。私有模型不替代业务服务权限。",
+    "note": "网络位置、模型供应与业务授权分别核验；观测日志也可能含受限数据。",
+    "nodes": [
+      {
+        "id": "user",
+        "x": 50,
+        "y": 13,
+        "w": 85,
+        "h": 18,
+        "label": "用户入口与身份",
+        "detail": "角色、任务和访问范围"
+      },
+      {
+        "id": "control",
+        "x": 50,
+        "y": 38,
+        "w": 85,
+        "h": 18,
+        "label": "运行控制",
+        "detail": "预算、权限、审批、日志与恢复"
+      },
+      {
+        "id": "service",
+        "x": 50,
+        "y": 63,
+        "w": 85,
+        "h": 18,
+        "label": "推理与领域服务",
+        "detail": "模型、检索、计算与受控业务接口"
+      },
+      {
+        "id": "data",
+        "x": 50,
+        "y": 88,
+        "w": 85,
+        "h": 18,
+        "label": "企业数据与状态",
+        "detail": "事实、文档、索引、版本与审计"
+      }
+    ],
+    "edges": [
+      {
+        "from": "user",
+        "to": "control"
+      },
+      {
+        "from": "control",
+        "to": "service"
+      },
+      {
+        "from": "service",
+        "to": "data"
+      }
+    ]
+  },
+  "production": {
+    "type": "graph",
+    "title": "异常事件到经核验的处理记录",
+    "encoding": "生产线教学流程 · 设备联锁只读",
+    "description": "异常事件去重后，根据告警级别和当前事实确定人工处置需求。检索有效SOP、形成核验清单、等待授权批准；维护工单幂等提交后必须查实际状态。系统不生成或执行停启机指令。",
+    "note": "设备控制调用数为零；业务工作流不能替代安全联锁或设备负责人确认。",
+    "nodes": [
+      {
+        "id": "event",
+        "x": 17,
+        "y": 25,
+        "w": 27,
+        "h": 27,
+        "label": "事件与去重",
+        "detail": "设备、批次、事件键"
+      },
+      {
+        "id": "triage",
+        "x": 50,
+        "y": 25,
+        "w": 27,
+        "h": 27,
+        "label": "异常分级",
+        "detail": "联锁只读、人工升级"
+      },
+      {
+        "id": "facts",
+        "x": 83,
+        "y": 25,
+        "w": 27,
+        "h": 27,
+        "label": "SOP与事实",
+        "detail": "版本、维修、质检"
+      },
+      {
+        "id": "review",
+        "x": 83,
+        "y": 75,
+        "w": 27,
+        "h": 27,
+        "label": "核查与审批",
+        "detail": "缺项、冲突、责任人"
+      },
+      {
+        "id": "ticket",
+        "x": 50,
+        "y": 75,
+        "w": 27,
+        "h": 27,
+        "label": "维护工单",
+        "detail": "获批请求与幂等键"
+      },
+      {
+        "id": "confirm",
+        "x": 17,
+        "y": 75,
+        "w": 27,
+        "h": 27,
+        "label": "状态核验",
+        "detail": "结果、接管与审计"
+      }
+    ],
+    "edges": [
+      {
+        "from": "event",
+        "to": "triage"
+      },
+      {
+        "from": "triage",
+        "to": "facts"
+      },
+      {
+        "from": "facts",
+        "to": "review"
+      },
+      {
+        "from": "review",
+        "to": "ticket"
+      },
+      {
+        "from": "ticket",
+        "to": "confirm"
+      }
+    ]
+  },
+  "rollout": {
+    "type": "graph",
+    "title": "每一阶段都需要可检验的准入条件",
+    "encoding": "项目阶段与验收门槛",
+    "description": "以对象、价值和允许行动筛选场景，再用固定样本构造原型，通过故障和越权样本验证沙盒。在有限授权范围内灰度试点，达到预先登记标准才扩大范围；每个阶段都保留回滚和人工接管。",
+    "note": "阶段顺序不表示承诺工期；验收阈值须由业务、技术与治理责任人共同确定。",
+    "nodes": [
+      {
+        "id": "select",
+        "x": 17,
+        "y": 25,
+        "w": 27,
+        "h": 27,
+        "label": "场景筛选",
+        "detail": "价值、边界、数据"
+      },
+      {
+        "id": "prototype",
+        "x": 50,
+        "y": 25,
+        "w": 27,
+        "h": 27,
+        "label": "可验收原型",
+        "detail": "固定输入与基准"
+      },
+      {
+        "id": "sandbox",
+        "x": 83,
+        "y": 25,
+        "w": 27,
+        "h": 27,
+        "label": "沙盒检验",
+        "detail": "缺失、故障、越权"
+      },
+      {
+        "id": "pilot",
+        "x": 83,
+        "y": 75,
+        "w": 27,
+        "h": 27,
+        "label": "灰度试点",
+        "detail": "有限范围与对照"
+      },
+      {
+        "id": "expand",
+        "x": 50,
+        "y": 75,
+        "w": 27,
+        "h": 27,
+        "label": "分批扩展",
+        "detail": "重新核验新范围"
+      },
+      {
+        "id": "rollback",
+        "x": 17,
+        "y": 75,
+        "w": 27,
+        "h": 27,
+        "label": "回滚与复核",
+        "detail": "停止新任务、保留状态"
+      }
+    ],
+    "edges": [
+      {
+        "from": "select",
+        "to": "prototype"
+      },
+      {
+        "from": "prototype",
+        "to": "sandbox"
+      },
+      {
+        "from": "sandbox",
+        "to": "pilot"
+      },
+      {
+        "from": "pilot",
+        "to": "expand"
+      },
+      {
+        "from": "expand",
+        "to": "rollback",
+        "dashed": true
+      },
+      {
+        "from": "rollback",
+        "to": "prototype",
+        "via": [
+          {
+            "x": 17,
+            "y": 50
+          },
+          {
+            "x": 50,
+            "y": 50
+          }
+        ],
+        "dashed": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,16 @@
+Browser tab: 2, Title: "企业AI Agent：知识、协作与受控执行 · 大数据与管理决策基础", URL: "http://127.0.0.1:61712/dist/#/chapter/14_ai_agent".
+1 AXWebArea 企业AI Agent：知识、协作与受控执行 · 大数据与管理决策基础, URL: 127.0.0.1:61712/dist/#/chapter/14_ai_agent
+	2 container 搜索课程
+		3 text 搜索课程
+		4 button 关闭搜索
+		5 search text field (settable) Description: 搜索章节、课程资料或概念, Value: Harness, ID: course-search-input
+		26 container
+			27 heading 主题词条, Value: 2
+				28 text 主题词条
+			29 link Description: harness（智能体运行环境） 流程挖掘与智能体执行, Value: 127.0.0.1:61712/dist/#/chapter/10_process_mining?anchor=%E6%99%BA%E8%83%BD%E4%BD%93%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83%E7%9A%84%E7%BB%84%E6%88%90
+			30 link Description: Harness：上下文、状态、预算、恢复与监督 企业AI Agent：知识、协作与受控执行, Value: 127.0.0.1:61712/dist/#/chapter/14_ai_agent?anchor=agent-architecture
+			31 link Description: Harness Engineering 企业AI Agent：知识、协作与受控执行, Value: 127.0.0.1:61712/dist/#/chapter/14_ai_agent?anchor=agent-architecture
+		24 text ↑ ↓ 选择 · Enter 打开
+		25 text Esc 关闭
+
+The focused UI element is 5 search text field (settable) Description: 搜索章节、课程资料或概念, Value: Harness, ID: course-search-input

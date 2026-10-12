@@ -19,6 +19,9 @@ target.mkdir(parents=True, exist_ok=True)
 text = (root / "dist/content/lecture-slides.json").read_text()
 text += (root / "dist/slides.js").read_text()
 text += (root / "dist/slide-diagrams.js").read_text()
+for extra in ["content-source/agent-course/figures.json", "content-source/agent-course/14_ai_agent.md"]:
+    if (root / extra).exists():
+        text += (root / extra).read_text()
 unicodes = set(map(ord, text)) | set(range(32, 127))
 required_cjk = {u for u in unicodes if 0x3400 <= u <= 0x9fff}
 manifest = {"family": "BDM Course Song", "upstream": "https://github.com/adobe-fonts/source-han-serif", "license": "SIL OFL 1.1", "contentSha256": sha256((root / "dist/content/lecture-slides.json").read_bytes()).hexdigest(), "requiredCjkCharacters": len(required_cjk), "fonts": []}

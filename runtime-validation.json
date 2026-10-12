@@ -2,6 +2,26 @@
   "runtime": "Pyodide 0.27.7 / CPython 3.12",
   "experiments": [
     {
+      "id": "agent-rag",
+      "status": "passed",
+      "outputs": 2
+    },
+    {
+      "id": "agent-office",
+      "status": "passed",
+      "outputs": 1
+    },
+    {
+      "id": "agent-routing",
+      "status": "passed",
+      "outputs": 1
+    },
+    {
+      "id": "agent-production",
+      "status": "passed",
+      "outputs": 1
+    },
+    {
       "id": "framing",
       "status": "passed",
       "outputs": 1
@@ -77,7 +97,7 @@
       "outputs": 1
     }
   ],
-  "implementedPythonModules": 30,
+  "implementedPythonModules": 31,
   "parameterChecks": [
     "zero budget and capacity",
     "feasible optimized plans",

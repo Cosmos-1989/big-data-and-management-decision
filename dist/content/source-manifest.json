@@ -59,5 +59,29 @@
     "figures": 19,
     "programs": 43,
     "datasets": 13
+  },
+  "agentExtension": {
+    "date": "2026-10-12",
+    "sourceFiles": [
+      {
+        "path": "docs/lecture_notes/14_ai_agent.md",
+        "sha256": "0eab2bbb5a506c78797880e9515660446ddf22778eb7dc019ddb2a1524f157f4"
+      },
+      {
+        "path": "assignments/final_project.md",
+        "sha256": "9784d497c6bc6ee6bf44b81d604de2d3428c05bae37ed2efc0cccbfba497b3bb"
+      },
+      {
+        "path": "src/bdm_decision/cases/week14_enterprise_agents.py",
+        "sha256": "191268253ba6d68df1208093bc863a54edf9f31dd2df97751183b019d16f902e"
+      }
+    ],
+    "build": "scripts/build-agent-extension.mjs",
+    "experiments": [
+      "agent-rag",
+      "agent-office",
+      "agent-routing",
+      "agent-production"
+    ]
   }
 }

@@ -1,0 +1,751 @@
+{
+  "audit_date": "2026-10-12",
+  "question": "现有课程是否完整覆盖企业 AI Agent 培训所列范围？",
+  "conclusion": "未完整覆盖。第10章为运行环境、授权执行、混合检索和任务评测提供了扎实基础；但 Chatflow、Skills、GraphRAG、多智能体、四个端到端案例、分阶段落地方法和七工具比较尚未形成完整教学闭环。",
+  "scope": {
+    "authoritative_core": "docs/textbook/chapters/01–10.tex 与 website/dist/content/01–10.json",
+    "supplement": "docs/lecture_notes/11–14.md 与 website/dist/content/11–14.json",
+    "delivery": "website/dist/content/lecture-slides.json、website/dist/experiments.js、website/dist/content/lab-specs.json",
+    "source_priority": "以新版 1–10 章 textbook 为准；12、13 讲补充稿是待编写占位，不计作覆盖；14 讲为提纲式补充，不等同完整章节。"
+  },
+  "rating_rule": {
+    "充分": "现有核心讲义有系统定义/机制、具体算例或案例，且网页幻灯片可独立讲授；若缺实验，在 gap 中另列。",
+    "部分": "已有相关概念或案例，但缺关键环节、完整讲授或实践。",
+    "缺失": "未见该主题的实质性课程内容；相邻概念不推定等价。"
+  },
+  "counts": {
+    "部分": 15,
+    "充分": 6,
+    "缺失": 13
+  },
+  "items": [
+    {
+      "id": "F01",
+      "group": "基础框架",
+      "topic": "Chatbot / Copilot / Agent 的边界",
+      "level": "部分",
+      "evidence": [
+        {
+          "path": "docs/textbook/chapters/10_process_mining.tex",
+          "where": "333–340 行",
+          "note": "区分预定工作流与可选后续行动的智能体"
+        },
+        {
+          "path": "docs/lecture_notes/14_ai_agent.md",
+          "where": "4–7 行",
+          "note": "学习目标提出企业助手与聊天机器人的区别，但正文未展开"
+        }
+      ],
+      "gap": "缺 Copilot 定义、三者在主动性/工具/状态/责任上的同任务对照。",
+      "integration": {
+        "place": "第10章“语言模型、工作流与智能体”之前；第14讲实训开场",
+        "proposal": "用同一“审批一张订单”任务比较回答、辅助起草和受控执行，并标出人类最终责任。"
+      }
+    },
+    {
+      "id": "F02",
+      "group": "基础框架",
+      "topic": "LLM 在 Agent 系统中的职责与限制",
+      "level": "部分",
+      "evidence": [
+        {
+          "path": "docs/textbook/chapters/01_intro.tex",
+          "where": "578–581 行",
+          "note": "说明 LLM 生成文本或结构化输出，工具提供查询与操作"
+        },
+        {
+          "path": "docs/textbook/chapters/10_process_mining.tex",
+          "where": "333–340 行",
+          "note": "策略基于历史提出候选行动"
+        }
+      ],
+      "gap": "已有生成与候选行动的定位，但缺上下文窗口、非确定性、工具结果核验和任务级失败示例的系统讲解。",
+      "integration": {
+        "place": "第10章智能体基础",
+        "proposal": "加入模型提议、领域服务计算、harness 验证与业务服务提交四层职责图。"
+      }
+    },
+    {
+      "id": "F03",
+      "group": "基础框架",
+      "topic": "Planning：分解、更新与终止",
+      "level": "部分",
+      "evidence": [
+        {
+          "path": "docs/textbook/chapters/10_process_mining.tex",
+          "where": "343–405 行",
+          "note": "有任务规格、提出计划、验证、执行、恢复的状态图"
+        },
+        {
+          "path": "website/dist/content/lecture-slides.json",
+          "where": "10_process_mining 第29–31页",
+          "note": "订单任务规格、幂等恢复与状态机"
+        }
+      ],
+      "gap": "未明确教授计划分解、观察后重规划、计划与执行记录的区别，也无规划练习。",
+      "integration": {
+        "place": "第10章运行环境组成之后",
+        "proposal": "以“诊断 E7 停机并生成维修申请”为例展示步骤图、条件分支、失败重规划与停止规则。"
+      }
+    },
+    {
+      "id": "F04",
+      "group": "基础框架",
+      "topic": "Memory：会话、检查点与长期记忆",
+      "level": "部分",
+      "evidence": [
+        {
+          "path": "docs/textbook/chapters/10_process_mining.tex",
+          "where": "343–389 行",
+          "note": "上下文管理、状态持久化及 LangGraph 检查点/跨交互存储"
+        },
+        {
+          "path": "website/dist/content/lecture-slides.json",
+          "where": "10_process_mining 第28、30页",
+          "note": "运行环境与故障恢复"
+        }
+      ],
+      "gap": "缺短期工作状态、长期知识/用户偏好、写入与检索策略、过期/删除/权限的对比及失效案例。",
+      "integration": {
+        "place": "第10章运行环境组成之后",
+        "proposal": "增加三类状态表，区分检索证据、任务检查点和可持久记忆；以错误旧版 SOP 为反例。"
+      }
+    },
+    {
+      "id": "F05",
+      "group": "基础框架",
+      "topic": "Tools：结构化调用、权限、幂等与结果验证",
+      "level": "充分",
+      "evidence": [
+        {
+          "path": "docs/textbook/chapters/10_process_mining.tex",
+          "where": "367–445 行",
+          "note": "类型化工具路由、授权、幂等恢复、MCP 与提示注入边界"
+        },
+        {
+          "path": "docs/textbook/chapters/03_sql_kpi.tex",
+          "where": "542–547 行",
+          "note": "只读快照、许可表、资源预算与执行日志"
+        },
+        {
+          "path": "website/dist/content/lecture-slides.json",
+          "where": "10_process_mining 第30–32页",
+          "note": "故障恢复、状态机和业务授权"
+        }
+      ],
+      "gap": "理论和示例较完整；缺可运行的工具调用沙箱。",
+      "integration": {
+        "place": "第10章实验与网站面板",
+        "proposal": "用只读查询、模拟工单和拒绝越权三种受控工具补实操。"
+      }
+    },
+    {
+      "id": "F06",
+      "group": "基础框架",
+      "topic": "Skills：可复用任务能力的定义、版本与验收",
+      "level": "缺失",
+      "evidence": [
+        {
+          "path": "docs/textbook/chapters/10_process_mining.tex",
+          "where": "350–363 行",
+          "note": "列出工具路由和任务定义，但未定义 Skills"
+        }
+      ],
+      "gap": "全文未把 Skills 作为独立能力单元，也未讲其与工具、提示模板、工作流的边界。",
+      "integration": {
+        "place": "第10章基础组件；第14讲工具生态",
+        "proposal": "给一个可版本化“查询并审计 OTD”能力包：输入契约、步骤、权限、输出与测试。"
+      }
+    },
+    {
+      "id": "F07",
+      "group": "基础框架",
+      "topic": "Harness：上下文、状态、预算、恢复与监督",
+      "level": "充分",
+      "evidence": [
+        {
+          "path": "docs/textbook/chapters/10_process_mining.tex",
+          "where": "329–445 行",
+          "note": "完整组件表及故障恢复/状态机/授权示例"
+        },
+        {
+          "path": "website/dist/content/lecture-slides.json",
+          "where": "10_process_mining 第27–32页",
+          "note": "连续六页覆盖运行环境与控制"
+        }
+      ],
+      "gap": "概念论证与案例较足；仍需一个可交互的最小 harness 原型。",
+      "integration": {
+        "place": "第10章实验",
+        "proposal": "展示有限状态循环与执行轨迹，允许访客触发预算耗尽、响应丢失和审批拒绝。"
+      }
+    },
+    {
+      "id": "R01",
+      "group": "RAG 流程",
+      "topic": "文档解析、OCR/表格、元数据保真",
+      "level": "部分",
+      "evidence": [
+        {
+          "path": "docs/textbook/chapters/10_process_mining.tex",
+          "where": "470–474 行",
+          "note": "要求保留结构、表格单位、页码、版本和权限"
+        },
+        {
+          "path": "docs/textbook/chapters/04_data_quality.tex",
+          "where": "593–600 行",
+          "note": "提取遗漏单位、来源和有效期风险"
+        }
+      ],
+      "gap": "说明了保真要求，但无解析步骤、图文表/扫描件对照样例与校验输出。",
+      "integration": {
+        "place": "第4章证据质量；第10章 RAG",
+        "proposal": "用两版 SOP、扫描表格和签发记录展示解析前后差异及字段核查。"
+      }
+    },
+    {
+      "id": "R02",
+      "group": "RAG 流程",
+      "topic": "切分策略与片段定位",
+      "level": "部分",
+      "evidence": [
+        {
+          "path": "docs/textbook/chapters/10_process_mining.tex",
+          "where": "473 行",
+          "note": "建议按可理解段落切分并验证长度"
+        },
+        {
+          "path": "docs/textbook/chapters/04_data_quality.tex",
+          "where": "593 行",
+          "note": "提到切片边界和引用定位"
+        }
+      ],
+      "gap": "缺标题/表格/条款边界、重叠、粒度与召回/定位关系的具体反例。",
+      "integration": {
+        "place": "第10章检索增强生成的逐步计算",
+        "proposal": "以设备放行条款分别做固定字数切分和结构切分，让学生比较证据完整性。"
+      }
+    },
+    {
+      "id": "R03",
+      "group": "RAG 流程",
+      "topic": "向量嵌入、相似度与混合检索",
+      "level": "充分",
+      "evidence": [
+        {
+          "path": "docs/textbook/chapters/10_process_mining.tex",
+          "where": "475–488 行",
+          "note": "嵌入余弦相似度、词法/向量融合及 RRF 算例"
+        },
+        {
+          "path": "website/dist/content/lecture-slides.json",
+          "where": "10_process_mining 第35–37页",
+          "note": "材料到回答、混合检索与 RRF 数值页"
+        }
+      ],
+      "gap": "原理与算例充分，缺可调权重或候选库面板。",
+      "integration": {
+        "place": "第10章 RAG 实验",
+        "proposal": "提供词法与向量排名列表，让学生改变查询并观察融合前后的证据集合。"
+      }
+    },
+    {
+      "id": "R04",
+      "group": "RAG 流程",
+      "topic": "Rerank：候选重排与证据筛选",
+      "level": "部分",
+      "evidence": [
+        {
+          "path": "docs/textbook/chapters/10_process_mining.tex",
+          "where": "485 行",
+          "note": "仅一句提到可用重排模型选证据"
+        }
+      ],
+      "gap": "无重排输入输出、排序前后案例、成本/权限顺序和评估。",
+      "integration": {
+        "place": "第10章 RAG",
+        "proposal": "增加候选生成→权限过滤→重排→引用核查图及一份可手算排序样例。"
+      }
+    },
+    {
+      "id": "R05",
+      "group": "RAG 流程",
+      "topic": "GraphRAG：实体关系检索与文本证据结合",
+      "level": "缺失",
+      "evidence": [
+        {
+          "path": "docs/textbook/chapters/02_enterprise_data_model.tex",
+          "where": "871–873 行",
+          "note": "业务对象关系图可作为先修，但并非 GraphRAG"
+        }
+      ],
+      "gap": "不存在 GraphRAG 定义、图构建、路径检索与文本证据合成的课程内容；不能把 Ontology 等同 GraphRAG。",
+      "integration": {
+        "place": "第10章 RAG 后的进阶框；第2章对象图回链",
+        "proposal": "用设备→批次→订单关系找受影响对象，再用 SOP 文本核对处理条件，并说明图边与文档均须溯源。"
+      }
+    },
+    {
+      "id": "R06",
+      "group": "RAG 流程",
+      "topic": "引用、冲突、有效期与检索评测",
+      "level": "部分",
+      "evidence": [
+        {
+          "path": "docs/textbook/chapters/10_process_mining.tex",
+          "where": "490–493 行",
+          "note": "E7 新旧 SOP 与受限报告的冲突处理"
+        },
+        {
+          "path": "docs/textbook/chapters/04_data_quality.tex",
+          "where": "593–600 行",
+          "note": "来源、权限、版本、撤销同步"
+        }
+      ],
+      "gap": "冲突处理有实例；缺检索金标准、Recall@k/引用正确率/拒答率等教学测量。",
+      "integration": {
+        "place": "第10章案例评测",
+        "proposal": "建立小型制度问答基准，要求出处、适用范围、冲突说明与缺证据拒答。"
+      }
+    },
+    {
+      "id": "O01",
+      "group": "编排模式",
+      "topic": "Chatflow 与 Workflow 的区别",
+      "level": "缺失",
+      "evidence": [
+        {
+          "path": "docs/textbook/chapters/10_process_mining.tex",
+          "where": "333–340 行",
+          "note": "仅比较工作流与智能体，没有 Chatflow"
+        }
+      ],
+      "gap": "没有会话驱动与任务流程驱动的状态、触发、人工接入和失败恢复对照。",
+      "integration": {
+        "place": "第10章智能体基础；第14讲实训",
+        "proposal": "用制度咨询（会话）与报销审核（流程）两例画节点与状态转换，不绑定单一平台。"
+      }
+    },
+    {
+      "id": "O02",
+      "group": "编排模式",
+      "topic": "固定工作流与自主 Agent 的边界",
+      "level": "充分",
+      "evidence": [
+        {
+          "path": "docs/textbook/chapters/10_process_mining.tex",
+          "where": "333–340 行",
+          "note": "固定步骤/分支与基于观察的下一步选择"
+        },
+        {
+          "path": "website/dist/content/lecture-slides.json",
+          "where": "10_process_mining 第27页",
+          "note": "独立幻灯片讲授"
+        }
+      ],
+      "gap": "概念清楚，但缺同任务实现对照。",
+      "integration": {
+        "place": "第10章基础",
+        "proposal": "补一个“告警处理”固定规则与受限 Agent 的并列轨迹。"
+      }
+    },
+    {
+      "id": "O03",
+      "group": "编排模式",
+      "topic": "多智能体分工、调度、共享状态与冲突",
+      "level": "缺失",
+      "evidence": [
+        {
+          "path": "docs/textbook/chapters/10_process_mining.tex",
+          "where": "343–345 行",
+          "note": "仅提计划、生成、评价职责分配，未讲多智能体"
+        }
+      ],
+      "gap": "缺调度器、角色边界、交接契约、并发/循环控制、冲突仲裁和成本评价。",
+      "integration": {
+        "place": "第10章运行环境后设置进阶小节",
+        "proposal": "以“检索员—分析员—复核员”三角色构成受控图，并与单 Agent 基线比较任务成功率及成本。"
+      }
+    },
+    {
+      "id": "G01",
+      "group": "部署与治理",
+      "topic": "私有部署架构、数据流和容量",
+      "level": "部分",
+      "evidence": [
+        {
+          "path": "docs/textbook/chapters/10_process_mining.tex",
+          "where": "447–519 行",
+          "note": "本地推理/领域服务/数据分层及安全成本"
+        },
+        {
+          "path": "docs/textbook/chapters/09_optimization.tex",
+          "where": "340–368 行",
+          "note": "费用交点、设计容量与并发限制"
+        },
+        {
+          "path": "website/dist/content/lecture-slides.json",
+          "where": "10_process_mining 第33–34、39页",
+          "note": "部署分层、平台组合及端到端延迟"
+        }
+      ],
+      "gap": "架构与成本已有；缺可复现部署规格、网络边界图、模型/索引更新与容量压测。",
+      "integration": {
+        "place": "第9章容量；第10章部署",
+        "proposal": "加入单机教学版和企业隔离版两级部署图，说明硬件、权限、数据流与验收差异。"
+      }
+    },
+    {
+      "id": "G02",
+      "group": "部署与治理",
+      "topic": "权限、安全、提示注入、审计和人工批准",
+      "level": "充分",
+      "evidence": [
+        {
+          "path": "docs/textbook/chapters/10_process_mining.tex",
+          "where": "367–445 行",
+          "note": "信任边界、服务端授权、注入反例和审批状态"
+        },
+        {
+          "path": "docs/textbook/chapters/02_enterprise_data_model.tex",
+          "where": "663–690 行",
+          "note": "对象行动权限与版本化状态"
+        },
+        {
+          "path": "docs/textbook/chapters/04_data_quality.tex",
+          "where": "581–600 行",
+          "note": "检索权限/敏感信息/撤销材料"
+        }
+      ],
+      "gap": "原则与案例充分；缺统一威胁模型表和网站交互演练。",
+      "integration": {
+        "place": "第10章治理实验",
+        "proposal": "使用权限撤销、旧 SOP、恶意文档三类故障注入，考核拒绝和审计。"
+      }
+    },
+    {
+      "id": "G03",
+      "group": "部署与治理",
+      "topic": "完整任务可靠性、成本与经营效果",
+      "level": "充分",
+      "evidence": [
+        {
+          "path": "docs/textbook/chapters/10_process_mining.tex",
+          "where": "521–561 行",
+          "note": "多步成功率、失败上界、重复尝试及单位成功任务成本"
+        },
+        {
+          "path": "docs/textbook/chapters/06_ab_testing.tex",
+          "where": "359–387 行",
+          "note": "智能体运营试点分配与外推"
+        },
+        {
+          "path": "website/dist/content/lecture-slides.json",
+          "where": "10_process_mining 第40–43页",
+          "note": "可靠性与成本四页"
+        }
+      ],
+      "gap": "理论完整；需把成本、质量和业务指标汇成推广门禁。",
+      "integration": {
+        "place": "第10章落地路线",
+        "proposal": "以任务成功率、越权率、引用正确率、人工复核时长和单位成功成本组成门禁。"
+      }
+    },
+    {
+      "id": "C01",
+      "group": "四类案例",
+      "topic": "企业制度问答",
+      "level": "部分",
+      "evidence": [
+        {
+          "path": "docs/textbook/chapters/10_process_mining.tex",
+          "where": "490–493 行",
+          "note": "新版/旧版 SOP、受限报告的设备放行问题"
+        },
+        {
+          "path": "docs/lecture_notes/14_ai_agent.md",
+          "where": "18–19 行",
+          "note": "仅笼统说 RAG 检索企业知识库"
+        }
+      ],
+      "gap": "有制度冲突片段但无完整问答任务、用户角色、金标准答案与引用评价。",
+      "integration": {
+        "place": "第10章 RAG 案例；第14讲案例一",
+        "proposal": "构造四份模拟制度文件及五类问题：有效、过期、冲突、无权限、无答案。"
+      }
+    },
+    {
+      "id": "C02",
+      "group": "四类案例",
+      "topic": "办公数字员工",
+      "level": "缺失",
+      "evidence": [
+        {
+          "path": "docs/textbook/chapters/10_process_mining.tex",
+          "where": "381–405 行",
+          "note": "维修工单恢复可迁移，但非办公场景"
+        }
+      ],
+      "gap": "缺邮件/表单/日程等办公任务的边界、审批、重复提交与交付物核查。",
+      "integration": {
+        "place": "第14讲案例二",
+        "proposal": "选“会议纪要→待办→审批后建单”的模拟办公流程，外部动作仅写入教学沙箱。"
+      }
+    },
+    {
+      "id": "C03",
+      "group": "四类案例",
+      "topic": "客户分流",
+      "level": "缺失",
+      "evidence": [
+        {
+          "path": "docs/textbook/chapters/07_prediction.tex",
+          "where": "31–35、507 行",
+          "note": "只有风险预测，不是 Agent 分流和人工接管"
+        }
+      ],
+      "gap": "缺意图/紧急度识别、路由规则、人工兜底、服务公平与误分流评价。",
+      "integration": {
+        "place": "第7章预测到行动过渡；第14讲案例三",
+        "proposal": "以教学工单分类为输入，比规则路由与 Agent 建议，记录误分流和人工复核。"
+      }
+    },
+    {
+      "id": "C04",
+      "group": "四类案例",
+      "topic": "产线异常诊断与处置",
+      "level": "部分",
+      "evidence": [
+        {
+          "path": "docs/textbook/chapters/02_enterprise_data_model.tex",
+          "where": "871–873 行",
+          "note": "设备→批次→订单影响关系"
+        },
+        {
+          "path": "docs/textbook/chapters/10_process_mining.tex",
+          "where": "566–629 行",
+          "note": "订单加急综合案例与状态核验"
+        },
+        {
+          "path": "website/dist/content/ai_question_to_data_case.json",
+          "where": "示例问题",
+          "note": "OEE/WIP/OTD 问数"
+        }
+      ],
+      "gap": "有制造 KPI、对象图和行动案例，但无从异常告警到证据检索、原因假设、审批、反馈的完整 Agent 轨迹。",
+      "integration": {
+        "place": "第10章综合案例；第14讲案例四",
+        "proposal": "沿 E7 停机做“检测→追溯→查 SOP→备选排程→批准→回执→复盘”，明确因果证据边界。"
+      }
+    },
+    {
+      "id": "L01",
+      "group": "落地路径",
+      "topic": "场景筛选与优先级",
+      "level": "部分",
+      "evidence": [
+        {
+          "path": "docs/textbook/chapters/01_intro.tex",
+          "where": "478–485 行",
+          "note": "任务规格定义对象、时点、行动与验收"
+        },
+        {
+          "path": "docs/textbook/chapters/10_process_mining.tex",
+          "where": "521–561 行",
+          "note": "可靠性和单位成功成本"
+        }
+      ],
+      "gap": "缺价值、可用数据、流程标准化、失败损失、授权难度的统一筛选矩阵。",
+      "integration": {
+        "place": "第10章新“从筛选到扩展”小节",
+        "proposal": "设置五维筛选表，先选低不可逆风险且结果可验证的场景。"
+      }
+    },
+    {
+      "id": "L02",
+      "group": "落地路径",
+      "topic": "MVP 与试点验收",
+      "level": "部分",
+      "evidence": [
+        {
+          "path": "docs/textbook/chapters/06_ab_testing.tex",
+          "where": "359–376 行",
+          "note": "智能体按实际运营单元分配试点"
+        },
+        {
+          "path": "docs/textbook/chapters/10_process_mining.tex",
+          "where": "367–405 行",
+          "note": "任务规格和恢复要求"
+        }
+      ],
+      "gap": "缺可交付的最小原型结构、基线、样本任务集和故障注入验收单。",
+      "integration": {
+        "place": "第10章实验；第14讲项目任务",
+        "proposal": "以一个只读问答和一个审批后动作构成 MVP，预先冻结成功/安全/成本阈值。"
+      }
+    },
+    {
+      "id": "L03",
+      "group": "落地路径",
+      "topic": "评测、灰度与回滚",
+      "level": "部分",
+      "evidence": [
+        {
+          "path": "docs/textbook/chapters/10_process_mining.tex",
+          "where": "529–561 行",
+          "note": "任务评测、回归评测与成本"
+        },
+        {
+          "path": "docs/textbook/chapters/06_ab_testing.tex",
+          "where": "378–398 行",
+          "note": "试点到推广、外推与回滚选项"
+        }
+      ],
+      "gap": "未形成 Agent 特有的离线→影子→小流量→扩展门禁，也无故障回滚演练。",
+      "integration": {
+        "place": "第10章落地路径",
+        "proposal": "给四阶段发布图，每阶段限定可用工具与人工审核比例，记录回滚触发条件。"
+      }
+    },
+    {
+      "id": "L04",
+      "group": "落地路径",
+      "topic": "规模化运维与持续治理",
+      "level": "部分",
+      "evidence": [
+        {
+          "path": "docs/textbook/chapters/10_process_mining.tex",
+          "where": "494–519 行",
+          "note": "本地资源与治理成本"
+        },
+        {
+          "path": "docs/textbook/chapters/10_process_mining.tex",
+          "where": "529–561 行",
+          "note": "保留任务回归评测"
+        }
+      ],
+      "gap": "缺模型/工具/知识版本更新、责任分工、监控告警和定期复评的运行清单。",
+      "integration": {
+        "place": "第10章落地路径",
+        "proposal": "把知识库更新、权限变更、模型版本、成本异常与业务漂移纳入同一发布记录。"
+      }
+    },
+    {
+      "id": "T01",
+      "group": "工具生态",
+      "topic": "OpenClaw",
+      "level": "缺失",
+      "evidence": [],
+      "gap": "核心讲义、11–14 补充稿、网站幻灯片及实验均未出现 OpenClaw；现有平台比较涉及其他产品，不能替代该工具。",
+      "integration": {
+        "place": "第14讲“工具生态与选型”中性比较页",
+        "proposal": "基于该工具官方文档核对部署方式、构建/运行对象、扩展接口、权限与评测能力；用同一任务评价，不作功能排名或采购背书。"
+      }
+    },
+    {
+      "id": "T02",
+      "group": "工具生态",
+      "topic": "Hermes Agent",
+      "level": "缺失",
+      "evidence": [],
+      "gap": "核心讲义、11–14 补充稿、网站幻灯片及实验均未出现 Hermes Agent；现有平台比较涉及其他产品，不能替代该工具。",
+      "integration": {
+        "place": "第14讲“工具生态与选型”中性比较页",
+        "proposal": "基于该工具官方文档核对部署方式、构建/运行对象、扩展接口、权限与评测能力；用同一任务评价，不作功能排名或采购背书。"
+      }
+    },
+    {
+      "id": "T03",
+      "group": "工具生态",
+      "topic": "Claude Code",
+      "level": "缺失",
+      "evidence": [],
+      "gap": "核心讲义、11–14 补充稿、网站幻灯片及实验均未出现 Claude Code；现有平台比较涉及其他产品，不能替代该工具。",
+      "integration": {
+        "place": "第14讲“工具生态与选型”中性比较页",
+        "proposal": "基于该工具官方文档核对部署方式、构建/运行对象、扩展接口、权限与评测能力；用同一任务评价，不作功能排名或采购背书。"
+      }
+    },
+    {
+      "id": "T04",
+      "group": "工具生态",
+      "topic": "Codex",
+      "level": "缺失",
+      "evidence": [],
+      "gap": "核心讲义、11–14 补充稿、网站幻灯片及实验均未出现 Codex；现有平台比较涉及其他产品，不能替代该工具。",
+      "integration": {
+        "place": "第14讲“工具生态与选型”中性比较页",
+        "proposal": "基于该工具官方文档核对部署方式、构建/运行对象、扩展接口、权限与评测能力；用同一任务评价，不作功能排名或采购背书。"
+      }
+    },
+    {
+      "id": "T05",
+      "group": "工具生态",
+      "topic": "Trae",
+      "level": "缺失",
+      "evidence": [],
+      "gap": "核心讲义、11–14 补充稿、网站幻灯片及实验均未出现 Trae；现有平台比较涉及其他产品，不能替代该工具。",
+      "integration": {
+        "place": "第14讲“工具生态与选型”中性比较页",
+        "proposal": "基于该工具官方文档核对部署方式、构建/运行对象、扩展接口、权限与评测能力；用同一任务评价，不作功能排名或采购背书。"
+      }
+    },
+    {
+      "id": "T06",
+      "group": "工具生态",
+      "topic": "Dify",
+      "level": "缺失",
+      "evidence": [],
+      "gap": "核心讲义、11–14 补充稿、网站幻灯片及实验均未出现 Dify；现有平台比较涉及其他产品，不能替代该工具。",
+      "integration": {
+        "place": "第14讲“工具生态与选型”中性比较页",
+        "proposal": "基于该工具官方文档核对部署方式、构建/运行对象、扩展接口、权限与评测能力；用同一任务评价，不作功能排名或采购背书。"
+      }
+    },
+    {
+      "id": "T07",
+      "group": "工具生态",
+      "topic": "Coze",
+      "level": "缺失",
+      "evidence": [],
+      "gap": "核心讲义、11–14 补充稿、网站幻灯片及实验均未出现 Coze；现有平台比较涉及其他产品，不能替代该工具。",
+      "integration": {
+        "place": "第14讲“工具生态与选型”中性比较页",
+        "proposal": "基于该工具官方文档核对部署方式、构建/运行对象、扩展接口、权限与评测能力；用同一任务评价，不作功能排名或采购背书。"
+      }
+    }
+  ],
+  "integration_plan": [
+    {
+      "order": 1,
+      "location": "第1、2、3、4、6、7、9章的既有桥接段落",
+      "action": "各增加最少必要的 Agent 语境：决策任务、语义/权限、受限问数、文档质量、试点评价、客户路由的预测与行动区别、容量成本。避免重写原有统计和管理主线。"
+    },
+    {
+      "order": 2,
+      "location": "第10章“智能体及其运行环境”",
+      "action": "在现有工作流/Agent与 harness 之间补三者边界、Planning/Memory/Skills 和 Chatflow/Workflow；以单 Agent 基线引出多智能体调度与交接。"
+    },
+    {
+      "order": 3,
+      "location": "第10章“本地部署与检索增强生成”",
+      "action": "在现有向量/RRF推导前后加解析、结构化切分、权限过滤、重排、GraphRAG 和检索评测，保留原有公式及 E7 冲突材料案例。"
+    },
+    {
+      "order": 4,
+      "location": "第10章“智能体的可靠性与经济评价”及综合案例",
+      "action": "加入筛选→最小原型→离线评测→影子运行→受控试点→灰度扩展→复评/回滚的门禁，并把四案例贯穿对应步骤。"
+    },
+    {
+      "order": 5,
+      "location": "第14讲补充页与网站实验区",
+      "action": "把现有提纲升级为可选实践单元：四个完整案例、七工具中性对照、无需外部账号的本地模拟 Agent/RAG 面板；每个案例定义背景、输入、权限、预期输出、异常与评分。"
+    }
+  ],
+  "source_notes": [
+    "网站主课目前只有第1–10章 HTML 幻灯片；第11–14讲位于 extras，均无对应 lecture-slides deck。",
+    "第12、13讲 MD 与网页正文仍写“待编写”，不能计算为已有覆盖。",
+    "实验面板中有流程挖掘、SQL 审计、对象/行动数据类演示，却没有 Agent 的工具循环或 RAG 检索评测任务。",
+    "七工具只是用户要求覆盖的生态条目；本报告仅判现有课程是否涉及，不对截至审查日的产品能力、价格、排名作未经官网核验的断言。"
+  ]
+}

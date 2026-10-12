@@ -1,0 +1,32 @@
+[
+  {
+    "experiment": "agent-rag",
+    "result": "制度问答与来源判定状态证据理由下一处理人restricted_transferrestricted无当前角色不可读取员工制度。制度负责人",
+    "status": "运行完成"
+  },
+  {
+    "experiment": "agent-office",
+    "result": "办公与研发助手任务判定结果状态会议排期slot_committed_local10:00committed受限研发资料access_denied不显示正文restricted公开研发资料answered先核对传感器校准与轴承检查记录。answered",
+    "status": "运行完成"
+  },
+  {
+    "case": "agent-routing-verified",
+    "output": "客户咨询分流\n消息\t路由\t状态\t可显示事实\t下一处理人\t命中意图\nO100 物流怎样？\torder_status\tanswered\t已发货\t客户\torder\n重复提交复用前次结果： True\n"
+  },
+  {
+    "case": "agent-routing-safety",
+    "output": "客户咨询分流\n消息\t路由\t状态\t可显示事实\t下一处理人\t命中意图\n设备冒烟，O100 物流怎样？\tsafety_escalate\tpending_human\t请停止使用并联系人工安全值班组。\t安全值班组\tsafety、order\n重复提交复用前次结果： True\n"
+  },
+  {
+    "case": "agent-production-approved",
+    "output": "产线异常复核\n横轴\n事件\n路由\n状态\n风险分数\n命中信号\n本地工单\n设备控制调用数\n数值\n风险分数\n设备控制调用数\n图形\n柱状图\n折线图\n0\n0.25\n0.5\n0.75\n1\nE-DEMO\n事件　/　风险分数\n事件\t路由\t状态\t风险分数\t命中信号\t本地工单\t设备控制调用数\nE-DEMO\twarning_review\tticketed_local\t1\tvibration\tT-E-DEMO\t0\n维护负责人已在本地演示中批准调查工单。\n"
+  },
+  {
+    "case": "agent-production-interlock-stale",
+    "output": "产线异常复核\n横轴\n事件\n路由\n状态\n风险分数\n命中信号\n本地工单\n设备控制调用数\n数值\n设备控制调用数\n图形\n柱状图\n折线图\n0\n0.25\n0.5\n0.75\n1\nE-DEMO\n事件　/　设备控制调用数\n事件\t路由\t状态\t风险分数\t命中信号\t本地工单\t设备控制调用数\nE-DEMO\tinterlock_escalate\thuman_safety_response\tnull\t无\t未建立\t0\nPLC 已上报联锁，模型不发送任何设备控制命令。\n"
+  },
+  {
+    "case": "agent-nl2sql",
+    "output": "查询结果 · 3 行\n横轴\nwork_center\noee_time\nmean_daily_wip\notd_due\non_time_count\ndue_count\n数值\noee_time\nmean_daily_wip\notd_due\non_time_count\ndue_count\n图形\n柱状图\n折线图\n0\n0.177593\n0.355187\n0.53278\n0.710373\nASM-02\nFT-03\nWS-01\nwork_center　/　oee_time\nwork_center\toee_time\tmean_daily_wip\totd_due\ton_time_count\tdue_count\nASM-02\t0.618634\t82.6667\t0.83871\t52\t62\nFT-03\t0.653186\t42.6667\t0.979592\t48\t49\nWS-01\t0.710373\t56.6667\t0.932203\t55\t59"
+  }
+]

@@ -1,0 +1,3567 @@
+{
+  "sourceSha256": "191268253ba6d68df1208093bc863a54edf9f31dd2df97751183b019d16f902e",
+  "checks": 159,
+  "passed": 159,
+  "failures": [],
+  "records": [
+    {
+      "group": "policy boundaries",
+      "name": "2026-09-30; amount=350",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "decision": "eligible",
+        "evidence_ids": [
+          "HOTEL-v2"
+        ],
+        "clause_summary": "国内住宿每晚不超过 350 元；超过 350 且不超过 500 元须预先由部门经理批准。",
+        "reason": "金额在该版条款的自动范围内。",
+        "next_actor": "",
+        "state": "answered"
+      },
+      "error": null
+    },
+    {
+      "group": "policy boundaries",
+      "name": "2026-09-30; amount=350.01",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "decision": "manager_preapproval",
+        "evidence_ids": [
+          "HOTEL-v2"
+        ],
+        "clause_summary": "国内住宿每晚不超过 350 元；超过 350 且不超过 500 元须预先由部门经理批准。",
+        "reason": "须在预订前由部门经理审批。",
+        "next_actor": "部门经理",
+        "state": "pending_review"
+      },
+      "error": null
+    },
+    {
+      "group": "policy boundaries",
+      "name": "2026-09-30; amount=500",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "decision": "manager_preapproval",
+        "evidence_ids": [
+          "HOTEL-v2"
+        ],
+        "clause_summary": "国内住宿每晚不超过 350 元；超过 350 且不超过 500 元须预先由部门经理批准。",
+        "reason": "须在预订前由部门经理审批。",
+        "next_actor": "部门经理",
+        "state": "pending_review"
+      },
+      "error": null
+    },
+    {
+      "group": "policy boundaries",
+      "name": "2026-09-30; amount=500.01",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "decision": "outside_policy",
+        "evidence_ids": [
+          "HOTEL-v2"
+        ],
+        "clause_summary": "国内住宿每晚不超过 350 元；超过 350 且不超过 500 元须预先由部门经理批准。",
+        "reason": "超出本条款支持范围，转人工核对例外。",
+        "next_actor": "制度负责人",
+        "state": "pending_review"
+      },
+      "error": null
+    },
+    {
+      "group": "policy boundaries",
+      "name": "2026-10-01; amount=400",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "decision": "eligible",
+        "evidence_ids": [
+          "HOTEL-v3"
+        ],
+        "clause_summary": "国内住宿每晚不超过 400 元；超过 400 且不超过 600 元须预先由部门经理批准。",
+        "reason": "金额在该版条款的自动范围内。",
+        "next_actor": "",
+        "state": "answered"
+      },
+      "error": null
+    },
+    {
+      "group": "policy boundaries",
+      "name": "2026-10-01; amount=400.01",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "decision": "manager_preapproval",
+        "evidence_ids": [
+          "HOTEL-v3"
+        ],
+        "clause_summary": "国内住宿每晚不超过 400 元；超过 400 且不超过 600 元须预先由部门经理批准。",
+        "reason": "须在预订前由部门经理审批。",
+        "next_actor": "部门经理",
+        "state": "pending_review"
+      },
+      "error": null
+    },
+    {
+      "group": "policy boundaries",
+      "name": "2026-10-01; amount=600",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "decision": "manager_preapproval",
+        "evidence_ids": [
+          "HOTEL-v3"
+        ],
+        "clause_summary": "国内住宿每晚不超过 400 元；超过 400 且不超过 600 元须预先由部门经理批准。",
+        "reason": "须在预订前由部门经理审批。",
+        "next_actor": "部门经理",
+        "state": "pending_review"
+      },
+      "error": null
+    },
+    {
+      "group": "policy boundaries",
+      "name": "2026-10-01; amount=600.01",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "decision": "outside_policy",
+        "evidence_ids": [
+          "HOTEL-v3"
+        ],
+        "clause_summary": "国内住宿每晚不超过 400 元；超过 400 且不超过 600 元须预先由部门经理批准。",
+        "reason": "超出本条款支持范围，转人工核对例外。",
+        "next_actor": "制度负责人",
+        "state": "pending_review"
+      },
+      "error": null
+    },
+    {
+      "group": "policy validation",
+      "name": "invalid amount=None",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "decision": "clarify",
+        "evidence_ids": [],
+        "clause_summary": "",
+        "reason": "请填写非负的每晚住宿金额。",
+        "next_actor": "",
+        "state": "clarify"
+      },
+      "error": null
+    },
+    {
+      "group": "policy validation",
+      "name": "invalid amount=True",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "decision": "clarify",
+        "evidence_ids": [],
+        "clause_summary": "",
+        "reason": "请填写非负的每晚住宿金额。",
+        "next_actor": "",
+        "state": "clarify"
+      },
+      "error": null
+    },
+    {
+      "group": "policy validation",
+      "name": "invalid amount=-1",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "decision": "clarify",
+        "evidence_ids": [],
+        "clause_summary": "",
+        "reason": "请填写非负的每晚住宿金额。",
+        "next_actor": "",
+        "state": "clarify"
+      },
+      "error": null
+    },
+    {
+      "group": "policy validation",
+      "name": "invalid amount=nan",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "decision": "clarify",
+        "evidence_ids": [],
+        "clause_summary": "",
+        "reason": "请填写非负的每晚住宿金额。",
+        "next_actor": "",
+        "state": "clarify"
+      },
+      "error": null
+    },
+    {
+      "group": "policy validation",
+      "name": "invalid amount=inf",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "decision": "clarify",
+        "evidence_ids": [],
+        "clause_summary": "",
+        "reason": "请填写非负的每晚住宿金额。",
+        "next_actor": "",
+        "state": "clarify"
+      },
+      "error": null
+    },
+    {
+      "group": "policy boundaries",
+      "name": "invoice days=30",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "decision": "within_window",
+        "evidence_ids": [
+          "INVOICE-v1"
+        ],
+        "clause_summary": "教学设定：出差结束后 30 个自然日内提交合规发票。",
+        "reason": "尚在教学条款规定的提交窗口内。",
+        "next_actor": "",
+        "state": "answered"
+      },
+      "error": null
+    },
+    {
+      "group": "policy boundaries",
+      "name": "invoice days=31",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "decision": "late_review",
+        "evidence_ids": [
+          "INVOICE-v1"
+        ],
+        "clause_summary": "教学设定：出差结束后 30 个自然日内提交合规发票。",
+        "reason": "超过普通提交窗口，交人工检查例外。",
+        "next_actor": "财务制度负责人",
+        "state": "pending_review"
+      },
+      "error": null
+    },
+    {
+      "group": "evidence",
+      "name": "conflicting highest-version hotel evidence",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "decision": "conflict_review",
+        "evidence_ids": [],
+        "clause_summary": "",
+        "reason": "同一版本出现多个有效条款，需人工核对。",
+        "next_actor": "制度负责人",
+        "state": "pending_review"
+      },
+      "error": null
+    },
+    {
+      "group": "evidence",
+      "name": "inaccessible/absent evidence {'role': 'guest'}",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "decision": "restricted_transfer",
+        "evidence_ids": [],
+        "clause_summary": "",
+        "reason": "当前角色不可读取员工制度。",
+        "next_actor": "制度负责人",
+        "state": "restricted"
+      },
+      "error": null
+    },
+    {
+      "group": "evidence",
+      "name": "inaccessible/absent evidence {'as_of': '2025-12-31'}",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "decision": "no_evidence",
+        "evidence_ids": [],
+        "clause_summary": "",
+        "reason": "指定日期或地区没有有效且可见的条款。",
+        "next_actor": "制度负责人",
+        "state": "clarify"
+      },
+      "error": null
+    },
+    {
+      "group": "evidence",
+      "name": "inaccessible/absent evidence {'region': 'international'}",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "decision": "no_evidence",
+        "evidence_ids": [],
+        "clause_summary": "",
+        "reason": "指定日期或地区没有有效且可见的条款。",
+        "next_actor": "制度负责人",
+        "state": "clarify"
+      },
+      "error": null
+    },
+    {
+      "group": "evidence",
+      "name": "salary never emits restricted fact even for HR",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "decision": "restricted_transfer",
+        "evidence_ids": [],
+        "clause_summary": "",
+        "reason": "个人薪资不在本实验的可答范围。",
+        "next_actor": "受控 HR 系统",
+        "state": "restricted"
+      },
+      "error": null
+    },
+    {
+      "group": "evidence",
+      "name": "mixed intents require clarification",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "decision": "clarify",
+        "evidence_ids": [],
+        "clause_summary": "",
+        "reason": "问题同时涉及多个制度主题，请拆开提问。",
+        "next_actor": "",
+        "state": "clarify"
+      },
+      "error": null
+    },
+    {
+      "group": "research",
+      "name": "engineer reads approved chip v1, not draft v2",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "decision": "answered",
+        "answer_fact": "接口额定电压 3.3 V。",
+        "evidence_ids": [
+          "R-CHIP-v1"
+        ],
+        "state": "answered",
+        "reason": "已按批准状态、访问角色和版本筛选。"
+      },
+      "error": null
+    },
+    {
+      "group": "research",
+      "name": "employee cannot read chip fact",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "decision": "access_denied",
+        "answer_fact": null,
+        "evidence_ids": [],
+        "state": "restricted",
+        "reason": "当前角色无权查看该主题资料。"
+      },
+      "error": null
+    },
+    {
+      "group": "research",
+      "name": "conflicting approved highest versions stop answering",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "decision": "conflict_review",
+        "answer_fact": null,
+        "evidence_ids": [],
+        "state": "pending_review",
+        "reason": "同版本资料冲突，需研发负责人核对。"
+      },
+      "error": null
+    },
+    {
+      "group": "meeting binding",
+      "name": "people=['李', '王']; token=ORG-1; auth=False",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "decision": "approval_denied",
+        "state": "proposed",
+        "proposal_slot": null,
+        "reason": "组织者身份必须以明确的布尔值 True 表示；未通过身份核验。"
+      },
+      "error": null
+    },
+    {
+      "group": "meeting binding",
+      "name": "people=['李', '赵']; token=ORG-1; auth=True",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "decision": "approval_denied",
+        "state": "proposed",
+        "proposal_slot": null,
+        "approval_error": "组织者身份或审批号不匹配，不能批准或回放已批准状态。",
+        "reason": "审批必须绑定同一身份、事件、参与人、时段和日历版本。"
+      },
+      "error": null
+    },
+    {
+      "group": "meeting binding",
+      "name": "people=['王', '赵']; token=ORG-1; auth=True",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "decision": "approval_denied",
+        "state": "proposed",
+        "proposal_slot": null,
+        "approval_error": "组织者身份或审批号不匹配，不能批准或回放已批准状态。",
+        "reason": "审批必须绑定同一身份、事件、参与人、时段和日历版本。"
+      },
+      "error": null
+    },
+    {
+      "group": "meeting binding",
+      "name": "people=['李', '王']; token=APPROVE:OTHER:S2; auth=True",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "decision": "approval_denied",
+        "state": "proposed",
+        "proposal_slot": null,
+        "approval_error": "组织者身份或审批号不匹配，不能批准或回放已批准状态。",
+        "reason": "审批必须绑定同一身份、事件、参与人、时段和日历版本。"
+      },
+      "error": null
+    },
+    {
+      "group": "meeting binding",
+      "name": "people=['李', '王']; token=APPROVE:MA:S2; auth=True",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "decision": "slot_committed_local",
+        "proposal_slot": "S2",
+        "proposal_time": "10:00",
+        "reason": "仅在浏览器内记录了经组织者确认的模拟会议。",
+        "state": "committed",
+        "next_actor": "参会人",
+        "participants": [
+          "李",
+          "王"
+        ],
+        "approval_id": "APPROVE:MA:S2"
+      },
+      "error": null
+    },
+    {
+      "group": "meeting binding",
+      "name": "people=['李', '王', '赵']; token=APPROVE:MA:None; auth=True",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "decision": "approval_denied",
+        "state": "conflict",
+        "proposal_slot": null,
+        "approval_error": "组织者身份或审批号不匹配，不能批准或回放已批准状态。",
+        "reason": "审批必须绑定同一身份、事件、参与人、时段和日历版本。"
+      },
+      "error": null
+    },
+    {
+      "group": "idempotency",
+      "name": "approved exact duplicate creates no second ticket",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "first": {
+          "event_id": "DUP",
+          "line_id": "L1",
+          "machine_id": "M01",
+          "lot_id": "LOT-001",
+          "risk_score": 1,
+          "matched_signals": [
+            "vibration"
+          ],
+          "ticket_id": "T-DUP",
+          "new_ticket_count": 1,
+          "control_commands": [],
+          "evidence_event_id": "DUP",
+          "route": "warning_review",
+          "state": "ticketed_local",
+          "next_actor": "维护与质量负责人",
+          "draft_id": "D-DUP",
+          "proposed_action": "提出维护调查草稿；由维护负责人复核。",
+          "reason": "维护负责人已在本地演示中批准调查工单。",
+          "approval_by": "maintenance_lead"
+        },
+        "second": {
+          "event_id": "DUP",
+          "line_id": "L1",
+          "machine_id": "M01",
+          "lot_id": "LOT-001",
+          "risk_score": 1,
+          "matched_signals": [
+            "vibration"
+          ],
+          "ticket_id": "T-DUP",
+          "new_ticket_count": 0,
+          "control_commands": [],
+          "evidence_event_id": "DUP",
+          "route": "warning_review",
+          "state": "ticketed_local",
+          "next_actor": "维护与质量负责人",
+          "draft_id": "D-DUP",
+          "proposed_action": "提出维护调查草稿；由维护负责人复核。",
+          "reason": "维护负责人已在本地演示中批准调查工单。",
+          "approval_by": "maintenance_lead",
+          "replayed": true
+        }
+      },
+      "error": null
+    },
+    {
+      "group": "idempotency",
+      "name": "return-value mutation does not mutate ledger",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "event_id": "ALIAS",
+        "line_id": "L1",
+        "machine_id": "M01",
+        "lot_id": "LOT-001",
+        "risk_score": 1,
+        "matched_signals": [
+          "vibration"
+        ],
+        "ticket_id": null,
+        "new_ticket_count": 0,
+        "control_commands": [],
+        "evidence_event_id": "ALIAS",
+        "route": "warning_review",
+        "state": "proposed",
+        "next_actor": "维护负责人",
+        "draft_id": "D-ALIAS",
+        "proposed_action": "提出维护调查草稿；由维护负责人复核。",
+        "reason": "命中 1 项教学异常条件；只生成调查建议。",
+        "replayed": true
+      },
+      "error": null
+    },
+    {
+      "group": "customer priority",
+      "name": "受伤，需要退款和物流，规格是什么",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "visible_fact": "请停止使用并联系人工安全值班组。",
+        "matched_keywords": [
+          "safety",
+          "refund",
+          "order",
+          "product"
+        ],
+        "evidence_ids": [],
+        "route": "safety_escalate",
+        "state": "pending_human",
+        "next_actor": "安全值班组",
+        "reason": "命中安全词，优先于其他意图。"
+      },
+      "error": null
+    },
+    {
+      "group": "customer priority",
+      "name": "退货，订单物流，功率是什么",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "visible_fact": null,
+        "matched_keywords": [
+          "refund",
+          "order",
+          "product"
+        ],
+        "evidence_ids": [],
+        "route": "verify_identity",
+        "state": "clarify",
+        "next_actor": "客户",
+        "reason": "退货申请需要先核验客户身份。"
+      },
+      "error": null
+    },
+    {
+      "group": "customer priority",
+      "name": "订单物流及功率规格",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "visible_fact": "已发货",
+        "matched_keywords": [
+          "order",
+          "product"
+        ],
+        "evidence_ids": [
+          "O100"
+        ],
+        "route": "order_status",
+        "state": "answered",
+        "next_actor": "客户",
+        "reason": "身份及订单归属均已在教学数据中核对。"
+      },
+      "error": null
+    },
+    {
+      "group": "customer priority",
+      "name": "功率规格",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "visible_fact": "额定功率 500 W",
+        "matched_keywords": [
+          "product"
+        ],
+        "evidence_ids": [
+          "P1"
+        ],
+        "route": "product_fact",
+        "state": "answered",
+        "next_actor": "客户",
+        "reason": "仅引用已批准的虚构产品资料。"
+      },
+      "error": null
+    },
+    {
+      "group": "customer privacy",
+      "name": "verified different customer never reads O100",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "visible_fact": null,
+        "matched_keywords": [
+          "order"
+        ],
+        "evidence_ids": [],
+        "route": "privacy_block",
+        "state": "restricted",
+        "next_actor": "人工客服",
+        "reason": "订单与当前客户不匹配。"
+      },
+      "error": null
+    },
+    {
+      "group": "customer priority",
+      "name": "refund boundary days=14",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "visible_fact": null,
+        "matched_keywords": [
+          "refund"
+        ],
+        "evidence_ids": [],
+        "route": "refund_review",
+        "state": "pending_human",
+        "next_actor": "人工客服",
+        "reason": "符合教学规则的普通审核入口；不会自动退款。"
+      },
+      "error": null
+    },
+    {
+      "group": "customer priority",
+      "name": "refund boundary days=15",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "visible_fact": null,
+        "matched_keywords": [
+          "refund"
+        ],
+        "evidence_ids": [],
+        "route": "exception_review",
+        "state": "pending_human",
+        "next_actor": "人工客服",
+        "reason": "进入例外复核，不自动拒绝或退款。"
+      },
+      "error": null
+    },
+    {
+      "group": "production grid",
+      "name": "v=7.9; t=79; q=good; age=60; trip=False",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "event_id": "P",
+        "line_id": "L1",
+        "machine_id": "M01",
+        "lot_id": "LOT-001",
+        "risk_score": 0,
+        "matched_signals": [],
+        "ticket_id": null,
+        "new_ticket_count": 0,
+        "control_commands": [],
+        "evidence_event_id": "P",
+        "route": "monitor",
+        "state": "closed",
+        "next_actor": "现场班组",
+        "proposed_action": "按既有频率继续监测。",
+        "reason": "本教学规则的三项异常条件均未触发。"
+      },
+      "error": null
+    },
+    {
+      "group": "production grid",
+      "name": "v=7.9; t=79; q=good; age=60; trip=True",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "event_id": "P",
+        "line_id": "L1",
+        "machine_id": "M01",
+        "lot_id": "LOT-001",
+        "risk_score": null,
+        "matched_signals": [],
+        "ticket_id": null,
+        "new_ticket_count": 0,
+        "control_commands": [],
+        "evidence_event_id": "P",
+        "route": "interlock_escalate",
+        "state": "human_safety_response",
+        "next_actor": "现场值班工程师",
+        "proposed_action": "按现场既有安全程序人工处置。",
+        "reason": "PLC 已上报联锁，模型不发送任何设备控制命令。"
+      },
+      "error": null
+    },
+    {
+      "group": "production grid",
+      "name": "v=7.9; t=79; q=good; age=61; trip=False",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "event_id": "P",
+        "line_id": "L1",
+        "machine_id": "M01",
+        "lot_id": "LOT-001",
+        "risk_score": null,
+        "matched_signals": [],
+        "ticket_id": null,
+        "new_ticket_count": 0,
+        "control_commands": [],
+        "evidence_event_id": "P",
+        "route": "data_quality_hold",
+        "state": "data_quality_hold",
+        "next_actor": "数据与现场负责人",
+        "proposed_action": "核查传感器、时间戳、设备与批次记录。",
+        "reason": "数据缺失、过期或不在教学规则的有效范围内。"
+      },
+      "error": null
+    },
+    {
+      "group": "production grid",
+      "name": "v=7.9; t=79; q=good; age=61; trip=True",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "event_id": "P",
+        "line_id": "L1",
+        "machine_id": "M01",
+        "lot_id": "LOT-001",
+        "risk_score": null,
+        "matched_signals": [],
+        "ticket_id": null,
+        "new_ticket_count": 0,
+        "control_commands": [],
+        "evidence_event_id": "P",
+        "route": "interlock_escalate",
+        "state": "human_safety_response",
+        "next_actor": "现场值班工程师",
+        "proposed_action": "按现场既有安全程序人工处置。",
+        "reason": "PLC 已上报联锁，模型不发送任何设备控制命令。"
+      },
+      "error": null
+    },
+    {
+      "group": "production grid",
+      "name": "v=7.9; t=79; q=bad; age=60; trip=False",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "event_id": "P",
+        "line_id": "L1",
+        "machine_id": "M01",
+        "lot_id": "LOT-001",
+        "risk_score": 1,
+        "matched_signals": [
+          "quality"
+        ],
+        "ticket_id": null,
+        "new_ticket_count": 0,
+        "control_commands": [],
+        "evidence_event_id": "P",
+        "route": "warning_review",
+        "state": "proposed",
+        "next_actor": "维护负责人",
+        "draft_id": "D-P",
+        "proposed_action": "提出维护调查草稿；由维护负责人复核。 同时请质量负责人决定是否隔离批次。",
+        "reason": "命中 1 项教学异常条件；只生成调查建议。"
+      },
+      "error": null
+    },
+    {
+      "group": "production grid",
+      "name": "v=7.9; t=79; q=bad; age=60; trip=True",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "event_id": "P",
+        "line_id": "L1",
+        "machine_id": "M01",
+        "lot_id": "LOT-001",
+        "risk_score": null,
+        "matched_signals": [],
+        "ticket_id": null,
+        "new_ticket_count": 0,
+        "control_commands": [],
+        "evidence_event_id": "P",
+        "route": "interlock_escalate",
+        "state": "human_safety_response",
+        "next_actor": "现场值班工程师",
+        "proposed_action": "按现场既有安全程序人工处置。",
+        "reason": "PLC 已上报联锁，模型不发送任何设备控制命令。"
+      },
+      "error": null
+    },
+    {
+      "group": "production grid",
+      "name": "v=7.9; t=79; q=bad; age=61; trip=False",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "event_id": "P",
+        "line_id": "L1",
+        "machine_id": "M01",
+        "lot_id": "LOT-001",
+        "risk_score": null,
+        "matched_signals": [],
+        "ticket_id": null,
+        "new_ticket_count": 0,
+        "control_commands": [],
+        "evidence_event_id": "P",
+        "route": "data_quality_hold",
+        "state": "data_quality_hold",
+        "next_actor": "数据与现场负责人",
+        "proposed_action": "核查传感器、时间戳、设备与批次记录。",
+        "reason": "数据缺失、过期或不在教学规则的有效范围内。"
+      },
+      "error": null
+    },
+    {
+      "group": "production grid",
+      "name": "v=7.9; t=79; q=bad; age=61; trip=True",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "event_id": "P",
+        "line_id": "L1",
+        "machine_id": "M01",
+        "lot_id": "LOT-001",
+        "risk_score": null,
+        "matched_signals": [],
+        "ticket_id": null,
+        "new_ticket_count": 0,
+        "control_commands": [],
+        "evidence_event_id": "P",
+        "route": "interlock_escalate",
+        "state": "human_safety_response",
+        "next_actor": "现场值班工程师",
+        "proposed_action": "按现场既有安全程序人工处置。",
+        "reason": "PLC 已上报联锁，模型不发送任何设备控制命令。"
+      },
+      "error": null
+    },
+    {
+      "group": "production grid",
+      "name": "v=7.9; t=80; q=good; age=60; trip=False",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "event_id": "P",
+        "line_id": "L1",
+        "machine_id": "M01",
+        "lot_id": "LOT-001",
+        "risk_score": 1,
+        "matched_signals": [
+          "temperature"
+        ],
+        "ticket_id": null,
+        "new_ticket_count": 0,
+        "control_commands": [],
+        "evidence_event_id": "P",
+        "route": "warning_review",
+        "state": "proposed",
+        "next_actor": "维护负责人",
+        "draft_id": "D-P",
+        "proposed_action": "提出维护调查草稿；由维护负责人复核。",
+        "reason": "命中 1 项教学异常条件；只生成调查建议。"
+      },
+      "error": null
+    },
+    {
+      "group": "production grid",
+      "name": "v=7.9; t=80; q=good; age=60; trip=True",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "event_id": "P",
+        "line_id": "L1",
+        "machine_id": "M01",
+        "lot_id": "LOT-001",
+        "risk_score": null,
+        "matched_signals": [],
+        "ticket_id": null,
+        "new_ticket_count": 0,
+        "control_commands": [],
+        "evidence_event_id": "P",
+        "route": "interlock_escalate",
+        "state": "human_safety_response",
+        "next_actor": "现场值班工程师",
+        "proposed_action": "按现场既有安全程序人工处置。",
+        "reason": "PLC 已上报联锁，模型不发送任何设备控制命令。"
+      },
+      "error": null
+    },
+    {
+      "group": "production grid",
+      "name": "v=7.9; t=80; q=good; age=61; trip=False",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "event_id": "P",
+        "line_id": "L1",
+        "machine_id": "M01",
+        "lot_id": "LOT-001",
+        "risk_score": null,
+        "matched_signals": [],
+        "ticket_id": null,
+        "new_ticket_count": 0,
+        "control_commands": [],
+        "evidence_event_id": "P",
+        "route": "data_quality_hold",
+        "state": "data_quality_hold",
+        "next_actor": "数据与现场负责人",
+        "proposed_action": "核查传感器、时间戳、设备与批次记录。",
+        "reason": "数据缺失、过期或不在教学规则的有效范围内。"
+      },
+      "error": null
+    },
+    {
+      "group": "production grid",
+      "name": "v=7.9; t=80; q=good; age=61; trip=True",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "event_id": "P",
+        "line_id": "L1",
+        "machine_id": "M01",
+        "lot_id": "LOT-001",
+        "risk_score": null,
+        "matched_signals": [],
+        "ticket_id": null,
+        "new_ticket_count": 0,
+        "control_commands": [],
+        "evidence_event_id": "P",
+        "route": "interlock_escalate",
+        "state": "human_safety_response",
+        "next_actor": "现场值班工程师",
+        "proposed_action": "按现场既有安全程序人工处置。",
+        "reason": "PLC 已上报联锁，模型不发送任何设备控制命令。"
+      },
+      "error": null
+    },
+    {
+      "group": "production grid",
+      "name": "v=7.9; t=80; q=bad; age=60; trip=False",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "event_id": "P",
+        "line_id": "L1",
+        "machine_id": "M01",
+        "lot_id": "LOT-001",
+        "risk_score": 2,
+        "matched_signals": [
+          "temperature",
+          "quality"
+        ],
+        "ticket_id": null,
+        "new_ticket_count": 0,
+        "control_commands": [],
+        "evidence_event_id": "P",
+        "route": "high_review",
+        "state": "proposed",
+        "next_actor": "维护负责人",
+        "draft_id": "D-P",
+        "proposed_action": "提出维护调查草稿；由维护负责人复核。 同时请质量负责人决定是否隔离批次。",
+        "reason": "命中 2 项教学异常条件；只生成调查建议。"
+      },
+      "error": null
+    },
+    {
+      "group": "production grid",
+      "name": "v=7.9; t=80; q=bad; age=60; trip=True",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "event_id": "P",
+        "line_id": "L1",
+        "machine_id": "M01",
+        "lot_id": "LOT-001",
+        "risk_score": null,
+        "matched_signals": [],
+        "ticket_id": null,
+        "new_ticket_count": 0,
+        "control_commands": [],
+        "evidence_event_id": "P",
+        "route": "interlock_escalate",
+        "state": "human_safety_response",
+        "next_actor": "现场值班工程师",
+        "proposed_action": "按现场既有安全程序人工处置。",
+        "reason": "PLC 已上报联锁，模型不发送任何设备控制命令。"
+      },
+      "error": null
+    },
+    {
+      "group": "production grid",
+      "name": "v=7.9; t=80; q=bad; age=61; trip=False",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "event_id": "P",
+        "line_id": "L1",
+        "machine_id": "M01",
+        "lot_id": "LOT-001",
+        "risk_score": null,
+        "matched_signals": [],
+        "ticket_id": null,
+        "new_ticket_count": 0,
+        "control_commands": [],
+        "evidence_event_id": "P",
+        "route": "data_quality_hold",
+        "state": "data_quality_hold",
+        "next_actor": "数据与现场负责人",
+        "proposed_action": "核查传感器、时间戳、设备与批次记录。",
+        "reason": "数据缺失、过期或不在教学规则的有效范围内。"
+      },
+      "error": null
+    },
+    {
+      "group": "production grid",
+      "name": "v=7.9; t=80; q=bad; age=61; trip=True",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "event_id": "P",
+        "line_id": "L1",
+        "machine_id": "M01",
+        "lot_id": "LOT-001",
+        "risk_score": null,
+        "matched_signals": [],
+        "ticket_id": null,
+        "new_ticket_count": 0,
+        "control_commands": [],
+        "evidence_event_id": "P",
+        "route": "interlock_escalate",
+        "state": "human_safety_response",
+        "next_actor": "现场值班工程师",
+        "proposed_action": "按现场既有安全程序人工处置。",
+        "reason": "PLC 已上报联锁，模型不发送任何设备控制命令。"
+      },
+      "error": null
+    },
+    {
+      "group": "production grid",
+      "name": "v=7.9; t=81; q=good; age=60; trip=False",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "event_id": "P",
+        "line_id": "L1",
+        "machine_id": "M01",
+        "lot_id": "LOT-001",
+        "risk_score": 1,
+        "matched_signals": [
+          "temperature"
+        ],
+        "ticket_id": null,
+        "new_ticket_count": 0,
+        "control_commands": [],
+        "evidence_event_id": "P",
+        "route": "warning_review",
+        "state": "proposed",
+        "next_actor": "维护负责人",
+        "draft_id": "D-P",
+        "proposed_action": "提出维护调查草稿；由维护负责人复核。",
+        "reason": "命中 1 项教学异常条件；只生成调查建议。"
+      },
+      "error": null
+    },
+    {
+      "group": "production grid",
+      "name": "v=7.9; t=81; q=good; age=60; trip=True",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "event_id": "P",
+        "line_id": "L1",
+        "machine_id": "M01",
+        "lot_id": "LOT-001",
+        "risk_score": null,
+        "matched_signals": [],
+        "ticket_id": null,
+        "new_ticket_count": 0,
+        "control_commands": [],
+        "evidence_event_id": "P",
+        "route": "interlock_escalate",
+        "state": "human_safety_response",
+        "next_actor": "现场值班工程师",
+        "proposed_action": "按现场既有安全程序人工处置。",
+        "reason": "PLC 已上报联锁，模型不发送任何设备控制命令。"
+      },
+      "error": null
+    },
+    {
+      "group": "production grid",
+      "name": "v=7.9; t=81; q=good; age=61; trip=False",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "event_id": "P",
+        "line_id": "L1",
+        "machine_id": "M01",
+        "lot_id": "LOT-001",
+        "risk_score": null,
+        "matched_signals": [],
+        "ticket_id": null,
+        "new_ticket_count": 0,
+        "control_commands": [],
+        "evidence_event_id": "P",
+        "route": "data_quality_hold",
+        "state": "data_quality_hold",
+        "next_actor": "数据与现场负责人",
+        "proposed_action": "核查传感器、时间戳、设备与批次记录。",
+        "reason": "数据缺失、过期或不在教学规则的有效范围内。"
+      },
+      "error": null
+    },
+    {
+      "group": "production grid",
+      "name": "v=7.9; t=81; q=good; age=61; trip=True",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "event_id": "P",
+        "line_id": "L1",
+        "machine_id": "M01",
+        "lot_id": "LOT-001",
+        "risk_score": null,
+        "matched_signals": [],
+        "ticket_id": null,
+        "new_ticket_count": 0,
+        "control_commands": [],
+        "evidence_event_id": "P",
+        "route": "interlock_escalate",
+        "state": "human_safety_response",
+        "next_actor": "现场值班工程师",
+        "proposed_action": "按现场既有安全程序人工处置。",
+        "reason": "PLC 已上报联锁，模型不发送任何设备控制命令。"
+      },
+      "error": null
+    },
+    {
+      "group": "production grid",
+      "name": "v=7.9; t=81; q=bad; age=60; trip=False",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "event_id": "P",
+        "line_id": "L1",
+        "machine_id": "M01",
+        "lot_id": "LOT-001",
+        "risk_score": 2,
+        "matched_signals": [
+          "temperature",
+          "quality"
+        ],
+        "ticket_id": null,
+        "new_ticket_count": 0,
+        "control_commands": [],
+        "evidence_event_id": "P",
+        "route": "high_review",
+        "state": "proposed",
+        "next_actor": "维护负责人",
+        "draft_id": "D-P",
+        "proposed_action": "提出维护调查草稿；由维护负责人复核。 同时请质量负责人决定是否隔离批次。",
+        "reason": "命中 2 项教学异常条件；只生成调查建议。"
+      },
+      "error": null
+    },
+    {
+      "group": "production grid",
+      "name": "v=7.9; t=81; q=bad; age=60; trip=True",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "event_id": "P",
+        "line_id": "L1",
+        "machine_id": "M01",
+        "lot_id": "LOT-001",
+        "risk_score": null,
+        "matched_signals": [],
+        "ticket_id": null,
+        "new_ticket_count": 0,
+        "control_commands": [],
+        "evidence_event_id": "P",
+        "route": "interlock_escalate",
+        "state": "human_safety_response",
+        "next_actor": "现场值班工程师",
+        "proposed_action": "按现场既有安全程序人工处置。",
+        "reason": "PLC 已上报联锁，模型不发送任何设备控制命令。"
+      },
+      "error": null
+    },
+    {
+      "group": "production grid",
+      "name": "v=7.9; t=81; q=bad; age=61; trip=False",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "event_id": "P",
+        "line_id": "L1",
+        "machine_id": "M01",
+        "lot_id": "LOT-001",
+        "risk_score": null,
+        "matched_signals": [],
+        "ticket_id": null,
+        "new_ticket_count": 0,
+        "control_commands": [],
+        "evidence_event_id": "P",
+        "route": "data_quality_hold",
+        "state": "data_quality_hold",
+        "next_actor": "数据与现场负责人",
+        "proposed_action": "核查传感器、时间戳、设备与批次记录。",
+        "reason": "数据缺失、过期或不在教学规则的有效范围内。"
+      },
+      "error": null
+    },
+    {
+      "group": "production grid",
+      "name": "v=7.9; t=81; q=bad; age=61; trip=True",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "event_id": "P",
+        "line_id": "L1",
+        "machine_id": "M01",
+        "lot_id": "LOT-001",
+        "risk_score": null,
+        "matched_signals": [],
+        "ticket_id": null,
+        "new_ticket_count": 0,
+        "control_commands": [],
+        "evidence_event_id": "P",
+        "route": "interlock_escalate",
+        "state": "human_safety_response",
+        "next_actor": "现场值班工程师",
+        "proposed_action": "按现场既有安全程序人工处置。",
+        "reason": "PLC 已上报联锁，模型不发送任何设备控制命令。"
+      },
+      "error": null
+    },
+    {
+      "group": "production grid",
+      "name": "v=8.0; t=79; q=good; age=60; trip=False",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "event_id": "P",
+        "line_id": "L1",
+        "machine_id": "M01",
+        "lot_id": "LOT-001",
+        "risk_score": 1,
+        "matched_signals": [
+          "vibration"
+        ],
+        "ticket_id": null,
+        "new_ticket_count": 0,
+        "control_commands": [],
+        "evidence_event_id": "P",
+        "route": "warning_review",
+        "state": "proposed",
+        "next_actor": "维护负责人",
+        "draft_id": "D-P",
+        "proposed_action": "提出维护调查草稿；由维护负责人复核。",
+        "reason": "命中 1 项教学异常条件；只生成调查建议。"
+      },
+      "error": null
+    },
+    {
+      "group": "production grid",
+      "name": "v=8.0; t=79; q=good; age=60; trip=True",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "event_id": "P",
+        "line_id": "L1",
+        "machine_id": "M01",
+        "lot_id": "LOT-001",
+        "risk_score": null,
+        "matched_signals": [],
+        "ticket_id": null,
+        "new_ticket_count": 0,
+        "control_commands": [],
+        "evidence_event_id": "P",
+        "route": "interlock_escalate",
+        "state": "human_safety_response",
+        "next_actor": "现场值班工程师",
+        "proposed_action": "按现场既有安全程序人工处置。",
+        "reason": "PLC 已上报联锁，模型不发送任何设备控制命令。"
+      },
+      "error": null
+    },
+    {
+      "group": "production grid",
+      "name": "v=8.0; t=79; q=good; age=61; trip=False",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "event_id": "P",
+        "line_id": "L1",
+        "machine_id": "M01",
+        "lot_id": "LOT-001",
+        "risk_score": null,
+        "matched_signals": [],
+        "ticket_id": null,
+        "new_ticket_count": 0,
+        "control_commands": [],
+        "evidence_event_id": "P",
+        "route": "data_quality_hold",
+        "state": "data_quality_hold",
+        "next_actor": "数据与现场负责人",
+        "proposed_action": "核查传感器、时间戳、设备与批次记录。",
+        "reason": "数据缺失、过期或不在教学规则的有效范围内。"
+      },
+      "error": null
+    },
+    {
+      "group": "production grid",
+      "name": "v=8.0; t=79; q=good; age=61; trip=True",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "event_id": "P",
+        "line_id": "L1",
+        "machine_id": "M01",
+        "lot_id": "LOT-001",
+        "risk_score": null,
+        "matched_signals": [],
+        "ticket_id": null,
+        "new_ticket_count": 0,
+        "control_commands": [],
+        "evidence_event_id": "P",
+        "route": "interlock_escalate",
+        "state": "human_safety_response",
+        "next_actor": "现场值班工程师",
+        "proposed_action": "按现场既有安全程序人工处置。",
+        "reason": "PLC 已上报联锁，模型不发送任何设备控制命令。"
+      },
+      "error": null
+    },
+    {
+      "group": "production grid",
+      "name": "v=8.0; t=79; q=bad; age=60; trip=False",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "event_id": "P",
+        "line_id": "L1",
+        "machine_id": "M01",
+        "lot_id": "LOT-001",
+        "risk_score": 2,
+        "matched_signals": [
+          "vibration",
+          "quality"
+        ],
+        "ticket_id": null,
+        "new_ticket_count": 0,
+        "control_commands": [],
+        "evidence_event_id": "P",
+        "route": "high_review",
+        "state": "proposed",
+        "next_actor": "维护负责人",
+        "draft_id": "D-P",
+        "proposed_action": "提出维护调查草稿；由维护负责人复核。 同时请质量负责人决定是否隔离批次。",
+        "reason": "命中 2 项教学异常条件；只生成调查建议。"
+      },
+      "error": null
+    },
+    {
+      "group": "production grid",
+      "name": "v=8.0; t=79; q=bad; age=60; trip=True",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "event_id": "P",
+        "line_id": "L1",
+        "machine_id": "M01",
+        "lot_id": "LOT-001",
+        "risk_score": null,
+        "matched_signals": [],
+        "ticket_id": null,
+        "new_ticket_count": 0,
+        "control_commands": [],
+        "evidence_event_id": "P",
+        "route": "interlock_escalate",
+        "state": "human_safety_response",
+        "next_actor": "现场值班工程师",
+        "proposed_action": "按现场既有安全程序人工处置。",
+        "reason": "PLC 已上报联锁，模型不发送任何设备控制命令。"
+      },
+      "error": null
+    },
+    {
+      "group": "production grid",
+      "name": "v=8.0; t=79; q=bad; age=61; trip=False",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "event_id": "P",
+        "line_id": "L1",
+        "machine_id": "M01",
+        "lot_id": "LOT-001",
+        "risk_score": null,
+        "matched_signals": [],
+        "ticket_id": null,
+        "new_ticket_count": 0,
+        "control_commands": [],
+        "evidence_event_id": "P",
+        "route": "data_quality_hold",
+        "state": "data_quality_hold",
+        "next_actor": "数据与现场负责人",
+        "proposed_action": "核查传感器、时间戳、设备与批次记录。",
+        "reason": "数据缺失、过期或不在教学规则的有效范围内。"
+      },
+      "error": null
+    },
+    {
+      "group": "production grid",
+      "name": "v=8.0; t=79; q=bad; age=61; trip=True",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "event_id": "P",
+        "line_id": "L1",
+        "machine_id": "M01",
+        "lot_id": "LOT-001",
+        "risk_score": null,
+        "matched_signals": [],
+        "ticket_id": null,
+        "new_ticket_count": 0,
+        "control_commands": [],
+        "evidence_event_id": "P",
+        "route": "interlock_escalate",
+        "state": "human_safety_response",
+        "next_actor": "现场值班工程师",
+        "proposed_action": "按现场既有安全程序人工处置。",
+        "reason": "PLC 已上报联锁，模型不发送任何设备控制命令。"
+      },
+      "error": null
+    },
+    {
+      "group": "production grid",
+      "name": "v=8.0; t=80; q=good; age=60; trip=False",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "event_id": "P",
+        "line_id": "L1",
+        "machine_id": "M01",
+        "lot_id": "LOT-001",
+        "risk_score": 2,
+        "matched_signals": [
+          "vibration",
+          "temperature"
+        ],
+        "ticket_id": null,
+        "new_ticket_count": 0,
+        "control_commands": [],
+        "evidence_event_id": "P",
+        "route": "high_review",
+        "state": "proposed",
+        "next_actor": "维护负责人",
+        "draft_id": "D-P",
+        "proposed_action": "提出维护调查草稿；由维护负责人复核。",
+        "reason": "命中 2 项教学异常条件；只生成调查建议。"
+      },
+      "error": null
+    },
+    {
+      "group": "production grid",
+      "name": "v=8.0; t=80; q=good; age=60; trip=True",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "event_id": "P",
+        "line_id": "L1",
+        "machine_id": "M01",
+        "lot_id": "LOT-001",
+        "risk_score": null,
+        "matched_signals": [],
+        "ticket_id": null,
+        "new_ticket_count": 0,
+        "control_commands": [],
+        "evidence_event_id": "P",
+        "route": "interlock_escalate",
+        "state": "human_safety_response",
+        "next_actor": "现场值班工程师",
+        "proposed_action": "按现场既有安全程序人工处置。",
+        "reason": "PLC 已上报联锁，模型不发送任何设备控制命令。"
+      },
+      "error": null
+    },
+    {
+      "group": "production grid",
+      "name": "v=8.0; t=80; q=good; age=61; trip=False",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "event_id": "P",
+        "line_id": "L1",
+        "machine_id": "M01",
+        "lot_id": "LOT-001",
+        "risk_score": null,
+        "matched_signals": [],
+        "ticket_id": null,
+        "new_ticket_count": 0,
+        "control_commands": [],
+        "evidence_event_id": "P",
+        "route": "data_quality_hold",
+        "state": "data_quality_hold",
+        "next_actor": "数据与现场负责人",
+        "proposed_action": "核查传感器、时间戳、设备与批次记录。",
+        "reason": "数据缺失、过期或不在教学规则的有效范围内。"
+      },
+      "error": null
+    },
+    {
+      "group": "production grid",
+      "name": "v=8.0; t=80; q=good; age=61; trip=True",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "event_id": "P",
+        "line_id": "L1",
+        "machine_id": "M01",
+        "lot_id": "LOT-001",
+        "risk_score": null,
+        "matched_signals": [],
+        "ticket_id": null,
+        "new_ticket_count": 0,
+        "control_commands": [],
+        "evidence_event_id": "P",
+        "route": "interlock_escalate",
+        "state": "human_safety_response",
+        "next_actor": "现场值班工程师",
+        "proposed_action": "按现场既有安全程序人工处置。",
+        "reason": "PLC 已上报联锁，模型不发送任何设备控制命令。"
+      },
+      "error": null
+    },
+    {
+      "group": "production grid",
+      "name": "v=8.0; t=80; q=bad; age=60; trip=False",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "event_id": "P",
+        "line_id": "L1",
+        "machine_id": "M01",
+        "lot_id": "LOT-001",
+        "risk_score": 3,
+        "matched_signals": [
+          "vibration",
+          "temperature",
+          "quality"
+        ],
+        "ticket_id": null,
+        "new_ticket_count": 0,
+        "control_commands": [],
+        "evidence_event_id": "P",
+        "route": "high_review",
+        "state": "proposed",
+        "next_actor": "维护负责人",
+        "draft_id": "D-P",
+        "proposed_action": "提出维护调查草稿；由维护负责人复核。 同时请质量负责人决定是否隔离批次。",
+        "reason": "命中 3 项教学异常条件；只生成调查建议。"
+      },
+      "error": null
+    },
+    {
+      "group": "production grid",
+      "name": "v=8.0; t=80; q=bad; age=60; trip=True",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "event_id": "P",
+        "line_id": "L1",
+        "machine_id": "M01",
+        "lot_id": "LOT-001",
+        "risk_score": null,
+        "matched_signals": [],
+        "ticket_id": null,
+        "new_ticket_count": 0,
+        "control_commands": [],
+        "evidence_event_id": "P",
+        "route": "interlock_escalate",
+        "state": "human_safety_response",
+        "next_actor": "现场值班工程师",
+        "proposed_action": "按现场既有安全程序人工处置。",
+        "reason": "PLC 已上报联锁，模型不发送任何设备控制命令。"
+      },
+      "error": null
+    },
+    {
+      "group": "production grid",
+      "name": "v=8.0; t=80; q=bad; age=61; trip=False",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "event_id": "P",
+        "line_id": "L1",
+        "machine_id": "M01",
+        "lot_id": "LOT-001",
+        "risk_score": null,
+        "matched_signals": [],
+        "ticket_id": null,
+        "new_ticket_count": 0,
+        "control_commands": [],
+        "evidence_event_id": "P",
+        "route": "data_quality_hold",
+        "state": "data_quality_hold",
+        "next_actor": "数据与现场负责人",
+        "proposed_action": "核查传感器、时间戳、设备与批次记录。",
+        "reason": "数据缺失、过期或不在教学规则的有效范围内。"
+      },
+      "error": null
+    },
+    {
+      "group": "production grid",
+      "name": "v=8.0; t=80; q=bad; age=61; trip=True",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "event_id": "P",
+        "line_id": "L1",
+        "machine_id": "M01",
+        "lot_id": "LOT-001",
+        "risk_score": null,
+        "matched_signals": [],
+        "ticket_id": null,
+        "new_ticket_count": 0,
+        "control_commands": [],
+        "evidence_event_id": "P",
+        "route": "interlock_escalate",
+        "state": "human_safety_response",
+        "next_actor": "现场值班工程师",
+        "proposed_action": "按现场既有安全程序人工处置。",
+        "reason": "PLC 已上报联锁，模型不发送任何设备控制命令。"
+      },
+      "error": null
+    },
+    {
+      "group": "production grid",
+      "name": "v=8.0; t=81; q=good; age=60; trip=False",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "event_id": "P",
+        "line_id": "L1",
+        "machine_id": "M01",
+        "lot_id": "LOT-001",
+        "risk_score": 2,
+        "matched_signals": [
+          "vibration",
+          "temperature"
+        ],
+        "ticket_id": null,
+        "new_ticket_count": 0,
+        "control_commands": [],
+        "evidence_event_id": "P",
+        "route": "high_review",
+        "state": "proposed",
+        "next_actor": "维护负责人",
+        "draft_id": "D-P",
+        "proposed_action": "提出维护调查草稿；由维护负责人复核。",
+        "reason": "命中 2 项教学异常条件；只生成调查建议。"
+      },
+      "error": null
+    },
+    {
+      "group": "production grid",
+      "name": "v=8.0; t=81; q=good; age=60; trip=True",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "event_id": "P",
+        "line_id": "L1",
+        "machine_id": "M01",
+        "lot_id": "LOT-001",
+        "risk_score": null,
+        "matched_signals": [],
+        "ticket_id": null,
+        "new_ticket_count": 0,
+        "control_commands": [],
+        "evidence_event_id": "P",
+        "route": "interlock_escalate",
+        "state": "human_safety_response",
+        "next_actor": "现场值班工程师",
+        "proposed_action": "按现场既有安全程序人工处置。",
+        "reason": "PLC 已上报联锁，模型不发送任何设备控制命令。"
+      },
+      "error": null
+    },
+    {
+      "group": "production grid",
+      "name": "v=8.0; t=81; q=good; age=61; trip=False",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "event_id": "P",
+        "line_id": "L1",
+        "machine_id": "M01",
+        "lot_id": "LOT-001",
+        "risk_score": null,
+        "matched_signals": [],
+        "ticket_id": null,
+        "new_ticket_count": 0,
+        "control_commands": [],
+        "evidence_event_id": "P",
+        "route": "data_quality_hold",
+        "state": "data_quality_hold",
+        "next_actor": "数据与现场负责人",
+        "proposed_action": "核查传感器、时间戳、设备与批次记录。",
+        "reason": "数据缺失、过期或不在教学规则的有效范围内。"
+      },
+      "error": null
+    },
+    {
+      "group": "production grid",
+      "name": "v=8.0; t=81; q=good; age=61; trip=True",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "event_id": "P",
+        "line_id": "L1",
+        "machine_id": "M01",
+        "lot_id": "LOT-001",
+        "risk_score": null,
+        "matched_signals": [],
+        "ticket_id": null,
+        "new_ticket_count": 0,
+        "control_commands": [],
+        "evidence_event_id": "P",
+        "route": "interlock_escalate",
+        "state": "human_safety_response",
+        "next_actor": "现场值班工程师",
+        "proposed_action": "按现场既有安全程序人工处置。",
+        "reason": "PLC 已上报联锁，模型不发送任何设备控制命令。"
+      },
+      "error": null
+    },
+    {
+      "group": "production grid",
+      "name": "v=8.0; t=81; q=bad; age=60; trip=False",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "event_id": "P",
+        "line_id": "L1",
+        "machine_id": "M01",
+        "lot_id": "LOT-001",
+        "risk_score": 3,
+        "matched_signals": [
+          "vibration",
+          "temperature",
+          "quality"
+        ],
+        "ticket_id": null,
+        "new_ticket_count": 0,
+        "control_commands": [],
+        "evidence_event_id": "P",
+        "route": "high_review",
+        "state": "proposed",
+        "next_actor": "维护负责人",
+        "draft_id": "D-P",
+        "proposed_action": "提出维护调查草稿；由维护负责人复核。 同时请质量负责人决定是否隔离批次。",
+        "reason": "命中 3 项教学异常条件；只生成调查建议。"
+      },
+      "error": null
+    },
+    {
+      "group": "production grid",
+      "name": "v=8.0; t=81; q=bad; age=60; trip=True",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "event_id": "P",
+        "line_id": "L1",
+        "machine_id": "M01",
+        "lot_id": "LOT-001",
+        "risk_score": null,
+        "matched_signals": [],
+        "ticket_id": null,
+        "new_ticket_count": 0,
+        "control_commands": [],
+        "evidence_event_id": "P",
+        "route": "interlock_escalate",
+        "state": "human_safety_response",
+        "next_actor": "现场值班工程师",
+        "proposed_action": "按现场既有安全程序人工处置。",
+        "reason": "PLC 已上报联锁，模型不发送任何设备控制命令。"
+      },
+      "error": null
+    },
+    {
+      "group": "production grid",
+      "name": "v=8.0; t=81; q=bad; age=61; trip=False",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "event_id": "P",
+        "line_id": "L1",
+        "machine_id": "M01",
+        "lot_id": "LOT-001",
+        "risk_score": null,
+        "matched_signals": [],
+        "ticket_id": null,
+        "new_ticket_count": 0,
+        "control_commands": [],
+        "evidence_event_id": "P",
+        "route": "data_quality_hold",
+        "state": "data_quality_hold",
+        "next_actor": "数据与现场负责人",
+        "proposed_action": "核查传感器、时间戳、设备与批次记录。",
+        "reason": "数据缺失、过期或不在教学规则的有效范围内。"
+      },
+      "error": null
+    },
+    {
+      "group": "production grid",
+      "name": "v=8.0; t=81; q=bad; age=61; trip=True",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "event_id": "P",
+        "line_id": "L1",
+        "machine_id": "M01",
+        "lot_id": "LOT-001",
+        "risk_score": null,
+        "matched_signals": [],
+        "ticket_id": null,
+        "new_ticket_count": 0,
+        "control_commands": [],
+        "evidence_event_id": "P",
+        "route": "interlock_escalate",
+        "state": "human_safety_response",
+        "next_actor": "现场值班工程师",
+        "proposed_action": "按现场既有安全程序人工处置。",
+        "reason": "PLC 已上报联锁，模型不发送任何设备控制命令。"
+      },
+      "error": null
+    },
+    {
+      "group": "production grid",
+      "name": "v=8.1; t=79; q=good; age=60; trip=False",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "event_id": "P",
+        "line_id": "L1",
+        "machine_id": "M01",
+        "lot_id": "LOT-001",
+        "risk_score": 1,
+        "matched_signals": [
+          "vibration"
+        ],
+        "ticket_id": null,
+        "new_ticket_count": 0,
+        "control_commands": [],
+        "evidence_event_id": "P",
+        "route": "warning_review",
+        "state": "proposed",
+        "next_actor": "维护负责人",
+        "draft_id": "D-P",
+        "proposed_action": "提出维护调查草稿；由维护负责人复核。",
+        "reason": "命中 1 项教学异常条件；只生成调查建议。"
+      },
+      "error": null
+    },
+    {
+      "group": "production grid",
+      "name": "v=8.1; t=79; q=good; age=60; trip=True",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "event_id": "P",
+        "line_id": "L1",
+        "machine_id": "M01",
+        "lot_id": "LOT-001",
+        "risk_score": null,
+        "matched_signals": [],
+        "ticket_id": null,
+        "new_ticket_count": 0,
+        "control_commands": [],
+        "evidence_event_id": "P",
+        "route": "interlock_escalate",
+        "state": "human_safety_response",
+        "next_actor": "现场值班工程师",
+        "proposed_action": "按现场既有安全程序人工处置。",
+        "reason": "PLC 已上报联锁，模型不发送任何设备控制命令。"
+      },
+      "error": null
+    },
+    {
+      "group": "production grid",
+      "name": "v=8.1; t=79; q=good; age=61; trip=False",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "event_id": "P",
+        "line_id": "L1",
+        "machine_id": "M01",
+        "lot_id": "LOT-001",
+        "risk_score": null,
+        "matched_signals": [],
+        "ticket_id": null,
+        "new_ticket_count": 0,
+        "control_commands": [],
+        "evidence_event_id": "P",
+        "route": "data_quality_hold",
+        "state": "data_quality_hold",
+        "next_actor": "数据与现场负责人",
+        "proposed_action": "核查传感器、时间戳、设备与批次记录。",
+        "reason": "数据缺失、过期或不在教学规则的有效范围内。"
+      },
+      "error": null
+    },
+    {
+      "group": "production grid",
+      "name": "v=8.1; t=79; q=good; age=61; trip=True",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "event_id": "P",
+        "line_id": "L1",
+        "machine_id": "M01",
+        "lot_id": "LOT-001",
+        "risk_score": null,
+        "matched_signals": [],
+        "ticket_id": null,
+        "new_ticket_count": 0,
+        "control_commands": [],
+        "evidence_event_id": "P",
+        "route": "interlock_escalate",
+        "state": "human_safety_response",
+        "next_actor": "现场值班工程师",
+        "proposed_action": "按现场既有安全程序人工处置。",
+        "reason": "PLC 已上报联锁，模型不发送任何设备控制命令。"
+      },
+      "error": null
+    },
+    {
+      "group": "production grid",
+      "name": "v=8.1; t=79; q=bad; age=60; trip=False",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "event_id": "P",
+        "line_id": "L1",
+        "machine_id": "M01",
+        "lot_id": "LOT-001",
+        "risk_score": 2,
+        "matched_signals": [
+          "vibration",
+          "quality"
+        ],
+        "ticket_id": null,
+        "new_ticket_count": 0,
+        "control_commands": [],
+        "evidence_event_id": "P",
+        "route": "high_review",
+        "state": "proposed",
+        "next_actor": "维护负责人",
+        "draft_id": "D-P",
+        "proposed_action": "提出维护调查草稿；由维护负责人复核。 同时请质量负责人决定是否隔离批次。",
+        "reason": "命中 2 项教学异常条件；只生成调查建议。"
+      },
+      "error": null
+    },
+    {
+      "group": "production grid",
+      "name": "v=8.1; t=79; q=bad; age=60; trip=True",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "event_id": "P",
+        "line_id": "L1",
+        "machine_id": "M01",
+        "lot_id": "LOT-001",
+        "risk_score": null,
+        "matched_signals": [],
+        "ticket_id": null,
+        "new_ticket_count": 0,
+        "control_commands": [],
+        "evidence_event_id": "P",
+        "route": "interlock_escalate",
+        "state": "human_safety_response",
+        "next_actor": "现场值班工程师",
+        "proposed_action": "按现场既有安全程序人工处置。",
+        "reason": "PLC 已上报联锁，模型不发送任何设备控制命令。"
+      },
+      "error": null
+    },
+    {
+      "group": "production grid",
+      "name": "v=8.1; t=79; q=bad; age=61; trip=False",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "event_id": "P",
+        "line_id": "L1",
+        "machine_id": "M01",
+        "lot_id": "LOT-001",
+        "risk_score": null,
+        "matched_signals": [],
+        "ticket_id": null,
+        "new_ticket_count": 0,
+        "control_commands": [],
+        "evidence_event_id": "P",
+        "route": "data_quality_hold",
+        "state": "data_quality_hold",
+        "next_actor": "数据与现场负责人",
+        "proposed_action": "核查传感器、时间戳、设备与批次记录。",
+        "reason": "数据缺失、过期或不在教学规则的有效范围内。"
+      },
+      "error": null
+    },
+    {
+      "group": "production grid",
+      "name": "v=8.1; t=79; q=bad; age=61; trip=True",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "event_id": "P",
+        "line_id": "L1",
+        "machine_id": "M01",
+        "lot_id": "LOT-001",
+        "risk_score": null,
+        "matched_signals": [],
+        "ticket_id": null,
+        "new_ticket_count": 0,
+        "control_commands": [],
+        "evidence_event_id": "P",
+        "route": "interlock_escalate",
+        "state": "human_safety_response",
+        "next_actor": "现场值班工程师",
+        "proposed_action": "按现场既有安全程序人工处置。",
+        "reason": "PLC 已上报联锁，模型不发送任何设备控制命令。"
+      },
+      "error": null
+    },
+    {
+      "group": "production grid",
+      "name": "v=8.1; t=80; q=good; age=60; trip=False",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "event_id": "P",
+        "line_id": "L1",
+        "machine_id": "M01",
+        "lot_id": "LOT-001",
+        "risk_score": 2,
+        "matched_signals": [
+          "vibration",
+          "temperature"
+        ],
+        "ticket_id": null,
+        "new_ticket_count": 0,
+        "control_commands": [],
+        "evidence_event_id": "P",
+        "route": "high_review",
+        "state": "proposed",
+        "next_actor": "维护负责人",
+        "draft_id": "D-P",
+        "proposed_action": "提出维护调查草稿；由维护负责人复核。",
+        "reason": "命中 2 项教学异常条件；只生成调查建议。"
+      },
+      "error": null
+    },
+    {
+      "group": "production grid",
+      "name": "v=8.1; t=80; q=good; age=60; trip=True",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "event_id": "P",
+        "line_id": "L1",
+        "machine_id": "M01",
+        "lot_id": "LOT-001",
+        "risk_score": null,
+        "matched_signals": [],
+        "ticket_id": null,
+        "new_ticket_count": 0,
+        "control_commands": [],
+        "evidence_event_id": "P",
+        "route": "interlock_escalate",
+        "state": "human_safety_response",
+        "next_actor": "现场值班工程师",
+        "proposed_action": "按现场既有安全程序人工处置。",
+        "reason": "PLC 已上报联锁，模型不发送任何设备控制命令。"
+      },
+      "error": null
+    },
+    {
+      "group": "production grid",
+      "name": "v=8.1; t=80; q=good; age=61; trip=False",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "event_id": "P",
+        "line_id": "L1",
+        "machine_id": "M01",
+        "lot_id": "LOT-001",
+        "risk_score": null,
+        "matched_signals": [],
+        "ticket_id": null,
+        "new_ticket_count": 0,
+        "control_commands": [],
+        "evidence_event_id": "P",
+        "route": "data_quality_hold",
+        "state": "data_quality_hold",
+        "next_actor": "数据与现场负责人",
+        "proposed_action": "核查传感器、时间戳、设备与批次记录。",
+        "reason": "数据缺失、过期或不在教学规则的有效范围内。"
+      },
+      "error": null
+    },
+    {
+      "group": "production grid",
+      "name": "v=8.1; t=80; q=good; age=61; trip=True",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "event_id": "P",
+        "line_id": "L1",
+        "machine_id": "M01",
+        "lot_id": "LOT-001",
+        "risk_score": null,
+        "matched_signals": [],
+        "ticket_id": null,
+        "new_ticket_count": 0,
+        "control_commands": [],
+        "evidence_event_id": "P",
+        "route": "interlock_escalate",
+        "state": "human_safety_response",
+        "next_actor": "现场值班工程师",
+        "proposed_action": "按现场既有安全程序人工处置。",
+        "reason": "PLC 已上报联锁，模型不发送任何设备控制命令。"
+      },
+      "error": null
+    },
+    {
+      "group": "production grid",
+      "name": "v=8.1; t=80; q=bad; age=60; trip=False",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "event_id": "P",
+        "line_id": "L1",
+        "machine_id": "M01",
+        "lot_id": "LOT-001",
+        "risk_score": 3,
+        "matched_signals": [
+          "vibration",
+          "temperature",
+          "quality"
+        ],
+        "ticket_id": null,
+        "new_ticket_count": 0,
+        "control_commands": [],
+        "evidence_event_id": "P",
+        "route": "high_review",
+        "state": "proposed",
+        "next_actor": "维护负责人",
+        "draft_id": "D-P",
+        "proposed_action": "提出维护调查草稿；由维护负责人复核。 同时请质量负责人决定是否隔离批次。",
+        "reason": "命中 3 项教学异常条件；只生成调查建议。"
+      },
+      "error": null
+    },
+    {
+      "group": "production grid",
+      "name": "v=8.1; t=80; q=bad; age=60; trip=True",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "event_id": "P",
+        "line_id": "L1",
+        "machine_id": "M01",
+        "lot_id": "LOT-001",
+        "risk_score": null,
+        "matched_signals": [],
+        "ticket_id": null,
+        "new_ticket_count": 0,
+        "control_commands": [],
+        "evidence_event_id": "P",
+        "route": "interlock_escalate",
+        "state": "human_safety_response",
+        "next_actor": "现场值班工程师",
+        "proposed_action": "按现场既有安全程序人工处置。",
+        "reason": "PLC 已上报联锁，模型不发送任何设备控制命令。"
+      },
+      "error": null
+    },
+    {
+      "group": "production grid",
+      "name": "v=8.1; t=80; q=bad; age=61; trip=False",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "event_id": "P",
+        "line_id": "L1",
+        "machine_id": "M01",
+        "lot_id": "LOT-001",
+        "risk_score": null,
+        "matched_signals": [],
+        "ticket_id": null,
+        "new_ticket_count": 0,
+        "control_commands": [],
+        "evidence_event_id": "P",
+        "route": "data_quality_hold",
+        "state": "data_quality_hold",
+        "next_actor": "数据与现场负责人",
+        "proposed_action": "核查传感器、时间戳、设备与批次记录。",
+        "reason": "数据缺失、过期或不在教学规则的有效范围内。"
+      },
+      "error": null
+    },
+    {
+      "group": "production grid",
+      "name": "v=8.1; t=80; q=bad; age=61; trip=True",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "event_id": "P",
+        "line_id": "L1",
+        "machine_id": "M01",
+        "lot_id": "LOT-001",
+        "risk_score": null,
+        "matched_signals": [],
+        "ticket_id": null,
+        "new_ticket_count": 0,
+        "control_commands": [],
+        "evidence_event_id": "P",
+        "route": "interlock_escalate",
+        "state": "human_safety_response",
+        "next_actor": "现场值班工程师",
+        "proposed_action": "按现场既有安全程序人工处置。",
+        "reason": "PLC 已上报联锁，模型不发送任何设备控制命令。"
+      },
+      "error": null
+    },
+    {
+      "group": "production grid",
+      "name": "v=8.1; t=81; q=good; age=60; trip=False",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "event_id": "P",
+        "line_id": "L1",
+        "machine_id": "M01",
+        "lot_id": "LOT-001",
+        "risk_score": 2,
+        "matched_signals": [
+          "vibration",
+          "temperature"
+        ],
+        "ticket_id": null,
+        "new_ticket_count": 0,
+        "control_commands": [],
+        "evidence_event_id": "P",
+        "route": "high_review",
+        "state": "proposed",
+        "next_actor": "维护负责人",
+        "draft_id": "D-P",
+        "proposed_action": "提出维护调查草稿；由维护负责人复核。",
+        "reason": "命中 2 项教学异常条件；只生成调查建议。"
+      },
+      "error": null
+    },
+    {
+      "group": "production grid",
+      "name": "v=8.1; t=81; q=good; age=60; trip=True",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "event_id": "P",
+        "line_id": "L1",
+        "machine_id": "M01",
+        "lot_id": "LOT-001",
+        "risk_score": null,
+        "matched_signals": [],
+        "ticket_id": null,
+        "new_ticket_count": 0,
+        "control_commands": [],
+        "evidence_event_id": "P",
+        "route": "interlock_escalate",
+        "state": "human_safety_response",
+        "next_actor": "现场值班工程师",
+        "proposed_action": "按现场既有安全程序人工处置。",
+        "reason": "PLC 已上报联锁，模型不发送任何设备控制命令。"
+      },
+      "error": null
+    },
+    {
+      "group": "production grid",
+      "name": "v=8.1; t=81; q=good; age=61; trip=False",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "event_id": "P",
+        "line_id": "L1",
+        "machine_id": "M01",
+        "lot_id": "LOT-001",
+        "risk_score": null,
+        "matched_signals": [],
+        "ticket_id": null,
+        "new_ticket_count": 0,
+        "control_commands": [],
+        "evidence_event_id": "P",
+        "route": "data_quality_hold",
+        "state": "data_quality_hold",
+        "next_actor": "数据与现场负责人",
+        "proposed_action": "核查传感器、时间戳、设备与批次记录。",
+        "reason": "数据缺失、过期或不在教学规则的有效范围内。"
+      },
+      "error": null
+    },
+    {
+      "group": "production grid",
+      "name": "v=8.1; t=81; q=good; age=61; trip=True",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "event_id": "P",
+        "line_id": "L1",
+        "machine_id": "M01",
+        "lot_id": "LOT-001",
+        "risk_score": null,
+        "matched_signals": [],
+        "ticket_id": null,
+        "new_ticket_count": 0,
+        "control_commands": [],
+        "evidence_event_id": "P",
+        "route": "interlock_escalate",
+        "state": "human_safety_response",
+        "next_actor": "现场值班工程师",
+        "proposed_action": "按现场既有安全程序人工处置。",
+        "reason": "PLC 已上报联锁，模型不发送任何设备控制命令。"
+      },
+      "error": null
+    },
+    {
+      "group": "production grid",
+      "name": "v=8.1; t=81; q=bad; age=60; trip=False",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "event_id": "P",
+        "line_id": "L1",
+        "machine_id": "M01",
+        "lot_id": "LOT-001",
+        "risk_score": 3,
+        "matched_signals": [
+          "vibration",
+          "temperature",
+          "quality"
+        ],
+        "ticket_id": null,
+        "new_ticket_count": 0,
+        "control_commands": [],
+        "evidence_event_id": "P",
+        "route": "high_review",
+        "state": "proposed",
+        "next_actor": "维护负责人",
+        "draft_id": "D-P",
+        "proposed_action": "提出维护调查草稿；由维护负责人复核。 同时请质量负责人决定是否隔离批次。",
+        "reason": "命中 3 项教学异常条件；只生成调查建议。"
+      },
+      "error": null
+    },
+    {
+      "group": "production grid",
+      "name": "v=8.1; t=81; q=bad; age=60; trip=True",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "event_id": "P",
+        "line_id": "L1",
+        "machine_id": "M01",
+        "lot_id": "LOT-001",
+        "risk_score": null,
+        "matched_signals": [],
+        "ticket_id": null,
+        "new_ticket_count": 0,
+        "control_commands": [],
+        "evidence_event_id": "P",
+        "route": "interlock_escalate",
+        "state": "human_safety_response",
+        "next_actor": "现场值班工程师",
+        "proposed_action": "按现场既有安全程序人工处置。",
+        "reason": "PLC 已上报联锁，模型不发送任何设备控制命令。"
+      },
+      "error": null
+    },
+    {
+      "group": "production grid",
+      "name": "v=8.1; t=81; q=bad; age=61; trip=False",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "event_id": "P",
+        "line_id": "L1",
+        "machine_id": "M01",
+        "lot_id": "LOT-001",
+        "risk_score": null,
+        "matched_signals": [],
+        "ticket_id": null,
+        "new_ticket_count": 0,
+        "control_commands": [],
+        "evidence_event_id": "P",
+        "route": "data_quality_hold",
+        "state": "data_quality_hold",
+        "next_actor": "数据与现场负责人",
+        "proposed_action": "核查传感器、时间戳、设备与批次记录。",
+        "reason": "数据缺失、过期或不在教学规则的有效范围内。"
+      },
+      "error": null
+    },
+    {
+      "group": "production grid",
+      "name": "v=8.1; t=81; q=bad; age=61; trip=True",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "event_id": "P",
+        "line_id": "L1",
+        "machine_id": "M01",
+        "lot_id": "LOT-001",
+        "risk_score": null,
+        "matched_signals": [],
+        "ticket_id": null,
+        "new_ticket_count": 0,
+        "control_commands": [],
+        "evidence_event_id": "P",
+        "route": "interlock_escalate",
+        "state": "human_safety_response",
+        "next_actor": "现场值班工程师",
+        "proposed_action": "按现场既有安全程序人工处置。",
+        "reason": "PLC 已上报联锁，模型不发送任何设备控制命令。"
+      },
+      "error": null
+    },
+    {
+      "group": "production invalid data",
+      "name": "vibration_mm_s=None",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "event_id": "P",
+        "line_id": "L1",
+        "machine_id": "M01",
+        "lot_id": "LOT-001",
+        "risk_score": null,
+        "matched_signals": [],
+        "ticket_id": null,
+        "new_ticket_count": 0,
+        "control_commands": [],
+        "evidence_event_id": "P",
+        "route": "data_quality_hold",
+        "state": "data_quality_hold",
+        "next_actor": "数据与现场负责人",
+        "proposed_action": "核查传感器、时间戳、设备与批次记录。",
+        "reason": "数据缺失、过期或不在教学规则的有效范围内。"
+      },
+      "error": null
+    },
+    {
+      "group": "production invalid data",
+      "name": "temperature_c=nan",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "event_id": "P",
+        "line_id": "L1",
+        "machine_id": "M01",
+        "lot_id": "LOT-001",
+        "risk_score": null,
+        "matched_signals": [],
+        "ticket_id": null,
+        "new_ticket_count": 0,
+        "control_commands": [],
+        "evidence_event_id": "P",
+        "route": "data_quality_hold",
+        "state": "data_quality_hold",
+        "next_actor": "数据与现场负责人",
+        "proposed_action": "核查传感器、时间戳、设备与批次记录。",
+        "reason": "数据缺失、过期或不在教学规则的有效范围内。"
+      },
+      "error": null
+    },
+    {
+      "group": "production invalid data",
+      "name": "temperature_c=inf",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "event_id": "P",
+        "line_id": "L1",
+        "machine_id": "M01",
+        "lot_id": "LOT-001",
+        "risk_score": null,
+        "matched_signals": [],
+        "ticket_id": null,
+        "new_ticket_count": 0,
+        "control_commands": [],
+        "evidence_event_id": "P",
+        "route": "data_quality_hold",
+        "state": "data_quality_hold",
+        "next_actor": "数据与现场负责人",
+        "proposed_action": "核查传感器、时间戳、设备与批次记录。",
+        "reason": "数据缺失、过期或不在教学规则的有效范围内。"
+      },
+      "error": null
+    },
+    {
+      "group": "production invalid data",
+      "name": "sensor_age_s=True",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "event_id": "P",
+        "line_id": "L1",
+        "machine_id": "M01",
+        "lot_id": "LOT-001",
+        "risk_score": null,
+        "matched_signals": [],
+        "ticket_id": null,
+        "new_ticket_count": 0,
+        "control_commands": [],
+        "evidence_event_id": "P",
+        "route": "data_quality_hold",
+        "state": "data_quality_hold",
+        "next_actor": "数据与现场负责人",
+        "proposed_action": "核查传感器、时间戳、设备与批次记录。",
+        "reason": "数据缺失、过期或不在教学规则的有效范围内。"
+      },
+      "error": null
+    },
+    {
+      "group": "production invalid data",
+      "name": "sensor_age_s=-1",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "event_id": "P",
+        "line_id": "L1",
+        "machine_id": "M01",
+        "lot_id": "LOT-001",
+        "risk_score": null,
+        "matched_signals": [],
+        "ticket_id": null,
+        "new_ticket_count": 0,
+        "control_commands": [],
+        "evidence_event_id": "P",
+        "route": "data_quality_hold",
+        "state": "data_quality_hold",
+        "next_actor": "数据与现场负责人",
+        "proposed_action": "核查传感器、时间戳、设备与批次记录。",
+        "reason": "数据缺失、过期或不在教学规则的有效范围内。"
+      },
+      "error": null
+    },
+    {
+      "group": "production invalid data",
+      "name": "machine_id='M99'",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "event_id": "P",
+        "line_id": "L1",
+        "machine_id": "M99",
+        "lot_id": "LOT-001",
+        "risk_score": null,
+        "matched_signals": [],
+        "ticket_id": null,
+        "new_ticket_count": 0,
+        "control_commands": [],
+        "evidence_event_id": "P",
+        "route": "data_quality_hold",
+        "state": "data_quality_hold",
+        "next_actor": "数据与现场负责人",
+        "proposed_action": "核查传感器、时间戳、设备与批次记录。",
+        "reason": "数据缺失、过期或不在教学规则的有效范围内。"
+      },
+      "error": null
+    },
+    {
+      "group": "production invalid data",
+      "name": "quality_flag='unknown'",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "event_id": "P",
+        "line_id": "L1",
+        "machine_id": "M01",
+        "lot_id": "LOT-001",
+        "risk_score": null,
+        "matched_signals": [],
+        "ticket_id": null,
+        "new_ticket_count": 0,
+        "control_commands": [],
+        "evidence_event_id": "P",
+        "route": "data_quality_hold",
+        "state": "data_quality_hold",
+        "next_actor": "数据与现场负责人",
+        "proposed_action": "核查传感器、时间戳、设备与批次记录。",
+        "reason": "数据缺失、过期或不在教学规则的有效范围内。"
+      },
+      "error": null
+    },
+    {
+      "group": "production invalid data",
+      "name": "event_time='2026-10-14T00:00:00'",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "event_id": "P",
+        "line_id": "L1",
+        "machine_id": "M01",
+        "lot_id": "LOT-001",
+        "risk_score": null,
+        "matched_signals": [],
+        "ticket_id": null,
+        "new_ticket_count": 0,
+        "control_commands": [],
+        "evidence_event_id": "P",
+        "route": "data_quality_hold",
+        "state": "data_quality_hold",
+        "next_actor": "数据与现场负责人",
+        "proposed_action": "核查传感器、时间戳、设备与批次记录。",
+        "reason": "数据缺失、过期或不在教学规则的有效范围内。"
+      },
+      "error": null
+    },
+    {
+      "group": "production invalid data",
+      "name": "event_time='2026-10-13T19:00:00+08:00'",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "event_id": "P",
+        "line_id": "L1",
+        "machine_id": "M01",
+        "lot_id": "LOT-001",
+        "risk_score": null,
+        "matched_signals": [],
+        "ticket_id": null,
+        "new_ticket_count": 0,
+        "control_commands": [],
+        "evidence_event_id": "P",
+        "route": "data_quality_hold",
+        "state": "data_quality_hold",
+        "next_actor": "数据与现场负责人",
+        "proposed_action": "核查传感器、时间戳、设备与批次记录。",
+        "reason": "数据缺失、过期或不在教学规则的有效范围内。"
+      },
+      "error": null
+    },
+    {
+      "group": "production invalid data",
+      "name": "true interlock outranks missing data and stale age",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "event_id": "P",
+        "line_id": "L1",
+        "machine_id": "M01",
+        "lot_id": "LOT-001",
+        "risk_score": null,
+        "matched_signals": [],
+        "ticket_id": null,
+        "new_ticket_count": 0,
+        "control_commands": [],
+        "evidence_event_id": "P",
+        "route": "interlock_escalate",
+        "state": "human_safety_response",
+        "next_actor": "现场值班工程师",
+        "proposed_action": "按现场既有安全程序人工处置。",
+        "reason": "PLC 已上报联锁，模型不发送任何设备控制命令。"
+      },
+      "error": null
+    },
+    {
+      "group": "adversarial replay",
+      "name": "same event but changed customer must not expose cached order",
+      "passed": true,
+      "severity": "blocker",
+      "actual": {
+        "visible_fact": null,
+        "matched_keywords": [
+          "order"
+        ],
+        "evidence_ids": [],
+        "route": "privacy_block",
+        "state": "restricted",
+        "next_actor": "人工客服",
+        "reason": "订单与当前客户不匹配。"
+      },
+      "error": null
+    },
+    {
+      "group": "adversarial replay",
+      "name": "changed same-id safety message must not replay order answer",
+      "passed": true,
+      "severity": "blocker",
+      "actual": {
+        "decision": "event_conflict",
+        "route": "event_conflict",
+        "state": "conflict",
+        "visible_fact": null,
+        "answer_fact": null,
+        "evidence_ids": [],
+        "risk_score": null,
+        "matched_signals": [],
+        "matched_keywords": [],
+        "ticket_id": null,
+        "new_ticket_count": 0,
+        "control_commands": [],
+        "proposal_slot": null,
+        "next_actor": "人工责任人",
+        "reason": "同一事件号的身份、载荷或规则版本不一致，请人工核对。"
+      },
+      "error": null
+    },
+    {
+      "group": "adversarial replay",
+      "name": "same-id new interlock must not replay monitor",
+      "passed": true,
+      "severity": "blocker",
+      "actual": {
+        "decision": "event_conflict",
+        "route": "event_conflict",
+        "state": "conflict",
+        "visible_fact": null,
+        "answer_fact": null,
+        "evidence_ids": [],
+        "risk_score": null,
+        "matched_signals": [],
+        "matched_keywords": [],
+        "ticket_id": null,
+        "new_ticket_count": 0,
+        "control_commands": [],
+        "proposal_slot": null,
+        "next_actor": "现场值班工程师",
+        "reason": "同一事件号的身份、载荷或规则版本不一致，请人工核对。",
+        "proposed_action": "核对同号事件冲突，并按现场既有安全程序处置当前联锁上报。"
+      },
+      "error": null
+    },
+    {
+      "group": "adversarial replay",
+      "name": "shared Harness ledger must isolate task kinds",
+      "passed": true,
+      "severity": "blocker",
+      "actual": {
+        "event_id": "COLLIDE",
+        "line_id": "L1",
+        "machine_id": "M01",
+        "lot_id": "LOT-001",
+        "risk_score": null,
+        "matched_signals": [],
+        "ticket_id": null,
+        "new_ticket_count": 0,
+        "control_commands": [],
+        "evidence_event_id": "COLLIDE",
+        "route": "interlock_escalate",
+        "state": "human_safety_response",
+        "next_actor": "现场值班工程师",
+        "proposed_action": "按现场既有安全程序人工处置。",
+        "reason": "PLC 已上报联锁，模型不发送任何设备控制命令。"
+      },
+      "error": null
+    },
+    {
+      "group": "boolean validation",
+      "name": "verified='false' must not grant order access",
+      "passed": true,
+      "severity": "blocker",
+      "actual": {
+        "route": "invalid_input",
+        "visible_fact": null,
+        "state": "clarify",
+        "reason": "事件号、客户身份及核验标志必须具有规定类型。",
+        "matched_keywords": [],
+        "evidence_ids": [],
+        "next_actor": "客户"
+      },
+      "error": null
+    },
+    {
+      "group": "boolean validation",
+      "name": "organizer_authenticated='false' must not approve",
+      "passed": true,
+      "severity": "blocker",
+      "actual": {
+        "decision": "approval_denied",
+        "state": "proposed",
+        "proposal_slot": null,
+        "reason": "组织者身份必须以明确的布尔值 True 表示；未通过身份核验。"
+      },
+      "error": null
+    },
+    {
+      "group": "boolean validation",
+      "name": "invalid interlock_trip=1 must hold or escalate",
+      "passed": true,
+      "severity": "blocker",
+      "actual": {
+        "route": "invalid_input",
+        "state": "clarify",
+        "risk_score": null,
+        "matched_signals": [],
+        "evidence_event_id": null,
+        "ticket_id": null,
+        "new_ticket_count": 0,
+        "control_commands": [],
+        "next_actor": "数据与现场负责人",
+        "reason": "事件号、观察身份或 PLC 联锁标志类型不合法；不能据此判断正常。"
+      },
+      "error": null
+    },
+    {
+      "group": "boolean validation",
+      "name": "invalid interlock_trip='true' must hold or escalate",
+      "passed": true,
+      "severity": "blocker",
+      "actual": {
+        "route": "invalid_input",
+        "state": "clarify",
+        "risk_score": null,
+        "matched_signals": [],
+        "evidence_event_id": null,
+        "ticket_id": null,
+        "new_ticket_count": 0,
+        "control_commands": [],
+        "next_actor": "数据与现场负责人",
+        "reason": "事件号、观察身份或 PLC 联锁标志类型不合法；不能据此判断正常。"
+      },
+      "error": null
+    },
+    {
+      "group": "boolean validation",
+      "name": "invalid interlock_trip=None must hold or escalate",
+      "passed": true,
+      "severity": "blocker",
+      "actual": {
+        "route": "invalid_input",
+        "state": "clarify",
+        "risk_score": null,
+        "matched_signals": [],
+        "evidence_event_id": null,
+        "ticket_id": null,
+        "new_ticket_count": 0,
+        "control_commands": [],
+        "next_actor": "数据与现场负责人",
+        "reason": "事件号、观察身份或 PLC 联锁标志类型不合法；不能据此判断正常。"
+      },
+      "error": null
+    },
+    {
+      "group": "approval and version binding",
+      "name": "same-principal verification revoked cannot replay fact",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "decision": "event_conflict",
+        "route": "event_conflict",
+        "state": "conflict",
+        "visible_fact": null,
+        "answer_fact": null,
+        "evidence_ids": [],
+        "risk_score": null,
+        "matched_signals": [],
+        "matched_keywords": [],
+        "ticket_id": null,
+        "new_ticket_count": 0,
+        "control_commands": [],
+        "proposal_slot": null,
+        "next_actor": "人工责任人",
+        "reason": "同一事件号的身份、载荷或规则版本不一致，请人工核对。"
+      },
+      "error": null
+    },
+    {
+      "group": "approval and version binding",
+      "name": "one ORG-1 approval cannot approve two event IDs",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "decision": "approval_denied",
+        "state": "proposed",
+        "proposal_slot": null,
+        "approval_error": "组织者身份或审批号不匹配，不能批准或回放已批准状态。",
+        "reason": "审批必须绑定同一身份、事件、参与人、时段和日历版本。"
+      },
+      "error": null
+    },
+    {
+      "group": "approval and version binding",
+      "name": "same meeting ID changed participants explicitly conflicts",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "decision": "event_conflict",
+        "route": "event_conflict",
+        "state": "conflict",
+        "visible_fact": null,
+        "answer_fact": null,
+        "evidence_ids": [],
+        "risk_score": null,
+        "matched_signals": [],
+        "matched_keywords": [],
+        "ticket_id": null,
+        "new_ticket_count": 0,
+        "control_commands": [],
+        "proposal_slot": null,
+        "next_actor": "人工责任人",
+        "reason": "同一事件号的身份、载荷或规则版本不一致，请人工核对。"
+      },
+      "error": null
+    },
+    {
+      "group": "approval and version binding",
+      "name": "unauthenticated replay of committed meeting does not approve",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "decision": "approval_denied",
+        "state": "proposed",
+        "proposal_slot": null,
+        "reason": "组织者身份必须以明确的布尔值 True 表示；未通过身份核验。"
+      },
+      "error": null
+    },
+    {
+      "group": "approval and version binding",
+      "name": "wrong approver cannot replay approved work order",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "route": "approval_denied",
+        "state": "restricted",
+        "risk_score": null,
+        "ticket_id": null,
+        "new_ticket_count": 0,
+        "control_commands": [],
+        "approval_error": "只有维护负责人可审核异常草稿；设备状态不会改变。",
+        "reason": "未通过审批角色或提案状态核验，不能回放已批准工单。"
+      },
+      "error": null
+    },
+    {
+      "group": "approval and version binding",
+      "name": "order-data version change cannot replay stale fact",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "decision": "event_conflict",
+        "route": "event_conflict",
+        "state": "conflict",
+        "visible_fact": null,
+        "answer_fact": null,
+        "evidence_ids": [],
+        "risk_score": null,
+        "matched_signals": [],
+        "matched_keywords": [],
+        "ticket_id": null,
+        "new_ticket_count": 0,
+        "control_commands": [],
+        "proposal_slot": null,
+        "next_actor": "人工责任人",
+        "reason": "同一事件号的身份、载荷或规则版本不一致，请人工核对。"
+      },
+      "error": null
+    },
+    {
+      "group": "approval and version binding",
+      "name": "changed threshold version blocks old proposal approval",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "decision": "event_conflict",
+        "route": "event_conflict",
+        "state": "conflict",
+        "visible_fact": null,
+        "answer_fact": null,
+        "evidence_ids": [],
+        "risk_score": null,
+        "matched_signals": [],
+        "matched_keywords": [],
+        "ticket_id": null,
+        "new_ticket_count": 0,
+        "control_commands": [],
+        "proposal_slot": null,
+        "next_actor": "人工责任人",
+        "reason": "教学阈值版本已变化，请重新生成并审核异常提案。"
+      },
+      "error": null
+    },
+    {
+      "group": "approval and version binding",
+      "name": "changed calendar version blocks old proposal approval",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "decision": "event_conflict",
+        "route": "event_conflict",
+        "state": "conflict",
+        "visible_fact": null,
+        "answer_fact": null,
+        "evidence_ids": [],
+        "risk_score": null,
+        "matched_signals": [],
+        "matched_keywords": [],
+        "ticket_id": null,
+        "new_ticket_count": 0,
+        "control_commands": [],
+        "proposal_slot": null,
+        "next_actor": "人工责任人",
+        "reason": "日历版本已经变化，请重新生成并审核会议提案。"
+      },
+      "error": null
+    },
+    {
+      "group": "evidence",
+      "name": "international invoice is outside the teaching policy scope",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "decision": "no_evidence",
+        "evidence_ids": [],
+        "clause_summary": "",
+        "reason": "指定日期或地区没有有效且可见的条款。",
+        "next_actor": "制度负责人",
+        "state": "clarify"
+      },
+      "error": null
+    },
+    {
+      "group": "evidence",
+      "name": "policy experiment exposes no callable approval shortcut",
+      "passed": true,
+      "severity": "regression",
+      "actual": false,
+      "error": null
+    },
+    {
+      "group": "evidence",
+      "name": "manager-preapproval remains pending rather than approved",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "decision": "manager_preapproval",
+        "evidence_ids": [
+          "HOTEL-v3"
+        ],
+        "clause_summary": "国内住宿每晚不超过 400 元；超过 400 且不超过 600 元须预先由部门经理批准。",
+        "reason": "须在预订前由部门经理审批。",
+        "next_actor": "部门经理",
+        "state": "pending_review"
+      },
+      "error": null
+    },
+    {
+      "group": "policy boundaries",
+      "name": "fractional amount matches continuous-range policy summary",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "decision": "manager_preapproval",
+        "evidence_ids": [
+          "HOTEL-v3"
+        ],
+        "clause_summary": "国内住宿每晚不超过 400 元；超过 400 且不超过 600 元须预先由部门经理批准。",
+        "reason": "须在预订前由部门经理审批。",
+        "next_actor": "部门经理",
+        "state": "pending_review"
+      },
+      "error": null
+    },
+    {
+      "group": "boolean validation",
+      "name": "product approved string false cannot expose a formal fact",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "visible_fact": null,
+        "matched_keywords": [
+          "product"
+        ],
+        "evidence_ids": [],
+        "route": "clarify",
+        "state": "clarify",
+        "next_actor": "客户",
+        "reason": "没有该产品的已批准规格。"
+      },
+      "error": null
+    },
+    {
+      "group": "production invalid data",
+      "name": "missing lot identity must hold",
+      "passed": true,
+      "severity": "regression",
+      "actual": {
+        "event_id": "P",
+        "line_id": "L1",
+        "machine_id": "M01",
+        "lot_id": null,
+        "risk_score": null,
+        "matched_signals": [],
+        "ticket_id": null,
+        "new_ticket_count": 0,
+        "control_commands": [],
+        "evidence_event_id": "P",
+        "route": "data_quality_hold",
+        "state": "data_quality_hold",
+        "next_actor": "数据与现场负责人",
+        "proposed_action": "核查传感器、时间戳、设备与批次记录。",
+        "reason": "数据缺失、过期或不在教学规则的有效范围内。"
+      },
+      "error": null
+    },
+    {
+      "group": "executed frontend controls",
+      "name": "agent-rag:amount_yuan",
+      "passed": true,
+      "severity": "regression",
+      "actual": [
+        {
+          "title": "制度问答与来源",
+          "data": [
+            {
+              "判定": "eligible",
+              "状态": "answered",
+              "证据": "HOTEL-v3",
+              "理由": "金额在该版条款的自动范围内。",
+              "下一处理人": ""
+            }
+          ],
+          "options": {}
+        },
+        {
+          "title": "版本与额度（教学数据）",
+          "data": [
+            {
+              "版本": "HOTEL-v2",
+              "自动额度": 350,
+              "预审上限": 500
+            },
+            {
+              "版本": "HOTEL-v3",
+              "自动额度": 400,
+              "预审上限": 600
+            }
+          ],
+          "options": {
+            "x": "版本",
+            "y": "自动额度"
+          }
+        }
+      ],
+      "error": null
+    },
+    {
+      "group": "executed frontend controls",
+      "name": "agent-rag:employee_access",
+      "passed": true,
+      "severity": "regression",
+      "actual": [
+        {
+          "title": "制度问答与来源",
+          "data": [
+            {
+              "判定": "restricted_transfer",
+              "状态": "restricted",
+              "证据": "无",
+              "理由": "当前角色不可读取员工制度。",
+              "下一处理人": "制度负责人"
+            }
+          ],
+          "options": {}
+        }
+      ],
+      "error": null
+    },
+    {
+      "group": "deterministic boundary",
+      "name": "agent-rag repeat independent run",
+      "passed": true,
+      "severity": "regression",
+      "actual": [
+        {
+          "title": "制度问答与来源",
+          "data": [
+            {
+              "判定": "manager_preapproval",
+              "状态": "pending_review",
+              "证据": "HOTEL-v3",
+              "理由": "须在预订前由部门经理审批。",
+              "下一处理人": "部门经理"
+            }
+          ],
+          "options": {}
+        },
+        {
+          "title": "版本与额度（教学数据）",
+          "data": [
+            {
+              "版本": "HOTEL-v2",
+              "自动额度": 350,
+              "预审上限": 500
+            },
+            {
+              "版本": "HOTEL-v3",
+              "自动额度": 400,
+              "预审上限": 600
+            }
+          ],
+          "options": {
+            "x": "版本",
+            "y": "自动额度"
+          }
+        }
+      ],
+      "error": null
+    },
+    {
+      "group": "executed frontend controls",
+      "name": "agent-office:approve",
+      "passed": true,
+      "severity": "regression",
+      "actual": [
+        {
+          "title": "办公与研发助手",
+          "data": [
+            {
+              "任务": "会议排期",
+              "判定": "slot_committed_local",
+              "结果": "10:00",
+              "状态": "committed"
+            },
+            {
+              "任务": "受限研发资料",
+              "判定": "access_denied",
+              "结果": "不显示正文",
+              "状态": "restricted"
+            },
+            {
+              "任务": "公开研发资料",
+              "判定": "answered",
+              "结果": "先核对传感器校准与轴承检查记录。",
+              "状态": "answered"
+            }
+          ],
+          "options": {}
+        }
+      ],
+      "error": null
+    },
+    {
+      "group": "executed frontend controls",
+      "name": "agent-office:engineer_access",
+      "passed": true,
+      "severity": "regression",
+      "actual": [
+        {
+          "title": "办公与研发助手",
+          "data": [
+            {
+              "任务": "会议排期",
+              "判定": "slot_proposed",
+              "结果": "10:00",
+              "状态": "proposed"
+            },
+            {
+              "任务": "受限研发资料",
+              "判定": "answered",
+              "结果": "接口额定电压 3.3 V。",
+              "状态": "answered"
+            },
+            {
+              "任务": "公开研发资料",
+              "判定": "answered",
+              "结果": "先核对传感器校准与轴承检查记录。",
+              "状态": "answered"
+            }
+          ],
+          "options": {}
+        }
+      ],
+      "error": null
+    },
+    {
+      "group": "deterministic boundary",
+      "name": "agent-office repeat independent run",
+      "passed": true,
+      "severity": "regression",
+      "actual": [
+        {
+          "title": "办公与研发助手",
+          "data": [
+            {
+              "任务": "会议排期",
+              "判定": "slot_proposed",
+              "结果": "10:00",
+              "状态": "proposed"
+            },
+            {
+              "任务": "受限研发资料",
+              "判定": "access_denied",
+              "结果": "不显示正文",
+              "状态": "restricted"
+            },
+            {
+              "任务": "公开研发资料",
+              "判定": "answered",
+              "结果": "先核对传感器校准与轴承检查记录。",
+              "状态": "answered"
+            }
+          ],
+          "options": {}
+        }
+      ],
+      "error": null
+    },
+    {
+      "group": "executed frontend controls",
+      "name": "agent-routing:verified",
+      "passed": true,
+      "severity": "regression",
+      "actual": [
+        {
+          "title": "客户咨询分流",
+          "data": [
+            {
+              "消息": "O100 物流怎样？",
+              "路由": "order_status",
+              "状态": "answered",
+              "可显示事实": "已发货",
+              "下一处理人": "客户",
+              "命中意图": "order"
+            }
+          ],
+          "options": {}
+        }
+      ],
+      "error": null
+    },
+    {
+      "group": "executed frontend controls",
+      "name": "agent-routing:safety_message",
+      "passed": true,
+      "severity": "regression",
+      "actual": [
+        {
+          "title": "客户咨询分流",
+          "data": [
+            {
+              "消息": "设备冒烟，O100 物流怎样？",
+              "路由": "safety_escalate",
+              "状态": "pending_human",
+              "可显示事实": "请停止使用并联系人工安全值班组。",
+              "下一处理人": "安全值班组",
+              "命中意图": "safety、order"
+            }
+          ],
+          "options": {}
+        }
+      ],
+      "error": null
+    },
+    {
+      "group": "deterministic boundary",
+      "name": "agent-routing repeat independent run",
+      "passed": true,
+      "severity": "regression",
+      "actual": [
+        {
+          "title": "客户咨询分流",
+          "data": [
+            {
+              "消息": "O100 物流怎样？",
+              "路由": "verify_identity",
+              "状态": "clarify",
+              "可显示事实": "无",
+              "下一处理人": "客户",
+              "命中意图": "order"
+            }
+          ],
+          "options": {}
+        }
+      ],
+      "error": null
+    },
+    {
+      "group": "executed frontend controls",
+      "name": "agent-production:vibration_mm_s",
+      "passed": true,
+      "severity": "regression",
+      "actual": [
+        {
+          "title": "产线异常复核",
+          "data": [
+            {
+              "事件": "E-DEMO",
+              "路由": "monitor",
+              "状态": "closed",
+              "风险分数": 0,
+              "命中信号": "无",
+              "本地工单": "未建立",
+              "设备控制调用数": 0
+            }
+          ],
+          "options": {}
+        }
+      ],
+      "error": null
+    },
+    {
+      "group": "executed frontend controls",
+      "name": "agent-production:stale_reading",
+      "passed": true,
+      "severity": "regression",
+      "actual": [
+        {
+          "title": "产线异常复核",
+          "data": [
+            {
+              "事件": "E-DEMO",
+              "路由": "data_quality_hold",
+              "状态": "data_quality_hold",
+              "风险分数": null,
+              "命中信号": "无",
+              "本地工单": "未建立",
+              "设备控制调用数": 0
+            }
+          ],
+          "options": {}
+        }
+      ],
+      "error": null
+    },
+    {
+      "group": "executed frontend controls",
+      "name": "agent-production:interlock_trip",
+      "passed": true,
+      "severity": "regression",
+      "actual": [
+        {
+          "title": "产线异常复核",
+          "data": [
+            {
+              "事件": "E-DEMO",
+              "路由": "interlock_escalate",
+              "状态": "human_safety_response",
+              "风险分数": null,
+              "命中信号": "无",
+              "本地工单": "未建立",
+              "设备控制调用数": 0
+            }
+          ],
+          "options": {}
+        }
+      ],
+      "error": null
+    },
+    {
+      "group": "executed frontend controls",
+      "name": "agent-production:approve_ticket",
+      "passed": true,
+      "severity": "regression",
+      "actual": [
+        {
+          "title": "产线异常复核",
+          "data": [
+            {
+              "事件": "E-DEMO",
+              "路由": "warning_review",
+              "状态": "ticketed_local",
+              "风险分数": 1,
+              "命中信号": "vibration",
+              "本地工单": "T-E-DEMO",
+              "设备控制调用数": 0
+            }
+          ],
+          "options": {}
+        }
+      ],
+      "error": null
+    },
+    {
+      "group": "deterministic boundary",
+      "name": "agent-production repeat independent run",
+      "passed": true,
+      "severity": "regression",
+      "actual": [
+        {
+          "title": "产线异常复核",
+          "data": [
+            {
+              "事件": "E-DEMO",
+              "路由": "warning_review",
+              "状态": "proposed",
+              "风险分数": 1,
+              "命中信号": "vibration",
+              "本地工单": "未建立",
+              "设备控制调用数": 0
+            }
+          ],
+          "options": {}
+        }
+      ],
+      "error": null
+    },
+    {
+      "group": "executed frontend controls",
+      "name": "customer exact replay genuinely reports True",
+      "passed": true,
+      "severity": "regression",
+      "actual": "重复提交复用前次结果： True\n",
+      "error": null
+    }
+  ]
+}

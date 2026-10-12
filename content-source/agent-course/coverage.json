@@ -1,0 +1,1301 @@
+{
+  "audit_date": "2026-10-12",
+  "scope": {
+    "chapter": "docs/lecture_notes/14_ai_agent.md",
+    "website_source": "website/content-source/agent-course/14_ai_agent.md",
+    "website_toc": "website/dist/content/14_ai_agent.json",
+    "slide_source": "website/content-source/agent-course/slides.json",
+    "experiments": "website/content-source/agent-course/experiments.json",
+    "code": "src/bdm_decision/cases/week14_enterprise_agents.py",
+    "kit": "website/content-source/agent-course/kit",
+    "official_source_audit": "/private/tmp/bdm-agent-extension/sources.md"
+  },
+  "source_sha256": "0eab2bbb5a506c78797880e9515660446ddf22778eb7dc019ddb2a1524f157f4",
+  "slides_observed_count": 55,
+  "slides_status": "仅对已存在且标题精确匹配的幻灯片记录确认，缺项不填写虚构页号。",
+  "coverage_basis": "教学内容覆盖与生产实证分开；34项均可在新章或教材找到明确教学内容，所有真实部署、模型表现与企业效果仍需独立试点。",
+  "counts": {
+    "items": 34,
+    "teaching_sufficient": 34,
+    "with_practical_limit": 34,
+    "confirmed_slide_titles": 58,
+    "direct_runnable_simulation": 8,
+    "related_runnable_simulation": 9,
+    "lecture_or_document_only": 17,
+    "pending_slide_titles": 0,
+    "blocking_issues": 0
+  },
+  "validation": {
+    "independent_lab_checks": "159/159 on current source; see independent-lab-results.json",
+    "standard_tests": "48/48 using README command",
+    "portable_kit": "enterprise-agent-kit.zip: 17 entries, ZIP CRC pass; extracted to clean /private/tmp directory and both tests passed 48/48 and 159/159",
+    "chapter_sections": 15,
+    "course_experiments": 4,
+    "official_tool_entries": 7,
+    "browser_duckdb": "根代理在浏览器DuckDB运行固定日期适配SQL成功：ASM-02 OEE=0.618634、WIP=82.6667、OTD=52/62；FT-03 OEE=0.653186、OTD=48/49；WS-01 OEE=0.710373、OTD=55/59。讲义绑定参数版另经内存SQLite复算。"
+  },
+  "items": [
+    {
+      "classroom_simulation": "有关联的可运行模拟",
+      "id": "F01",
+      "group": "基础框架",
+      "topic": "Chatbot / Copilot / Agent 的边界",
+      "before_level": "部分",
+      "after_teaching_level": "教学内容充分",
+      "section_refs": [
+        {
+          "section": 2,
+          "title": "智能体架构与运行控制",
+          "anchor": "agent-architecture",
+          "source_line": 33
+        },
+        {
+          "section": 10,
+          "title": "客户咨询分流工作流",
+          "anchor": "agent-routing-case",
+          "source_line": 176
+        }
+      ],
+      "specific_content": "同一订单任务区分只答复、人工主导起草与受控工具执行，并解释责任不因聊天界面而转移。",
+      "experiment_ids": [
+        "agent-routing"
+      ],
+      "slide_titles_confirmed": [
+        "对话、协助与执行的控制差异"
+      ],
+      "slide_titles_pending": [],
+      "kit_paths": [],
+      "practical_status": "存在实操限制",
+      "practical_limit": "三模式比较是教学构型，没有对三个真实产品逐一实测。",
+      "production_claim": "未由本课程的确定性课堂模拟或官方资料对照证明真实模型/企业平台/生产性能"
+    },
+    {
+      "classroom_simulation": "仅讲义、幻灯片或方案资料",
+      "id": "F02",
+      "group": "基础框架",
+      "topic": "LLM 在 Agent 系统中的职责与限制",
+      "before_level": "部分",
+      "after_teaching_level": "教学内容充分",
+      "section_refs": [
+        {
+          "section": 2,
+          "title": "智能体架构与运行控制",
+          "anchor": "agent-architecture",
+          "source_line": 33
+        },
+        {
+          "section": 12,
+          "title": "任务评测与经济评价",
+          "anchor": "agent-evaluation",
+          "source_line": 210
+        }
+      ],
+      "specific_content": "LLM生成语言和候选动作，外部证据、确定性计算与执行回读验证结果；完整任务而非文本流畅度定义成功。",
+      "experiment_ids": [],
+      "slide_titles_confirmed": [
+        "六项功能组成一个任务系统",
+        "RAG原模型：检索与生成的组合"
+      ],
+      "slide_titles_pending": [],
+      "kit_paths": [],
+      "practical_status": "存在实操限制",
+      "practical_limit": "未运行真实LLM，非确定性和上下文限制由讲授与设计检查解释。",
+      "production_claim": "未由本课程的确定性课堂模拟或官方资料对照证明真实模型/企业平台/生产性能"
+    },
+    {
+      "classroom_simulation": "有关联的可运行模拟",
+      "id": "F03",
+      "group": "基础框架",
+      "topic": "Planning：分解、更新与终止",
+      "before_level": "部分",
+      "after_teaching_level": "教学内容充分",
+      "section_refs": [
+        {
+          "section": 2,
+          "title": "智能体架构与运行控制",
+          "anchor": "agent-architecture",
+          "source_line": 33
+        },
+        {
+          "section": 6,
+          "title": "多智能体协作与任务调度",
+          "anchor": "agent-multi",
+          "source_line": 107
+        }
+      ],
+      "specific_content": "讲解步骤依赖、观察后重规划、终止/冲突/超时；会议与产线案例给出不可交换的任务顺序。",
+      "experiment_ids": [
+        "agent-office",
+        "agent-production"
+      ],
+      "slide_titles_confirmed": [
+        "Planning：顺序由依赖与约束决定",
+        "调度：并行必须尊重证据依赖"
+      ],
+      "slide_titles_pending": [],
+      "kit_paths": [],
+      "practical_status": "存在实操限制",
+      "practical_limit": "网站以固定状态机示范顺序，未测试模型自主规划。",
+      "production_claim": "未由本课程的确定性课堂模拟或官方资料对照证明真实模型/企业平台/生产性能"
+    },
+    {
+      "classroom_simulation": "仅讲义、幻灯片或方案资料",
+      "id": "F04",
+      "group": "基础框架",
+      "topic": "Memory：会话、检查点与长期记忆",
+      "before_level": "部分",
+      "after_teaching_level": "教学内容充分",
+      "section_refs": [
+        {
+          "section": 2,
+          "title": "智能体架构与运行控制",
+          "anchor": "agent-architecture",
+          "source_line": 33
+        },
+        {
+          "section": 4,
+          "title": "Chatflow与角色任务设计",
+          "anchor": "agent-chatflow",
+          "source_line": 78
+        }
+      ],
+      "specific_content": "区分会话字段、检查点、长期知识和用户偏好，规定来源、过期、删除与最新输入优先。",
+      "experiment_ids": [],
+      "slide_titles_confirmed": [
+        "Memory：保存什么与相信什么"
+      ],
+      "slide_titles_pending": [],
+      "kit_paths": [],
+      "practical_status": "存在实操限制",
+      "practical_limit": "没有持久记忆服务或跨会话隐私实测。",
+      "production_claim": "未由本课程的确定性课堂模拟或官方资料对照证明真实模型/企业平台/生产性能"
+    },
+    {
+      "classroom_simulation": "可运行模拟直接覆盖",
+      "id": "F05",
+      "group": "基础框架",
+      "topic": "Tools：结构化调用、权限、幂等与结果验证",
+      "before_level": "充分",
+      "after_teaching_level": "教学内容充分",
+      "section_refs": [
+        {
+          "section": 2,
+          "title": "智能体架构与运行控制",
+          "anchor": "agent-architecture",
+          "source_line": 33
+        },
+        {
+          "section": 5,
+          "title": "Workflow与流程闭环",
+          "anchor": "agent-workflow",
+          "source_line": 97
+        },
+        {
+          "section": 9,
+          "title": "制度问答与办公数字员工",
+          "anchor": "agent-office-cases",
+          "source_line": 143
+        },
+        {
+          "section": 11,
+          "title": "生产线异常处理综合方案",
+          "anchor": "agent-production-case",
+          "source_line": 188
+        }
+      ],
+      "specific_content": "结构化输入、类型校验、读写权限、审批绑定、幂等键、工具结果回读和状态不变量贯穿四案。",
+      "experiment_ids": [
+        "agent-office",
+        "agent-routing",
+        "agent-production"
+      ],
+      "slide_titles_confirmed": [
+        "Tools：接口契约先于工具调用",
+        "Harness：保持状态与执行不变量"
+      ],
+      "slide_titles_pending": [],
+      "kit_paths": [],
+      "practical_status": "存在实操限制",
+      "practical_limit": "工具均为本地确定性函数，未接入企业API。",
+      "production_claim": "未由本课程的确定性课堂模拟或官方资料对照证明真实模型/企业平台/生产性能"
+    },
+    {
+      "classroom_simulation": "有关联的可运行模拟",
+      "id": "F06",
+      "group": "基础框架",
+      "topic": "Skills：可复用任务能力的定义、版本与验收",
+      "before_level": "缺失",
+      "after_teaching_level": "教学内容充分",
+      "section_refs": [
+        {
+          "section": 2,
+          "title": "智能体架构与运行控制",
+          "anchor": "agent-architecture",
+          "source_line": 33
+        },
+        {
+          "section": 8,
+          "title": "工具生态与技术选型",
+          "anchor": "agent-tools",
+          "source_line": 127
+        },
+        {
+          "section": 15,
+          "title": "综合项目与参考资料",
+          "anchor": "agent-project",
+          "source_line": 302
+        }
+      ],
+      "specific_content": "定义Skill输入/输出/范围/失败/版本/验收，并以四份可读Skill配方区分技能、证据和授权。",
+      "experiment_ids": [
+        "agent-rag",
+        "agent-office",
+        "agent-routing",
+        "agent-production"
+      ],
+      "slide_titles_confirmed": [
+        "Skills：把稳定方法变成可复用约定"
+      ],
+      "slide_titles_pending": [],
+      "kit_paths": [
+        "website/content-source/agent-course/kit/skills/policy-evidence/SKILL.md",
+        "website/content-source/agent-course/kit/skills/office-proposal/SKILL.md",
+        "website/content-source/agent-course/kit/skills/customer-routing/SKILL.md",
+        "website/content-source/agent-course/kit/skills/production-triage/SKILL.md"
+      ],
+      "practical_status": "存在实操限制",
+      "practical_limit": "Skill Markdown是中立教学配方，不是任何平台已安装或获权技能。",
+      "production_claim": "未由本课程的确定性课堂模拟或官方资料对照证明真实模型/企业平台/生产性能"
+    },
+    {
+      "classroom_simulation": "可运行模拟直接覆盖",
+      "id": "F07",
+      "group": "基础框架",
+      "topic": "Harness：上下文、状态、预算、恢复与监督",
+      "before_level": "充分",
+      "after_teaching_level": "教学内容充分",
+      "section_refs": [
+        {
+          "section": 2,
+          "title": "智能体架构与运行控制",
+          "anchor": "agent-architecture",
+          "source_line": 33
+        },
+        {
+          "section": 5,
+          "title": "Workflow与流程闭环",
+          "anchor": "agent-workflow",
+          "source_line": 97
+        },
+        {
+          "section": 6,
+          "title": "多智能体协作与任务调度",
+          "anchor": "agent-multi",
+          "source_line": 107
+        },
+        {
+          "section": 7,
+          "title": "私有化部署与安全治理",
+          "anchor": "agent-deployment",
+          "source_line": 117
+        }
+      ],
+      "specific_content": "Harness在模型外管理状态、工具、预算、审批、超时、日志、恢复；同键异载荷冲突和授权推进有演示。",
+      "experiment_ids": [
+        "agent-office",
+        "agent-production"
+      ],
+      "slide_titles_confirmed": [
+        "Harness：保持状态与执行不变量"
+      ],
+      "slide_titles_pending": [],
+      "kit_paths": [],
+      "practical_status": "存在实操限制",
+      "practical_limit": "教学内存账本不是耐久事务系统，未测真实故障恢复。",
+      "production_claim": "未由本课程的确定性课堂模拟或官方资料对照证明真实模型/企业平台/生产性能"
+    },
+    {
+      "classroom_simulation": "有关联的可运行模拟",
+      "id": "R01",
+      "group": "RAG 流程",
+      "topic": "文档解析、OCR/表格、元数据保真",
+      "before_level": "部分",
+      "after_teaching_level": "教学内容充分",
+      "section_refs": [
+        {
+          "section": 3,
+          "title": "企业RAG与可信问答",
+          "anchor": "agent-rag",
+          "source_line": 60
+        },
+        {
+          "section": 9,
+          "title": "制度问答与办公数字员工",
+          "anchor": "agent-office-cases",
+          "source_line": 143
+        }
+      ],
+      "specific_content": "解释文档结构解析、扫描件OCR、表格/单位/页码/版本/ACL保真，并以金额误读说明错误传播。",
+      "experiment_ids": [
+        "agent-rag"
+      ],
+      "slide_titles_confirmed": [
+        "解析：保留条款、表格与来源位置"
+      ],
+      "slide_titles_pending": [],
+      "kit_paths": [],
+      "practical_status": "存在实操限制",
+      "practical_limit": "问答实验使用预结构化文件，没有OCR、PDF解析流水线。",
+      "production_claim": "未由本课程的确定性课堂模拟或官方资料对照证明真实模型/企业平台/生产性能"
+    },
+    {
+      "classroom_simulation": "有关联的可运行模拟",
+      "id": "R02",
+      "group": "RAG 流程",
+      "topic": "切分策略与片段定位",
+      "before_level": "部分",
+      "after_teaching_level": "教学内容充分",
+      "section_refs": [
+        {
+          "section": 3,
+          "title": "企业RAG与可信问答",
+          "anchor": "agent-rag",
+          "source_line": 60
+        },
+        {
+          "section": 9,
+          "title": "制度问答与办公数字员工",
+          "anchor": "agent-office-cases",
+          "source_line": 143
+        }
+      ],
+      "specific_content": "按完整条款、问答段与表格切分；重叠、片段定位与重复证据风险有例。",
+      "experiment_ids": [
+        "agent-rag"
+      ],
+      "slide_titles_confirmed": [
+        "切分：保护语义条件的完整性"
+      ],
+      "slide_titles_pending": [],
+      "kit_paths": [],
+      "practical_status": "存在实操限制",
+      "practical_limit": "没有交互式切分参数面板或父子块检索实现。",
+      "production_claim": "未由本课程的确定性课堂模拟或官方资料对照证明真实模型/企业平台/生产性能"
+    },
+    {
+      "classroom_simulation": "仅讲义、幻灯片或方案资料",
+      "id": "R03",
+      "group": "RAG 流程",
+      "topic": "向量嵌入、相似度与混合检索",
+      "before_level": "充分",
+      "after_teaching_level": "教学内容充分",
+      "section_refs": [
+        {
+          "section": 3,
+          "title": "企业RAG与可信问答",
+          "anchor": "agent-rag",
+          "source_line": 60
+        }
+      ],
+      "specific_content": "给出余弦相似度、语义向量/关键词混合检索与权限先行；教材第10章含检索逐步计算。",
+      "experiment_ids": [],
+      "slide_titles_confirmed": [
+        "向量、词法与结构化查询"
+      ],
+      "slide_titles_pending": [],
+      "kit_paths": [],
+      "practical_status": "存在实操限制",
+      "practical_limit": "当前四案例用固定关键词，不建立向量索引或调权重。",
+      "production_claim": "未由本课程的确定性课堂模拟或官方资料对照证明真实模型/企业平台/生产性能"
+    },
+    {
+      "classroom_simulation": "仅讲义、幻灯片或方案资料",
+      "id": "R04",
+      "group": "RAG 流程",
+      "topic": "Rerank：候选重排与证据筛选",
+      "before_level": "部分",
+      "after_teaching_level": "教学内容充分",
+      "section_refs": [
+        {
+          "section": 3,
+          "title": "企业RAG与可信问答",
+          "anchor": "agent-rag",
+          "source_line": 60
+        },
+        {
+          "section": 12,
+          "title": "任务评测与经济评价",
+          "anchor": "agent-evaluation",
+          "source_line": 210
+        }
+      ],
+      "specific_content": "重排输入为权限过滤后的候选，区分初检召回与二阶段排序、成本和引用核验。",
+      "experiment_ids": [],
+      "slide_titles_confirmed": [
+        "Rerank：在候选集中重新排序"
+      ],
+      "slide_titles_pending": [],
+      "kit_paths": [],
+      "practical_status": "存在实操限制",
+      "practical_limit": "没有真实Reranker调用或重排前后量化实验。",
+      "production_claim": "未由本课程的确定性课堂模拟或官方资料对照证明真实模型/企业平台/生产性能"
+    },
+    {
+      "classroom_simulation": "仅讲义、幻灯片或方案资料",
+      "id": "R05",
+      "group": "RAG 流程",
+      "topic": "GraphRAG：实体关系检索与文本证据结合",
+      "before_level": "缺失",
+      "after_teaching_level": "教学内容充分",
+      "section_refs": [
+        {
+          "section": 3,
+          "title": "企业RAG与可信问答",
+          "anchor": "agent-rag",
+          "source_line": 60
+        },
+        {
+          "section": 15,
+          "title": "综合项目与参考资料",
+          "anchor": "agent-project",
+          "source_line": 302
+        }
+      ],
+      "specific_content": "说明实体关系、社区摘要、局部/全局查询、原文回链、ACL继承和图抽取错误传播。",
+      "experiment_ids": [],
+      "slide_titles_confirmed": [
+        "GraphRAG：关系追踪与主题汇总"
+      ],
+      "slide_titles_pending": [],
+      "kit_paths": [],
+      "practical_status": "存在实操限制",
+      "practical_limit": "没有图构建、实体消歧或GraphRAG运行面板；必须与局部检索基线再比较。",
+      "production_claim": "未由本课程的确定性课堂模拟或官方资料对照证明真实模型/企业平台/生产性能"
+    },
+    {
+      "classroom_simulation": "可运行模拟直接覆盖",
+      "id": "R06",
+      "group": "RAG 流程",
+      "topic": "引用、冲突、有效期与检索评测",
+      "before_level": "部分",
+      "after_teaching_level": "教学内容充分",
+      "section_refs": [
+        {
+          "section": 3,
+          "title": "企业RAG与可信问答",
+          "anchor": "agent-rag",
+          "source_line": 60
+        },
+        {
+          "section": 9,
+          "title": "制度问答与办公数字员工",
+          "anchor": "agent-office-cases",
+          "source_line": 143
+        },
+        {
+          "section": 12,
+          "title": "任务评测与经济评价",
+          "anchor": "agent-evaluation",
+          "source_line": 210
+        }
+      ],
+      "specific_content": "制度版本/有效期/冲突/拒答与引用证据完整展示；定义Recall@k和引用正确率。",
+      "experiment_ids": [
+        "agent-rag"
+      ],
+      "slide_titles_confirmed": [
+        "RAG：将外部证据引入回答",
+        "Rerank：在候选集中重新排序"
+      ],
+      "slide_titles_pending": [],
+      "kit_paths": [],
+      "practical_status": "存在实操限制",
+      "practical_limit": "本地规则的正确引用不等于真实RAG检索质量。",
+      "production_claim": "未由本课程的确定性课堂模拟或官方资料对照证明真实模型/企业平台/生产性能"
+    },
+    {
+      "classroom_simulation": "有关联的可运行模拟",
+      "id": "O01",
+      "group": "编排模式",
+      "topic": "Chatflow 与 Workflow 的区别",
+      "before_level": "缺失",
+      "after_teaching_level": "教学内容充分",
+      "section_refs": [
+        {
+          "section": 4,
+          "title": "Chatflow与角色任务设计",
+          "anchor": "agent-chatflow",
+          "source_line": 78
+        },
+        {
+          "section": 5,
+          "title": "Workflow与流程闭环",
+          "anchor": "agent-workflow",
+          "source_line": 97
+        },
+        {
+          "section": 10,
+          "title": "客户咨询分流工作流",
+          "anchor": "agent-routing-case",
+          "source_line": 176
+        }
+      ],
+      "specific_content": "用触发、状态、失败与交付物表比较Chatflow和Workflow，并示范对话入口调用业务流程。",
+      "experiment_ids": [
+        "agent-routing"
+      ],
+      "slide_titles_confirmed": [
+        "Chatflow：会话状态支持逐轮澄清",
+        "Workflow：完成条件属于业务状态",
+        "Chatflow与Workflow如何组合"
+      ],
+      "slide_titles_pending": [],
+      "kit_paths": [],
+      "practical_status": "存在实操限制",
+      "practical_limit": "术语作为平台设计模式讲授，未声称跨平台标准或可直接导入配置。",
+      "production_claim": "未由本课程的确定性课堂模拟或官方资料对照证明真实模型/企业平台/生产性能"
+    },
+    {
+      "classroom_simulation": "有关联的可运行模拟",
+      "id": "O02",
+      "group": "编排模式",
+      "topic": "固定工作流与自主 Agent 的边界",
+      "before_level": "充分",
+      "after_teaching_level": "教学内容充分",
+      "section_refs": [
+        {
+          "section": 2,
+          "title": "智能体架构与运行控制",
+          "anchor": "agent-architecture",
+          "source_line": 33
+        },
+        {
+          "section": 5,
+          "title": "Workflow与流程闭环",
+          "anchor": "agent-workflow",
+          "source_line": 97
+        },
+        {
+          "section": 6,
+          "title": "多智能体协作与任务调度",
+          "anchor": "agent-multi",
+          "source_line": 107
+        }
+      ],
+      "specific_content": "固定分支与模型候选步骤的边界、人工批准及外部执行确认均有同任务说明。",
+      "experiment_ids": [
+        "agent-office",
+        "agent-routing"
+      ],
+      "slide_titles_confirmed": [
+        "对话、协助与执行的控制差异",
+        "Workflow：完成条件属于业务状态"
+      ],
+      "slide_titles_pending": [],
+      "kit_paths": [],
+      "practical_status": "存在实操限制",
+      "practical_limit": "课堂规则模拟不代表自主Agent已连接业务工具。",
+      "production_claim": "未由本课程的确定性课堂模拟或官方资料对照证明真实模型/企业平台/生产性能"
+    },
+    {
+      "classroom_simulation": "有关联的可运行模拟",
+      "id": "O03",
+      "group": "编排模式",
+      "topic": "多智能体分工、调度、共享状态与冲突",
+      "before_level": "缺失",
+      "after_teaching_level": "教学内容充分",
+      "section_refs": [
+        {
+          "section": 6,
+          "title": "多智能体协作与任务调度",
+          "anchor": "agent-multi",
+          "source_line": 107
+        },
+        {
+          "section": 11,
+          "title": "生产线异常处理综合方案",
+          "anchor": "agent-production-case",
+          "source_line": 188
+        },
+        {
+          "section": 15,
+          "title": "综合项目与参考资料",
+          "anchor": "agent-project",
+          "source_line": 302
+        }
+      ],
+      "specific_content": "检索/分析/核查/控制角色、依赖图、并行条件、冲突升级与单Agent基线成本比较。",
+      "experiment_ids": [
+        "agent-production"
+      ],
+      "slide_titles_confirmed": [
+        "多角色协作：由职责差异决定分工",
+        "管理者调用与控制权移交",
+        "调度：并行必须尊重证据依赖"
+      ],
+      "slide_titles_pending": [],
+      "kit_paths": [
+        "website/content-source/agent-course/kit/workflow-contract.json"
+      ],
+      "practical_status": "存在实操限制",
+      "practical_limit": "多角色职责为流程说明，网页没有真实多模型调度。",
+      "production_claim": "未由本课程的确定性课堂模拟或官方资料对照证明真实模型/企业平台/生产性能"
+    },
+    {
+      "classroom_simulation": "仅讲义、幻灯片或方案资料",
+      "id": "G01",
+      "group": "部署与治理",
+      "topic": "私有部署架构、数据流和容量",
+      "before_level": "部分",
+      "after_teaching_level": "教学内容充分",
+      "section_refs": [
+        {
+          "section": 7,
+          "title": "私有化部署与安全治理",
+          "anchor": "agent-deployment",
+          "source_line": 117
+        },
+        {
+          "section": 13,
+          "title": "从场景筛选到规模化推广",
+          "anchor": "agent-rollout",
+          "source_line": 235
+        },
+        {
+          "section": 15,
+          "title": "综合项目与参考资料",
+          "anchor": "agent-project",
+          "source_line": 302
+        }
+      ],
+      "specific_content": "私有化分层、数据流/网络/密钥/容量/备份与责任；另有部署检查表和中立工作流契约。",
+      "experiment_ids": [],
+      "slide_titles_confirmed": [
+        "私有化：先画数据与调用的边界"
+      ],
+      "slide_titles_pending": [],
+      "kit_paths": [
+        "website/content-source/agent-course/kit/deployment-checklist.md",
+        "website/content-source/agent-course/kit/workflow-contract.json"
+      ],
+      "practical_status": "存在实操限制",
+      "practical_limit": "未部署内网模型、向量服务或企业业务系统，容量未在真实负载下测试。",
+      "production_claim": "未由本课程的确定性课堂模拟或官方资料对照证明真实模型/企业平台/生产性能"
+    },
+    {
+      "classroom_simulation": "有关联的可运行模拟",
+      "id": "G02",
+      "group": "部署与治理",
+      "topic": "权限、安全、提示注入、审计和人工批准",
+      "before_level": "充分",
+      "after_teaching_level": "教学内容充分",
+      "section_refs": [
+        {
+          "section": 2,
+          "title": "智能体架构与运行控制",
+          "anchor": "agent-architecture",
+          "source_line": 33
+        },
+        {
+          "section": 7,
+          "title": "私有化部署与安全治理",
+          "anchor": "agent-deployment",
+          "source_line": 117
+        },
+        {
+          "section": 9,
+          "title": "制度问答与办公数字员工",
+          "anchor": "agent-office-cases",
+          "source_line": 143
+        },
+        {
+          "section": 10,
+          "title": "客户咨询分流工作流",
+          "anchor": "agent-routing-case",
+          "source_line": 176
+        },
+        {
+          "section": 11,
+          "title": "生产线异常处理综合方案",
+          "anchor": "agent-production-case",
+          "source_line": 188
+        }
+      ],
+      "specific_content": "文档ACL、工具/对象权限、提示注入不可信边界、审计、人审与PLC只读隔离。",
+      "experiment_ids": [
+        "agent-rag",
+        "agent-routing",
+        "agent-production"
+      ],
+      "slide_titles_confirmed": [
+        "治理：读取、写入与审批分层实施",
+        "上线前检查：故障也属于业务输入"
+      ],
+      "slide_titles_pending": [],
+      "kit_paths": [
+        "website/content-source/agent-course/kit/deployment-checklist.md"
+      ],
+      "practical_status": "存在实操限制",
+      "practical_limit": "课堂角色与审批标志是输入字段，不是生产身份认证；真实部署仍须独立验证身份、对象权限和业务审批。",
+      "production_claim": "未由本课程的确定性课堂模拟或官方资料对照证明真实模型/企业平台/生产性能"
+    },
+    {
+      "classroom_simulation": "仅讲义、幻灯片或方案资料",
+      "id": "G03",
+      "group": "部署与治理",
+      "topic": "完整任务可靠性、成本与经营效果",
+      "before_level": "充分",
+      "after_teaching_level": "教学内容充分",
+      "section_refs": [
+        {
+          "section": 12,
+          "title": "任务评测与经济评价",
+          "anchor": "agent-evaluation",
+          "source_line": 210
+        },
+        {
+          "section": 13,
+          "title": "从场景筛选到规模化推广",
+          "anchor": "agent-rollout",
+          "source_line": 235
+        },
+        {
+          "section": 14,
+          "title": "AI问数与NL2SQL审计",
+          "anchor": "agent-nl2sql",
+          "source_line": 254
+        }
+      ],
+      "specific_content": "任务成功率链式计算、约束违规、单位成功任务成本、对照评测与业务因果边界。",
+      "experiment_ids": [],
+      "slide_titles_confirmed": [
+        "评测单位：一个完整任务",
+        "多步骤可靠性：条件成功率相乘",
+        "经济评价：按确认成功任务计成本"
+      ],
+      "slide_titles_pending": [],
+      "kit_paths": [],
+      "practical_status": "存在实操限制",
+      "practical_limit": "没有真实模型成本、业务对照或生产效果数据。",
+      "production_claim": "未由本课程的确定性课堂模拟或官方资料对照证明真实模型/企业平台/生产性能"
+    },
+    {
+      "classroom_simulation": "可运行模拟直接覆盖",
+      "id": "C01",
+      "group": "四类案例",
+      "topic": "企业制度问答",
+      "before_level": "部分",
+      "after_teaching_level": "教学内容充分",
+      "section_refs": [
+        {
+          "section": 9,
+          "title": "制度问答与办公数字员工",
+          "anchor": "agent-office-cases",
+          "source_line": 143
+        },
+        {
+          "section": 12,
+          "title": "任务评测与经济评价",
+          "anchor": "agent-evaluation",
+          "source_line": 210
+        }
+      ],
+      "specific_content": "虚构制度的背景、数据、输入/输出、权限、版本、失效、冲突、手算与人工预审完整呈现。",
+      "experiment_ids": [
+        "agent-rag"
+      ],
+      "slide_titles_confirmed": [
+        "案例一：制度问答的完整任务",
+        "住宿算例：判断与批准分开",
+        "制度问答：正确地拒答与转交"
+      ],
+      "slide_titles_pending": [],
+      "kit_paths": [],
+      "practical_status": "存在实操限制",
+      "practical_limit": "本地关键词和规则模拟，不运行真实RAG或LLM；住宿连续金额区间与发票地域规则已修复并测试。",
+      "production_claim": "未由本课程的确定性课堂模拟或官方资料对照证明真实模型/企业平台/生产性能"
+    },
+    {
+      "classroom_simulation": "可运行模拟直接覆盖",
+      "id": "C02",
+      "group": "四类案例",
+      "topic": "办公数字员工",
+      "before_level": "缺失",
+      "after_teaching_level": "教学内容充分",
+      "section_refs": [
+        {
+          "section": 9,
+          "title": "制度问答与办公数字员工",
+          "anchor": "agent-office-cases",
+          "source_line": 143
+        },
+        {
+          "section": 12,
+          "title": "任务评测与经济评价",
+          "anchor": "agent-evaluation",
+          "source_line": 210
+        }
+      ],
+      "specific_content": "会议槽交集与组织者审批，研发资料的发布/权限/版本筛选；含手算与失败分支。",
+      "experiment_ids": [
+        "agent-office"
+      ],
+      "slide_titles_confirmed": [
+        "会议排期：交集定义共同可用性",
+        "排期审批：必须绑定具体提案",
+        "研发查询：批准状态优先于版本号"
+      ],
+      "slide_titles_pending": [],
+      "kit_paths": [],
+      "practical_status": "存在实操限制",
+      "practical_limit": "无真实日历、研发库或代码提交。",
+      "production_claim": "未由本课程的确定性课堂模拟或官方资料对照证明真实模型/企业平台/生产性能"
+    },
+    {
+      "classroom_simulation": "可运行模拟直接覆盖",
+      "id": "C03",
+      "group": "四类案例",
+      "topic": "客户分流",
+      "before_level": "缺失",
+      "after_teaching_level": "教学内容充分",
+      "section_refs": [
+        {
+          "section": 10,
+          "title": "客户咨询分流工作流",
+          "anchor": "agent-routing-case",
+          "source_line": 176
+        },
+        {
+          "section": 12,
+          "title": "任务评测与经济评价",
+          "anchor": "agent-evaluation",
+          "source_line": 210
+        }
+      ],
+      "specific_content": "安全>退货>订单>规格的路由，身份/订单归属、人工退款、幂等与手算反例。",
+      "experiment_ids": [
+        "agent-routing"
+      ],
+      "slide_titles_confirmed": [
+        "咨询优先级：安全先于便利",
+        "订单隐私：身份与归属同时成立",
+        "退货审核、产品答复与重复请求"
+      ],
+      "slide_titles_pending": [],
+      "kit_paths": [],
+      "practical_status": "存在实操限制",
+      "practical_limit": "词典分流与内存订单，非真实客服工单或身份认证。",
+      "production_claim": "未由本课程的确定性课堂模拟或官方资料对照证明真实模型/企业平台/生产性能"
+    },
+    {
+      "classroom_simulation": "可运行模拟直接覆盖",
+      "id": "C04",
+      "group": "四类案例",
+      "topic": "产线异常诊断与处置",
+      "before_level": "部分",
+      "after_teaching_level": "教学内容充分",
+      "section_refs": [
+        {
+          "section": 11,
+          "title": "生产线异常处理综合方案",
+          "anchor": "agent-production-case",
+          "source_line": 188
+        },
+        {
+          "section": 12,
+          "title": "任务评测与经济评价",
+          "anchor": "agent-evaluation",
+          "source_line": 210
+        }
+      ],
+      "specific_content": "联锁优先、传感器时效、三项风险分数、草稿/本地审批、设备控制零调用与手算轨迹。",
+      "experiment_ids": [
+        "agent-production"
+      ],
+      "slide_titles_confirmed": [
+        "先检查联锁，再判断资料可用性",
+        "规则评分：异常条件的计数",
+        "异常算例：三项命中仍只形成草稿",
+        "工单幂等：回放须保持请求一致"
+      ],
+      "slide_titles_pending": [],
+      "kit_paths": [],
+      "practical_status": "存在实操限制",
+      "practical_limit": "完全虚构阈值；未接PLC/MES/CMMS，不能作为安全或生产性能证明。",
+      "production_claim": "未由本课程的确定性课堂模拟或官方资料对照证明真实模型/企业平台/生产性能"
+    },
+    {
+      "classroom_simulation": "仅讲义、幻灯片或方案资料",
+      "id": "L01",
+      "group": "落地路径",
+      "topic": "场景筛选与优先级",
+      "before_level": "部分",
+      "after_teaching_level": "教学内容充分",
+      "section_refs": [
+        {
+          "section": 1,
+          "title": "学习路径与业务任务",
+          "anchor": "agent-route",
+          "source_line": 7
+        },
+        {
+          "section": 13,
+          "title": "从场景筛选到规模化推广",
+          "anchor": "agent-rollout",
+          "source_line": 235
+        }
+      ],
+      "specific_content": "用价值、资料、标准化、失败损失与权限难度筛场景，比较只读、草稿与写入风险。",
+      "experiment_ids": [],
+      "slide_titles_confirmed": [
+        "任务契约如何消除歧义",
+        "推广路径：阶段有证据门槛"
+      ],
+      "slide_titles_pending": [],
+      "kit_paths": [],
+      "practical_status": "存在实操限制",
+      "practical_limit": "没有实际企业候选项目打分及预算批准。",
+      "production_claim": "未由本课程的确定性课堂模拟或官方资料对照证明真实模型/企业平台/生产性能"
+    },
+    {
+      "classroom_simulation": "可运行模拟直接覆盖",
+      "id": "L02",
+      "group": "落地路径",
+      "topic": "MVP 与试点验收",
+      "before_level": "部分",
+      "after_teaching_level": "教学内容充分",
+      "section_refs": [
+        {
+          "section": 12,
+          "title": "任务评测与经济评价",
+          "anchor": "agent-evaluation",
+          "source_line": 210
+        },
+        {
+          "section": 13,
+          "title": "从场景筛选到规模化推广",
+          "anchor": "agent-rollout",
+          "source_line": 235
+        },
+        {
+          "section": 15,
+          "title": "综合项目与参考资料",
+          "anchor": "agent-project",
+          "source_line": 302
+        }
+      ],
+      "specific_content": "MVP任务契约、固定标准答案、故障注入、责任人与灰度门槛；综合项目有验收量规。",
+      "experiment_ids": [
+        "agent-rag",
+        "agent-office",
+        "agent-routing",
+        "agent-production"
+      ],
+      "slide_titles_confirmed": [
+        "上线前检查：故障也属于业务输入"
+      ],
+      "slide_titles_pending": [],
+      "kit_paths": [
+        "website/content-source/agent-course/final_project.md"
+      ],
+      "practical_status": "存在实操限制",
+      "practical_limit": "通过课堂标准样本仅验证模拟器规则。",
+      "production_claim": "未由本课程的确定性课堂模拟或官方资料对照证明真实模型/企业平台/生产性能"
+    },
+    {
+      "classroom_simulation": "仅讲义、幻灯片或方案资料",
+      "id": "L03",
+      "group": "落地路径",
+      "topic": "评测、灰度与回滚",
+      "before_level": "部分",
+      "after_teaching_level": "教学内容充分",
+      "section_refs": [
+        {
+          "section": 12,
+          "title": "任务评测与经济评价",
+          "anchor": "agent-evaluation",
+          "source_line": 210
+        },
+        {
+          "section": 13,
+          "title": "从场景筛选到规模化推广",
+          "anchor": "agent-rollout",
+          "source_line": 235
+        }
+      ],
+      "specific_content": "离线/沙盒/影子/灰度/扩展阶段，明确禁行、回滚、保留日志和对照指标。",
+      "experiment_ids": [],
+      "slide_titles_confirmed": [
+        "推广路径：阶段有证据门槛",
+        "影子运行与灰度试点的区别",
+        "回滚：保留证据，恢复可用流程"
+      ],
+      "slide_titles_pending": [],
+      "kit_paths": [
+        "website/content-source/agent-course/kit/deployment-checklist.md"
+      ],
+      "practical_status": "存在实操限制",
+      "practical_limit": "未实施经授权的真实影子或灰度试点。",
+      "production_claim": "未由本课程的确定性课堂模拟或官方资料对照证明真实模型/企业平台/生产性能"
+    },
+    {
+      "classroom_simulation": "仅讲义、幻灯片或方案资料",
+      "id": "L04",
+      "group": "落地路径",
+      "topic": "规模化运维与持续治理",
+      "before_level": "部分",
+      "after_teaching_level": "教学内容充分",
+      "section_refs": [
+        {
+          "section": 7,
+          "title": "私有化部署与安全治理",
+          "anchor": "agent-deployment",
+          "source_line": 117
+        },
+        {
+          "section": 13,
+          "title": "从场景筛选到规模化推广",
+          "anchor": "agent-rollout",
+          "source_line": 235
+        },
+        {
+          "section": 15,
+          "title": "综合项目与参考资料",
+          "anchor": "agent-project",
+          "source_line": 302
+        }
+      ],
+      "specific_content": "模型/知识/规则/工具版本、监控、职责、备份与新业务范围重新验收。",
+      "experiment_ids": [],
+      "slide_titles_confirmed": [
+        "回滚：保留证据，恢复可用流程"
+      ],
+      "slide_titles_pending": [],
+      "kit_paths": [
+        "website/content-source/agent-course/kit/deployment-checklist.md"
+      ],
+      "practical_status": "存在实操限制",
+      "practical_limit": "部署运维为方案与清单，未积累生产运行记录。",
+      "production_claim": "未由本课程的确定性课堂模拟或官方资料对照证明真实模型/企业平台/生产性能"
+    },
+    {
+      "classroom_simulation": "仅讲义、幻灯片或方案资料",
+      "id": "T01",
+      "group": "工具生态",
+      "topic": "OpenClaw",
+      "before_level": "缺失",
+      "after_teaching_level": "教学内容充分",
+      "section_refs": [
+        {
+          "section": 8,
+          "title": "工具生态与技术选型",
+          "anchor": "agent-tools",
+          "source_line": 127
+        }
+      ],
+      "specific_content": "OpenClaw的Gateway、会话与工具入口及可信操作者边界，使用官方文档链接。",
+      "experiment_ids": [],
+      "slide_titles_confirmed": [
+        "OpenClaw与Hermes：持续任务入口"
+      ],
+      "slide_titles_pending": [],
+      "kit_paths": [],
+      "practical_status": "存在实操限制",
+      "practical_limit": "中立产品定位，没有安装与配置演示；不能据此断言适于敌对多租户。",
+      "production_claim": "未由本课程的确定性课堂模拟或官方资料对照证明真实模型/企业平台/生产性能"
+    },
+    {
+      "classroom_simulation": "仅讲义、幻灯片或方案资料",
+      "id": "T02",
+      "group": "工具生态",
+      "topic": "Hermes Agent",
+      "before_level": "缺失",
+      "after_teaching_level": "教学内容充分",
+      "section_refs": [
+        {
+          "section": 8,
+          "title": "工具生态与技术选型",
+          "anchor": "agent-tools",
+          "source_line": 127
+        }
+      ],
+      "specific_content": "Hermes Agent的入口、记忆、Skills与分层安全控制，使用官方文档链接。",
+      "experiment_ids": [],
+      "slide_titles_confirmed": [
+        "OpenClaw与Hermes：持续任务入口"
+      ],
+      "slide_titles_pending": [],
+      "kit_paths": [],
+      "practical_status": "存在实操限制",
+      "practical_limit": "没有安装、沙箱或企业权限实测。",
+      "production_claim": "未由本课程的确定性课堂模拟或官方资料对照证明真实模型/企业平台/生产性能"
+    },
+    {
+      "classroom_simulation": "仅讲义、幻灯片或方案资料",
+      "id": "T03",
+      "group": "工具生态",
+      "topic": "Claude Code",
+      "before_level": "缺失",
+      "after_teaching_level": "教学内容充分",
+      "section_refs": [
+        {
+          "section": 8,
+          "title": "工具生态与技术选型",
+          "anchor": "agent-tools",
+          "source_line": 127
+        }
+      ],
+      "specific_content": "Claude Code的代码任务、运行权限与shell沙箱边界，使用官方文档链接。",
+      "experiment_ids": [],
+      "slide_titles_confirmed": [
+        "Claude Code、Codex与TRAE"
+      ],
+      "slide_titles_pending": [],
+      "kit_paths": [],
+      "practical_status": "存在实操限制",
+      "practical_limit": "没有产品试用；不能泛化shell沙箱到文件工具、MCP和hooks。",
+      "production_claim": "未由本课程的确定性课堂模拟或官方资料对照证明真实模型/企业平台/生产性能"
+    },
+    {
+      "classroom_simulation": "仅讲义、幻灯片或方案资料",
+      "id": "T04",
+      "group": "工具生态",
+      "topic": "Codex",
+      "before_level": "缺失",
+      "after_teaching_level": "教学内容充分",
+      "section_refs": [
+        {
+          "section": 8,
+          "title": "工具生态与技术选型",
+          "anchor": "agent-tools",
+          "source_line": 127
+        }
+      ],
+      "specific_content": "Codex的代码任务Harness、沙箱与审批区别，使用官方文档链接。",
+      "experiment_ids": [],
+      "slide_titles_confirmed": [
+        "Claude Code、Codex与TRAE"
+      ],
+      "slide_titles_pending": [],
+      "kit_paths": [],
+      "practical_status": "存在实操限制",
+      "practical_limit": "没有在课程网站集成或量化评测Codex。",
+      "production_claim": "未由本课程的确定性课堂模拟或官方资料对照证明真实模型/企业平台/生产性能"
+    },
+    {
+      "classroom_simulation": "仅讲义、幻灯片或方案资料",
+      "id": "T05",
+      "group": "工具生态",
+      "topic": "Trae",
+      "before_level": "缺失",
+      "after_teaching_level": "教学内容充分",
+      "section_refs": [
+        {
+          "section": 8,
+          "title": "工具生态与技术选型",
+          "anchor": "agent-tools",
+          "source_line": 127
+        }
+      ],
+      "specific_content": "TRAE IDE/Work产品形态与命令控制的官方资料，提示核对当前版本与操作系统。",
+      "experiment_ids": [],
+      "slide_titles_confirmed": [
+        "Claude Code、Codex与TRAE"
+      ],
+      "slide_titles_pending": [],
+      "kit_paths": [],
+      "practical_status": "存在实操限制",
+      "practical_limit": "版本和平台能力可变化；没有现场安装实测。",
+      "production_claim": "未由本课程的确定性课堂模拟或官方资料对照证明真实模型/企业平台/生产性能"
+    },
+    {
+      "classroom_simulation": "仅讲义、幻灯片或方案资料",
+      "id": "T06",
+      "group": "工具生态",
+      "topic": "Dify",
+      "before_level": "缺失",
+      "after_teaching_level": "教学内容充分",
+      "section_refs": [
+        {
+          "section": 8,
+          "title": "工具生态与技术选型",
+          "anchor": "agent-tools",
+          "source_line": 127
+        }
+      ],
+      "specific_content": "Dify的Chatflow/Workflow、Docker Compose自部署路径，使用官方文档链接。",
+      "experiment_ids": [],
+      "slide_titles_confirmed": [
+        "Dify与Coze：显式编排应用"
+      ],
+      "slide_titles_pending": [],
+      "kit_paths": [],
+      "practical_status": "存在实操限制",
+      "practical_limit": "中立契约不可直接导入Dify，尚未配置真实应用或模型。",
+      "production_claim": "未由本课程的确定性课堂模拟或官方资料对照证明真实模型/企业平台/生产性能"
+    },
+    {
+      "classroom_simulation": "仅讲义、幻灯片或方案资料",
+      "id": "T07",
+      "group": "工具生态",
+      "topic": "Coze",
+      "before_level": "缺失",
+      "after_teaching_level": "教学内容充分",
+      "section_refs": [
+        {
+          "section": 8,
+          "title": "工具生态与技术选型",
+          "anchor": "agent-tools",
+          "source_line": 127
+        }
+      ],
+      "specific_content": "Coze可视化节点、对话流与开源Studio边界，使用官方文档链接。",
+      "experiment_ids": [],
+      "slide_titles_confirmed": [
+        "Dify与Coze：显式编排应用"
+      ],
+      "slide_titles_pending": [],
+      "kit_paths": [],
+      "practical_status": "存在实操限制",
+      "practical_limit": "Coze商业平台与开源Studio不能视为同功能；没有真实应用试用。",
+      "production_claim": "未由本课程的确定性课堂模拟或官方资料对照证明真实模型/企业平台/生产性能"
+    }
+  ],
+  "issues": [
+    {
+      "priority": "P2",
+      "kind": "课堂模拟范围",
+      "path": "website/content-source/agent-course/experiments.json",
+      "where": "四个实验的代码和参数",
+      "evidence": "实验操作的是本地字典与规则；role、verified、approval_by 是输入值而非企业身份系统的认证结果，不能据此证明真实权限控制。",
+      "suggestion": "继续保持讲义与界面的“确定性模拟/无外部调用”说明，真实试点另验身份、工具授权和外部状态。"
+    },
+    {
+      "priority": "P2",
+      "kind": "SQL双版本边界",
+      "path": "website/scripts/build-agent-extension.mjs",
+      "where": "参数替换与浏览器 SQL 代码片段",
+      "evidence": "讲义展示 :start_date/:end_date 绑定参数；网页运行按钮用 2026-04-03/06 字面量替代，浏览器注册课程CSV为DuckDB视图。两者不是同一可直接复制即运行的SQL文本。",
+      "suggestion": "保留并显式展示“讲义为参数化候选、浏览器为固定样本运行适配”的注释；生产查询只能绑定参数及只读权限。"
+    }
+  ],
+  "resolved_findings": [
+    {
+      "kind": "住宿区间摘要",
+      "evidence": "HOTEL-v2/v3摘要现使用“超过350/400且不超过500/600”，与350.01/400.01数值分支一致。"
+    },
+    {
+      "kind": "发票地域",
+      "evidence": "INVOICE-v1已限定domestic，international返回无有效证据。"
+    },
+    {
+      "kind": "制度审批示意",
+      "evidence": "未绑定的approve_policy已从当前模块删除；制度实验停在待经理预审。"
+    },
+    {
+      "kind": "方案包复现命令",
+      "evidence": "tests/test_enterprise_agent_teaching.py已存在，README命令实际执行48/48通过；独立不变量检查159/159通过。"
+    }
+  ],
+  "unresolved_blockers": []
+}

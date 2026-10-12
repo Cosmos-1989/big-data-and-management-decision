@@ -1,0 +1,131 @@
+{
+  "schema": "teaching.workflow.v1",
+  "purpose": "生产线异常的中立工作流契约；不是某产品的可直接导入配置",
+  "external_actions": "none",
+  "task_identity": [
+    "task",
+    "principal",
+    "event_id",
+    "object_version",
+    "request_fingerprint"
+  ],
+  "nodes": [
+    {
+      "id": "receive",
+      "inputs": [
+        "event_id",
+        "machine_id",
+        "lot_id"
+      ],
+      "outputs": [
+        "validated_event"
+      ],
+      "failure": "invalid_input"
+    },
+    {
+      "id": "interlock",
+      "inputs": [
+        "interlock_trip"
+      ],
+      "outputs": [
+        "human_safety_response",
+        "continue_read_only"
+      ],
+      "rule": "strict boolean; true优先现场升级"
+    },
+    {
+      "id": "measurements",
+      "inputs": [
+        "vibration_mm_s",
+        "temperature_c",
+        "sensor_age_s",
+        "quality_flag"
+      ],
+      "outputs": [
+        "valid_facts"
+      ],
+      "failure": "data_quality_hold"
+    },
+    {
+      "id": "triage",
+      "inputs": [
+        "valid_facts"
+      ],
+      "outputs": [
+        "matched_signals",
+        "risk_score",
+        "route"
+      ],
+      "rule": "0监测;1警示复核;2或3高等级复核，分数不是风险概率"
+    },
+    {
+      "id": "review",
+      "inputs": [
+        "proposal",
+        "evidence",
+        "object_version"
+      ],
+      "outputs": [
+        "bound_approval",
+        "rejected"
+      ],
+      "actor": "maintenance_lead"
+    },
+    {
+      "id": "ticket",
+      "inputs": [
+        "bound_approval",
+        "idempotency_key"
+      ],
+      "outputs": [
+        "ticket_id"
+      ],
+      "implementation": "本地教学账本；生产对接需独立适配与授权"
+    },
+    {
+      "id": "verify",
+      "inputs": [
+        "ticket_id"
+      ],
+      "outputs": [
+        "confirmed_state",
+        "audit_record"
+      ],
+      "invariant": "设备控制调用数=0"
+    }
+  ],
+  "dependencies": [
+    [
+      "receive",
+      "interlock"
+    ],
+    [
+      "interlock",
+      "measurements"
+    ],
+    [
+      "measurements",
+      "triage"
+    ],
+    [
+      "triage",
+      "review"
+    ],
+    [
+      "review",
+      "ticket"
+    ],
+    [
+      "ticket",
+      "verify"
+    ]
+  ],
+  "roles": {
+    "manager": "维护任务规格与依赖",
+    "retrieval": "返回有权限的SOP与事实",
+    "analysis": "计算异常条件命中",
+    "reviewer": "核对证据与约束",
+    "human": "批准具体调查工单"
+  },
+  "rollback": "停止新任务，保留已提交状态，恢复人工流程；不删除审计"
+}

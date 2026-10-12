@@ -3,11 +3,12 @@ import katex from '../dist/vendor/katex/katex.mjs';
 
 const read = path => JSON.parse(readFileSync(new URL(path, import.meta.url), 'utf8'));
 const decks = read('../dist/content/lecture-slides.json');
-const chapters = [
+const requiredChapters = [
   '01_intro', '02_enterprise_data_model', '03_sql_kpi', '04_data_quality',
   '05_statistics_dashboard', '06_ab_testing', '07_prediction', '08_causality',
-  '09_optimization', '10_process_mining'
+  '09_optimization', '10_process_mining', '14_ai_agent'
 ];
+const chapters = Object.keys(decks);
 const macros = {
   '\\E':'\\mathbb E', '\\Prob':'\\mathbb P', '\\R':'\\mathbb R',
   '\\N':'\\mathbb N', '\\eps':'\\varepsilon', '\\dd':'\\,\\mathrm d',
@@ -17,6 +18,7 @@ const macros = {
   '\\norm':'\\left\\lVert #1\\right\\rVert'
 };
 const errors = [];
+for (const id of requiredChapters) if (!decks[id]) errors.push(`缺少必需的幻灯片：${id}`);
 let formulaCount = 0;
 let pageCount = 0;
 const report = (chapter, page, message) => errors.push(`${chapter} 第 ${page} 页：${message}`);

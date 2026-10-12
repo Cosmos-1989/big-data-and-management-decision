@@ -1,0 +1,866 @@
+{
+  "schema_version": 1,
+  "verified_on": "2026-10-12",
+  "purpose": "企业AI Agent教学扩展的一手资料与选型边界",
+  "status": "official_sources_verified_no_runtime_comparison",
+  "methodology": [
+    "先读本地Codex安装README；帮助命令因缺失二进制失败，未修改安装。",
+    "网络仅采官方项目文档、官方工程文章、规范和原始论文；每条教材化建议明确为选型推论。",
+    "未实测产品部署、未比较价格或性能排名、未推断私有实现。"
+  ],
+  "local_openai_inspection": [
+    {
+      "path": "/Users/sunzy/.nvm/versions/node/v20.20.1/lib/node_modules/@openai/codex/README.md",
+      "result": "已读取本地运行定位与官方文档链接"
+    },
+    {
+      "command": "codex --help",
+      "result": "ENOENT: 打包的darwin-arm64二进制不存在；仅记录来源查验限制"
+    }
+  ],
+  "tools": [
+    {
+      "id": "openclaw",
+      "name": "OpenClaw",
+      "category": "消息入口与自部署Agent运行时",
+      "verified_facts": [
+        {
+          "claim": "自部署Gateway统一渠道连接、会话及路由；可从聊天渠道或控制界面与Agent交互。",
+          "source_ids": [
+            "OC1"
+          ]
+        },
+        {
+          "claim": "工具执行可以进入沙箱；Gateway仍运行在宿主机。沙箱默认关闭，工具拒绝策略仍独立生效。",
+          "source_ids": [
+            "OC3"
+          ]
+        },
+        {
+          "claim": "官方信任模型是每Gateway一个可信操作者或相互信任团队；相互敌对用户应拆分Gateway/凭证/主机边界。",
+          "source_ids": [
+            "OC2"
+          ]
+        },
+        {
+          "claim": "消息工具可能跨渠道发送，工具策略与接入身份策略分别约束相关动作。",
+          "source_ids": [
+            "OC4"
+          ]
+        }
+      ],
+      "teaching_selection_inference": [
+        "用于讲解“消息→任务→工具执行→结果”的持续服务链；课堂先用脱敏事件和只读工具。",
+        "若任务需要固定可审计节点路径，可在运行时之外显式设计Workflow；不把聊天入口视为既有业务流程。"
+      ],
+      "boundaries": [
+        "自部署Gateway不意味着模型推理或插件也都在内网；需单独审查提供商和工具数据流。",
+        "不能称为企业敌对多租户隔离平台；不把能调用工具视为已经授予业务操作权限。"
+      ]
+    },
+    {
+      "id": "hermes",
+      "name": "Hermes Agent",
+      "category": "通用Agent运行时与跨会话记忆",
+      "verified_facts": [
+        {
+          "claim": "官方文档提供CLI/桌面与消息网关，持续记忆、技能复用、子代理以及本地/容器/SSH等执行后端。",
+          "source_ids": [
+            "HE1"
+          ]
+        },
+        {
+          "claim": "安全控制分别处理发送者授权、危险命令审批、文件写入和容器隔离。",
+          "source_ids": [
+            "HE2"
+          ]
+        },
+        {
+          "claim": "Skills可被保存和复用，第三方安装有扫描机制。",
+          "source_ids": [
+            "HE3"
+          ]
+        }
+      ],
+      "teaching_selection_inference": [
+        "适合比较程序化记忆、任务经历形成的操作知识与知识库证据，观察跨会话任务是否可恢复。",
+        "课堂比较应固定任务、工具、模型、预算与测试集，评价完成率和可追踪性。"
+      ],
+      "boundaries": [
+        "“自我改进”是文档中的设计定位，不是已证明所有任务性能单调提升。",
+        "本地运行与容器运行的权限差异需按后端配置核验；本次未安装或实测。"
+      ]
+    },
+    {
+      "id": "claude-code",
+      "name": "Claude Code",
+      "category": "代码与文件任务的工程Agent",
+      "verified_facts": [
+        {
+          "claim": "读取代码库、编辑文件、执行命令，提供终端/IDE/桌面/Web等入口。",
+          "source_ids": [
+            "CC1"
+          ]
+        },
+        {
+          "claim": "权限由Claude Code运行时规则执行；prompt或CLAUDE.md不会直接变更允许的系统访问。",
+          "source_ids": [
+            "CC2"
+          ]
+        },
+        {
+          "claim": "内置shell沙箱限制命令的文件和网络访问；其文件工具、MCP服务器和hooks不在这个shell沙箱中。",
+          "source_ids": [
+            "CC3"
+          ]
+        }
+      ],
+      "teaching_selection_inference": [
+        "用于把分析脚本、测试、代码差异与文档产物置于一个可审查的工程任务中。",
+        "用仓库约定或Skills表达方法规范，用运行时规则及环境隔离落实执行权限。"
+      ],
+      "boundaries": [
+        "不能把模型行为提示写成强制访问控制。",
+        "仅shell沙箱不等于全进程、MCP及外部系统的统一隔离；平台和云会话边界各有文档。"
+      ]
+    },
+    {
+      "id": "codex",
+      "name": "Codex",
+      "category": "开放Harness及工程Agent入口",
+      "verified_facts": [
+        {
+          "claim": "Codex提供CLI、桌面及IDE等入口，底层的开放Harness也可用于应用集成。",
+          "source_ids": [
+            "CX2"
+          ]
+        },
+        {
+          "claim": "sandbox_mode决定技术边界，approval_policy决定越界时如何审批；自动审批不改变沙箱边界。",
+          "source_ids": [
+            "CX1"
+          ]
+        },
+        {
+          "claim": "官方开放Harness管理会话状态、工具使用、执行与审批，可经CLI、SDK、app-server集成。",
+          "source_ids": [
+            "CX2"
+          ]
+        },
+        {
+          "claim": "Skills使用SKILL.md和可选脚本/资料，先读取描述，选用时载入完整指令。",
+          "source_ids": [
+            "CX3"
+          ]
+        }
+      ],
+      "teaching_selection_inference": [
+        "适合讲授“模型决策—Harness控制—隔离执行—测试验收”的分层，并产出可审查文件。",
+        "在任务契约、目录范围与验收规则明确的场景比较自动化收益。"
+      ],
+      "boundaries": [
+        "开放Harness不表示模型权重或托管服务也开源。",
+        "本地执行不意味着无需模型服务；计划、账号和功能访问不做跨用户保证。",
+        "本地CLI帮助因二进制缺失无法执行；本次事实来自已读README和官方网页，不是运行测试。"
+      ]
+    },
+    {
+      "id": "trae",
+      "name": "TRAE",
+      "category": "IDE工程Agent与通用工作助手产品族",
+      "verified_facts": [
+        {
+          "claim": "2026-06-09官方产品说明将独立SOLO产品称为TRAE Work，覆盖Desktop/Web/Mobile；TRAE IDE仍有IDE Mode与SOLO Mode。",
+          "source_ids": [
+            "TR1"
+          ]
+        },
+        {
+          "claim": "2026-01-08工程文章说明文件系统沙箱、shell拦截以及手动/自动执行配置。",
+          "source_ids": [
+            "TR2"
+          ]
+        }
+      ],
+      "teaching_selection_inference": [
+        "代码任务可比较TRAE IDE的编辑器、终端和代码审查组织方式；文档/数据任务应明确当前产品是TRAE Work。",
+        "按任务完成证据、权限设置与数据流评价，保留试验环境和版本记录。"
+      ],
+      "boundaries": [
+        "工程文章所述平台范围是发布日期快照，不能据此宣布当前所有OS具备同等沙箱或网络隔离。",
+        "未核验私有化部署能力；不把下载桌面客户端等同模型完全本地推理。",
+        "不引用营销中的无人干预、最高效率或模型排名作为教材结论。"
+      ]
+    },
+    {
+      "id": "dify",
+      "name": "Dify",
+      "category": "可视化AI应用与知识库编排平台",
+      "verified_facts": [
+        {
+          "claim": "Workflow用于单次或批处理任务，可经用户/API或Trigger触发；Chatflow每轮对话触发，提供会话变量、LLM记忆及流式输出。",
+          "source_ids": [
+            "DI1"
+          ]
+        },
+        {
+          "claim": "官方提供Docker Compose自部署指南。",
+          "source_ids": [
+            "DI2"
+          ]
+        },
+        {
+          "claim": "云版工作区具有Owner、Admin、Editor、Normal角色，知识库可见/使用权限在其自身设置管理。",
+          "source_ids": [
+            "DI3"
+          ]
+        },
+        {
+          "claim": "知识库支持一般/父子块及向量、全文、混合检索，候选可再由Rerank模型排序。",
+          "source_ids": [
+            "DI4",
+            "DI5"
+          ]
+        }
+      ],
+      "teaching_selection_inference": [
+        "固定输入输出、校验、分支、报告等单次业务用Workflow；需要澄清需求并保存对话状态时用Chatflow。",
+        "用可视化节点显式表现检索、校验、审批、外部API和错误分支；可对比固定流程与Agent节点的动态选择。"
+      ],
+      "boundaries": [
+        "云版资源权限不能直接套在所有开源自部署版本；编排角色与后端ERP/数据库API权限是不同层。",
+        "自部署Dify不意味着接入的模型、插件与Rerank服务不会处理出网数据。",
+        "无普遍最优块长、TopK、阈值；需任务级检索测试。"
+      ]
+    },
+    {
+      "id": "coze",
+      "name": "Coze",
+      "category": "智能体与低代码应用编排平台",
+      "verified_facts": [
+        {
+          "claim": "中国官方文档以可视化节点实现Workflow与Chatflow：前者功能请求，后者多轮对话请求。",
+          "source_ids": [
+            "CZ1"
+          ]
+        },
+        {
+          "claim": "API执行Chatflow要求已发布的对话流、令牌run权限，相关会话创建者需一致。",
+          "source_ids": [
+            "CZ2"
+          ]
+        },
+        {
+          "claim": "Coze Studio官方开源仓库提供Docker部署；与云端Coze平台应分开识别。",
+          "source_ids": [
+            "CZ3"
+          ]
+        }
+      ],
+      "teaching_selection_inference": [
+        "课堂可从接待澄清的Chatflow开始，再把固定报告、查询或审批处理组织为Workflow。",
+        "分别展示编辑/发布权限、API调用身份和后端业务权限，避免把流程可见等同于可执行所有动作。"
+      ],
+      "boundaries": [
+        "本次云资料来自coze.cn；不推论国际站、Studio及所有商业版本能力或费用一致。",
+        "开源Studio自部署需要自行管理运行、网络与鉴权；部署成功不等于获得业务操作授权。"
+      ]
+    }
+  ],
+  "topics": [
+    {
+      "id": "rag",
+      "title": "RAG：证据获取与回答生成",
+      "verified_facts": [
+        {
+          "claim": "原始RAG将检索到的文档视为潜在变量，用检索分布与条件生成分布构造输出；RAG-Sequence对同一文档条件下的整段输出进行top-k近似边缘化。",
+          "source_ids": [
+            "RA1"
+          ]
+        }
+      ],
+      "teaching_selection_inference": [
+        "教材须区分原论文的联合训练模型与现代应用中“检索证据后加入上下文”的RAG实现。",
+        "案例应先定义可回答范围、来源与版本，再检查候选证据、引用位置及拒答条件。"
+      ],
+      "boundaries": [
+        "检索增强不保证证据真实、覆盖完整或生成无误。",
+        "检索器概率、向量相似度、Rerank分数不可无条件互换；流程是否更新模型参数取决于具体实现。"
+      ],
+      "teaching_equations": [
+        {
+          "tex": "p(y\\mid x)\\approx\\sum_{z\\in\\mathcal Z_k(x)}p_\\eta(z\\mid x)p_\\theta(y\\mid x,z)",
+          "scope": "RAG-Sequence原论文的top-k近似；不是所有RAG系统的必需计算步骤。",
+          "source_ids": [
+            "RA1"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "parsing",
+      "title": "文档解析：保持可溯源的结构",
+      "verified_facts": [
+        {
+          "claim": "解析工具按格式输出结构元素；PDF/图像可以配置OCR或布局处理，表格与文本具有不同结构表示。",
+          "source_ids": [
+            "RA3"
+          ]
+        }
+      ],
+      "teaching_selection_inference": [
+        "把段落、标题、表格、文档版本、页码与来源ID一起保存；对扫描件和复杂表格用样本核查解析结果。"
+      ],
+      "boundaries": [
+        "能输出文本不证明版面顺序、公式、单位或表格结构已准确恢复；OCR结果须作为解析产物而非原文。"
+      ]
+    },
+    {
+      "id": "chunking",
+      "title": "切分：匹配精度与上下文完整性",
+      "verified_facts": [
+        {
+          "claim": "Unstructured可按标题保留节边界，并对表格单独处理；原元素元数据有助恢复来源。",
+          "source_ids": [
+            "RA4"
+          ]
+        },
+        {
+          "claim": "Dify父子模式以较小子块匹配，返回较大父块提供上下文；一般模式直接返回匹配块。",
+          "source_ids": [
+            "DI4"
+          ]
+        }
+      ],
+      "teaching_selection_inference": [
+        "以合同条款、SOP步骤、完整表格或定义条件为切分单位；比较短块、重叠、父子块对证据召回的影响。"
+      ],
+      "boundaries": [
+        "重叠可保留局部连续性，也会引入重复；固定长度不是唯一策略。",
+        "不要混淆字符数与token数；产品的上限与默认值应随实验环境记录。"
+      ]
+    },
+    {
+      "id": "vector",
+      "title": "向量检索与混合检索",
+      "verified_facts": [
+        {
+          "claim": "DPR通过双编码器表示问题与段落，再从密集表示中选择相关候选；原RAG使用内积检索。",
+          "source_ids": [
+            "RA2",
+            "RA1"
+          ]
+        },
+        {
+          "claim": "Dify支持语义向量、全文和混合检索。",
+          "source_ids": [
+            "DI5"
+          ]
+        }
+      ],
+      "teaching_selection_inference": [
+        "语义近似问题可用向量检索；物料号、订单号、精确术语需比较关键词/过滤或混合检索；结构化数值查询可交给受限SQL工具。"
+      ],
+      "boundaries": [
+        "向量相近只表示该表示与度量下的候选关系，不能当作事实蕴含或业务权限证明。",
+        "更换编码模型可能影响索引兼容；实验需保持编码、过滤和语料版本一致。"
+      ]
+    },
+    {
+      "id": "rerank",
+      "title": "Rerank：候选集内部的二次排序",
+      "verified_facts": [
+        {
+          "claim": "官方Rerank接口接受query及候选文档，并按与查询的语义相关性重排。",
+          "source_ids": [
+            "RA5"
+          ]
+        },
+        {
+          "claim": "Dify检索设置允许对向量、全文或混合召回结果调用Rerank。",
+          "source_ids": [
+            "DI5"
+          ]
+        }
+      ],
+      "teaching_selection_inference": [
+        "先评估首阶段是否召回正确证据，再评估重排是否把它移到有限上下文预算内；同时记录延迟和成本。"
+      ],
+      "boundaries": [
+        "重排不能挽回未进入候选集的证据；分数不是校准后的答案正确概率。"
+      ]
+    },
+    {
+      "id": "graphrag",
+      "title": "GraphRAG：关系与全局主题摘要",
+      "verified_facts": [
+        {
+          "claim": "原论文从文档抽取实体图并预生成社区摘要，再为全局主题类问题组合回答。",
+          "source_ids": [
+            "GR1"
+          ]
+        },
+        {
+          "claim": "官方项目包含TextUnits、实体/关系/声明、社区层次；Global与Local等查询各用不同证据结构。",
+          "source_ids": [
+            "GR2"
+          ]
+        }
+      ],
+      "teaching_selection_inference": [
+        "当任务需要跨文档实体关系、主题汇总或关联链时，将图索引与向量基线进行同题比较。",
+        "将每条关系与社区摘要链接回来源，区分提取事实、综合摘要与推断。"
+      ],
+      "boundaries": [
+        "并非所有RAG都必须图化，简单局部事实查询可能更适合基线检索。",
+        "抽取关系和摘要仍可能出错，建图与维护也增加成本；论文结果不能外推所有企业任务。"
+      ]
+    },
+    {
+      "id": "harness",
+      "title": "Harness：模型外围的运行与控制系统",
+      "verified_facts": [
+        {
+          "claim": "官方将Harness描述为Agent循环外围的执行系统，管理状态、工具、进展、失败处理及审批。",
+          "source_ids": [
+            "CX2"
+          ]
+        },
+        {
+          "claim": "长任务案例通过初始环境、进度工件、版本记录、逐项推进及端到端测试衔接多个上下文。",
+          "source_ids": [
+            "HA2"
+          ]
+        }
+      ],
+      "teaching_selection_inference": [
+        "企业任务可明确状态机、工具契约、预算、终止条件、恢复点、审批与验收记录；把“答案”与“已验证完成的动作”分别记录。"
+      ],
+      "boundaries": [
+        "Harness不是单一模型名称，也不是一个提示词文件；长期任务工件不能自动证明任务正确。",
+        "原始长任务案例不证明多Agent必然优于单Agent。"
+      ]
+    },
+    {
+      "id": "skills",
+      "title": "Skills：可复用操作知识的按需加载",
+      "verified_facts": [
+        {
+          "claim": "官方规范以SKILL.md的YAML元数据和Markdown说明组织Skill，可配脚本、参考资料和资源。",
+          "source_ids": [
+            "SK1"
+          ]
+        },
+        {
+          "claim": "按需加载先暴露描述，再在选择后加载操作指令；allowed-tools为实验字段，不同宿主支持不同。",
+          "source_ids": [
+            "SK1",
+            "CX3"
+          ]
+        }
+      ],
+      "teaching_selection_inference": [
+        "用Skill封装指标口径检查、报表生成、实验复核等稳定方法，并明确输入、步骤、产物和适用条件。"
+      ],
+      "boundaries": [
+        "Skill是操作知识与资源包，不等于RAG证据库；也不意味着执行内容天然可信。",
+        "Skill的工具列表或自然语言约束不替代宿主、沙箱、身份及后端授权。"
+      ]
+    },
+    {
+      "id": "multiagent",
+      "title": "多智能体：分工契约与控制权",
+      "verified_facts": [
+        {
+          "claim": "Workflow遵循预定义路径；Agent由模型动态安排步骤和工具，适用复杂度应随任务需求增加。",
+          "source_ids": [
+            "HA1"
+          ]
+        },
+        {
+          "claim": "manager-as-tools让管理者保留最终答复，handoff将下一分支控制权交给专家Agent。",
+          "source_ids": [
+            "MA1"
+          ]
+        }
+      ],
+      "teaching_selection_inference": [
+        "当子任务存在独立工具、专业指令、输出契约或并行价值时再分工；为归并、冲突与独立复核指定责任。"
+      ],
+      "boundaries": [
+        "多个Agent使用相同错误证据时可能相关地出错；交叉复核不自动等于独立证据。",
+        "增加Agent数会增加协调、状态和权限表面；未核验任何通用性能排名。"
+      ]
+    },
+    {
+      "id": "mcp",
+      "title": "MCP：工具与上下文连接契约",
+      "verified_facts": [
+        {
+          "claim": "官方架构由Host管理Clients及连接生命周期，Servers暴露资源、工具、提示；各连接按能力协商。",
+          "source_ids": [
+            "MC1"
+          ]
+        }
+      ],
+      "teaching_selection_inference": [
+        "将企业查询和有限动作包装为输入输出明确的工具，分别标注身份、读写范围和可审计的结果。"
+      ],
+      "boundaries": [
+        "能力协商说明双方支持哪些协议特性，不等于完成企业业务授权；具体ACL与副作用政策仍由宿主和服务落实。"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "OC1",
+      "title": "OpenClaw Docs",
+      "url": "https://docs.openclaw.ai/",
+      "authority": "OpenClaw 官方文档",
+      "verified_on": "2026-10-12",
+      "method": "opened_official_web_page",
+      "supports": "自部署 Gateway、渠道接入、会话与工具运行入口；不采用官网营销效果表述。",
+      "limitation": ""
+    },
+    {
+      "id": "OC2",
+      "title": "OpenClaw Security",
+      "url": "https://docs.openclaw.ai/gateway/security",
+      "authority": "OpenClaw 官方文档",
+      "verified_on": "2026-10-12",
+      "method": "opened_official_web_page",
+      "supports": "每个 Gateway 的可信操作者/团队边界；接入身份与工具授权区别。",
+      "limitation": ""
+    },
+    {
+      "id": "OC3",
+      "title": "OpenClaw Sandboxing",
+      "url": "https://docs.openclaw.ai/gateway/sandboxing",
+      "authority": "OpenClaw 官方文档",
+      "verified_on": "2026-10-12",
+      "method": "opened_official_web_page",
+      "supports": "沙箱可承载工具执行；Gateway 留在宿主机；默认关闭；工具 deny 不被沙箱撤销。",
+      "limitation": ""
+    },
+    {
+      "id": "OC4",
+      "title": "OpenClaw Tool and Agent Permissions",
+      "url": "https://docs.openclaw.ai/gateway/security/tool-permissions",
+      "authority": "OpenClaw 官方文档",
+      "verified_on": "2026-10-12",
+      "method": "opened_official_web_page",
+      "supports": "控制平面、消息发送、per-agent 工具策略是不同权限表面。",
+      "limitation": ""
+    },
+    {
+      "id": "HE1",
+      "title": "Hermes Agent Documentation",
+      "url": "https://hermes-agent.nousresearch.com/docs",
+      "authority": "Nous Research 官方文档",
+      "verified_on": "2026-10-12",
+      "method": "opened_official_web_page",
+      "supports": "CLI/桌面/消息网关、持续记忆、Skills、可配置执行后端。",
+      "limitation": ""
+    },
+    {
+      "id": "HE2",
+      "title": "Hermes Security",
+      "url": "https://hermes-agent.nousresearch.com/docs/user-guide/security",
+      "authority": "Nous Research 官方文档",
+      "verified_on": "2026-10-12",
+      "method": "opened_official_web_page",
+      "supports": "发送者授权、危险命令审批、写入安全、容器隔离、MCP 凭证过滤分层。",
+      "limitation": ""
+    },
+    {
+      "id": "HE3",
+      "title": "Hermes Skills System",
+      "url": "https://hermes-agent.nousresearch.com/docs/user-guide/features/skills",
+      "authority": "Nous Research 官方文档",
+      "verified_on": "2026-10-12",
+      "method": "opened_official_web_page",
+      "supports": "技能复用与安装检查；不据此断言自我学习效果普遍优于其他产品。",
+      "limitation": ""
+    },
+    {
+      "id": "CC1",
+      "title": "Claude Code Overview",
+      "url": "https://code.claude.com/docs/en/overview",
+      "authority": "Anthropic 官方文档",
+      "verified_on": "2026-10-12",
+      "method": "opened_official_web_page",
+      "supports": "工程任务、代码/文件/命令；终端、IDE、桌面、Web 等入口。",
+      "limitation": ""
+    },
+    {
+      "id": "CC2",
+      "title": "Claude Code Configure Permissions",
+      "url": "https://code.claude.com/docs/en/permissions",
+      "authority": "Anthropic 官方文档",
+      "verified_on": "2026-10-12",
+      "method": "opened_official_web_page",
+      "supports": "权限规则由运行时执行；prompt/CLAUDE.md 不等于执行授权。",
+      "limitation": ""
+    },
+    {
+      "id": "CC3",
+      "title": "Claude Code Sandboxed Bash Tool",
+      "url": "https://code.claude.com/docs/en/sandboxing",
+      "authority": "Anthropic 官方文档",
+      "verified_on": "2026-10-12",
+      "method": "opened_official_web_page",
+      "supports": "shell 沙箱作用范围与不在该边界内的文件工具/MCP/hooks；平台差异。",
+      "limitation": ""
+    },
+    {
+      "id": "CX1",
+      "title": "Codex Sandbox",
+      "url": "https://learn.chatgpt.com/docs/sandboxing",
+      "authority": "OpenAI 官方文档",
+      "verified_on": "2026-10-12",
+      "method": "opened_official_web_page",
+      "supports": "sandbox_mode 与 approval_policy 是不同控制；自动审批不取消沙箱。",
+      "limitation": ""
+    },
+    {
+      "id": "CX2",
+      "title": "Codex as a Platform: Open Agent Harness",
+      "url": "https://developers.openai.com/blog/codex-as-a-platform",
+      "authority": "OpenAI 官方工程文章",
+      "verified_on": "2026-10-12",
+      "method": "opened_official_web_page",
+      "supports": "开放 harness、状态/工具/审批、SDK/app-server/CLI集成；模型服务另属一层。",
+      "limitation": ""
+    },
+    {
+      "id": "CX3",
+      "title": "Build Skills",
+      "url": "https://learn.chatgpt.com/docs/build-skills",
+      "authority": "OpenAI 官方文档",
+      "verified_on": "2026-10-12",
+      "method": "opened_official_web_page",
+      "supports": "SKILL.md 与可选 scripts/references/assets、按需加载。",
+      "limitation": ""
+    },
+    {
+      "id": "TR1",
+      "title": "Introducing TRAE Work",
+      "url": "https://www.trae.ai/blog/trae_work_0609",
+      "authority": "TRAE 官方产品文章",
+      "verified_on": "2026-10-12",
+      "method": "opened_official_web_page",
+      "supports": "2026-06-09 的产品命名：独立 SOLO 演变为 Work；TRAE IDE 的 IDE/SOLO Mode。",
+      "limitation": "产品定位资料，不提供能力效果或价格比较依据。"
+    },
+    {
+      "id": "TR2",
+      "title": "Making AI Coding Safer",
+      "url": "https://www.trae.ai/blog/engineering_thought_0108",
+      "authority": "TRAE 官方工程文章",
+      "verified_on": "2026-10-12",
+      "method": "opened_official_web_page",
+      "supports": "沙箱、shell拦截、手动执行/自动执行；界限与平台状况。",
+      "limitation": "2026-01-08 发布时的实施快照；不能证明2026-10所有平台的相同支持状态。"
+    },
+    {
+      "id": "DI1",
+      "title": "Dify Key Concepts",
+      "url": "https://docs.dify.ai/en/learn/key-concepts",
+      "authority": "Dify 官方文档",
+      "verified_on": "2026-10-12",
+      "method": "opened_official_web_page",
+      "supports": "Workflow/Chatflow、单次与多轮、会话变量、流式输出、发布入口。",
+      "limitation": ""
+    },
+    {
+      "id": "DI2",
+      "title": "Deploy Dify with Docker Compose",
+      "url": "https://docs.dify.ai/en/self-host/deploy/quick-start/docker-compose",
+      "authority": "Dify 官方文档",
+      "verified_on": "2026-10-12",
+      "method": "opened_official_web_page",
+      "supports": "自部署服务、环境配置与升级按目标版本指南。",
+      "limitation": ""
+    },
+    {
+      "id": "DI3",
+      "title": "Dify Manage Members",
+      "url": "https://docs.dify.ai/en/cloud/use-dify/workspace/team-members-management",
+      "authority": "Dify 官方文档",
+      "verified_on": "2026-10-12",
+      "method": "opened_official_web_page",
+      "supports": "云版工作区Owner/Admin/Editor/Normal与知识库访问设置。",
+      "limitation": "该页面属于Cloud产品，不能直接当作每个自部署版本的权限矩阵。"
+    },
+    {
+      "id": "DI4",
+      "title": "Dify Configure Chunk Settings",
+      "url": "https://docs.dify.ai/en/cloud/use-dify/knowledge/create-knowledge/chunking-and-cleaning-text",
+      "authority": "Dify 官方文档",
+      "verified_on": "2026-10-12",
+      "method": "opened_official_web_page",
+      "supports": "一般切分、父子块、匹配子块后返回父块、边界与上下文权衡。",
+      "limitation": ""
+    },
+    {
+      "id": "DI5",
+      "title": "Dify Index Method and Retrieval Settings",
+      "url": "https://docs.dify.ai/en/cloud/use-dify/knowledge/create-knowledge/setting-indexing-methods",
+      "authority": "Dify 官方文档",
+      "verified_on": "2026-10-12",
+      "method": "opened_official_web_page",
+      "supports": "向量/全文/混合检索及候选重排；模型API配置。",
+      "limitation": "页面中的默认值与收费随版本变化，本教材不固定这些数值。"
+    },
+    {
+      "id": "CZ1",
+      "title": "Coze 低代码工作流介绍",
+      "url": "https://docs.coze.cn/guides_workflow",
+      "authority": "Coze 中国官方文档",
+      "verified_on": "2026-10-12",
+      "method": "opened_official_web_page",
+      "supports": "节点编排、Workflow/Chatflow、所有者与协作者资源权限。",
+      "limitation": ""
+    },
+    {
+      "id": "CZ2",
+      "title": "Coze 执行对话流",
+      "url": "https://docs.coze.cn/developer_guides_workflow_chat",
+      "authority": "Coze 中国官方API文档",
+      "verified_on": "2026-10-12",
+      "method": "opened_official_web_page",
+      "supports": "已发布Chatflow、访问令牌run权限、会话创建者一致。",
+      "limitation": ""
+    },
+    {
+      "id": "CZ3",
+      "title": "Coze Studio Official Repository",
+      "url": "https://github.com/coze-dev/coze-studio",
+      "authority": "Coze 官方开源仓库",
+      "verified_on": "2026-10-12",
+      "method": "opened_official_web_page",
+      "supports": "开源Studio的可视化开发与Docker部署；公开部署风险说明。",
+      "limitation": "开源版本不等于coze.cn/国际版商业服务；不保证能力、许可、鉴权一致。"
+    },
+    {
+      "id": "RA1",
+      "title": "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks",
+      "url": "https://arxiv.org/html/2005.11401v4",
+      "authority": "Lewis et al. 原始论文",
+      "verified_on": "2026-10-12",
+      "method": "opened_official_web_page",
+      "supports": "§2 RAG-Sequence/Token、检索分布与生成分布、top-k边缘化、DPR编码。",
+      "limitation": "原论文含训练方案；常见企业检索后提示生成的系统不必采用其联合微调。"
+    },
+    {
+      "id": "RA2",
+      "title": "Dense Passage Retrieval for Open-Domain Question Answering",
+      "url": "https://arxiv.org/abs/2004.04906",
+      "authority": "Karpukhin et al. 原始论文",
+      "verified_on": "2026-10-12",
+      "method": "opened_official_web_page",
+      "supports": "独立编码问题与段落，基于密集表示选择候选证据。",
+      "limitation": "原论文测试集成绩不能推论当前企业私有语料收益。"
+    },
+    {
+      "id": "RA3",
+      "title": "Unstructured Partitioning",
+      "url": "https://docs.unstructured.io/open-source/core-functionality/partitioning",
+      "authority": "Unstructured 官方文档",
+      "verified_on": "2026-10-12",
+      "method": "opened_official_web_page",
+      "supports": "格式解析、结构元素、表格、PDF/图像处理与OCR策略。",
+      "limitation": ""
+    },
+    {
+      "id": "RA4",
+      "title": "Unstructured Chunking",
+      "url": "https://docs.unstructured.io/open-source/core-functionality/chunking",
+      "authority": "Unstructured 官方文档",
+      "verified_on": "2026-10-12",
+      "method": "opened_official_web_page",
+      "supports": "元素组合、标题边界、表格独立、块长度/overlap、原元素与来源元数据。",
+      "limitation": ""
+    },
+    {
+      "id": "RA5",
+      "title": "Cohere Rerank Overview",
+      "url": "https://docs.cohere.com/docs/rerank-overview",
+      "authority": "Cohere 官方文档",
+      "verified_on": "2026-10-12",
+      "method": "opened_official_web_page",
+      "supports": "给定query与候选documents按语义相关性重新排序。",
+      "limitation": "不以产品营销词或特定模型性能作为本课程比较结论。"
+    },
+    {
+      "id": "GR1",
+      "title": "From Local to Global: A Graph RAG Approach to Query-Focused Summarization",
+      "url": "https://arxiv.org/abs/2404.16130v2",
+      "authority": "Edge et al. 原始论文",
+      "verified_on": "2026-10-12",
+      "method": "opened_official_web_page",
+      "supports": "实体图、社区摘要、面向全局主题的查询聚焦摘要。",
+      "limitation": "论文结果限于所研究任务与数据，不能推论所有检索问题均优于向量RAG。"
+    },
+    {
+      "id": "GR2",
+      "title": "Microsoft GraphRAG Documentation",
+      "url": "https://microsoft.github.io/graphrag/",
+      "authority": "Microsoft 官方项目文档",
+      "verified_on": "2026-10-12",
+      "method": "opened_official_web_page",
+      "supports": "TextUnits、实体/关系/声明提取、社区层次、Local/Global/Basic查询。",
+      "limitation": ""
+    },
+    {
+      "id": "HA1",
+      "title": "Building Effective Agents",
+      "url": "https://www.anthropic.com/engineering/building-effective-agents",
+      "authority": "Anthropic 官方工程文章",
+      "verified_on": "2026-10-12",
+      "method": "opened_official_web_page",
+      "supports": "预定义Workflow与模型动态规划Agent区别；逐步增加复杂度。",
+      "limitation": "2024-12原文的架构原则仍可教学；不把其旧工具列表当最新产品目录。"
+    },
+    {
+      "id": "HA2",
+      "title": "Effective Harnesses for Long-Running Agents",
+      "url": "https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents",
+      "authority": "Anthropic 官方工程文章",
+      "verified_on": "2026-10-12",
+      "method": "opened_official_web_page",
+      "supports": "初始化、进度工件、版本历史、逐项推进与端到端检查。",
+      "limitation": "案例主要是Web开发；不是多Agent普遍占优的证明。"
+    },
+    {
+      "id": "SK1",
+      "title": "Agent Skills Specification",
+      "url": "https://agentskills.io/specification",
+      "authority": "Agent Skills 官方规范",
+      "verified_on": "2026-10-12",
+      "method": "opened_official_web_page",
+      "supports": "SKILL.md+YAML元数据、可选资源、渐进披露、allowed-tools的实验性。",
+      "limitation": ""
+    },
+    {
+      "id": "MA1",
+      "title": "Orchestration and Handoffs",
+      "url": "https://developers.openai.com/api/docs/guides/agents/orchestration",
+      "authority": "OpenAI 官方文档",
+      "verified_on": "2026-10-12",
+      "method": "opened_official_web_page",
+      "supports": "handoff转移控制；agents-as-tools保留管理者最终答复责任；按契约分工。",
+      "limitation": ""
+    },
+    {
+      "id": "MC1",
+      "title": "MCP Architecture (2025-11-25)",
+      "url": "https://modelcontextprotocol.io/specification/2025-11-25/architecture",
+      "authority": "MCP 官方版本化规范",
+      "verified_on": "2026-10-12",
+      "method": "opened_official_web_page",
+      "supports": "Host管理Clients与授权，Server暴露资源/工具/提示，能力协商不同于业务授权。",
+      "limitation": ""
+    }
+  ]
+}
