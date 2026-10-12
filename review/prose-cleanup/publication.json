@@ -1,0 +1,160 @@
+{
+  "status": "verified",
+  "verifiedAt": "2026-10-12T16:08:44.998900+00:00",
+  "sourceCommit": "0caebe3",
+  "pagesCommit": "18e3e18b145395015be3cfedaebab6b18a03afd9",
+  "deployment": {
+    "runId": 38275047131,
+    "status": "completed",
+    "conclusion": "success",
+    "url": "https://github.com/Cosmos-1989/big-data-and-management-decision/actions/runs/38275047131"
+  },
+  "httpsCertificateValidation": true,
+  "assets": [
+    {
+      "path": "index.html",
+      "url": "https://cosmos-1989.github.io/big-data-and-management-decision/index.html?v=20261012-4",
+      "bytes": 6021,
+      "localSha256": "ae8e05a473cb1b3bf87c6aadc35649c38eaf64a871cfedfca7b942d4b4798182",
+      "onlineSha256": "ae8e05a473cb1b3bf87c6aadc35649c38eaf64a871cfedfca7b942d4b4798182",
+      "matches": true
+    },
+    {
+      "path": "app.js",
+      "url": "https://cosmos-1989.github.io/big-data-and-management-decision/app.js?v=20261012-4",
+      "bytes": 18201,
+      "localSha256": "5722021fb5c80db1d4981928c6e05e75350d0bb38009a238c44cd52c326759d9",
+      "onlineSha256": "5722021fb5c80db1d4981928c6e05e75350d0bb38009a238c44cd52c326759d9",
+      "matches": true
+    },
+    {
+      "path": "cases.js",
+      "url": "https://cosmos-1989.github.io/big-data-and-management-decision/cases.js?v=20261012-4",
+      "bytes": 2953,
+      "localSha256": "6811ffb96a063f971a6570c0b5283a96e2d9791906662c5ad5678f4813df41e6",
+      "onlineSha256": "6811ffb96a063f971a6570c0b5283a96e2d9791906662c5ad5678f4813df41e6",
+      "matches": true
+    },
+    {
+      "path": "slides.js",
+      "url": "https://cosmos-1989.github.io/big-data-and-management-decision/slides.js?v=20261012-4",
+      "bytes": 14143,
+      "localSha256": "97ec82c0f0ff35aa635bec4fa8ee8b14066616afaea285b63bafc6e6cef3bc2d",
+      "onlineSha256": "97ec82c0f0ff35aa635bec4fa8ee8b14066616afaea285b63bafc6e6cef3bc2d",
+      "matches": true
+    },
+    {
+      "path": "slides-refined.css",
+      "url": "https://cosmos-1989.github.io/big-data-and-management-decision/slides-refined.css?v=20261012-4",
+      "bytes": 22709,
+      "localSha256": "d0f0a9c36116aa1c8159509c3c3f69473e84554b83188b2fd7232f07eadabf3c",
+      "onlineSha256": "d0f0a9c36116aa1c8159509c3c3f69473e84554b83188b2fd7232f07eadabf3c",
+      "matches": true
+    },
+    {
+      "path": "content/01_intro.json",
+      "url": "https://cosmos-1989.github.io/big-data-and-management-decision/content/01_intro.json?v=20261012-4",
+      "bytes": 60847,
+      "localSha256": "e190a75908f78316c5f1f64522f8b7bd18762c05b22b0a82892a103de339f3f0",
+      "onlineSha256": "e190a75908f78316c5f1f64522f8b7bd18762c05b22b0a82892a103de339f3f0",
+      "matches": true
+    },
+    {
+      "path": "content/14_ai_agent.json",
+      "url": "https://cosmos-1989.github.io/big-data-and-management-decision/content/14_ai_agent.json?v=20261012-4",
+      "bytes": 75193,
+      "localSha256": "9fba68accdeab9467d073bdf21362502e32921bcb643432a5159d9d09da35130",
+      "onlineSha256": "9fba68accdeab9467d073bdf21362502e32921bcb643432a5159d9d09da35130",
+      "matches": true
+    },
+    {
+      "path": "content/syllabus.json",
+      "url": "https://cosmos-1989.github.io/big-data-and-management-decision/content/syllabus.json?v=20261012-4",
+      "bytes": 9311,
+      "localSha256": "cda7525f890d13c5ac7b6991ff0fbb262857ab2a0bc56872d3cda638faa33851",
+      "onlineSha256": "cda7525f890d13c5ac7b6991ff0fbb262857ab2a0bc56872d3cda638faa33851",
+      "matches": true
+    },
+    {
+      "path": "content/lecture-slides.json",
+      "url": "https://cosmos-1989.github.io/big-data-and-management-decision/content/lecture-slides.json?v=20261012-4",
+      "bytes": 1067613,
+      "localSha256": "3e0205052e91bdc5cbb812ab7d9d721301100f060ba43ad0caee3f4eb2e6aaa8",
+      "onlineSha256": "3e0205052e91bdc5cbb812ab7d9d721301100f060ba43ad0caee3f4eb2e6aaa8",
+      "matches": true
+    },
+    {
+      "path": "content/case-cards.json",
+      "url": "https://cosmos-1989.github.io/big-data-and-management-decision/content/case-cards.json?v=20261012-4",
+      "bytes": 16868,
+      "localSha256": "8d276ebce715a4ad785ecb619d8f9546f02d7c2e4444e3bcff0be3f576a341ee",
+      "onlineSha256": "8d276ebce715a4ad785ecb619d8f9546f02d7c2e4444e3bcff0be3f576a341ee",
+      "matches": true
+    },
+    {
+      "path": "content/appendix-4.json",
+      "url": "https://cosmos-1989.github.io/big-data-and-management-decision/content/appendix-4.json?v=20261012-4",
+      "bytes": 7203,
+      "localSha256": "aa19911563f2c31d3698afe7354eb48dbeb72d82346fa0728f83478854e8daac",
+      "onlineSha256": "aa19911563f2c31d3698afe7354eb48dbeb72d82346fa0728f83478854e8daac",
+      "matches": true
+    },
+    {
+      "path": "downloads/bdm_textbook.pdf",
+      "url": "https://cosmos-1989.github.io/big-data-and-management-decision/downloads/bdm_textbook.pdf?v=20261012-4",
+      "bytes": 2787778,
+      "localSha256": "152d9e8cd36934e1add2ae2201e4282e55f9c0f75061f3e4c77ebde5d507df6d",
+      "onlineSha256": "152d9e8cd36934e1add2ae2201e4282e55f9c0f75061f3e4c77ebde5d507df6d",
+      "matches": true
+    },
+    {
+      "path": "downloads/enterprise-agent-course.md",
+      "url": "https://cosmos-1989.github.io/big-data-and-management-decision/downloads/enterprise-agent-course.md?v=20261012-4",
+      "bytes": 44864,
+      "localSha256": "10167276aac52b155773ac3dcc35e8cfd1f3d75773fb1dd8fe6b4f3eca58189f",
+      "onlineSha256": "10167276aac52b155773ac3dcc35e8cfd1f3d75773fb1dd8fe6b4f3eca58189f",
+      "matches": true
+    },
+    {
+      "path": "downloads/enterprise-agent-kit.zip",
+      "url": "https://cosmos-1989.github.io/big-data-and-management-decision/downloads/enterprise-agent-kit.zip?v=20261012-4",
+      "bytes": 75872,
+      "localSha256": "65a6644adc91445647af42488ddaf64768149efd775f98c1a44485d7bed63de2",
+      "onlineSha256": "65a6644adc91445647af42488ddaf64768149efd775f98c1a44485d7bed63de2",
+      "matches": true
+    },
+    {
+      "path": "assets/fonts/course-song-regular.woff2",
+      "url": "https://cosmos-1989.github.io/big-data-and-management-decision/assets/fonts/course-song-regular.woff2?v=20261012-4",
+      "bytes": 314732,
+      "localSha256": "9caa67f132328fe141779f09844b2f91ef51c3e78932fe94e44468c254af0659",
+      "onlineSha256": "9caa67f132328fe141779f09844b2f91ef51c3e78932fe94e44468c254af0659",
+      "matches": true
+    },
+    {
+      "path": "assets/fonts/course-song-bold.woff2",
+      "url": "https://cosmos-1989.github.io/big-data-and-management-decision/assets/fonts/course-song-bold.woff2?v=20261012-4",
+      "bytes": 324880,
+      "localSha256": "3382510b8992fb76b9feb59425ec3fe51e6e5587f6dd5ff3c229203af95b4d1a",
+      "onlineSha256": "3382510b8992fb76b9feb59425ec3fe51e6e5587f6dd5ff3c229203af95b4d1a",
+      "matches": true
+    },
+    {
+      "path": "assets/fonts/manifest.json",
+      "url": "https://cosmos-1989.github.io/big-data-and-management-decision/assets/fonts/manifest.json?v=20261012-4",
+      "bytes": 985,
+      "localSha256": "53d429d9fb9b3e3d4f1232d2f810174a824110df95145869ccad50eaae3df0a8",
+      "onlineSha256": "53d429d9fb9b3e3d4f1232d2f810174a824110df95145869ccad50eaae3df0a8",
+      "matches": true
+    }
+  ],
+  "browserVerification": {
+    "formalParagraph": "任务意图、可检验的规格与实际实现分别表达目标、验收条件与实现方式，运行结果 用于修正设计[136]。在管理决策中，经营意图通常是“减少延期”或“提高良率”； 规格须进一步规定对象、时间、指标、行动权限及允许的失败方式。例如，“减少延期”可以具体化为：每日九时对未来 四十八小时到期且尚未发运的订单提出至多两项加急建议；仅在设备资格满足、 预计净收益为正且主管批准后提交；最终以客户承诺版本对应的实际交付结果评价。 实现可以由 SQL、优化程序和智能体共同完成。上述规格仍须在实际使用中根据 客户承诺和资源规则修订。",
+    "hasTeachingTransfer": false,
+    "hasTwoDayAdvice": false,
+    "mathErrors": 0,
+    "title": "数据、信息与管理决策",
+    "url": "https://cosmos-1989.github.io/big-data-and-management-decision/#/chapter/01_intro"
+  },
+  "browserScreenshot": "online-intro.png"
+}
