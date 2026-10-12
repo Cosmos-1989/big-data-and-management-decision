@@ -1,4 +1,4 @@
-@import url('./assets/fonts/course-song.css?v=20261012-3');
+@import url('./assets/fonts/course-song.css?v=20261012-4');
 /* Lecture canvas: a consistent 1280 × 720 composition, scaled for projection.
    Narrow embedded views retain ordinary reading size instead of shrinking text. */
 .lesson-slides{--slide-scale:1;--deck-ink:#203648;--deck-blue:#386f91;--deck-line:#dce5eb;--slide-song:"BDM Course Song","Songti SC",SimSun,STSong,serif;border-radius:12px;overflow:hidden;background:#fff;font-family:var(--slide-song)}

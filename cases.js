@@ -14,7 +14,7 @@ export function decorateEnterpriseCases(article,chapterId,cases){
   const links=(item.sourceRefs||[]).map(key=>`<a href="#/chapter/bibliography?anchor=ref-${encodeURIComponent(key)}">[${esc(key)}]</a>`).join(' ');
   const section=document.createElement('section');section.className='enterprise-case';
   section.setAttribute('aria-label',`${item.organization} 案例图解`);
-  section.innerHTML=`<div class="case-topline"><span class="case-type">企业案例 · 图解</span><span class="case-org">${esc(item.organization)}</span></div><p class="case-context">${esc(item.context)}</p><div class="case-flow">${flow}</div><div class="case-takeaway"><span>课堂观察</span><strong>${esc(item.takeaway)}</strong></div><details class="case-evidence"><summary>资料与案例边界</summary><p>${esc(item.sourceCaveat)} ${links}</p></details>`;
+  section.innerHTML=`<div class="case-topline"><span class="case-type">企业案例 · 图解</span><span class="case-org">${esc(item.organization)}</span></div><p class="case-context">${esc(item.context)}</p><div class="case-flow">${flow}</div><div class="case-takeaway"><span>分析要点</span><strong>${esc(item.takeaway)}</strong></div><details class="case-evidence"><summary>资料来源与适用范围</summary><p>${esc(item.sourceCaveat)} ${links}</p></details>`;
   target.after(section);
  }
 }

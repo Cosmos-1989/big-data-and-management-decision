@@ -1,5 +1,5 @@
 /** A chapter is taught as a sequence of claims, explanations, and worked examples. */
-import {diagramHtml} from './slide-diagrams.js?v=20261012-3';
+import {diagramHtml} from './slide-diagrams.js?v=20261012-4';
 const escapeHtml=value=>String(value??'').replace(/[&<>"']/g,ch=>({
  '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'
 }[ch]));
