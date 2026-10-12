@@ -1,5 +1,5 @@
 /** A chapter is taught as a sequence of claims, explanations, and worked examples. */
-import {diagramHtml} from './slide-diagrams.js?v=20261010-8';
+import {diagramHtml} from './slide-diagrams.js?v=20261012-3';
 const escapeHtml=value=>String(value??'').replace(/[&<>"']/g,ch=>({
  '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'
 }[ch]));
@@ -87,7 +87,7 @@ function slideHtml(slide,index,count,deck){
  const layout=slide.layout||(!blocks.length?'focus':slide.codeBlock||slide.visual?.kind==='table'?'stack':'split');
  const labels={opener:'研究问题',goals:'本讲结构',concept:'概念与机制',case:'案例分析',calculation:'推导与计算',derivation:'理论推导',worked:'算例解析',method:'研究方法',contrast:'比较与辨析',closing:'本讲结论',experiment:'实验设计',discussion:'讨论与辨析',summary:'本讲结论'};
  const styles=`slide-kind-${kind} slide-layout-${cleanKind(layout)}${body.length===2?' slide-two-paragraphs':''}${slide.density==='compact'?' slide-compact':''}${slide.codeBlock?' slide-with-code':''}${slide.diagram?' slide-with-diagram':''}`;
- return `<article class="lecture-slide ${styles}" data-page="${index+1}" data-layout="${layout}" aria-hidden="${index?'true':'false'}"><div class="slide-page">
+ return `<article class="lecture-slide ${styles}" data-chapter="${escapeHtml(deck.id||'')}" data-page="${index+1}" data-layout="${layout}" aria-hidden="${index?'true':'false'}"><div class="slide-page">
   <header class="slide-heading"><div class="slide-topline"><span class="slide-chapter">${inline(deck.title)}</span><span class="slide-section">${inline(slide.section||slide.detailRef?.section||labels[kind]||'课程讲授')}</span><span class="slide-number">${String(index+1).padStart(2,'0')} / ${String(count).padStart(2,'0')}</span></div>
   <span class="slide-kicker">${inline(slide.kicker||labels[kind]||'课程讲授')}</span><h3>${inline(slide.title||'')}</h3>${slide.lead?`<p class="slide-lead">${inline(slide.lead)}</p>`:''}</header>
   <div class="slide-content"><div class="slide-narrative">${body.length?`<div class="slide-body">${body.map(p=>`<p>${inline(p)}</p>`).join('')}</div>`:''}${formula}${points.length?`<div class="slide-checkpoints"><span>分析要点</span><ul>${points.map(p=>`<li>${inline(p)}</li>`).join('')}</ul></div>`:''}${promptHtml(slide.prompts)}</div>${blocks.length?`<div class="slide-support">${blocks.join('')}</div>`:''}</div>
