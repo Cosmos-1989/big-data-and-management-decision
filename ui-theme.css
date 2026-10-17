@@ -208,10 +208,11 @@ td,th{border-color:#e2e9ed}
 .prose .course-notes h2{margin:17px 0 19px;font-size:23px}
 .prose .course-notes ol{padding-left:1.8em}
 .prose .course-notes li{padding-left:.4em;margin:17px 0;overflow-wrap:anywhere}
+.prose .course-notes li[id],.prose [id^="fnref"]{scroll-margin-top:calc(var(--header-height) + 22px)}
 .prose .course-notes li p{margin:5px 0}
 .prose .course-notes li::marker{color:#5f7f93;font-variant-numeric:tabular-nums}
 .prose .course-notes a[role="doc-backlink"]{white-space:nowrap;margin-left:.35em;padding:2px 5px;text-decoration:none;border-radius:3px}
-.prose .course-notes :target,.prose sup:target{background:#e8f3fa;outline:5px solid #e8f3fa;border-radius:2px}
+.prose .course-notes :target,.prose .course-notes li:focus,.prose sup:target{background:#e8f3fa;outline:5px solid #e8f3fa;border-radius:2px}
 @media(max-width:600px){.prose .course-notes{font-size:14px}.prose .course-notes li{padding-left:.15em}}
 @media print{.prose a[role="doc-noteref"]{background:none;color:inherit}.prose .course-notes{break-before:auto;font-size:10pt}.prose .course-notes li{break-inside:avoid}.prose .course-notes a[role="doc-backlink"]{display:none}}
 @media(min-width:1800px){body:not(.home-view):not(.lab-view) main{width:auto;max-width:1110px;margin:var(--header-height) 240px 0 var(--sidebar-width);padding-inline:76px}.toc{right:35px;width:180px}}
