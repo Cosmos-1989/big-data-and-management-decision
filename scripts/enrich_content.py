@@ -2,11 +2,12 @@
 from pathlib import Path
 import json,re,subprocess,os,shutil
 from bs4 import BeautifulSoup
-ROOT=Path(__file__).resolve().parents[2];OUT=ROOT/'website/dist';BOOK=ROOT/'docs/textbook'
+from content_typography import normalize_document
+ROOT=Path(__file__).resolve().parents[2];OUT=Path(os.environ.get('BDM_SITE_OUTPUT',ROOT/'website/dist'));BOOK=ROOT/'docs/textbook'
 pandoc=os.environ.get('PANDOC','pandoc')
 cited=sorted(set(re.findall(r'\\cite(?:\[[^\]]*\])?\{([^}]+)\}', ''.join(p.read_text() for p in list((BOOK/'chapters').glob('*.tex'))+[BOOK/'frontmatter.tex',BOOK/'appendices.tex']))))
 cited=sorted(set(k for group in cited for k in group.split(',')))
-html=subprocess.run([pandoc,'-f','markdown','-t','html5','--citeproc','--bibliography='+str(BOOK/'references.bib')],input='---\nnocite: "'+', '.join('@'+k for k in cited)+'"\n---\n',text=True,capture_output=True,check=True).stdout
+html=subprocess.run([pandoc,'-f','markdown','-t','html5','--mathjax','--citeproc','--bibliography='+str(BOOK/'references.bib')],input='---\nnocite: "'+', '.join('@'+k for k in cited)+'"\n---\n',text=True,capture_output=True,check=True).stdout
 bib=BeautifulSoup(html,'html.parser');numbers={e['id'].removeprefix('ref-'):i+1 for i,e in enumerate(bib.select('.csl-entry'))}
 for e in bib.select('.csl-entry'):
     label=bib.new_tag('span',attrs={'class':'ref-number'});label.string='['+str(numbers[e['id'][4:]])+'] ';e.insert(0,label)
@@ -67,7 +68,7 @@ for p in sorted((OUT/'content').glob('*.json')):
                 other=next((x for x in meta['extras'] if x['source']==str(target.relative_to(ROOT))),None)
                 if other:a['href']='#/chapter/'+other['id'];continue
             dest=OUT/'downloads/source'/target.relative_to(ROOT);dest.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(target,dest);a['href']='./'+str(dest.relative_to(OUT))
-    d['html']=str(soup);p.write_text(json.dumps(d,ensure_ascii=False));documents.append(d)
+    d['html']=str(soup);d,_=normalize_document(d);p.write_text(json.dumps(d,ensure_ascii=False));documents.append(d)
 # Use descriptive captions and unique numbering for code snippets.
 for chapter in meta['chapters']:
     snippets=[s for s in meta['snippets'] if s['chapter']==chapter['id']]

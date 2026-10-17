@@ -1,10 +1,10 @@
-import {experiments,sourceDemo} from './experiments.js?v=20261012-4';
+import {experiments,sourceDemo} from './experiments.js?v=20261017-1';
 import {marked} from './vendor/marked.js';
 export const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 let worker,sqlWorker,db,sqlConnection,active=false,timer,runGeneration=0;
 let editor,output,status,runButton,current,program,mode,files,stdout='',results=[],runtimeReady=false;
 let teachingSpecsPromise;
-function teachingSpecs(){return teachingSpecsPromise ||= fetch('./content/lab-specs.json?v=20261012-4').then(r=>{if(!r.ok)throw new Error('实验题面加载失败');return r.json();});}
+function teachingSpecs(){return teachingSpecsPromise ||= fetch('./content/lab-specs.json?v=20261017-1').then(r=>{if(!r.ok)throw new Error('实验题面加载失败');return r.json();});}
 function challengeHtml(spec){if(!spec)return '';const fields=[['任务描述',spec.problem],['输入与参数',spec.input],['预期输出',spec.output],['约束与口径',spec.constraints]];return `<section class="challenge-card" aria-label="实验题面"><div class="challenge-heading"><span>实验题目</span><strong>${esc(spec.title)}</strong></div><div class="challenge-background"><span>案例背景</span><p>${esc(spec.background)}</p></div><div class="challenge-grid">${fields.map(([name,value])=>`<div><h2>${name}</h2><p>${esc(value)}</p></div>`).join('')}</div><div class="challenge-bottom"><div><span>示例与观察</span><p>${esc(spec.example)}</p></div><div><span>评价要点</span><p>${esc(spec.evaluation)}</p></div></div></section>`;}
 const number=v=>typeof v==='number'?Number(v.toPrecision(6)).toLocaleString('zh-CN',{maximumFractionDigits:6}):typeof v==='object'?JSON.stringify(v):String(v??'—');
 export function tableHtml(rows){
@@ -77,7 +77,7 @@ export async function runCurrent(){
  const gen=++runGeneration;timer=setTimeout(()=>{if(gen===runGeneration){stop();status.textContent='超过 120 秒，已停止。可减少计算量后重试。';}},120000);
  try{
   if(current.language==='sql'){await runSql(editor.value,gen);return;}
-  if(!worker){worker=new Worker(new URL('./python-worker.js?v=20261012-4',import.meta.url));worker.onerror=e=>finish('运行环境加载失败：'+e.message,true);}
+  if(!worker){worker=new Worker(new URL('./python-worker.js?v=20261017-1',import.meta.url));worker.onerror=e=>finish('运行环境加载失败：'+e.message,true);}
   worker.onmessage=({data})=>{
    if(gen!==runGeneration)return;
    if(data.type==='status')status.textContent=data.text;
@@ -103,7 +103,7 @@ export async function runCurrent(){
  }catch(e){if(gen===runGeneration){const pre=document.createElement('pre');pre.className='error-output';pre.textContent=String(e.message||e);output.append(pre);finish('运行失败，可以修改代码或重置后重试。',true);}}
 }
 export async function mountLab(container,catalog,id='kpi'){
- cleanupLab();const specs=await teachingSpecs();files ||= await(await fetch('./data/files.json?v=20261012-4')).json();
+ cleanupLab();const specs=await teachingSpecs();files ||= await(await fetch('./data/files.json?v=20261017-1')).json();
  const source=catalog.programs.find(p=>'source-'+p.id===id);
  const snippet=catalog.snippets.find(p=>p.id===id);
  program=source;mode=source?'source':snippet?'snippet':'experiment';

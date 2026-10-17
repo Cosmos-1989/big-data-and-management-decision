@@ -201,6 +201,19 @@ td,th{border-color:#e2e9ed}
 #course-search-input::placeholder{color:#72828c}
 .course-search-input-wrap:focus-within{outline:2px solid #6a91a8;outline-offset:2px}
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+/* Source-authored notes share the chapter's navigation and print correctly. */
+.prose a[role="doc-noteref"]{font-family:var(--font-sans,system-ui,sans-serif);font-size:.82em;font-weight:600;text-decoration:none;padding:1px 3px;margin-inline:1px;border-radius:3px;color:#3c718e;background:#edf5fa}
+.prose a[role="doc-noteref"]:hover,.prose a[role="doc-noteref"]:focus-visible{color:#214f6a;background:#dcecf6;outline:2px solid #87b3cd;outline-offset:2px}
+.prose .course-notes{margin-top:58px;padding-top:12px;border-top:1px solid #d6e3eb;color:#435b6a;font-size:15px;line-height:1.9}
+.prose .course-notes h2{margin:17px 0 19px;font-size:23px}
+.prose .course-notes ol{padding-left:1.8em}
+.prose .course-notes li{padding-left:.4em;margin:17px 0;overflow-wrap:anywhere}
+.prose .course-notes li p{margin:5px 0}
+.prose .course-notes li::marker{color:#5f7f93;font-variant-numeric:tabular-nums}
+.prose .course-notes a[role="doc-backlink"]{white-space:nowrap;margin-left:.35em;padding:2px 5px;text-decoration:none;border-radius:3px}
+.prose .course-notes :target,.prose sup:target{background:#e8f3fa;outline:5px solid #e8f3fa;border-radius:2px}
+@media(max-width:600px){.prose .course-notes{font-size:14px}.prose .course-notes li{padding-left:.15em}}
+@media print{.prose a[role="doc-noteref"]{background:none;color:inherit}.prose .course-notes{break-before:auto;font-size:10pt}.prose .course-notes li{break-inside:avoid}.prose .course-notes a[role="doc-backlink"]{display:none}}
 @media(min-width:1800px){body:not(.home-view):not(.lab-view) main{width:auto;max-width:1110px;margin:var(--header-height) 240px 0 var(--sidebar-width);padding-inline:76px}.toc{right:35px;width:180px}}
 @media(max-width:1199px){:root{--sidebar-width:244px}.toc{display:none}main{margin-right:0;max-width:940px;padding-inline:42px}.site-header{padding-inline:23px}.header-primary{gap:16px}.brand{font-size:21px}.university-mark{padding-right:17px}.course-search-button{max-width:300px}.header-download{font-size:12px}.home-view main{padding-inline:42px}.course-hero{gap:44px}.lab-view main{padding-inline:32px}}
 @media(max-width:980px){:root{--header-height:110px;--sidebar-width:244px}.header-primary{height:64px}.site-header{padding-inline:22px}.neu-logo{width:108px}.brand{font-size:20px}.brand-sub{font-size:9px}.header-download{display:none}.course-search-button{max-width:260px;min-width:130px}.menu,.home-view .menu{display:flex;align-items:center;justify-content:center;order:0}.sidebar{display:none;width:min(85vw,304px);background:var(--paper);border-right:1px solid #e0e7ec;box-shadow:8px 20px 35px #233b4d1c}.sidebar.open{display:block}.nav-open{overflow:hidden}main{width:100%;max-width:940px;margin:var(--header-height) auto 0;padding:33px 40px 55px}.lab-view main{margin-left:0;max-width:none}.home-view main{max-width:980px}.course-hero{gap:30px}.hero-copy h1{font-size:43px}.hero-description{font-size:13px}.experiment-entry{min-height:300px}.group-heading{display:flex}.group-heading h3{font-size:16px;margin:0}.course-group{padding:22px 18px 13px}.course-group .chapter-list>a{font-size:12px}.workspace{grid-template-columns:1fr}.lesson-slides .slides-controls{top:var(--header-height)}}

@@ -5,13 +5,13 @@
       "title": "经营问题与决策框架",
       "chapter": "01_intro",
       "language": "python",
-      "background": "制造企业观察到交付延期、库存积压等经营症状。管理者要把“现象”变成有对象、数据、指标和行动的任务。",
-      "problem": "读取课程给定的经营症状，选取第一条，沿决策流程说明问题如何转化为可执行行动。",
+      "background": "制造企业观察到交付延期、库存积压等经营症状。管理者需要明确问题涉及的业务对象、所需数据、评价指标和可选行动。",
+      "problem": "读取内置经营症状列表，选取第一条，说明如何据此定义问题并形成可执行的行动方案。",
       "input": "课程内置 SYMPTOMS 列表；无需手工输入。",
-      "output": "业务症状表，以及第一条症状对应的各步决策流程。",
+      "output": "经营症状表，以及第一条症状对应的各步决策流程。",
       "constraints": "区分经营症状、研究问题与行动；不要把相关性描述直接解释为行动效果。",
-      "example": "观察“交付延期”条目时，逐项检查候选数据、KPI、分析任务与责任行动是否衔接。",
-      "evaluation": "答案应包含业务对象、行动对象、候选数据、指标与反馈；能指出仍需补充的约束。",
+      "example": "分析“交付延期”条目时，逐项核对候选数据、KPI（关键绩效指标）、分析任务与行动责任是否衔接。",
+      "evaluation": "答案应包含业务对象、行动对象、候选数据、指标与反馈，并指出仍需补充的约束。",
       "parameters": [],
       "annotatedCode": "# 导入课程给定的经营症状和“症状→决策”转换函数。\nfrom bdm_decision.cases.week01_problem_framing import SYMPTOMS, decision_pipeline\nfrom dataclasses import asdict\n\n# 将每条症状展开成字段，先看业务问题、数据与候选行动。\ndisplay([asdict(s) for s in SYMPTOMS], '业务症状与管理行动')\n# 逐步阅读第一条症状的决策流程。\nfor step in decision_pipeline(SYMPTOMS[0]):\n    print(step)"
     },
@@ -20,13 +20,13 @@
       "title": "企业对象与数据模型",
       "chapter": "02_enterprise_data_model",
       "language": "python",
-      "background": "订单、客户、产品等业务记录散落在不同系统中，需要统一业务对象与关系口径。",
+      "background": "订单、客户、产品等业务记录分散在不同系统中，需要统一业务对象的定义及关系口径。",
       "problem": "列出课程内置实体及其字段、主键和关系，并生成各实体的建表语句。",
       "input": "ENTITIES 与 RELATIONSHIPS 两组内置定义；无需手工输入。",
       "output": "实体表、关系表及每个实体的 CREATE TABLE 语句。",
-      "constraints": "主键应唯一；外键与关系基数要和业务粒度一致。程序展示结构，不自动验证真实数据库中的记录。",
-      "example": "检查订单实体是否有可追溯的客户键，再说明“一个客户多笔订单”的基数。",
-      "evaluation": "逐一核查实体主键、关系外键和业务粒度；解释建表结构能否支持后续指标。",
+      "constraints": "主键应唯一；外键与关系基数（对象之间的数量对应关系）应与业务粒度一致。程序展示数据结构，不自动验证真实数据库中的记录。",
+      "example": "检查订单记录能否通过客户键关联到客户，再说明“一个客户可有多笔订单”对应的关系基数。",
+      "evaluation": "逐一核查实体主键、关系外键和业务粒度，说明建表结构能否支持后续指标计算。",
       "parameters": [],
       "annotatedCode": "# 导入实体、关系定义和建表语句生成器。\nfrom bdm_decision.cases.week02_enterprise_data_model import ENTITIES, RELATIONSHIPS, create_table_sql\nfrom dataclasses import asdict\n\n# 先核查每个业务实体的主键和字段数量。\ndisplay([{'实体': e.name, '主键': e.primary_key, '字段数': len(e.fields), '说明': e.description} for e in ENTITIES], '业务实体')\n# 再查看实体之间的关系与外键。\ndisplay([asdict(r) for r in RELATIONSHIPS], '实体关系')\n# 为每个实体生成 SQL 表结构，核对字段与键约束。\nfor entity in ENTITIES:\n    print(create_table_sql(entity))"
     },
@@ -39,7 +39,7 @@
       "problem": "按区域和月份生成经营指标，并计算每个客户最近三笔订单的滚动收入。",
       "input": "课程内置 orders.csv、customers.csv、products.csv；默认滚动窗口为 3 笔订单。",
       "output": "区域 KPI、月度 KPI 与客户滚动收入三组表；前两组可切换图形。",
-      "constraints": "连接键必须唯一且可匹配；比率应先合并分子分母；未交付订单不能擅自算为准时或逾期。",
+      "constraints": "连接键必须满足唯一性与匹配要求；计算汇总比率时，应先分别汇总分子和分母；未交付订单不能直接计为准时或逾期。",
       "example": "对比区域收入和月度准时交付率，再检查客户窗口是“最近三笔订单”而非“最近三天”。",
       "evaluation": "用原始分子分母复核至少一个区域或月份指标，并检查订单数在连接后未异常变化。",
       "parameters": [],
@@ -50,11 +50,11 @@
       "title": "半导体制造指标",
       "chapter": "03_sql_kpi",
       "language": "python",
-      "background": "半导体制造工作中心同时关心良率、设备效率、周期、在制品与准时交付。",
-      "problem": "按工作中心汇总制造指标，调整 OEE 阈值，列出低效率且 WIP 高于工站中位数的预警对象。",
+      "background": "半导体制造工作中心需要同时分析良率、设备效率、生产周期、在制品与准时交付情况。",
+      "problem": "按工作中心汇总制造指标，调整 OEE（设备综合效率）阈值，列出低效率且 WIP（在制品数量）高于工站中位数的预警对象。",
       "input": "semiconductor_kpi_daily.csv；OEE 预警阈值 threshold∈[0.20,1.00]，步长 0.05，默认 0.75。",
       "output": "制造 KPI 表与预警工站表。",
-      "constraints": "OEE=可用率×性能率×质量率；良率和 OTD 用合计分子/分母；程序对零分母返回 0，但报告应标“未定义”。WIP 为记录均值，非日总量。",
+      "constraints": "OEE=可用率×性能率×质量率；良率和 OTD（准时交付率）按合计分子/分母计算；程序对零分母返回 0，但报告应标为“未定义”。WIP 为记录均值，不是日总量。",
       "example": "将阈值由 0.75 调低，观察预警名单是否缩小；核对 WIP 必须高于工站中位数才入选。",
       "evaluation": "正确区分件数比率、记录均值和时间权重；报告预警工站及阈值变化。",
       "parameters": [
@@ -78,7 +78,7 @@
       "problem": "在原始订单与故意加入质量问题的订单之间切换，比较字段剖析和规则失败记录。",
       "input": "orders.csv 或 orders_quality_issues.csv，以及关联维表；dirty 为布尔值，默认 true。",
       "output": "字段缺失概览、质量问题明细及记录数/问题数。",
-      "constraints": "问题数不等于受影响的唯一订单数；修复前应保留失败记录和规则，不能直接删除异常行。",
+      "constraints": "问题数不等于受影响的唯一订单数；修复前应保留失败记录和对应规则，不可直接删除异常行。",
       "example": "先运行 dirty=true，再切换为 false；比较主键重复、字段缺失和外键失败是否减少。",
       "evaluation": "给出失败规则、失败记录、影响指标和修复建议，不把问题数当作受影响订单数。",
       "parameters": [
@@ -97,11 +97,11 @@
       "chapter": "05_statistics_dashboard",
       "language": "python",
       "background": "每日收入和交付指标会波动，单一平均值不足以显示趋势和异常。",
-      "problem": "计算收入分布摘要与运营 KPI，再按可调窗口画收入移动平均。",
+      "problem": "计算收入分布摘要与运营 KPI，并按可调窗口绘制收入移动平均曲线。",
       "input": "daily_operations.csv；移动平均窗口 window∈[1,10] 天，整数，默认 3。",
       "output": "运营 KPI、每日收入趋势与描述统计。",
-      "constraints": "窗口按数据行顺序计算；窗口变大使曲线更平滑但也更滞后。均值、分位数与离散程度回答不同问题。",
-      "example": "比较窗口 1 和 7：观察局部峰值如何被平滑，同时注意突变识别的滞后。",
+      "constraints": "窗口按数据行顺序计算；窗口增大通常使曲线更平滑，也会增加对变化的响应滞后。均值、分位数与离散程度描述分布的不同特征。",
+      "example": "比较窗口 1 和 7，观察局部峰值的平滑程度，并考察对突变的识别是否滞后。",
       "evaluation": "解释窗口变化、均值/中位数差异和异常点对管理结论的影响。",
       "parameters": [
         {
@@ -121,12 +121,12 @@
       "chapter": "06_ab_testing",
       "language": "python",
       "background": "电商结算页改版可能提高转化，也可能增加页面延迟或客服负担。",
-      "problem": "比较 A/B 两组的转化率、收入和护栏指标，计算处理组减对照组的差异及置信区间。",
+      "problem": "比较 A/B 两组的转化率、收入和约束指标（护栏指标），计算处理组减对照组的差异及置信区间。",
       "input": "ab_test_checkout.csv；置信水平 confidence∈[0.80,0.99]，步长 0.01，默认 0.95。",
       "output": "分组摘要与四项指标（converted、revenue、page_load_ms、support_ticket）的差异表。",
-      "constraints": "随机分配和稳定观察窗口是因果解释前提；指标单位不同；区间跨 0 时不能认定差异方向。护栏变坏时不能只看转化提升。",
+      "constraints": "因果解释要求随机分配、稳定的观察窗口等条件；各指标的单位不同，须分别解释。区间跨 0 时，不能确定总体差异的方向；约束指标恶化时，推广判断还需考虑相应风险。",
       "example": "从 0.95 提高到 0.99，观察区间是否变宽，并复核转化改善是否伴随延迟增加。",
-      "evaluation": "同时报告主指标与护栏的方向、单位和区间，并说明决策是否仍需扩大样本。",
+      "evaluation": "同时报告主指标与约束指标的变化方向、单位和区间，并说明是否需要扩大样本以提高决策精度。",
       "parameters": [
         {
           "name": "confidence",
@@ -145,12 +145,12 @@
       "chapter": "07_prediction",
       "language": "python",
       "background": "客户运营希望提前识别流失风险，但不同阈值会改变误报与漏报数量。",
-      "problem": "用课程样本训练逻辑回归，调整分类阈值，读取混淆矩阵、分类指标、概率校准和 AUC。",
+      "problem": "用课程样本训练逻辑回归，调整分类阈值，分析混淆矩阵、分类指标、概率校准和 AUC（ROC 曲线下面积，用于衡量风险排序能力）。",
       "input": "customer_churn.csv；阈值 threshold∈[0.05,0.95]，步长 0.05，默认 0.50。",
       "output": "混淆矩阵、分类指标、非空校准分箱，以及训练/测试样本量和 AUC。",
       "constraints": "模型固定为课程实现；滑块只改判定阈值，不重新训练。AUC 与阈值无关；概率校准不等于行动收益。",
-      "example": "把阈值从 0.50 降到 0.20，比较召回与误报，并说明哪类错误对业务更贵。",
-      "evaluation": "报告阈值变化后的误报、漏报和行动成本取舍；不要把 AUC 当作阈值指标。",
+      "example": "把阈值从 0.50 降到 0.20，比较召回率与误报数量，并说明哪类错误的业务代价更高。",
+      "evaluation": "报告阈值变化后的误报、漏报及行动成本权衡；AUC 衡量整体排序能力，不随当前判定阈值改变。",
       "parameters": [
         {
           "name": "threshold",
@@ -168,13 +168,13 @@
       "title": "混杂、IPW 与 DID",
       "chapter": "08_causality",
       "language": "python",
-      "background": "优惠券不是随机发放时，高风险客户更可能被触达，朴素留存差可能混入原有风险差异。",
-      "problem": "计算朴素差异、风险分层估计和逆概率加权估计，检查加权后协变量平衡，并展示两期 DID。",
+      "background": "优惠券并非随机发放时，高风险客户可能更常被选中，朴素留存率差异会混入原有风险差异。",
+      "problem": "计算朴素差异、风险分层估计和逆概率加权（IPW）估计，检查加权后协变量平衡，并计算两期差分中的差分（DID）。",
       "input": "coupon_retention_observational.csv 与 coupon_retention_panel.csv；倾向得分截断 clip∈[0.01,0.20]，步长 0.01，默认 0.05。",
       "output": "三种留存效应估计、加权平衡表和 DID 结果。",
-      "constraints": "IPW 依赖可测混杂充分调整与重叠性；DID 依赖平行趋势。截断影响权重和估计，不能视为自动消除偏差。",
-      "example": "比较 clip=0.01 与 0.20 的 IPW 结果，再检查平衡变化，而非只比较效应大小。",
-      "evaluation": "写出三种估计的差别、加权平衡结果与未满足时的因果解释限制。",
+      "constraints": "IPW 依赖已测混杂因素的充分调整与重叠性；DID 依赖平行趋势等识别条件。截断会改变权重和估计结果，不能自动消除偏差。",
+      "example": "比较 clip=0.01 与 0.20 的 IPW 结果，并检查协变量平衡的变化。",
+      "evaluation": "说明三种估计的差别、加权后的平衡情况，以及识别条件未满足时因果解释所受的限制。",
       "parameters": [
         {
           "name": "clip",
@@ -193,10 +193,10 @@
       "chapter": "09_optimization",
       "language": "python",
       "background": "补货计划需要在采购预算与仓储空间有限的条件下兼顾需求不确定性和收益。",
-      "problem": "为每种产品从可选整数订货量中选出组合，使期望净收益最大，同时满足预算与库容。",
+      "problem": "为每种产品选择整数订货量，使总期望净收益最大，同时满足预算与库容约束。",
       "input": "replenishment_planning.csv；budget∈[0,5000]，步长 100，默认 2600；storage∈[0,150]，步长 5，默认 95。",
       "output": "各产品建议订货量、预算使用、库容使用和期望净收益。",
-      "constraints": "预算和库容均为硬约束；场景概率应和为 1；金额、件数和空间单位不能混用。该例枚举离散方案，适合教学规模。",
+      "constraints": "预算和库容均为必须满足的约束；情景概率之和应为 1；金额、件数和空间单位不能混用。本例枚举离散方案，适用于教学规模的问题。",
       "example": "增加预算但固定库容：若方案不变，说明当前瓶颈可能是库容或产品数量上限。",
       "evaluation": "核对总预算与总库容均不超限，并说明为什么新增预算可能不改变方案。",
       "parameters": [
@@ -225,14 +225,14 @@
       "chapter": "10_process_mining",
       "language": "python",
       "background": "订单从创建到结算经过多个事件，等待、返工和跳步可能造成延期。",
-      "problem": "按案例重建事件序列，统计流程变体和直接跟随关系，识别合规异常与平均吞吐时间。",
+      "problem": "按流程实例重建事件序列，统计流程变体和直接跟随关系，识别合规异常，并计算平均吞吐时间。",
       "input": "order_to_cash_event_log.csv；无需手工参数。",
-      "output": "流程变体表、相邻活动的平均等待时间、合规异常和平均吞吐小时。",
-      "constraints": "同一 case_id 内按时间顺序排序；相邻事件差值不等于纯加工时间；平均吞吐不可说明瓶颈因果。",
-      "example": "比较最长平均相邻活动等待与常见变体，再检查是否由少数异常案例驱动。",
-      "evaluation": "指出频繁变体、最长等待环节与返工/合规异常，并承认事件日志的解释边界。",
+      "output": "流程变体表、相邻活动的平均事件间隔、合规异常和平均吞吐时间（小时）。",
+      "constraints": "同一 case_id 内按时间顺序排序；相邻事件间隔可能包含等待、处理和运输等时间，不能直接视为纯加工时间或纯等待时间；平均吞吐时间不能单独识别瓶颈及其因果机制。",
+      "example": "比较平均事件间隔最长的活动对与常见变体，检查结果是否由少数异常实例驱动。",
+      "evaluation": "指出常见变体、事件间隔较长的环节及返工/合规异常，并说明仅凭现有日志能够支持哪些解释。",
       "parameters": [],
-      "annotatedCode": "# 从带 case_id、活动与时间戳的事件日志重建订单流程。\nfrom bdm_decision.process_mining.event_log import *\n\nevents = load_event_log()\n# 按案例汇总完整路径、返工与吞吐时间。\ncases = summarize_cases(events)\n# 直接跟随关系连接相邻活动并汇总等待时间。\ntransitions = directly_follows_graph(events)\ndisplay(summarize_variants(cases), '流程变体', x='variant_id', y='average_throughput_hours')\ndisplay([{'路径': t.source+' → '+t.target, '平均等待小时':t.average_elapsed_hours, '次数':t.count} for t in transitions], '直接跟随关系', x='路径', y='平均等待小时')\n# 合规异常要回到事件明细核查，不能单凭图形判定原因。\ndisplay(conformance_issues(cases), '合规异常')\nprint('平均吞吐时间（小时）:', round(average_throughput(cases),2))"
+      "annotatedCode": "# 从带 case_id、活动与时间戳的事件日志重建订单流程。\nfrom bdm_decision.process_mining.event_log import *\n\nevents = load_event_log()\n# 按案例汇总完整路径、返工与吞吐时间。\ncases = summarize_cases(events)\n# 直接跟随关系连接相邻活动，并汇总其时间戳之间的间隔。\ntransitions = directly_follows_graph(events)\ndisplay(summarize_variants(cases), '流程变体', x='variant_id', y='average_throughput_hours')\ndisplay([{'路径': t.source+' → '+t.target, '平均事件间隔（小时）':t.average_elapsed_hours, '次数':t.count} for t in transitions], '直接跟随关系', x='路径', y='平均事件间隔（小时）')\n# 合规异常要回到事件明细核查，不能单凭图形判定原因。\ndisplay(conformance_issues(cases), '合规异常')\nprint('平均吞吐时间（小时）:', round(average_throughput(cases),2))"
     },
     {
       "id": "allocation",
@@ -245,7 +245,7 @@
       "output": "入选订单、实际使用容量和总期望收益。",
       "constraints": "订单不可拆分；每单只能选 0 或 1 次；算法枚举 2^4 个组合，扩大到大量订单应换更高效算法。",
       "example": "容量为 8 时，可比较 A+B（容量 7、收益 430）与 B+C（容量 8、收益 480），再由程序找全局最优。",
-      "evaluation": "逐项核查容量不超限，在 16 种组合中找最高收益；说明若最优有并列如何处理。",
+      "evaluation": "逐项核查容量不超限，在 16 种组合中找出最高收益方案，并说明如何处理并列最优解。",
       "parameters": [
         {
           "name": "capacity",
@@ -263,13 +263,13 @@
       "title": "业务对象、行动与情景",
       "chapter": "13_ontology_action_scenario",
       "language": "python",
-      "background": "业务对象、关系、候选行动、权限和审计记录需结构化表达，才能形成可追踪决策。",
+      "background": "业务对象、关系、候选行动、权限和审计记录需要结构化表达，才能追踪决策依据与执行情况。",
       "problem": "构造一笔订单及其加急行动，展示对象关系、不同角色权限、情景和模拟审计事件。",
       "input": "代码内固定订单 O-001、风险 0.7、价值 1200、加急 12 小时、成本 80；无界面参数。",
       "output": "对象、关系、候选行动、权限声明、情景结构和模拟审计记录。",
-      "constraints": "纯数据结构演示；Permission 只声明允许与否，不执行授权检查；AuditEvent 为模拟记录，不表示真实业务已执行。",
+      "constraints": "本实验仅展示数据结构。Permission 记录权限声明，不执行授权检查；AuditEvent 为模拟审计记录，不表示真实业务已经执行。",
       "example": "比较 analyst 与 manager 对 expedite 的权限字段，讨论真实系统在执行前还需哪些校验。",
-      "evaluation": "完整关联 object_id、action_id、角色权限和审计事件；说明哪些仅是声明。",
+      "evaluation": "将 object_id、action_id、角色权限和审计事件完整关联，并说明哪些信息仅属于声明。",
       "parameters": [],
       "annotatedCode": "# 导入对象、关系、行动、权限、情景和审计记录的数据结构。\nfrom bdm_decision.ontology.objects import BusinessObject\nfrom bdm_decision.ontology.links import BusinessLink\nfrom bdm_decision.ontology.actions import BusinessAction\nfrom bdm_decision.ontology.permissions import Permission\nfrom bdm_decision.ontology.scenarios import Scenario\nfrom bdm_decision.ontology.audit import AuditEvent\nfrom datetime import datetime\n\n# 定义待处理订单及其风险和价值属性。\norder = BusinessObject('O-001','order',{'risk':0.7,'value':1200})\n# 构造“加急”候选行动；此处不会执行真实动作。\naction = BusinessAction('A-001','expedite',order.object_id,{'hours':12},{'delay_reduction':0.4},80)\ndisplay([order], '业务对象')\ndisplay([BusinessLink('O-001','C-001','belongs_to',{})], '业务关系')\ndisplay([action], '候选行动')\n# 展示角色权限声明；真实授权还需执行时校验。\ndisplay([Permission('analyst','expedite',False),Permission('manager','expedite',True)], '权限声明（非执行引擎）')\ndisplay([Scenario('S-001','base',[action],{'expected_cost':80})], '情景结构')\n# 这是模拟审计事件，用于理解可追溯结构。\ndisplay([AuditEvent('E-001','student',action.action_id,datetime(2026,9,17),'simulated')], '模拟审计记录')"
     },
@@ -282,7 +282,7 @@
       "problem": "调用课程已有的看板渲染函数，用样例数据输出一个 HTML 指标与图表页面。",
       "input": "daily_operations.csv；无手工参数。",
       "output": "HTML 看板预览。",
-      "constraints": "图形展示为描述性统计；趋势共变不等于原因；预览 iframe 为隔离的生成页面。",
+      "constraints": "图形展示描述性统计，趋势共变不能直接解释为因果关系；iframe（嵌入网页的内联框架）中的预览为隔离生成的页面。",
       "example": "对照看板指标与统计实验的汇总结果，检查同一指标口径是否一致。",
       "evaluation": "从源数据复核关键 KPI，说明图形不能单独证明因果关系。",
       "parameters": [],
@@ -294,10 +294,10 @@
       "chapter": "03_sql_kpi",
       "language": "sql",
       "background": "业务人员希望按区域比较订单规模和销售额，需要连接订单、客户与产品表。",
-      "problem": "执行可编辑 SQL，按区域统计订单行数与销售额并按收入降序排列。",
+      "problem": "执行可编辑的 SQL，按区域统计订单行数与销售额，并按收入降序排列。",
       "input": "orders、customers、products 等课程样例表；默认 SQL 可替换为用户查询。",
-      "output": "最后一条 SQL 查询的结果表，可选数值列作图。",
-      "constraints": "JOIN 必须保持订单事实粒度；订单行数 COUNT(*) 只有在连接不扩行时才等于原订单数。当前工作台只展示最后一个查询结果。",
+      "output": "最后一条 SQL 查询的结果表；可选择数值列绘图。",
+      "constraints": "JOIN（表连接）必须保持订单事实粒度；只有连接未增加行数时，订单行数 COUNT(*) 才等于原订单数。当前工作台只展示最后一条查询的结果。",
       "example": "先运行默认查询，再分别检查连接前后 COUNT(*)，若行数变化，回查维表键唯一性。",
       "evaluation": "查询结果应有区域、订单数、收入；核查 JOIN 前后行数、区域粒度与收入计算公式。",
       "parameters": [],
@@ -308,13 +308,13 @@
       "title": "AI 服务容量与成本比较",
       "chapter": "09_optimization",
       "language": "python",
-      "background": "企业准备部署带检索和工具调用的 AI 问数服务。每次请求占用推理槽位并产生云端调用或本地运行成本。",
+      "background": "企业准备部署带检索和工具调用的 AI 问数服务。每次请求占用推理槽位（可并行处理任务的资源位置），并产生云端调用费用或本地运行成本。",
       "problem": "给定每小时请求数与每次检索片段数，比较云端/本地每小时成本、设计容量、槽位利用率和成本临界点；判断本地方案是否满足容量约束。",
       "input": "requests_per_hour≥0，默认 900；retrieved_passages 为非负整数，默认 4。其余 token、速率、并发槽位、利用率上限与单价取 Workload/Deployment 内置教学参数。",
       "output": "输入/输出 token、单请求占用秒数、槽位利用率、设计容量、是否可行、云端单次/每小时成本、本地每小时成本、成本临界请求量。",
-      "constraints": "占用时间将查询与工具等待计入槽位；容量是平均占用近似，不是 P95 延迟或可靠性保证。价格和速率只是教材算例，不能当实时采购报价。先核查可行性，再比较费用。",
+      "constraints": "占用时间将查询与工具等待计入槽位；容量按平均占用近似计算，不保证 P95 延迟（请求延迟的高分位水平）或运行可靠性。价格和速率均为教学设定，不代表实时采购报价。应先核查可行性，再比较费用。",
       "example": "默认 900 请求/小时、4 片段时，可观察本地容量约 1630 请求/小时；这只是固定内置参数下的估计，修改片段数后重算。",
-      "evaluation": "同时报告容量是否满足、两方案成本差与参数敏感性；不得仅凭较低成本推荐超容量的方案。",
+      "evaluation": "同时报告容量是否满足要求、两方案的成本差与参数敏感性；成本较低但超出容量的方案不能直接推荐实施。",
       "parameters": [
         {
           "name": "requests_per_hour",
@@ -341,21 +341,21 @@
       "chapter": "03_sql_kpi",
       "language": "sql",
       "background": "管理者询问样本期内哪个区域准时交付率最低。候选 SQL 即使能够运行，也可能因未交付订单、连接扩行和分母口径导致错误答案。",
-      "problem": "查询已交付订单的区域准时交付率，展示准时笔数与已交付笔数，再按比率升序排列。对照行数和指标字典审计结果。",
+      "problem": "查询已交付订单的区域准时交付率，展示准时笔数与已交付笔数，再按比率升序排列。依据连接前后行数与指标字典核查结果。",
       "input": "orders 与 customers 两张样例表；使用样本期全量已交付订单，查询不含“上周”时间条件。",
       "output": "每个区域的已交付订单数、准时订单数和准时交付率。",
       "constraints": "JOIN 前检查客户主键唯一；实际交付日期为空的订单不进入本指标分母；零分母返回 NULL；本查询不执行真实用户权限检查。",
       "example": "把 WHERE o.actual_date IS NOT NULL 删除后比较比率变化，解释为何未交付订单不能直接算为延迟。",
-      "evaluation": "结果应同时给出分子与分母，并声明对象范围、时间窗口、连接粒度及查询不可支持的因果结论。",
+      "evaluation": "结果应同时给出分子与分母，并明确对象范围、时间窗口和连接粒度，以及本查询不能支持的因果结论。",
       "parameters": [],
       "annotatedCode": "-- 口径：仅统计样本期已交付的订单；连接客户表取得区域。\nWITH delivered AS (\n  SELECT c.region, o.order_id,\n         CASE WHEN o.actual_date <= o.promised_date THEN 1 ELSE 0 END AS on_time\n  FROM orders AS o\n  JOIN customers AS c ON o.customer_id = c.customer_id\n  WHERE o.actual_date IS NOT NULL\n)\n-- 同时保留分子和分母，便于审核准时交付率。\nSELECT region, COUNT(*) AS delivered_orders, SUM(on_time) AS on_time_orders,\n       ROUND(SUM(on_time) * 1.0 / NULLIF(COUNT(*), 0), 4) AS on_time_rate\nFROM delivered\nGROUP BY region\nORDER BY on_time_rate ASC;"
     },
     {
       "background": "虚构企业保存多版差旅制度。员工提问时必须引用在询问日期有效且本人可读的条款。",
-      "problem": "给定角色、日期与金额，确定可直接按条款办理、须经理预审、超出条款或需要拒答，并显示证据版本。",
+      "problem": "给定角色、日期与金额，判断申请属于直接办理、经理预审、超出条款范围或拒答中的哪种情况，并显示证据版本。",
       "input": "固定问题“国内住宿报销额度”；日期 2026-10-10；金额由滑块给出；访问开关决定员工或访客角色。",
-      "output": "判定、状态、制度 ID、理由、下一处理人；已授权时显示两版教学制度的额度。",
-      "constraints": "只按固定关键词和教学政策计算；不会访问真实制度。经理预审并非已批准。访客不得看到受限正文。",
+      "output": "判定、状态、制度 ID、理由和下一处理人；访问已获授权时，显示两版教学制度的额度。",
+      "constraints": "本实验仅按固定关键词和教学制度计算，不访问真实制度。经理预审状态不等于批准；访客不得读取受限正文。",
       "example": "员工查询 450 元：HOTEL-v3 自动额度 400 元、预审上限 600 元，因此须部门经理预审。",
       "evaluation": "核对有效期、版本、角色、金额边界与证据 ID；缺证据或越权答复数应为零。",
       "annotatedCode": "# 固定关键词和制度版本过滤，模拟可信问答；此处没有语言模型。\nfrom bdm_decision.cases.week14_enterprise_agents import answer_policy, policy_threshold_rows\n\namount_yuan = 450\nemployee_access = True\n# 访客角色不得看到员工制度正文；金额滑块可触发不同审批分支。\nrole = 'employee' if employee_access else 'guest'\nresult = answer_policy('国内住宿报销额度', role=role, as_of='2026-10-10',\n                       region='domestic', amount_yuan=amount_yuan)\ndisplay([{'判定': result['decision'], '状态': result['state'],\n          '证据': '、'.join(result['evidence_ids']) or '无',\n          '理由': result['reason'], '下一处理人': result['next_actor']}], '制度问答与来源')\n# 仅在已授权时展示教学制度额度，不向访客泄露员工文件。\nif employee_access:\n    display(policy_threshold_rows(), '版本与额度（教学数据）', x='版本', y='自动额度')\n",
@@ -365,10 +365,10 @@
       "language": "python"
     },
     {
-      "background": "排期和资料检索都是常见的办公室重复任务，但日历提交与受限研发资料需要不同权限。",
-      "problem": "给李、王求最早共同空档；经组织者模拟审批后才确认本地提案。查询芯片接口和泵振动资料时过滤未批准版本与角色。",
+      "background": "会议排期和资料检索是常见的办公任务，提交日历与读取受限研发资料须分别授权。",
+      "problem": "求李、王最早的共同空档；经组织者模拟审批后，才确认本地会议提案。查询芯片接口和泵振动资料时，仅使用已批准且当前角色可访问的版本。",
       "input": "固定日历 S1=09:00、S2=10:00、S3=14:00；两个布尔开关分别控制组织者模拟审批与工程师访问资格。",
-      "output": "会议提案或本地确认状态、研发资料答复或权限拒绝、每项状态。",
+      "output": "会议提案或本地确认结果、研发资料答复或权限拒绝结果，以及各项状态。",
       "constraints": "不会发送真实会议邀请，也不会读取外部研发库；草稿与过期资料不可用于答复。",
       "example": "李有 S1/S2，王有 S2/S3，共同最早是 S2=10:00；未审批只能显示 proposed。",
       "evaluation": "共同空档、版本、访问角色与审批状态均应正确；无审批提交和草稿引用数为零。",
@@ -379,13 +379,13 @@
       "language": "python"
     },
     {
-      "background": "虚构客服同时处理订单进度、退货、产品资料与安全消息；错误分流可能泄露订单或延迟人工响应。",
-      "problem": "对客户 U1 关于 O100 的消息给出唯一路由。安全词优先；订单状态只在身份与归属均核对后显示。",
-      "input": "固定客户 U1、订单 O100；身份与安全词由开关控制，消息由代码按开关生成。",
-      "output": "路由、状态、可显示事实、下一处理人、命中意图以及重复提交是否复用。",
+      "background": "虚构客服系统同时处理订单进度、退货、产品资料与安全消息；错误分流可能泄露订单信息或延迟人工响应。",
+      "problem": "对客户 U1 关于 O100 的消息确定唯一处理路径。含安全关键词的消息优先升级处理；订单状态仅在身份与订单归属均核对后显示。",
+      "input": "固定客户 U1、订单 O100；开关控制身份核验状态及消息是否包含安全关键词，代码据此生成消息。",
+      "output": "处理路径、状态、允许显示的事实、下一处理人、识别出的意图，以及重复提交是否复用已有结果。",
       "constraints": "不执行退款或修改订单；十四日只是虚构教学规则。身份未核验时不得显示订单状态。",
-      "example": "U1 未核验问 O100 物流，结果为 verify_identity；核验后显示“已发货”；消息含“冒烟”则安全升级优先。",
-      "evaluation": "高优先级安全分支不能漏分流，越权订单状态不得泄露，重复提交不能产生新动作。",
+      "example": "U1 未通过核验时询问 O100 物流，结果为 verify_identity；核验后显示“已发货”；消息包含“冒烟”时，优先升级至安全处置流程。",
+      "evaluation": "高优先级安全消息不得遗漏，越权订单状态不得泄露，重复提交不得产生重复动作。",
       "annotatedCode": "# 固定词典和优先级实现客服分流；不会退款或查询真实订单。\nfrom bdm_decision.cases.week14_enterprise_agents import route_customer\n\nverified = False\nsafety_message = False\nmessage = '设备冒烟，O100 物流怎样？' if safety_message else 'O100 物流怎样？'\nledger = {}  # 完整账本保存请求指纹；首次调用和重试都使用它。\nresult = route_customer('CASE-1', customer_id='U1', verified=verified,\n                        message=message, order_id='O100', ledger=ledger)\ndisplay([{'消息': message, '路由': result['route'], '状态': result['state'],\n          '可显示事实': result.get('visible_fact') or '无',\n          '下一处理人': result['next_actor'],\n          '命中意图': '、'.join(result['matched_keywords']) or '无'}], '客户咨询分流')\n# 同一事件号再次提交只复用结果，不新增客服动作。\nreplay = route_customer('CASE-1', customer_id='U1', verified=verified,\n                        message=message, order_id='O100', ledger=ledger)\nprint('重复提交复用前次结果：', replay.get('replayed', False))\n",
       "id": "agent-routing",
       "title": "客户咨询分流工作流",
@@ -393,12 +393,12 @@
       "language": "python"
     },
     {
-      "background": "虚构封测线 M01 上报振动、温度与批次质量。AI 只读复核，现场 PLC 和有资质人员负责设备安全。",
-      "problem": "先处理联锁，再验证读数新鲜度；有效数据按阈值计算风险分数，形成维护调查草稿并记录审批与幂等。",
-      "input": "默认振动 8.0 mm/s、温度 79°C、质量 good、年龄 20 秒；滑块和开关控制振动、过期、联锁与本地审批。",
+      "background": "虚构封测线 M01 上报振动、温度与批次质量。AI 仅作只读复核，现场 PLC（可编程逻辑控制器）和有资质人员负责设备安全。",
+      "problem": "优先处理联锁信号，再检查读数是否过期；对有效数据按阈值计算风险分数，生成维护调查草稿，并记录审批及幂等处理结果（重复请求不产生额外动作）。",
+      "input": "默认振动 8.0 mm/s、温度 79°C、质量 good、距采样时间 20 秒；滑块和开关控制振动、读数过期、联锁与本地审批状态。",
       "output": "路由、状态、风险分数、触发信号、本地工单 ID 和设备控制调用数。",
-      "constraints": "联锁只读且最高优先级；模型绝不停机、开机、复位或调参。读数过期时不判正常，未审批不创建正式工单。",
-      "example": "振动恰为 8.0 时风险分数为 1，输出 warning_review；若联锁触发则直接人工安全响应，设备控制调用数恒为 0。",
+      "constraints": "联锁状态仅供读取，处置优先级最高；模型不执行停机、开机、复位或调参。读数过期时不能判定设备正常，未审批时不能创建正式工单。",
+      "example": "振动恰为 8.0 时风险分数为 1，输出 warning_review；联锁触发时直接转交人工安全处置，设备控制调用数恒为 0。",
       "evaluation": "标准样本的阈值、优先级和幂等结果须全部正确；漏升级、无审批工单与设备控制调用数均为零。",
       "annotatedCode": "# 只读教学事件：PLC 联锁状态只能输入，代码没有任何停启机调用。\nfrom bdm_decision.cases.week14_enterprise_agents import (\n    handle_production_event, approve_production_event\n)\n\nvibration_mm_s = 8.0\nstale_reading = False\ninterlock_trip = False\napprove_ticket = False\nledger = {}  # 本地账本用于工单审批和事件去重。\nresult = handle_production_event('E-DEMO', vibration_mm_s=vibration_mm_s,\n                                 temperature_c=79.0, quality_flag='good',\n                                 sensor_age_s=61 if stale_reading else 20,\n                                 interlock_trip=interlock_trip, ledger=ledger)\n# 只有有效异常草稿可被维护负责人批准；仍然不触及设备。\nif approve_ticket and result['state'] == 'proposed':\n    result = approve_production_event('E-DEMO', approval_by='maintenance_lead',\n                                      ledger=ledger)\ndisplay([{'事件': 'E-DEMO', '路由': result['route'], '状态': result['state'],\n          '风险分数': result['risk_score'],\n          '命中信号': '、'.join(result['matched_signals']) or '无',\n          '本地工单': result.get('ticket_id') or '未建立',\n          '设备控制调用数': len(result['control_commands'])}], '产线异常复核')\nprint(result['reason'])\n",
       "id": "agent-production",
@@ -461,7 +461,7 @@
       "id": "04_data_quality-code-8",
       "chapter": "04_data_quality",
       "language": "sql",
-      "comment": "-- 外键覆盖检查：左连接客户表，再找有客户 ID 却未匹配维表的订单。",
+      "comment": "-- 外键覆盖检查：左连接客户表，找出包含客户 ID 却未匹配客户维表的订单。",
       "annotatedCode": "-- 外键覆盖检查：左连接客户表，再找有客户 ID 却未匹配维表的订单。\nSELECT\n  o.order_id,\n  o.customer_id\nFROM orders AS o\nLEFT JOIN customers AS c\n  ON o.customer_id = c.customer_id\nWHERE o.customer_id IS NOT NULL\n  AND c.customer_id IS NULL;"
     },
     {
@@ -489,7 +489,7 @@
       "id": "appendix-4-code-12",
       "chapter": "appendix-4",
       "language": "text",
-      "comment": "# 在项目根目录运行容量比较；第二条命令增加每小时请求与检索片段数，用于观察成本和可行容量变化。",
+      "comment": "# 在项目根目录运行容量比较；第二条命令增加每小时请求数与检索片段数，用于观察成本和可行容量的变化。",
       "annotatedCode": "# 在项目根目录运行容量比较；第二条命令增加每小时请求与检索片段数，用于观察成本和可行容量变化。\nPYTHONPATH=src python -m bdm_decision.cases.week10_ai_infra_capacity\nPYTHONPATH=src python -m bdm_decision.cases.week10_ai_infra_capacity \\\n    --requests-per-hour 1500 --retrieved-passages 10"
     },
     {
@@ -552,7 +552,7 @@
       "id": "ab_test",
       "path": "src/bdm_decision/causal/ab_test.py",
       "status": "implemented",
-      "comment": "# A/B 分组摘要、均值差和区间；护栏指标应与主指标同时检查。"
+      "comment": "# A/B 分组摘要、均值差和区间；约束指标应与主指标同时检查。"
     },
     {
       "id": "checks",
@@ -636,7 +636,7 @@
       "id": "week06_ab_testing",
       "path": "src/bdm_decision/cases/week06_ab_testing.py",
       "status": "implemented",
-      "comment": "# 第 6 章结算页 A/B 教学样例与结果报告。"
+      "comment": "# 第 6 章结账页 A/B 测试样例与结果报告。"
     },
     {
       "id": "week03_sql_kpi",
@@ -654,7 +654,7 @@
       "id": "week10_process_mining",
       "path": "src/bdm_decision/cases/week10_process_mining.py",
       "status": "implemented",
-      "comment": "# 第 10 章事件日志流程报告；区分等待、返工和合规异常。"
+      "comment": "# 第 10 章事件日志报告；区分事件间隔、返工和合规异常。"
     },
     {
       "id": "week04_data_quality",
@@ -720,7 +720,7 @@
       "id": "objects",
       "path": "src/bdm_decision/ontology/objects.py",
       "status": "implemented",
-      "comment": "# 业务对象数据结构；object_id 是后续关联与审计的锚点。"
+      "comment": "# 业务对象数据结构；object_id 用于后续关联与审计追踪。"
     },
     {
       "id": "build_star_schema",
@@ -738,7 +738,7 @@
       "id": "data_quality_tests",
       "path": "src/bdm_decision/warehouse/data_quality_tests.sql",
       "status": "implemented",
-      "comment": "-- SQL 质量规则；输出失败记录后应回查来源而非静默剔除。"
+      "comment": "-- SQL 质量规则；保留失败记录，并检查其来源及原因。"
     },
     {
       "id": "build_kpi_tables",

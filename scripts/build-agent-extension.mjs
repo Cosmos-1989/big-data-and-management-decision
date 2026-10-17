@@ -3,7 +3,7 @@ import {readFile,writeFile,mkdir,copyFile} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 import {fileURLToPath} from 'node:url';
 import path from 'node:path';
-import {marked} from '../dist/vendor/marked.js';
+import {execFileSync} from 'node:child_process';
 import {diagramHtml} from '../dist/slide-diagrams.js';
 const site=path.resolve(fileURLToPath(new URL('..',import.meta.url))),root=path.dirname(site),input=path.join(site,'content-source/agent-course'),out=path.join(site,'dist');
 const read=async p=>JSON.parse(await readFile(p,'utf8'));
@@ -16,7 +16,7 @@ const sectionIds=['agent-route','agent-architecture','agent-rag','agent-chatflow
 function convert(source,id,isAgent=false){
  const formulas=[];
  source=source.replace(/\\\[([\s\S]*?)\\\]|\\\(([\s\S]*?)\\\)/g,(_,display,inline)=>{const n=formulas.length;formulas.push(`<span class="math ${display===undefined?'inline':'display'}">${display===undefined?'\\(':'\\['}${esc(display??inline)}${display===undefined?'\\)':'\\]'}</span>`);return `BDMAGENTMATH${n}TOKEN`;});
- let html=marked.parse(source,{gfm:true}),title='',section=-1,sub=0;const toc=[];
+ let html=execFileSync(process.env.PYTHON||'python3',[path.join(site,'scripts/render-markdown.py')],{input:source,encoding:'utf8'}),title='',section=-1,sub=0;const toc=[];
  html=html.replace(/<h1[^>]*>([\s\S]*?)<\/h1>/,(_,t)=>{title=plain(t).replace(/^第\s*14\s*章\s*/,'');return '';});
  html=html.replace(/<h([23])[^>]*>([\s\S]*?)<\/h\1>/g,(_,level,text)=>{if(level==='2'){section++;sub=0;}else sub++;const anchor=isAgent?(level==='2'?sectionIds[section]:`${sectionIds[section]}-${sub}`):`${id}-s${toc.length}`;if(!anchor)throw Error('Unexpected section count');toc.push({id:anchor,title:plain(text),level:Number(level)});return `<h${level} id="${anchor}">${text}</h${level}>`;});
  html=html.replace(/BDMAGENTMATH(\d+)TOKEN/g,(_,n)=>formulas[Number(n)]);
@@ -26,7 +26,7 @@ function convert(source,id,isAgent=false){
  // The project source uses a repository-relative link; publish its course route.
  html=html.replaceAll('../docs/lecture_notes/14_ai_agent.md','#/chapter/14_ai_agent');
  if(isAgent&&section+1!==sectionIds.length)throw Error(`Expected 15 sections, got ${section+1}`);
- return {id,title,html,toc,source:id==='14_ai_agent'?'docs/lecture_notes/14_ai_agent.md':'assignments/final_project.md',kind:'supplement'};
+ return JSON.parse(execFileSync(process.env.PYTHON||'python3',[path.join(site,'scripts/render-markdown.py'),'--normalize-document'],{input:JSON.stringify({id,title,html,toc,source:id==='14_ai_agent'?'docs/lecture_notes/14_ai_agent.md':'assignments/final_project.md',kind:'supplement'}),encoding:'utf8'}));
 }
 const agentSource=await readFile(path.join(input,'14_ai_agent.md'),'utf8');
 const projectSource=await readFile(path.join(input,'final_project.md'),'utf8');
@@ -63,9 +63,9 @@ for(const d of [agent,project]){const item=catalog.extras.find(e=>e.id===d.id);i
 catalog.extras.find(e=>e.id==='14_ai_agent').hasSlides=true;
 const links={
  '10_process_mining':['enterprise-agent-path','从受控执行到企业智能体方案','运行环境管理知识检索、任务状态与可靠性。企业制度、办公协作、客户分流和生产线异常处理，还需明确业务对象、工具契约及试点验收条件；相应分析见企业AI Agent专题。','agent-route'],
- '11_modern_data_platform':['enterprise-agent-data','智能体知识与服务的数据基础','知识片段、向量索引和关系摘要须继承数据的权限、版本及有效期。将语义层中的指标约定用于受控工具，将原始文档和可检索证据分开治理，见企业RAG和部署设计。','agent-rag'],
- '12_mlops':['enterprise-agent-lifecycle','智能体的版本、评测与运行维护','模型、Prompt、Skill、检索配置、业务规则和工具服务均须登记版本。回归测试使用固定任务集，并记录轨迹、权限符合性、延迟、人工复核时间与恢复行为；沙盒、灰度和回滚分别设置验收条件。','agent-evaluation'],
- '13_ontology_action_scenario':['enterprise-agent-actions','对象状态、行动契约与智能体编排','审批应绑定业务对象及版本，工具前后置条件决定允许的状态转移。模型和多角色的中间建议由运行环境核验，最终完成以业务系统状态为准；生产线异常处理中的分析、核查与维护审批具有不同职责。','agent-production-case']
+ '11_modern_data_platform':['enterprise-agent-data','智能体知识与服务的数据基础','知识片段、向量索引和关系摘要须继承数据的权限、版本及有效期。受控工具采用语义层中已确认的指标定义，原始文档与可检索证据分别治理；具体方法见企业检索增强生成（RAG）与部署设计。','agent-rag'],
+ '12_mlops':['enterprise-agent-lifecycle','智能体的版本、评测与运行维护','模型、提示词（Prompt）、任务技能（Skill）、检索配置、业务规则和工具服务均须登记版本。回归测试使用固定任务集，并记录轨迹、权限合规情况、延迟、人工复核时间与恢复行为；沙盒、灰度和回滚分别设置验收条件。','agent-evaluation'],
+ '13_ontology_action_scenario':['enterprise-agent-actions','对象状态、行动契约与智能体编排','审批应绑定业务对象及版本，工具前后置条件决定允许的状态转移。模型及各角色提出的中间建议由运行环境核验，最终完成以业务系统状态为准；生产线异常处理中的分析、核查与维护审批具有不同职责。','agent-production-case']
 };
 for(const [id,[anchor,title,body,target]] of Object.entries(links)){
  const p=path.join(out,`content/${id}.json`),d=await read(p);
@@ -99,7 +99,7 @@ const rows=coverage.items.map(item=>{
  const labs=item.experiment_ids.map(id=>`<a href="#/lab/${id}">${esc(experiments.find(e=>e.id===id)?.title||id)}</a>`).join('、');
  return `<tr><td>${esc(item.topic)}</td><td>${reading}</td><td>${pages.join('、')||'参见相关章节'}</td><td>${labs?labs+'<br>':''}${esc(item.practical_limit)}</td></tr>`;
 }).join('');
-const learningMap={id:'agent-learning-map',title:'企业Agent专题：主题与实验导航',kind:'supplement',source:agent.source,toc:[{id:'agent-map',title:'主题、讲授与实践',level:2}],html:`<p>以企业任务为线索，连接原理、技术和方案。本单元包含55页授课幻灯片、四个确定性教学实验和可编辑方案包；实验采用虚构资料与固定规则，不调用真实大模型或企业系统。产品与部署部分提供官方资料和验收方法。</p><h2 id="agent-map">主题、讲授与实践</h2><p><a href="#/chapter/${agent.id}">阅读完整专题 →</a>　<a href="./downloads/enterprise-agent-kit.zip">下载方案与验收材料 ↓</a></p><div class="table-scroll"><table><thead><tr><th>学习主题</th><th>讲义位置</th><th>幻灯片页</th><th>实验与学习边界</th></tr></thead><tbody>${rows}</tbody></table></div>`};
+const learningMap={id:'agent-learning-map',title:'企业Agent专题：主题与实验导航',kind:'supplement',source:agent.source,toc:[{id:'agent-map',title:'主题、讲授与实践',level:2}],html:`<p>企业智能体专题讨论任务定义、知识检索、对话与工作流、运行控制及部署治理。配套资料包括55页授课幻灯片、四个教学实验和可编辑方案包。实验采用虚构资料与固定规则，不调用真实大模型或企业系统；产品与部署部分附官方资料和验收要求。</p><h2 id="agent-map">主题、讲授与实践</h2><p><a href="#/chapter/${agent.id}">阅读完整专题 →</a>　<a href="./downloads/enterprise-agent-kit.zip">下载方案与验收材料 ↓</a></p><div class="table-scroll"><table><thead><tr><th>学习主题</th><th>讲义位置</th><th>幻灯片页</th><th>实验与学习边界</th></tr></thead><tbody>${rows}</tbody></table></div>`};
 await save(path.join(out,'content/agent-learning-map.json'),learningMap);
 catalog.extras=catalog.extras.filter(e=>e.id!==learningMap.id).concat({id:learningMap.id,title:learningMap.title,kind:learningMap.kind,source:learningMap.source});
 await save(path.join(out,'content/catalog.json'),catalog);

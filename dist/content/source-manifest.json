@@ -2,51 +2,51 @@
   "sources": [
     {
       "path": "docs/textbook/chapters/01_intro.tex",
-      "sha256": "d2a0e7a11088525fcb0040592e2e6e722f9c7a75267f52363fd83db76d849927"
+      "sha256": "e7c78f125bc4025488a52f547e25353cc0fec157768c870ee1e7d4b7dfc470f5"
     },
     {
       "path": "docs/textbook/chapters/02_enterprise_data_model.tex",
-      "sha256": "1c414ec58f5c7f99e2660a408f44352154dfcfbc09f258860d7ccd2e7e67e98b"
+      "sha256": "63317dc8b50d52c49edaf2ff70669988e7b48c2c6f84df8ee671b59fed297725"
     },
     {
       "path": "docs/textbook/chapters/03_sql_kpi.tex",
-      "sha256": "53ed9e2aa5965c95c5e80b215f2bde9e966b04f7aa85a1af9a4fca17fde50409"
+      "sha256": "c2d924a73b4c70848b9ac0fff6ab2bac969c5639dc2e94ec49f04862524a8066"
     },
     {
       "path": "docs/textbook/chapters/04_data_quality.tex",
-      "sha256": "a104eacd30c00828d6c7ae1241b032756db105f104de7ef91a4907d994786b18"
+      "sha256": "025c12030aef69b0625f4ff471604047c7864914dd50da5254db61d605f6ba3a"
     },
     {
       "path": "docs/textbook/chapters/05_statistics_dashboard.tex",
-      "sha256": "4ec5ff129c70906ede34ca3fec6ca8c22b39b3346164f69f2b54f7b67b21e132"
+      "sha256": "f0cd7fb9819589570fa01af2ccff1ed979df6478b22bbee92bc9a003631a7043"
     },
     {
       "path": "docs/textbook/chapters/06_ab_testing.tex",
-      "sha256": "cd79ba0e299bb969f98d2c7e93c7a36c062ab1cf9d9ee9197d28479f3de2db0d"
+      "sha256": "b6cd99c9648d4d83c61a5b9a50cf2ac95f9cac8a2736ae630485086c0c4d8ea8"
     },
     {
       "path": "docs/textbook/chapters/07_prediction.tex",
-      "sha256": "724771b42201f8e5d1f20a5ab5437b4800506759c4f220051e158a60db2453d0"
+      "sha256": "97d7c03710523ef6e2ef48aa8c128522c4840e092ff2cdbd2ccfe1a62f875d7f"
     },
     {
       "path": "docs/textbook/chapters/08_causality.tex",
-      "sha256": "b7d9a392827acc1be209c1deb22f2d5c25c18b01e7c732e01c153dae12d86f63"
+      "sha256": "b7f36d3bff50681ee0af2be509f60ee18cb24ae8ad164623227334351dd06a68"
     },
     {
       "path": "docs/textbook/chapters/09_optimization.tex",
-      "sha256": "c7ef6331cd20bfcadb1601dcda84853ef9089f50d89bdcb2cffa34066116f2be"
+      "sha256": "43399246d4eb582e28c95015a52e1508d977a835f6e5621780483809f9150856"
     },
     {
       "path": "docs/textbook/chapters/10_process_mining.tex",
-      "sha256": "f7b2fbc1960325e18f3bccd5b42e003f794ee516624eb734c4614b482483c307"
+      "sha256": "92c9a9a9c95ac7da7864f53155d51d1f4a50688e3b595b7a18fbb2181ad4012f"
     },
     {
       "path": "docs/textbook/frontmatter.tex",
-      "sha256": "e04e4155ce83fdca147bca02414f7328b47cff1f668cbb1e88373a26a782da47"
+      "sha256": "b346e94778b31f2c35a12e7a135f5081b0306c9bc8c1786ef04ae55cbf8f4753"
     },
     {
       "path": "docs/textbook/appendices.tex",
-      "sha256": "e17d6b6760e114cf9e85ca92d2f9969991479fb55e6e6a6958377c613c90d874"
+      "sha256": "091ec663c08dbfb77c3a752be54cbb47b3ab797405f2b965d9696fedc658e624"
     },
     {
       "path": "docs/textbook/references.bib",
@@ -57,7 +57,7 @@
     "chapters": 10,
     "appendices": 4,
     "figures": 19,
-    "programs": 43,
+    "programs": 44,
     "datasets": 13
   },
   "agentExtension": {
@@ -65,11 +65,11 @@
     "sourceFiles": [
       {
         "path": "docs/lecture_notes/14_ai_agent.md",
-        "sha256": "10167276aac52b155773ac3dcc35e8cfd1f3d75773fb1dd8fe6b4f3eca58189f"
+        "sha256": "6b2cca9a1f619394d51e1ee7d4d384b12d0283ec08a7cc80279cd16bc48509a1"
       },
       {
         "path": "assignments/final_project.md",
-        "sha256": "9784d497c6bc6ee6bf44b81d604de2d3428c05bae37ed2efc0cccbfba497b3bb"
+        "sha256": "dd686c0d11596d625c7b727973fcdc552740d01b20b2cad29e4e9d157e29f7ec"
       },
       {
         "path": "src/bdm_decision/cases/week14_enterprise_agents.py",

@@ -1,4 +1,5 @@
 node_modules/
+__pycache__/
 .sites-runtime/
 .env*
 math-validation-input.json

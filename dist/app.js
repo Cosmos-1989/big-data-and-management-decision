@@ -1,17 +1,17 @@
 import katex from './vendor/katex/katex.mjs';
 import renderMathInElement from './vendor/katex/contrib/auto-render.mjs';
-import {mountLab,cleanupLab,esc,tableHtml} from './lab.js?v=20261012-4';
-import {experiments} from './experiments.js?v=20261012-4';
-import {lectureSlidesHtml,initLectureSlides} from './slides.js?v=20261012-4';
-import {decorateEnterpriseCases,initFigureZoom} from './cases.js?v=20261012-4';
-import {initCourseSearch} from './course-search.js?v=20261012-4';
+import {mountLab,cleanupLab,esc,tableHtml} from './lab.js?v=20261017-1';
+import {experiments} from './experiments.js?v=20261017-1';
+import {lectureSlidesHtml,initLectureSlides} from './slides.js?v=20261017-1';
+import {decorateEnterpriseCases,initFigureZoom} from './cases.js?v=20261017-1';
+import {initCourseSearch} from './course-search.js?v=20261017-1';
 const main=document.querySelector('main'),sidebar=document.querySelector('.sidebar'),toc=document.querySelector('.toc');
 const home=main.innerHTML;let catalog,currentRoute='',renderVersion=0;
 const macros={'\\E':'\\mathbb E','\\Prob':'\\mathbb P','\\R':'\\mathbb R','\\N':'\\mathbb N','\\eps':'\\varepsilon','\\dd':'\\,\\mathrm d','\\argmin':'\\operatorname*{arg\\,min}','\\argmax':'\\operatorname*{arg\\,max}','\\abs':'\\left\\lvert #1\\right\\rvert','\\norm':'\\left\\lVert #1\\right\\rVert'};
 const cached=new Map();
 let decorationsPromise;
-function chapterDecorations(){return decorationsPromise ||= Promise.all([fetch('./content/lecture-slides.json?v=20261012-4').then(r=>r.json()),fetch('./content/case-cards.json?v=20261012-4').then(r=>r.json()),fetch('./content/lab-specs.json?v=20261012-4').then(r=>r.json())]).then(([slides,cases,specs])=>({slides,cases,snippets:specs.snippets}));}
-async function doc(id){if(!cached.has(id)){const r=await fetch('./content/'+encodeURIComponent(id)+'.json?v=20261012-4');if(!r.ok)throw new Error('找不到这份课程资料');cached.set(id,await r.json());}return cached.get(id);}
+function chapterDecorations(){return decorationsPromise ||= Promise.all([fetch('./content/lecture-slides.json?v=20261017-1').then(r=>r.json()),fetch('./content/case-cards.json?v=20261017-1').then(r=>r.json()),fetch('./content/lab-specs.json?v=20261017-1').then(r=>r.json())]).then(([slides,cases,specs])=>({slides,cases,snippets:specs.snippets}));}
+async function doc(id){if(!cached.has(id)){const r=await fetch('./content/'+encodeURIComponent(id)+'.json?v=20261017-1');if(!r.ok)throw new Error('找不到这份课程资料');cached.set(id,await r.json());}return cached.get(id);}
 function chapterLink(c){return `<a href="#/chapter/${c.id}"><span class="chapter-number">${/^\d/.test(c.id)?c.id.slice(0,2):'↗'}</span><span>${esc(c.title)}</span><span class="row-arrow">→</span></a>`;}
 function buildNav(){
  const core=catalog.chapters.filter(c=>/^\d/.test(c.id));
@@ -27,7 +27,7 @@ function setToc(items=[]){syncToc=()=>{};toc.innerHTML=`<div>本页内容</div>$
 }
 function footer(){return `<footer class="page-footer"><span>数智化企业运营与优化微专业</span><a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a></footer>`;}
 function title(s){document.title=s+' · 大数据与管理决策基础';}
-function jump(anchor){if(anchor){requestAnimationFrame(()=>{const el=document.getElementById(anchor);if(el)el.scrollIntoView({behavior:'instant',block:'start'});else main.scrollIntoView();syncToc();});}else window.scrollTo(0,0);}
+function jump(anchor){if(anchor){requestAnimationFrame(()=>{const el=document.getElementById(anchor);if(el){el.scrollIntoView({behavior:'instant',block:'start'});if(/^fn(?:ref)?[:\d]/.test(anchor)){const focusTarget=el.matches('a')?el:el.querySelector('a[role="doc-noteref"]')||el;if(!focusTarget.matches('a,button,[tabindex]'))focusTarget.tabIndex=-1;focusTarget.focus({preventScroll:true});}}else main.scrollIntoView();syncToc();});}else window.scrollTo(0,0);}
 function homePage(){
  title('课程首页');main.innerHTML=home;
  const core=catalog.chapters.filter(c=>/^\d/.test(c.id));
@@ -86,7 +86,7 @@ document.querySelector('.menu').onclick=()=>setSidebarOpen(!sidebar.classList.co
 document.querySelector('.sidebar-backdrop').onclick=()=>setSidebarOpen(false);
 window.matchMedia('(min-width:981px)').addEventListener('change',e=>{if(e.matches)setSidebarOpen(false);});
 document.addEventListener('keydown',e=>{if(e.key==='Escape'){setSidebarOpen(false);}});
-try{const r=await fetch('./content/catalog.json?v=20261012-4');if(!r.ok)throw new Error('课程目录加载失败，请刷新重试。');catalog=await r.json();buildNav();initCourseSearch(catalog);window.addEventListener('hashchange',route);await route();}catch(e){main.innerHTML=`<h1>课程内容暂时无法加载</h1><p>${esc(e.message)}</p><button onclick="location.reload()">重新加载</button>`;}
+try{const r=await fetch('./content/catalog.json?v=20261017-1');if(!r.ok)throw new Error('课程目录加载失败，请刷新重试。');catalog=await r.json();buildNav();initCourseSearch(catalog);window.addEventListener('hashchange',route);await route();}catch(e){main.innerHTML=`<h1>课程内容暂时无法加载</h1><p>${esc(e.message)}</p><button onclick="location.reload()">重新加载</button>`;}
 // Optional WebMCP navigation uses the same routes and visible state as the interface.
 const context=document.modelContext;
 if(context?.registerTool){

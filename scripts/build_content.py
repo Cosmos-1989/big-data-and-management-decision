@@ -6,8 +6,9 @@ from pathlib import Path
 import os, re, json, subprocess, shutil, hashlib, ast, zipfile, argparse
 import markdown
 from bs4 import BeautifulSoup
+from content_typography import normalize_document
 ROOT=Path(__file__).resolve().parents[2]
-SITE=ROOT/'website'; OUT=SITE/'dist'; BOOK=ROOT/'docs/textbook'
+SITE=ROOT/'website'; OUT=Path(os.environ.get('BDM_SITE_OUTPUT',SITE/'dist')); BOOK=ROOT/'docs/textbook'
 PANDOC=os.environ.get('PANDOC','pandoc')
 for d in ['content','figures','downloads','data']:(OUT/d).mkdir(parents=True,exist_ok=True)
 chapters=list(sorted((BOOK/'chapters').glob('*.tex')))
@@ -125,6 +126,7 @@ for slug,s in prepared:
         table.wrap(soup.new_tag('div',attrs={'class':'table-scroll'}))
     toc=[{'id':x['id'],'title':x.get_text(' ',strip=True),'level':int(x.name[1])} for x in soup.find_all(['h2','h3'])]
     doc={'id':slug,'title':title_text,'html':str(soup),'toc':toc,'source':'docs/textbook/'+('chapters/'+slug+'.tex' if slug[0].isdigit() else 'frontmatter.tex' if slug=='preface' else 'appendices.tex'),'kind':'textbook'}
+    doc,_=normalize_document(doc)
     (OUT/'content'/(slug+'.json')).write_text(json.dumps(doc,ensure_ascii=False))
 # Supplementary teaching units, assignments and report templates retain their provenance.
 extra=list(sorted((ROOT/'docs/lecture_notes').glob('1[1-4]_*.md')))+[ROOT/'docs/syllabus.md']+list(sorted((ROOT/'assignments').glob('*.md')))+list(sorted((ROOT/'reports').glob('*.md')))+list(sorted((ROOT/'docs/cases').glob('*.md')))+[ROOT/'data/sample/README.md']
@@ -133,12 +135,13 @@ for p in extra:
     slug=('data-guide' if p.name=='README.md' else p.stem);s=p.read_text()
     # Localize reader-facing assignment labels; keep filenames and code intact.
     s=re.sub(r'(?im)^(#{1,6}\s+)Assignment\b',r'\1作业',s)
-    soup=BeautifulSoup(markdown.markdown(s,extensions=['tables','fenced_code','toc']),'html.parser')
+    soup=BeautifulSoup(markdown.markdown(s,extensions=['tables','fenced_code','toc','footnotes'],extension_configs={'footnotes':{'BACKLINK_TITLE':'返回正文注释 {}','USE_DEFINITION_ORDER':False}}),'html.parser')
     title=soup.find('h1');t=title.get_text() if title else slug
     if title:title.decompose()
     for i,x in enumerate(soup.find_all(['h2','h3'])):x['id']=slug+'-s'+str(i)
     for tab in soup.find_all('table'):tab.wrap(soup.new_tag('div',attrs={'class':'table-scroll'}))
     doc={'id':slug,'title':t,'html':str(soup),'toc':[{'id':x['id'],'title':x.get_text(),'level':int(x.name[1])} for x in soup.find_all(['h2','h3'])],'source':str(p.relative_to(ROOT)),'kind':'supplement'}
+    doc,_=normalize_document(doc)
     (OUT/'content'/(slug+'.json')).write_text(json.dumps(doc,ensure_ascii=False));extra_meta.append({k:doc[k] for k in ['id','title','source','kind']})
 files={str(p.relative_to(ROOT)):p.read_text() for p in (ROOT/'src/bdm_decision').rglob('*') if p.suffix in ['.py','.sql','.yml']}
 files.update({str(p.relative_to(ROOT)):p.read_text() for p in (ROOT/'data/sample').glob('*.csv')})
