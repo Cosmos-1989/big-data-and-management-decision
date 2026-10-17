@@ -77,7 +77,7 @@ for name in ["设备 状态", "估计 各方案"]:
 report = {"documents": len(documents), "footnotes": len(all_notes),
           "footnoteReferences": sum(item["references"] for item in documents),
           "pages": documents, "terms": all_notes, "errors": errors}
-target = SITE / "review/language-20261017/language-validation.json"
+target = Path(os.environ.get("BDM_LANGUAGE_REPORT", SITE / "review/language-20261017/language-validation.json"))
 target.parent.mkdir(parents=True, exist_ok=True)
 target.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n")
 print(json.dumps({key: value for key, value in report.items() if key not in {"pages", "terms"}}, ensure_ascii=False, indent=2))

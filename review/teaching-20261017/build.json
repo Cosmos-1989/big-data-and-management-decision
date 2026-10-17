@@ -1,0 +1,44 @@
+{
+  "date": "2026-10-17",
+  "lectures": 16,
+  "cases": 80,
+  "slides": 712,
+  "sourceFiles": [
+    {
+      "path": "content-source/teaching-20261017/01-05/decks.json",
+      "sha256": "f28931fd94de667e65cf747d798229b59ba6ba0c4b8eb9f903091d035644608e"
+    },
+    {
+      "path": "content-source/teaching-20261017/01-05/cases.json",
+      "sha256": "40a9a1496bffbca8e7f19f7d5a986473ed5261a5bd85ed0b690b4400bf2f19c6"
+    },
+    {
+      "path": "content-source/teaching-20261017/01-05/term-audit.json",
+      "sha256": "c7cb7cbc1ddc93c1e73b4cf4b597144b956a7f1b9c3eda8bf7435b9ef55bdf07"
+    },
+    {
+      "path": "content-source/teaching-20261017/06-10/decks.json",
+      "sha256": "0764985f8f44779ae600082d5db7a08ffb8f8727f61e1fd3bdeca295869aa672"
+    },
+    {
+      "path": "content-source/teaching-20261017/06-10/cases.json",
+      "sha256": "b9ff8d96e6954098ba2ac5f6f9ce7b1a38915cdf03ed85428d4c15bfc7c570a7"
+    },
+    {
+      "path": "content-source/teaching-20261017/06-10/term-audit.json",
+      "sha256": "0427c48887c74b19670617c07f00420352abe72eda2640db77b7df37cf033af6"
+    },
+    {
+      "path": "content-source/teaching-20261017/11-16/decks.json",
+      "sha256": "f725692fa13e337f0aa03f9bd3ece204001c45abb0e0233e625b5087067156b0"
+    },
+    {
+      "path": "content-source/teaching-20261017/11-16/cases.json",
+      "sha256": "90be0f61ae4dab0aac69b0db238cc61f5e3192d2aa43e40f3e2e1253d16e4530"
+    },
+    {
+      "path": "content-source/teaching-20261017/11-16/term-audit.json",
+      "sha256": "b49338205715c26968045502ccef5d6cc9758d5668e29ab06c6c62b84922e4f7"
+    }
+  ]
+}

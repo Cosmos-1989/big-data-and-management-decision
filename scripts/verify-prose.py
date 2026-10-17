@@ -5,6 +5,7 @@ model assumptions, evidence limits, exercises and reproduction steps are valid.
 Run with the same BeautifulSoup dependency as build_content.py.
 """
 import json
+import os
 import re
 from pathlib import Path
 
@@ -60,7 +61,7 @@ for path in sorted((SITE / "dist/content").glob("*.json")):
 
 report = {"documents": documents, "decks": decks, "slidePages": slide_pages,
           "patterns": PATTERNS, "errors": errors}
-target = SITE / "review/prose-cleanup/residual-scan.json"
+target = Path(os.environ.get("BDM_PROSE_REPORT", SITE / "review/prose-cleanup/residual-scan.json"))
 target.parent.mkdir(parents=True, exist_ok=True)
 target.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n")
 print(json.dumps({key: value for key, value in report.items() if key != "patterns"},

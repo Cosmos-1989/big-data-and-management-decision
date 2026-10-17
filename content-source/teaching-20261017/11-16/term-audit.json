@@ -1,0 +1,1314 @@
+[
+  {
+    "chapter": "11_modern_data_platform",
+    "lesson": 11,
+    "term": "数据平台",
+    "aliases": [],
+    "firstSlideTitle": "现代数据平台：让同一指标可以复核",
+    "definitionSlideTitle": "现代数据平台：让同一指标可以复核",
+    "explanation": "组织采集、存储、计算与受控使用的系统及规则。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "11_modern_data_platform",
+    "lesson": 11,
+    "term": "语义层",
+    "aliases": [],
+    "firstSlideTitle": "现代数据平台：让同一指标可以复核",
+    "definitionSlideTitle": "现代数据平台：让同一指标可以复核",
+    "explanation": "统一表达业务对象、指标公式、维度和访问规则的逻辑层。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "11_modern_data_platform",
+    "lesson": 11,
+    "term": "数据仓库",
+    "aliases": [],
+    "firstSlideTitle": "数据库、仓库、湖与湖仓分别解决什么问题",
+    "definitionSlideTitle": "数据库、仓库、湖与湖仓分别解决什么问题",
+    "explanation": "整合业务主题和历史事实以支持跨系统分析。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "11_modern_data_platform",
+    "lesson": 11,
+    "term": "数据湖",
+    "aliases": [],
+    "firstSlideTitle": "数据库、仓库、湖与湖仓分别解决什么问题",
+    "definitionSlideTitle": "数据库、仓库、湖与湖仓分别解决什么问题",
+    "explanation": "保留多种格式原始及处理后数据，服务多种计算任务。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "11_modern_data_platform",
+    "lesson": 11,
+    "term": "湖仓一体",
+    "aliases": [
+      "lakehouse"
+    ],
+    "firstSlideTitle": "数据库、仓库、湖与湖仓分别解决什么问题",
+    "definitionSlideTitle": "数据库、仓库、湖与湖仓分别解决什么问题",
+    "explanation": "在湖存储上增加表管理、事务和分析能力。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "11_modern_data_platform",
+    "lesson": 11,
+    "term": "ETL",
+    "aliases": [],
+    "firstSlideTitle": "ETL与ELT：转换发生在什么位置",
+    "definitionSlideTitle": "ETL与ELT：转换发生在什么位置",
+    "explanation": "抽取、转换、加载。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "11_modern_data_platform",
+    "lesson": 11,
+    "term": "ELT",
+    "aliases": [],
+    "firstSlideTitle": "ETL与ELT：转换发生在什么位置",
+    "definitionSlideTitle": "ETL与ELT：转换发生在什么位置",
+    "explanation": "抽取、加载、转换。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "11_modern_data_platform",
+    "lesson": 11,
+    "term": "CDC",
+    "aliases": [
+      "变更数据捕获"
+    ],
+    "firstSlideTitle": "Shopify CDC：从反复查询到日志变更",
+    "definitionSlideTitle": "Shopify CDC：从反复查询到日志变更",
+    "explanation": "把数据库增改删转换为可处理的变更记录。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "11_modern_data_platform",
+    "lesson": 11,
+    "term": "bronze",
+    "aliases": [],
+    "firstSlideTitle": "原始层、标准层与服务层",
+    "definitionSlideTitle": "原始层、标准层与服务层",
+    "explanation": "保留原始数据与采集依据的常见分层名称。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "11_modern_data_platform",
+    "lesson": 11,
+    "term": "silver",
+    "aliases": [],
+    "firstSlideTitle": "原始层、标准层与服务层",
+    "definitionSlideTitle": "原始层、标准层与服务层",
+    "explanation": "清洗和标准化业务事实的常见分层名称。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "11_modern_data_platform",
+    "lesson": 11,
+    "term": "gold",
+    "aliases": [],
+    "firstSlideTitle": "原始层、标准层与服务层",
+    "definitionSlideTitle": "原始层、标准层与服务层",
+    "explanation": "为特定业务用途组织服务数据的常见分层名称。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "11_modern_data_platform",
+    "lesson": 11,
+    "term": "快照",
+    "aliases": [],
+    "firstSlideTitle": "Shopify CDC：从反复查询到日志变更",
+    "definitionSlideTitle": "Shopify CDC：从反复查询到日志变更",
+    "explanation": "记录某一已提交版本的数据边界；分析快照还固定所用输入。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "11_modern_data_platform",
+    "lesson": 11,
+    "term": "粒度",
+    "aliases": [],
+    "firstSlideTitle": "指标必须保留可汇总的构成项",
+    "definitionSlideTitle": "指标必须保留可汇总的构成项",
+    "explanation": "每行记录代表的业务单位。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "11_modern_data_platform",
+    "lesson": 11,
+    "term": "NL2SQL",
+    "aliases": [
+      "自然语言转SQL"
+    ],
+    "firstSlideTitle": "语义层把业务词汇对应到可执行规则",
+    "definitionSlideTitle": "语义层把业务词汇对应到可执行规则",
+    "explanation": "把自然语言问题转为候选SQL查询的技术。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "11_modern_data_platform",
+    "lesson": 11,
+    "term": "数据血缘",
+    "aliases": [
+      "lineage"
+    ],
+    "firstSlideTitle": "数据血缘回答结果从哪里来",
+    "definitionSlideTitle": "数据血缘回答结果从哪里来",
+    "explanation": "记录数据来源及转换依赖关系。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "11_modern_data_platform",
+    "lesson": 11,
+    "term": "数据产品",
+    "aliases": [],
+    "firstSlideTitle": "数据产品需要可执行的服务约定",
+    "definitionSlideTitle": "数据产品需要可执行的服务约定",
+    "explanation": "面向明确任务、由责任人维护且有稳定接口的数据资产。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "11_modern_data_platform",
+    "lesson": 11,
+    "term": "SLA",
+    "aliases": [
+      "服务水平协议"
+    ],
+    "firstSlideTitle": "数据产品需要可执行的服务约定",
+    "definitionSlideTitle": "数据产品需要可执行的服务约定",
+    "explanation": "约定刷新、可用性、质量和故障响应等服务条件。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "11_modern_data_platform",
+    "lesson": 11,
+    "term": "数据洁净室",
+    "aliases": [],
+    "firstSlideTitle": "访问权限应随派生数据保持",
+    "definitionSlideTitle": "访问权限应随派生数据保持",
+    "explanation": "在约定规则下协作分析并限制明细暴露的环境。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "11_modern_data_platform",
+    "lesson": 11,
+    "term": "OEE",
+    "aliases": [
+      "设备综合效率"
+    ],
+    "firstSlideTitle": "从设备事件到运营指标服务",
+    "definitionSlideTitle": "从设备事件到运营指标服务",
+    "explanation": "计划时间中折算为理想合格产出的比例。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "11_modern_data_platform",
+    "lesson": 11,
+    "term": "WIP",
+    "aliases": [
+      "在制品"
+    ],
+    "firstSlideTitle": "从设备事件到运营指标服务",
+    "definitionSlideTitle": "从设备事件到运营指标服务",
+    "explanation": "生产流程中仍未完成的对象存量。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "11_modern_data_platform",
+    "lesson": 11,
+    "term": "OTD",
+    "aliases": [
+      "准时交付率"
+    ],
+    "firstSlideTitle": "现代数据平台：让同一指标可以复核",
+    "definitionSlideTitle": "现代数据平台：让同一指标可以复核",
+    "explanation": "应交对象中按规定承诺日期准时完成的比例。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "12_mlops",
+    "lesson": 12,
+    "term": "MLOps",
+    "aliases": [
+      "机器学习运维"
+    ],
+    "firstSlideTitle": "MLOps：持续维护可用的预测服务",
+    "definitionSlideTitle": "MLOps：持续维护可用的预测服务",
+    "explanation": "管理数据、代码、模型和服务持续变化的可追溯运维方式。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "12_mlops",
+    "lesson": 12,
+    "term": "部署",
+    "aliases": [],
+    "firstSlideTitle": "MLOps：持续维护可用的预测服务",
+    "definitionSlideTitle": "MLOps：持续维护可用的预测服务",
+    "explanation": "将模型及依赖配置成可调用服务或批处理任务。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "12_mlops",
+    "lesson": 12,
+    "term": "推理",
+    "aliases": [],
+    "firstSlideTitle": "MLOps：持续维护可用的预测服务",
+    "definitionSlideTitle": "MLOps：持续维护可用的预测服务",
+    "explanation": "已训练模型对新输入计算输出。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "12_mlops",
+    "lesson": 12,
+    "term": "特征",
+    "aliases": [],
+    "firstSlideTitle": "服务契约先定义结果的业务含义",
+    "definitionSlideTitle": "服务契约先定义结果的业务含义",
+    "explanation": "预测当时可使用的输入属性。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "12_mlops",
+    "lesson": 12,
+    "term": "标签",
+    "aliases": [],
+    "firstSlideTitle": "服务契约先定义结果的业务含义",
+    "definitionSlideTitle": "服务契约先定义结果的业务含义",
+    "explanation": "用于训练和评价的目标结果。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "12_mlops",
+    "lesson": 12,
+    "term": "训练与服务偏差",
+    "aliases": [
+      "training-serving skew"
+    ],
+    "firstSlideTitle": "相同字段名还需要相同计算含义",
+    "definitionSlideTitle": "相同字段名还需要相同计算含义",
+    "explanation": "训练与实际预测阶段的数据或处理含义不一致。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "12_mlops",
+    "lesson": 12,
+    "term": "特征库",
+    "aliases": [],
+    "firstSlideTitle": "相同字段名还需要相同计算含义",
+    "definitionSlideTitle": "相同字段名还需要相同计算含义",
+    "explanation": "管理复用特征的定义、物化与获取接口。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "12_mlops",
+    "lesson": 12,
+    "term": "基线",
+    "aliases": [],
+    "firstSlideTitle": "离线测试与线上效果回答不同问题",
+    "definitionSlideTitle": "离线测试与线上效果回答不同问题",
+    "explanation": "作为比较的既有流程、简单规则或模型。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "12_mlops",
+    "lesson": 12,
+    "term": "影子",
+    "aliases": [
+      "影子运行",
+      "影子部署"
+    ],
+    "firstSlideTitle": "影子运行：候选输出暂不控制行动",
+    "definitionSlideTitle": "影子运行：候选输出暂不控制行动",
+    "explanation": "复制真实输入，候选结果不用于业务行动。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "12_mlops",
+    "lesson": 12,
+    "term": "灰度",
+    "aliases": [],
+    "firstSlideTitle": "灰度发布：让可控范围使用候选",
+    "definitionSlideTitle": "灰度发布：让可控范围使用候选",
+    "explanation": "限定用户、对象或流量逐步采用候选版本。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "12_mlops",
+    "lesson": 12,
+    "term": "校准",
+    "aliases": [],
+    "firstSlideTitle": "运行监控、数据监控和效果监控分层",
+    "definitionSlideTitle": "运行监控、数据监控和效果监控分层",
+    "explanation": "同类预测概率与实际发生频率的对应程度。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "12_mlops",
+    "lesson": 12,
+    "term": "数据漂移",
+    "aliases": [],
+    "firstSlideTitle": "数据漂移与概念漂移需要不同证据",
+    "definitionSlideTitle": "数据漂移与概念漂移需要不同证据",
+    "explanation": "输入的分布随时间改变。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "12_mlops",
+    "lesson": 12,
+    "term": "概念漂移",
+    "aliases": [],
+    "firstSlideTitle": "数据漂移与概念漂移需要不同证据",
+    "definitionSlideTitle": "数据漂移与概念漂移需要不同证据",
+    "explanation": "给定输入后结果的条件关系改变。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "12_mlops",
+    "lesson": 12,
+    "term": "选择性反馈",
+    "aliases": [],
+    "firstSlideTitle": "标签延迟与选择性反馈",
+    "definitionSlideTitle": "标签延迟与选择性反馈",
+    "explanation": "结果可得性受选择或行动影响。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "12_mlops",
+    "lesson": 12,
+    "term": "回滚",
+    "aliases": [],
+    "firstSlideTitle": "Pro-ML：从异常信号追查原因",
+    "definitionSlideTitle": "Pro-ML：从异常信号追查原因",
+    "explanation": "恢复经验证的先前服务状态，并另查实际业务后果。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "12_mlops",
+    "lesson": 12,
+    "term": "分析工程",
+    "aliases": [],
+    "firstSlideTitle": "分析代码也需要测试与变更控制",
+    "definitionSlideTitle": "分析代码也需要测试与变更控制",
+    "explanation": "用软件工程方式管理数据转换、测试与文档。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "12_mlops",
+    "lesson": 12,
+    "term": "CI",
+    "aliases": [
+      "持续集成"
+    ],
+    "firstSlideTitle": "分析代码也需要测试与变更控制",
+    "definitionSlideTitle": "分析代码也需要测试与变更控制",
+    "explanation": "变更时自动检查代码及依赖。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "12_mlops",
+    "lesson": 12,
+    "term": "CD",
+    "aliases": [
+      "持续交付"
+    ],
+    "firstSlideTitle": "分析代码也需要测试与变更控制",
+    "definitionSlideTitle": "分析代码也需要测试与变更控制",
+    "explanation": "把已验证产物准备为可发布状态。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "12_mlops",
+    "lesson": 12,
+    "term": "LLM",
+    "aliases": [
+      "大语言模型"
+    ],
+    "firstSlideTitle": "生成式系统的版本范围更广",
+    "definitionSlideTitle": "生成式系统的版本范围更广",
+    "explanation": "从大量语言资料学习生成和理解模式的模型。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "12_mlops",
+    "lesson": 12,
+    "term": "RAG",
+    "aliases": [
+      "检索增强生成"
+    ],
+    "firstSlideTitle": "生成式系统的版本范围更广",
+    "definitionSlideTitle": "生成式系统的版本范围更广",
+    "explanation": "先检索外部证据再形成生成答复。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "13_ontology_action_scenario",
+    "lesson": 13,
+    "term": "业务本体",
+    "aliases": [
+      "Ontology"
+    ],
+    "firstSlideTitle": "业务本体：明确对象、关系与允许变化",
+    "definitionSlideTitle": "业务本体：明确对象、关系与允许变化",
+    "explanation": "组织业务对象、属性与关系的共同模型。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "13_ontology_action_scenario",
+    "lesson": 13,
+    "term": "行动",
+    "aliases": [
+      "Action"
+    ],
+    "firstSlideTitle": "业务本体：明确对象、关系与允许变化",
+    "definitionSlideTitle": "业务本体：明确对象、关系与允许变化",
+    "explanation": "以契约规定允许的状态变化。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "13_ontology_action_scenario",
+    "lesson": 13,
+    "term": "情景",
+    "aliases": [
+      "Scenario"
+    ],
+    "firstSlideTitle": "业务本体：明确对象、关系与允许变化",
+    "definitionSlideTitle": "业务本体：明确对象、关系与允许变化",
+    "explanation": "固定假设及候选行动后比较条件结果。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "13_ontology_action_scenario",
+    "lesson": 13,
+    "term": "事件",
+    "aliases": [],
+    "firstSlideTitle": "事件记录变化，状态表达当前判断",
+    "definitionSlideTitle": "事件记录变化，状态表达当前判断",
+    "explanation": "在某一时点发生的业务活动。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "13_ontology_action_scenario",
+    "lesson": 13,
+    "term": "状态",
+    "aliases": [],
+    "firstSlideTitle": "业务本体：明确对象、关系与允许变化",
+    "definitionSlideTitle": "业务本体：明确对象、关系与允许变化",
+    "explanation": "依据当前有效记录与规则得到的对象判断。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "13_ontology_action_scenario",
+    "lesson": 13,
+    "term": "前置条件",
+    "aliases": [],
+    "firstSlideTitle": "行动用前置条件限制允许变化",
+    "definitionSlideTitle": "行动用前置条件限制允许变化",
+    "explanation": "执行之前必须满足的检查。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "13_ontology_action_scenario",
+    "lesson": 13,
+    "term": "后置条件",
+    "aliases": [],
+    "firstSlideTitle": "行动用前置条件限制允许变化",
+    "definitionSlideTitle": "行动用前置条件限制允许变化",
+    "explanation": "执行之后应能够核验的结果。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "13_ontology_action_scenario",
+    "lesson": 13,
+    "term": "不变量",
+    "aliases": [],
+    "firstSlideTitle": "不变量表达每次行动都须保持的规则",
+    "definitionSlideTitle": "不变量表达每次行动都须保持的规则",
+    "explanation": "所有允许状态转移中都应成立的条件。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "13_ontology_action_scenario",
+    "lesson": 13,
+    "term": "幂等",
+    "aliases": [],
+    "firstSlideTitle": "幂等处理限制重复请求的副作用",
+    "definitionSlideTitle": "幂等处理限制重复请求的副作用",
+    "explanation": "同一请求重复执行仍保持相同业务效果。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "13_ontology_action_scenario",
+    "lesson": 13,
+    "term": "数字孪生",
+    "aliases": [],
+    "firstSlideTitle": "DHL仓库数字孪生：可见状态支持资源分配",
+    "definitionSlideTitle": "DHL仓库数字孪生：可见状态支持资源分配",
+    "explanation": "数字模型与实体结构、状态或行为持续对应。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "13_ontology_action_scenario",
+    "lesson": 13,
+    "term": "M13",
+    "aliases": [],
+    "firstSlideTitle": "运营要素把异常转化为可核查的问题",
+    "definitionSlideTitle": "运营要素把异常转化为可核查的问题",
+    "explanation": "按需求、产品、路线、批次、设备、产能、在制品、质量、维护、物料、交付、成本和行动组织制造运营调查的课程教学抽象分类；关联不构成因果证据。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "13_ontology_action_scenario",
+    "lesson": 13,
+    "term": "智能体",
+    "aliases": [
+      "Agent"
+    ],
+    "firstSlideTitle": "智能体的建议须通过行动契约",
+    "definitionSlideTitle": "智能体的建议须通过行动契约",
+    "explanation": "围绕目标维护任务状态、选择步骤并调用工具的软件系统。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "13_ontology_action_scenario",
+    "lesson": 13,
+    "term": "审计",
+    "aliases": [],
+    "firstSlideTitle": "审计轨迹连接意图、操作与结果",
+    "definitionSlideTitle": "审计轨迹连接意图、操作与结果",
+    "explanation": "追查操作者、依据、批准、实际操作与结果的证据。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "14_ai_agent",
+    "lesson": 14,
+    "term": "AI Agent",
+    "aliases": [
+      "企业智能体",
+      "Agent"
+    ],
+    "firstSlideTitle": "企业智能体：从任务到受控结果",
+    "definitionSlideTitle": "企业智能体：从任务到受控结果",
+    "explanation": "面向目标选择步骤、调用工具并维护任务状态的软件系统。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "14_ai_agent",
+    "lesson": 14,
+    "term": "任务契约",
+    "aliases": [],
+    "firstSlideTitle": "企业智能体：从任务到受控结果",
+    "definitionSlideTitle": "企业智能体：从任务到受控结果",
+    "explanation": "对输入、输出、权限及完成条件的共同约定。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "14_ai_agent",
+    "lesson": 14,
+    "term": "Chatbot",
+    "aliases": [
+      "聊天机器人"
+    ],
+    "firstSlideTitle": "对话、协助与执行的控制差异",
+    "definitionSlideTitle": "对话、协助与执行的控制差异",
+    "explanation": "以答复为主要产物的交互模式。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "14_ai_agent",
+    "lesson": 14,
+    "term": "Copilot",
+    "aliases": [
+      "协作助手"
+    ],
+    "firstSlideTitle": "对话、协助与执行的控制差异",
+    "definitionSlideTitle": "对话、协助与执行的控制差异",
+    "explanation": "在人主导工作中检索、起草或建议的交互模式。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "14_ai_agent",
+    "lesson": 14,
+    "term": "LLM",
+    "aliases": [
+      "大语言模型"
+    ],
+    "firstSlideTitle": "大语言模型、提示与上下文",
+    "definitionSlideTitle": "大语言模型、提示与上下文",
+    "explanation": "学习语言序列模式并生成理解与推理候选的模型。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "14_ai_agent",
+    "lesson": 14,
+    "term": "Prompt",
+    "aliases": [
+      "提示词"
+    ],
+    "firstSlideTitle": "大语言模型、提示与上下文",
+    "definitionSlideTitle": "大语言模型、提示与上下文",
+    "explanation": "交给模型的任务说明与输入。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "14_ai_agent",
+    "lesson": 14,
+    "term": "上下文",
+    "aliases": [],
+    "firstSlideTitle": "大语言模型、提示与上下文",
+    "definitionSlideTitle": "大语言模型、提示与上下文",
+    "explanation": "当前请求内模型可利用的历史、证据和工具结果。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "14_ai_agent",
+    "lesson": 14,
+    "term": "token",
+    "aliases": [
+      "词元"
+    ],
+    "firstSlideTitle": "大语言模型、提示与上下文",
+    "definitionSlideTitle": "大语言模型、提示与上下文",
+    "explanation": "模型分词得到的基本处理单位。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "14_ai_agent",
+    "lesson": 14,
+    "term": "Planning",
+    "aliases": [
+      "规划"
+    ],
+    "firstSlideTitle": "任务系统的六项功能",
+    "definitionSlideTitle": "任务系统的六项功能",
+    "explanation": "组织步骤、依赖、资源及失败出口。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "14_ai_agent",
+    "lesson": 14,
+    "term": "Memory",
+    "aliases": [],
+    "firstSlideTitle": "任务系统的六项功能",
+    "definitionSlideTitle": "任务系统的六项功能",
+    "explanation": "保存任务必要信息，并区分来源与时效。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "14_ai_agent",
+    "lesson": 14,
+    "term": "Tools",
+    "aliases": [
+      "工具"
+    ],
+    "firstSlideTitle": "企业智能体：从任务到受控结果",
+    "definitionSlideTitle": "企业智能体：从任务到受控结果",
+    "explanation": "连接外部查询与操作的接口能力。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "14_ai_agent",
+    "lesson": 14,
+    "term": "Skills",
+    "aliases": [
+      "技能"
+    ],
+    "firstSlideTitle": "任务系统的六项功能",
+    "definitionSlideTitle": "任务系统的六项功能",
+    "explanation": "复用操作方法及其资源与适用条件。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "14_ai_agent",
+    "lesson": 14,
+    "term": "Harness",
+    "aliases": [
+      "运行控制环境"
+    ],
+    "firstSlideTitle": "任务系统的六项功能",
+    "definitionSlideTitle": "任务系统的六项功能",
+    "explanation": "在模型外管理状态、权限、调度及恢复的环境。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "14_ai_agent",
+    "lesson": 14,
+    "term": "槽位",
+    "aliases": [],
+    "firstSlideTitle": "Memory：信息类型、来源与有效性",
+    "definitionSlideTitle": "Memory：信息类型、来源与有效性",
+    "explanation": "日期、金额、参与人等任务字段。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "14_ai_agent",
+    "lesson": 14,
+    "term": "副作用",
+    "aliases": [],
+    "firstSlideTitle": "Tools：接口契约先于工具调用",
+    "definitionSlideTitle": "Tools：接口契约先于工具调用",
+    "explanation": "对外部业务状态产生的实际改变。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "14_ai_agent",
+    "lesson": 14,
+    "term": "幂等",
+    "aliases": [],
+    "firstSlideTitle": "Harness：保持状态与执行不变量",
+    "definitionSlideTitle": "Harness：保持状态与执行不变量",
+    "explanation": "同一请求重复处理仍保持相同业务效果。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "14_ai_agent",
+    "lesson": 14,
+    "term": "RAG",
+    "aliases": [
+      "检索增强生成"
+    ],
+    "firstSlideTitle": "RAG：将外部证据引入回答",
+    "definitionSlideTitle": "RAG：将外部证据引入回答",
+    "explanation": "先检索外部资料，再据此生成答复。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "14_ai_agent",
+    "lesson": 14,
+    "term": "重排",
+    "aliases": [
+      "Rerank"
+    ],
+    "firstSlideTitle": "RAG：将外部证据引入回答",
+    "definitionSlideTitle": "RAG：将外部证据引入回答",
+    "explanation": "按问题相关性重新排列初步候选。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "14_ai_agent",
+    "lesson": 14,
+    "term": "OCR",
+    "aliases": [
+      "光学字符识别"
+    ],
+    "firstSlideTitle": "解析：保留条款、表格与来源位置",
+    "definitionSlideTitle": "解析：保留条款、表格与来源位置",
+    "explanation": "将扫描图像中的字符识别为可处理文本。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "14_ai_agent",
+    "lesson": 14,
+    "term": "召回率",
+    "aliases": [],
+    "firstSlideTitle": "检索的评价：找到相关资料还需要保留条件",
+    "definitionSlideTitle": "检索的评价：找到相关资料还需要保留条件",
+    "explanation": "应检出的证据中实际检出的比例。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "14_ai_agent",
+    "lesson": 14,
+    "term": "精确率",
+    "aliases": [],
+    "firstSlideTitle": "检索的评价：找到相关资料还需要保留条件",
+    "definitionSlideTitle": "检索的评价：找到相关资料还需要保留条件",
+    "explanation": "已检出的候选中相关证据的比例。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "14_ai_agent",
+    "lesson": 14,
+    "term": "向量",
+    "aliases": [],
+    "firstSlideTitle": "RAG：将外部证据引入回答",
+    "definitionSlideTitle": "RAG：将外部证据引入回答",
+    "explanation": "由数值组成的表示，用于比较问题与片段。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "14_ai_agent",
+    "lesson": 14,
+    "term": "SQL",
+    "aliases": [],
+    "firstSlideTitle": "向量、词法与结构化查询",
+    "definitionSlideTitle": "向量、词法与结构化查询",
+    "explanation": "查询关系型数据的语言。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "14_ai_agent",
+    "lesson": 14,
+    "term": "GraphRAG",
+    "aliases": [
+      "图检索增强生成"
+    ],
+    "firstSlideTitle": "GraphRAG：关系追踪与主题汇总",
+    "definitionSlideTitle": "GraphRAG：关系追踪与主题汇总",
+    "explanation": "利用实体、关系和社区摘要组织检索与汇总。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "14_ai_agent",
+    "lesson": 14,
+    "term": "Chatflow",
+    "aliases": [
+      "对话流程"
+    ],
+    "firstSlideTitle": "Chatflow：会话状态支持逐轮澄清",
+    "definitionSlideTitle": "Chatflow：会话状态支持逐轮澄清",
+    "explanation": "围绕多轮输入维护变量并选择处理步骤。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "14_ai_agent",
+    "lesson": 14,
+    "term": "Workflow",
+    "aliases": [
+      "工作流"
+    ],
+    "firstSlideTitle": "Workflow：完成条件属于业务状态",
+    "definitionSlideTitle": "Workflow：完成条件属于业务状态",
+    "explanation": "用触发、节点、分支和终止条件组织任务。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "14_ai_agent",
+    "lesson": 14,
+    "term": "多智能体",
+    "aliases": [],
+    "firstSlideTitle": "多角色协作：由职责差异决定分工",
+    "definitionSlideTitle": "多角色协作：由职责差异决定分工",
+    "explanation": "多个维护任务状态的执行主体按契约分担工作。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "14_ai_agent",
+    "lesson": 14,
+    "term": "私有化部署",
+    "aliases": [],
+    "firstSlideTitle": "私有化部署：数据流与调用范围",
+    "definitionSlideTitle": "私有化部署：数据流与调用范围",
+    "explanation": "约定组件在企业控制的基础设施中运行。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "14_ai_agent",
+    "lesson": 14,
+    "term": "控制面",
+    "aliases": [],
+    "firstSlideTitle": "私有化部署：数据流与调用范围",
+    "definitionSlideTitle": "私有化部署：数据流与调用范围",
+    "explanation": "管理配置、身份与调度的组件。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "14_ai_agent",
+    "lesson": 14,
+    "term": "ERP",
+    "aliases": [
+      "企业资源计划"
+    ],
+    "firstSlideTitle": "私有化部署：数据流与调用范围",
+    "definitionSlideTitle": "私有化部署：数据流与调用范围",
+    "explanation": "整合采购、生产与财务等业务的系统。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "14_ai_agent",
+    "lesson": 14,
+    "term": "Gateway",
+    "aliases": [
+      "网关"
+    ],
+    "firstSlideTitle": "OpenClaw与Hermes：持续任务入口",
+    "definitionSlideTitle": "OpenClaw与Hermes：持续任务入口",
+    "explanation": "连接消息入口与后端服务的组件。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "14_ai_agent",
+    "lesson": 14,
+    "term": "CLI",
+    "aliases": [
+      "命令行界面"
+    ],
+    "firstSlideTitle": "OpenClaw与Hermes：持续任务入口",
+    "definitionSlideTitle": "OpenClaw与Hermes：持续任务入口",
+    "explanation": "通过文本命令与程序交互的界面。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "14_ai_agent",
+    "lesson": 14,
+    "term": "IDE",
+    "aliases": [
+      "集成开发环境"
+    ],
+    "firstSlideTitle": "Claude Code、Codex与TRAE",
+    "definitionSlideTitle": "Claude Code、Codex与TRAE",
+    "explanation": "集成编码、运行与调试功能的开发环境。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "14_ai_agent",
+    "lesson": 14,
+    "term": "沙箱",
+    "aliases": [],
+    "firstSlideTitle": "OpenClaw与Hermes：持续任务入口",
+    "definitionSlideTitle": "OpenClaw与Hermes：持续任务入口",
+    "explanation": "限制程序可访问资源的执行环境。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "14_ai_agent",
+    "lesson": 14,
+    "term": "MCP",
+    "aliases": [
+      "模型上下文协议"
+    ],
+    "firstSlideTitle": "Claude Code、Codex与TRAE",
+    "definitionSlideTitle": "Claude Code、Codex与TRAE",
+    "explanation": "连接模型应用与外部工具或资源的协议。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "14_ai_agent",
+    "lesson": 14,
+    "term": "API",
+    "aliases": [
+      "应用程序接口"
+    ],
+    "firstSlideTitle": "Dify与Coze：显式编排应用",
+    "definitionSlideTitle": "Dify与Coze：显式编排应用",
+    "explanation": "软件之间按约定请求与交换结果的接口。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "14_ai_agent",
+    "lesson": 14,
+    "term": "联锁",
+    "aliases": [],
+    "firstSlideTitle": "调度：并行必须尊重证据依赖",
+    "definitionSlideTitle": "调度：并行必须尊重证据依赖",
+    "explanation": "按安全条件阻断危险操作的保护机制。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "14_ai_agent",
+    "lesson": 14,
+    "term": "PLC",
+    "aliases": [
+      "可编程逻辑控制器"
+    ],
+    "firstSlideTitle": "案例四：生产线异常调查",
+    "definitionSlideTitle": "案例四：生产线异常调查",
+    "explanation": "现场可编程逻辑控制设备，其作用须服从既有安全体系。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "14_ai_agent",
+    "lesson": 14,
+    "term": "基线",
+    "aliases": [],
+    "firstSlideTitle": "基线与验收：先约定怎样才算完成",
+    "definitionSlideTitle": "基线与验收：先约定怎样才算完成",
+    "explanation": "用于比较的现行业务流程或简单技术方法。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "14_ai_agent",
+    "lesson": 14,
+    "term": "OEE",
+    "aliases": [
+      "设备综合效率"
+    ],
+    "firstSlideTitle": "制造指标：先解释对象、存量与比率",
+    "definitionSlideTitle": "制造指标：先解释对象、存量与比率",
+    "explanation": "计划时间中折算为理想合格产出的比例。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "14_ai_agent",
+    "lesson": 14,
+    "term": "WIP",
+    "aliases": [
+      "在制品"
+    ],
+    "firstSlideTitle": "制造指标：先解释对象、存量与比率",
+    "definitionSlideTitle": "制造指标：先解释对象、存量与比率",
+    "explanation": "指定时点尚在生产流程中的存量。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "14_ai_agent",
+    "lesson": 14,
+    "term": "OTD",
+    "aliases": [
+      "准时交付率"
+    ],
+    "firstSlideTitle": "制造指标：先解释对象、存量与比率",
+    "definitionSlideTitle": "制造指标：先解释对象、存量与比率",
+    "explanation": "应交对象中按约定口径准时完成的比例。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "14_ai_agent",
+    "lesson": 14,
+    "term": "KPI",
+    "aliases": [
+      "关键绩效指标"
+    ],
+    "firstSlideTitle": "制造指标：先解释对象、存量与比率",
+    "definitionSlideTitle": "制造指标：先解释对象、存量与比率",
+    "explanation": "组织跟踪业务表现的明确度量。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "14_ai_agent",
+    "lesson": 14,
+    "term": "CSV",
+    "aliases": [],
+    "firstSlideTitle": "制造指标：先解释对象、存量与比率",
+    "definitionSlideTitle": "制造指标：先解释对象、存量与比率",
+    "explanation": "用分隔符组织表格记录的文本格式。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "final_project",
+    "lesson": 15,
+    "term": "原型",
+    "aliases": [
+      "prototype"
+    ],
+    "firstSlideTitle": "综合项目：验证一条有边界的决策链",
+    "definitionSlideTitle": "综合项目：验证一条有边界的决策链",
+    "explanation": "在限定条件下检验关键机制的可运行系统。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "final_project",
+    "lesson": 15,
+    "term": "概念验证",
+    "aliases": [
+      "PoC"
+    ],
+    "firstSlideTitle": "综合项目：验证一条有边界的决策链",
+    "definitionSlideTitle": "综合项目：验证一条有边界的决策链",
+    "explanation": "检查关键假设能否实现的验证活动。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "final_project",
+    "lesson": 15,
+    "term": "试点",
+    "aliases": [
+      "pilot"
+    ],
+    "firstSlideTitle": "综合项目：验证一条有边界的决策链",
+    "definitionSlideTitle": "综合项目：验证一条有边界的决策链",
+    "explanation": "在有限真实业务范围验证使用与运行。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "final_project",
+    "lesson": 15,
+    "term": "基线",
+    "aliases": [],
+    "firstSlideTitle": "基线需要代表实际可替代的流程",
+    "definitionSlideTitle": "基线需要代表实际可替代的流程",
+    "explanation": "用于比较的现行流程或明确规则。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "final_project",
+    "lesson": 15,
+    "term": "验收",
+    "aliases": [],
+    "firstSlideTitle": "从经营症状写成可回答的问题",
+    "definitionSlideTitle": "从经营症状写成可回答的问题",
+    "explanation": "按预先规定条件独立核对实际结果。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "final_project",
+    "lesson": 15,
+    "term": "KPI",
+    "aliases": [
+      "关键绩效指标"
+    ],
+    "firstSlideTitle": "先复算构成项，再搭建看板",
+    "definitionSlideTitle": "先复算构成项，再搭建看板",
+    "explanation": "按明确口径衡量业务表现的量。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "final_project",
+    "lesson": 15,
+    "term": "接口契约",
+    "aliases": [],
+    "firstSlideTitle": "接口契约连接分析与执行",
+    "definitionSlideTitle": "接口契约连接分析与执行",
+    "explanation": "规定输入输出、失败状态和副作用的约定。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "final_project",
+    "lesson": 15,
+    "term": "副作用",
+    "aliases": [],
+    "firstSlideTitle": "接口契约连接分析与执行",
+    "definitionSlideTitle": "接口契约连接分析与执行",
+    "explanation": "对外部状态产生实际改变。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "final_project",
+    "lesson": 15,
+    "term": "端到端",
+    "aliases": [],
+    "firstSlideTitle": "海尔佛山洗衣机：把定制需求贯通到生产",
+    "definitionSlideTitle": "海尔佛山洗衣机：把定制需求贯通到生产",
+    "explanation": "从业务请求覆盖全部必需环节到最终状态。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "final_project",
+    "lesson": 15,
+    "term": "敏感性分析",
+    "aliases": [],
+    "firstSlideTitle": "敏感性分析检查建议是否依赖脆弱假设",
+    "definitionSlideTitle": "敏感性分析检查建议是否依赖脆弱假设",
+    "explanation": "改变关键参数并观察方案选择是否稳定。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "final_project",
+    "lesson": 15,
+    "term": "可复现",
+    "aliases": [],
+    "firstSlideTitle": "固定分析快照，保留原始证据",
+    "definitionSlideTitle": "固定分析快照，保留原始证据",
+    "explanation": "他人按保存记录重建规定结果。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "final_project",
+    "lesson": 15,
+    "term": "随机种子",
+    "aliases": [],
+    "firstSlideTitle": "可复现实验需要可运行的证据包",
+    "definitionSlideTitle": "可复现实验需要可运行的证据包",
+    "explanation": "控制伪随机过程起点的参数。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "final_project",
+    "lesson": 15,
+    "term": "决策备忘录",
+    "aliases": [],
+    "firstSlideTitle": "决策备忘录说明建议及其证据边界",
+    "definitionSlideTitle": "决策备忘录说明建议及其证据边界",
+    "explanation": "面向授权决策者简明说明方案选择与条件。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "final_project",
+    "lesson": 16,
+    "term": "原型",
+    "aliases": [],
+    "firstSlideTitle": "项目评价：判断结论获得了多少支持",
+    "definitionSlideTitle": "项目评价：判断结论获得了多少支持",
+    "explanation": "在限定条件下验证机制的系统。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "final_project",
+    "lesson": 16,
+    "term": "试点",
+    "aliases": [],
+    "firstSlideTitle": "项目评价：判断结论获得了多少支持",
+    "definitionSlideTitle": "项目评价：判断结论获得了多少支持",
+    "explanation": "在有限真实业务范围检验使用与运行。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "final_project",
+    "lesson": 16,
+    "term": "基线",
+    "aliases": [],
+    "firstSlideTitle": "评价基线要代表真实替代选择",
+    "definitionSlideTitle": "评价基线要代表真实替代选择",
+    "explanation": "用于判断增量价值的真实替代流程或简单规则。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "final_project",
+    "lesson": 16,
+    "term": "证据链",
+    "aliases": [],
+    "firstSlideTitle": "主张、依据与推理应能够逐项追问",
+    "definitionSlideTitle": "主张、依据与推理应能够逐项追问",
+    "explanation": "连接主张、可查依据、推理与范围限制的关系。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "final_project",
+    "lesson": 16,
+    "term": "定性分析",
+    "aliases": [],
+    "firstSlideTitle": "真实案例帮助解释机制与组织条件",
+    "definitionSlideTitle": "真实案例帮助解释机制与组织条件",
+    "explanation": "用具体过程分析作用机制及组织条件。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "final_project",
+    "lesson": 16,
+    "term": "敏感性",
+    "aliases": [],
+    "firstSlideTitle": "区间和敏感性说明结论有多稳定",
+    "definitionSlideTitle": "区间和敏感性说明结论有多稳定",
+    "explanation": "改变未定参数，检查采用建议何时反转。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "final_project",
+    "lesson": 16,
+    "term": "单位成功",
+    "aliases": [],
+    "firstSlideTitle": "成本按完整任务及其后果核算",
+    "definitionSlideTitle": "成本按完整任务及其后果核算",
+    "explanation": "全部相关总成本除以经确认满足约束的成功任务数。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "final_project",
+    "lesson": 16,
+    "term": "可复现",
+    "aliases": [],
+    "firstSlideTitle": "技术附件支持他人重建关键结果",
+    "definitionSlideTitle": "技术附件支持他人重建关键结果",
+    "explanation": "按记录重建关键结果。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "final_project",
+    "lesson": 16,
+    "term": "可审计",
+    "aliases": [],
+    "firstSlideTitle": "技术附件支持他人重建关键结果",
+    "definitionSlideTitle": "技术附件支持他人重建关键结果",
+    "explanation": "追查实际操作、依据及责任。",
+    "definitionAtOrBeforeFirstUse": true
+  },
+  {
+    "chapter": "final_project",
+    "lesson": 16,
+    "term": "决策备忘录",
+    "aliases": [],
+    "firstSlideTitle": "决策备忘录把证据转成具体选择",
+    "definitionSlideTitle": "决策备忘录把证据转成具体选择",
+    "explanation": "向有权限决策者说明当前选择、依据和条件。",
+    "definitionAtOrBeforeFirstUse": true
+  }
+]

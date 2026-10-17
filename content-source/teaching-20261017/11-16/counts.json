@@ -1,0 +1,39 @@
+{
+  "decks": {
+    "11_modern_data_platform": 20,
+    "12_mlops": 20,
+    "13_ontology_action_scenario": 20,
+    "14_ai_agent": 65,
+    "final_project": 45
+  },
+  "lessons": {
+    "11": {
+      "slides": 20,
+      "cases": 5
+    },
+    "12": {
+      "slides": 20,
+      "cases": 5
+    },
+    "13": {
+      "slides": 20,
+      "cases": 5
+    },
+    "14": {
+      "slides": 65,
+      "cases": 5
+    },
+    "15": {
+      "slides": 20,
+      "cases": 5
+    },
+    "16": {
+      "slides": 25,
+      "cases": 5
+    }
+  },
+  "cases": 30,
+  "terms": 121,
+  "firstUseChecks": true,
+  "originalAgentTitlesPreserved": true
+}

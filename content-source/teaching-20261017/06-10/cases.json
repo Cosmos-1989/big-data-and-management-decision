@@ -1,0 +1,777 @@
+[
+  {
+    "id": "b06-01",
+    "lesson": 6,
+    "chapter": "06_ab_testing",
+    "company": "Netflix",
+    "title": "Netflix：同一影片的封面应如何比较",
+    "context": "Netflix 为同一影片准备多幅展示图片，希望帮助会员发现适合自己的内容。已播放影片的会员，只看到了系统当时选择的封面，历史点击率因而同时受到用户偏好和图片分配规则影响。",
+    "decision": "比较个性化封面与统一封面的体验，需要可核验的分配与结果。",
+    "facts": [
+      "官方技术文章介绍封面探索记录和离线回放评价",
+      "候选模型离线筛选后，再进行个性化与非个性化封面的线上 A/B 比较"
+    ],
+    "analysis": "课程分析：封面是处理版本，会员后续观看是结果；文中以观看参与质量标签避免只追求点击，未披露统一判定阈值。历史点击还受受众与分配影响，先保留受控探索记录，再以随机比较评价完整策略，分别支持离线筛选与上线决策。",
+    "limits": "文章说明当时的系统和研究过程，未公开可重算的完整实验资料；不把企业报告的改善直接外推到其他内容平台，也不据此宣称单张图片对某个会员的个体效应。",
+    "questions": [
+      {
+        "question": "为什么历史点击率最高的封面未必对所有会员最有效？",
+        "answer": "历史受众和展示机会不同；需要同一目标人群下可比较的分配。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "Artwork Personalization at Netflix",
+        "url": "https://netflixtechblog.com/artwork-personalization-c589f074ad76",
+        "publisher": "Netflix Technology Blog",
+        "date": "2017-12-07",
+        "accessed": "2026-10-17",
+        "support": "官方技术文章介绍封面探索记录和离线回放评价；候选模型离线筛选后，再进行个性化与非个性化封面的线上 A/B 比较"
+      }
+    ]
+  },
+  {
+    "id": "b06-02",
+    "lesson": 6,
+    "chapter": "06_ab_testing",
+    "company": "Airbnb",
+    "title": "Airbnb：房源实验为何受到邻近房源影响",
+    "context": "Airbnb 的房源共同竞争住客。改变部分房源的收费或展示条件，可能把需求从对照房源转移到处理房源；此时单房源结果会依赖其他房源的处理状态，个体随机化不再直接回答全市场推广后的变化。",
+    "decision": "随机化单元应匹配房源之间的替代关系。",
+    "facts": [
+      "企业参与的研究在 Airbnb 实施平台费用变化的元实验",
+      "研究对照个体随机化与相似房源集群随机化，并检验市场干扰偏差"
+    ],
+    "analysis": "课程分析：同一实验内比较不同分组设计，可以检验测量结果对干扰的敏感程度。集群随机化让相互竞争的对象尽量接受同一处理，减少跨组需求转移；代价是独立分配单元减少，需要重新评价估计精度。",
+    "limits": "证据针对特定平台费用变化和集群构造；不能推定任何房源实验都具有相同偏差，也不能认为集群随机化已经消除所有干扰。应分别审查地域边界与集群间联系。",
+    "questions": [
+      {
+        "question": "把每个房源独立随机化，为什么未必比按集群分组更可信？",
+        "answer": "相邻房源竞争同一需求，处理可能改变对照结果。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "Reducing Interference Bias in Online Marketplace Experiments Using Cluster Randomization",
+        "url": "https://pubsonline.informs.org/doi/10.1287/mnsc.2020.01157",
+        "publisher": "Management Science",
+        "date": "2024-04-05",
+        "accessed": "2026-10-17",
+        "support": "企业参与的研究在 Airbnb 实施平台费用变化的元实验；研究对照个体随机化与相似房源集群随机化，并检验市场干扰偏差"
+      }
+    ]
+  },
+  {
+    "id": "b06-03",
+    "lesson": 6,
+    "chapter": "06_ab_testing",
+    "company": "Booking.com",
+    "title": "Booking.com：实验记录为什么要保存失败结果",
+    "context": "Booking.com 的产品团队持续试验搜索、页面与服务方案。试验数量增长后，研究结论可能因记录不全、取数故障或重复试验而难以复用；只保留成功上线的方案，也会让其他团队误判某类改动的成功机会。",
+    "decision": "把实验登记、数据质量与组织学习纳入同一流程。",
+    "facts": [
+      "公司作者的论文介绍集中保存实验成功与失败的知识库",
+      "其平台将实验代码与业务逻辑适度分离，并监测数据采集管道的质量"
+    ],
+    "analysis": "课程分析：实验知识库保存研究问题、分配、指标和结果，可减少只展示成功方案的选择性记录。可复查的负面结果说明某种改动在特定对象与窗口内未获支持；后续复试应说明版本或条件发生了什么变化。",
+    "limits": "论文描述组织和平台机制，不提供“建立知识库必然提高利润”的独立因果识别。不同版本、受众和时期的实验不能仅凭名称合并，更不能把不显著结果解释为严格零效应。",
+    "questions": [
+      {
+        "question": "失败实验是否有长期业务价值？",
+        "answer": "保存设计与适用条件，才能避免无依据重复并形成新假设。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "Democratizing online controlled experiments at Booking.com",
+        "url": "https://arxiv.org/abs/1710.08217",
+        "publisher": "Booking.com authors / arXiv",
+        "date": "2017-10-23",
+        "accessed": "2026-10-17",
+        "support": "公司作者的论文介绍集中保存实验成功与失败的知识库；其平台将实验代码与业务逻辑适度分离，并监测数据采集管道的质量"
+      }
+    ]
+  },
+  {
+    "id": "b06-04",
+    "lesson": 6,
+    "chapter": "06_ab_testing",
+    "company": "Uber",
+    "title": "Uber：结果显著之前先检查实验是否按计划运行",
+    "context": "Uber 的实验跨越乘客、司机和配送等应用。对象更换设备或使用不同端，可能使同一对象经历不同版本；数据采集和分流故障也可能造成处理与对照人数出现异常比例，使看似精确的效应失去可靠依据。",
+    "decision": "分配执行与数据质量是效应解释的前提。",
+    "facts": [
+      "Uber 的实验平台公开介绍样本比例失衡与对象跨版本的质量检查",
+      "平台把固定终点分析与用于监测关键指标退化的序贯方法分开"
+    ],
+    "analysis": "课程分析：先调查分配比例、版本暴露和日志完整性，再讨论效应大小。安全监测需要及时发现恶化，正式推广判断需要明确统计目标；二者可以共存，但须各有预定规则，不能以临时查看的最优结果决定结论。",
+    "limits": "这是企业对当时平台的技术说明，不能证明所有实验完全避免故障。观察到跨版本对象后是否排除，必须依预先规则和研究目标判断，选择性删除会另生偏差。",
+    "questions": [
+      {
+        "question": "样本量很大且结果显著，为什么仍要检查分流？",
+        "answer": "更多记录不能修复分配或记录机制的系统性错误。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "Under the Hood of Uber’s Experimentation Platform",
+        "url": "https://www.uber.com/us/en/blog/xp/",
+        "publisher": "Uber Engineering",
+        "date": "2018-08-28",
+        "accessed": "2026-10-17",
+        "support": "Uber 的实验平台公开介绍样本比例失衡与对象跨版本的质量检查；平台把固定终点分析与用于监测关键指标退化的序贯方法分开"
+      }
+    ]
+  },
+  {
+    "id": "b06-05",
+    "lesson": 6,
+    "chapter": "06_ab_testing",
+    "company": "DoorDash",
+    "title": "DoorDash：调度实验按地区和时间切换",
+    "context": "DoorDash 的顾客、商家与骑手共享配送网络。新调度方案改变一部分订单占用的骑手，也会改变其他订单的等待与履约。把顾客直接分为两组，并不能使共享网络中的结果互不影响。",
+    "decision": "在地区与时间窗口层面切换处理，并按分配结构分析。",
+    "facts": [
+      "DoorDash 官方介绍在特定地区随时间交替处理与对照的 switchback 设计",
+      "文章说明共享运力的网络效应为何使简单顾客级 A/B 比较受到干扰"
+    ],
+    "analysis": "课程分析：时间切换实验让同一地区在不同窗口使用不同策略；窗口长度要兼顾残留影响与独立信息量。清洗期是切换后暂不计入比较的时段，用于减弱上一策略残留。按订单计数不能替代按地区时间单元估计误差。",
+    "limits": "方法不能自动消除相邻窗口残留、跨区调度和共同时间冲击；清洗长度、分层与方差估计需结合具体运行机制。此处不引用厂商宣传中的实验增速作为业务净收益。",
+    "questions": [
+      {
+        "question": "订单很多，为什么实验精度仍可能不足？",
+        "answer": "独立信息主要来自随机分配的地区时间单元，组内订单共享冲击。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "Switchback Tests and Randomized Experimentation Under Network Effects at DoorDash",
+        "url": "https://careersatdoordash.com/blog/switchback-tests-and-randomized-experimentation-under-network-effects-at-doordash/",
+        "publisher": "DoorDash Engineering",
+        "date": "2018-02-13",
+        "accessed": "2026-10-17",
+        "support": "DoorDash 官方介绍在特定地区随时间交替处理与对照的 switchback 设计；文章说明共享运力的网络效应为何使简单顾客级 A/B 比较受到干扰"
+      }
+    ]
+  },
+  {
+    "id": "b07-01",
+    "lesson": 7,
+    "chapter": "07_prediction",
+    "company": "Amazon",
+    "title": "Amazon：补货为何需要需求分布",
+    "context": "Amazon 的零售需求预测面对大量商品和不同市场。为库存和服务作准备时，平均需求相同的商品可能具有不同的高需求风险；单一点预测无法表达销售波动，也不能直接决定应准备的数量。",
+    "decision": "以概率预测支持多种缺货与积压成本条件下的选择。",
+    "facts": [
+      "Amazon 科学论文介绍实际零售需求概率预测平台",
+      "平台把预处理、特征、分布式学习、模型集成及评价纳入生产流程"
+    ],
+    "analysis": "课程分析：概率预测给出不同需求结果的可能性，分位数是累计概率达到指定水平的位置，可把服务要求或成本权衡映射为候选库存。模型学习与补货选择应分开评价：预测需检验校准和时间外误差，补货还须加入资金、仓储、提前期及缺货代价。",
+    "limits": "论文说明平台架构及预测工作，不公开所有商品的商业决策规则。课程中的成本映射是方法分析，不能宣称企业采用某一固定分位数，也不能凭预测改进推定利润增量。",
+    "questions": [
+      {
+        "question": "同样的平均需求，为什么可能需要不同库存？",
+        "answer": "需求尾部、缺货代价及资源条件不同，会改变所需的保障目标。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "Probabilistic demand forecasting at scale",
+        "url": "https://www.amazon.science/publications/probabilistic-demand-forecasting-at-scale",
+        "publisher": "Amazon Science / VLDB",
+        "date": "2017",
+        "accessed": "2026-10-17",
+        "support": "Amazon 科学论文介绍实际零售需求概率预测平台；平台把预处理、特征、分布式学习、模型集成及评价纳入生产流程"
+      }
+    ]
+  },
+  {
+    "id": "b07-02",
+    "lesson": 7,
+    "chapter": "07_prediction",
+    "company": "Uber",
+    "title": "Uber DeepETA：在道路模型上预测残差",
+    "context": "Uber 的到达时间估计（estimated time of arrival，ETA）用于接驾、计价、匹配和配送。道路路由引擎按路段计算行程，但实际路线、临时交通和接送场景仍可能造成系统偏差。完全抛开已有道路知识，并非唯一的模型更新方式。",
+    "decision": "利用道路计算作为基础，再学习实际耗时与基础估计的差异。",
+    "facts": [
+      "DeepETA 把道路路由结果与实际观察结果的残差作为学习对象",
+      "官方文章同时提出准确性、低时延和跨业务适用的模型要求"
+    ],
+    "analysis": "课程分析：残差是实际结果减去已有预测的差。先保留可靠的领域计算，再用当时可得的空间、时间和实时信号校正，能够明确新增模型需要解释的部分。评价既要测时间外误差，也要测请求响应时延与不同业务的表现。",
+    "limits": "这是已部署系统的设计说明；公开资料不支持还原全部数据或认定相同架构在任意城市都更优。到达时间预测本身也不证明改变匹配规则会改善全网结果。",
+    "questions": [
+      {
+        "question": "已有道路模型时，新模型应预测什么？",
+        "answer": "可预测基础估计的残差，并检验校正后的误差和服务代价。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "DeepETA: How Uber Predicts Arrival Times Using Deep Learning",
+        "url": "https://www.uber.com/us/en/blog/deepeta-how-uber-predicts-arrival-times/",
+        "publisher": "Uber Engineering",
+        "date": "2022-02-10",
+        "accessed": "2026-10-17",
+        "support": "DeepETA 把道路路由结果与实际观察结果的残差作为学习对象；官方文章同时提出准确性、低时延和跨业务适用的模型要求"
+      }
+    ]
+  },
+  {
+    "id": "b07-03",
+    "lesson": 7,
+    "chapter": "07_prediction",
+    "company": "DoorDash",
+    "title": "DoorDash：把配送预测与承诺决策分开",
+    "context": "DoorDash 顾客需要知道何时收到餐食，而餐厅备餐、骑手可用性和停车情况均有不确定性。两单即使平均到达时间相同，也可能具有不同的迟到尾部；把同一个均值直接展示为承诺会隐藏这种差别。",
+    "decision": "先预测配送时间分布，再依据业务目标形成展示与承诺。",
+    "facts": [
+      "DoorDash 的 NextGen ETA 说明概率预测基础层与业务决策层的两层结构",
+      "同一基础预测可服务不同类型 ETA 及多目标决策"
+    ],
+    "analysis": "课程分析：预测分布描述可能耗时，决策层选择展示范围或承诺条件。应检验不同地区、餐厅和时段的概率校准，再说明承诺对应的损失权衡。区间宽度和实际覆盖需一起报告，不能仅比较平均误差。",
+    "limits": "公开文章介绍概率系统，并未声称采用本课后续的共形方法；二者的联系在于都要求说明不确定性。展示区间不自动具有给定频率覆盖保证，需核验其构造与数据条件。",
+    "questions": [
+      {
+        "question": "为什么不能把一个预测均值同时当作所有场景的承诺？",
+        "answer": "均值不包含尾部风险，业务承诺还取决于错误代价与目标覆盖。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "Improving ETAs with multi-task models, deep learning, and probabilistic forecasts",
+        "url": "https://careersatdoordash.com/blog/improving-etas-with-multi-task-models-deep-learning-and-probabilistic-forecasts/",
+        "publisher": "DoorDash Engineering",
+        "date": "2024-03-12",
+        "accessed": "2026-10-17",
+        "support": "DoorDash 的 NextGen ETA 说明概率预测基础层与业务决策层的两层结构；同一基础预测可服务不同类型 ETA 及多目标决策"
+      }
+    ]
+  },
+  {
+    "id": "b07-04",
+    "lesson": 7,
+    "chapter": "07_prediction",
+    "company": "Netflix",
+    "title": "Netflix：评分预测为何不足以设计首页",
+    "context": "Netflix 的推荐工作从评分预测扩展到影片排序和首页组织。会员最终接触的是多个主题行与内容组合；单部影片的预测评分很高，并不充分决定它应放在首页什么位置，或是否与其他内容重复。",
+    "decision": "预测目标必须与用户实际接触的决策对象一致。",
+    "facts": [
+      "Netflix 官方文章讨论从评分预测、影片排序到个性化首页生成的演变",
+      "首页个性化需要联合考虑行的选择、排序及其内容"
+    ],
+    "analysis": "课程分析：离线损失衡量某一预测任务，首页体验则还受到位置、组合和重复影响。可以先用离线评价筛选模型，再用线上随机比较检验整页策略。单项评分误差降低，不能自动证明用户发现内容或长期留存得到改善。",
+    "limits": "文章描述特定时期的推荐系统，没有给出所有模型的通用优劣排序。本例不把首页设计写成单一预测问题，也不把企业模型演进解释为某个算法已具有普遍因果优势。",
+    "questions": [
+      {
+        "question": "预测更准，产品体验一定更好吗？",
+        "answer": "须看预测目标如何进入页面决策，并用完整体验评价验证。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "Learning a Personalized Homepage",
+        "url": "https://netflixtechblog.com/learning-a-personalized-homepage-aa8ec670359a",
+        "publisher": "Netflix Technology Blog",
+        "date": "2015-04-09",
+        "accessed": "2026-10-17",
+        "support": "Netflix 官方文章讨论从评分预测、影片排序到个性化首页生成的演变；首页个性化需要联合考虑行的选择、排序及其内容"
+      }
+    ]
+  },
+  {
+    "id": "b07-05",
+    "lesson": 7,
+    "chapter": "07_prediction",
+    "company": "Google Maps",
+    "title": "Google Maps：道路相互连接怎样影响预测",
+    "context": "Google Maps 需要预测用户到达各路段时的未来路况，而非仅报告出发时的当前速度。相邻道路的交通会彼此传递，瓶颈上游的影响也可能延后出现；把路段独立处理，会丢失网络中的部分依赖。",
+    "decision": "把道路结构与历史、实时交通共同用于未来行程时间预测。",
+    "facts": [
+      "DeepMind 与 Google Maps 联合使用在相连对象间汇总信息的图神经网络预测道路超路段行程时间",
+      "官方文章说明路由分析器与预测模型共同组成交通预测系统"
+    ],
+    "analysis": "课程分析：图神经网络是在相连对象之间传递和汇总信息的模型。道路图使邻近路段成为特征关系的一部分，但评价仍须使用预测时点真正可得的数据，并按未来时间和地区检验。网络结构的合理性不能替代外部测试。",
+    "limits": "公开材料支持当时的系统机制，不提供跨全部城市的统一改善保证。交通模式突变时仍需监测漂移，即输入分布或输入与结果关系的变化；道路预测准确也不等于任意导航策略的整体交通效应已被识别。",
+    "questions": [
+      {
+        "question": "知道当前车速，为什么仍需预测未来路况？",
+        "answer": "车辆到达后续路段时交通已变化，且路段之间会传播拥堵。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "Traffic prediction with advanced Graph Neural Networks",
+        "url": "https://deepmind.google/blog/traffic-prediction-with-advanced-graph-neural-networks/",
+        "publisher": "Google DeepMind",
+        "date": "2020-09-03",
+        "accessed": "2026-10-17",
+        "support": "DeepMind 与 Google Maps 联合使用在相连对象间汇总信息的图神经网络预测道路超路段行程时间；官方文章说明路由分析器与预测模型共同组成交通预测系统"
+      }
+    ]
+  },
+  {
+    "id": "b08-01",
+    "lesson": 8,
+    "chapter": "08_causality",
+    "company": "eBay",
+    "title": "eBay：搜索广告转化与增量购买",
+    "context": "搜索 eBay 品牌词的人，本来可能已有强烈购买意愿。广告点击后完成购买，能说明渠道触点与购买相继发生，却没有告诉管理者：如果不投这条广告，同一批用户是否仍会通过自然搜索来到网站并购买。",
+    "decision": "评价广告预算应比较有广告与无广告时的购买增量。",
+    "facts": [
+      "eBay 合作研究通过大规模实地实验评价付费搜索广告",
+      "研究发现非实验归因会高估该情境下的广告回报，并报告品牌词与非品牌词差异"
+    ],
+    "analysis": "课程分析：混杂是处理选择和结果受共同原因影响；本例中原有购买意愿同时影响点击与购买。广告归因把交易记给某个触点，因果评价则比较反事实购买差异。应分别检查品牌词、用户频率与观察窗口，不能把所有广告平均后的效果当作每类用户的效果。",
+    "limits": "实验结论针对当时 eBay 的搜索广告、用户与窗口；“短期未测得效益”不等于所有品牌广告长期无效。课程未将该研究的回报数值外推至其他企业。",
+    "questions": [
+      {
+        "question": "点击广告后购买，为什么还不能证明广告促成了购买？",
+        "answer": "高购买意愿者可能本来就会购买，需构造未投广告的参照。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "Consumer Heterogeneity and Paid Search Effectiveness: A Large Scale Field Experiment",
+        "url": "https://www.nber.org/papers/w20171",
+        "publisher": "NBER / eBay Research collaborators",
+        "date": "2014-05",
+        "accessed": "2026-10-17",
+        "support": "eBay 合作研究通过大规模实地实验评价付费搜索广告；研究发现非实验归因会高估该情境下的广告回报，并报告品牌词与非品牌词差异"
+      }
+    ]
+  },
+  {
+    "id": "b08-02",
+    "lesson": 8,
+    "chapter": "08_causality",
+    "company": "Uber",
+    "title": "Uber：不同促销需要比较净增量价值",
+    "context": "Uber 的促销选择同时涉及用户反应与处理费用。某些用户本来就会转化，向他们发送优惠可能增加支出却没有增加购买；不同优惠方式的成本又不同，因而最高转化率未必对应最高净价值。",
+    "decision": "用随机促销资料估计增量反应，再把不同处理成本纳入选择。",
+    "facts": [
+      "Uber 作者的研究比较多个处理及不同成本，并使用真实促销实验资料评价",
+      "论文区分模拟与真实资料，并说明已实施的 uplift 建模及生产平台设计"
+    ],
+    "analysis": "课程分析：提升建模（uplift modeling）估计处理相对不处理的条件效果，以区分原本会购买者与因行动改变结果者。比较促销时，再扣除触达和核销费用；模型筛选与策略价值评价应分开，避免在同一批资料中选择并报告最好结果。",
+    "limits": "论文中的真实实验和模拟结果需要分别阅读，不能把算法在模拟中的排名称为生产收益。个体预测分数不等于已观察的个体真实因果效应；未来分配仍需重叠、目标人群与费用条件适用。",
+    "questions": [
+      {
+        "question": "购买可能性最高的用户，是否最值得发优惠？",
+        "answer": "还需比较优惠带来的增量结果及费用，不能仅按原有转化概率选择。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "Uplift Modeling for Multiple Treatments with Cost Optimization",
+        "url": "https://arxiv.org/abs/1908.05372",
+        "publisher": "Uber authors / IEEE DSAA",
+        "date": "2019; revised 2020-03-26",
+        "accessed": "2026-10-17",
+        "support": "Uber 作者的研究比较多个处理及不同成本，并使用真实促销实验资料评价；论文区分模拟与真实资料，并说明已实施的 uplift 建模及生产平台设计"
+      }
+    ]
+  },
+  {
+    "id": "b08-03",
+    "lesson": 8,
+    "chapter": "08_causality",
+    "company": "Google",
+    "title": "Google：广告效果可以在地区层面识别",
+    "context": "广告主需要为出价、预算和活动设计评估增量效果。某些情境难以在个人层面维持一致曝光，但可以用地理定向改变不同地区的投放；此时研究对象、处理分配和误差结构都应以地区为基础。",
+    "decision": "随机分配互不重叠地区，比较不同投放条件下的结果。",
+    "facts": [
+      "Google 研究介绍把不重叠地理区域随机分到处理或对照条件",
+      "各地区通过地理定向广告落实分配，研究用于广告效果测量"
+    ],
+    "analysis": "课程分析：随机化发生在地区，不能把区内大量交易当作同样数量的独立分配。地区选择应控制跨区购买和广告溢出风险，结果按相同窗口与口径计量。随机分配支持内部比较，推广到其他地区仍需说明目标人群和市场条件。",
+    "limits": "研究描述一类设计，未表明所有广告都能形成足够多且互不干扰的地区。边界购买、全国媒体及同期政策可能破坏比较；观测地理相关本身不等于已实施随机地理实验。",
+    "questions": [
+      {
+        "question": "为什么地区随机化后，交易数不能直接当作独立样本量？",
+        "answer": "同一地区共享处理与冲击，独立分配的信息来自地区。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "Measuring Ad Effectiveness Using Geo Experiments",
+        "url": "https://research.google/pubs/measuring-ad-effectiveness-using-geo-experiments/",
+        "publisher": "Google Research",
+        "date": "2011",
+        "accessed": "2026-10-17",
+        "support": "Google 研究介绍把不重叠地理区域随机分到处理或对照条件；各地区通过地理定向广告落实分配，研究用于广告效果测量"
+      }
+    ]
+  },
+  {
+    "id": "b08-04",
+    "lesson": 8,
+    "chapter": "08_causality",
+    "company": "Facebook",
+    "title": "Facebook：丰富特征能否代替随机比较",
+    "context": "数字广告平台保存大量人口特征和行为记录，似乎可以把曝光者与未曝光者调整到足够相似。但广告投放会依据用户意图和平台算法选择对象；未被记录或未被恰当调整的购买意愿仍可能影响比较。",
+    "decision": "用真实随机实验作为基准，检验观测估计的识别能力。",
+    "facts": [
+      "合作研究比较 Facebook 大型广告随机实验与多种观测估计",
+      "研究发现丰富人口与行为变量的调整仍常不能复现随机实验效果"
+    ],
+    "analysis": "课程分析：拟合结果准确与识别行动效应是不同要求。高维控制有助于调整已测共同原因，却不能保证所有相关机制都被测量。实验基准可以暴露观测方法在特定任务中的偏差，再帮助确定需要补充哪些分配或意图信息。",
+    "limits": "结论针对论文中的广告研究，不证明任何观测方法在任何场景都失败。随机实验也须核验分配、干扰和缺失；本例支持审查识别依据，不能据此给所有方法排一个普遍名次。",
+    "questions": [
+      {
+        "question": "特征更多、模型更复杂，是否就能排除未测混杂？",
+        "answer": "不能；算法复杂度不创造未观察到的可比性依据。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "A Comparison of Approaches to Advertising Measurement: Evidence from Big Field Experiments at Facebook",
+        "url": "https://pubsonline.informs.org/doi/abs/10.1287/mksc.2018.1135",
+        "publisher": "Marketing Science",
+        "date": "2019-04-04",
+        "accessed": "2026-10-17",
+        "support": "合作研究比较 Facebook 大型广告随机实验与多种观测估计；研究发现丰富人口与行为变量的调整仍常不能复现随机实验效果"
+      }
+    ]
+  },
+  {
+    "id": "b08-05",
+    "lesson": 8,
+    "chapter": "08_causality",
+    "company": "Tripadvisor",
+    "title": "Tripadvisor：会员注册便利化与实际采用",
+    "context": "Tripadvisor 希望了解会员身份是否增加用户参与和预订。主动注册者原本就更活跃，直接比较会员与非会员会混入自我选择。平台曾随机为部分用户提供更简便的注册流程，但有些被鼓励者仍不注册，未被鼓励者也可能自行注册。",
+    "decision": "利用随机注册便利化的鼓励设计，区分分配效果与会员采用效果。",
+    "facts": [
+      "Microsoft 与 Tripadvisor 的官方合作案例确认利用既有注册流程 A/B 实验研究会员作用",
+      "其局部平均处理效应（LATE）对应因鼓励而改变注册状态者，研究同时估计人群差异"
+    ],
+    "analysis": "课程分析：工具变量是随机分配且能改变采用的外生来源；排除限制要求它只通过注册影响结果，单调性要求无人因流程更简便而反向减少注册。满足无干扰等条件时，可识别因鼓励而改变注册者的 LATE；它不自动等于所有用户的平均效应。",
+    "limits": "官方案例报告会员作用随用户特征而异，未公开可重算的全部原始记录。注册流程若直接改变访问体验，排除限制便需另行论证；不能把所估局部效果无条件解释为强制所有人注册的效果。",
+    "questions": [
+      {
+        "question": "实际注册者的效果与全面推广注册便利化的效果，为何不同？",
+        "answer": "推广影响采用概率，局部效应只对应因鼓励而改变注册状态的人。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "A Microsoft & TripAdvisor Case Study: Causal AI for Customer Segmentation",
+        "url": "https://www.microsoft.com/en-us/research/group/alice/case-study/",
+        "publisher": "Microsoft Research / TripAdvisor",
+        "date": "2020",
+        "accessed": "2026-10-17",
+        "support": "Microsoft 与 Tripadvisor 的官方合作案例确认利用既有注册流程 A/B 实验研究会员作用；其局部平均处理效应（LATE）对应因鼓励而改变注册状态者，研究同时估计人群差异"
+      }
+    ]
+  },
+  {
+    "id": "b09-01",
+    "lesson": 9,
+    "chapter": "09_optimization",
+    "company": "Zara",
+    "title": "Zara：有限库存怎样分给不同门店",
+    "context": "Zara 快时尚商品生命周期短，门店还可能在关键尺码缺货后撤下整款展示。给一家门店多配一件，不仅影响该尺码销量，也可能影响整款继续展示的机会；仓库库存同时又受到其他门店需求竞争。",
+    "decision": "把门店销量预测、尺码展示规则与共享库存共同纳入配送数量选择。",
+    "facts": [
+      "Caro 与 Gallien 的企业合作研究建模门店库存与预期销量的关系",
+      "研究把该关系与共享库存约束共同纳入配送数量选择，并报告实施与受控试点"
+    ],
+    "analysis": "课程分析：单店预测提供数量与销量关系，共同库存约束决定各店不能独立取最优。关键尺码规则形成跨尺码耦合，因此按各店申请量比例分货可能遗漏真实销售机会。应联合比较可行配送组合，并在实施后复核展示与销售。",
+    "limits": "事实来自特定历史项目，不能将其模型视为 Zara 当前全部库存技术。论文销量结果有明确试点背景；此处不把其历史收益数字当作其他零售商可直接获得的收益。",
+    "questions": [
+      {
+        "question": "为什么逐店选择最优补货量，合并后仍可能不可行？",
+        "answer": "各店共享有限仓库库存，尺码与展示规则还形成组合约束。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "Inventory Management of a Fast-Fashion Retail Network",
+        "url": "https://pubsonline.informs.org/doi/10.1287/opre.1090.0698",
+        "publisher": "Operations Research",
+        "date": "2010",
+        "accessed": "2026-10-17",
+        "support": "Caro 与 Gallien 的企业合作研究建模门店库存与预期销量的关系；研究把该关系与共享库存约束共同纳入配送数量选择，并报告实施与受控试点"
+      }
+    ]
+  },
+  {
+    "id": "b09-02",
+    "lesson": 9,
+    "chapter": "09_optimization",
+    "company": "Google DeepMind",
+    "title": "Google：冷却优化为何需要双层约束核验",
+    "context": "Google 数据中心冷却既消耗能源，也承担设备运行的温度保障。不同泵、风机和冷却设定相互作用，仅凭某一设备耗电更低，不能判断整个冷却系统是否更优；降低能耗还必须保持现场安全边界。",
+    "decision": "先限定允许动作，再在其中比较预期能耗。",
+    "facts": [
+      "DeepMind 公开说明以传感器状态预测候选动作的能耗并选择满足安全约束的动作",
+      "云端建议先经内部约束审查，再由现场控制系统复验，操作员可以退出人工智能（AI）控制"
+    ],
+    "analysis": "课程分析：硬约束规定不可越过的运行边界，不应仅把安全损失乘一个惩罚系数后与节能相抵。模型预测用于选择候选，现场核验处理真实设备状态；置信不足的动作可以排除，以缩小运行范围换取可靠性。",
+    "limits": "公开节能数据来自企业报告，缺少本课可重算的全部比较资料。案例证明企业采用了约束和接管机制，并不证明某一约束集覆盖所有故障，也不代表预测模型自身能够保证安全。",
+    "questions": [
+      {
+        "question": "为什么已有优化模型，还需现场控制器再次检查？",
+        "answer": "模型输入可能延迟或失准，实际设备状态和本地边界仍须核验。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "Safety-first AI for autonomous data centre cooling and industrial control",
+        "url": "https://deepmind.google/blog/safety-first-ai-for-autonomous-data-centre-cooling-and-industrial-control/",
+        "publisher": "Google DeepMind",
+        "date": "2018-08-17",
+        "accessed": "2026-10-17",
+        "support": "DeepMind 公开说明以传感器状态预测候选动作的能耗并选择满足安全约束的动作；云端建议先经内部约束审查，再由现场控制系统复验，操作员可以退出人工智能（AI）控制"
+      }
+    ]
+  },
+  {
+    "id": "b09-03",
+    "lesson": 9,
+    "chapter": "09_optimization",
+    "company": "Lufthansa",
+    "title": "Lufthansa：模拟机排程中的硬条件与偏好",
+    "context": "Lufthansa Flight Training 为不同航空公司的机组安排模拟机训练。训练设备类型、课程顺序和休息要求限制哪些时段可用；客户又可能偏好某个日期或间隔。满足所有偏好与尽量提高设备利用率常会发生冲突。",
+    "decision": "先保证不可违反的训练条件，再权衡可让步的客户偏好。",
+    "facts": [
+      "Gurobi 客户案例介绍 Lufthansa Flight Training 的长期模拟机排程",
+      "案例区分硬条件与软偏好，并说明限时求解需要高质量可行方案而非总能证明最优"
+    ],
+    "analysis": "课程分析：硬条件进入可行域，软偏好可按明确权重计入目标。求解器时间结束时，应报告当前可行安排和有效界；同一模型在不同权重下的方案差异，可以帮助计划员说明哪些偏好需要让步，而不把偏好满足率混成合规判断。",
+    "limits": "来源为供应商客户案例，涉及历史业务和系统。文中的具体休息时间属于该案例条件，不是所有航空训练通用法规；高质量可行解也不能一概称作已经证明的全局最优解。",
+    "questions": [
+      {
+        "question": "偏好未全部满足，是否意味着排程不合规？",
+        "answer": "先区分必须满足的硬条件与允许权衡的软偏好。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "Lufthansa: Flight Training GmbH",
+        "url": "https://www.gurobi.com/resources/case-studies/lufthansa-flight-training-gmbh",
+        "publisher": "Gurobi customer case",
+        "date": null,
+        "accessed": "2026-10-17",
+        "support": "Gurobi 客户案例介绍 Lufthansa Flight Training 的长期模拟机排程；案例区分硬条件与软偏好，并说明限时求解需要高质量可行方案而非总能证明最优"
+      }
+    ]
+  },
+  {
+    "id": "b09-04",
+    "lesson": 9,
+    "chapter": "09_optimization",
+    "company": "Walmart",
+    "title": "Walmart：运输优化同时决定路线与装载",
+    "context": "Walmart 的中段运输连接供应商、配送中心与门店。路线里程、拖车装载和门店收货窗口相互制约：一条较短路线可能装不下货物，也可能错过门店允许到货时段；只优化单车距离会漏掉系统条件。",
+    "decision": "把多站路线、装载与门店时间窗口联合建模。",
+    "facts": [
+      "Walmart 介绍从内部使用扩展为商业产品的 Route Optimization 技术",
+      "公开功能包括多站旅程规划、拖车装载以及位置和门店交付窗口"
+    ],
+    "analysis": "课程分析：车辆、路线与货物构成耦合决策，目标可包括行驶成本，约束则保持容量和交付可行。需求变化或道路中断时，应重求并观察关键方案是否翻转；节省里程还要同时检查缺货风险、司机工时和交付表现。",
+    "limits": "新闻稿中的总体节约属于企业自报，不能据此识别每项功能的独立效果。本例说明建模关系，不还原 Walmart 的私有目标权重、求解器或全部运营约束。",
+    "questions": [
+      {
+        "question": "里程最少的方案，为什么不一定能执行？",
+        "answer": "装载容量和交付窗口可能排除该路线，必须联合验算。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "Walmart Commerce Technologies Launches AI-Powered Logistics Product",
+        "url": "https://corporate.walmart.com/news/2024/03/14/walmart-commerce-technologies-launches-ai-powered-logistics-product",
+        "publisher": "Walmart",
+        "date": "2024-03-14",
+        "accessed": "2026-10-17",
+        "support": "Walmart 介绍从内部使用扩展为商业产品的 Route Optimization 技术；公开功能包括多站旅程规划、拖车装载以及位置和门店交付窗口"
+      }
+    ]
+  },
+  {
+    "id": "b09-05",
+    "lesson": 9,
+    "chapter": "09_optimization",
+    "company": "Uber",
+    "title": "Uber：一次派单也会改变下一时段的供需",
+    "context": "Uber 把司机分配给当前乘客后，司机完成行程的位置会改变后续可用运力。立刻等待最短的配对，未必让未来供需最平衡；当前与未来之间的权衡，使派单既是匹配问题，也是持续状态变化中的策略问题。",
+    "decision": "把行动对未来司机分布的影响纳入当前匹配。",
+    "facts": [
+      "Uber 官方文章说明用强化学习估计长期价值并辅助匹配，即从状态、行动与后续回报中学习决策",
+      "文章把司机与需求平衡、当前和长期效率作为联合考虑的运营目标"
+    ],
+    "analysis": "课程分析：强化学习通过状态、行动与后续回报评价连续决策；价值函数概括当前状态对未来回报的意义。将这一估计加入派单，仍需遵守当前匹配资格和容量。策略仿真应保留供需反馈，再通过适合网络干扰的试点评价。",
+    "limits": "企业文章不公开所有策略及长期效果的独立识别资料。价值模型依赖状态和训练资料，未来市场变化可使估计失准；单次离线预测改进不能直接证明动态匹配策略优于现行规则。",
+    "questions": [
+      {
+        "question": "为什么最短接驾距离可能不是长期最好的派单？",
+        "answer": "行程会移动司机，进而改变未来各地区的可用运力与等待。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "Reinforcement Learning for Modeling Marketplace Balance",
+        "url": "https://www.uber.com/us/en/blog/reinforcement-learning-for-modeling-marketplace-balance/",
+        "publisher": "Uber Engineering",
+        "date": "2025-07-02",
+        "accessed": "2026-10-17",
+        "support": "Uber 官方文章说明用强化学习估计长期价值并辅助匹配，即从状态、行动与后续回报中学习决策；文章把司机与需求平衡、当前和长期效率作为联合考虑的运营目标"
+      }
+    ]
+  },
+  {
+    "id": "b10-01",
+    "lesson": 10,
+    "chapter": "10_process_mining",
+    "company": "Vodafone",
+    "title": "Vodafone：采购流程图与实际路径的差距",
+    "context": "Vodafone 已有采购到付款的流程文件，但实际订单、收货和发票会出现多种路径。关键指标提示问题时，管理者还需要知道哪些交易返工、何处解除付款冻结，以及审批记录为何缺失，才能选择具体处置。",
+    "decision": "从 SAP 数字痕迹重建路径，再把偏离定位到交易。",
+    "facts": [
+      "供应商与客户材料介绍以日志重建 Vodafone 采购到付款过程",
+      "分析包括流程变体、返工、采购订单与收货及发票的三单匹配，以及跳过批准步骤的候选问题"
+    ],
+    "analysis": "课程分析：三单匹配是把采购订单、收货与发票按对象和金额核对。流程发现指出实际路径，一致性检查把实际轨迹与适用审批规则逐项比较；“缺少审批事件”需要追溯原系统和例外记录，不能仅据图中的跳步认定违规。",
+    "limits": "来源为供应商客户案例，支持实践用途，不构成可独立重算的净效果识别。公开数字的币种、期间与单位还需逐项核对，课程不采用其中含混数量作绩效证据。",
+    "questions": [
+      {
+        "question": "发现一张订单跳过审批，能否立即认定违规？",
+        "answer": "须核对适用制度、批准例外和源系统记录完整性。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "Vodafone + Celonis",
+        "url": "https://www.celonis.com/solutions/stories/vodafone-transparency-process-mining",
+        "publisher": "Celonis customer case",
+        "date": null,
+        "accessed": "2026-10-17",
+        "support": "供应商与客户材料介绍以日志重建 Vodafone 采购到付款过程；分析包括流程变体、返工、采购订单与收货及发票的三单匹配，以及跳过批准步骤的候选问题"
+      }
+    ]
+  },
+  {
+    "id": "b10-02",
+    "lesson": 10,
+    "chapter": "10_process_mining",
+    "company": "DHL Group",
+    "title": "DHL：人事工单结束，财务付款是否也已结束",
+    "context": "DHL 的人力资源共享服务关注入职、离职和薪资记录。某个人事工单标记关闭，并不自动意味着所有下游财务处理已经完成；人员、工单和支付记录跨越系统，单一状态很容易掩盖尚未关闭的业务关系。",
+    "decision": "把员工、工单与付款作为相互关联的对象核验。",
+    "facts": [
+      "客户案例介绍 DHL 用流程分析调查离职后继续付款的问题",
+      "后续采用保留员工、工单和付款等关系的对象中心方法关联跨系统人事服务，并讨论工单关闭但付款待处理的情形"
+    ],
+    "analysis": "课程分析：对象中心流程分析保留一个事件与多个对象的联系。员工离职可触发人事与财务不同步骤，不能把“工单完成”当作全部对象完成；应按对象分别定义结束条件，再沿关联检查尚未满足的状态。",
+    "limits": "来源为供应商客户叙述，其累计节约不直接等于单一自动化的因果收益。课程只讨论公开的问题和对象关系，不推定所有持续支付都属违规，也不披露或重构个人数据。",
+    "questions": [
+      {
+        "question": "一个服务工单关闭，为什么仍可能存在未完业务？",
+        "answer": "工单和付款是不同对象，各自的完成状态需要分别核验。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "DHL Group + Celonis",
+        "url": "https://www.celonis.com/solutions/stories/dhl-group",
+        "publisher": "Celonis / DHL Group customer case",
+        "date": null,
+        "accessed": "2026-10-17",
+        "support": "客户案例介绍 DHL 用流程分析调查离职后继续付款的问题；后续采用保留员工、工单和付款等关系的对象中心方法关联跨系统人事服务，并讨论工单关闭但付款待处理的情形"
+      }
+    ]
+  },
+  {
+    "id": "b10-03",
+    "lesson": 10,
+    "chapter": "10_process_mining",
+    "company": "Deutsche Telekom",
+    "title": "Deutsche Telekom：付款更早并不总是更好",
+    "context": "Deutsche Telekom 的共享服务集中处理采购与应付账款。付款过晚可能错过现金折扣，过早则占用资金；付款冻结、重复付款和合同条款又会改变可执行时机。仅以平均付款周期排名，容易把不同合同混在一起。",
+    "decision": "把付款时间连同合同、折扣与重复风险一起判断。",
+    "facts": [
+      "客户案例介绍用流程分析处理付款冻结、现金折扣损失与重复付款",
+      "团队结合多个来源系统建立指标并持续监控采购到付款流程"
+    ],
+    "analysis": "课程分析：付款周期必须绑定发票、合同和折扣有效期。流程日志用于定位卡点，决策则比较提前支付的折扣与资金占用。重复付款检测提供候选异常，服务端还需核验同一债务是否已履行，避免把正常分期付款错误合并。",
+    "limits": "来源为供应商客户案例，所述节约为企业报告而非本课独立识别。本例不把越快付款视为普遍目标，也不把相同金额和供应商直接视为重复付款的充分证据。",
+    "questions": [
+      {
+        "question": "是否应尽量缩短所有付款的处理周期？",
+        "answer": "应先核对合同条件、折扣期限与资金成本，保持同一债务身份。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "Deutsche Telekom + Celonis",
+        "url": "https://www.celonis.com/solutions/stories/deutsche-telekom-procure-to-pay-process-mining",
+        "publisher": "Celonis / Deutsche Telekom customer case",
+        "date": null,
+        "accessed": "2026-10-17",
+        "support": "客户案例介绍用流程分析处理付款冻结、现金折扣损失与重复付款；团队结合多个来源系统建立指标并持续监控采购到付款流程"
+      }
+    ]
+  },
+  {
+    "id": "b10-04",
+    "lesson": 10,
+    "chapter": "10_process_mining",
+    "company": "ABB",
+    "title": "ABB：跨业务流程需要共同语义",
+    "context": "ABB 在多个业务部门和企业系统中开展流程分析，范围包括应收应付、订单、库存及生产计划。各部门对状态和活动的编码可能不同，直接合并路径会把技术命名差异误认为经营行为差异，也可能掩盖真实业务例外。",
+    "decision": "先建立对象、活动和指标的共同定义，再比较跨部门过程。",
+    "facts": [
+      "ABB 客户材料介绍跨部门、多 ERP 系统的流程分析计划",
+      "公开用途涵盖付款、订单、库存、生产及部分运输排放跟踪"
+    ],
+    "analysis": "课程分析：跨系统分析需要保留源字段、映射规则和版本。相同活动名称须具有可比业务含义，周期边界也须一致；适用规则可以按业务类型变化。改进方案应从可回溯的实例问题出发，再以质量、周期与费用评价实际变化。",
+    "limits": "材料支持企业实践范围，不能证明不同部门已天然可比；提到运输排放分析也不等于所有供应链排放已完整覆盖。课程不以厂商评价替代模型边界和数据完整性的核验。",
+    "questions": [
+      {
+        "question": "跨部门流程图名称相同，是否意味着可以直接排名？",
+        "answer": "还需统一事件语义、对象粒度、时间边界和规则范围。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "ABB and Celonis: The art of co-innovation",
+        "url": "https://www.celonis.com/blog/abb-and-celonis-the-art-of-co-innovation",
+        "publisher": "Celonis / ABB customer account",
+        "date": null,
+        "accessed": "2026-10-17",
+        "support": "ABB 客户材料介绍跨部门、多 ERP 系统的流程分析计划；公开用途涵盖付款、订单、库存、生产及部分运输排放跟踪"
+      }
+    ]
+  },
+  {
+    "id": "b10-05",
+    "lesson": 10,
+    "chapter": "10_process_mining",
+    "company": "Stripe",
+    "title": "Stripe：超时重试怎样避免重复业务影响",
+    "context": "商家向 Stripe 发出会改变状态的请求后，连接可能在服务已经完成操作、但回应尚未到达时中断。客户端只知道超时，无法仅据此判定操作失败；直接发送一笔新的相同请求，可能造成重复副作用。",
+    "decision": "为同一逻辑请求保留稳定身份，并由服务端控制重复执行。",
+    "facts": [
+      "Stripe 官方说明在改变状态的接口中使用 Idempotency-Key",
+      "重复相同逻辑请求时，服务端利用该键识别请求并返回已有结果，减少重复业务影响"
+    ],
+    "analysis": "课程分析：幂等键识别同一业务请求，不能每次重试换新键。业务身份、请求参数和已保存结果必须一致地管理；超时后先查询或以同键受控重试。检查点保存程序进度，服务端幂等性控制外部副作用，两种机制不能互相替代。",
+    "limits": "具体接口的保存期限、错误处理和并发语义以当期文档为准。幂等键不自动使所有外部系统操作具有一次且仅一次保证；跨服务的业务验收仍要检查最终状态和相关事件。",
+    "questions": [
+      {
+        "question": "请求超时以后，为什么不能立即换新键再发一次？",
+        "answer": "原操作可能已完成，新键会把重试识别为另一笔业务请求。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "Designing robust and predictable APIs with idempotency",
+        "url": "https://stripe.com/blog/idempotency",
+        "publisher": "Stripe Engineering",
+        "date": "2017-02-22",
+        "accessed": "2026-10-17",
+        "support": "Stripe 官方说明在改变状态的接口中使用 Idempotency-Key；重复相同逻辑请求时，服务端利用该键识别请求并返回已有结果，减少重复业务影响"
+      }
+    ]
+  }
+]

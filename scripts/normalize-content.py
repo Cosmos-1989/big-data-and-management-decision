@@ -12,10 +12,12 @@ for path in sorted((OUT / "content").glob("*.json")):
     document = json.loads(path.read_text())
     if not isinstance(document, dict) or not document.get("html"):
         continue
+    before = json.dumps(document, ensure_ascii=False, sort_keys=True)
     document, report = normalize_document(document)
-    path.write_text(json.dumps(document, ensure_ascii=False) + "\n")
+    if json.dumps(document, ensure_ascii=False, sort_keys=True) != before:
+        path.write_text(json.dumps(document, ensure_ascii=False) + "\n")
     reports.append(report)
-target = SITE / "review/language-20261017/typography.json"
+target = Path(os.environ.get("BDM_TYPOGRAPHY_REPORT", SITE / "review/language-20261017/typography.json"))
 target.parent.mkdir(parents=True, exist_ok=True)
 target.write_text(json.dumps(reports, ensure_ascii=False, indent=2) + "\n")
 print(json.dumps({"documents": len(reports),

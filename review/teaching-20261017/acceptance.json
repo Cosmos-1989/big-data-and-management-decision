@@ -1,0 +1,111 @@
+{
+  "lectures": 16,
+  "slides": 712,
+  "newCases": 80,
+  "casesPerLecture": 5,
+  "firstUseExplanations": 392,
+  "originalPagesProtected": 458,
+  "originalMathMissing": 0,
+  "originalDiagramsMissing": 0,
+  "originalCodeBlocksMissing": 0,
+  "primarySourceUrls": 84,
+  "sourceReuse": 0,
+  "desktop": {
+    "canvas": [
+      1280,
+      720
+    ],
+    "allPagesMeasured": 712,
+    "overflowPages": 0,
+    "diagramCollisions": 0,
+    "expandedDiscussionOverflow": 0,
+    "songFontsLoaded": [
+      400,
+      700
+    ]
+  },
+  "mobile": {
+    "viewport": [
+      390,
+      844
+    ],
+    "pagesMeasured": 712,
+    "textOrReferenceOverflow": 0,
+    "wideFiguresAndFormulas": "intentional horizontal scrolling"
+  },
+  "visualReview": {
+    "contactSheets": 80,
+    "pages": 712,
+    "reviewers": [
+      "01-05: contact 01–20",
+      "06-10: contact 21–40",
+      "root: contact 41–60",
+      "11-16: contact 61–80"
+    ],
+    "scope": "Layout inspection from rendered nine-slide contact sheets, plus full-size source/slide and mobile interaction checks; not a substitute for classroom evaluation"
+  },
+  "interactionChecks": [
+    "first case direct link selects page 3/50",
+    "15/16 independent players and second-player TSB direct link",
+    "fullscreen and next-page navigation",
+    "fullscreen casebook link exits presentation",
+    "casebook has eighty cases",
+    "discussion and source disclosure expand",
+    "casebook return link restores matching slide"
+  ],
+  "fontCoverage": {
+    "family": "BDM Course Song",
+    "upstream": "https://github.com/adobe-fonts/source-han-serif",
+    "license": "SIL OFL 1.1",
+    "contentSha256": "5bd9e277a302419905a2c33e42c708301f134a3b1a052a529d2aae9f9268eebd",
+    "requiredCjkCharacters": 1294,
+    "fonts": [
+      {
+        "weight": 400,
+        "file": "course-song-regular.woff2",
+        "bytes": 344756,
+        "sha256": "428f5ce2e170e6f55f4b5620a8d8adb0f3a0656ef8fe7589af4da6ac33f3c68d",
+        "sourceSha256": "3754ea669c530e2473354f8f6d9f79680a44d7e26ec7d00eeabee4a7e0753c5d",
+        "version": "Version 2.003;hotconv 1.1.1;makeotfexe 2.6.0",
+        "missingCjk": []
+      },
+      {
+        "weight": 700,
+        "file": "course-song-bold.woff2",
+        "bytes": 356980,
+        "sha256": "a8f425ae7a1d5361c97a61ba50174670021c78835643a869bab43ee678222760",
+        "sourceSha256": "4ee555ae58b3d22f6a95c2c494f2c36b7cccfc1d2224635f6461a03756f0e3c1",
+        "version": "Version 2.003;hotconv 1.1.1;makeotfexe 2.6.0",
+        "missingCjk": []
+      }
+    ]
+  },
+  "files": {
+    "dist/content/lecture-slides.json": "5bd9e277a302419905a2c33e42c708301f134a3b1a052a529d2aae9f9268eebd",
+    "dist/content/business-cases.json": "5e1283cec7a1b3074508208820c0b495e24a64b239cd6fd6b777e485d42744ee",
+    "dist/content/lecture-terms.json": "fcfd3789e9ecdaf59fe227b75b2128dbaac1149fe2c55855229050852c1df150"
+  },
+  "checks": {
+    "check-terms": {
+      "errors": []
+    },
+    "check-math": {
+      "errors": []
+    },
+    "check-slides": {
+      "errors": []
+    },
+    "check-language": {
+      "errors": []
+    },
+    "check-diagrams": {
+      "errors": []
+    },
+    "check-content": {
+      "errors": []
+    },
+    "check-prose": {
+      "errors": []
+    }
+  }
+}

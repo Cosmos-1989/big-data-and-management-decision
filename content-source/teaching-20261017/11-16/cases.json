@@ -1,0 +1,945 @@
+[
+  {
+    "id": "b11-01",
+    "lesson": 11,
+    "chapter": "11_modern_data_platform",
+    "company": "Uber",
+    "title": "Uber Hudi：记录会在到达后继续变化",
+    "context": "订单的完成、取消与补录可能分属不同时间，文件只追加容易留下多个互相矛盾的状态。",
+    "decision": "分析平台如何维护不断变化的业务记录？",
+    "facts": [
+      "Uber说明Hudi支持湖上事务、按键更新和增量处理。",
+      "工程文章将迟到更新、回填和状态变化列为平台设计的直接需求。"
+    ],
+    "analysis": "课程分析：原始事件留存与当前状态表承担不同职责；按键更新须配合事件顺序、版本和重放规则。",
+    "limits": "实施机制来自Uber工程自述；这里不据平台规模推断管理收益，也不声称Hudi会自动决定业务状态。",
+    "questions": [
+      {
+        "question": "只保留最近到达的一条订单记录是否可靠？",
+        "answer": "不一定。到达顺序可能不同于业务生效顺序，须检查事件时间及有效版本。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "Apache Hudi at Uber: Engineering for Trillion-Record-Scale Data Lake Operations",
+        "url": "https://www.uber.com/us/en/blog/apache-hudi-at-uber/",
+        "publisher": "Uber Engineering",
+        "date": "2026-01-16",
+        "accessed": "2026-10-17",
+        "support": "Uber说明Hudi支持湖上事务、按键更新和增量处理。；工程文章将迟到更新、回填和状态变化列为平台设计的直接需求。"
+      }
+    ]
+  },
+  {
+    "id": "b11-02",
+    "lesson": 11,
+    "chapter": "11_modern_data_platform",
+    "company": "Netflix",
+    "title": "Netflix Iceberg：表格式迁移需要验证",
+    "context": "存量分析任务依赖旧表格式，大规模迁移同时牵涉查询兼容性、历史数据和运行中的生产任务。",
+    "decision": "怎样更换表管理方式而保持分析连续性？",
+    "facts": [
+      "Netflix公开了从Hive向Iceberg迁移的工具仓库。",
+      "工具说明保存表责任人、下游使用者和迁移状态，并提供观察期、影子核对与回退组件。"
+    ],
+    "analysis": "课程分析：文件位置不等于表版本。迁移验收应比对行数、主键覆盖、关键指标和权限，再逐步切换消费者。",
+    "limits": "案例说明真实迁移与公开工具；此处的验收清单是课程分析，不是Netflix内部完整迁移规程。",
+    "questions": [
+      {
+        "question": "两种引擎都能查出数据，能否直接认定迁移完成？",
+        "answer": "还需检查相同快照上的结果、旧查询兼容性以及更新与恢复行为。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "Hive to Iceberg Migration Tooling",
+        "url": "https://github.com/Netflix-Skunkworks/hive2iceberg-migration",
+        "publisher": "Netflix-Skunkworks",
+        "date": "未标注发布日期",
+        "accessed": "2026-10-17",
+        "support": "Netflix公开了从Hive向Iceberg迁移的工具仓库。；工具说明保存表责任人、下游使用者和迁移状态，并提供观察期、影子核对与回退组件。"
+      },
+      {
+        "title": "Netflix’s journey to an Apache Iceberg-only data lake (NFX306)",
+        "url": "https://www.youtube.com/watch?v=jMFMEk8jFu8",
+        "publisher": "AWS Events / Netflix",
+        "date": "2023-12-04",
+        "accessed": "2026-10-17",
+        "support": "Netflix在AWS官方活动介绍实际迁移及其背景；活动描述已由搜索引擎读取，未以视频字幕补充事实。"
+      }
+    ]
+  },
+  {
+    "id": "b11-03",
+    "lesson": 11,
+    "chapter": "11_modern_data_platform",
+    "company": "Shopify",
+    "title": "Shopify CDC：从反复查询到日志变更",
+    "context": "业务表分布在多个数据库分片中，逐表查询提取变化会占用线上资源，也给完整捕捉变化带来困难。",
+    "decision": "数据采集怎样同时支持业务稳定性与变化追踪？",
+    "facts": [
+      "Shopify在2021年介绍从查询式CDC转向不可变、追加式的日志采集。",
+      "其方案使用Kafka Connect和Debezium，连接应用数据库变化与下游数据处理。"
+    ],
+    "analysis": "课程分析：变更数据捕获（CDC）读取新增、修改和删除事件；下游仍须处理初始快照、重复、顺序与模式变化。",
+    "limits": "文章描述当时的平台迁移，不代表所有数据库均可直接采用相同配置，也不保证端到端恰好一次业务效果。",
+    "questions": [
+      {
+        "question": "日志被保存后，删除操作是否就能忽略？",
+        "answer": "不能。当前状态表和下游派生数据必须根据删除语义更新，历史留存还须服从数据保留规则。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "Capturing Every Change From Shopify’s Sharded Monolith",
+        "url": "https://shopify.engineering/capturing-every-change-shopify-sharded-monolith",
+        "publisher": "Shopify Engineering",
+        "date": "2021-03-12",
+        "accessed": "2026-10-17",
+        "support": "Shopify在2021年介绍从查询式CDC转向不可变、追加式的日志采集。；其方案使用Kafka Connect和Debezium，连接应用数据库变化与下游数据处理。"
+      }
+    ]
+  },
+  {
+    "id": "b11-04",
+    "lesson": 11,
+    "chapter": "11_modern_data_platform",
+    "company": "Walmart",
+    "title": "Walmart湖仓选型：工作负载决定取舍",
+    "context": "同一零售平台既有大量追加事件，也有频繁更新的有界业务记录，两类任务对表格式的要求不同。",
+    "decision": "平台选型应比较哪些业务约束？",
+    "facts": [
+      "Walmart用两类实际工作负载评估Hudi、Delta和Iceberg。",
+      "其评分同时考虑兼容性、可用性、成本、性能、支持与总拥有成本，并明确测试版本。"
+    ],
+    "analysis": "课程分析：应先描述更新比例、迟到数据和读写需求，再选择测试；单一查询速度不能概括平台的适用性。",
+    "limits": "这是2023年特定版本与Walmart环境的评估，不能作为当前产品排名或所有企业的采购结论。",
+    "questions": [
+      {
+        "question": "为什么不能把其中的测试赢家直接作为本企业答案？",
+        "answer": "数据变化方式、既有引擎、团队能力和版本均可能不同，须复现本企业工作负载。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "Lakehouse at Fortune 1 Scale",
+        "url": "https://medium.com/walmartglobaltech/lakehouse-at-fortune-1-scale-480bcb10391b",
+        "publisher": "Walmart Global Tech",
+        "date": "2023-05-03",
+        "accessed": "2026-10-17",
+        "support": "Walmart用两类实际工作负载评估Hudi、Delta和Iceberg。；其评分同时考虑兼容性、可用性、成本、性能、支持与总拥有成本，并明确测试版本。"
+      }
+    ]
+  },
+  {
+    "id": "b11-05",
+    "lesson": 11,
+    "chapter": "11_modern_data_platform",
+    "company": "Disney Advertising × Horizon Media",
+    "title": "Disney数据洁净室：协作分析也有边界",
+    "context": "广告主希望把自身客户信息与媒体受众信息联系起来，直接交换用户明细会产生隐私和商业保密问题。",
+    "decision": "跨企业分析如何限制可见数据和允许输出？",
+    "facts": [
+      "Disney于2022年宣布与Horizon Media开展数据洁净室测量试点。",
+      "公告说明该环境支持受众匹配和广告分析，并与Habu、InfoSum、Snowflake合作。"
+    ],
+    "analysis": "课程分析：数据洁净室是在约定规则下开展跨方分析的环境；能否输出某项结果，仍取决于权限、查询和披露控制。",
+    "limits": "公告支持试点及其用途；不能据此保证匿名化绝无重识别风险，也不能把广告测量直接解释为因果效果。",
+    "questions": [
+      {
+        "question": "移除姓名之后，是否可以无限制输出细分人群？",
+        "answer": "不能。小样本人群和多次查询可能造成披露，仍须限制粒度及组合查询。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "Disney’s Proprietary Clean Room Data Solution Sets Its Sights on Measurement & Activation",
+        "url": "https://press.disneyadvertising.com/disney-s-proprietary-clean-room-data-solution-sets-its-sights-on-measurement-activation-",
+        "publisher": "Disney Advertising",
+        "date": "2022-03-02",
+        "accessed": "2026-10-17",
+        "support": "Disney于2022年宣布与Horizon Media开展数据洁净室测量试点。；公告说明该环境支持受众匹配和广告分析，并与Habu、InfoSum、Snowflake合作。"
+      }
+    ]
+  },
+  {
+    "id": "b12-01",
+    "lesson": 12,
+    "chapter": "12_mlops",
+    "company": "Uber",
+    "title": "Michelangelo：模型上线是一套持续流程",
+    "context": "配送时间预测既使用历史餐厅表现，也使用近期准备时间，训练与在线计算可能出现口径偏差。",
+    "decision": "怎样使训练、部署与实际预测保持可追溯？",
+    "facts": [
+      "Uber于2017年介绍Michelangelo，覆盖数据管理、训练、评价、部署、预测和监控。",
+      "UberEATS配送时间是其公开应用，平台共享特征并保存训练配置、参数及评价结果。"
+    ],
+    "analysis": "课程分析：模型版本须与特征定义、数据快照和服务配置绑定；只保存一个模型文件不足以解释线上结果。",
+    "limits": "事实对应2017年公开架构，不代表Uber当前全部系统；配送预测的产品使用也不等于已证明经营净收益。",
+    "questions": [
+      {
+        "question": "训练时计算过去七天均值，线上改为当日均值，会发生什么？",
+        "answer": "输入含义发生变化，模型接收的特征已不同于训练定义，须重新验证而非仅检查字段名。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "Meet Michelangelo: Uber’s Machine Learning Platform",
+        "url": "https://www.uber.com/us/en/blog/michelangelo-machine-learning-platform/",
+        "publisher": "Uber Engineering",
+        "date": "2017-09-05",
+        "accessed": "2026-10-17",
+        "support": "Uber于2017年介绍Michelangelo，覆盖数据管理、训练、评价、部署、预测和监控。；UberEATS配送时间是其公开应用，平台共享特征并保存训练配置、参数及评价结果。"
+      }
+    ]
+  },
+  {
+    "id": "b12-02",
+    "lesson": 12,
+    "chapter": "12_mlops",
+    "company": "LinkedIn",
+    "title": "Pro-ML：从异常信号追查原因",
+    "context": "模型输出偏离预期，可能源于缺失数据、特征计算改变或环境变化；这些问题需要不同修复措施。",
+    "decision": "监控如何帮助区分管道缺陷与模型失效？",
+    "facts": [
+      "LinkedIn说明Pro-ML的健康保障检查线上与离线特征的一致性。",
+      "异常分析使用回放、存储、探索和扰动等方法，追查代码、数据或重训练需求。"
+    ],
+    "analysis": "课程分析：先定位异常属于输入、变换、模型还是结果，再选择回滚、修复数据或重训练；报警不能自动给出原因。",
+    "limits": "公开材料支持平台职责及诊断方法，不提供每次故障的根因记录，也不证明重新训练总能恢复业务效果。",
+    "questions": [
+      {
+        "question": "模型分数分布改变，为什么不立即自动重训练？",
+        "answer": "数据管道缺陷也会造成分布改变，训练新模型可能把缺陷固化，应先核查输入与版本。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "Scaling Machine Learning Productivity at LinkedIn",
+        "url": "https://www.linkedin.com/blog/engineering/machine-learning/scaling-machine-learning-productivity-at-linkedin",
+        "publisher": "LinkedIn Engineering",
+        "date": "2019-01-03",
+        "accessed": "2026-10-17",
+        "support": "LinkedIn说明Pro-ML的健康保障检查线上与离线特征的一致性。；异常分析使用回放、存储、探索和扰动等方法，追查代码、数据或重训练需求。"
+      }
+    ]
+  },
+  {
+    "id": "b12-03",
+    "lesson": 12,
+    "chapter": "12_mlops",
+    "company": "DoorDash",
+    "title": "Sibyl：影子流量先检验服务承载",
+    "context": "替换预测服务可能影响搜索排序、反欺诈和配送员报酬，服务负载与模型决策需要分别验证。",
+    "decision": "如何在不改变用户决策的情况下检验新服务？",
+    "facts": [
+      "DoorDash在2020年介绍Sibyl，把预测服务与特征、训练、存储分离。",
+      "最初异步复制搜索请求进行负载测试，其预测不用于线上排序，再选择较宽松场景迁移。"
+    ],
+    "analysis": "课程分析：影子部署复制实际输入但不采用候选输出，可检验延迟、错误和资源开销；业务效果仍需后续验证。",
+    "limits": "该测试支持服务承载与迁移设计，不能用影子预测证明候选模型改善了客户体验。",
+    "questions": [
+      {
+        "question": "影子服务没有报错，能否立即替换全部排序流量？",
+        "answer": "不能。还需核对输出、特征迁移和延迟限制，并分阶段检验实际决策后果。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "Meet Sibyl: DoorDash’s New Prediction Service",
+        "url": "https://careersatdoordash.com/blog/doordashs-new-prediction-service/",
+        "publisher": "DoorDash Engineering",
+        "date": "2020-06-29",
+        "accessed": "2026-10-17",
+        "support": "DoorDash在2020年介绍Sibyl，把预测服务与特征、训练、存储分离。；最初异步复制搜索请求进行负载测试，其预测不用于线上排序，再选择较宽松场景迁移。"
+      }
+    ]
+  },
+  {
+    "id": "b12-04",
+    "lesson": 12,
+    "chapter": "12_mlops",
+    "company": "Netflix",
+    "title": "Metaflow：一次结果需要可恢复的运行记录",
+    "context": "数据科学任务包含多个有依赖的步骤，某一步失败后全部重跑会增加成本，也可能悄然改变输入。",
+    "decision": "怎样让实验步骤、产物和环境可检查、可恢复？",
+    "facts": [
+      "Netflix开发并开源Metaflow，用于构建和管理实际机器学习与数据科学项目。",
+      "项目提供分步流程、运行产物管理及本地到云端的执行支持。"
+    ],
+    "analysis": "课程分析：把步骤依赖与中间产物显式保存，能够定位失败并重放；复现仍须固定数据、代码、依赖与随机性。",
+    "limits": "框架功能来自官方仓库；工具不会自动证明数据标签正确，也不能保证外部服务和可变数据永久可复现。",
+    "questions": [
+      {
+        "question": "保存最终图表之后，为什么还需要中间产物？",
+        "answer": "它们支持定位错误及核查每一步转换，避免只能观察最后结果而无法解释来源。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "Metaflow: Build, Manage and Deploy AI/ML Systems",
+        "url": "https://github.com/Netflix/metaflow",
+        "publisher": "Netflix / Metaflow",
+        "date": "未标注发布日期",
+        "accessed": "2026-10-17",
+        "support": "Netflix开发并开源Metaflow，用于构建和管理实际机器学习与数据科学项目。；项目提供分步流程、运行产物管理及本地到云端的执行支持。"
+      }
+    ]
+  },
+  {
+    "id": "b12-05",
+    "lesson": 12,
+    "chapter": "12_mlops",
+    "company": "Stripe",
+    "title": "Radar：模型更新须面对误拒与漏放",
+    "context": "支付反欺诈需要及时判断风险，拒绝真实客户和放过欺诈交易都产生损失，单看准确率容易误判。",
+    "decision": "模型架构升级应如何联系运行约束与错误代价？",
+    "facts": [
+      "Stripe介绍Radar从较简单模型演进到深度网络，并在2022年调整模型架构。",
+      "文章说明训练速度、数据规模及误拒合法支付之间的实际取舍。"
+    ],
+    "analysis": "课程分析：评估须同时观察误拒、漏放、延迟和费用；欺诈标签可能延迟到达，短期监控与成熟标签评价应分开。",
+    "limits": "架构事实及取舍来自Stripe工程自述；标签延迟的评价设计为课程分析，不据此复述未独立验证的效果数字。",
+    "questions": [
+      {
+        "question": "一个模型拒绝更多支付，是否就表示更安全？",
+        "answer": "可能减少欺诈，也可能增加误拒；应固定人群与观察窗口，比较不同错误的成本。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "How we built it: Stripe Radar",
+        "url": "https://stripe.com/blog/how-we-built-it-stripe-radar",
+        "publisher": "Stripe Engineering",
+        "date": "2023-03-29",
+        "accessed": "2026-10-17",
+        "support": "Stripe介绍Radar从较简单模型演进到深度网络，并在2022年调整模型架构。；文章说明训练速度、数据规模及误拒合法支付之间的实际取舍。"
+      }
+    ]
+  },
+  {
+    "id": "b13-01",
+    "lesson": 13,
+    "chapter": "13_ontology_action_scenario",
+    "company": "BMW Group",
+    "title": "BMW虚拟工厂：在建设前比较布局",
+    "context": "产线布局涉及设备、物流和装配路径，多地规划人员需要在同一空间模型上检查相互影响。",
+    "decision": "怎样在改变实体工厂前比较可行方案？",
+    "facts": [
+      "BMW披露使用数字工厂副本开展协同生产规划。",
+      "Omniverse环境整合结构、设施及物流信息，用于生产系统设计与仿真。"
+    ],
+    "analysis": "课程分析：设备及通道构成对象和关系，布局调整是候选行动；仿真比较须明确节拍、冲突及模型的适用范围。",
+    "limits": "资料支持虚拟规划用途，未说明采用Palantir，也未披露完整仿真算法；对象映射属于案例分析。",
+    "questions": [
+      {
+        "question": "画面逼真能否证明布局方案可执行？",
+        "answer": "还需核验设备能力、物流规则、人体工学与安全约束，视觉相似不等于运行模型有效。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "BMW Group and NVIDIA take virtual factory planning to the next level",
+        "url": "https://www.press.bmwgroup.com/global/article/attachment/T0329569EN/476165",
+        "publisher": "BMW Group",
+        "date": "2021-04-13",
+        "accessed": "2026-10-17",
+        "support": "BMW披露使用数字工厂副本开展协同生产规划。；Omniverse环境整合结构、设施及物流信息，用于生产系统设计与仿真。"
+      }
+    ]
+  },
+  {
+    "id": "b13-02",
+    "lesson": 13,
+    "chapter": "13_ontology_action_scenario",
+    "company": "Unilever",
+    "title": "Unilever配方数字孪生：参数受产品约束",
+    "context": "新配方进入生产时，需要在温度、加工条件和产品质量之间寻找适用的过程参数。",
+    "decision": "情景推演如何支持配方与过程匹配？",
+    "facts": [
+      "Unilever于2023年介绍巴西Indaiatuba洗衣粉工厂使用数字孪生预测新配方的适宜过程参数。",
+      "文章将该应用放在工厂数字化和员工能力建设的具体背景中。"
+    ],
+    "analysis": "课程分析：配方、设备和批次对应不同对象；参数建议只有在原料、设备和质量约束满足时才具有可操作性。",
+    "limits": "材料支持参数预测用途，未给出独立因果试验或完整控制策略，不能据此确认无条件的经营效果。",
+    "questions": [
+      {
+        "question": "同一参数为什么不能直接复制到另一条产线？",
+        "answer": "设备、原料和环境条件可能不同，须确认模型适用范围并验证质量约束。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "Two Unilever sites named most digitally advanced factories",
+        "url": "https://www.unilever.com/news/news-search/2023/unilever-sites-join-network-of-worlds-most-digitally-advanced-factories/",
+        "publisher": "Unilever",
+        "date": "2023",
+        "accessed": "2026-10-17",
+        "support": "Unilever于2023年介绍巴西Indaiatuba洗衣粉工厂使用数字孪生预测新配方的适宜过程参数。；文章将该应用放在工厂数字化和员工能力建设的具体背景中。"
+      }
+    ]
+  },
+  {
+    "id": "b13-03",
+    "lesson": 13,
+    "chapter": "13_ontology_action_scenario",
+    "company": "DHL × Tetra Pak",
+    "title": "DHL仓库数字孪生：可见状态支持资源分配",
+    "context": "仓库拥堵和设备交会同时影响作业效率与人员安全，需要结合位置、任务及受限区域来判断。",
+    "decision": "哪些状态信息才足以支持现场调度？",
+    "facts": [
+      "DHL于2019年宣布在Tetra Pak新加坡仓库实施数字孪生。",
+      "方案结合物联网、邻近传感器及实时运营数据，支持主管安排资源并监测受限区域。"
+    ],
+    "analysis": "课程分析：位置与任务状态形成行动前提；资源分配可由主管调整，安全告警则须保留独立处置和责任机制。",
+    "limits": "公告支持所列实施与用途，未披露完整控制逻辑；实时可视化不能单独保证现场安全。",
+    "questions": [
+      {
+        "question": "只显示设备位置，为什么仍无法直接计算最优调度？",
+        "answer": "还缺少任务优先级、载荷、通道约束与安全条件，状态要围绕可选行动组织。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "DHL Supply Chain partners Tetra Pak to implement its first digital twin warehouse in Asia Pacific",
+        "url": "https://group.dhl.com/en/media-relations/press-releases/2019/dhl-supply-chain-partners-tetra-pak-implement-first-digital-twin-warehouse-asia-pacific.html",
+        "publisher": "DHL Group",
+        "date": "2019-07-16",
+        "accessed": "2026-10-17",
+        "support": "DHL于2019年宣布在Tetra Pak新加坡仓库实施数字孪生。；方案结合物联网、邻近传感器及实时运营数据，支持主管安排资源并监测受限区域。"
+      }
+    ]
+  },
+  {
+    "id": "b13-04",
+    "lesson": 13,
+    "chapter": "13_ontology_action_scenario",
+    "company": "Rio Tinto",
+    "title": "Gudai-Darri：资产身份贯通维护与培训",
+    "context": "远程矿山的设备、设计资料和运行记录需要对应到同一资产，维护人员还需理解实际空间位置。",
+    "decision": "如何让一个资产模型服务不同业务任务？",
+    "facts": [
+      "Rio Tinto于2022年介绍Gudai-Darri矿山的处理厂数字副本。",
+      "同一数字资产数据用于运行监测、工作规划、技术资料访问和虚拟现实培训。"
+    ],
+    "analysis": "课程分析：资产身份可联结多个视图，但培训、维护与操作权限不同；共享对象模型应保留任务所需的状态和访问边界。",
+    "limits": "资料支持所列应用；不能据3D资产副本推断所有设备均有实时高精度预测模型或自主控制。",
+    "questions": [
+      {
+        "question": "培训模型可以直接作为设备恢复运行的批准依据吗？",
+        "answer": "不能。培训表达与实时设备状态、检修记录和批准程序属于不同证据。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "Rio Tinto Opens Gudai-Darri, its Most Technologically Advanced Mine",
+        "url": "https://www.riotinto.com/en/news/releases/2022/rio-tinto-opens-gudai-darri-its-most-technologically-advanced-mine",
+        "publisher": "Rio Tinto",
+        "date": "2022-06-21",
+        "accessed": "2026-10-17",
+        "support": "Rio Tinto于2022年介绍Gudai-Darri矿山的处理厂数字副本。；同一数字资产数据用于运行监测、工作规划、技术资料访问和虚拟现实培训。"
+      }
+    ]
+  },
+  {
+    "id": "b13-05",
+    "lesson": 13,
+    "chapter": "13_ontology_action_scenario",
+    "company": "Jaguar Land Rover",
+    "title": "JLR供应链孪生：先演算再改变",
+    "context": "供应链调整影响多部门数据及相互依赖的业务环节，局部方案可能把风险转移给其他环节。",
+    "decision": "怎样把供应链假设与真实执行区分？",
+    "facts": [
+      "JLR在2024年年报中披露与NVIDIA合作开发供应链数字孪生。",
+      "年报说明该模型用于在虚拟环境中尝试变化，并结合跨部门信息整合。"
+    ],
+    "analysis": "课程分析：情景要记录需求、供给与约束假设；比较结果是模型条件下的推演，实际执行仍需对应负责人及最新状态。",
+    "limits": "年报支持合作及开发用途，未披露内部模型结构，开发计划亦不能作为已经验证的经营改善。",
+    "questions": [
+      {
+        "question": "供应链模型显示库存下降，就能批准减少安全库存吗？",
+        "answer": "须同时检验缺货风险、供应扰动及服务要求，并明确模型尚未覆盖的变化。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "JLR Annual Report 2024",
+        "url": "https://www.jlr.com/annual-report-2024",
+        "publisher": "Jaguar Land Rover",
+        "date": "2024",
+        "accessed": "2026-10-17",
+        "support": "JLR在2024年年报中披露与NVIDIA合作开发供应链数字孪生。；年报说明该模型用于在虚拟环境中尝试变化，并结合跨部门信息整合。"
+      }
+    ]
+  },
+  {
+    "id": "b14-01",
+    "lesson": 14,
+    "chapter": "14_ai_agent",
+    "company": "Morgan Stanley",
+    "title": "Morgan Stanley：内部知识答复保留来源",
+    "context": "财富管理顾问需要检索大量公司内部研究资料，同时保持专业判断和客户服务责任。",
+    "decision": "怎样界定知识助手的证据范围与责任？",
+    "facts": [
+      "Morgan Stanley于2023年宣布开发面向顾问的内部AI服务。",
+      "公告说明回答取自内部内容并链接源文档，交互反馈用于改进系统。"
+    ],
+    "analysis": "课程分析：检索增强生成（RAG）应让回答与可访问证据对应；提供信息与给客户提交投资建议是不同任务和权限。",
+    "limits": "案例支持内部知识服务的设计，不声称系统能够独立替代顾问，也不把有引用等同于每项结论已获证实。",
+    "questions": [
+      {
+        "question": "附上同主题报告后，答案是否自然可信？",
+        "answer": "仍须检查报告版本、适用对象及原文是否支持该具体判断。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "Key Milestone in Innovation Journey with OpenAI",
+        "url": "https://www.morganstanley.com/press-releases/key-milestone-in-innovation-journey-with-openai",
+        "publisher": "Morgan Stanley",
+        "date": "2023-03-14",
+        "accessed": "2026-10-17",
+        "support": "Morgan Stanley于2023年宣布开发面向顾问的内部AI服务。；公告说明回答取自内部内容并链接源文档，交互反馈用于改进系统。"
+      }
+    ]
+  },
+  {
+    "id": "b14-02",
+    "lesson": 14,
+    "chapter": "14_ai_agent",
+    "company": "Box IT",
+    "title": "Box Gizmo：未解决问题推动知识修订",
+    "context": "员工IT资料分散在旧工单、聊天和文档中，重复、过期或责任不清会影响检索答复。",
+    "decision": "知识助手怎样持续发现并修复证据缺口？",
+    "facts": [
+      "Box IT介绍Gizmo通过Slack接收问题，并检索经过治理和发布的知识。",
+      "未解决请求及负面反馈进入周期性缺口分析，更新建议由知识团队审查后发布。"
+    ],
+    "analysis": "课程分析：知识状态与访问级别决定可检索性；缺口识别应产生待审修订任务，不能把模型生成的草稿自动视为正式制度。",
+    "limits": "实施流程来自Box IT自述；尚不能据此量化其独立因果收益，缺口建议也需要责任人核实。",
+    "questions": [
+      {
+        "question": "将全部旧工单直接放入向量库有什么问题？",
+        "answer": "旧工单可能含过期方案、内部备注和敏感信息，应先审查适用性、发布状态与访问范围。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "Building a closed-loop knowledge system for AI-powered IT support at Box",
+        "url": "https://blog.box.com/building-closed-loop-knowledge-system-ai-powered-it-support-box",
+        "publisher": "Box IT",
+        "date": "2026-07-02",
+        "accessed": "2026-10-17",
+        "support": "Box IT介绍Gizmo通过Slack接收问题，并检索经过治理和发布的知识。；未解决请求及负面反馈进入周期性缺口分析，更新建议由知识团队审查后发布。"
+      }
+    ]
+  },
+  {
+    "id": "b14-03",
+    "lesson": 14,
+    "chapter": "14_ai_agent",
+    "company": "Dow",
+    "title": "Dow运费核查：发现差异与批准更正分开",
+    "context": "运费发票与协商费率、预提成本之间可能存在差异，人工逐单核查耗时且需要对应运输事实。",
+    "decision": "智能体如何把非结构化发票接入核查流程？",
+    "facts": [
+      "Microsoft客户案例介绍Dow用Copilot核查运费、预提费用和发票费率。",
+      "其中一类智能体从邮件处理PDF发票，识别差异并转交更正。"
+    ],
+    "analysis": "课程分析：解析与匹配可以自动执行；差异仍须核查合同、运输和单位，付款或更正则适用独立授权。",
+    "limits": "2024年客户材料中的节约金额属于预期，不能作为已审计收益；材料未说明模型拥有自主付款权限。",
+    "questions": [
+      {
+        "question": "识别到高于合同的收费后，智能体能否直接退款？",
+        "answer": "差异证据需先核实，并经相应财务授权；检测结果不能自行产生付款权限。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "Dow reimagines productivity and supply chain efficiency with Microsoft 365 Copilot",
+        "url": "https://www.microsoft.com/en/customers/story/19829-dow-microsoft-365-copilot",
+        "publisher": "Microsoft Customer Stories / Dow",
+        "date": "2024-11-19",
+        "accessed": "2026-10-17",
+        "support": "Microsoft客户案例介绍Dow用Copilot核查运费、预提费用和发票费率。；其中一类智能体从邮件处理PDF发票，识别差异并转交更正。"
+      }
+    ]
+  },
+  {
+    "id": "b14-04",
+    "lesson": 14,
+    "chapter": "14_ai_agent",
+    "company": "Rakuten",
+    "title": "Rakuten研发助手：可运行代码仍须验收",
+    "context": "代码库任务需要理解依赖、修改实现并检验结果，生成的代码片段不等于可合并的工程变更。",
+    "decision": "研发Agent应交付怎样的验证证据？",
+    "facts": [
+      "Anthropic客户案例介绍Rakuten使用Claude Code处理软件开发任务。",
+      "案例记录了在大型开源代码库中实现特定方法的试验，并由工程团队检查结果。"
+    ],
+    "analysis": "课程分析：任务应固定预期行为与范围，运行环境限制访问和命令；测试、差异审查及维护责任决定能否采纳。",
+    "limits": "这是供应商客户案例，个别任务的成功不能推断任意代码库的准确率或普遍节省比例。",
+    "questions": [
+      {
+        "question": "测试通过为什么仍可能不宜合并？",
+        "answer": "测试可能未覆盖兼容性、安全和维护要求，仍须审查变更范围、依赖及潜在副作用。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "Rakuten Claude Code case study",
+        "url": "https://claude.com/customers/rakuten",
+        "publisher": "Anthropic / Rakuten",
+        "date": "未标注发布日期",
+        "accessed": "2026-10-17",
+        "support": "Anthropic客户案例介绍Rakuten使用Claude Code处理软件开发任务。；案例记录了在大型开源代码库中实现特定方法的试验，并由工程团队检查结果。"
+      }
+    ]
+  },
+  {
+    "id": "b14-05",
+    "lesson": 14,
+    "chapter": "14_ai_agent",
+    "company": "Wiley",
+    "title": "Wiley客服分流：结束对话不等于解决问题",
+    "context": "开学季的账号、注册和支付问题需要不同处理路径，重复咨询与复杂问题会占用客服能力。",
+    "decision": "客服Agent怎样区分可处理任务与人工接管？",
+    "facts": [
+      "Salesforce客户案例介绍Wiley用Agentforce查询知识、处理账号访问并分流注册与支付问题。",
+      "系统也生成对话摘要，帮助后续客服理解既往处理情况。"
+    ],
+    "analysis": "课程分析：应按任务核验账号状态、转交对象与未解决原因；关闭会话不能替代问题解决，摘要也须保留不确定信息。",
+    "limits": "供应商材料支持所列功能，其中的收益数字不能单独证明因果效果；账户操作的验证条件仍须另行核对。",
+    "questions": [
+      {
+        "question": "客户离开聊天后，能否把该工单计为已解决？",
+        "answer": "须依据任务完成证据和后续重复求助检查，离开或超时只能说明会话结束。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "Wiley customer story",
+        "url": "https://www.salesforce.com/customer-stories/wiley/",
+        "publisher": "Salesforce / Wiley",
+        "date": "未标注发布日期",
+        "accessed": "2026-10-17",
+        "support": "Salesforce客户案例介绍Wiley用Agentforce查询知识、处理账号访问并分流注册与支付问题。；系统也生成对话摘要，帮助后续客服理解既往处理情况。"
+      }
+    ]
+  },
+  {
+    "id": "b15-01",
+    "lesson": 15,
+    "chapter": "final_project",
+    "company": "Siemens Amberg",
+    "title": "Amberg：从检验瓶颈定义原型",
+    "context": "电路板生产的末端X射线检验可能限制整线吞吐，单纯提高前段设备速度不能解除该瓶颈。",
+    "decision": "应增加检验设备，还是先验证另一种检验分流方式？",
+    "facts": [
+      "Siemens介绍Amberg利用过程参数训练质量预测模型，在边缘应用中判断是否需要末端检验。",
+      "其公开说明把传感器、云端训练和产线反馈连接起来。"
+    ],
+    "analysis": "课程分析：原型首先验证可否识别需要检查的对象；评价应联合观察漏检、节拍、追溯和质量放行约束。",
+    "limits": "材料来自Siemens自述，未附可复算的原始数据；预测结果不能自行授权减少检验或替代质量放行制度。",
+    "questions": [
+      {
+        "question": "为什么原型不能只汇报减少了多少检验？",
+        "answer": "减少检验可能增加漏检，必须同时核对质量风险、异常处理和放行条件。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "Digital transformation: Leading by example",
+        "url": "https://www.siemens.com/en-us/company/insights/electronics-digital-enterprise-future-technologies/",
+        "publisher": "Siemens",
+        "date": "未标注发布日期",
+        "accessed": "2026-10-17",
+        "support": "Siemens介绍Amberg利用过程参数训练质量预测模型，在边缘应用中判断是否需要末端检验。；其公开说明把传感器、云端训练和产线反馈连接起来。"
+      }
+    ]
+  },
+  {
+    "id": "b15-02",
+    "lesson": 15,
+    "chapter": "final_project",
+    "company": "Haier Electronics",
+    "title": "海尔佛山洗衣机：把定制需求贯通到生产",
+    "context": "定制订单的规格差异需要进入供应与生产安排，只建立销售看板不能完成订单化制造。",
+    "decision": "端到端系统应围绕哪一个业务对象组织？",
+    "facts": [
+      "海尔电器2017年ESG报告介绍佛山洗衣机互联工厂的按需定制生产。",
+      "报告把用户需求、设计、制造、检验追溯与交付联系起来，并说明定制订单进入生产安排。"
+    ],
+    "analysis": "课程分析：客户订单须对应配置、物料和交付状态，原型可选一个受控环节验证映射完整性，再讨论扩展范围。",
+    "limits": "报告支持订单化协同事实，但其中的效果比例不能单独识别平台的因果贡献，具体内部算法亦未披露。",
+    "questions": [
+      {
+        "question": "同一客户修改规格时，原型应怎样处理？",
+        "answer": "保留订单版本及已执行状态，重新核验物料、产能和承诺，避免把旧批准套用到新配置。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "Environmental, Social and Governance Report 2017, page 24",
+        "url": "https://imagegroup1.haier.com/global/csr/W020200721606034528153.pdf",
+        "publisher": "Haier Electronics",
+        "date": "2018-06-26",
+        "accessed": "2026-10-17",
+        "support": "海尔电器2017年ESG报告介绍佛山洗衣机互联工厂的按需定制生产。；报告把用户需求、设计、制造、检验追溯与交付联系起来，并说明定制订单进入生产安排。"
+      }
+    ]
+  },
+  {
+    "id": "b15-03",
+    "lesson": 15,
+    "chapter": "final_project",
+    "company": "Ocado",
+    "title": "Ocado履约：用仿真检验系统依赖",
+    "context": "在线生鲜履约同时涉及储存、机器人取货、装袋与配送，局部加速可能使下一环节排队。",
+    "decision": "端到端原型怎样识别局部优化的代价？",
+    "facts": [
+      "Ocado公开介绍用数字孪生和仿真检验仓储设计、履约算法及配送安排。",
+      "其机器人履约系统由协调软件连接网格取货与人工或机器人拣选工位。"
+    ],
+    "analysis": "课程分析：模拟须保留任务依赖、设备能力和到达波动；用同一订单集比较吞吐、排队及缺货，再决定试点。",
+    "limits": "材料支持所列技术用途；基于同一订单集的比较属于方案分析，不是Ocado完整调度系统或商业收益的复现。",
+    "questions": [
+      {
+        "question": "取货机器人更快，为什么订单交付仍可能变慢？",
+        "answer": "下游工位或包装可能成为瓶颈，等待和拥堵会抵消局部速度收益。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "Our technology: Ocado Smart Platform",
+        "url": "https://www.ocadogroup.com/about-us/our-technology",
+        "publisher": "Ocado Group",
+        "date": "未标注发布日期",
+        "accessed": "2026-10-17",
+        "support": "Ocado公开介绍用数字孪生和仿真检验仓储设计、履约算法及配送安排。；其机器人履约系统由协调软件连接网格取货与人工或机器人拣选工位。"
+      }
+    ]
+  },
+  {
+    "id": "b15-04",
+    "lesson": 15,
+    "chapter": "final_project",
+    "company": "Amazon",
+    "title": "Sequoia：首个场地验证系统组合",
+    "context": "新的库存容器化方案把移动机器人、龙门系统、机械臂和员工工作站连接起来，效果取决于组合运行。",
+    "decision": "复杂原型怎样选择有边界的试点范围？",
+    "facts": [
+      "Amazon于2023年介绍在得克萨斯州休斯敦履约中心部署Sequoia。",
+      "公告说明Sequoia整合多种机器人系统与新的员工工作站，用于库存接收、存储及提取。"
+    ],
+    "analysis": "课程分析：首仓试点须记录接口、岗位和异常处理；推广前应分别验证设备安全、人员负担、库存准确性及订单周期。",
+    "limits": "公告支持部署及系统组成，但未给出可独立复算的完整性能比较数据，不能直接外推到其他仓库。",
+    "questions": [
+      {
+        "question": "试点已经运行，为什么推广前仍要重新验收？",
+        "answer": "新场地的布局、商品和订单结构不同，设备能力及人员流程也可能改变。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "Amazon announces new fulfillment center robots, Sequoia and Digit",
+        "url": "https://www.aboutamazon.com/news/operations/amazon-introduces-new-robotics-solutions",
+        "publisher": "Amazon",
+        "date": "2023-10-18",
+        "accessed": "2026-10-17",
+        "support": "Amazon于2023年介绍在得克萨斯州休斯敦履约中心部署Sequoia。；公告说明Sequoia整合多种机器人系统与新的员工工作站，用于库存接收、存储及提取。"
+      }
+    ]
+  },
+  {
+    "id": "b15-05",
+    "lesson": 15,
+    "chapter": "final_project",
+    "company": "BMW Group",
+    "title": "AIQX：质检原型需要对象与位置对应",
+    "context": "车身外观与装配细节的检查，需要把图像、车辆身份和生产位置联系起来，避免把检测结果附到错误对象。",
+    "decision": "从视觉模型到质量系统需要补齐哪些环节？",
+    "facts": [
+      "BMW于2023年介绍AIQX用产线相机和深度学习进行质量检查。",
+      "文章说明车辆定位触发拍摄，图像发送到云端平台分析。"
+    ],
+    "analysis": "课程分析：系统验收须覆盖触发、图像质量、车辆关联、检测和人工复核；离线识别准确率只检验其中一环。",
+    "limits": "材料支持公开系统结构，未披露具体阈值、完整错误率或最终质量放行程序。",
+    "questions": [
+      {
+        "question": "模型在样例照片上准确，为什么不能据此验收整个质检原型？",
+        "answer": "现场触发、定位、光照和结果归属都可能失败，需要端到端记录以及异常样本测试。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "Developers of the future: BMW Group IT",
+        "url": "https://www.bmwgroup.com/en/news/general/2023/BMWGroupIT.html",
+        "publisher": "BMW Group",
+        "date": "2023-01-29",
+        "accessed": "2026-10-17",
+        "support": "BMW于2023年介绍AIQX用产线相机和深度学习进行质量检查。；文章说明车辆定位触发拍摄，图像发送到云端平台分析。"
+      }
+    ]
+  },
+  {
+    "id": "b16-01",
+    "lesson": 16,
+    "chapter": "final_project",
+    "company": "Zillow Group",
+    "title": "Zillow Offers：何时停止扩大预测驱动的业务",
+    "context": "Zillow Offers直接买入、整修并转售住宅，预测误差会在持有的房产和资金占用中体现。",
+    "decision": "2021年，公司决定逐步结束这项业务。",
+    "facts": [
+      "2021年11月2日，Zillow宣布逐步结束Zillow Offers。",
+      "公司将房价预测的不可预见性及扩大业务所带来的利润和资产负债表波动列为退出理由。",
+      "同一财报也披露了整修和转售能力约束。"
+    ],
+    "analysis": "项目答辩须把预测误差、运营处理能力及可承受的财务暴露放在同一决策框架中。只展示拟合指标，无法说明业务规模是否可持续；试点应事先规定风险限额与停止扩张的条件。",
+    "limits": "退出理由来自公司披露，不能据此把全部损失归因于单一算法，也不能推出所有自动估价业务都不可行。",
+    "questions": [
+      {
+        "question": "怎样的证据才足以支持继续扩大试点？",
+        "answer": "需要同时报告样本外误差及其尾部风险、库存和资金占用、整修转售能力，以及在不利情景下是否仍满足预定风险限额；平均预测准确率不能单独代替这些验收条件。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "Zillow Group Q3 2021 results and wind-down plan",
+        "url": "https://investors.zillowgroup.com/news-and-events/news/news-details/2021/Zillow-Group-Reports-Third-Quarter-2021-Financial-Results--Shares-Plan-to-Wind-Down-Zillow-Offers-Operations/default.aspx",
+        "publisher": "Zillow Group",
+        "date": "2021-11-02",
+        "accessed": "2026-10-17",
+        "support": "退出决定、管理层说明的预测不确定性与业务波动，以及整修和转售能力约束。"
+      }
+    ]
+  },
+  {
+    "id": "b16-02",
+    "lesson": 16,
+    "chapter": "final_project",
+    "company": "Knight Capital",
+    "title": "Knight Capital：上线验收必须覆盖实际执行控制",
+    "context": "证券订单路由系统会将客户订单转换为发送到市场的子订单，软件错误可能直接形成真实交易。",
+    "decision": "新代码分批部署之后，企业必须确认每台服务器的版本、订单状态与执行限额。",
+    "facts": [
+      "SEC在2013年的行政程序文件中指出，2012年部署时八台服务器有一台没有复制新代码，旧功能因复用标志被触发。",
+      "文件指出，部署没有第二位技术人员复核，风险监控未与超限自动停止下单相连接。",
+      "在排障时移除其余服务器的新代码，使问题扩大。"
+    ],
+    "analysis": "答辩演示应包含不一致版本、重复订单及超过限额等失败输入，并展示系统是否实际阻断操作。监控界面、审批记录和执行前约束承担不同职责；看到告警不能等同于危险操作已被停止。",
+    "limits": "这是特定证券交易事故的监管认定。它支持审查部署和风险控制的必要性，不提供任何单一控制措施在所有系统中的充分性证明。",
+    "questions": [
+      {
+        "question": "“出现异常时回滚”为什么不是完整的恢复方案？",
+        "answer": "必须确认各节点当前版本、旧代码能否被重新激活以及已发生操作的状态。恢复动作本身也应经过前置条件核验，不能假定移除新代码必然回到安全状态。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "Knight Capital Americas administrative order, paragraphs 15–17 and 25–27",
+        "url": "https://www.sec.gov/Archives/edgar/data/1569391/000119312513401173/d613486dex101.htm",
+        "publisher": "U.S. Securities and Exchange Commission",
+        "date": "2013-10-16",
+        "accessed": "2026-10-17",
+        "support": "八台服务器部署不一致、缺少复核、执行限额未连接自动阻断，以及排障操作扩大错误的事实。"
+      }
+    ]
+  },
+  {
+    "id": "b16-03",
+    "lesson": 16,
+    "chapter": "final_project",
+    "company": "TSB Bank",
+    "title": "TSB迁移：数据复制成功与业务验收分别证明",
+    "context": "银行核心平台迁移同时影响网点、电话、网上与手机银行服务。",
+    "decision": "迁移是否可以验收，需要核对数据结果，也需要证明客户仍能完成关键业务。",
+    "facts": [
+      "英国FCA和PRA在2022年的处罚说明中回顾了TSB于2018年4月实施的平台迁移。",
+      "监管说明明确区分：数据本身成功迁移，但新平台随即发生技术故障，银行服务受到严重干扰。",
+      "监管机构指出迁移组织控制、运营风险及关键外包安排管理存在不足。"
+    ],
+    "analysis": "综合项目的验收规格应按完整业务路径定义，例如身份验证、余额查询和交易结果确认。逐表行数一致是数据层证据，不能代替端到端业务测试、恢复演练及第三方责任确认。",
+    "limits": "监管结论针对这一迁移项目，不能据此认定外包本身必然失败，也不能将所有服务故障解释为数据错误。",
+    "questions": [
+      {
+        "question": "“所有表都对账成功”还缺少哪类上线证据？",
+        "answer": "还需说明重要业务在正常和失败条件下能否完成、负载下是否满足服务要求、故障后如何恢复，以及企业和供应商分别承担哪些可核验的职责。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "TSB fined £48.65m for operational resilience failings",
+        "url": "https://www.fca.org.uk/news/press-releases/tsb-fined-48m-operational-resilience-failings",
+        "publisher": "Financial Conduct Authority",
+        "date": "2022-12-20（网页更新于2026-07-27）",
+        "accessed": "2026-10-17",
+        "support": "迁移时间、数据成功迁移与服务失效的区分，以及监管指出的组织和外包风险管理缺陷。"
+      }
+    ]
+  },
+  {
+    "id": "b16-04",
+    "lesson": 16,
+    "chapter": "final_project",
+    "company": "Microsoft",
+    "title": "Tay：公开试验怎样约束失败的影响",
+    "context": "微软在2016年将娱乐型聊天机器人Tay开放给Twitter用户互动。",
+    "decision": "开放范围扩大时，需要判断已有测试是否覆盖恶意互动，并规定何时暂停服务。",
+    "facts": [
+      "微软在2016年3月25日说明，Tay上线前做过滤、用户研究和压力测试。",
+      "官方复盘承认，上线后的一次协同攻击利用了未充分预见的漏洞，机器人产生了不当内容。",
+      "微软暂停了Tay，并将改善对恶意意图的应对作为重新开放的条件。"
+    ],
+    "analysis": "项目展示需要同时包含正常使用和对抗性输入。课堂分析可据此提出分阶段开放、限制操作影响、监测违规并保留停用能力；这些是本课程的方案要求，不是对Tay内部架构的推测。",
+    "limits": "官方博客没有公开完整模型或攻击路径，不能把事件直接归类为现代RAG的文档注入，也不能编造其训练或权限机制。",
+    "questions": [
+      {
+        "question": "“上线后再从反馈中学习”需要哪些先决条件？",
+        "answer": "需要明确可容忍的失败、开放对象与操作范围、监测责任、暂停条件及纠正流程。收集反馈的价值应与可能造成的实际影响同时评价。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "Learning from Tay’s introduction",
+        "url": "https://blogs.microsoft.com/blog/2016/03/25/learning-tays-introduction/",
+        "publisher": "Microsoft",
+        "date": "2016-03-25",
+        "accessed": "2026-10-17",
+        "support": "上线前测试、上线后攻击与不当输出、暂停及重新开放的条件。"
+      }
+    ]
+  },
+  {
+    "id": "b16-05",
+    "lesson": 16,
+    "chapter": "final_project",
+    "company": "Amazon Web Services",
+    "title": "S3事件复盘：操作工具怎样限制故障影响范围",
+    "context": "2017年2月28日，AWS在排查S3计费处理问题时执行了一次服务器移除操作。",
+    "decision": "运维工具需要限制单次操作的影响，并为故障状态提供独立的信息渠道。",
+    "facts": [
+      "AWS复盘说明，命令输入错误移除了超出预期的一组服务器，影响索引和存储分配子系统。",
+      "事后AWS降低工具移除容量的速度，并增加最低容量保护。",
+      "服务状态面板的管理控制台也依赖S3，故障期间更新受限；事后调整为跨区域运行。"
+    ],
+    "analysis": "综合项目应展示输入校验、操作影响范围和恢复过程。还应检查监控、告警、审批或状态通报是否与被保护的服务共享同一故障依赖，避免故障发生时连观察和沟通能力也一并丢失。",
+    "limits": "材料是AWS对特定事件的公开复盘，不能据此推断所有内部实现细节，也不能声称改进后任何类似故障都不再可能发生。",
+    "questions": [
+      {
+        "question": "为什么仅增加一个确认按钮仍不足以证明操作安全？",
+        "answer": "确认只能表明操作者表达了意图，还需机器可检验的影响范围、最低容量等前置条件，以及故障后可独立使用的观察和恢复渠道。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "Summary of the Amazon S3 Service Disruption in Northern Virginia",
+        "url": "https://aws.amazon.com/message/41926/",
+        "publisher": "Amazon Web Services",
+        "date": "页面未标明发布日期；事件日期为2017-02-28",
+        "accessed": "2026-10-17",
+        "support": "命令影响扩大、工具容量保护改进，以及状态面板对S3的依赖和跨区域调整。"
+      }
+    ]
+  }
+]

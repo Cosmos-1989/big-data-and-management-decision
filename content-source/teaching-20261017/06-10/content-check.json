@@ -1,0 +1,53 @@
+{
+  "baseline": "2fde9b0",
+  "originalPages": 207,
+  "revisedPages": 279,
+  "cases": 25,
+  "caseSlides": 50,
+  "conceptBridges": 22,
+  "terms": 137,
+  "firstUseErrors": [],
+  "originalProseOperations": 40,
+  "originalPagesWithProseChanges": 34,
+  "chapters": {
+    "06_ab_testing": {
+      "originalPages": 44,
+      "revisedPages": 58,
+      "caseCount": 5,
+      "termCount": 23
+    },
+    "07_prediction": {
+      "originalPages": 39,
+      "revisedPages": 55,
+      "caseCount": 5,
+      "termCount": 36
+    },
+    "08_causality": {
+      "originalPages": 42,
+      "revisedPages": 57,
+      "caseCount": 5,
+      "termCount": 29
+    },
+    "09_optimization": {
+      "originalPages": 37,
+      "revisedPages": 50,
+      "caseCount": 5,
+      "termCount": 19
+    },
+    "10_process_mining": {
+      "originalPages": 45,
+      "revisedPages": 59,
+      "caseCount": 5,
+      "termCount": 30
+    }
+  },
+  "protectedFields": [
+    "original title order",
+    "display formulas",
+    "inline math sequence",
+    "diagrams",
+    "worked examples",
+    "code blocks",
+    "detailRef anchors"
+  ]
+}

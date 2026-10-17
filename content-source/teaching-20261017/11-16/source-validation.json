@@ -1,0 +1,493 @@
+{
+  "accessed": "2026-10-17",
+  "cases": 30,
+  "sources": 31,
+  "entries": [
+    {
+      "caseId": "b11-01",
+      "lesson": 11,
+      "verifiedBy": "slides_cases_11_16 primary-source research",
+      "sourceType": "company or implementing provider first-person publication",
+      "sources": [
+        {
+          "url": "https://www.uber.com/us/en/blog/apache-hudi-at-uber/",
+          "publisher": "Uber Engineering",
+          "support": "Uber说明Hudi支持湖上事务、按键更新和增量处理。；工程文章将迟到更新、回填和状态变化列为平台设计的直接需求。",
+          "verification": "primary source opened and content reviewed"
+        }
+      ],
+      "quantitativeClaims": "No performance KPI invented; vendor outcome metrics not used as causal evidence",
+      "boundaryCheck": "实施机制来自Uber工程自述；这里不据平台规模推断管理收益，也不声称Hudi会自动决定业务状态。"
+    },
+    {
+      "caseId": "b11-02",
+      "lesson": 11,
+      "verifiedBy": "slides_cases_11_16 primary-source research",
+      "sourceType": "company or implementing provider first-person publication",
+      "sources": [
+        {
+          "url": "https://github.com/Netflix-Skunkworks/hive2iceberg-migration",
+          "publisher": "Netflix-Skunkworks",
+          "support": "Netflix公开了从Hive向Iceberg迁移的工具仓库。；工具说明保存表责任人、下游使用者和迁移状态，并提供观察期、影子核对与回退组件。",
+          "verification": "primary source opened and content reviewed"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=jMFMEk8jFu8",
+          "publisher": "AWS Events / Netflix",
+          "support": "Netflix在AWS官方活动介绍实际迁移及其背景；活动描述已由搜索引擎读取，未以视频字幕补充事实。",
+          "verification": "official event description indexed by search; video page open returns site shell only"
+        }
+      ],
+      "quantitativeClaims": "No performance KPI invented; vendor outcome metrics not used as causal evidence",
+      "boundaryCheck": "案例说明真实迁移与公开工具；此处的验收清单是课程分析，不是Netflix内部完整迁移规程。"
+    },
+    {
+      "caseId": "b11-03",
+      "lesson": 11,
+      "verifiedBy": "slides_cases_11_16 primary-source research",
+      "sourceType": "company or implementing provider first-person publication",
+      "sources": [
+        {
+          "url": "https://shopify.engineering/capturing-every-change-shopify-sharded-monolith",
+          "publisher": "Shopify Engineering",
+          "support": "Shopify在2021年介绍从查询式CDC转向不可变、追加式的日志采集。；其方案使用Kafka Connect和Debezium，连接应用数据库变化与下游数据处理。",
+          "verification": "primary source opened and content reviewed"
+        }
+      ],
+      "quantitativeClaims": "No performance KPI invented; vendor outcome metrics not used as causal evidence",
+      "boundaryCheck": "文章描述当时的平台迁移，不代表所有数据库均可直接采用相同配置，也不保证端到端恰好一次业务效果。"
+    },
+    {
+      "caseId": "b11-04",
+      "lesson": 11,
+      "verifiedBy": "slides_cases_11_16 primary-source research",
+      "sourceType": "company or implementing provider first-person publication",
+      "sources": [
+        {
+          "url": "https://medium.com/walmartglobaltech/lakehouse-at-fortune-1-scale-480bcb10391b",
+          "publisher": "Walmart Global Tech",
+          "support": "Walmart用两类实际工作负载评估Hudi、Delta和Iceberg。；其评分同时考虑兼容性、可用性、成本、性能、支持与总拥有成本，并明确测试版本。",
+          "verification": "primary source opened and content reviewed"
+        }
+      ],
+      "quantitativeClaims": "No performance KPI invented; vendor outcome metrics not used as causal evidence",
+      "boundaryCheck": "这是2023年特定版本与Walmart环境的评估，不能作为当前产品排名或所有企业的采购结论。"
+    },
+    {
+      "caseId": "b11-05",
+      "lesson": 11,
+      "verifiedBy": "slides_cases_11_16 primary-source research",
+      "sourceType": "company or implementing provider first-person publication",
+      "sources": [
+        {
+          "url": "https://press.disneyadvertising.com/disney-s-proprietary-clean-room-data-solution-sets-its-sights-on-measurement-activation-",
+          "publisher": "Disney Advertising",
+          "support": "Disney于2022年宣布与Horizon Media开展数据洁净室测量试点。；公告说明该环境支持受众匹配和广告分析，并与Habu、InfoSum、Snowflake合作。",
+          "verification": "primary source opened and content reviewed"
+        }
+      ],
+      "quantitativeClaims": "No performance KPI invented; vendor outcome metrics not used as causal evidence",
+      "boundaryCheck": "公告支持试点及其用途；不能据此保证匿名化绝无重识别风险，也不能把广告测量直接解释为因果效果。"
+    },
+    {
+      "caseId": "b12-01",
+      "lesson": 12,
+      "verifiedBy": "slides_cases_11_16 primary-source research",
+      "sourceType": "company or implementing provider first-person publication",
+      "sources": [
+        {
+          "url": "https://www.uber.com/us/en/blog/michelangelo-machine-learning-platform/",
+          "publisher": "Uber Engineering",
+          "support": "Uber于2017年介绍Michelangelo，覆盖数据管理、训练、评价、部署、预测和监控。；UberEATS配送时间是其公开应用，平台共享特征并保存训练配置、参数及评价结果。",
+          "verification": "primary source opened and content reviewed"
+        }
+      ],
+      "quantitativeClaims": "No performance KPI invented; vendor outcome metrics not used as causal evidence",
+      "boundaryCheck": "事实对应2017年公开架构，不代表Uber当前全部系统；配送预测的产品使用也不等于已证明经营净收益。"
+    },
+    {
+      "caseId": "b12-02",
+      "lesson": 12,
+      "verifiedBy": "slides_cases_11_16 primary-source research",
+      "sourceType": "company or implementing provider first-person publication",
+      "sources": [
+        {
+          "url": "https://www.linkedin.com/blog/engineering/machine-learning/scaling-machine-learning-productivity-at-linkedin",
+          "publisher": "LinkedIn Engineering",
+          "support": "LinkedIn说明Pro-ML的健康保障检查线上与离线特征的一致性。；异常分析使用回放、存储、探索和扰动等方法，追查代码、数据或重训练需求。",
+          "verification": "primary source opened and content reviewed"
+        }
+      ],
+      "quantitativeClaims": "No performance KPI invented; vendor outcome metrics not used as causal evidence",
+      "boundaryCheck": "公开材料支持平台职责及诊断方法，不提供每次故障的根因记录，也不证明重新训练总能恢复业务效果。"
+    },
+    {
+      "caseId": "b12-03",
+      "lesson": 12,
+      "verifiedBy": "slides_cases_11_16 primary-source research",
+      "sourceType": "company or implementing provider first-person publication",
+      "sources": [
+        {
+          "url": "https://careersatdoordash.com/blog/doordashs-new-prediction-service/",
+          "publisher": "DoorDash Engineering",
+          "support": "DoorDash在2020年介绍Sibyl，把预测服务与特征、训练、存储分离。；最初异步复制搜索请求进行负载测试，其预测不用于线上排序，再选择较宽松场景迁移。",
+          "verification": "primary source opened and content reviewed"
+        }
+      ],
+      "quantitativeClaims": "No performance KPI invented; vendor outcome metrics not used as causal evidence",
+      "boundaryCheck": "该测试支持服务承载与迁移设计，不能用影子预测证明候选模型改善了客户体验。"
+    },
+    {
+      "caseId": "b12-04",
+      "lesson": 12,
+      "verifiedBy": "slides_cases_11_16 primary-source research",
+      "sourceType": "company or implementing provider first-person publication",
+      "sources": [
+        {
+          "url": "https://github.com/Netflix/metaflow",
+          "publisher": "Netflix / Metaflow",
+          "support": "Netflix开发并开源Metaflow，用于构建和管理实际机器学习与数据科学项目。；项目提供分步流程、运行产物管理及本地到云端的执行支持。",
+          "verification": "primary source opened and content reviewed"
+        }
+      ],
+      "quantitativeClaims": "No performance KPI invented; vendor outcome metrics not used as causal evidence",
+      "boundaryCheck": "框架功能来自官方仓库；工具不会自动证明数据标签正确，也不能保证外部服务和可变数据永久可复现。"
+    },
+    {
+      "caseId": "b12-05",
+      "lesson": 12,
+      "verifiedBy": "slides_cases_11_16 primary-source research",
+      "sourceType": "company or implementing provider first-person publication",
+      "sources": [
+        {
+          "url": "https://stripe.com/blog/how-we-built-it-stripe-radar",
+          "publisher": "Stripe Engineering",
+          "support": "Stripe介绍Radar从较简单模型演进到深度网络，并在2022年调整模型架构。；文章说明训练速度、数据规模及误拒合法支付之间的实际取舍。",
+          "verification": "primary source opened and content reviewed"
+        }
+      ],
+      "quantitativeClaims": "No performance KPI invented; vendor outcome metrics not used as causal evidence",
+      "boundaryCheck": "架构事实及取舍来自Stripe工程自述；标签延迟的评价设计为课程分析，不据此复述未独立验证的效果数字。"
+    },
+    {
+      "caseId": "b13-01",
+      "lesson": 13,
+      "verifiedBy": "slides_cases_11_16 primary-source research",
+      "sourceType": "company or implementing provider first-person publication",
+      "sources": [
+        {
+          "url": "https://www.press.bmwgroup.com/global/article/attachment/T0329569EN/476165",
+          "publisher": "BMW Group",
+          "support": "BMW披露使用数字工厂副本开展协同生产规划。；Omniverse环境整合结构、设施及物流信息，用于生产系统设计与仿真。",
+          "verification": "primary source opened and content reviewed"
+        }
+      ],
+      "quantitativeClaims": "No performance KPI invented; vendor outcome metrics not used as causal evidence",
+      "boundaryCheck": "资料支持虚拟规划用途，未说明采用Palantir，也未披露完整仿真算法；对象映射属于案例分析。"
+    },
+    {
+      "caseId": "b13-02",
+      "lesson": 13,
+      "verifiedBy": "slides_cases_11_16 primary-source research",
+      "sourceType": "company or implementing provider first-person publication",
+      "sources": [
+        {
+          "url": "https://www.unilever.com/news/news-search/2023/unilever-sites-join-network-of-worlds-most-digitally-advanced-factories/",
+          "publisher": "Unilever",
+          "support": "Unilever于2023年介绍巴西Indaiatuba洗衣粉工厂使用数字孪生预测新配方的适宜过程参数。；文章将该应用放在工厂数字化和员工能力建设的具体背景中。",
+          "verification": "primary source opened and content reviewed"
+        }
+      ],
+      "quantitativeClaims": "No performance KPI invented; vendor outcome metrics not used as causal evidence",
+      "boundaryCheck": "材料支持参数预测用途，未给出独立因果试验或完整控制策略，不能据此确认无条件的经营效果。"
+    },
+    {
+      "caseId": "b13-03",
+      "lesson": 13,
+      "verifiedBy": "slides_cases_11_16 primary-source research",
+      "sourceType": "company or implementing provider first-person publication",
+      "sources": [
+        {
+          "url": "https://group.dhl.com/en/media-relations/press-releases/2019/dhl-supply-chain-partners-tetra-pak-implement-first-digital-twin-warehouse-asia-pacific.html",
+          "publisher": "DHL Group",
+          "support": "DHL于2019年宣布在Tetra Pak新加坡仓库实施数字孪生。；方案结合物联网、邻近传感器及实时运营数据，支持主管安排资源并监测受限区域。",
+          "verification": "primary source opened and content reviewed"
+        }
+      ],
+      "quantitativeClaims": "No performance KPI invented; vendor outcome metrics not used as causal evidence",
+      "boundaryCheck": "公告支持所列实施与用途，未披露完整控制逻辑；实时可视化不能单独保证现场安全。"
+    },
+    {
+      "caseId": "b13-04",
+      "lesson": 13,
+      "verifiedBy": "slides_cases_11_16 primary-source research",
+      "sourceType": "company or implementing provider first-person publication",
+      "sources": [
+        {
+          "url": "https://www.riotinto.com/en/news/releases/2022/rio-tinto-opens-gudai-darri-its-most-technologically-advanced-mine",
+          "publisher": "Rio Tinto",
+          "support": "Rio Tinto于2022年介绍Gudai-Darri矿山的处理厂数字副本。；同一数字资产数据用于运行监测、工作规划、技术资料访问和虚拟现实培训。",
+          "verification": "primary source opened and content reviewed"
+        }
+      ],
+      "quantitativeClaims": "No performance KPI invented; vendor outcome metrics not used as causal evidence",
+      "boundaryCheck": "资料支持所列应用；不能据3D资产副本推断所有设备均有实时高精度预测模型或自主控制。"
+    },
+    {
+      "caseId": "b13-05",
+      "lesson": 13,
+      "verifiedBy": "slides_cases_11_16 primary-source research",
+      "sourceType": "company or implementing provider first-person publication",
+      "sources": [
+        {
+          "url": "https://www.jlr.com/annual-report-2024",
+          "publisher": "Jaguar Land Rover",
+          "support": "JLR在2024年年报中披露与NVIDIA合作开发供应链数字孪生。；年报说明该模型用于在虚拟环境中尝试变化，并结合跨部门信息整合。",
+          "verification": "primary source opened and content reviewed"
+        }
+      ],
+      "quantitativeClaims": "No performance KPI invented; vendor outcome metrics not used as causal evidence",
+      "boundaryCheck": "年报支持合作及开发用途，未披露内部模型结构，开发计划亦不能作为已经验证的经营改善。"
+    },
+    {
+      "caseId": "b14-01",
+      "lesson": 14,
+      "verifiedBy": "slides_cases_11_16 primary-source research",
+      "sourceType": "company or implementing provider first-person publication",
+      "sources": [
+        {
+          "url": "https://www.morganstanley.com/press-releases/key-milestone-in-innovation-journey-with-openai",
+          "publisher": "Morgan Stanley",
+          "support": "Morgan Stanley于2023年宣布开发面向顾问的内部AI服务。；公告说明回答取自内部内容并链接源文档，交互反馈用于改进系统。",
+          "verification": "primary source opened and content reviewed"
+        }
+      ],
+      "quantitativeClaims": "No performance KPI invented; vendor outcome metrics not used as causal evidence",
+      "boundaryCheck": "案例支持内部知识服务的设计，不声称系统能够独立替代顾问，也不把有引用等同于每项结论已获证实。"
+    },
+    {
+      "caseId": "b14-02",
+      "lesson": 14,
+      "verifiedBy": "slides_cases_11_16 primary-source research",
+      "sourceType": "company or implementing provider first-person publication",
+      "sources": [
+        {
+          "url": "https://blog.box.com/building-closed-loop-knowledge-system-ai-powered-it-support-box",
+          "publisher": "Box IT",
+          "support": "Box IT介绍Gizmo通过Slack接收问题，并检索经过治理和发布的知识。；未解决请求及负面反馈进入周期性缺口分析，更新建议由知识团队审查后发布。",
+          "verification": "primary source opened and content reviewed"
+        }
+      ],
+      "quantitativeClaims": "No performance KPI invented; vendor outcome metrics not used as causal evidence",
+      "boundaryCheck": "实施流程来自Box IT自述；尚不能据此量化其独立因果收益，缺口建议也需要责任人核实。"
+    },
+    {
+      "caseId": "b14-03",
+      "lesson": 14,
+      "verifiedBy": "slides_cases_11_16 primary-source research",
+      "sourceType": "company or implementing provider first-person publication",
+      "sources": [
+        {
+          "url": "https://www.microsoft.com/en/customers/story/19829-dow-microsoft-365-copilot",
+          "publisher": "Microsoft Customer Stories / Dow",
+          "support": "Microsoft客户案例介绍Dow用Copilot核查运费、预提费用和发票费率。；其中一类智能体从邮件处理PDF发票，识别差异并转交更正。",
+          "verification": "primary source opened and content reviewed"
+        }
+      ],
+      "quantitativeClaims": "No performance KPI invented; vendor outcome metrics not used as causal evidence",
+      "boundaryCheck": "2024年客户材料中的节约金额属于预期，不能作为已审计收益；材料未说明模型拥有自主付款权限。"
+    },
+    {
+      "caseId": "b14-04",
+      "lesson": 14,
+      "verifiedBy": "slides_cases_11_16 primary-source research",
+      "sourceType": "company or implementing provider first-person publication",
+      "sources": [
+        {
+          "url": "https://claude.com/customers/rakuten",
+          "publisher": "Anthropic / Rakuten",
+          "support": "Anthropic客户案例介绍Rakuten使用Claude Code处理软件开发任务。；案例记录了在大型开源代码库中实现特定方法的试验，并由工程团队检查结果。",
+          "verification": "primary source opened and content reviewed"
+        }
+      ],
+      "quantitativeClaims": "No performance KPI invented; vendor outcome metrics not used as causal evidence",
+      "boundaryCheck": "这是供应商客户案例，个别任务的成功不能推断任意代码库的准确率或普遍节省比例。"
+    },
+    {
+      "caseId": "b14-05",
+      "lesson": 14,
+      "verifiedBy": "slides_cases_11_16 primary-source research",
+      "sourceType": "company or implementing provider first-person publication",
+      "sources": [
+        {
+          "url": "https://www.salesforce.com/customer-stories/wiley/",
+          "publisher": "Salesforce / Wiley",
+          "support": "Salesforce客户案例介绍Wiley用Agentforce查询知识、处理账号访问并分流注册与支付问题。；系统也生成对话摘要，帮助后续客服理解既往处理情况。",
+          "verification": "primary source opened and content reviewed"
+        }
+      ],
+      "quantitativeClaims": "No performance KPI invented; vendor outcome metrics not used as causal evidence",
+      "boundaryCheck": "供应商材料支持所列功能，其中的收益数字不能单独证明因果效果；账户操作的验证条件仍须另行核对。"
+    },
+    {
+      "caseId": "b15-01",
+      "lesson": 15,
+      "verifiedBy": "slides_cases_11_16 primary-source research",
+      "sourceType": "company or implementing provider first-person publication",
+      "sources": [
+        {
+          "url": "https://www.siemens.com/en-us/company/insights/electronics-digital-enterprise-future-technologies/",
+          "publisher": "Siemens",
+          "support": "Siemens介绍Amberg利用过程参数训练质量预测模型，在边缘应用中判断是否需要末端检验。；其公开说明把传感器、云端训练和产线反馈连接起来。",
+          "verification": "primary source opened and content reviewed"
+        }
+      ],
+      "quantitativeClaims": "No performance KPI invented; vendor outcome metrics not used as causal evidence",
+      "boundaryCheck": "材料来自Siemens自述，未附可复算的原始数据；预测结果不能自行授权减少检验或替代质量放行制度。"
+    },
+    {
+      "caseId": "b15-02",
+      "lesson": 15,
+      "verifiedBy": "slides_cases_11_16 primary-source research",
+      "sourceType": "company or implementing provider first-person publication",
+      "sources": [
+        {
+          "url": "https://imagegroup1.haier.com/global/csr/W020200721606034528153.pdf",
+          "publisher": "Haier Electronics",
+          "support": "海尔电器2017年ESG报告介绍佛山洗衣机互联工厂的按需定制生产。；报告把用户需求、设计、制造、检验追溯与交付联系起来，并说明定制订单进入生产安排。",
+          "verification": "primary source opened and content reviewed"
+        }
+      ],
+      "quantitativeClaims": "No performance KPI invented; vendor outcome metrics not used as causal evidence",
+      "boundaryCheck": "报告支持订单化协同事实，但其中的效果比例不能单独识别平台的因果贡献，具体内部算法亦未披露。"
+    },
+    {
+      "caseId": "b15-03",
+      "lesson": 15,
+      "verifiedBy": "slides_cases_11_16 primary-source research",
+      "sourceType": "company or implementing provider first-person publication",
+      "sources": [
+        {
+          "url": "https://www.ocadogroup.com/about-us/our-technology",
+          "publisher": "Ocado Group",
+          "support": "Ocado公开介绍用数字孪生和仿真检验仓储设计、履约算法及配送安排。；其机器人履约系统由协调软件连接网格取货与人工或机器人拣选工位。",
+          "verification": "primary source opened and content reviewed"
+        }
+      ],
+      "quantitativeClaims": "No performance KPI invented; vendor outcome metrics not used as causal evidence",
+      "boundaryCheck": "材料支持所列技术用途；基于同一订单集的比较属于方案分析，不是Ocado完整调度系统或商业收益的复现。"
+    },
+    {
+      "caseId": "b15-04",
+      "lesson": 15,
+      "verifiedBy": "slides_cases_11_16 primary-source research",
+      "sourceType": "company or implementing provider first-person publication",
+      "sources": [
+        {
+          "url": "https://www.aboutamazon.com/news/operations/amazon-introduces-new-robotics-solutions",
+          "publisher": "Amazon",
+          "support": "Amazon于2023年介绍在得克萨斯州休斯敦履约中心部署Sequoia。；公告说明Sequoia整合多种机器人系统与新的员工工作站，用于库存接收、存储及提取。",
+          "verification": "primary source opened and content reviewed"
+        }
+      ],
+      "quantitativeClaims": "No performance KPI invented; vendor outcome metrics not used as causal evidence",
+      "boundaryCheck": "公告支持部署及系统组成，但未给出可独立复算的完整性能比较数据，不能直接外推到其他仓库。"
+    },
+    {
+      "caseId": "b15-05",
+      "lesson": 15,
+      "verifiedBy": "slides_cases_11_16 primary-source research",
+      "sourceType": "company or implementing provider first-person publication",
+      "sources": [
+        {
+          "url": "https://www.bmwgroup.com/en/news/general/2023/BMWGroupIT.html",
+          "publisher": "BMW Group",
+          "support": "BMW于2023年介绍AIQX用产线相机和深度学习进行质量检查。；文章说明车辆定位触发拍摄，图像发送到云端平台分析。",
+          "verification": "primary source opened and content reviewed"
+        }
+      ],
+      "quantitativeClaims": "No performance KPI invented; vendor outcome metrics not used as causal evidence",
+      "boundaryCheck": "材料支持公开系统结构，未披露具体阈值、完整错误率或最终质量放行程序。"
+    },
+    {
+      "caseId": "b16-01",
+      "lesson": 16,
+      "verifiedBy": "root primary-source brief",
+      "sourceType": "regulator order or company disclosure",
+      "sources": [
+        {
+          "url": "https://investors.zillowgroup.com/news-and-events/news/news-details/2021/Zillow-Group-Reports-Third-Quarter-2021-Financial-Results--Shares-Plan-to-Wind-Down-Zillow-Offers-Operations/default.aspx",
+          "publisher": "Zillow Group",
+          "support": "退出决定、管理层说明的预测不确定性与业务波动，以及整修和转售能力约束。",
+          "verification": "verified in root-supplied research brief"
+        }
+      ],
+      "quantitativeClaims": "No performance KPI invented; vendor outcome metrics not used as causal evidence",
+      "boundaryCheck": "退出理由来自公司披露，不能据此把全部损失归因于单一算法，也不能推出所有自动估价业务都不可行。"
+    },
+    {
+      "caseId": "b16-02",
+      "lesson": 16,
+      "verifiedBy": "root primary-source brief",
+      "sourceType": "regulator order or company disclosure",
+      "sources": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1569391/000119312513401173/d613486dex101.htm",
+          "publisher": "U.S. Securities and Exchange Commission",
+          "support": "八台服务器部署不一致、缺少复核、执行限额未连接自动阻断，以及排障操作扩大错误的事实。",
+          "verification": "verified in root-supplied research brief"
+        }
+      ],
+      "quantitativeClaims": "No performance KPI invented; vendor outcome metrics not used as causal evidence",
+      "boundaryCheck": "这是特定证券交易事故的监管认定。它支持审查部署和风险控制的必要性，不提供任何单一控制措施在所有系统中的充分性证明。"
+    },
+    {
+      "caseId": "b16-03",
+      "lesson": 16,
+      "verifiedBy": "root primary-source brief",
+      "sourceType": "regulator order or company disclosure",
+      "sources": [
+        {
+          "url": "https://www.fca.org.uk/news/press-releases/tsb-fined-48m-operational-resilience-failings",
+          "publisher": "Financial Conduct Authority",
+          "support": "迁移时间、数据成功迁移与服务失效的区分，以及监管指出的组织和外包风险管理缺陷。",
+          "verification": "verified in root-supplied research brief"
+        }
+      ],
+      "quantitativeClaims": "No performance KPI invented; vendor outcome metrics not used as causal evidence",
+      "boundaryCheck": "监管结论针对这一迁移项目，不能据此认定外包本身必然失败，也不能将所有服务故障解释为数据错误。"
+    },
+    {
+      "caseId": "b16-04",
+      "lesson": 16,
+      "verifiedBy": "root primary-source brief",
+      "sourceType": "regulator order or company disclosure",
+      "sources": [
+        {
+          "url": "https://blogs.microsoft.com/blog/2016/03/25/learning-tays-introduction/",
+          "publisher": "Microsoft",
+          "support": "上线前测试、上线后攻击与不当输出、暂停及重新开放的条件。",
+          "verification": "verified in root-supplied research brief"
+        }
+      ],
+      "quantitativeClaims": "No performance KPI invented; vendor outcome metrics not used as causal evidence",
+      "boundaryCheck": "官方博客没有公开完整模型或攻击路径，不能把事件直接归类为现代RAG的文档注入，也不能编造其训练或权限机制。"
+    },
+    {
+      "caseId": "b16-05",
+      "lesson": 16,
+      "verifiedBy": "root primary-source brief",
+      "sourceType": "regulator order or company disclosure",
+      "sources": [
+        {
+          "url": "https://aws.amazon.com/message/41926/",
+          "publisher": "Amazon Web Services",
+          "support": "命令影响扩大、工具容量保护改进，以及状态面板对S3的依赖和跨区域调整。",
+          "verification": "verified in root-supplied research brief"
+        }
+      ],
+      "quantitativeClaims": "No performance KPI invented; vendor outcome metrics not used as causal evidence",
+      "boundaryCheck": "材料是AWS对特定事件的公开复盘，不能据此推断所有内部实现细节，也不能声称改进后任何类似故障都不再可能发生。"
+    }
+  ]
+}

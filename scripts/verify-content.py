@@ -4,6 +4,14 @@ from bs4 import BeautifulSoup
 OUT=Path(__file__).resolve().parents[1]/'dist'
 docs={p.stem:json.loads(p.read_text()) for p in (OUT/'content').glob('*.json') if 'html' in json.loads(p.read_text())}
 ids={k:{e['id'] for e in BeautifulSoup(d['html'],'html.parser').find_all(id=True)} for k,d in docs.items()}
+# The application mounts lecture players before the source-authored article.
+# Validate those generated destinations against their actual decks and cases.
+slide_destinations={}
+for key,deck in json.loads((OUT/'content/lecture-slides.json').read_text()).items():
+ chapter=deck.get('chapter',key)
+ mounted=slide_destinations.setdefault(chapter,{})
+ section='slides' if not mounted else 'slides-'+str(deck['lectureNumber'])
+ mounted[section]={slide.get('caseId') for slide in deck['slides'] if slide.get('caseId')}
 errors=[];math=[];stats={'pages':len(docs),'tables':0,'figures':0,'equations':0}
 for id,d in docs.items():
  s=BeautifulSoup(d['html'],'html.parser');stats['tables']+=len(s.find_all('table'));stats['figures']+=len(s.find_all('img'))
@@ -12,7 +20,10 @@ for id,d in docs.items():
   if h.startswith('#/chapter/'):
    path,_,q=h.partition('?');target=path[10:];anchor=urllib.parse.parse_qs(q).get('anchor',[None])[0]
    if target not in docs:errors.append([id,'missing chapter',h])
-   elif anchor and anchor not in ids[target]:errors.append([id,'missing anchor',h])
+   elif anchor and anchor not in ids[target]:
+    generated=slide_destinations.get(target,{})
+    case=urllib.parse.parse_qs(q).get('case',[None])[0]
+    if anchor not in generated or case and case not in generated[anchor]:errors.append([id,'missing anchor or case',h])
   if h.startswith(('/','./')) and not (OUT/urllib.parse.unquote(h.removeprefix('./').lstrip('/'))).exists():errors.append([id,'missing file',h])
   if h.startswith('/'):errors.append([id,'root-relative link breaks project Pages',h])
  for im in s.find_all('img'):

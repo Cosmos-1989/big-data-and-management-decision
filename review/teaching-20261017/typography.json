@@ -1,0 +1,202 @@
+[
+  {
+    "document": "01_intro",
+    "changedTextNodes": 0,
+    "footnoteReferences": 11
+  },
+  {
+    "document": "02_enterprise_data_model",
+    "changedTextNodes": 0,
+    "footnoteReferences": 11
+  },
+  {
+    "document": "03_sql_kpi",
+    "changedTextNodes": 0,
+    "footnoteReferences": 7
+  },
+  {
+    "document": "04_data_quality",
+    "changedTextNodes": 0,
+    "footnoteReferences": 5
+  },
+  {
+    "document": "05_statistics_dashboard",
+    "changedTextNodes": 0,
+    "footnoteReferences": 4
+  },
+  {
+    "document": "06_ab_testing",
+    "changedTextNodes": 0,
+    "footnoteReferences": 6
+  },
+  {
+    "document": "07_prediction",
+    "changedTextNodes": 0,
+    "footnoteReferences": 10
+  },
+  {
+    "document": "08_causality",
+    "changedTextNodes": 0,
+    "footnoteReferences": 4
+  },
+  {
+    "document": "09_optimization",
+    "changedTextNodes": 0,
+    "footnoteReferences": 7
+  },
+  {
+    "document": "10_process_mining",
+    "changedTextNodes": 0,
+    "footnoteReferences": 8
+  },
+  {
+    "document": "11_modern_data_platform",
+    "changedTextNodes": 0,
+    "footnoteReferences": 4
+  },
+  {
+    "document": "12_mlops",
+    "changedTextNodes": 0,
+    "footnoteReferences": 0
+  },
+  {
+    "document": "13_ontology_action_scenario",
+    "changedTextNodes": 0,
+    "footnoteReferences": 0
+  },
+  {
+    "document": "14_ai_agent",
+    "changedTextNodes": 0,
+    "footnoteReferences": 7
+  },
+  {
+    "document": "agent-learning-map",
+    "changedTextNodes": 0,
+    "footnoteReferences": 0
+  },
+  {
+    "document": "ai_question_to_data_case",
+    "changedTextNodes": 0,
+    "footnoteReferences": 0
+  },
+  {
+    "document": "appendix-1",
+    "changedTextNodes": 0,
+    "footnoteReferences": 0
+  },
+  {
+    "document": "appendix-2",
+    "changedTextNodes": 0,
+    "footnoteReferences": 2
+  },
+  {
+    "document": "appendix-3",
+    "changedTextNodes": 0,
+    "footnoteReferences": 1
+  },
+  {
+    "document": "appendix-4",
+    "changedTextNodes": 0,
+    "footnoteReferences": 1
+  },
+  {
+    "document": "assignment_01_data_modeling",
+    "changedTextNodes": 0,
+    "footnoteReferences": 0
+  },
+  {
+    "document": "assignment_02_enterprise_data_model",
+    "changedTextNodes": 0,
+    "footnoteReferences": 0
+  },
+  {
+    "document": "assignment_03_sql_kpi",
+    "changedTextNodes": 0,
+    "footnoteReferences": 0
+  },
+  {
+    "document": "assignment_04_data_quality",
+    "changedTextNodes": 0,
+    "footnoteReferences": 0
+  },
+  {
+    "document": "assignment_05_dashboard",
+    "changedTextNodes": 0,
+    "footnoteReferences": 0
+  },
+  {
+    "document": "assignment_06_statistical_inference",
+    "changedTextNodes": 0,
+    "footnoteReferences": 0
+  },
+  {
+    "document": "assignment_07_prediction",
+    "changedTextNodes": 0,
+    "footnoteReferences": 0
+  },
+  {
+    "document": "assignment_09_causality",
+    "changedTextNodes": 0,
+    "footnoteReferences": 0
+  },
+  {
+    "document": "assignment_11_optimization",
+    "changedTextNodes": 0,
+    "footnoteReferences": 1
+  },
+  {
+    "document": "assignment_12_process_mining",
+    "changedTextNodes": 0,
+    "footnoteReferences": 0
+  },
+  {
+    "document": "bibliography",
+    "changedTextNodes": 0,
+    "footnoteReferences": 0
+  },
+  {
+    "document": "business-casebook",
+    "changedTextNodes": 0,
+    "footnoteReferences": 0
+  },
+  {
+    "document": "data-guide",
+    "changedTextNodes": 0,
+    "footnoteReferences": 0
+  },
+  {
+    "document": "decision_memo_template",
+    "changedTextNodes": 0,
+    "footnoteReferences": 0
+  },
+  {
+    "document": "final_project",
+    "changedTextNodes": 0,
+    "footnoteReferences": 0
+  },
+  {
+    "document": "model_card_template",
+    "changedTextNodes": 0,
+    "footnoteReferences": 0
+  },
+  {
+    "document": "preface",
+    "changedTextNodes": 0,
+    "footnoteReferences": 0
+  },
+  {
+    "document": "project_report_template",
+    "changedTextNodes": 0,
+    "footnoteReferences": 0
+  },
+  {
+    "document": "semiconductor_kpi_m13_case",
+    "changedTextNodes": 0,
+    "footnoteReferences": 1
+  },
+  {
+    "document": "syllabus",
+    "changedTextNodes": 0,
+    "footnoteReferences": 0
+  }
+]

@@ -1,5 +1,5 @@
 /** A chapter is taught as a sequence of claims, explanations, and worked examples. */
-import {diagramHtml} from './slide-diagrams.js?v=20261017-1';
+import {diagramHtml} from './slide-diagrams.js?v=20261017-3';
 const escapeHtml=value=>String(value??'').replace(/[&<>"']/g,ch=>({
  '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'
 }[ch]));
@@ -68,7 +68,7 @@ function detailRefHtml(ref){
  const chapter=String(ref.chapter||'');
  const chapterNumber=/^\d{2}_/.test(chapter)?Number(chapter.slice(0,2)):null;
  const location=`${chapterNumber?`讲义第 ${chapterNumber} 章 · `:'讲义 · '}${ref.section}${ref.subsection&&ref.subsection!==ref.section?` / ${ref.subsection}`:''}`;
- const link=/^\d{2}_[a-z0-9_]+$/.test(chapter)&&ref.anchor
+ const link=/^[a-z0-9][a-z0-9_-]*$/.test(chapter)&&ref.anchor
   ?`<a href="#/chapter/${encodeURIComponent(chapter)}?anchor=${encodeURIComponent(ref.anchor)}">${inline(location)} <span aria-hidden="true">↗</span></a>`
   :`<strong>${inline(location)}</strong>`;
  return `<aside class="slide-reading"><span>详细论证与资料</span><div>${link}${ref.note?`<p>${inline(ref.note)}</p>`:''}</div></aside>`;
@@ -76,6 +76,12 @@ function detailRefHtml(ref){
 
 function promptHtml(prompts){
  return asArray(prompts).map(item=>`<details class="slide-prompt"><summary><span>课堂思考</span>${inline(item.question)}</summary><p>${inline(item.answer)}</p></details>`).join('');
+}
+
+function evidenceHtml(slide){
+ const links=asArray(slide.sources).filter(item=>item?.url?.startsWith('https://'));
+ if(!slide.caseId&&!links.length)return '';
+ return `<aside class="slide-evidence"><span>事实来源</span><div>${links.slice(0,2).map((source,i)=>`<a href="${escapeHtml(source.url)}" target="_blank" rel="noopener noreferrer" title="${escapeHtml(source.title)}">${i+1}. ${escapeHtml(source.title)}</a>`).join('')}${slide.caseId?`<a class="slide-case-reading" href="#/chapter/business-casebook?anchor=${encodeURIComponent(slide.caseId)}">案例全文与讨论 ↗</a>`:''}</div></aside>`;
 }
 
 function slideHtml(slide,index,count,deck){
@@ -86,12 +92,12 @@ function slideHtml(slide,index,count,deck){
  const blocks=[diagramHtml(slide.diagram),workedExampleHtml(slide.workedExample),codeBlockHtml(slide.codeBlock),visualHtml(slide.visual)].filter(Boolean);
  const layout=slide.layout||(!blocks.length?'focus':slide.codeBlock||slide.visual?.kind==='table'?'stack':'split');
  const labels={opener:'研究问题',goals:'本讲结构',concept:'概念与机制',case:'案例分析',calculation:'推导与计算',derivation:'理论推导',worked:'算例解析',method:'研究方法',contrast:'比较与辨析',closing:'本讲结论',experiment:'实验设计',discussion:'讨论与辨析',summary:'本讲结论'};
- const styles=`slide-kind-${kind} slide-layout-${cleanKind(layout)}${body.length===2?' slide-two-paragraphs':''}${slide.density==='compact'?' slide-compact':''}${slide.codeBlock?' slide-with-code':''}${slide.diagram?' slide-with-diagram':''}`;
- return `<article class="lecture-slide ${styles}" data-chapter="${escapeHtml(deck.id||'')}" data-page="${index+1}" data-layout="${layout}" aria-hidden="${index?'true':'false'}"><div class="slide-page">
+ const styles=`slide-kind-${kind} slide-layout-${cleanKind(layout)}${body.length===2?' slide-two-paragraphs':''}${slide.density==='compact'?' slide-compact':''}${slide.codeBlock?' slide-with-code':''}${slide.diagram?' slide-with-diagram':''}${slide.caseId?' slide-business-case':''}`;
+ return `<article class="lecture-slide ${styles}" data-chapter="${escapeHtml(deck.id||'')}" data-page="${index+1}" data-layout="${layout}"${slide.caseId?` data-case-id="${escapeHtml(slide.caseId)}"`:''}${slide.lessonNumber?` data-lesson="${escapeHtml(slide.lessonNumber)}"`:''} aria-hidden="${index?'true':'false'}"><div class="slide-page">
   <header class="slide-heading"><div class="slide-topline"><span class="slide-chapter">${inline(deck.title)}</span><span class="slide-section">${inline(slide.section||slide.detailRef?.section||labels[kind]||'课程讲授')}</span><span class="slide-number">${String(index+1).padStart(2,'0')} / ${String(count).padStart(2,'0')}</span></div>
   <span class="slide-kicker">${inline(slide.kicker||labels[kind]||'课程讲授')}</span><h3>${inline(slide.title||'')}</h3>${slide.lead?`<p class="slide-lead">${inline(slide.lead)}</p>`:''}</header>
   <div class="slide-content"><div class="slide-narrative">${body.length?`<div class="slide-body">${body.map(p=>`<p>${inline(p)}</p>`).join('')}</div>`:''}${formula}${points.length?`<div class="slide-checkpoints"><span>分析要点</span><ul>${points.map(p=>`<li>${inline(p)}</li>`).join('')}</ul></div>`:''}${promptHtml(slide.prompts)}</div>${blocks.length?`<div class="slide-support">${blocks.join('')}</div>`:''}</div>
-  <footer class="slide-bottom">${slide.takeaway?`<div class="slide-takeaway"><span>结论</span><strong>${inline(slide.takeaway)}</strong></div>`:''}${detailRefHtml(slide.detailRef)}</footer>
+  <footer class="slide-bottom">${slide.takeaway?`<div class="slide-takeaway"><span>结论</span><strong>${inline(slide.takeaway)}</strong></div>`:''}${detailRefHtml(slide.detailRef)}${evidenceHtml(slide)}</footer>
  </div></article>`;
 }
 
@@ -99,7 +105,7 @@ export function lectureSlidesHtml(deck){
  if(!deck?.slides?.length)return '';
  const slides=deck.slides;
  const firstSection=slides[0]?.section||slides[0]?.detailRef?.section||'课程问题';
- return `<section id="slides" class="lesson-slides" aria-label="${escapeHtml(deck.title)}授课幻灯片" tabindex="0">
+ return `<section id="${escapeHtml(deck.sectionId||'slides')}" class="lesson-slides" aria-label="${escapeHtml(deck.title)}授课幻灯片" tabindex="0">
   <div class="slides-toolbar"><div><span class="slides-eyebrow">授课幻灯片 / ${slides.length} 页</span><strong>${escapeHtml(deck.title)}</strong></div><button type="button" class="slides-fullscreen" aria-label="全屏显示授课幻灯片">⛶ 全屏授课</button></div>
   <div class="slide-viewport"><div class="slide-track">${slides.map((s,i)=>slideHtml(s,i,slides.length,deck)).join('')}</div></div>
   <div class="slides-controls"><button class="slides-prev" type="button" aria-label="上一页" disabled>←</button><span class="slides-counter" aria-live="polite">1 / ${slides.length}</span><button class="slides-next" type="button" aria-label="下一页">→</button><span class="slides-current-section">${inline(firstSection)}</span><div class="slides-progress" aria-hidden="true"><span></span></div><select class="slides-jump" aria-label="跳转到幻灯片页">${slides.map((s,i)=>`<option value="${i}">${String(i+1).padStart(2,'0')} · ${escapeHtml(s.title||'')}</option>`).join('')}</select></div>
@@ -149,6 +155,10 @@ export function initLectureSlides(root){
  root.querySelector('.slides-prev').onclick=()=>show(index-1);
  root.querySelector('.slides-next').onclick=()=>show(index+1);
  jump.onchange=()=>show(Number(jump.value));
+ root.addEventListener('lecture-select',event=>{
+  const target=slides.findIndex(slide=>slide.dataset.caseId===event.detail?.caseId);
+  if(target>=0)show(target);
+ },{signal:lifecycle.signal});
  root.addEventListener('keydown',event=>{
   if(event.key==='Escape'&&root.classList.contains('is-theatre')){
    root.classList.remove('is-theatre');updatePresentation();size();return;
@@ -179,7 +189,7 @@ export function initLectureSlides(root){
   }
   updatePresentation();size();root.focus({preventScroll:true});
  };
- root.querySelectorAll('.slide-reading a').forEach(link=>link.addEventListener('click',async event=>{
+ root.querySelectorAll('.slide-reading a,.slide-evidence a[href^="#"]').forEach(link=>link.addEventListener('click',async event=>{
   if(document.fullscreenElement!==root&&!root.classList.contains('is-theatre'))return;
   event.preventDefault();
   if(document.fullscreenElement===root)await document.exitFullscreen();

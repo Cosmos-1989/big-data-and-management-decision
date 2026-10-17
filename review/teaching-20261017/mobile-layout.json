@@ -1,0 +1,3748 @@
+[
+  {
+    "chapter": "#/chapter/01_intro?anchor=slides",
+    "players": [
+      {
+        "id": "slides",
+        "pages": [
+          {
+            "issues": [],
+            "page": "1",
+            "title": "从经营症状到管理决策"
+          },
+          {
+            "issues": [],
+            "page": "2",
+            "title": "决策任务的基本要素"
+          },
+          {
+            "issues": [],
+            "page": "3",
+            "title": "UPSNav：路线顺序如何成为可执行行动"
+          },
+          {
+            "issues": [],
+            "page": "4",
+            "title": "UPSNav：建议、执行与结果应分别核验"
+          },
+          {
+            "issues": [],
+            "page": "5",
+            "title": "记录、估计与选择"
+          },
+          {
+            "issues": [],
+            "page": "6",
+            "title": "数据仓库与ETL：形成分析资料"
+          },
+          {
+            "issues": [],
+            "page": "7",
+            "title": "OLAP与报表：两种阅读数据的方式"
+          },
+          {
+            "issues": [],
+            "page": "8",
+            "title": "商业智能、决策支持与决策智能"
+          },
+          {
+            "issues": [],
+            "page": "9",
+            "title": "对象、行动范围与指标口径"
+          },
+          {
+            "issues": [],
+            "page": "10",
+            "title": "Wells Fargo：开户数量为何偏离客户价值"
+          },
+          {
+            "issues": [],
+            "page": "11",
+            "title": "Wells Fargo：测量准确与目标合理是两项判断"
+          },
+          {
+            "issues": [],
+            "page": "12",
+            "title": "绩效目标与基准策略"
+          },
+          {
+            "issues": [],
+            "page": "13",
+            "title": "CVS停售烟草：企业目标如何界定行动集合"
+          },
+          {
+            "issues": [],
+            "page": "14",
+            "title": "CVS：数据能够估计后果，不能独自决定目标"
+          },
+          {
+            "issues": [],
+            "page": "15",
+            "title": "条件期望损失与行动选择"
+          },
+          {
+            "issues": [],
+            "page": "16",
+            "title": "期望损失公式的读法"
+          },
+          {
+            "issues": [],
+            "page": "17",
+            "title": "风险预测与干预收益"
+          },
+          {
+            "issues": [],
+            "page": "18",
+            "title": "订单加急：明确比较条件"
+          },
+          {
+            "issues": [],
+            "page": "19",
+            "title": "订单加急：计算预期净收益"
+          },
+          {
+            "issues": [],
+            "page": "20",
+            "title": "以损失矩阵评价信息"
+          },
+          {
+            "issues": [],
+            "page": "21",
+            "title": "从损失矩阵推导行动阈值"
+          },
+          {
+            "issues": [],
+            "page": "22",
+            "title": "先验、信号与后验"
+          },
+          {
+            "issues": [],
+            "page": "23",
+            "title": "先验下的最优基准行动"
+          },
+          {
+            "issues": [],
+            "page": "24",
+            "title": "检测信号的总体概率"
+          },
+          {
+            "issues": [],
+            "page": "25",
+            "title": "状态与检测信号的联合概率"
+          },
+          {
+            "issues": [],
+            "page": "26",
+            "title": "由后验概率选择条件行动"
+          },
+          {
+            "issues": [],
+            "page": "27",
+            "title": "先条件择优，再取平均"
+          },
+          {
+            "issues": [],
+            "page": "28",
+            "title": "样本信息价值与完全信息价值"
+          },
+          {
+            "issues": [],
+            "page": "29",
+            "title": "免费信息价值的非负性"
+          },
+          {
+            "issues": [],
+            "page": "30",
+            "title": "信息采购：净收益与成本结构"
+          },
+          {
+            "issues": [],
+            "page": "31",
+            "title": "更精确信息何时没有决策价值"
+          },
+          {
+            "issues": [],
+            "page": "32",
+            "title": "Amazon：可逆性改变信息等待的代价"
+          },
+          {
+            "issues": [],
+            "page": "33",
+            "title": "Amazon：把决策速度纳入成本结构"
+          },
+          {
+            "issues": [],
+            "page": "34",
+            "title": "当前行动与未来状态"
+          },
+          {
+            "issues": [],
+            "page": "35",
+            "title": "Patagonia：产品销售与资源消耗的跨期权衡"
+          },
+          {
+            "issues": [],
+            "page": "36",
+            "title": "Patagonia：明确系统边界，再评价长期结果"
+          },
+          {
+            "issues": [],
+            "page": "37",
+            "title": "Bellman 递推：从未来回到当前"
+          },
+          {
+            "issues": [],
+            "page": "38",
+            "title": "两期维护：当期成本与未来故障损失"
+          },
+          {
+            "issues": [],
+            "page": "39",
+            "title": "两期维护：从末期反推今日行动"
+          },
+          {
+            "issues": [],
+            "page": "40",
+            "title": "分析任务与证据边界"
+          },
+          {
+            "issues": [],
+            "page": "41",
+            "title": "CRISP-DM：组织可检验的迭代"
+          },
+          {
+            "issues": [],
+            "page": "42",
+            "title": "任务规格与分层验收"
+          },
+          {
+            "issues": [],
+            "page": "43",
+            "title": "交付决策的完整证据链"
+          },
+          {
+            "issues": [],
+            "page": "44",
+            "title": "Skywise：关联维护事实"
+          },
+          {
+            "issues": [],
+            "page": "45",
+            "title": "维护决策的简化成本比较"
+          },
+          {
+            "issues": [],
+            "page": "46",
+            "title": "赛事仿真：比较候选策略"
+          },
+          {
+            "issues": [],
+            "page": "47",
+            "title": "用蒙特卡罗估计策略损失"
+          },
+          {
+            "issues": [],
+            "page": "48",
+            "title": "配对仿真：平均时间差的计算"
+          },
+          {
+            "issues": [],
+            "page": "49",
+            "title": "生产率改善须固定分母与质量"
+          },
+          {
+            "issues": [],
+            "page": "50",
+            "title": "检验一个决策任务是否完整"
+          }
+        ],
+        "readable": true
+      }
+    ],
+    "width": 390
+  },
+  {
+    "chapter": "#/chapter/02_enterprise_data_model?anchor=slides",
+    "players": [
+      {
+        "id": "slides",
+        "pages": [
+          {
+            "issues": [],
+            "page": "1",
+            "title": "统一身份与业务含义"
+          },
+          {
+            "issues": [],
+            "page": "2",
+            "title": "数据模型与治理责任"
+          },
+          {
+            "issues": [],
+            "page": "3",
+            "title": "Spotify Backstage：服务身份与责任归属"
+          },
+          {
+            "issues": [],
+            "page": "4",
+            "title": "Backstage：维护责任与执行权限分开建模"
+          },
+          {
+            "issues": [],
+            "page": "5",
+            "title": "企业 AI 系统的六项职能"
+          },
+          {
+            "issues": [],
+            "page": "6",
+            "title": "快照、模式与表格式"
+          },
+          {
+            "issues": [],
+            "page": "7",
+            "title": "存储、语义与权限"
+          },
+          {
+            "issues": [],
+            "page": "8",
+            "title": "从业务概念到可观察记录"
+          },
+          {
+            "issues": [],
+            "page": "9",
+            "title": "企业数据的六类语义"
+          },
+          {
+            "issues": [],
+            "page": "10",
+            "title": "关系模式与记录身份"
+          },
+          {
+            "issues": [],
+            "page": "11",
+            "title": "键与三类完整性约束"
+          },
+          {
+            "issues": [],
+            "page": "12",
+            "title": "Shopify：数字编号相同，对象未必相同"
+          },
+          {
+            "issues": [],
+            "page": "13",
+            "title": "Shopify：连接前先确认编号的业务身份"
+          },
+          {
+            "issues": [],
+            "page": "14",
+            "title": "关系基数与模型层次"
+          },
+          {
+            "issues": [],
+            "page": "15",
+            "title": "制造对象与事件历史"
+          },
+          {
+            "issues": [],
+            "page": "16",
+            "title": "函数依赖与第三范式"
+          },
+          {
+            "issues": [],
+            "page": "17",
+            "title": "订单行中的名称冗余"
+          },
+          {
+            "issues": [],
+            "page": "18",
+            "title": "无损连接与历史解释"
+          },
+          {
+            "issues": [],
+            "page": "19",
+            "title": "事务模型与星型模型"
+          },
+          {
+            "issues": [],
+            "page": "20",
+            "title": "事实粒度决定指标范围"
+          },
+          {
+            "issues": [],
+            "page": "21",
+            "title": "Uber H3：地理汇总先确定空间单位"
+          },
+          {
+            "issues": [],
+            "page": "22",
+            "title": "Uber H3：换一个观察尺度，就要重新核对权重"
+          },
+          {
+            "issues": [],
+            "page": "23",
+            "title": "制造指标先固定测量对象"
+          },
+          {
+            "issues": [],
+            "page": "24",
+            "title": "制造 KPI 的事实基础"
+          },
+          {
+            "issues": [],
+            "page": "25",
+            "title": "度量的可加性与比率汇总"
+          },
+          {
+            "issues": [],
+            "page": "26",
+            "title": "双时间：历史事实与历史知识"
+          },
+          {
+            "issues": [],
+            "page": "27",
+            "title": "状态机与幂等请求"
+          },
+          {
+            "issues": [],
+            "page": "28",
+            "title": "授权操作与状态核验"
+          },
+          {
+            "issues": [],
+            "page": "29",
+            "title": "Stripe PaymentIntent：支付不是一个成功布尔值"
+          },
+          {
+            "issues": [],
+            "page": "30",
+            "title": "Stripe：提交事件与最终业务状态应分别保存"
+          },
+          {
+            "issues": [],
+            "page": "31",
+            "title": "语义层约束自然语言问数"
+          },
+          {
+            "issues": [],
+            "page": "32",
+            "title": "绩效合同：为何要同时考虑努力与风险"
+          },
+          {
+            "issues": [],
+            "page": "33",
+            "title": "为何准确记录仍不足以保证合理激励"
+          },
+          {
+            "issues": [],
+            "page": "34",
+            "title": "产出信号、合同与风险成本"
+          },
+          {
+            "issues": [],
+            "page": "35",
+            "title": "确定性等价收入的推导"
+          },
+          {
+            "issues": [],
+            "page": "36",
+            "title": "代理人的最优努力"
+          },
+          {
+            "issues": [],
+            "page": "37",
+            "title": "参与约束与企业收益"
+          },
+          {
+            "issues": [],
+            "page": "38",
+            "title": "最优线性激励强度"
+          },
+          {
+            "issues": [],
+            "page": "39",
+            "title": "测量噪声与合同权重：数值比较"
+          },
+          {
+            "issues": [],
+            "page": "40",
+            "title": "单一奖励与多任务替代"
+          },
+          {
+            "issues": [],
+            "page": "41",
+            "title": "真实努力与记录操纵"
+          },
+          {
+            "issues": [],
+            "page": "42",
+            "title": "对象关系与元数据目录"
+          },
+          {
+            "issues": [],
+            "page": "43",
+            "title": "LinkedIn DataHub：数据集之外还要记录关系"
+          },
+          {
+            "issues": [],
+            "page": "44",
+            "title": "DataHub：把来源与影响表示为可查询的关系"
+          },
+          {
+            "issues": [],
+            "page": "45",
+            "title": "局部加速的总体上界"
+          },
+          {
+            "issues": [],
+            "page": "46",
+            "title": "总任务时间与局部加速"
+          },
+          {
+            "issues": [],
+            "page": "47",
+            "title": "由异常指标复核数据模型"
+          }
+        ],
+        "readable": true
+      }
+    ],
+    "width": 390
+  },
+  {
+    "chapter": "#/chapter/03_sql_kpi?anchor=slides",
+    "players": [
+      {
+        "id": "slides",
+        "pages": [
+          {
+            "issues": [],
+            "page": "1",
+            "title": "查询正确性与业务语义"
+          },
+          {
+            "issues": [],
+            "page": "2",
+            "title": "SQL 的逻辑处理顺序"
+          },
+          {
+            "issues": [],
+            "page": "3",
+            "title": "区域收入查询的业务约定"
+          },
+          {
+            "issues": [],
+            "page": "4",
+            "title": "区域收入查询：逐层核查"
+          },
+          {
+            "issues": [],
+            "page": "5",
+            "title": "区域收入：由订单逐步得到结果"
+          },
+          {
+            "issues": [],
+            "page": "6",
+            "title": "关系运算与事实集合"
+          },
+          {
+            "issues": [],
+            "page": "7",
+            "title": "WHERE 与 HAVING 会保留不同事实"
+          },
+          {
+            "issues": [],
+            "page": "8",
+            "title": "SQL 的重复行语义"
+          },
+          {
+            "issues": [],
+            "page": "9",
+            "title": "事务、分析与展示粒度"
+          },
+          {
+            "issues": [],
+            "page": "10",
+            "title": "Shopify GMV：交易规模与平台收入"
+          },
+          {
+            "issues": [],
+            "page": "11",
+            "title": "Shopify：同为金额，业务对象与期间仍可能不同"
+          },
+          {
+            "issues": [],
+            "page": "12",
+            "title": "事实表与维度表"
+          },
+          {
+            "issues": [],
+            "page": "13",
+            "title": "连接的唯一性与覆盖性"
+          },
+          {
+            "issues": [],
+            "page": "14",
+            "title": "连接重复为何放大金额"
+          },
+          {
+            "issues": [],
+            "page": "15",
+            "title": "半连接：只判断是否存在匹配"
+          },
+          {
+            "issues": [],
+            "page": "16",
+            "title": "指标定义的形式化表示"
+          },
+          {
+            "issues": [],
+            "page": "17",
+            "title": "Airbnb Minerva：定义变化后，历史应怎样比较"
+          },
+          {
+            "issues": [],
+            "page": "18",
+            "title": "Minerva：把口径差异与经营差异分开核算"
+          },
+          {
+            "issues": [],
+            "page": "19",
+            "title": "为什么要保留“和与个数”"
+          },
+          {
+            "issues": [],
+            "page": "20",
+            "title": "保留可合并的统计状态"
+          },
+          {
+            "issues": [],
+            "page": "21",
+            "title": "DoorDash Curie：为何保留事件级事实"
+          },
+          {
+            "issues": [],
+            "page": "22",
+            "title": "DoorDash：先保留分析所需信息，再形成聚合结果"
+          },
+          {
+            "issues": [],
+            "page": "23",
+            "title": "产线平均与产品整体良率"
+          },
+          {
+            "issues": [],
+            "page": "24",
+            "title": "良率与周期的权重"
+          },
+          {
+            "issues": [],
+            "page": "25",
+            "title": "OEE 的分解与约分"
+          },
+          {
+            "issues": [],
+            "page": "26",
+            "title": "OEE：480 分钟班次算例"
+          },
+          {
+            "issues": [],
+            "page": "27",
+            "title": "多产品 OEE 的工时权重"
+          },
+          {
+            "issues": [],
+            "page": "28",
+            "title": "多节拍 OEE：一个反例"
+          },
+          {
+            "issues": [],
+            "page": "29",
+            "title": "WIP 的时点与时间平均"
+          },
+          {
+            "issues": [],
+            "page": "30",
+            "title": "不等间隔快照如何平均"
+          },
+          {
+            "issues": [],
+            "page": "31",
+            "title": "OTD 的到期承诺队列"
+          },
+          {
+            "issues": [],
+            "page": "32",
+            "title": "到期队列：固定对象与截止点"
+          },
+          {
+            "issues": [],
+            "page": "33",
+            "title": "同一订单记录的两种准时率"
+          },
+          {
+            "issues": [],
+            "page": "34",
+            "title": "NULL、三值逻辑与条件聚合"
+          },
+          {
+            "issues": [],
+            "page": "35",
+            "title": "到期 OTD 的条件聚合"
+          },
+          {
+            "issues": [],
+            "page": "36",
+            "title": "零分母、零结果与缺失"
+          },
+          {
+            "issues": [],
+            "page": "37",
+            "title": "NULL 与三值逻辑"
+          },
+          {
+            "issues": [],
+            "page": "38",
+            "title": "分层查询：订单事实与地区聚合"
+          },
+          {
+            "issues": [],
+            "page": "39",
+            "title": "毛利率为何使用收入权重"
+          },
+          {
+            "issues": [],
+            "page": "40",
+            "title": "Spotify streamshare：播放量不是统一单价"
+          },
+          {
+            "issues": [],
+            "page": "41",
+            "title": "Spotify：比率变化与单位价格应分别解释"
+          },
+          {
+            "issues": [],
+            "page": "42",
+            "title": "窗口函数与最近三笔订单"
+          },
+          {
+            "issues": [],
+            "page": "43",
+            "title": "最近三笔窗口：逐行计算"
+          },
+          {
+            "issues": [],
+            "page": "44",
+            "title": "从 KPI 结果到管理解释"
+          },
+          {
+            "issues": [],
+            "page": "45",
+            "title": "Uber uMetric：实时与离线为何算出不同结果"
+          },
+          {
+            "issues": [],
+            "page": "46",
+            "title": "uMetric：先解释时间差异，再定位计算差异"
+          },
+          {
+            "issues": [],
+            "page": "47",
+            "title": "将自然语言规范为查询请求"
+          },
+          {
+            "issues": [],
+            "page": "48",
+            "title": "结果验证与不变量"
+          },
+          {
+            "issues": [],
+            "page": "49",
+            "title": "受限执行与独立授权"
+          },
+          {
+            "issues": [],
+            "page": "50",
+            "title": "问数产品的可交付率"
+          },
+          {
+            "issues": [],
+            "page": "51",
+            "title": "本地部署：位置与资源边界"
+          },
+          {
+            "issues": [],
+            "page": "52",
+            "title": "查询复核的依据与步骤"
+          }
+        ],
+        "readable": true
+      }
+    ],
+    "width": 390
+  },
+  {
+    "chapter": "#/chapter/04_data_quality?anchor=slides",
+    "players": [
+      {
+        "id": "slides",
+        "pages": [
+          {
+            "issues": [],
+            "page": "1",
+            "title": "数据质量：从记录条件到决策证据"
+          },
+          {
+            "issues": [],
+            "page": "2",
+            "title": "准时交付率的统计对象"
+          },
+          {
+            "issues": [],
+            "page": "3",
+            "title": "指标可信度与证据追溯"
+          },
+          {
+            "issues": [],
+            "page": "4",
+            "title": "用途适配的数据质量"
+          },
+          {
+            "issues": [],
+            "page": "5",
+            "title": "数据生成环节与质量风险"
+          },
+          {
+            "issues": [],
+            "page": "6",
+            "title": "规则符合性与记录准确性"
+          },
+          {
+            "issues": [],
+            "page": "7",
+            "title": "Unity：错误数据如何进入模型反馈"
+          },
+          {
+            "issues": [],
+            "page": "8",
+            "title": "Unity：保留可追溯范围，避免单一原因归因"
+          },
+          {
+            "issues": [],
+            "page": "9",
+            "title": "质量维度：覆盖、取值与关系"
+          },
+          {
+            "issues": [],
+            "page": "10",
+            "title": "质量维度：时间、真实性与来源"
+          },
+          {
+            "issues": [],
+            "page": "11",
+            "title": "GitLab数据库事件：备份存在不等于能够恢复"
+          },
+          {
+            "issues": [],
+            "page": "12",
+            "title": "GitLab：服务可用性与数据完整性分别验收"
+          },
+          {
+            "issues": [],
+            "page": "13",
+            "title": "数据剖析与规则检验"
+          },
+          {
+            "issues": [],
+            "page": "14",
+            "title": "观察总体、记录概率与协方差"
+          },
+          {
+            "issues": [],
+            "page": "15",
+            "title": "选择性缺失与均值偏差"
+          },
+          {
+            "issues": [],
+            "page": "16",
+            "title": "订单算例：选择性回写低估周期"
+          },
+          {
+            "issues": [],
+            "page": "17",
+            "title": "缺失机制与可用识别条件"
+          },
+          {
+            "issues": [],
+            "page": "18",
+            "title": "按完整类别权重恢复平均周期"
+          },
+          {
+            "issues": [],
+            "page": "19",
+            "title": "回归斜率与测量误差"
+          },
+          {
+            "issues": [],
+            "page": "20",
+            "title": "经典测量误差与斜率衰减"
+          },
+          {
+            "issues": [],
+            "page": "21",
+            "title": "测量噪声如何影响回归斜率"
+          },
+          {
+            "issues": [],
+            "page": "22",
+            "title": "缺失结果的部分识别"
+          },
+          {
+            "issues": [],
+            "page": "23",
+            "title": "识别区间与达标判断"
+          },
+          {
+            "issues": [],
+            "page": "24",
+            "title": "识别边界依赖已经核实的约束"
+          },
+          {
+            "issues": [],
+            "page": "25",
+            "title": "比率误差的精确传播"
+          },
+          {
+            "issues": [],
+            "page": "26",
+            "title": "比率的保守误差界"
+          },
+          {
+            "issues": [],
+            "page": "27",
+            "title": "良率算例：分母漏记造成偏差"
+          },
+          {
+            "issues": [],
+            "page": "28",
+            "title": "质量规则与失败行标识"
+          },
+          {
+            "issues": [],
+            "page": "29",
+            "title": "质量规则的业务解释"
+          },
+          {
+            "issues": [],
+            "page": "30",
+            "title": "程序示范：定位重复订单编号"
+          },
+          {
+            "issues": [],
+            "page": "31",
+            "title": "Amazon Deequ：把数据假设写成可检验约束"
+          },
+          {
+            "issues": [],
+            "page": "32",
+            "title": "Deequ：从观察到的规律走向经过确认的规则"
+          },
+          {
+            "issues": [],
+            "page": "33",
+            "title": "从记录失败到管理损失"
+          },
+          {
+            "issues": [],
+            "page": "34",
+            "title": "实际交付日期为空的状态解释"
+          },
+          {
+            "issues": [],
+            "page": "35",
+            "title": "发布决策的预期损失比较"
+          },
+          {
+            "issues": [],
+            "page": "36",
+            "title": "治理预算的风险最小化模型"
+          },
+          {
+            "issues": [],
+            "page": "37",
+            "title": "最优治理投入的边际条件"
+          },
+          {
+            "issues": [],
+            "page": "38",
+            "title": "确定性误差界与可靠排序"
+          },
+          {
+            "issues": [],
+            "page": "39",
+            "title": "指标治理：定义、实现与责任"
+          },
+          {
+            "issues": [],
+            "page": "40",
+            "title": "Airbnb质量评分：总分如何保留解释性"
+          },
+          {
+            "issues": [],
+            "page": "41",
+            "title": "Airbnb：不要让总分掩盖关键维度的失效"
+          },
+          {
+            "issues": [],
+            "page": "42",
+            "title": "数据契约、血缘与变更控制"
+          },
+          {
+            "issues": [],
+            "page": "43",
+            "title": "发布控制与异常严重级别"
+          },
+          {
+            "issues": [],
+            "page": "44",
+            "title": "数据质量事件响应"
+          },
+          {
+            "issues": [],
+            "page": "45",
+            "title": "Citibank监管整改：数据治理是持续责任"
+          },
+          {
+            "issues": [],
+            "page": "46",
+            "title": "Citibank：把一次修复转化为可持续的控制"
+          },
+          {
+            "issues": [],
+            "page": "47",
+            "title": "Froedtert 案例：统一定义与责任"
+          },
+          {
+            "issues": [],
+            "page": "48",
+            "title": "Assurance 案例：持续质量监测"
+          },
+          {
+            "issues": [],
+            "page": "49",
+            "title": "质量事件持续时间与损失"
+          },
+          {
+            "issues": [],
+            "page": "50",
+            "title": "数据发现、治理流程与敏感信息识别"
+          },
+          {
+            "issues": [],
+            "page": "51",
+            "title": "检索增强生成的证据质量"
+          },
+          {
+            "issues": [],
+            "page": "52",
+            "title": "实验任务：订单质量报告"
+          },
+          {
+            "issues": [],
+            "page": "53",
+            "title": "实验核对：对象、主数据与数量"
+          },
+          {
+            "issues": [],
+            "page": "54",
+            "title": "实验核对：枚举、日期与失败计数"
+          },
+          {
+            "issues": [],
+            "page": "55",
+            "title": "质量报告：从发现到决策依据"
+          }
+        ],
+        "readable": true
+      }
+    ],
+    "width": 390
+  },
+  {
+    "chapter": "#/chapter/05_statistics_dashboard?anchor=slides",
+    "players": [
+      {
+        "id": "slides",
+        "pages": [
+          {
+            "issues": [],
+            "page": "1",
+            "title": "描述统计与运营解释"
+          },
+          {
+            "issues": [],
+            "page": "2",
+            "title": "观测单位决定统计量的含义"
+          },
+          {
+            "issues": [],
+            "page": "3",
+            "title": "样本描述与总体推断"
+          },
+          {
+            "issues": [],
+            "page": "4",
+            "title": "经验分布函数"
+          },
+          {
+            "issues": [],
+            "page": "5",
+            "title": "同一样本的三种服务含义"
+          },
+          {
+            "issues": [],
+            "page": "6",
+            "title": "均值与中位数的管理用途"
+          },
+          {
+            "issues": [],
+            "page": "7",
+            "title": "Google SRE：平均时延为什么不够"
+          },
+          {
+            "issues": [],
+            "page": "8",
+            "title": "Google SRE：同时保留中心、尾部与失败情况"
+          },
+          {
+            "issues": [],
+            "page": "9",
+            "title": "日收入算例：中心位置与高值影响"
+          },
+          {
+            "issues": [],
+            "page": "10",
+            "title": "离散程度与相对波动"
+          },
+          {
+            "issues": [],
+            "page": "11",
+            "title": "四分位距与描述性异常"
+          },
+          {
+            "issues": [],
+            "page": "12",
+            "title": "收入异常算例：从排序到核查"
+          },
+          {
+            "issues": [],
+            "page": "13",
+            "title": "总体比率与分母权重"
+          },
+          {
+            "issues": [],
+            "page": "14",
+            "title": "产品组合与总体良率"
+          },
+          {
+            "issues": [],
+            "page": "15",
+            "title": "组合反转算例：各族改善而总体下降"
+          },
+          {
+            "issues": [],
+            "page": "16",
+            "title": "总体变化的精确分解"
+          },
+          {
+            "issues": [],
+            "page": "17",
+            "title": "固定组合算例：量化两类变化"
+          },
+          {
+            "issues": [],
+            "page": "18",
+            "title": "Netflix ISP指数：先固定观看结构再比较网络"
+          },
+          {
+            "issues": [],
+            "page": "19",
+            "title": "Netflix：原始总体与标准化总体分别报告"
+          },
+          {
+            "issues": [],
+            "page": "20",
+            "title": "后向移动平均与原始时间序列"
+          },
+          {
+            "issues": [],
+            "page": "21",
+            "title": "Prime Day：活动高峰如何影响经营摘要"
+          },
+          {
+            "issues": [],
+            "page": "22",
+            "title": "Prime Day：不要把事件高峰解释为常态水平"
+          },
+          {
+            "issues": [],
+            "page": "23",
+            "title": "二项模型与过程波动"
+          },
+          {
+            "issues": [],
+            "page": "24",
+            "title": "经营目标与统计控制界限"
+          },
+          {
+            "issues": [],
+            "page": "25",
+            "title": "二项模型下的近似控制界限"
+          },
+          {
+            "issues": [],
+            "page": "26",
+            "title": "控制图算例：越界后调查什么"
+          },
+          {
+            "issues": [],
+            "page": "27",
+            "title": "Toyota Andon：可视化信号需要处置责任"
+          },
+          {
+            "issues": [],
+            "page": "28",
+            "title": "Andon：从异常可见走向可核验的处置"
+          },
+          {
+            "issues": [],
+            "page": "29",
+            "title": "比较基准与经营判断"
+          },
+          {
+            "issues": [],
+            "page": "30",
+            "title": "McDonald’s：同店销售增长不等于客流增长"
+          },
+          {
+            "issues": [],
+            "page": "31",
+            "title": "McDonald’s：先拆分增长来源，再作经营判断"
+          },
+          {
+            "issues": [],
+            "page": "32",
+            "title": "同一停留面积的两种计数"
+          },
+          {
+            "issues": [],
+            "page": "33",
+            "title": "Little 定律的面积论证"
+          },
+          {
+            "issues": [],
+            "page": "34",
+            "title": "在制量、吞吐率与平均周期"
+          },
+          {
+            "issues": [],
+            "page": "35",
+            "title": "到达、服务与排队模型记号"
+          },
+          {
+            "issues": [],
+            "page": "36",
+            "title": "单服务台模型中的利用率与等待"
+          },
+          {
+            "issues": [],
+            "page": "37",
+            "title": "稳态在制量的推导"
+          },
+          {
+            "issues": [],
+            "page": "38",
+            "title": "负荷算例：利用率与系统时间"
+          },
+          {
+            "issues": [],
+            "page": "39",
+            "title": "变异性与 Kingman 等待近似"
+          },
+          {
+            "issues": [],
+            "page": "40",
+            "title": "同等负荷下，变异性怎样影响等待"
+          },
+          {
+            "issues": [],
+            "page": "41",
+            "title": "能力成本与在制成本的权衡"
+          },
+          {
+            "issues": [],
+            "page": "42",
+            "title": "连续最优服务能力的推导"
+          },
+          {
+            "issues": [],
+            "page": "43",
+            "title": "能力算例：总成本率的比较"
+          },
+          {
+            "issues": [],
+            "page": "44",
+            "title": "人工智能服务的测量边界"
+          },
+          {
+            "issues": [],
+            "page": "45",
+            "title": "无排队服务时间的构成"
+          },
+          {
+            "issues": [],
+            "page": "46",
+            "title": "平均并发与服务位置占用"
+          },
+          {
+            "issues": [],
+            "page": "47",
+            "title": "请求费用与成功任务成本"
+          },
+          {
+            "issues": [],
+            "page": "48",
+            "title": "视觉编码与比较任务"
+          },
+          {
+            "issues": [],
+            "page": "49",
+            "title": "从统计摘要到可下钻看板"
+          },
+          {
+            "issues": [],
+            "page": "50",
+            "title": "看板类型与使用任务"
+          },
+          {
+            "issues": [],
+            "page": "51",
+            "title": "看板的运营维护与复核"
+          },
+          {
+            "issues": [],
+            "page": "52",
+            "title": "Rolls-Royce 案例：服务与备件看板"
+          },
+          {
+            "issues": [],
+            "page": "53",
+            "title": "制造看板的五种测量对象"
+          },
+          {
+            "issues": [],
+            "page": "54",
+            "title": "制造看板的分层分析次序"
+          },
+          {
+            "issues": [],
+            "page": "55",
+            "title": "人工智能辅助图表解释的核查"
+          },
+          {
+            "issues": [],
+            "page": "56",
+            "title": "实验任务：日运营统计与看板"
+          },
+          {
+            "issues": [],
+            "page": "57",
+            "title": "实验核对：完整样本的预期摘要"
+          },
+          {
+            "issues": [],
+            "page": "58",
+            "title": "管理解释的证据层次"
+          },
+          {
+            "issues": [],
+            "page": "59",
+            "title": "可复核的运营看板"
+          }
+        ],
+        "readable": true
+      }
+    ],
+    "width": 390
+  },
+  {
+    "chapter": "#/chapter/06_ab_testing?anchor=slides",
+    "players": [
+      {
+        "id": "slides",
+        "pages": [
+          {
+            "issues": [],
+            "page": "1",
+            "title": "随机实验如何支持推广决策"
+          },
+          {
+            "issues": [],
+            "page": "2",
+            "title": "描述、统计推断、因果评价与决策"
+          },
+          {
+            "issues": [],
+            "page": "3",
+            "title": "均值、方差与独立信息"
+          },
+          {
+            "issues": [],
+            "page": "4",
+            "title": "总体参数、估计量与标准误"
+          },
+          {
+            "issues": [],
+            "page": "5",
+            "title": "样本规模与估计精度"
+          },
+          {
+            "issues": [],
+            "page": "6",
+            "title": "随机实验的基本要素"
+          },
+          {
+            "issues": [],
+            "page": "7",
+            "title": "Netflix：同一影片的封面应如何比较"
+          },
+          {
+            "issues": [],
+            "page": "8",
+            "title": "Netflix：分配记录决定封面比较能否解释"
+          },
+          {
+            "issues": [],
+            "page": "9",
+            "title": "潜在结果与平均处理效应"
+          },
+          {
+            "issues": [],
+            "page": "10",
+            "title": "完全随机分配下的差异估计"
+          },
+          {
+            "issues": [],
+            "page": "11",
+            "title": "无偏性的入组概率证明"
+          },
+          {
+            "issues": [],
+            "page": "12",
+            "title": "四个单元：真效应与可见结果"
+          },
+          {
+            "issues": [],
+            "page": "13",
+            "title": "穷举随机分配，核查无偏性"
+          },
+          {
+            "issues": [],
+            "page": "14",
+            "title": "Neyman 随机化方差"
+          },
+          {
+            "issues": [],
+            "page": "15",
+            "title": "同一算例的两种方差计算"
+          },
+          {
+            "issues": [],
+            "page": "16",
+            "title": "区间估计：给估计误差规定范围"
+          },
+          {
+            "issues": [],
+            "page": "17",
+            "title": "两组差异的标准误与近似区间"
+          },
+          {
+            "issues": [],
+            "page": "18",
+            "title": "p 值的统计含义"
+          },
+          {
+            "issues": [],
+            "page": "19",
+            "title": "置信水平与区间解释"
+          },
+          {
+            "issues": [],
+            "page": "20",
+            "title": "效应幅度、估计精度与业务阈值"
+          },
+          {
+            "issues": [],
+            "page": "21",
+            "title": "差异、非劣效与等效性研究"
+          },
+          {
+            "issues": [],
+            "page": "22",
+            "title": "显著性水平、功效与可检测效应"
+          },
+          {
+            "issues": [],
+            "page": "23",
+            "title": "两组比例实验的样本量规划"
+          },
+          {
+            "issues": [],
+            "page": "24",
+            "title": "主指标与约束指标"
+          },
+          {
+            "issues": [],
+            "page": "25",
+            "title": "预先规定的推广证据标准"
+          },
+          {
+            "issues": [],
+            "page": "26",
+            "title": "实验前信息与独立的调整评价"
+          },
+          {
+            "issues": [],
+            "page": "27",
+            "title": "CUPED：利用实验前信息降低方差"
+          },
+          {
+            "issues": [],
+            "page": "28",
+            "title": "最优线性调整系数"
+          },
+          {
+            "issues": [],
+            "page": "29",
+            "title": "方差缩减的数量级"
+          },
+          {
+            "issues": [],
+            "page": "30",
+            "title": "Airbnb：房源实验为何受到邻近房源影响"
+          },
+          {
+            "issues": [],
+            "page": "31",
+            "title": "Airbnb：减少干扰与保留精度的权衡"
+          },
+          {
+            "issues": [],
+            "page": "32",
+            "title": "整群随机化与分析层级"
+          },
+          {
+            "issues": [],
+            "page": "33",
+            "title": "DoorDash：调度实验按地区和时间切换"
+          },
+          {
+            "issues": [],
+            "page": "34",
+            "title": "DoorDash：订单数量不等于独立信息量"
+          },
+          {
+            "issues": [],
+            "page": "35",
+            "title": "集群内相关与设计效应"
+          },
+          {
+            "issues": [],
+            "page": "36",
+            "title": "Booking.com：实验记录为什么要保存失败结果"
+          },
+          {
+            "issues": [],
+            "page": "37",
+            "title": "Booking.com：负面结果保存了哪些知识"
+          },
+          {
+            "issues": [],
+            "page": "38",
+            "title": "实验质量检查"
+          },
+          {
+            "issues": [],
+            "page": "39",
+            "title": "Uber：结果显著之前先检查实验是否按计划运行"
+          },
+          {
+            "issues": [],
+            "page": "40",
+            "title": "Uber：显著性不能补救分流故障"
+          },
+          {
+            "issues": [],
+            "page": "41",
+            "title": "重复查看与多重比较"
+          },
+          {
+            "issues": [],
+            "page": "42",
+            "title": "序贯检验：停止时点也是设计的一部分"
+          },
+          {
+            "issues": [],
+            "page": "43",
+            "title": "置信序列：对持续查看的错误控制"
+          },
+          {
+            "issues": [],
+            "page": "44",
+            "title": "置信序列的并集界证明"
+          },
+          {
+            "issues": [],
+            "page": "45",
+            "title": "持续查看需要怎样的精度代价"
+          },
+          {
+            "issues": [],
+            "page": "46",
+            "title": "两臂持续监测的效应区间"
+          },
+          {
+            "issues": [],
+            "page": "47",
+            "title": "统计效应与经济盈亏阈值"
+          },
+          {
+            "issues": [],
+            "page": "48",
+            "title": "Microsoft 案例：可信实验的组织条件"
+          },
+          {
+            "issues": [],
+            "page": "49",
+            "title": "查询系统的成对比较"
+          },
+          {
+            "issues": [],
+            "page": "50",
+            "title": "智能体运营试点的分配设计"
+          },
+          {
+            "issues": [],
+            "page": "51",
+            "title": "内部有效性与外部适用性"
+          },
+          {
+            "issues": [],
+            "page": "52",
+            "title": "结账页实验：输入与分析任务"
+          },
+          {
+            "issues": [],
+            "page": "53",
+            "title": "结账页实验：转化差异的估计"
+          },
+          {
+            "issues": [],
+            "page": "54",
+            "title": "转化差异的标准误与区间"
+          },
+          {
+            "issues": [],
+            "page": "55",
+            "title": "结账页实验：从差异到双侧 p 值"
+          },
+          {
+            "issues": [],
+            "page": "56",
+            "title": "结账页实验：收益与风险的完整结果"
+          },
+          {
+            "issues": [],
+            "page": "57",
+            "title": "结账页实验：下一轮设计"
+          },
+          {
+            "issues": [],
+            "page": "58",
+            "title": "可信实验报告的论证结构"
+          }
+        ],
+        "readable": true
+      }
+    ],
+    "width": 390
+  },
+  {
+    "chapter": "#/chapter/07_prediction?anchor=slides",
+    "players": [
+      {
+        "id": "slides",
+        "pages": [
+          {
+            "issues": [],
+            "page": "1",
+            "title": "预测任务：从当前信息到未来结果"
+          },
+          {
+            "issues": [],
+            "page": "2",
+            "title": "监督学习的统计对象"
+          },
+          {
+            "issues": [],
+            "page": "3",
+            "title": "分析任务及其结论边界"
+          },
+          {
+            "issues": [],
+            "page": "4",
+            "title": "结果窗口、泄漏与删失"
+          },
+          {
+            "issues": [],
+            "page": "5",
+            "title": "标签窗口与特征截止时点"
+          },
+          {
+            "issues": [],
+            "page": "6",
+            "title": "学习目标与模型复杂度"
+          },
+          {
+            "issues": [],
+            "page": "7",
+            "title": "损失函数与经验风险"
+          },
+          {
+            "issues": [],
+            "page": "8",
+            "title": "同样判为正类，概率损失仍不同"
+          },
+          {
+            "issues": [],
+            "page": "9",
+            "title": "平方损失为何得到条件均值"
+          },
+          {
+            "issues": [],
+            "page": "10",
+            "title": "对数损失与真实条件概率"
+          },
+          {
+            "issues": [],
+            "page": "11",
+            "title": "从二元结果到概率模型"
+          },
+          {
+            "issues": [],
+            "page": "12",
+            "title": "逻辑回归：线性分数到事件概率"
+          },
+          {
+            "issues": [],
+            "page": "13",
+            "title": "Amazon：补货为何需要需求分布"
+          },
+          {
+            "issues": [],
+            "page": "14",
+            "title": "Amazon：需求尾部与补货目标"
+          },
+          {
+            "issues": [],
+            "page": "15",
+            "title": "服务承诺与条件分位数"
+          },
+          {
+            "issues": [],
+            "page": "16",
+            "title": "随机森林如何形成多个预测"
+          },
+          {
+            "issues": [],
+            "page": "17",
+            "title": "集成方差与误差相关性"
+          },
+          {
+            "issues": [],
+            "page": "18",
+            "title": "Uber DeepETA：在道路模型上预测残差"
+          },
+          {
+            "issues": [],
+            "page": "19",
+            "title": "Uber：残差校正与在线服务要求"
+          },
+          {
+            "issues": [],
+            "page": "20",
+            "title": "梯度提升的逐步更新"
+          },
+          {
+            "issues": [],
+            "page": "21",
+            "title": "Google Maps：道路相互连接怎样影响预测"
+          },
+          {
+            "issues": [],
+            "page": "22",
+            "title": "Google Maps：道路结构与时间外检验"
+          },
+          {
+            "issues": [],
+            "page": "23",
+            "title": "训练、验证与最终测试"
+          },
+          {
+            "issues": [],
+            "page": "24",
+            "title": "交叉验证：轮换训练与验证"
+          },
+          {
+            "issues": [],
+            "page": "25",
+            "title": "时间切分与重复观测"
+          },
+          {
+            "issues": [],
+            "page": "26",
+            "title": "新样本误差的偏差—方差分解"
+          },
+          {
+            "issues": [],
+            "page": "27",
+            "title": "误报、漏报与评价分母"
+          },
+          {
+            "issues": [],
+            "page": "28",
+            "title": "分类阈值与混淆矩阵"
+          },
+          {
+            "issues": [],
+            "page": "29",
+            "title": "准确率与 F1 的完整复算"
+          },
+          {
+            "issues": [],
+            "page": "30",
+            "title": "排序与校准回答不同问题"
+          },
+          {
+            "issues": [],
+            "page": "31",
+            "title": "排序能力与概率校准"
+          },
+          {
+            "issues": [],
+            "page": "32",
+            "title": "校准表如何检查概率的数值意义"
+          },
+          {
+            "issues": [],
+            "page": "33",
+            "title": "分类阈值的成本推导"
+          },
+          {
+            "issues": [],
+            "page": "34",
+            "title": "留存行动的预期净价值"
+          },
+          {
+            "issues": [],
+            "page": "35",
+            "title": "高风险与高净价值的反例"
+          },
+          {
+            "issues": [],
+            "page": "36",
+            "title": "DoorDash：把配送预测与承诺决策分开"
+          },
+          {
+            "issues": [],
+            "page": "37",
+            "title": "DoorDash：分布预测不自动构成覆盖保证"
+          },
+          {
+            "issues": [],
+            "page": "38",
+            "title": "分割共形预测的构造"
+          },
+          {
+            "issues": [],
+            "page": "39",
+            "title": "覆盖保证来自未来残差的秩"
+          },
+          {
+            "issues": [],
+            "page": "40",
+            "title": "共形区间的有限样本算例"
+          },
+          {
+            "issues": [],
+            "page": "41",
+            "title": "模型解释与因果机制"
+          },
+          {
+            "issues": [],
+            "page": "42",
+            "title": "预训练与新任务中的适应"
+          },
+          {
+            "issues": [],
+            "page": "43",
+            "title": "Netflix：评分预测为何不足以设计首页"
+          },
+          {
+            "issues": [],
+            "page": "44",
+            "title": "Netflix：预测对象必须对准页面决策"
+          },
+          {
+            "issues": [],
+            "page": "45",
+            "title": "基础模型的任务级比较"
+          },
+          {
+            "issues": [],
+            "page": "46",
+            "title": "航空备件：四种预测任务"
+          },
+          {
+            "issues": [],
+            "page": "47",
+            "title": "自动建模与选择偏差"
+          },
+          {
+            "issues": [],
+            "page": "48",
+            "title": "推理服务的键值缓存"
+          },
+          {
+            "issues": [],
+            "page": "49",
+            "title": "键值缓存的容量核算"
+          },
+          {
+            "issues": [],
+            "page": "50",
+            "title": "客户流失实验：输入与学习过程"
+          },
+          {
+            "issues": [],
+            "page": "51",
+            "title": "客户流失：复算测试指标"
+          },
+          {
+            "issues": [],
+            "page": "52",
+            "title": "客户行动价值：收益假设与费用"
+          },
+          {
+            "issues": [],
+            "page": "53",
+            "title": "客户名单：风险与行动价值"
+          },
+          {
+            "issues": [],
+            "page": "54",
+            "title": "行动策略与标签生成机制"
+          },
+          {
+            "issues": [],
+            "page": "55",
+            "title": "预测系统的完整证据"
+          }
+        ],
+        "readable": true
+      }
+    ],
+    "width": 390
+  },
+  {
+    "chapter": "#/chapter/08_causality?anchor=slides",
+    "players": [
+      {
+        "id": "slides",
+        "pages": [
+          {
+            "issues": [],
+            "page": "1",
+            "title": "从观察差异到干预效应"
+          },
+          {
+            "issues": [],
+            "page": "2",
+            "title": "一致性、干扰与处理版本"
+          },
+          {
+            "issues": [],
+            "page": "3",
+            "title": "潜在结果与个体效应"
+          },
+          {
+            "issues": [],
+            "page": "4",
+            "title": "效应参数与目标人群"
+          },
+          {
+            "issues": [],
+            "page": "5",
+            "title": "同一改进可以具有相反的符号"
+          },
+          {
+            "issues": [],
+            "page": "6",
+            "title": "预测关联与干预效应"
+          },
+          {
+            "issues": [],
+            "page": "7",
+            "title": "eBay：搜索广告转化与增量购买"
+          },
+          {
+            "issues": [],
+            "page": "8",
+            "title": "eBay：既有购买意愿与广告增量"
+          },
+          {
+            "issues": [],
+            "page": "9",
+            "title": "朴素差异的选择偏差分解"
+          },
+          {
+            "issues": [],
+            "page": "10",
+            "title": "混杂、后门路径与错误调整"
+          },
+          {
+            "issues": [],
+            "page": "11",
+            "title": "调整变量与因果结构"
+          },
+          {
+            "issues": [],
+            "page": "12",
+            "title": "Google：广告效果可以在地区层面识别"
+          },
+          {
+            "issues": [],
+            "page": "13",
+            "title": "Google：地区是分配与推断的基本单位"
+          },
+          {
+            "issues": [],
+            "page": "14",
+            "title": "随机实验的识别基准"
+          },
+          {
+            "issues": [],
+            "page": "15",
+            "title": "Facebook：丰富特征能否代替随机比较"
+          },
+          {
+            "issues": [],
+            "page": "16",
+            "title": "Facebook：高维控制与识别依据"
+          },
+          {
+            "issues": [],
+            "page": "17",
+            "title": "观测研究的核心识别条件"
+          },
+          {
+            "issues": [],
+            "page": "18",
+            "title": "处理版本与个体间干扰"
+          },
+          {
+            "issues": [],
+            "page": "19",
+            "title": "标准化：给两种行动相同的人群构成"
+          },
+          {
+            "issues": [],
+            "page": "20",
+            "title": "从识别条件到标准化公式"
+          },
+          {
+            "issues": [],
+            "page": "21",
+            "title": "困难订单优先加急：观察数据"
+          },
+          {
+            "issues": [],
+            "page": "22",
+            "title": "标准化到同一难度构成"
+          },
+          {
+            "issues": [],
+            "page": "23",
+            "title": "目标人群权重与效果异质性"
+          },
+          {
+            "issues": [],
+            "page": "24",
+            "title": "倾向得分与平衡性质"
+          },
+          {
+            "issues": [],
+            "page": "25",
+            "title": "逆概率加权的识别逻辑"
+          },
+          {
+            "issues": [],
+            "page": "26",
+            "title": "加权如何还原困难订单算例"
+          },
+          {
+            "issues": [],
+            "page": "27",
+            "title": "平衡诊断与标准化均值差异"
+          },
+          {
+            "issues": [],
+            "page": "28",
+            "title": "权重集中与有效样本量"
+          },
+          {
+            "issues": [],
+            "page": "29",
+            "title": "四个观测，权重可由一个对象主导"
+          },
+          {
+            "issues": [],
+            "page": "30",
+            "title": "增广与双重稳健的含义"
+          },
+          {
+            "issues": [],
+            "page": "31",
+            "title": "增广逆概率加权估计"
+          },
+          {
+            "issues": [],
+            "page": "32",
+            "title": "单个双重稳健分数为何可超过一"
+          },
+          {
+            "issues": [],
+            "page": "33",
+            "title": "得分正确时，残差怎样抵消偏差"
+          },
+          {
+            "issues": [],
+            "page": "34",
+            "title": "结果正确时，校正项为何均值为零"
+          },
+          {
+            "issues": [],
+            "page": "35",
+            "title": "双重稳健偏差的乘积结构"
+          },
+          {
+            "issues": [],
+            "page": "36",
+            "title": "局部正交性：误差以乘积进入"
+          },
+          {
+            "issues": [],
+            "page": "37",
+            "title": "交叉拟合与辅助模型过拟合"
+          },
+          {
+            "issues": [],
+            "page": "38",
+            "title": "正交性与收敛条件"
+          },
+          {
+            "issues": [],
+            "page": "39",
+            "title": "差分中的差分"
+          },
+          {
+            "issues": [],
+            "page": "40",
+            "title": "两期 DID 的识别条件"
+          },
+          {
+            "issues": [],
+            "page": "41",
+            "title": "门店留存率的两期比较"
+          },
+          {
+            "issues": [],
+            "page": "42",
+            "title": "分期推广与双向固定效应"
+          },
+          {
+            "issues": [],
+            "page": "43",
+            "title": "分期处理与效应异质性"
+          },
+          {
+            "issues": [],
+            "page": "44",
+            "title": "资格、处理与随访时点"
+          },
+          {
+            "issues": [],
+            "page": "45",
+            "title": "未测混杂的敏感性范围"
+          },
+          {
+            "issues": [],
+            "page": "46",
+            "title": "Tripadvisor：会员注册便利化与实际采用"
+          },
+          {
+            "issues": [],
+            "page": "47",
+            "title": "Tripadvisor：会员采用者效应的外推边界"
+          },
+          {
+            "issues": [],
+            "page": "48",
+            "title": "效应异质性与外推范围"
+          },
+          {
+            "issues": [],
+            "page": "49",
+            "title": "Uber：不同促销需要比较净增量价值"
+          },
+          {
+            "issues": [],
+            "page": "50",
+            "title": "Uber：促销价值取决于增量效果与成本"
+          },
+          {
+            "issues": [],
+            "page": "51",
+            "title": "策略价值与预算约束"
+          },
+          {
+            "issues": [],
+            "page": "52",
+            "title": "数据平台采用的识别设计"
+          },
+          {
+            "issues": [],
+            "page": "53",
+            "title": "个人节时与组织生产率"
+          },
+          {
+            "issues": [],
+            "page": "54",
+            "title": "平台组合效应与净现值"
+          },
+          {
+            "issues": [],
+            "page": "55",
+            "title": "优惠券实验：研究对象与计算顺序"
+          },
+          {
+            "issues": [],
+            "page": "56",
+            "title": "优惠券模拟数据：调整与诊断"
+          },
+          {
+            "issues": [],
+            "page": "57",
+            "title": "因果报告的论证顺序"
+          }
+        ],
+        "readable": true
+      }
+    ],
+    "width": 390
+  },
+  {
+    "chapter": "#/chapter/09_optimization?anchor=slides",
+    "players": [
+      {
+        "id": "slides",
+        "pages": [
+          {
+            "issues": [],
+            "page": "1",
+            "title": "共享资源下的行动选择"
+          },
+          {
+            "issues": [],
+            "page": "2",
+            "title": "变量、目标与可行域"
+          },
+          {
+            "issues": [],
+            "page": "3",
+            "title": "Zara：有限库存怎样分给不同门店"
+          },
+          {
+            "issues": [],
+            "page": "4",
+            "title": "Zara：单店需求与共同库存的耦合"
+          },
+          {
+            "issues": [],
+            "page": "5",
+            "title": "库存目标的成本口径"
+          },
+          {
+            "issues": [],
+            "page": "6",
+            "title": "Google：冷却优化为何需要双层约束核验"
+          },
+          {
+            "issues": [],
+            "page": "7",
+            "title": "Google：预测候选与现场复验"
+          },
+          {
+            "issues": [],
+            "page": "8",
+            "title": "约束与可执行性"
+          },
+          {
+            "issues": [],
+            "page": "9",
+            "title": "连续、整数与混合整数规划"
+          },
+          {
+            "issues": [],
+            "page": "10",
+            "title": "对偶价格与证明最优的共同上界"
+          },
+          {
+            "issues": [],
+            "page": "11",
+            "title": "两类任务的资源配置"
+          },
+          {
+            "issues": [],
+            "page": "12",
+            "title": "弱对偶与最优性证书"
+          },
+          {
+            "issues": [],
+            "page": "13",
+            "title": "影子价格的有效范围"
+          },
+          {
+            "issues": [],
+            "page": "14",
+            "title": "离散资源的有限增量价值"
+          },
+          {
+            "issues": [],
+            "page": "15",
+            "title": "情景模型与期望目标"
+          },
+          {
+            "issues": [],
+            "page": "16",
+            "title": "报童模型的临界分位数"
+          },
+          {
+            "issues": [],
+            "page": "17",
+            "title": "缺货惩罚改变目标分位数"
+          },
+          {
+            "issues": [],
+            "page": "18",
+            "title": "条件风险价值的变分定义"
+          },
+          {
+            "issues": [],
+            "page": "19",
+            "title": "情景 CVaR 的线性化表示"
+          },
+          {
+            "issues": [],
+            "page": "20",
+            "title": "离散 CVaR：分位点的概率质量"
+          },
+          {
+            "issues": [],
+            "page": "21",
+            "title": "分布鲁棒优化"
+          },
+          {
+            "issues": [],
+            "page": "22",
+            "title": "Walmart：运输优化同时决定路线与装载"
+          },
+          {
+            "issues": [],
+            "page": "23",
+            "title": "Walmart：最短路线未必满足交付条件"
+          },
+          {
+            "issues": [],
+            "page": "24",
+            "title": "参数敏感性与方案稳健性"
+          },
+          {
+            "issues": [],
+            "page": "25",
+            "title": "排程中的互斥与不可抢占"
+          },
+          {
+            "issues": [],
+            "page": "26",
+            "title": "Lufthansa：模拟机排程中的硬条件与偏好"
+          },
+          {
+            "issues": [],
+            "page": "27",
+            "title": "Lufthansa：可行、偏好满足与已证最优"
+          },
+          {
+            "issues": [],
+            "page": "28",
+            "title": "单机排程的互斥约束"
+          },
+          {
+            "issues": [],
+            "page": "29",
+            "title": "加权延期与任务顺序"
+          },
+          {
+            "issues": [],
+            "page": "30",
+            "title": "预测损失与决策后悔"
+          },
+          {
+            "issues": [],
+            "page": "31",
+            "title": "小预测误差也可能选择错误"
+          },
+          {
+            "issues": [],
+            "page": "32",
+            "title": "Uber：一次派单也会改变下一时段的供需"
+          },
+          {
+            "issues": [],
+            "page": "33",
+            "title": "Uber：当前匹配会改变未来状态"
+          },
+          {
+            "issues": [],
+            "page": "34",
+            "title": "滚动优化与策略仿真"
+          },
+          {
+            "issues": [],
+            "page": "35",
+            "title": "订单加急的增量净收益"
+          },
+          {
+            "issues": [],
+            "page": "36",
+            "title": "加急组合：风险与净价值"
+          },
+          {
+            "issues": [],
+            "page": "37",
+            "title": "预算限制与并列方案"
+          },
+          {
+            "issues": [],
+            "page": "38",
+            "title": "建模、求解与独立验证"
+          },
+          {
+            "issues": [],
+            "page": "39",
+            "title": "模型服务的费用交点"
+          },
+          {
+            "issues": [],
+            "page": "40",
+            "title": "平均占用约束与尾部时延"
+          },
+          {
+            "issues": [],
+            "page": "41",
+            "title": "服务费用的假设算例"
+          },
+          {
+            "issues": [],
+            "page": "42",
+            "title": "库存实验：四产品的经济参数"
+          },
+          {
+            "issues": [],
+            "page": "43",
+            "title": "库存实验：数量范围与资源占用"
+          },
+          {
+            "issues": [],
+            "page": "44",
+            "title": "库存实验：三点需求与概率"
+          },
+          {
+            "issues": [],
+            "page": "45",
+            "title": "库存实验：从输入到整数模型"
+          },
+          {
+            "issues": [],
+            "page": "46",
+            "title": "库存组合的基准解"
+          },
+          {
+            "issues": [],
+            "page": "47",
+            "title": "并列最优与次级选择标准"
+          },
+          {
+            "issues": [],
+            "page": "48",
+            "title": "P02 订货十六件的完整核算"
+          },
+          {
+            "issues": [],
+            "page": "49",
+            "title": "边际价值为何不能单独决定组合"
+          },
+          {
+            "issues": [],
+            "page": "50",
+            "title": "从数学方案到执行记录"
+          }
+        ],
+        "readable": true
+      }
+    ],
+    "width": 390
+  },
+  {
+    "chapter": "#/chapter/10_process_mining?anchor=slides",
+    "players": [
+      {
+        "id": "slides",
+        "pages": [
+          {
+            "issues": [],
+            "page": "1",
+            "title": "从结果指标到过程证据"
+          },
+          {
+            "issues": [],
+            "page": "2",
+            "title": "时间戳与事件的业务含义"
+          },
+          {
+            "issues": [],
+            "page": "3",
+            "title": "经典事件日志的必需字段"
+          },
+          {
+            "issues": [],
+            "page": "4",
+            "title": "轨迹与流程变体"
+          },
+          {
+            "issues": [],
+            "page": "5",
+            "title": "吞吐时间、事件间隔与等待"
+          },
+          {
+            "issues": [],
+            "page": "6",
+            "title": "实例、事件与变体的粒度"
+          },
+          {
+            "issues": [],
+            "page": "7",
+            "title": "日志质量与分析有效性"
+          },
+          {
+            "issues": [],
+            "page": "8",
+            "title": "Vodafone：采购流程图与实际路径的差距"
+          },
+          {
+            "issues": [],
+            "page": "9",
+            "title": "Vodafone：日志偏离需要适用规则解释"
+          },
+          {
+            "issues": [],
+            "page": "10",
+            "title": "流程挖掘的三类任务"
+          },
+          {
+            "issues": [],
+            "page": "11",
+            "title": "直接跟随图保留了什么"
+          },
+          {
+            "issues": [],
+            "page": "12",
+            "title": "直接跟随边的频次"
+          },
+          {
+            "issues": [],
+            "page": "13",
+            "title": "直接跟随边的平均间隔"
+          },
+          {
+            "issues": [],
+            "page": "14",
+            "title": "微型日志：从时刻到轨迹"
+          },
+          {
+            "issues": [],
+            "page": "15",
+            "title": "同一条边：三次转移、两个订单"
+          },
+          {
+            "issues": [],
+            "page": "16",
+            "title": "标准路径与返工变体"
+          },
+          {
+            "issues": [],
+            "page": "17",
+            "title": "双向边与并行语义"
+          },
+          {
+            "issues": [],
+            "page": "18",
+            "title": "Petri 网的状态转移"
+          },
+          {
+            "issues": [],
+            "page": "19",
+            "title": "发货变迁：两个条件必须同时满足"
+          },
+          {
+            "issues": [],
+            "page": "20",
+            "title": "返工次数的几何模型"
+          },
+          {
+            "issues": [],
+            "page": "21",
+            "title": "多状态流程的剩余时间"
+          },
+          {
+            "issues": [],
+            "page": "22",
+            "title": "两状态返工：首步分解可直接求解"
+          },
+          {
+            "issues": [],
+            "page": "23",
+            "title": "DHL：人事工单结束，财务付款是否也已结束"
+          },
+          {
+            "issues": [],
+            "page": "24",
+            "title": "DHL：多个对象具有不同完成条件"
+          },
+          {
+            "issues": [],
+            "page": "25",
+            "title": "事件与多个业务对象"
+          },
+          {
+            "issues": [],
+            "page": "26",
+            "title": "间隔、负荷与产能瓶颈"
+          },
+          {
+            "issues": [],
+            "page": "27",
+            "title": "Deutsche Telekom：付款更早并不总是更好"
+          },
+          {
+            "issues": [],
+            "page": "28",
+            "title": "Deutsche Telekom：付款时机取决于合同"
+          },
+          {
+            "issues": [],
+            "page": "29",
+            "title": "一致性检查的规则范围"
+          },
+          {
+            "issues": [],
+            "page": "30",
+            "title": "模拟日志的路径与时间"
+          },
+          {
+            "issues": [],
+            "page": "31",
+            "title": "模拟日志：边频次与时间对照"
+          },
+          {
+            "issues": [],
+            "page": "32",
+            "title": "从异常实例到复核证据"
+          },
+          {
+            "issues": [],
+            "page": "33",
+            "title": "Celonis 与 Siemens：指标的含义"
+          },
+          {
+            "issues": [],
+            "page": "34",
+            "title": "ABB：跨业务流程需要共同语义"
+          },
+          {
+            "issues": [],
+            "page": "35",
+            "title": "ABB：先统一语义，再比较过程"
+          },
+          {
+            "issues": [],
+            "page": "36",
+            "title": "流程发现与改进试点"
+          },
+          {
+            "issues": [],
+            "page": "37",
+            "title": "工作流与智能体"
+          },
+          {
+            "issues": [],
+            "page": "38",
+            "title": "智能体运行环境"
+          },
+          {
+            "issues": [],
+            "page": "39",
+            "title": "订单加急的任务规格"
+          },
+          {
+            "issues": [],
+            "page": "40",
+            "title": "响应丢失后的幂等恢复"
+          },
+          {
+            "issues": [],
+            "page": "41",
+            "title": "Stripe：超时重试怎样避免重复业务影响"
+          },
+          {
+            "issues": [],
+            "page": "42",
+            "title": "Stripe：客户端超时不等于服务端失败"
+          },
+          {
+            "issues": [],
+            "page": "43",
+            "title": "状态机：把可执行动作写成明确转移"
+          },
+          {
+            "issues": [],
+            "page": "44",
+            "title": "执行状态机与不变量"
+          },
+          {
+            "issues": [],
+            "page": "45",
+            "title": "协议、结构与业务授权"
+          },
+          {
+            "issues": [],
+            "page": "46",
+            "title": "本地服务的职责分层"
+          },
+          {
+            "issues": [],
+            "page": "47",
+            "title": "平台组合的任务级比较"
+          },
+          {
+            "issues": [],
+            "page": "48",
+            "title": "检索增强生成：从材料到可核查回答"
+          },
+          {
+            "issues": [],
+            "page": "49",
+            "title": "词法检索、嵌入与语义候选"
+          },
+          {
+            "issues": [],
+            "page": "50",
+            "title": "证据检索与排名融合"
+          },
+          {
+            "issues": [],
+            "page": "51",
+            "title": "倒数排名融合的算例"
+          },
+          {
+            "issues": [],
+            "page": "52",
+            "title": "设备放行的规则与事实"
+          },
+          {
+            "issues": [],
+            "page": "53",
+            "title": "端到端时延与任务负载"
+          },
+          {
+            "issues": [],
+            "page": "54",
+            "title": "多步骤任务的成功概率"
+          },
+          {
+            "issues": [],
+            "page": "55",
+            "title": "无独立假设的失败上界"
+          },
+          {
+            "issues": [],
+            "page": "56",
+            "title": "至少成功一次与重复可靠性"
+          },
+          {
+            "issues": [],
+            "page": "57",
+            "title": "单位成功任务成本"
+          },
+          {
+            "issues": [],
+            "page": "58",
+            "title": "加急组合的决策与执行记录"
+          },
+          {
+            "issues": [],
+            "page": "59",
+            "title": "从异常发现到执行确认"
+          }
+        ],
+        "readable": true
+      }
+    ],
+    "width": 390
+  },
+  {
+    "chapter": "#/chapter/11_modern_data_platform?anchor=slides",
+    "players": [
+      {
+        "id": "slides",
+        "pages": [
+          {
+            "issues": [],
+            "page": "1",
+            "title": "现代数据平台：让同一指标可以复核"
+          },
+          {
+            "issues": [],
+            "page": "2",
+            "title": "数据库、仓库、湖与湖仓分别解决什么问题"
+          },
+          {
+            "issues": [],
+            "page": "3",
+            "title": "ETL与ELT：转换发生在什么位置"
+          },
+          {
+            "issues": [],
+            "page": "4",
+            "title": "Shopify CDC：从反复查询到日志变更"
+          },
+          {
+            "issues": [],
+            "page": "5",
+            "title": "原始层、标准层与服务层"
+          },
+          {
+            "issues": [],
+            "page": "6",
+            "title": "当前状态与历史事件不可混为一表"
+          },
+          {
+            "issues": [],
+            "page": "7",
+            "title": "Uber Hudi：记录会在到达后继续变化"
+          },
+          {
+            "issues": [],
+            "page": "8",
+            "title": "快照和事务使多文件结果保持一致"
+          },
+          {
+            "issues": [],
+            "page": "9",
+            "title": "Netflix Iceberg：表格式迁移需要验证"
+          },
+          {
+            "issues": [],
+            "page": "10",
+            "title": "指标必须保留可汇总的构成项"
+          },
+          {
+            "issues": [],
+            "page": "11",
+            "title": "语义层把业务词汇对应到可执行规则"
+          },
+          {
+            "issues": [],
+            "page": "12",
+            "title": "数据血缘回答结果从哪里来"
+          },
+          {
+            "issues": [],
+            "page": "13",
+            "title": "数据产品需要可执行的服务约定"
+          },
+          {
+            "issues": [],
+            "page": "14",
+            "title": "访问权限应随派生数据保持"
+          },
+          {
+            "issues": [],
+            "page": "15",
+            "title": "Disney数据洁净室：协作分析也有边界"
+          },
+          {
+            "issues": [],
+            "page": "16",
+            "title": "从设备事件到运营指标服务"
+          },
+          {
+            "issues": [],
+            "page": "17",
+            "title": "发布失败应阻断有问题的结果"
+          },
+          {
+            "issues": [],
+            "page": "18",
+            "title": "选型前写出工作负载与证据要求"
+          },
+          {
+            "issues": [],
+            "page": "19",
+            "title": "Walmart湖仓选型：工作负载决定取舍"
+          },
+          {
+            "issues": [],
+            "page": "20",
+            "title": "平台验收：沿一项指标完成追溯"
+          }
+        ],
+        "readable": true
+      }
+    ],
+    "width": 390
+  },
+  {
+    "chapter": "#/chapter/12_mlops?anchor=slides",
+    "players": [
+      {
+        "id": "slides",
+        "pages": [
+          {
+            "issues": [],
+            "page": "1",
+            "title": "MLOps：持续维护可用的预测服务"
+          },
+          {
+            "issues": [],
+            "page": "2",
+            "title": "服务契约先定义结果的业务含义"
+          },
+          {
+            "issues": [],
+            "page": "3",
+            "title": "模型版本需要绑定数据与计算规则"
+          },
+          {
+            "issues": [],
+            "page": "4",
+            "title": "Metaflow：一次结果需要可恢复的运行记录"
+          },
+          {
+            "issues": [],
+            "page": "5",
+            "title": "相同字段名还需要相同计算含义"
+          },
+          {
+            "issues": [],
+            "page": "6",
+            "title": "Michelangelo：模型上线是一套持续流程"
+          },
+          {
+            "issues": [],
+            "page": "7",
+            "title": "离线测试与线上效果回答不同问题"
+          },
+          {
+            "issues": [],
+            "page": "8",
+            "title": "批量、在线与边缘预测的取舍"
+          },
+          {
+            "issues": [],
+            "page": "9",
+            "title": "影子运行：候选输出暂不控制行动"
+          },
+          {
+            "issues": [],
+            "page": "10",
+            "title": "Sibyl：影子流量先检验服务承载"
+          },
+          {
+            "issues": [],
+            "page": "11",
+            "title": "灰度发布：让可控范围使用候选"
+          },
+          {
+            "issues": [],
+            "page": "12",
+            "title": "运行监控、数据监控和效果监控分层"
+          },
+          {
+            "issues": [],
+            "page": "13",
+            "title": "Pro-ML：从异常信号追查原因"
+          },
+          {
+            "issues": [],
+            "page": "14",
+            "title": "数据漂移与概念漂移需要不同证据"
+          },
+          {
+            "issues": [],
+            "page": "15",
+            "title": "标签延迟与选择性反馈"
+          },
+          {
+            "issues": [],
+            "page": "16",
+            "title": "Radar：模型更新须面对误拒与漏放"
+          },
+          {
+            "issues": [],
+            "page": "17",
+            "title": "回滚要恢复一套相互兼容的服务"
+          },
+          {
+            "issues": [],
+            "page": "18",
+            "title": "分析代码也需要测试与变更控制"
+          },
+          {
+            "issues": [],
+            "page": "19",
+            "title": "生成式系统的版本范围更广"
+          },
+          {
+            "issues": [],
+            "page": "20",
+            "title": "从告警到处置形成可验证路径"
+          }
+        ],
+        "readable": true
+      }
+    ],
+    "width": 390
+  },
+  {
+    "chapter": "#/chapter/13_ontology_action_scenario?anchor=slides",
+    "players": [
+      {
+        "id": "slides",
+        "pages": [
+          {
+            "issues": [],
+            "page": "1",
+            "title": "业务本体：明确对象、关系与允许变化"
+          },
+          {
+            "issues": [],
+            "page": "2",
+            "title": "对象身份必须跨系统保持一致"
+          },
+          {
+            "issues": [],
+            "page": "3",
+            "title": "关系需要含义、方向和有效时点"
+          },
+          {
+            "issues": [],
+            "page": "4",
+            "title": "Gudai-Darri：资产身份贯通维护与培训"
+          },
+          {
+            "issues": [],
+            "page": "5",
+            "title": "事件记录变化，状态表达当前判断"
+          },
+          {
+            "issues": [],
+            "page": "6",
+            "title": "行动用前置条件限制允许变化"
+          },
+          {
+            "issues": [],
+            "page": "7",
+            "title": "DHL仓库数字孪生：可见状态支持资源分配"
+          },
+          {
+            "issues": [],
+            "page": "8",
+            "title": "不变量表达每次行动都须保持的规则"
+          },
+          {
+            "issues": [],
+            "page": "9",
+            "title": "幂等处理限制重复请求的副作用"
+          },
+          {
+            "issues": [],
+            "page": "10",
+            "title": "情景把假设与实际状态分开"
+          },
+          {
+            "issues": [],
+            "page": "11",
+            "title": "JLR供应链孪生：先演算再改变"
+          },
+          {
+            "issues": [],
+            "page": "12",
+            "title": "同一情景中比较可行动方案"
+          },
+          {
+            "issues": [],
+            "page": "13",
+            "title": "Unilever配方数字孪生：参数受产品约束"
+          },
+          {
+            "issues": [],
+            "page": "14",
+            "title": "数字孪生需要与实际对象持续对应"
+          },
+          {
+            "issues": [],
+            "page": "15",
+            "title": "BMW虚拟工厂：在建设前比较布局"
+          },
+          {
+            "issues": [],
+            "page": "16",
+            "title": "运营要素把异常转化为可核查的问题"
+          },
+          {
+            "issues": [],
+            "page": "17",
+            "title": "智能体的建议须通过行动契约"
+          },
+          {
+            "issues": [],
+            "page": "18",
+            "title": "审计轨迹连接意图、操作与结果"
+          },
+          {
+            "issues": [],
+            "page": "19",
+            "title": "用反例检验对象与行动模型"
+          },
+          {
+            "issues": [],
+            "page": "20",
+            "title": "对象、行动、情景三条链分别闭合"
+          }
+        ],
+        "readable": true
+      }
+    ],
+    "width": 390
+  },
+  {
+    "chapter": "#/chapter/14_ai_agent?anchor=slides",
+    "players": [
+      {
+        "id": "slides",
+        "pages": [
+          {
+            "issues": [],
+            "page": "1",
+            "title": "企业智能体：从任务到受控结果"
+          },
+          {
+            "issues": [],
+            "page": "2",
+            "title": "任务契约如何消除歧义"
+          },
+          {
+            "issues": [],
+            "page": "3",
+            "title": "对话、协助与执行的控制差异"
+          },
+          {
+            "issues": [],
+            "page": "4",
+            "title": "大语言模型、提示与上下文"
+          },
+          {
+            "issues": [],
+            "page": "5",
+            "title": "任务系统的六项功能"
+          },
+          {
+            "issues": [],
+            "page": "6",
+            "title": "Planning：顺序由依赖与约束决定"
+          },
+          {
+            "issues": [],
+            "page": "7",
+            "title": "Memory：信息类型、来源与有效性"
+          },
+          {
+            "issues": [],
+            "page": "8",
+            "title": "Tools：接口契约先于工具调用"
+          },
+          {
+            "issues": [],
+            "page": "9",
+            "title": "Skills：可复用的操作知识与适用条件"
+          },
+          {
+            "issues": [],
+            "page": "10",
+            "title": "Harness：保持状态与执行不变量"
+          },
+          {
+            "issues": [],
+            "page": "11",
+            "title": "RAG：将外部证据引入回答"
+          },
+          {
+            "issues": [],
+            "page": "12",
+            "title": "Morgan Stanley：内部知识答复保留来源"
+          },
+          {
+            "issues": [],
+            "page": "13",
+            "title": "解析：保留条款、表格与来源位置"
+          },
+          {
+            "issues": [],
+            "page": "14",
+            "title": "切分：保护语义条件的完整性"
+          },
+          {
+            "issues": [],
+            "page": "15",
+            "title": "检索的评价：找到相关资料还需要保留条件"
+          },
+          {
+            "issues": [],
+            "page": "16",
+            "title": "向量、词法与结构化查询"
+          },
+          {
+            "issues": [],
+            "page": "17",
+            "title": "Rerank：在候选集中重新排序"
+          },
+          {
+            "issues": [],
+            "page": "18",
+            "title": "检索与生成：先解释符号的概率含义"
+          },
+          {
+            "issues": [],
+            "page": "19",
+            "title": "RAG原模型：检索与生成的组合"
+          },
+          {
+            "issues": [],
+            "page": "20",
+            "title": "GraphRAG：关系追踪与主题汇总"
+          },
+          {
+            "issues": [],
+            "page": "21",
+            "title": "Box Gizmo：未解决问题推动知识修订"
+          },
+          {
+            "issues": [],
+            "page": "22",
+            "title": "Chatflow：会话状态支持逐轮澄清"
+          },
+          {
+            "issues": [],
+            "page": "23",
+            "title": "Workflow：完成条件属于业务状态"
+          },
+          {
+            "issues": [],
+            "page": "24",
+            "title": "Dow运费核查：发现差异与批准更正分开"
+          },
+          {
+            "issues": [],
+            "page": "25",
+            "title": "Chatflow与Workflow如何组合"
+          },
+          {
+            "issues": [],
+            "page": "26",
+            "title": "Wiley客服分流：结束对话不等于解决问题"
+          },
+          {
+            "issues": [],
+            "page": "27",
+            "title": "多角色协作：由职责差异决定分工"
+          },
+          {
+            "issues": [],
+            "page": "28",
+            "title": "管理者调用与控制权移交"
+          },
+          {
+            "issues": [],
+            "page": "29",
+            "title": "调度：并行必须尊重证据依赖"
+          },
+          {
+            "issues": [],
+            "page": "30",
+            "title": "私有化部署：数据流与调用范围"
+          },
+          {
+            "issues": [],
+            "page": "31",
+            "title": "治理：读取、写入与审批分层实施"
+          },
+          {
+            "issues": [],
+            "page": "32",
+            "title": "上线前验证：故障与异常分支"
+          },
+          {
+            "issues": [],
+            "page": "33",
+            "title": "OpenClaw与Hermes：持续任务入口"
+          },
+          {
+            "issues": [],
+            "page": "34",
+            "title": "Claude Code、Codex与TRAE"
+          },
+          {
+            "issues": [],
+            "page": "35",
+            "title": "Rakuten研发助手：可运行代码仍须验收"
+          },
+          {
+            "issues": [],
+            "page": "36",
+            "title": "Dify与Coze：显式编排应用"
+          },
+          {
+            "issues": [],
+            "page": "37",
+            "title": "案例一：制度问答的完整任务"
+          },
+          {
+            "issues": [],
+            "page": "38",
+            "title": "日期筛选先于相似度排序"
+          },
+          {
+            "issues": [],
+            "page": "39",
+            "title": "住宿算例：判断与批准分开"
+          },
+          {
+            "issues": [],
+            "page": "40",
+            "title": "制度问答：正确地拒答与转交"
+          },
+          {
+            "issues": [],
+            "page": "41",
+            "title": "案例二：会议与研发任务共享控制层"
+          },
+          {
+            "issues": [],
+            "page": "42",
+            "title": "会议排期：交集定义共同可用性"
+          },
+          {
+            "issues": [],
+            "page": "43",
+            "title": "排期审批：必须绑定具体提案"
+          },
+          {
+            "issues": [],
+            "page": "44",
+            "title": "研发查询：批准状态优先于版本号"
+          },
+          {
+            "issues": [],
+            "page": "45",
+            "title": "案例三：客户咨询分流的输入与任务"
+          },
+          {
+            "issues": [],
+            "page": "46",
+            "title": "咨询路由：安全事件的优先级"
+          },
+          {
+            "issues": [],
+            "page": "47",
+            "title": "订单隐私：身份与归属同时成立"
+          },
+          {
+            "issues": [],
+            "page": "48",
+            "title": "退货审核、产品答复与重复请求"
+          },
+          {
+            "issues": [],
+            "page": "49",
+            "title": "案例四：生产线异常调查"
+          },
+          {
+            "issues": [],
+            "page": "50",
+            "title": "先检查联锁，再判断资料可用性"
+          },
+          {
+            "issues": [],
+            "page": "51",
+            "title": "规则评分：异常条件的计数"
+          },
+          {
+            "issues": [],
+            "page": "52",
+            "title": "异常算例：评分结果与待审草稿"
+          },
+          {
+            "issues": [],
+            "page": "53",
+            "title": "工单幂等：回放须保持请求一致"
+          },
+          {
+            "issues": [],
+            "page": "54",
+            "title": "基线与验收：先约定怎样才算完成"
+          },
+          {
+            "issues": [],
+            "page": "55",
+            "title": "评测单位：一个完整任务"
+          },
+          {
+            "issues": [],
+            "page": "56",
+            "title": "多步骤可靠性：条件成功率相乘"
+          },
+          {
+            "issues": [],
+            "page": "57",
+            "title": "经济评价：按确认成功任务计成本"
+          },
+          {
+            "issues": [],
+            "page": "58",
+            "title": "推广路径：阶段有证据门槛"
+          },
+          {
+            "issues": [],
+            "page": "59",
+            "title": "影子运行与灰度试点的区别"
+          },
+          {
+            "issues": [],
+            "page": "60",
+            "title": "回滚：保留证据，恢复可用流程"
+          },
+          {
+            "issues": [],
+            "page": "61",
+            "title": "制造指标：先解释对象、存量与比率"
+          },
+          {
+            "issues": [],
+            "page": "62",
+            "title": "AI问数：先澄清日期与指标"
+          },
+          {
+            "issues": [],
+            "page": "63",
+            "title": "窗口指标：总分子除以总分母"
+          },
+          {
+            "issues": [],
+            "page": "64",
+            "title": "样本结果：共现不证明因果"
+          },
+          {
+            "issues": [],
+            "page": "65",
+            "title": "综合项目：提交可独立复核的方案"
+          }
+        ],
+        "readable": true
+      }
+    ],
+    "width": 390
+  },
+  {
+    "chapter": "#/chapter/final_project?anchor=slides",
+    "players": [
+      {
+        "id": "slides",
+        "pages": [
+          {
+            "issues": [],
+            "page": "1",
+            "title": "综合项目：验证一条有边界的决策链"
+          },
+          {
+            "issues": [],
+            "page": "2",
+            "title": "从经营症状写成可回答的问题"
+          },
+          {
+            "issues": [],
+            "page": "3",
+            "title": "基线需要代表实际可替代的流程"
+          },
+          {
+            "issues": [],
+            "page": "4",
+            "title": "把需求转成输入、规则和可见结果"
+          },
+          {
+            "issues": [],
+            "page": "5",
+            "title": "Amberg：从检验瓶颈定义原型"
+          },
+          {
+            "issues": [],
+            "page": "6",
+            "title": "固定分析快照，保留原始证据"
+          },
+          {
+            "issues": [],
+            "page": "7",
+            "title": "海尔佛山洗衣机：把定制需求贯通到生产"
+          },
+          {
+            "issues": [],
+            "page": "8",
+            "title": "先复算构成项，再搭建看板"
+          },
+          {
+            "issues": [],
+            "page": "9",
+            "title": "按需要证明的结论选择方法"
+          },
+          {
+            "issues": [],
+            "page": "10",
+            "title": "接口契约连接分析与执行"
+          },
+          {
+            "issues": [],
+            "page": "11",
+            "title": "AIQX：质检原型需要对象与位置对应"
+          },
+          {
+            "issues": [],
+            "page": "12",
+            "title": "先贯通一条完整业务路径"
+          },
+          {
+            "issues": [],
+            "page": "13",
+            "title": "Ocado履约：用仿真检验系统依赖"
+          },
+          {
+            "issues": [],
+            "page": "14",
+            "title": "敏感性分析检查建议是否依赖脆弱假设"
+          },
+          {
+            "issues": [],
+            "page": "15",
+            "title": "可复现实验需要可运行的证据包"
+          },
+          {
+            "issues": [],
+            "page": "16",
+            "title": "AI使用记录帮助区分生成与验证"
+          },
+          {
+            "issues": [],
+            "page": "17",
+            "title": "真实试点需要进入和退出条件"
+          },
+          {
+            "issues": [],
+            "page": "18",
+            "title": "Sequoia：首个场地验证系统组合"
+          },
+          {
+            "issues": [],
+            "page": "19",
+            "title": "决策备忘录说明建议及其证据边界"
+          },
+          {
+            "issues": [],
+            "page": "20",
+            "title": "提交前用陌生读者完成一次复核"
+          }
+        ],
+        "readable": true
+      },
+      {
+        "id": "slides-16",
+        "pages": [
+          {
+            "issues": [],
+            "page": "1",
+            "title": "项目评价：判断结论获得了多少支持"
+          },
+          {
+            "issues": [],
+            "page": "2",
+            "title": "功能、效果与经营价值分别证明"
+          },
+          {
+            "issues": [],
+            "page": "3",
+            "title": "主张、依据与推理应能够逐项追问"
+          },
+          {
+            "issues": [],
+            "page": "4",
+            "title": "评价基线要代表真实替代选择"
+          },
+          {
+            "issues": [],
+            "page": "5",
+            "title": "结果窗口要与业务后果相匹配"
+          },
+          {
+            "issues": [],
+            "page": "6",
+            "title": "TSB迁移：数据复制成功与业务验收分别证明"
+          },
+          {
+            "issues": [],
+            "page": "7",
+            "title": "TSB Bank：怎样据此审查项目"
+          },
+          {
+            "issues": [],
+            "page": "8",
+            "title": "总体平均值可能掩盖关键失败"
+          },
+          {
+            "issues": [],
+            "page": "9",
+            "title": "真实案例帮助解释机制与组织条件"
+          },
+          {
+            "issues": [],
+            "page": "10",
+            "title": "Tay：公开试验怎样约束失败的影响"
+          },
+          {
+            "issues": [],
+            "page": "11",
+            "title": "Microsoft：怎样据此审查项目"
+          },
+          {
+            "issues": [],
+            "page": "12",
+            "title": "区间和敏感性说明结论有多稳定"
+          },
+          {
+            "issues": [],
+            "page": "13",
+            "title": "成本按完整任务及其后果核算"
+          },
+          {
+            "issues": [],
+            "page": "14",
+            "title": "停止条件使试点能够有序结束"
+          },
+          {
+            "issues": [],
+            "page": "15",
+            "title": "Zillow Offers：何时停止扩大预测驱动的业务"
+          },
+          {
+            "issues": [],
+            "page": "16",
+            "title": "Zillow Group：怎样据此审查项目"
+          },
+          {
+            "issues": [],
+            "page": "17",
+            "title": "职责表要对应实际可执行权限"
+          },
+          {
+            "issues": [],
+            "page": "18",
+            "title": "Knight Capital：上线验收必须覆盖实际执行控制"
+          },
+          {
+            "issues": [],
+            "page": "19",
+            "title": "Knight Capital：怎样据此审查项目"
+          },
+          {
+            "issues": [],
+            "page": "20",
+            "title": "技术附件支持他人重建关键结果"
+          },
+          {
+            "issues": [],
+            "page": "21",
+            "title": "S3事件复盘：操作工具怎样限制故障影响范围"
+          },
+          {
+            "issues": [],
+            "page": "22",
+            "title": "Amazon Web Services：怎样据此审查项目"
+          },
+          {
+            "issues": [],
+            "page": "23",
+            "title": "决策备忘录把证据转成具体选择"
+          },
+          {
+            "issues": [],
+            "page": "24",
+            "title": "用一个反例解释系统边界"
+          },
+          {
+            "issues": [],
+            "page": "25",
+            "title": "评价把项目结果与下一步连接"
+          }
+        ],
+        "readable": true
+      }
+    ],
+    "width": 390
+  }
+]

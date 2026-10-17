@@ -6,7 +6,8 @@ const decks = read('../dist/content/lecture-slides.json');
 const requiredChapters = [
   '01_intro', '02_enterprise_data_model', '03_sql_kpi', '04_data_quality',
   '05_statistics_dashboard', '06_ab_testing', '07_prediction', '08_causality',
-  '09_optimization', '10_process_mining', '14_ai_agent'
+  '09_optimization', '10_process_mining', '11_modern_data_platform', '12_mlops',
+  '13_ontology_action_scenario', '14_ai_agent', 'final_project', 'final_project_defense'
 ];
 const chapters = Object.keys(decks);
 const macros = {
@@ -56,9 +57,10 @@ function checkInline(value, chapter, page) {
 
 for (const chapter of chapters) {
   const deck = decks[chapter];
-  const doc = read(`../dist/content/${chapter}.json`);
+  const documentId = deck.chapter || chapter;
+  const doc = read(`../dist/content/${documentId}.json`);
   if (!deck?.slides?.length) { report(chapter, 0, '缺少幻灯片'); continue; }
-  if (deck.title !== doc.title) report(chapter, 0, '幻灯片标题与讲义章节不一致');
+  if (documentId !== 'final_project' && deck.title !== doc.title) report(chapter, 0, '幻灯片标题与讲义章节不一致');
   const anchors = new Set((doc.toc || []).map(item => item.id));
   for (const [index, slide] of deck.slides.entries()) {
     const page = index + 1;
@@ -67,7 +69,7 @@ for (const chapter of chapters) {
       report(chapter, page, '缺少标题、引入、正文或结论');
     }
     const ref = slide.detailRef;
-    if (!ref || ref.chapter !== chapter || !anchors.has(ref.anchor) || !ref.section) {
+    if (!ref || ref.chapter !== documentId || !anchors.has(ref.anchor) || !ref.section) {
       report(chapter, page, '讲义延伸位置缺失或锚点无效');
     } else {
       const targetIndex = doc.toc.findIndex(item => item.id === ref.anchor);

@@ -1,0 +1,17 @@
+{
+  "lectures": 5,
+  "oldPages": 196,
+  "newPages": 263,
+  "cases": 25,
+  "sourceURLs": 28,
+  "terms": 134,
+  "editedOriginalPages": 37,
+  "counts": {
+    "01_intro": 50,
+    "02_enterprise_data_model": 47,
+    "03_sql_kpi": 52,
+    "04_data_quality": 55,
+    "05_statistics_dashboard": 59
+  },
+  "preservationErrors": []
+}

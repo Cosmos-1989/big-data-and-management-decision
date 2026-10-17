@@ -1,0 +1,52 @@
+[
+  {
+    "id":"b16-01","lesson":16,"chapter":"final_project","company":"Zillow Group","title":"Zillow Offers：何时停止扩大预测驱动的业务",
+    "context":"Zillow Offers直接买入、整修并转售住宅，预测误差会在持有的房产和资金占用中体现。",
+    "decision":"2021年，公司决定逐步结束这项业务。",
+    "facts":["2021年11月2日，Zillow宣布逐步结束Zillow Offers。","公司将房价预测的不可预见性及扩大业务所带来的利润和资产负债表波动列为退出理由。","同一财报也披露了整修和转售能力约束。"],
+    "analysis":"项目答辩须把预测误差、运营处理能力及可承受的财务暴露放在同一决策框架中。只展示拟合指标，无法说明业务规模是否可持续；试点应事先规定风险限额与停止扩张的条件。",
+    "limits":"退出理由来自公司披露，不能据此把全部损失归因于单一算法，也不能推出所有自动估价业务都不可行。",
+    "questions":[{"question":"怎样的证据才足以支持继续扩大试点？","answer":"需要同时报告样本外误差及其尾部风险、库存和资金占用、整修转售能力，以及在不利情景下是否仍满足预定风险限额；平均预测准确率不能单独代替这些验收条件。"}],
+    "sources":[{"title":"Zillow Group Q3 2021 results and wind-down plan","url":"https://investors.zillowgroup.com/news-and-events/news/news-details/2021/Zillow-Group-Reports-Third-Quarter-2021-Financial-Results--Shares-Plan-to-Wind-Down-Zillow-Offers-Operations/default.aspx","publisher":"Zillow Group","date":"2021-11-02","accessed":"2026-10-17","support":"退出决定、管理层说明的预测不确定性与业务波动，以及整修和转售能力约束。"}]
+  },
+  {
+    "id":"b16-02","lesson":16,"chapter":"final_project","company":"Knight Capital","title":"Knight Capital：上线验收必须覆盖实际执行控制",
+    "context":"证券订单路由系统会将客户订单转换为发送到市场的子订单，软件错误可能直接形成真实交易。",
+    "decision":"新代码分批部署之后，企业必须确认每台服务器的版本、订单状态与执行限额。",
+    "facts":["SEC在2013年的行政程序文件中指出，2012年部署时八台服务器有一台没有复制新代码，旧功能因复用标志被触发。","文件指出，部署没有第二位技术人员复核，风险监控未与超限自动停止下单相连接。","在排障时移除其余服务器的新代码，使问题扩大。"],
+    "analysis":"答辩演示应包含不一致版本、重复订单及超过限额等失败输入，并展示系统是否实际阻断操作。监控界面、审批记录和执行前约束承担不同职责；看到告警不能等同于危险操作已被停止。",
+    "limits":"这是特定证券交易事故的监管认定。它支持审查部署和风险控制的必要性，不提供任何单一控制措施在所有系统中的充分性证明。",
+    "questions":[{"question":"“出现异常时回滚”为什么不是完整的恢复方案？","answer":"必须确认各节点当前版本、旧代码能否被重新激活以及已发生操作的状态。恢复动作本身也应经过前置条件核验，不能假定移除新代码必然回到安全状态。"}],
+    "sources":[{"title":"Knight Capital Americas administrative order, paragraphs 15–17 and 25–27","url":"https://www.sec.gov/Archives/edgar/data/1569391/000119312513401173/d613486dex101.htm","publisher":"U.S. Securities and Exchange Commission","date":"2013-10-16","accessed":"2026-10-17","support":"八台服务器部署不一致、缺少复核、执行限额未连接自动阻断，以及排障操作扩大错误的事实。"}]
+  },
+  {
+    "id":"b16-03","lesson":16,"chapter":"final_project","company":"TSB Bank","title":"TSB迁移：数据复制成功与业务验收分别证明",
+    "context":"银行核心平台迁移同时影响网点、电话、网上与手机银行服务。",
+    "decision":"迁移是否可以验收，需要核对数据结果，也需要证明客户仍能完成关键业务。",
+    "facts":["英国FCA和PRA在2022年的处罚说明中回顾了TSB于2018年4月实施的平台迁移。","监管说明明确区分：数据本身成功迁移，但新平台随即发生技术故障，银行服务受到严重干扰。","监管机构指出迁移组织控制、运营风险及关键外包安排管理存在不足。"],
+    "analysis":"综合项目的验收规格应按完整业务路径定义，例如身份验证、余额查询和交易结果确认。逐表行数一致是数据层证据，不能代替端到端业务测试、恢复演练及第三方责任确认。",
+    "limits":"监管结论针对这一迁移项目，不能据此认定外包本身必然失败，也不能将所有服务故障解释为数据错误。",
+    "questions":[{"question":"“所有表都对账成功”还缺少哪类上线证据？","answer":"还需说明重要业务在正常和失败条件下能否完成、负载下是否满足服务要求、故障后如何恢复，以及企业和供应商分别承担哪些可核验的职责。"}],
+    "sources":[{"title":"TSB fined £48.65m for operational resilience failings","url":"https://www.fca.org.uk/news/press-releases/tsb-fined-48m-operational-resilience-failings","publisher":"Financial Conduct Authority","date":"2022-12-20（网页更新于2026-07-27）","accessed":"2026-10-17","support":"迁移时间、数据成功迁移与服务失效的区分，以及监管指出的组织和外包风险管理缺陷。"}]
+  },
+  {
+    "id":"b16-04","lesson":16,"chapter":"final_project","company":"Microsoft","title":"Tay：公开试验怎样约束失败的影响",
+    "context":"微软在2016年将娱乐型聊天机器人Tay开放给Twitter用户互动。",
+    "decision":"开放范围扩大时，需要判断已有测试是否覆盖恶意互动，并规定何时暂停服务。",
+    "facts":["微软在2016年3月25日说明，Tay上线前做过滤、用户研究和压力测试。","官方复盘承认，上线后的一次协同攻击利用了未充分预见的漏洞，机器人产生了不当内容。","微软暂停了Tay，并将改善对恶意意图的应对作为重新开放的条件。"],
+    "analysis":"项目展示需要同时包含正常使用和对抗性输入。课堂分析可据此提出分阶段开放、限制操作影响、监测违规并保留停用能力；这些是本课程的方案要求，不是对Tay内部架构的推测。",
+    "limits":"官方博客没有公开完整模型或攻击路径，不能把事件直接归类为现代RAG的文档注入，也不能编造其训练或权限机制。",
+    "questions":[{"question":"“上线后再从反馈中学习”需要哪些先决条件？","answer":"需要明确可容忍的失败、开放对象与操作范围、监测责任、暂停条件及纠正流程。收集反馈的价值应与可能造成的实际影响同时评价。"}],
+    "sources":[{"title":"Learning from Tay’s introduction","url":"https://blogs.microsoft.com/blog/2016/03/25/learning-tays-introduction/","publisher":"Microsoft","date":"2016-03-25","accessed":"2026-10-17","support":"上线前测试、上线后攻击与不当输出、暂停及重新开放的条件。"}]
+  },
+  {
+    "id":"b16-05","lesson":16,"chapter":"final_project","company":"Amazon Web Services","title":"S3事件复盘：操作工具怎样限制故障影响范围",
+    "context":"2017年2月28日，AWS在排查S3计费处理问题时执行了一次服务器移除操作。",
+    "decision":"运维工具需要限制单次操作的影响，并为故障状态提供独立的信息渠道。",
+    "facts":["AWS复盘说明，命令输入错误移除了超出预期的一组服务器，影响索引和存储分配子系统。","事后AWS降低工具移除容量的速度，并增加最低容量保护。","服务状态面板的管理控制台也依赖S3，故障期间更新受限；事后调整为跨区域运行。"],
+    "analysis":"综合项目应展示输入校验、操作影响范围和恢复过程。还应检查监控、告警、审批或状态通报是否与被保护的服务共享同一故障依赖，避免故障发生时连观察和沟通能力也一并丢失。",
+    "limits":"材料是AWS对特定事件的公开复盘，不能据此推断所有内部实现细节，也不能声称改进后任何类似故障都不再可能发生。",
+    "questions":[{"question":"为什么仅增加一个确认按钮仍不足以证明操作安全？","answer":"确认只能表明操作者表达了意图，还需机器可检验的影响范围、最低容量等前置条件，以及故障后可独立使用的观察和恢复渠道。"}],
+    "sources":[{"title":"Summary of the Amazon S3 Service Disruption in Northern Virginia","url":"https://aws.amazon.com/message/41926/","publisher":"Amazon Web Services","date":"页面未标明发布日期；事件日期为2017-02-28","accessed":"2026-10-17","support":"命令影响扩大、工具容量保护改进，以及状态面板对S3的依赖和跨区域调整。"}]
+  }
+]

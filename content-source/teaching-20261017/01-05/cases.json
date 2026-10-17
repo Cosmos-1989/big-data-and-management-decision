@@ -1,0 +1,801 @@
+[
+  {
+    "id": "b01-01",
+    "lesson": 1,
+    "chapter": "01_intro",
+    "company": "UPS",
+    "title": "UPSNav：路线顺序如何成为可执行行动",
+    "context": "快递配送既要确定先去哪个站点，也要确定车辆应驶向建筑物的哪个收货位置。只得到地理地址，仍可能停在与装卸口不同的一侧。",
+    "decision": "行动规格应一直明确到实际执行对象。",
+    "facts": [
+      "UPS在2018年公布UPSNav接入司机手持终端，按ORION计算的访问顺序提供逐向导航",
+      "导航目标包括装卸平台与收货区等具体位置，而不只使用建筑物正门"
+    ],
+    "analysis": "路线选择规定顺序，位置资料把顺序落实到可到达的收货点；评价时还应分别记录路径建议、实际停靠及交付完成。",
+    "limits": "公告支持导航功能及部署方向，但未给出可复算的路线样本，不能据此断言某项定位改动的净因果收益。",
+    "questions": [
+      {
+        "question": "路线算法给出最短访问顺序后，任务是否已经完整？",
+        "answer": "尚需可执行的地点、道路与收货约束，并用真实交付结果核验，数学上的顺序只是行动规格的一部分。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "UPS Deploys Purpose-Built Navigation For UPS Service Personnel",
+        "url": "https://about.ups.com/us/en/newsroom/press-releases/innovation-driven/ups-deploys-purpose-built-navigation-for-ups-service-personnel.html",
+        "publisher": "UPS",
+        "date": "2018-12-04",
+        "support": "支持UPSNav接入手持终端、沿ORION顺序导航至装卸口等具体位置。",
+        "accessed": "2026-10-17"
+      }
+    ]
+  },
+  {
+    "id": "b01-02",
+    "lesson": 1,
+    "chapter": "01_intro",
+    "company": "CVS Health",
+    "title": "CVS停售烟草：企业目标如何界定行动集合",
+    "context": "药房出售烟草可以产生销售收入，但与企业公开的健康服务定位存在冲突。CVS在2014年选择退出烟草品类，并安排戒烟支持。",
+    "decision": "先明确组织接受哪些结果及约束，再比较可选方案。",
+    "facts": [
+      "CVS公告将停售与健康服务定位联系起来，并披露当时预期的收入影响",
+      "企业后续资料确认，2014年全部CVS Pharmacy门店已停止销售烟草"
+    ],
+    "analysis": "若健康定位被确立为经营约束，继续销售就可能不在可行集合内；若被纳入目标，则须说明与财务指标的权衡。数据不能代替这一价值判断。",
+    "limits": "停售及其公开理由是可核事实；品牌、长期利润或社会健康的净变化，需要各自评价设计，不能由公告直接推出。",
+    "questions": [
+      {
+        "question": "“该品类仍有收入”足以证明停售决策错误吗？",
+        "answer": "不足。收入只是一项后果，还需按组织目标考虑健康定位、成本和长期结果，并说明采用何种评价周期。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "CVS Health’s commitment to a tobacco-free future",
+        "url": "https://www.cvshealth.com/campaigns/quitting-tobacco.html",
+        "publisher": "CVS Health",
+        "date": "2024",
+        "support": "支持2014年在全部CVS Pharmacy门店停售烟草及企业公开的健康服务定位。",
+        "accessed": "2026-10-17"
+      },
+      {
+        "title": "CVS Caremark to Stop Selling Tobacco Products at all CVS/pharmacy Locations",
+        "url": "https://www.cvs.com/bizcontent/minuteclinic/desktop/pressreleases/020514-stop-tobacco.pdf",
+        "publisher": "CVS Caremark",
+        "date": "2014-02-05",
+        "support": "支持停售公告、戒烟项目安排及当时对收入影响的预期，未将预测当作实绩。",
+        "accessed": "2026-10-17"
+      }
+    ]
+  },
+  {
+    "id": "b01-03",
+    "lesson": 1,
+    "chapter": "01_intro",
+    "company": "Wells Fargo",
+    "title": "Wells Fargo：开户数量为何偏离客户价值",
+    "context": "银行以产品销售数量设定目标并与奖金联系。2016年监管调查发现，员工为完成目标而未经客户授权开立账户，记录增长与合规服务发生背离。",
+    "decision": "绩效指标须与客户授权、真实需求及质量约束共同设计。",
+    "facts": [
+      "CFPB查明销售目标与奖金激励下存在未经授权开户行为",
+      "Wells Fargo披露自2016年10月取消相关零售产品销售目标，随后调整激励安排"
+    ],
+    "analysis": "代理指标是间接反映目标的可观测量。开户数量易于计数，却不能单独代表客户获得适当服务。把一个代理指标直接变成奖励对象，可能改变行为与记录生成机制。",
+    "limits": "监管材料证实具体违规及控制问题；不能据此推断所有销售目标都会产生同类行为，也不能把整改后任何改善都归因于单一规则。",
+    "questions": [
+      {
+        "question": "提高指标数据的准确性，能否自动修复激励偏差？",
+        "answer": "不能。即使账户记录准确，未经授权开户仍损害客户；还需核查指标与组织价值的关系以及授权和问责机制。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "CFPB Fines Wells Fargo for Secretly Opening Unauthorized Accounts",
+        "url": "https://www.consumerfinance.gov/archive/newsroom/consumer-financial-protection-bureau-fines-wells-fargo-100-million-widespread-illegal-practice-secretly-opening-unauthorized-accounts/",
+        "publisher": "Consumer Financial Protection Bureau",
+        "date": "2016-09-08",
+        "support": "支持监管查明员工为完成销售目标和获得奖金而未经授权开户的事实。",
+        "accessed": "2026-10-17"
+      },
+      {
+        "title": "Wells Fargo: Commitment to rebuilding trust",
+        "url": "https://www.sec.gov/Archives/edgar/data/72971/000119312517065587/d344612ddefa14a.htm",
+        "publisher": "Wells Fargo / SEC EDGAR",
+        "date": "2017",
+        "support": "支持2016年10月取消相关零售产品销售目标及2017年调整激励安排。",
+        "accessed": "2026-10-17"
+      }
+    ]
+  },
+  {
+    "id": "b01-04",
+    "lesson": 1,
+    "chapter": "01_intro",
+    "company": "Patagonia",
+    "title": "Patagonia：产品销售与资源消耗的跨期权衡",
+    "context": "服装生产和消费涉及材料、用水与废弃物。Patagonia在2011年黑色星期五刊登“Don’t Buy This Jacket”广告，公开呼吁减少不必要消费并制造更耐用的产品。",
+    "decision": "扩大销量之外，决策还应说明资源代价与评价期限。",
+    "facts": [
+      "企业说明广告意在直接讨论消费主义及产品生产的环境负担",
+      "其倡议鼓励客户购买前慎重判断，并主张企业少生产、提高质量"
+    ],
+    "analysis": "评价一件产品时，可把购买、使用、维修和替换视为跨期过程。即时销售额无法概括使用寿命及资源代价，行动边界也可能包含维修和继续使用。",
+    "limits": "广告与企业主张是真实材料；它们不能证明总消费或环境负担实际减少，也不提供可直接归因于广告的利润变化。",
+    "questions": [
+      {
+        "question": "若销量下降、使用寿命延长，能否仅由销量判断项目绩效？",
+        "answer": "不能。应按预先确定的财务及资源目标，比较同等使用服务下的成本与环境结果，并明确观察期。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "Don’t Buy This Jacket, Black Friday and the New York Times",
+        "url": "https://www.patagonia.com/stories/planet/activism/dont-buy-this-jacket-black-friday-and-the-new-york-times/story-18615.html",
+        "publisher": "Patagonia",
+        "date": "2011-11-25（2022年补注）",
+        "support": "支持2011年广告、减少不必要消费及提高产品质量的企业主张，不支持净环境影响的因果结论。",
+        "accessed": "2026-10-17"
+      }
+    ]
+  },
+  {
+    "id": "b01-05",
+    "lesson": 1,
+    "chapter": "01_intro",
+    "company": "Amazon",
+    "title": "Amazon：可逆性改变信息等待的代价",
+    "context": "Amazon的2016年度股东信讨论决策速度，主张对容易撤回的决策采用较轻程序，并及时识别和纠正错误；难以撤回的决策需要更审慎的处理。",
+    "decision": "等待新信息的收益，应与延迟和纠错成本共同比较。",
+    "facts": [
+      "股东信区分可逆决策与不能采用同一程序的其他决策",
+      "企业同时强调尽快识别并纠正错误，而非仅追求快速批准"
+    ],
+    "analysis": "可逆性降低部分错误的后续代价，却不等于风险为零。信息采购的价值取决于信号能否及时改变行动，以及等待期间是否失去机会。",
+    "limits": "这是企业管理主张，不是随机实验结论；文中关于信息比例的经验说法不能作为所有行业的最优阈值。",
+    "questions": [
+      {
+        "question": "对可逆决策，是不是信息越少、行动越快越好？",
+        "answer": "不是。应比较信息的预期决策收益、等待成本和纠正错误的成本；安全或监管硬约束仍须满足。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "2016 Letter to Shareholders",
+        "url": "https://www.aboutamazon.com/news/company-news/2016-letter-to-shareholders",
+        "publisher": "Amazon",
+        "date": "2017",
+        "support": "支持按可逆性区分决策程序及强调及时纠正错误的管理主张；属于股东信而非对照研究。",
+        "accessed": "2026-10-17"
+      }
+    ]
+  },
+  {
+    "id": "b02-01",
+    "lesson": 2,
+    "chapter": "02_enterprise_data_model",
+    "company": "Shopify",
+    "title": "Shopify：数字编号相同，对象未必相同",
+    "context": "电商平台同时管理产品、客户、订单和库存位置。Shopify接口为对象提供全局标识，避免仅凭一个数字在不同对象类型之间进行关联。",
+    "decision": "稳定身份需要明确对象类型与唯一性范围。",
+    "facts": [
+      "Shopify公开文档以统一资源标识区分产品、客户和订单等对象类型",
+      "库存层级的某些标识还包含所属库存项信息，不能只取一个局部编号"
+    ],
+    "analysis": "连接键必须指向同一种业务对象，并满足规定唯一性。把产品号误当成订单号，即使字符串能匹配，也不会形成有业务意义的关系。",
+    "limits": "案例依据真实接口规则；文档中的示例编号用于说明结构，不代表某家商户实际交易，也不证明标识本身保证数据准确。",
+    "questions": [
+      {
+        "question": "两张表的编号列都是整数，是否足以作为连接键？",
+        "answer": "不足。应先确认它们标识同类对象、具有相同唯一性范围，并处理版本及必要的父对象信息。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "Global IDs in Shopify APIs",
+        "url": "https://shopify.dev/docs/api/usage/gids",
+        "publisher": "Shopify",
+        "date": "未标注",
+        "support": "支持应用范围内的全局对象身份、类型区分及库存层级的参数化标识。",
+        "accessed": "2026-10-17"
+      }
+    ]
+  },
+  {
+    "id": "b02-02",
+    "lesson": 2,
+    "chapter": "02_enterprise_data_model",
+    "company": "Stripe",
+    "title": "Stripe PaymentIntent：支付不是一个成功布尔值",
+    "context": "支付可能需要用户补充支付方式或完成额外认证，也可能处于异步处理阶段。Stripe用PaymentIntent（支付意图）对象保存一次支付过程的状态。",
+    "decision": "状态模型应保留业务尚未完成的不同原因。",
+    "facts": [
+      "公开生命周期包含待支付方式、待确认、待用户操作、处理中和成功等状态",
+      "需要额外认证或异步处理的支付，不会在首次提交后立即成为成功"
+    ],
+    "analysis": "把全部非成功状态压为失败，会丢失下一步动作的信息。状态记录说明当前处境，事件记录说明何时转移；两者共同支持重试、客户提示与最终核对。",
+    "limits": "公开状态及允许流程是平台规则，未说明具体商户的内部对账设计；处理中也不表示最终到账。",
+    "questions": [
+      {
+        "question": "“接口已接受请求”能否作为订单已收款的依据？",
+        "answer": "不能。应依据支付状态及最终确认核对，区分提交、认证、处理和成功，避免提前发货或重复付款。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "The PaymentIntent lifecycle",
+        "url": "https://docs.stripe.com/payments/paymentintents/lifecycle",
+        "publisher": "Stripe",
+        "date": "未标注",
+        "support": "支持支付意图在待补支付方式、待认证、处理中和成功等状态之间转换。",
+        "accessed": "2026-10-17"
+      }
+    ]
+  },
+  {
+    "id": "b02-03",
+    "lesson": 2,
+    "chapter": "02_enterprise_data_model",
+    "company": "Uber",
+    "title": "Uber H3：地理汇总先确定空间单位",
+    "context": "出行平台要比较不同地区的供需。行政区大小不一，直接比较订单总数会同时混合区域面积与需求密度。Uber建立H3分层空间网格组织位置资料。",
+    "decision": "空间粒度与时间粒度一样，会改变汇总结果的解释。",
+    "facts": [
+      "Uber在2018年公开H3，将地球表面组织为可识别的分层网格",
+      "企业说明H3用于市场分析、定价和调度等空间分析任务"
+    ],
+    "analysis": "同一行程可按坐标归入指定层级的网格，再与同层级供给资料比较。细网格适合定位局部差异，粗网格适合区域概览；切换层级时须重新合并基础量。",
+    "limits": "公开资料支持实际用途与网格机制；网格划分本身不保证需求估计准确，也不意味着每个单元具有完全相同面积。",
+    "questions": [
+      {
+        "question": "把较小网格的百分比简单平均，能得到较大地区的总比率吗？",
+        "answer": "通常不能。应先汇总同口径的分子和分母，再求比率，并保持空间层级与时间窗口一致。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "H3: Uber’s Hexagonal Hierarchical Spatial Index",
+        "url": "https://www.uber.com/us/en/blog/h3/",
+        "publisher": "Uber Engineering",
+        "date": "2018-06-27",
+        "support": "支持Uber以分层网格组织位置数据，用于市场分析、定价与调度；未披露本次分析所需的具体需求样本。",
+        "accessed": "2026-10-17"
+      }
+    ]
+  },
+  {
+    "id": "b02-04",
+    "lesson": 2,
+    "chapter": "02_enterprise_data_model",
+    "company": "LinkedIn",
+    "title": "LinkedIn DataHub：数据集之外还要记录关系",
+    "context": "分析者找到一张表后，仍要判断它如何生成、用于哪些图表以及由谁负责。LinkedIn的DataHub把多类元数据实体及其关联纳入搜索与发现。",
+    "decision": "可发现性依赖身份、关系和责任共同表达。",
+    "facts": [
+      "2019年公开说明覆盖数据集、指标、任务、图表、人员等多类实体",
+      "其前身已区分位置、模式、所有权等技术元数据与血缘、作业执行等过程元数据"
+    ],
+    "analysis": "元数据是描述数据结构、含义、来源及责任的信息。数据集、转换任务和图表有不同身份，血缘关系把它们连接起来，支持沿来源或影响方向追溯。",
+    "limits": "实体覆盖与元数据机制来自企业工程文档；元数据关系可能不完整，发现一张表也不等于取得明细访问权限。",
+    "questions": [
+      {
+        "question": "为什么数据目录只列“表名与字段名”还不够？",
+        "answer": "因为它无法充分回答来源、更新过程、下游影响及责任问题；还需记录相关实体和可追溯关系。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "DataHub: A generalized metadata search & discovery tool",
+        "url": "https://www.linkedin.com/blog/engineering/archive/data-hub",
+        "publisher": "LinkedIn Engineering",
+        "date": "2019-08-14",
+        "support": "支持元数据实体覆盖数据集、指标、任务、图表、人员及其关联，区别技术与过程元数据。",
+        "accessed": "2026-10-17"
+      }
+    ]
+  },
+  {
+    "id": "b02-05",
+    "lesson": 2,
+    "chapter": "02_enterprise_data_model",
+    "company": "Spotify",
+    "title": "Spotify Backstage：服务身份与责任归属",
+    "context": "服务数量增加后，开发人员需要知道某个服务由谁维护、文档在哪里。Spotify以Backstage的软件目录集中组织服务及其所有权信息。",
+    "decision": "技术对象需要可识别的身份与明确的维护关系。",
+    "facts": [
+      "Spotify工程文章说明服务所有权信息被记录于软件目录，团队能够查看所负责的服务",
+      "文档等开发资料也通过Backstage集中呈现，方便在对象上下文中查找"
+    ],
+    "analysis": "服务属于技术对象，团队属于组织对象，“负责维护”是二者的关系。把责任仅写在自由文本里，不利于批量查找和变更核对；结构化关系更便于维护。",
+    "limits": "目录中的所有权说明联系与维护责任，不自动授予生产系统操作权限，也不证明登记信息始终与组织调整同步。",
+    "questions": [
+      {
+        "question": "把某团队登记为服务负责人，是否等于该团队所有人均可修改生产数据？",
+        "answer": "不等于。责任关系说明由谁维护和答复，实际读取或执行权限仍须由独立授权规则约束。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "What the Heck is Backstage Anyway?",
+        "url": "https://engineering.atspotify.com/2020/3/what-the-heck-is-backstage-anyway",
+        "publisher": "Spotify Engineering",
+        "date": "2020-03",
+        "support": "支持Spotify以软件目录组织服务及所有权信息，并将文档等开发资料集中呈现。",
+        "accessed": "2026-10-17"
+      }
+    ]
+  },
+  {
+    "id": "b03-01",
+    "lesson": 3,
+    "chapter": "03_sql_kpi",
+    "company": "Airbnb",
+    "title": "Airbnb Minerva：定义变化后，历史应怎样比较",
+    "context": "同一业务指标常被图表、报告与实验共同使用。Airbnb以Minerva集中定义指标与维度，并追踪数据定义版本，支持业务逻辑变化后的历史回填。",
+    "decision": "指标一致性包含版本及历史重算规则。",
+    "facts": [
+      "2021年工程文档说明指标与维度在集中仓库中定义并接受校验",
+      "定义变更受版本控制，重大数据集变更会被跟踪并执行回填，向多种下游工具提供接口"
+    ],
+    "analysis": "同名指标若改变筛选条件，跨期变化就可能混合真实经营变化与口径变化。应保存定义版本，说明是否按新规则重算历史，并用固定版本核对趋势。",
+    "limits": "这些是公开平台机制；不能据此假设所有变更都会自动保持业务可比性，也不能把平台使用量当作指标准确率。",
+    "questions": [
+      {
+        "question": "新规则上线当天指标上升，能否直接解释为经营改善？",
+        "answer": "不能。应先固定同一批事实，比较新旧定义；若历史已回填，还须确认整条趋势采用同一规则。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "How Airbnb achieved metric consistency at scale",
+        "url": "https://medium.com/airbnb-engineering/how-airbnb-achieved-metric-consistency-at-scale-f23cc53dea70",
+        "publisher": "Airbnb Engineering",
+        "date": "2021-04-30",
+        "support": "支持指标与维度集中定义、定义版本控制、逻辑变更后的历史回填和统一消费接口。",
+        "accessed": "2026-10-17"
+      }
+    ]
+  },
+  {
+    "id": "b03-02",
+    "lesson": 3,
+    "chapter": "03_sql_kpi",
+    "company": "Uber",
+    "title": "Uber uMetric：实时与离线为何算出不同结果",
+    "context": "Uber公开说明，不同团队曾在不同存储与消费渠道为同一业务逻辑建立指标。例如运营分析与实时服务可能各自计算“完成行程”。",
+    "decision": "同名指标须落实到一致的来源及计算逻辑。",
+    "facts": [
+      "uMetric通过统一视图表达不同存储上的同类来源数据",
+      "指标定义保存SQL聚合与业务逻辑，并结合发现、计算、质量及消费管理"
+    ],
+    "analysis": "实时更新与离线补数可以使用不同技术，但若比较同一指标，就须统一事件定义、截止时点和迟到记录处理。否则两个正确执行的查询也可能回答不同问题。",
+    "limits": "工程文章证实标准化问题与机制；不同数据时效下出现差异不必然是故障，仍应按预先约定的统计窗口与新鲜度评价。",
+    "questions": [
+      {
+        "question": "离线报表与实时界面数字不一致，是否应立即删除其中一个？",
+        "answer": "不应。先核对事件范围、快照、截止点和补数状态，再判断是合理时效差异还是重复定义或计算错误。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "The Journey Towards Metric Standardization",
+        "url": "https://www.uber.com/qa/en/blog/umetric/",
+        "publisher": "Uber Engineering",
+        "date": "2021-01-12",
+        "support": "支持同业务指标在不同存储和渠道产生差异、统一视图与指标定义、SQL解析及质量核验。",
+        "accessed": "2026-10-17"
+      }
+    ]
+  },
+  {
+    "id": "b03-03",
+    "lesson": 3,
+    "chapter": "03_sql_kpi",
+    "company": "DoorDash",
+    "title": "DoorDash Curie：为何保留事件级事实",
+    "context": "DoorDash为实验分析平台Curie建设指标层。其公开设计要求保留原始事件级数据，将指标与维度分别定义，并在使用时按分析需求关联。",
+    "decision": "只存汇总值，可能无法回答新的分组问题。",
+    "facts": [
+      "指标定义记录来源、字段及SQL中的聚合和过滤逻辑",
+      "度量尽量定义在最细事件层，维度独立建模，以支持正确过滤和维度分析"
+    ],
+    "analysis": "若只保存日均值而丢弃事件数与分组属性，就无法可靠地重算新分组均值。保留基础事实或充分的可合并统计状态，才能在改变问题时维持含义。",
+    "limits": "文章支持平台的数据建模原则；并不意味着任何任务都应无限保存明细，保留范围仍受成本、隐私与合法用途限制。",
+    "questions": [
+      {
+        "question": "一个全国平均值足以支持以后任意城市、品类的比较吗？",
+        "answer": "不足。平均值通常丢失组规模及成员归属，应保留相关基础量和合法可用维度，再按新范围计算。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "Using Metrics Layer to Standardize and Scale Experimentation at DoorDash",
+        "url": "https://careersatdoordash.com/blog/using-metrics-layer-to-standardize-and-scale-experimentation-at-doordash-2/",
+        "publisher": "DoorDash Engineering",
+        "date": "2023-04-12",
+        "support": "支持指标SQL包含数据源、聚合及过滤；保留事件级事实，将维度独立定义并在消费时关联。",
+        "accessed": "2026-10-17"
+      }
+    ]
+  },
+  {
+    "id": "b03-04",
+    "lesson": 3,
+    "chapter": "03_sql_kpi",
+    "company": "Spotify",
+    "title": "Spotify streamshare：播放量不是统一单价",
+    "context": "音乐平台需要把版税分配给权利人。Spotify公开说明按地区、月份的播放份额分配，而不是为每次播放设定一个普遍固定的费率。",
+    "decision": "比率的分母和结算对象决定金额解释。",
+    "facts": [
+      "播放份额以某权利人相关播放量除以相应市场的总播放量计算",
+      "平台先向权利人支付，艺术家和词曲作者最终到账还取决于各自合同"
+    ],
+    "analysis": "某曲播放量增加，既可能提高份额，也可能被市场总播放增长抵消；收入还受版税池及合同影响。用总支付除总播放得到的事后均值，不能当成每次播放的固定合同价格。",
+    "limits": "具体计算受资格规则、市场及合同约束；公开的一般分配机制不足以确定某位艺术家的实际收入。",
+    "questions": [
+      {
+        "question": "播放量翻倍，是否就能保证艺术家到账翻倍？",
+        "answer": "不能。分母、可分配金额及合同可能同时变化，应按同一市场、月份和权利范围复核。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "Royalties Guide",
+        "url": "https://artists.spotify.com/en/royalties-guide",
+        "publisher": "Spotify for Artists",
+        "date": "未标注",
+        "support": "支持按地区、月份的播放份额分配给权利人，艺术家到账还取决于合同，不采用统一固定单次播放费率。",
+        "accessed": "2026-10-17"
+      }
+    ]
+  },
+  {
+    "id": "b03-05",
+    "lesson": 3,
+    "chapter": "03_sql_kpi",
+    "company": "Shopify",
+    "title": "Shopify GMV：交易规模与平台收入",
+    "context": "电商平台帮助商户完成交易，同时从订阅及商户服务取得自身收入。Shopify在财务披露中分别呈现GMV、GPV、MRR和收入，避免混为同一规模。",
+    "decision": "指标名称应对应不同的对象与确认规则。",
+    "facts": [
+      "GMV指平台促成的订单金额，按披露口径扣除退款并含运费、关税及增值税",
+      "GPV是其中由Shopify Payments处理的部分；MRR根据期末商户与订阅费率计算"
+    ],
+    "analysis": "GMV计量商户交易活动，平台收入计量自身取得的收入，二者不是同一金额。MRR是由期末状态计算的月度经常性收入指标，也不能直接当成期间已确认收入。",
+    "limits": "定义依据2023年业绩披露；跨企业比较须重新核对各家口径，不能仅凭同一缩写判断可比。",
+    "questions": [
+      {
+        "question": "将GMV增长率写成“公司收入增长率”，会错在哪里？",
+        "answer": "把平台促成的交易规模替换成平台自身收入；还可能忽略退款、税费、收入确认及订阅状态等范围差异。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "Shopify Announces Fourth-Quarter and Full-Year 2023 Financial Results",
+        "url": "https://www.shopify.com/news/shopify-announces-fourth-quarter-and-full-year-2023-financial-results",
+        "publisher": "Shopify",
+        "date": "2024-02-13",
+        "support": "支持GMV、GPV、MRR与收入分列；GMV净退款且含运费、关税及增值税，GPV为Shopify Payments处理的GMV。",
+        "accessed": "2026-10-17"
+      }
+    ]
+  },
+  {
+    "id": "b04-01",
+    "lesson": 4,
+    "chapter": "04_data_quality",
+    "company": "GitLab",
+    "title": "GitLab数据库事件：备份存在不等于能够恢复",
+    "context": "2017年1月31日，GitLab.com主数据库数据被误删，服务中断并丢失部分数据库修改。企业复盘同时说明恢复流程、备份验证及数据损失范围。",
+    "decision": "可恢复性必须通过恢复检验与影响核对来证明。",
+    "facts": [
+      "事件影响项目、评论、账户等部分数据库记录，代码仓库未遭受同类数据丢失",
+      "复盘区分受影响的在线服务与未受同类影响的自托管安装，并提出改进恢复程序"
+    ],
+    "analysis": "质量事件报告须按数据类型、时间段和服务范围识别损失；“有备份”只说明存在副本，恢复演练才检验副本能否按时用于恢复。",
+    "limits": "不能把本次数据库修改丢失扩大为所有代码被删除，也不能由一个恢复时间推断所有业务损失；不同资产边界应分别核对。",
+    "questions": [
+      {
+        "question": "服务重新上线，是否足以宣布数据已完全恢复？",
+        "answer": "不足。应核对恢复点、缺失时间段、对象范围及下游结果，明确哪些记录已恢复、哪些仍不可恢复。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "Postmortem of database outage of January 31",
+        "url": "https://about.gitlab.com/blog/postmortem-of-database-outage-of-january-31/",
+        "publisher": "GitLab",
+        "date": "2017-02-10",
+        "support": "支持误删主数据库、部分数据库记录丢失、恢复流程缺陷；代码仓库和自托管实例不属于同一数据损失范围。",
+        "accessed": "2026-10-17"
+      }
+    ]
+  },
+  {
+    "id": "b04-02",
+    "lesson": 4,
+    "chapter": "04_data_quality",
+    "company": "Unity Software",
+    "title": "Unity：错误数据如何进入模型反馈",
+    "context": "Unity在2022年度报告中披露，上半年变现产品的效能受到两类问题影响：一个工具的准确性故障，以及从一名大型客户摄入错误数据的后果。",
+    "decision": "模型输入质量需要沿产生、摄入与使用过程调查。",
+    "facts": [
+      "年报将平台工具准确性问题与错误数据摄入并列列为效能受损因素",
+      "企业披露这些问题对2022年上半年的收入增长产生不利影响"
+    ],
+    "analysis": "数据即使格式有效，也可能在业务含义、标签或分布上不适合模型用途。调查应定位来源、批次及受影响模型，检验剔除或重建数据后的表现。",
+    "limits": "公开披露没有给出客户身份、错误字段或可复算的独立效应；不能把全部收入影响归给这一数据源，具体的数据污染机制也未在该披露中说明。",
+    "questions": [
+      {
+        "question": "只检查字段类型与非空约束，能否排除这类风险？",
+        "answer": "不能。还需检验数据生成含义、与目标用途的适配性及下游表现，并以来源和版本支持追溯。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "Unity Software Inc. 2022 Form 10-K",
+        "url": "https://www.sec.gov/Archives/edgar/data/1810806/000181080623000016/unity-20221231.htm",
+        "publisher": "Unity Software / SEC EDGAR",
+        "date": "2023",
+        "support": "支持2022年上半年变现产品同时受到工具准确性故障和大客户错误数据摄入影响；不支持将全部损失单归错误数据。",
+        "accessed": "2026-10-17"
+      }
+    ]
+  },
+  {
+    "id": "b04-03",
+    "lesson": 4,
+    "chapter": "04_data_quality",
+    "company": "Amazon",
+    "title": "Amazon Deequ：把数据假设写成可检验约束",
+    "context": "机器学习和分析程序常隐含“键唯一”“变量取值在范围内”等假设。Amazon研究团队的Deequ将这些要求写成声明式约束，用于大规模数据验证。",
+    "decision": "程序正确还要求输入满足已经声明的数据条件。",
+    "facts": [
+      "研究论文说明Deequ支持常见质量约束、用户定制检验及质量指标序列监测",
+      "团队说明该库满足Amazon生产用途需求；论文中的商品评论业务演示另属虚构场景"
+    ],
+    "analysis": "声明式约束描述应成立的条件，验证程序定位违反条件的记录或批次。自动建议规则只能帮助发现规律，业务负责人仍须判断规律是否应成为约束。",
+    "limits": "通过规则不证明记录完全真实；论文的演示数据和虚构用途也不能当作已披露的客户项目或已实现的经营收益。",
+    "questions": [
+      {
+        "question": "历史数据中数量始终为正，能否直接制定“负数一律删除”？",
+        "answer": "不能。负数可能表示退货或冲销，应先确认事实类型，再决定允许取值和处理规则。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "Unit Testing Data with Deequ",
+        "url": "https://assets.amazon.science/12/62/7a066bf44199afea06ec73f23ad0/unit-testing-data-with-deequ.pdf",
+        "publisher": "Amazon Research / ACM SIGMOD",
+        "date": "2019",
+        "support": "支持Amazon生产用途、声明式数据约束、定制验证及质量指标序列监测；文中商品评论演示为虚构业务用途。",
+        "accessed": "2026-10-17"
+      }
+    ]
+  },
+  {
+    "id": "b04-04",
+    "lesson": 4,
+    "chapter": "04_data_quality",
+    "company": "Airbnb",
+    "title": "Airbnb质量评分：总分如何保留解释性",
+    "context": "Airbnb此前对关键数据实施认证，但严格认证需要跨团队投入。2023年工程文章介绍数据质量评分，让未获认证的资产也能呈现质量差异与改进方向。",
+    "decision": "综合评分应能分解到可采取行动的质量维度。",
+    "facts": [
+      "评分采用准确性、可靠性或及时性、责任治理、可用性四类维度",
+      "企业在Dataportal展示分项，并区分直接质量证据与有效责任人等间接反映质量的代理信号"
+    ],
+    "analysis": "责任人齐全有助于治理，却不直接证明字段准确；总分相同的资产可能在不同维度失效。用途适配评价应查看分项及其证据，并优先处理会影响当前决策的风险。",
+    "limits": "维度及权重是企业特定设计，不是所有组织通用的质量公理；评分提高本身也不构成经营收益的因果证据。",
+    "questions": [
+      {
+        "question": "总分较高的数据集，是否一定适用于实时调度？",
+        "answer": "不一定。若及时性不足，其他维度的高分无法补偿当前状态过期；应按任务的必要条件逐项核对。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "Data Quality Score: The next chapter of data quality at Airbnb",
+        "url": "https://medium.com/airbnb-engineering/data-quality-score-the-next-chapter-of-data-quality-at-airbnb-851dccda19c3",
+        "publisher": "Airbnb Engineering",
+        "date": "2023-11-28",
+        "support": "支持认证成本、四个质量评分维度、直接指标与代理指标以及在Dataportal展示分项分数。",
+        "accessed": "2026-10-17"
+      }
+    ]
+  },
+  {
+    "id": "b04-05",
+    "lesson": 4,
+    "chapter": "04_data_quality",
+    "company": "Citibank",
+    "title": "Citibank监管整改：数据治理是持续责任",
+    "context": "2020年美国货币监理署对Citibank采取执法行动，指出企业范围的风险管理、数据治理及内部控制长期存在缺陷，并要求综合整改。",
+    "decision": "质量控制需要明确责任、检查与升级机制。",
+    "facts": [
+      "监管公告将数据治理与风险管理、内部控制一并列入缺陷范围",
+      "整改要求覆盖持续控制及治理安排，而非仅更正单个报表或购买一套工具"
+    ],
+    "analysis": "数据质量依赖生产、定义、使用和监督各环节的责任安排。一次清洗可以修正当前记录，持续治理则要控制以后变更、复核失败和重复发生的风险。",
+    "limits": "处罚涉及多项管理缺陷，不能将罚款解释为某个错误字段的单独损失，也不能据此推断某种工具能替代组织整改。",
+    "questions": [
+      {
+        "question": "若所有已知错误都已手工修复，治理责任是否就结束了？",
+        "answer": "没有。还需验证根因已受控制，建立持续检查、变更审批、责任升级与复核记录，防止错误再次进入结果。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "OCC Assesses $400 Million Civil Money Penalty Against Citibank",
+        "url": "https://www.occ.gov/news-issuances/news-releases/2020/nr-occ-2020-132.html",
+        "publisher": "Office of the Comptroller of the Currency",
+        "date": "2020-10-07",
+        "support": "支持风险管理、数据治理与内部控制缺陷及综合整改要求，处罚并非只针对某个错误字段。",
+        "accessed": "2026-10-17"
+      }
+    ]
+  },
+  {
+    "id": "b05-01",
+    "lesson": 5,
+    "chapter": "05_statistics_dashboard",
+    "company": "Netflix",
+    "title": "Netflix ISP指数：先固定观看结构再比较网络",
+    "context": "互联网服务提供商（ISP）的观看设备、分辨率和视频编码组合可能不同。Netflix的ISP Speed Index按会话可达到的最大码率分桶，并采用共同观看时长结构计算可比指标。",
+    "decision": "直接总体均值可能混入用户与内容组合差异。",
+    "facts": [
+      "桶内表现按观看时长加权，再按统一的全球时长分布赋予各桶权重",
+      "黄金时段按每个ISP每天Netflix观看最集中的三个小时定义"
+    ],
+    "analysis": "标准化固定组合权重，使比较更接近相同观看结构下的表现。它与直接比较各网络实际用户组合下的均值回答不同问题，应在图表中明确方法及版本。",
+    "limits": "该指标针对Netflix指定时段与会话，不是家庭网络所有用途的最高带宽，也不能单独识别某项网络投资的因果效果。",
+    "questions": [
+      {
+        "question": "甲网络实际均值较低，能否立即认定相同观看条件下也更差？",
+        "answer": "不能。应先按可比观看结构分组或标准化，同时核对覆盖、时间与计算版本。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "How We Calculate Rankings: Netflix ISP Speed Index",
+        "url": "https://ispspeedindex.netflix.net/about/",
+        "publisher": "Netflix",
+        "date": "未标注",
+        "support": "支持按会话最大码率分桶、桶内按时长计算表现、按统一全球观看时长结构标准化，以及黄金时段定义。",
+        "accessed": "2026-10-17"
+      }
+    ]
+  },
+  {
+    "id": "b05-02",
+    "lesson": 5,
+    "chapter": "05_statistics_dashboard",
+    "company": "Google",
+    "title": "Google SRE：平均时延为什么不够",
+    "context": "站点可靠性工程（SRE）以工程方法管理服务可靠性。在线服务中，多数请求可能很快，少数却等待很久。Google的SRE实践采用时延分布、直方图及高分位数，避免仅用平均值概括用户体验。",
+    "decision": "典型水平与尾部风险需要不同统计量。",
+    "facts": [
+      "Google文档讨论用时延分桶计数表达请求分布，而非只保留单个均值",
+      "服务目标设计中，中位数与高分位数分别用于呈现典型体验及较慢的一端"
+    ],
+    "analysis": "中位数描述排序中部，高分位数对应较慢请求的阈值；两者连同请求量、错误率和统计窗口一起解释。均值相同的服务仍可能具有截然不同的尾部。",
+    "limits": "分位数是指定样本与窗口的描述，不保证未来每次请求都满足阈值；不同服务或窗口的分位数通常也不能简单平均。",
+    "questions": [
+      {
+        "question": "总体平均时延下降，是否意味着最慢用户的体验改善？",
+        "answer": "未必。快请求占比增加即可拉低均值，应同时核查相同任务范围内的高分位数及超时数量。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "Monitoring Distributed Systems",
+        "url": "https://sre.google/sre-book/monitoring-distributed-systems/",
+        "publisher": "Google SRE",
+        "date": "2016",
+        "support": "支持Google监控实践中的延迟分布、直方图及尾部；提供方法与企业实践背景，不提供逐请求运行数据。",
+        "accessed": "2026-10-17"
+      },
+      {
+        "title": "Service Level Objectives",
+        "url": "https://sre.google/sre-book/service-level-objectives/",
+        "publisher": "Google SRE",
+        "date": "2016",
+        "support": "支持服务指标与目标的区分、分位数呈现典型和尾部体验，不能仅监控平均值。",
+        "accessed": "2026-10-17"
+      }
+    ]
+  },
+  {
+    "id": "b05-03",
+    "lesson": 5,
+    "chapter": "05_statistics_dashboard",
+    "company": "Toyota",
+    "title": "Toyota Andon：可视化信号需要处置责任",
+    "context": "Toyota公开的生产方式以发现异常时停止过程、防止缺陷继续产生为原则。Andon把异常显现出来，并让现场人员呼叫相应负责人。",
+    "decision": "运营界面的价值取决于信号能否进入明确的处置过程。",
+    "facts": [
+      "企业说明设备或现场发生异常时可停止并显示告警",
+      "在没有自动设备的工位，人员也可触发Andon，呼叫负责人处理质量或作业延迟"
+    ],
+    "analysis": "告警说明需要调查与响应，责任及证据决定后续行动。看板若只改变颜色而没有对象、时间、处置人及恢复标准，难以构成完整运营机制。",
+    "limits": "Andon并不等于统计控制图，也不是所有信号都由三倍标准差规则产生；信号类型与触发条件须分别确认。",
+    "questions": [
+      {
+        "question": "控制图出现越界点，能否直接采用某项维修动作？",
+        "answer": "不能。应先核对统计范围与记录，再调查相关过程；动作取决于根因、权限和处置规则。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "Toyota Production System",
+        "url": "https://global.toyota/en/company/vision-and-philosophy/production-system/",
+        "publisher": "Toyota Motor Corporation",
+        "date": "未标注",
+        "support": "支持发现异常时停机防止缺陷继续产生，以及Andon呼叫责任人的机制；未宣称每项告警均来自统计控制图。",
+        "accessed": "2026-10-17"
+      }
+    ]
+  },
+  {
+    "id": "b05-04",
+    "lesson": 5,
+    "chapter": "05_statistics_dashboard",
+    "company": "Amazon",
+    "title": "Prime Day：活动高峰如何影响经营摘要",
+    "context": "Amazon披露，2023年两日Prime Day期间，全球Prime会员购买超过3.75亿件商品。集中促销使经营序列出现事件性高峰，汇报时必须保留活动窗口。",
+    "decision": "活动总量与常态日水平不能互相替代。",
+    "facts": [
+      "公布数值对应两日活动、全球Prime会员及商品件数",
+      "商品件数不同于订单数或顾客数，公告也没有把两日活动量定义为全年日常需求"
+    ],
+    "analysis": "将高峰与普通日期混合求均值，会改变对“典型一天”的解释。趋势图应保留原始活动点，比较相近促销、季节及覆盖范围，移动平均则须注明窗口。",
+    "limits": "活动销量不等于促销带来的净增量，可能包含提前购买或跨期转移；利润与长期需求还需相应资料和反事实比较。",
+    "questions": [
+      {
+        "question": "活动后移动平均仍很高，是否证明日常需求永久提高？",
+        "answer": "不能。单个高值会在多个后向窗口中持续影响均值，应核查原始值与活动后同类日期，并区分长期变化和窗口效应。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "Prime Day 2023: Stats and some of the top-selling deals",
+        "url": "https://www.aboutamazon.com/news/retail/amazon-prime-day-2023-stats",
+        "publisher": "Amazon",
+        "date": "2023-07-13",
+        "support": "支持2023年两日全球Prime会员购买超过3.75亿件商品；不是订单数、人数或全年常态日销量。",
+        "accessed": "2026-10-17"
+      }
+    ]
+  },
+  {
+    "id": "b05-05",
+    "lesson": 5,
+    "chapter": "05_statistics_dashboard",
+    "company": "McDonald’s",
+    "title": "McDonald’s：同店销售增长不等于客流增长",
+    "context": "McDonald’s在2023年年报中区分可比销售、客流、系统销售与合并收入。可比销售关注经营至少十三个月的门店，并采用相应汇率与范围规则。",
+    "decision": "判断增长来源，需要拆分对象范围、价格与数量。",
+    "facts": [
+      "年报说明可比销售受顾客交易数及平均客单价变化共同影响，客单价又受定价与产品组合影响",
+      "系统销售覆盖直营与加盟门店，而加盟店全部销售不计为公司的合并收入"
+    ],
+    "analysis": "销售增长可能来自客流、价格或产品结构，并不单独说明来客更多。跨期应固定可比门店与币值处理，分层核查各来源；跨企业比较还须重读口径。",
+    "limits": "年报中的管理解释未独立识别菜单、营销或数字渠道各因素的因果贡献；销售分解仍需与因果评价区分。",
+    "questions": [
+      {
+        "question": "同店销售上升、客流下降，这两项结果是否逻辑矛盾？",
+        "answer": "不矛盾。平均客单价上升可抵消客流下降；还应核对店群、币值、产品组合及相同期间的定义。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "McDonald’s Corporation 2023 Form 10-K",
+        "url": "https://www.sec.gov/Archives/edgar/data/63908/000006390824000072/mcd-20231231.htm",
+        "publisher": "McDonald’s / SEC EDGAR",
+        "date": "2024",
+        "support": "支持可比门店经营至少13个月、汇率处理、销售由客流与客单价共同变化，以及系统销售与合并收入区别。",
+        "accessed": "2026-10-17"
+      }
+    ]
+  }
+]
