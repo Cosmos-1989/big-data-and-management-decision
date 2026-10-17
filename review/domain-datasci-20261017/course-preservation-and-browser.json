@@ -1,0 +1,48 @@
+{
+  "checkedAt": "2026-10-17T03:34:50.311007+00:00",
+  "baselineSource": "614e40335e736621d4cd936890d22331c8f5ea22",
+  "pagesRevision": "47063222d2c836392136b017bce7c94c6eee5669",
+  "changedPublicFiles": [
+    "CNAME"
+  ],
+  "allPreviousCourseFilesUnchanged": true,
+  "browserChecks": [
+    {
+      "url": "https://datasci.biz/#/chapter/01_intro",
+      "checks": [
+        "Lecture title and body loaded",
+        "Slide 1 advanced to slide 2",
+        "First-use definitions and case panels present"
+      ],
+      "passed": true
+    },
+    {
+      "url": "https://datasci.biz/#/lab/framing",
+      "checks": [
+        "Python example completed",
+        "Four operating-symptom rows and decision pipeline displayed"
+      ],
+      "passed": true
+    },
+    {
+      "url": "https://datasci.biz/#/lab/sql",
+      "checks": [
+        "DuckDB-WASM initialized",
+        "SQL returned South 28700, East 20550, North 12600, West 9500"
+      ],
+      "passed": true
+    },
+    {
+      "url": "https://datasci.biz/#/",
+      "checks": [
+        "Course home and chapter links loaded",
+        "Northeastern University logo displayed"
+      ],
+      "passed": true
+    }
+  ],
+  "screenshots": [
+    "home-live.png",
+    "sql-live.png"
+  ]
+}

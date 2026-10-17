@@ -75,19 +75,20 @@ node scripts/verify-slides.mjs
 
 公开课程网站：https://datasci.biz/
 
-原 GitHub Pages 地址：https://cosmos-1989.github.io/big-data-and-management-decision/ （完成域名绑定后跳转至主域名）。
+原 GitHub Pages 地址：https://cosmos-1989.github.io/big-data-and-management-decision/ （自动跳转至主域名）。
 
 GitHub 使用现有课程仓库 `Cosmos-1989/big-data-and-management-decision`。网站源码单独保存在 `codex/course-website` 分支；`gh-pages` 分支的根目录保存 `dist/` 静态文件。课程仓库 `main` 分支不受网站发布影响。
 
 网站已适配根域名及项目子目录，资源、下载、Python 和 SQL Worker 均使用相对路径。更新网站并完成验证、提交后，可从本网站 Git 仓库执行：
 
 ```sh
-git push github HEAD:refs/heads/codex/course-website
-git subtree split --prefix=dist -b codex/pages-dist
-git push github codex/pages-dist:refs/heads/gh-pages
+git fetch github gh-pages
+git subtree merge --prefix=dist github/gh-pages
+task_pages_commit=$(git subtree split --prefix=dist --rejoin)
+git push --atomic github HEAD:refs/heads/codex/course-website "$task_pages_commit":refs/heads/gh-pages
 ```
 
-Pages 设置为从 `gh-pages` 分支的根目录发布。`.nojekyll` 保留运行依赖中的下划线文件。首次发布完成后，后续推送自动触发部署。
+Pages 设置为从 `gh-pages` 分支的根目录发布。发布前合并远端记录，可保留 GitHub 在域名设置中自动生成的 CNAME 提交；若出现冲突，核实并解决后再发布。`.nojekyll` 保留运行依赖中的下划线文件。后续推送自动触发部署。
 
 `.openai/hosting.json` 保留原 Sites 身份及静态目录，可用于同步更新原站。不要提交父课程仓库中尚未审阅的改动。
 

@@ -1,0 +1,33 @@
+{
+  "method": "Pinned to each publicly verified GitHub A record, preserving Host header; no certificate bypass",
+  "checks": [
+    {
+      "ip": "185.199.108.153",
+      "exitCode": 0,
+      "status": "HTTP/1.1 301 Moved Permanently",
+      "location": "https://datasci.biz/",
+      "error": ""
+    },
+    {
+      "ip": "185.199.109.153",
+      "exitCode": 0,
+      "status": "HTTP/1.1 301 Moved Permanently",
+      "location": "https://datasci.biz/",
+      "error": ""
+    },
+    {
+      "ip": "185.199.110.153",
+      "exitCode": 0,
+      "status": "HTTP/1.1 301 Moved Permanently",
+      "location": "https://datasci.biz/",
+      "error": ""
+    },
+    {
+      "ip": "185.199.111.153",
+      "exitCode": 0,
+      "status": "HTTP/1.1 301 Moved Permanently",
+      "location": "https://datasci.biz/",
+      "error": ""
+    }
+  ]
+}

@@ -1,0 +1,341 @@
+{
+  "startedAtUtc": "2026-10-17T03:35:29.303112+00:00",
+  "finishedAtUtc": "2026-10-17T03:36:01.463189+00:00",
+  "method": "One read-only DoH query per provider/name/type. No DNS changes, no TLS checks, no polling.",
+  "records": [
+    {
+      "provider": "google",
+      "name": "datasci.biz",
+      "type": "NS",
+      "url": "https://dns.google/resolve?name=datasci.biz&type=NS",
+      "exitCode": 35,
+      "stderr": "curl: (35) LibreSSL SSL_connect: SSL_ERROR_SYSCALL in connection to dns.google:443"
+    },
+    {
+      "provider": "google",
+      "name": "_domainconnect.datasci.biz",
+      "type": "CNAME",
+      "url": "https://dns.google/resolve?name=_domainconnect.datasci.biz&type=CNAME",
+      "exitCode": 35,
+      "stderr": "curl: (35) LibreSSL SSL_connect: SSL_ERROR_SYSCALL in connection to dns.google:443"
+    },
+    {
+      "provider": "google",
+      "name": "_dmarc.datasci.biz",
+      "type": "TXT",
+      "url": "https://dns.google/resolve?name=_dmarc.datasci.biz&type=TXT",
+      "exitCode": 0,
+      "status": 0,
+      "answers": [
+        {
+          "name": "_dmarc.datasci.biz.",
+          "type": 16,
+          "TTL": 3600,
+          "data": "v=DMARC1; p=quarantine; adkim=r; aspf=r; rua=mailto:dmarc_rua@onsecureserver.net;"
+        }
+      ],
+      "authority": []
+    },
+    {
+      "provider": "google",
+      "name": "datasci.biz",
+      "type": "AAAA",
+      "url": "https://dns.google/resolve?name=datasci.biz&type=AAAA",
+      "exitCode": 35,
+      "stderr": "curl: (35) LibreSSL SSL_connect: SSL_ERROR_SYSCALL in connection to dns.google:443"
+    },
+    {
+      "provider": "google",
+      "name": "datasci.biz",
+      "type": "CAA",
+      "url": "https://dns.google/resolve?name=datasci.biz&type=CAA",
+      "exitCode": 35,
+      "stderr": "curl: (35) LibreSSL SSL_connect: SSL_ERROR_SYSCALL in connection to dns.google:443"
+    },
+    {
+      "provider": "google",
+      "name": "www.datasci.biz",
+      "type": "AAAA",
+      "url": "https://dns.google/resolve?name=www.datasci.biz&type=AAAA",
+      "exitCode": 0,
+      "status": 0,
+      "answers": [
+        {
+          "name": "www.datasci.biz.",
+          "type": 5,
+          "TTL": 3600,
+          "data": "cosmos-1989.github.io."
+        },
+        {
+          "name": "cosmos-1989.github.io.",
+          "type": 28,
+          "TTL": 3600,
+          "data": "2606:50c0:8002::153"
+        },
+        {
+          "name": "cosmos-1989.github.io.",
+          "type": 28,
+          "TTL": 3600,
+          "data": "2606:50c0:8003::153"
+        },
+        {
+          "name": "cosmos-1989.github.io.",
+          "type": 28,
+          "TTL": 3600,
+          "data": "2606:50c0:8000::153"
+        },
+        {
+          "name": "cosmos-1989.github.io.",
+          "type": 28,
+          "TTL": 3600,
+          "data": "2606:50c0:8001::153"
+        }
+      ],
+      "authority": []
+    },
+    {
+      "provider": "google",
+      "name": "www.datasci.biz",
+      "type": "CAA",
+      "url": "https://dns.google/resolve?name=www.datasci.biz&type=CAA",
+      "exitCode": 35,
+      "stderr": "curl: (35) LibreSSL SSL_connect: SSL_ERROR_SYSCALL in connection to dns.google:443"
+    },
+    {
+      "provider": "cloudflare",
+      "name": "datasci.biz",
+      "type": "NS",
+      "url": "https://cloudflare-dns.com/dns-query?name=datasci.biz&type=NS",
+      "exitCode": 35,
+      "stderr": "curl: (35) LibreSSL SSL_connect: SSL_ERROR_SYSCALL in connection to cloudflare-dns.com:443"
+    },
+    {
+      "provider": "cloudflare",
+      "name": "_domainconnect.datasci.biz",
+      "type": "CNAME",
+      "url": "https://cloudflare-dns.com/dns-query?name=_domainconnect.datasci.biz&type=CNAME",
+      "exitCode": 35,
+      "stderr": "curl: (35) LibreSSL SSL_connect: SSL_ERROR_SYSCALL in connection to cloudflare-dns.com:443"
+    },
+    {
+      "provider": "cloudflare",
+      "name": "_dmarc.datasci.biz",
+      "type": "TXT",
+      "url": "https://cloudflare-dns.com/dns-query?name=_dmarc.datasci.biz&type=TXT",
+      "exitCode": 0,
+      "status": 0,
+      "answers": [
+        {
+          "name": "_dmarc.datasci.biz",
+          "type": 16,
+          "TTL": 3600,
+          "data": "\"v=DMARC1; p=quarantine; adkim=r; aspf=r; rua=mailto:dmarc_rua@onsecureserver.net;\""
+        }
+      ],
+      "authority": []
+    },
+    {
+      "provider": "cloudflare",
+      "name": "datasci.biz",
+      "type": "AAAA",
+      "url": "https://cloudflare-dns.com/dns-query?name=datasci.biz&type=AAAA",
+      "exitCode": 0,
+      "status": 0,
+      "answers": [],
+      "authority": [
+        {
+          "name": "datasci.biz",
+          "type": 6,
+          "TTL": 600,
+          "data": "ns71.domaincontrol.com. dns.jomax.net. 2026101704 28800 7200 604800 600"
+        }
+      ]
+    },
+    {
+      "provider": "cloudflare",
+      "name": "datasci.biz",
+      "type": "CAA",
+      "url": "https://cloudflare-dns.com/dns-query?name=datasci.biz&type=CAA",
+      "exitCode": 0,
+      "status": 0,
+      "answers": [],
+      "authority": [
+        {
+          "name": "datasci.biz",
+          "type": 6,
+          "TTL": 600,
+          "data": "ns71.domaincontrol.com. dns.jomax.net. 2026101704 28800 7200 604800 600"
+        }
+      ]
+    },
+    {
+      "provider": "cloudflare",
+      "name": "www.datasci.biz",
+      "type": "AAAA",
+      "url": "https://cloudflare-dns.com/dns-query?name=www.datasci.biz&type=AAAA",
+      "exitCode": 0,
+      "status": 0,
+      "answers": [
+        {
+          "name": "www.datasci.biz",
+          "type": 5,
+          "TTL": 3600,
+          "data": "cosmos-1989.github.io."
+        },
+        {
+          "name": "cosmos-1989.github.io",
+          "type": 28,
+          "TTL": 3600,
+          "data": "2606:50c0:8000::153"
+        },
+        {
+          "name": "cosmos-1989.github.io",
+          "type": 28,
+          "TTL": 3600,
+          "data": "2606:50c0:8001::153"
+        },
+        {
+          "name": "cosmos-1989.github.io",
+          "type": 28,
+          "TTL": 3600,
+          "data": "2606:50c0:8003::153"
+        },
+        {
+          "name": "cosmos-1989.github.io",
+          "type": 28,
+          "TTL": 3600,
+          "data": "2606:50c0:8002::153"
+        }
+      ],
+      "authority": []
+    },
+    {
+      "provider": "cloudflare",
+      "name": "www.datasci.biz",
+      "type": "CAA",
+      "url": "https://cloudflare-dns.com/dns-query?name=www.datasci.biz&type=CAA",
+      "exitCode": 0,
+      "status": 0,
+      "answers": [
+        {
+          "name": "www.datasci.biz",
+          "type": 5,
+          "TTL": 3600,
+          "data": "cosmos-1989.github.io."
+        },
+        {
+          "name": "cosmos-1989.github.io",
+          "type": 257,
+          "TTL": 3600,
+          "data": "0 issue \"digicert.com\""
+        },
+        {
+          "name": "cosmos-1989.github.io",
+          "type": 257,
+          "TTL": 3600,
+          "data": "0 issue \"letsencrypt.org\""
+        },
+        {
+          "name": "cosmos-1989.github.io",
+          "type": 257,
+          "TTL": 3600,
+          "data": "0 issue \"sectigo.com\""
+        },
+        {
+          "name": "cosmos-1989.github.io",
+          "type": 257,
+          "TTL": 3600,
+          "data": "0 issuewild \"digicert.com\""
+        },
+        {
+          "name": "cosmos-1989.github.io",
+          "type": 257,
+          "TTL": 3600,
+          "data": "0 issuewild \"letsencrypt.org\""
+        },
+        {
+          "name": "cosmos-1989.github.io",
+          "type": 257,
+          "TTL": 3600,
+          "data": "0 issuewild \"sectigo.com\""
+        }
+      ],
+      "authority": []
+    }
+  ],
+  "baseline": {
+    "provenance": "Parent observed original GoDaddy records before migration and confirmed same values still in GoDaddy UI after www save.",
+    "NS": {
+      "values": [
+        "ns71.domaincontrol.com",
+        "ns72.domaincontrol.com"
+      ],
+      "ttl": 3600
+    },
+    "domainconnect": {
+      "value": "_domainconnect.gd.domaincontrol.com",
+      "ttl": 3600
+    },
+    "dmarc": {
+      "value": "v=DMARC1; p=quarantine; adkim=r; aspf=r; rua=mailto:dmarc_rua@onsecureserver.net;",
+      "ttl": 3600
+    }
+  },
+  "changedExternalState": false,
+  "transportFallback": [
+    {
+      "provider": "cloudflare",
+      "name": "datasci.biz",
+      "type": "NS",
+      "url": "https://cloudflare-dns.com/dns-query?name=datasci.biz&type=NS",
+      "publicResolverPinnedIp": "1.1.1.1",
+      "purpose": "single transport-failure fallback; not propagation polling",
+      "exitCode": 0,
+      "status": 0,
+      "answers": [
+        {
+          "name": "datasci.biz",
+          "type": 2,
+          "TTL": 3600,
+          "data": "ns71.domaincontrol.com."
+        },
+        {
+          "name": "datasci.biz",
+          "type": 2,
+          "TTL": 3600,
+          "data": "ns72.domaincontrol.com."
+        }
+      ],
+      "authority": []
+    },
+    {
+      "provider": "cloudflare",
+      "name": "_domainconnect.datasci.biz",
+      "type": "CNAME",
+      "url": "https://cloudflare-dns.com/dns-query?name=_domainconnect.datasci.biz&type=CNAME",
+      "publicResolverPinnedIp": "1.1.1.1",
+      "purpose": "single transport-failure fallback; not propagation polling",
+      "exitCode": 0,
+      "status": 0,
+      "answers": [
+        {
+          "name": "_domainconnect.datasci.biz",
+          "type": 5,
+          "TTL": 3600,
+          "data": "_domainconnect.gd.domaincontrol.com."
+        }
+      ],
+      "authority": []
+    }
+  ],
+  "summary": {
+    "nsMatchesOriginal": true,
+    "domainconnectMatchesOriginal": true,
+    "dmarcMatchesOriginal": true,
+    "apexAAAA": "No AAAA record in successful Cloudflare response (NOERROR/NODATA).",
+    "apexCAA": "No CAA record in successful Cloudflare response (NOERROR/NODATA).",
+    "wwwAAAA": "CNAME follows cosmos-1989.github.io to GitHub Pages IPv6 2606:50c0:8000::153 through 8003::153; no distinct conflicting www AAAA.",
+    "wwwCAA": "No distinct www CAA. CNAME target cosmos-1989.github.io has issue and issuewild authorizations for digicert.com, letsencrypt.org, sectigo.com; no conflict with GitHub Pages certificate issuance.",
+    "limitations": "Initial NS/domainconnect DoH queries failed at TLS transport; one bounded fixed-public-IP fallback is logged. Failed requests are retained, not treated as absent records."
+  }
+}

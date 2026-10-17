@@ -1,0 +1,38 @@
+[
+  {
+    "url": "http://datasci.biz/",
+    "exitCode": 52,
+    "stderr": "curl: (52) Empty reply from server",
+    "http_code": 0,
+    "url_effective": "http://datasci.biz/",
+    "num_redirects": 0,
+    "ssl_verify_result": 0
+  },
+  {
+    "url": "http://www.datasci.biz/",
+    "exitCode": 0,
+    "stderr": "",
+    "http_code": 200,
+    "url_effective": "https://datasci.biz/",
+    "num_redirects": 1,
+    "ssl_verify_result": 0
+  },
+  {
+    "url": "https://www.datasci.biz/",
+    "exitCode": 60,
+    "stderr": "curl: (60) SSL: no alternative certificate subject name matches target host name 'www.datasci.biz'\nMore details here: https://curl.se/docs/sslcerts.html\n\ncurl failed to verify the legitimacy of the server and therefore could not\nestablish a secure connection to it. To learn more about this situation and\nhow to fix it, please visit the web page mentioned above.",
+    "http_code": 0,
+    "url_effective": "https://www.datasci.biz/",
+    "num_redirects": 0,
+    "ssl_verify_result": 1
+  },
+  {
+    "url": "https://cosmos-1989.github.io/big-data-and-management-decision/",
+    "exitCode": 0,
+    "stderr": "",
+    "http_code": 200,
+    "url_effective": "https://datasci.biz/",
+    "num_redirects": 1,
+    "ssl_verify_result": 0
+  }
+]
