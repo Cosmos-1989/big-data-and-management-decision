@@ -107,5 +107,38 @@
     "check-prose": {
       "errors": []
     }
+  },
+  "publication": {
+    "sourceContentCommit": "d45120f",
+    "pagesRevision": "a7ac658cce92ef9affdc47316843638d947b2bf0",
+    "actionsRun": 38997903344,
+    "actionsUrl": "https://github.com/Cosmos-1989/big-data-and-management-decision/actions/runs/38997903344",
+    "status": "completed",
+    "conclusion": "success",
+    "publicFilesChecked": 18,
+    "allFilesMatched": true,
+    "tlsVerification": true,
+    "browser": {
+      "assetVersion": "20261017-4",
+      "chapter1Pages": 50,
+      "chapter1Cases": 5,
+      "casebookCases": 80,
+      "firstUseExplanation": "数据仓库与ETL：形成分析资料",
+      "computedChineseFont": "BDM Course Song",
+      "projectPlayers": {
+        "15": 20,
+        "16": 25
+      },
+      "secondPlayerCase": "b16-03",
+      "keyboardNext": "7 / 25",
+      "fullscreenAndEscape": "passed",
+      "casebookLinkAndReturn": "passed",
+      "search": "Tripadvisor case found with concise nonduplicated label"
+    },
+    "screenshots": [
+      "public-definitions.png",
+      "public-case.png",
+      "public-project.png"
+    ]
   }
 }

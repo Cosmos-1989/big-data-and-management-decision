@@ -1,0 +1,134 @@
+{
+  "base": "https://cosmos-1989.github.io/big-data-and-management-decision/",
+  "pagesRevision": "a7ac658cce92ef9affdc47316843638d947b2bf0",
+  "tlsVerification": true,
+  "files": [
+    {
+      "path": "index.html",
+      "bytes": 6085,
+      "localSha256": "68ee02b6566daba0c441b8c0f73c5a0816ca2c399219a584e35f3dddc9e70c91",
+      "publicSha256": "68ee02b6566daba0c441b8c0f73c5a0816ca2c399219a584e35f3dddc9e70c91",
+      "match": true
+    },
+    {
+      "path": "app.js",
+      "bytes": 19547,
+      "localSha256": "0d99021efe377e62e4b85ec27e2f0a1f0e81599eb2b49d1e9f3593285bb28ea5",
+      "publicSha256": "0d99021efe377e62e4b85ec27e2f0a1f0e81599eb2b49d1e9f3593285bb28ea5",
+      "match": true
+    },
+    {
+      "path": "slides.js",
+      "bytes": 15211,
+      "localSha256": "a589f23e3e860092f47252cd46a05cdc240e5651d566cc334fe86c2d3f7c0a75",
+      "publicSha256": "a589f23e3e860092f47252cd46a05cdc240e5651d566cc334fe86c2d3f7c0a75",
+      "match": true
+    },
+    {
+      "path": "slides-refined.css",
+      "bytes": 24721,
+      "localSha256": "5bd4ba3e08fabb94d56bbfd5436ae33e3a951c53218c56a3a51810472b92acd9",
+      "publicSha256": "5bd4ba3e08fabb94d56bbfd5436ae33e3a951c53218c56a3a51810472b92acd9",
+      "match": true
+    },
+    {
+      "path": "slide-diagrams.js",
+      "bytes": 9441,
+      "localSha256": "bbcd97f636775d7cb176573564eb3649d135eec8e2ee254143e4181a59dafa4e",
+      "publicSha256": "bbcd97f636775d7cb176573564eb3649d135eec8e2ee254143e4181a59dafa4e",
+      "match": true
+    },
+    {
+      "path": "business-cases.js",
+      "bytes": 2481,
+      "localSha256": "46598354e4c0ecaa076829c415adac3ba07d44b653f41bb6289eab6d28c45e48",
+      "publicSha256": "46598354e4c0ecaa076829c415adac3ba07d44b653f41bb6289eab6d28c45e48",
+      "match": true
+    },
+    {
+      "path": "business-cases.css",
+      "bytes": 3219,
+      "localSha256": "9d2bfe581062da435d33fdd62810f3e403f59c3dd8415b44817bcb093ec35fcf",
+      "publicSha256": "9d2bfe581062da435d33fdd62810f3e403f59c3dd8415b44817bcb093ec35fcf",
+      "match": true
+    },
+    {
+      "path": "content/catalog.json",
+      "bytes": 275404,
+      "localSha256": "ef29b4d148f0287e056d287916f22199b3592be0f5d83d8e7440f564c229c28a",
+      "publicSha256": "ef29b4d148f0287e056d287916f22199b3592be0f5d83d8e7440f564c229c28a",
+      "match": true
+    },
+    {
+      "path": "content/lecture-slides.json",
+      "bytes": 1552926,
+      "localSha256": "5bd9e277a302419905a2c33e42c708301f134a3b1a052a529d2aae9f9268eebd",
+      "publicSha256": "5bd9e277a302419905a2c33e42c708301f134a3b1a052a529d2aae9f9268eebd",
+      "match": true
+    },
+    {
+      "path": "content/business-cases.json",
+      "bytes": 165845,
+      "localSha256": "5e1283cec7a1b3074508208820c0b495e24a64b239cd6fd6b777e485d42744ee",
+      "publicSha256": "5e1283cec7a1b3074508208820c0b495e24a64b239cd6fd6b777e485d42744ee",
+      "match": true
+    },
+    {
+      "path": "content/business-casebook.json",
+      "bytes": 215341,
+      "localSha256": "cacadc2dcc8bf51ae7d21a934f142717efcd910c7caa7de9d3d5d42602fd1d61",
+      "publicSha256": "cacadc2dcc8bf51ae7d21a934f142717efcd910c7caa7de9d3d5d42602fd1d61",
+      "match": true
+    },
+    {
+      "path": "content/lecture-terms.json",
+      "bytes": 135613,
+      "localSha256": "fcfd3789e9ecdaf59fe227b75b2128dbaac1149fe2c55855229050852c1df150",
+      "publicSha256": "fcfd3789e9ecdaf59fe227b75b2128dbaac1149fe2c55855229050852c1df150",
+      "match": true
+    },
+    {
+      "path": "content/source-manifest.json",
+      "bytes": 4542,
+      "localSha256": "04fe0f6650cf6c6e6f2b99994fdaf265e9d3851d645154775a83bda680962fe4",
+      "publicSha256": "04fe0f6650cf6c6e6f2b99994fdaf265e9d3851d645154775a83bda680962fe4",
+      "match": true
+    },
+    {
+      "path": "assets/fonts/course-song.css",
+      "bytes": 325,
+      "localSha256": "b810af08bc44dc11e7ea98411d5f81c7d08d2563a2a1c17ab108915c842c39fa",
+      "publicSha256": "b810af08bc44dc11e7ea98411d5f81c7d08d2563a2a1c17ab108915c842c39fa",
+      "match": true
+    },
+    {
+      "path": "assets/fonts/manifest.json",
+      "bytes": 985,
+      "localSha256": "4293c10473f393f71e3cefe59d61ec4e662b1f03e53845bf3663365128451b2c",
+      "publicSha256": "4293c10473f393f71e3cefe59d61ec4e662b1f03e53845bf3663365128451b2c",
+      "match": true
+    },
+    {
+      "path": "assets/fonts/course-song-regular.woff2",
+      "bytes": 344756,
+      "localSha256": "428f5ce2e170e6f55f4b5620a8d8adb0f3a0656ef8fe7589af4da6ac33f3c68d",
+      "publicSha256": "428f5ce2e170e6f55f4b5620a8d8adb0f3a0656ef8fe7589af4da6ac33f3c68d",
+      "match": true
+    },
+    {
+      "path": "assets/fonts/course-song-bold.woff2",
+      "bytes": 356980,
+      "localSha256": "a8f425ae7a1d5361c97a61ba50174670021c78835643a869bab43ee678222760",
+      "publicSha256": "a8f425ae7a1d5361c97a61ba50174670021c78835643a869bab43ee678222760",
+      "match": true
+    },
+    {
+      "path": "downloads/business-casebook.md",
+      "bytes": 119453,
+      "localSha256": "962d6376aceee8d98b7e18b01adbd1a8b3aadb5f381df5d48e7b5c3c8bd0f14d",
+      "publicSha256": "962d6376aceee8d98b7e18b01adbd1a8b3aadb5f381df5d48e7b5c3c8bd0f14d",
+      "match": true
+    }
+  ],
+  "allMatched": true
+}

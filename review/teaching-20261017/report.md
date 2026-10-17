@@ -13,3 +13,7 @@
 已验证案例页跳转、项目两套播放器、全屏退出与翻页、案例集的80例和讨论/来源展开，以及返回对应幻灯片。规则实验程序未变，本轮不重跑全部Python/SQL计算。PDF教材未重新编修。
 
 复核指标见acceptance.json、teaching-validation.json、desktop-layout.json、mobile-layout.json及check-*.json。商业案例的公开披露不等于对其收益的独立因果验证，相关限制随案例一同呈现。
+
+## 线上验收
+
+最终Pages版本a7ac658cce92ef9affdc47316843638d947b2bf0，Actions运行38997903344成功。启用证书校验的HTTPS比对18个关键发布文件，与本地逐字节一致。实际打开公开网站，验证50页首讲、首用ETL解释、5例章末案例、80例案例集、20/25页两个项目播放器、第二播放器案例定位、全屏/键盘下一页/退出。搜索Tripadvisor后可打开对应案例，无重复公司名前缀。截图见public-*.png；公开文件哈希及部署信息分别见public-files.json与publication.json。
