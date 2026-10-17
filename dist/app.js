@@ -1,18 +1,18 @@
 import katex from './vendor/katex/katex.mjs';
 import renderMathInElement from './vendor/katex/contrib/auto-render.mjs';
-import {mountLab,cleanupLab,esc,tableHtml} from './lab.js?v=20261017-3';
-import {experiments} from './experiments.js?v=20261017-3';
-import {lectureSlidesHtml,initLectureSlides} from './slides.js?v=20261017-3';
-import {decorateEnterpriseCases,initFigureZoom} from './cases.js?v=20261017-3';
-import {initCourseSearch} from './course-search.js?v=20261017-3';
-import {chapterBusinessCasesHtml} from './business-cases.js?v=20261017-3';
+import {mountLab,cleanupLab,esc,tableHtml} from './lab.js?v=20261017-4';
+import {experiments} from './experiments.js?v=20261017-4';
+import {lectureSlidesHtml,initLectureSlides} from './slides.js?v=20261017-4';
+import {decorateEnterpriseCases,initFigureZoom} from './cases.js?v=20261017-4';
+import {initCourseSearch} from './course-search.js?v=20261017-4';
+import {chapterBusinessCasesHtml} from './business-cases.js?v=20261017-4';
 const main=document.querySelector('main'),sidebar=document.querySelector('.sidebar'),toc=document.querySelector('.toc');
 const home=main.innerHTML;let catalog,currentRoute='',renderVersion=0;
 const macros={'\\E':'\\mathbb E','\\Prob':'\\mathbb P','\\R':'\\mathbb R','\\N':'\\mathbb N','\\eps':'\\varepsilon','\\dd':'\\,\\mathrm d','\\argmin':'\\operatorname*{arg\\,min}','\\argmax':'\\operatorname*{arg\\,max}','\\abs':'\\left\\lvert #1\\right\\rvert','\\norm':'\\left\\lVert #1\\right\\rVert'};
 const cached=new Map();
 let decorationsPromise;
-function chapterDecorations(){return decorationsPromise ||= Promise.all([fetch('./content/lecture-slides.json?v=20261017-3').then(r=>r.json()),fetch('./content/case-cards.json?v=20261017-3').then(r=>r.json()),fetch('./content/lab-specs.json?v=20261017-3').then(r=>r.json()),fetch('./content/business-cases.json?v=20261017-3').then(r=>r.json())]).then(([slides,cases,specs,business])=>({slides,cases,snippets:specs.snippets,business}));}
-async function doc(id){if(!cached.has(id)){const r=await fetch('./content/'+encodeURIComponent(id)+'.json?v=20261017-3');if(!r.ok)throw new Error('找不到这份课程资料');cached.set(id,await r.json());}return cached.get(id);}
+function chapterDecorations(){return decorationsPromise ||= Promise.all([fetch('./content/lecture-slides.json?v=20261017-4').then(r=>r.json()),fetch('./content/case-cards.json?v=20261017-4').then(r=>r.json()),fetch('./content/lab-specs.json?v=20261017-4').then(r=>r.json()),fetch('./content/business-cases.json?v=20261017-4').then(r=>r.json())]).then(([slides,cases,specs,business])=>({slides,cases,snippets:specs.snippets,business}));}
+async function doc(id){if(!cached.has(id)){const r=await fetch('./content/'+encodeURIComponent(id)+'.json?v=20261017-4');if(!r.ok)throw new Error('找不到这份课程资料');cached.set(id,await r.json());}return cached.get(id);}
 function chapterLink(c){return `<a href="#/chapter/${c.id}"><span class="chapter-number">${/^\d/.test(c.id)?c.id.slice(0,2):'↗'}</span><span>${esc(c.title)}</span><span class="row-arrow">→</span></a>`;}
 function buildNav(){
  const core=catalog.chapters.filter(c=>/^\d/.test(c.id));
@@ -87,7 +87,7 @@ document.querySelector('.menu').onclick=()=>setSidebarOpen(!sidebar.classList.co
 document.querySelector('.sidebar-backdrop').onclick=()=>setSidebarOpen(false);
 window.matchMedia('(min-width:981px)').addEventListener('change',e=>{if(e.matches)setSidebarOpen(false);});
 document.addEventListener('keydown',e=>{if(e.key==='Escape'){setSidebarOpen(false);}});
-try{const r=await fetch('./content/catalog.json?v=20261017-3');if(!r.ok)throw new Error('课程目录加载失败，请刷新重试。');catalog=await r.json();buildNav();initCourseSearch(catalog);window.addEventListener('hashchange',route);await route();}catch(e){main.innerHTML=`<h1>课程内容暂时无法加载</h1><p>${esc(e.message)}</p><button onclick="location.reload()">重新加载</button>`;}
+try{const r=await fetch('./content/catalog.json?v=20261017-4');if(!r.ok)throw new Error('课程目录加载失败，请刷新重试。');catalog=await r.json();buildNav();initCourseSearch(catalog);window.addEventListener('hashchange',route);await route();}catch(e){main.innerHTML=`<h1>课程内容暂时无法加载</h1><p>${esc(e.message)}</p><button onclick="location.reload()">重新加载</button>`;}
 // Optional WebMCP navigation uses the same routes and visible state as the interface.
 const context=document.modelContext;
 if(context?.registerTool){

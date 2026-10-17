@@ -92,7 +92,7 @@ const catalog=await read(path.join(content,'catalog.json'));
 for(const item of [...catalog.chapters,...catalog.extras])if(Object.values(ordered).some(d=>d.chapter===item.id))item.hasSlides=true;
 catalog.extras=catalog.extras.filter(x=>x.id!=='business-casebook').concat({id:'business-casebook',title:'真实商业案例集',kind:'supplement',source:'website/content-source/teaching-20261017'});
 catalog.index=catalog.index.filter(x=>!x.teachingCase);
-for(const item of cases)catalog.index.push({term:item.company+'：'+item.title,sort:(item.company+' '+item.title).toLowerCase(),chapter:'business-casebook',anchor:item.id,teachingCase:true});
+for(const item of cases)catalog.index.push({term:item.title,sort:(item.company+' '+item.title).toLowerCase(),chapter:'business-casebook',anchor:item.id,teachingCase:true});
 await save(path.join(content,'catalog.json'),catalog);
 const manifest=await read(path.join(content,'source-manifest.json'));
 manifest.teachingExtension={date:'2026-10-17',lectures:16,cases:cases.length,slides:Object.values(ordered).reduce((n,d)=>n+d.slides.length,0),sourceFiles};
