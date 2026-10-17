@@ -1,0 +1,337 @@
+[
+  {
+    "document": "01_intro",
+    "gaps": 22,
+    "examples": [
+      "的订单、库存、设备 状态与客户行为提供",
+      "销方案，还需要估计 各方案的后果并衡量",
+      "前行动对未来状态的 影响，以及组织目标",
+      "达、统计估计和方案 求解均以这些概念为",
+      "绩效目标，却还没有 给出完整的决策问题",
+      "务少数客户，也可能 依靠修改承诺日期。"
+    ],
+    "changedTextNodes": 18
+  },
+  {
+    "document": "02_enterprise_data_model",
+    "gaps": 54,
+    "examples": [
+      "企业信息分布于不同 系统之中。订单在销",
+      "批次拆分和质量检验 由生产系统记录。数",
+      "联系，使跨系统比较 具有一致含义。",
+      "、指标定义与元数据 明确记录的含义。治",
+      "分析。企业人工智能 系统的数据与操作服",
+      "理、业务语义、模型 服务、任务运行和业"
+    ],
+    "changedTextNodes": 45
+  },
+  {
+    "document": "03_sql_kpi",
+    "gaps": 18,
+    "examples": [
+      "时期、产品或部门的 经营统计量。SQL",
+      "确数量、时间与对象 范围。自然语言查询",
+      "并满足数据库执行的 权限和资源限制。",
+      " 章 定义的对象身份决定",
+      "次数、分组所确定的 结果粒度，以及每组",
+      "效率，但正确的优化 必须保持结果语义及"
+    ],
+    "changedTextNodes": 18
+  },
+  {
+    "document": "04_data_quality",
+    "gaps": 34,
+    "examples": [
+      "改变统计对象，日期 补录会改变历史可用",
+      "量分析研究这些记录 特征是否满足既定用",
+      "失、测量误差和比率 误差则影响统计结论",
+      "策略需依据预计损失 选择（第 ",
+      "。规则符合情况提供 可计算的检查结果，",
+      "交付周期时，要考察 订单覆盖是否完整、"
+    ],
+    "changedTextNodes": 31
+  },
+  {
+    "document": "05_statistics_dashboard",
+    "gaps": 22,
+    "examples": [
+      "。订单周期的均值与 高分位数分别反映总",
+      "区分组内变化与组合 变化，设备利用率和",
+      "化、随机波动与过程 信号；存量、流量和",
+      "留这些区别，并注明 描述性发现及其仍待",
+      "本和总工时，中位数 反映中心位置，高分",
+      "2天，五天内完成的 比例为80%。均值"
+    ],
+    "changedTextNodes": 29
+  },
+  {
+    "document": "06_ab_testing",
+    "gaps": 19,
+    "examples": [
+      "机实验通过事先规定 处理分配机制，使组",
+      "及其精度取决于实验 单元、潜在结果和目",
+      "息，整群设计以共同 接受干预的对象为分",
+      "误。各方法的有效性 取决于相应的分配与",
+      "试验；若拟修改方案 或补充数据，应另行",
+      "体”，实验单位首先 应由业务流程确定。"
+    ],
+    "changedTextNodes": 20
+  },
+  {
+    "document": "07_prediction",
+    "gaps": 22,
+    "examples": [
+      "服务，组织需要根据 当前状态判断未来风",
+      "似该目标；逻辑回归 与集成学习是常用的",
+      "区间和运行监测用于 评价模型的泛化及适",
+      "算；改变结果的干预 则需估计处理效应，",
+      "件均值是平方损失下 的最优预测。更换损",
+      "测为正类，分类结果 可能一样，概率质量"
+    ],
+    "changedTextNodes": 25
+  },
+  {
+    "document": "08_causality",
+    "gaps": 31,
+    "examples": [
+      "订单接受加急与保持 原安排时的结果。实",
+      "加权依赖给定协变量 的可比性，差分中的",
+      "健估计结合结果回归 与处理概率模型。观",
+      "理下的条件均值均有 观测依据。再对目标",
+      "，低难度层 为 ",
+      "括所有同时影响加急 选择与延期的处理前"
+    ],
+    "changedTextNodes": 34
+  },
+  {
+    "document": "09_optimization",
+    "gaps": 24,
+    "examples": [
+      "约束。多个行动可能 竞争同一资源，因而",
+      "供需求、风险和效果 估计，优化模型根据",
+      "处理离散选择和活动 先后关系。随机库存",
+      "方案比较，决策导向 学习则以行动损失评",
+      "查、参数敏感性分析 与实施条件核验。",
+      "界。因此这一范围内 资源增量价值为每单"
+    ],
+    "changedTextNodes": 31
+  },
+  {
+    "document": "10_process_mining",
+    "gaps": 33,
+    "examples": [
+      "动的发生时间、执行 对象与结果，为等待",
+      "程模型描述活动发生 的条件；智能体根据",
+      "性检查分别用于建立 模型及核查规则遵循",
+      "别计入未来各步访问 所产生的期望时间。",
+      "；评价流程变更则需 重新说明变更后的概",
+      "。输入为订单到收款 日志，输出用于定位"
+    ],
+    "changedTextNodes": 34
+  },
+  {
+    "document": "11_modern_data_platform",
+    "gaps": 0,
+    "examples": [],
+    "changedTextNodes": 0
+  },
+  {
+    "document": "12_mlops",
+    "gaps": 0,
+    "examples": [],
+    "changedTextNodes": 0
+  },
+  {
+    "document": "13_ontology_action_scenario",
+    "gaps": 0,
+    "examples": [],
+    "changedTextNodes": 0
+  },
+  {
+    "document": "14_ai_agent",
+    "gaps": 0,
+    "examples": [],
+    "changedTextNodes": 19
+  },
+  {
+    "document": "agent-learning-map",
+    "gaps": 0,
+    "examples": [],
+    "changedTextNodes": 0
+  },
+  {
+    "document": "ai_question_to_data_case",
+    "gaps": 0,
+    "examples": [],
+    "changedTextNodes": 0
+  },
+  {
+    "document": "appendix-1",
+    "gaps": 11,
+    "examples": [
+      "的信号概率，再计算 条件状态概率。敏感",
+      " 节的标准化即利用 这一运算结构。在一",
+      "零，但一阶条件本身 既不保证极小值，也",
+      "二阶导数在整个区间 严格为正，则函数严",
+      "小值。只在某点二阶 导数为正，仅能结合",
+      "导数为正，因而能够 得到对应模型的唯一"
+    ],
+    "changedTextNodes": 9
+  },
+  {
+    "document": "appendix-2",
+    "gaps": 5,
+    "examples": [
+      "版本。依赖按仓库的 环境说明安装。一个",
+      "业数据时，还要记录 脱敏、授权范围和保",
+      "、单位、排序和时间 范围之后，再扩大数",
+      "；对实验，重点检查 分配单元和标准误；",
+      "，重点检查最终业务 状态与失败恢复，并"
+    ],
+    "changedTextNodes": 3
+  },
+  {
+    "document": "appendix-3",
+    "gaps": 3,
+    "examples": [
+      "留其性质；官方产品 文档按所引用页面或",
+      "另行保留合法可用的 版本记录。引用标准",
+      "论证依据，索引用于 回到本书中的概念位"
+    ],
+    "changedTextNodes": 3
+  },
+  {
+    "document": "appendix-4",
+    "gaps": 7,
+    "examples": [
+      "可行性，相关关系见 第 ",
+      " 章。以下参数均为 假定值，用于分析指",
+      "假设负载下，预填充 速度设为6000 ",
+      "的容量计算还需明确 服务位置的含义。本",
+      "61与3.18美元 的小时费用。第二次",
+      "固定成本、调度性能 与可行区间均需重新"
+    ],
+    "changedTextNodes": 11
+  },
+  {
+    "document": "assignment_01_data_modeling",
+    "gaps": 0,
+    "examples": [],
+    "changedTextNodes": 0
+  },
+  {
+    "document": "assignment_02_enterprise_data_model",
+    "gaps": 0,
+    "examples": [],
+    "changedTextNodes": 0
+  },
+  {
+    "document": "assignment_03_sql_kpi",
+    "gaps": 0,
+    "examples": [],
+    "changedTextNodes": 0
+  },
+  {
+    "document": "assignment_04_data_quality",
+    "gaps": 0,
+    "examples": [],
+    "changedTextNodes": 0
+  },
+  {
+    "document": "assignment_05_dashboard",
+    "gaps": 0,
+    "examples": [],
+    "changedTextNodes": 0
+  },
+  {
+    "document": "assignment_06_statistical_inference",
+    "gaps": 0,
+    "examples": [],
+    "changedTextNodes": 0
+  },
+  {
+    "document": "assignment_07_prediction",
+    "gaps": 0,
+    "examples": [],
+    "changedTextNodes": 0
+  },
+  {
+    "document": "assignment_09_causality",
+    "gaps": 0,
+    "examples": [],
+    "changedTextNodes": 0
+  },
+  {
+    "document": "assignment_11_optimization",
+    "gaps": 0,
+    "examples": [],
+    "changedTextNodes": 0
+  },
+  {
+    "document": "assignment_12_process_mining",
+    "gaps": 0,
+    "examples": [],
+    "changedTextNodes": 0
+  },
+  {
+    "document": "bibliography",
+    "gaps": 0,
+    "examples": [],
+    "changedTextNodes": 0
+  },
+  {
+    "document": "data-guide",
+    "gaps": 0,
+    "examples": [],
+    "changedTextNodes": 0
+  },
+  {
+    "document": "decision_memo_template",
+    "gaps": 0,
+    "examples": [],
+    "changedTextNodes": 0
+  },
+  {
+    "document": "final_project",
+    "gaps": 0,
+    "examples": [],
+    "changedTextNodes": 0
+  },
+  {
+    "document": "model_card_template",
+    "gaps": 0,
+    "examples": [],
+    "changedTextNodes": 0
+  },
+  {
+    "document": "preface",
+    "gaps": 25,
+    "examples": [
+      "需求，设备日志记录 生产状态，财务资料",
+      "，并比较不同方案的 预期后果。本书围绕",
+      "管理科学的基本理论 及其在生产运营中的",
+      "数据模型规定对象的 身份、属性与关系，",
+      "使推断建立在适当的 假设上，使决策符合",
+      "状态、行动、损失和 信息价值；第2至4"
+    ],
+    "changedTextNodes": 17
+  },
+  {
+    "document": "project_report_template",
+    "gaps": 0,
+    "examples": [],
+    "changedTextNodes": 0
+  },
+  {
+    "document": "semiconductor_kpi_m13_case",
+    "gaps": 0,
+    "examples": [],
+    "changedTextNodes": 0
+  },
+  {
+    "document": "syllabus",
+    "gaps": 0,
+    "examples": [],
+    "changedTextNodes": 0
+  }
+]

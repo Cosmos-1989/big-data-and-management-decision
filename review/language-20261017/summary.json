@@ -1,0 +1,774 @@
+{
+  "date": "2026-10-17",
+  "status": "published_and_verified_mobile_root_scrollwidth_exception_disclosed",
+  "requestedWork": [
+    "按 humanizer 技能审校全站正式中文，兼顾学术准确与自然流畅",
+    "修复中文词语内部异常空格",
+    "为首次出现且尚未解释的必要概念补充脚注"
+  ],
+  "skill": "/Users/sunzy/.agents/skills/humanizer/SKILL.md",
+  "scope": {
+    "webDocuments": 39,
+    "lectureDecks": 11,
+    "lectureSlidePages": 458,
+    "enterpriseCaseCards": 15,
+    "experiments": 21,
+    "caseAndExperimentScopesOverlapDocuments": true,
+    "supplementMarkdownDocuments": 22
+  },
+  "changes": {
+    "anomalousCjkGapsBefore": 330,
+    "remainingNormalizationChangesInFinalWebDocuments": 0,
+    "initialTextNodesTouchedByTypographyNormalization": 347,
+    "footnoteDefinitions": 90,
+    "footnoteReferences": 90,
+    "footnotesByReviewScope": {
+      "coreChapters01To05": 38,
+      "coreChapters06To10": 35,
+      "frontMatterAndAppendices": 4,
+      "supplementMarkdown": 13
+    },
+    "requiredTermsExplained": [
+      "数据仓库",
+      "ETL",
+      "OLAP",
+      "报表系统"
+    ],
+    "core01To05FinalChangedParagraphBlocks": 72,
+    "changedSlidePages": 157,
+    "changedSlideStrings": 172,
+    "countingRule": "操作日志条数、文本节点数、最终段落数、脚注条数和幻灯片页数分别统计，不互相替代。"
+  },
+  "academicIntegrity": {
+    "protectedMathConditionsExamplesCitationsLabelsAnchors": true,
+    "webSyncCheckedDocuments": 35,
+    "preservedCodeBlocksInWebSync": 15,
+    "preservedAnchorsInWebSync": 691,
+    "crossReviewCorrectionsApplied": [
+      "将边际收益递减与总收益下降区分",
+      "日志对齐释义涵盖日志移动与模型移动两个方向",
+      "首次出现处补充 ER、OEE、OCI、MCP、RRF 的名称",
+      "将申请确认与受控提交的状态影响表述为可能发生且需要授权"
+    ],
+    "declaredCodePresentationException": {
+      "experiment": "process",
+      "changes": "实验模板和编辑器 annotatedCode 中两处结果标签及一条注释，将等待时间改为相邻事件间隔；算法、数据及数值参数未改。",
+      "runtimeStatus": "运行完成",
+      "newLabelPresent": true,
+      "oldLabelPresent": false,
+      "averageThroughputHours": 114.88
+    }
+  },
+  "checks": {
+    "webContent": {
+      "evidence": "website/content-validation.json",
+      "stats": {
+        "pages": 39,
+        "tables": 90,
+        "figures": 19,
+        "equations": 1237
+      },
+      "errors": []
+    },
+    "webLanguage": {
+      "evidence": "website/review/language-20261017/language-validation.json",
+      "documents": 39,
+      "footnotes": 90,
+      "references": 90,
+      "errors": []
+    },
+    "webMath": {
+      "formulas": 1237,
+      "errors": [],
+      "method": "只读运行 node scripts/verify-math.mjs"
+    },
+    "slideContent": {
+      "decks": 11,
+      "pages": 458,
+      "formulas": 2147,
+      "errors": [],
+      "method": "只读运行 node scripts/verify-slides.mjs"
+    },
+    "slideLayout": {
+      "evidence": "website/review/language-20261017/slide-layout.json",
+      "pages": 458,
+      "pagesWithIssues": 0,
+      "mathErrors": 0,
+      "expandedPages": 13,
+      "expandedPageOverflows": 0,
+      "diagramIssues": [],
+      "fontEvidence": [
+        {
+          "family": "BDM Course Song",
+          "status": "loaded",
+          "weight": "400"
+        },
+        {
+          "family": "BDM Course Song",
+          "status": "loaded",
+          "weight": "700"
+        }
+      ]
+    },
+    "diagrams": {
+      "evidence": "website/review/language-20261017/diagram-validation.json",
+      "figures": 190,
+      "errors": []
+    },
+    "experimentIntegrity": {
+      "evidence": "website/review/language-20261017/experiment-integrity.json",
+      "experiments": 21,
+      "errors": [],
+      "declaredChangedCodeLabels": [
+        "process"
+      ]
+    },
+    "pdf": {
+      "evidence": "website/review/language-20261017/pdf-build.json",
+      "pages": 194,
+      "sha256": "b57b563f877ade71ce973345744a368992bd28501be3fcdbe220298059e1c500",
+      "warnings": [],
+      "visualEvidence": "website/review/language-20261017/pdf-visual-review.md",
+      "contactSheetsViewed": 17,
+      "pagesCoveredByContactSheets": 194,
+      "highResolutionPagesViewed": 29,
+      "visualIssues": []
+    },
+    "mobile": {
+      "evidence": "website/review/language-20261017/mobile.json",
+      "finalLayoutStatus": "body_notes_and_navigation_pass_root_scrollwidth_exception",
+      "viewport": 390,
+      "contentWidth": 390,
+      "documentWidthAtRecordedSnapshot": 490,
+      "noteKeyboardTarget": "fn2",
+      "notesFitViewportAtSnapshot": true,
+      "keyboardFootnoteNavigationPassed": true,
+      "note": "正文与注释适合390px视口，15幅图解在图框内滚动，键盘注释跳转和返回通过；根文档scrollWidth仍报告490px，与幻灯片内部溢出统计相关，本轮未调整尺寸规则，不宣称全站手机宽度检查无异常。"
+    },
+    "runtimeSmoke": {
+      "evidence": "website/review/language-20261017/runtime-smoke.json",
+      "results": {
+        "process": {
+          "newLabel": true,
+          "oldLabel": false,
+          "output": "ent → pack_order11order_received → pick_items21quality_check → invoice_sent11ship_order → payment_received481合规异常case_idissueO2C004missing credit_checkO2C007activity order violation平均吞吐时间（小时）: 114.88\n",
+          "status": "运行完成"
+        },
+        "statistics": {
+          "error": null,
+          "parameters": [
+            "移动平均窗口 / 观测期3"
+          ],
+          "results": [
+            "运营指标",
+            "收入趋势",
+            "收入描述统计"
+          ],
+          "status": "运行完成"
+        }
+      }
+    },
+    "finalRootChecks": {
+      "source": "root于2026-10-17的最终检查消息",
+      "typographyTestsPassed": 7,
+      "typographyTestsTotal": 7,
+      "webDocuments": 39,
+      "webFormulas": 1237,
+      "slidePages": 458,
+      "slideFormulas": 2147,
+      "diagrams": 190,
+      "diagramRendererTypes": 6,
+      "proseCoverage": {
+        "webDocuments": 39,
+        "lectureDecks": 11,
+        "slidePages": 458
+      }
+    }
+  },
+  "sourceMirrors": {
+    "checkedPairs": 51,
+    "uniquePrimaryFiles": 45,
+    "byteIdenticalPairs": 51,
+    "groups": {
+      "textbook": 19,
+      "course-materials": 22,
+      "prose-cleanup": 4,
+      "latex": 1,
+      "agent-course": 5
+    },
+    "files": [
+      {
+        "group": "textbook",
+        "source": "docs/textbook/appendices.tex",
+        "mirror": "website/content-source/textbook/appendices.tex",
+        "bytes": 16320,
+        "sourceSha256": "091ec663c08dbfb77c3a752be54cbb47b3ab797405f2b965d9696fedc658e624",
+        "mirrorSha256": "091ec663c08dbfb77c3a752be54cbb47b3ab797405f2b965d9696fedc658e624",
+        "identical": true
+      },
+      {
+        "group": "textbook",
+        "source": "docs/textbook/assets/README.md",
+        "mirror": "website/content-source/textbook/assets/README.md",
+        "bytes": 741,
+        "sourceSha256": "a5029e2f1ae9232140f62a2b48751432c36b1b15804fe539e7d39ddde6f3d1c3",
+        "mirrorSha256": "a5029e2f1ae9232140f62a2b48751432c36b1b15804fe539e7d39ddde6f3d1c3",
+        "identical": true
+      },
+      {
+        "group": "textbook",
+        "source": "docs/textbook/assets/cover_data_decisions.png",
+        "mirror": "website/content-source/textbook/assets/cover_data_decisions.png",
+        "bytes": 1643268,
+        "sourceSha256": "ba6f64d14b1be344b85a146830bb83abc9795089f239e96f863ae8e5c78acdec",
+        "mirrorSha256": "ba6f64d14b1be344b85a146830bb83abc9795089f239e96f863ae8e5c78acdec",
+        "identical": true
+      },
+      {
+        "group": "textbook",
+        "source": "docs/textbook/book_preamble.tex",
+        "mirror": "website/content-source/textbook/book_preamble.tex",
+        "bytes": 2764,
+        "sourceSha256": "7cc1cc7ac79701189239e7f8718bebb40842c0cf6812ca90495038220b53b4e1",
+        "mirrorSha256": "7cc1cc7ac79701189239e7f8718bebb40842c0cf6812ca90495038220b53b4e1",
+        "identical": true
+      },
+      {
+        "group": "textbook",
+        "source": "docs/textbook/chapters/01_intro.tex",
+        "mirror": "website/content-source/textbook/chapters/01_intro.tex",
+        "bytes": 42804,
+        "sourceSha256": "e7c78f125bc4025488a52f547e25353cc0fec157768c870ee1e7d4b7dfc470f5",
+        "mirrorSha256": "e7c78f125bc4025488a52f547e25353cc0fec157768c870ee1e7d4b7dfc470f5",
+        "identical": true
+      },
+      {
+        "group": "textbook",
+        "source": "docs/textbook/chapters/02_enterprise_data_model.tex",
+        "mirror": "website/content-source/textbook/chapters/02_enterprise_data_model.tex",
+        "bytes": 70820,
+        "sourceSha256": "63317dc8b50d52c49edaf2ff70669988e7b48c2c6f84df8ee671b59fed297725",
+        "mirrorSha256": "63317dc8b50d52c49edaf2ff70669988e7b48c2c6f84df8ee671b59fed297725",
+        "identical": true
+      },
+      {
+        "group": "textbook",
+        "source": "docs/textbook/chapters/03_sql_kpi.tex",
+        "mirror": "website/content-source/textbook/chapters/03_sql_kpi.tex",
+        "bytes": 41543,
+        "sourceSha256": "c2d924a73b4c70848b9ac0fff6ab2bac969c5639dc2e94ec49f04862524a8066",
+        "mirrorSha256": "c2d924a73b4c70848b9ac0fff6ab2bac969c5639dc2e94ec49f04862524a8066",
+        "identical": true
+      },
+      {
+        "group": "textbook",
+        "source": "docs/textbook/chapters/04_data_quality.tex",
+        "mirror": "website/content-source/textbook/chapters/04_data_quality.tex",
+        "bytes": 44397,
+        "sourceSha256": "025c12030aef69b0625f4ff471604047c7864914dd50da5254db61d605f6ba3a",
+        "mirrorSha256": "025c12030aef69b0625f4ff471604047c7864914dd50da5254db61d605f6ba3a",
+        "identical": true
+      },
+      {
+        "group": "textbook",
+        "source": "docs/textbook/chapters/05_statistics_dashboard.tex",
+        "mirror": "website/content-source/textbook/chapters/05_statistics_dashboard.tex",
+        "bytes": 39160,
+        "sourceSha256": "f0cd7fb9819589570fa01af2ccff1ed979df6478b22bbee92bc9a003631a7043",
+        "mirrorSha256": "f0cd7fb9819589570fa01af2ccff1ed979df6478b22bbee92bc9a003631a7043",
+        "identical": true
+      },
+      {
+        "group": "textbook",
+        "source": "docs/textbook/chapters/06_ab_testing.tex",
+        "mirror": "website/content-source/textbook/chapters/06_ab_testing.tex",
+        "bytes": 31102,
+        "sourceSha256": "b6cd99c9648d4d83c61a5b9a50cf2ac95f9cac8a2736ae630485086c0c4d8ea8",
+        "mirrorSha256": "b6cd99c9648d4d83c61a5b9a50cf2ac95f9cac8a2736ae630485086c0c4d8ea8",
+        "identical": true
+      },
+      {
+        "group": "textbook",
+        "source": "docs/textbook/chapters/07_prediction.tex",
+        "mirror": "website/content-source/textbook/chapters/07_prediction.tex",
+        "bytes": 36827,
+        "sourceSha256": "97d7c03710523ef6e2ef48aa8c128522c4840e092ff2cdbd2ccfe1a62f875d7f",
+        "mirrorSha256": "97d7c03710523ef6e2ef48aa8c128522c4840e092ff2cdbd2ccfe1a62f875d7f",
+        "identical": true
+      },
+      {
+        "group": "textbook",
+        "source": "docs/textbook/chapters/08_causality.tex",
+        "mirror": "website/content-source/textbook/chapters/08_causality.tex",
+        "bytes": 37513,
+        "sourceSha256": "b7f36d3bff50681ee0af2be509f60ee18cb24ae8ad164623227334351dd06a68",
+        "mirrorSha256": "b7f36d3bff50681ee0af2be509f60ee18cb24ae8ad164623227334351dd06a68",
+        "identical": true
+      },
+      {
+        "group": "textbook",
+        "source": "docs/textbook/chapters/09_optimization.tex",
+        "mirror": "website/content-source/textbook/chapters/09_optimization.tex",
+        "bytes": 33073,
+        "sourceSha256": "43399246d4eb582e28c95015a52e1508d977a835f6e5621780483809f9150856",
+        "mirrorSha256": "43399246d4eb582e28c95015a52e1508d977a835f6e5621780483809f9150856",
+        "identical": true
+      },
+      {
+        "group": "textbook",
+        "source": "docs/textbook/chapters/10_process_mining.tex",
+        "mirror": "website/content-source/textbook/chapters/10_process_mining.tex",
+        "bytes": 45657,
+        "sourceSha256": "92c9a9a9c95ac7da7864f53155d51d1f4a50688e3b595b7a18fbb2181ad4012f",
+        "mirrorSha256": "92c9a9a9c95ac7da7864f53155d51d1f4a50688e3b595b7a18fbb2181ad4012f",
+        "identical": true
+      },
+      {
+        "group": "textbook",
+        "source": "docs/textbook/editorial_style.tex",
+        "mirror": "website/content-source/textbook/editorial_style.tex",
+        "bytes": 5354,
+        "sourceSha256": "41163af2549d7d7c9f915e10be1ab02763523f073038daa047fcd2d8f9d79bc6",
+        "mirrorSha256": "41163af2549d7d7c9f915e10be1ab02763523f073038daa047fcd2d8f9d79bc6",
+        "identical": true
+      },
+      {
+        "group": "textbook",
+        "source": "docs/textbook/frontmatter.tex",
+        "mirror": "website/content-source/textbook/frontmatter.tex",
+        "bytes": 9633,
+        "sourceSha256": "b346e94778b31f2c35a12e7a135f5081b0306c9bc8c1786ef04ae55cbf8f4753",
+        "mirrorSha256": "b346e94778b31f2c35a12e7a135f5081b0306c9bc8c1786ef04ae55cbf8f4753",
+        "identical": true
+      },
+      {
+        "group": "textbook",
+        "source": "docs/textbook/index.ist",
+        "mirror": "website/content-source/textbook/index.ist",
+        "bytes": 123,
+        "sourceSha256": "095e821a431c9bcee50a04d67151704848ddc3eff10683ae2d4d7a6074995458",
+        "mirrorSha256": "095e821a431c9bcee50a04d67151704848ddc3eff10683ae2d4d7a6074995458",
+        "identical": true
+      },
+      {
+        "group": "textbook",
+        "source": "docs/textbook/main.tex",
+        "mirror": "website/content-source/textbook/main.tex",
+        "bytes": 933,
+        "sourceSha256": "c3df4ec70968751533942303150b8c06681deb05618c390bbb151b078a9af3b7",
+        "mirrorSha256": "c3df4ec70968751533942303150b8c06681deb05618c390bbb151b078a9af3b7",
+        "identical": true
+      },
+      {
+        "group": "textbook",
+        "source": "docs/textbook/references.bib",
+        "mirror": "website/content-source/textbook/references.bib",
+        "bytes": 35723,
+        "sourceSha256": "35532cf07ceef12d6837ed420426dd2697937bfc8c3592c168bc028a2a81c591",
+        "mirrorSha256": "35532cf07ceef12d6837ed420426dd2697937bfc8c3592c168bc028a2a81c591",
+        "identical": true
+      },
+      {
+        "group": "course-materials",
+        "source": "assignments/assignment_01_data_modeling.md",
+        "mirror": "website/content-source/course-materials/assignments/assignment_01_data_modeling.md",
+        "bytes": 1399,
+        "sourceSha256": "c4723ed7c651f5f382b6a3b509d3ebe4f996eda2caf6e2c6227d760863a3a920",
+        "mirrorSha256": "c4723ed7c651f5f382b6a3b509d3ebe4f996eda2caf6e2c6227d760863a3a920",
+        "identical": true
+      },
+      {
+        "group": "course-materials",
+        "source": "assignments/assignment_02_enterprise_data_model.md",
+        "mirror": "website/content-source/course-materials/assignments/assignment_02_enterprise_data_model.md",
+        "bytes": 1363,
+        "sourceSha256": "fc718bb84b151058adcbb4a627ef735137cdce8c0f95f1798d41dd8ccaa61908",
+        "mirrorSha256": "fc718bb84b151058adcbb4a627ef735137cdce8c0f95f1798d41dd8ccaa61908",
+        "identical": true
+      },
+      {
+        "group": "course-materials",
+        "source": "assignments/assignment_03_sql_kpi.md",
+        "mirror": "website/content-source/course-materials/assignments/assignment_03_sql_kpi.md",
+        "bytes": 2544,
+        "sourceSha256": "f0223bf209abae6bdfbd713de518c70f9a1b682c997c8bb3a6cc114a304707c7",
+        "mirrorSha256": "f0223bf209abae6bdfbd713de518c70f9a1b682c997c8bb3a6cc114a304707c7",
+        "identical": true
+      },
+      {
+        "group": "course-materials",
+        "source": "assignments/assignment_04_data_quality.md",
+        "mirror": "website/content-source/course-materials/assignments/assignment_04_data_quality.md",
+        "bytes": 1788,
+        "sourceSha256": "c07fb2c0c3f72a04238553e87b40968933a6f008a1802205cbd6013d3449d943",
+        "mirrorSha256": "c07fb2c0c3f72a04238553e87b40968933a6f008a1802205cbd6013d3449d943",
+        "identical": true
+      },
+      {
+        "group": "course-materials",
+        "source": "assignments/assignment_05_dashboard.md",
+        "mirror": "website/content-source/course-materials/assignments/assignment_05_dashboard.md",
+        "bytes": 2233,
+        "sourceSha256": "7ae2c5f5c5e8b44ecc62afce18d0a364764a5bf775aedddd7c7195d62c65277c",
+        "mirrorSha256": "7ae2c5f5c5e8b44ecc62afce18d0a364764a5bf775aedddd7c7195d62c65277c",
+        "identical": true
+      },
+      {
+        "group": "course-materials",
+        "source": "assignments/assignment_06_statistical_inference.md",
+        "mirror": "website/content-source/course-materials/assignments/assignment_06_statistical_inference.md",
+        "bytes": 1756,
+        "sourceSha256": "bf00520990957617cb0f9b62ddc5e306d385df2112530f455cb6feb5306094b9",
+        "mirrorSha256": "bf00520990957617cb0f9b62ddc5e306d385df2112530f455cb6feb5306094b9",
+        "identical": true
+      },
+      {
+        "group": "course-materials",
+        "source": "assignments/assignment_07_prediction.md",
+        "mirror": "website/content-source/course-materials/assignments/assignment_07_prediction.md",
+        "bytes": 1222,
+        "sourceSha256": "97d616a8b2ba03f2bb8a229a9563256d1656203ff42d15173a7544627b1a4bd2",
+        "mirrorSha256": "97d616a8b2ba03f2bb8a229a9563256d1656203ff42d15173a7544627b1a4bd2",
+        "identical": true
+      },
+      {
+        "group": "course-materials",
+        "source": "assignments/assignment_09_causality.md",
+        "mirror": "website/content-source/course-materials/assignments/assignment_09_causality.md",
+        "bytes": 1357,
+        "sourceSha256": "2990359db952700c6493ace62e9acf399bb9123e2f33a03f99d958fbd9d344b9",
+        "mirrorSha256": "2990359db952700c6493ace62e9acf399bb9123e2f33a03f99d958fbd9d344b9",
+        "identical": true
+      },
+      {
+        "group": "course-materials",
+        "source": "assignments/assignment_11_optimization.md",
+        "mirror": "website/content-source/course-materials/assignments/assignment_11_optimization.md",
+        "bytes": 1356,
+        "sourceSha256": "4c6e6725f6dda1a615ac6366b3eb8b16faa6bd46399865f8363e34dbdab07f29",
+        "mirrorSha256": "4c6e6725f6dda1a615ac6366b3eb8b16faa6bd46399865f8363e34dbdab07f29",
+        "identical": true
+      },
+      {
+        "group": "course-materials",
+        "source": "assignments/assignment_12_process_mining.md",
+        "mirror": "website/content-source/course-materials/assignments/assignment_12_process_mining.md",
+        "bytes": 1242,
+        "sourceSha256": "48d4b440cef7e0f0f3b5f24314ff655d861613ab525547bbc2ea0379338f470d",
+        "mirrorSha256": "48d4b440cef7e0f0f3b5f24314ff655d861613ab525547bbc2ea0379338f470d",
+        "identical": true
+      },
+      {
+        "group": "course-materials",
+        "source": "assignments/final_project.md",
+        "mirror": "website/content-source/course-materials/assignments/final_project.md",
+        "bytes": 4917,
+        "sourceSha256": "dd686c0d11596d625c7b727973fcdc552740d01b20b2cad29e4e9d157e29f7ec",
+        "mirrorSha256": "dd686c0d11596d625c7b727973fcdc552740d01b20b2cad29e4e9d157e29f7ec",
+        "identical": true
+      },
+      {
+        "group": "course-materials",
+        "source": "data/sample/README.md",
+        "mirror": "website/content-source/course-materials/data/sample/README.md",
+        "bytes": 2923,
+        "sourceSha256": "a819555a5e5613672520181f20314bb78a2d76e54891af0a985be754d95dcd61",
+        "mirrorSha256": "a819555a5e5613672520181f20314bb78a2d76e54891af0a985be754d95dcd61",
+        "identical": true
+      },
+      {
+        "group": "course-materials",
+        "source": "docs/cases/ai_question_to_data_case.md",
+        "mirror": "website/content-source/course-materials/docs/cases/ai_question_to_data_case.md",
+        "bytes": 1807,
+        "sourceSha256": "d3634be7c5d24952835f568b00d94c30a52c5d552c9ea755387fbe93618bf9fe",
+        "mirrorSha256": "d3634be7c5d24952835f568b00d94c30a52c5d552c9ea755387fbe93618bf9fe",
+        "identical": true
+      },
+      {
+        "group": "course-materials",
+        "source": "docs/cases/semiconductor_kpi_m13_case.md",
+        "mirror": "website/content-source/course-materials/docs/cases/semiconductor_kpi_m13_case.md",
+        "bytes": 4100,
+        "sourceSha256": "3422a2d96fcb7356d56feed1f22d6620aecbc93eb4aae1a249b300679c83ab5e",
+        "mirrorSha256": "3422a2d96fcb7356d56feed1f22d6620aecbc93eb4aae1a249b300679c83ab5e",
+        "identical": true
+      },
+      {
+        "group": "course-materials",
+        "source": "docs/lecture_notes/11_modern_data_platform.md",
+        "mirror": "website/content-source/course-materials/docs/lecture_notes/11_modern_data_platform.md",
+        "bytes": 5091,
+        "sourceSha256": "fe7958a5d45d9fa7507a52e321714dfb0670c8d309f0318b5c58ac5c14da90f8",
+        "mirrorSha256": "fe7958a5d45d9fa7507a52e321714dfb0670c8d309f0318b5c58ac5c14da90f8",
+        "identical": true
+      },
+      {
+        "group": "course-materials",
+        "source": "docs/lecture_notes/12_mlops.md",
+        "mirror": "website/content-source/course-materials/docs/lecture_notes/12_mlops.md",
+        "bytes": 458,
+        "sourceSha256": "84a6a8797091c23129658685b639876e545a914fb1a14f63cc4a46418b917d8a",
+        "mirrorSha256": "84a6a8797091c23129658685b639876e545a914fb1a14f63cc4a46418b917d8a",
+        "identical": true
+      },
+      {
+        "group": "course-materials",
+        "source": "docs/lecture_notes/13_ontology_action_scenario.md",
+        "mirror": "website/content-source/course-materials/docs/lecture_notes/13_ontology_action_scenario.md",
+        "bytes": 467,
+        "sourceSha256": "d97cede9cc7e87b5e7e19d790a92b0e4115c0a23027d3bd2f99a2cdbcc9a920a",
+        "mirrorSha256": "d97cede9cc7e87b5e7e19d790a92b0e4115c0a23027d3bd2f99a2cdbcc9a920a",
+        "identical": true
+      },
+      {
+        "group": "course-materials",
+        "source": "docs/lecture_notes/14_ai_agent.md",
+        "mirror": "website/content-source/course-materials/docs/lecture_notes/14_ai_agent.md",
+        "bytes": 47134,
+        "sourceSha256": "6b2cca9a1f619394d51e1ee7d4d384b12d0283ec08a7cc80279cd16bc48509a1",
+        "mirrorSha256": "6b2cca9a1f619394d51e1ee7d4d384b12d0283ec08a7cc80279cd16bc48509a1",
+        "identical": true
+      },
+      {
+        "group": "course-materials",
+        "source": "docs/syllabus.md",
+        "mirror": "website/content-source/course-materials/docs/syllabus.md",
+        "bytes": 5956,
+        "sourceSha256": "c10928dc74811ef0237f06d6391d290dc8b66b3517c6fc61769866bbd8568c39",
+        "mirrorSha256": "c10928dc74811ef0237f06d6391d290dc8b66b3517c6fc61769866bbd8568c39",
+        "identical": true
+      },
+      {
+        "group": "course-materials",
+        "source": "reports/decision_memo_template.md",
+        "mirror": "website/content-source/course-materials/reports/decision_memo_template.md",
+        "bytes": 275,
+        "sourceSha256": "37ed02e9df3f61dbdc26d244220d0af3b045840e043c4a37be5b5a276a71f704",
+        "mirrorSha256": "37ed02e9df3f61dbdc26d244220d0af3b045840e043c4a37be5b5a276a71f704",
+        "identical": true
+      },
+      {
+        "group": "course-materials",
+        "source": "reports/model_card_template.md",
+        "mirror": "website/content-source/course-materials/reports/model_card_template.md",
+        "bytes": 271,
+        "sourceSha256": "e475f15d9161334bd8fe0bbd24c9422874a8f122c12a29d975a417fc7450b2bd",
+        "mirrorSha256": "e475f15d9161334bd8fe0bbd24c9422874a8f122c12a29d975a417fc7450b2bd",
+        "identical": true
+      },
+      {
+        "group": "course-materials",
+        "source": "reports/project_report_template.md",
+        "mirror": "website/content-source/course-materials/reports/project_report_template.md",
+        "bytes": 483,
+        "sourceSha256": "8f144784d81c47370c14183578171cb770cc2e0b643c69c835f09c13c69c3ed4",
+        "mirrorSha256": "8f144784d81c47370c14183578171cb770cc2e0b643c69c835f09c13c69c3ed4",
+        "identical": true
+      },
+      {
+        "group": "prose-cleanup",
+        "source": "docs/cases/ai_question_to_data_case.md",
+        "mirror": "website/content-source/prose-cleanup/docs/cases/ai_question_to_data_case.md",
+        "bytes": 1807,
+        "sourceSha256": "d3634be7c5d24952835f568b00d94c30a52c5d552c9ea755387fbe93618bf9fe",
+        "mirrorSha256": "d3634be7c5d24952835f568b00d94c30a52c5d552c9ea755387fbe93618bf9fe",
+        "identical": true
+      },
+      {
+        "group": "prose-cleanup",
+        "source": "docs/cases/semiconductor_kpi_m13_case.md",
+        "mirror": "website/content-source/prose-cleanup/docs/cases/semiconductor_kpi_m13_case.md",
+        "bytes": 4100,
+        "sourceSha256": "3422a2d96fcb7356d56feed1f22d6620aecbc93eb4aae1a249b300679c83ab5e",
+        "mirrorSha256": "3422a2d96fcb7356d56feed1f22d6620aecbc93eb4aae1a249b300679c83ab5e",
+        "identical": true
+      },
+      {
+        "group": "prose-cleanup",
+        "source": "docs/lecture_notes/11_modern_data_platform.md",
+        "mirror": "website/content-source/prose-cleanup/docs/lecture_notes/11_modern_data_platform.md",
+        "bytes": 5091,
+        "sourceSha256": "fe7958a5d45d9fa7507a52e321714dfb0670c8d309f0318b5c58ac5c14da90f8",
+        "mirrorSha256": "fe7958a5d45d9fa7507a52e321714dfb0670c8d309f0318b5c58ac5c14da90f8",
+        "identical": true
+      },
+      {
+        "group": "prose-cleanup",
+        "source": "docs/syllabus.md",
+        "mirror": "website/content-source/prose-cleanup/docs/syllabus.md",
+        "bytes": 5956,
+        "sourceSha256": "c10928dc74811ef0237f06d6391d290dc8b66b3517c6fc61769866bbd8568c39",
+        "mirrorSha256": "c10928dc74811ef0237f06d6391d290dc8b66b3517c6fc61769866bbd8568c39",
+        "identical": true
+      },
+      {
+        "group": "latex",
+        "source": "docs/latex/bdm_lecture_preamble.tex",
+        "mirror": "website/content-source/latex/bdm_lecture_preamble.tex",
+        "bytes": 4798,
+        "sourceSha256": "40a5f38c6d3b618132516f57cdc8b5d86208df977ea0c203eadae115fca1ffc5",
+        "mirrorSha256": "40a5f38c6d3b618132516f57cdc8b5d86208df977ea0c203eadae115fca1ffc5",
+        "identical": true
+      },
+      {
+        "group": "agent-course",
+        "source": "docs/lecture_notes/14_ai_agent.md",
+        "mirror": "website/content-source/agent-course/14_ai_agent.md",
+        "bytes": 47134,
+        "sourceSha256": "6b2cca9a1f619394d51e1ee7d4d384b12d0283ec08a7cc80279cd16bc48509a1",
+        "mirrorSha256": "6b2cca9a1f619394d51e1ee7d4d384b12d0283ec08a7cc80279cd16bc48509a1",
+        "identical": true
+      },
+      {
+        "group": "agent-course",
+        "source": "assignments/final_project.md",
+        "mirror": "website/content-source/agent-course/final_project.md",
+        "bytes": 4917,
+        "sourceSha256": "dd686c0d11596d625c7b727973fcdc552740d01b20b2cad29e4e9d157e29f7ec",
+        "mirrorSha256": "dd686c0d11596d625c7b727973fcdc552740d01b20b2cad29e4e9d157e29f7ec",
+        "identical": true
+      },
+      {
+        "group": "agent-course",
+        "source": "src/bdm_decision/cases/week14_enterprise_agents.py",
+        "mirror": "website/content-source/agent-course/week14_enterprise_agents.py",
+        "bytes": 36296,
+        "sourceSha256": "191268253ba6d68df1208093bc863a54edf9f31dd2df97751183b019d16f902e",
+        "mirrorSha256": "191268253ba6d68df1208093bc863a54edf9f31dd2df97751183b019d16f902e",
+        "identical": true
+      },
+      {
+        "group": "agent-course",
+        "source": "tests/test_enterprise_agent_invariants.py",
+        "mirror": "website/content-source/agent-course/tests/test_enterprise_agent_invariants.py",
+        "bytes": 20857,
+        "sourceSha256": "ca3e0f419a67ee314efb81a8e9f8c59d560a5ddd9ada0d83de21daaf86ddfb79",
+        "mirrorSha256": "ca3e0f419a67ee314efb81a8e9f8c59d560a5ddd9ada0d83de21daaf86ddfb79",
+        "identical": true
+      },
+      {
+        "group": "agent-course",
+        "source": "tests/test_enterprise_agent_teaching.py",
+        "mirror": "website/content-source/agent-course/tests/test_enterprise_agent_teaching.py",
+        "bytes": 13539,
+        "sourceSha256": "5534a73d9456a57d5999beaef68f92d385b70a7f26cc6ae8be932eb721d21361",
+        "mirrorSha256": "5534a73d9456a57d5999beaef68f92d385b70a7f26cc6ae8be932eb721d21361",
+        "identical": true
+      }
+    ],
+    "errors": [],
+    "legacyProseCleanupMirrorsResynchronized": 4
+  },
+  "websiteSourcesWithoutPrimaryMirror": [
+    {
+      "file": "website/content-source/agent-course/cases.md",
+      "sha256": "fc36370aeca2dca6de413fa0e8cbafc7e5e08b993ba984d4abda7e54e76fd456",
+      "role": "websiteCanonicalSource"
+    },
+    {
+      "file": "website/content-source/agent-course/coverage.json",
+      "sha256": "aadb97b8e78bdaaabc598c39cbf59e76a7daa44c3ade57e64520e02f0defac5c",
+      "role": "historicalCoverageAudit"
+    },
+    {
+      "file": "website/content-source/agent-course/experiments.json",
+      "sha256": "da4a1d441fdf50e9e658fd46f9bcd355d962d55611ece3446f0c7e81d59f66e9",
+      "role": "websiteCanonicalSource"
+    },
+    {
+      "file": "website/content-source/agent-course/figures.json",
+      "sha256": "5014d1370d9f7b00462f520dd0ba0e515655d58152259872234ec3fc3cf4162b",
+      "role": "websiteCanonicalSource"
+    },
+    {
+      "file": "website/content-source/agent-course/kit/README.md",
+      "sha256": "1dd1d5790723a12199008f268e7944133d52c1c9797b6971a9efa0cfd8a1ca93",
+      "role": "websiteCanonicalSource"
+    },
+    {
+      "file": "website/content-source/agent-course/kit/deployment-checklist.md",
+      "sha256": "cdea67ed69b9ba9c5cc4f8108a507f78542ca091ffdd4b57f18e2babc8d7fcf5",
+      "role": "websiteCanonicalSource"
+    },
+    {
+      "file": "website/content-source/agent-course/kit/skills/customer-routing/SKILL.md",
+      "sha256": "30c640c1f31cfb7346c644233f0081a85ca2fc8dca5864a2c7e99894944af4f4",
+      "role": "websiteCanonicalSource"
+    },
+    {
+      "file": "website/content-source/agent-course/kit/skills/office-proposal/SKILL.md",
+      "sha256": "2268a268bd76086a4fb66c1263542320eafd29433c9799cd76f3ea13f6b7e18a",
+      "role": "websiteCanonicalSource"
+    },
+    {
+      "file": "website/content-source/agent-course/kit/skills/policy-evidence/SKILL.md",
+      "sha256": "94e36ed71ffdd85df733ec2e5cc054e8b39a21f15b8e8e1af0b49e56c8c4c586",
+      "role": "websiteCanonicalSource"
+    },
+    {
+      "file": "website/content-source/agent-course/kit/skills/production-triage/SKILL.md",
+      "sha256": "b1cc86204e4937fe2277224deaaff47a58010ee545d262ceee52f42840984050",
+      "role": "websiteCanonicalSource"
+    },
+    {
+      "file": "website/content-source/agent-course/kit/workflow-contract.json",
+      "sha256": "874abbd9849baf715ac636012e653b186af74daa81669ffbbf8bd34c0d4bb19d",
+      "role": "websiteCanonicalSource"
+    },
+    {
+      "file": "website/content-source/agent-course/slides.json",
+      "sha256": "a132f0115eef70c21373029d8f7a3c76f417b6dfa703191ed1cd829926c11296",
+      "role": "websiteCanonicalSource"
+    },
+    {
+      "file": "website/content-source/prose-cleanup/README.md",
+      "sha256": "7485918b902b6123f725f08adaa21167df73628dcf7ba5a41e9cf2fbe0ee2d53",
+      "role": "authoringGuidance"
+    }
+  ],
+  "historicalAudit": {
+    "file": "website/content-source/agent-course/coverage.json",
+    "auditDate": "2026-10-12",
+    "recordedSourceSha256": "10167276aac52b155773ac3dcc35e8cfd1f3d75773fb1dd8fe6b4f3eca58189f",
+    "currentSource": "docs/lecture_notes/14_ai_agent.md",
+    "currentSourceSha256": "6b2cca9a1f619394d51e1ee7d4d384b12d0283ec08a7cc80279cd16bc48509a1",
+    "interpretation": "保留前轮覆盖审计快照；其历史日期、工具状态和源哈希不冒称本轮重验结果。本轮仅审校文字并保留主题清单及锚点。"
+  },
+  "pdfCopies": [
+    {
+      "file": "docs/textbook/bdm_textbook.pdf",
+      "bytes": 2817139,
+      "sha256": "b57b563f877ade71ce973345744a368992bd28501be3fcdbe220298059e1c500"
+    },
+    {
+      "file": "website/dist/downloads/bdm_textbook.pdf",
+      "bytes": 2817139,
+      "sha256": "b57b563f877ade71ce973345744a368992bd28501be3fcdbe220298059e1c500"
+    }
+  ],
+  "evidenceConsistency": {
+    "reviewLogsAreHistoricalBeforeAfterRecords": true,
+    "crossReviewRecommendationsResolvedInCurrentSources": true,
+    "allCurrentSourceMirrorsMatch": true,
+    "publicationEvidenceNotYetProvided": false
+  },
+  "publication": {
+    "status": "published_and_verified",
+    "sourceCommit": "0c27ad93c77cfb7aba54b9bb662f53bcfb36d63c",
+    "pagesCommit": "4afd4f2ebf109ba77752fa68710c4ebf4d1eca93",
+    "deploymentRun": 38995024460,
+    "deploymentConclusion": "success",
+    "deploymentUrl": "https://github.com/Cosmos-1989/big-data-and-management-decision/actions/runs/38995024460",
+    "siteUrl": "https://cosmos-1989.github.io/big-data-and-management-decision/",
+    "httpsFilesCompared": 21,
+    "hashMatches": 21,
+    "onlineBrowserEvidence": "online-browser.json",
+    "onlineScreenshot": "online-notes.png",
+    "mobileEvidence": "mobile.json",
+    "githubPushVerified": true,
+    "githubPagesDeploymentVerified": true,
+    "liveContentVerified": true,
+    "note": "线上21个文件与本地SHA-256完全一致；独立后台页面核实首章注释、焦点、高亮和数学渲染。手机根文档宽度统计异常仍按原记录披露。"
+  }
+}

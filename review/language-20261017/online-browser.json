@@ -1,0 +1,47 @@
+{
+  "content": {
+    "mathErrors": 0,
+    "notes": 11,
+    "paragraph": "管理决策研究在一定信息和资源条件下如何选择行动。企业记录的订单、库存、设备状态与客户行为提供了描述经营活动的资料；比较补货、维修或营销方案，还需要估计各方案的后果并衡量相应代价。数据分析与决策分析由此发生联系。",
+    "refCount": 11,
+    "refs": [
+      {
+        "href": "#/chapter/01_intro?anchor=fn1",
+        "title": "数据仓库（data warehouse）是面向查询与分析的数据存储系统，汇集多个业务来源的数据，并按约定组织主题、历史记录和分析口径。"
+      },
+      {
+        "href": "#/chapter/01_intro?anchor=fn2",
+        "title": "ETL 是 extract, transform, load 的缩写，即抽取、转换、装载：先从源系统取得数据，再完成清洗与结构转换，最后写入目标系统。"
+      },
+      {
+        "href": "#/chapter/01_intro?anchor=fn3",
+        "title": "OLAP 是 online analytical processing 的缩写，即联机分析处理，支持按时间、地区、产品等维度汇总、切换和细查经营数据。"
+      },
+      {
+        "href": "#/chapter/01_intro?anchor=fn4",
+        "title": "报表系统按照预先定义或临时指定的查询和版式，将数据组织为表格、图形等输出，供经营汇报、监控或核对使用。"
+      }
+    ],
+    "script": "./app.js?v=20261017-1",
+    "url": "https://cosmos-1989.github.io/big-data-and-management-decision/#/chapter/01_intro"
+  },
+  "forward": {
+    "focused": "fn2",
+    "note": "ETL 是 extract, transform, load 的缩写，即抽取、转换、装载：先从源系统取得数据，再完成清洗与结构转换，最后写入目标系统。↩︎",
+    "url": "https://cosmos-1989.github.io/big-data-and-management-decision/#/chapter/01_intro?anchor=fn2"
+  },
+  "return": {
+    "focused": "fnref2",
+    "url": "https://cosmos-1989.github.io/big-data-and-management-decision/#/chapter/01_intro?anchor=fnref2"
+  },
+  "finalDisplay": {
+    "focused": "fn1",
+    "headerBottom": 114,
+    "mathErrors": 0,
+    "noteTop": 277.8046875,
+    "notes": 11,
+    "style": "./ui-theme.css?v=20261017-2",
+    "url": "https://cosmos-1989.github.io/big-data-and-management-decision/#/chapter/01_intro?anchor=fn1",
+    "viewport": 1280
+  }
+}

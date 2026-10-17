@@ -1,0 +1,69 @@
+[
+  {
+    "file": "website/dist/experiments.js",
+    "before": "移动平均窗口 / 日",
+    "after": "移动平均窗口 / 观测期",
+    "occurrences": 1,
+    "reason": "修正展示口径并补充实验简介的缩写含义；计算过程不变"
+  },
+  {
+    "file": "website/dist/experiments.js",
+    "before": "从事件日志重建流程，查看等待时间、返工和合规异常。",
+    "after": "从事件日志重建流程，比较相邻事件间隔、返工与待核查的合规异常。",
+    "occurrences": 1,
+    "reason": "修正展示口径并补充实验简介的缩写含义；计算过程不变"
+  },
+  {
+    "file": "website/dist/experiments.js",
+    "before": "平均等待小时",
+    "after": "平均事件间隔（小时）",
+    "occurrences": 2,
+    "reason": "修正展示口径并补充实验简介的缩写含义；计算过程不变"
+  },
+  {
+    "file": "website/dist/experiments.js",
+    "before": "调整 OEE 预警阈值，比较工站的良率、在制品与交付表现。",
+    "after": "调整设备综合效率（OEE）的预警阈值，比较工站的良率、在制品与交付表现。",
+    "occurrences": 1,
+    "reason": "修正展示口径并补充实验简介的缩写含义；计算过程不变"
+  },
+  {
+    "file": "website/dist/experiments.js",
+    "before": "比较朴素差异、风险分层与逆概率加权，检验平衡性。",
+    "after": "比较朴素差异、风险分层与逆概率加权（IPW），检查协变量平衡，并计算差分中的差分（DID）。",
+    "occurrences": 1,
+    "reason": "修正展示口径并补充实验简介的缩写含义；计算过程不变"
+  },
+  {
+    "file": "website/dist/experiments.js",
+    "before": "训练原课程逻辑回归模型，调整阈值，观察误报和漏报的变化。",
+    "after": "训练逻辑回归模型，调整分类阈值，观察误报与漏报的变化。",
+    "occurrences": 1,
+    "reason": "修正展示口径并补充实验简介的缩写含义；计算过程不变"
+  },
+  {
+    "file": "website/dist/experiments.js",
+    "before": "运行课程原有看板程序，输出完整图表与指标页面。",
+    "after": "运行运营看板程序，查看指标与图表页面。",
+    "occurrences": 1,
+    "reason": "修正展示口径并补充实验简介的缩写含义；计算过程不变"
+  },
+  {
+    "file": "website/dist/experiments.js",
+    "before": "给定每小时请求数与每次检索片段数，比较云端/本地每小时成本、设计容量、槽位利用率和成本临界点；判断本地方案是否满足容量约束。",
+    "after": "给定每小时请求数与每次检索片段数，比较云端与本地方案的每小时成本、设计容量、并行服务位置占用率和成本临界点，并检查本地方案是否满足容量约束。",
+    "occurrences": 1,
+    "reason": "修正展示口径并补充实验简介的缩写含义；计算过程不变"
+  },
+  {
+    "file": "website/dist/content/lab-specs.json",
+    "before": "平均等待小时；直接跟随关系连接相邻活动并汇总等待时间。",
+    "after": "平均事件间隔（小时）；直接跟随关系连接相邻活动，并汇总其时间戳之间的间隔。",
+    "occurrences": 3,
+    "reason": "实验编辑器采用annotatedCode，因此同步两处结果标签与一条注释；已实际运行核查，算法、数据及数值参数不变。"
+  },
+  {
+    "file": "website/dist/ui-theme.css",
+    "reason": "线上核验发现注释可能被固定导航遮挡：为注释和返回标记设置导航高度加22px滚动间距，并高亮获得焦点的注释；本地桌面验证注释位于导航下方。"
+  }
+]

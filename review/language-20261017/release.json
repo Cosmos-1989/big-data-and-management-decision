@@ -1,0 +1,14 @@
+{
+  "status": "published_and_verified",
+  "sourceCommit": "0c27ad93c77cfb7aba54b9bb662f53bcfb36d63c",
+  "pagesCommit": "4afd4f2ebf109ba77752fa68710c4ebf4d1eca93",
+  "deploymentRun": 38995024460,
+  "deploymentConclusion": "success",
+  "deploymentUrl": "https://github.com/Cosmos-1989/big-data-and-management-decision/actions/runs/38995024460",
+  "siteUrl": "https://cosmos-1989.github.io/big-data-and-management-decision/",
+  "httpsFilesCompared": 21,
+  "hashMatches": 21,
+  "onlineBrowserEvidence": "online-browser.json",
+  "onlineScreenshot": "online-notes.png",
+  "mobileEvidence": "mobile.json"
+}

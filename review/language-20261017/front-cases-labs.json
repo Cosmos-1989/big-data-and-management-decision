@@ -1,0 +1,1133 @@
+{
+  "scope": "前言、全部附录、15张企业案例卡、21个实验题面及说明字段、4个Agent实验源题面",
+  "skill": "/Users/sunzy/.agents/skills/humanizer/SKILL.md",
+  "operationCount": 138,
+  "addedFootnotes": 4,
+  "changes": [
+    {
+      "file": "docs/textbook/frontmatter.tex",
+      "before": "这些资料为管理决策提供了观察基础。\n从观察到决策，还需要明确记录的含义，评估统计结论的不确定性，并比较不同方案的\n预期后果。",
+      "after": "这些资料是管理决策的观察基础。\n利用这些观察作出决策，还需要明确记录的含义，评估统计结论的不确定性，并比较不同方案的\n预期后果。",
+      "reason": "改为正式、流畅的中文，保留原有论证与限定"
+    },
+    {
+      "file": "docs/textbook/frontmatter.tex",
+      "before": "把三者结合起来，才能使指标具有明确含义，使推断建立在适当的\n假设上，使决策符合组织目标与资源条件。",
+      "after": "三者的结合有助于明确指标含义、检验推断假设，并使决策符合组织目标与资源条件。",
+      "reason": "改为正式、流畅的中文，保留原有论证与限定"
+    },
+    {
+      "file": "docs/textbook/frontmatter.tex",
+      "before": "公式之后的算例用于说明\n计算步骤，条件变化的讨论用于说明结论如何随之改变。",
+      "after": "各公式配有算例说明计算步骤，并讨论条件变化如何影响结论。",
+      "reason": "改为正式、流畅的中文，保留原有论证与限定"
+    },
+    {
+      "file": "docs/textbook/frontmatter.tex",
+      "before": "来源引文对应公开事实，随后的\n模型与数值算例用于分析其技术机制。",
+      "after": "引文注明公开事实的来源，相关\n模型与数值算例用于分析技术机制。",
+      "reason": "改为正式、流畅的中文，保留原有论证与限定"
+    },
+    {
+      "file": "docs/textbook/frontmatter.tex",
+      "before": "企业系统分析从计算资源、数据、业务\n语义、模型服务、任务运行和实际行动出发，分别说明其技术条件与管理责任。",
+      "after": "企业系统分析涉及计算资源、数据、业务\n语义、模型服务、任务运行和实际行动，各部分均需明确技术条件与管理责任。",
+      "reason": "改为正式、流畅的中文，保留原有论证与限定"
+    },
+    {
+      "file": "docs/textbook/frontmatter.tex",
+      "before": "附录汇集数学关系、计算复现约定和证据写作规范。",
+      "after": "附录汇集数学关系、计算复现约定和实证报告规范。",
+      "reason": "改为正式、流畅的中文，保留原有论证与限定"
+    },
+    {
+      "file": "docs/textbook/frontmatter.tex",
+      "before": "业务对象与指标定义赋予记录以可供查询的\n含义；",
+      "after": "业务对象与指标定义明确记录的业务含义和查询口径；",
+      "reason": "改为正式、流畅的中文，保留原有论证与限定"
+    },
+    {
+      "file": "docs/textbook/frontmatter.tex",
+      "before": "访问控制、质量检查与责任分配作用于每一个环节。",
+      "after": "每个环节均需落实访问控制、质量检查与责任分配。",
+      "reason": "改为正式、流畅的中文，保留原有论证与限定"
+    },
+    {
+      "file": "docs/textbook/frontmatter.tex",
+      "before": "技术图应同时标明数据的位置、调用接口、使用者身份、可写入的业务对象以及收费\n单位。",
+      "after": "系统架构图应同时标明数据的位置、调用接口、使用者身份、允许写入的业务对象以及计费\n单位。",
+      "reason": "改为正式、流畅的中文，保留原有论证与限定"
+    },
+    {
+      "file": "docs/textbook/frontmatter.tex",
+      "before": "相应方法应用于制造情境时，",
+      "after": "将相应方法用于制造场景时，",
+      "reason": "改为正式、流畅的中文，保留原有论证与限定"
+    },
+    {
+      "file": "docs/textbook/appendices.tex",
+      "before": "对可积的连续变量，\n将求和改为关于其分布的积分。",
+      "after": "对可积的连续随机变量，\n将求和改为关于其分布的积分。",
+      "reason": "改为正式、流畅的中文，保留原有论证与限定"
+    },
+    {
+      "file": "docs/textbook/appendices.tex",
+      "before": "独立同分布观测的协方差为零，",
+      "after": "独立同分布的不同观测之间协方差为零，",
+      "reason": "改为正式、流畅的中文，保留原有论证与限定"
+    },
+    {
+      "file": "docs/textbook/appendices.tex",
+      "before": "在有约束问题中，应先检查可行性，再谈目标值。",
+      "after": "对有约束问题，应先核查方案的可行性，再比较目标值。",
+      "reason": "改为正式、流畅的中文，保留原有论证与限定"
+    },
+    {
+      "file": "docs/textbook/appendices.tex",
+      "before": "各模块的计算范围见表。其中，",
+      "after": "各模块的计算范围列于上表。",
+      "reason": "改为正式、流畅的中文，保留原有论证与限定"
+    },
+    {
+      "file": "docs/textbook/appendices.tex",
+      "before": "仓库测试同时保留手算结果与程序结果，",
+      "after": "配套测试同时保留手算结果与程序结果，",
+      "reason": "改为正式、流畅的中文，保留原有论证与限定"
+    },
+    {
+      "file": "docs/textbook/appendices.tex",
+      "before": "例如，企业披露采用某平台组织数据目录，是关于实施情况的事实；目录通过降低数据发现与理解成本改善分析效率，是可进一步检验的机制；是否采购该平台，则取决于需求、成本、替代方案、安全要求和实施能力。",
+      "after": "例如，企业披露采用某平台建立数据目录，属于实施情况的事实；数据目录能否通过降低数据发现与理解成本改善分析效率，是需要检验的机制问题；是否采购该平台，则取决于需求、成本、替代方案、安全要求和实施能力。",
+      "reason": "改为正式、流畅的中文，保留原有论证与限定"
+    },
+    {
+      "file": "docs/textbook/appendices.tex",
+      "before": "书目中的访问日期是在线材料的核查日期，不代替出版日期。",
+      "after": "书目中的访问日期说明何时核查在线材料，不能替代出版日期。",
+      "reason": "改为正式、流畅的中文，保留原有论证与限定"
+    },
+    {
+      "file": "docs/textbook/appendices.tex",
+      "before": "动态页面可能更新，重要复现应另行保留合法可用的\n版本记录。",
+      "after": "动态页面可能更新，涉及关键结论的复现应另行保留合法可用的\n版本记录。",
+      "reason": "改为正式、流畅的中文，保留原有论证与限定"
+    },
+    {
+      "file": "docs/textbook/appendices.tex",
+      "before": "费用阈值与容量上限共同定义候选区间；",
+      "after": "费用阈值与容量上限共同限定候选区间；",
+      "reason": "改为正式、流畅的中文，保留原有论证与限定"
+    },
+    {
+      "file": "docs/textbook/appendices.tex",
+      "before": "案例的简化容量公式不充当服务级别的正式证明。",
+      "after": "案例中的简化容量公式不能替代对实际服务性能的测量与验证。",
+      "reason": "改为正式、流畅的中文，保留原有论证与限定"
+    },
+    {
+      "file": "docs/textbook/appendices.tex",
+      "before": "数据文件哈希、依赖版本、随机种子、参数和输出日期。",
+      "after": "数据文件哈希\\footnote{文件哈希是由文件内容计算出的摘要，用于检查两份文件内容是否一致以及文件是否发生变化；复现时应同时记录所用算法。}、依赖版本、随机种子\\footnote{随机种子用于初始化伪随机数生成器。在相同程序、软件环境和随机数生成算法下固定种子，有助于重复得到同一随机序列；种子本身不能保证跨环境结果完全一致。}、参数和输出日期。",
+      "reason": "为首次使用且未解释的背景术语补充脚注"
+    },
+    {
+      "file": "docs/textbook/appendices.tex",
+      "before": "经典论文按正式发表信息著录；预印本保留其性质；",
+      "after": "经典论文按正式发表信息著录；预印本\\footnote{预印本是作者在正式期刊或会议出版之前公开的论文版本，可能尚未经过同行评议，引用时应注明版本及其发表状态。}保留其性质；",
+      "reason": "为首次使用且未解释的背景术语补充脚注"
+    },
+    {
+      "file": "docs/textbook/appendices.tex",
+      "before": "模型预填充与生成阶段的区分参考",
+      "after": "模型预填充与生成阶段\\footnote{预填充阶段处理输入序列并建立后续生成所需的中间状态；生成阶段逐步输出新的 token。两阶段的速度单位相同，但计算方式与资源占用不同。}的区分参考",
+      "reason": "为首次使用且未解释的背景术语补充脚注"
+    },
+    {
+      "file": "website/dist/content/case-cards.json",
+      "item": "airbus-skywise-maintenance",
+      "field": "takeaway",
+      "before": "数据平台的管理价值，取决于业务对象能否进入明确的状态、行动与损失模型。",
+      "after": "数据平台的管理价值取决于能否明确业务对象的状态、可选行动及相应损失。",
+      "reason": "使案例分析表述更准确、自然，并保留证据边界"
+    },
+    {
+      "file": "website/dist/content/case-cards.json",
+      "item": "airbus-skywise-maintenance",
+      "field": "sourceCaveat",
+      "before": "Skywise 合作与用途来自 Airbus 公告；维护决策的变量、模型和步骤为假定条件，不代表 Airbus 的实际算法或收益。",
+      "after": "Skywise 的合作情况与用途依据 Airbus 公告；维护决策的变量、模型和步骤均为教学设定，不代表 Airbus 的实际算法或收益。",
+      "reason": "使案例分析表述更准确、自然，并保留证据边界"
+    },
+    {
+      "file": "website/dist/content/case-cards.json",
+      "item": "oracle-red-bull-simulation",
+      "field": "flow[2]",
+      "before": "比较｜同时看平均结果和不利情景的表现",
+      "after": "比较｜同时考察平均结果和不利情景下的表现",
+      "reason": "使案例分析表述更准确、自然，并保留证据边界"
+    },
+    {
+      "file": "website/dist/content/case-cards.json",
+      "item": "oracle-red-bull-simulation",
+      "field": "flow[3]",
+      "before": "更新｜新信息到来时重校输入与策略",
+      "after": "更新｜新信息到来时重新校准输入与策略",
+      "reason": "使案例分析表述更准确、自然，并保留证据边界"
+    },
+    {
+      "file": "website/dist/content/case-cards.json",
+      "item": "oracle-red-bull-simulation",
+      "field": "takeaway",
+      "before": "更多仿真可降低抽样误差；情景设定或模拟器本身偏离现实，仍需独立校准。",
+      "after": "增加仿真次数可降低抽样误差；情景设定或模拟器偏离现实所造成的误差，仍需通过校准检验。",
+      "reason": "使案例分析表述更准确、自然，并保留证据边界"
+    },
+    {
+      "file": "website/dist/content/case-cards.json",
+      "item": "palantir-ontology-lot",
+      "field": "takeaway",
+      "before": "读到延期率的权限，与修改订单优先级的权限，是不同的系统职责。",
+      "after": "读取延期率与修改订单优先级需要分别授权。",
+      "reason": "使案例分析表述更准确、自然，并保留证据边界"
+    },
+    {
+      "file": "website/dist/content/case-cards.json",
+      "item": "atlan-nasdaq-catalog",
+      "field": "context",
+      "before": "Atlan 案例描述 Nasdaq 在平台更新中组合转换、存储、监测与目录工具，以改善数据发现、来源追踪和治理协作。",
+      "after": "Atlan 案例介绍 Nasdaq 在平台更新中整合数据转换、存储、监测与目录工具，以改善数据发现、来源追踪和治理协作。",
+      "reason": "使案例分析表述更准确、自然，并保留证据边界"
+    },
+    {
+      "file": "website/dist/content/case-cards.json",
+      "item": "atlan-nasdaq-catalog",
+      "field": "sourceCaveat",
+      "before": "平台组合与内部调查来自 Atlan 的客户案例；耗时分解和加速算式为假定计算，不是 Nasdaq 的实测收益或因果评价。",
+      "after": "平台组合与内部调查依据 Atlan 的客户案例；耗时分解及加速比计算为教学设定，不是 Nasdaq 的实测收益或因果评价。",
+      "reason": "使案例分析表述更准确、自然，并保留证据边界"
+    },
+    {
+      "file": "website/dist/content/case-cards.json",
+      "item": "snowflake-databricks-semantic-query",
+      "field": "flow[2]",
+      "before": "提问｜用未见过的同义表达与不同规模的数据测试",
+      "after": "测试｜使用未见过的同义表达与不同规模的数据检验回答",
+      "reason": "使案例分析表述更准确、自然，并保留证据边界"
+    },
+    {
+      "file": "website/dist/content/case-cards.json",
+      "item": "snowflake-databricks-semantic-query",
+      "field": "takeaway",
+      "before": "问数系统应检验答案对应的口径，而非仅检查 SQL 是否成功执行。",
+      "after": "问数系统既需检查 SQL 能否成功执行，也需核验答案采用的指标口径。",
+      "reason": "使案例分析表述更准确、自然，并保留证据边界"
+    },
+    {
+      "file": "website/dist/content/case-cards.json",
+      "item": "snowflake-databricks-semantic-query",
+      "field": "sourceCaveat",
+      "before": "产品机制来自两家公司公开文档；这里没有对产品准确率、速度或商业效果作实测比较。",
+      "after": "产品机制依据两家公司公开文档；本案例未实测比较产品准确率、速度或商业效果。",
+      "reason": "使案例分析表述更准确、自然，并保留证据边界"
+    },
+    {
+      "file": "website/dist/content/case-cards.json",
+      "item": "multi-platform-query-evaluation",
+      "field": "takeaway",
+      "before": "合理数字也可能来自错误口径；拒绝越权请求可以是正确的安全结果。",
+      "after": "数值看似合理的答案也可能采用错误口径；拒绝越权请求则可能是符合安全要求的正确结果。",
+      "reason": "使案例分析表述更准确、自然，并保留证据边界"
+    },
+    {
+      "file": "website/dist/content/case-cards.json",
+      "item": "multi-platform-query-evaluation",
+      "field": "sourceCaveat",
+      "before": "产品职责见公开文档；以下为比较协议的假定方案，不包含两款产品的实测排名。",
+      "after": "产品职责依据公开文档；比较协议为假定方案，不包含两款产品的实测排名。",
+      "reason": "使案例分析表述更准确、自然，并保留证据边界"
+    },
+    {
+      "file": "website/dist/content/case-cards.json",
+      "item": "collibra-froedtert-catalog",
+      "field": "takeaway",
+      "before": "同一个名称可能指不同测量对象；定义、责任和访问权限应分别落地。",
+      "after": "同名指标可能测量不同对象，因而需分别明确指标定义、责任主体和访问权限。",
+      "reason": "使案例分析表述更准确、自然，并保留证据边界"
+    },
+    {
+      "file": "website/dist/content/case-cards.json",
+      "item": "monte-carlo-assurance-observability",
+      "field": "context",
+      "before": "供应商案例介绍 Assurance 在业务增长中引入数据可观测性。字段规则检查预先声明的约束，持续监测则检查数据量、分布、更新时间与血缘等运行状态。",
+      "after": "供应商案例介绍 Assurance 在业务增长中引入数据可观测性。字段规则检查预先声明的约束，持续监测则检查数据量、分布、更新时间与数据血缘（数据来源及其转换关系）等运行状态。",
+      "reason": "首次背景术语以括号简释，并优化通顺性"
+    },
+    {
+      "file": "website/dist/content/case-cards.json",
+      "item": "rolls-royce-spares-dashboard",
+      "field": "flow[2]",
+      "before": "供给｜显示库存、可得率和运输时延",
+      "after": "供给｜展示库存、备件可得性和运输时延",
+      "reason": "使案例分析表述更准确、自然，并保留证据边界"
+    },
+    {
+      "file": "website/dist/content/case-cards.json",
+      "item": "microsoft-experiment-to-factory",
+      "field": "flow[3]",
+      "before": "决策｜保存正负结果，区分预先检验与事后探索",
+      "after": "决策｜保存正面与负面结果，区分预先规定的检验与事后探索",
+      "reason": "使案例分析表述更准确、自然，并保留证据边界"
+    },
+    {
+      "file": "website/dist/content/case-cards.json",
+      "item": "microsoft-experiment-to-factory",
+      "field": "takeaway",
+      "before": "实验可信度取决于分配、质量检查和结果报告程序的可复现性。",
+      "after": "实验可信度依赖明确的分配机制、数据质量检查和可复查的结果报告。",
+      "reason": "使案例分析表述更准确、自然，并保留证据边界"
+    },
+    {
+      "file": "website/dist/content/case-cards.json",
+      "item": "rolls-royce-spares-prediction",
+      "field": "flow[2]",
+      "before": "校验｜记录提前退役或转出的删失，以及特征的可得时间",
+      "after": "校验｜记录提前退役或转出造成的删失（结果未被完整观察），以及特征的可得时间",
+      "reason": "补充删失的简明释义，保留结果观察边界"
+    },
+    {
+      "file": "website/dist/content/case-cards.json",
+      "item": "rolls-royce-spares-prediction",
+      "field": "flow[3]",
+      "before": "应用｜把预测与零件需求、维修周期和服务水平联动",
+      "after": "应用｜结合预测、零件需求、维修周期和服务水平制定方案",
+      "reason": "使案例分析表述更准确、自然，并保留证据边界"
+    },
+    {
+      "file": "website/dist/content/case-cards.json",
+      "item": "platform-effect-identification",
+      "field": "context",
+      "before": "设某制造集团分批启用统一数据目录。网站访问或上线后的交付改善不能直接归因于平台；需要定义可比较的任务、部门和采用时点。",
+      "after": "设某制造集团分批启用统一数据目录。访问量或上线后的交付改善不能直接归因于平台；评估需要明确采用时点，并选择可比较的任务与部门。",
+      "reason": "使案例分析表述更准确、自然，并保留证据边界"
+    },
+    {
+      "file": "website/dist/content/case-cards.json",
+      "item": "factory-expedite-allocation",
+      "field": "flow[2]",
+      "before": "净值｜把避免的延期损失与加急费用逐单相减",
+      "after": "净值｜逐单计算避免的期望延期损失与加急费用之差",
+      "reason": "使案例分析表述更准确、自然，并保留证据边界"
+    },
+    {
+      "file": "website/dist/content/case-cards.json",
+      "item": "celonis-siemens-process",
+      "field": "takeaway",
+      "before": "人工活动包括返工、必要控制与合理例外；减少人工触达须同时检查质量和合规后果。",
+      "after": "人工活动包括返工、必要控制与合理例外；减少人工处理次数时，须同时核查质量和合规后果。",
+      "reason": "使案例分析表述更准确、自然，并保留证据边界"
+    },
+    {
+      "file": "website/dist/content/case-cards.json",
+      "item": "order-expedite-execution",
+      "field": "context",
+      "before": "订单 O17 与批次、设备 E7 的队列状态共同定义加急任务。候选方案须通过授权核验、操作提交与结果回查，任务完成以实际状态为准。",
+      "after": "订单 O17 及其关联批次、设备 E7 的队列状态构成加急任务的已知条件。候选方案须经过授权核验、操作提交与结果回查，任务是否完成以实际业务状态为准。",
+      "reason": "使案例分析表述更准确、自然，并保留证据边界"
+    },
+    {
+      "file": "website/dist/content/case-cards.json",
+      "item": "order-expedite-execution",
+      "field": "flow[2]",
+      "before": "执行｜由授权人批准，服务端再验权限与资源后幂等提交",
+      "after": "执行｜授权人员批准后，服务端再次检查权限与资源，并以幂等方式提交",
+      "reason": "使案例分析表述更准确、自然，并保留证据边界"
+    },
+    {
+      "file": "website/dist/content/case-cards.json",
+      "item": "order-expedite-execution",
+      "field": "takeaway",
+      "before": "业务状态和执行记录共同证明任务完成。",
+      "after": "任务完成情况应由业务状态和执行记录共同核验。",
+      "reason": "使案例分析表述更准确、自然，并保留证据边界"
+    },
+    {
+      "file": "website/dist/content/lab-specs.json",
+      "item": "framing",
+      "field": "background",
+      "before": "制造企业观察到交付延期、库存积压等经营症状。管理者要把“现象”变成有对象、数据、指标和行动的任务。",
+      "after": "制造企业观察到交付延期、库存积压等经营症状。管理者需要明确问题涉及的业务对象、所需数据、评价指标和可选行动。",
+      "reason": "使题面更清晰、规范，保持实验行为和数值约束不变"
+    },
+    {
+      "file": "website/dist/content/lab-specs.json",
+      "item": "framing",
+      "field": "problem",
+      "before": "读取课程给定的经营症状，选取第一条，沿决策流程说明问题如何转化为可执行行动。",
+      "after": "读取内置经营症状列表，选取第一条，说明如何据此定义问题并形成可执行的行动方案。",
+      "reason": "使题面更清晰、规范，保持实验行为和数值约束不变"
+    },
+    {
+      "file": "website/dist/content/lab-specs.json",
+      "item": "framing",
+      "field": "output",
+      "before": "业务症状表，以及第一条症状对应的各步决策流程。",
+      "after": "经营症状表，以及第一条症状对应的各步决策流程。",
+      "reason": "使题面更清晰、规范，保持实验行为和数值约束不变"
+    },
+    {
+      "file": "website/dist/content/lab-specs.json",
+      "item": "framing",
+      "field": "example",
+      "before": "观察“交付延期”条目时，逐项检查候选数据、KPI、分析任务与责任行动是否衔接。",
+      "after": "分析“交付延期”条目时，逐项核对候选数据、KPI（关键绩效指标）、分析任务与行动责任是否衔接。",
+      "reason": "优化不自然表达，并为独立实验补充缩写释义"
+    },
+    {
+      "file": "website/dist/content/lab-specs.json",
+      "item": "framing",
+      "field": "evaluation",
+      "before": "答案应包含业务对象、行动对象、候选数据、指标与反馈；能指出仍需补充的约束。",
+      "after": "答案应包含业务对象、行动对象、候选数据、指标与反馈，并指出仍需补充的约束。",
+      "reason": "使题面更清晰、规范，保持实验行为和数值约束不变"
+    },
+    {
+      "file": "website/dist/content/lab-specs.json",
+      "item": "model",
+      "field": "background",
+      "before": "订单、客户、产品等业务记录散落在不同系统中，需要统一业务对象与关系口径。",
+      "after": "订单、客户、产品等业务记录分散在不同系统中，需要统一业务对象的定义及关系口径。",
+      "reason": "使题面更清晰、规范，保持实验行为和数值约束不变"
+    },
+    {
+      "file": "website/dist/content/lab-specs.json",
+      "item": "model",
+      "field": "constraints",
+      "before": "主键应唯一；外键与关系基数要和业务粒度一致。程序展示结构，不自动验证真实数据库中的记录。",
+      "after": "主键应唯一；外键与关系基数（对象之间的数量对应关系）应与业务粒度一致。程序展示数据结构，不自动验证真实数据库中的记录。",
+      "reason": "使题面更清晰、规范，保持实验行为和数值约束不变"
+    },
+    {
+      "file": "website/dist/content/lab-specs.json",
+      "item": "model",
+      "field": "example",
+      "before": "检查订单实体是否有可追溯的客户键，再说明“一个客户多笔订单”的基数。",
+      "after": "检查订单记录能否通过客户键关联到客户，再说明“一个客户可有多笔订单”对应的关系基数。",
+      "reason": "使题面更清晰、规范，保持实验行为和数值约束不变"
+    },
+    {
+      "file": "website/dist/content/lab-specs.json",
+      "item": "model",
+      "field": "evaluation",
+      "before": "逐一核查实体主键、关系外键和业务粒度；解释建表结构能否支持后续指标。",
+      "after": "逐一核查实体主键、关系外键和业务粒度，说明建表结构能否支持后续指标计算。",
+      "reason": "使题面更清晰、规范，保持实验行为和数值约束不变"
+    },
+    {
+      "file": "website/dist/content/lab-specs.json",
+      "item": "kpi",
+      "field": "constraints",
+      "before": "连接键必须唯一且可匹配；比率应先合并分子分母；未交付订单不能擅自算为准时或逾期。",
+      "after": "连接键必须满足唯一性与匹配要求；计算汇总比率时，应先分别汇总分子和分母；未交付订单不能直接计为准时或逾期。",
+      "reason": "使题面更清晰、规范，保持实验行为和数值约束不变"
+    },
+    {
+      "file": "website/dist/content/lab-specs.json",
+      "item": "manufacturing",
+      "field": "background",
+      "before": "半导体制造工作中心同时关心良率、设备效率、周期、在制品与准时交付。",
+      "after": "半导体制造工作中心需要同时分析良率、设备效率、生产周期、在制品与准时交付情况。",
+      "reason": "使题面更清晰、规范，保持实验行为和数值约束不变"
+    },
+    {
+      "file": "website/dist/content/lab-specs.json",
+      "item": "manufacturing",
+      "field": "problem",
+      "before": "按工作中心汇总制造指标，调整 OEE 阈值，列出低效率且 WIP 高于工站中位数的预警对象。",
+      "after": "按工作中心汇总制造指标，调整 OEE（设备综合效率）阈值，列出低效率且 WIP（在制品数量）高于工站中位数的预警对象。",
+      "reason": "使题面更清晰、规范，保持实验行为和数值约束不变"
+    },
+    {
+      "file": "website/dist/content/lab-specs.json",
+      "item": "manufacturing",
+      "field": "constraints",
+      "before": "OEE=可用率×性能率×质量率；良率和 OTD 用合计分子/分母；程序对零分母返回 0，但报告应标“未定义”。WIP 为记录均值，非日总量。",
+      "after": "OEE=可用率×性能率×质量率；良率和 OTD（准时交付率）按合计分子/分母计算；程序对零分母返回 0，但报告应标为“未定义”。WIP 为记录均值，不是日总量。",
+      "reason": "使题面更清晰、规范，保持实验行为和数值约束不变"
+    },
+    {
+      "file": "website/dist/content/lab-specs.json",
+      "item": "quality",
+      "field": "constraints",
+      "before": "问题数不等于受影响的唯一订单数；修复前应保留失败记录和规则，不能直接删除异常行。",
+      "after": "问题数不等于受影响的唯一订单数；修复前应保留失败记录和对应规则，不可直接删除异常行。",
+      "reason": "使题面更清晰、规范，保持实验行为和数值约束不变"
+    },
+    {
+      "file": "website/dist/content/lab-specs.json",
+      "item": "statistics",
+      "field": "problem",
+      "before": "计算收入分布摘要与运营 KPI，再按可调窗口画收入移动平均。",
+      "after": "计算收入分布摘要与运营 KPI，并按可调窗口绘制收入移动平均曲线。",
+      "reason": "使题面更清晰、规范，保持实验行为和数值约束不变"
+    },
+    {
+      "file": "website/dist/content/lab-specs.json",
+      "item": "statistics",
+      "field": "constraints",
+      "before": "窗口按数据行顺序计算；窗口变大使曲线更平滑但也更滞后。均值、分位数与离散程度回答不同问题。",
+      "after": "窗口按数据行顺序计算；窗口增大通常使曲线更平滑，也会增加对变化的响应滞后。均值、分位数与离散程度描述分布的不同特征。",
+      "reason": "使题面更清晰、规范，保持实验行为和数值约束不变"
+    },
+    {
+      "file": "website/dist/content/lab-specs.json",
+      "item": "statistics",
+      "field": "example",
+      "before": "比较窗口 1 和 7：观察局部峰值如何被平滑，同时注意突变识别的滞后。",
+      "after": "比较窗口 1 和 7，观察局部峰值的平滑程度，并考察对突变的识别是否滞后。",
+      "reason": "使题面更清晰、规范，保持实验行为和数值约束不变"
+    },
+    {
+      "file": "website/dist/content/lab-specs.json",
+      "item": "ab",
+      "field": "problem",
+      "before": "比较 A/B 两组的转化率、收入和护栏指标，计算处理组减对照组的差异及置信区间。",
+      "after": "比较 A/B 两组的转化率、收入和约束指标（护栏指标），计算处理组减对照组的差异及置信区间。",
+      "reason": "使题面更清晰、规范，保持实验行为和数值约束不变"
+    },
+    {
+      "file": "website/dist/content/lab-specs.json",
+      "item": "ab",
+      "field": "constraints",
+      "before": "随机分配和稳定观察窗口是因果解释前提；指标单位不同；区间跨 0 时不能认定差异方向。护栏变坏时不能只看转化提升。",
+      "after": "因果解释要求随机分配、稳定的观察窗口等条件；各指标的单位不同，须分别解释。区间跨 0 时，不能确定总体差异的方向；约束指标恶化时，推广判断还需考虑相应风险。",
+      "reason": "使题面更清晰、规范，保持实验行为和数值约束不变"
+    },
+    {
+      "file": "website/dist/content/lab-specs.json",
+      "item": "ab",
+      "field": "evaluation",
+      "before": "同时报告主指标与护栏的方向、单位和区间，并说明决策是否仍需扩大样本。",
+      "after": "同时报告主指标与约束指标的变化方向、单位和区间，并说明是否需要扩大样本以提高决策精度。",
+      "reason": "使题面更清晰、规范，保持实验行为和数值约束不变"
+    },
+    {
+      "file": "website/dist/content/lab-specs.json",
+      "item": "prediction",
+      "field": "problem",
+      "before": "用课程样本训练逻辑回归，调整分类阈值，读取混淆矩阵、分类指标、概率校准和 AUC。",
+      "after": "用课程样本训练逻辑回归，调整分类阈值，分析混淆矩阵、分类指标、概率校准和 AUC（ROC 曲线下面积，用于衡量风险排序能力）。",
+      "reason": "使题面更清晰、规范，保持实验行为和数值约束不变"
+    },
+    {
+      "file": "website/dist/content/lab-specs.json",
+      "item": "prediction",
+      "field": "example",
+      "before": "把阈值从 0.50 降到 0.20，比较召回与误报，并说明哪类错误对业务更贵。",
+      "after": "把阈值从 0.50 降到 0.20，比较召回率与误报数量，并说明哪类错误的业务代价更高。",
+      "reason": "使题面更清晰、规范，保持实验行为和数值约束不变"
+    },
+    {
+      "file": "website/dist/content/lab-specs.json",
+      "item": "prediction",
+      "field": "evaluation",
+      "before": "报告阈值变化后的误报、漏报和行动成本取舍；不要把 AUC 当作阈值指标。",
+      "after": "报告阈值变化后的误报、漏报及行动成本权衡；AUC 衡量整体排序能力，不随当前判定阈值改变。",
+      "reason": "使题面更清晰、规范，保持实验行为和数值约束不变"
+    },
+    {
+      "file": "website/dist/content/lab-specs.json",
+      "item": "causality",
+      "field": "background",
+      "before": "优惠券不是随机发放时，高风险客户更可能被触达，朴素留存差可能混入原有风险差异。",
+      "after": "优惠券并非随机发放时，高风险客户可能更常被选中，朴素留存率差异会混入原有风险差异。",
+      "reason": "使题面更清晰、规范，保持实验行为和数值约束不变"
+    },
+    {
+      "file": "website/dist/content/lab-specs.json",
+      "item": "causality",
+      "field": "problem",
+      "before": "计算朴素差异、风险分层估计和逆概率加权估计，检查加权后协变量平衡，并展示两期 DID。",
+      "after": "计算朴素差异、风险分层估计和逆概率加权（IPW）估计，检查加权后协变量平衡，并计算两期差分中的差分（DID）。",
+      "reason": "使题面更清晰、规范，保持实验行为和数值约束不变"
+    },
+    {
+      "file": "website/dist/content/lab-specs.json",
+      "item": "causality",
+      "field": "constraints",
+      "before": "IPW 依赖可测混杂充分调整与重叠性；DID 依赖平行趋势。截断影响权重和估计，不能视为自动消除偏差。",
+      "after": "IPW 依赖已测混杂因素的充分调整与重叠性；DID 依赖平行趋势等识别条件。截断会改变权重和估计结果，不能自动消除偏差。",
+      "reason": "使题面更清晰、规范，保持实验行为和数值约束不变"
+    },
+    {
+      "file": "website/dist/content/lab-specs.json",
+      "item": "causality",
+      "field": "example",
+      "before": "比较 clip=0.01 与 0.20 的 IPW 结果，再检查平衡变化，而非只比较效应大小。",
+      "after": "比较 clip=0.01 与 0.20 的 IPW 结果，并检查协变量平衡的变化。",
+      "reason": "使题面更清晰、规范，保持实验行为和数值约束不变"
+    },
+    {
+      "file": "website/dist/content/lab-specs.json",
+      "item": "causality",
+      "field": "evaluation",
+      "before": "写出三种估计的差别、加权平衡结果与未满足时的因果解释限制。",
+      "after": "说明三种估计的差别、加权后的平衡情况，以及识别条件未满足时因果解释所受的限制。",
+      "reason": "使题面更清晰、规范，保持实验行为和数值约束不变"
+    },
+    {
+      "file": "website/dist/content/lab-specs.json",
+      "item": "optimization",
+      "field": "problem",
+      "before": "为每种产品从可选整数订货量中选出组合，使期望净收益最大，同时满足预算与库容。",
+      "after": "为每种产品选择整数订货量，使总期望净收益最大，同时满足预算与库容约束。",
+      "reason": "使题面更清晰、规范，保持实验行为和数值约束不变"
+    },
+    {
+      "file": "website/dist/content/lab-specs.json",
+      "item": "optimization",
+      "field": "constraints",
+      "before": "预算和库容均为硬约束；场景概率应和为 1；金额、件数和空间单位不能混用。该例枚举离散方案，适合教学规模。",
+      "after": "预算和库容均为必须满足的约束；情景概率之和应为 1；金额、件数和空间单位不能混用。本例枚举离散方案，适用于教学规模的问题。",
+      "reason": "使题面更清晰、规范，保持实验行为和数值约束不变"
+    },
+    {
+      "file": "website/dist/content/lab-specs.json",
+      "item": "process",
+      "field": "problem",
+      "before": "按案例重建事件序列，统计流程变体和直接跟随关系，识别合规异常与平均吞吐时间。",
+      "after": "按流程实例重建事件序列，统计流程变体和直接跟随关系，识别合规异常，并计算平均吞吐时间。",
+      "reason": "使题面更清晰、规范，保持实验行为和数值约束不变"
+    },
+    {
+      "file": "website/dist/content/lab-specs.json",
+      "item": "process",
+      "field": "output",
+      "before": "流程变体表、相邻活动的平均等待时间、合规异常和平均吞吐小时。",
+      "after": "流程变体表、相邻活动的平均事件间隔、合规异常和平均吞吐时间（小时）。",
+      "reason": "事件间隔并不自动等于等待时间，与正文的时间定义统一"
+    },
+    {
+      "file": "website/dist/content/lab-specs.json",
+      "item": "process",
+      "field": "constraints",
+      "before": "同一 case_id 内按时间顺序排序；相邻事件差值不等于纯加工时间；平均吞吐不可说明瓶颈因果。",
+      "after": "同一 case_id 内按时间顺序排序；相邻事件间隔可能包含等待、处理和运输等时间，不能直接视为纯加工时间或纯等待时间；平均吞吐时间不能单独识别瓶颈及其因果机制。",
+      "reason": "使题面更清晰、规范，保持实验行为和数值约束不变"
+    },
+    {
+      "file": "website/dist/content/lab-specs.json",
+      "item": "process",
+      "field": "example",
+      "before": "比较最长平均相邻活动等待与常见变体，再检查是否由少数异常案例驱动。",
+      "after": "比较平均事件间隔最长的活动对与常见变体，检查结果是否由少数异常实例驱动。",
+      "reason": "使题面更清晰、规范，保持实验行为和数值约束不变"
+    },
+    {
+      "file": "website/dist/content/lab-specs.json",
+      "item": "process",
+      "field": "evaluation",
+      "before": "指出频繁变体、最长等待环节与返工/合规异常，并承认事件日志的解释边界。",
+      "after": "指出常见变体、事件间隔较长的环节及返工/合规异常，并说明仅凭现有日志能够支持哪些解释。",
+      "reason": "使题面更清晰、规范，保持实验行为和数值约束不变"
+    },
+    {
+      "file": "website/dist/content/lab-specs.json",
+      "item": "allocation",
+      "field": "evaluation",
+      "before": "逐项核查容量不超限，在 16 种组合中找最高收益；说明若最优有并列如何处理。",
+      "after": "逐项核查容量不超限，在 16 种组合中找出最高收益方案，并说明如何处理并列最优解。",
+      "reason": "使题面更清晰、规范，保持实验行为和数值约束不变"
+    },
+    {
+      "file": "website/dist/content/lab-specs.json",
+      "item": "ontology",
+      "field": "background",
+      "before": "业务对象、关系、候选行动、权限和审计记录需结构化表达，才能形成可追踪决策。",
+      "after": "业务对象、关系、候选行动、权限和审计记录需要结构化表达，才能追踪决策依据与执行情况。",
+      "reason": "使题面更清晰、规范，保持实验行为和数值约束不变"
+    },
+    {
+      "file": "website/dist/content/lab-specs.json",
+      "item": "ontology",
+      "field": "constraints",
+      "before": "纯数据结构演示；Permission 只声明允许与否，不执行授权检查；AuditEvent 为模拟记录，不表示真实业务已执行。",
+      "after": "本实验仅展示数据结构。Permission 记录权限声明，不执行授权检查；AuditEvent 为模拟审计记录，不表示真实业务已经执行。",
+      "reason": "使题面更清晰、规范，保持实验行为和数值约束不变"
+    },
+    {
+      "file": "website/dist/content/lab-specs.json",
+      "item": "ontology",
+      "field": "evaluation",
+      "before": "完整关联 object_id、action_id、角色权限和审计事件；说明哪些仅是声明。",
+      "after": "将 object_id、action_id、角色权限和审计事件完整关联，并说明哪些信息仅属于声明。",
+      "reason": "使题面更清晰、规范，保持实验行为和数值约束不变"
+    },
+    {
+      "file": "website/dist/content/lab-specs.json",
+      "item": "dashboard",
+      "field": "constraints",
+      "before": "图形展示为描述性统计；趋势共变不等于原因；预览 iframe 为隔离的生成页面。",
+      "after": "图形展示描述性统计，趋势共变不能直接解释为因果关系；iframe（嵌入网页的内联框架）中的预览为隔离生成的页面。",
+      "reason": "使题面更清晰、规范，保持实验行为和数值约束不变"
+    },
+    {
+      "file": "website/dist/content/lab-specs.json",
+      "item": "sql",
+      "field": "problem",
+      "before": "执行可编辑 SQL，按区域统计订单行数与销售额并按收入降序排列。",
+      "after": "执行可编辑的 SQL，按区域统计订单行数与销售额，并按收入降序排列。",
+      "reason": "使题面更清晰、规范，保持实验行为和数值约束不变"
+    },
+    {
+      "file": "website/dist/content/lab-specs.json",
+      "item": "sql",
+      "field": "output",
+      "before": "最后一条 SQL 查询的结果表，可选数值列作图。",
+      "after": "最后一条 SQL 查询的结果表；可选择数值列绘图。",
+      "reason": "使题面更清晰、规范，保持实验行为和数值约束不变"
+    },
+    {
+      "file": "website/dist/content/lab-specs.json",
+      "item": "sql",
+      "field": "constraints",
+      "before": "JOIN 必须保持订单事实粒度；订单行数 COUNT(*) 只有在连接不扩行时才等于原订单数。当前工作台只展示最后一个查询结果。",
+      "after": "JOIN（表连接）必须保持订单事实粒度；只有连接未增加行数时，订单行数 COUNT(*) 才等于原订单数。当前工作台只展示最后一条查询的结果。",
+      "reason": "使题面更清晰、规范，保持实验行为和数值约束不变"
+    },
+    {
+      "file": "website/dist/content/lab-specs.json",
+      "item": "ai-capacity",
+      "field": "background",
+      "before": "企业准备部署带检索和工具调用的 AI 问数服务。每次请求占用推理槽位并产生云端调用或本地运行成本。",
+      "after": "企业准备部署带检索和工具调用的 AI 问数服务。每次请求占用推理槽位（可并行处理任务的资源位置），并产生云端调用费用或本地运行成本。",
+      "reason": "使题面更清晰、规范，保持实验行为和数值约束不变"
+    },
+    {
+      "file": "website/dist/content/lab-specs.json",
+      "item": "ai-capacity",
+      "field": "constraints",
+      "before": "占用时间将查询与工具等待计入槽位；容量是平均占用近似，不是 P95 延迟或可靠性保证。价格和速率只是教材算例，不能当实时采购报价。先核查可行性，再比较费用。",
+      "after": "占用时间将查询与工具等待计入槽位；容量按平均占用近似计算，不保证 P95 延迟（请求延迟的高分位水平）或运行可靠性。价格和速率均为教学设定，不代表实时采购报价。应先核查可行性，再比较费用。",
+      "reason": "使题面更清晰、规范，保持实验行为和数值约束不变"
+    },
+    {
+      "file": "website/dist/content/lab-specs.json",
+      "item": "ai-capacity",
+      "field": "evaluation",
+      "before": "同时报告容量是否满足、两方案成本差与参数敏感性；不得仅凭较低成本推荐超容量的方案。",
+      "after": "同时报告容量是否满足要求、两方案的成本差与参数敏感性；成本较低但超出容量的方案不能直接推荐实施。",
+      "reason": "使题面更清晰、规范，保持实验行为和数值约束不变"
+    },
+    {
+      "file": "website/dist/content/lab-specs.json",
+      "item": "ai-sql-audit",
+      "field": "problem",
+      "before": "查询已交付订单的区域准时交付率，展示准时笔数与已交付笔数，再按比率升序排列。对照行数和指标字典审计结果。",
+      "after": "查询已交付订单的区域准时交付率，展示准时笔数与已交付笔数，再按比率升序排列。依据连接前后行数与指标字典核查结果。",
+      "reason": "使题面更清晰、规范，保持实验行为和数值约束不变"
+    },
+    {
+      "file": "website/dist/content/lab-specs.json",
+      "item": "ai-sql-audit",
+      "field": "evaluation",
+      "before": "结果应同时给出分子与分母，并声明对象范围、时间窗口、连接粒度及查询不可支持的因果结论。",
+      "after": "结果应同时给出分子与分母，并明确对象范围、时间窗口和连接粒度，以及本查询不能支持的因果结论。",
+      "reason": "使题面更清晰、规范，保持实验行为和数值约束不变"
+    },
+    {
+      "file": "website/dist/content/lab-specs.json",
+      "item": "agent-rag",
+      "field": "problem",
+      "before": "给定角色、日期与金额，确定可直接按条款办理、须经理预审、超出条款或需要拒答，并显示证据版本。",
+      "after": "给定角色、日期与金额，判断申请属于直接办理、经理预审、超出条款范围或拒答中的哪种情况，并显示证据版本。",
+      "reason": "使题面更清晰、规范，保持实验行为和数值约束不变"
+    },
+    {
+      "file": "website/dist/content/lab-specs.json",
+      "item": "agent-rag",
+      "field": "output",
+      "before": "判定、状态、制度 ID、理由、下一处理人；已授权时显示两版教学制度的额度。",
+      "after": "判定、状态、制度 ID、理由和下一处理人；访问已获授权时，显示两版教学制度的额度。",
+      "reason": "使题面更清晰、规范，保持实验行为和数值约束不变"
+    },
+    {
+      "file": "website/dist/content/lab-specs.json",
+      "item": "agent-rag",
+      "field": "constraints",
+      "before": "只按固定关键词和教学政策计算；不会访问真实制度。经理预审并非已批准。访客不得看到受限正文。",
+      "after": "本实验仅按固定关键词和教学制度计算，不访问真实制度。经理预审状态不等于批准；访客不得读取受限正文。",
+      "reason": "使题面更清晰、规范，保持实验行为和数值约束不变"
+    },
+    {
+      "file": "website/dist/content/lab-specs.json",
+      "item": "agent-office",
+      "field": "background",
+      "before": "排期和资料检索都是常见的办公室重复任务，但日历提交与受限研发资料需要不同权限。",
+      "after": "会议排期和资料检索是常见的办公任务，提交日历与读取受限研发资料须分别授权。",
+      "reason": "使题面更清晰、规范，保持实验行为和数值约束不变"
+    },
+    {
+      "file": "website/dist/content/lab-specs.json",
+      "item": "agent-office",
+      "field": "problem",
+      "before": "给李、王求最早共同空档；经组织者模拟审批后才确认本地提案。查询芯片接口和泵振动资料时过滤未批准版本与角色。",
+      "after": "求李、王最早的共同空档；经组织者模拟审批后，才确认本地会议提案。查询芯片接口和泵振动资料时，仅使用已批准且当前角色可访问的版本。",
+      "reason": "使题面更清晰、规范，保持实验行为和数值约束不变"
+    },
+    {
+      "file": "website/dist/content/lab-specs.json",
+      "item": "agent-office",
+      "field": "output",
+      "before": "会议提案或本地确认状态、研发资料答复或权限拒绝、每项状态。",
+      "after": "会议提案或本地确认结果、研发资料答复或权限拒绝结果，以及各项状态。",
+      "reason": "使题面更清晰、规范，保持实验行为和数值约束不变"
+    },
+    {
+      "file": "website/dist/content/lab-specs.json",
+      "item": "agent-routing",
+      "field": "background",
+      "before": "虚构客服同时处理订单进度、退货、产品资料与安全消息；错误分流可能泄露订单或延迟人工响应。",
+      "after": "虚构客服系统同时处理订单进度、退货、产品资料与安全消息；错误分流可能泄露订单信息或延迟人工响应。",
+      "reason": "使题面更清晰、规范，保持实验行为和数值约束不变"
+    },
+    {
+      "file": "website/dist/content/lab-specs.json",
+      "item": "agent-routing",
+      "field": "problem",
+      "before": "对客户 U1 关于 O100 的消息给出唯一路由。安全词优先；订单状态只在身份与归属均核对后显示。",
+      "after": "对客户 U1 关于 O100 的消息确定唯一处理路径。含安全关键词的消息优先升级处理；订单状态仅在身份与订单归属均核对后显示。",
+      "reason": "使题面更清晰、规范，保持实验行为和数值约束不变"
+    },
+    {
+      "file": "website/dist/content/lab-specs.json",
+      "item": "agent-routing",
+      "field": "input",
+      "before": "固定客户 U1、订单 O100；身份与安全词由开关控制，消息由代码按开关生成。",
+      "after": "固定客户 U1、订单 O100；开关控制身份核验状态及消息是否包含安全关键词，代码据此生成消息。",
+      "reason": "使题面更清晰、规范，保持实验行为和数值约束不变"
+    },
+    {
+      "file": "website/dist/content/lab-specs.json",
+      "item": "agent-routing",
+      "field": "output",
+      "before": "路由、状态、可显示事实、下一处理人、命中意图以及重复提交是否复用。",
+      "after": "处理路径、状态、允许显示的事实、下一处理人、识别出的意图，以及重复提交是否复用已有结果。",
+      "reason": "使题面更清晰、规范，保持实验行为和数值约束不变"
+    },
+    {
+      "file": "website/dist/content/lab-specs.json",
+      "item": "agent-routing",
+      "field": "example",
+      "before": "U1 未核验问 O100 物流，结果为 verify_identity；核验后显示“已发货”；消息含“冒烟”则安全升级优先。",
+      "after": "U1 未通过核验时询问 O100 物流，结果为 verify_identity；核验后显示“已发货”；消息包含“冒烟”时，优先升级至安全处置流程。",
+      "reason": "使题面更清晰、规范，保持实验行为和数值约束不变"
+    },
+    {
+      "file": "website/dist/content/lab-specs.json",
+      "item": "agent-routing",
+      "field": "evaluation",
+      "before": "高优先级安全分支不能漏分流，越权订单状态不得泄露，重复提交不能产生新动作。",
+      "after": "高优先级安全消息不得遗漏，越权订单状态不得泄露，重复提交不得产生重复动作。",
+      "reason": "使题面更清晰、规范，保持实验行为和数值约束不变"
+    },
+    {
+      "file": "website/dist/content/lab-specs.json",
+      "item": "agent-production",
+      "field": "background",
+      "before": "虚构封测线 M01 上报振动、温度与批次质量。AI 只读复核，现场 PLC 和有资质人员负责设备安全。",
+      "after": "虚构封测线 M01 上报振动、温度与批次质量。AI 仅作只读复核，现场 PLC（可编程逻辑控制器）和有资质人员负责设备安全。",
+      "reason": "使题面更清晰、规范，保持实验行为和数值约束不变"
+    },
+    {
+      "file": "website/dist/content/lab-specs.json",
+      "item": "agent-production",
+      "field": "problem",
+      "before": "先处理联锁，再验证读数新鲜度；有效数据按阈值计算风险分数，形成维护调查草稿并记录审批与幂等。",
+      "after": "优先处理联锁信号，再检查读数是否过期；对有效数据按阈值计算风险分数，生成维护调查草稿，并记录审批及幂等处理结果（重复请求不产生额外动作）。",
+      "reason": "使题面更清晰、规范，保持实验行为和数值约束不变"
+    },
+    {
+      "file": "website/dist/content/lab-specs.json",
+      "item": "agent-production",
+      "field": "input",
+      "before": "默认振动 8.0 mm/s、温度 79°C、质量 good、年龄 20 秒；滑块和开关控制振动、过期、联锁与本地审批。",
+      "after": "默认振动 8.0 mm/s、温度 79°C、质量 good、距采样时间 20 秒；滑块和开关控制振动、读数过期、联锁与本地审批状态。",
+      "reason": "使题面更清晰、规范，保持实验行为和数值约束不变"
+    },
+    {
+      "file": "website/dist/content/lab-specs.json",
+      "item": "agent-production",
+      "field": "constraints",
+      "before": "联锁只读且最高优先级；模型绝不停机、开机、复位或调参。读数过期时不判正常，未审批不创建正式工单。",
+      "after": "联锁状态仅供读取，处置优先级最高；模型不执行停机、开机、复位或调参。读数过期时不能判定设备正常，未审批时不能创建正式工单。",
+      "reason": "使题面更清晰、规范，保持实验行为和数值约束不变"
+    },
+    {
+      "file": "website/dist/content/lab-specs.json",
+      "item": "agent-production",
+      "field": "example",
+      "before": "振动恰为 8.0 时风险分数为 1，输出 warning_review；若联锁触发则直接人工安全响应，设备控制调用数恒为 0。",
+      "after": "振动恰为 8.0 时风险分数为 1，输出 warning_review；联锁触发时直接转交人工安全处置，设备控制调用数恒为 0。",
+      "reason": "使题面更清晰、规范，保持实验行为和数值约束不变"
+    },
+    {
+      "file": "website/dist/content/lab-specs.json",
+      "item": "ab_test",
+      "field": "comment",
+      "before": "# A/B 分组摘要、均值差和区间；护栏指标应与主指标同时检查。",
+      "after": "# A/B 分组摘要、均值差和区间；约束指标应与主指标同时检查。",
+      "reason": "使说明语言更准确、自然"
+    },
+    {
+      "file": "website/dist/content/lab-specs.json",
+      "item": "week06_ab_testing",
+      "field": "comment",
+      "before": "# 第 6 章结算页 A/B 教学样例与结果报告。",
+      "after": "# 第 6 章结账页 A/B 测试样例与结果报告。",
+      "reason": "使说明语言更准确、自然"
+    },
+    {
+      "file": "website/dist/content/lab-specs.json",
+      "item": "objects",
+      "field": "comment",
+      "before": "# 业务对象数据结构；object_id 是后续关联与审计的锚点。",
+      "after": "# 业务对象数据结构；object_id 用于后续关联与审计追踪。",
+      "reason": "使说明语言更准确、自然"
+    },
+    {
+      "file": "website/dist/content/lab-specs.json",
+      "item": "data_quality_tests",
+      "field": "comment",
+      "before": "-- SQL 质量规则；输出失败记录后应回查来源而非静默剔除。",
+      "after": "-- SQL 质量规则；保留失败记录，并检查其来源及原因。",
+      "reason": "使说明语言更准确、自然"
+    },
+    {
+      "file": "website/dist/content/lab-specs.json",
+      "item": "week10_process_mining",
+      "field": "comment",
+      "before": "# 第 10 章事件日志流程报告；区分等待、返工和合规异常。",
+      "after": "# 第 10 章事件日志报告；区分事件间隔、返工和合规异常。",
+      "reason": "使说明语言更准确、自然"
+    },
+    {
+      "file": "website/dist/content/lab-specs.json",
+      "item": "04_data_quality-code-8",
+      "field": "comment",
+      "before": "-- 外键覆盖检查：左连接客户表，再找有客户 ID 却未匹配维表的订单。",
+      "after": "-- 外键覆盖检查：左连接客户表，找出包含客户 ID 却未匹配客户维表的订单。",
+      "reason": "使说明语言更准确、自然"
+    },
+    {
+      "file": "website/dist/content/lab-specs.json",
+      "item": "appendix-4-code-12",
+      "field": "comment",
+      "before": "# 在项目根目录运行容量比较；第二条命令增加每小时请求与检索片段数，用于观察成本和可行容量变化。",
+      "after": "# 在项目根目录运行容量比较；第二条命令增加每小时请求数与检索片段数，用于观察成本和可行容量的变化。",
+      "reason": "使说明语言更准确、自然"
+    },
+    {
+      "file": "website/content-source/agent-course/experiments.json",
+      "item": "agent-rag",
+      "field": "spec.problem",
+      "before": "给定角色、日期与金额，确定可直接按条款办理、须经理预审、超出条款或需要拒答，并显示证据版本。",
+      "after": "给定角色、日期与金额，判断申请属于直接办理、经理预审、超出条款范围或拒答中的哪种情况，并显示证据版本。",
+      "reason": "与已审校实验题面同步，防止构建恢复旧表述"
+    },
+    {
+      "file": "website/content-source/agent-course/experiments.json",
+      "item": "agent-rag",
+      "field": "spec.output",
+      "before": "判定、状态、制度 ID、理由、下一处理人；已授权时显示两版教学制度的额度。",
+      "after": "判定、状态、制度 ID、理由和下一处理人；访问已获授权时，显示两版教学制度的额度。",
+      "reason": "与已审校实验题面同步，防止构建恢复旧表述"
+    },
+    {
+      "file": "website/content-source/agent-course/experiments.json",
+      "item": "agent-rag",
+      "field": "spec.constraints",
+      "before": "只按固定关键词和教学政策计算；不会访问真实制度。经理预审并非已批准。访客不得看到受限正文。",
+      "after": "本实验仅按固定关键词和教学制度计算，不访问真实制度。经理预审状态不等于批准；访客不得读取受限正文。",
+      "reason": "与已审校实验题面同步，防止构建恢复旧表述"
+    },
+    {
+      "file": "website/content-source/agent-course/experiments.json",
+      "item": "agent-office",
+      "field": "spec.background",
+      "before": "排期和资料检索都是常见的办公室重复任务，但日历提交与受限研发资料需要不同权限。",
+      "after": "会议排期和资料检索是常见的办公任务，提交日历与读取受限研发资料须分别授权。",
+      "reason": "与已审校实验题面同步，防止构建恢复旧表述"
+    },
+    {
+      "file": "website/content-source/agent-course/experiments.json",
+      "item": "agent-office",
+      "field": "spec.problem",
+      "before": "给李、王求最早共同空档；经组织者模拟审批后才确认本地提案。查询芯片接口和泵振动资料时过滤未批准版本与角色。",
+      "after": "求李、王最早的共同空档；经组织者模拟审批后，才确认本地会议提案。查询芯片接口和泵振动资料时，仅使用已批准且当前角色可访问的版本。",
+      "reason": "与已审校实验题面同步，防止构建恢复旧表述"
+    },
+    {
+      "file": "website/content-source/agent-course/experiments.json",
+      "item": "agent-office",
+      "field": "spec.output",
+      "before": "会议提案或本地确认状态、研发资料答复或权限拒绝、每项状态。",
+      "after": "会议提案或本地确认结果、研发资料答复或权限拒绝结果，以及各项状态。",
+      "reason": "与已审校实验题面同步，防止构建恢复旧表述"
+    },
+    {
+      "file": "website/content-source/agent-course/experiments.json",
+      "item": "agent-routing",
+      "field": "spec.background",
+      "before": "虚构客服同时处理订单进度、退货、产品资料与安全消息；错误分流可能泄露订单或延迟人工响应。",
+      "after": "虚构客服系统同时处理订单进度、退货、产品资料与安全消息；错误分流可能泄露订单信息或延迟人工响应。",
+      "reason": "与已审校实验题面同步，防止构建恢复旧表述"
+    },
+    {
+      "file": "website/content-source/agent-course/experiments.json",
+      "item": "agent-routing",
+      "field": "spec.problem",
+      "before": "对客户 U1 关于 O100 的消息给出唯一路由。安全词优先；订单状态只在身份与归属均核对后显示。",
+      "after": "对客户 U1 关于 O100 的消息确定唯一处理路径。含安全关键词的消息优先升级处理；订单状态仅在身份与订单归属均核对后显示。",
+      "reason": "与已审校实验题面同步，防止构建恢复旧表述"
+    },
+    {
+      "file": "website/content-source/agent-course/experiments.json",
+      "item": "agent-routing",
+      "field": "spec.input",
+      "before": "固定客户 U1、订单 O100；身份与安全词由开关控制，消息由代码按开关生成。",
+      "after": "固定客户 U1、订单 O100；开关控制身份核验状态及消息是否包含安全关键词，代码据此生成消息。",
+      "reason": "与已审校实验题面同步，防止构建恢复旧表述"
+    },
+    {
+      "file": "website/content-source/agent-course/experiments.json",
+      "item": "agent-routing",
+      "field": "spec.output",
+      "before": "路由、状态、可显示事实、下一处理人、命中意图以及重复提交是否复用。",
+      "after": "处理路径、状态、允许显示的事实、下一处理人、识别出的意图，以及重复提交是否复用已有结果。",
+      "reason": "与已审校实验题面同步，防止构建恢复旧表述"
+    },
+    {
+      "file": "website/content-source/agent-course/experiments.json",
+      "item": "agent-routing",
+      "field": "spec.example",
+      "before": "U1 未核验问 O100 物流，结果为 verify_identity；核验后显示“已发货”；消息含“冒烟”则安全升级优先。",
+      "after": "U1 未通过核验时询问 O100 物流，结果为 verify_identity；核验后显示“已发货”；消息包含“冒烟”时，优先升级至安全处置流程。",
+      "reason": "与已审校实验题面同步，防止构建恢复旧表述"
+    },
+    {
+      "file": "website/content-source/agent-course/experiments.json",
+      "item": "agent-routing",
+      "field": "spec.evaluation",
+      "before": "高优先级安全分支不能漏分流，越权订单状态不得泄露，重复提交不能产生新动作。",
+      "after": "高优先级安全消息不得遗漏，越权订单状态不得泄露，重复提交不得产生重复动作。",
+      "reason": "与已审校实验题面同步，防止构建恢复旧表述"
+    },
+    {
+      "file": "website/content-source/agent-course/experiments.json",
+      "item": "agent-production",
+      "field": "spec.background",
+      "before": "虚构封测线 M01 上报振动、温度与批次质量。AI 只读复核，现场 PLC 和有资质人员负责设备安全。",
+      "after": "虚构封测线 M01 上报振动、温度与批次质量。AI 仅作只读复核，现场 PLC（可编程逻辑控制器）和有资质人员负责设备安全。",
+      "reason": "与已审校实验题面同步，防止构建恢复旧表述"
+    },
+    {
+      "file": "website/content-source/agent-course/experiments.json",
+      "item": "agent-production",
+      "field": "spec.problem",
+      "before": "先处理联锁，再验证读数新鲜度；有效数据按阈值计算风险分数，形成维护调查草稿并记录审批与幂等。",
+      "after": "优先处理联锁信号，再检查读数是否过期；对有效数据按阈值计算风险分数，生成维护调查草稿，并记录审批及幂等处理结果（重复请求不产生额外动作）。",
+      "reason": "与已审校实验题面同步，防止构建恢复旧表述"
+    },
+    {
+      "file": "website/content-source/agent-course/experiments.json",
+      "item": "agent-production",
+      "field": "spec.input",
+      "before": "默认振动 8.0 mm/s、温度 79°C、质量 good、年龄 20 秒；滑块和开关控制振动、过期、联锁与本地审批。",
+      "after": "默认振动 8.0 mm/s、温度 79°C、质量 good、距采样时间 20 秒；滑块和开关控制振动、读数过期、联锁与本地审批状态。",
+      "reason": "与已审校实验题面同步，防止构建恢复旧表述"
+    },
+    {
+      "file": "website/content-source/agent-course/experiments.json",
+      "item": "agent-production",
+      "field": "spec.constraints",
+      "before": "联锁只读且最高优先级；模型绝不停机、开机、复位或调参。读数过期时不判正常，未审批不创建正式工单。",
+      "after": "联锁状态仅供读取，处置优先级最高；模型不执行停机、开机、复位或调参。读数过期时不能判定设备正常，未审批时不能创建正式工单。",
+      "reason": "与已审校实验题面同步，防止构建恢复旧表述"
+    },
+    {
+      "file": "website/content-source/agent-course/experiments.json",
+      "item": "agent-production",
+      "field": "spec.example",
+      "before": "振动恰为 8.0 时风险分数为 1，输出 warning_review；若联锁触发则直接人工安全响应，设备控制调用数恒为 0。",
+      "after": "振动恰为 8.0 时风险分数为 1，输出 warning_review；联锁触发时直接转交人工安全处置，设备控制调用数恒为 0。",
+      "reason": "与已审校实验题面同步，防止构建恢复旧表述"
+    }
+  ],
+  "terms": [
+    {
+      "file": "docs/textbook/appendices.tex",
+      "term": "文件哈希与随机种子",
+      "definition": "文件内容摘要用于一致性检查；随机种子初始化伪随机数生成器，辅助复现实验。"
+    },
+    {
+      "file": "docs/textbook/appendices.tex",
+      "term": "预印本",
+      "definition": "正式出版前公开的论文版本，需注明版本与发表状态。"
+    },
+    {
+      "file": "docs/textbook/appendices.tex",
+      "term": "预填充与生成阶段",
+      "definition": "预填充处理输入并建立中间状态；生成逐步输出新的 token，两阶段负载不同。"
+    }
+  ],
+  "checks": [
+    {
+      "file": "website/dist/content/case-cards.json",
+      "structureIdentical": true,
+      "changedLanguageFields": 26,
+      "numericLeafCount": 0,
+      "numericLeavesIdentical": true,
+      "numericTokensIdenticalInStrings": true,
+      "protectedCodeFields": 0,
+      "protectedCodeAndIdentityFieldsIdentical": true
+    },
+    {
+      "file": "website/dist/content/lab-specs.json",
+      "structureIdentical": true,
+      "changedLanguageFields": 72,
+      "numericLeafCount": 41,
+      "numericLeavesIdentical": true,
+      "numericTokensIdenticalInStrings": true,
+      "protectedCodeFields": 34,
+      "protectedCodeAndIdentityFieldsIdentical": true
+    },
+    {
+      "file": "website/content-source/agent-course/experiments.json",
+      "structureIdentical": true,
+      "changedLanguageFields": 17,
+      "numericLeafCount": 16,
+      "numericLeavesIdentical": true,
+      "numericTokensIdenticalInStrings": true,
+      "protectedCodeFields": 8,
+      "protectedCodeAndIdentityFieldsIdentical": true
+    },
+    {
+      "file": "docs/textbook/frontmatter.tex",
+      "protectedTokens": 6,
+      "protectedContentIdentical": true,
+      "addedFootnotes": 0
+    },
+    {
+      "file": "docs/textbook/appendices.tex",
+      "protectedTokens": 47,
+      "protectedContentIdentical": true,
+      "addedFootnotes": 4
+    }
+  ],
+  "notes": [
+    "逐份完整阅读，已经准确通顺的段落保留。",
+    "未修改任何 code/annotatedCode、参数、数字、ID、路径、引用与节点结构。",
+    "JSON中的术语采用括号简释，未添加新的脚注机制。",
+    "未构建、未写入Git。"
+  ]
+}

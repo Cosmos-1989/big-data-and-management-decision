@@ -1,0 +1,1065 @@
+{
+  "scope": "第6至10章正文语言审校及必要背景术语释义",
+  "skill": "/Users/sunzy/.agents/skills/humanizer/SKILL.md",
+  "operationCount": 135,
+  "addedFootnotes": 35,
+  "changes": [
+    {
+      "file": "docs/textbook/chapters/06_ab_testing.tex",
+      "before": "处理分配机制，使组间比较具有明确的概率依据。效应估计及其精度取决于实验\n单元、潜在结果和目标参数；推广评价还须结合实施成本与风险。",
+      "after": "处理分配机制，为组间比较提供明确的概率依据。效应估计及其精度取决于实验\n单元、潜在结果和目标参数；是否推广还须结合实施成本与风险判断。",
+      "reason": "使学术表述更自然、明确，保留原有论证范围"
+    },
+    {
+      "file": "docs/textbook/chapters/06_ab_testing.tex",
+      "before": "统计推断面对的是未完全观察的总体和未来重复样本。",
+      "after": "统计推断研究未完全观察的总体，并利用重复抽样机制刻画样本结论的不确定性。",
+      "reason": "使学术表述更自然、明确，保留原有论证范围"
+    },
+    {
+      "file": "docs/textbook/chapters/06_ab_testing.tex",
+      "before": "统计推断和因果评估也不同。统计推断可以描述样本差异的不确定性；因果评估还需要说明差异是否由某个行动造成。",
+      "after": "统计推断与因果评估的目标有所不同：前者可以描述样本差异的不确定性，后者还需要判断差异是否由某项行动造成。",
+      "reason": "使学术表述更自然、明确，保留原有论证范围"
+    },
+    {
+      "file": "docs/textbook/chapters/06_ab_testing.tex",
+      "before": "独立同分布总体抽样框架也产生熟悉的两组均值标准误，相应的期望与方差针对总体抽样，须与此处仅针对处理分配的随机性区分。",
+      "after": "在独立同分布的总体抽样框架下，也可得到两组均值差的标准误公式；此时的期望与方差针对总体抽样，而此处的随机性仅来自处理分配，两者应加以区分。",
+      "reason": "使学术表述更自然、明确，保留原有论证范围"
+    },
+    {
+      "file": "docs/textbook/chapters/06_ab_testing.tex",
+      "before": "随机化无偏性也不保证每次实验两组完全平衡。它是对设计重复实施的性质。",
+      "after": "随机化无偏性是同一设计反复实施时的平均性质，并不保证每次实验中的两组都完全平衡。",
+      "reason": "使学术表述更自然、明确，保留原有论证范围"
+    },
+    {
+      "file": "docs/textbook/chapters/06_ab_testing.tex",
+      "before": "观测结果方向为正，但当前精度同时容许小幅负效应与较大正效应。",
+      "after": "效应的点估计为正，但按当前估计精度，小幅负效应与较大正效应都不能排除。",
+      "reason": "使学术表述更自然、明确，保留原有论证范围"
+    },
+    {
+      "file": "docs/textbook/chapters/06_ab_testing.tex",
+      "before": "设计阶段的任务是协调精度、成本和实施期限，并使统计目标与推广条件相协调。",
+      "after": "设计阶段需要统筹精度、成本和实施期限，使统计目标与推广条件相匹配。",
+      "reason": "使学术表述更自然、明确，保留原有论证范围"
+    },
+    {
+      "file": "docs/textbook/chapters/06_ab_testing.tex",
+      "before": "这就是 CUPED 所利用的基本方差缩减思想\\cite{cuped06}。",
+      "after": "这就是 CUPED\\footnote{CUPED 是 Controlled-experiment Using Pre-Experiment Data 的缩写，指利用实验前数据降低随机实验估计方差的方法。} 所利用的基本方差缩减思想\\cite{cuped06}。",
+      "reason": "首次使用的背景术语缺少解释，补充精炼脚注"
+    },
+    {
+      "file": "docs/textbook/chapters/06_ab_testing.tex",
+      "before": "可用独立历史数据或交叉拟合。",
+      "after": "可用独立历史数据或交叉拟合\\footnote{交叉拟合将样本分组，用其他组的数据估计调整模型，再对留出组计算调整结果，以避免同一观测同时用于拟合和评价。第8章进一步讨论其在因果估计中的作用。}。",
+      "reason": "首次使用的背景术语缺少解释，补充精炼脚注"
+    },
+    {
+      "file": "docs/textbook/chapters/06_ab_testing.tex",
+      "before": "同设备的产品共享温度、班组和故障冲击，不能将一台设备产出的数万件产品当成数万个独立实验单元。",
+      "after": "同一设备产出的产品共享温度、班组和故障冲击，不能将数万件产品视为数万个独立实验单元。",
+      "reason": "使学术表述更自然、明确，保留原有论证范围"
+    },
+    {
+      "file": "docs/textbook/chapters/06_ab_testing.tex",
+      "before": "时间切换实验需要预设切换日历、处理残留的清洗期，并控制时段差异；",
+      "after": "时间切换实验需要预设切换日历和清洗期\\footnote{清洗期是切换处理后暂不计入效果比较的时段，用于减弱上一种处理的残留影响；其长度应依据业务机制和处理持续时间确定。}，并控制时段差异；",
+      "reason": "首次使用的背景术语缺少解释，补充精炼脚注"
+    },
+    {
+      "file": "docs/textbook/chapters/06_ab_testing.tex",
+      "before": "样本比例失衡常被称为 SRM。",
+      "after": "样本比例失衡常被称为 SRM\\footnote{SRM 是 sample ratio mismatch 的缩写，指实际入组比例与实验预设分配比例之间出现统计上难以由随机波动解释的偏离。}。",
+      "reason": "首次使用的背景术语缺少解释，补充精炼脚注"
+    },
+    {
+      "file": "docs/textbook/chapters/06_ab_testing.tex",
+      "before": "若原计划 50/50 分流，但实际进入 B 组的样本显著偏少，可能说明随机化、日志采集或资格过滤出了问题。",
+      "after": "若原计划 50/50 分流，但实际进入 B 组的样本显著偏少，随机分配、日志采集或资格筛选可能存在异常。",
+      "reason": "使学术表述更自然、明确，保留原有论证范围"
+    },
+    {
+      "file": "docs/textbook/chapters/06_ab_testing.tex",
+      "before": "除非使用序贯检验或预先规定的中期分析规则，否则应在实验开始前设定分析窗口和停止规则。",
+      "after": "反复查看结果时，需要采用序贯检验\\footnote{序贯检验允许分阶段积累数据并判断是否停止，但检验边界须考虑多次查看结果带来的选择效应，才能维持规定的错误率。}或预先规定的中期分析规则；固定样本实验则应按事先设定的分析窗口和停止规则实施。",
+      "reason": "首次使用的背景术语缺少解释，补充精炼脚注"
+    },
+    {
+      "file": "docs/textbook/chapters/06_ab_testing.tex",
+      "before": "对所有时间使用并集界，",
+      "after": "对所有时间使用并集界\\footnote{并集界指任意一组事件中至少一个发生的概率，不超过各事件概率之和；该上界不要求事件相互独立。}，",
+      "reason": "首次使用的背景术语缺少解释，补充精炼脚注"
+    },
+    {
+      "file": "docs/textbook/chapters/06_ab_testing.tex",
+      "before": "把区间裁到 \\([0,1]\\) 不改变覆盖保证。",
+      "after": "将区间与 \\([0,1]\\) 取交集不改变覆盖保证。",
+      "reason": "使学术表述更自然、明确，保留原有论证范围"
+    },
+    {
+      "file": "docs/textbook/chapters/06_ab_testing.tex",
+      "before": "两组比较可以分别为两臂分配 \\(\\alpha/2\\)，再由各自均值区间构造差异区间，但不能将本节的一臂公式直接套在任意非独立差分序列上。",
+      "after": "比较两组时，可以为每组分配 \\(\\alpha/2\\) 的错误概率预算，再由各自的均值区间构造差异区间。单组公式不能直接用于任意非独立的差分序列。",
+      "reason": "使学术表述更自然、明确，保留原有论证范围"
+    },
+    {
+      "file": "docs/textbook/chapters/06_ab_testing.tex",
+      "before": "在工厂对应的实验制度中，",
+      "after": "在制造场景的实验设计中，",
+      "reason": "使学术表述更自然、明确，保留原有论证范围"
+    },
+    {
+      "file": "docs/textbook/chapters/06_ab_testing.tex",
+      "before": "两个工作中心的试点\n若规模不足，结果应限于设计与不确定性的分析，不据此作显著性结论。",
+      "after": "若试点仅含两个工作中心且规模不足，\n应着重分析设计的可行性与估计不确定性，不据此作显著性结论。",
+      "reason": "使学术表述更自然、明确，保留原有论证范围"
+    },
+    {
+      "file": "docs/textbook/chapters/06_ab_testing.tex",
+      "before": "下一章研究另一类统计任务，即在给定信息下预测未知结果。",
+      "after": "预测任务则研究在给定信息下如何估计未知结果，见第7章。",
+      "reason": "以研究对象之间的关系替代章节推进叙述"
+    },
+    {
+      "file": "docs/textbook/chapters/07_prediction.tex",
+      "before": "总体风险衡量目标分布下的预测损失，经验风险以样本平均近似该目标；逻辑回归\n与集成学习是常用的预测模型。",
+      "after": "总体风险衡量目标分布下的预测损失，经验风险以样本平均近似这一期望；逻辑回归\n与集成学习是常用的预测方法。",
+      "reason": "使学术表述更自然、明确，保留原有论证范围"
+    },
+    {
+      "file": "docs/textbook/chapters/07_prediction.tex",
+      "before": "企业管理中大量问题都要求提前判断未来状态。",
+      "after": "企业管理经常需要提前判断未来状态。",
+      "reason": "使学术表述更自然、明确，保留原有论证范围"
+    },
+    {
+      "file": "docs/textbook/chapters/07_prediction.tex",
+      "before": "预测模型能否上线，常常取决于这个时间边界是否清楚。",
+      "after": "只有明确这一时间边界，离线评估才可能反映模型上线后的预测条件。",
+      "reason": "使学术表述更自然、明确，保留原有论证范围"
+    },
+    {
+      "file": "docs/textbook/chapters/07_prediction.tex",
+      "before": "一个客户可以在多个月份形成多条客户月份样本；一个订单只形成一条订单样本；一个门店每天可以形成门店日期样本。",
+      "after": "一个客户可以在不同月份形成多条月度记录；以订单为单位时，一张订单对应一条记录；以门店日为单位时，每个门店每天对应一条记录。",
+      "reason": "使学术表述更自然、明确，保留原有论证范围"
+    },
+    {
+      "file": "docs/textbook/chapters/07_prediction.tex",
+      "before": "交叉熵不仅惩罚分类错误，也惩罚过度自信的错误概率。",
+      "after": "交叉熵会对错误且过度自信的概率预测施加较大惩罚。",
+      "reason": "使学术表述更自然、明确，保留原有论证范围"
+    },
+    {
+      "file": "docs/textbook/chapters/07_prediction.tex",
+      "before": "对数损失因此奖励真实概率，\n而不只是奖励阈值一侧的类别判断。",
+      "after": "因此，报告真实概率使期望对数损失最小；\n仅判断概率位于分类阈值的哪一侧，不能充分评价概率预测的质量。",
+      "reason": "使学术表述更自然、明确，保留原有论证范围"
+    },
+    {
+      "file": "docs/textbook/chapters/07_prediction.tex",
+      "before": "Bernoulli 似然为",
+      "after": "Bernoulli（伯努利）似然\\footnote{伯努利分布描述只有两种结果的单次观测，例如流失与未流失；其参数是目标事件发生的概率。似然将已观察结果视为固定，用于比较不同参数值对该结果的支持程度。}为",
+      "reason": "首次使用的背景术语缺少解释，补充精炼脚注"
+    },
+    {
+      "file": "docs/textbook/chapters/07_prediction.tex",
+      "before": "标准化参数只能从训练数据估计，系数的业务解释还依赖变量编码和共线性。",
+      "after": "标准化参数只能从训练数据估计，系数的业务解释还依赖变量编码和共线性\\footnote{共线性指多个特征之间存在较强的线性关系，可能使单个系数对样本变化敏感，从而影响系数的稳定解释。}。",
+      "reason": "首次使用的背景术语缺少解释，补充精炼脚注"
+    },
+    {
+      "file": "docs/textbook/chapters/07_prediction.tex",
+      "before": "随机森林通过自助抽样和节点分裂时的随机特征选择降低树之间的相关性。",
+      "after": "随机森林通过自助抽样\\footnote{自助抽样（bootstrap sampling）从原样本中有放回地抽取观测，形成与原样本规模相同或另行指定规模的新样本；随机森林据此训练不同的树。}和节点分裂时的随机特征选择降低树之间的相关性。",
+      "reason": "首次使用的背景术语缺少解释，补充精炼脚注"
+    },
+    {
+      "file": "docs/textbook/chapters/07_prediction.tex",
+      "before": "学习率、树深和早停共同限制复杂度。",
+      "after": "学习率、树深和早停\\footnote{早停是依据验证误差等预设标准，在训练误差继续下降而验证表现不再改善时停止训练，以限制过拟合。}共同限制复杂度。",
+      "reason": "首次使用的背景术语缺少解释，补充精炼脚注"
+    },
+    {
+      "file": "docs/textbook/chapters/07_prediction.tex",
+      "before": "划分方式应尊重部署目标。",
+      "after": "划分方式应与部署目标一致。",
+      "reason": "使学术表述更自然、明确，保留原有论证范围"
+    },
+    {
+      "file": "docs/textbook/chapters/07_prediction.tex",
+      "before": "于是可以得到混淆矩阵（confusion matrix）：",
+      "after": "于是可以得到混淆矩阵（confusion matrix）\\footnote{TP、FP、TN、FN 分别表示真阳性、假阳性、真阴性和假阴性的样本数。阳性表示目标事件发生；假阳性是误报，假阴性是漏报。}：",
+      "reason": "首次使用的背景术语缺少解释，补充精炼脚注"
+    },
+    {
+      "file": "docs/textbook/chapters/07_prediction.tex",
+      "before": "accuracy 衡量总体预测正确比例，但在类别不平衡时容易误导。",
+      "after": "准确率（accuracy）衡量总体预测正确比例，但类别不平衡时，单独使用该指标容易产生误导。",
+      "reason": "使学术表述更自然、明确，保留原有论证范围"
+    },
+    {
+      "file": "docs/textbook/chapters/07_prediction.tex",
+      "before": "precision 衡量被标记为高风险的客户中有多少真的流失，recall 衡量真实流失客户中有多少被模型捕捉。",
+      "after": "精确率（precision）衡量被标记为高风险的客户中实际流失的比例，召回率（recall）衡量实际流失客户中被模型检出的比例。",
+      "reason": "使学术表述更自然、明确，保留原有论证范围"
+    },
+    {
+      "file": "docs/textbook/chapters/07_prediction.tex",
+      "before": "风险排序用于确定复核顺序。",
+      "after": "风险排序用于确定复核顺序。排序能力常用 ROC 曲线下面积（AUC）评价\\footnote{ROC 是 receiver operating characteristic 的缩写，中文通常称受试者工作特征曲线。它记录不同分类阈值下的假阳性率与真阳性率；AUC 是该曲线下的面积。参见 \\url{https://scikit-learn.org/stable/modules/model_evaluation.html}。}。",
+      "reason": "首次使用的背景术语缺少解释，补充精炼脚注"
+    },
+    {
+      "file": "docs/textbook/chapters/07_prediction.tex",
+      "before": "AUC 关注排序能力，不依赖某个固定阈值；并列分数按半次排序正确计入。风险排序仍不自动等于行动价值排序。",
+      "after": "AUC 不依赖某个固定分类阈值；并列分数按半次排序正确计入。风险排序与行动价值排序仍须分别评价。",
+      "reason": "使学术表述更自然、明确，保留原有论证范围"
+    },
+    {
+      "file": "docs/textbook/chapters/07_prediction.tex",
+      "before": "因此分类模型还需要检查 log loss 和概率校准。",
+      "after": "因此，分类模型还需要检查对数损失（log loss，即前述交叉熵损失）和概率校准。",
+      "reason": "使学术表述更自然、明确，保留原有论证范围"
+    },
+    {
+      "file": "docs/textbook/chapters/07_prediction.tex",
+      "before": "另一个问题是纯分类处置：",
+      "after": "若行动仅表示分类处置而不改变对象的真实状态，则考虑另一种损失结构：",
+      "reason": "使学术表述更自然、明确，保留原有论证范围"
+    },
+    {
+      "file": "docs/textbook/chapters/07_prediction.tex",
+      "before": "该式用于固定状态下的分类损失，不应拿来替代会改变结果的留存干预模型。",
+      "after": "该式适用于真实状态固定的分类损失；留存干预会改变结果，须使用相应的干预效果模型。",
+      "reason": "使学术表述更自然、明确，保留原有论证范围"
+    },
+    {
+      "file": "docs/textbook/chapters/07_prediction.tex",
+      "before": "为一个未来批次预测周期 \\(\\hat f(x)\\) 后，还需要知道不确定范围。",
+      "after": "预测未来批次的生产周期 \\(\\hat f(x)\\) 时，除了点预测，还需要描述未来结果的不确定范围。",
+      "reason": "使学术表述更自然、明确，保留原有论证范围"
+    },
+    {
+      "file": "docs/textbook/chapters/07_prediction.tex",
+      "before": "逻辑回归的系数可以解释为标准化特征对 log-odds 的线性贡献，",
+      "after": "逻辑回归的系数可以解释为标准化特征对对数优势（log-odds）\\footnote{若事件概率为 \\(p\\)，优势（odds）为 \\(p/(1-p)\\)，对数优势为其自然对数。逻辑回归假定对数优势是输入特征的线性函数。}的线性贡献，",
+      "reason": "首次使用的背景术语缺少解释，补充精炼脚注"
+    },
+    {
+      "file": "docs/textbook/chapters/07_prediction.tex",
+      "before": "这类方法将预训练任务中获得的预测能力迁移至新的表格任务。",
+      "after": "这类方法将预训练任务中获得的预测能力迁移至新的表格任务。\\footnote{预训练是在多个既有任务或大规模数据上先估计模型参数；上下文学习则利用当前输入中的示例适应新任务，而不在该次推理中更新模型参数。}",
+      "reason": "首次使用的背景术语缺少解释，补充精炼脚注"
+    },
+    {
+      "file": "docs/textbook/chapters/07_prediction.tex",
+      "before": "它们的标签、删失机制和损失函数不同，",
+      "after": "它们的标签、删失机制\\footnote{删失指结果发生时间未被完整观察，例如研究结束时设备仍未故障，只能知道寿命超过已观察时长。删失记录不能直接当作从未发生故障。}和损失函数不同，",
+      "reason": "首次使用的背景术语缺少解释，补充精炼脚注"
+    },
+    {
+      "file": "docs/textbook/chapters/07_prediction.tex",
+      "before": "Agent 自动尝试很多模型时尤其需要保留完整搜索记录，避免只展示成功的一次。",
+      "after": "智能体自动尝试多个模型时，应保留完整搜索记录，避免只报告表现最好的一次。",
+      "reason": "使学术表述更自然、明确，保留原有论证范围"
+    },
+    {
+      "file": "docs/textbook/chapters/07_prediction.tex",
+      "before": "每序列 \\(S\\) 个 token，键和值",
+      "after": "每序列 \\(S\\) 个 token\\footnote{Token 是分词器处理文本的基本单位，可能对应一个字、一个词或词的一部分，不等同于固定字数。键值缓存（KV cache）保存注意力计算中已生成位置的键和值，以减少后续解码的重复计算。}，键和值",
+      "reason": "首次使用的背景术语缺少解释，补充精炼脚注"
+    },
+    {
+      "file": "docs/textbook/chapters/07_prediction.tex",
+      "before": "其参数只对应教学设定\\cite{aiinfra2026}。",
+      "after": "上述参数为教学设定\\cite{aiinfra2026}。",
+      "reason": "使学术表述更自然、明确，保留原有论证范围"
+    },
+    {
+      "file": "docs/textbook/chapters/07_prediction.tex",
+      "before": "上线监控不仅检查输入变量是否改变，还要检查产生标签的策略是否改变。",
+      "after": "上线监控应同时检查输入变量与标签生成策略的变化。",
+      "reason": "使学术表述更自然、明确，保留原有论证范围"
+    },
+    {
+      "file": "docs/textbook/chapters/07_prediction.tex",
+      "before": "以及系统是否只是把更难的\n对象留给了未处理组。",
+      "after": "以及处理分配是否使更难的\n对象集中在未处理组。",
+      "reason": "使学术表述更自然、明确，保留原有论证范围"
+    },
+    {
+      "file": "docs/textbook/chapters/07_prediction.tex",
+      "before": "模型上线后的最低监控包括：",
+      "after": "模型上线后至少应监控以下事项：",
+      "reason": "使学术表述更自然、明确，保留原有论证范围"
+    },
+    {
+      "file": "docs/textbook/chapters/07_prediction.tex",
+      "before": "下一章以潜在结果为基础，研究行动如何改变结果。",
+      "after": "行动对结果的影响需依据潜在结果框架研究，见第8章。",
+      "reason": "将编排叙述改为具体的知识联系"
+    },
+    {
+      "file": "docs/textbook/chapters/08_causality.tex",
+      "before": "观察组间差异与目标效应的偏离需要通过选择机制分析。",
+      "after": "观察到的组间差异为何偏离目标效应，需要结合处理的选择机制分析。",
+      "reason": "使学术表述更自然、明确，保留原有论证范围"
+    },
+    {
+      "file": "docs/textbook/chapters/08_causality.tex",
+      "before": "组织只能观察已经发生的行动路径，不能同时观察同一对象在另一种行动下的结果。",
+      "after": "组织只能观察对象实际接受的行动及其结果，不能同时观察同一对象在另一种行动下的结果。",
+      "reason": "使学术表述更自然、明确，保留原有论证范围"
+    },
+    {
+      "file": "docs/textbook/chapters/08_causality.tex",
+      "before": "不同估计对象对应不同管理问题。若企业准备全面上线优惠券策略，ATE 更相关；若只想评估已经被运营团队触达的客户，ATT 更相关；若要决定哪些客户最值得触达，CATE 与行动成本一起进入第~\\ref{ch:week09-optimization}~章的优化问题。",
+      "after": "估计对象应由管理问题确定。评价在目标人群中全面实施优惠券策略的平均效果，可关注 ATE；评价实际被运营团队触达客户的平均效果，可关注 ATT；选择行动对象时，则需结合 CATE、收益与行动成本建立优化问题，见第~\\ref{ch:week09-optimization}~章。",
+      "reason": "使学术表述更自然、明确，保留原有论证范围"
+    },
+    {
+      "file": "docs/textbook/chapters/08_causality.tex",
+      "before": "Agent 可以根据业务描述提出候选因果图，却无法从观察相关性唯一恢复正确图。",
+      "after": "智能体可以根据业务描述提出候选因果图，但仅凭观察到的相关性，通常不能唯一确定真实因果图。",
+      "reason": "使学术表述更自然、明确，保留原有论证范围"
+    },
+    {
+      "file": "docs/textbook/chapters/08_causality.tex",
+      "before": "高价值客户不能被随机拒绝服务，高风险订单不能被随机不处理，价格政策也可能按区域逐步上线。",
+      "after": "例如，服务承诺可能不允许对高价值客户随机拒绝服务，安全要求可能不允许对高风险订单随机停止处置，价格政策也可能按区域逐步上线。",
+      "reason": "避免将特定业务限制写成没有条件的普遍禁令"
+    },
+    {
+      "file": "docs/textbook/chapters/08_causality.tex",
+      "before": "就很难从数据中比较他们在两种处理状态下的反事实结果。",
+      "after": "就无法仅凭该协变量层内的观测比较两种处理状态。",
+      "reason": "重叠性缺失明确为层内缺少比较依据，避免用含糊的难易描述"
+    },
+    {
+      "file": "docs/textbook/chapters/08_causality.tex",
+      "before": "它的优点是透明，缺点是协变量维度高时层会变得稀疏。",
+      "after": "分层结果易于核查，但协变量维度较高时，部分层内的样本可能很少，甚至缺少某一处理组。",
+      "reason": "使学术表述更自然、明确，保留原有论证范围"
+    },
+    {
+      "file": "docs/textbook/chapters/08_causality.tex",
+      "before": "估计得分相近并不保证有限样本已经平衡，更不能\n证明未观测因素可比；实际分析仍需诊断与业务论证。",
+      "after": "估计得分相近并不保证有限样本中的协变量已经平衡，也不能\n证明未观测因素可比；仍须进行平衡诊断并分析业务机制。",
+      "reason": "使学术表述更自然、明确，保留原有论证范围"
+    },
+    {
+      "file": "docs/textbook/chapters/08_causality.tex",
+      "before": "残余不平衡提示需要调整模型或限制比较范围；未观测混杂则通过领域知识、研究设计和敏感性分析考察。",
+      "after": "残余不平衡提示需要调整模型或限制比较范围；未观测混杂则需结合领域知识、研究设计和敏感性分析\\footnote{因果分析中的敏感性分析考察识别假设偏离到何种程度会改变结论，例如设定遗漏混杂可能造成的偏差范围。它不能证明没有遗漏混杂，而是说明结论对该风险的敏感程度。}考察。",
+      "reason": "首次使用的背景术语缺少解释，补充精炼脚注"
+    },
+    {
+      "file": "docs/textbook/chapters/08_causality.tex",
+      "before": "对照项同理，正好抵消结果模型偏差。",
+      "after": "对照项同理，两项校正恰好抵消结果模型的偏差。",
+      "reason": "使学术表述更自然、明确，保留原有论证范围"
+    },
+    {
+      "file": "docs/textbook/chapters/08_causality.tex",
+      "before": "这就是双重稳健性的来源。",
+      "after": "两种情形均可消除总体分数的偏差。",
+      "reason": "使学术表述更自然、明确，保留原有论证范围"
+    },
+    {
+      "file": "docs/textbook/chapters/08_causality.tex",
+      "before": "双重机器学习利用估计方程对辅助函数扰动的一阶不敏感性，",
+      "after": "双重机器学习\\footnote{双重机器学习（double/debiased machine learning，DML）利用机器学习估计结果回归、倾向得分等辅助函数，再结合正交估计方程与样本分割推断目标效应；“双重”不表示任意两个模型拟合良好就能保证因果识别。}利用估计方程对辅助函数扰动的一阶不敏感性，",
+      "reason": "首次使用的背景术语缺少解释，补充精炼脚注"
+    },
+    {
+      "file": "docs/textbook/chapters/08_causality.tex",
+      "before": "这样每个样本的辅助函数预测不使用自己的结果。",
+      "after": "因此，计算每个样本的分数时，所用辅助模型均未使用该样本拟合。",
+      "reason": "使学术表述更自然、明确，保留原有论证范围"
+    },
+    {
+      "file": "docs/textbook/chapters/08_causality.tex",
+      "before": "干预前多期趋势、业务机制与安慰剂检验可提供经验依据；",
+      "after": "干预前多期趋势、业务机制与安慰剂检验\\footnote{安慰剂检验将同一方法用于理论上不应受处理影响的时期、对象或结果，检查是否仍得到明显偏离零的效应估计。检验通过可增加设计的可信度，但不能证明干预后的平行趋势成立。}可提供经验依据；",
+      "reason": "首次使用的背景术语缺少解释，补充精炼脚注"
+    },
+    {
+      "file": "docs/textbook/chapters/08_causality.tex",
+      "before": "简单双向固定效应回归可能把已经处理的甲当作乙的对照，",
+      "after": "简单双向固定效应回归\\footnote{双向固定效应回归同时控制组别固定差异与各组共同的时期冲击。分期处理且效应异质时，其回归系数未必是目标处理效应的适当加权平均。}可能把已经处理的甲当作乙的对照，",
+      "reason": "首次使用的背景术语缺少解释，补充精炼脚注"
+    },
+    {
+      "file": "docs/textbook/chapters/08_causality.tex",
+      "before": "研究设计应对齐资格判定、可选行动、处理开始和随访结果的观察时点。",
+      "after": "研究设计应明确资格判定、可选行动、处理开始和随访结果的时点，使处理分组与随访起点一致。",
+      "reason": "使学术表述更自然、明确，保留原有论证范围"
+    },
+    {
+      "file": "docs/textbook/chapters/08_causality.tex",
+      "before": "平均处理效应容易掩盖异质性。",
+      "after": "相同的平均处理效应可能对应不同的人群效应分布。",
+      "reason": "使学术表述更自然、明确，保留原有论证范围"
+    },
+    {
+      "file": "docs/textbook/chapters/08_causality.tex",
+      "before": "一个拟合很灵活的策略会专门挑选被高估的个体，导致事后收益乐观。",
+      "after": "高度灵活的策略可能因样本噪声而选中效应被高估的个体，使同一样本上的收益评价偏高。",
+      "reason": "使学术表述更自然、明确，保留原有论证范围"
+    },
+    {
+      "file": "docs/textbook/chapters/08_causality.tex",
+      "before": "不能只选登录量。",
+      "after": "登录量只能反映使用情况，不能单独代表上述经营效果。",
+      "reason": "使学术表述更自然、明确，保留原有论证范围"
+    },
+    {
+      "file": "docs/textbook/chapters/08_causality.tex",
+      "before": "这两个选择方向甚至相反。",
+      "after": "这两种选择机制对观察到的生产率差异可能产生相反方向的偏差。",
+      "reason": "使学术表述更自然、明确，保留原有论证范围"
+    },
+    {
+      "file": "docs/textbook/chapters/08_causality.tex",
+      "before": "两种问题对应不同的反事实，不能由\n同一个上线前后差值回答。",
+      "after": "两种问题对应不同的反事实，\n仅凭同一个上线前后差值无法分别识别。",
+      "reason": "使学术表述更自然、明确，保留原有论证范围"
+    },
+    {
+      "file": "docs/textbook/chapters/08_causality.tex",
+      "before": "选择\n使用单位数量，是为了使处理组与对照组在订单量不同的时期保持可比；",
+      "after": "按每百张到期订单\n计算误判数，可使处理组与对照组在订单量不同的时期具有可比的统计尺度；",
+      "reason": "使学术表述更自然、明确，保留原有论证范围"
+    },
+    {
+      "file": "docs/textbook/chapters/08_causality.tex",
+      "before": "这些结果支持优惠券提高留存率的解释。",
+      "after": "这些结果可解释为优惠券提高留存率的效应估计。",
+      "reason": "使学术表述更自然、明确，保留原有论证范围"
+    },
+    {
+      "file": "docs/textbook/chapters/08_causality.tex",
+      "before": "平衡明显改善，但并未完美平衡，因此管理结论仍需保守。",
+      "after": "加权降低了观测协变量的不平衡程度，但残余差异仍较明显，管理结论需保留相应限制。",
+      "reason": "使学术表述更自然、明确，保留原有论证范围"
+    },
+    {
+      "file": "docs/textbook/chapters/08_causality.tex",
+      "before": "若结论用于扩大全量策略，",
+      "after": "若结论用于将策略推广至目标人群，",
+      "reason": "使学术表述更自然、明确，保留原有论证范围"
+    },
+    {
+      "file": "docs/textbook/chapters/08_causality.tex",
+      "before": "将效应估计转化为行动策略时，需要给定收益、成本和资源限制，下一章据此讨论优化。",
+      "after": "将效应估计转化为行动策略，还需明确收益、成本和资源限制，并据此建立优化模型，见第9章。",
+      "reason": "使学术表述更自然、明确，保留原有论证范围"
+    },
+    {
+      "file": "docs/textbook/chapters/09_optimization.tex",
+      "before": "目标函数可以被明确或近似表达，且输出需要被组织执行。",
+      "after": "目标函数能够明确或近似表达，且建议需要由组织落实。",
+      "reason": "使学术表述更自然、明确，保留原有论证范围"
+    },
+    {
+      "file": "docs/textbook/chapters/09_optimization.tex",
+      "before": "同一个需求分布在不同成本条件下可对应不同补货量。",
+      "after": "同一需求分布在不同成本条件下，对应的最优补货量可能不同。",
+      "reason": "使学术表述更自然、明确，保留原有论证范围"
+    },
+    {
+      "file": "docs/textbook/chapters/09_optimization.tex",
+      "before": "有预算和库容约束时，则需要在 SKU 之间竞争资源。",
+      "after": "有预算和库容约束时，则需比较各 SKU 占用共同资源的收益。",
+      "reason": "使学术表述更自然、明确，保留原有论证范围"
+    },
+    {
+      "file": "docs/textbook/chapters/09_optimization.tex",
+      "before": "最优订货量受到后续边际价值下降的限制；",
+      "after": "继续订货的收益会随数量增加而降低；",
+      "reason": "使学术表述更自然、明确，保留原有论证范围"
+    },
+    {
+      "file": "docs/textbook/chapters/09_optimization.tex",
+      "before": "如果放松某约束几乎不改变最优值，该资源在考察增量范围内的价值较低。",
+      "after": "如果放松某约束几乎不改变最优值，该资源在所考察范围内的增量价值较低。",
+      "reason": "使学术表述更自然、明确，保留原有论证范围"
+    },
+    {
+      "file": "docs/textbook/chapters/09_optimization.tex",
+      "before": "配套案例采用离散情景表示需求不确定性。",
+      "after": "库存案例采用离散情景表示需求不确定性。",
+      "reason": "使学术表述更自然、明确，保留原有论证范围"
+    },
+    {
+      "file": "docs/textbook/chapters/09_optimization.tex",
+      "before": "对可积损失随机变量 \\(L\\) 和置信水平",
+      "after": "对可积\\footnote{随机变量可积是指其绝对值的期望有限，因而其期望损失具有有限、明确的数值。}损失随机变量 \\(L\\) 和置信水平",
+      "reason": "首次使用的背景术语缺少解释，补充精炼脚注"
+    },
+    {
+      "file": "docs/textbook/chapters/09_optimization.tex",
+      "before": "这一定义也处理离散分布的分位点质量，不能简单把它永远写成条件期望",
+      "after": "这一定义也适用于分位点具有正概率质量的离散分布。\\footnote{风险价值（value at risk，VaR）是损失分布在指定置信水平下的分位数；条件风险价值（conditional value at risk，CVaR）综合最坏一部分概率质量的损失。离散分布在分位点可能集中一段概率质量，因此须按定义处理边界。}因此，CVaR 不能一概写成条件期望",
+      "reason": "首次使用的背景术语缺少解释，补充精炼脚注"
+    },
+    {
+      "file": "docs/textbook/chapters/09_optimization.tex",
+      "before": "把全部样本都算进去了。",
+      "after": "包含了全部概率质量。",
+      "reason": "使学术表述更自然、明确，保留原有论证范围"
+    },
+    {
+      "file": "docs/textbook/chapters/09_optimization.tex",
+      "before": "它对应最坏的一半概率质量：",
+      "after": "这一数值对应最坏的一半概率质量：",
+      "reason": "使学术表述更自然、明确，保留原有论证范围"
+    },
+    {
+      "file": "docs/textbook/chapters/09_optimization.tex",
+      "before": "集合可以通过矩约束、距离球或业务压力情景构造。",
+      "after": "集合可以通过矩约束\\footnote{矩约束限定均值、方差等分布特征；距离球则收集与参考分布的指定距离不超过给定半径的分布。二者都是表达分布不确定范围的方式。}、距离球或业务压力情景构造。",
+      "reason": "首次使用的背景术语缺少解释，补充精炼脚注"
+    },
+    {
+      "file": "docs/textbook/chapters/09_optimization.tex",
+      "before": "管理者可以采用保守情景、预算缓冲、服务水平约束或最大后悔值控制风险。",
+      "after": "管理者可以采用保守情景、预算缓冲、服务水平约束或最大后悔值\\footnote{某情景下的后悔值，是方案损失与事先知道该情景时可达的最小损失之差。最小最大后悔准则选择最坏情景后悔值最小的方案。}控制风险。",
+      "reason": "首次使用的背景术语缺少解释，补充精炼脚注"
+    },
+    {
+      "file": "docs/textbook/chapters/09_optimization.tex",
+      "before": "考虑两项任务 A、B 共用一台设备，",
+      "after": "混合整数线性规划（MILP）\\footnote{MILP 是 mixed-integer linear programming 的缩写，指目标和约束为线性、部分变量取整数而其余变量连续的优化模型，常用于选择、排班和生产排程。参见 \\url{https://developers.google.com/optimization/mip/mip_example}。}可用二元变量表达任务的先后关系。考虑两项任务 A、B 共用一台设备，",
+      "reason": "首次使用的背景术语缺少解释，补充精炼脚注"
+    },
+    {
+      "file": "docs/textbook/chapters/09_optimization.tex",
+      "before": "却选择第二项并后悔 0.1；",
+      "after": "却选择第二项，后悔值为 0.1；",
+      "reason": "使学术表述更自然、明确，保留原有论证范围"
+    },
+    {
+      "file": "docs/textbook/chapters/09_optimization.tex",
+      "before": "实证比较可将联合学习与分别训练预测模型、再调用求解器的方法并列评价。",
+      "after": "实证比较应在相同数据与决策任务下，评价联合学习方法，以及先训练预测模型、再调用求解器的方法。",
+      "reason": "使学术表述更自然、明确，保留原有论证范围"
+    },
+    {
+      "file": "docs/textbook/chapters/09_optimization.tex",
+      "before": "可加入计划变更成本或冻结窗口。",
+      "after": "可加入计划变更成本或冻结窗口\\footnote{冻结窗口是计划期内暂不允许常规调整的近期时段，用于保护已经投入准备或执行的任务；紧急变更应另设审批规则。}。",
+      "reason": "首次使用的背景术语缺少解释，补充精炼脚注"
+    },
+    {
+      "file": "docs/textbook/chapters/09_optimization.tex",
+      "before": "风险 \\(p_i\\) 在这个简化差值中抵消，",
+      "after": "风险 \\(p_i\\) 在这一简化的净收益差值中抵消，",
+      "reason": "使学术表述更自然、明确，保留原有论证范围"
+    },
+    {
+      "file": "docs/textbook/chapters/09_optimization.tex",
+      "before": "达到时间限制时，应同时报告当前可行解和最优性间隙。",
+      "after": "达到时间限制时，应同时报告当前可行解和最优性间隙\\footnote{最优性间隙衡量当前可行目标值与求解器有效界之间的差距。只有在界有效且间隙满足规定容差时，才能据此评价解距最优值有多远；相对间隙的分母约定应随报告说明。}。",
+      "reason": "首次使用的背景术语缺少解释，补充精炼脚注"
+    },
+    {
+      "file": "docs/textbook/chapters/09_optimization.tex",
+      "before": "该条件只约束平均占用，不保证第95百分位完成时间；",
+      "after": "该条件只约束平均占用，不能保证第95百分位完成时间满足要求；",
+      "reason": "使学术表述更自然、明确，保留原有论证范围"
+    },
+    {
+      "file": "docs/textbook/chapters/09_optimization.tex",
+      "before": "通过一次平均值确定全部资源需求，\n会掩盖日内峰值及长任务对队列的影响。",
+      "after": "仅用一个平均值确定全部资源需求，\n会掩盖日内峰值及长任务对队列的影响。",
+      "reason": "使学术表述更自然、明确，保留原有论证范围"
+    },
+    {
+      "file": "docs/textbook/chapters/09_optimization.tex",
+      "before": "求解方法的选择取决于变量类型、约束结构、问题规模和计算期限。小规模问题可以枚举并逐项检查；规模增加后，可采用线性规划或混合整数规划算法。",
+      "after": "求解方法的选择取决于变量类型、约束结构、问题规模和计算期限。",
+      "reason": "删除紧邻上段已经说明的枚举与规模重复句"
+    },
+    {
+      "file": "docs/textbook/chapters/09_optimization.tex",
+      "before": "因此基准方案不会无限制地优先补 P04。",
+      "after": "因此基准方案不会仅按边际价值优先补充 P04。",
+      "reason": "使学术表述更自然、明确，保留原有论证范围"
+    },
+    {
+      "file": "docs/textbook/chapters/09_optimization.tex",
+      "before": "不可建模因素、执行建议和监控指标。",
+      "after": "模型未纳入的因素、执行建议和监控指标。",
+      "reason": "使学术表述更自然、明确，保留原有论证范围"
+    },
+    {
+      "file": "docs/textbook/chapters/09_optimization.tex",
+      "before": "下一章通过事件日志研究方案的实际执行及其经营结果。",
+      "after": "方案的实际执行及其经营结果可通过事件日志研究，见第10章。",
+      "reason": "使学术表述更自然、明确，保留原有论证范围"
+    },
+    {
+      "file": "docs/textbook/chapters/10_process_mining.tex",
+      "before": "传统看板往往按日期、部门、区域或产品汇总指标。",
+      "after": "经营看板通常按日期、部门、区域或产品汇总指标。",
+      "reason": "使学术表述更自然、明确，保留原有论证范围"
+    },
+    {
+      "file": "docs/textbook/chapters/10_process_mining.tex",
+      "before": "事件日志的质量直接决定流程挖掘质量。",
+      "after": "事件日志的质量影响流程分析的可靠性。",
+      "reason": "避免不加条件的决定性因果措辞"
+    },
+    {
+      "file": "docs/textbook/chapters/10_process_mining.tex",
+      "before": "流程挖掘结果取决于事件日志的质量。管理报告应检查：",
+      "after": "事件日志的质量检查至少包括：",
+      "reason": "删除同一节内的重复强调并直接进入检查内容"
+    },
+    {
+      "file": "docs/textbook/chapters/10_process_mining.tex",
+      "before": "流程发现是否连接到订单金额、客户影响和服务水平。",
+      "after": "流程发现是否结合订单金额、客户影响和服务水平进行解释。",
+      "reason": "使学术表述更自然、明确，保留原有论证范围"
+    },
+    {
+      "file": "docs/textbook/chapters/10_process_mining.tex",
+      "before": "直接跟随图概括观察到的相邻活动，流程变体保留完整活动序列；Petri 网描述可执行的流程状态与转换。",
+      "after": "直接跟随图概括观察到的相邻活动，流程变体保留完整活动序列；Petri 网描述流程状态与活动发生条件。",
+      "reason": "使学术表述更自然、明确，保留原有论证范围"
+    },
+    {
+      "file": "docs/textbook/chapters/10_process_mining.tex",
+      "before": "流程变体揭示实际执行并不总是遵循标准路径。",
+      "after": "流程变体可用于识别实际执行与标准路径之间的差异。",
+      "reason": "使学术表述更自然、明确，保留原有论证范围"
+    },
+    {
+      "file": "docs/textbook/chapters/10_process_mining.tex",
+      "before": "日志可能同时出现 A 后 B 和 B 后 A。",
+      "after": "不同轨迹中可能分别出现 A 后 B 和 B 后 A。",
+      "reason": "使学术表述更自然、明确，保留原有论证范围"
+    },
+    {
+      "file": "docs/textbook/chapters/10_process_mining.tex",
+      "before": "Petri 网用库所表示条件、变迁表示活动、令牌表示状态。",
+      "after": "Petri 网用库所表示条件、变迁表示活动、令牌表示状态。\\footnote{Petri 网是一种描述并发系统的形式模型。库所中的令牌数量组成当前标识，表示系统状态；变迁按输入和输出规则移动令牌，以表达活动的使能条件及其状态变化。}",
+      "reason": "首次使用的背景术语缺少解释，补充精炼脚注"
+    },
+    {
+      "file": "docs/textbook/chapters/10_process_mining.tex",
+      "before": "日志回放或对齐可发现缺失活动、额外活动和非法顺序，",
+      "after": "日志回放或对齐\\footnote{日志回放按记录的活动序列检查模型能否逐步执行；对齐则在日志与模型允许的轨迹之间寻找偏离代价较小的对应关系，定位日志多出或模型缺失的步骤。}可发现缺失活动、额外活动和非法顺序，",
+      "reason": "首次使用的背景术语缺少解释，补充精炼脚注"
+    },
+    {
+      "file": "docs/textbook/chapters/10_process_mining.tex",
+      "before": "当过程为有限状态马尔可夫过程、最终吸收且",
+      "after": "当过程为有限状态马尔可夫过程\\footnote{马尔可夫性质指给定当前状态后，下一步的条件分布不再依赖更早历史。吸收状态一旦进入便不再离开；此处以任务完成作为吸收，因此矩阵仅描述未完成状态间的转移。}、最终吸收且",
+      "reason": "首次使用的背景术语缺少解释，补充精炼脚注"
+    },
+    {
+      "file": "docs/textbook/chapters/10_process_mining.tex",
+      "before": "流程绩效至少应同时看三类指标：",
+      "after": "流程绩效至少应同时考察三类指标：",
+      "reason": "使学术表述更自然、明确，保留原有论证范围"
+    },
+    {
+      "file": "docs/textbook/chapters/10_process_mining.tex",
+      "before": "一致性检查需要先定义参考流程。参考流程可以来自制度文件、系统配置、审计规则或业务专家共识。",
+      "after": "一致性检查以明确的参考流程为依据，其来源可以是制度文件、系统配置、审计规则或业务专家共识。",
+      "reason": "使学术表述更自然、明确，保留原有论证范围"
+    },
+    {
+      "file": "docs/textbook/chapters/10_process_mining.tex",
+      "before": "资源分析要避免简单排名。",
+      "after": "资源绩效比较应考虑任务构成。",
+      "reason": "使学术表述更自然、明确，保留原有论证范围"
+    },
+    {
+      "file": "docs/textbook/chapters/10_process_mining.tex",
+      "before": "前若干条 directly-follows edge 为：",
+      "after": "部分直接跟随边的统计结果为：",
+      "reason": "使学术表述更自然、明确，保留原有论证范围"
+    },
+    {
+      "file": "docs/textbook/chapters/10_process_mining.tex",
+      "before": "最慢的平均边为",
+      "after": "平均事件间隔最长的边为",
+      "reason": "使学术表述更自然、明确，保留原有论证范围"
+    },
+    {
+      "file": "docs/textbook/chapters/10_process_mining.tex",
+      "before": "其聚合依据见第~\\ref{ch:week03-sql-kpi}~章的指标代数。减少人工触达可能有价值，",
+      "after": "其聚合依据见第~\\ref{ch:week03-sql-kpi}~章的指标代数。减少人工处理次数可能有价值，",
+      "reason": "使学术表述更自然、明确，保留原有论证范围"
+    },
+    {
+      "file": "docs/textbook/chapters/10_process_mining.tex",
+      "before": "与之比较，Palantir 的对象与行动层强调业务对象及状态改变入口，",
+      "after": "其他平台具有不同的功能侧重。Palantir 的对象与行动层强调业务对象及状态变更接口，",
+      "reason": "使学术表述更自然、明确，保留原有论证范围"
+    },
+    {
+      "file": "docs/textbook/chapters/10_process_mining.tex",
+      "before": "Oracle 的数据库与私有 AI 能力强调数据与计算邻近，",
+      "after": "Oracle 的数据库与私有 AI 能力强调在数据所在环境中执行计算，",
+      "reason": "使学术表述更自然、明确，保留原有论证范围"
+    },
+    {
+      "file": "docs/textbook/chapters/10_process_mining.tex",
+      "before": "工具调用的输入、返回值和状态变化构成执行记录，可据此核查任务过程。",
+      "after": "工具调用的输入、返回值和状态变化形成执行记录，可用于核查任务是否按规定完成。",
+      "reason": "使学术表述更自然、明确，保留原有论证范围"
+    },
+    {
+      "file": "docs/textbook/chapters/10_process_mining.tex",
+      "before": "该行动可能是读取指标、检索标准作业程序（SOP）、运行优化或请求审批。",
+      "after": "该行动可能是读取指标、检索标准作业程序（SOP）\\footnote{SOP 是 standard operating procedure 的缩写，指对常规作业的步骤、责任、条件和记录要求作出规定的文件。其适用性取决于对象、版本及生效范围。}、运行优化或请求审批。",
+      "reason": "首次使用的背景术语缺少解释，补充精炼脚注"
+    },
+    {
+      "file": "docs/textbook/chapters/10_process_mining.tex",
+      "before": "每一次转移不仅需要操作名称，还需要前置条件、执行身份、规则版本和\n可观察的结果。",
+      "after": "每次状态转移均需明确操作名称、前置条件、执行身份、规则版本和\n可观察的结果。",
+      "reason": "使学术表述更自然、明确，保留原有论证范围"
+    },
+    {
+      "file": "docs/textbook/chapters/10_process_mining.tex",
+      "before": "执行请求需要稳定的幂等键，",
+      "after": "执行请求需要稳定的幂等键\\footnote{幂等性指重复执行同一操作不会产生额外的业务影响。幂等键是识别同一逻辑请求的稳定标识，服务端据此返回已有结果或避免重复创建；实际保证仍取决于服务端的实现。}，",
+      "reason": "首次使用的背景术语缺少解释，补充精炼脚注"
+    },
+    {
+      "file": "docs/textbook/chapters/10_process_mining.tex",
+      "before": "需要特别区分“调用返回成功”和“业务状态符合预期”。",
+      "after": "“调用返回成功”与“业务状态符合预期”是不同的判断。",
+      "reason": "使学术表述更自然、明确，保留原有论证范围"
+    },
+    {
+      "file": "docs/textbook/chapters/10_process_mining.tex",
+      "before": "结构化输出可使模型生成满足 JSON Schema 的请求，",
+      "after": "结构化输出可使模型生成满足 JSON Schema\\footnote{JSON 是一种结构化数据表示格式；JSON Schema 用字段类型、必填项、取值范围等规则描述并校验 JSON 数据结构。结构校验不判断业务含义是否正确。参见 \\url{https://json-schema.org/overview/what-is-jsonschema}。}的请求，",
+      "reason": "首次使用的背景术语缺少解释，补充精炼脚注"
+    },
+    {
+      "file": "docs/textbook/chapters/10_process_mining.tex",
+      "before": "语法检查、语义检查、授权与结果验证是连续的四道不同检查。",
+      "after": "请求结构、业务语义、操作权限和执行结果须分别核查。",
+      "reason": "使学术表述更自然、明确，保留原有论证范围"
+    },
+    {
+      "file": "docs/textbook/chapters/10_process_mining.tex",
+      "before": "它仍然只是待分析的数据，不能获得指令权限。",
+      "after": "这段文字属于待分析的数据，不具有改变任务或授权规则的权限。",
+      "reason": "使学术表述更自然、明确，保留原有论证范围"
+    },
+    {
+      "file": "docs/textbook/chapters/10_process_mining.tex",
+      "before": "第一层保存结构化事实和原始文档；",
+      "after": "本地系统可按职责分为四层。第一层保存结构化事实和原始文档；",
+      "reason": "使学术表述更自然、明确，保留原有论证范围"
+    },
+    {
+      "file": "docs/textbook/chapters/10_process_mining.tex",
+      "before": "一个兼容的 HTTP 接口不代表所有工具调用、结构化输出和上下文行为完全相同，必须以固定模型和运行时版本验证。",
+      "after": "HTTP 接口兼容并不保证工具调用、结构化输出和上下文处理完全一致，应在固定模型与运行时版本下逐项验证。",
+      "reason": "使学术表述更自然、明确，保留原有论证范围"
+    },
+    {
+      "file": "docs/textbook/chapters/10_process_mining.tex",
+      "before": "用嵌入函数 \\(f\\) 把问题",
+      "after": "用嵌入函数\\footnote{文本嵌入（embedding）将文本映射到数值向量，使语义相关性可以通过向量距离或相似度近似比较。相似度高不等于证据适用或结论正确。} \\(f\\) 把问题",
+      "reason": "首次使用的背景术语缺少解释，补充精炼脚注"
+    },
+    {
+      "file": "docs/textbook/chapters/10_process_mining.tex",
+      "before": "该排名融合是工程策略，不产生答案正确性的概率。",
+      "after": "该排名融合用于整合检索排序，其分数不表示答案正确的概率。",
+      "reason": "使学术表述更自然、明确，保留原有论证范围"
+    },
+    {
+      "file": "docs/textbook/chapters/10_process_mining.tex",
+      "before": "提高推理速度不一定改善工具等待。",
+      "after": "缩短模型推理时间不一定能减少工具调用的等待时间。",
+      "reason": "使学术表述更自然、明确，保留原有论证范围"
+    },
+    {
+      "file": "docs/textbook/chapters/10_process_mining.tex",
+      "before": "模型、网络、安全控制与业务应用\n由企业根据现有系统集成。",
+      "after": "企业需要根据现有系统集成模型、网络、安全控制与业务应用。",
+      "reason": "使学术表述更自然、明确，保留原有论证范围"
+    },
+    {
+      "file": "docs/textbook/chapters/10_process_mining.tex",
+      "before": "前者接近常用 pass@\\(k\\) 的理想化含义，后者衡量重复可靠性。",
+      "after": "前者接近常用 pass@\\(k\\)\\footnote{pass@\\(k\\) 衡量给定任务在至多 \\(k\\) 个候选中至少有一个通过判定的成功情况。它不表示系统能够在不知道标准答案时自动选出成功候选，因此须与单次部署成功率区分。}的理想化含义，后者衡量重复可靠性。",
+      "reason": "首次使用的背景术语缺少解释，补充精炼脚注"
+    },
+    {
+      "file": "docs/textbook/chapters/10_process_mining.tex",
+      "before": "记录应保存候选方案而不只保存最终名单，因为后续复盘需要知道替代方案是什么。",
+      "after": "除最终名单外，还应保存候选方案，以便复查备选行动及其取舍依据。",
+      "reason": "使学术表述更自然、明确，保留原有论证范围"
+    },
+    {
+      "file": "docs/textbook/chapters/10_process_mining.tex",
+      "before": "前四步可以在隔离的教学环境重复计算；第五、六步涉及组织责任与真实业务副作用。\n在模拟系统中可使用伪造事件和虚拟批准，但验收规则仍应按真实业务状态设计。",
+      "after": "前四步可以在隔离的教学环境中重复计算；第五、六步会改变业务状态，涉及相应授权与责任。\n模拟系统可使用模拟事件和虚拟批准，验收规则仍应依据业务状态设计。",
+      "reason": "使学术表述更自然、明确，保留原有论证范围"
+    }
+  ],
+  "terms": [
+    {
+      "file": "docs/textbook/chapters/06_ab_testing.tex",
+      "term": "CUPED",
+      "definition": "Controlled-experiment Using Pre-Experiment Data；利用实验前数据降低随机实验估计方差。"
+    },
+    {
+      "file": "docs/textbook/chapters/06_ab_testing.tex",
+      "term": "交叉拟合",
+      "definition": "分组估计调整模型并在留出组计算结果，避免同一观测兼作拟合与评价。"
+    },
+    {
+      "file": "docs/textbook/chapters/06_ab_testing.tex",
+      "term": "清洗期",
+      "definition": "切换处理后暂不计入效果比较的时段，用于减弱前一种处理的残留影响。"
+    },
+    {
+      "file": "docs/textbook/chapters/06_ab_testing.tex",
+      "term": "SRM",
+      "definition": "sample ratio mismatch；实际入组比例偏离预设分配比例。"
+    },
+    {
+      "file": "docs/textbook/chapters/06_ab_testing.tex",
+      "term": "序贯检验",
+      "definition": "分阶段积累数据、结合预设检验边界决定是否停止的推断方法。"
+    },
+    {
+      "file": "docs/textbook/chapters/06_ab_testing.tex",
+      "term": "并集界",
+      "definition": "一组事件的并集概率不超过各事件概率之和，不要求独立。"
+    },
+    {
+      "file": "docs/textbook/chapters/07_prediction.tex",
+      "term": "Bernoulli 似然",
+      "definition": "二元结果的概率模型；似然比较不同参数对既定观测的支持程度。"
+    },
+    {
+      "file": "docs/textbook/chapters/07_prediction.tex",
+      "term": "共线性",
+      "definition": "多个特征之间存在较强线性关系，可能影响系数估计和解释的稳定性。"
+    },
+    {
+      "file": "docs/textbook/chapters/07_prediction.tex",
+      "term": "自助抽样",
+      "definition": "从原样本有放回抽取观测，形成用于训练或推断的新样本。"
+    },
+    {
+      "file": "docs/textbook/chapters/07_prediction.tex",
+      "term": "早停",
+      "definition": "依据验证表现等预设标准提前停止迭代训练，以限制过拟合。"
+    },
+    {
+      "file": "docs/textbook/chapters/07_prediction.tex",
+      "term": "TP/FP/TN/FN",
+      "definition": "真阳性、假阳性、真阴性和假阴性的计数；分别区分正确检出、误报、正确排除和漏报。"
+    },
+    {
+      "file": "docs/textbook/chapters/07_prediction.tex",
+      "term": "ROC/AUC",
+      "definition": "不同阈值下的假阳性率与真阳性率构成 ROC 曲线，其曲线下面积为 AUC。"
+    },
+    {
+      "file": "docs/textbook/chapters/07_prediction.tex",
+      "term": "log-odds",
+      "definition": "事件概率与其补概率之比的自然对数，是逻辑回归的线性预测量。"
+    },
+    {
+      "file": "docs/textbook/chapters/07_prediction.tex",
+      "term": "预训练与上下文学习",
+      "definition": "预训练先在既有任务上估计参数；上下文学习利用输入示例适应新任务而不更新参数。"
+    },
+    {
+      "file": "docs/textbook/chapters/07_prediction.tex",
+      "term": "删失",
+      "definition": "结果时间未完整观察，只获得超过某个观察时长等部分信息。"
+    },
+    {
+      "file": "docs/textbook/chapters/07_prediction.tex",
+      "term": "token/KV cache",
+      "definition": "token 是分词基本单位；KV cache 保存已生成位置的键和值，减少自回归解码重复计算。"
+    },
+    {
+      "file": "docs/textbook/chapters/08_causality.tex",
+      "term": "因果敏感性分析",
+      "definition": "考察识别假设的偏离达到何种幅度会改变结论，不能证明不存在遗漏混杂。"
+    },
+    {
+      "file": "docs/textbook/chapters/08_causality.tex",
+      "term": "DML",
+      "definition": "double/debiased machine learning；结合灵活辅助函数估计、正交方程与样本分割进行目标参数推断。"
+    },
+    {
+      "file": "docs/textbook/chapters/08_causality.tex",
+      "term": "安慰剂检验",
+      "definition": "在不应受处理影响的时期、对象或结果上检验是否仍出现效果，以检查设计。"
+    },
+    {
+      "file": "docs/textbook/chapters/08_causality.tex",
+      "term": "双向固定效应",
+      "definition": "同时控制组别固定差异与共同时间冲击；分期处理下需检查效应异质性及权重。"
+    },
+    {
+      "file": "docs/textbook/chapters/09_optimization.tex",
+      "term": "可积",
+      "definition": "随机变量绝对值的期望有限，保证期望损失有有限明确数值。"
+    },
+    {
+      "file": "docs/textbook/chapters/09_optimization.tex",
+      "term": "VaR/CVaR",
+      "definition": "VaR 为指定置信水平的损失分位数；CVaR 综合最坏一部分概率质量的损失。"
+    },
+    {
+      "file": "docs/textbook/chapters/09_optimization.tex",
+      "term": "矩约束与距离球",
+      "definition": "分别以均值方差等分布特征或与参考分布的距离限制候选分布集合。"
+    },
+    {
+      "file": "docs/textbook/chapters/09_optimization.tex",
+      "term": "最大后悔值",
+      "definition": "方案损失相对于事先知道情景时最优损失的差额，最大后悔值考察最不利情景。"
+    },
+    {
+      "file": "docs/textbook/chapters/09_optimization.tex",
+      "term": "MILP",
+      "definition": "mixed-integer linear programming；线性目标约束下部分变量为整数的优化模型。"
+    },
+    {
+      "file": "docs/textbook/chapters/09_optimization.tex",
+      "term": "冻结窗口",
+      "definition": "计划期内暂不允许常规调整的近期时段，以稳定已准备或执行的任务。"
+    },
+    {
+      "file": "docs/textbook/chapters/09_optimization.tex",
+      "term": "最优性间隙",
+      "definition": "当前可行目标值与求解器有效界的差距，用于说明尚未证明的改进空间。"
+    },
+    {
+      "file": "docs/textbook/chapters/10_process_mining.tex",
+      "term": "Petri 网与标识",
+      "definition": "用库所、变迁和令牌描述并发系统；令牌数量向量为标识，表示当前状态。"
+    },
+    {
+      "file": "docs/textbook/chapters/10_process_mining.tex",
+      "term": "日志回放与对齐",
+      "definition": "逐步执行事件序列检查模型，或寻找日志与模型轨迹的低代价对应关系。"
+    },
+    {
+      "file": "docs/textbook/chapters/10_process_mining.tex",
+      "term": "马尔可夫过程与吸收",
+      "definition": "给定当前状态后下一步不再依赖更早历史；吸收状态进入后不再离开。"
+    },
+    {
+      "file": "docs/textbook/chapters/10_process_mining.tex",
+      "term": "SOP",
+      "definition": "standard operating procedure；规定常规作业步骤、责任、条件和记录要求的文件。"
+    },
+    {
+      "file": "docs/textbook/chapters/10_process_mining.tex",
+      "term": "幂等性与幂等键",
+      "definition": "重复同一操作不额外改变业务结果；稳定请求标识由服务端用于去重或返回已有结果。"
+    },
+    {
+      "file": "docs/textbook/chapters/10_process_mining.tex",
+      "term": "JSON/JSON Schema",
+      "definition": "JSON 为结构化数据格式；JSON Schema 用类型、必填项、范围等规则描述并校验数据结构。"
+    },
+    {
+      "file": "docs/textbook/chapters/10_process_mining.tex",
+      "term": "文本嵌入",
+      "definition": "文本向量表示，用向量相似度近似比较语义相关性，不代表证据适用或答案正确。"
+    },
+    {
+      "file": "docs/textbook/chapters/10_process_mining.tex",
+      "term": "pass@k",
+      "definition": "至多 k 个候选中至少一个通过判定，不表示实际系统能自动识别正确候选。"
+    }
+  ],
+  "protectedChecks": [
+    {
+      "file": "docs/textbook/chapters/06_ab_testing.tex",
+      "protectedTokenCount": 114,
+      "protectedTokensIdentical": true,
+      "addedFootnotes": 6,
+      "footnoteCount": 6,
+      "balancedBraces": true,
+      "figures": 1,
+      "tables": 2,
+      "codePaths": 3
+    },
+    {
+      "file": "docs/textbook/chapters/07_prediction.tex",
+      "protectedTokenCount": 191,
+      "protectedTokensIdentical": true,
+      "addedFootnotes": 10,
+      "footnoteCount": 10,
+      "balancedBraces": true,
+      "figures": 1,
+      "tables": 4,
+      "codePaths": 6
+    },
+    {
+      "file": "docs/textbook/chapters/08_causality.tex",
+      "protectedTokenCount": 150,
+      "protectedTokensIdentical": true,
+      "addedFootnotes": 4,
+      "footnoteCount": 4,
+      "balancedBraces": true,
+      "figures": 1,
+      "tables": 4,
+      "codePaths": 3
+    },
+    {
+      "file": "docs/textbook/chapters/09_optimization.tex",
+      "protectedTokenCount": 187,
+      "protectedTokensIdentical": true,
+      "addedFootnotes": 7,
+      "footnoteCount": 7,
+      "balancedBraces": true,
+      "figures": 1,
+      "tables": 3,
+      "codePaths": 4
+    },
+    {
+      "file": "docs/textbook/chapters/10_process_mining.tex",
+      "protectedTokenCount": 147,
+      "protectedTokensIdentical": true,
+      "addedFootnotes": 8,
+      "footnoteCount": 8,
+      "balancedBraces": true,
+      "figures": 4,
+      "tables": 7,
+      "codePaths": 4
+    }
+  ],
+  "primarySourcesConsulted": [
+    "https://scikit-learn.org/stable/modules/model_evaluation.html",
+    "https://developers.google.com/optimization/mip/mip_example",
+    "https://json-schema.org/overview/what-is-jsonschema"
+  ],
+  "reviewComplete": true,
+  "notes": [
+    "逐章完整阅读并进行 humanizer 初审、定点改写及复审。",
+    "仅编辑指定五章与本审校清单。未构建，未写入 Git。",
+    "新增脚注按正文阅读顺序置于术语所在句，未在标题、图题、表头、公式或代码中添加。",
+    "排版换行和异常中文空格由主任务统一规范，未全文件重排。",
+    "全部原有数学、表格、TikZ图形、引用、标签、路径和代码标识按字节比对保持一致；新增脚注包含的少量公式不在原有保护序列之内。"
+  ]
+}

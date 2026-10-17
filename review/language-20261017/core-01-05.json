@@ -1,0 +1,1627 @@
+{
+  "scope": [
+    "01_intro.tex",
+    "02_enterprise_data_model.tex",
+    "03_sql_kpi.tex",
+    "04_data_quality.tex",
+    "05_statistics_dashboard.tex"
+  ],
+  "operations": [
+    {
+      "file": "docs/textbook/chapters/01_intro.tex",
+      "before": "信息系统和商业智能传统关注数据如何被采集、集成、建模、查询和呈现。",
+      "after": "信息系统与商业智能研究数据的采集、集成、建模、查询和呈现。",
+      "reason": "删除不自然的“传统关注”搭配，保留学科范围。"
+    },
+    {
+      "file": "docs/textbook/chapters/01_intro.tex",
+      "before": "统计学和机器学习传统关注如何从数据中获得证据，包括描述分布、估计关系、预测未来、识别因果效应和控制不确定性。",
+      "after": "统计学与机器学习研究如何根据数据描述分布、估计关系、预测未知结果、识别因果效应及量化不确定性。",
+      "reason": "改为准确的学术动词；统计方法量化不确定性而非一概“控制”不确定性。"
+    },
+    {
+      "file": "docs/textbook/chapters/01_intro.tex",
+      "before": "经典 BI 依赖数据仓库",
+      "after": "经典 BI 依赖数据仓库\\footnote{数据仓库（data warehouse）是面向查询与分析的数据存储系统，汇集多个业务来源的数据，并按约定组织主题、历史记录和分析口径。}",
+      "reason": "补释首次出现而尚未说明的术语：数据仓库"
+    },
+    {
+      "file": "docs/textbook/chapters/01_intro.tex",
+      "before": "、ETL",
+      "after": "、ETL\\footnote{ETL 是 extract, transform, load 的缩写，即抽取、转换、装载：先从源系统取得数据，再完成清洗与结构转换，最后写入目标系统。}",
+      "reason": "补释首次出现而尚未说明的术语：ETL"
+    },
+    {
+      "file": "docs/textbook/chapters/01_intro.tex",
+      "before": "、OLAP",
+      "after": "、OLAP\\footnote{OLAP 是 online analytical processing 的缩写，即联机分析处理，支持按时间、地区、产品等维度汇总、切换和细查经营数据。}",
+      "reason": "补释首次出现而尚未说明的术语：OLAP"
+    },
+    {
+      "file": "docs/textbook/chapters/01_intro.tex",
+      "before": "、报表系统",
+      "after": "、报表系统\\footnote{报表系统按照预先定义或临时指定的查询和版式，将数据组织为表格、图形等输出，供经营汇报、监控或核对使用。}",
+      "reason": "补释首次出现而尚未说明的术语：报表系统"
+    },
+    {
+      "file": "docs/textbook/chapters/01_intro.tex",
+      "before": "它关心的不只是“发生了什么”或“将会发生什么”，还包括“谁被允许对哪个对象采取什么行动”“行动结果如何回流”“模型和规则如何被监控与审计”。",
+      "after": "其设计需同时规定经营状态的描述与预测、行动对象和操作权限、结果反馈，以及模型和规则的监控与审计。",
+      "reason": "将密集设问改为正式、可核对的系统职责。"
+    },
+    {
+      "file": "docs/textbook/chapters/01_intro.tex",
+      "before": "只有把可采取的\n行动、可接受的代价和不允许违反的承诺同时写出，目标才成为可供分析的选择问题。",
+      "after": "为使目标成为可供分析的选择问题，须同时明确可采取的\n行动、可接受的代价和必须履行的承诺。",
+      "reason": "压缩重复转折和被动表达，保留行动、代价及约束三项条件。"
+    },
+    {
+      "file": "docs/textbook/chapters/01_intro.tex",
+      "before": "假设 \\(p=0.2\\)，两种损失分别为 20 和 17，理性选择是转移。",
+      "after": "假设 \\(p=0.2\\)，两种行动的期望损失分别为 20 和 17，按期望损失准则应选择转移。",
+      "reason": "明确比较的是期望损失，避免将特定准则泛称为理性选择。"
+    },
+    {
+      "file": "docs/textbook/chapters/01_intro.tex",
+      "before": "因此这项信息最多值得支付 \\(17-9.2=7.8\\) 万元。完美信息则允许正常时不转移、中断时转移，损失为 \\(0.8\\times0+0.2\\times25=5\\)，其价值为 \\(17-5=12\\)。现实检测价值小于完美信息价值，这为数据采集预算提供了上界。",
+      "after": "因此，按期望损失准则，这项信息可接受的最高费用为 \\(17-9.2=7.8\\) 万元。完全信息允许正常时不转移、中断时转移，期望损失为 \\(0.8\\times0+0.2\\times25=5\\)，其价值为 \\(17-5=12\\)。本例检测的信息价值小于完全信息价值，后者给出信息采购费用的上界。",
+      "reason": "统一“完全信息”术语，并把价值判断限定到本例及所用准则。"
+    },
+    {
+      "file": "docs/textbook/chapters/01_intro.tex",
+      "before": "用数学语言说，条件化带来的价值\n取决于可依据观察选择的策略集合是否扩大。",
+      "after": "条件化带来的价值\n取决于是否能依据不同观察采用不同策略。",
+      "reason": "删除解释姿态，直接表达策略随信息调整的含义。"
+    },
+    {
+      "file": "docs/textbook/chapters/01_intro.tex",
+      "before": "当前两行动问题的 EVSI 仍为零。",
+      "after": "当前只含两种行动的决策问题中，EVSI 仍为零。",
+      "reason": "修复生硬的名词压缩。"
+    },
+    {
+      "file": "docs/textbook/chapters/01_intro.tex",
+      "before": "只要能把部分对象推到行动阈值的另一侧，",
+      "after": "只要能使部分对象的后验风险跨越行动阈值，",
+      "reason": "以明确的风险与阈值关系替代口语化隐喻。"
+    },
+    {
+      "file": "docs/textbook/chapters/01_intro.tex",
+      "before": "概率校准情况",
+      "after": "概率校准情况\\footnote{概率校准考察预测概率与事件发生频率是否相符。例如，在长期重复的可比情形中，预测概率接近某一水平的事件，其实际发生比例也应接近该水平。}",
+      "reason": "补释首次出现而尚未说明的术语：概率校准"
+    },
+    {
+      "file": "docs/textbook/chapters/01_intro.tex",
+      "before": "CRISP-DM 将数据挖掘项目划分为六个阶段：",
+      "after": "CRISP-DM\\footnote{CRISP-DM 是 cross-industry standard process for data mining 的缩写，即跨行业数据挖掘标准流程，用于组织数据分析项目各阶段的任务及其相互依赖。}",
+      "reason": "补释首次出现而尚未说明的术语：CRISP-DM"
+    },
+    {
+      "file": "docs/textbook/chapters/01_intro.tex",
+      "before": "用于组织数据分析项目各阶段的任务及其相互依赖。}\n\\[",
+      "after": "用于组织数据分析项目各阶段的任务及其相互依赖。} 将数据挖掘项目划分为六个阶段：\n\\[",
+      "reason": "恢复补注后主句的谓语和标点。"
+    },
+    {
+      "file": "docs/textbook/chapters/01_intro.tex",
+      "before": "元数据、数据血缘与可复现实验环境",
+      "after": "元数据、数据血缘与可复现实验环境\\footnote{元数据（metadata）描述数据的结构、含义、来源、责任和版本；数据血缘（data lineage）记录数据从源头经过哪些转换，形成当前表、指标或模型输入。}",
+      "reason": "补释首次出现而尚未说明的术语：元数据与数据血缘"
+    },
+    {
+      "file": "docs/textbook/chapters/01_intro.tex",
+      "before": "权限控制、操作日志与 human-in-the-loop；",
+      "after": "权限控制、操作日志与人工介入机制（human-in-the-loop）\\footnote{人工介入机制在预定步骤由人员审核、批准或纠正系统结果，并明确其判断权限与责任。}；",
+      "reason": "以中文学术表述代替孤立英文术语，并补充机制含义。"
+    },
+    {
+      "file": "docs/textbook/chapters/01_intro.tex",
+      "before": "前两次检查实施的计算与规格是否一致，第三次检查\n跨系统执行行为。",
+      "after": "前两次检查程序计算是否符合规格，第三次检查\n跨系统执行行为是否符合要求。",
+      "reason": "修复“检查实施的计算”歧义，并补足并列句谓语。"
+    },
+    {
+      "file": "docs/textbook/chapters/01_intro.tex",
+      "before": "实现可以由 SQL、优化程序和智能体共同完成。",
+      "after": "实现可以由 SQL\\footnote{SQL 是 structured query language 的缩写，即结构化查询语言，供关系数据库定义、查询及操作数据使用。此处主要使用其查询与聚合功能；具体语义见第3章。}",
+      "reason": "补释首次出现而尚未说明的术语：SQL"
+    },
+    {
+      "file": "docs/textbook/chapters/01_intro.tex",
+      "before": "此处主要使用其查询与聚合功能；具体语义见第3章。}上述规格",
+      "after": "此处主要使用其查询与聚合功能；具体语义见第3章。}、优化程序和智能体共同完成。上述规格",
+      "reason": "恢复术语补注后的并列主句。"
+    },
+    {
+      "file": "docs/textbook/chapters/01_intro.tex",
+      "before": "业务本体、数字孪生和智能平台的技术分析需要明确其对象、状态与行动模型。",
+      "after": "业务本体与数字孪生\\footnote{业务本体（business ontology）规定业务对象、属性、关系及相关规则；数字孪生（digital twin）是与实际对象保持数据联系的数字表示或模型，用于描述其状态或分析其行为。}",
+      "reason": "补释首次出现而尚未说明的术语：业务本体与数字孪生"
+    },
+    {
+      "file": "docs/textbook/chapters/01_intro.tex",
+      "before": "用于描述其状态或分析其行为。}\n",
+      "after": "用于描述其状态或分析其行为。}的技术分析，需要明确对象、状态与行动模型；智能平台也须据此说明其业务含义。\n",
+      "reason": "恢复补注后的主句，并保持对智能平台的分析要求。"
+    },
+    {
+      "file": "docs/textbook/chapters/01_intro.tex",
+      "before": "确认前仅作为待验证的企业经验陈述。",
+      "after": "核实这些条件前，相应增幅只能作为待验证的企业经验陈述。",
+      "reason": "补足省略对象，明确验证限定的适用范围。"
+    },
+    {
+      "file": "docs/textbook/chapters/01_intro.tex",
+      "before": "大语言模型依据上下文生成文本或结构化输出，",
+      "after": "大语言模型（large language model，LLM）依据上下文生成文本或结构化输出，",
+      "reason": "首次给出后续反复使用的缩写全称。"
+    },
+    {
+      "file": "docs/textbook/chapters/02_enterprise_data_model.tex",
+      "before": "同一个客户可能在 CRM、订单系统、售后系统和营销系统中拥有不同编号",
+      "after": "同一个客户可能在 CRM\\footnote{CRM 是 customer relationship management 的缩写，即客户关系管理。CRM 系统记录客户身份、交互、销售机会和服务过程，支持客户关系的维护与分析。}",
+      "reason": "补释首次出现而尚未说明的术语：CRM"
+    },
+    {
+      "file": "docs/textbook/chapters/02_enterprise_data_model.tex",
+      "before": "支持客户关系的维护与分析。}；",
+      "after": "支持客户关系的维护与分析。}、订单系统、售后系统和营销系统中拥有不同编号；",
+      "reason": "恢复补注后的系统并列和完整主句。"
+    },
+    {
+      "file": "docs/textbook/chapters/02_enterprise_data_model.tex",
+      "before": "若没有明确的数据模型，后续分析会出现三类问题。",
+      "after": "缺少明确的数据模型时，后续分析可能出现以下问题。",
+      "reason": "避免把风险表述为无条件必然，并使引出列表自然。"
+    },
+    {
+      "file": "docs/textbook/chapters/02_enterprise_data_model.tex",
+      "before": "对象不稳定：系统无法判断同一个客户、订单或产品在不同系统中是否指向同一业务对象。",
+      "after": "对象身份不明：系统无法判断不同记录是否指向同一个客户、订单或产品。",
+      "reason": "删除“同一个是否指向同一”循环表述。"
+    },
+    {
+      "file": "docs/textbook/chapters/02_enterprise_data_model.tex",
+      "before": "行动不稳定：分析结果无法对应到可执行对象",
+      "after": "行动对象不明：分析结果无法对应到可执行对象",
+      "reason": "用准确的对象匹配问题替代含义不明的稳定性。"
+    },
+    {
+      "file": "docs/textbook/chapters/02_enterprise_data_model.tex",
+      "before": "进入数字化和 AI 化环境后，监督不再只依赖财务报表和事后审计，还依赖订单、设备、库存、客户、合同、质量事件等运营对象能否被持续、准确、可追溯地记录。",
+      "after": "在数字化和人工智能应用环境中，监督除依据财务报表和事后审计外，也依赖订单、设备、库存、客户、合同、质量事件等运营对象的持续记录及其准确性和可追溯性。",
+      "reason": "消除生硬“AI化”和含混的“监督依赖能否”，保留原有监督依据。"
+    },
+    {
+      "file": "docs/textbook/chapters/02_enterprise_data_model.tex",
+      "before": "则把 AI 系统的治理、风险管理、日志、透明度和质量管理推向制度层面",
+      "after": "则分别对 AI 系统治理、风险管理、日志、透明度或质量管理提出要求",
+      "reason": "避免概括性宣传语，保留各框架要求范围有所不同的限定。"
+    },
+    {
+      "file": "docs/textbook/chapters/02_enterprise_data_model.tex",
+      "before": "语义层提供统一的查询定义",
+      "after": "语义层提供统一的查询定义\\footnote{语义层（semantic layer）把表、字段与业务对象、指标和关系对应起来，为不同查询工具提供一致的业务定义；其具体内容仍需由业务负责人确认。}",
+      "reason": "补释首次出现而尚未说明的术语：语义层"
+    },
+    {
+      "file": "docs/textbook/chapters/02_enterprise_data_model.tex",
+      "before": "Apache Iceberg 规定表元数据、快照和模式\n演化的语义",
+      "after": "Apache Iceberg 规定表元数据、快照和模式\n演化的语义\\footnote{快照（snapshot）记录表在某一版本的状态；模式演化（schema evolution）是在明确兼容规则下调整表的字段名称、类型或结构。此处的“模式”指数据结构，不指统计模型。}",
+      "reason": "补释首次出现而尚未说明的术语：快照与模式演化"
+    },
+    {
+      "file": "docs/textbook/chapters/02_enterprise_data_model.tex",
+      "before": "对象存储中的文件",
+      "after": "对象存储中的文件\\footnote{对象存储（object storage）将数据作为带有唯一标识和元数据的对象保存，计算引擎通过对象接口读取相应文件内容。}",
+      "reason": "补释首次出现而尚未说明的术语：对象存储"
+    },
+    {
+      "file": "docs/textbook/chapters/02_enterprise_data_model.tex",
+      "before": "一个计算引擎能够读入同一张表，也不能据此推定它能按照相同权限写回。",
+      "after": "计算引擎能够读取同一张表，并不意味着它也具有相应写入能力或权限。",
+      "reason": "明确区分技术读写能力与授权。"
+    },
+    {
+      "file": "docs/textbook/chapters/02_enterprise_data_model.tex",
+      "before": "设备资格、操作权限、幂等请求及完成确认",
+      "after": "设备资格、操作权限、幂等请求及完成确认\\footnote{幂等请求（idempotent request）要求同一操作在重复提交时不产生额外业务效果。例如，使用同一请求标识重试创建工单，不应生成多张工单。}",
+      "reason": "补释首次出现而尚未说明的术语：幂等请求"
+    },
+    {
+      "file": "docs/textbook/chapters/02_enterprise_data_model.tex",
+      "before": "这项操作的状态机",
+      "after": "这项操作的状态机\\footnote{状态机（state machine）以有限或明确规定的状态及允许的转换描述操作过程。例如，工单可处于待审批、已批准、已提交或已完成状态，转换须满足相应条件。}",
+      "reason": "补释首次出现而尚未说明的术语：状态机"
+    },
+    {
+      "file": "docs/textbook/chapters/02_enterprise_data_model.tex",
+      "before": "输入长度影响预填充计算和上下文占用",
+      "after": "输入长度影响预填充计算和上下文占用\\footnote{预填充（prefill）是模型生成新内容前，对输入序列进行处理并建立相关中间状态的阶段；上下文是模型当前可利用的输入及历史信息。}",
+      "reason": "补释首次出现而尚未说明的术语：预填充与上下文"
+    },
+    {
+      "file": "docs/textbook/chapters/02_enterprise_data_model.tex",
+      "before": "平台职责依据各平台公开的产品机制，核查项目针对订单加急算例的分析要求。",
+      "after": "各平台的职责描述以其公开产品机制为依据，核查项目则根据订单加急算例的需求确定。",
+      "reason": "修复两个主谓搭配不完整的分句。"
+    },
+    {
+      "file": "docs/textbook/chapters/02_enterprise_data_model.tex",
+      "before": "设某封测企业在 ERP 中维护客户订单，在制造执行系统中记录批次过站、",
+      "after": "设某封测企业在 ERP 中维护客户订单，在制造执行系统中记录批次过站、\\footnote{ERP 是 enterprise resource planning 的缩写，即企业资源计划，通常整合订单、采购、库存、生产计划及财务等业务。制造执行系统（manufacturing execution system，MES）则记录并管理生产现场的作业执行和批次状态。}",
+      "reason": "补释首次出现而尚未说明的术语：ERP 与制造执行系统"
+    },
+    {
+      "file": "docs/textbook/chapters/02_enterprise_data_model.tex",
+      "before": "批次过站、\\footnote{",
+      "after": "批次过站\\footnote{",
+      "reason": "将脚注定位在完整术语之后。"
+    },
+    {
+      "file": "docs/textbook/chapters/02_enterprise_data_model.tex",
+      "before": "作业执行和批次状态。}\n设备状态和质量检验。",
+      "after": "作业执行和批次状态。}、\n设备状态和质量检验。",
+      "reason": "保留跨行并列对象间的顿号。"
+    },
+    {
+      "file": "docs/textbook/chapters/02_enterprise_data_model.tex",
+      "before": "由 Databricks 或 Snowflake 中选定的主查询服务提供指标\n结果",
+      "after": "从 Databricks 或 Snowflake 中选定主查询服务，提供指标\n结果",
+      "reason": "修复“由…中选定”语法不顺。"
+    },
+    {
+      "file": "docs/textbook/chapters/02_enterprise_data_model.tex",
+      "before": "该路径要求对象标识、\n数据版本、网络转移和可写入接口作出跨平台约定",
+      "after": "该路径要求对对象标识、\n数据版本、网络传输和写入接口作出跨平台约定",
+      "reason": "补足介词，统一技术用语。"
+    },
+    {
+      "file": "docs/textbook/chapters/02_enterprise_data_model.tex",
+      "before": "记录符合规则与记录真实反映业务具有不同含义",
+      "after": "记录符合规则，并不等于记录准确反映业务",
+      "reason": "改为明确而简洁的质量概念区分。"
+    },
+    {
+      "file": "docs/textbook/chapters/02_enterprise_data_model.tex",
+      "before": "Codd 提出的关系模型为数据库提供了严格而简洁的形式语言。",
+      "after": "Codd 提出的关系模型用形式语言描述数据及其关系。",
+      "reason": "删除评价性修饰，直接说明作用。"
+    },
+    {
+      "file": "docs/textbook/chapters/02_enterprise_data_model.tex",
+      "before": "\\begin{table}[htbp]\n\\centering\n\\caption{自然键与代理键的比较}",
+      "after": "记录标识可以采用自然键或代理键\\footnote{自然键（natural key）使用已有业务属性识别对象，例如受约束的产品编码；代理键（surrogate key）由系统另行分配，通常不承载业务含义，需维护其与业务标识的映射。}。\n\n\\begin{table}[htbp]\n\\centering\n\\caption{自然键与代理键的比较}",
+      "reason": "在正文补充自然键和代理键的含义，避免只列优缺点而无定义。"
+    },
+    {
+      "file": "docs/textbook/chapters/02_enterprise_data_model.tex",
+      "before": "它通过减少冗余来避免插入异常、删除异常和更新异常。",
+      "after": "它通过减少冗余，降低插入、删除和更新操作破坏数据一致性的风险。",
+      "reason": "把未展开的术语连列改为可直接理解的操作后果。"
+    },
+    {
+      "file": "docs/textbook/chapters/02_enterprise_data_model.tex",
+      "before": "产业咨询和制造数字化实践也反复强调，WIP、Cycle Time、产能利用和良率之间存在耦合关系：",
+      "after": "产业咨询和制造数字化研究也讨论了 WIP、Cycle Time、产能利用和良率之间的相互影响：",
+      "reason": "消除借助“反复强调”制造权威感的措辞。"
+    },
+    {
+      "file": "docs/textbook/chapters/02_enterprise_data_model.tex",
+      "before": "真实主管既要完成可计数的产量",
+      "after": "实际生产中，主管既要完成可计数的产量",
+      "reason": "修复“真实主管”不自然搭配。"
+    },
+    {
+      "file": "docs/textbook/chapters/02_enterprise_data_model.tex",
+      "before": "公司治理的经济学背景可由 Jensen 与 Meckling、Shleifer 与 Vishny 进入",
+      "after": "公司治理的经济学背景可参考 Jensen 与 Meckling、Shleifer 与 Vishny 的研究",
+      "reason": "修复“背景可由…进入”生硬表达。"
+    },
+    {
+      "file": "docs/textbook/chapters/02_enterprise_data_model.tex",
+      "before": "在这个案例中，订单明细事实表回答“卖出了什么”，库存快照表回答“某天某仓库还剩多少”，补货事件表回答“何时补了多少”，产品维度表回答“这是什么品类和价格带”。",
+      "after": "在这个案例中，订单明细事实表记录售出商品及其交易，库存快照表记录指定日期和仓库的库存余额，补货事件表记录补货时间与数量，产品维度表描述品类和价格带。",
+      "reason": "将连续口语设问改为明确的数据职责，保留原有信息。"
+    },
+    {
+      "file": "docs/textbook/chapters/03_sql_kpi.tex",
+      "before": "SQL 是关系数据库的声明式查询语言。",
+      "after": "SQL（structured query language，结构化查询语言）是关系数据库使用的声明式语言\\footnote{声明式语言说明所需结果及其条件，具体计算步骤由数据库系统选择；这与逐步规定控制流程的命令式程序有所不同。}。",
+      "reason": "使本章可独立阅读，补充缩写及声明式的含义。"
+    },
+    {
+      "file": "docs/textbook/chapters/03_sql_kpi.tex",
+      "before": "例如，下面的查询按区域计算 2026 年 3 月订单收入：",
+      "after": "以下查询按区域计算 2026 年 3 月的订单收入：",
+      "reason": "去除可省略的过渡语，补足定中关系。"
+    },
+    {
+      "file": "docs/textbook/chapters/03_sql_kpi.tex",
+      "before": "实际 SQL 默认保留重复行，更接近多重集语义。",
+      "after": "实际 SQL 默认保留重复行，更接近多重集语义\\footnote{多重集（multiset）允许同一取值重复出现，并保留其出现次数。SQL 中未去重的结果可以包含内容相同但对应不同业务事实的多行。}。",
+      "reason": "解释集合语义与SQL重复行的区别。"
+    },
+    {
+      "file": "docs/textbook/chapters/03_sql_kpi.tex",
+      "before": "空值引入三值逻辑。",
+      "after": "空值引入三值逻辑\\footnote{SQL 条件的逻辑结果包括真、假和未知。涉及空值的比较通常得到未知；因此，“不是已知为真”不一定等于“已知为假”。}",
+      "reason": "补释首次出现而尚未说明的术语：三值逻辑"
+    },
+    {
+      "file": "docs/textbook/chapters/03_sql_kpi.tex",
+      "before": "不一定等于“已知为假”。}SQL 中",
+      "after": "不一定等于“已知为假”。}。SQL 中",
+      "reason": "补全脚注后的主句标点。"
+    },
+    {
+      "file": "docs/textbook/chapters/03_sql_kpi.tex",
+      "before": "三者可以不同，但必须被明确说明。",
+      "after": "三者可以不同，报告中须分别说明。",
+      "reason": "简化被动句。"
+    },
+    {
+      "file": "docs/textbook/chapters/03_sql_kpi.tex",
+      "before": "或改用半连接筛选",
+      "after": "或改用半连接筛选\\footnote{半连接（semi join）只保留左表中在右表至少有一个匹配的行，不输出右表字段，也不因右表存在多个匹配而复制左表行。}",
+      "reason": "补释首次出现而尚未说明的术语：半连接"
+    },
+    {
+      "file": "docs/textbook/chapters/03_sql_kpi.tex",
+      "before": "随意使用 \\texttt{DISTINCT} 可能恰好掩盖样例错误，却会误删金额相同的不同订单。",
+      "after": "直接使用 \\texttt{DISTINCT} 可能掩盖样例中的重复连接错误，却也可能误删金额相同的不同订单。",
+      "reason": "明确错误机制，并避免把潜在误删写成必然。"
+    },
+    {
+      "file": "docs/textbook/chapters/03_sql_kpi.tex",
+      "before": "该查询采用一行一个有效订单承诺的关系模式，",
+      "after": "计算到期口径 OTD 时，应采用一行一个有效订单承诺的关系模式，",
+      "reason": "移除无先行指代的“该查询”，明确所谈指标与关系模式。"
+    },
+    {
+      "file": "docs/textbook/chapters/03_sql_kpi.tex",
+      "before": "一个严谨的指标系统应区分三类状态：",
+      "after": "指标系统应区分三类状态：",
+      "reason": "删除无信息的自我评价。"
+    },
+    {
+      "file": "docs/textbook/chapters/03_sql_kpi.tex",
+      "before": "语言模型可以生成流畅 SQL，但没有足够信息时，应返回待澄清项或明示默认口径。",
+      "after": "语言模型可以生成语法正确的 SQL；信息不足时，系统仍须返回待澄清项或明示默认口径。",
+      "reason": "SQL不宜称“流畅”，区分语法与业务含义。"
+    },
+    {
+      "file": "docs/textbook/chapters/03_sql_kpi.tex",
+      "before": "此类变形测试可以发现单个标准答案未覆盖的错误。",
+      "after": "此类变形测试\\footnote{变形测试（metamorphic testing）通过改变输入并检查输出之间应保持的关系验证程序。例如，调换记录顺序不应改变总销售额；它不要求为每个新输入预先给定完整标准答案。}",
+      "reason": "补释首次出现而尚未说明的术语：变形测试"
+    },
+    {
+      "file": "docs/textbook/chapters/03_sql_kpi.tex",
+      "before": "不要求为每个新输入预先给定完整标准答案。}\n",
+      "after": "不要求为每个新输入预先给定完整标准答案。}可以发现单个标准答案未覆盖的错误。\n",
+      "reason": "恢复术语补注后的谓语。"
+    },
+    {
+      "file": "docs/textbook/chapters/03_sql_kpi.tex",
+      "before": "参数绑定适用于值",
+      "after": "参数绑定适用于值\\footnote{参数绑定（parameter binding）把数据值与 SQL 语句结构分开提交，由数据库按参数处理，避免把值直接拼接为语句的一部分。表名、列名等标识符通常须另行按受控映射选择。}",
+      "reason": "补释首次出现而尚未说明的术语：参数绑定"
+    },
+    {
+      "file": "docs/textbook/chapters/03_sql_kpi.tex",
+      "before": "标准查询库可以提高稳定性；一旦口径或模式变化，它也需要重新验证。",
+      "after": "标准查询库有助于保持口径一致；口径或数据模式变化后，相关查询须重新验证。",
+      "reason": "将空泛“稳定性”具体化为口径一致，明确需验证的对象。"
+    },
+    {
+      "file": "docs/textbook/chapters/03_sql_kpi.tex",
+      "before": "运行还需键值缓存（KV cache）、中间计算和批处理内存。",
+      "after": "运行还需键值缓存（KV cache）\\footnote{键值缓存保存注意力计算中已生成的键和值，后续逐步生成时可复用这些中间结果，从而减少重复计算；其内存占用随上下文长度和并发等条件变化。}",
+      "reason": "补释首次出现而尚未说明的术语：KV cache"
+    },
+    {
+      "file": "docs/textbook/chapters/03_sql_kpi.tex",
+      "before": "随上下文长度和并发等条件变化。}部署评价",
+      "after": "随上下文长度和并发等条件变化。}、中间计算和批处理内存。部署评价",
+      "reason": "恢复术语补注后的并列主句。"
+    },
+    {
+      "file": "docs/textbook/chapters/04_data_quality.tex",
+      "before": "客户 SLA 违约判断",
+      "after": "客户 SLA 违约判断\\footnote{SLA 是 service-level agreement 的缩写，即服务水平协议，规定服务方承诺的交付时间、可用性或响应标准，以及相关责任。}",
+      "reason": "补释首次出现而尚未说明的术语：SLA"
+    },
+    {
+      "file": "docs/textbook/chapters/04_data_quality.tex",
+      "before": "数据质量依据用途定义。同一份数据可能满足一种用途的质量要求，同时无法满足另一种用途的要求。",
+      "after": "数据质量应根据用途评价。同一份数据可能适合某项任务，却无法满足另一项任务的要求。",
+      "reason": "避免同段重复“用途的质量要求”，保留用途依赖关系。"
+    },
+    {
+      "file": "docs/textbook/chapters/04_data_quality.tex",
+      "before": "质量评价因而须与具体用途和容许误差联系。",
+      "after": "质量评价因而须说明具体用途和容许误差。",
+      "reason": "以可操作的明确要求代替抽象“联系”。"
+    },
+    {
+      "file": "docs/textbook/chapters/04_data_quality.tex",
+      "before": "剖析与测试的区别在于：剖析偏探索，测试偏断言。",
+      "after": "剖析探索数据的结构与分布，测试则判断预定规则是否成立。",
+      "reason": "将生硬的“偏断言”改为可直接理解的检验职责。"
+    },
+    {
+      "file": "docs/textbook/chapters/04_data_quality.tex",
+      "before": "完全随机缺失要求缺失与所有相关变量独立；给定已观测协变量后的随机缺失允许缺失依赖这些协变量；非随机缺失则仍依赖未观测结果。",
+      "after": "完全随机缺失（missing completely at random，MCAR）要求缺失与所有相关变量独立；随机缺失（missing at random，MAR）要求在给定已观测协变量后，缺失不再依赖缺失部分的取值；非随机缺失（missing not at random，MNAR）则在给定已观测信息后仍依赖未观测取值。",
+      "reason": "补充缩写全称，并消除MAR/MNAR条件陈述的省略。"
+    },
+    {
+      "file": "docs/textbook/chapters/04_data_quality.tex",
+      "before": "测量噪声使斜率向零衰减。",
+      "after": "在这些条件下，测量噪声使斜率向零衰减。",
+      "reason": "使结论紧接其模型条件，防止无条件外推。"
+    },
+    {
+      "file": "docs/textbook/chapters/04_data_quality.tex",
+      "before": "某些规则虽然失败比例不高，但集中在关键客户或高价值订单上，管理影响仍然很大。",
+      "after": "某些规则的失败比例虽低，但失败记录若集中于关键客户或高价值订单，管理影响仍可能很大。",
+      "reason": "修复“规则集中在客户上”的主语错配，并保留风险限定。"
+    },
+    {
+      "file": "docs/textbook/chapters/04_data_quality.tex",
+      "before": "例如，\\texttt{customer\\_id} 缺失不仅是字段为空，它会使订单无法归属区域和客户分层，从而影响区域收入、客户价值和销售责任评价。",
+      "after": "例如，\\texttt{customer\\_id} 缺失会使订单无法归属区域和客户分层，从而影响区域收入、客户价值和销售责任评价。",
+      "reason": "删去重复的“缺失就是空值”及无实质作用的对比。"
+    },
+    {
+      "file": "docs/textbook/chapters/04_data_quality.tex",
+      "before": "规则失败之后是否停止看板或自动决策，是成本决策。",
+      "after": "质量规则失败后，是否暂停看板发布或自动决策，需要比较错误发布的预期损失与暂停成本。",
+      "reason": "明确动作和所比较的成本，避免“是成本决策”笼统概括。"
+    },
+    {
+      "file": "docs/textbook/chapters/04_data_quality.tex",
+      "before": "数据治理是组织层面的制度安排，用来确保数据被一致、负责、安全、可追溯地管理。",
+      "after": "数据治理是关于数据定义、使用、变更与监督的制度安排，旨在明确责任并维护一致性、安全性和可追溯性。",
+      "reason": "去除“负责地管理”的不自然搭配及“确保”的绝对化保证。"
+    },
+    {
+      "file": "docs/textbook/chapters/04_data_quality.tex",
+      "before": "三者都有业务理由，但如果不在指标字典中明确，就会在经营会议中制造虚假的分歧。",
+      "after": "三种口径各有业务用途；若未在指标字典中说明，经营会议就可能把口径差异误认为经营结果的分歧。",
+      "reason": "用可解释的错误机制替代评价性“虚假分歧”。"
+    },
+    {
+      "file": "docs/textbook/chapters/04_data_quality.tex",
+      "before": "质量检查需要行动规则。若所有失败都被视为同等严重，团队会陷入告警疲劳；若所有失败都只是记录日志，关键指标可能在错误数据上发布。",
+      "after": "质量检查需要相应的处置规则。若所有失败都按同一级别告警，人员可能因频繁处理低影响告警而忽视严重问题；若失败后仅记录日志，关键指标仍可能依据错误数据发布。",
+      "reason": "补足告警疲劳的实际机制，减少未解释术语及口号感。"
+    },
+    {
+      "file": "docs/textbook/chapters/04_data_quality.tex",
+      "before": "当发布控制失败时，组织需要一套可重复的事件响应流程。最低流程包括：",
+      "after": "发布条件未满足时，应按既定流程处置质量事件。基本步骤包括：",
+      "reason": "明确是发布条件不满足，避免将控制成功阻断误称为控制失败。"
+    },
+    {
+      "file": "docs/textbook/chapters/04_data_quality.tex",
+      "before": "质量事件可用平均检测时间 MTTD 和平均修复时间 MTTR 描述，同时记录错误发布的持续时间。",
+      "after": "质量事件可用平均检测时间（mean time to detect，MTTD）和平均修复时间（mean time to repair，MTTR）描述\\footnote{MTTD 度量从事件发生到被发现的时间，MTTR 此处度量从发现到修复完成的时间；不同组织可能采用其他起止点，跨项目比较时须先统一定义。}，同时记录错误发布的持续时间。",
+      "reason": "给出缩写全称和明确测量边界，避免MTTR不同口径混淆。"
+    },
+    {
+      "file": "docs/textbook/chapters/04_data_quality.tex",
+      "before": "RAG 将检索到的材料作为模型回答的上下文。",
+      "after": "检索增强生成（retrieval-augmented generation，RAG）将检索到的材料作为模型回答的上下文。",
+      "reason": "首次正文出现时给出中文名称与英文全称，主句已说明机制，不重复加脚注。"
+    },
+    {
+      "file": "docs/textbook/chapters/04_data_quality.tex",
+      "before": "切片边界和引用定位",
+      "after": "切片边界和引用定位\\footnote{文档切片（chunking）是按段落、主题或长度等规则，将文档划分为便于检索的片段。切片边界应尽量保留定义、条件及其适用范围，避免片段脱离语境。}",
+      "reason": "补释首次出现而尚未说明的术语：文档切片"
+    },
+    {
+      "file": "docs/textbook/chapters/04_data_quality.tex",
+      "before": "哈希标识用于检测内容变化",
+      "after": "哈希标识用于检测内容变化\\footnote{哈希函数（hash function）把输入内容映射为用于比对的摘要。这里用摘要检查内容是否变化；摘要本身不能证明内容真实或发布主体可信。}",
+      "reason": "补释首次出现而尚未说明的术语：哈希"
+    },
+    {
+      "file": "docs/textbook/chapters/04_data_quality.tex",
+      "before": "检索召回率与答案正确率需要分别测量",
+      "after": "检索召回率与答案正确率需要分别测量\\footnote{检索召回率（recall）是被检索出的相关材料占全部应检索相关材料的比例，需相对于已标注或可确认的相关材料集合计算。它不等于最终回答正确的比例。}",
+      "reason": "补释首次出现而尚未说明的术语：检索召回率"
+    },
+    {
+      "file": "docs/textbook/chapters/04_data_quality.tex",
+      "before": "质量管理据此比较错误发布的预期损失、暂停成本与修复收益，并分配治理资源。",
+      "after": "质量管理需据此比较错误发布的预期损失、暂停成本与修复收益，分配治理资源。",
+      "reason": "保持并列动作连贯，避免“并”引出机械收束。"
+    },
+    {
+      "file": "docs/textbook/chapters/05_statistics_dashboard.tex",
+      "before": "均值、中位数和分位数是同一分布的不同摘要。均值便于加总成本和总工时，中位数\n反映中心位置，高分位数揭示少数长周期对象。选择哪一个摘要取决于管理问题，\n均值与中位数分别概括总体平均水平和分布中点，应依据分析目的选择并列呈现的统计量。",
+      "after": "均值、中位数和分位数概括同一分布的不同特征。均值与总成本、总工时相联系，\n中位数反映分布中点，高分位数刻画长周期对象。管理问题决定应选用或并列呈现\n哪些统计量。",
+      "reason": "合并同段重复的统计量选择说明，保留各摘要的不同含义。"
+    },
+    {
+      "file": "docs/textbook/chapters/05_statistics_dashboard.tex",
+      "before": "标准差与原指标具有相同单位，因此便于解释为“典型偏离幅度”。",
+      "after": "标准差与原指标具有相同单位，用于描述观测值偏离均值的总体幅度。",
+      "reason": "避免“典型偏离”可能暗示多数观测偏离量等于标准差。"
+    },
+    {
+      "file": "docs/textbook/chapters/05_statistics_dashboard.tex",
+      "before": "因此，统计波动需要继续连接业务语境。",
+      "after": "因此，应结合波动对应的业务对象和约束评价其经营影响。",
+      "reason": "将抽象“连接业务语境”改为明确评价要求。"
+    },
+    {
+      "file": "docs/textbook/chapters/05_statistics_dashboard.tex",
+      "before": "经营沟通中应写清楚：指标是否可加，分子和分母是什么，分母是否足够支持比较，是否存在质量检查未通过的记录。",
+      "after": "经营报告应说明指标的可加性、分子与分母、样本量是否足以支持比较，以及是否存在未通过质量检查的记录。",
+      "reason": "统一为正式并列宾语，减少连续口语设问。"
+    },
+    {
+      "file": "docs/textbook/chapters/05_statistics_dashboard.tex",
+      "before": "移动平均可以平滑短期波动，使趋势更容易被看见；但它也可能掩盖突发异常。",
+      "after": "移动平均可以平滑短期波动，使趋势较易辨认，但也可能掩盖突发异常。",
+      "reason": "使中文表述自然，保留平滑的收益与局限。"
+    },
+    {
+      "file": "docs/textbook/chapters/05_statistics_dashboard.tex",
+      "before": "Kingman 近似进一步提示",
+      "after": "Kingman 近似给出平均排队等待时间的估计",
+      "reason": "数学公式宜明确其所估计对象，避免将正式近似称为“提示”。"
+    },
+    {
+      "file": "docs/textbook/chapters/05_statistics_dashboard.tex",
+      "before": "的 \\(GI/G/1\\) 系统",
+      "after": "的 \\(GI/G/1\\) 系统\\footnote{排队模型记号中，GI 表示一般分布且相互独立的到达间隔，G 表示一般服务时间分布，1 表示单个服务台。此处其余独立性、服务次序及稳定性条件由正文另外规定。}",
+      "reason": "补释首次出现而尚未说明的术语：GI/G/1"
+    },
+    {
+      "file": "docs/textbook/chapters/05_statistics_dashboard.tex",
+      "before": "请求到达后的首输出时间称为 TTFT；",
+      "after": "请求到达后到首个输出 token 的时间称为 TTFT（time to first token）\\footnote{token 是模型处理文本的基本单位，由所用分词器划分，可能对应一个字、一个词或词的一部分。TTFT 只度量首次输出的等待，不等于完整回答的生成时间。}；",
+      "reason": "补齐TTFT全称，解释token并明确首输出测量边界。"
+    },
+    {
+      "file": "docs/textbook/chapters/05_statistics_dashboard.tex",
+      "before": "以货币计量的每请求费用也应拆开。",
+      "after": "每次请求的费用应按输入、输出、查询与工具调用分别核算。",
+      "reason": "将口语化“拆开”改为明确核算对象。"
+    },
+    {
+      "file": "docs/textbook/chapters/05_statistics_dashboard.tex",
+      "before": "一个基础经营看板至少应包含：",
+      "after": "基础经营看板通常包括以下内容：",
+      "reason": "不同看板设计受任务决定，此处组件清单不宜表述为普遍强制最低项。"
+    },
+    {
+      "file": "docs/textbook/chapters/05_statistics_dashboard.tex",
+      "before": "dashboard HTML 工具：",
+      "after": "HTML 看板工具：",
+      "reason": "统一中文技术表述。"
+    },
+    {
+      "file": "docs/textbook/chapters/05_statistics_dashboard.tex",
+      "before": "这些数字构成看板的第一层摘要。第二层应解释：为什么准时率低于管理目标？收入异常高的日期来自哪个客户或产品？质量问题是否集中在延期较高的日期？这些问题需要回到",
+      "after": "这些数字构成看板的第一层摘要。进一步分析应调查准时率与目标的差距、高收入日期对应的客户或产品，以及质量问题与延期的时间分布。调查需要结合",
+      "reason": "用连贯的学术叙述替代连续设问，避免暗示现有摘要足以解释原因。"
+    },
+    {
+      "file": "docs/textbook/chapters/05_statistics_dashboard.tex",
+      "before": "这些分析为研究经营变化提供具体假设。下一章以随机实验估计管理干预的效果。",
+      "after": "这些分析为研究经营变化提供可检验的假设。随机实验估计管理干预效果的方法见第~\\ref{ch:week06-ab-testing}~章。",
+      "reason": "保留必要跨章导航，删除教学过程叙述。"
+    },
+    {
+      "file": "docs/textbook/chapters/01_intro.tex",
+      "before": "元数据、数据血缘与可复现实验环境\\footnote{元数据（metadata）描述数据的结构、含义、来源、责任和版本；数据血缘（data lineage）记录数据从源头经过哪些转换，形成当前表、指标或模型输入。}",
+      "after": "元数据、数据血缘\\footnote{元数据（metadata）描述数据的结构、含义、来源、责任和版本；数据血缘（data lineage）记录数据从源头经过哪些转换，形成当前表、指标或模型输入。}与可复现实验环境",
+      "reason": "将脚注标记紧接所解释术语。"
+    },
+    {
+      "file": "docs/textbook/chapters/02_enterprise_data_model.tex",
+      "before": "幂等请求及完成确认\\footnote{幂等请求（idempotent request）要求同一操作在重复提交时不产生额外业务效果。例如，使用同一请求标识重试创建工单，不应生成多张工单。}",
+      "after": "幂等请求\\footnote{幂等请求（idempotent request）要求同一操作在重复提交时不产生额外业务效果。例如，使用同一请求标识重试创建工单，不应生成多张工单。}及完成确认",
+      "reason": "将脚注标记紧接所解释术语。"
+    },
+    {
+      "file": "docs/textbook/chapters/03_sql_kpi.tex",
+      "before": "半连接筛选\\footnote{半连接（semi join）只保留左表中在右表至少有一个匹配的行，不输出右表字段，也不因右表存在多个匹配而复制左表行。}",
+      "after": "半连接\\footnote{半连接（semi join）只保留左表中在右表至少有一个匹配的行，不输出右表字段，也不因右表存在多个匹配而复制左表行。}筛选",
+      "reason": "将脚注标记紧接所解释术语。"
+    },
+    {
+      "file": "docs/textbook/chapters/04_data_quality.tex",
+      "before": "SLA 违约判断\\footnote{SLA 是 service-level agreement 的缩写，即服务水平协议，规定服务方承诺的交付时间、可用性或响应标准，以及相关责任。}",
+      "after": "SLA\\footnote{SLA 是 service-level agreement 的缩写，即服务水平协议，规定服务方承诺的交付时间、可用性或响应标准，以及相关责任。} 违约判断",
+      "reason": "将脚注紧接SLA缩写。"
+    },
+    {
+      "file": "docs/textbook/chapters/04_data_quality.tex",
+      "before": "切片边界和引用定位\\footnote{文档切片（chunking）是按段落、主题或长度等规则，将文档划分为便于检索的片段。切片边界应尽量保留定义、条件及其适用范围，避免片段脱离语境。}",
+      "after": "切片边界\\footnote{文档切片（chunking）是按段落、主题或长度等规则，将文档划分为便于检索的片段。切片边界应尽量保留定义、条件及其适用范围，避免片段脱离语境。}和引用定位",
+      "reason": "将脚注标记紧接所解释术语。"
+    },
+    {
+      "file": "docs/textbook/chapters/04_data_quality.tex",
+      "before": "哈希标识用于检测内容变化\\footnote{哈希函数（hash function）把输入内容映射为用于比对的摘要。这里用摘要检查内容是否变化；摘要本身不能证明内容真实或发布主体可信。}",
+      "after": "哈希\\footnote{哈希函数（hash function）把输入内容映射为用于比对的摘要。这里用摘要检查内容是否变化；摘要本身不能证明内容真实或发布主体可信。}标识用于检测内容变化",
+      "reason": "将脚注标记紧接所解释术语。"
+    },
+    {
+      "file": "docs/textbook/chapters/04_data_quality.tex",
+      "before": "检索召回率与答案正确率需要分别测量\\footnote{检索召回率（recall）是被检索出的相关材料占全部应检索相关材料的比例，需相对于已标注或可确认的相关材料集合计算。它不等于最终回答正确的比例。}",
+      "after": "检索召回率\\footnote{检索召回率（recall）是被检索出的相关材料占全部应检索相关材料的比例，需相对于已标注或可确认的相关材料集合计算。它不等于最终回答正确的比例。}与答案正确率需要分别测量",
+      "reason": "将脚注标记紧接所解释术语。"
+    },
+    {
+      "file": "docs/textbook/chapters/05_statistics_dashboard.tex",
+      "before": "基础经营看板通常包括以下内容：",
+      "after": "一个基础经营看板至少应包含：",
+      "reason": "复核后保留原有看板最低要求，不将规定改弱为一般描述。"
+    },
+    {
+      "file": "docs/textbook/chapters/01_intro.tex",
+      "before": "设一家封测工厂",
+      "after": "设一家封测工厂\\footnote{封测是半导体封装与测试的简称。封装将芯片与外部连接和保护结构结合，测试检查器件是否满足规定性能；本例的工厂围绕相应生产批次安排设备与订单。}",
+      "reason": "补充正文未解释的必要术语：封测"
+    },
+    {
+      "file": "docs/textbook/chapters/02_enterprise_data_model.tex",
+      "before": "如果把这些问题放在同一张宽表中",
+      "after": "如果把这些问题放在同一张宽表中\\footnote{宽表把多个对象或主题的属性展开到较少的表中，常用于简化查询。若展开关系涉及不同事实粒度，则须检查重复记录和历史属性的处理。}",
+      "reason": "补充正文未解释的必要术语：宽表"
+    },
+    {
+      "file": "docs/textbook/chapters/02_enterprise_data_model.tex",
+      "before": "自然语言生成 SQL（NL2SQL）",
+      "after": "自然语言生成 SQL（NL2SQL）\\footnote{NL2SQL 是 natural language to SQL 的缩写，指将自然语言问题转换为 SQL 查询；转换须结合数据表结构、业务定义及用户权限。}",
+      "reason": "补充正文未解释的必要术语：NL2SQL"
+    },
+    {
+      "file": "docs/textbook/chapters/05_statistics_dashboard.tex",
+      "before": "同一批次内缺陷相关会造成过度离散",
+      "after": "同一批次内缺陷相关会造成过度离散\\footnote{过度离散是指数据的实际波动大于所用概率模型规定的方差。例如，同批产品缺陷相关时，不良件数的波动可能超过独立二项模型的预测范围。}",
+      "reason": "补充正文未解释的必要术语：过度离散"
+    },
+    {
+      "file": "docs/textbook/chapters/05_statistics_dashboard.tex",
+      "before": "到达为强度 \\(\\lambda\\) 的泊松过程",
+      "after": "到达为强度 \\(\\lambda\\) 的泊松过程\\footnote{齐次泊松过程假定不相交时间区间内的到达次数相互独立，且次数服从均值与区间长度成正比的泊松分布；相邻到达间隔独立并服从同一指数分布。}",
+      "reason": "补充正文未解释的必要术语：泊松过程"
+    },
+    {
+      "file": "docs/textbook/chapters/01_intro.tex",
+      "before": "的技术分析，需要明确对象、状态与行动模型；智能平台也须据此说明其业务含义。",
+      "after": "均须明确其所表示的对象、状态与行动；智能平台的应用分析也以这些定义为基础。",
+      "reason": "消除“技术分析需要明确”的空泛搭配，直接说明模型的表示要求。"
+    },
+    {
+      "file": "docs/textbook/chapters/02_enterprise_data_model.tex",
+      "before": "设某封测企业在 ERP 中维护客户订单，在制造执行系统中记录批次过站\\footnote{ERP 是 enterprise resource planning 的缩写，即企业资源计划，通常整合订单、采购、库存、生产计划及财务等业务。制造执行系统（manufacturing execution system，MES）则记录并管理生产现场的作业执行和批次状态。}",
+      "after": "设某封测企业在 ERP 中维护客户订单，在制造执行系统\\footnote{ERP 是 enterprise resource planning 的缩写，即企业资源计划，通常整合订单、采购、库存、生产计划及财务等业务。制造执行系统（manufacturing execution system，MES）则记录并管理生产现场的作业执行和批次状态。}中记录批次过站",
+      "reason": "将ERP与MES的联合解释定位到系统名称之后。"
+    }
+  ],
+  "terms": [
+    {
+      "file": "docs/textbook/chapters/01_intro.tex",
+      "term": "数据仓库",
+      "definition": "数据仓库（data warehouse）是面向查询与分析的数据存储系统，汇集多个业务来源的数据，并按约定组织主题、历史记录和分析口径。",
+      "sources": [
+        "https://www.ibm.com/think/topics/data-warehouse"
+      ]
+    },
+    {
+      "file": "docs/textbook/chapters/01_intro.tex",
+      "term": "ETL",
+      "definition": "ETL 是 extract, transform, load 的缩写，即抽取、转换、装载：先从源系统取得数据，再完成清洗与结构转换，最后写入目标系统。",
+      "sources": [
+        "https://www.ibm.com/think/topics/etl"
+      ]
+    },
+    {
+      "file": "docs/textbook/chapters/01_intro.tex",
+      "term": "OLAP",
+      "definition": "OLAP 是 online analytical processing 的缩写，即联机分析处理，支持按时间、地区、产品等维度汇总、切换和细查经营数据。",
+      "sources": [
+        "https://www.ibm.com/think/topics/data-warehouse"
+      ]
+    },
+    {
+      "file": "docs/textbook/chapters/01_intro.tex",
+      "term": "报表系统",
+      "definition": "报表系统按照预先定义或临时指定的查询和版式，将数据组织为表格、图形等输出，供经营汇报、监控或核对使用。",
+      "sources": [
+        "https://www.ibm.com/think/topics/data-warehouse"
+      ]
+    },
+    {
+      "file": "docs/textbook/chapters/01_intro.tex",
+      "term": "概率校准",
+      "definition": "概率校准考察预测概率与事件发生频率是否相符。例如，在长期重复的可比情形中，预测概率接近某一水平的事件，其实际发生比例也应接近该水平。",
+      "sources": []
+    },
+    {
+      "file": "docs/textbook/chapters/01_intro.tex",
+      "term": "CRISP-DM",
+      "definition": "CRISP-DM 是 cross-industry standard process for data mining 的缩写，即跨行业数据挖掘标准流程，用于组织数据分析项目各阶段的任务及其相互依赖。",
+      "sources": [
+        "https://www.ibm.com/docs/en/spss-modeler/18.6.0?topic=dm-crisp-help-overview"
+      ]
+    },
+    {
+      "file": "docs/textbook/chapters/01_intro.tex",
+      "term": "元数据与数据血缘",
+      "definition": "元数据（metadata）描述数据的结构、含义、来源、责任和版本；数据血缘（data lineage）记录数据从源头经过哪些转换，形成当前表、指标或模型输入。",
+      "sources": [
+        "https://www.ibm.com/think/topics/data-warehouse"
+      ]
+    },
+    {
+      "file": "docs/textbook/chapters/01_intro.tex",
+      "term": "human-in-the-loop",
+      "definition": "人工介入机制在预定步骤由人员审核、批准或纠正系统结果，并明确其判断权限与责任。",
+      "sources": []
+    },
+    {
+      "file": "docs/textbook/chapters/01_intro.tex",
+      "term": "SQL",
+      "definition": "SQL 是 structured query language 的缩写，即结构化查询语言，供关系数据库定义、查询及操作数据使用。此处主要使用其查询与聚合功能；具体语义见第3章。",
+      "sources": [
+        "https://www.postgresql.org/docs/18/ddl.html"
+      ]
+    },
+    {
+      "file": "docs/textbook/chapters/01_intro.tex",
+      "term": "业务本体与数字孪生",
+      "definition": "业务本体（business ontology）规定业务对象、属性、关系及相关规则；数字孪生（digital twin）是与实际对象保持数据联系的数字表示或模型，用于描述其状态或分析其行为。",
+      "sources": [
+        "https://www.palantir.com/docs/foundry/ontology/overview/",
+        "https://blogs.oracle.com/infrastructure/seeing-double-digital-twins-connect-the-physical-and-virtual-worlds"
+      ]
+    },
+    {
+      "file": "docs/textbook/chapters/02_enterprise_data_model.tex",
+      "term": "CRM",
+      "definition": "CRM 是 customer relationship management 的缩写，即客户关系管理。CRM 系统记录客户身份、交互、销售机会和服务过程，支持客户关系的维护与分析。",
+      "sources": [
+        "https://help.salesforce.com/s/articleView?id=000220989&language=en_US&type=1"
+      ]
+    },
+    {
+      "file": "docs/textbook/chapters/02_enterprise_data_model.tex",
+      "term": "语义层",
+      "definition": "语义层（semantic layer）把表、字段与业务对象、指标和关系对应起来，为不同查询工具提供一致的业务定义；其具体内容仍需由业务负责人确认。",
+      "sources": [
+        "https://docs.snowflake.com/en/user-guide/views-semantic/overview"
+      ]
+    },
+    {
+      "file": "docs/textbook/chapters/02_enterprise_data_model.tex",
+      "term": "快照与模式演化",
+      "definition": "快照（snapshot）记录表在某一版本的状态；模式演化（schema evolution）是在明确兼容规则下调整表的字段名称、类型或结构。此处的“模式”指数据结构，不指统计模型。",
+      "sources": [
+        "https://iceberg.apache.org/spec/",
+        "https://iceberg.apache.org/docs/nightly/evolution/"
+      ]
+    },
+    {
+      "file": "docs/textbook/chapters/02_enterprise_data_model.tex",
+      "term": "对象存储",
+      "definition": "对象存储（object storage）将数据作为带有唯一标识和元数据的对象保存，计算引擎通过对象接口读取相应文件内容。",
+      "sources": []
+    },
+    {
+      "file": "docs/textbook/chapters/02_enterprise_data_model.tex",
+      "term": "幂等请求",
+      "definition": "幂等请求（idempotent request）要求同一操作在重复提交时不产生额外业务效果。例如，使用同一请求标识重试创建工单，不应生成多张工单。",
+      "sources": [
+        "https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/"
+      ]
+    },
+    {
+      "file": "docs/textbook/chapters/02_enterprise_data_model.tex",
+      "term": "状态机",
+      "definition": "状态机（state machine）以有限或明确规定的状态及允许的转换描述操作过程。例如，工单可处于待审批、已批准、已提交或已完成状态，转换须满足相应条件。",
+      "sources": []
+    },
+    {
+      "file": "docs/textbook/chapters/02_enterprise_data_model.tex",
+      "term": "预填充与上下文",
+      "definition": "预填充（prefill）是模型生成新内容前，对输入序列进行处理并建立相关中间状态的阶段；上下文是模型当前可利用的输入及历史信息。",
+      "sources": [
+        "https://huggingface.co/docs/transformers/v4.53.0/kv_cache"
+      ]
+    },
+    {
+      "file": "docs/textbook/chapters/02_enterprise_data_model.tex",
+      "term": "ERP 与制造执行系统",
+      "definition": "ERP 是 enterprise resource planning 的缩写，即企业资源计划，通常整合订单、采购、库存、生产计划及财务等业务。制造执行系统（manufacturing execution system，MES）则记录并管理生产现场的作业执行和批次状态。",
+      "sources": [
+        "https://www.sap.com/uk/products/scm/digital-manufacturing/what-is-mes.html"
+      ]
+    },
+    {
+      "file": "docs/textbook/chapters/02_enterprise_data_model.tex",
+      "term": "自然键与代理键",
+      "definition": "自然键使用已有业务属性识别对象；代理键由系统另行分配，通常不承载业务含义，需维护其与业务标识的映射。",
+      "sources": []
+    },
+    {
+      "file": "docs/textbook/chapters/03_sql_kpi.tex",
+      "term": "声明式语言",
+      "definition": "声明式语言说明所需结果及其条件，具体计算步骤由数据库系统选择。",
+      "sources": [
+        "https://www.postgresql.org/docs/current/queries.html"
+      ]
+    },
+    {
+      "file": "docs/textbook/chapters/03_sql_kpi.tex",
+      "term": "多重集",
+      "definition": "多重集允许同一取值重复出现，并保留其出现次数。",
+      "sources": []
+    },
+    {
+      "file": "docs/textbook/chapters/03_sql_kpi.tex",
+      "term": "三值逻辑",
+      "definition": "SQL 条件的逻辑结果包括真、假和未知。涉及空值的比较通常得到未知；因此，“不是已知为真”不一定等于“已知为假”。",
+      "sources": [
+        "https://www.postgresql.org/docs/17/functions-logical.html"
+      ]
+    },
+    {
+      "file": "docs/textbook/chapters/03_sql_kpi.tex",
+      "term": "半连接",
+      "definition": "半连接（semi join）只保留左表中在右表至少有一个匹配的行，不输出右表字段，也不因右表存在多个匹配而复制左表行。",
+      "sources": [
+        "https://duckdb.org/docs/current/sql/query_syntax/from"
+      ]
+    },
+    {
+      "file": "docs/textbook/chapters/03_sql_kpi.tex",
+      "term": "变形测试",
+      "definition": "变形测试（metamorphic testing）通过改变输入并检查输出之间应保持的关系验证程序。例如，调换记录顺序不应改变总销售额；它不要求为每个新输入预先给定完整标准答案。",
+      "sources": []
+    },
+    {
+      "file": "docs/textbook/chapters/03_sql_kpi.tex",
+      "term": "参数绑定",
+      "definition": "参数绑定（parameter binding）把数据值与 SQL 语句结构分开提交，由数据库按参数处理，避免把值直接拼接为语句的一部分。表名、列名等标识符通常须另行按受控映射选择。",
+      "sources": [
+        "https://duckdb.org/docs/stable/sql/query_syntax/prepared_statements"
+      ]
+    },
+    {
+      "file": "docs/textbook/chapters/03_sql_kpi.tex",
+      "term": "KV cache",
+      "definition": "键值缓存保存注意力计算中已生成的键和值，后续逐步生成时可复用这些中间结果，从而减少重复计算；其内存占用随上下文长度和并发等条件变化。",
+      "sources": [
+        "https://huggingface.co/docs/transformers/v4.53.0/kv_cache"
+      ]
+    },
+    {
+      "file": "docs/textbook/chapters/04_data_quality.tex",
+      "term": "SLA",
+      "definition": "SLA 是 service-level agreement 的缩写，即服务水平协议，规定服务方承诺的交付时间、可用性或响应标准，以及相关责任。",
+      "sources": [
+        "https://docs.aws.amazon.com/pdfs/prescriptive-guidance/latest/retrieval-augmented-generation-options/retrieval-augmented-generation-options.pdf"
+      ]
+    },
+    {
+      "file": "docs/textbook/chapters/04_data_quality.tex",
+      "term": "MTTD 与 MTTR",
+      "definition": "MTTD 度量从事件发生到被发现；MTTR 此处度量从发现到修复完成。跨项目比较须统一起止点。",
+      "sources": [
+        "https://www.ibm.com/think/topics/mttr-vs-mtbf"
+      ]
+    },
+    {
+      "file": "docs/textbook/chapters/04_data_quality.tex",
+      "term": "文档切片",
+      "definition": "文档切片（chunking）是按段落、主题或长度等规则，将文档划分为便于检索的片段。切片边界应尽量保留定义、条件及其适用范围，避免片段脱离语境。",
+      "sources": [
+        "https://docs.aws.amazon.com/prescriptive-guidance/latest/retrieval-augmented-generation-options/what-is-rag.html"
+      ]
+    },
+    {
+      "file": "docs/textbook/chapters/04_data_quality.tex",
+      "term": "哈希",
+      "definition": "哈希函数（hash function）把输入内容映射为用于比对的摘要。这里用摘要检查内容是否变化；摘要本身不能证明内容真实或发布主体可信。",
+      "sources": [
+        "https://csrc.nist.gov/glossary/term/hash_function"
+      ]
+    },
+    {
+      "file": "docs/textbook/chapters/04_data_quality.tex",
+      "term": "检索召回率",
+      "definition": "检索召回率（recall）是被检索出的相关材料占全部应检索相关材料的比例，需相对于已标注或可确认的相关材料集合计算。它不等于最终回答正确的比例。",
+      "sources": [
+        "https://learn.microsoft.com/en-us/azure/architecture/ai-ml/guide/rag/rag-information-retrieval"
+      ]
+    },
+    {
+      "file": "docs/textbook/chapters/05_statistics_dashboard.tex",
+      "term": "GI/G/1",
+      "definition": "排队模型记号中，GI 表示一般分布且相互独立的到达间隔，G 表示一般服务时间分布，1 表示单个服务台。此处其余独立性、服务次序及稳定性条件由正文另外规定。",
+      "sources": []
+    },
+    {
+      "file": "docs/textbook/chapters/05_statistics_dashboard.tex",
+      "term": "token 与 TTFT",
+      "definition": "token 是由分词器划分的模型文本处理单位；TTFT 是请求到达至首个输出token的时间。",
+      "sources": [
+        "https://huggingface.co/docs/transformers/v4.53.0/kv_cache"
+      ]
+    },
+    {
+      "file": "docs/textbook/chapters/01_intro.tex",
+      "term": "封测",
+      "definition": "封测是半导体封装与测试的简称。封装将芯片与外部连接和保护结构结合，测试检查器件是否满足规定性能；本例的工厂围绕相应生产批次安排设备与订单。",
+      "sources": [
+        "https://amkor.com/test-services/",
+        "https://amkor.com/technology/"
+      ]
+    },
+    {
+      "file": "docs/textbook/chapters/02_enterprise_data_model.tex",
+      "term": "宽表",
+      "definition": "宽表把多个对象或主题的属性展开到较少的表中，常用于简化查询。若展开关系涉及不同事实粒度，则须检查重复记录和历史属性的处理。",
+      "sources": []
+    },
+    {
+      "file": "docs/textbook/chapters/02_enterprise_data_model.tex",
+      "term": "NL2SQL",
+      "definition": "NL2SQL 是 natural language to SQL 的缩写，指将自然语言问题转换为 SQL 查询；转换须结合数据表结构、业务定义及用户权限。",
+      "sources": []
+    },
+    {
+      "file": "docs/textbook/chapters/05_statistics_dashboard.tex",
+      "term": "过度离散",
+      "definition": "过度离散是指数据的实际波动大于所用概率模型规定的方差。例如，同批产品缺陷相关时，不良件数的波动可能超过独立二项模型的预测范围。",
+      "sources": []
+    },
+    {
+      "file": "docs/textbook/chapters/05_statistics_dashboard.tex",
+      "term": "泊松过程",
+      "definition": "齐次泊松过程假定不相交时间区间内的到达次数相互独立，且次数服从均值与区间长度成正比的泊松分布；相邻到达间隔独立并服从同一指数分布。",
+      "sources": [
+        "https://www.cs.cmu.edu/~harchol/Probability/book.html"
+      ]
+    }
+  ],
+  "integrity": [
+    {
+      "file": "01_intro.tex",
+      "before_sha256": "d2a0e7a11088525fcb0040592e2e6e722f9c7a75267f52363fd83db76d849927",
+      "after_sha256": "b5c78511f7945623d55a47ce0e1717c2eddd947c7c25802835a1e42848336d89",
+      "footnote_count": 11,
+      "protected": {
+        "code_blocks": {
+          "count_before": 1,
+          "count_after": 1,
+          "identical": true
+        },
+        "figures": {
+          "count_before": 1,
+          "count_after": 1,
+          "identical": true
+        },
+        "display_math": {
+          "count_before": 17,
+          "count_after": 17,
+          "identical": true
+        },
+        "inline_math": {
+          "count_before": 78,
+          "count_after": 78,
+          "identical": true
+        },
+        "citation_targets": {
+          "count_before": 13,
+          "count_after": 13,
+          "identical": true
+        },
+        "labels": {
+          "count_before": 3,
+          "count_after": 3,
+          "identical": true
+        },
+        "index_terms": {
+          "count_before": 24,
+          "count_after": 24,
+          "identical": true
+        },
+        "paths": {
+          "count_before": 1,
+          "count_after": 1,
+          "identical": true
+        }
+      },
+      "brace_balance_preserved": true
+    },
+    {
+      "file": "02_enterprise_data_model.tex",
+      "before_sha256": "1c414ec58f5c7f99e2660a408f44352154dfcfbc09f258860d7ccd2e7e67e98b",
+      "after_sha256": "311f0d8a35ef06506f3c6f56e9fddb0d6a9652dec99c7cb7b64e69951a593a72",
+      "footnote_count": 11,
+      "protected": {
+        "code_blocks": {
+          "count_before": 1,
+          "count_after": 1,
+          "identical": true
+        },
+        "figures": {
+          "count_before": 5,
+          "count_after": 5,
+          "identical": true
+        },
+        "display_math": {
+          "count_before": 24,
+          "count_after": 24,
+          "identical": true
+        },
+        "inline_math": {
+          "count_before": 115,
+          "count_after": 115,
+          "identical": true
+        },
+        "citation_targets": {
+          "count_before": 25,
+          "count_after": 25,
+          "identical": true
+        },
+        "labels": {
+          "count_before": 7,
+          "count_after": 7,
+          "identical": true
+        },
+        "index_terms": {
+          "count_before": 33,
+          "count_after": 33,
+          "identical": true
+        },
+        "paths": {
+          "count_before": 3,
+          "count_after": 3,
+          "identical": true
+        }
+      },
+      "brace_balance_preserved": true
+    },
+    {
+      "file": "03_sql_kpi.tex",
+      "before_sha256": "53ed9e2aa5965c95c5e80b215f2bde9e966b04f7aa85a1af9a4fca17fde50409",
+      "after_sha256": "c2d924a73b4c70848b9ac0fff6ab2bac969c5639dc2e94ec49f04862524a8066",
+      "footnote_count": 7,
+      "protected": {
+        "code_blocks": {
+          "count_before": 4,
+          "count_after": 4,
+          "identical": true
+        },
+        "figures": {
+          "count_before": 1,
+          "count_after": 1,
+          "identical": true
+        },
+        "display_math": {
+          "count_before": 14,
+          "count_after": 14,
+          "identical": true
+        },
+        "inline_math": {
+          "count_before": 68,
+          "count_after": 68,
+          "identical": true
+        },
+        "citation_targets": {
+          "count_before": 15,
+          "count_after": 15,
+          "identical": true
+        },
+        "labels": {
+          "count_before": 3,
+          "count_after": 3,
+          "identical": true
+        },
+        "index_terms": {
+          "count_before": 27,
+          "count_after": 27,
+          "identical": true
+        },
+        "paths": {
+          "count_before": 10,
+          "count_after": 10,
+          "identical": true
+        }
+      },
+      "brace_balance_preserved": true
+    },
+    {
+      "file": "04_data_quality.tex",
+      "before_sha256": "a104eacd30c00828d6c7ae1241b032756db105f104de7ef91a4907d994786b18",
+      "after_sha256": "025c12030aef69b0625f4ff471604047c7864914dd50da5254db61d605f6ba3a",
+      "footnote_count": 5,
+      "protected": {
+        "code_blocks": {
+          "count_before": 3,
+          "count_after": 3,
+          "identical": true
+        },
+        "figures": {
+          "count_before": 1,
+          "count_after": 1,
+          "identical": true
+        },
+        "display_math": {
+          "count_before": 16,
+          "count_after": 16,
+          "identical": true
+        },
+        "inline_math": {
+          "count_before": 81,
+          "count_after": 81,
+          "identical": true
+        },
+        "citation_targets": {
+          "count_before": 11,
+          "count_after": 11,
+          "identical": true
+        },
+        "labels": {
+          "count_before": 2,
+          "count_after": 2,
+          "identical": true
+        },
+        "index_terms": {
+          "count_before": 25,
+          "count_after": 25,
+          "identical": true
+        },
+        "paths": {
+          "count_before": 6,
+          "count_after": 6,
+          "identical": true
+        }
+      },
+      "brace_balance_preserved": true
+    },
+    {
+      "file": "05_statistics_dashboard.tex",
+      "before_sha256": "4ec5ff129c70906ede34ca3fec6ca8c22b39b3346164f69f2b54f7b67b21e132",
+      "after_sha256": "f0cd7fb9819589570fa01af2ccff1ed979df6478b22bbee92bc9a003631a7043",
+      "footnote_count": 4,
+      "protected": {
+        "code_blocks": {
+          "count_before": 1,
+          "count_after": 1,
+          "identical": true
+        },
+        "figures": {
+          "count_before": 2,
+          "count_after": 2,
+          "identical": true
+        },
+        "display_math": {
+          "count_before": 27,
+          "count_after": 27,
+          "identical": true
+        },
+        "inline_math": {
+          "count_before": 105,
+          "count_after": 105,
+          "identical": true
+        },
+        "citation_targets": {
+          "count_before": 12,
+          "count_after": 12,
+          "identical": true
+        },
+        "labels": {
+          "count_before": 5,
+          "count_after": 5,
+          "identical": true
+        },
+        "index_terms": {
+          "count_before": 21,
+          "count_after": 21,
+          "identical": true
+        },
+        "paths": {
+          "count_before": 5,
+          "count_after": 5,
+          "identical": true
+        }
+      },
+      "brace_balance_preserved": true
+    }
+  ],
+  "summary": {
+    "operation_records": 117,
+    "footnotes_added": 38,
+    "terms_explained_in_footnotes": 38,
+    "all_protected_identical": true,
+    "brace_balance_preserved": true,
+    "full_read_completed": true,
+    "source_files_changed": 5,
+    "build_or_git_operations_performed": false,
+    "final_changed_blocks": 72,
+    "footnotes_by_chapter": {
+      "01_intro.tex": 11,
+      "02_enterprise_data_model.tex": 11,
+      "03_sql_kpi.tex": 7,
+      "04_data_quality.tex": 5,
+      "05_statistics_dashboard.tex": 4
+    }
+  },
+  "final_changed_blocks": [
+    {
+      "file": "docs/textbook/chapters/01_intro.tex",
+      "before": "\\begin{enumerate}\n  \\item 信息系统和商业智能传统关注数据如何被采集、集成、建模、查询和呈现。企业需要把交易系统、流程系统、客户系统和外部环境中的数据组织成可查询、可解释、可治理的信息资源。\n  \\item 统计学和机器学习传统关注如何从数据中获得证据，包括描述分布、估计关系、预测未来、识别因果效应和控制不确定性。\n  \\item 管理科学和运筹优化研究预算、产能、库存、时间和风险约束下的方案选择。\n\\end{enumerate}",
+      "after": "\\begin{enumerate}\n  \\item 信息系统与商业智能研究数据的采集、集成、建模、查询和呈现。企业需要把交易系统、流程系统、客户系统和外部环境中的数据组织成可查询、可解释、可治理的信息资源。\n  \\item 统计学与机器学习研究如何根据数据描述分布、估计关系、预测未知结果、识别因果效应及量化不确定性。\n  \\item 管理科学和运筹优化研究预算、产能、库存、时间和风险约束下的方案选择。\n\\end{enumerate}"
+    },
+    {
+      "file": "docs/textbook/chapters/01_intro.tex",
+      "before": "商业智能（Business Intelligence, BI）通常关注企业经营事实的汇总、查询与展示，例如月度销售报表、区域经营看板、库存监控和经营驾驶舱。经典 BI 依赖数据仓库、ETL、OLAP、报表系统和可视化前端，它为组织提供共同的经营事实基础。",
+      "after": "商业智能（Business Intelligence, BI）通常关注企业经营事实的汇总、查询与展示，例如月度销售报表、区域经营看板、库存监控和经营驾驶舱。经典 BI 依赖数据仓库\\footnote{数据仓库（data warehouse）是面向查询与分析的数据存储系统，汇集多个业务来源的数据，并按约定组织主题、历史记录和分析口径。}、ETL\\footnote{ETL 是 extract, transform, load 的缩写，即抽取、转换、装载：先从源系统取得数据，再完成清洗与结构转换，最后写入目标系统。}、OLAP\\footnote{OLAP 是 online analytical processing 的缩写，即联机分析处理，支持按时间、地区、产品等维度汇总、切换和细查经营数据。}、报表系统\\footnote{报表系统按照预先定义或临时指定的查询和版式，将数据组织为表格、图形等输出，供经营汇报、监控或核对使用。}和可视化前端，它为组织提供共同的经营事实基础。"
+    },
+    {
+      "file": "docs/textbook/chapters/01_intro.tex",
+      "before": "决策智能（Decision Intelligence）则要求把数据、模型、业务对象、行动、权限、审计与反馈连接为系统。它关心的不只是“发生了什么”或“将会发生什么”，还包括“谁被允许对哪个对象采取什么行动”“行动结果如何回流”“模型和规则如何被监控与审计”。",
+      "after": "决策智能（Decision Intelligence）则要求把数据、模型、业务对象、行动、权限、审计与反馈连接为系统。其设计需同时规定经营状态的描述与预测、行动对象和操作权限、结果反馈，以及模型和规则的监控与审计。"
+    },
+    {
+      "file": "docs/textbook/chapters/01_intro.tex",
+      "before": "\\subsection{行动方案的比较}\n\\subjectindex{juecewenti}{决策问题}\n\\subjectindex{sunshihanshu}{损失函数}\n先考虑一句常见的要求：“把准时交付率提高到95\\%。”它提出了绩效目标，却还没有\n给出完整的决策问题。提高交付率可以依靠增加库存、加班、优先服务少数客户，也可能\n依靠修改承诺日期。其中有些行动改善真实服务，有些只是改变报表。只有把可采取的\n行动、可接受的代价和不允许违反的承诺同时写出，目标才成为可供分析的选择问题。",
+      "after": "\\subsection{行动方案的比较}\n\\subjectindex{juecewenti}{决策问题}\n\\subjectindex{sunshihanshu}{损失函数}\n先考虑一句常见的要求：“把准时交付率提高到95\\%。”它提出了绩效目标，却还没有\n给出完整的决策问题。提高交付率可以依靠增加库存、加班、优先服务少数客户，也可能\n依靠修改承诺日期。其中有些行动改善真实服务，有些只是改变报表。为使目标成为可供分析的选择问题，须同时明确可采取的\n行动、可接受的代价和必须履行的承诺。"
+    },
+    {
+      "file": "docs/textbook/chapters/01_intro.tex",
+      "before": "设一家封测工厂面对明日的设备中断风险，状态 \\(\\theta\\in\\{0,1\\}\\) 分别表示正常和中断，行动 \\(a\\in\\{0,1\\}\\) 分别表示按原计划生产和提前转移批次。损失矩阵中的数字均为假设值，单位为万元，已经包含转移、停机和延期成本。",
+      "after": "设一家封测工厂\\footnote{封测是半导体封装与测试的简称。封装将芯片与外部连接和保护结构结合，测试检查器件是否满足规定性能；本例的工厂围绕相应生产批次安排设备与订单。}面对明日的设备中断风险，状态 \\(\\theta\\in\\{0,1\\}\\) 分别表示正常和中断，行动 \\(a\\in\\{0,1\\}\\) 分别表示按原计划生产和提前转移批次。损失矩阵中的数字均为假设值，单位为万元，已经包含转移、停机和延期成本。"
+    },
+    {
+      "file": "docs/textbook/chapters/01_intro.tex",
+      "before": "\\subsection{先验概率下的行动选择}\n设中断概率为 \\(p\\)。原计划的期望损失为 \\(100p\\)，转移的期望损失为 \\(15(1-p)+25p=15+10p\\)。因此当\n\\[\n100p>15+10p\n\\quad\\Longleftrightarrow\\quad p>\\frac16\n\\]\n时选择转移。该阈值由两种行动的损失确定。假设 \\(p=0.2\\)，两种损失分别为 20 和 17，理性选择是转移。",
+      "after": "\\subsection{先验概率下的行动选择}\n设中断概率为 \\(p\\)。原计划的期望损失为 \\(100p\\)，转移的期望损失为 \\(15(1-p)+25p=15+10p\\)。因此当\n\\[\n100p>15+10p\n\\quad\\Longleftrightarrow\\quad p>\\frac16\n\\]\n时选择转移。该阈值由两种行动的损失确定。假设 \\(p=0.2\\)，两种行动的期望损失分别为 20 和 17，按期望损失准则应选择转移。"
+    },
+    {
+      "file": "docs/textbook/chapters/01_intro.tex",
+      "before": "\\subsection{样本信息的期望价值}\n\\subjectindex{EVSI}{EVSI（样本信息价值）}\n\\subjectindex{EVPI}{EVPI（完全信息价值）}\n使用检测但尚未支付检测费时，期望损失为\n\\[\n0.24\\left(15+10\\times\\frac23\\right)\n+0.76\\left(100\\times\\frac1{19}\\right)=9.2.\n\\]\n因此这项信息最多值得支付 \\(17-9.2=7.8\\) 万元。完美信息则允许正常时不转移、中断时转移，损失为 \\(0.8\\times0+0.2\\times25=5\\)，其价值为 \\(17-5=12\\)。现实检测价值小于完美信息价值，这为数据采集预算提供了上界。",
+      "after": "\\subsection{样本信息的期望价值}\n\\subjectindex{EVSI}{EVSI（样本信息价值）}\n\\subjectindex{EVPI}{EVPI（完全信息价值）}\n使用检测但尚未支付检测费时，期望损失为\n\\[\n0.24\\left(15+10\\times\\frac23\\right)\n+0.76\\left(100\\times\\frac1{19}\\right)=9.2.\n\\]\n因此，按期望损失准则，这项信息可接受的最高费用为 \\(17-9.2=7.8\\) 万元。完全信息允许正常时不转移、中断时转移，期望损失为 \\(0.8\\times0+0.2\\times25=5\\)，其价值为 \\(17-5=12\\)。本例检测的信息价值小于完全信息价值，后者给出信息采购费用的上界。"
+    },
+    {
+      "file": "docs/textbook/chapters/01_intro.tex",
+      "before": "\\subsection{行动阈值与信息采购}\n上述计算包含两个先后次序不能交换的步骤：先在每一种可能的信号下选择行动，再对\n这些条件最小损失取平均。如果先把后验概率平均回先验，再选择一次行动，便丢失了\n“不同信号允许采用不同策略”这一信息价值的来源。用数学语言说，条件化带来的价值\n取决于可依据观察选择的策略集合是否扩大。\n\n若所有可能的后验中断概率都高于 \\(1/6\\)，本例在每种信号\n下都会转移批次；即使检测让概率估计更精确，当前两行动问题的 EVSI 仍为零。\n反过来，一项总体分类准确率不高的检测，只要能把部分对象推到行动阈值的另一侧，\n就可能有较高价值。信息价值取决于信息、损失、可行行动\n和决策时点之间的关系。",
+      "after": "\\subsection{行动阈值与信息采购}\n上述计算包含两个先后次序不能交换的步骤：先在每一种可能的信号下选择行动，再对\n这些条件最小损失取平均。如果先把后验概率平均回先验，再选择一次行动，便丢失了\n“不同信号允许采用不同策略”这一信息价值的来源。条件化带来的价值\n取决于是否能依据不同观察采用不同策略。\n\n若所有可能的后验中断概率都高于 \\(1/6\\)，本例在每种信号\n下都会转移批次；即使检测让概率估计更精确，当前只含两种行动的决策问题中，EVSI 仍为零。\n反过来，一项总体分类准确率不高的检测，只要能使部分对象的后验风险跨越行动阈值，\n就可能有较高价值。信息价值取决于信息、损失、可行行动\n和决策时点之间的关系。"
+    },
+    {
+      "file": "docs/textbook/chapters/01_intro.tex",
+      "before": "期望损失评价规则在给定概率模型下的平均表现。单次实现值还受到随机状态影响，评价事前选择时应使用当时可得信息；评价规则的长期表现则需比较重复应用中的损失和概率校准情况。这一区分为第~\\ref{ch:week06-ab-testing}~章的统计评价和第~\\ref{ch:week08-causality}~章的反事实分析提供基础。",
+      "after": "期望损失评价规则在给定概率模型下的平均表现。单次实现值还受到随机状态影响，评价事前选择时应使用当时可得信息；评价规则的长期表现则需比较重复应用中的损失和概率校准情况\\footnote{概率校准考察预测概率与事件发生频率是否相符。例如，在长期重复的可比情形中，预测概率接近某一水平的事件，其实际发生比例也应接近该水平。}。这一区分为第~\\ref{ch:week06-ab-testing}~章的统计评价和第~\\ref{ch:week08-causality}~章的反事实分析提供基础。"
+    },
+    {
+      "file": "docs/textbook/chapters/01_intro.tex",
+      "before": "CRISP-DM 将数据挖掘项目划分为六个阶段：\n\\[\n\\begin{aligned}\n\\text{Business Understanding}\n&\\rightarrow\n\\text{Data Understanding}\n\\rightarrow\n\\text{Data Preparation}\\\\\n&\\rightarrow\n\\text{Modeling}\n\\rightarrow\n\\text{Evaluation}\n\\rightarrow\n\\text{Deployment}.\n\\end{aligned}\n\\]",
+      "after": "CRISP-DM\\footnote{CRISP-DM 是 cross-industry standard process for data mining 的缩写，即跨行业数据挖掘标准流程，用于组织数据分析项目各阶段的任务及其相互依赖。} 将数据挖掘项目划分为六个阶段：\n\\[\n\\begin{aligned}\n\\text{Business Understanding}\n&\\rightarrow\n\\text{Data Understanding}\n\\rightarrow\n\\text{Data Preparation}\\\\\n&\\rightarrow\n\\text{Modeling}\n\\rightarrow\n\\text{Evaluation}\n\\rightarrow\n\\text{Deployment}.\n\\end{aligned}\n\\]"
+    },
+    {
+      "file": "docs/textbook/chapters/01_intro.tex",
+      "before": "企业组织这些活动时，还需安排以下职责。\n\\begin{enumerate}\n  \\item 数据质量管理与指标口径治理；\n  \\item 元数据、数据血缘与可复现实验环境；\n  \\item 模型监控、漂移检测与模型审计；\n  \\item 权限控制、操作日志与 human-in-the-loop；\n  \\item 行动反馈数据的回流与持续评估。\n\\end{enumerate}",
+      "after": "企业组织这些活动时，还需安排以下职责。\n\\begin{enumerate}\n  \\item 数据质量管理与指标口径治理；\n  \\item 元数据、数据血缘\\footnote{元数据（metadata）描述数据的结构、含义、来源、责任和版本；数据血缘（data lineage）记录数据从源头经过哪些转换，形成当前表、指标或模型输入。}与可复现实验环境；\n  \\item 模型监控、漂移检测与模型审计；\n  \\item 权限控制、操作日志与人工介入机制（human-in-the-loop）\\footnote{人工介入机制在预定步骤由人员审核、批准或纠正系统结果，并明确其判断权限与责任。}；\n  \\item 行动反馈数据的回流与持续评估。\n\\end{enumerate}"
+    },
+    {
+      "file": "docs/textbook/chapters/01_intro.tex",
+      "before": "\\subsection{从经营意图到可检验的实现}\n\\subjectindex{renwuguige}{任务规格}\n任务意图、可检验的规格与实际实现分别表达目标、验收条件与实现方式，运行结果\n用于修正设计\\cite{gse2026}。在管理决策中，经营意图通常是“减少延期”或“提高良率”；\n规格须进一步规定对象、时间、指标、行动权限及允许的失败方式。例如，“减少延期”可以具体化为：每日九时对未来\n四十八小时到期且尚未发运的订单提出至多两项加急建议；仅在设备资格满足、\n预计净收益为正且主管批准后提交；最终以客户承诺版本对应的实际交付结果评价。\n实现可以由 SQL、优化程序和智能体共同完成。上述规格仍须在实际使用中根据\n客户承诺和资源规则修订。",
+      "after": "\\subsection{从经营意图到可检验的实现}\n\\subjectindex{renwuguige}{任务规格}\n任务意图、可检验的规格与实际实现分别表达目标、验收条件与实现方式，运行结果\n用于修正设计\\cite{gse2026}。在管理决策中，经营意图通常是“减少延期”或“提高良率”；\n规格须进一步规定对象、时间、指标、行动权限及允许的失败方式。例如，“减少延期”可以具体化为：每日九时对未来\n四十八小时到期且尚未发运的订单提出至多两项加急建议；仅在设备资格满足、\n预计净收益为正且主管批准后提交；最终以客户承诺版本对应的实际交付结果评价。\n实现可以由 SQL\\footnote{SQL 是 structured query language 的缩写，即结构化查询语言，供关系数据库定义、查询及操作数据使用。此处主要使用其查询与聚合功能；具体语义见第3章。}、优化程序和智能体共同完成。上述规格仍须在实际使用中根据\n客户承诺和资源规则修订。"
+    },
+    {
+      "file": "docs/textbook/chapters/01_intro.tex",
+      "before": "对订单加急原型，验收可分三次完成。先以四张订单手算筛选条件和最优组合，\n再将同一输入交给程序，核对目标值与所有约束；最后模拟“提交成功而响应丢失”，\n检查恢复后是否仍只有一张工单。前两次检查实施的计算与规格是否一致，第三次检查\n跨系统执行行为。模型自动生成程序时，计算结果和执行状态须通过独立手算与业务系统记录复核。",
+      "after": "对订单加急原型，验收可分三次完成。先以四张订单手算筛选条件和最优组合，\n再将同一输入交给程序，核对目标值与所有约束；最后模拟“提交成功而响应丢失”，\n检查恢复后是否仍只有一张工单。前两次检查程序计算是否符合规格，第三次检查\n跨系统执行行为是否符合要求。模型自动生成程序时，计算结果和执行状态须通过独立手算与业务系统记录复核。"
+    },
+    {
+      "file": "docs/textbook/chapters/01_intro.tex",
+      "before": "若维护成本为 \\(c_m\\)，推迟维护的故障概率为 \\(p\\)，故障损失为 \\(c_f\\)，最简单规则是比较 \\(c_m\\) 与 \\(pc_f\\)。但现实中维护也有失效风险、停场成本及资源竞争，必须扩展行动后的结果分布。业务本体、数字孪生和智能平台的技术分析需要明确其对象、状态与行动模型。",
+      "after": "若维护成本为 \\(c_m\\)，推迟维护的故障概率为 \\(p\\)，故障损失为 \\(c_f\\)，最简单规则是比较 \\(c_m\\) 与 \\(pc_f\\)。但现实中维护也有失效风险、停场成本及资源竞争，必须扩展行动后的结果分布。业务本体与数字孪生\\footnote{业务本体（business ontology）规定业务对象、属性、关系及相关规则；数字孪生（digital twin）是与实际对象保持数据联系的数字表示或模型，用于描述其状态或分析其行为。}均须明确其所表示的对象、状态与行动；智能平台的应用分析也以这些定义为基础。"
+    },
+    {
+      "file": "docs/textbook/chapters/01_intro.tex",
+      "before": "\\subsection{人工智能应用的生产率测量}\n\\subjectindex{shengchanlv}{生产率}\nAnthropic 在 2026 年的 Economic Index 继续用平台使用记录和调查研究 AI 的应用方式\\cite{aiindex08}。这类材料能说明被观察用户如何使用工具，但用户选择、行业覆盖与自报偏差会限制外推。企业提供的研发或办公效率增幅也应记录基线、样本、时间、质量标准和计算方式，确认前仅作为待验证的企业经验陈述。",
+      "after": "\\subsection{人工智能应用的生产率测量}\n\\subjectindex{shengchanlv}{生产率}\nAnthropic 在 2026 年的 Economic Index 继续用平台使用记录和调查研究 AI 的应用方式\\cite{aiindex08}。这类材料能说明被观察用户如何使用工具，但用户选择、行业覆盖与自报偏差会限制外推。企业提供的研发或办公效率增幅也应记录基线、样本、时间、质量标准和计算方式，核实这些条件前，相应增幅只能作为待验证的企业经验陈述。"
+    },
+    {
+      "file": "docs/textbook/chapters/01_intro.tex",
+      "before": "\\subsection{人工智能工具与智能体}\n大语言模型依据上下文生成文本或结构化输出，工具提供查询、计算和外部操作能力。智能体（agent）根据观察选择后续行动；其运行环境（harness）管理任务状态、工具权限、资源预算、错误恢复、结果检验与终止条件。2025 至 2026 年的工程研究把跨上下文持续工作和可恢复执行作为重要问题\\cite{harness01}。",
+      "after": "\\subsection{人工智能工具与智能体}\n大语言模型（large language model，LLM）依据上下文生成文本或结构化输出，工具提供查询、计算和外部操作能力。智能体（agent）根据观察选择后续行动；其运行环境（harness）管理任务状态、工具权限、资源预算、错误恢复、结果检验与终止条件。2025 至 2026 年的工程研究把跨上下文持续工作和可恢复执行作为重要问题\\cite{harness01}。"
+    },
+    {
+      "file": "docs/textbook/chapters/02_enterprise_data_model.tex",
+      "before": "企业数据分布于多个系统，统一分析首先需要处理标识、计量和状态的差异。同一个客户可能在 CRM、订单系统、售后系统和营销系统中拥有不同编号；同一笔销售可能被财务部门、运营部门和渠道部门以不同口径统计；同一件库存商品可能同时存在采购在途、仓库可用、销售锁定和质检冻结等状态。若没有明确的数据模型，后续分析会出现三类问题。\n\n\\begin{enumerate}\n  \\item 对象不稳定：系统无法判断同一个客户、订单或产品在不同系统中是否指向同一业务对象。\n  \\item 口径不稳定：不同报表对销售额、库存、延期、流失等指标使用不同定义。\n  \\item 行动不稳定：分析结果无法对应到可执行对象，例如无法说明对哪个订单加急、对哪个客户回访、对哪个库存位置补货。\n\\end{enumerate}",
+      "after": "企业数据分布于多个系统，统一分析首先需要处理标识、计量和状态的差异。同一个客户可能在 CRM\\footnote{CRM 是 customer relationship management 的缩写，即客户关系管理。CRM 系统记录客户身份、交互、销售机会和服务过程，支持客户关系的维护与分析。}、订单系统、售后系统和营销系统中拥有不同编号；同一笔销售可能被财务部门、运营部门和渠道部门以不同口径统计；同一件库存商品可能同时存在采购在途、仓库可用、销售锁定和质检冻结等状态。缺少明确的数据模型时，后续分析可能出现以下问题。\n\n\\begin{enumerate}\n  \\item 对象身份不明：系统无法判断不同记录是否指向同一个客户、订单或产品。\n  \\item 口径不稳定：不同报表对销售额、库存、延期、流失等指标使用不同定义。\n  \\item 行动对象不明：分析结果无法对应到可执行对象，例如无法说明对哪个订单加急、对哪个客户回访、对哪个库存位置补货。\n\\end{enumerate}"
+    },
+    {
+      "file": "docs/textbook/chapters/02_enterprise_data_model.tex",
+      "before": "经典代理理论指出，企业治理的核心问题之一是如何在授权经营和监督约束之间取得平衡。进入数字化和 AI 化环境后，监督不再只依赖财务报表和事后审计，还依赖订单、设备、库存、客户、合同、质量事件等运营对象能否被持续、准确、可追溯地记录。OECD/G20 公司治理原则在 2023 年修订版中继续强调透明度、责任、董事会职责和可持续韧性；COSO 在内部控制与企业风险管理框架中强调经营、报告和合规目标；ISO/IEC 38500:2024 将 IT 治理定位为治理机构对组织当前和未来 IT 使用的评价、指导和监督；NIST AI RMF、ISO/IEC 42001 和欧盟 AI Act 则把 AI 系统的治理、风险管理、日志、透明度和质量管理推向制度层面\\cite{oecd2023,coso2013,coso2017,iso38500,nist2023airmf,iso42001,euai2024}。这些框架对数据建模的共同要求包括对象识别、指标解释、规则审计、权限控制和异常追责。",
+      "after": "经典代理理论指出，企业治理的核心问题之一是如何在授权经营和监督约束之间取得平衡。在数字化和人工智能应用环境中，监督除依据财务报表和事后审计外，也依赖订单、设备、库存、客户、合同、质量事件等运营对象的持续记录及其准确性和可追溯性。OECD/G20 公司治理原则在 2023 年修订版中继续强调透明度、责任、董事会职责和可持续韧性；COSO 在内部控制与企业风险管理框架中强调经营、报告和合规目标；ISO/IEC 38500:2024 将 IT 治理定位为治理机构对组织当前和未来 IT 使用的评价、指导和监督；NIST AI RMF、ISO/IEC 42001 和欧盟 AI Act 则分别对 AI 系统治理、风险管理、日志、透明度或质量管理提出要求\\cite{oecd2023,coso2013,coso2017,iso38500,nist2023airmf,iso42001,euai2024}。这些框架对数据建模的共同要求包括对象识别、指标解释、规则审计、权限控制和异常追责。"
+    },
+    {
+      "file": "docs/textbook/chapters/02_enterprise_data_model.tex",
+      "before": "主键用于识别记录，事实表粒度说明每行的含义，指标字典规定计算方法，语义层提供统一的查询定义。它们共同支持跨部门核对经营资料，也为管理层监督与内部控制提供数据依据。",
+      "after": "主键用于识别记录，事实表粒度说明每行的含义，指标字典规定计算方法，语义层提供统一的查询定义\\footnote{语义层（semantic layer）把表、字段与业务对象、指标和关系对应起来，为不同查询工具提供一致的业务定义；其具体内容仍需由业务负责人确认。}。它们共同支持跨部门核对经营资料，也为管理层监督与内部控制提供数据依据。"
+    },
+    {
+      "file": "docs/textbook/chapters/02_enterprise_data_model.tex",
+      "before": "\\subsection{从存储格式到业务含义}\n\\subjectindex{Iceberg}{Apache Iceberg}\n数据管理首先要解决更新、读取与共享。Apache Iceberg 规定表元数据、快照和模式\n演化的语义，使多种计算引擎能够根据表的快照读取对象存储中的文件；跨系统使用还\n取决于目录服务、读写协议和权限配置\\cite{iceberg2026}。开放表格式保证的是一组\n文件和元数据的互操作条件，并不会自动统一“订单完成”或“OEE”之类的业务定义。\n一个计算引擎能够读入同一张表，也不能据此推定它能按照相同权限写回。",
+      "after": "\\subsection{从存储格式到业务含义}\n\\subjectindex{Iceberg}{Apache Iceberg}\n数据管理首先要解决更新、读取与共享。Apache Iceberg 规定表元数据、快照和模式\n演化的语义\\footnote{快照（snapshot）记录表在某一版本的状态；模式演化（schema evolution）是在明确兼容规则下调整表的字段名称、类型或结构。此处的“模式”指数据结构，不指统计模型。}，使多种计算引擎能够根据表的快照读取对象存储中的文件\\footnote{对象存储（object storage）将数据作为带有唯一标识和元数据的对象保存，计算引擎通过对象接口读取相应文件内容。}；跨系统使用还\n取决于目录服务、读写协议和权限配置\\cite{iceberg2026}。开放表格式保证的是一组\n文件和元数据的互操作条件，并不会自动统一“订单完成”或“OEE”之类的业务定义。\n计算引擎能够读取同一张表，并不意味着它也具有相应写入能力或权限。"
+    },
+    {
+      "file": "docs/textbook/chapters/02_enterprise_data_model.tex",
+      "before": "\\subsection{从推理服务到业务行动}\n基础模型通过服务接口接受输入、返回预测或生成内容。检索服务提供经过授权的\n文档片段，业务服务提供查询和操作接口。智能体运行程序在任务预算内选择调用，\n保存每步状态，并把涉及真实业务状态的操作交由具有权限的服务执行。模型生成\n“维修设备 E7”的文本建议，尚不改变维护系统中的工单；后者需要对象标识、\n设备资格、操作权限、幂等请求及完成确认。这项操作的状态机见第~\\ref{ch:week10-process-mining}~章。\n\n系统选型还应从工作量推导资源条件。输入长度影响预填充计算和上下文占用，输出\n长度影响逐步生成时间，同时到达的请求影响排队与内存需求。李博杰的《深入理解\nAI Infra》提供从计算、存储、通信和依赖关系估计这些约束的系统方法\n\\cite{aiinfra2026}。服务运行指标见第~\\ref{sec:ai-service-operations}~节，\n容量与成本的计算实例见附录~\\ref{app:ai-infra-lab}。采购或部署时，应将\n厂商公布的集群规模与企业实测的任务时延分开记录。",
+      "after": "\\subsection{从推理服务到业务行动}\n基础模型通过服务接口接受输入、返回预测或生成内容。检索服务提供经过授权的\n文档片段，业务服务提供查询和操作接口。智能体运行程序在任务预算内选择调用，\n保存每步状态，并把涉及真实业务状态的操作交由具有权限的服务执行。模型生成\n“维修设备 E7”的文本建议，尚不改变维护系统中的工单；后者需要对象标识、\n设备资格、操作权限、幂等请求\\footnote{幂等请求（idempotent request）要求同一操作在重复提交时不产生额外业务效果。例如，使用同一请求标识重试创建工单，不应生成多张工单。}及完成确认。这项操作的状态机\\footnote{状态机（state machine）以有限或明确规定的状态及允许的转换描述操作过程。例如，工单可处于待审批、已批准、已提交或已完成状态，转换须满足相应条件。}见第~\\ref{ch:week10-process-mining}~章。\n\n系统选型还应从工作量推导资源条件。输入长度影响预填充计算和上下文占用\\footnote{预填充（prefill）是模型生成新内容前，对输入序列进行处理并建立相关中间状态的阶段；上下文是模型当前可利用的输入及历史信息。}，输出\n长度影响逐步生成时间，同时到达的请求影响排队与内存需求。李博杰的《深入理解\nAI Infra》提供从计算、存储、通信和依赖关系估计这些约束的系统方法\n\\cite{aiinfra2026}。服务运行指标见第~\\ref{sec:ai-service-operations}~节，\n容量与成本的计算实例见附录~\\ref{app:ai-infra-lab}。采购或部署时，应将\n厂商公布的集群规模与企业实测的任务时延分开记录。"
+    },
+    {
+      "file": "docs/textbook/chapters/02_enterprise_data_model.tex",
+      "before": "平台职责依据各平台公开的产品机制，核查项目针对订单加急算例的分析要求。同一家厂商可能同时覆盖多个类别。选择产品时，应分别比较查询、\n治理、模型与操作能力，明确每项能力交付的记录、接口和责任主体。\n\n\\subsection{封测企业的两种实施路径}\n设某封测企业在 ERP 中维护客户订单，在制造执行系统中记录批次过站、\n设备状态和质量检验。企业希望对未来两日的到期订单提供可解释的加急\n候选名单。实施前需先确定哪一套系统对订单承诺、设备可用性和审批结果\n分别具有最终记录责任。同一字段在多个系统中出现时，要根据生成与更新过程\n指定权威来源。",
+      "after": "各平台的职责描述以其公开产品机制为依据，核查项目则根据订单加急算例的需求确定。同一家厂商可能同时覆盖多个类别。选择产品时，应分别比较查询、\n治理、模型与操作能力，明确每项能力交付的记录、接口和责任主体。\n\n\\subsection{封测企业的两种实施路径}\n设某封测企业在 ERP 中维护客户订单，在制造执行系统\\footnote{ERP 是 enterprise resource planning 的缩写，即企业资源计划，通常整合订单、采购、库存、生产计划及财务等业务。制造执行系统（manufacturing execution system，MES）则记录并管理生产现场的作业执行和批次状态。}中记录批次过站、\n设备状态和质量检验。企业希望对未来两日的到期订单提供可解释的加急\n候选名单。实施前需先确定哪一套系统对订单承诺、设备可用性和审批结果\n分别具有最终记录责任。同一字段在多个系统中出现时，要根据生成与更新过程\n指定权威来源。"
+    },
+    {
+      "file": "docs/textbook/chapters/02_enterprise_data_model.tex",
+      "before": "在多系统组合的路径中，可以把经审核的事件和合同快照汇聚到一套受管\n数据服务，由 Databricks 或 Snowflake 中选定的主查询服务提供指标\n结果\\cite{databricksUnity2026,snowflakeSemantic2026}。若希望使用开放表格式交换\n数据，还需以 Iceberg 的实际读写协议检查版本、目录和权限的兼容性\n\\cite{iceberg2026,databricksIceberg2026}。\n若企业需要跨订单、批次和设备管理操作，可以评估 Palantir 对象与动作\n服务的适配性\\cite{palantirActions2026}。元数据目录、治理流程和敏感信息发现\n可按责任分别配置，无须假定所有产品都同时采用。该路径要求对象标识、\n数据版本、网络转移和可写入接口作出跨平台约定，并以一套业务系统确认\n加急的最终状态。",
+      "after": "在多系统组合的路径中，可以把经审核的事件和合同快照汇聚到一套受管\n数据服务，从 Databricks 或 Snowflake 中选定主查询服务，提供指标\n结果\\cite{databricksUnity2026,snowflakeSemantic2026}。若希望使用开放表格式交换\n数据，还需以 Iceberg 的实际读写协议检查版本、目录和权限的兼容性\n\\cite{iceberg2026,databricksIceberg2026}。\n若企业需要跨订单、批次和设备管理操作，可以评估 Palantir 对象与动作\n服务的适配性\\cite{palantirActions2026}。元数据目录、治理流程和敏感信息发现\n可按责任分别配置，无须假定所有产品都同时采用。该路径要求对对象标识、\n数据版本、网络传输和写入接口作出跨平台约定，并以一套业务系统确认\n加急的最终状态。"
+    },
+    {
+      "file": "docs/textbook/chapters/02_enterprise_data_model.tex",
+      "before": "数据库中的日期可能完全符合格式和先后顺序，却与客户认可的承诺日期不同；\n一个尚未录入签收日期的订单，也可能已经交付。\n记录符合规则与记录真实反映业务具有不同含义（第~\\ref{ch:week04-data-quality}~章）。\n测量目标与系统实际记录的内容应分别定义。\n\\subsection{企业运营数据的基本语义}",
+      "after": "数据库中的日期可能完全符合格式和先后顺序，却与客户认可的承诺日期不同；\n一个尚未录入签收日期的订单，也可能已经交付。\n记录符合规则，并不等于记录准确反映业务（第~\\ref{ch:week04-data-quality}~章）。\n测量目标与系统实际记录的内容应分别定义。\n\\subsection{企业运营数据的基本语义}"
+    },
+    {
+      "file": "docs/textbook/chapters/02_enterprise_data_model.tex",
+      "before": "Codd 提出的关系模型为数据库提供了严格而简洁的形式语言。在关系模型中，数据被表示为关系，关系可以理解为带有属性名的元组集合。一个关系模式可写为\n\\[\nR(A_1:D_1,A_2:D_2,\\ldots,A_k:D_k),\n\\]\n其中 \\(A_j\\) 是属性名，\\(D_j\\) 是该属性的取值域。关系实例是满足该模式的一组元组：\n\\[\nr(R)=\\{t_1,t_2,\\ldots,t_n\\}.\n\\]\n更严格地说，元组 \\(t\\) 可被看作从属性集合到相应取值域的映射：\n\\[\nt(A_j)\\in D_j,\\quad j=1,\\ldots,k.\n\\]",
+      "after": "Codd 提出的关系模型用形式语言描述数据及其关系。在关系模型中，数据被表示为关系，关系可以理解为带有属性名的元组集合。一个关系模式可写为\n\\[\nR(A_1:D_1,A_2:D_2,\\ldots,A_k:D_k),\n\\]\n其中 \\(A_j\\) 是属性名，\\(D_j\\) 是该属性的取值域。关系实例是满足该模式的一组元组：\n\\[\nr(R)=\\{t_1,t_2,\\ldots,t_n\\}.\n\\]\n更严格地说，元组 \\(t\\) 可被看作从属性集合到相应取值域的映射：\n\\[\nt(A_j)\\in D_j,\\quad j=1,\\ldots,k.\n\\]"
+    },
+    {
+      "file": "docs/textbook/chapters/02_enterprise_data_model.tex",
+      "before": "",
+      "after": "记录标识可以采用自然键或代理键\\footnote{自然键（natural key）使用已有业务属性识别对象，例如受约束的产品编码；代理键（surrogate key）由系统另行分配，通常不承载业务含义，需维护其与业务标识的映射。}。"
+    },
+    {
+      "file": "docs/textbook/chapters/02_enterprise_data_model.tex",
+      "before": "规范化关系模型主要服务于一致性维护和事务处理。它通过减少冗余来避免插入异常、删除异常和更新异常。例如，若客户地址被重复写入每一笔订单，客户地址更新时就可能出现不同订单保存不同地址的矛盾。",
+      "after": "规范化关系模型主要服务于一致性维护和事务处理。它通过减少冗余，降低插入、删除和更新操作破坏数据一致性的风险。例如，若客户地址被重复写入每一笔订单，客户地址更新时就可能出现不同订单保存不同地址的矛盾。"
+    },
+    {
+      "file": "docs/textbook/chapters/02_enterprise_data_model.tex",
+      "before": "SEMI E10 和 SEMI E79 等行业标准长期用于设备可靠性、可用性、可维护性、利用率和设备生产率度量，其中 OEE、吞吐和设备状态分类都要求统一时间口径和状态定义\\cite{semi03}。产业咨询和制造数字化实践也反复强调，WIP、Cycle Time、产能利用和良率之间存在耦合关系：局部提高设备利用率未必改善整体交付，过高 WIP 可能放大等待时间和周期波动\\cite{mckinsey2024fab,mckinsey2024backend}。",
+      "after": "SEMI E10 和 SEMI E79 等行业标准长期用于设备可靠性、可用性、可维护性、利用率和设备生产率度量，其中 OEE、吞吐和设备状态分类都要求统一时间口径和状态定义\\cite{semi03}。产业咨询和制造数字化研究也讨论了 WIP、Cycle Time、产能利用和良率之间的相互影响：局部提高设备利用率未必改善整体交付，过高 WIP 可能放大等待时间和周期波动\\cite{mckinsey2024fab,mckinsey2024backend}。"
+    },
+    {
+      "file": "docs/textbook/chapters/02_enterprise_data_model.tex",
+      "before": "自然语言生成 SQL（NL2SQL）和 AI 问数正在进入企业数据分析实践。管理者可能直接询问：“最近三天哪个工作中心 OEE 最低？它的 WIP 和 OTD 是否也异常？”一个 AI 问数系统通常需要经历以下过程。\n\\[\n\\begin{aligned}\n\\text{自然语言问题}\n&\\rightarrow\n\\text{业务对象识别}\n\\rightarrow\n\\text{指标与维度匹配}\\\\\n&\\rightarrow\n\\text{SQL 生成}\n\\rightarrow\n\\text{结果校验}\n\\rightarrow\n\\text{解释与行动建议}.\n\\end{aligned}\n\\]",
+      "after": "自然语言生成 SQL（NL2SQL）\\footnote{NL2SQL 是 natural language to SQL 的缩写，指将自然语言问题转换为 SQL 查询；转换须结合数据表结构、业务定义及用户权限。}和 AI 问数正在进入企业数据分析实践。管理者可能直接询问：“最近三天哪个工作中心 OEE 最低？它的 WIP 和 OTD 是否也异常？”一个 AI 问数系统通常需要经历以下过程。\n\\[\n\\begin{aligned}\n\\text{自然语言问题}\n&\\rightarrow\n\\text{业务对象识别}\n\\rightarrow\n\\text{指标与维度匹配}\\\\\n&\\rightarrow\n\\text{SQL 生成}\n\\rightarrow\n\\text{结果校验}\n\\rightarrow\n\\text{解释与行动建议}.\n\\end{aligned}\n\\]"
+    },
+    {
+      "file": "docs/textbook/chapters/02_enterprise_data_model.tex",
+      "before": "\\subsection{多任务配置与指标操纵}\n\\subjectindex{duorenwujili}{多任务激励}\n\\subjectindex{zhibiaocaozong}{指标操纵}\n真实主管既要完成可计数的产量 \\(e_1\\)，也要完成较难计数的预防维护 \\(e_2\\)。设 \\(e_1+e_2=1\\)、二者非负，工资只奖励 \\(\\beta e_1\\)，努力不均衡成本为 \\(\\kappa(e_1^2+e_2^2)/2\\)，其中 \\(\\kappa>0\\)。当 \\(0\\le\\beta\\le\\kappa\\) 时，约束最优解为\n\\[\ne_1^*=\\frac12+\\frac{\\beta}{2\\kappa},\n\\qquad e_2^*=\\frac12-\\frac{\\beta}{2\\kappa},\n\\quad 0\\le\\beta\\le\\kappa.\n\\]\n其推导是先代入 \\(e_2=1-e_1\\)，再对 \\(\\beta e_1-\\kappa[e_1^2+(1-e_1)^2]/2\\) 求导，得到 \\(\\beta-\\kappa(2e_1-1)=0\\)。严格内点对应 \\(0\\le\\beta<\\kappa\\)；当 \\(\\beta\\ge\\kappa\\) 时，最优解为 \\(e_1=1,e_2=0\\)。若组织价值为 \\(e_1+3e_2\\)，提高产量奖励会使努力由维护转向生产，并降低该价值。结论来自任务之间的替代关系以及维护较高的边际价值。",
+      "after": "\\subsection{多任务配置与指标操纵}\n\\subjectindex{duorenwujili}{多任务激励}\n\\subjectindex{zhibiaocaozong}{指标操纵}\n实际生产中，主管既要完成可计数的产量 \\(e_1\\)，也要完成较难计数的预防维护 \\(e_2\\)。设 \\(e_1+e_2=1\\)、二者非负，工资只奖励 \\(\\beta e_1\\)，努力不均衡成本为 \\(\\kappa(e_1^2+e_2^2)/2\\)，其中 \\(\\kappa>0\\)。当 \\(0\\le\\beta\\le\\kappa\\) 时，约束最优解为\n\\[\ne_1^*=\\frac12+\\frac{\\beta}{2\\kappa},\n\\qquad e_2^*=\\frac12-\\frac{\\beta}{2\\kappa},\n\\quad 0\\le\\beta\\le\\kappa.\n\\]\n其推导是先代入 \\(e_2=1-e_1\\)，再对 \\(\\beta e_1-\\kappa[e_1^2+(1-e_1)^2]/2\\) 求导，得到 \\(\\beta-\\kappa(2e_1-1)=0\\)。严格内点对应 \\(0\\le\\beta<\\kappa\\)；当 \\(\\beta\\ge\\kappa\\) 时，最优解为 \\(e_1=1,e_2=0\\)。若组织价值为 \\(e_1+3e_2\\)，提高产量奖励会使努力由维护转向生产，并降低该价值。结论来自任务之间的替代关系以及维护较高的边际价值。"
+    },
+    {
+      "file": "docs/textbook/chapters/02_enterprise_data_model.tex",
+      "before": "在这个案例中，订单明细事实表回答“卖出了什么”，库存快照表回答“某天某仓库还剩多少”，补货事件表回答“何时补了多少”，产品维度表回答“这是什么品类和价格带”。如果把这些问题放在同一张宽表中，短期内可能方便查询，但长期会造成粒度混乱、历史状态丢失和指标解释困难。",
+      "after": "在这个案例中，订单明细事实表记录售出商品及其交易，库存快照表记录指定日期和仓库的库存余额，补货事件表记录补货时间与数量，产品维度表描述品类和价格带。如果把这些问题放在同一张宽表中\\footnote{宽表把多个对象或主题的属性展开到较少的表中，常用于简化查询。若展开关系涉及不同事实粒度，则须检查重复记录和历史属性的处理。}，短期内可能方便查询，但长期会造成粒度混乱、历史状态丢失和指标解释困难。"
+    },
+    {
+      "file": "docs/textbook/chapters/02_enterprise_data_model.tex",
+      "before": "\\chapterreading{关系模型与 ER 模型的原始论述分别见 Codd 与 Chen\\cite{codd1970,chen1976}。\nDate 的数据库教材讨论约束与规范化，Kimball 与 Ross 的著作系统说明维度建模\n\\cite{date2003,kimball2013}。数据管理职责可参考 DAMA-DMBOK\\cite{dama2017}；\n公司治理的经济学背景可由 Jensen 与 Meckling、Shleifer 与 Vishny 进入\n\\cite{jensen1976,shleifer1997}。线性报酬算例采用正态噪声、指数效用和二次努力成本，多任务问题的一般处理见 Holmström 与 Milgrom\n\\cite{hm91}。数据平台的存储协议、开放接口和语义实现可进一步阅读\n\\cite{iceberg2026,databricksUnity2026,snowflakeSemantic2026,palantir02,sapBDC2026}。}",
+      "after": "\\chapterreading{关系模型与 ER 模型的原始论述分别见 Codd 与 Chen\\cite{codd1970,chen1976}。\nDate 的数据库教材讨论约束与规范化，Kimball 与 Ross 的著作系统说明维度建模\n\\cite{date2003,kimball2013}。数据管理职责可参考 DAMA-DMBOK\\cite{dama2017}；\n公司治理的经济学背景可参考 Jensen 与 Meckling、Shleifer 与 Vishny 的研究\n\\cite{jensen1976,shleifer1997}。线性报酬算例采用正态噪声、指数效用和二次努力成本，多任务问题的一般处理见 Holmström 与 Milgrom\n\\cite{hm91}。数据平台的存储协议、开放接口和语义实现可进一步阅读\n\\cite{iceberg2026,databricksUnity2026,snowflakeSemantic2026,palantir02,sapBDC2026}。}"
+    },
+    {
+      "file": "docs/textbook/chapters/03_sql_kpi.tex",
+      "before": "SQL 是关系数据库的声明式查询语言。销售额、延期率和高风险订单数等统计量，均可通过记录筛选、表间连接和分组聚合计算。查询文本保存了这些计算的定义，便于重复执行和核对。",
+      "after": "SQL（structured query language，结构化查询语言）是关系数据库使用的声明式语言\\footnote{声明式语言说明所需结果及其条件，具体计算步骤由数据库系统选择；这与逐步规定控制流程的命令式程序有所不同。}。销售额、延期率和高风险订单数等统计量，均可通过记录筛选、表间连接和分组聚合计算。查询文本保存了这些计算的定义，便于重复执行和核对。"
+    },
+    {
+      "file": "docs/textbook/chapters/03_sql_kpi.tex",
+      "before": "例如，下面的查询按区域计算 2026 年 3 月订单收入：",
+      "after": "以下查询按区域计算 2026 年 3 月的订单收入："
+    },
+    {
+      "file": "docs/textbook/chapters/03_sql_kpi.tex",
+      "before": "\\subsection{查询的选择与分组条件}\n关系代数把查询视为对集合的运算；实际 SQL 默认保留重复行，更接近多重集语义。\n这个差别具有业务后果。两个订单行即使产品、数量和金额相同，也可能是两个不同事实；\n对全部字段使用 \\texttt{DISTINCT} 并不能可靠地替代业务主键去重。\n重复究竟是合法重复还是采集错误，应由第~\\ref{ch:week02-enterprise-data-model}~章\n定义的对象身份决定。",
+      "after": "\\subsection{查询的选择与分组条件}\n关系代数把查询视为对集合的运算；实际 SQL 默认保留重复行，更接近多重集语义\\footnote{多重集（multiset）允许同一取值重复出现，并保留其出现次数。SQL 中未去重的结果可以包含内容相同但对应不同业务事实的多行。}。\n这个差别具有业务后果。两个订单行即使产品、数量和金额相同，也可能是两个不同事实；\n对全部字段使用 \\texttt{DISTINCT} 并不能可靠地替代业务主键去重。\n重复究竟是合法重复还是采集错误，应由第~\\ref{ch:week02-enterprise-data-model}~章\n定义的对象身份决定。"
+    },
+    {
+      "file": "docs/textbook/chapters/03_sql_kpi.tex",
+      "before": "空值引入三值逻辑。SQL 中 \\texttt{NULL = NULL} 的结果为未知；\n\\texttt{WHERE} 只保留条件为真的行。因此，条件 \\texttt{actual\\_date > due\\_date}\n不会自动选出已经到期但尚未交付的订单。把未交付订单排除之后，查询回答的已不再是\n“所有到期承诺中有多少延期”，而只覆盖实际交付日期已记录的订单。",
+      "after": "空值引入三值逻辑\\footnote{SQL 条件的逻辑结果包括真、假和未知。涉及空值的比较通常得到未知；因此，“不是已知为真”不一定等于“已知为假”。}。SQL 中 \\texttt{NULL = NULL} 的结果为未知；\n\\texttt{WHERE} 只保留条件为真的行。因此，条件 \\texttt{actual\\_date > due\\_date}\n不会自动选出已经到期但尚未交付的订单。把未交付订单排除之后，查询回答的已不再是\n“所有到期承诺中有多少延期”，而只覆盖实际交付日期已记录的订单。"
+    },
+    {
+      "file": "docs/textbook/chapters/03_sql_kpi.tex",
+      "before": "例如，订单明细事实表的事务粒度可能是一行一个订单明细项；按地区、月份聚合后的分析粒度是一行一个地区月份；在管理层月报中展示的粒度可能是一行一个区域。三者可以不同，但必须被明确说明。",
+      "after": "例如，订单明细事实表的事务粒度可能是一行一个订单明细项；按地区、月份聚合后的分析粒度是一行一个地区月份；在管理层月报中展示的粒度可能是一行一个区域。三者可以不同，报告中须分别说明。"
+    },
+    {
+      "file": "docs/textbook/chapters/03_sql_kpi.tex",
+      "before": "连接也需要代数审计。若事实 \\(i\\) 的金额为 \\(x_i\\)，内连接后匹配到 \\(m_i\\) 条记录，直接求和得到 \\(\\sum_i m_ix_i\\)，未必等于 \\(\\sum_i x_i\\)。维度唯一性与完整匹配共同保证 \\(m_i=1\\)；订单连接多条质检事件则需要先按订单聚合事件，或改用半连接筛选。随意使用 \\texttt{DISTINCT} 可能恰好掩盖样例错误，却会误删金额相同的不同订单。",
+      "after": "连接也需要代数审计。若事实 \\(i\\) 的金额为 \\(x_i\\)，内连接后匹配到 \\(m_i\\) 条记录，直接求和得到 \\(\\sum_i m_ix_i\\)，未必等于 \\(\\sum_i x_i\\)。维度唯一性与完整匹配共同保证 \\(m_i=1\\)；订单连接多条质检事件则需要先按订单聚合事件，或改用半连接\\footnote{半连接（semi join）只保留左表中在右表至少有一个匹配的行，不输出右表字段，也不因右表存在多个匹配而复制左表行。}筛选。直接使用 \\texttt{DISTINCT} 可能掩盖样例中的重复连接错误，却也可能误删金额相同的不同订单。"
+    },
+    {
+      "file": "docs/textbook/chapters/03_sql_kpi.tex",
+      "before": "该查询采用一行一个有效订单承诺的关系模式，\\texttt{delivered\\_at} 表示截至统计时点已知的实际交付时间。查询前须按既定规则选择承诺版本并保留变更记录，以便区分服务改善与承诺日期调整。",
+      "after": "计算到期口径 OTD 时，应采用一行一个有效订单承诺的关系模式，\\texttt{delivered\\_at} 表示截至统计时点已知的实际交付时间。查询前须按既定规则选择承诺版本并保留变更记录，以便区分服务改善与承诺日期调整。"
+    },
+    {
+      "file": "docs/textbook/chapters/03_sql_kpi.tex",
+      "before": "\\begin{remark}\n一个严谨的指标系统应区分三类状态：“业务没有发生”“业务发生但结果失败”“数据缺失导致无法判断”。这三者在管理上对应完全不同的行动。\n\\end{remark}",
+      "after": "\\begin{remark}\n指标系统应区分三类状态：“业务没有发生”“业务发生但结果失败”“数据缺失导致无法判断”。这三者在管理上对应完全不同的行动。\n\\end{remark}"
+    },
+    {
+      "file": "docs/textbook/chapters/03_sql_kpi.tex",
+      "before": "\\subsection{自然语言问题的形式化}\n\\subjectindex{NL2SQL}{NL2SQL}\n\\subjectindex{AIwenshu}{AI问数}\n“找出最近良率最差的工站”至少留下四个未定项：最近是自然周还是滚动七天，良率是首检还是最终良率，最差按水平还是相对目标偏差，低产量工站是否有最低分母要求。语言模型可以生成流畅 SQL，但没有足够信息时，应返回待澄清项或明示默认口径。",
+      "after": "\\subsection{自然语言问题的形式化}\n\\subjectindex{NL2SQL}{NL2SQL}\n\\subjectindex{AIwenshu}{AI问数}\n“找出最近良率最差的工站”至少留下四个未定项：最近是自然周还是滚动七天，良率是首检还是最终良率，最差按水平还是相对目标偏差，低产量工站是否有最低分母要求。语言模型可以生成语法正确的 SQL；信息不足时，系统仍须返回待澄清项或明示默认口径。"
+    },
+    {
+      "file": "docs/textbook/chapters/03_sql_kpi.tex",
+      "before": "结果还需要不变量测试：良品不能超过同范围总数；工站分组的件数之和应等于未分组件数；将同一个输入文件按行拆成两部分，合并统计状态后应与全量计算一致。改变输入顺序不应改变非顺序指标。此类变形测试可以发现单个标准答案未覆盖的错误。",
+      "after": "结果还需要不变量测试：良品不能超过同范围总数；工站分组的件数之和应等于未分组件数；将同一个输入文件按行拆成两部分，合并统计状态后应与全量计算一致。改变输入顺序不应改变非顺序指标。此类变形测试\\footnote{变形测试（metamorphic testing）通过改变输入并检查输出之间应保持的关系验证程序。例如，调换记录顺序不应改变总销售额；它不要求为每个新输入预先给定完整标准答案。}可以发现单个标准答案未覆盖的错误。"
+    },
+    {
+      "file": "docs/textbook/chapters/03_sql_kpi.tex",
+      "before": "参数绑定适用于值，表名与列名应从白名单映射；数据库权限必须实际生效；执行日志保存用户问题、规范化查询请求、SQL、参数、数据版本和结果摘要。模型生成的代码经过验证后执行，检索内容作为查询资料使用；系统权限由独立的授权配置决定。",
+      "after": "参数绑定适用于值\\footnote{参数绑定（parameter binding）把数据值与 SQL 语句结构分开提交，由数据库按参数处理，避免把值直接拼接为语句的一部分。表名、列名等标识符通常须另行按受控映射选择。}，表名与列名应从白名单映射；数据库权限必须实际生效；执行日志保存用户问题、规范化查询请求、SQL、参数、数据版本和结果摘要。模型生成的代码经过验证后执行，检索内容作为查询资料使用；系统权限由独立的授权配置决定。"
+    },
+    {
+      "file": "docs/textbook/chapters/03_sql_kpi.tex",
+      "before": "“周良率”“到期 OTD”“日均 WIP”的查询验证可分别保存请求定义、SQL 和小型反例数据。测试时使用未见过的同义问法与不同数据规模，避免只记住固定答案。标准查询库可以提高稳定性；一旦口径或模式变化，它也需要重新验证。",
+      "after": "“周良率”“到期 OTD”“日均 WIP”的查询验证可分别保存请求定义、SQL 和小型反例数据。测试时使用未见过的同义问法与不同数据规模，避免只记住固定答案。标准查询库有助于保持口径一致；口径或数据模式变化后，相关查询须重新验证。"
+    },
+    {
+      "file": "docs/textbook/chapters/03_sql_kpi.tex",
+      "before": "若模型有 \\(P\\) 个参数，每个权重使用 \\(b\\) 位，纯权重存储约为 \\(Pb/8\\) 字节。运行还需键值缓存（KV cache）、中间计算和批处理内存。部署评价应在给定上下文长度及并发量下测量正确率、延迟、资源消耗和错误损失。",
+      "after": "若模型有 \\(P\\) 个参数，每个权重使用 \\(b\\) 位，纯权重存储约为 \\(Pb/8\\) 字节。运行还需键值缓存（KV cache）\\footnote{键值缓存保存注意力计算中已生成的键和值，后续逐步生成时可复用这些中间结果，从而减少重复计算；其内存占用随上下文长度和并发等条件变化。}、中间计算和批处理内存。部署评价应在给定上下文长度及并发量下测量正确率、延迟、资源消耗和错误损失。"
+    },
+    {
+      "file": "docs/textbook/chapters/04_data_quality.tex",
+      "before": "数据质量依据用途定义。同一份数据可能满足一种用途的质量要求，同时无法满足另一种用途的要求。例如，月度销售概览可能可以容忍少量非核心字段缺失，但客户 SLA 违约判断不能容忍战略客户订单的交付日期缺失；趋势分析可以接受一两天的数据入仓延迟，但实时补货调度不能接受这样的延迟。",
+      "after": "数据质量应根据用途评价。同一份数据可能适合某项任务，却无法满足另一项任务的要求。例如，月度销售概览可能可以容忍少量非核心字段缺失，但客户 SLA\\footnote{SLA 是 service-level agreement 的缩写，即服务水平协议，规定服务方承诺的交付时间、可用性或响应标准，以及相关责任。} 违约判断不能容忍战略客户订单的交付日期缺失；趋势分析可以接受一两天的数据入仓延迟，但实时补货调度不能接受这样的延迟。"
+    },
+    {
+      "file": "docs/textbook/chapters/04_data_quality.tex",
+      "before": "同一数据集用于不同任务时，可以有不同的质量要求。月度收入分析关注交易覆盖与金额准确性，实时调度还要求状态更新及时。质量评价因而须与具体用途和容许误差联系。",
+      "after": "同一数据集用于不同任务时，可以有不同的质量要求。月度收入分析关注交易覆盖与金额准确性，实时调度还要求状态更新及时。质量评价因而须说明具体用途和容许误差。"
+    },
+    {
+      "file": "docs/textbook/chapters/04_data_quality.tex",
+      "before": "剖析与测试的区别在于：剖析偏探索，测试偏断言。剖析会提出问题，例如“这个字段为什么有四种渠道值”；测试会表达规则，例如“渠道字段只能属于 Direct、Partner、Online”。二者应当配合使用。",
+      "after": "剖析探索数据的结构与分布，测试则判断预定规则是否成立。剖析会提出问题，例如“这个字段为什么有四种渠道值”；测试会表达规则，例如“渠道字段只能属于 Direct、Partner、Online”。二者应当配合使用。"
+    },
+    {
+      "file": "docs/textbook/chapters/04_data_quality.tex",
+      "before": "完全随机缺失要求缺失与所有相关变量独立；给定已观测协变量后的随机缺失允许缺失依赖这些协变量；非随机缺失则仍依赖未观测结果。实际数据通常不能仅靠一项检验区分后两者。应调查业务记录机制，并用“所有未回写订单均较慢”等情景做敏感性分析。对窗口内已到期但尚未交付的订单，未完成状态本身就是履约证据；已交付订单准时率须与到期承诺口径的 OTD 明确区分（第~\\ref{ch:week03-sql-kpi}~章）。\n\n\\subsection{经典测量误差与衰减偏差}\n\\subjectindex{celiangwucha}{测量误差}\n设真实线性关系为 \\(Y=\\alpha+\\beta X+\\epsilon\\)，但只观察到 \\(W=X+U\\)。若 \\(U\\) 与 \\(X,\\epsilon\\) 独立、均值为零，且 \\(\\epsilon\\) 与 \\(X\\) 不相关，使用 \\(W\\) 回归的总体斜率为\n\\[\n\\frac{\\operatorname{Cov}(W,Y)}{\\operatorname{Var}(W)}\n=\\beta\\frac{\\operatorname{Var}(X)}\n{\\operatorname{Var}(X)+\\operatorname{Var}(U)}.\n\\]\n测量噪声使斜率向零衰减。这是经典独立加性误差模型下的结果；若传感器误差与负载相关，方向未必向零。即使数据没有空值、格式全部正确，也可能因为测量偏差而不适合推断。",
+      "after": "完全随机缺失（missing completely at random，MCAR）要求缺失与所有相关变量独立；随机缺失（missing at random，MAR）要求在给定已观测协变量后，缺失不再依赖缺失部分的取值；非随机缺失（missing not at random，MNAR）则在给定已观测信息后仍依赖未观测取值。实际数据通常不能仅靠一项检验区分后两者。应调查业务记录机制，并用“所有未回写订单均较慢”等情景做敏感性分析。对窗口内已到期但尚未交付的订单，未完成状态本身就是履约证据；已交付订单准时率须与到期承诺口径的 OTD 明确区分（第~\\ref{ch:week03-sql-kpi}~章）。\n\n\\subsection{经典测量误差与衰减偏差}\n\\subjectindex{celiangwucha}{测量误差}\n设真实线性关系为 \\(Y=\\alpha+\\beta X+\\epsilon\\)，但只观察到 \\(W=X+U\\)。若 \\(U\\) 与 \\(X,\\epsilon\\) 独立、均值为零，且 \\(\\epsilon\\) 与 \\(X\\) 不相关，使用 \\(W\\) 回归的总体斜率为\n\\[\n\\frac{\\operatorname{Cov}(W,Y)}{\\operatorname{Var}(W)}\n=\\beta\\frac{\\operatorname{Var}(X)}\n{\\operatorname{Var}(X)+\\operatorname{Var}(U)}.\n\\]\n在这些条件下，测量噪声使斜率向零衰减。这是经典独立加性误差模型下的结果；若传感器误差与负载相关，方向未必向零。即使数据没有空值、格式全部正确，也可能因为测量偏差而不适合推断。"
+    },
+    {
+      "file": "docs/textbook/chapters/04_data_quality.tex",
+      "before": "当 \\(n>0\\) 时，规则通过比例可定义为\n\\[\nQ_j(R)=1-\\frac{|F_j|}{n},\n\\]\n空表应单独报告“无可评估记录”，不将零分母解释为质量满分。该比例仅描述单项规则的符合情况。某些规则只要失败一行就可能导致严重后果，例如主键重复或核心外键缺失；某些规则虽然失败比例不高，但集中在关键客户或高价值订单上，管理影响仍然很大。因此，质量治理应关注失败记录的业务重要性和修复路径。",
+      "after": "当 \\(n>0\\) 时，规则通过比例可定义为\n\\[\nQ_j(R)=1-\\frac{|F_j|}{n},\n\\]\n空表应单独报告“无可评估记录”，不将零分母解释为质量满分。该比例仅描述单项规则的符合情况。某些规则只要失败一行就可能导致严重后果，例如主键重复或核心外键缺失；某些规则的失败比例虽低，但失败记录若集中于关键客户或高价值订单，管理影响仍可能很大。因此，质量治理应关注失败记录的业务重要性和修复路径。"
+    },
+    {
+      "file": "docs/textbook/chapters/04_data_quality.tex",
+      "before": "质量规则应同时包含技术表达和业务解释。技术表达说明如何找出失败记录；业务解释说明失败为什么影响指标、模型或行动。例如，\\texttt{customer\\_id} 缺失不仅是字段为空，它会使订单无法归属区域和客户分层，从而影响区域收入、客户价值和销售责任评价。",
+      "after": "质量规则应同时包含技术表达和业务解释。技术表达说明如何找出失败记录；业务解释说明失败为什么影响指标、模型或行动。例如，\\texttt{customer\\_id} 缺失会使订单无法归属区域和客户分层，从而影响区域收入、客户价值和销售责任评价。"
+    },
+    {
+      "file": "docs/textbook/chapters/04_data_quality.tex",
+      "before": "\\subsection{发布决策与预期损失}\n\\subjectindex{fabukongzhi}{发布控制}\n规则失败之后是否停止看板或自动决策，是成本决策。令 \\(Z=1\\) 表示当前数据存在实质错误，观察到告警证据 \\(e\\) 后的概率为 \\(p=\\Prob(Z=1\\mid e)\\)。若继续发布在错误时损失 \\(C_{\\rm bad}\\)，暂停发布的成本固定为 \\(C_{\\rm hold}\\)，且其他成本可忽略，则\n\\[\n\\text{暂停}\\quad\\Longleftrightarrow\\quad\npC_{\\rm bad}>C_{\\rm hold}.\n\\]\n例如暂停一小时损失 2 万元，错误排程可能损失 100 万元，阈值为 \\(p>0.02\\)。这些数值为假设参数，实际评价还应区分误报、漏报、恢复时间和已知替代数据。法律或合同要求的强制阻断不应被该简化经济阈值覆盖。",
+      "after": "\\subsection{发布决策与预期损失}\n\\subjectindex{fabukongzhi}{发布控制}\n质量规则失败后，是否暂停看板发布或自动决策，需要比较错误发布的预期损失与暂停成本。令 \\(Z=1\\) 表示当前数据存在实质错误，观察到告警证据 \\(e\\) 后的概率为 \\(p=\\Prob(Z=1\\mid e)\\)。若继续发布在错误时损失 \\(C_{\\rm bad}\\)，暂停发布的成本固定为 \\(C_{\\rm hold}\\)，且其他成本可忽略，则\n\\[\n\\text{暂停}\\quad\\Longleftrightarrow\\quad\npC_{\\rm bad}>C_{\\rm hold}.\n\\]\n例如暂停一小时损失 2 万元，错误排程可能损失 100 万元，阈值为 \\(p>0.02\\)。这些数值为假设参数，实际评价还应区分误报、漏报、恢复时间和已知替代数据。法律或合同要求的强制阻断不应被该简化经济阈值覆盖。"
+    },
+    {
+      "file": "docs/textbook/chapters/04_data_quality.tex",
+      "before": "数据治理是组织层面的制度安排，用来确保数据被一致、负责、安全、可追溯地管理。它通常涉及数据负责人、数据管理专员、元数据管理、主数据管理、权限、安全、质量规则、变更流程和审计机制。DAMA-DMBOK 将数据治理放在数据管理知识体系的中心，并围绕其组织数据架构、建模、存储、安全、集成、主数据、元数据、数据质量、数据仓库、BI 和数据科学等领域。",
+      "after": "数据治理是关于数据定义、使用、变更与监督的制度安排，旨在明确责任并维护一致性、安全性和可追溯性。它通常涉及数据负责人、数据管理专员、元数据管理、主数据管理、权限、安全、质量规则、变更流程和审计机制。DAMA-DMBOK 将数据治理放在数据管理知识体系的中心，并围绕其组织数据架构、建模、存储、安全、集成、主数据、元数据、数据质量、数据仓库、BI 和数据科学等领域。"
+    },
+    {
+      "file": "docs/textbook/chapters/04_data_quality.tex",
+      "before": "没有治理的指标体系会出现“同名不同义”和“同义不同名”。例如，财务部门的销售额可能以开票为准，运营部门的销售额可能以下单为准，渠道部门的销售额可能以发货为准。三者都有业务理由，但如果不在指标字典中明确，就会在经营会议中制造虚假的分歧。",
+      "after": "没有治理的指标体系会出现“同名不同义”和“同义不同名”。例如，财务部门的销售额可能以开票为准，运营部门的销售额可能以下单为准，渠道部门的销售额可能以发货为准。三种口径各有业务用途；若未在指标字典中说明，经营会议就可能把口径差异误认为经营结果的分歧。"
+    },
+    {
+      "file": "docs/textbook/chapters/04_data_quality.tex",
+      "before": "质量检查需要行动规则。若所有失败都被视为同等严重，团队会陷入告警疲劳；若所有失败都只是记录日志，关键指标可能在错误数据上发布。按发布策略，质量规则可分为三个级别：",
+      "after": "质量检查需要相应的处置规则。若所有失败都按同一级别告警，人员可能因频繁处理低影响告警而忽视严重问题；若失败后仅记录日志，关键指标仍可能依据错误数据发布。按发布策略，质量规则可分为三个级别："
+    },
+    {
+      "file": "docs/textbook/chapters/04_data_quality.tex",
+      "before": "当发布控制失败时，组织需要一套可重复的事件响应流程。最低流程包括：\n\\begin{enumerate}\n  \\item 识别：质量测试产生失败记录，并记录数据批次；\n  \\item 定级：根据指标影响、客户影响和自动化风险确定严重级别；\n  \\item 隔离：暂停受影响指标发布，或在看板上显式标注警告；\n  \\item 归因：定位问题发生在源系统、主数据、管道还是指标逻辑；\n  \\item 修复：补录、回填、重跑、修改规则或更新数据契约；\n  \\item 复盘：记录根因、影响范围、修复证据和预防措施。\n\\end{enumerate}",
+      "after": "发布条件未满足时，应按既定流程处置质量事件。基本步骤包括：\n\\begin{enumerate}\n  \\item 识别：质量测试产生失败记录，并记录数据批次；\n  \\item 定级：根据指标影响、客户影响和自动化风险确定严重级别；\n  \\item 隔离：暂停受影响指标发布，或在看板上显式标注警告；\n  \\item 归因：定位问题发生在源系统、主数据、管道还是指标逻辑；\n  \\item 修复：补录、回填、重跑、修改规则或更新数据契约；\n  \\item 复盘：记录根因、影响范围、修复证据和预防措施。\n\\end{enumerate}"
+    },
+    {
+      "file": "docs/textbook/chapters/04_data_quality.tex",
+      "before": "质量事件可用平均检测时间 MTTD 和平均修复时间 MTTR 描述，同时记录错误发布的持续时间。设每小时错误决策损失为 \\(\\ell\\)，事件持续时间为 \\(T\\)，则相应损失为 \\(\\ell T\\)。检测改进缩短发现之前的时间，责任分配和修复资源则影响发现之后的处置时间，两者共同决定总损失。",
+      "after": "质量事件可用平均检测时间（mean time to detect，MTTD）和平均修复时间（mean time to repair，MTTR）描述\\footnote{MTTD 度量从事件发生到被发现的时间，MTTR 此处度量从发现到修复完成的时间；不同组织可能采用其他起止点，跨项目比较时须先统一定义。}，同时记录错误发布的持续时间。设每小时错误决策损失为 \\(\\ell\\)，事件持续时间为 \\(T\\)，则相应损失为 \\(\\ell T\\)。检测改进缩短发现之前的时间，责任分配和修复资源则影响发现之后的处置时间，两者共同决定总损失。"
+    },
+    {
+      "file": "docs/textbook/chapters/04_data_quality.tex",
+      "before": "\\section{检索增强生成中的数据质量}\n\\subjectindex{zhengjuyouxiaoqi}{证据有效期}\nRAG 将检索到的材料作为模型回答的上下文。因此质量检查除了表字段，还应包含文档有效期、版本、来源、权限、切片边界和引用定位。旧版工艺规则即使文本提取完全正确，也可能不适合今天的排程。扫描表格中丢失单位，会把正确的数字转成错误的约束。\n\n对每个证据片段 \\(d\\)，可保存\n\\[\n(\\text{id},\\text{source},\\text{version},\n\\text{valid\\_from},\\text{owner},\\text{scope},\\text{hash}).\n\\]\n哈希标识用于检测内容变化，来源真实性由发布主体和签发记录核查。访问权限在检索阶段执行，撤销或过期材料同步更新其索引与缓存状态，使模型获得授权范围内的有效文档。\n\n检索召回率与答案正确率需要分别测量。正确答案不存在于知识库时，应允许“证据不足”；若答案依赖两份相互矛盾的规范，应显示冲突和适用时间。回答应列出对应的有效来源及引用位置。",
+      "after": "\\section{检索增强生成中的数据质量}\n\\subjectindex{zhengjuyouxiaoqi}{证据有效期}\n检索增强生成（retrieval-augmented generation，RAG）将检索到的材料作为模型回答的上下文。因此质量检查除了表字段，还应包含文档有效期、版本、来源、权限、切片边界\\footnote{文档切片（chunking）是按段落、主题或长度等规则，将文档划分为便于检索的片段。切片边界应尽量保留定义、条件及其适用范围，避免片段脱离语境。}和引用定位。旧版工艺规则即使文本提取完全正确，也可能不适合今天的排程。扫描表格中丢失单位，会把正确的数字转成错误的约束。\n\n对每个证据片段 \\(d\\)，可保存\n\\[\n(\\text{id},\\text{source},\\text{version},\n\\text{valid\\_from},\\text{owner},\\text{scope},\\text{hash}).\n\\]\n哈希\\footnote{哈希函数（hash function）把输入内容映射为用于比对的摘要。这里用摘要检查内容是否变化；摘要本身不能证明内容真实或发布主体可信。}标识用于检测内容变化，来源真实性由发布主体和签发记录核查。访问权限在检索阶段执行，撤销或过期材料同步更新其索引与缓存状态，使模型获得授权范围内的有效文档。\n\n检索召回率\\footnote{检索召回率（recall）是被检索出的相关材料占全部应检索相关材料的比例，需相对于已标注或可确认的相关材料集合计算。它不等于最终回答正确的比例。}与答案正确率需要分别测量。正确答案不存在于知识库时，应允许“证据不足”；若答案依赖两份相互矛盾的规范，应显示冲突和适用时间。回答应列出对应的有效来源及引用位置。"
+    },
+    {
+      "file": "docs/textbook/chapters/04_data_quality.tex",
+      "before": "质量管理据此比较错误发布的预期损失、暂停成本与修复收益，并分配治理资源。数据目录、质量工作和敏感信息发现各有职责，要通过实际数据来源与授权检查它们的覆盖范围。文档型知识库还需要检查来源、有效期与访问范围。统计摘要与图形对经营特征的描述，同样以数据来源及质量条件明确为前提。",
+      "after": "质量管理需据此比较错误发布的预期损失、暂停成本与修复收益，分配治理资源。数据目录、质量工作和敏感信息发现各有职责，要通过实际数据来源与授权检查它们的覆盖范围。文档型知识库还需要检查来源、有效期与访问范围。统计摘要与图形对经营特征的描述，同样以数据来源及质量条件明确为前提。"
+    },
+    {
+      "file": "docs/textbook/chapters/05_statistics_dashboard.tex",
+      "before": "均值、中位数和分位数是同一分布的不同摘要。均值便于加总成本和总工时，中位数\n反映中心位置，高分位数揭示少数长周期对象。选择哪一个摘要取决于管理问题，\n均值与中位数分别概括总体平均水平和分布中点，应依据分析目的选择并列呈现的统计量。",
+      "after": "均值、中位数和分位数概括同一分布的不同特征。均值与总成本、总工时相联系，\n中位数反映分布中点，高分位数刻画长周期对象。管理问题决定应选用或并列呈现\n哪些统计量。"
+    },
+    {
+      "file": "docs/textbook/chapters/05_statistics_dashboard.tex",
+      "before": "只有中心位置不足以支持管理判断。两个团队的平均收入可能相同，但一个团队稳定，另一个团队高度波动。当 \\(n\\ge2\\) 时，样本方差和标准差定义为\n\\[\ns^2=\\frac{1}{n-1}\\sum_{i=1}^n(x_i-\\bar x)^2,\\qquad s=\\sqrt{s^2}.\n\\]\n标准差与原指标具有相同单位，因此便于解释为“典型偏离幅度”。若日收入的标准差为 2987.05，则说明日收入围绕均值有较大波动。",
+      "after": "只有中心位置不足以支持管理判断。两个团队的平均收入可能相同，但一个团队稳定，另一个团队高度波动。当 \\(n\\ge2\\) 时，样本方差和标准差定义为\n\\[\ns^2=\\frac{1}{n-1}\\sum_{i=1}^n(x_i-\\bar x)^2,\\qquad s=\\sqrt{s^2}.\n\\]\n标准差与原指标具有相同单位，用于描述观测值偏离均值的总体幅度。若日收入的标准差为 2987.05，则说明日收入围绕均值有较大波动。"
+    },
+    {
+      "file": "docs/textbook/chapters/05_statistics_dashboard.tex",
+      "before": "\\begin{remark}\n标准差刻画统计波动。经营风险还取决于波动发生在什么对象、是否集中在关键客户、是否超出服务承诺、是否触发现金流或库存约束。因此，统计波动需要继续连接业务语境。\n\\end{remark}",
+      "after": "\\begin{remark}\n标准差刻画统计波动。经营风险还取决于波动发生在什么对象、是否集中在关键客户、是否超出服务承诺、是否触发现金流或库存约束。因此，应结合波动对应的业务对象和约束评价其经营影响。\n\\end{remark}"
+    },
+    {
+      "file": "docs/textbook/chapters/05_statistics_dashboard.tex",
+      "before": "经营沟通中应写清楚：指标是否可加，分子和分母是什么，分母是否足够支持比较，是否存在质量检查未通过的记录。",
+      "after": "经营报告应说明指标的可加性、分子与分母、样本量是否足以支持比较，以及是否存在未通过质量检查的记录。"
+    },
+    {
+      "file": "docs/textbook/chapters/05_statistics_dashboard.tex",
+      "before": "管理者通常既关心当前水平，也关心趋势。对时间序列 \\(x_t\\)，简单移动平均可写为\n\\[\nMA_t^{(k)}=\\frac{1}{k}\\sum_{j=0}^{k-1}x_{t-j}.\n\\]\n移动平均可以平滑短期波动，使趋势更容易被看见；但它也可能掩盖突发异常。因此，看板应同时展示移动平均和原始观测。",
+      "after": "管理者通常既关心当前水平，也关心趋势。对时间序列 \\(x_t\\)，简单移动平均可写为\n\\[\nMA_t^{(k)}=\\frac{1}{k}\\sum_{j=0}^{k-1}x_{t-j}.\n\\]\n移动平均可以平滑短期波动，使趋势较易辨认，但也可能掩盖突发异常。因此，看板应同时展示移动平均和原始观测。"
+    },
+    {
+      "file": "docs/textbook/chapters/05_statistics_dashboard.tex",
+      "before": "若每天只抽 20 件，正态近似可能很差；同一批次内缺陷相关会造成过度离散；基准本身漂移也会使固定界限失效。此时应考虑精确二项界限、分层或适当的过程模型。反复监控带来累计误报问题，第~\\ref{ch:week06-ab-testing}~章将讨论时间一致推断。",
+      "after": "若每天只抽 20 件，正态近似可能很差；同一批次内缺陷相关会造成过度离散\\footnote{过度离散是指数据的实际波动大于所用概率模型规定的方差。例如，同批产品缺陷相关时，不良件数的波动可能超过独立二项模型的预测范围。}；基准本身漂移也会使固定界限失效。此时应考虑精确二项界限、分层或适当的过程模型。反复监控带来累计误报问题，第~\\ref{ch:week06-ab-testing}~章将讨论时间一致推断。"
+    },
+    {
+      "file": "docs/textbook/chapters/05_statistics_dashboard.tex",
+      "before": "\\subsection{利用率与等待时间}\n\\subjectindex{MM1}{M/M/1队列}\n\\subjectindex{Kingman}{Kingman近似}\n\\subjectindex{liyonglv}{利用率}\n进一步采用 \\(M/M/1\\) 教学模型：到达为强度 \\(\\lambda\\) 的泊松过程，单台设备服务时间独立且服从均值 \\(1/\\mu\\) 的指数分布，二者独立，先到先服务，无容量上限，且 \\(\\rho=\\lambda/\\mu<1\\)。令 \\(\\pi_n\\) 为稳态有 \\(n\\) 批的概率，相邻状态流量平衡给出 \\(\\pi_n\\lambda=\\pi_{n+1}\\mu\\)，所以 \\(\\pi_n=\\pi_0\\rho^n\\)。利用几何级数归一化得到 \\(\\pi_0=1-\\rho\\)，进而\n\\[\n\\bar L=\\sum_{n=0}^\\infty n(1-\\rho)\\rho^n\n=\\frac{\\rho}{1-\\rho}.\n\\]\n再用 Little 定律计算系统时间，并减去平均服务时间 \\(1/\\mu\\)，分别得到\n\\[\n\\bar W=\\frac1{\\mu-\\lambda},\\qquad\n\\bar W_q=\\frac{\\rho}{\\mu-\\lambda}.\n\\]\n若 \\(\\mu=10\\) 批/小时，到达率从 8 增加到 9.5，利用率只从 \\(80\\%\\) 增至 \\(95\\%\\)，平均系统时间却从 0.5 小时增至 2 小时。提高局部利用率的收益必须与等待、WIP 和 OTD 的损害共同评估。",
+      "after": "\\subsection{利用率与等待时间}\n\\subjectindex{MM1}{M/M/1队列}\n\\subjectindex{Kingman}{Kingman近似}\n\\subjectindex{liyonglv}{利用率}\n进一步采用 \\(M/M/1\\) 教学模型：到达为强度 \\(\\lambda\\) 的泊松过程\\footnote{齐次泊松过程假定不相交时间区间内的到达次数相互独立，且次数服从均值与区间长度成正比的泊松分布；相邻到达间隔独立并服从同一指数分布。}，单台设备服务时间独立且服从均值 \\(1/\\mu\\) 的指数分布，二者独立，先到先服务，无容量上限，且 \\(\\rho=\\lambda/\\mu<1\\)。令 \\(\\pi_n\\) 为稳态有 \\(n\\) 批的概率，相邻状态流量平衡给出 \\(\\pi_n\\lambda=\\pi_{n+1}\\mu\\)，所以 \\(\\pi_n=\\pi_0\\rho^n\\)。利用几何级数归一化得到 \\(\\pi_0=1-\\rho\\)，进而\n\\[\n\\bar L=\\sum_{n=0}^\\infty n(1-\\rho)\\rho^n\n=\\frac{\\rho}{1-\\rho}.\n\\]\n再用 Little 定律计算系统时间，并减去平均服务时间 \\(1/\\mu\\)，分别得到\n\\[\n\\bar W=\\frac1{\\mu-\\lambda},\\qquad\n\\bar W_q=\\frac{\\rho}{\\mu-\\lambda}.\n\\]\n若 \\(\\mu=10\\) 批/小时，到达率从 8 增加到 9.5，利用率只从 \\(80\\%\\) 增至 \\(95\\%\\)，平均系统时间却从 0.5 小时增至 2 小时。提高局部利用率的收益必须与等待、WIP 和 OTD 的损害共同评估。"
+    },
+    {
+      "file": "docs/textbook/chapters/05_statistics_dashboard.tex",
+      "before": "对到达间隔与服务时间各自独立同分布、两序列相互独立、先到先服务且 \\(\\rho<1\\) 的 \\(GI/G/1\\) 系统，在相应有限二阶矩等条件下，Kingman 近似进一步提示\n\\[\n\\bar W_q\\approx\n\\frac{c_a^2+c_s^2}{2}\\frac{\\rho}{1-\\rho}\\E[S],\n\\]\n其中 \\(c_a,c_s\\) 是到达间隔与服务时间的变异系数。该式是近似而非普遍恒等式，主要用于理解变异性、利用率与服务时间如何共同影响等待。产品混流、故障和换线会使真实产线复杂得多，应通过数据和仿真校准。",
+      "after": "对到达间隔与服务时间各自独立同分布、两序列相互独立、先到先服务且 \\(\\rho<1\\) 的 \\(GI/G/1\\) 系统\\footnote{排队模型记号中，GI 表示一般分布且相互独立的到达间隔，G 表示一般服务时间分布，1 表示单个服务台。此处其余独立性、服务次序及稳定性条件由正文另外规定。}，在相应有限二阶矩等条件下，Kingman 近似给出平均排队等待时间的估计\n\\[\n\\bar W_q\\approx\n\\frac{c_a^2+c_s^2}{2}\\frac{\\rho}{1-\\rho}\\E[S],\n\\]\n其中 \\(c_a,c_s\\) 是到达间隔与服务时间的变异系数。该式是近似而非普遍恒等式，主要用于理解变异性、利用率与服务时间如何共同影响等待。产品混流、故障和换线会使真实产线复杂得多，应通过数据和仿真校准。"
+    },
+    {
+      "file": "docs/textbook/chapters/05_statistics_dashboard.tex",
+      "before": "\\section{人工智能服务的运营度量}\n\\label{sec:ai-service-operations}\n\\subjectindex{TTFT}{TTFT（首输出时间）}\n把企业问数系统作为持续运行的服务，可区分请求、完整任务和业务结果三个单位。\n一个用户问题可能包含模型生成、数据库查询、文档检索及人工批准等多次调用。\n请求到达后的首输出时间称为 TTFT；从提交到全部回答返回为请求完成时间；\n从提出问题到取得通过验收的业务结果为任务完成时间。后两个时间都应记录\n失败与重试。李博杰对预填充、逐步生成及任务负载的区分有助于确定测量边界\n\\cite{aiinfra2026}。",
+      "after": "\\section{人工智能服务的运营度量}\n\\label{sec:ai-service-operations}\n\\subjectindex{TTFT}{TTFT（首输出时间）}\n把企业问数系统作为持续运行的服务，可区分请求、完整任务和业务结果三个单位。\n一个用户问题可能包含模型生成、数据库查询、文档检索及人工批准等多次调用。\n请求到达后到首个输出 token 的时间称为 TTFT（time to first token）\\footnote{token 是模型处理文本的基本单位，由所用分词器划分，可能对应一个字、一个词或词的一部分。TTFT 只度量首次输出的等待，不等于完整回答的生成时间。}；从提交到全部回答返回为请求完成时间；\n从提出问题到取得通过验收的业务结果为任务完成时间。后两个时间都应记录\n失败与重试。李博杰对预填充、逐步生成及任务负载的区分有助于确定测量边界\n\\cite{aiinfra2026}。"
+    },
+    {
+      "file": "docs/textbook/chapters/05_statistics_dashboard.tex",
+      "before": "以货币计量的每请求费用也应拆开。设输入与输出每百万 token 的单价分别为\n\\(c_p,c_o\\)，查询和工具的单位费用为 \\(c_q,c_t\\)，则\n\\[\n  c_{\\rm request}=\n    \\frac{p c_p+o c_o}{10^6}+c_q+c_t.\n\\]\n若失败任务必须重做，还要把失败尝试纳入单位成功任务成本。第\n\\ref{ch:week09-optimization}~章据此比较云端调用与自建服务的固定投入，\n附录~\\ref{app:ai-infra-lab}~提供数值计算。收费规则和性能会随服务、地区及\n合同变化，算例参数均为教学设定。",
+      "after": "每次请求的费用应按输入、输出、查询与工具调用分别核算。设输入与输出每百万 token 的单价分别为\n\\(c_p,c_o\\)，查询和工具的单位费用为 \\(c_q,c_t\\)，则\n\\[\n  c_{\\rm request}=\n    \\frac{p c_p+o c_o}{10^6}+c_q+c_t.\n\\]\n若失败任务必须重做，还要把失败尝试纳入单位成功任务成本。第\n\\ref{ch:week09-optimization}~章据此比较云端调用与自建服务的固定投入，\n附录~\\ref{app:ai-infra-lab}~提供数值计算。收费规则和性能会随服务、地区及\n合同变化，算例参数均为教学设定。"
+    },
+    {
+      "file": "docs/textbook/chapters/05_statistics_dashboard.tex",
+      "before": "配套样例提供数据 \\path{data/sample/daily_operations.csv}，粒度为一行一个经营日期，字段包括收入、订单数、交付订单数、准时订单数、平均延期天数、待处理订单数和质量问题数。配套代码分布为：\n\\begin{itemize}\n  \\item 统计案例：\\path{src/bdm_decision/cases/week05_statistics_dashboard.py}；\n  \\item dashboard HTML 工具：\\path{src/bdm_decision/app/dashboard.py}。\n\\end{itemize}",
+      "after": "配套样例提供数据 \\path{data/sample/daily_operations.csv}，粒度为一行一个经营日期，字段包括收入、订单数、交付订单数、准时订单数、平均延期天数、待处理订单数和质量问题数。配套代码分布为：\n\\begin{itemize}\n  \\item 统计案例：\\path{src/bdm_decision/cases/week05_statistics_dashboard.py}；\n  \\item HTML 看板工具：\\path{src/bdm_decision/app/dashboard.py}。\n\\end{itemize}"
+    },
+    {
+      "file": "docs/textbook/chapters/05_statistics_dashboard.tex",
+      "before": "这些数字构成看板的第一层摘要。第二层应解释：为什么准时率低于管理目标？收入异常高的日期来自哪个客户或产品？质量问题是否集中在延期较高的日期？这些问题需要回到第~\\ref{ch:week02-enterprise-data-model}~章的业务对象、第~\\ref{ch:week03-sql-kpi}~章的 SQL/KPI 和第~\\ref{ch:week04-data-quality}~章的质量失败记录。",
+      "after": "这些数字构成看板的第一层摘要。进一步分析应调查准时率与目标的差距、高收入日期对应的客户或产品，以及质量问题与延期的时间分布。调查需要结合第~\\ref{ch:week02-enterprise-data-model}~章的业务对象、第~\\ref{ch:week03-sql-kpi}~章的 SQL/KPI 和第~\\ref{ch:week04-data-quality}~章的质量失败记录。"
+    },
+    {
+      "file": "docs/textbook/chapters/05_statistics_dashboard.tex",
+      "before": "产品组合分解把总体变化分为组内变化与权重变化；控制图根据稳定过程的概率模型判断观测偏离；Little 定律和排队模型说明在制品、吞吐率与停留时间的联系。对人工智能服务，应分别记录首输出、完整请求和验收后的任务时间，并按负载估计并发与费用。这些分析为研究经营变化提供具体假设。下一章以随机实验估计管理干预的效果。",
+      "after": "产品组合分解把总体变化分为组内变化与权重变化；控制图根据稳定过程的概率模型判断观测偏离；Little 定律和排队模型说明在制品、吞吐率与停留时间的联系。对人工智能服务，应分别记录首输出、完整请求和验收后的任务时间，并按负载估计并发与费用。这些分析为研究经营变化提供可检验的假设。随机实验估计管理干预效果的方法见第~\\ref{ch:week06-ab-testing}~章。"
+    }
+  ]
+}

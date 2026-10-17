@@ -1,0 +1,40 @@
+{
+  "mobile": {
+    "contentWidth": 390,
+    "diagramScrollers": 15,
+    "documentWidth": 490,
+    "noteBounds": [
+      {
+        "left": 23,
+        "right": 367
+      }
+    ],
+    "notes": 11,
+    "viewport": 390
+  },
+  "keyboard": {
+    "focused": "fn2",
+    "note": "ETL 是 extract, transform, load 的缩写，即抽取、转换、装载：先从源系统取得数据，再完成清洗与结构转换，最后写入目标系统。↩︎",
+    "url": "http://127.0.0.1:61718/dist/#/chapter/01_intro?anchor=fn2"
+  },
+  "observation": "The body and notes fit 390px; the document scrollWidth reports 490px. Diagram content scrolls within its figure.",
+  "keyboardForward": {
+    "focused": "fn2",
+    "note": "ETL 是 extract, transform, load 的缩写，即抽取、转换、装载：先从源系统取得数据，再完成清洗与结构转换，最后写入目标系统。↩︎",
+    "url": "http://127.0.0.1:61718/dist/#/chapter/01_intro?anchor=fn2"
+  },
+  "keyboardReturn": {
+    "focused": "fnref2",
+    "url": "http://127.0.0.1:61718/dist/#/chapter/01_intro?anchor=fnref2"
+  },
+  "onlineAfterStickyHeaderFix": {
+    "background": "rgb(232, 243, 250)",
+    "bodyWidth": 390,
+    "focused": "fn2",
+    "headerBottom": 110,
+    "noteRight": 367,
+    "noteTop": 269.8203125,
+    "rootWidth": 490,
+    "viewport": 390
+  }
+}

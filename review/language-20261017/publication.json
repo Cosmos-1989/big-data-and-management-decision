@@ -1,0 +1,133 @@
+{
+  "verified_at_utc": "2026-10-17T02:28:48.636129+00:00",
+  "https_certificate_verification": true,
+  "files": [
+    {
+      "file": "index.html",
+      "local_sha256": "7ae3cfa992f882b043907977167eeea4c7595ca22146a5dc069b30013b1a161e",
+      "online_sha256": "7ae3cfa992f882b043907977167eeea4c7595ca22146a5dc069b30013b1a161e",
+      "match": true
+    },
+    {
+      "file": "app.js",
+      "local_sha256": "0c46de066e76db1a983ad99ad4237c9c9189cbbe817e5010ad505059e28361b5",
+      "online_sha256": "0c46de066e76db1a983ad99ad4237c9c9189cbbe817e5010ad505059e28361b5",
+      "match": true
+    },
+    {
+      "file": "ui-theme.css",
+      "local_sha256": "39c2c9c7187b1ed44bfe489426845f86c19fd5f7c84f2d8d26e47928118540f7",
+      "online_sha256": "39c2c9c7187b1ed44bfe489426845f86c19fd5f7c84f2d8d26e47928118540f7",
+      "match": true
+    },
+    {
+      "file": "slides-refined.css",
+      "local_sha256": "7cbc3444e56a02b7cccccddfe4d1a6501625a55b738272936a79c726ff15ddb8",
+      "online_sha256": "7cbc3444e56a02b7cccccddfe4d1a6501625a55b738272936a79c726ff15ddb8",
+      "match": true
+    },
+    {
+      "file": "slides.js",
+      "local_sha256": "0468308c526badc1ebe2edee0dc7a944eeed89dc630fdf59e213901db39716f9",
+      "online_sha256": "0468308c526badc1ebe2edee0dc7a944eeed89dc630fdf59e213901db39716f9",
+      "match": true
+    },
+    {
+      "file": "lab.js",
+      "local_sha256": "ee5e5debae8fcf898f5f805593e718a6b8a12a07ae40802205b47d9fecd104cd",
+      "online_sha256": "ee5e5debae8fcf898f5f805593e718a6b8a12a07ae40802205b47d9fecd104cd",
+      "match": true
+    },
+    {
+      "file": "experiments.js",
+      "local_sha256": "1af6549e25b3713b44a1e6318fe4b92dc135a27ee500178e0baa53a7f261dda4",
+      "online_sha256": "1af6549e25b3713b44a1e6318fe4b92dc135a27ee500178e0baa53a7f261dda4",
+      "match": true
+    },
+    {
+      "file": "content/01_intro.json",
+      "local_sha256": "3e825824e764f99ab3996e4d5bc55f969ab22ee7aa7b6e6118264eb77e3cb9a1",
+      "online_sha256": "3e825824e764f99ab3996e4d5bc55f969ab22ee7aa7b6e6118264eb77e3cb9a1",
+      "match": true
+    },
+    {
+      "file": "content/02_enterprise_data_model.json",
+      "local_sha256": "97247d4488759a07c9071921de72d4dd468d719dccc26bfdc38632b927817ea6",
+      "online_sha256": "97247d4488759a07c9071921de72d4dd468d719dccc26bfdc38632b927817ea6",
+      "match": true
+    },
+    {
+      "file": "content/14_ai_agent.json",
+      "local_sha256": "7f60f260c00a74aa9d1ea51ada8de005b7e305501d20158a21b2b61d0abed6fa",
+      "online_sha256": "7f60f260c00a74aa9d1ea51ada8de005b7e305501d20158a21b2b61d0abed6fa",
+      "match": true
+    },
+    {
+      "file": "content/catalog.json",
+      "local_sha256": "49433a5d2830f76e35f31b2a4f06d8949160ef0df9638d693ac1a5e6ae4e3393",
+      "online_sha256": "49433a5d2830f76e35f31b2a4f06d8949160ef0df9638d693ac1a5e6ae4e3393",
+      "match": true
+    },
+    {
+      "file": "content/syllabus.json",
+      "local_sha256": "c31597adaaad94687175f9e59883edf7527f05b245fd90ad6e8538dbbab5ff6c",
+      "online_sha256": "c31597adaaad94687175f9e59883edf7527f05b245fd90ad6e8538dbbab5ff6c",
+      "match": true
+    },
+    {
+      "file": "content/lecture-slides.json",
+      "local_sha256": "dfb6673bab444712c48c7ffbe06be67d35e1b6ba260d4f7e086349124e88074d",
+      "online_sha256": "dfb6673bab444712c48c7ffbe06be67d35e1b6ba260d4f7e086349124e88074d",
+      "match": true
+    },
+    {
+      "file": "content/case-cards.json",
+      "local_sha256": "b5a17b1851c937688bce4cfd132db1e8380440fe6b763bf2147143a5170ce31b",
+      "online_sha256": "b5a17b1851c937688bce4cfd132db1e8380440fe6b763bf2147143a5170ce31b",
+      "match": true
+    },
+    {
+      "file": "content/lab-specs.json",
+      "local_sha256": "892fef9c6df6177ddd3357f4775b8a45b9595e5efecb18c9449c0e6df2db42d6",
+      "online_sha256": "892fef9c6df6177ddd3357f4775b8a45b9595e5efecb18c9449c0e6df2db42d6",
+      "match": true
+    },
+    {
+      "file": "content/bibliography.json",
+      "local_sha256": "3950a64e858c13d539f530d57553ff3f62d01b3454a79ef5e3cd1e493d9df63b",
+      "online_sha256": "3950a64e858c13d539f530d57553ff3f62d01b3454a79ef5e3cd1e493d9df63b",
+      "match": true
+    },
+    {
+      "file": "downloads/bdm_textbook.pdf",
+      "local_sha256": "b57b563f877ade71ce973345744a368992bd28501be3fcdbe220298059e1c500",
+      "online_sha256": "b57b563f877ade71ce973345744a368992bd28501be3fcdbe220298059e1c500",
+      "match": true
+    },
+    {
+      "file": "assets/fonts/course-song-regular.woff2",
+      "local_sha256": "587fcd4d67f193d529775ffc92ae105f0e9c0ef0c343e1c9c45f982c08456c91",
+      "online_sha256": "587fcd4d67f193d529775ffc92ae105f0e9c0ef0c343e1c9c45f982c08456c91",
+      "match": true
+    },
+    {
+      "file": "assets/fonts/course-song-bold.woff2",
+      "local_sha256": "4e423d841257f1a8dd6851b9e72018a92d978180200b839c1f680dfb74ffb9a6",
+      "online_sha256": "4e423d841257f1a8dd6851b9e72018a92d978180200b839c1f680dfb74ffb9a6",
+      "match": true
+    },
+    {
+      "file": "downloads/enterprise-agent-course.md",
+      "local_sha256": "6b2cca9a1f619394d51e1ee7d4d384b12d0283ec08a7cc80279cd16bc48509a1",
+      "online_sha256": "6b2cca9a1f619394d51e1ee7d4d384b12d0283ec08a7cc80279cd16bc48509a1",
+      "match": true
+    },
+    {
+      "file": "downloads/enterprise-agent-kit.zip",
+      "local_sha256": "605a03820912804f90231b65062ac03b6e9c8d9604c0ca12b9cfa17219e2b59d",
+      "online_sha256": "605a03820912804f90231b65062ac03b6e9c8d9604c0ca12b9cfa17219e2b59d",
+      "match": true
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,457 @@
+[
+  {
+    "id": "01_intro",
+    "protected": {
+      "math": 95,
+      "citations": 15,
+      "images": 1
+    },
+    "codeBlocksPreserved": 1,
+    "anchorsPreserved": 57,
+    "document": "01_intro",
+    "changedTextNodes": 0,
+    "footnoteReferences": 11
+  },
+  {
+    "id": "02_enterprise_data_model",
+    "protected": {
+      "math": 139,
+      "citations": 45,
+      "images": 5
+    },
+    "codeBlocksPreserved": 1,
+    "anchorsPreserved": 77,
+    "document": "02_enterprise_data_model",
+    "changedTextNodes": 0,
+    "footnoteReferences": 11
+  },
+  {
+    "id": "03_sql_kpi",
+    "protected": {
+      "math": 82,
+      "citations": 21,
+      "images": 1
+    },
+    "codeBlocksPreserved": 4,
+    "anchorsPreserved": 51,
+    "document": "03_sql_kpi",
+    "changedTextNodes": 0,
+    "footnoteReferences": 7
+  },
+  {
+    "id": "04_data_quality",
+    "protected": {
+      "math": 97,
+      "citations": 18,
+      "images": 1
+    },
+    "codeBlocksPreserved": 3,
+    "anchorsPreserved": 49,
+    "document": "04_data_quality",
+    "changedTextNodes": 0,
+    "footnoteReferences": 5
+  },
+  {
+    "id": "05_statistics_dashboard",
+    "protected": {
+      "math": 131,
+      "citations": 13,
+      "images": 2
+    },
+    "codeBlocksPreserved": 1,
+    "anchorsPreserved": 47,
+    "document": "05_statistics_dashboard",
+    "changedTextNodes": 0,
+    "footnoteReferences": 4
+  },
+  {
+    "id": "06_ab_testing",
+    "protected": {
+      "math": 97,
+      "citations": 12,
+      "images": 1
+    },
+    "codeBlocksPreserved": 0,
+    "anchorsPreserved": 43,
+    "document": "06_ab_testing",
+    "changedTextNodes": 0,
+    "footnoteReferences": 6
+  },
+  {
+    "id": "07_prediction",
+    "protected": {
+      "math": 165,
+      "citations": 15,
+      "images": 1
+    },
+    "codeBlocksPreserved": 0,
+    "anchorsPreserved": 55,
+    "document": "07_prediction",
+    "changedTextNodes": 0,
+    "footnoteReferences": 10
+  },
+  {
+    "id": "08_causality",
+    "protected": {
+      "math": 117,
+      "citations": 15,
+      "images": 1
+    },
+    "codeBlocksPreserved": 0,
+    "anchorsPreserved": 46,
+    "document": "08_causality",
+    "changedTextNodes": 0,
+    "footnoteReferences": 4
+  },
+  {
+    "id": "09_optimization",
+    "protected": {
+      "math": 162,
+      "citations": 14,
+      "images": 1
+    },
+    "codeBlocksPreserved": 0,
+    "anchorsPreserved": 51,
+    "document": "09_optimization",
+    "changedTextNodes": 0,
+    "footnoteReferences": 7
+  },
+  {
+    "id": "10_process_mining",
+    "protected": {
+      "math": 78,
+      "citations": 38,
+      "images": 4
+    },
+    "codeBlocksPreserved": 0,
+    "anchorsPreserved": 62,
+    "document": "10_process_mining",
+    "changedTextNodes": 0,
+    "footnoteReferences": 8
+  },
+  {
+    "id": "11_modern_data_platform",
+    "protected": {
+      "math": 0,
+      "citations": 0,
+      "images": 0
+    },
+    "codeBlocksPreserved": 1,
+    "anchorsPreserved": 19,
+    "document": "11_modern_data_platform",
+    "changedTextNodes": 0,
+    "footnoteReferences": 4
+  },
+  {
+    "id": "12_mlops",
+    "protected": {
+      "math": 0,
+      "citations": 0,
+      "images": 0
+    },
+    "codeBlocksPreserved": 0,
+    "anchorsPreserved": 2,
+    "document": "12_mlops",
+    "changedTextNodes": 0,
+    "footnoteReferences": 0
+  },
+  {
+    "id": "13_ontology_action_scenario",
+    "protected": {
+      "math": 0,
+      "citations": 0,
+      "images": 0
+    },
+    "codeBlocksPreserved": 0,
+    "anchorsPreserved": 2,
+    "document": "13_ontology_action_scenario",
+    "changedTextNodes": 0,
+    "footnoteReferences": 0
+  },
+  {
+    "id": "ai_question_to_data_case",
+    "protected": {
+      "math": 0,
+      "citations": 0,
+      "images": 0
+    },
+    "codeBlocksPreserved": 1,
+    "anchorsPreserved": 5,
+    "document": "ai_question_to_data_case",
+    "changedTextNodes": 0,
+    "footnoteReferences": 0
+  },
+  {
+    "id": "appendix-1",
+    "protected": {
+      "math": 19,
+      "citations": 0,
+      "images": 0
+    },
+    "codeBlocksPreserved": 0,
+    "anchorsPreserved": 8,
+    "document": "appendix-1",
+    "changedTextNodes": 0,
+    "footnoteReferences": 0
+  },
+  {
+    "id": "appendix-2",
+    "protected": {
+      "math": 1,
+      "citations": 0,
+      "images": 0
+    },
+    "codeBlocksPreserved": 1,
+    "anchorsPreserved": 13,
+    "document": "appendix-2",
+    "changedTextNodes": 0,
+    "footnoteReferences": 2
+  },
+  {
+    "id": "appendix-3",
+    "protected": {
+      "math": 0,
+      "citations": 0,
+      "images": 0
+    },
+    "codeBlocksPreserved": 0,
+    "anchorsPreserved": 11,
+    "document": "appendix-3",
+    "changedTextNodes": 0,
+    "footnoteReferences": 1
+  },
+  {
+    "id": "appendix-4",
+    "protected": {
+      "math": 5,
+      "citations": 2,
+      "images": 0
+    },
+    "codeBlocksPreserved": 1,
+    "anchorsPreserved": 12,
+    "document": "appendix-4",
+    "changedTextNodes": 0,
+    "footnoteReferences": 1
+  },
+  {
+    "id": "assignment_01_data_modeling",
+    "protected": {
+      "math": 0,
+      "citations": 0,
+      "images": 0
+    },
+    "codeBlocksPreserved": 0,
+    "anchorsPreserved": 4,
+    "document": "assignment_01_data_modeling",
+    "changedTextNodes": 0,
+    "footnoteReferences": 0
+  },
+  {
+    "id": "assignment_02_enterprise_data_model",
+    "protected": {
+      "math": 0,
+      "citations": 0,
+      "images": 0
+    },
+    "codeBlocksPreserved": 0,
+    "anchorsPreserved": 3,
+    "document": "assignment_02_enterprise_data_model",
+    "changedTextNodes": 0,
+    "footnoteReferences": 0
+  },
+  {
+    "id": "assignment_03_sql_kpi",
+    "protected": {
+      "math": 0,
+      "citations": 0,
+      "images": 0
+    },
+    "codeBlocksPreserved": 0,
+    "anchorsPreserved": 4,
+    "document": "assignment_03_sql_kpi",
+    "changedTextNodes": 0,
+    "footnoteReferences": 0
+  },
+  {
+    "id": "assignment_04_data_quality",
+    "protected": {
+      "math": 0,
+      "citations": 0,
+      "images": 0
+    },
+    "codeBlocksPreserved": 0,
+    "anchorsPreserved": 4,
+    "document": "assignment_04_data_quality",
+    "changedTextNodes": 0,
+    "footnoteReferences": 0
+  },
+  {
+    "id": "assignment_05_dashboard",
+    "protected": {
+      "math": 0,
+      "citations": 0,
+      "images": 0
+    },
+    "codeBlocksPreserved": 0,
+    "anchorsPreserved": 4,
+    "document": "assignment_05_dashboard",
+    "changedTextNodes": 0,
+    "footnoteReferences": 0
+  },
+  {
+    "id": "assignment_06_statistical_inference",
+    "protected": {
+      "math": 0,
+      "citations": 0,
+      "images": 0
+    },
+    "codeBlocksPreserved": 0,
+    "anchorsPreserved": 5,
+    "document": "assignment_06_statistical_inference",
+    "changedTextNodes": 0,
+    "footnoteReferences": 0
+  },
+  {
+    "id": "assignment_07_prediction",
+    "protected": {
+      "math": 0,
+      "citations": 0,
+      "images": 0
+    },
+    "codeBlocksPreserved": 0,
+    "anchorsPreserved": 3,
+    "document": "assignment_07_prediction",
+    "changedTextNodes": 0,
+    "footnoteReferences": 0
+  },
+  {
+    "id": "assignment_09_causality",
+    "protected": {
+      "math": 0,
+      "citations": 0,
+      "images": 0
+    },
+    "codeBlocksPreserved": 0,
+    "anchorsPreserved": 3,
+    "document": "assignment_09_causality",
+    "changedTextNodes": 0,
+    "footnoteReferences": 0
+  },
+  {
+    "id": "assignment_11_optimization",
+    "protected": {
+      "math": 0,
+      "citations": 0,
+      "images": 0
+    },
+    "codeBlocksPreserved": 0,
+    "anchorsPreserved": 6,
+    "document": "assignment_11_optimization",
+    "changedTextNodes": 0,
+    "footnoteReferences": 1
+  },
+  {
+    "id": "assignment_12_process_mining",
+    "protected": {
+      "math": 0,
+      "citations": 0,
+      "images": 0
+    },
+    "codeBlocksPreserved": 0,
+    "anchorsPreserved": 3,
+    "document": "assignment_12_process_mining",
+    "changedTextNodes": 0,
+    "footnoteReferences": 0
+  },
+  {
+    "id": "data-guide",
+    "protected": {
+      "math": 0,
+      "citations": 0,
+      "images": 0
+    },
+    "codeBlocksPreserved": 0,
+    "anchorsPreserved": 0,
+    "document": "data-guide",
+    "changedTextNodes": 0,
+    "footnoteReferences": 0
+  },
+  {
+    "id": "decision_memo_template",
+    "protected": {
+      "math": 0,
+      "citations": 0,
+      "images": 0
+    },
+    "codeBlocksPreserved": 0,
+    "anchorsPreserved": 6,
+    "document": "decision_memo_template",
+    "changedTextNodes": 0,
+    "footnoteReferences": 0
+  },
+  {
+    "id": "model_card_template",
+    "protected": {
+      "math": 0,
+      "citations": 0,
+      "images": 0
+    },
+    "codeBlocksPreserved": 0,
+    "anchorsPreserved": 7,
+    "document": "model_card_template",
+    "changedTextNodes": 0,
+    "footnoteReferences": 0
+  },
+  {
+    "id": "preface",
+    "protected": {
+      "math": 16,
+      "citations": 0,
+      "images": 1
+    },
+    "codeBlocksPreserved": 0,
+    "anchorsPreserved": 6,
+    "document": "preface",
+    "changedTextNodes": 0,
+    "footnoteReferences": 0
+  },
+  {
+    "id": "project_report_template",
+    "protected": {
+      "math": 0,
+      "citations": 0,
+      "images": 0
+    },
+    "codeBlocksPreserved": 0,
+    "anchorsPreserved": 7,
+    "document": "project_report_template",
+    "changedTextNodes": 0,
+    "footnoteReferences": 0
+  },
+  {
+    "id": "semiconductor_kpi_m13_case",
+    "protected": {
+      "math": 0,
+      "citations": 0,
+      "images": 0
+    },
+    "codeBlocksPreserved": 1,
+    "anchorsPreserved": 9,
+    "document": "semiconductor_kpi_m13_case",
+    "changedTextNodes": 0,
+    "footnoteReferences": 1
+  },
+  {
+    "id": "syllabus",
+    "protected": {
+      "math": 0,
+      "citations": 0,
+      "images": 0
+    },
+    "codeBlocksPreserved": 0,
+    "anchorsPreserved": 7,
+    "document": "syllabus",
+    "changedTextNodes": 0,
+    "footnoteReferences": 0
+  }
+]

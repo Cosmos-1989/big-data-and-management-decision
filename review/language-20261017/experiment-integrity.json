@@ -1,0 +1,10 @@
+{
+  "experiments": 21,
+  "changedCodeLabels": [
+    "process"
+  ],
+  "errors": [],
+  "annotatedCodeCorrections": {
+    "process": "Two output labels and their explanatory comment now distinguish elapsed intervals from waiting time; no algorithm, data or numeric parameter changed."
+  }
+}

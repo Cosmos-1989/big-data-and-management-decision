@@ -1,0 +1,20 @@
+{
+  "process": {
+    "newLabel": true,
+    "oldLabel": false,
+    "output": "ent → pack_order11order_received → pick_items21quality_check → invoice_sent11ship_order → payment_received481合规异常case_idissueO2C004missing credit_checkO2C007activity order violation平均吞吐时间（小时）: 114.88\n",
+    "status": "运行完成"
+  },
+  "statistics": {
+    "error": null,
+    "parameters": [
+      "移动平均窗口 / 观测期3"
+    ],
+    "results": [
+      "运营指标",
+      "收入趋势",
+      "收入描述统计"
+    ],
+    "status": "运行完成"
+  }
+}

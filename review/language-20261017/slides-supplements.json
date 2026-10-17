@@ -1,0 +1,4488 @@
+{
+  "reviewedDocuments": [
+    "docs/lecture_notes/11_modern_data_platform.md",
+    "docs/lecture_notes/14_ai_agent.md",
+    "docs/cases/ai_question_to_data_case.md",
+    "docs/cases/semiconductor_kpi_m13_case.md",
+    "docs/syllabus.md",
+    "assignments/assignment_01_data_modeling.md",
+    "assignments/assignment_02_enterprise_data_model.md",
+    "assignments/assignment_03_sql_kpi.md",
+    "assignments/assignment_04_data_quality.md",
+    "assignments/assignment_05_dashboard.md",
+    "assignments/assignment_06_statistical_inference.md",
+    "assignments/assignment_07_prediction.md",
+    "assignments/assignment_09_causality.md",
+    "assignments/assignment_11_optimization.md",
+    "assignments/assignment_12_process_mining.md",
+    "assignments/final_project.md",
+    "reports/decision_memo_template.md",
+    "reports/model_card_template.md",
+    "reports/project_report_template.md",
+    "data/sample/README.md",
+    "docs/lecture_notes/12_mlops.md",
+    "docs/lecture_notes/13_ontology_action_scenario.md"
+  ],
+  "changes": [
+    {
+      "file": "docs/lecture_notes/11_modern_data_platform.md",
+      "before": "区分数据库、数据仓库、数据湖和 lakehouse 的管理含义",
+      "after": "区分数据库、数据仓库、数据湖和湖仓一体（lakehouse）的用途",
+      "reason": "修改语序或搭配，使学术表述准确、自然",
+      "occurrences": 1
+    },
+    {
+      "file": "docs/lecture_notes/11_modern_data_platform.md",
+      "before": "解释 bronze/silver/gold 分层如何支撑可复现分析",
+      "after": "解释 bronze/silver/gold 分层[^medallion]如何支持可复现分析",
+      "reason": "首次出现的数据分层名称增加释义",
+      "occurrences": 1
+    },
+    {
+      "file": "docs/lecture_notes/11_modern_data_platform.md",
+      "before": "将半导体制造 KPI 映射为可治理的数据产品",
+      "after": "将半导体制造关键绩效指标（KPI）组织为具有明确责任和使用规则的数据产品",
+      "reason": "修改语序或搭配，使学术表述准确、自然",
+      "occurrences": 1
+    },
+    {
+      "file": "docs/lecture_notes/11_modern_data_platform.md",
+      "before": "说明 SiFactory-like 制造决策系统需要哪些数据对象、指标层和审计机制",
+      "after": "说明制造决策系统原型（SiFactory-like）所需的数据对象、指标层和审计机制",
+      "reason": "修改语序或搭配，使学术表述准确、自然",
+      "occurrences": 1
+    },
+    {
+      "file": "docs/lecture_notes/11_modern_data_platform.md",
+      "before": "当管理者问“为什么某条线 OEE 下降、WIP 上升、OTD 变差”时，系统不能只返回一张临时 SQL 表。它需要知道设备、批次、工站、订单、质量事件、维护事件和指标口径之间的关系。",
+      "after": "当管理者问“为什么某条产线的 OEE 下降、WIP 上升、OTD 下降”[^manufacturing-kpi]时，仅返回临时查询结果不足以解释这些变化。分析还需要关联设备、批次、工站、订单、质量事件和维护事件，并确认各项指标的计算口径。",
+      "reason": "修改语序或搭配，使学术表述准确、自然",
+      "occurrences": 1
+    },
+    {
+      "file": "docs/lecture_notes/11_modern_data_platform.md",
+      "before": "数据仓库：面向主题、集成、稳定、可分析；",
+      "after": "数据仓库：围绕业务主题整合多源数据，保存支持历史分析的统一记录；",
+      "reason": "修改语序或搭配，使学术表述准确、自然",
+      "occurrences": 1
+    },
+    {
+      "file": "docs/lecture_notes/11_modern_data_platform.md",
+      "before": "数据湖：保留多源异构数据和原始明细；",
+      "after": "数据湖：集中保存不同来源和格式的数据，包括供后续处理的原始明细；",
+      "reason": "修改语序或搭配，使学术表述准确、自然",
+      "occurrences": 1
+    },
+    {
+      "file": "docs/lecture_notes/11_modern_data_platform.md",
+      "before": "lakehouse：在开放存储上结合湖的灵活性与仓库的治理能力；",
+      "after": "湖仓一体：在数据湖存储基础上提供表管理、事务与分析能力，结合多格式数据存储和仓库式管理；",
+      "reason": "修改语序或搭配，使学术表述准确、自然",
+      "occurrences": 1
+    },
+    {
+      "file": "docs/lecture_notes/11_modern_data_platform.md",
+      "before": "数据产品：有 owner、SLA、质量规则和消费接口的数据资产。",
+      "after": "数据产品：具有明确责任人、服务水平协议（SLA）[^sla]、质量规则和访问接口的数据资产。",
+      "reason": "修改语序或搭配，使学术表述准确、自然",
+      "occurrences": 1
+    },
+    {
+      "file": "docs/lecture_notes/11_modern_data_platform.md",
+      "before": "半导体制造场景的 gold 层至少包含：",
+      "after": "在本案例设计中，gold 层以面向特定分析任务的数据集市[^mart]组织制造指标：",
+      "reason": "修改语序或搭配，使学术表述准确、自然",
+      "occurrences": 1
+    },
+    {
+      "file": "docs/lecture_notes/11_modern_data_platform.md",
+      "before": "lot KPI mart",
+      "after": "批次 KPI 数据集市（lot KPI mart）",
+      "reason": "为数据集名称补充中文含义，保留原英文名称",
+      "occurrences": 1
+    },
+    {
+      "file": "docs/lecture_notes/11_modern_data_platform.md",
+      "before": "equipment KPI mart",
+      "after": "设备 KPI 数据集市（equipment KPI mart）",
+      "reason": "为数据集名称补充中文含义，保留原英文名称",
+      "occurrences": 1
+    },
+    {
+      "file": "docs/lecture_notes/11_modern_data_platform.md",
+      "before": "work-center daily KPI mart",
+      "after": "工作中心日 KPI 数据集市（work-center daily KPI mart）",
+      "reason": "为数据集名称补充中文含义，保留原英文名称",
+      "occurrences": 1
+    },
+    {
+      "file": "docs/lecture_notes/11_modern_data_platform.md",
+      "before": "order delivery KPI mart",
+      "after": "订单交付 KPI 数据集市（order delivery KPI mart）",
+      "reason": "为数据集名称补充中文含义，保留原英文名称",
+      "occurrences": 1
+    },
+    {
+      "file": "docs/lecture_notes/11_modern_data_platform.md",
+      "before": "M13 element mapping table",
+      "after": "运营要素映射表（M13 element mapping table）",
+      "reason": "为数据集名称补充中文含义，保留原英文名称",
+      "occurrences": 1
+    },
+    {
+      "file": "docs/lecture_notes/11_modern_data_platform.md",
+      "before": "如何把 M13 要素作为诊断导航，而不是零散指标列表。",
+      "after": "如何依据 M13 运营要素分类组织诊断，将指标变化关联到待核查的业务环节。",
+      "reason": "修改语序或搭配，使学术表述准确、自然",
+      "occurrences": 1
+    },
+    {
+      "file": "docs/lecture_notes/11_modern_data_platform.md",
+      "before": "把数据湖仓理解为存储系统升级，而不是治理机制升级；",
+      "after": "仅更换存储系统，未同步建立质量、权限、版本和责任规则；",
+      "reason": "以具体错误替代空泛对比",
+      "occurrences": 1
+    },
+    {
+      "file": "docs/lecture_notes/11_modern_data_platform.md",
+      "before": "只建设宽表，不定义指标 owner 和质量规则；",
+      "after": "只建设宽表，不明确指标责任人和质量规则；",
+      "reason": "修改语序或搭配，使学术表述准确、自然",
+      "occurrences": 1
+    },
+    {
+      "file": "docs/lecture_notes/11_modern_data_platform.md",
+      "before": "只看 dashboard，不保留行动和反馈日志。",
+      "after": "只查看运营看板，不保留行动与结果反馈日志。",
+      "reason": "修改语序或搭配，使学术表述准确、自然",
+      "occurrences": 1
+    },
+    {
+      "file": "docs/lecture_notes/14_ai_agent.md",
+      "before": "可以把系统分解为 LLM、Planning、Memory、Tools、Skills、Harness 六项功能。此分解用于分析设计，不是业界统一且严格的定义。",
+      "after": "从功能上，可区分大语言模型（LLM）[^llm]、规划（Planning）、记忆（Memory）、工具（Tools）、技能（Skills）和运行控制（Harness）。这是一种系统分析框架，具体产品对功能的划分和命名可能不同。",
+      "reason": "为英文模块补充中文名称，明确分析框架的适用范围",
+      "occurrences": 1
+    },
+    {
+      "file": "docs/lecture_notes/14_ai_agent.md",
+      "before": "检索到的未可信文本不能变成系统指令",
+      "after": "检索到的不可信文本不能被当作系统指令",
+      "reason": "修改语序或搭配，使学术表述准确、自然",
+      "occurrences": 1
+    },
+    {
+      "file": "docs/lecture_notes/14_ai_agent.md",
+      "before": "关键**不变量**是无有效审批不得进入",
+      "after": "必须保持的**不变量**[^invariant]包括：无有效审批不得进入",
+      "reason": "解释状态机术语并理顺列举句式",
+      "occurrences": 1
+    },
+    {
+      "file": "docs/lecture_notes/14_ai_agent.md",
+      "before": "无效输入按失败关闭处理。",
+      "after": "无效输入按失败关闭原则[^fail-closed]处理。",
+      "reason": "解释失败关闭原则",
+      "occurrences": 1
+    },
+    {
+      "file": "docs/lecture_notes/14_ai_agent.md",
+      "before": "它提高了“能找到证据”的机会，并不保证资料正确、检索正确或答案真实。",
+      "after": "外部检索增加了可用证据，但资料可能有误，检索可能失配，生成的答案也可能不受证据支持。",
+      "reason": "修改语序或搭配，使学术表述准确、自然",
+      "occurrences": 1
+    },
+    {
+      "file": "docs/lecture_notes/14_ai_agent.md",
+      "before": "对扫描版制度，OCR 之后要核对金额、日期、比较符号和表格行列",
+      "after": "对扫描版制度，完成光学字符识别（OCR）[^ocr]后，须核对金额、日期、比较符号和表格行列",
+      "reason": "首次出现OCR解释并避免主语悬置",
+      "occurrences": 1
+    },
+    {
+      "file": "docs/lecture_notes/14_ai_agent.md",
+      "before": "相似度高只表示表示空间中的接近",
+      "after": "相似度高只表明两个向量在该表示空间中接近",
+      "reason": "修改语序或搭配，使学术表述准确、自然",
+      "occurrences": 1
+    },
+    {
+      "file": "docs/lecture_notes/14_ai_agent.md",
+      "before": "最终答复仍需逐条检查适用日期和引用是否支持结论。",
+      "after": "形成最终答复前，仍须逐条核查资料的适用日期，并确认引用能够支持结论。",
+      "reason": "修改语序或搭配，使学术表述准确、自然",
+      "occurrences": 1
+    },
+    {
+      "file": "docs/lecture_notes/14_ai_agent.md",
+      "before": "Prompt（提示设计）应分别说明任务",
+      "after": "提示词（Prompt）应分别说明任务",
+      "reason": "区分提示词这一输入与提示设计这一活动",
+      "occurrences": 1
+    },
+    {
+      "file": "docs/lecture_notes/14_ai_agent.md",
+      "before": "而不只测一句答复是否流畅",
+      "after": "并核查答复是否流畅",
+      "reason": "将必要的语言质量评价与任务评价并列，避免模板式排斥",
+      "occurrences": 1
+    },
+    {
+      "file": "docs/lecture_notes/14_ai_agent.md",
+      "before": "只有在降低错误、减少上下文干扰或改进可维护性时才值得增加",
+      "after": "只有在能够减少错误与上下文干扰，或改善可维护性时才有必要",
+      "reason": "修改语序或搭配，使学术表述准确、自然",
+      "occurrences": 1
+    },
+    {
+      "file": "docs/lecture_notes/14_ai_agent.md",
+      "before": "检索前做文档 ACL 过滤",
+      "after": "检索前依据文档访问控制列表（ACL）[^acl]过滤资料",
+      "reason": "补充访问控制列表的含义",
+      "occurrences": 1
+    },
+    {
+      "file": "docs/lecture_notes/14_ai_agent.md",
+      "before": "只读分析系统与 PLC/安全联锁分离",
+      "after": "只读分析系统与可编程逻辑控制器（PLC）[^plc]及安全联锁系统分离",
+      "reason": "首次解释PLC并明确隔离对象",
+      "occurrences": 1
+    },
+    {
+      "file": "docs/lecture_notes/14_ai_agent.md",
+      "before": "用户没有要求也未授权改代码、合并补丁或发布研发结论。",
+      "after": "本任务不包括修改代码、合并补丁或发布研发结论，相关操作均未获授权。",
+      "reason": "去除面向对话用户的过程性口吻，保留授权边界",
+      "occurrences": 1
+    },
+    {
+      "file": "docs/lecture_notes/14_ai_agent.md",
+      "before": "目标是减少漏掉高优先级事件与越权披露，而不是使模型自动处理所有投诉。",
+      "after": "任务目标是减少高优先级事件漏报与越权披露，并将需由人工处理的事项转交相应人员。",
+      "reason": "修改语序或搭配，使学术表述准确、自然",
+      "occurrences": 1
+    },
+    {
+      "file": "docs/lecture_notes/14_ai_agent.md",
+      "before": "年龄超过 60 s 或关键数值缺失、非数值时",
+      "after": "读数距采集时点超过 60 s，或关键数值缺失、非数值时",
+      "reason": "将传感器age准确表述为读数时效，而非设备年龄",
+      "occurrences": 1
+    },
+    {
+      "file": "docs/lecture_notes/14_ai_agent.md",
+      "before": "另造一条相同读数但",
+      "after": "另设一条读数相同但",
+      "reason": "修改语序或搭配，使学术表述准确、自然",
+      "occurrences": 1
+    },
+    {
+      "file": "docs/lecture_notes/14_ai_agent.md",
+      "before": "若载荷变化则须交人工核查，不可悄悄覆盖。",
+      "after": "若载荷变化，则须交人工核查，不得覆盖原记录。",
+      "reason": "修改语序或搭配，使学术表述准确、自然",
+      "occurrences": 1
+    },
+    {
+      "file": "docs/lecture_notes/14_ai_agent.md",
+      "before": "经济评价应比较完整的投入与效果。",
+      "after": "经济评价应覆盖任务全过程的投入与效果。",
+      "reason": "修改语序或搭配，使学术表述准确、自然",
+      "occurrences": 1
+    },
+    {
+      "file": "docs/lecture_notes/14_ai_agent.md",
+      "before": "推广后仍需观测真实使用",
+      "after": "推广后仍须监测实际运行情况",
+      "reason": "修改语序或搭配，使学术表述准确、自然",
+      "occurrences": 1
+    },
+    {
+      "file": "docs/lecture_notes/14_ai_agent.md",
+      "before": "模型和工具 API 都要版本化",
+      "after": "模型和工具应用程序接口（API）[^api]都须记录版本",
+      "reason": "解释API并避免口语化的“都要版本化”",
+      "occurrences": 1
+    },
+    {
+      "file": "assignments/assignment_01_data_modeling.md",
+      "before": "# Assignment 01:",
+      "after": "# 作业 01：",
+      "reason": "作业标题采用一致的中文名称，保留编号",
+      "occurrences": 1
+    },
+    {
+      "file": "assignments/assignment_02_enterprise_data_model.md",
+      "before": "# Assignment 02:",
+      "after": "# 作业 02：",
+      "reason": "作业标题采用一致的中文名称，保留编号",
+      "occurrences": 1
+    },
+    {
+      "file": "assignments/assignment_03_sql_kpi.md",
+      "before": "# Assignment 03:",
+      "after": "# 作业 03：",
+      "reason": "作业标题采用一致的中文名称，保留编号",
+      "occurrences": 1
+    },
+    {
+      "file": "assignments/assignment_04_data_quality.md",
+      "before": "# Assignment 04:",
+      "after": "# 作业 04：",
+      "reason": "作业标题采用一致的中文名称，保留编号",
+      "occurrences": 1
+    },
+    {
+      "file": "assignments/assignment_05_dashboard.md",
+      "before": "# Assignment 05:",
+      "after": "# 作业 05：",
+      "reason": "作业标题采用一致的中文名称，保留编号",
+      "occurrences": 1
+    },
+    {
+      "file": "assignments/assignment_06_statistical_inference.md",
+      "before": "# Assignment 06:",
+      "after": "# 作业 06：",
+      "reason": "作业标题采用一致的中文名称，保留编号",
+      "occurrences": 1
+    },
+    {
+      "file": "assignments/assignment_07_prediction.md",
+      "before": "# Assignment 07:",
+      "after": "# 作业 07：",
+      "reason": "作业标题采用一致的中文名称，保留编号",
+      "occurrences": 1
+    },
+    {
+      "file": "assignments/assignment_09_causality.md",
+      "before": "# Assignment 09:",
+      "after": "# 作业 09：",
+      "reason": "作业标题采用一致的中文名称，保留编号",
+      "occurrences": 1
+    },
+    {
+      "file": "assignments/assignment_11_optimization.md",
+      "before": "# Assignment 11:",
+      "after": "# 作业 11：",
+      "reason": "作业标题采用一致的中文名称，保留编号",
+      "occurrences": 1
+    },
+    {
+      "file": "assignments/assignment_12_process_mining.md",
+      "before": "# Assignment 12:",
+      "after": "# 作业 12：",
+      "reason": "作业标题采用一致的中文名称，保留编号",
+      "occurrences": 1
+    },
+    {
+      "file": "assignments/assignment_01_data_modeling.md",
+      "before": "你需要选择一个企业运营症状，并把它转化为一个可以继续开发为数据分析项目的问题框架。",
+      "after": "请选择一种企业运营症状，明确相应的管理问题、数据需求和可采取的行动，为后续数据分析建立问题框架。",
+      "reason": "修改语序或搭配，使学术表述准确、自然",
+      "occurrences": 1
+    },
+    {
+      "file": "assignments/assignment_02_enterprise_data_model.md",
+      "before": "推荐使用半导体制造方向时，至少覆盖 lot、equipment、operation、product、WIP 或 order 中的 4 类对象。",
+      "after": "若选择半导体制造方向，至少覆盖批次（lot）、设备（equipment）、工序（operation）、产品（product）、在制品（WIP）或订单（order）中的 4 类对象。",
+      "reason": "修正主谓搭配，并补充英文对象名称的中文含义",
+      "occurrences": 1
+    },
+    {
+      "file": "assignments/assignment_03_sql_kpi.md",
+      "before": "本作业新增 AI 问数可选任务，用于训练 NL2SQL 生成结果的审计能力。",
+      "after": "可选的 AI 问数任务要求审计自然语言转 SQL（NL2SQL）的生成结果。",
+      "reason": "删除版本更新痕迹，直接陈述任务要求",
+      "occurrences": 1
+    },
+    {
+      "file": "assignments/assignment_04_data_quality.md",
+      "before": "哪些失败应设为 error，哪些可以设为 warning；",
+      "after": "哪些规则失败应列为错误（error），哪些可列为警告（warning）；",
+      "reason": "修改语序或搭配，使学术表述准确、自然",
+      "occurrences": 1
+    },
+    {
+      "file": "assignments/assignment_04_data_quality.md",
+      "before": "能准确返回失败记录，而不是只给出抽象结论。",
+      "after": "能准确返回违反规则的记录。",
+      "reason": "修改语序或搭配，使学术表述准确、自然",
+      "occurrences": 1
+    },
+    {
+      "file": "assignments/assignment_04_data_quality.md",
+      "before": "能提出 owner、steward、门禁和修复流程。",
+      "after": "能明确数据责任人（owner）、日常治理负责人（steward）、发布控制和修复流程。",
+      "reason": "修改语序或搭配，使学术表述准确、自然",
+      "occurrences": 1
+    },
+    {
+      "file": "assignments/assignment_04_data_quality.md",
+      "before": "比较 clean dataset 与 dirty dataset 的质量报告差异。",
+      "after": "比较无预设异常数据集（clean dataset）与含预设异常数据集（dirty dataset）的质量报告。",
+      "reason": "修改语序或搭配，使学术表述准确、自然",
+      "occurrences": 1
+    },
+    {
+      "file": "assignments/assignment_05_dashboard.md",
+      "before": "描述统计、Dashboard 与管理沟通",
+      "after": "描述统计、运营看板与管理沟通",
+      "reason": "修改语序或搭配，使学术表述准确、自然",
+      "occurrences": 1
+    },
+    {
+      "file": "assignments/assignment_05_dashboard.md",
+      "before": "经营 dashboard 原型",
+      "after": "经营看板原型",
+      "reason": "修改语序或搭配，使学术表述准确、自然",
+      "occurrences": 1
+    },
+    {
+      "file": "assignments/assignment_05_dashboard.md",
+      "before": "作业重点不是图表数量，而是能否用描述统计、比较基准、异常识别和质量提示支持管理判断。",
+      "after": "看板须通过描述统计、基准比较、异常识别和质量提示支持管理判断。",
+      "reason": "修改语序或搭配，使学术表述准确、自然",
+      "occurrences": 1
+    },
+    {
+      "file": "assignments/assignment_05_dashboard.md",
+      "before": "一份 dashboard 原型",
+      "after": "一份运营看板原型",
+      "reason": "修改语序或搭配，使学术表述准确、自然",
+      "occurrences": 1
+    },
+    {
+      "file": "assignments/assignment_05_dashboard.md",
+      "before": "若选择半导体制造数据，dashboard 至少包含",
+      "after": "若选择半导体制造数据，运营看板至少包含",
+      "reason": "修改语序或搭配，使学术表述准确、自然",
+      "occurrences": 1
+    },
+    {
+      "file": "assignments/assignment_05_dashboard.md",
+      "before": "Dashboard 结构",
+      "after": "看板结构",
+      "reason": "修改语序或搭配，使学术表述准确、自然",
+      "occurrences": 1
+    },
+    {
+      "file": "assignments/assignment_05_dashboard.md",
+      "before": "可打开的 dashboard",
+      "after": "可在浏览器查看的运营看板",
+      "reason": "修改语序或搭配，使学术表述准确、自然",
+      "occurrences": 1
+    },
+    {
+      "file": "assignments/assignment_05_dashboard.md",
+      "before": "将 dashboard 与第 4 周质量报告联动",
+      "after": "将运营看板与第 4 周质量报告关联",
+      "reason": "修改语序或搭配，使学术表述准确、自然",
+      "occurrences": 1
+    },
+    {
+      "file": "assignments/assignment_05_dashboard.md",
+      "before": "四分位数、IQR、标准差",
+      "after": "四分位数、四分位距（IQR）、标准差",
+      "reason": "在已有中文统计名称中解释IQR",
+      "occurrences": 1
+    },
+    {
+      "file": "assignments/assignment_06_statistical_inference.md",
+      "before": "重点不是机械计算显著性，而是说明差异、不确定性、样本量、护栏指标和行动建议之间的关系。",
+      "after": "分析须说明效应差异、不确定性、样本量、护栏指标与行动建议之间的关系。",
+      "reason": "修改语序或搭配，使学术表述准确、自然",
+      "occurrences": 1
+    },
+    {
+      "file": "assignments/assignment_06_statistical_inference.md",
+      "before": "实验分析 memo",
+      "after": "实验分析备忘录",
+      "reason": "修改语序或搭配，使学术表述准确、自然",
+      "occurrences": 1
+    },
+    {
+      "file": "assignments/assignment_06_statistical_inference.md",
+      "before": "memo 中",
+      "after": "备忘录中",
+      "reason": "修改语序或搭配，使学术表述准确、自然",
+      "occurrences": 1
+    },
+    {
+      "file": "assignments/assignment_06_statistical_inference.md",
+      "before": "请在 memo 末尾回答",
+      "after": "请在备忘录末尾回答",
+      "reason": "修改语序或搭配，使学术表述准确、自然",
+      "occurrences": 1
+    },
+    {
+      "file": "assignments/assignment_07_prediction.md",
+      "before": "请将预测模型视为管理决策系统的一部分，而不是单纯追求准确率的算法练习。",
+      "after": "分析应同时评价预测表现，以及预测如何支持客户留存决策。",
+      "reason": "修改语序或搭配，使学术表述准确、自然",
+      "occurrences": 1
+    },
+    {
+      "file": "assignments/assignment_07_prediction.md",
+      "before": "confusion matrix、accuracy、precision、recall、F1、ROC AUC 和 log loss",
+      "after": "混淆矩阵（confusion matrix）、准确率（accuracy）、精准率（precision）、召回率（recall）、F1、ROC AUC 和对数损失（log loss）",
+      "reason": "修改语序或搭配，使学术表述准确、自然",
+      "occurrences": 1
+    },
+    {
+      "file": "assignments/assignment_09_causality.md",
+      "before": "请注意：优惠券并非随机发放，而是更可能发给高风险客户，因此朴素比较会受到选择偏差影响。",
+      "after": "优惠券更可能发给高风险客户，发放机制并非随机，因此两组留存率的直接比较可能受到选择偏差影响。",
+      "reason": "修改语序或搭配，使学术表述准确、自然",
+      "occurrences": 1
+    },
+    {
+      "file": "assignments/assignment_09_causality.md",
+      "before": "treated 和 control 的朴素留存率差异为 0",
+      "after": "处理组（treated）和对照组（control）的朴素留存率差异为 0",
+      "reason": "修改语序或搭配，使学术表述准确、自然",
+      "occurrences": 1
+    },
+    {
+      "file": "assignments/assignment_09_causality.md",
+      "before": "写出 treated change、control change 和 DID estimate",
+      "after": "写出处理组变化（treated change）、对照组变化（control change）和差分中的差分估计（DID estimate）",
+      "reason": "修改语序或搭配，使学术表述准确、自然",
+      "occurrences": 1
+    },
+    {
+      "file": "assignments/assignment_09_causality.md",
+      "before": "naive、risk-band stratification、IPW 和 DID",
+      "after": "朴素比较（naive）、风险分层（risk-band stratification）、逆概率加权（IPW）和差分中的差分（DID）",
+      "reason": "修改语序或搭配，使学术表述准确、自然",
+      "occurrences": 1
+    },
+    {
+      "file": "assignments/assignment_11_optimization.md",
+      "before": "任选一个 SKU，",
+      "after": "任选一个库存管理单位（SKU）[^sku]，",
+      "reason": "首次出现库存编码缩写增加释义",
+      "occurrences": 1
+    },
+    {
+      "file": "assignments/assignment_12_process_mining.md",
+      "before": "的 order-to-cash 事件日志展开。请将事件日志视为业务流程的可计算证据，而不是普通流水表。",
+      "after": "的订单到收款（order-to-cash）事件日志展开。分析须利用事件的实例归属、活动顺序与时间戳，研究流程路径、耗时和合规情况。",
+      "reason": "修改语序或搭配，使学术表述准确、自然",
+      "occurrences": 1
+    },
+    {
+      "file": "assignments/assignment_12_process_mining.md",
+      "before": "case id、activity、timestamp、resource、trace 和 variant 的含义",
+      "after": "实例标识（case id）、活动（activity）、时间戳（timestamp）、执行资源（resource）、轨迹（trace）和变体（variant）的含义",
+      "reason": "修改语序或搭配，使学术表述准确、自然",
+      "occurrences": 1
+    },
+    {
+      "file": "assignments/assignment_12_process_mining.md",
+      "before": "前两个流程变体的 case 数",
+      "after": "前两个流程变体的实例数",
+      "reason": "修改语序或搭配，使学术表述准确、自然",
+      "occurrences": 1
+    },
+    {
+      "file": "assignments/assignment_12_process_mining.md",
+      "before": "平均耗时最长的 directly-follows edge",
+      "after": "平均耗时最长的直接跟随边（directly-follows edge）",
+      "reason": "修改语序或搭配，使学术表述准确、自然",
+      "occurrences": 1
+    },
+    {
+      "file": "assignments/assignment_12_process_mining.md",
+      "before": "返工 case 和合规异常 case",
+      "after": "返工实例和合规异常实例",
+      "reason": "修改语序或搭配，使学术表述准确、自然",
+      "occurrences": 1
+    },
+    {
+      "file": "assignments/assignment_12_process_mining.md",
+      "before": "说明 order-to-cash 流程",
+      "after": "说明订单到收款流程",
+      "reason": "修改语序或搭配，使学术表述准确、自然",
+      "occurrences": 1
+    },
+    {
+      "file": "assignments/assignment_12_process_mining.md",
+      "before": "至少一个 variant 表和一个 directly-follows edge 表",
+      "after": "至少一个流程变体表和一个直接跟随边表",
+      "reason": "修改语序或搭配，使学术表述准确、自然",
+      "occurrences": 1
+    },
+    {
+      "file": "assignments/assignment_12_process_mining.md",
+      "before": "timestamp 质量",
+      "after": "时间戳质量",
+      "reason": "修改语序或搭配，使学术表述准确、自然",
+      "occurrences": 1
+    },
+    {
+      "file": "assignments/final_project.md",
+      "before": "一个规范化数据库或 lakehouse 分层数据集",
+      "after": "一个规范化数据库或湖仓一体（lakehouse）分层数据集",
+      "reason": "修改语序或搭配，使学术表述准确、自然",
+      "occurrences": 1
+    },
+    {
+      "file": "assignments/final_project.md",
+      "before": "一个 KPI dashboard",
+      "after": "一个 KPI 运营看板",
+      "reason": "修改语序或搭配，使学术表述准确、自然",
+      "occurrences": 1
+    },
+    {
+      "file": "assignments/final_project.md",
+      "before": "一个 ontology/action/scenario 原型",
+      "after": "一个业务本体、行动与情景（ontology/action/scenario）原型",
+      "reason": "修改语序或搭配，使学术表述准确、自然",
+      "occurrences": 1
+    },
+    {
+      "file": "assignments/final_project.md",
+      "before": "一份面向管理者的 decision memo",
+      "after": "一份面向管理者的决策备忘录（decision memo）",
+      "reason": "修改语序或搭配，使学术表述准确、自然",
+      "occurrences": 1
+    },
+    {
+      "file": "assignments/final_project.md",
+      "before": "建立 dashboard 和管理 memo",
+      "after": "建立运营看板和管理备忘录",
+      "reason": "修改语序或搭配，使学术表述准确、自然",
+      "occurrences": 1
+    },
+    {
+      "file": "assignments/final_project.md",
+      "before": "基于 lot flow 或 order-to-cash event log 做过程挖掘",
+      "after": "基于批次流转（lot flow）或订单到收款事件日志（order-to-cash event log）开展流程挖掘",
+      "reason": "修改语序或搭配，使学术表述准确、自然",
+      "occurrences": 1
+    },
+    {
+      "file": "assignments/final_project.md",
+      "before": "保留原有客户运营方向，但必须加入因果评估或行动收益边界",
+      "after": "围绕客户运营开展预测与策略设计，并说明因果评估依据或行动收益的适用边界",
+      "reason": "删除编写历史痕迹",
+      "occurrences": 1
+    },
+    {
+      "file": "assignments/final_project.md",
+      "before": "管理 memo 初稿",
+      "after": "管理备忘录初稿",
+      "reason": "修改语序或搭配，使学术表述准确、自然",
+      "occurrences": 1
+    },
+    {
+      "file": "assignments/final_project.md",
+      "before": "业务痛点",
+      "after": "业务问题",
+      "reason": "修改语序或搭配，使学术表述准确、自然",
+      "occurrences": 1
+    },
+    {
+      "file": "reports/decision_memo_template.md",
+      "before": "# Decision Memo",
+      "after": "# 决策备忘录（Decision Memo）",
+      "reason": "中文报告模板补充准确的中文栏目名称，保留英文对照",
+      "occurrences": 1
+    },
+    {
+      "file": "reports/decision_memo_template.md",
+      "before": "## Management Question",
+      "after": "## 管理问题（Management Question）",
+      "reason": "中文报告模板补充准确的中文栏目名称，保留英文对照",
+      "occurrences": 1
+    },
+    {
+      "file": "reports/decision_memo_template.md",
+      "before": "## Recommended Action",
+      "after": "## 建议行动（Recommended Action）",
+      "reason": "中文报告模板补充准确的中文栏目名称，保留英文对照",
+      "occurrences": 1
+    },
+    {
+      "file": "reports/decision_memo_template.md",
+      "before": "## Evidence",
+      "after": "## 证据依据（Evidence）",
+      "reason": "中文报告模板补充准确的中文栏目名称，保留英文对照",
+      "occurrences": 1
+    },
+    {
+      "file": "reports/decision_memo_template.md",
+      "before": "## Expected Impact",
+      "after": "## 预期影响（Expected Impact）",
+      "reason": "中文报告模板补充准确的中文栏目名称，保留英文对照",
+      "occurrences": 1
+    },
+    {
+      "file": "reports/decision_memo_template.md",
+      "before": "## Cost and Risk",
+      "after": "## 成本与风险（Cost and Risk）",
+      "reason": "中文报告模板补充准确的中文栏目名称，保留英文对照",
+      "occurrences": 1
+    },
+    {
+      "file": "reports/decision_memo_template.md",
+      "before": "## Follow-up Metrics",
+      "after": "## 后续评价指标（Follow-up Metrics）",
+      "reason": "中文报告模板补充准确的中文栏目名称，保留英文对照",
+      "occurrences": 1
+    },
+    {
+      "file": "reports/model_card_template.md",
+      "before": "# Model Card",
+      "after": "# 模型卡（Model Card）",
+      "reason": "中文报告模板补充准确的中文栏目名称，保留英文对照",
+      "occurrences": 1
+    },
+    {
+      "file": "reports/model_card_template.md",
+      "before": "## Model Overview",
+      "after": "## 模型概况（Model Overview）",
+      "reason": "中文报告模板补充准确的中文栏目名称，保留英文对照",
+      "occurrences": 1
+    },
+    {
+      "file": "reports/model_card_template.md",
+      "before": "## Business Problem",
+      "after": "## 业务问题（Business Problem）",
+      "reason": "中文报告模板补充准确的中文栏目名称，保留英文对照",
+      "occurrences": 1
+    },
+    {
+      "file": "reports/model_card_template.md",
+      "before": "## Data",
+      "after": "## 数据（Data）",
+      "reason": "中文报告模板补充准确的中文栏目名称，保留英文对照",
+      "occurrences": 1
+    },
+    {
+      "file": "reports/model_card_template.md",
+      "before": "## Features",
+      "after": "## 特征（Features）",
+      "reason": "中文报告模板补充准确的中文栏目名称，保留英文对照",
+      "occurrences": 1
+    },
+    {
+      "file": "reports/model_card_template.md",
+      "before": "## Evaluation",
+      "after": "## 评价结果（Evaluation）",
+      "reason": "中文报告模板补充准确的中文栏目名称，保留英文对照",
+      "occurrences": 1
+    },
+    {
+      "file": "reports/model_card_template.md",
+      "before": "## Limitations",
+      "after": "## 适用范围与局限（Limitations）",
+      "reason": "中文报告模板补充准确的中文栏目名称，保留英文对照",
+      "occurrences": 1
+    },
+    {
+      "file": "reports/model_card_template.md",
+      "before": "## Monitoring Plan",
+      "after": "## 运行监测方案（Monitoring Plan）",
+      "reason": "中文报告模板补充准确的中文栏目名称，保留英文对照",
+      "occurrences": 1
+    },
+    {
+      "file": "reports/project_report_template.md",
+      "before": "# Project Report",
+      "after": "# 项目报告（Project Report）",
+      "reason": "中文报告模板补充准确的中文栏目名称，保留英文对照",
+      "occurrences": 1
+    },
+    {
+      "file": "reports/project_report_template.md",
+      "before": "## 1. Business Problem",
+      "after": "## 1. 业务问题（Business Problem）",
+      "reason": "中文报告模板补充准确的中文栏目名称，保留英文对照",
+      "occurrences": 1
+    },
+    {
+      "file": "reports/project_report_template.md",
+      "before": "## 2. Data Model and Data Quality",
+      "after": "## 2. 数据模型与数据质量（Data Model and Data Quality）",
+      "reason": "中文报告模板补充准确的中文栏目名称，保留英文对照",
+      "occurrences": 1
+    },
+    {
+      "file": "reports/project_report_template.md",
+      "before": "## 3. Analysis and Modeling",
+      "after": "## 3. 分析与建模（Analysis and Modeling）",
+      "reason": "中文报告模板补充准确的中文栏目名称，保留英文对照",
+      "occurrences": 1
+    },
+    {
+      "file": "reports/project_report_template.md",
+      "before": "## 4. Decision or Optimization Model",
+      "after": "## 4. 决策或优化模型（Decision or Optimization Model）",
+      "reason": "中文报告模板补充准确的中文栏目名称，保留英文对照",
+      "occurrences": 1
+    },
+    {
+      "file": "reports/project_report_template.md",
+      "before": "## 5. Ontology, Action, and Scenario Design",
+      "after": "## 5. 业务本体、行动与情景设计（Ontology, Action, and Scenario Design）",
+      "reason": "中文报告模板补充准确的中文栏目名称，保留英文对照",
+      "occurrences": 1
+    },
+    {
+      "file": "reports/project_report_template.md",
+      "before": "## 6. Engineering Reproducibility",
+      "after": "## 6. 实验环境与结果复现（Engineering Reproducibility）",
+      "reason": "中文报告模板补充准确的中文栏目名称，保留英文对照",
+      "occurrences": 1
+    },
+    {
+      "file": "reports/project_report_template.md",
+      "before": "## 7. Risks, Ethics, and Governance",
+      "after": "## 7. 风险、伦理与治理（Risks, Ethics, and Governance）",
+      "reason": "中文报告模板补充准确的中文栏目名称，保留英文对照",
+      "occurrences": 1
+    },
+    {
+      "file": "docs/cases/ai_question_to_data_case.md",
+      "before": "企业 AI 问数系统将自然语言问题转换为候选 SQL。",
+      "after": "企业 AI 问数系统利用自然语言转 SQL（NL2SQL）技术，将业务问题转换为候选查询。",
+      "reason": "修改语序或搭配，使学术表述准确、自然",
+      "occurrences": 1
+    },
+    {
+      "file": "docs/cases/ai_question_to_data_case.md",
+      "before": "最近三笔订单收入增长最快的客户是谁？",
+      "after": "按日期和订单号确定每名客户最近三笔订单后，哪名客户这三笔收入的增长最快？",
+      "reason": "明确“最近三笔”的对象归属，保留原问题的增长比较任务",
+      "occurrences": 1
+    },
+    {
+      "file": "docs/cases/ai_question_to_data_case.md",
+      "before": "join 前后事实表行数",
+      "after": "连接（join）前后事实表行数",
+      "reason": "修改语序或搭配，使学术表述准确、自然",
+      "occurrences": 1
+    },
+    {
+      "file": "docs/cases/ai_question_to_data_case.md",
+      "before": "一段“不能据此推出什么”的证据边界说明。",
+      "after": "一段证据范围说明，指出查询结果尚不能支持的结论。",
+      "reason": "修改语序或搭配，使学术表述准确、自然",
+      "occurrences": 1
+    },
+    {
+      "file": "docs/cases/semiconductor_kpi_m13_case.md",
+      "before": "指标包括 Yield、OEE、Cycle Time、WIP 和 OTD。",
+      "after": "指标包括良率（Yield）、设备综合效率（OEE）、生产周期（Cycle Time）、在制品存量（WIP）和准时交付率（OTD）。",
+      "reason": "正文首次出现指标缩写即给中文释义",
+      "occurrences": 1
+    },
+    {
+      "file": "docs/cases/semiconductor_kpi_m13_case.md",
+      "before": "M13 要素用于组织诊断；",
+      "after": "M13 运营要素分类[^m13]用于组织诊断；",
+      "reason": "说明M13为课程采用的要素分类，避免未释专名",
+      "occurrences": 1
+    },
+    {
+      "file": "docs/cases/semiconductor_kpi_m13_case.md",
+      "before": "维度和 owner。",
+      "after": "维度和责任人。",
+      "reason": "修改语序或搭配，使学术表述准确、自然",
+      "occurrences": 1
+    },
+    {
+      "file": "docs/cases/semiconductor_kpi_m13_case.md",
+      "before": "## 5. Dashboard 任务",
+      "after": "## 5. 运营看板任务",
+      "reason": "修改语序或搭配，使学术表述准确、自然",
+      "occurrences": 1
+    },
+    {
+      "file": "docs/cases/semiconductor_kpi_m13_case.md",
+      "before": "按产品族展示 scrap 和 rework",
+      "after": "按产品族展示报废（scrap）和返工（rework）",
+      "reason": "修改语序或搭配，使学术表述准确、自然",
+      "occurrences": 1
+    },
+    {
+      "file": "docs/cases/semiconductor_kpi_m13_case.md",
+      "before": "M13 在本案例中用于组织诊断逻辑，而不是替代 KPI。示例：",
+      "after": "M13 按需求、产品、工艺路线、设备、产能、质量和交付等运营要素组织诊断；KPI 则度量相应表现。指标与要素的可能关联包括：",
+      "reason": "修改语序或搭配，使学术表述准确、自然",
+      "occurrences": 1
+    },
+    {
+      "file": "docs/syllabus.md",
+      "before": "描述统计与 dashboard",
+      "after": "描述统计与运营看板",
+      "reason": "修改语序或搭配，使学术表述准确、自然",
+      "occurrences": 1
+    },
+    {
+      "file": "docs/syllabus.md",
+      "before": "和 dashboard 分析",
+      "after": "和运营看板分析",
+      "reason": "修改语序或搭配，使学术表述准确、自然",
+      "occurrences": 1
+    },
+    {
+      "file": "docs/syllabus.md",
+      "before": "决策 memo",
+      "after": "决策备忘录",
+      "reason": "修改语序或搭配，使学术表述准确、自然",
+      "occurrences": 3
+    },
+    {
+      "file": "docs/syllabus.md",
+      "before": "从单个 KPI 走向生产运营要素组合诊断",
+      "after": "结合多个运营要素解释 KPI 变化",
+      "reason": "修改语序或搭配，使学术表述准确、自然",
+      "occurrences": 1
+    },
+    {
+      "file": "docs/syllabus.md",
+      "before": "建设 SiFactory-like 制造决策系统原型",
+      "after": "建设制造决策系统原型（SiFactory-like）",
+      "reason": "修改语序或搭配，使学术表述准确、自然",
+      "occurrences": 1
+    },
+    {
+      "file": "docs/syllabus.md",
+      "before": "QueryMind-style NL2SQL 演示与 SQL 审计",
+      "after": "自然语言问数原型（QueryMind-style）与 SQL 审计",
+      "reason": "修改语序或搭配，使学术表述准确、自然",
+      "occurrences": 1
+    },
+    {
+      "file": "docs/syllabus.md",
+      "before": "制造 lot flow 与 order-to-cash 流程诊断",
+      "after": "批次流转与订单到收款流程诊断",
+      "reason": "修改语序或搭配，使学术表述准确、自然",
+      "occurrences": 1
+    },
+    {
+      "file": "docs/syllabus.md",
+      "before": "对应[第14讲](#/chapter/14_ai_agent)与[主题导航](#/chapter/agent-learning-map)。",
+      "after": "讲义与实验见[第14讲](#/chapter/14_ai_agent)，主题索引见[主题导航](#/chapter/agent-learning-map)。",
+      "reason": "修改语序或搭配，使学术表述准确、自然",
+      "occurrences": 1
+    },
+    {
+      "file": "data/sample/README.md",
+      "before": "# Sample Data",
+      "after": "# 课程样例数据",
+      "reason": "修改语序或搭配，使学术表述准确、自然",
+      "occurrences": 1
+    },
+    {
+      "file": "data/sample/README.md",
+      "before": "本目录用于放置课程样例企业运营数据：",
+      "after": "企业运营样例数据按以下文件组织：",
+      "reason": "修改语序或搭配，使学术表述准确、自然",
+      "occurrences": 1
+    },
+    {
+      "file": "data/sample/README.md",
+      "before": "当前已提供第 3 周 SQL/KPI 实验所需的最小样例数据：",
+      "after": "第 3 周 SQL/KPI 实验使用以下样例表：",
+      "reason": "修改语序或搭配，使学术表述准确、自然",
+      "occurrences": 1
+    },
+    {
+      "file": "data/sample/README.md",
+      "before": "第 4 周新增 ",
+      "after": "第 4 周使用 ",
+      "reason": "删除版本更新痕迹，保留周次与实验用途",
+      "occurrences": 1
+    },
+    {
+      "file": "data/sample/README.md",
+      "before": "第 5 周新增 ",
+      "after": "第 5 周使用 ",
+      "reason": "删除版本更新痕迹，保留周次与实验用途",
+      "occurrences": 1
+    },
+    {
+      "file": "data/sample/README.md",
+      "before": "第 6 周新增 ",
+      "after": "第 6 周使用 ",
+      "reason": "删除版本更新痕迹，保留周次与实验用途",
+      "occurrences": 1
+    },
+    {
+      "file": "data/sample/README.md",
+      "before": "第 7 周新增 ",
+      "after": "第 7 周使用 ",
+      "reason": "删除版本更新痕迹，保留周次与实验用途",
+      "occurrences": 1
+    },
+    {
+      "file": "data/sample/README.md",
+      "before": "第 8 周新增 ",
+      "after": "第 8 周使用 ",
+      "reason": "删除版本更新痕迹，保留周次与实验用途",
+      "occurrences": 1
+    },
+    {
+      "file": "data/sample/README.md",
+      "before": "第 9 周新增 ",
+      "after": "第 9 周使用 ",
+      "reason": "删除版本更新痕迹，保留周次与实验用途",
+      "occurrences": 1
+    },
+    {
+      "file": "data/sample/README.md",
+      "before": "第 10 周新增 ",
+      "after": "第 10 周使用 ",
+      "reason": "删除版本更新痕迹，保留周次与实验用途",
+      "occurrences": 1
+    },
+    {
+      "file": "data/sample/README.md",
+      "before": "课程升级后新增 ",
+      "after": "半导体制造案例使用 ",
+      "reason": "删除编写升级痕迹",
+      "occurrences": 1
+    },
+    {
+      "file": "data/sample/README.md",
+      "before": "描述统计与 dashboard 实验",
+      "after": "描述统计与运营看板实验",
+      "reason": "修改语序或搭配，使学术表述准确、自然",
+      "occurrences": 1
+    },
+    {
+      "file": "data/sample/README.md",
+      "before": "SQL 问数和 dashboard 实验",
+      "after": "SQL 问数和运营看板实验",
+      "reason": "修改语序或搭配，使学术表述准确、自然",
+      "occurrences": 1
+    },
+    {
+      "file": "data/sample/README.md",
+      "before": "一行一个 SKU 补货策略输入",
+      "after": "一行一个库存管理单位（SKU）的补货策略输入",
+      "reason": "修改语序或搭配，使学术表述准确、自然",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "01_intro",
+      "slide": 3,
+      "field": "body",
+      "before": "三类方法由共同的决策任务连接",
+      "after": "三类方法围绕同一决策任务相互衔接",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "01_intro",
+      "slide": 3,
+      "field": "takeaway",
+      "before": "业务语境确定问题，数据、估计与优化分别承担不同论证职责。",
+      "after": "业务语境确定问题，数据记录、统计估计与方案优化分别提供相应依据。",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "01_intro",
+      "slide": 6,
+      "field": "takeaway",
+      "before": "方案改善应相对于明确、可执行且口径一致的基准评价。",
+      "after": "评价方案改善时，应采用明确、可执行且口径一致的比较基准。",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "01_intro",
+      "slide": 18,
+      "field": "body",
+      "before": "若先平均回先验再择一个固定行动",
+      "after": "若先将后验概率平均还原为先验，再选择一个固定行动",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "01_intro",
+      "slide": 24,
+      "field": "body",
+      "before": "为此后各期可最优行动时的最小期望总成本",
+      "after": "为从本期起各期均采用最优行动时的最小期望总成本",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "01_intro",
+      "slide": 25,
+      "field": "lead",
+      "before": "维护在今日付费，却改变明日发生故障的概率。",
+      "after": "今日维护需要付费，同时会改变明日的故障概率。",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "01_intro",
+      "slide": 26,
+      "field": "body",
+      "before": "因此当期免费并不代表跨期最优",
+      "after": "因此当期无需支出的方案未必使跨期总成本最小",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "01_intro",
+      "slide": 27,
+      "field": "takeaway",
+      "before": "分析方法不能自动使结论超出相应证据边界。",
+      "after": "分析结论的适用范围受其证据与方法条件限制。",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "01_intro",
+      "slide": 33,
+      "field": "takeaway",
+      "before": "仿真比较提供条件于情景与模拟器的方案证据。",
+      "after": "仿真比较提供以情景设定和模拟器为条件的方案证据。",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "01_intro",
+      "slide": 36,
+      "field": "body",
+      "before": "全部负责部门的耗时",
+      "after": "所有相关部门的耗时",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "02_enterprise_data_model",
+      "slide": 1,
+      "field": "takeaway",
+      "before": "字段同名不保证含义一致，能够连接也不保证能够行动。",
+      "after": "同名字段仍须核对含义，跨表连接后仍须确认可采取的行动。",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "02_enterprise_data_model",
+      "slide": 8,
+      "field": "lead",
+      "before": "约束阻止确定类型的错误，不替代业务真实性检验。",
+      "after": "约束可以阻止特定类型的错误，业务真实性仍须另行核验。",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "02_enterprise_data_model",
+      "slide": 13,
+      "field": "lead",
+      "before": "键和覆盖保证重建记录，时间版本保证历史含义。",
+      "after": "键的唯一性与引用的完整覆盖支持记录重建，时间版本支持历史解释。",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "02_enterprise_data_model",
+      "slide": 13,
+      "field": "body",
+      "before": "需要下单时名称时",
+      "after": "若需查询下单时的产品名称",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "02_enterprise_data_model",
+      "slide": 14,
+      "field": "lead",
+      "before": "更新一致性和分析查询提出不同结构需求。",
+      "after": "事务更新与分析查询对数据结构有不同要求。",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "02_enterprise_data_model",
+      "slide": 17,
+      "field": "body",
+      "before": "等权日均率评价平均一天的表现",
+      "after": "等权日均率描述一个平均观察日的表现",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "02_enterprise_data_model",
+      "slide": 20,
+      "field": "takeaway",
+      "before": "正确履行查询定义还需语义检验",
+      "after": "查询是否符合业务定义还需语义检验",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "02_enterprise_data_model",
+      "slide": 25,
+      "field": "body",
+      "before": "企业原目标为",
+      "after": "企业的目标为",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "02_enterprise_data_model",
+      "slide": 28,
+      "field": "body",
+      "before": "内点值等于",
+      "after": "内点解对应的组织价值等于",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "02_enterprise_data_model",
+      "slide": 29,
+      "field": "lead",
+      "before": "绩效增长可能改变行为，也可能改变记录。",
+      "after": "绩效激励可能改变实际努力，也可能诱发记录操纵。",
+      "reason": "使导语准确对应模型中的激励、努力与记录操纵关系",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "02_enterprise_data_model",
+      "slide": 29,
+      "field": "body",
+      "before": "固定风险项与努力无关",
+      "after": "给定合同的风险项与努力无关",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "02_enterprise_data_model",
+      "slide": 33,
+      "field": "body",
+      "before": "补入问题",
+      "after": "补货流入问题",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "03_sql_kpi",
+      "slide": 1,
+      "field": "body",
+      "before": "每一输出量",
+      "after": "每个输出量",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "03_sql_kpi",
+      "slide": 3,
+      "field": "body",
+      "before": "每单一种产品",
+      "after": "每张订单只包含一种产品",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "03_sql_kpi",
+      "slide": 4,
+      "field": "lead",
+      "before": "示例查询仅使用示例标准价。",
+      "after": "该查询使用期内固定的标准价格。",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "03_sql_kpi",
+      "slide": 5,
+      "field": "body",
+      "before": "连接三张 3 月订单",
+      "after": "关联三张 3 月订单的记录",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "03_sql_kpi",
+      "slide": 9,
+      "field": "body",
+      "before": "月报按大区展示是展示粒度",
+      "after": "月报一行展示一个大区时，该大区就是展示粒度",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "03_sql_kpi",
+      "slide": 12,
+      "field": "body",
+      "before": "名称相近不使对象范围相同",
+      "after": "名称相近不代表统计对象相同",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "03_sql_kpi",
+      "slide": 13,
+      "field": "body",
+      "before": "表示结合性的合并操作",
+      "after": "表示满足结合律的合并操作",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "03_sql_kpi",
+      "slide": 13,
+      "field": "body",
+      "before": "总量保存和",
+      "after": "总量保存各分片之和",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "03_sql_kpi",
+      "slide": 18,
+      "field": "body",
+      "before": "按件数的合格率采用另一权重",
+      "after": "按件数计算的合格率采用不同权重",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "03_sql_kpi",
+      "slide": 19,
+      "field": "body",
+      "before": "按件数质量代入所得",
+      "after": "代入按件数计算的质量合格率后所得",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "03_sql_kpi",
+      "slide": 23,
+      "field": "takeaway",
+      "before": "未完成不意味着退出队列",
+      "after": "尚未完成的订单仍须按既定范围纳入",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "03_sql_kpi",
+      "slide": 28,
+      "field": "body",
+      "before": "数量乘价成本差",
+      "after": "数量乘售价与成本之差",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "03_sql_kpi",
+      "slide": 29,
+      "field": "body",
+      "before": "对订单等权得到",
+      "after": "对两张订单等权平均得到",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "03_sql_kpi",
+      "slide": 33,
+      "field": "body",
+      "before": "可运行 SQL 不能自动补足这些业务条件。",
+      "after": "SQL 可以运行，也仍需明确这些业务条件。",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "03_sql_kpi",
+      "slide": 35,
+      "field": "body",
+      "before": "授权由数据库和运行环境生效",
+      "after": "授权须由数据库和运行环境实际实施",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "03_sql_kpi",
+      "slide": 35,
+      "field": "takeaway",
+      "before": "授权须由独立配置及实际执行环境生效。",
+      "after": "授权规则须独立配置，并由实际执行环境实施。",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "04_data_quality",
+      "slide": 1,
+      "field": "body",
+      "before": "修复与发布决策还须比较错误发布的损失和暂停成本",
+      "after": "修复与发布决策还须比较发布错误数据的损失与暂停发布的成本",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "04_data_quality",
+      "slide": 6,
+      "field": "takeaway",
+      "before": "规则零失败只能支持其检验范围内的符合结论。",
+      "after": "没有规则失败记录，只能说明数据满足已检验的条件。",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "04_data_quality",
+      "slide": 8,
+      "field": "lead",
+      "before": "结构符合之外，还需确认记录在何时可用、是否真实、能否复核。",
+      "after": "除核对结构约束外，还须确认记录何时可用、是否真实及能否复核。",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "04_data_quality",
+      "slide": 9,
+      "field": "body",
+      "before": "它帮助发现结构并提出问题，不独立判定业务值的正确性。",
+      "after": "这些摘要用于发现数据特征并提出待核查问题；业务取值是否正确仍需相应依据。",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "04_data_quality",
+      "slide": 10,
+      "field": "lead",
+      "before": "记录机会与结果相关时，完整记录会改变目标分布。",
+      "after": "记录概率与结果相关时，仅分析完整记录会改变所研究的分布。",
+      "reason": "区分目标总体与完整记录子集，避免误称目标分布被改变",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "04_data_quality",
+      "slide": 13,
+      "field": "body",
+      "before": "观察加权得到",
+      "after": "按已记录类别占比加权得到",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "04_data_quality",
+      "slide": 19,
+      "field": "body",
+      "before": "分子增加通常推高比率",
+      "after": "分母固定时，分子增加会推高比率",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "04_data_quality",
+      "slide": 22,
+      "field": "takeaway",
+      "before": "不能汇总替代业务影响",
+      "after": "不能以汇总通过率代替业务影响评价",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "04_data_quality",
+      "slide": 24,
+      "field": "body",
+      "before": "需要凭源凭证核查",
+      "after": "需要根据来源凭证核查",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "04_data_quality",
+      "slide": 29,
+      "field": "body",
+      "before": "向高者转移小额预算可进一步降损",
+      "after": "向边际收益较高的资产转移小额预算，可进一步减少预期损失",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "04_data_quality",
+      "slide": 32,
+      "field": "takeaway",
+      "before": "契约防止无声变化；血缘支持影响分析。",
+      "after": "契约约束未经确认的变更，血缘支持追溯其影响。",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "04_data_quality",
+      "slide": 37,
+      "field": "body",
+      "before": "每小时损失近似为",
+      "after": "每小时损失近似固定为",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "04_data_quality",
+      "slide": 40,
+      "field": "body",
+      "before": "输出逐项失败的原始行或业务键",
+      "after": "逐项输出违反规则的原始行或业务键",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "04_data_quality",
+      "slide": 43,
+      "field": "body",
+      "before": "避免将一个总体通过率当作全部可信度",
+      "after": "避免用总体通过率概括数据的全部可信程度",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "05_statistics_dashboard",
+      "slide": 3,
+      "field": "body",
+      "before": "这是样本描述，无需独立同分布",
+      "after": "这是对已有样本的描述，不要求独立同分布",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "05_statistics_dashboard",
+      "slide": 6,
+      "field": "body",
+      "before": "高值抬升平均",
+      "after": "高收入值抬升均值",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "05_statistics_dashboard",
+      "slide": 8,
+      "field": "body",
+      "before": "箱线图常把下方区间之外的观测标为待调查点",
+      "after": "箱线图通常将给定区间之外的观测标为待调查点",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "05_statistics_dashboard",
+      "slide": 13,
+      "field": "body",
+      "before": "换用末期权重会重新分摊交互影响",
+      "after": "换用末期权重会改变两类变化之间交互部分的归属",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "05_statistics_dashboard",
+      "slide": 20,
+      "field": "body",
+      "before": "三个一天区间的在制量",
+      "after": "三个长度均为一天的区间内，在制量",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "05_statistics_dashboard",
+      "slide": 21,
+      "field": "body",
+      "before": "每批完整停留",
+      "after": "每批完整停留时间",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "05_statistics_dashboard",
+      "slide": 23,
+      "field": "body",
+      "before": "同用批/时间",
+      "after": "均以单位时间的批次数计量",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "05_statistics_dashboard",
+      "slide": 26,
+      "field": "body",
+      "before": "允许一般的到达间隔和服务时间分布",
+      "after": "允许到达间隔与服务时间服从一般分布",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "05_statistics_dashboard",
+      "slide": 27,
+      "field": "body",
+      "before": "两者均有",
+      "after": "两个系统均有",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "05_statistics_dashboard",
+      "slide": 29,
+      "field": "lead",
+      "before": "边际能力成本等于边际在制成本下降。",
+      "after": "最优点的边际能力成本等于增加能力所减少的边际在制成本。",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "05_statistics_dashboard",
+      "slide": 30,
+      "field": "takeaway",
+      "before": "可连续能力",
+      "after": "可连续调整的服务能力",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "05_statistics_dashboard",
+      "slide": 31,
+      "field": "takeaway",
+      "before": "可验收业务结果是任务度量的核心边界。",
+      "after": "任务度量应以取得通过验收的业务结果为终点。",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "05_statistics_dashboard",
+      "slide": 33,
+      "field": "body",
+      "before": "无排队时占用服务位置",
+      "after": "不计排队时占用服务位置",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "05_statistics_dashboard",
+      "slide": 35,
+      "field": "body",
+      "before": "较难辨认细微差异",
+      "after": "较难表达细微差异",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "05_statistics_dashboard",
+      "slide": 39,
+      "field": "takeaway",
+      "before": "案例说明分析环节如何连接，不提供未经核验的收益估计。",
+      "after": "案例展示服务分析与库存规划的衔接；具体收益须由实际数据核验。",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "06_ab_testing",
+      "slide": 4,
+      "field": "body",
+      "before": "总体标准误减半",
+      "after": "均值估计的标准误减半",
+      "reason": "标准误属于估计量，而非总体本身",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "06_ab_testing",
+      "slide": 8,
+      "field": "body",
+      "before": "两条路径相减",
+      "after": "两组均值的期望相减",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "06_ab_testing",
+      "slide": 9,
+      "field": "body",
+      "before": "真有限总体效应",
+      "after": "真实的有限总体效应",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "06_ab_testing",
+      "slide": 15,
+      "field": "body",
+      "before": "区间实现后",
+      "after": "区间计算得到后",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "06_ab_testing",
+      "slide": 16,
+      "field": "body",
+      "before": "插件标准误",
+      "after": "代入样本比例得到的标准误",
+      "reason": "将plug-in译为明确的计算操作，避免与软件插件混淆",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "06_ab_testing",
+      "slide": 22,
+      "field": "takeaway",
+      "before": "正确分配",
+      "after": "正确执行随机分配",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "06_ab_testing",
+      "slide": 23,
+      "field": "takeaway",
+      "before": "强处理前预测关系",
+      "after": "处理前变量对结果的较强预测能力",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "06_ab_testing",
+      "slide": 25,
+      "field": "body",
+      "before": "普通渐近区间",
+      "after": "通常的渐近置信区间",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "06_ab_testing",
+      "slide": 26,
+      "field": "body",
+      "before": "任意两项群内相关",
+      "after": "群内任意两项观测的相关系数",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "06_ab_testing",
+      "slide": 27,
+      "field": "body",
+      "before": "而不是直接计算推广",
+      "after": "并在排除设计与记录故障后再评价是否推广",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "06_ab_testing",
+      "slide": 34,
+      "field": "body",
+      "before": "探索与预先检验分别报告",
+      "after": "探索性分析与预先指定的检验分别报告",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "06_ab_testing",
+      "slide": 36,
+      "field": "body",
+      "before": "残留清洗期",
+      "after": "消除前期处理残留影响所需的清洗期",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "06_ab_testing",
+      "slide": 41,
+      "field": "body",
+      "before": "未合并 Wald 正态近似统计量",
+      "after": "采用未合并方差的 Wald 正态近似统计量",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "07_prediction",
+      "slide": 5,
+      "field": "body",
+      "before": "可以多精确地估计这些关系",
+      "after": "能够以何种精度估计这些关系",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "07_prediction",
+      "slide": 6,
+      "field": "body",
+      "before": "两个报告都判为正类",
+      "after": "两项概率报告都对应正类判断",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "07_prediction",
+      "slide": 11,
+      "field": "body",
+      "before": "使平均预测具有降低方差的可能",
+      "after": "从而可能降低平均预测的方差",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "07_prediction",
+      "slide": 13,
+      "field": "body",
+      "before": "普通平方损失多因子二",
+      "after": "普通平方损失的负梯度多一个系数二",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "07_prediction",
+      "slide": 14,
+      "field": "body",
+      "before": "训练集估计参数及预处理",
+      "after": "训练集用于估计模型参数和预处理所需统计量",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "07_prediction",
+      "slide": 15,
+      "field": "lead",
+      "before": "同一份训练资料可多次轮换验证用途，保留测试集仍独立。",
+      "after": "训练资料可轮换用于拟合和验证，保留测试集须始终独立。",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "07_prediction",
+      "slide": 20,
+      "field": "body",
+      "before": "并列各计半次",
+      "after": "分数并列时计入一半权重",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "07_prediction",
+      "slide": 21,
+      "field": "body",
+      "before": "十人仍有很大抽样波动",
+      "after": "十人的样本仍可能存在较大的抽样波动",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "07_prediction",
+      "slide": 25,
+      "field": "body",
+      "before": "即同时对校准与未来样本平均",
+      "after": "即对校准样本与未来样本的联合随机性取平均",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "07_prediction",
+      "slide": 31,
+      "field": "body",
+      "before": "自动化不使独立评价的要求降低",
+      "after": "自动化并未降低独立评价的要求",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "07_prediction",
+      "slide": 33,
+      "field": "body",
+      "before": "原例共",
+      "after": "该算例共",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "07_prediction",
+      "slide": 35,
+      "field": "body",
+      "before": "召回为一只说明这批未漏报",
+      "after": "召回率为一，只说明这批样本中没有漏报",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "07_prediction",
+      "slide": 37,
+      "field": "body",
+      "before": "三个月风险毛利",
+      "after": "三个月内因流失而损失的预期毛利",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "08_causality",
+      "slide": 1,
+      "field": "body",
+      "before": "行动后更好也未必全由行动造成",
+      "after": "行动后的结果更好，也未必全部由行动造成",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "08_causality",
+      "slide": 9,
+      "field": "body",
+      "before": "即已调整足以支持比较的共同原因",
+      "after": "即所调整的共同原因足以支持两种处理状态之间的比较",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "08_causality",
+      "slide": 13,
+      "field": "body",
+      "before": "图中两率相减",
+      "after": "图中两种标准化延期率相减",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "08_causality",
+      "slide": 13,
+      "field": "body",
+      "before": "仍需难度充分调整前置混杂",
+      "after": "仍需以难度充分调整处理前混杂",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "08_causality",
+      "slide": 15,
+      "field": "body",
+      "before": "转到同一得分内比较",
+      "after": "转化为同一得分人群内的比较",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "08_causality",
+      "slide": 20,
+      "field": "body",
+      "before": "图中权重最后一个独占七成",
+      "after": "图中最后一个观测的权重占总权重的七成",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "08_causality",
+      "slide": 20,
+      "field": "body",
+      "before": "高权重记录的变化会更敏感",
+      "after": "估计结果对高权重记录的变化更敏感",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "08_causality",
+      "slide": 21,
+      "field": "body",
+      "before": "三项相加为单对象分数",
+      "after": "三项相加得到单个对象的估计分数",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "08_causality",
+      "slide": 23,
+      "field": "body",
+      "before": "不能由这一步代数直接代替",
+      "after": "不能仅凭这一步代数运算确认",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "08_causality",
+      "slide": 24,
+      "field": "body",
+      "before": "结果候选均正确",
+      "after": "候选结果模型均正确",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "08_causality",
+      "slide": 27,
+      "field": "body",
+      "before": "这隔离辅助拟合与自身残差评价",
+      "after": "这样可将辅助模型的拟合与同一记录的残差评价分开",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "08_causality",
+      "slide": 28,
+      "field": "body",
+      "before": "在得分有界远离零和一",
+      "after": "在得分与零和一均保持固定正距离",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "08_causality",
+      "slide": 34,
+      "field": "body",
+      "before": "界由业务机制或敏感性设定支持",
+      "after": "偏差界须有业务机制依据，或明确列为敏感性设定",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "08_causality",
+      "slide": 39,
+      "field": "body",
+      "before": "统一贴现经营收益",
+      "after": "按统一口径贴现的经营收益",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "08_causality",
+      "slide": 41,
+      "field": "body",
+      "before": "平衡仍有残差",
+      "after": "调整后仍存在协变量不平衡",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "09_optimization",
+      "slide": 1,
+      "field": "body",
+      "before": "逐项值得行动的对象仍可能不能同时选择",
+      "after": "逐项具有行动价值的对象仍可能无法同时纳入方案",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "09_optimization",
+      "slide": 7,
+      "field": "body",
+      "before": "超过一时交点负数量不可行",
+      "after": "增量超过一时，交点含有负数量，因而不可行",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "09_optimization",
+      "slide": 12,
+      "field": "lead",
+      "before": "并正确处理分位点质量",
+      "after": "并正确处理分位点处的概率质量",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "09_optimization",
+      "slide": 14,
+      "field": "title",
+      "before": "离散 CVaR：分位点质量",
+      "after": "离散 CVaR：分位点的概率质量",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "09_optimization",
+      "slide": 16,
+      "field": "body",
+      "before": "离散方案跳变可能只是近似并列",
+      "after": "离散方案发生跳变时，新旧方案的目标值可能接近",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "09_optimization",
+      "slide": 16,
+      "field": "body",
+      "before": "有代价的缓冲或备选",
+      "after": "相应的资源缓冲或备选方案，并计入其成本",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "09_optimization",
+      "slide": 18,
+      "field": "body",
+      "before": "正权延期下等待无益",
+      "after": "延期权重为正且无其他约束时，主动等待不能降低目标值",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "09_optimization",
+      "slide": 20,
+      "field": "body",
+      "before": "第一组误差更小却颠倒排序",
+      "after": "第一组的预测误差更小，但颠倒了行动成本排序",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "09_optimization",
+      "slide": 23,
+      "field": "body",
+      "before": "A、B收益",
+      "after": "A、B组合的收益",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "09_optimization",
+      "slide": 24,
+      "field": "body",
+      "before": "B与B、D均达收益一点四",
+      "after": "仅选B与选择B、D两单均达到一点四的收益",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "09_optimization",
+      "slide": 25,
+      "field": "body",
+      "before": "只有适当证书才能称全局最优",
+      "after": "须有相应最优性证明或求解证书，才能报告全局最优",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "09_optimization",
+      "slide": 28,
+      "field": "body",
+      "before": "后者低于约1629的设计占用上限",
+      "after": "一千五百的负载低于约1629的设计占用上限",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "09_optimization",
+      "slide": 30,
+      "field": "body",
+      "before": "四区间乘积形成候选空间",
+      "after": "四个整数取值区间的全部组合构成候选空间",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "09_optimization",
+      "slide": 32,
+      "field": "body",
+      "before": "按每产品三点需求",
+      "after": "按每种产品的三点需求",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "09_optimization",
+      "slide": 36,
+      "field": "body",
+      "before": "单按收益或收益成本比贪心可能非最优",
+      "after": "仅按收益或收益成本比逐项贪心选择，可能得不到最优解",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "10_process_mining",
+      "slide": 1,
+      "field": "body",
+      "before": "平均履约周期与准时率发现结果变化",
+      "after": "平均履约周期与准时率可以反映结果变化",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "10_process_mining",
+      "slide": 7,
+      "field": "lead",
+      "before": "观察模型、规则比较与绩效增强具有不同目标。",
+      "after": "过程发现、一致性检查与流程增强具有不同目标。",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "10_process_mining",
+      "slide": 8,
+      "field": "body",
+      "before": "DFG丢失部分完整轨迹与并行、选择约束",
+      "after": "直接跟随图（DFG）不能完整保留轨迹及并行、选择约束",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "10_process_mining",
+      "slide": 11,
+      "field": "body",
+      "before": "均为完成时刻",
+      "after": "由于记录均为完成时刻",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "10_process_mining",
+      "slide": 14,
+      "field": "body",
+      "before": "先按分量检查",
+      "after": "先逐分量检查",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "10_process_mining",
+      "slide": 14,
+      "field": "body",
+      "before": "然后扣输入、加输出",
+      "after": "然后扣除输入令牌并增加输出令牌",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "10_process_mining",
+      "slide": 14,
+      "field": "body",
+      "before": "参考模型可表达发货前提",
+      "after": "参考模型可表达发货的前置条件",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "10_process_mining",
+      "slide": 16,
+      "field": "body",
+      "before": "并与次数机制适当独立",
+      "after": "并与决定加工次数的机制满足所需独立条件",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "10_process_mining",
+      "slide": 18,
+      "field": "body",
+      "before": "本次加工加后续状态的概率加权剩余时间",
+      "after": "本次加工时间加后续状态剩余时间的概率加权平均",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "10_process_mining",
+      "slide": 20,
+      "field": "takeaway",
+      "before": "时间定位候选",
+      "after": "时间差用于定位待调查环节",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "10_process_mining",
+      "slide": 23,
+      "field": "body",
+      "before": "全部相邻事件对计数",
+      "after": "对全部相邻事件对进行计数",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "10_process_mining",
+      "slide": 24,
+      "field": "body",
+      "before": "这些编号把聚合结果落到可核查实例",
+      "after": "这些编号将聚合结果对应到可核查的流程实例",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "10_process_mining",
+      "slide": 25,
+      "field": "takeaway",
+      "before": "指标代数明确计算含义",
+      "after": "指标公式明确计算含义",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "10_process_mining",
+      "slide": 27,
+      "field": "body",
+      "before": "确定流程控制必要验证",
+      "after": "固定流程负责必要验证",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "10_process_mining",
+      "slide": 31,
+      "field": "body",
+      "before": "图示主路径",
+      "after": "图中展示主要路径",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "10_process_mining",
+      "slide": 38,
+      "field": "body",
+      "before": "维修文字不等于系统批准",
+      "after": "记载维修完成的文字不能替代系统中的有效批准",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "10_process_mining",
+      "slide": 39,
+      "field": "body",
+      "before": "下式给出相应时间账",
+      "after": "下式给出各环节的时长之和",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "10_process_mining",
+      "slide": 40,
+      "field": "body",
+      "before": "所有 \\(m\\) 步必需",
+      "after": "任务完成需要所有 \\(m\\) 步均成功",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "10_process_mining",
+      "slide": 40,
+      "field": "body",
+      "before": "链式法则乘此前均成功条件下的各步率",
+      "after": "链式法则将此前步骤均成功条件下的各步成功率相乘",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "10_process_mining",
+      "slide": 40,
+      "field": "body",
+      "before": "须重定义任务事件及成本",
+      "after": "须重新定义任务事件及成本",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "10_process_mining",
+      "slide": 44,
+      "field": "body",
+      "before": "预算 \\(0.80\\) 后仅B按最低费并列标准最优",
+      "after": "加上预算 \\(0.80\\) 后，按并列时费用最低的标准选择仅加急B",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "14_ai_agent",
+      "slide": 2,
+      "field": "takeaway",
+      "before": "成功标准应覆盖肯定答复，也应覆盖有理由地停止。",
+      "after": "验收标准应同时规定何时可以答复，以及何时须停止或转交人工。",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "14_ai_agent",
+      "slide": 4,
+      "field": "body",
+      "before": "LLM生成语言与候选，Planning组织步骤，Memory维护上下文",
+      "after": "LLM（大语言模型）生成语言与候选，Planning负责规划步骤，Memory保存记忆与上下文",
+      "reason": "在独立阅读页面中解释核心英文模块",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "14_ai_agent",
+      "slide": 5,
+      "field": "body",
+      "before": "动态规划不能取消这些前置条件",
+      "after": "重新规划不能取消这些前置条件",
+      "reason": "此处讨论任务重规划，并非Bellman意义上的动态规划",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "14_ai_agent",
+      "slide": 9,
+      "field": "body",
+      "before": "不能只请模型在答复中承诺遵守",
+      "after": "不能仅依靠模型在答复中承诺遵守",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "14_ai_agent",
+      "slide": 11,
+      "field": "body",
+      "before": "需要OCR",
+      "after": "需要光学字符识别（OCR）",
+      "reason": "扫描文字识别首次出现给予中文名称",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "14_ai_agent",
+      "slide": 14,
+      "field": "body",
+      "before": "首阶段",
+      "after": "第一阶段",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "14_ai_agent",
+      "slide": 19,
+      "field": "body",
+      "before": "两者不是排斥关系",
+      "after": "两者可以组合使用",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "14_ai_agent",
+      "slide": 20,
+      "field": "body",
+      "before": "再汇合这些产物",
+      "after": "再汇总这些结果",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "14_ai_agent",
+      "slide": 21,
+      "field": "body",
+      "before": "不宜混写",
+      "after": "须分别规定",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "14_ai_agent",
+      "slide": 23,
+      "field": "body",
+      "before": "ERP或设备系统",
+      "after": "企业资源计划（ERP）或设备系统",
+      "reason": "补充重要系统缩写的中文名称",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "14_ai_agent",
+      "slide": 29,
+      "field": "body",
+      "before": "发票另给结束后天数",
+      "after": "发票问题另给出差结束后天数",
+      "reason": "明确期限起点，与正文INVOICE-v1条款一致",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "14_ai_agent",
+      "slide": 29,
+      "field": "visual",
+      "before": "结束后",
+      "after": "出差结束后",
+      "reason": "明确期限起点，与正文制度一致",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "14_ai_agent",
+      "slide": 32,
+      "field": "body",
+      "before": "发票结束后",
+      "after": "出差结束后",
+      "reason": "修正不成立的“发票结束”表述，保留时间参数",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "14_ai_agent",
+      "slide": 35,
+      "field": "body",
+      "before": "标准批准号ORG-1",
+      "after": "案例批准号ORG-1",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "14_ai_agent",
+      "slide": 36,
+      "field": "body",
+      "before": "答复先核对传感器校准与轴承检查记录",
+      "after": "答复要求先核对传感器校准与轴承检查记录",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "14_ai_agent",
+      "slide": 38,
+      "field": "body",
+      "before": "退货随后核验身份，订单随后核验归属",
+      "after": "退货分支核验身份，订单分支核验归属",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "14_ai_agent",
+      "slide": 39,
+      "field": "body",
+      "before": "真实布尔输入",
+      "after": "布尔类型输入",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "14_ai_agent",
+      "slide": 40,
+      "field": "takeaway",
+      "before": "正确路由是待处理结果，不能冒充业务事务已经完成。",
+      "after": "正确分流只确认请求进入相应处理路径，不能据此宣称业务事务已经完成。",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "14_ai_agent",
+      "slide": 41,
+      "field": "body",
+      "before": "读数年龄",
+      "after": "读数距采集时点的时长",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "14_ai_agent",
+      "slide": 41,
+      "field": "body",
+      "before": "现场PLC、安全系统",
+      "after": "现场可编程逻辑控制器（PLC）、安全系统",
+      "reason": "对重要工业控制缩写补充中文名称",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "14_ai_agent",
+      "slide": 42,
+      "field": "body",
+      "before": "传感器年龄",
+      "after": "读数距采集时点的时长",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "14_ai_agent",
+      "slide": 44,
+      "field": "body",
+      "before": "读数年龄",
+      "after": "读数距采集时点",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "14_ai_agent",
+      "slide": 46,
+      "field": "body",
+      "before": "制度看日期与引用，会议看交集与批准，客服看安全优先与隐私，生产看联锁、资料时效和零控制调用",
+      "after": "制度问答核对日期与引用，会议排期核对交集与批准，客服分流检查安全优先与隐私，生产异常检查联锁、资料时效和零控制调用",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "14_ai_agent",
+      "slide": 47,
+      "field": "body",
+      "before": "单一步骤的高分",
+      "after": "单一步骤的高成功率",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "14_ai_agent",
+      "slide": 49,
+      "field": "body",
+      "before": "原型通过只能证明规则可运行",
+      "after": "规则原型通过只能证明所设规则可正确执行",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "14_ai_agent",
+      "slide": 51,
+      "field": "body",
+      "before": "成本质量门槛失守",
+      "after": "成本或质量指标突破预设门槛",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "14_ai_agent",
+      "slide": 53,
+      "field": "body",
+      "before": "每工作中心每日事实粒度明确",
+      "after": "每个工作中心的每日事实粒度明确",
+      "reason": "理顺语序、指代或专业搭配，保持原论证和限定条件",
+      "occurrences": 1
+    },
+    {
+      "file": "docs/lecture_notes/12_mlops.md",
+      "before": "> 本章讲义正在编写中。以下为课程统一的讲义章节结构占位，正式内容（含理论推导、案例与图表）以同名 LaTeX 源文件为准。",
+      "after": "> 本文件仅列出章节框架，尚无正文。",
+      "reason": "保留源文件尚未成稿的事实，删除无可核验依据的同名LaTeX版本说明",
+      "occurrences": 1
+    },
+    {
+      "file": "docs/lecture_notes/13_ontology_action_scenario.md",
+      "before": "> 本章讲义正在编写中。以下为课程统一的讲义章节结构占位，正式内容（含理论推导、案例与图表）以同名 LaTeX 源文件为准。",
+      "after": "> 本文件仅列出章节框架，尚无正文。",
+      "reason": "保留源文件尚未成稿的事实，删除无可核验依据的同名LaTeX版本说明",
+      "occurrences": 1
+    },
+    {
+      "file": "docs/lecture_notes/14_ai_agent.md",
+      "before": "召回并用；重排输入是经权限过滤的候选片段，输出是排序及分数，形成最终答复前，",
+      "after": "召回并用。重排以经权限过滤的候选片段为输入，输出排序及分数。形成最终答复前，",
+      "reason": "按检索、重排与答复核验拆分多重长句",
+      "occurrences": 1
+    },
+    {
+      "file": "docs/lecture_notes/14_ai_agent.md",
+      "before": "数据缺失或年龄 \\(>60\\,\\mathrm{s}\\) 则",
+      "after": "数据缺失或读数距采集时点 \\(>60\\,\\mathrm{s}\\) 则",
+      "reason": "明确读数时效",
+      "occurrences": 1
+    },
+    {
+      "file": "docs/lecture_notes/14_ai_agent.md",
+      "before": "但数据年龄 61 s",
+      "after": "但读数距采集时点为 61 s",
+      "reason": "明确读数时效",
+      "occurrences": 1
+    },
+    {
+      "file": "website/dist/content/lecture-slides.json",
+      "chapter": "14_ai_agent",
+      "slide": 44,
+      "field": "body",
+      "before": "读数距采集时点\\(20\\)秒",
+      "after": "读数距采集时点的时长为\\(20\\)秒",
+      "reason": "补足时长短语的主谓搭配",
+      "occurrences": 1
+    },
+    {
+      "file": "docs/lecture_notes/14_ai_agent.md",
+      "before": "这是一种系统分析框架，具体产品对功能的划分和命名可能不同。",
+      "after": "这是一种功能分析框架。",
+      "reason": "删除与段末产品功能划分说明重复的句子",
+      "occurrences": 1
+    },
+    {
+      "file": "docs/lecture_notes/14_ai_agent.md",
+      "before": "某个产品可能合并或另行命名这些功能。",
+      "after": "具体产品可能合并部分功能，或采用不同名称。",
+      "reason": "保留不同产品对功能划分和命名的限定，改善语序",
+      "occurrences": 1
+    },
+    {
+      "file": "docs/lecture_notes/14_ai_agent.md",
+      "before": "读数距采集时点超过 60 s",
+      "after": "读数采集后已超过 60 s",
+      "reason": "用时间经过量表述读数时效",
+      "occurrences": 1
+    },
+    {
+      "file": "docs/lecture_notes/14_ai_agent.md",
+      "before": "数据缺失或读数距采集时点 \\(>60\\,\\mathrm{s}\\) 则",
+      "after": "数据缺失，或读数采集后已经过 \\(>60\\,\\mathrm{s}\\)，则",
+      "reason": "补足判定条件的时长表达",
+      "occurrences": 1
+    },
+    {
+      "file": "docs/lecture_notes/14_ai_agent.md",
+      "before": "读数距采集时点为 61 s",
+      "after": "读数采集后已经过 61 s",
+      "reason": "用时间经过量表述读数时效",
+      "occurrences": 1
+    },
+    {
+      "file": "docs/lecture_notes/11_modern_data_platform.md",
+      "before": "它应保留可追溯的基础事实和指标口径，不能仅由一张汇总报表替代。",
+      "after": "数据集市须明确覆盖范围、基础事实及指标口径，支持汇总结果的追溯。",
+      "reason": "以具体职责解释数据集市，删除无必要的排斥句",
+      "occurrences": 1
+    }
+  ],
+  "terms": [
+    {
+      "file": "docs/lecture_notes/11_modern_data_platform.md",
+      "id": "medallion",
+      "definition": "bronze、silver、gold 是常见的数据分层命名：bronze 保留原始数据，silver 对数据进行清洗和标准化，gold 组织供业务分析使用的结果。分层名称本身不保证质量；各层仍须有可检验的处理与发布规则。参见 [Microsoft 分层架构文档](https://learn.microsoft.com/en-us/fabric/onelake/onelake-medallion-lakehouse-architecture)。",
+      "sources": [
+        "https://learn.microsoft.com/en-us/fabric/onelake/onelake-medallion-lakehouse-architecture"
+      ]
+    },
+    {
+      "file": "docs/lecture_notes/11_modern_data_platform.md",
+      "id": "manufacturing-kpi",
+      "definition": "OEE（Overall Equipment Effectiveness）为设备综合效率，WIP（Work in Process）为在制品存量，OTD（On-time Delivery）为准时交付率。下文的 Yield 为良率，Cycle Time 为生产周期。各指标的对象、时间与分子分母必须分别定义；计算基础见第 3 章。",
+      "sources": []
+    },
+    {
+      "file": "docs/lecture_notes/11_modern_data_platform.md",
+      "id": "sla",
+      "definition": "服务水平协议（Service Level Agreement）规定供给方与使用方的责任、服务质量及响应要求。在数据服务中，可约定刷新频率、可用性、质量门槛和故障处置期限。参见 [NIST 术语定义](https://csrc.nist.gov/glossary/term/service_level_agreement)。",
+      "sources": [
+        "https://csrc.nist.gov/glossary/term/service_level_agreement"
+      ]
+    },
+    {
+      "file": "docs/lecture_notes/11_modern_data_platform.md",
+      "id": "mart",
+      "definition": "数据集市（data mart）面向特定业务领域或分析任务组织数据，例如设备效率或订单交付分析。数据集市须明确覆盖范围、基础事实及指标口径，支持汇总结果的追溯。",
+      "sources": []
+    },
+    {
+      "file": "docs/lecture_notes/14_ai_agent.md",
+      "id": "llm",
+      "definition": "大语言模型（Large Language Model）从大量文本中学习语言的统计关系，用于理解、生成和转换文本。模型生成的流畅程度不等同于事实正确性；业务结论仍需证据与规则核验。",
+      "sources": []
+    },
+    {
+      "file": "docs/lecture_notes/14_ai_agent.md",
+      "id": "invariant",
+      "definition": "不变量是在所有允许状态或状态转移中都必须成立的条件。例如“没有有效批准就不能提交”应由执行机制持续检查，而非仅作为提示词中的要求。",
+      "sources": []
+    },
+    {
+      "file": "docs/lecture_notes/14_ai_agent.md",
+      "id": "fail-closed",
+      "definition": "失败关闭（fail closed）指权限、输入或前置条件无法确认时，停止受限操作并保留待核查状态，避免在检查失效时默认允许执行。",
+      "sources": []
+    },
+    {
+      "file": "docs/lecture_notes/14_ai_agent.md",
+      "id": "ocr",
+      "definition": "光学字符识别（Optical Character Recognition）将图像中的印刷或手写文字转换为可处理文本。识别结果可能出现数字、符号或阅读顺序错误，因此不能省略与原页的核对。参见 [Microsoft OCR 文档](https://learn.microsoft.com/en-us/azure/ai-services/computer-vision/overview-ocr)。",
+      "sources": [
+        "https://learn.microsoft.com/en-us/azure/ai-services/computer-vision/overview-ocr"
+      ]
+    },
+    {
+      "file": "docs/lecture_notes/14_ai_agent.md",
+      "id": "acl",
+      "definition": "访问控制列表（Access Control List）记录哪些主体可访问某项资源，以及各主体具有何种访问权限。检索系统应据此限定候选文档，而不只在生成答案后隐藏敏感文字。参见 [NIST 术语定义](https://csrc.nist.gov/glossary/term/access_control_list)。",
+      "sources": [
+        "https://csrc.nist.gov/glossary/term/access_control_list"
+      ]
+    },
+    {
+      "file": "docs/lecture_notes/14_ai_agent.md",
+      "id": "plc",
+      "definition": "可编程逻辑控制器（Programmable Logic Controller）是执行逻辑、计时、计数及输入输出控制等工业功能的控制装置。其设备控制职责与语言模型的分析建议职责须分别管理。参见 [NIST 术语定义](https://csrc.nist.gov/glossary/term/programmable_logic_controller)。",
+      "sources": [
+        "https://csrc.nist.gov/glossary/term/programmable_logic_controller"
+      ]
+    },
+    {
+      "file": "docs/lecture_notes/14_ai_agent.md",
+      "id": "api",
+      "definition": "应用程序接口（Application Programming Interface）规定软件之间可调用的功能及其输入、输出约定。接口能够被调用，不表示调用方已获业务权限；身份、范围与批准仍须独立核验。",
+      "sources": []
+    },
+    {
+      "file": "assignments/assignment_11_optimization.md",
+      "id": "sku",
+      "definition": "库存管理单位（Stock Keeping Unit）是库存核算与补货管理中区分产品规格的单位。不同型号、尺寸或包装可能对应不同 SKU，具体区分规则须由企业定义。",
+      "sources": []
+    },
+    {
+      "file": "docs/cases/semiconductor_kpi_m13_case.md",
+      "id": "m13",
+      "definition": "M13 是本课程采用的制造运营要素分类，用于把指标异常关联到需求、产品、路线、设备、产能、在制品、质量、维护、交付和行动等待调查环节。它是诊断的组织框架；某项指标与某个要素关联，不构成因果证据。",
+      "sources": []
+    }
+  ],
+  "sourcesConsulted": [
+    "https://learn.microsoft.com/en-us/fabric/onelake/onelake-medallion-lakehouse-architecture",
+    "https://csrc.nist.gov/glossary/term/service_level_agreement",
+    "https://csrc.nist.gov/glossary/term/access_control_list",
+    "https://csrc.nist.gov/glossary/term/programmable_logic_controller",
+    "https://learn.microsoft.com/en-us/azure/ai-services/computer-vision/overview-ocr"
+  ],
+  "slideReview": {
+    "decks": 11,
+    "pages": 458,
+    "changedPages": 157,
+    "changedStrings": 172,
+    "integrity": {
+      "layoutAndNonProseFieldsPreserved": true,
+      "diagramsIdentical": true,
+      "allMathAndInlineCodeIdentical": true,
+      "allNumericTokensIdentical": true,
+      "allReferencesAndAnchorsIdentical": true
+    },
+    "lengthDeltas": [
+      {
+        "chapter": "01_intro",
+        "slide": 3,
+        "beforeChars": 205,
+        "afterChars": 211,
+        "delta": 6
+      },
+      {
+        "chapter": "01_intro",
+        "slide": 6,
+        "beforeChars": 265,
+        "afterChars": 268,
+        "delta": 3
+      },
+      {
+        "chapter": "01_intro",
+        "slide": 18,
+        "beforeChars": 297,
+        "afterChars": 306,
+        "delta": 9
+      },
+      {
+        "chapter": "01_intro",
+        "slide": 24,
+        "beforeChars": 266,
+        "afterChars": 270,
+        "delta": 4
+      },
+      {
+        "chapter": "01_intro",
+        "slide": 25,
+        "beforeChars": 425,
+        "afterChars": 426,
+        "delta": 1
+      },
+      {
+        "chapter": "01_intro",
+        "slide": 26,
+        "beforeChars": 277,
+        "afterChars": 284,
+        "delta": 7
+      },
+      {
+        "chapter": "01_intro",
+        "slide": 27,
+        "beforeChars": 401,
+        "afterChars": 402,
+        "delta": 1
+      },
+      {
+        "chapter": "01_intro",
+        "slide": 33,
+        "beforeChars": 415,
+        "afterChars": 418,
+        "delta": 3
+      },
+      {
+        "chapter": "01_intro",
+        "slide": 36,
+        "beforeChars": 208,
+        "afterChars": 208,
+        "delta": 0
+      },
+      {
+        "chapter": "02_enterprise_data_model",
+        "slide": 1,
+        "beforeChars": 205,
+        "afterChars": 207,
+        "delta": 2
+      },
+      {
+        "chapter": "02_enterprise_data_model",
+        "slide": 8,
+        "beforeChars": 222,
+        "afterChars": 225,
+        "delta": 3
+      },
+      {
+        "chapter": "02_enterprise_data_model",
+        "slide": 13,
+        "beforeChars": 300,
+        "afterChars": 313,
+        "delta": 13
+      },
+      {
+        "chapter": "02_enterprise_data_model",
+        "slide": 14,
+        "beforeChars": 188,
+        "afterChars": 189,
+        "delta": 1
+      },
+      {
+        "chapter": "02_enterprise_data_model",
+        "slide": 17,
+        "beforeChars": 290,
+        "afterChars": 293,
+        "delta": 3
+      },
+      {
+        "chapter": "02_enterprise_data_model",
+        "slide": 20,
+        "beforeChars": 310,
+        "afterChars": 312,
+        "delta": 2
+      },
+      {
+        "chapter": "02_enterprise_data_model",
+        "slide": 25,
+        "beforeChars": 310,
+        "afterChars": 310,
+        "delta": 0
+      },
+      {
+        "chapter": "02_enterprise_data_model",
+        "slide": 28,
+        "beforeChars": 352,
+        "afterChars": 359,
+        "delta": 7
+      },
+      {
+        "chapter": "02_enterprise_data_model",
+        "slide": 29,
+        "beforeChars": 309,
+        "afterChars": 316,
+        "delta": 7
+      },
+      {
+        "chapter": "02_enterprise_data_model",
+        "slide": 33,
+        "beforeChars": 248,
+        "afterChars": 250,
+        "delta": 2
+      },
+      {
+        "chapter": "03_sql_kpi",
+        "slide": 1,
+        "beforeChars": 261,
+        "afterChars": 261,
+        "delta": 0
+      },
+      {
+        "chapter": "03_sql_kpi",
+        "slide": 3,
+        "beforeChars": 417,
+        "afterChars": 422,
+        "delta": 5
+      },
+      {
+        "chapter": "03_sql_kpi",
+        "slide": 4,
+        "beforeChars": 258,
+        "afterChars": 260,
+        "delta": 2
+      },
+      {
+        "chapter": "03_sql_kpi",
+        "slide": 5,
+        "beforeChars": 201,
+        "afterChars": 204,
+        "delta": 3
+      },
+      {
+        "chapter": "03_sql_kpi",
+        "slide": 9,
+        "beforeChars": 182,
+        "afterChars": 191,
+        "delta": 9
+      },
+      {
+        "chapter": "03_sql_kpi",
+        "slide": 12,
+        "beforeChars": 252,
+        "afterChars": 253,
+        "delta": 1
+      },
+      {
+        "chapter": "03_sql_kpi",
+        "slide": 13,
+        "beforeChars": 252,
+        "afterChars": 258,
+        "delta": 6
+      },
+      {
+        "chapter": "03_sql_kpi",
+        "slide": 18,
+        "beforeChars": 277,
+        "afterChars": 279,
+        "delta": 2
+      },
+      {
+        "chapter": "03_sql_kpi",
+        "slide": 19,
+        "beforeChars": 316,
+        "afterChars": 323,
+        "delta": 7
+      },
+      {
+        "chapter": "03_sql_kpi",
+        "slide": 23,
+        "beforeChars": 511,
+        "afterChars": 516,
+        "delta": 5
+      },
+      {
+        "chapter": "03_sql_kpi",
+        "slide": 28,
+        "beforeChars": 231,
+        "afterChars": 234,
+        "delta": 3
+      },
+      {
+        "chapter": "03_sql_kpi",
+        "slide": 29,
+        "beforeChars": 262,
+        "afterChars": 266,
+        "delta": 4
+      },
+      {
+        "chapter": "03_sql_kpi",
+        "slide": 33,
+        "beforeChars": 279,
+        "afterChars": 279,
+        "delta": 0
+      },
+      {
+        "chapter": "03_sql_kpi",
+        "slide": 35,
+        "beforeChars": 373,
+        "afterChars": 379,
+        "delta": 6
+      },
+      {
+        "chapter": "04_data_quality",
+        "slide": 1,
+        "beforeChars": 295,
+        "afterChars": 300,
+        "delta": 5
+      },
+      {
+        "chapter": "04_data_quality",
+        "slide": 6,
+        "beforeChars": 207,
+        "afterChars": 210,
+        "delta": 3
+      },
+      {
+        "chapter": "04_data_quality",
+        "slide": 8,
+        "beforeChars": 349,
+        "afterChars": 350,
+        "delta": 1
+      },
+      {
+        "chapter": "04_data_quality",
+        "slide": 9,
+        "beforeChars": 341,
+        "afterChars": 351,
+        "delta": 10
+      },
+      {
+        "chapter": "04_data_quality",
+        "slide": 10,
+        "beforeChars": 231,
+        "afterChars": 236,
+        "delta": 5
+      },
+      {
+        "chapter": "04_data_quality",
+        "slide": 13,
+        "beforeChars": 261,
+        "afterChars": 267,
+        "delta": 6
+      },
+      {
+        "chapter": "04_data_quality",
+        "slide": 19,
+        "beforeChars": 242,
+        "afterChars": 247,
+        "delta": 5
+      },
+      {
+        "chapter": "04_data_quality",
+        "slide": 22,
+        "beforeChars": 277,
+        "afterChars": 283,
+        "delta": 6
+      },
+      {
+        "chapter": "04_data_quality",
+        "slide": 24,
+        "beforeChars": 177,
+        "afterChars": 179,
+        "delta": 2
+      },
+      {
+        "chapter": "04_data_quality",
+        "slide": 29,
+        "beforeChars": 320,
+        "afterChars": 332,
+        "delta": 12
+      },
+      {
+        "chapter": "04_data_quality",
+        "slide": 32,
+        "beforeChars": 342,
+        "afterChars": 346,
+        "delta": 4
+      },
+      {
+        "chapter": "04_data_quality",
+        "slide": 37,
+        "beforeChars": 254,
+        "afterChars": 256,
+        "delta": 2
+      },
+      {
+        "chapter": "04_data_quality",
+        "slide": 40,
+        "beforeChars": 418,
+        "afterChars": 420,
+        "delta": 2
+      },
+      {
+        "chapter": "04_data_quality",
+        "slide": 43,
+        "beforeChars": 274,
+        "afterChars": 276,
+        "delta": 2
+      },
+      {
+        "chapter": "05_statistics_dashboard",
+        "slide": 3,
+        "beforeChars": 252,
+        "afterChars": 257,
+        "delta": 5
+      },
+      {
+        "chapter": "05_statistics_dashboard",
+        "slide": 6,
+        "beforeChars": 291,
+        "afterChars": 293,
+        "delta": 2
+      },
+      {
+        "chapter": "05_statistics_dashboard",
+        "slide": 8,
+        "beforeChars": 240,
+        "afterChars": 241,
+        "delta": 1
+      },
+      {
+        "chapter": "05_statistics_dashboard",
+        "slide": 13,
+        "beforeChars": 276,
+        "afterChars": 283,
+        "delta": 7
+      },
+      {
+        "chapter": "05_statistics_dashboard",
+        "slide": 20,
+        "beforeChars": 305,
+        "afterChars": 311,
+        "delta": 6
+      },
+      {
+        "chapter": "05_statistics_dashboard",
+        "slide": 21,
+        "beforeChars": 293,
+        "afterChars": 295,
+        "delta": 2
+      },
+      {
+        "chapter": "05_statistics_dashboard",
+        "slide": 23,
+        "beforeChars": 301,
+        "afterChars": 307,
+        "delta": 6
+      },
+      {
+        "chapter": "05_statistics_dashboard",
+        "slide": 26,
+        "beforeChars": 293,
+        "afterChars": 294,
+        "delta": 1
+      },
+      {
+        "chapter": "05_statistics_dashboard",
+        "slide": 27,
+        "beforeChars": 284,
+        "afterChars": 286,
+        "delta": 2
+      },
+      {
+        "chapter": "05_statistics_dashboard",
+        "slide": 29,
+        "beforeChars": 285,
+        "afterChars": 295,
+        "delta": 10
+      },
+      {
+        "chapter": "05_statistics_dashboard",
+        "slide": 30,
+        "beforeChars": 313,
+        "afterChars": 318,
+        "delta": 5
+      },
+      {
+        "chapter": "05_statistics_dashboard",
+        "slide": 31,
+        "beforeChars": 360,
+        "afterChars": 363,
+        "delta": 3
+      },
+      {
+        "chapter": "05_statistics_dashboard",
+        "slide": 33,
+        "beforeChars": 306,
+        "afterChars": 307,
+        "delta": 1
+      },
+      {
+        "chapter": "05_statistics_dashboard",
+        "slide": 35,
+        "beforeChars": 335,
+        "afterChars": 335,
+        "delta": 0
+      },
+      {
+        "chapter": "05_statistics_dashboard",
+        "slide": 39,
+        "beforeChars": 329,
+        "afterChars": 333,
+        "delta": 4
+      },
+      {
+        "chapter": "06_ab_testing",
+        "slide": 4,
+        "beforeChars": 281,
+        "afterChars": 284,
+        "delta": 3
+      },
+      {
+        "chapter": "06_ab_testing",
+        "slide": 8,
+        "beforeChars": 262,
+        "afterChars": 265,
+        "delta": 3
+      },
+      {
+        "chapter": "06_ab_testing",
+        "slide": 9,
+        "beforeChars": 280,
+        "afterChars": 282,
+        "delta": 2
+      },
+      {
+        "chapter": "06_ab_testing",
+        "slide": 15,
+        "beforeChars": 263,
+        "afterChars": 265,
+        "delta": 2
+      },
+      {
+        "chapter": "06_ab_testing",
+        "slide": 16,
+        "beforeChars": 310,
+        "afterChars": 317,
+        "delta": 7
+      },
+      {
+        "chapter": "06_ab_testing",
+        "slide": 22,
+        "beforeChars": 301,
+        "afterChars": 305,
+        "delta": 4
+      },
+      {
+        "chapter": "06_ab_testing",
+        "slide": 23,
+        "beforeChars": 381,
+        "afterChars": 388,
+        "delta": 7
+      },
+      {
+        "chapter": "06_ab_testing",
+        "slide": 25,
+        "beforeChars": 263,
+        "afterChars": 266,
+        "delta": 3
+      },
+      {
+        "chapter": "06_ab_testing",
+        "slide": 26,
+        "beforeChars": 278,
+        "afterChars": 283,
+        "delta": 5
+      },
+      {
+        "chapter": "06_ab_testing",
+        "slide": 27,
+        "beforeChars": 369,
+        "afterChars": 379,
+        "delta": 10
+      },
+      {
+        "chapter": "06_ab_testing",
+        "slide": 34,
+        "beforeChars": 428,
+        "afterChars": 434,
+        "delta": 6
+      },
+      {
+        "chapter": "06_ab_testing",
+        "slide": 36,
+        "beforeChars": 280,
+        "afterChars": 291,
+        "delta": 11
+      },
+      {
+        "chapter": "06_ab_testing",
+        "slide": 41,
+        "beforeChars": 329,
+        "afterChars": 334,
+        "delta": 5
+      },
+      {
+        "chapter": "07_prediction",
+        "slide": 5,
+        "beforeChars": 292,
+        "afterChars": 293,
+        "delta": 1
+      },
+      {
+        "chapter": "07_prediction",
+        "slide": 6,
+        "beforeChars": 192,
+        "afterChars": 196,
+        "delta": 4
+      },
+      {
+        "chapter": "07_prediction",
+        "slide": 11,
+        "beforeChars": 391,
+        "afterChars": 390,
+        "delta": -1
+      },
+      {
+        "chapter": "07_prediction",
+        "slide": 13,
+        "beforeChars": 221,
+        "afterChars": 227,
+        "delta": 6
+      },
+      {
+        "chapter": "07_prediction",
+        "slide": 14,
+        "beforeChars": 163,
+        "afterChars": 172,
+        "delta": 9
+      },
+      {
+        "chapter": "07_prediction",
+        "slide": 15,
+        "beforeChars": 272,
+        "afterChars": 272,
+        "delta": 0
+      },
+      {
+        "chapter": "07_prediction",
+        "slide": 20,
+        "beforeChars": 236,
+        "afterChars": 241,
+        "delta": 5
+      },
+      {
+        "chapter": "07_prediction",
+        "slide": 21,
+        "beforeChars": 214,
+        "afterChars": 221,
+        "delta": 7
+      },
+      {
+        "chapter": "07_prediction",
+        "slide": 25,
+        "beforeChars": 311,
+        "afterChars": 318,
+        "delta": 7
+      },
+      {
+        "chapter": "07_prediction",
+        "slide": 31,
+        "beforeChars": 292,
+        "afterChars": 292,
+        "delta": 0
+      },
+      {
+        "chapter": "07_prediction",
+        "slide": 33,
+        "beforeChars": 215,
+        "afterChars": 216,
+        "delta": 1
+      },
+      {
+        "chapter": "07_prediction",
+        "slide": 35,
+        "beforeChars": 231,
+        "afterChars": 237,
+        "delta": 6
+      },
+      {
+        "chapter": "07_prediction",
+        "slide": 37,
+        "beforeChars": 396,
+        "afterChars": 404,
+        "delta": 8
+      },
+      {
+        "chapter": "08_causality",
+        "slide": 1,
+        "beforeChars": 426,
+        "afterChars": 431,
+        "delta": 5
+      },
+      {
+        "chapter": "08_causality",
+        "slide": 9,
+        "beforeChars": 244,
+        "afterChars": 253,
+        "delta": 9
+      },
+      {
+        "chapter": "08_causality",
+        "slide": 13,
+        "beforeChars": 196,
+        "afterChars": 204,
+        "delta": 8
+      },
+      {
+        "chapter": "08_causality",
+        "slide": 15,
+        "beforeChars": 244,
+        "afterChars": 248,
+        "delta": 4
+      },
+      {
+        "chapter": "08_causality",
+        "slide": 20,
+        "beforeChars": 183,
+        "afterChars": 193,
+        "delta": 10
+      },
+      {
+        "chapter": "08_causality",
+        "slide": 21,
+        "beforeChars": 221,
+        "afterChars": 226,
+        "delta": 5
+      },
+      {
+        "chapter": "08_causality",
+        "slide": 23,
+        "beforeChars": 277,
+        "afterChars": 278,
+        "delta": 1
+      },
+      {
+        "chapter": "08_causality",
+        "slide": 24,
+        "beforeChars": 274,
+        "afterChars": 276,
+        "delta": 2
+      },
+      {
+        "chapter": "08_causality",
+        "slide": 27,
+        "beforeChars": 189,
+        "afterChars": 198,
+        "delta": 9
+      },
+      {
+        "chapter": "08_causality",
+        "slide": 28,
+        "beforeChars": 290,
+        "afterChars": 295,
+        "delta": 5
+      },
+      {
+        "chapter": "08_causality",
+        "slide": 34,
+        "beforeChars": 293,
+        "afterChars": 301,
+        "delta": 8
+      },
+      {
+        "chapter": "08_causality",
+        "slide": 39,
+        "beforeChars": 218,
+        "afterChars": 222,
+        "delta": 4
+      },
+      {
+        "chapter": "08_causality",
+        "slide": 41,
+        "beforeChars": 234,
+        "afterChars": 240,
+        "delta": 6
+      },
+      {
+        "chapter": "09_optimization",
+        "slide": 1,
+        "beforeChars": 438,
+        "afterChars": 442,
+        "delta": 4
+      },
+      {
+        "chapter": "09_optimization",
+        "slide": 7,
+        "beforeChars": 256,
+        "afterChars": 264,
+        "delta": 8
+      },
+      {
+        "chapter": "09_optimization",
+        "slide": 12,
+        "beforeChars": 309,
+        "afterChars": 313,
+        "delta": 4
+      },
+      {
+        "chapter": "09_optimization",
+        "slide": 14,
+        "beforeChars": 245,
+        "afterChars": 248,
+        "delta": 3
+      },
+      {
+        "chapter": "09_optimization",
+        "slide": 16,
+        "beforeChars": 182,
+        "afterChars": 200,
+        "delta": 18
+      },
+      {
+        "chapter": "09_optimization",
+        "slide": 18,
+        "beforeChars": 208,
+        "afterChars": 224,
+        "delta": 16
+      },
+      {
+        "chapter": "09_optimization",
+        "slide": 20,
+        "beforeChars": 189,
+        "afterChars": 198,
+        "delta": 9
+      },
+      {
+        "chapter": "09_optimization",
+        "slide": 23,
+        "beforeChars": 205,
+        "afterChars": 208,
+        "delta": 3
+      },
+      {
+        "chapter": "09_optimization",
+        "slide": 24,
+        "beforeChars": 195,
+        "afterChars": 203,
+        "delta": 8
+      },
+      {
+        "chapter": "09_optimization",
+        "slide": 25,
+        "beforeChars": 296,
+        "afterChars": 306,
+        "delta": 10
+      },
+      {
+        "chapter": "09_optimization",
+        "slide": 28,
+        "beforeChars": 227,
+        "afterChars": 232,
+        "delta": 5
+      },
+      {
+        "chapter": "09_optimization",
+        "slide": 30,
+        "beforeChars": 187,
+        "afterChars": 195,
+        "delta": 8
+      },
+      {
+        "chapter": "09_optimization",
+        "slide": 32,
+        "beforeChars": 252,
+        "afterChars": 254,
+        "delta": 2
+      },
+      {
+        "chapter": "09_optimization",
+        "slide": 36,
+        "beforeChars": 217,
+        "afterChars": 225,
+        "delta": 8
+      },
+      {
+        "chapter": "10_process_mining",
+        "slide": 1,
+        "beforeChars": 434,
+        "afterChars": 436,
+        "delta": 2
+      },
+      {
+        "chapter": "10_process_mining",
+        "slide": 7,
+        "beforeChars": 376,
+        "afterChars": 377,
+        "delta": 1
+      },
+      {
+        "chapter": "10_process_mining",
+        "slide": 8,
+        "beforeChars": 198,
+        "afterChars": 205,
+        "delta": 7
+      },
+      {
+        "chapter": "10_process_mining",
+        "slide": 11,
+        "beforeChars": 181,
+        "afterChars": 185,
+        "delta": 4
+      },
+      {
+        "chapter": "10_process_mining",
+        "slide": 14,
+        "beforeChars": 233,
+        "afterChars": 242,
+        "delta": 9
+      },
+      {
+        "chapter": "10_process_mining",
+        "slide": 16,
+        "beforeChars": 222,
+        "afterChars": 231,
+        "delta": 9
+      },
+      {
+        "chapter": "10_process_mining",
+        "slide": 18,
+        "beforeChars": 227,
+        "afterChars": 231,
+        "delta": 4
+      },
+      {
+        "chapter": "10_process_mining",
+        "slide": 20,
+        "beforeChars": 395,
+        "afterChars": 401,
+        "delta": 6
+      },
+      {
+        "chapter": "10_process_mining",
+        "slide": 23,
+        "beforeChars": 176,
+        "afterChars": 179,
+        "delta": 3
+      },
+      {
+        "chapter": "10_process_mining",
+        "slide": 24,
+        "beforeChars": 412,
+        "afterChars": 416,
+        "delta": 4
+      },
+      {
+        "chapter": "10_process_mining",
+        "slide": 25,
+        "beforeChars": 381,
+        "afterChars": 381,
+        "delta": 0
+      },
+      {
+        "chapter": "10_process_mining",
+        "slide": 27,
+        "beforeChars": 346,
+        "afterChars": 346,
+        "delta": 0
+      },
+      {
+        "chapter": "10_process_mining",
+        "slide": 31,
+        "beforeChars": 199,
+        "afterChars": 202,
+        "delta": 3
+      },
+      {
+        "chapter": "10_process_mining",
+        "slide": 38,
+        "beforeChars": 181,
+        "afterChars": 191,
+        "delta": 10
+      },
+      {
+        "chapter": "10_process_mining",
+        "slide": 39,
+        "beforeChars": 218,
+        "afterChars": 221,
+        "delta": 3
+      },
+      {
+        "chapter": "10_process_mining",
+        "slide": 40,
+        "beforeChars": 226,
+        "afterChars": 240,
+        "delta": 14
+      },
+      {
+        "chapter": "10_process_mining",
+        "slide": 44,
+        "beforeChars": 253,
+        "afterChars": 261,
+        "delta": 8
+      },
+      {
+        "chapter": "14_ai_agent",
+        "slide": 2,
+        "beforeChars": 401,
+        "afterChars": 407,
+        "delta": 6
+      },
+      {
+        "chapter": "14_ai_agent",
+        "slide": 4,
+        "beforeChars": 242,
+        "afterChars": 254,
+        "delta": 12
+      },
+      {
+        "chapter": "14_ai_agent",
+        "slide": 5,
+        "beforeChars": 215,
+        "afterChars": 215,
+        "delta": 0
+      },
+      {
+        "chapter": "14_ai_agent",
+        "slide": 9,
+        "beforeChars": 241,
+        "afterChars": 242,
+        "delta": 1
+      },
+      {
+        "chapter": "14_ai_agent",
+        "slide": 11,
+        "beforeChars": 233,
+        "afterChars": 241,
+        "delta": 8
+      },
+      {
+        "chapter": "14_ai_agent",
+        "slide": 14,
+        "beforeChars": 221,
+        "afterChars": 222,
+        "delta": 1
+      },
+      {
+        "chapter": "14_ai_agent",
+        "slide": 19,
+        "beforeChars": 474,
+        "afterChars": 474,
+        "delta": 0
+      },
+      {
+        "chapter": "14_ai_agent",
+        "slide": 20,
+        "beforeChars": 233,
+        "afterChars": 233,
+        "delta": 0
+      },
+      {
+        "chapter": "14_ai_agent",
+        "slide": 21,
+        "beforeChars": 226,
+        "afterChars": 227,
+        "delta": 1
+      },
+      {
+        "chapter": "14_ai_agent",
+        "slide": 23,
+        "beforeChars": 240,
+        "afterChars": 248,
+        "delta": 8
+      },
+      {
+        "chapter": "14_ai_agent",
+        "slide": 29,
+        "beforeChars": 544,
+        "afterChars": 550,
+        "delta": 6
+      },
+      {
+        "chapter": "14_ai_agent",
+        "slide": 32,
+        "beforeChars": 497,
+        "afterChars": 497,
+        "delta": 0
+      },
+      {
+        "chapter": "14_ai_agent",
+        "slide": 35,
+        "beforeChars": 234,
+        "afterChars": 234,
+        "delta": 0
+      },
+      {
+        "chapter": "14_ai_agent",
+        "slide": 36,
+        "beforeChars": 495,
+        "afterChars": 497,
+        "delta": 2
+      },
+      {
+        "chapter": "14_ai_agent",
+        "slide": 38,
+        "beforeChars": 238,
+        "afterChars": 238,
+        "delta": 0
+      },
+      {
+        "chapter": "14_ai_agent",
+        "slide": 39,
+        "beforeChars": 253,
+        "afterChars": 253,
+        "delta": 0
+      },
+      {
+        "chapter": "14_ai_agent",
+        "slide": 40,
+        "beforeChars": 558,
+        "afterChars": 567,
+        "delta": 9
+      },
+      {
+        "chapter": "14_ai_agent",
+        "slide": 41,
+        "beforeChars": 241,
+        "afterChars": 257,
+        "delta": 16
+      },
+      {
+        "chapter": "14_ai_agent",
+        "slide": 42,
+        "beforeChars": 270,
+        "afterChars": 275,
+        "delta": 5
+      },
+      {
+        "chapter": "14_ai_agent",
+        "slide": 44,
+        "beforeChars": 493,
+        "afterChars": 500,
+        "delta": 7
+      },
+      {
+        "chapter": "14_ai_agent",
+        "slide": 46,
+        "beforeChars": 233,
+        "afterChars": 245,
+        "delta": 12
+      },
+      {
+        "chapter": "14_ai_agent",
+        "slide": 47,
+        "beforeChars": 255,
+        "afterChars": 257,
+        "delta": 2
+      },
+      {
+        "chapter": "14_ai_agent",
+        "slide": 49,
+        "beforeChars": 229,
+        "afterChars": 235,
+        "delta": 6
+      },
+      {
+        "chapter": "14_ai_agent",
+        "slide": 51,
+        "beforeChars": 237,
+        "afterChars": 242,
+        "delta": 5
+      },
+      {
+        "chapter": "14_ai_agent",
+        "slide": 53,
+        "beforeChars": 458,
+        "afterChars": 460,
+        "delta": 2
+      }
+    ]
+  },
+  "mdIntegrity": [
+    {
+      "file": "docs/lecture_notes/11_modern_data_platform.md",
+      "sha256": "fe7958a5d45d9fa7507a52e321714dfb0670c8d309f0318b5c58ac5c14da90f8",
+      "changed": true,
+      "protected": {
+        "fencedCode": 1,
+        "inlineCode": 1,
+        "math": 0,
+        "linkTargets": 0
+      },
+      "fencedCodeIdentical": true,
+      "inlineCodeIdentical": true,
+      "mathIdentical": true,
+      "existingLinkTargetsPreserved": true,
+      "existingNumericTokensIdentical": true,
+      "footnoteDefinitions": 4,
+      "footnoteReferencesResolved": true
+    },
+    {
+      "file": "docs/lecture_notes/14_ai_agent.md",
+      "sha256": "6b2cca9a1f619394d51e1ee7d4d384b12d0283ec08a7cc80279cd16bc48509a1",
+      "changed": true,
+      "protected": {
+        "fencedCode": 1,
+        "inlineCode": 143,
+        "math": 32,
+        "linkTargets": 30
+      },
+      "fencedCodeIdentical": true,
+      "inlineCodeIdentical": true,
+      "mathIdentical": true,
+      "existingLinkTargetsPreserved": true,
+      "existingNumericTokensIdentical": true,
+      "footnoteDefinitions": 7,
+      "footnoteReferencesResolved": true
+    },
+    {
+      "file": "docs/cases/ai_question_to_data_case.md",
+      "sha256": "d3634be7c5d24952835f568b00d94c30a52c5d552c9ea755387fbe93618bf9fe",
+      "changed": true,
+      "protected": {
+        "fencedCode": 1,
+        "inlineCode": 0,
+        "math": 0,
+        "linkTargets": 0
+      },
+      "fencedCodeIdentical": true,
+      "inlineCodeIdentical": true,
+      "mathIdentical": true,
+      "existingLinkTargetsPreserved": true,
+      "existingNumericTokensIdentical": true,
+      "footnoteDefinitions": 0,
+      "footnoteReferencesResolved": true
+    },
+    {
+      "file": "docs/cases/semiconductor_kpi_m13_case.md",
+      "sha256": "f7ca90df66ff502506922ede9329938224330d3d7b48496f99c60f48cb66a236",
+      "changed": true,
+      "protected": {
+        "fencedCode": 1,
+        "inlineCode": 7,
+        "math": 0,
+        "linkTargets": 0
+      },
+      "fencedCodeIdentical": true,
+      "inlineCodeIdentical": true,
+      "mathIdentical": true,
+      "existingLinkTargetsPreserved": true,
+      "existingNumericTokensIdentical": true,
+      "footnoteDefinitions": 1,
+      "footnoteReferencesResolved": true
+    },
+    {
+      "file": "docs/syllabus.md",
+      "sha256": "c10928dc74811ef0237f06d6391d290dc8b66b3517c6fc61769866bbd8568c39",
+      "changed": true,
+      "protected": {
+        "fencedCode": 0,
+        "inlineCode": 0,
+        "math": 0,
+        "linkTargets": 2
+      },
+      "fencedCodeIdentical": true,
+      "inlineCodeIdentical": true,
+      "mathIdentical": true,
+      "existingLinkTargetsPreserved": true,
+      "existingNumericTokensIdentical": true,
+      "footnoteDefinitions": 0,
+      "footnoteReferencesResolved": true
+    },
+    {
+      "file": "assignments/assignment_01_data_modeling.md",
+      "sha256": "c4723ed7c651f5f382b6a3b509d3ebe4f996eda2caf6e2c6227d760863a3a920",
+      "changed": true,
+      "protected": {
+        "fencedCode": 0,
+        "inlineCode": 1,
+        "math": 0,
+        "linkTargets": 0
+      },
+      "fencedCodeIdentical": true,
+      "inlineCodeIdentical": true,
+      "mathIdentical": true,
+      "existingLinkTargetsPreserved": true,
+      "existingNumericTokensIdentical": true,
+      "footnoteDefinitions": 0,
+      "footnoteReferencesResolved": true
+    },
+    {
+      "file": "assignments/assignment_02_enterprise_data_model.md",
+      "sha256": "fc718bb84b151058adcbb4a627ef735137cdce8c0f95f1798d41dd8ccaa61908",
+      "changed": true,
+      "protected": {
+        "fencedCode": 0,
+        "inlineCode": 0,
+        "math": 0,
+        "linkTargets": 0
+      },
+      "fencedCodeIdentical": true,
+      "inlineCodeIdentical": true,
+      "mathIdentical": true,
+      "existingLinkTargetsPreserved": true,
+      "existingNumericTokensIdentical": true,
+      "footnoteDefinitions": 0,
+      "footnoteReferencesResolved": true
+    },
+    {
+      "file": "assignments/assignment_03_sql_kpi.md",
+      "sha256": "f0223bf209abae6bdfbd713de518c70f9a1b682c997c8bb3a6cc114a304707c7",
+      "changed": true,
+      "protected": {
+        "fencedCode": 0,
+        "inlineCode": 6,
+        "math": 0,
+        "linkTargets": 0
+      },
+      "fencedCodeIdentical": true,
+      "inlineCodeIdentical": true,
+      "mathIdentical": true,
+      "existingLinkTargetsPreserved": true,
+      "existingNumericTokensIdentical": true,
+      "footnoteDefinitions": 0,
+      "footnoteReferencesResolved": true
+    },
+    {
+      "file": "assignments/assignment_04_data_quality.md",
+      "sha256": "c07fb2c0c3f72a04238553e87b40968933a6f008a1802205cbd6013d3449d943",
+      "changed": true,
+      "protected": {
+        "fencedCode": 0,
+        "inlineCode": 17,
+        "math": 0,
+        "linkTargets": 0
+      },
+      "fencedCodeIdentical": true,
+      "inlineCodeIdentical": true,
+      "mathIdentical": true,
+      "existingLinkTargetsPreserved": true,
+      "existingNumericTokensIdentical": true,
+      "footnoteDefinitions": 0,
+      "footnoteReferencesResolved": true
+    },
+    {
+      "file": "assignments/assignment_05_dashboard.md",
+      "sha256": "7ae2c5f5c5e8b44ecc62afce18d0a364764a5bf775aedddd7c7195d62c65277c",
+      "changed": true,
+      "protected": {
+        "fencedCode": 0,
+        "inlineCode": 4,
+        "math": 0,
+        "linkTargets": 0
+      },
+      "fencedCodeIdentical": true,
+      "inlineCodeIdentical": true,
+      "mathIdentical": true,
+      "existingLinkTargetsPreserved": true,
+      "existingNumericTokensIdentical": true,
+      "footnoteDefinitions": 0,
+      "footnoteReferencesResolved": true
+    },
+    {
+      "file": "assignments/assignment_06_statistical_inference.md",
+      "sha256": "bf00520990957617cb0f9b62ddc5e306d385df2112530f455cb6feb5306094b9",
+      "changed": true,
+      "protected": {
+        "fencedCode": 0,
+        "inlineCode": 3,
+        "math": 0,
+        "linkTargets": 0
+      },
+      "fencedCodeIdentical": true,
+      "inlineCodeIdentical": true,
+      "mathIdentical": true,
+      "existingLinkTargetsPreserved": true,
+      "existingNumericTokensIdentical": true,
+      "footnoteDefinitions": 0,
+      "footnoteReferencesResolved": true
+    },
+    {
+      "file": "assignments/assignment_07_prediction.md",
+      "sha256": "97d616a8b2ba03f2bb8a229a9563256d1656203ff42d15173a7544627b1a4bd2",
+      "changed": true,
+      "protected": {
+        "fencedCode": 0,
+        "inlineCode": 2,
+        "math": 0,
+        "linkTargets": 0
+      },
+      "fencedCodeIdentical": true,
+      "inlineCodeIdentical": true,
+      "mathIdentical": true,
+      "existingLinkTargetsPreserved": true,
+      "existingNumericTokensIdentical": true,
+      "footnoteDefinitions": 0,
+      "footnoteReferencesResolved": true
+    },
+    {
+      "file": "assignments/assignment_09_causality.md",
+      "sha256": "2990359db952700c6493ace62e9acf399bb9123e2f33a03f99d958fbd9d344b9",
+      "changed": true,
+      "protected": {
+        "fencedCode": 0,
+        "inlineCode": 4,
+        "math": 0,
+        "linkTargets": 0
+      },
+      "fencedCodeIdentical": true,
+      "inlineCodeIdentical": true,
+      "mathIdentical": true,
+      "existingLinkTargetsPreserved": true,
+      "existingNumericTokensIdentical": true,
+      "footnoteDefinitions": 0,
+      "footnoteReferencesResolved": true
+    },
+    {
+      "file": "assignments/assignment_11_optimization.md",
+      "sha256": "4c6e6725f6dda1a615ac6366b3eb8b16faa6bd46399865f8363e34dbdab07f29",
+      "changed": true,
+      "protected": {
+        "fencedCode": 0,
+        "inlineCode": 2,
+        "math": 0,
+        "linkTargets": 0
+      },
+      "fencedCodeIdentical": true,
+      "inlineCodeIdentical": true,
+      "mathIdentical": true,
+      "existingLinkTargetsPreserved": true,
+      "existingNumericTokensIdentical": true,
+      "footnoteDefinitions": 1,
+      "footnoteReferencesResolved": true
+    },
+    {
+      "file": "assignments/assignment_12_process_mining.md",
+      "sha256": "48d4b440cef7e0f0f3b5f24314ff655d861613ab525547bbc2ea0379338f470d",
+      "changed": true,
+      "protected": {
+        "fencedCode": 0,
+        "inlineCode": 2,
+        "math": 0,
+        "linkTargets": 0
+      },
+      "fencedCodeIdentical": true,
+      "inlineCodeIdentical": true,
+      "mathIdentical": true,
+      "existingLinkTargetsPreserved": true,
+      "existingNumericTokensIdentical": true,
+      "footnoteDefinitions": 0,
+      "footnoteReferencesResolved": true
+    },
+    {
+      "file": "assignments/final_project.md",
+      "sha256": "dd686c0d11596d625c7b727973fcdc552740d01b20b2cad29e4e9d157e29f7ec",
+      "changed": true,
+      "protected": {
+        "fencedCode": 1,
+        "inlineCode": 0,
+        "math": 0,
+        "linkTargets": 1
+      },
+      "fencedCodeIdentical": true,
+      "inlineCodeIdentical": true,
+      "mathIdentical": true,
+      "existingLinkTargetsPreserved": true,
+      "existingNumericTokensIdentical": true,
+      "footnoteDefinitions": 0,
+      "footnoteReferencesResolved": true
+    },
+    {
+      "file": "reports/decision_memo_template.md",
+      "sha256": "37ed02e9df3f61dbdc26d244220d0af3b045840e043c4a37be5b5a276a71f704",
+      "changed": true,
+      "protected": {
+        "fencedCode": 0,
+        "inlineCode": 0,
+        "math": 0,
+        "linkTargets": 0
+      },
+      "fencedCodeIdentical": true,
+      "inlineCodeIdentical": true,
+      "mathIdentical": true,
+      "existingLinkTargetsPreserved": true,
+      "existingNumericTokensIdentical": true,
+      "footnoteDefinitions": 0,
+      "footnoteReferencesResolved": true
+    },
+    {
+      "file": "reports/model_card_template.md",
+      "sha256": "e475f15d9161334bd8fe0bbd24c9422874a8f122c12a29d975a417fc7450b2bd",
+      "changed": true,
+      "protected": {
+        "fencedCode": 0,
+        "inlineCode": 0,
+        "math": 0,
+        "linkTargets": 0
+      },
+      "fencedCodeIdentical": true,
+      "inlineCodeIdentical": true,
+      "mathIdentical": true,
+      "existingLinkTargetsPreserved": true,
+      "existingNumericTokensIdentical": true,
+      "footnoteDefinitions": 0,
+      "footnoteReferencesResolved": true
+    },
+    {
+      "file": "reports/project_report_template.md",
+      "sha256": "8f144784d81c47370c14183578171cb770cc2e0b643c69c835f09c13c69c3ed4",
+      "changed": true,
+      "protected": {
+        "fencedCode": 0,
+        "inlineCode": 0,
+        "math": 0,
+        "linkTargets": 0
+      },
+      "fencedCodeIdentical": true,
+      "inlineCodeIdentical": true,
+      "mathIdentical": true,
+      "existingLinkTargetsPreserved": true,
+      "existingNumericTokensIdentical": true,
+      "footnoteDefinitions": 0,
+      "footnoteReferencesResolved": true
+    },
+    {
+      "file": "data/sample/README.md",
+      "sha256": "a819555a5e5613672520181f20314bb78a2d76e54891af0a985be754d95dcd61",
+      "changed": true,
+      "protected": {
+        "fencedCode": 0,
+        "inlineCode": 20,
+        "math": 0,
+        "linkTargets": 0
+      },
+      "fencedCodeIdentical": true,
+      "inlineCodeIdentical": true,
+      "mathIdentical": true,
+      "existingLinkTargetsPreserved": true,
+      "existingNumericTokensIdentical": true,
+      "footnoteDefinitions": 0,
+      "footnoteReferencesResolved": true
+    },
+    {
+      "file": "docs/lecture_notes/12_mlops.md",
+      "sha256": "84a6a8797091c23129658685b639876e545a914fb1a14f63cc4a46418b917d8a",
+      "changed": true,
+      "protected": {
+        "fencedCode": 0,
+        "inlineCode": 0,
+        "math": 0,
+        "linkTargets": 0
+      },
+      "fencedCodeIdentical": true,
+      "inlineCodeIdentical": true,
+      "mathIdentical": true,
+      "existingLinkTargetsPreserved": true,
+      "existingNumericTokensIdentical": true,
+      "footnoteDefinitions": 0,
+      "footnoteReferencesResolved": true
+    },
+    {
+      "file": "docs/lecture_notes/13_ontology_action_scenario.md",
+      "sha256": "d97cede9cc7e87b5e7e19d790a92b0e4115c0a23027d3bd2f99a2cdbcc9a920a",
+      "changed": true,
+      "protected": {
+        "fencedCode": 0,
+        "inlineCode": 0,
+        "math": 0,
+        "linkTargets": 0
+      },
+      "fencedCodeIdentical": true,
+      "inlineCodeIdentical": true,
+      "mathIdentical": true,
+      "existingLinkTargetsPreserved": true,
+      "existingNumericTokensIdentical": true,
+      "footnoteDefinitions": 0,
+      "footnoteReferencesResolved": true
+    }
+  ],
+  "summary": {
+    "reviewedMarkdownDocuments": 22,
+    "changedMarkdownDocuments": 22,
+    "reviewedDecks": 11,
+    "reviewedSlidePages": 458,
+    "changedSlidePages": 157,
+    "recordedOperations": 332,
+    "footnoteDefinitions": 13,
+    "protectedContentChecksPassed": true,
+    "newTermNotesHaveResolvableReferences": true
+  }
+}
