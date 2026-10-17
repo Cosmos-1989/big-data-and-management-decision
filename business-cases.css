@@ -1,0 +1,32 @@
+.chapter-business-cases{margin-top:62px;scroll-margin-top:calc(var(--header-height) + 24px)}
+.business-cases-intro{display:flex;align-items:baseline;justify-content:space-between;gap:24px;border-bottom:1px solid #dae5ec;padding-bottom:14px}
+.business-cases-intro h2{margin:0}
+.business-cases-intro>a{font-size:13px;white-space:nowrap;color:#47758f}
+.business-case-card{margin:42px 0;padding:0 0 34px;border-bottom:1px solid #dce6ec;scroll-margin-top:calc(var(--header-height) + 24px);overflow-wrap:anywhere}
+.business-case-heading>span{display:block;font-size:12px;letter-spacing:.025em;color:#678392;margin-bottom:10px}
+.business-case-heading h3,.prose .business-case-heading h3{font-family:var(--font-serif,"Songti SC",SimSun,serif);font-size:25px;line-height:1.5;margin:0 0 17px;color:#17394d}
+.business-case-card p,.business-case-card li{font-size:16px;line-height:1.9;color:#3e5563}
+.business-case-card p{margin:12px 0}
+.business-case-context{color:#4d6878}
+.business-case-decision{border-left:3px solid #84abc1;background:#f0f7fb;padding:13px 20px;margin:21px 0}
+.business-case-decision>span{font-size:12px;color:#547b91}
+.business-case-decision p{margin:5px 0 0;font-weight:500}
+.business-case-card h4{font-size:15px;font-weight:600;margin:24px 0 9px;color:#365b70}
+.business-case-facts ul{padding-left:1.4em;margin:6px 0 16px}
+.business-case-facts li{padding-left:5px;margin:7px 0}
+.business-case-card .business-case-limit{font-size:14px;line-height:1.8;color:#647b89;margin:20px 0;padding-top:14px;border-top:1px solid #e5ecf0}
+.business-case-limit strong{display:block;font-size:12px;font-weight:500;color:#647b89;margin-bottom:5px}
+.business-case-question,.business-case-sources{margin:13px 0;border:1px solid #dce6ec;border-radius:7px;background:#fbfdfe}
+.business-case-card summary{cursor:pointer;padding:13px 16px;font-size:14px;line-height:1.7;color:#3d667d}
+.business-case-card details>p,.business-case-card details>ol{margin:0;padding:0 17px 16px}
+.business-case-card details>ol{padding-left:38px}
+.business-case-card .business-case-sources li{font-size:13px;line-height:1.8;margin:7px 0 17px}
+.business-case-sources li>a{color:#356d8a;text-decoration:underline;text-underline-offset:3px}
+.business-case-sources li>span{display:block;font-size:12px;color:#748995;margin-top:5px}
+.business-case-sources li>p{font-size:13px;margin:6px 0 0}
+.business-case-card .business-case-accessed{font-size:12px;color:#748995}
+.business-case-links{display:flex;gap:20px;flex-wrap:wrap;margin-top:17px;font-size:12px}
+.business-case-links a{color:#416f89;text-decoration:none}
+.business-case-card a:focus-visible,.business-case-card summary:focus-visible{outline:2px solid #8db6cd;outline-offset:4px;border-radius:3px}
+@media(max-width:600px){.business-cases-intro{display:block}.business-cases-intro>a{display:block;margin-top:10px}.business-case-card{margin:32px 0;padding-bottom:24px}.business-case-heading h3,.prose .business-case-heading h3{font-size:22px}.business-case-decision{padding:12px 15px}.business-case-card p,.business-case-card li{font-size:15px}}
+@media print{.business-case-card{break-inside:auto}.business-case-sources,.business-case-question{break-inside:avoid}.business-case-links{display:none}}

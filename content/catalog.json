@@ -11,61 +11,71 @@
       "id": "01_intro",
       "title": "数据、信息与管理决策",
       "source": "docs/textbook/chapters/01_intro.tex",
-      "kind": "textbook"
+      "kind": "textbook",
+      "hasSlides": true
     },
     {
       "id": "02_enterprise_data_model",
       "title": "企业数据模型与治理机制",
       "source": "docs/textbook/chapters/02_enterprise_data_model.tex",
-      "kind": "textbook"
+      "kind": "textbook",
+      "hasSlides": true
     },
     {
       "id": "03_sql_kpi",
       "title": "关系查询、指标计算与语义服务",
       "source": "docs/textbook/chapters/03_sql_kpi.tex",
-      "kind": "textbook"
+      "kind": "textbook",
+      "hasSlides": true
     },
     {
       "id": "04_data_quality",
       "title": "数据质量与证据可信度",
       "source": "docs/textbook/chapters/04_data_quality.tex",
-      "kind": "textbook"
+      "kind": "textbook",
+      "hasSlides": true
     },
     {
       "id": "05_statistics_dashboard",
       "title": "统计描述、过程波动与运营规律",
       "source": "docs/textbook/chapters/05_statistics_dashboard.tex",
-      "kind": "textbook"
+      "kind": "textbook",
+      "hasSlides": true
     },
     {
       "id": "06_ab_testing",
       "title": "统计推断与随机实验",
       "source": "docs/textbook/chapters/06_ab_testing.tex",
-      "kind": "textbook"
+      "kind": "textbook",
+      "hasSlides": true
     },
     {
       "id": "07_prediction",
       "title": "预测模型、泛化与不确定性",
       "source": "docs/textbook/chapters/07_prediction.tex",
-      "kind": "textbook"
+      "kind": "textbook",
+      "hasSlides": true
     },
     {
       "id": "08_causality",
       "title": "因果识别与管理干预",
       "source": "docs/textbook/chapters/08_causality.tex",
-      "kind": "textbook"
+      "kind": "textbook",
+      "hasSlides": true
     },
     {
       "id": "09_optimization",
       "title": "资源配置、优化与处方决策",
       "source": "docs/textbook/chapters/09_optimization.tex",
-      "kind": "textbook"
+      "kind": "textbook",
+      "hasSlides": true
     },
     {
       "id": "10_process_mining",
       "title": "流程挖掘与智能体执行",
       "source": "docs/textbook/chapters/10_process_mining.tex",
-      "kind": "textbook"
+      "kind": "textbook",
+      "hasSlides": true
     },
     {
       "id": "appendix-1",
@@ -97,19 +107,22 @@
       "id": "11_modern_data_platform",
       "title": "第 11 章现代数据平台与语义层",
       "source": "docs/lecture_notes/11_modern_data_platform.md",
-      "kind": "supplement"
+      "kind": "supplement",
+      "hasSlides": true
     },
     {
       "id": "12_mlops",
       "title": "第 12 章 MLOps 与分析工程",
       "source": "docs/lecture_notes/12_mlops.md",
-      "kind": "supplement"
+      "kind": "supplement",
+      "hasSlides": true
     },
     {
       "id": "13_ontology_action_scenario",
       "title": "第 13 章 Palantir 式决策系统抽象",
       "source": "docs/lecture_notes/13_ontology_action_scenario.md",
-      "kind": "supplement"
+      "kind": "supplement",
+      "hasSlides": true
     },
     {
       "id": "14_ai_agent",
@@ -188,7 +201,8 @@
       "id": "final_project",
       "title": "综合项目：SiFactory-like 企业制造决策系统原型",
       "source": "assignments/final_project.md",
-      "kind": "supplement"
+      "kind": "supplement",
+      "hasSlides": true
     },
     {
       "id": "decision_memo_template",
@@ -231,6 +245,12 @@
       "title": "企业Agent专题：主题与实验导航",
       "kind": "supplement",
       "source": "docs/lecture_notes/14_ai_agent.md"
+    },
+    {
+      "id": "business-casebook",
+      "title": "真实商业案例集",
+      "kind": "supplement",
+      "source": "website/content-source/teaching-20261017"
     }
   ],
   "programs": [
@@ -2027,121 +2047,121 @@
       "term": "Chatbot / Copilot / Agent 的边界",
       "sort": "chatbot / copilot / agent 的边界",
       "chapter": "14_ai_agent",
-      "anchor": "14_ai_agent-notes"
+      "anchor": "agent-architecture"
     },
     {
       "term": "LLM 在 Agent 系统中的职责与限制",
       "sort": "llm 在 agent 系统中的职责与限制",
       "chapter": "14_ai_agent",
-      "anchor": "14_ai_agent-notes"
+      "anchor": "agent-architecture"
     },
     {
       "term": "Planning：分解、更新与终止",
       "sort": "planning：分解、更新与终止",
       "chapter": "14_ai_agent",
-      "anchor": "14_ai_agent-notes"
+      "anchor": "agent-architecture"
     },
     {
       "term": "Memory：会话、检查点与长期记忆",
       "sort": "memory：会话、检查点与长期记忆",
       "chapter": "14_ai_agent",
-      "anchor": "14_ai_agent-notes"
+      "anchor": "agent-architecture"
     },
     {
       "term": "Tools：结构化调用、权限、幂等与结果验证",
       "sort": "tools：结构化调用、权限、幂等与结果验证",
       "chapter": "14_ai_agent",
-      "anchor": "14_ai_agent-notes"
+      "anchor": "agent-architecture"
     },
     {
       "term": "Skills：可复用任务能力的定义、版本与验收",
       "sort": "skills：可复用任务能力的定义、版本与验收",
       "chapter": "14_ai_agent",
-      "anchor": "14_ai_agent-notes"
+      "anchor": "agent-architecture"
     },
     {
       "term": "Harness：上下文、状态、预算、恢复与监督",
       "sort": "harness：上下文、状态、预算、恢复与监督",
       "chapter": "14_ai_agent",
-      "anchor": "14_ai_agent-notes"
+      "anchor": "agent-architecture"
     },
     {
       "term": "文档解析、OCR/表格、元数据保真",
       "sort": "文档解析、ocr/表格、元数据保真",
       "chapter": "14_ai_agent",
-      "anchor": "14_ai_agent-notes"
+      "anchor": "agent-rag"
     },
     {
       "term": "切分策略与片段定位",
       "sort": "切分策略与片段定位",
       "chapter": "14_ai_agent",
-      "anchor": "14_ai_agent-notes"
+      "anchor": "agent-rag"
     },
     {
       "term": "向量嵌入、相似度与混合检索",
       "sort": "向量嵌入、相似度与混合检索",
       "chapter": "14_ai_agent",
-      "anchor": "14_ai_agent-notes"
+      "anchor": "agent-rag"
     },
     {
       "term": "Rerank：候选重排与证据筛选",
       "sort": "rerank：候选重排与证据筛选",
       "chapter": "14_ai_agent",
-      "anchor": "14_ai_agent-notes"
+      "anchor": "agent-rag"
     },
     {
       "term": "GraphRAG：实体关系检索与文本证据结合",
       "sort": "graphrag：实体关系检索与文本证据结合",
       "chapter": "14_ai_agent",
-      "anchor": "14_ai_agent-notes"
+      "anchor": "agent-rag"
     },
     {
       "term": "引用、冲突、有效期与检索评测",
       "sort": "引用、冲突、有效期与检索评测",
       "chapter": "14_ai_agent",
-      "anchor": "14_ai_agent-notes"
+      "anchor": "agent-rag"
     },
     {
       "term": "Chatflow 与 Workflow 的区别",
       "sort": "chatflow 与 workflow 的区别",
       "chapter": "14_ai_agent",
-      "anchor": "14_ai_agent-notes"
+      "anchor": "agent-chatflow"
     },
     {
       "term": "固定工作流与自主 Agent 的边界",
       "sort": "固定工作流与自主 agent 的边界",
       "chapter": "14_ai_agent",
-      "anchor": "14_ai_agent-notes"
+      "anchor": "agent-architecture"
     },
     {
       "term": "多智能体分工、调度、共享状态与冲突",
       "sort": "多智能体分工、调度、共享状态与冲突",
       "chapter": "14_ai_agent",
-      "anchor": "14_ai_agent-notes"
+      "anchor": "agent-multi"
     },
     {
       "term": "私有部署架构、数据流和容量",
       "sort": "私有部署架构、数据流和容量",
       "chapter": "14_ai_agent",
-      "anchor": "14_ai_agent-notes"
+      "anchor": "agent-deployment"
     },
     {
       "term": "权限、安全、提示注入、审计和人工批准",
       "sort": "权限、安全、提示注入、审计和人工批准",
       "chapter": "14_ai_agent",
-      "anchor": "14_ai_agent-notes"
+      "anchor": "agent-architecture"
     },
     {
       "term": "完整任务可靠性、成本与经营效果",
       "sort": "完整任务可靠性、成本与经营效果",
       "chapter": "14_ai_agent",
-      "anchor": "14_ai_agent-notes"
+      "anchor": "agent-evaluation"
     },
     {
       "term": "企业制度问答",
       "sort": "企业制度问答",
       "chapter": "14_ai_agent",
-      "anchor": "14_ai_agent-notes"
+      "anchor": "agent-office-cases"
     },
     {
       "term": "办公数字员工",
@@ -2153,79 +2173,79 @@
       "term": "客户分流",
       "sort": "客户分流",
       "chapter": "14_ai_agent",
-      "anchor": "agent-evaluation"
+      "anchor": "agent-routing-case"
     },
     {
       "term": "产线异常诊断与处置",
       "sort": "产线异常诊断与处置",
       "chapter": "14_ai_agent",
-      "anchor": "14_ai_agent-notes"
+      "anchor": "agent-production-case"
     },
     {
       "term": "场景筛选与优先级",
       "sort": "场景筛选与优先级",
       "chapter": "14_ai_agent",
-      "anchor": "14_ai_agent-notes"
+      "anchor": "agent-route"
     },
     {
       "term": "MVP 与试点验收",
       "sort": "mvp 与试点验收",
       "chapter": "14_ai_agent",
-      "anchor": "14_ai_agent-notes"
+      "anchor": "agent-evaluation"
     },
     {
       "term": "评测、灰度与回滚",
       "sort": "评测、灰度与回滚",
       "chapter": "14_ai_agent",
-      "anchor": "14_ai_agent-notes"
+      "anchor": "agent-evaluation"
     },
     {
       "term": "规模化运维与持续治理",
       "sort": "规模化运维与持续治理",
       "chapter": "14_ai_agent",
-      "anchor": "14_ai_agent-notes"
+      "anchor": "agent-deployment"
     },
     {
       "term": "OpenClaw",
       "sort": "openclaw",
       "chapter": "14_ai_agent",
-      "anchor": "14_ai_agent-notes"
+      "anchor": "agent-tools"
     },
     {
       "term": "Hermes Agent",
       "sort": "hermes agent",
       "chapter": "14_ai_agent",
-      "anchor": "14_ai_agent-notes"
+      "anchor": "agent-tools"
     },
     {
       "term": "Claude Code",
       "sort": "claude code",
       "chapter": "14_ai_agent",
-      "anchor": "14_ai_agent-notes"
+      "anchor": "agent-tools"
     },
     {
       "term": "Codex",
       "sort": "codex",
       "chapter": "14_ai_agent",
-      "anchor": "14_ai_agent-notes"
+      "anchor": "agent-tools"
     },
     {
       "term": "Trae",
       "sort": "trae",
       "chapter": "14_ai_agent",
-      "anchor": "14_ai_agent-notes"
+      "anchor": "agent-tools"
     },
     {
       "term": "Dify",
       "sort": "dify",
       "chapter": "14_ai_agent",
-      "anchor": "14_ai_agent-notes"
+      "anchor": "agent-tools"
     },
     {
       "term": "Coze",
       "sort": "coze",
       "chapter": "14_ai_agent",
-      "anchor": "14_ai_agent-notes"
+      "anchor": "agent-tools"
     },
     {
       "term": "Chatflow",
@@ -2237,7 +2257,7 @@
       "term": "Workflow",
       "sort": "workflow",
       "chapter": "14_ai_agent",
-      "anchor": "agent-chatflow"
+      "anchor": "agent-workflow"
     },
     {
       "term": "RAG",
@@ -2280,6 +2300,566 @@
       "sort": "私有化部署",
       "chapter": "14_ai_agent",
       "anchor": "agent-deployment"
+    },
+    {
+      "term": "UPS：UPSNav：路线顺序如何成为可执行行动",
+      "sort": "ups upsnav：路线顺序如何成为可执行行动",
+      "chapter": "business-casebook",
+      "anchor": "b01-01",
+      "teachingCase": true
+    },
+    {
+      "term": "CVS Health：CVS停售烟草：企业目标如何界定行动集合",
+      "sort": "cvs health cvs停售烟草：企业目标如何界定行动集合",
+      "chapter": "business-casebook",
+      "anchor": "b01-02",
+      "teachingCase": true
+    },
+    {
+      "term": "Wells Fargo：Wells Fargo：开户数量为何偏离客户价值",
+      "sort": "wells fargo wells fargo：开户数量为何偏离客户价值",
+      "chapter": "business-casebook",
+      "anchor": "b01-03",
+      "teachingCase": true
+    },
+    {
+      "term": "Patagonia：Patagonia：产品销售与资源消耗的跨期权衡",
+      "sort": "patagonia patagonia：产品销售与资源消耗的跨期权衡",
+      "chapter": "business-casebook",
+      "anchor": "b01-04",
+      "teachingCase": true
+    },
+    {
+      "term": "Amazon：Amazon：可逆性改变信息等待的代价",
+      "sort": "amazon amazon：可逆性改变信息等待的代价",
+      "chapter": "business-casebook",
+      "anchor": "b01-05",
+      "teachingCase": true
+    },
+    {
+      "term": "Shopify：Shopify：数字编号相同，对象未必相同",
+      "sort": "shopify shopify：数字编号相同，对象未必相同",
+      "chapter": "business-casebook",
+      "anchor": "b02-01",
+      "teachingCase": true
+    },
+    {
+      "term": "Stripe：Stripe PaymentIntent：支付不是一个成功布尔值",
+      "sort": "stripe stripe paymentintent：支付不是一个成功布尔值",
+      "chapter": "business-casebook",
+      "anchor": "b02-02",
+      "teachingCase": true
+    },
+    {
+      "term": "Uber：Uber H3：地理汇总先确定空间单位",
+      "sort": "uber uber h3：地理汇总先确定空间单位",
+      "chapter": "business-casebook",
+      "anchor": "b02-03",
+      "teachingCase": true
+    },
+    {
+      "term": "LinkedIn：LinkedIn DataHub：数据集之外还要记录关系",
+      "sort": "linkedin linkedin datahub：数据集之外还要记录关系",
+      "chapter": "business-casebook",
+      "anchor": "b02-04",
+      "teachingCase": true
+    },
+    {
+      "term": "Spotify：Spotify Backstage：服务身份与责任归属",
+      "sort": "spotify spotify backstage：服务身份与责任归属",
+      "chapter": "business-casebook",
+      "anchor": "b02-05",
+      "teachingCase": true
+    },
+    {
+      "term": "Airbnb：Airbnb Minerva：定义变化后，历史应怎样比较",
+      "sort": "airbnb airbnb minerva：定义变化后，历史应怎样比较",
+      "chapter": "business-casebook",
+      "anchor": "b03-01",
+      "teachingCase": true
+    },
+    {
+      "term": "Uber：Uber uMetric：实时与离线为何算出不同结果",
+      "sort": "uber uber umetric：实时与离线为何算出不同结果",
+      "chapter": "business-casebook",
+      "anchor": "b03-02",
+      "teachingCase": true
+    },
+    {
+      "term": "DoorDash：DoorDash Curie：为何保留事件级事实",
+      "sort": "doordash doordash curie：为何保留事件级事实",
+      "chapter": "business-casebook",
+      "anchor": "b03-03",
+      "teachingCase": true
+    },
+    {
+      "term": "Spotify：Spotify streamshare：播放量不是统一单价",
+      "sort": "spotify spotify streamshare：播放量不是统一单价",
+      "chapter": "business-casebook",
+      "anchor": "b03-04",
+      "teachingCase": true
+    },
+    {
+      "term": "Shopify：Shopify GMV：交易规模与平台收入",
+      "sort": "shopify shopify gmv：交易规模与平台收入",
+      "chapter": "business-casebook",
+      "anchor": "b03-05",
+      "teachingCase": true
+    },
+    {
+      "term": "GitLab：GitLab数据库事件：备份存在不等于能够恢复",
+      "sort": "gitlab gitlab数据库事件：备份存在不等于能够恢复",
+      "chapter": "business-casebook",
+      "anchor": "b04-01",
+      "teachingCase": true
+    },
+    {
+      "term": "Unity Software：Unity：错误数据如何进入模型反馈",
+      "sort": "unity software unity：错误数据如何进入模型反馈",
+      "chapter": "business-casebook",
+      "anchor": "b04-02",
+      "teachingCase": true
+    },
+    {
+      "term": "Amazon：Amazon Deequ：把数据假设写成可检验约束",
+      "sort": "amazon amazon deequ：把数据假设写成可检验约束",
+      "chapter": "business-casebook",
+      "anchor": "b04-03",
+      "teachingCase": true
+    },
+    {
+      "term": "Airbnb：Airbnb质量评分：总分如何保留解释性",
+      "sort": "airbnb airbnb质量评分：总分如何保留解释性",
+      "chapter": "business-casebook",
+      "anchor": "b04-04",
+      "teachingCase": true
+    },
+    {
+      "term": "Citibank：Citibank监管整改：数据治理是持续责任",
+      "sort": "citibank citibank监管整改：数据治理是持续责任",
+      "chapter": "business-casebook",
+      "anchor": "b04-05",
+      "teachingCase": true
+    },
+    {
+      "term": "Netflix：Netflix ISP指数：先固定观看结构再比较网络",
+      "sort": "netflix netflix isp指数：先固定观看结构再比较网络",
+      "chapter": "business-casebook",
+      "anchor": "b05-01",
+      "teachingCase": true
+    },
+    {
+      "term": "Google：Google SRE：平均时延为什么不够",
+      "sort": "google google sre：平均时延为什么不够",
+      "chapter": "business-casebook",
+      "anchor": "b05-02",
+      "teachingCase": true
+    },
+    {
+      "term": "Toyota：Toyota Andon：可视化信号需要处置责任",
+      "sort": "toyota toyota andon：可视化信号需要处置责任",
+      "chapter": "business-casebook",
+      "anchor": "b05-03",
+      "teachingCase": true
+    },
+    {
+      "term": "Amazon：Prime Day：活动高峰如何影响经营摘要",
+      "sort": "amazon prime day：活动高峰如何影响经营摘要",
+      "chapter": "business-casebook",
+      "anchor": "b05-04",
+      "teachingCase": true
+    },
+    {
+      "term": "McDonald’s：McDonald’s：同店销售增长不等于客流增长",
+      "sort": "mcdonald’s mcdonald’s：同店销售增长不等于客流增长",
+      "chapter": "business-casebook",
+      "anchor": "b05-05",
+      "teachingCase": true
+    },
+    {
+      "term": "Netflix：Netflix：同一影片的封面应如何比较",
+      "sort": "netflix netflix：同一影片的封面应如何比较",
+      "chapter": "business-casebook",
+      "anchor": "b06-01",
+      "teachingCase": true
+    },
+    {
+      "term": "Airbnb：Airbnb：房源实验为何受到邻近房源影响",
+      "sort": "airbnb airbnb：房源实验为何受到邻近房源影响",
+      "chapter": "business-casebook",
+      "anchor": "b06-02",
+      "teachingCase": true
+    },
+    {
+      "term": "Booking.com：Booking.com：实验记录为什么要保存失败结果",
+      "sort": "booking.com booking.com：实验记录为什么要保存失败结果",
+      "chapter": "business-casebook",
+      "anchor": "b06-03",
+      "teachingCase": true
+    },
+    {
+      "term": "Uber：Uber：结果显著之前先检查实验是否按计划运行",
+      "sort": "uber uber：结果显著之前先检查实验是否按计划运行",
+      "chapter": "business-casebook",
+      "anchor": "b06-04",
+      "teachingCase": true
+    },
+    {
+      "term": "DoorDash：DoorDash：调度实验按地区和时间切换",
+      "sort": "doordash doordash：调度实验按地区和时间切换",
+      "chapter": "business-casebook",
+      "anchor": "b06-05",
+      "teachingCase": true
+    },
+    {
+      "term": "Amazon：Amazon：补货为何需要需求分布",
+      "sort": "amazon amazon：补货为何需要需求分布",
+      "chapter": "business-casebook",
+      "anchor": "b07-01",
+      "teachingCase": true
+    },
+    {
+      "term": "Uber：Uber DeepETA：在道路模型上预测残差",
+      "sort": "uber uber deepeta：在道路模型上预测残差",
+      "chapter": "business-casebook",
+      "anchor": "b07-02",
+      "teachingCase": true
+    },
+    {
+      "term": "DoorDash：DoorDash：把配送预测与承诺决策分开",
+      "sort": "doordash doordash：把配送预测与承诺决策分开",
+      "chapter": "business-casebook",
+      "anchor": "b07-03",
+      "teachingCase": true
+    },
+    {
+      "term": "Netflix：Netflix：评分预测为何不足以设计首页",
+      "sort": "netflix netflix：评分预测为何不足以设计首页",
+      "chapter": "business-casebook",
+      "anchor": "b07-04",
+      "teachingCase": true
+    },
+    {
+      "term": "Google Maps：Google Maps：道路相互连接怎样影响预测",
+      "sort": "google maps google maps：道路相互连接怎样影响预测",
+      "chapter": "business-casebook",
+      "anchor": "b07-05",
+      "teachingCase": true
+    },
+    {
+      "term": "eBay：eBay：搜索广告转化与增量购买",
+      "sort": "ebay ebay：搜索广告转化与增量购买",
+      "chapter": "business-casebook",
+      "anchor": "b08-01",
+      "teachingCase": true
+    },
+    {
+      "term": "Uber：Uber：不同促销需要比较净增量价值",
+      "sort": "uber uber：不同促销需要比较净增量价值",
+      "chapter": "business-casebook",
+      "anchor": "b08-02",
+      "teachingCase": true
+    },
+    {
+      "term": "Google：Google：广告效果可以在地区层面识别",
+      "sort": "google google：广告效果可以在地区层面识别",
+      "chapter": "business-casebook",
+      "anchor": "b08-03",
+      "teachingCase": true
+    },
+    {
+      "term": "Facebook：Facebook：丰富特征能否代替随机比较",
+      "sort": "facebook facebook：丰富特征能否代替随机比较",
+      "chapter": "business-casebook",
+      "anchor": "b08-04",
+      "teachingCase": true
+    },
+    {
+      "term": "Tripadvisor：Tripadvisor：会员注册便利化与实际采用",
+      "sort": "tripadvisor tripadvisor：会员注册便利化与实际采用",
+      "chapter": "business-casebook",
+      "anchor": "b08-05",
+      "teachingCase": true
+    },
+    {
+      "term": "Zara：Zara：有限库存怎样分给不同门店",
+      "sort": "zara zara：有限库存怎样分给不同门店",
+      "chapter": "business-casebook",
+      "anchor": "b09-01",
+      "teachingCase": true
+    },
+    {
+      "term": "Google DeepMind：Google：冷却优化为何需要双层约束核验",
+      "sort": "google deepmind google：冷却优化为何需要双层约束核验",
+      "chapter": "business-casebook",
+      "anchor": "b09-02",
+      "teachingCase": true
+    },
+    {
+      "term": "Lufthansa：Lufthansa：模拟机排程中的硬条件与偏好",
+      "sort": "lufthansa lufthansa：模拟机排程中的硬条件与偏好",
+      "chapter": "business-casebook",
+      "anchor": "b09-03",
+      "teachingCase": true
+    },
+    {
+      "term": "Walmart：Walmart：运输优化同时决定路线与装载",
+      "sort": "walmart walmart：运输优化同时决定路线与装载",
+      "chapter": "business-casebook",
+      "anchor": "b09-04",
+      "teachingCase": true
+    },
+    {
+      "term": "Uber：Uber：一次派单也会改变下一时段的供需",
+      "sort": "uber uber：一次派单也会改变下一时段的供需",
+      "chapter": "business-casebook",
+      "anchor": "b09-05",
+      "teachingCase": true
+    },
+    {
+      "term": "Vodafone：Vodafone：采购流程图与实际路径的差距",
+      "sort": "vodafone vodafone：采购流程图与实际路径的差距",
+      "chapter": "business-casebook",
+      "anchor": "b10-01",
+      "teachingCase": true
+    },
+    {
+      "term": "DHL Group：DHL：人事工单结束，财务付款是否也已结束",
+      "sort": "dhl group dhl：人事工单结束，财务付款是否也已结束",
+      "chapter": "business-casebook",
+      "anchor": "b10-02",
+      "teachingCase": true
+    },
+    {
+      "term": "Deutsche Telekom：Deutsche Telekom：付款更早并不总是更好",
+      "sort": "deutsche telekom deutsche telekom：付款更早并不总是更好",
+      "chapter": "business-casebook",
+      "anchor": "b10-03",
+      "teachingCase": true
+    },
+    {
+      "term": "ABB：ABB：跨业务流程需要共同语义",
+      "sort": "abb abb：跨业务流程需要共同语义",
+      "chapter": "business-casebook",
+      "anchor": "b10-04",
+      "teachingCase": true
+    },
+    {
+      "term": "Stripe：Stripe：超时重试怎样避免重复业务影响",
+      "sort": "stripe stripe：超时重试怎样避免重复业务影响",
+      "chapter": "business-casebook",
+      "anchor": "b10-05",
+      "teachingCase": true
+    },
+    {
+      "term": "Uber：Uber Hudi：记录会在到达后继续变化",
+      "sort": "uber uber hudi：记录会在到达后继续变化",
+      "chapter": "business-casebook",
+      "anchor": "b11-01",
+      "teachingCase": true
+    },
+    {
+      "term": "Netflix：Netflix Iceberg：表格式迁移需要验证",
+      "sort": "netflix netflix iceberg：表格式迁移需要验证",
+      "chapter": "business-casebook",
+      "anchor": "b11-02",
+      "teachingCase": true
+    },
+    {
+      "term": "Shopify：Shopify CDC：从反复查询到日志变更",
+      "sort": "shopify shopify cdc：从反复查询到日志变更",
+      "chapter": "business-casebook",
+      "anchor": "b11-03",
+      "teachingCase": true
+    },
+    {
+      "term": "Walmart：Walmart湖仓选型：工作负载决定取舍",
+      "sort": "walmart walmart湖仓选型：工作负载决定取舍",
+      "chapter": "business-casebook",
+      "anchor": "b11-04",
+      "teachingCase": true
+    },
+    {
+      "term": "Disney Advertising × Horizon Media：Disney数据洁净室：协作分析也有边界",
+      "sort": "disney advertising × horizon media disney数据洁净室：协作分析也有边界",
+      "chapter": "business-casebook",
+      "anchor": "b11-05",
+      "teachingCase": true
+    },
+    {
+      "term": "Uber：Michelangelo：模型上线是一套持续流程",
+      "sort": "uber michelangelo：模型上线是一套持续流程",
+      "chapter": "business-casebook",
+      "anchor": "b12-01",
+      "teachingCase": true
+    },
+    {
+      "term": "LinkedIn：Pro-ML：从异常信号追查原因",
+      "sort": "linkedin pro-ml：从异常信号追查原因",
+      "chapter": "business-casebook",
+      "anchor": "b12-02",
+      "teachingCase": true
+    },
+    {
+      "term": "DoorDash：Sibyl：影子流量先检验服务承载",
+      "sort": "doordash sibyl：影子流量先检验服务承载",
+      "chapter": "business-casebook",
+      "anchor": "b12-03",
+      "teachingCase": true
+    },
+    {
+      "term": "Netflix：Metaflow：一次结果需要可恢复的运行记录",
+      "sort": "netflix metaflow：一次结果需要可恢复的运行记录",
+      "chapter": "business-casebook",
+      "anchor": "b12-04",
+      "teachingCase": true
+    },
+    {
+      "term": "Stripe：Radar：模型更新须面对误拒与漏放",
+      "sort": "stripe radar：模型更新须面对误拒与漏放",
+      "chapter": "business-casebook",
+      "anchor": "b12-05",
+      "teachingCase": true
+    },
+    {
+      "term": "BMW Group：BMW虚拟工厂：在建设前比较布局",
+      "sort": "bmw group bmw虚拟工厂：在建设前比较布局",
+      "chapter": "business-casebook",
+      "anchor": "b13-01",
+      "teachingCase": true
+    },
+    {
+      "term": "Unilever：Unilever配方数字孪生：参数受产品约束",
+      "sort": "unilever unilever配方数字孪生：参数受产品约束",
+      "chapter": "business-casebook",
+      "anchor": "b13-02",
+      "teachingCase": true
+    },
+    {
+      "term": "DHL × Tetra Pak：DHL仓库数字孪生：可见状态支持资源分配",
+      "sort": "dhl × tetra pak dhl仓库数字孪生：可见状态支持资源分配",
+      "chapter": "business-casebook",
+      "anchor": "b13-03",
+      "teachingCase": true
+    },
+    {
+      "term": "Rio Tinto：Gudai-Darri：资产身份贯通维护与培训",
+      "sort": "rio tinto gudai-darri：资产身份贯通维护与培训",
+      "chapter": "business-casebook",
+      "anchor": "b13-04",
+      "teachingCase": true
+    },
+    {
+      "term": "Jaguar Land Rover：JLR供应链孪生：先演算再改变",
+      "sort": "jaguar land rover jlr供应链孪生：先演算再改变",
+      "chapter": "business-casebook",
+      "anchor": "b13-05",
+      "teachingCase": true
+    },
+    {
+      "term": "Morgan Stanley：Morgan Stanley：内部知识答复保留来源",
+      "sort": "morgan stanley morgan stanley：内部知识答复保留来源",
+      "chapter": "business-casebook",
+      "anchor": "b14-01",
+      "teachingCase": true
+    },
+    {
+      "term": "Box IT：Box Gizmo：未解决问题推动知识修订",
+      "sort": "box it box gizmo：未解决问题推动知识修订",
+      "chapter": "business-casebook",
+      "anchor": "b14-02",
+      "teachingCase": true
+    },
+    {
+      "term": "Dow：Dow运费核查：发现差异与批准更正分开",
+      "sort": "dow dow运费核查：发现差异与批准更正分开",
+      "chapter": "business-casebook",
+      "anchor": "b14-03",
+      "teachingCase": true
+    },
+    {
+      "term": "Rakuten：Rakuten研发助手：可运行代码仍须验收",
+      "sort": "rakuten rakuten研发助手：可运行代码仍须验收",
+      "chapter": "business-casebook",
+      "anchor": "b14-04",
+      "teachingCase": true
+    },
+    {
+      "term": "Wiley：Wiley客服分流：结束对话不等于解决问题",
+      "sort": "wiley wiley客服分流：结束对话不等于解决问题",
+      "chapter": "business-casebook",
+      "anchor": "b14-05",
+      "teachingCase": true
+    },
+    {
+      "term": "Siemens Amberg：Amberg：从检验瓶颈定义原型",
+      "sort": "siemens amberg amberg：从检验瓶颈定义原型",
+      "chapter": "business-casebook",
+      "anchor": "b15-01",
+      "teachingCase": true
+    },
+    {
+      "term": "Haier Electronics：海尔佛山洗衣机：把定制需求贯通到生产",
+      "sort": "haier electronics 海尔佛山洗衣机：把定制需求贯通到生产",
+      "chapter": "business-casebook",
+      "anchor": "b15-02",
+      "teachingCase": true
+    },
+    {
+      "term": "Ocado：Ocado履约：用仿真检验系统依赖",
+      "sort": "ocado ocado履约：用仿真检验系统依赖",
+      "chapter": "business-casebook",
+      "anchor": "b15-03",
+      "teachingCase": true
+    },
+    {
+      "term": "Amazon：Sequoia：首个场地验证系统组合",
+      "sort": "amazon sequoia：首个场地验证系统组合",
+      "chapter": "business-casebook",
+      "anchor": "b15-04",
+      "teachingCase": true
+    },
+    {
+      "term": "BMW Group：AIQX：质检原型需要对象与位置对应",
+      "sort": "bmw group aiqx：质检原型需要对象与位置对应",
+      "chapter": "business-casebook",
+      "anchor": "b15-05",
+      "teachingCase": true
+    },
+    {
+      "term": "Zillow Group：Zillow Offers：何时停止扩大预测驱动的业务",
+      "sort": "zillow group zillow offers：何时停止扩大预测驱动的业务",
+      "chapter": "business-casebook",
+      "anchor": "b16-01",
+      "teachingCase": true
+    },
+    {
+      "term": "Knight Capital：Knight Capital：上线验收必须覆盖实际执行控制",
+      "sort": "knight capital knight capital：上线验收必须覆盖实际执行控制",
+      "chapter": "business-casebook",
+      "anchor": "b16-02",
+      "teachingCase": true
+    },
+    {
+      "term": "TSB Bank：TSB迁移：数据复制成功与业务验收分别证明",
+      "sort": "tsb bank tsb迁移：数据复制成功与业务验收分别证明",
+      "chapter": "business-casebook",
+      "anchor": "b16-03",
+      "teachingCase": true
+    },
+    {
+      "term": "Microsoft：Tay：公开试验怎样约束失败的影响",
+      "sort": "microsoft tay：公开试验怎样约束失败的影响",
+      "chapter": "business-casebook",
+      "anchor": "b16-04",
+      "teachingCase": true
+    },
+    {
+      "term": "Amazon Web Services：S3事件复盘：操作工具怎样限制故障影响范围",
+      "sort": "amazon web services s3事件复盘：操作工具怎样限制故障影响范围",
+      "chapter": "business-casebook",
+      "anchor": "b16-05",
+      "teachingCase": true
     }
   ],
   "figures": 19,

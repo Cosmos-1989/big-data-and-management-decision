@@ -1,1 +1,24 @@
-{"id": "13_ontology_action_scenario", "title": "第 13 章 Palantir 式决策系统抽象", "html": "<h2 id=\"readings\">专题阅读</h2><div class=\"reading-links\"><a href=\"#/chapter/02_enterprise_data_model\">企业数据模型与治理机制<small>业务对象、关系与治理责任</small></a><a href=\"#/chapter/09_optimization\">资源配置、优化与处方决策<small>目标、约束与方案比较</small></a><a href=\"#/chapter/10_process_mining\">流程挖掘与智能体执行<small>业务流程、行动权限与执行反馈</small></a></div><h2 id=\"practice\">实验练习</h2><div class=\"reading-links\"><a href=\"#/lab/ontology\">业务对象、行动与情景 →</a><a href=\"#/lab/optimization\">预算约束下的库存补货 →</a></div><section class=\"agent-connection\"><h2 id=\"enterprise-agent-actions\">对象状态、行动契约与智能体编排</h2><p>审批应绑定业务对象及版本，工具前后置条件决定允许的状态转移。模型及各角色提出的中间建议由运行环境核验，最终完成以业务系统状态为准；生产线异常处理中的分析、核查与维护审批具有不同职责。</p><a href=\"#/chapter/14_ai_agent?anchor=agent-production-case\">进入企业AI Agent专题 →</a></section>", "toc": [{"id": "readings", "title": "专题阅读", "level": 2}, {"id": "practice", "title": "实验练习", "level": 2}, {"id": "enterprise-agent-actions", "title": "对象状态、行动契约与智能体编排", "level": 2}], "source": "docs/lecture_notes/13_ontology_action_scenario.md", "kind": "supplement"}
+{
+  "id": "13_ontology_action_scenario",
+  "title": "第 13 章 Palantir 式决策系统抽象",
+  "html": "<h2 id=\"readings\">专题阅读</h2><div class=\"reading-links\"><a href=\"#/chapter/02_enterprise_data_model\">企业数据模型与治理机制<small>业务对象、关系与治理责任</small></a><a href=\"#/chapter/09_optimization\">资源配置、优化与处方决策<small>目标、约束与方案比较</small></a><a href=\"#/chapter/10_process_mining\">流程挖掘与智能体执行<small>业务流程、行动权限与执行反馈</small></a></div><h2 id=\"practice\">实验练习</h2><div class=\"reading-links\"><a href=\"#/lab/ontology\">业务对象、行动与情景 →</a><a href=\"#/lab/optimization\">预算约束下的库存补货 →</a></div><section class=\"agent-connection\"><h2 id=\"enterprise-agent-actions\">对象状态、行动契约与智能体编排</h2><p>审批应绑定业务对象及版本，工具前后置条件决定允许的状态转移。模型及各角色提出的中间建议由运行环境核验，最终完成以业务系统状态为准；生产线异常处理中的分析、核查与维护审批具有不同职责。</p><a href=\"#/chapter/14_ai_agent?anchor=agent-production-case\">进入企业AI Agent专题 →</a></section>",
+  "toc": [
+    {
+      "id": "readings",
+      "title": "专题阅读",
+      "level": 2
+    },
+    {
+      "id": "practice",
+      "title": "实验练习",
+      "level": 2
+    },
+    {
+      "id": "enterprise-agent-actions",
+      "title": "对象状态、行动契约与智能体编排",
+      "level": 2
+    }
+  ],
+  "source": "docs/lecture_notes/13_ontology_action_scenario.md",
+  "kind": "supplement"
+}
