@@ -1,0 +1,17 @@
+{
+  "recordedAtUtc": "2026-10-17T04:02:53.563690+00:00",
+  "service": "Cloudflare 1.1.1.1 public DNS cache",
+  "tool": "https://one.one.one.one/purge-cache/",
+  "hostname": "www.datasci.biz",
+  "recordTypes": [
+    "CNAME",
+    "A",
+    "AAAA"
+  ],
+  "observedUiResult": "purge request queued. Please wait a few seconds and verify the request was successful",
+  "zoneRecordsChanged": false,
+  "accountRequired": false,
+  "captchaShown": false,
+  "scopeLimit": "This acknowledges queued public-cache refresh requests; it does not establish completion or clear the unknown GitHub system resolver cache.",
+  "screenshot": "www-public-cache-refresh.png"
+}

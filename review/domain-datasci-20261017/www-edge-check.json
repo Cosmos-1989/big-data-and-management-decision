@@ -1,0 +1,40 @@
+{
+  "checkedAtUtc": "2026-10-17T04:33:53.529256+00:00",
+  "hostname": "www.datasci.biz",
+  "strictCertificateValidation": true,
+  "checks": [
+    {
+      "ip": "185.199.108.153",
+      "exitCode": 0,
+      "status": 301,
+      "redirect": "https://datasci.biz/",
+      "tlsVerifyResult": 0,
+      "error": ""
+    },
+    {
+      "ip": "185.199.109.153",
+      "exitCode": 0,
+      "status": 301,
+      "redirect": "https://datasci.biz/",
+      "tlsVerifyResult": 0,
+      "error": ""
+    },
+    {
+      "ip": "185.199.110.153",
+      "exitCode": 0,
+      "status": 301,
+      "redirect": "https://datasci.biz/",
+      "tlsVerifyResult": 0,
+      "error": ""
+    },
+    {
+      "ip": "185.199.111.153",
+      "exitCode": 0,
+      "status": 301,
+      "redirect": "https://datasci.biz/",
+      "tlsVerifyResult": 0,
+      "error": ""
+    }
+  ],
+  "allPassed": true
+}

@@ -135,3 +135,5 @@ node scripts/verify-diagrams.mjs
 ## 自定义域名
 
 `dist/CNAME` 固定为 `datasci.biz`，每次发布都须保留。域名在GoDaddy管理，根域的四条A记录指向GitHub Pages：185.199.108.153、185.199.109.153、185.199.110.153、185.199.111.153；www的CNAME直接指向Cosmos-1989.github.io，不包含仓库名。DNS和证书核验记录见review/domain-datasci-20261017。不要改动与网站无关的邮件、NS或TXT记录。
+
+2026-10-17 已核验主域与 WWW 的 HTTPS 证书及跳转：`https://www.datasci.biz/` 以 301 跳转至 `https://datasci.biz/`，保留路径、查询参数及课程页面锚点。复查可运行 `python3 review/domain-datasci-20261017/verify-www.py`；详细验收见 `review/domain-datasci-20261017/acceptance.md`。

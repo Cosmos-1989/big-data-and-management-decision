@@ -1,0 +1,62 @@
+{
+  "checkedAtUtc": "2026-10-17T04:33:21.052337+00:00",
+  "tlsVerification": true,
+  "checks": [
+    {
+      "url": "https://datasci.biz/",
+      "expectedCanonical": "https://datasci.biz/",
+      "exitCode": 0,
+      "error": "",
+      "http_code": 200,
+      "url_effective": "https://datasci.biz/",
+      "num_redirects": 0,
+      "ssl_verify_result": 0,
+      "passed": true
+    },
+    {
+      "url": "http://datasci.biz/",
+      "expectedCanonical": "https://datasci.biz/",
+      "exitCode": 0,
+      "error": "",
+      "http_code": 200,
+      "url_effective": "https://datasci.biz/",
+      "num_redirects": 1,
+      "ssl_verify_result": 0,
+      "passed": true
+    },
+    {
+      "url": "https://www.datasci.biz/",
+      "expectedCanonical": "https://datasci.biz/",
+      "exitCode": 0,
+      "error": "",
+      "http_code": 200,
+      "url_effective": "https://datasci.biz/",
+      "num_redirects": 1,
+      "ssl_verify_result": 0,
+      "passed": true
+    },
+    {
+      "url": "http://www.datasci.biz/",
+      "expectedCanonical": "https://datasci.biz/",
+      "exitCode": 0,
+      "error": "",
+      "http_code": 200,
+      "url_effective": "https://datasci.biz/",
+      "num_redirects": 1,
+      "ssl_verify_result": 0,
+      "passed": true
+    },
+    {
+      "url": "https://www.datasci.biz/content/catalog.json?wwwcheck=1",
+      "expectedCanonical": "https://datasci.biz/content/catalog.json?wwwcheck=1",
+      "exitCode": 0,
+      "error": "",
+      "http_code": 200,
+      "url_effective": "https://datasci.biz/content/catalog.json?wwwcheck=1",
+      "num_redirects": 1,
+      "ssl_verify_result": 0,
+      "passed": true
+    }
+  ],
+  "allPassed": true
+}

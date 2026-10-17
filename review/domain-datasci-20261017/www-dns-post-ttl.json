@@ -1,0 +1,369 @@
+{
+  "startedAtUtc": "2026-10-17T04:29:38.527580+00:00",
+  "finishedAtUtc": "2026-10-17T04:29:39.088292+00:00",
+  "method": "One read-only DoH query per provider/name/type. Resolver hostnames pinned to public IPs to avoid local fake-IP DNS. No website TLS checks, no Pages API, no polling, no external changes.",
+  "baselineFile": "www-dns-recheck.json",
+  "baselineFinishedAtUtc": "2026-10-17T03:43:17.109371+00:00",
+  "summary": {
+    "allQueriesSuccessful": true,
+    "providersAgree": true,
+    "publicRecordsCorrectForGitHubPages": true,
+    "unchangedFromPreviousSnapshot": true,
+    "notes": "WWW AAAA and CAA belong to the CNAME target cosmos-1989.github.io. CAA permits letsencrypt.org. This snapshot does not determine GitHub internal resolver cache or certificate state."
+  },
+  "perProvider": {
+    "google": {
+      "apexA": [
+        "185.199.108.153",
+        "185.199.109.153",
+        "185.199.110.153",
+        "185.199.111.153"
+      ],
+      "wwwCNAME": [
+        "cosmos-1989.github.io"
+      ],
+      "wwwResolvedAAAA": [
+        "2606:50c0:8000::153",
+        "2606:50c0:8001::153",
+        "2606:50c0:8002::153",
+        "2606:50c0:8003::153"
+      ],
+      "wwwResolvedCAA": [
+        "0 issue \"digicert.com\"",
+        "0 issue \"letsencrypt.org\"",
+        "0 issue \"sectigo.com\"",
+        "0 issuewild \"digicert.com\"",
+        "0 issuewild \"letsencrypt.org\"",
+        "0 issuewild \"sectigo.com\""
+      ]
+    },
+    "cloudflare": {
+      "apexA": [
+        "185.199.108.153",
+        "185.199.109.153",
+        "185.199.110.153",
+        "185.199.111.153"
+      ],
+      "wwwCNAME": [
+        "cosmos-1989.github.io"
+      ],
+      "wwwResolvedAAAA": [
+        "2606:50c0:8000::153",
+        "2606:50c0:8001::153",
+        "2606:50c0:8002::153",
+        "2606:50c0:8003::153"
+      ],
+      "wwwResolvedCAA": [
+        "0 issue \"digicert.com\"",
+        "0 issue \"letsencrypt.org\"",
+        "0 issue \"sectigo.com\"",
+        "0 issuewild \"digicert.com\"",
+        "0 issuewild \"letsencrypt.org\"",
+        "0 issuewild \"sectigo.com\""
+      ]
+    }
+  },
+  "records": [
+    {
+      "provider": "google",
+      "resolverIp": "8.8.8.8",
+      "name": "datasci.biz",
+      "type": "A",
+      "url": "https://dns.google/resolve?name=datasci.biz&type=A",
+      "exitCode": 0,
+      "status": 0,
+      "answers": [
+        {
+          "name": "datasci.biz.",
+          "type": 1,
+          "TTL": 600,
+          "data": "185.199.110.153"
+        },
+        {
+          "name": "datasci.biz.",
+          "type": 1,
+          "TTL": 600,
+          "data": "185.199.108.153"
+        },
+        {
+          "name": "datasci.biz.",
+          "type": 1,
+          "TTL": 600,
+          "data": "185.199.111.153"
+        },
+        {
+          "name": "datasci.biz.",
+          "type": 1,
+          "TTL": 600,
+          "data": "185.199.109.153"
+        }
+      ],
+      "authority": []
+    },
+    {
+      "provider": "google",
+      "resolverIp": "8.8.8.8",
+      "name": "www.datasci.biz",
+      "type": "CNAME",
+      "url": "https://dns.google/resolve?name=www.datasci.biz&type=CNAME",
+      "exitCode": 0,
+      "status": 0,
+      "answers": [
+        {
+          "name": "www.datasci.biz.",
+          "type": 5,
+          "TTL": 3600,
+          "data": "cosmos-1989.github.io."
+        }
+      ],
+      "authority": []
+    },
+    {
+      "provider": "google",
+      "resolverIp": "8.8.8.8",
+      "name": "www.datasci.biz",
+      "type": "AAAA",
+      "url": "https://dns.google/resolve?name=www.datasci.biz&type=AAAA",
+      "exitCode": 0,
+      "status": 0,
+      "answers": [
+        {
+          "name": "www.datasci.biz.",
+          "type": 5,
+          "TTL": 3600,
+          "data": "cosmos-1989.github.io."
+        },
+        {
+          "name": "cosmos-1989.github.io.",
+          "type": 28,
+          "TTL": 3600,
+          "data": "2606:50c0:8001::153"
+        },
+        {
+          "name": "cosmos-1989.github.io.",
+          "type": 28,
+          "TTL": 3600,
+          "data": "2606:50c0:8003::153"
+        },
+        {
+          "name": "cosmos-1989.github.io.",
+          "type": 28,
+          "TTL": 3600,
+          "data": "2606:50c0:8000::153"
+        },
+        {
+          "name": "cosmos-1989.github.io.",
+          "type": 28,
+          "TTL": 3600,
+          "data": "2606:50c0:8002::153"
+        }
+      ],
+      "authority": []
+    },
+    {
+      "provider": "google",
+      "resolverIp": "8.8.8.8",
+      "name": "www.datasci.biz",
+      "type": "CAA",
+      "url": "https://dns.google/resolve?name=www.datasci.biz&type=CAA",
+      "exitCode": 0,
+      "status": 0,
+      "answers": [
+        {
+          "name": "www.datasci.biz.",
+          "type": 5,
+          "TTL": 3600,
+          "data": "cosmos-1989.github.io."
+        },
+        {
+          "name": "cosmos-1989.github.io.",
+          "type": 257,
+          "TTL": 3600,
+          "data": "0 issuewild \"letsencrypt.org\""
+        },
+        {
+          "name": "cosmos-1989.github.io.",
+          "type": 257,
+          "TTL": 3600,
+          "data": "0 issuewild \"sectigo.com\""
+        },
+        {
+          "name": "cosmos-1989.github.io.",
+          "type": 257,
+          "TTL": 3600,
+          "data": "0 issue \"letsencrypt.org\""
+        },
+        {
+          "name": "cosmos-1989.github.io.",
+          "type": 257,
+          "TTL": 3600,
+          "data": "0 issue \"digicert.com\""
+        },
+        {
+          "name": "cosmos-1989.github.io.",
+          "type": 257,
+          "TTL": 3600,
+          "data": "0 issue \"sectigo.com\""
+        },
+        {
+          "name": "cosmos-1989.github.io.",
+          "type": 257,
+          "TTL": 3600,
+          "data": "0 issuewild \"digicert.com\""
+        }
+      ],
+      "authority": []
+    },
+    {
+      "provider": "cloudflare",
+      "resolverIp": "1.1.1.1",
+      "name": "datasci.biz",
+      "type": "A",
+      "url": "https://cloudflare-dns.com/dns-query?name=datasci.biz&type=A",
+      "exitCode": 0,
+      "status": 0,
+      "answers": [
+        {
+          "name": "datasci.biz",
+          "type": 1,
+          "TTL": 600,
+          "data": "185.199.108.153"
+        },
+        {
+          "name": "datasci.biz",
+          "type": 1,
+          "TTL": 600,
+          "data": "185.199.109.153"
+        },
+        {
+          "name": "datasci.biz",
+          "type": 1,
+          "TTL": 600,
+          "data": "185.199.110.153"
+        },
+        {
+          "name": "datasci.biz",
+          "type": 1,
+          "TTL": 600,
+          "data": "185.199.111.153"
+        }
+      ],
+      "authority": []
+    },
+    {
+      "provider": "cloudflare",
+      "resolverIp": "1.1.1.1",
+      "name": "www.datasci.biz",
+      "type": "CNAME",
+      "url": "https://cloudflare-dns.com/dns-query?name=www.datasci.biz&type=CNAME",
+      "exitCode": 0,
+      "status": 0,
+      "answers": [
+        {
+          "name": "www.datasci.biz",
+          "type": 5,
+          "TTL": 3600,
+          "data": "cosmos-1989.github.io."
+        }
+      ],
+      "authority": []
+    },
+    {
+      "provider": "cloudflare",
+      "resolverIp": "1.1.1.1",
+      "name": "www.datasci.biz",
+      "type": "AAAA",
+      "url": "https://cloudflare-dns.com/dns-query?name=www.datasci.biz&type=AAAA",
+      "exitCode": 0,
+      "status": 0,
+      "answers": [
+        {
+          "name": "www.datasci.biz",
+          "type": 5,
+          "TTL": 3600,
+          "data": "cosmos-1989.github.io."
+        },
+        {
+          "name": "cosmos-1989.github.io",
+          "type": 28,
+          "TTL": 3600,
+          "data": "2606:50c0:8000::153"
+        },
+        {
+          "name": "cosmos-1989.github.io",
+          "type": 28,
+          "TTL": 3600,
+          "data": "2606:50c0:8001::153"
+        },
+        {
+          "name": "cosmos-1989.github.io",
+          "type": 28,
+          "TTL": 3600,
+          "data": "2606:50c0:8002::153"
+        },
+        {
+          "name": "cosmos-1989.github.io",
+          "type": 28,
+          "TTL": 3600,
+          "data": "2606:50c0:8003::153"
+        }
+      ],
+      "authority": []
+    },
+    {
+      "provider": "cloudflare",
+      "resolverIp": "1.1.1.1",
+      "name": "www.datasci.biz",
+      "type": "CAA",
+      "url": "https://cloudflare-dns.com/dns-query?name=www.datasci.biz&type=CAA",
+      "exitCode": 0,
+      "status": 0,
+      "answers": [
+        {
+          "name": "www.datasci.biz",
+          "type": 5,
+          "TTL": 3600,
+          "data": "cosmos-1989.github.io."
+        },
+        {
+          "name": "cosmos-1989.github.io",
+          "type": 257,
+          "TTL": 3600,
+          "data": "0 issue \"digicert.com\""
+        },
+        {
+          "name": "cosmos-1989.github.io",
+          "type": 257,
+          "TTL": 3600,
+          "data": "0 issue \"letsencrypt.org\""
+        },
+        {
+          "name": "cosmos-1989.github.io",
+          "type": 257,
+          "TTL": 3600,
+          "data": "0 issue \"sectigo.com\""
+        },
+        {
+          "name": "cosmos-1989.github.io",
+          "type": 257,
+          "TTL": 3600,
+          "data": "0 issuewild \"digicert.com\""
+        },
+        {
+          "name": "cosmos-1989.github.io",
+          "type": 257,
+          "TTL": 3600,
+          "data": "0 issuewild \"letsencrypt.org\""
+        },
+        {
+          "name": "cosmos-1989.github.io",
+          "type": 257,
+          "TTL": 3600,
+          "data": "0 issuewild \"sectigo.com\""
+        }
+      ],
+      "authority": []
+    }
+  ],
+  "changedExternalState": false
+}

@@ -1,0 +1,15 @@
+{
+  "checkedAtUtc": "2026-10-17T04:33:23.989768+00:00",
+  "validatedSource": "https://www.datasci.biz/",
+  "strictTlsValidationPassed": true,
+  "subjectAlternativeNames": [
+    "datasci.biz",
+    "www.datasci.biz"
+  ],
+  "certificateSummary": [
+    "Issuer: C=US, O=Let's Encrypt, CN=YR2",
+    "Not Before: Oct 17 03:33:23 2026 GMT",
+    "Not After : Jan 15 03:33:22 2027 GMT",
+    "Subject: CN=datasci.biz"
+  ]
+}

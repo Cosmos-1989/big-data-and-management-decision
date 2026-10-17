@@ -1,0 +1,23 @@
+{
+  "checkedAtUtc": "2026-10-17T04:21:01.432754+00:00",
+  "checks": [
+    {
+      "url": "https://datasci.biz/",
+      "exitCode": 0,
+      "status": 200,
+      "finalUrl": "https://datasci.biz/",
+      "redirects": 0,
+      "tlsVerifyResult": 0,
+      "error": ""
+    },
+    {
+      "url": "http://www.datasci.biz/",
+      "exitCode": 0,
+      "status": 200,
+      "finalUrl": "https://datasci.biz/",
+      "redirects": 1,
+      "tlsVerifyResult": 0,
+      "error": ""
+    }
+  ]
+}
