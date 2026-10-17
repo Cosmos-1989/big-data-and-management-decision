@@ -73,7 +73,9 @@ node scripts/verify-slides.mjs
 
 ## 发布
 
-公开课程网站：https://cosmos-1989.github.io/big-data-and-management-decision/
+公开课程网站：https://datasci.biz/
+
+原 GitHub Pages 地址：https://cosmos-1989.github.io/big-data-and-management-decision/ （完成域名绑定后跳转至主域名）。
 
 GitHub 使用现有课程仓库 `Cosmos-1989/big-data-and-management-decision`。网站源码单独保存在 `codex/course-website` 分支；`gh-pages` 分支的根目录保存 `dist/` 静态文件。课程仓库 `main` 分支不受网站发布影响。
 
@@ -128,3 +130,7 @@ node scripts/verify-diagrams.mjs
 ```
 
 逐页渲染、展开讨论、字体覆盖、内容保护与线上验收记录见 `review/teaching-20261017/`。`review/` 使用生产渲染器，可检查全部712页；本轮记录补充此前历史审核。
+
+## 自定义域名
+
+`dist/CNAME` 固定为 `datasci.biz`，每次发布都须保留。域名在GoDaddy管理，根域的四条A记录指向GitHub Pages：185.199.108.153、185.199.109.153、185.199.110.153、185.199.111.153；www的CNAME直接指向Cosmos-1989.github.io，不包含仓库名。DNS和证书核验记录见review/domain-datasci-20261017。不要改动与网站无关的邮件、NS或TXT记录。

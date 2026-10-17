@@ -1,0 +1,30 @@
+{
+  "domain": "datasci.biz",
+  "www": "www.datasci.biz",
+  "host": "GitHub Pages",
+  "repository": "Cosmos-1989/big-data-and-management-decision",
+  "branch": "gh-pages",
+  "existingA": [
+    "15.197.148.33",
+    "3.33.130.190"
+  ],
+  "existingWwwCname": "datasci.biz",
+  "newA": [
+    "185.199.108.153",
+    "185.199.109.153",
+    "185.199.110.153",
+    "185.199.111.153"
+  ],
+  "newWwwCname": "Cosmos-1989.github.io",
+  "preserve": [
+    "NS",
+    "MX",
+    "unrelated TXT",
+    "other subdomains"
+  ],
+  "officialSources": [
+    "https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site",
+    "https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/verifying-your-custom-domain-for-github-pages"
+  ],
+  "initialState": "Prepared locally; GitHub Pages and DNS have not yet been changed."
+}

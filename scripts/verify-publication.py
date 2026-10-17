@@ -8,14 +8,16 @@ import sys
 
 root = Path(__file__).resolve().parents[1]
 revision = sys.argv[1]
-base = 'https://cosmos-1989.github.io/big-data-and-management-decision/'
+base = sys.argv[2] if len(sys.argv) > 2 else 'https://datasci.biz/'
+if not base.startswith('https://') or not base.endswith('/'):
+    raise SystemExit('Use an HTTPS base URL ending in /')
 paths = ['index.html', 'app.js', 'slides.js', 'slides-refined.css', 'slide-diagrams.js',
          'business-cases.js', 'business-cases.css', 'content/catalog.json',
          'content/lecture-slides.json', 'content/business-cases.json',
          'content/business-casebook.json', 'content/lecture-terms.json',
          'content/source-manifest.json', 'assets/fonts/course-song.css',
          'assets/fonts/manifest.json', 'assets/fonts/course-song-regular.woff2',
-         'assets/fonts/course-song-bold.woff2', 'downloads/business-casebook.md']
+         'assets/fonts/course-song-bold.woff2', 'downloads/business-casebook.md', 'CNAME']
 
 def check(path):
     local = (root / 'dist' / path).read_bytes()
@@ -29,7 +31,7 @@ with ThreadPoolExecutor(max_workers=4) as pool:
     records = list(pool.map(check, paths))
 report = {'base': base, 'pagesRevision': revision, 'tlsVerification': True, 'files': records,
           'allMatched': all(r['match'] for r in records)}
-out = root / 'review/teaching-20261017/public-files.json'
+out = root / 'review/domain-datasci-20261017/public-files.json'
 out.write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n')
 print(json.dumps({'checkedFiles': len(records), 'allMatched': report['allMatched'],
                   'mismatched': [r['path'] for r in records if not r['match']]}))
