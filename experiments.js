@@ -1,4 +1,4 @@
-import {agentExperiments} from './agent-experiments.js?v=20261017-3';
+import {agentExperiments} from './agent-experiments.js?v=20261017-4';
 const c=(id,title,chapter,description,code,params=[])=>({id,title,chapter,description,code,params,language:'python'});
 export const experiments=[
 ...agentExperiments,

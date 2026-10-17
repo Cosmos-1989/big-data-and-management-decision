@@ -2302,560 +2302,560 @@
       "anchor": "agent-deployment"
     },
     {
-      "term": "UPS：UPSNav：路线顺序如何成为可执行行动",
+      "term": "UPSNav：路线顺序如何成为可执行行动",
       "sort": "ups upsnav：路线顺序如何成为可执行行动",
       "chapter": "business-casebook",
       "anchor": "b01-01",
       "teachingCase": true
     },
     {
-      "term": "CVS Health：CVS停售烟草：企业目标如何界定行动集合",
+      "term": "CVS停售烟草：企业目标如何界定行动集合",
       "sort": "cvs health cvs停售烟草：企业目标如何界定行动集合",
       "chapter": "business-casebook",
       "anchor": "b01-02",
       "teachingCase": true
     },
     {
-      "term": "Wells Fargo：Wells Fargo：开户数量为何偏离客户价值",
+      "term": "Wells Fargo：开户数量为何偏离客户价值",
       "sort": "wells fargo wells fargo：开户数量为何偏离客户价值",
       "chapter": "business-casebook",
       "anchor": "b01-03",
       "teachingCase": true
     },
     {
-      "term": "Patagonia：Patagonia：产品销售与资源消耗的跨期权衡",
+      "term": "Patagonia：产品销售与资源消耗的跨期权衡",
       "sort": "patagonia patagonia：产品销售与资源消耗的跨期权衡",
       "chapter": "business-casebook",
       "anchor": "b01-04",
       "teachingCase": true
     },
     {
-      "term": "Amazon：Amazon：可逆性改变信息等待的代价",
+      "term": "Amazon：可逆性改变信息等待的代价",
       "sort": "amazon amazon：可逆性改变信息等待的代价",
       "chapter": "business-casebook",
       "anchor": "b01-05",
       "teachingCase": true
     },
     {
-      "term": "Shopify：Shopify：数字编号相同，对象未必相同",
+      "term": "Shopify：数字编号相同，对象未必相同",
       "sort": "shopify shopify：数字编号相同，对象未必相同",
       "chapter": "business-casebook",
       "anchor": "b02-01",
       "teachingCase": true
     },
     {
-      "term": "Stripe：Stripe PaymentIntent：支付不是一个成功布尔值",
+      "term": "Stripe PaymentIntent：支付不是一个成功布尔值",
       "sort": "stripe stripe paymentintent：支付不是一个成功布尔值",
       "chapter": "business-casebook",
       "anchor": "b02-02",
       "teachingCase": true
     },
     {
-      "term": "Uber：Uber H3：地理汇总先确定空间单位",
+      "term": "Uber H3：地理汇总先确定空间单位",
       "sort": "uber uber h3：地理汇总先确定空间单位",
       "chapter": "business-casebook",
       "anchor": "b02-03",
       "teachingCase": true
     },
     {
-      "term": "LinkedIn：LinkedIn DataHub：数据集之外还要记录关系",
+      "term": "LinkedIn DataHub：数据集之外还要记录关系",
       "sort": "linkedin linkedin datahub：数据集之外还要记录关系",
       "chapter": "business-casebook",
       "anchor": "b02-04",
       "teachingCase": true
     },
     {
-      "term": "Spotify：Spotify Backstage：服务身份与责任归属",
+      "term": "Spotify Backstage：服务身份与责任归属",
       "sort": "spotify spotify backstage：服务身份与责任归属",
       "chapter": "business-casebook",
       "anchor": "b02-05",
       "teachingCase": true
     },
     {
-      "term": "Airbnb：Airbnb Minerva：定义变化后，历史应怎样比较",
+      "term": "Airbnb Minerva：定义变化后，历史应怎样比较",
       "sort": "airbnb airbnb minerva：定义变化后，历史应怎样比较",
       "chapter": "business-casebook",
       "anchor": "b03-01",
       "teachingCase": true
     },
     {
-      "term": "Uber：Uber uMetric：实时与离线为何算出不同结果",
+      "term": "Uber uMetric：实时与离线为何算出不同结果",
       "sort": "uber uber umetric：实时与离线为何算出不同结果",
       "chapter": "business-casebook",
       "anchor": "b03-02",
       "teachingCase": true
     },
     {
-      "term": "DoorDash：DoorDash Curie：为何保留事件级事实",
+      "term": "DoorDash Curie：为何保留事件级事实",
       "sort": "doordash doordash curie：为何保留事件级事实",
       "chapter": "business-casebook",
       "anchor": "b03-03",
       "teachingCase": true
     },
     {
-      "term": "Spotify：Spotify streamshare：播放量不是统一单价",
+      "term": "Spotify streamshare：播放量不是统一单价",
       "sort": "spotify spotify streamshare：播放量不是统一单价",
       "chapter": "business-casebook",
       "anchor": "b03-04",
       "teachingCase": true
     },
     {
-      "term": "Shopify：Shopify GMV：交易规模与平台收入",
+      "term": "Shopify GMV：交易规模与平台收入",
       "sort": "shopify shopify gmv：交易规模与平台收入",
       "chapter": "business-casebook",
       "anchor": "b03-05",
       "teachingCase": true
     },
     {
-      "term": "GitLab：GitLab数据库事件：备份存在不等于能够恢复",
+      "term": "GitLab数据库事件：备份存在不等于能够恢复",
       "sort": "gitlab gitlab数据库事件：备份存在不等于能够恢复",
       "chapter": "business-casebook",
       "anchor": "b04-01",
       "teachingCase": true
     },
     {
-      "term": "Unity Software：Unity：错误数据如何进入模型反馈",
+      "term": "Unity：错误数据如何进入模型反馈",
       "sort": "unity software unity：错误数据如何进入模型反馈",
       "chapter": "business-casebook",
       "anchor": "b04-02",
       "teachingCase": true
     },
     {
-      "term": "Amazon：Amazon Deequ：把数据假设写成可检验约束",
+      "term": "Amazon Deequ：把数据假设写成可检验约束",
       "sort": "amazon amazon deequ：把数据假设写成可检验约束",
       "chapter": "business-casebook",
       "anchor": "b04-03",
       "teachingCase": true
     },
     {
-      "term": "Airbnb：Airbnb质量评分：总分如何保留解释性",
+      "term": "Airbnb质量评分：总分如何保留解释性",
       "sort": "airbnb airbnb质量评分：总分如何保留解释性",
       "chapter": "business-casebook",
       "anchor": "b04-04",
       "teachingCase": true
     },
     {
-      "term": "Citibank：Citibank监管整改：数据治理是持续责任",
+      "term": "Citibank监管整改：数据治理是持续责任",
       "sort": "citibank citibank监管整改：数据治理是持续责任",
       "chapter": "business-casebook",
       "anchor": "b04-05",
       "teachingCase": true
     },
     {
-      "term": "Netflix：Netflix ISP指数：先固定观看结构再比较网络",
+      "term": "Netflix ISP指数：先固定观看结构再比较网络",
       "sort": "netflix netflix isp指数：先固定观看结构再比较网络",
       "chapter": "business-casebook",
       "anchor": "b05-01",
       "teachingCase": true
     },
     {
-      "term": "Google：Google SRE：平均时延为什么不够",
+      "term": "Google SRE：平均时延为什么不够",
       "sort": "google google sre：平均时延为什么不够",
       "chapter": "business-casebook",
       "anchor": "b05-02",
       "teachingCase": true
     },
     {
-      "term": "Toyota：Toyota Andon：可视化信号需要处置责任",
+      "term": "Toyota Andon：可视化信号需要处置责任",
       "sort": "toyota toyota andon：可视化信号需要处置责任",
       "chapter": "business-casebook",
       "anchor": "b05-03",
       "teachingCase": true
     },
     {
-      "term": "Amazon：Prime Day：活动高峰如何影响经营摘要",
+      "term": "Prime Day：活动高峰如何影响经营摘要",
       "sort": "amazon prime day：活动高峰如何影响经营摘要",
       "chapter": "business-casebook",
       "anchor": "b05-04",
       "teachingCase": true
     },
     {
-      "term": "McDonald’s：McDonald’s：同店销售增长不等于客流增长",
+      "term": "McDonald’s：同店销售增长不等于客流增长",
       "sort": "mcdonald’s mcdonald’s：同店销售增长不等于客流增长",
       "chapter": "business-casebook",
       "anchor": "b05-05",
       "teachingCase": true
     },
     {
-      "term": "Netflix：Netflix：同一影片的封面应如何比较",
+      "term": "Netflix：同一影片的封面应如何比较",
       "sort": "netflix netflix：同一影片的封面应如何比较",
       "chapter": "business-casebook",
       "anchor": "b06-01",
       "teachingCase": true
     },
     {
-      "term": "Airbnb：Airbnb：房源实验为何受到邻近房源影响",
+      "term": "Airbnb：房源实验为何受到邻近房源影响",
       "sort": "airbnb airbnb：房源实验为何受到邻近房源影响",
       "chapter": "business-casebook",
       "anchor": "b06-02",
       "teachingCase": true
     },
     {
-      "term": "Booking.com：Booking.com：实验记录为什么要保存失败结果",
+      "term": "Booking.com：实验记录为什么要保存失败结果",
       "sort": "booking.com booking.com：实验记录为什么要保存失败结果",
       "chapter": "business-casebook",
       "anchor": "b06-03",
       "teachingCase": true
     },
     {
-      "term": "Uber：Uber：结果显著之前先检查实验是否按计划运行",
+      "term": "Uber：结果显著之前先检查实验是否按计划运行",
       "sort": "uber uber：结果显著之前先检查实验是否按计划运行",
       "chapter": "business-casebook",
       "anchor": "b06-04",
       "teachingCase": true
     },
     {
-      "term": "DoorDash：DoorDash：调度实验按地区和时间切换",
+      "term": "DoorDash：调度实验按地区和时间切换",
       "sort": "doordash doordash：调度实验按地区和时间切换",
       "chapter": "business-casebook",
       "anchor": "b06-05",
       "teachingCase": true
     },
     {
-      "term": "Amazon：Amazon：补货为何需要需求分布",
+      "term": "Amazon：补货为何需要需求分布",
       "sort": "amazon amazon：补货为何需要需求分布",
       "chapter": "business-casebook",
       "anchor": "b07-01",
       "teachingCase": true
     },
     {
-      "term": "Uber：Uber DeepETA：在道路模型上预测残差",
+      "term": "Uber DeepETA：在道路模型上预测残差",
       "sort": "uber uber deepeta：在道路模型上预测残差",
       "chapter": "business-casebook",
       "anchor": "b07-02",
       "teachingCase": true
     },
     {
-      "term": "DoorDash：DoorDash：把配送预测与承诺决策分开",
+      "term": "DoorDash：把配送预测与承诺决策分开",
       "sort": "doordash doordash：把配送预测与承诺决策分开",
       "chapter": "business-casebook",
       "anchor": "b07-03",
       "teachingCase": true
     },
     {
-      "term": "Netflix：Netflix：评分预测为何不足以设计首页",
+      "term": "Netflix：评分预测为何不足以设计首页",
       "sort": "netflix netflix：评分预测为何不足以设计首页",
       "chapter": "business-casebook",
       "anchor": "b07-04",
       "teachingCase": true
     },
     {
-      "term": "Google Maps：Google Maps：道路相互连接怎样影响预测",
+      "term": "Google Maps：道路相互连接怎样影响预测",
       "sort": "google maps google maps：道路相互连接怎样影响预测",
       "chapter": "business-casebook",
       "anchor": "b07-05",
       "teachingCase": true
     },
     {
-      "term": "eBay：eBay：搜索广告转化与增量购买",
+      "term": "eBay：搜索广告转化与增量购买",
       "sort": "ebay ebay：搜索广告转化与增量购买",
       "chapter": "business-casebook",
       "anchor": "b08-01",
       "teachingCase": true
     },
     {
-      "term": "Uber：Uber：不同促销需要比较净增量价值",
+      "term": "Uber：不同促销需要比较净增量价值",
       "sort": "uber uber：不同促销需要比较净增量价值",
       "chapter": "business-casebook",
       "anchor": "b08-02",
       "teachingCase": true
     },
     {
-      "term": "Google：Google：广告效果可以在地区层面识别",
+      "term": "Google：广告效果可以在地区层面识别",
       "sort": "google google：广告效果可以在地区层面识别",
       "chapter": "business-casebook",
       "anchor": "b08-03",
       "teachingCase": true
     },
     {
-      "term": "Facebook：Facebook：丰富特征能否代替随机比较",
+      "term": "Facebook：丰富特征能否代替随机比较",
       "sort": "facebook facebook：丰富特征能否代替随机比较",
       "chapter": "business-casebook",
       "anchor": "b08-04",
       "teachingCase": true
     },
     {
-      "term": "Tripadvisor：Tripadvisor：会员注册便利化与实际采用",
+      "term": "Tripadvisor：会员注册便利化与实际采用",
       "sort": "tripadvisor tripadvisor：会员注册便利化与实际采用",
       "chapter": "business-casebook",
       "anchor": "b08-05",
       "teachingCase": true
     },
     {
-      "term": "Zara：Zara：有限库存怎样分给不同门店",
+      "term": "Zara：有限库存怎样分给不同门店",
       "sort": "zara zara：有限库存怎样分给不同门店",
       "chapter": "business-casebook",
       "anchor": "b09-01",
       "teachingCase": true
     },
     {
-      "term": "Google DeepMind：Google：冷却优化为何需要双层约束核验",
+      "term": "Google：冷却优化为何需要双层约束核验",
       "sort": "google deepmind google：冷却优化为何需要双层约束核验",
       "chapter": "business-casebook",
       "anchor": "b09-02",
       "teachingCase": true
     },
     {
-      "term": "Lufthansa：Lufthansa：模拟机排程中的硬条件与偏好",
+      "term": "Lufthansa：模拟机排程中的硬条件与偏好",
       "sort": "lufthansa lufthansa：模拟机排程中的硬条件与偏好",
       "chapter": "business-casebook",
       "anchor": "b09-03",
       "teachingCase": true
     },
     {
-      "term": "Walmart：Walmart：运输优化同时决定路线与装载",
+      "term": "Walmart：运输优化同时决定路线与装载",
       "sort": "walmart walmart：运输优化同时决定路线与装载",
       "chapter": "business-casebook",
       "anchor": "b09-04",
       "teachingCase": true
     },
     {
-      "term": "Uber：Uber：一次派单也会改变下一时段的供需",
+      "term": "Uber：一次派单也会改变下一时段的供需",
       "sort": "uber uber：一次派单也会改变下一时段的供需",
       "chapter": "business-casebook",
       "anchor": "b09-05",
       "teachingCase": true
     },
     {
-      "term": "Vodafone：Vodafone：采购流程图与实际路径的差距",
+      "term": "Vodafone：采购流程图与实际路径的差距",
       "sort": "vodafone vodafone：采购流程图与实际路径的差距",
       "chapter": "business-casebook",
       "anchor": "b10-01",
       "teachingCase": true
     },
     {
-      "term": "DHL Group：DHL：人事工单结束，财务付款是否也已结束",
+      "term": "DHL：人事工单结束，财务付款是否也已结束",
       "sort": "dhl group dhl：人事工单结束，财务付款是否也已结束",
       "chapter": "business-casebook",
       "anchor": "b10-02",
       "teachingCase": true
     },
     {
-      "term": "Deutsche Telekom：Deutsche Telekom：付款更早并不总是更好",
+      "term": "Deutsche Telekom：付款更早并不总是更好",
       "sort": "deutsche telekom deutsche telekom：付款更早并不总是更好",
       "chapter": "business-casebook",
       "anchor": "b10-03",
       "teachingCase": true
     },
     {
-      "term": "ABB：ABB：跨业务流程需要共同语义",
+      "term": "ABB：跨业务流程需要共同语义",
       "sort": "abb abb：跨业务流程需要共同语义",
       "chapter": "business-casebook",
       "anchor": "b10-04",
       "teachingCase": true
     },
     {
-      "term": "Stripe：Stripe：超时重试怎样避免重复业务影响",
+      "term": "Stripe：超时重试怎样避免重复业务影响",
       "sort": "stripe stripe：超时重试怎样避免重复业务影响",
       "chapter": "business-casebook",
       "anchor": "b10-05",
       "teachingCase": true
     },
     {
-      "term": "Uber：Uber Hudi：记录会在到达后继续变化",
+      "term": "Uber Hudi：记录会在到达后继续变化",
       "sort": "uber uber hudi：记录会在到达后继续变化",
       "chapter": "business-casebook",
       "anchor": "b11-01",
       "teachingCase": true
     },
     {
-      "term": "Netflix：Netflix Iceberg：表格式迁移需要验证",
+      "term": "Netflix Iceberg：表格式迁移需要验证",
       "sort": "netflix netflix iceberg：表格式迁移需要验证",
       "chapter": "business-casebook",
       "anchor": "b11-02",
       "teachingCase": true
     },
     {
-      "term": "Shopify：Shopify CDC：从反复查询到日志变更",
+      "term": "Shopify CDC：从反复查询到日志变更",
       "sort": "shopify shopify cdc：从反复查询到日志变更",
       "chapter": "business-casebook",
       "anchor": "b11-03",
       "teachingCase": true
     },
     {
-      "term": "Walmart：Walmart湖仓选型：工作负载决定取舍",
+      "term": "Walmart湖仓选型：工作负载决定取舍",
       "sort": "walmart walmart湖仓选型：工作负载决定取舍",
       "chapter": "business-casebook",
       "anchor": "b11-04",
       "teachingCase": true
     },
     {
-      "term": "Disney Advertising × Horizon Media：Disney数据洁净室：协作分析也有边界",
+      "term": "Disney数据洁净室：协作分析也有边界",
       "sort": "disney advertising × horizon media disney数据洁净室：协作分析也有边界",
       "chapter": "business-casebook",
       "anchor": "b11-05",
       "teachingCase": true
     },
     {
-      "term": "Uber：Michelangelo：模型上线是一套持续流程",
+      "term": "Michelangelo：模型上线是一套持续流程",
       "sort": "uber michelangelo：模型上线是一套持续流程",
       "chapter": "business-casebook",
       "anchor": "b12-01",
       "teachingCase": true
     },
     {
-      "term": "LinkedIn：Pro-ML：从异常信号追查原因",
+      "term": "Pro-ML：从异常信号追查原因",
       "sort": "linkedin pro-ml：从异常信号追查原因",
       "chapter": "business-casebook",
       "anchor": "b12-02",
       "teachingCase": true
     },
     {
-      "term": "DoorDash：Sibyl：影子流量先检验服务承载",
+      "term": "Sibyl：影子流量先检验服务承载",
       "sort": "doordash sibyl：影子流量先检验服务承载",
       "chapter": "business-casebook",
       "anchor": "b12-03",
       "teachingCase": true
     },
     {
-      "term": "Netflix：Metaflow：一次结果需要可恢复的运行记录",
+      "term": "Metaflow：一次结果需要可恢复的运行记录",
       "sort": "netflix metaflow：一次结果需要可恢复的运行记录",
       "chapter": "business-casebook",
       "anchor": "b12-04",
       "teachingCase": true
     },
     {
-      "term": "Stripe：Radar：模型更新须面对误拒与漏放",
+      "term": "Radar：模型更新须面对误拒与漏放",
       "sort": "stripe radar：模型更新须面对误拒与漏放",
       "chapter": "business-casebook",
       "anchor": "b12-05",
       "teachingCase": true
     },
     {
-      "term": "BMW Group：BMW虚拟工厂：在建设前比较布局",
+      "term": "BMW虚拟工厂：在建设前比较布局",
       "sort": "bmw group bmw虚拟工厂：在建设前比较布局",
       "chapter": "business-casebook",
       "anchor": "b13-01",
       "teachingCase": true
     },
     {
-      "term": "Unilever：Unilever配方数字孪生：参数受产品约束",
+      "term": "Unilever配方数字孪生：参数受产品约束",
       "sort": "unilever unilever配方数字孪生：参数受产品约束",
       "chapter": "business-casebook",
       "anchor": "b13-02",
       "teachingCase": true
     },
     {
-      "term": "DHL × Tetra Pak：DHL仓库数字孪生：可见状态支持资源分配",
+      "term": "DHL仓库数字孪生：可见状态支持资源分配",
       "sort": "dhl × tetra pak dhl仓库数字孪生：可见状态支持资源分配",
       "chapter": "business-casebook",
       "anchor": "b13-03",
       "teachingCase": true
     },
     {
-      "term": "Rio Tinto：Gudai-Darri：资产身份贯通维护与培训",
+      "term": "Gudai-Darri：资产身份贯通维护与培训",
       "sort": "rio tinto gudai-darri：资产身份贯通维护与培训",
       "chapter": "business-casebook",
       "anchor": "b13-04",
       "teachingCase": true
     },
     {
-      "term": "Jaguar Land Rover：JLR供应链孪生：先演算再改变",
+      "term": "JLR供应链孪生：先演算再改变",
       "sort": "jaguar land rover jlr供应链孪生：先演算再改变",
       "chapter": "business-casebook",
       "anchor": "b13-05",
       "teachingCase": true
     },
     {
-      "term": "Morgan Stanley：Morgan Stanley：内部知识答复保留来源",
+      "term": "Morgan Stanley：内部知识答复保留来源",
       "sort": "morgan stanley morgan stanley：内部知识答复保留来源",
       "chapter": "business-casebook",
       "anchor": "b14-01",
       "teachingCase": true
     },
     {
-      "term": "Box IT：Box Gizmo：未解决问题推动知识修订",
+      "term": "Box Gizmo：未解决问题推动知识修订",
       "sort": "box it box gizmo：未解决问题推动知识修订",
       "chapter": "business-casebook",
       "anchor": "b14-02",
       "teachingCase": true
     },
     {
-      "term": "Dow：Dow运费核查：发现差异与批准更正分开",
+      "term": "Dow运费核查：发现差异与批准更正分开",
       "sort": "dow dow运费核查：发现差异与批准更正分开",
       "chapter": "business-casebook",
       "anchor": "b14-03",
       "teachingCase": true
     },
     {
-      "term": "Rakuten：Rakuten研发助手：可运行代码仍须验收",
+      "term": "Rakuten研发助手：可运行代码仍须验收",
       "sort": "rakuten rakuten研发助手：可运行代码仍须验收",
       "chapter": "business-casebook",
       "anchor": "b14-04",
       "teachingCase": true
     },
     {
-      "term": "Wiley：Wiley客服分流：结束对话不等于解决问题",
+      "term": "Wiley客服分流：结束对话不等于解决问题",
       "sort": "wiley wiley客服分流：结束对话不等于解决问题",
       "chapter": "business-casebook",
       "anchor": "b14-05",
       "teachingCase": true
     },
     {
-      "term": "Siemens Amberg：Amberg：从检验瓶颈定义原型",
+      "term": "Amberg：从检验瓶颈定义原型",
       "sort": "siemens amberg amberg：从检验瓶颈定义原型",
       "chapter": "business-casebook",
       "anchor": "b15-01",
       "teachingCase": true
     },
     {
-      "term": "Haier Electronics：海尔佛山洗衣机：把定制需求贯通到生产",
+      "term": "海尔佛山洗衣机：把定制需求贯通到生产",
       "sort": "haier electronics 海尔佛山洗衣机：把定制需求贯通到生产",
       "chapter": "business-casebook",
       "anchor": "b15-02",
       "teachingCase": true
     },
     {
-      "term": "Ocado：Ocado履约：用仿真检验系统依赖",
+      "term": "Ocado履约：用仿真检验系统依赖",
       "sort": "ocado ocado履约：用仿真检验系统依赖",
       "chapter": "business-casebook",
       "anchor": "b15-03",
       "teachingCase": true
     },
     {
-      "term": "Amazon：Sequoia：首个场地验证系统组合",
+      "term": "Sequoia：首个场地验证系统组合",
       "sort": "amazon sequoia：首个场地验证系统组合",
       "chapter": "business-casebook",
       "anchor": "b15-04",
       "teachingCase": true
     },
     {
-      "term": "BMW Group：AIQX：质检原型需要对象与位置对应",
+      "term": "AIQX：质检原型需要对象与位置对应",
       "sort": "bmw group aiqx：质检原型需要对象与位置对应",
       "chapter": "business-casebook",
       "anchor": "b15-05",
       "teachingCase": true
     },
     {
-      "term": "Zillow Group：Zillow Offers：何时停止扩大预测驱动的业务",
+      "term": "Zillow Offers：何时停止扩大预测驱动的业务",
       "sort": "zillow group zillow offers：何时停止扩大预测驱动的业务",
       "chapter": "business-casebook",
       "anchor": "b16-01",
       "teachingCase": true
     },
     {
-      "term": "Knight Capital：Knight Capital：上线验收必须覆盖实际执行控制",
+      "term": "Knight Capital：上线验收必须覆盖实际执行控制",
       "sort": "knight capital knight capital：上线验收必须覆盖实际执行控制",
       "chapter": "business-casebook",
       "anchor": "b16-02",
       "teachingCase": true
     },
     {
-      "term": "TSB Bank：TSB迁移：数据复制成功与业务验收分别证明",
+      "term": "TSB迁移：数据复制成功与业务验收分别证明",
       "sort": "tsb bank tsb迁移：数据复制成功与业务验收分别证明",
       "chapter": "business-casebook",
       "anchor": "b16-03",
       "teachingCase": true
     },
     {
-      "term": "Microsoft：Tay：公开试验怎样约束失败的影响",
+      "term": "Tay：公开试验怎样约束失败的影响",
       "sort": "microsoft tay：公开试验怎样约束失败的影响",
       "chapter": "business-casebook",
       "anchor": "b16-04",
       "teachingCase": true
     },
     {
-      "term": "Amazon Web Services：S3事件复盘：操作工具怎样限制故障影响范围",
+      "term": "S3事件复盘：操作工具怎样限制故障影响范围",
       "sort": "amazon web services s3事件复盘：操作工具怎样限制故障影响范围",
       "chapter": "business-casebook",
       "anchor": "b16-05",
