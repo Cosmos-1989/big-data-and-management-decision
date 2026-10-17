@@ -95,7 +95,7 @@
   "extras": [
     {
       "id": "11_modern_data_platform",
-      "title": "第 11 章 现代数据平台与语义层",
+      "title": "第 11 章现代数据平台与语义层",
       "source": "docs/lecture_notes/11_modern_data_platform.md",
       "kind": "supplement"
     },
@@ -126,61 +126,61 @@
     },
     {
       "id": "assignment_01_data_modeling",
-      "title": "作业 01: 企业数据建模",
+      "title": "作业 01：企业数据建模",
       "source": "assignments/assignment_01_data_modeling.md",
       "kind": "supplement"
     },
     {
       "id": "assignment_02_enterprise_data_model",
-      "title": "作业 02: 企业数据与业务对象建模",
+      "title": "作业 02：企业数据与业务对象建模",
       "source": "assignments/assignment_02_enterprise_data_model.md",
       "kind": "supplement"
     },
     {
       "id": "assignment_03_sql_kpi",
-      "title": "作业 03: SQL、KPI 与经营分析",
+      "title": "作业 03： SQL、KPI 与经营分析",
       "source": "assignments/assignment_03_sql_kpi.md",
       "kind": "supplement"
     },
     {
       "id": "assignment_04_data_quality",
-      "title": "作业 04: 数据质量与指标治理",
+      "title": "作业 04：数据质量与指标治理",
       "source": "assignments/assignment_04_data_quality.md",
       "kind": "supplement"
     },
     {
       "id": "assignment_05_dashboard",
-      "title": "作业 05: 描述统计、Dashboard 与管理沟通",
+      "title": "作业 05：描述统计、运营看板与管理沟通",
       "source": "assignments/assignment_05_dashboard.md",
       "kind": "supplement"
     },
     {
       "id": "assignment_06_statistical_inference",
-      "title": "作业 06: 统计推断与 A/B 测试",
+      "title": "作业 06：统计推断与 A/B 测试",
       "source": "assignments/assignment_06_statistical_inference.md",
       "kind": "supplement"
     },
     {
       "id": "assignment_07_prediction",
-      "title": "作业 07: 预测模型基础",
+      "title": "作业 07：预测模型基础",
       "source": "assignments/assignment_07_prediction.md",
       "kind": "supplement"
     },
     {
       "id": "assignment_09_causality",
-      "title": "作业 09: 因果推断与管理干预",
+      "title": "作业 09：因果推断与管理干预",
       "source": "assignments/assignment_09_causality.md",
       "kind": "supplement"
     },
     {
       "id": "assignment_11_optimization",
-      "title": "作业 11: 优化与处方分析",
+      "title": "作业 11：优化与处方分析",
       "source": "assignments/assignment_11_optimization.md",
       "kind": "supplement"
     },
     {
       "id": "assignment_12_process_mining",
-      "title": "作业 12: 流程数据与过程挖掘",
+      "title": "作业 12：流程数据与过程挖掘",
       "source": "assignments/assignment_12_process_mining.md",
       "kind": "supplement"
     },
@@ -192,19 +192,19 @@
     },
     {
       "id": "decision_memo_template",
-      "title": "Decision Memo",
+      "title": "决策备忘录（Decision Memo）",
       "source": "reports/decision_memo_template.md",
       "kind": "supplement"
     },
     {
       "id": "model_card_template",
-      "title": "Model Card",
+      "title": "模型卡（Model Card）",
       "source": "reports/model_card_template.md",
       "kind": "supplement"
     },
     {
       "id": "project_report_template",
-      "title": "Project Report",
+      "title": "项目报告（Project Report）",
       "source": "reports/project_report_template.md",
       "kind": "supplement"
     },
@@ -222,7 +222,7 @@
     },
     {
       "id": "data-guide",
-      "title": "Sample Data",
+      "title": "课程样例数据",
       "source": "data/sample/README.md",
       "kind": "supplement"
     },
@@ -647,7 +647,7 @@
       "term": "业务对象",
       "sort": "yewuduixiang",
       "chapter": "01_intro",
-      "anchor": "经营问题的定义"
+      "anchor": null
     },
     {
       "term": "行动对象",
@@ -713,25 +713,25 @@
       "term": "EVPI（完全信息价值）",
       "sort": "EVPI",
       "chapter": "01_intro",
-      "anchor": "思考与习题"
+      "anchor": "01_intro-notes"
     },
     {
       "term": "Bellman递推",
       "sort": "Bellman",
       "chapter": "01_intro",
-      "anchor": "思考与习题"
+      "anchor": "01_intro-notes"
     },
     {
       "term": "多期决策",
       "sort": "duoqijuece",
       "chapter": "01_intro",
-      "anchor": "多期决策与分析任务"
+      "anchor": null
     },
     {
       "term": "证据边界",
       "sort": "zhengjubianjie",
       "chapter": "01_intro",
-      "anchor": "思考与习题"
+      "anchor": "01_intro-notes"
     },
     {
       "term": "CRISP-DM",
@@ -791,7 +791,7 @@
       "term": "企业人工智能基础设施",
       "sort": "qiyeyijichusheshi",
       "chapter": "02_enterprise_data_model",
-      "anchor": "思考与习题"
+      "anchor": "02_enterprise_data_model-notes"
     },
     {
       "term": "Apache Iceberg",
@@ -815,7 +815,7 @@
       "term": "数据模型",
       "sort": "shujumoxing",
       "chapter": "02_enterprise_data_model",
-      "anchor": "数据模型与组织管理"
+      "anchor": null
     },
     {
       "term": "主键",
@@ -839,7 +839,7 @@
       "term": "ER模型",
       "sort": "ER",
       "chapter": "02_enterprise_data_model",
-      "anchor": "思考与习题"
+      "anchor": "02_enterprise_data_model-notes"
     },
     {
       "term": "批次（lot）",
@@ -893,7 +893,7 @@
       "term": "制造分析要素",
       "sort": "zhizaofenixiyaosu",
       "chapter": "02_enterprise_data_model",
-      "anchor": "思考与习题"
+      "anchor": "02_enterprise_data_model-notes"
     },
     {
       "term": "元数据",
@@ -923,13 +923,13 @@
       "term": "激励制度",
       "sort": "jilizhidu",
       "chapter": "02_enterprise_data_model",
-      "anchor": "思考与习题"
+      "anchor": "02_enterprise_data_model-notes"
     },
     {
       "term": "CARA（常数绝对风险厌恶）",
       "sort": "CARA",
       "chapter": "02_enterprise_data_model",
-      "anchor": "思考与习题"
+      "anchor": "02_enterprise_data_model-notes"
     },
     {
       "term": "风险厌恶",
@@ -947,7 +947,7 @@
       "term": "多任务激励",
       "sort": "duorenwujili",
       "chapter": "02_enterprise_data_model",
-      "anchor": "思考与习题"
+      "anchor": "02_enterprise_data_model-notes"
     },
     {
       "term": "指标操纵",
@@ -1007,7 +1007,7 @@
       "term": "可合并统计状态",
       "sort": "kehebingzhuangtai",
       "chapter": "03_sql_kpi",
-      "anchor": "思考与习题"
+      "anchor": "03_sql_kpi-notes"
     },
     {
       "term": "Yield（良率）",
@@ -1049,7 +1049,7 @@
       "term": "设备综合效率",
       "sort": "shebeizonghexiaolv",
       "chapter": "03_sql_kpi",
-      "anchor": "思考与习题"
+      "anchor": "03_sql_kpi-notes"
     },
     {
       "term": "在制品",
@@ -1091,25 +1091,25 @@
       "term": "NL2SQL",
       "sort": "NL2SQL",
       "chapter": "03_sql_kpi",
-      "anchor": "思考与习题"
+      "anchor": "03_sql_kpi-notes"
     },
     {
       "term": "AI问数",
       "sort": "AIwenshu",
       "chapter": "03_sql_kpi",
-      "anchor": "思考与习题"
+      "anchor": "03_sql_kpi-notes"
     },
     {
       "term": "执行安全",
       "sort": "zhixinganquan",
       "chapter": "03_sql_kpi",
-      "anchor": "思考与习题"
+      "anchor": "03_sql_kpi-notes"
     },
     {
       "term": "沙箱",
       "sort": "shaxiang",
       "chapter": "03_sql_kpi",
-      "anchor": "思考与习题"
+      "anchor": "03_sql_kpi-notes"
     },
     {
       "term": "Snowflake",
@@ -1133,13 +1133,13 @@
       "term": "本地化服务",
       "sort": "bendihuafuwu",
       "chapter": "03_sql_kpi",
-      "anchor": "思考与习题"
+      "anchor": "03_sql_kpi-notes"
     },
     {
       "term": "语义视图",
       "sort": "yuyituxiao",
       "chapter": "03_sql_kpi",
-      "anchor": "思考与习题"
+      "anchor": "03_sql_kpi-notes"
     },
     {
       "term": "数据质量",
@@ -1169,25 +1169,25 @@
       "term": "MCAR",
       "sort": "MCAR",
       "chapter": "04_data_quality",
-      "anchor": "思考与习题"
+      "anchor": "缺失机制与均值估计"
     },
     {
       "term": "MAR",
       "sort": "MAR",
       "chapter": "04_data_quality",
-      "anchor": "思考与习题"
+      "anchor": "缺失机制与均值估计"
     },
     {
       "term": "MNAR",
       "sort": "MNAR",
       "chapter": "04_data_quality",
-      "anchor": "思考与习题"
+      "anchor": "缺失机制与均值估计"
     },
     {
       "term": "选择偏差",
       "sort": "xuanzepiancha",
       "chapter": "04_data_quality",
-      "anchor": "思考与习题"
+      "anchor": "04_data_quality-notes"
     },
     {
       "term": "测量误差",
@@ -1205,7 +1205,7 @@
       "term": "误差传播",
       "sort": "wuchachuanbo",
       "chapter": "04_data_quality",
-      "anchor": "思考与习题"
+      "anchor": "04_data_quality-notes"
     },
     {
       "term": "质量规则",
@@ -1217,7 +1217,7 @@
       "term": "发布控制",
       "sort": "fabukongzhi",
       "chapter": "04_data_quality",
-      "anchor": "发布控制与问题分级"
+      "anchor": "数据生成过程与质量风险"
     },
     {
       "term": "数据契约",
@@ -1235,13 +1235,13 @@
       "term": "变更控制",
       "sort": "biangengkongzhi",
       "chapter": "04_data_quality",
-      "anchor": "数据契约血缘与变更控制"
+      "anchor": "数据治理与指标治理"
     },
     {
       "term": "事件响应",
       "sort": "shijianxiangying",
       "chapter": "04_data_quality",
-      "anchor": "治理组织契约与事件响应"
+      "anchor": "数据生成过程与质量风险"
     },
     {
       "term": "Collibra",
@@ -1289,7 +1289,7 @@
       "term": "证据有效期",
       "sort": "zhengjuyouxiaoqi",
       "chapter": "04_data_quality",
-      "anchor": "思考与习题"
+      "anchor": "04_data_quality-notes"
     },
     {
       "term": "描述统计",
@@ -1343,7 +1343,7 @@
       "term": "辛普森反转",
       "sort": "xinpusen",
       "chapter": "05_statistics_dashboard",
-      "anchor": "思考与习题"
+      "anchor": "05_statistics_dashboard-notes"
     },
     {
       "term": "产品组合",
@@ -1367,19 +1367,19 @@
       "term": "Little定律",
       "sort": "Little",
       "chapter": "05_statistics_dashboard",
-      "anchor": "思考与习题"
+      "anchor": "05_statistics_dashboard-notes"
     },
     {
       "term": "M/M/1队列",
       "sort": "MM1",
       "chapter": "05_statistics_dashboard",
-      "anchor": "思考与习题"
+      "anchor": "05_statistics_dashboard-notes"
     },
     {
       "term": "Kingman近似",
       "sort": "Kingman",
       "chapter": "05_statistics_dashboard",
-      "anchor": "思考与习题"
+      "anchor": "05_statistics_dashboard-notes"
     },
     {
       "term": "利用率",
@@ -1409,7 +1409,7 @@
       "term": "Dashboard（看板）",
       "sort": "Dashboard",
       "chapter": "05_statistics_dashboard",
-      "anchor": "思考与习题"
+      "anchor": "05_statistics_dashboard-notes"
     },
     {
       "term": "Rolls-Royce",
@@ -1445,7 +1445,7 @@
       "term": "Neyman方差",
       "sort": "Neyman",
       "chapter": "06_ab_testing",
-      "anchor": "思考与习题"
+      "anchor": "06_ab_testing-notes"
     },
     {
       "term": "置信区间",
@@ -1457,7 +1457,7 @@
       "term": "p值",
       "sort": "pvalue",
       "chapter": "06_ab_testing",
-      "anchor": "思考与习题"
+      "anchor": "06_ab_testing-notes"
     },
     {
       "term": "功效",
@@ -1529,7 +1529,7 @@
       "term": "特征时点",
       "sort": "tezhengshidian",
       "chapter": "07_prediction",
-      "anchor": "思考与习题"
+      "anchor": "07_prediction-notes"
     },
     {
       "term": "经验风险",
@@ -1583,7 +1583,7 @@
       "term": "偏差--方差分解",
       "sort": "pianchafangcha",
       "chapter": "07_prediction",
-      "anchor": "思考与习题"
+      "anchor": "07_prediction-notes"
     },
     {
       "term": "交叉验证",
@@ -1607,13 +1607,13 @@
       "term": "行动阈值",
       "sort": "xingdongyuzhi",
       "chapter": "07_prediction",
-      "anchor": "思考与习题"
+      "anchor": "07_prediction-notes"
     },
     {
       "term": "共形预测",
       "sort": "gongxingyuce",
       "chapter": "07_prediction",
-      "anchor": null
+      "anchor": "分割共形预测"
     },
     {
       "term": "TabPFN",
@@ -1637,19 +1637,19 @@
       "term": "KV缓存",
       "sort": "KVhuancun",
       "chapter": "07_prediction",
-      "anchor": "思考与习题"
+      "anchor": "07_prediction-notes"
     },
     {
       "term": "分布偏移",
       "sort": "fenbupianyi",
       "chapter": "07_prediction",
-      "anchor": "思考与习题"
+      "anchor": "07_prediction-notes"
     },
     {
       "term": "因果识别",
       "sort": "yinguoshibie",
       "chapter": "08_causality",
-      "anchor": "思考与习题"
+      "anchor": "随机实验作为识别基准"
     },
     {
       "term": "反事实",
@@ -1733,13 +1733,13 @@
       "term": "ESS（有效样本量）",
       "sort": "ESS",
       "chapter": "08_causality",
-      "anchor": "思考与习题"
+      "anchor": "08_causality-notes"
     },
     {
       "term": "AIPW",
       "sort": "AIPW",
       "chapter": "08_causality",
-      "anchor": "思考与习题"
+      "anchor": "08_causality-notes"
     },
     {
       "term": "双重稳健",
@@ -1781,7 +1781,7 @@
       "term": "可行域",
       "sort": "kexingyu",
       "chapter": "09_optimization",
-      "anchor": null
+      "anchor": "可行域目标与经济解释"
     },
     {
       "term": "目标函数",
@@ -1805,7 +1805,7 @@
       "term": "对偶",
       "sort": "duiou",
       "chapter": "09_optimization",
-      "anchor": "资源配置的原问题"
+      "anchor": null
     },
     {
       "term": "最优性证明",
@@ -1841,13 +1841,13 @@
       "term": "MILP（混合整数线性规划）",
       "sort": "MILP",
       "chapter": "09_optimization",
-      "anchor": "思考与习题"
+      "anchor": "将先后顺序写成整数约束"
     },
     {
       "term": "排程",
       "sort": "paicheng",
       "chapter": "09_optimization",
-      "anchor": null
+      "anchor": "制造排程与决策导向学习"
     },
     {
       "term": "决策导向学习",
@@ -1871,7 +1871,7 @@
       "term": "增量收益",
       "sort": "zengliangshouyi",
       "chapter": "09_optimization",
-      "anchor": "sec:expedite-choice"
+      "anchor": "边际价值与资源分配"
     },
     {
       "term": "求解器",
@@ -1883,7 +1883,7 @@
       "term": "本地推理服务",
       "sort": "bendiduanfuwu",
       "chapter": "09_optimization",
-      "anchor": "思考与习题"
+      "anchor": "09_optimization-notes"
     },
     {
       "term": "事件日志",
@@ -1907,7 +1907,7 @@
       "term": "Petri网",
       "sort": "Petri",
       "chapter": "10_process_mining",
-      "anchor": "思考与习题"
+      "anchor": "enterprise-agent-path"
     },
     {
       "term": "返工",
@@ -1919,7 +1919,7 @@
       "term": "吸收马尔可夫链",
       "sort": "xishoumalkefulian",
       "chapter": "10_process_mining",
-      "anchor": "思考与习题"
+      "anchor": "enterprise-agent-path"
     },
     {
       "term": "OCEL（对象中心事件日志）",
@@ -1979,7 +1979,7 @@
       "term": "本地化服务",
       "sort": "bendihuafuwu",
       "chapter": "10_process_mining",
-      "anchor": "思考与习题"
+      "anchor": "enterprise-agent-path"
     },
     {
       "term": "RAG（检索增强生成）",
@@ -1997,19 +1997,19 @@
       "term": "可靠性",
       "sort": "kekaoxing",
       "chapter": "10_process_mining",
-      "anchor": "智能体的可靠性与经济评价"
+      "anchor": "事件日志的数据模型"
     },
     {
       "term": "任务级评测",
       "sort": "renwupingce",
       "chapter": "10_process_mining",
-      "anchor": "思考与习题"
+      "anchor": "enterprise-agent-path"
     },
     {
       "term": "决策记录",
       "sort": "juecejilu",
       "chapter": "10_process_mining",
-      "anchor": "思考与习题"
+      "anchor": "enterprise-agent-path"
     },
     {
       "term": "贝叶斯公式",
@@ -2027,121 +2027,121 @@
       "term": "Chatbot / Copilot / Agent 的边界",
       "sort": "chatbot / copilot / agent 的边界",
       "chapter": "14_ai_agent",
-      "anchor": "agent-architecture"
+      "anchor": "14_ai_agent-notes"
     },
     {
       "term": "LLM 在 Agent 系统中的职责与限制",
       "sort": "llm 在 agent 系统中的职责与限制",
       "chapter": "14_ai_agent",
-      "anchor": "agent-architecture"
+      "anchor": "14_ai_agent-notes"
     },
     {
       "term": "Planning：分解、更新与终止",
       "sort": "planning：分解、更新与终止",
       "chapter": "14_ai_agent",
-      "anchor": "agent-architecture"
+      "anchor": "14_ai_agent-notes"
     },
     {
       "term": "Memory：会话、检查点与长期记忆",
       "sort": "memory：会话、检查点与长期记忆",
       "chapter": "14_ai_agent",
-      "anchor": "agent-architecture"
+      "anchor": "14_ai_agent-notes"
     },
     {
       "term": "Tools：结构化调用、权限、幂等与结果验证",
       "sort": "tools：结构化调用、权限、幂等与结果验证",
       "chapter": "14_ai_agent",
-      "anchor": "agent-architecture"
+      "anchor": "14_ai_agent-notes"
     },
     {
       "term": "Skills：可复用任务能力的定义、版本与验收",
       "sort": "skills：可复用任务能力的定义、版本与验收",
       "chapter": "14_ai_agent",
-      "anchor": "agent-architecture"
+      "anchor": "14_ai_agent-notes"
     },
     {
       "term": "Harness：上下文、状态、预算、恢复与监督",
       "sort": "harness：上下文、状态、预算、恢复与监督",
       "chapter": "14_ai_agent",
-      "anchor": "agent-architecture"
+      "anchor": "14_ai_agent-notes"
     },
     {
       "term": "文档解析、OCR/表格、元数据保真",
       "sort": "文档解析、ocr/表格、元数据保真",
       "chapter": "14_ai_agent",
-      "anchor": "agent-rag"
+      "anchor": "14_ai_agent-notes"
     },
     {
       "term": "切分策略与片段定位",
       "sort": "切分策略与片段定位",
       "chapter": "14_ai_agent",
-      "anchor": "agent-rag"
+      "anchor": "14_ai_agent-notes"
     },
     {
       "term": "向量嵌入、相似度与混合检索",
       "sort": "向量嵌入、相似度与混合检索",
       "chapter": "14_ai_agent",
-      "anchor": "agent-rag"
+      "anchor": "14_ai_agent-notes"
     },
     {
       "term": "Rerank：候选重排与证据筛选",
       "sort": "rerank：候选重排与证据筛选",
       "chapter": "14_ai_agent",
-      "anchor": "agent-rag"
+      "anchor": "14_ai_agent-notes"
     },
     {
       "term": "GraphRAG：实体关系检索与文本证据结合",
       "sort": "graphrag：实体关系检索与文本证据结合",
       "chapter": "14_ai_agent",
-      "anchor": "agent-rag"
+      "anchor": "14_ai_agent-notes"
     },
     {
       "term": "引用、冲突、有效期与检索评测",
       "sort": "引用、冲突、有效期与检索评测",
       "chapter": "14_ai_agent",
-      "anchor": "agent-rag"
+      "anchor": "14_ai_agent-notes"
     },
     {
       "term": "Chatflow 与 Workflow 的区别",
       "sort": "chatflow 与 workflow 的区别",
       "chapter": "14_ai_agent",
-      "anchor": "agent-chatflow"
+      "anchor": "14_ai_agent-notes"
     },
     {
       "term": "固定工作流与自主 Agent 的边界",
       "sort": "固定工作流与自主 agent 的边界",
       "chapter": "14_ai_agent",
-      "anchor": "agent-architecture"
+      "anchor": "14_ai_agent-notes"
     },
     {
       "term": "多智能体分工、调度、共享状态与冲突",
       "sort": "多智能体分工、调度、共享状态与冲突",
       "chapter": "14_ai_agent",
-      "anchor": "agent-multi"
+      "anchor": "14_ai_agent-notes"
     },
     {
       "term": "私有部署架构、数据流和容量",
       "sort": "私有部署架构、数据流和容量",
       "chapter": "14_ai_agent",
-      "anchor": "agent-deployment"
+      "anchor": "14_ai_agent-notes"
     },
     {
       "term": "权限、安全、提示注入、审计和人工批准",
       "sort": "权限、安全、提示注入、审计和人工批准",
       "chapter": "14_ai_agent",
-      "anchor": "agent-architecture"
+      "anchor": "14_ai_agent-notes"
     },
     {
       "term": "完整任务可靠性、成本与经营效果",
       "sort": "完整任务可靠性、成本与经营效果",
       "chapter": "14_ai_agent",
-      "anchor": "agent-evaluation"
+      "anchor": "14_ai_agent-notes"
     },
     {
       "term": "企业制度问答",
       "sort": "企业制度问答",
       "chapter": "14_ai_agent",
-      "anchor": "agent-office-cases"
+      "anchor": "14_ai_agent-notes"
     },
     {
       "term": "办公数字员工",
@@ -2153,79 +2153,79 @@
       "term": "客户分流",
       "sort": "客户分流",
       "chapter": "14_ai_agent",
-      "anchor": "agent-routing-case"
+      "anchor": "agent-evaluation"
     },
     {
       "term": "产线异常诊断与处置",
       "sort": "产线异常诊断与处置",
       "chapter": "14_ai_agent",
-      "anchor": "agent-production-case"
+      "anchor": "14_ai_agent-notes"
     },
     {
       "term": "场景筛选与优先级",
       "sort": "场景筛选与优先级",
       "chapter": "14_ai_agent",
-      "anchor": "agent-route"
+      "anchor": "14_ai_agent-notes"
     },
     {
       "term": "MVP 与试点验收",
       "sort": "mvp 与试点验收",
       "chapter": "14_ai_agent",
-      "anchor": "agent-evaluation"
+      "anchor": "14_ai_agent-notes"
     },
     {
       "term": "评测、灰度与回滚",
       "sort": "评测、灰度与回滚",
       "chapter": "14_ai_agent",
-      "anchor": "agent-evaluation"
+      "anchor": "14_ai_agent-notes"
     },
     {
       "term": "规模化运维与持续治理",
       "sort": "规模化运维与持续治理",
       "chapter": "14_ai_agent",
-      "anchor": "agent-deployment"
+      "anchor": "14_ai_agent-notes"
     },
     {
       "term": "OpenClaw",
       "sort": "openclaw",
       "chapter": "14_ai_agent",
-      "anchor": "agent-tools"
+      "anchor": "14_ai_agent-notes"
     },
     {
       "term": "Hermes Agent",
       "sort": "hermes agent",
       "chapter": "14_ai_agent",
-      "anchor": "agent-tools"
+      "anchor": "14_ai_agent-notes"
     },
     {
       "term": "Claude Code",
       "sort": "claude code",
       "chapter": "14_ai_agent",
-      "anchor": "agent-tools"
+      "anchor": "14_ai_agent-notes"
     },
     {
       "term": "Codex",
       "sort": "codex",
       "chapter": "14_ai_agent",
-      "anchor": "agent-tools"
+      "anchor": "14_ai_agent-notes"
     },
     {
       "term": "Trae",
       "sort": "trae",
       "chapter": "14_ai_agent",
-      "anchor": "agent-tools"
+      "anchor": "14_ai_agent-notes"
     },
     {
       "term": "Dify",
       "sort": "dify",
       "chapter": "14_ai_agent",
-      "anchor": "agent-tools"
+      "anchor": "14_ai_agent-notes"
     },
     {
       "term": "Coze",
       "sort": "coze",
       "chapter": "14_ai_agent",
-      "anchor": "agent-tools"
+      "anchor": "14_ai_agent-notes"
     },
     {
       "term": "Chatflow",
@@ -2237,7 +2237,7 @@
       "term": "Workflow",
       "sort": "workflow",
       "chapter": "14_ai_agent",
-      "anchor": "agent-workflow"
+      "anchor": "agent-chatflow"
     },
     {
       "term": "RAG",
@@ -2283,7 +2283,7 @@
     }
   ],
   "figures": 19,
-  "sourceHash": "333e85c8ff80ee1af44e97ece1aa020d0715f5eb96f906d8d4770df984c1afb2",
+  "sourceHash": "9625b1926d93e1e3b5f407446c66b68681796de342ee62db999a6fcbfd1fd7a8",
   "datasets": [
     {
       "name": "ab_test_checkout.csv",
