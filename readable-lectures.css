@@ -1,0 +1,31 @@
+/* The first two lectures use continuous exposition and optional references. */
+.prose.readable-lecture{font-size:17px;line-height:1.95;color:#303a40;overflow-wrap:break-word}
+.prose.readable-lecture>p{margin:1.15em 0}
+.prose.readable-lecture h2{margin-top:2.8em;margin-bottom:1em;line-height:1.45}
+.prose.readable-lecture h3{margin-top:2em;margin-bottom:.9em;line-height:1.55}
+.prose.readable-lecture a.knowledge-link{color:inherit;text-decoration-color:#afc1cc}
+.prose.readable-lecture a.knowledge-link:hover,.prose.readable-lecture a.knowledge-link:focus-visible{color:#235d7c;text-decoration-color:currentColor}
+.prose.readable-lecture .knowledge-supplement{margin:1.4em 0}
+.prose.readable-lecture .knowledge-note,.prose.readable-lecture .knowledge-glossary{border:1px solid #dce5ea;border-radius:7px;background:#f8fafb;padding:0 1.05em}
+.prose.readable-lecture .knowledge-note summary,.prose.readable-lecture .knowledge-glossary summary{cursor:pointer;color:#546c7b;font-size:.86em;font-weight:500;line-height:1.7;padding:.7em 0}
+.prose.readable-lecture details[open]>summary{border-bottom:1px solid #e1e8ed;margin-bottom:.6em}
+.prose.readable-lecture .knowledge-note .knowledge-definitions{padding-bottom:.65em}
+.prose.readable-lecture .knowledge-definitions>div:not(.knowledge-return){grid-template-columns:minmax(95px,.23fr) minmax(0,1fr)}
+.prose.readable-lecture .readable-definition{padding:1em 1.2em;border-left:2px solid #94b5c8;background:#f5f9fb;margin:1.3em 0}
+.prose.readable-lecture .readable-definition p{margin:.55em 0 0}
+.prose.readable-lecture .statement-title{line-height:1.6}
+.prose.readable-lecture .math.display{margin:1.25em 0}
+.prose.readable-lecture table{font-size:.9em;line-height:1.8}
+.readable-case .business-case-analysis{padding:0;background:transparent;border:0}
+.readable-case .business-case-analysis,.readable-case .business-case-context{font-size:17px;line-height:1.95;margin:1em 0;color:#303a40}
+.readable-case .business-case-sources{margin-top:1.2em}
+@media(max-width:700px){
+ .prose.readable-lecture{font-size:16px;line-height:1.95}
+ .prose.readable-lecture .knowledge-definitions>div:not(.knowledge-return){display:block}
+ .prose.readable-lecture h2{margin-top:2.2em}
+ .readable-case .business-case-analysis,.readable-case .business-case-context{font-size:16px}
+}
+@media print{
+ .prose.readable-lecture .knowledge-note,.prose.readable-lecture .knowledge-glossary{background:transparent}
+ .prose.readable-lecture details>*{display:block!important}
+}

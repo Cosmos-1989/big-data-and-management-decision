@@ -12,7 +12,7 @@
       ],
       "chapter": "01_intro",
       "anchor": "concept-operating-symptom",
-      "definition": "业务运行中观察到的异常、压力或机会，尚需明确对象、时点、行动和评价标准。",
+      "definition": "企业在业务运行中观察到的异常、压力或机会，如库存上升或客户流失。把经营症状转化为决策问题，还需明确对象、时点、可采取的行动和评价标准。",
       "location": {
         "statement": "定义 · 经营症状"
       }
@@ -27,7 +27,7 @@
       ],
       "chapter": "01_intro",
       "anchor": "concept-decision-problem",
-      "definition": "在给定目标、信息和约束下选择可行行动，并根据结果评价选择的问题。",
+      "definition": "在给定目标、可用信息和约束条件下，从可行行动中作出选择，并依据实施结果评价该选择的问题。",
       "location": {
         "statement": "定义 · 管理决策问题"
       }
@@ -40,7 +40,7 @@
       ],
       "chapter": "01_intro",
       "anchor": "concept-analysis-task",
-      "definition": "对业务对象、行动、分析时点、评价指标和结果记录的具体规定。",
+      "definition": "对分析对象、可采取的行动、分析时点、评价指标和结果记录方式的具体规定。",
       "location": {
         "statement": "定义 · 决策分析任务"
       }
@@ -105,7 +105,7 @@
       ],
       "chapter": "01_intro",
       "anchor": "concept-information",
-      "definition": "在具体问题中具有明确含义、可用于判断的数据内容。例如，一笔订单是否已付款，需要结合订单身份、金额和记录时间解释。",
+      "definition": "数据在具体问题中所表达的含义。例如，判断一笔订单是否已付款，需要结合订单身份、付款金额和记录时间解释相应数据。",
       "linkAliases": []
     },
     {
@@ -126,7 +126,7 @@
       ],
       "chapter": "01_intro",
       "anchor": "concept-decision-analysis",
-      "definition": "把目标、备选行动、不确定结果和损失联系起来，比较方案的预期后果。"
+      "definition": "根据目标、备选行动、不确定结果及相应损失，比较各行动预期后果的方法。"
     },
     {
       "id": "entity",
@@ -148,7 +148,7 @@
       ],
       "chapter": "01_intro",
       "anchor": "concept-attribute",
-      "definition": "描述对象或事件某一方面的取值，如客户地区、设备型号和付款金额。",
+      "definition": "对象或事件的某一方面的特征，如客户地区、设备型号和付款金额；属性值是该特征在具体对象上的取值。",
       "linkAliases": []
     },
     {
@@ -170,7 +170,7 @@
       ],
       "chapter": "01_intro",
       "anchor": "concept-relationship-constraint",
-      "definition": "对对象间关联数量、是否必须存在关联及引用一致性的规定。例如，在本例业务规则下，每张订单必须属于一位已登记客户，而一位客户可以没有订单或拥有多张订单。"
+      "definition": "对对象间关联数量、关联是否必须存在以及引用一致性的规定。例如，若业务规则要求每张订单属于一位已登记客户，则一位客户仍可没有订单或拥有多张订单。"
     },
     {
       "id": "fact-grain",
@@ -183,7 +183,7 @@
       ],
       "chapter": "01_intro",
       "anchor": "concept-fact-grain",
-      "definition": "一条记录所代表的业务事实及其对象和时间单位。例如，“每行一条订单明细”和“每行某产品在某仓库某日的库存余额”采用不同粒度。粒度规定记录含义，不等于表的行数。"
+      "definition": "一条记录所代表的业务事实，以及识别该事实所需的对象和时间单位。例如，每行一条订单明细与每行某产品在某仓库某日的库存余额，采用不同的事实粒度。表的行数表示记录数量，事实粒度规定每条记录的含义。"
     },
     {
       "id": "data-table",
@@ -194,7 +194,7 @@
       ],
       "chapter": "01_intro",
       "anchor": "concept-data-table",
-      "definition": "按列规定字段、按行保存记录的数据结构；每行的含义由其粒度和业务规则确定。",
+      "definition": "按列规定字段、按行保存记录的数据结构。各行表示什么，由事实粒度和业务规则确定。",
       "linkAliases": [
         "数据表"
       ]
@@ -207,7 +207,7 @@
       ],
       "chapter": "01_intro",
       "anchor": "concept-field",
-      "definition": "记录中一个有名称和规定类型的数据项，如订单号、数量或下单时间。",
+      "definition": "记录中具有名称和规定类型的数据项，如订单号、数量或下单时间。",
       "linkAliases": []
     },
     {
@@ -218,7 +218,7 @@
       ],
       "chapter": "01_intro",
       "anchor": "concept-time-grain",
-      "definition": "时间采样或汇总采用的单位与分辨率，如每小时、每日或每月。逐事件记录采用事件粒度，事件之间不要求等时间间隔。"
+      "definition": "时间记录、采样或汇总所采用的单位与分辨率，如每小时、每日或每月。逐事件记录以一次事件为单位，相邻事件的时间间隔可以不同。"
     },
     {
       "id": "time-window",
@@ -267,7 +267,7 @@
       ],
       "chapter": "01_intro",
       "anchor": "concept-bi",
-      "definition": "组织经营数据以支持查询、汇总和呈现的信息系统方法，简称 BI。",
+      "definition": "组织经营数据，以支持查询、汇总和呈现的信息系统方法。英文为 business intelligence，简称 BI。",
       "location": {
         "text": "商业智能（Business Intelligence"
       }
@@ -281,7 +281,7 @@
       ],
       "chapter": "01_intro",
       "anchor": "concept-dss",
-      "definition": "结合数据、模型和交互式情景分析，帮助管理者比较行动方案的系统，简称 DSS。",
+      "definition": "结合数据、模型与交互式情景分析，帮助管理者比较行动方案的系统。英文为 decision support system，简称 DSS。",
       "location": {
         "text": "决策支持系统（Decision Support"
       }
@@ -294,7 +294,7 @@
       ],
       "chapter": "01_intro",
       "anchor": "concept-decision-intelligence",
-      "definition": "把经营数据、模型、行动权限、执行与反馈组织为可核查决策系统的方法。",
+      "definition": "将经营数据、分析模型与行动选择、执行权限和结果反馈联系起来的决策系统设计方法。",
       "location": {
         "text": "决策智能（Decision Intelligence"
       }
@@ -307,7 +307,7 @@
       ],
       "chapter": "01_intro",
       "anchor": "fn1",
-      "definition": "面向查询与分析的数据存储系统，汇集多个业务来源并组织历史记录和分析口径。"
+      "definition": "面向查询和分析的数据存储系统，汇集多个业务来源的数据，组织历史记录并采用统一的分析口径。"
     },
     {
       "id": "etl",
@@ -317,7 +317,7 @@
       ],
       "chapter": "01_intro",
       "anchor": "fn2",
-      "definition": "抽取、转换、装载：取得源数据，清洗和转换结构后写入目标系统。"
+      "definition": "抽取、转换和装载数据的过程：从来源取得数据，经清洗与结构转换后写入目标系统。"
     },
     {
       "id": "olap",
@@ -327,7 +327,7 @@
       ],
       "chapter": "01_intro",
       "anchor": "fn3",
-      "definition": "联机分析处理：按时间、地区、产品等分析维度汇总与细查数据。"
+      "definition": "联机分析处理，按时间、地区、产品等维度对数据进行汇总与明细查询。"
     },
     {
       "id": "reporting",
@@ -337,7 +337,7 @@
       ],
       "chapter": "01_intro",
       "anchor": "fn4",
-      "definition": "按规定的查询和版式组织表格、图形，供经营汇报、监控与核对使用。"
+      "definition": "按规定的查询规则和版式形成表格、图形的系统，用于经营汇报、监控和核对。"
     },
     {
       "id": "metadata",
@@ -361,7 +361,7 @@
       ],
       "chapter": "01_intro",
       "anchor": "fn8",
-      "definition": "记录数据从来源经过哪些转换形成当前数据或指标的关系。",
+      "definition": "数据从来源经过转换、形成当前记录或指标的来源与处理关系。",
       "linkAliases": [
         "数据血缘",
         "血缘追踪"
@@ -377,7 +377,7 @@
       ],
       "chapter": "01_intro",
       "anchor": "fn9",
-      "definition": "在规定步骤由人员审核、批准或纠正系统结果，并明确其权限与责任。"
+      "definition": "由人员在规定步骤审核、批准或纠正系统结果的安排，同时规定相应人员的权限和责任。"
     },
     {
       "id": "sql",
@@ -397,7 +397,7 @@
       ],
       "chapter": "01_intro",
       "anchor": "fn11",
-      "definition": "对业务对象、属性、关系和相关规则的统一规定。"
+      "definition": "对业务对象、属性、对象间关系和相关规则的统一定义。"
     },
     {
       "id": "digital-twin",
@@ -417,7 +417,7 @@
       ],
       "chapter": "01_intro",
       "anchor": "fn6",
-      "definition": "考察预测概率与可比情形中实际发生频率是否相符。"
+      "definition": "预测概率与可比情形中实际发生频率相符的性质。"
     },
     {
       "id": "decision-variable",
@@ -465,7 +465,7 @@
       ],
       "chapter": "01_intro",
       "anchor": "concept-constraint",
-      "definition": "比较方案时规定的条件。硬约束必须满足；软约束允许以相应代价偏离，并将该代价纳入方案比较。",
+      "definition": "行动方案应满足的条件。硬约束要求方案严格满足；软约束允许方案偏离，但须把偏离的相应代价纳入比较。",
       "linkAliases": [
         "硬约束",
         "软约束",
@@ -481,7 +481,7 @@
       ],
       "chapter": "01_intro",
       "anchor": "concept-objective",
-      "definition": "用数值表示待最小化的损失或待最大化的收益，以便比较可行方案。"
+      "definition": "把可行方案对应的损失或收益表示为数值的函数，供最小化损失或最大化收益时比较方案。"
     },
     {
       "id": "loss",
@@ -493,7 +493,7 @@
       ],
       "chapter": "01_intro",
       "anchor": "concept-loss",
-      "definition": "把某项行动及其可能结果换算为可比较代价的规则，如延期罚金与服务损失。"
+      "definition": "根据行动及其可能结果确定相应代价的函数，如计算延期罚金或服务损失的规则。"
     },
     {
       "id": "opportunity-cost",
@@ -513,7 +513,7 @@
       ],
       "chapter": "01_intro",
       "anchor": "concept-random-variable",
-      "definition": "将不确定结果表示为数值的量，如明日需求量或设备是否中断。"
+      "definition": "把随机结果映射为数值的函数，如表示明日需求量的数值，或用数值表示设备是否中断。"
     },
     {
       "id": "probability",
@@ -523,7 +523,7 @@
       ],
       "chapter": "01_intro",
       "anchor": "concept-probability",
-      "definition": "在给定条件和模型下量化事件发生可能性的数值，介于0与1之间。",
+      "definition": "在给定条件与概率模型下，量化事件发生可能性的数值，取值在0与1之间。",
       "linkAliases": []
     },
     {
@@ -536,7 +536,7 @@
       ],
       "chapter": "01_intro",
       "anchor": "concept-distribution",
-      "definition": "随机变量各取值或取值范围所对应的概率规则。"
+      "definition": "规定随机变量各取值或取值范围发生概率的规则。"
     },
     {
       "id": "expectation",
@@ -550,7 +550,7 @@
       ],
       "chapter": "01_intro",
       "anchor": "concept-expectation",
-      "definition": "按概率对可能取值作加权平均；有限离散情形为各取值与对应概率乘积之和。期望损失是对可能损失按概率作加权平均。",
+      "definition": "随机变量各可能取值按其概率计算的平均值。有限离散情形下，期望等于各取值与对应概率乘积的总和；期望损失则按同样方法对可能损失取平均。",
       "linkAliases": [
         "期望损失",
         "期望成本",
@@ -568,7 +568,7 @@
       ],
       "chapter": "01_intro",
       "anchor": "concept-conditional-probability",
-      "definition": "已知某项信息或事件成立后，另一事件发生的概率。条件均值是基于已知信息计算的期望。"
+      "definition": "在已知某项信息或某事件成立的条件下，另一事件发生的概率。条件期望是在这些已知信息下计算的期望。"
     },
     {
       "id": "potential-outcome",
@@ -579,7 +579,7 @@
       ],
       "chapter": "01_intro",
       "anchor": "concept-potential-outcome",
-      "definition": "同一对象在某项指定行动下可能产生的结果。一个对象通常不能在同一次决策中同时接受所有备选行动。"
+      "definition": "同一对象在指定行动下会产生的结果。同一次决策通常只能实施一种行动，因此其余行动所对应的结果无法同时观察。"
     },
     {
       "id": "exogenous",
@@ -611,7 +611,7 @@
       ],
       "chapter": "01_intro",
       "anchor": "concept-causal-effect",
-      "definition": "在明确对象与比较条件后，不同行动所造成的潜在结果差异或其平均值。"
+      "definition": "对同一对象比较不同行动下的潜在结果所得的差异，或在明确总体上对这种差异取平均。"
     },
     {
       "id": "argmin",
@@ -622,7 +622,7 @@
       ],
       "chapter": "01_intro",
       "anchor": "concept-argmin",
-      "definition": "最优解是使目标函数达到最小值或最大值的可行行动；最优值是该行动对应的目标函数值。arg min 表示取得最小值的行动，min 表示最小值本身。"
+      "definition": "最优解是使目标函数达到最小值或最大值的可行行动；最优值是该行动对应的函数值。arg min 表示使函数达到最小值的行动集合，min 表示最小值。"
     },
     {
       "id": "prior",
@@ -643,7 +643,7 @@
       ],
       "chapter": "01_intro",
       "anchor": "concept-signal",
-      "definition": "在行动前可观察、用于更新判断的信息，如检测呈阳性或阴性。阳性和阴性分别表示检测触发与未触发预定判定规则，并不等于真实故障与正常。"
+      "definition": "行动前能够观察、可用于更新判断的信息，如检测结果为阳性或阴性。阳性表示检测结果触发了预定判定规则，阴性表示未触发；检测结果与真实故障状态可能有差异。"
     },
     {
       "id": "posterior",
@@ -654,7 +654,7 @@
       ],
       "chapter": "01_intro",
       "anchor": "concept-posterior",
-      "definition": "在获得新信号后，结合先验概率和信号在各真实状态下出现的概率得到的更新概率。"
+      "definition": "取得新信号后，结合先验概率及信号在各真实状态下出现的概率，更新得到的状态概率。"
     },
     {
       "id": "total-probability",
@@ -664,7 +664,7 @@
       ],
       "chapter": "01_intro",
       "anchor": "concept-total-probability",
-      "definition": "把互不重叠且涵盖全部情形的状态分别加权，计算一个事件的总概率。"
+      "definition": "将一个事件在各状态下的条件概率，按各状态的发生概率加权求和。各状态须互不重叠，并涵盖全部可能情形。"
     },
     {
       "id": "bayes",
@@ -675,7 +675,7 @@
       ],
       "chapter": "01_intro",
       "anchor": "concept-bayes",
-      "definition": "利用先验概率和信号在各状态下的出现概率，反向计算观察信号后的状态概率。"
+      "definition": "根据先验概率和信号在各状态下出现的概率，计算观察到该信号后的状态概率的公式。"
     },
     {
       "id": "action-threshold",
@@ -697,7 +697,7 @@
       ],
       "chapter": "01_intro",
       "anchor": "concept-perfect-information",
-      "definition": "行动之前能够无误识别本例真实状态的信息。其价值是有无该信息时最优期望损失之差，信息成本另计。"
+      "definition": "行动前能够准确识别所分析状态的信息。完全信息的价值等于取得信息前的最小期望损失，减去取得信息后能够达到的期望最小损失；信息成本另计。"
     },
     {
       "id": "evsi",
@@ -709,7 +709,7 @@
       ],
       "chapter": "01_intro",
       "anchor": "concept-evsi",
-      "definition": "在行动集合不变、可忽略信号且不计信息成本时，利用信号调整行动所减少的最优期望损失。",
+      "definition": "取得信号前的最小期望损失，减去观察信号后按条件选择行动能够达到的期望最小损失。比较须采用相同行动集合，允许决策者忽略信号，且暂不计信息成本。",
       "location": {
         "statement": "定义 · 样本信息价值"
       }
@@ -724,7 +724,7 @@
       ],
       "chapter": "01_intro",
       "anchor": "concept-policy",
-      "definition": "根据当前可用信息或状态选择行动的规则；多期策略为各期规定相应规则。",
+      "definition": "根据当前可用信息或状态选择行动的规则。多期策略为各期分别规定这种选择规则。",
       "linkAliases": [
         "多期决策",
         "决策策略"
@@ -740,7 +740,7 @@
       ],
       "chapter": "01_intro",
       "anchor": "concept-transition",
-      "definition": "对象从当前状态变化为后续状态的过程；转移函数以当前状态、行动和随机扰动确定下一期状态。随机扰动表示尚不能由当前状态和行动确定的外部变化。",
+      "definition": "对象从当前状态变为后续状态的过程。转移函数根据当前状态、行动和随机扰动确定下一期状态；随机扰动表示当前状态与行动尚不能确定的变化。",
       "linkAliases": [
         "状态转移",
         "转移函数",
@@ -765,7 +765,7 @@
       ],
       "chapter": "01_intro",
       "anchor": "concept-bellman",
-      "definition": "在适当可积性和最优解存在条件下，把最优剩余成本写成当期成本与下一期最优剩余成本期望之和的最小值。"
+      "definition": "把当前最优剩余成本表示为当期成本与下一期最优剩余成本期望之和的最小值的递推关系。相应期望须有定义，最优解存在性等条件也须满足。"
     },
     {
       "id": "rolling-optimization",
@@ -775,7 +775,7 @@
       ],
       "chapter": "01_intro",
       "anchor": "concept-rolling-optimization",
-      "definition": "每次获得新信息后更新模型并重新求解，但先只执行当前阶段的行动。"
+      "definition": "获得新信息后更新模型、重新求解未来各期的行动计划，每次仅执行当前阶段的行动。"
     },
     {
       "id": "regularity",
@@ -787,7 +787,7 @@
       ],
       "chapter": "01_intro",
       "anchor": "concept-regularity",
-      "definition": "可积指相关绝对值的期望有限；最小值可取到指有可行行动真正达到该值；策略可测保证行动规则对应的概率和期望有定义。"
+      "definition": "保证递推关系有意义并可取得最优解的条件。可积要求相关随机量绝对值的期望有限；最小值可取到要求某个可行行动达到该值；策略可测保证依据行动规则形成的概率和期望有定义。"
     },
     {
       "id": "analysis-types",
@@ -821,7 +821,7 @@
       ],
       "chapter": "01_intro",
       "anchor": "concept-population",
-      "definition": "总体是结论希望适用的对象集合；样本是实际被观测或抽取的部分对象。目标总体须同时规定对象范围和时间范围。",
+      "definition": "总体是研究结论希望适用的对象集合，须同时规定对象和时间范围；样本是实际观测或抽取的部分对象。",
       "linkAliases": [
         "目标总体",
         "研究总体"
@@ -846,7 +846,7 @@
       ],
       "chapter": "01_intro",
       "anchor": "concept-association",
-      "definition": "不同变量在观测资料中呈现共同变化；这种关系本身不能确定改变一个变量是否会引起另一个变量改变。"
+      "definition": "变量在观测资料中共同变化的关系。判断改变一个变量是否会导致另一变量改变，还需要因果识别的依据。"
     },
     {
       "id": "experiment",
@@ -859,7 +859,7 @@
       ],
       "chapter": "01_intro",
       "anchor": "concept-experiment",
-      "definition": "实验由研究者安排干预，随机实验还随机分配干预；准实验利用并非随机分配但具有可论证比较条件的变化估计效果。"
+      "definition": "实验由研究者安排干预，随机实验进一步随机分配干预。准实验利用非随机分配的变化估计效果，其比较条件须能由研究设计和假设说明。"
     },
     {
       "id": "identification",
@@ -870,7 +870,7 @@
       ],
       "chapter": "01_intro",
       "anchor": "concept-identification",
-      "definition": "依据研究设计与假设，说明如何从可观察资料确定所关心的因果效应。"
+      "definition": "依据研究设计和假设，由可观察资料确定所关心因果效应的过程或条件。"
     },
     {
       "id": "generalization",
@@ -881,7 +881,7 @@
       ],
       "chapter": "01_intro",
       "anchor": "concept-generalization",
-      "definition": "把所研究对象中的结论用于其他对象、时期或环境；其有效性需要额外证据。"
+      "definition": "将研究所得结论用于其他对象、时期或环境。结论在这些条件下是否适用，需要相应证据。"
     },
     {
       "id": "baseline",
@@ -891,7 +891,7 @@
       ],
       "chapter": "01_intro",
       "anchor": "concept-baseline",
-      "definition": "比较效果时采用的参照状态或规则，需说明对象、时期和计算方式。"
+      "definition": "比较结果时采用的参照状态、行动或规则，须明确其对象、时期和计算方式。"
     },
     {
       "id": "bias",
@@ -904,7 +904,7 @@
       ],
       "chapter": "01_intro",
       "anchor": "concept-bias",
-      "definition": "误差是估计或预测与目标值的差；偏差是模型、抽样或测量机制引起的系统性偏离。抽样误差来自有限样本的随机变化，不能通过增加模拟次数消除结构偏差。",
+      "definition": "误差是估计值或预测值与目标值的差；偏差是抽样、测量或模型机制导致的系统性偏离。有限样本的随机变化会产生抽样误差，结构性偏差则需要调整相应设计或模型。",
       "linkAliases": []
     },
     {
@@ -928,7 +928,7 @@
       ],
       "chapter": "01_intro",
       "anchor": "concept-independent-sampling",
-      "definition": "一次抽取的结果不改变其他次抽取结果的概率分布。"
+      "definition": "各次抽样结果相互独立：已知其他抽样结果后，一次抽样结果的概率分布保持不变。"
     },
     {
       "id": "data-quality",
@@ -938,7 +938,7 @@
       ],
       "chapter": "01_intro",
       "anchor": "concept-data-quality",
-      "definition": "数据对特定用途的适用程度，需要结合准确性、完整性、一致性、及时性等要求判断。"
+      "definition": "数据满足特定用途要求的程度，通常从准确性、完整性、一致性和及时性等方面评价。"
     },
     {
       "id": "data-governance",
@@ -985,7 +985,7 @@
       ],
       "chapter": "01_intro",
       "anchor": "concept-audit",
-      "definition": "审计依据规则和证据独立核查记录或操作；可追溯性要求能够沿来源、版本和日志还原结果的形成过程。",
+      "definition": "审计依据规则与证据，独立核查记录或操作；可追溯性是沿来源、版本和日志还原结果形成过程的能力。",
       "linkAliases": [
         "可追溯性",
         "审计追踪",
@@ -1003,7 +1003,7 @@
       ],
       "chapter": "01_intro",
       "anchor": "concept-authorization",
-      "definition": "按身份、角色、对象范围和操作条件限制读取、修改、批准与执行。读取数据的权限不自动包含改变业务状态的权限。"
+      "definition": "按身份、角色、对象范围和操作条件规定读取、修改、批准和执行的权限。读取数据与改变业务状态分别需要相应授权。"
     },
     {
       "id": "specification",
@@ -1015,7 +1015,7 @@
       ],
       "chapter": "01_intro",
       "anchor": "concept-specification",
-      "definition": "把经营目标写成可检查条件，明确对象、决策时点、可用观察、行动、约束、结果窗口和验收规则。"
+      "definition": "对经营目标作出的可检验表述，包括对象、决策时点、可用观察、行动、约束、结果观察期和验收规则。"
     },
     {
       "id": "prototype",
@@ -1025,7 +1025,7 @@
       ],
       "chapter": "01_intro",
       "anchor": "concept-prototype",
-      "definition": "在有限范围中检验功能与假设的初步实现；原型通过计算检查不等于已满足实际运行的全部条件。"
+      "definition": "用于在有限范围内检验功能与假设的初步实现。计算结果的检查与实际运行条件的检查分别确定其适用范围。"
     },
     {
       "id": "data-class",
@@ -1035,7 +1035,7 @@
       ],
       "chapter": "01_intro",
       "anchor": "concept-data-class",
-      "definition": "以命名字段组织相关数据的程序结构；本讲用 Python 数据类保存问题定义的各个组成部分。"
+      "definition": "用命名字段组织相关数据的程序结构。例如，Python 数据类可以分别保存问题定义的各个组成部分。"
     },
     {
       "id": "simulation",
@@ -1047,7 +1047,7 @@
       ],
       "chapter": "01_intro",
       "anchor": "concept-simulation",
-      "definition": "依据明确的模型和输入情景计算系统可能结果，用于比较方案；其输出受模拟器假设限制。"
+      "definition": "按照模型及输入情景计算系统可能结果的方法，可用于比较行动方案。模拟器的假设决定结果的适用范围。"
     },
     {
       "id": "throughput",
@@ -1070,7 +1070,7 @@
       ],
       "chapter": "01_intro",
       "anchor": "concept-llm",
-      "definition": "依据大规模文本等资料训练、按当前上下文生成文本或结构化内容的模型，简称 LLM。"
+      "definition": "主要依据大规模文本资料训练，根据当前上下文生成文本或结构化内容的模型。英文为 large language model，简称 LLM。"
     },
     {
       "id": "agent",
@@ -1081,7 +1081,7 @@
       ],
       "chapter": "01_intro",
       "anchor": "concept-agent",
-      "definition": "根据观察选择后续行动的程序或系统；使用语言模型的智能体通常通过工具取得信息或执行操作。"
+      "definition": "根据观察选择后续行动的程序或系统。使用语言模型的智能体通常借助工具取得信息或执行操作。"
     },
     {
       "id": "tool",
@@ -1092,7 +1092,7 @@
       ],
       "chapter": "01_intro",
       "anchor": "concept-tool",
-      "definition": "供程序调用以完成查询、计算或操作的明确接口。生成操作建议与调用服务执行操作需要分别核验。",
+      "definition": "供程序调用、用于完成查询、计算或操作的功能及其接口。系统生成操作建议后，实际调用工具执行操作仍须满足相应核验要求。",
       "linkAliases": []
     },
     {
@@ -1104,7 +1104,7 @@
       ],
       "chapter": "01_intro",
       "anchor": "concept-harness",
-      "definition": "管理智能体任务状态、工具权限、预算、错误恢复、结果检查和终止条件的执行程序，本文称 harness。",
+      "definition": "管理智能体任务状态、工具权限、资源预算、错误恢复、结果检查和终止条件的执行程序，英文称 harness。",
       "linkAliases": []
     },
     {
@@ -1154,7 +1154,7 @@
       ],
       "chapter": "02_enterprise_data_model",
       "anchor": "concept-key",
-      "definition": "在所有合法关系实例中唯一识别记录的属性集合；超键可含冗余属性，候选键不含冗余属性，主键是选定的候选键。",
+      "definition": "在所有合法关系实例中能够唯一识别记录的属性集合称为超键；不含多余属性的超键称为候选键；选定作为主要标识的候选键称为主键。",
       "location": {
         "statement": "定义 · 键"
       }
@@ -1167,7 +1167,7 @@
       ],
       "chapter": "02_enterprise_data_model",
       "anchor": "concept-foreign-key",
-      "definition": "一个关系中引用被引用关系候选键或主键的属性集合；被引用关系也可为本关系，非空取值必须找到对应记录。",
+      "definition": "一个关系中引用另一关系候选键或主键的属性集合。被引用关系也可以是本关系，非空外键值须对应被引用关系中的记录。",
       "location": {
         "statement": "定义 · 外键"
       }
@@ -1182,7 +1182,7 @@
       ],
       "chapter": "02_enterprise_data_model",
       "anchor": "concept-third-normal-form",
-      "definition": "对每个非平凡函数依赖（被决定端为单个属性），决定属性集是超键，或被决定属性属于某个候选键。",
+      "definition": "对关系模式的每个右端为单个属性的函数依赖，若该属性不属于左端属性集，则左端须为超键，或者右端属性须属于某个候选键。",
       "location": {
         "statement": "定义 · 第三范式"
       }
@@ -1198,7 +1198,7 @@
       ],
       "chapter": "02_enterprise_data_model",
       "anchor": "concept-fact-dimension",
-      "definition": "事实表记录可度量事件或状态，维度表描述其分析角度，如客户、产品和日期。",
+      "definition": "事实表记录具有明确粒度的业务事件或状态及其度量；维度表描述客户、产品和日期等分析角度。",
       "location": {
         "statement": "定义 · 事实表与维度表"
       }
@@ -1212,7 +1212,7 @@
       ],
       "chapter": "02_enterprise_data_model",
       "anchor": "fn2",
-      "definition": "把表、字段与业务对象、指标和关系对应起来，提供统一业务定义的组织层。"
+      "definition": "将表和字段对应到业务对象、指标及其关系的一层统一定义，供查询工具和应用共享。"
     },
     {
       "id": "snapshot",
@@ -1223,7 +1223,7 @@
       ],
       "chapter": "01_intro",
       "anchor": "concept-snapshot",
-      "definition": "在指定时点或版本保存的数据状态，用于比较当时的库存、订单或表内容。不同日期的余额不能直接相加解释为某一天的余额。",
+      "definition": "在指定时点或版本保存的数据状态，可用于查询和比较当时的库存、订单或表内容。汇总余额时须区分时间范围：多个日期的余额之和表示的含义与某日余额不同。",
       "linkAliases": []
     },
     {
@@ -1255,7 +1255,7 @@
       ],
       "chapter": "02_enterprise_data_model",
       "anchor": "fn6",
-      "definition": "用规定的状态与允许转换描述过程，并为转换设置条件。"
+      "definition": "用一组状态、允许的状态转换及其发生条件描述过程的模型。"
     },
     {
       "id": "prefill",
@@ -1276,7 +1276,7 @@
       ],
       "chapter": "02_enterprise_data_model",
       "anchor": "fn9",
-      "definition": "自然键使用已有业务属性标识对象；代理键由系统分配，并维护与业务标识的映射。"
+      "definition": "自然键用已有业务属性标识对象；代理键由系统另行分配，并保存其与业务标识的对应关系。"
     },
     {
       "id": "wide-table",
@@ -1286,7 +1286,7 @@
       ],
       "chapter": "02_enterprise_data_model",
       "anchor": "fn11",
-      "definition": "把多个对象或主题的属性展开到较少表中以简化查询的结构；需检查不同粒度关联引起的重复。"
+      "definition": "把多个对象或主题的属性展开到较少表中的结构，可简化查询。关联不同粒度的记录时，应检查是否引入重复。"
     },
     {
       "id": "data-dictionary",
@@ -1311,7 +1311,7 @@
       ],
       "chapter": "02_enterprise_data_model",
       "anchor": "concept-er",
-      "definition": "以实体类型、属性和实体间的业务关系表达结构的模型，简称 ER 模型；ER 图是其图形表示。"
+      "definition": "以实体类型、属性及实体间业务关系表达数据结构的模型，简称 ER 模型；ER 图是这种结构的图形表示。"
     },
     {
       "id": "cardinality",
@@ -1326,7 +1326,7 @@
       ],
       "chapter": "02_enterprise_data_model",
       "anchor": "concept-cardinality",
-      "definition": "关系基数规定一个对象最多可关联多少个另一类对象，例如一对一、一对多和多对多；可选性规定是否允许没有关联对象，即最小关联数能否为零。"
+      "definition": "关系基数规定一类对象中的单个对象最多可关联多少个另一类对象，如一对一、一对多和多对多。可选性规定关联是否必须存在，即最小关联数能否为零。"
     },
     {
       "id": "schema",
@@ -1362,7 +1362,7 @@
       ],
       "chapter": "02_enterprise_data_model",
       "anchor": "concept-integrity",
-      "definition": "记录必须满足的规则：实体完整性保证主键非空且唯一，引用完整性保证非空外键能找到被引用记录，业务完整性保证约定的业务条件。"
+      "definition": "数据记录应满足的规则。实体完整性要求主键非空且唯一，引用完整性要求非空外键对应有效的被引用记录，业务完整性规定相应业务条件。"
     },
     {
       "id": "query-operations",
@@ -1396,7 +1396,7 @@
       ],
       "chapter": "02_enterprise_data_model",
       "anchor": "concept-model-levels",
-      "definition": "概念模型用业务语言规定对象与关系；逻辑模型规定表、字段、键与约束；物理模型规定具体系统中的存储及访问结构。"
+      "definition": "概念模型用业务语言规定对象与关系；关系型逻辑模型规定表、字段、键与约束；物理模型规定具体系统中的存储和访问结构。"
     },
     {
       "id": "index-partition",
@@ -1407,7 +1407,7 @@
       ],
       "chapter": "02_enterprise_data_model",
       "anchor": "concept-index-partition",
-      "definition": "索引是加速查找的辅助结构；分区按规定规则拆分表的数据范围，以便存储和查询管理。"
+      "definition": "索引是用于加速查找的辅助结构；分区按既定规则划分表中数据的存储范围，以便管理存储和查询。"
     },
     {
       "id": "master-data",
@@ -1448,7 +1448,7 @@
       ],
       "chapter": "02_enterprise_data_model",
       "anchor": "concept-transaction",
-      "definition": "把有关联的读写作为一个业务操作单位执行，要求其符合规定的一致性和并发控制规则。"
+      "definition": "将一组有关联的读写作为一个工作单位提交或撤销的操作，须遵守相应的一致性与并发控制规则。"
     },
     {
       "id": "star-schema",
@@ -1482,7 +1482,7 @@
       ],
       "chapter": "02_enterprise_data_model",
       "anchor": "concept-additivity",
-      "definition": "可加度量能沿全部适用维度求和；半可加度量只沿部分维度求和；不可加度量须依据基础量重新计算，如比率。"
+      "definition": "可加度量能够沿全部适用维度求和；半可加度量只适合沿部分维度求和；不可加度量需要根据基础量计算，如根据总收入和总成本计算毛利率。"
     },
     {
       "id": "lossless-join",
@@ -1493,7 +1493,7 @@
       ],
       "chapter": "02_enterprise_data_model",
       "anchor": "concept-lossless-join",
-      "definition": "将一个关系分成若干关系后，按规定的连接能够恢复原关系，不丢失原记录，也不产生原来没有的记录。"
+      "definition": "对满足约束的所有合法关系实例，分解后按规定连接各部分，能够恰好恢复原关系的性质。连接结果须保留原有记录，且不产生额外记录。"
     },
     {
       "id": "snapshot-tables",
@@ -1508,7 +1508,7 @@
       ],
       "chapter": "02_enterprise_data_model",
       "anchor": "concept-snapshot-tables",
-      "definition": "交易事实表逐次记录业务活动；周期快照表在固定时点保存状态；累计快照表在过程推进时更新约定里程碑。"
+      "definition": "交易事实表逐次记录业务活动；周期快照表在固定时点保存状态；累计快照表随业务过程推进，更新约定的里程碑记录。"
     },
     {
       "id": "scd",
@@ -1522,7 +1522,7 @@
       ],
       "chapter": "02_enterprise_data_model",
       "anchor": "concept-scd",
-      "definition": "处理客户等级等维度属性变化的一组方法。覆盖更新只保留当前值；保留历史版本及其有效区间，才能按历史时点解释记录。"
+      "definition": "处理客户等级等维度属性变化的一组方法。覆盖更新保存当前值；保留历史版本的方法同时记录旧值及其适用期间，供历史查询。"
     },
     {
       "id": "bitemporal",
@@ -1532,7 +1532,7 @@
       ],
       "chapter": "02_enterprise_data_model",
       "anchor": "concept-bitemporal",
-      "definition": "同时记录事实何时在业务上有效，以及该版本何时被系统获知或保存；两者用于分别还原历史事实与历史知识。"
+      "definition": "同时记录事实的业务有效时间与版本的系统保存时间的模型。前者说明事实何时成立，后者说明系统在某一时刻保存了哪个版本。"
     },
     {
       "id": "interval",
@@ -1542,7 +1542,7 @@
       ],
       "chapter": "02_enterprise_data_model",
       "anchor": "concept-interval",
-      "definition": "包含左端点而不包含右端点的范围。例如 [周一,周三) 包含周一开始，但不包含周三开始。"
+      "definition": "包含左端点、不包含右端点的区间。例如，[周一,周三) 从周一开始，至周三开始前结束。"
     },
     {
       "id": "leakage",
@@ -1553,7 +1553,7 @@
       ],
       "chapter": "02_enterprise_data_model",
       "anchor": "concept-leakage",
-      "definition": "建模或评价使用了在所模拟决策时点尚不可获得的信息，使历史效果显得过好。"
+      "definition": "建模或评价使用了在所模拟的决策时点尚不可获得的信息，导致历史评价不能如实反映该时点可达到的表现。"
     },
     {
       "id": "concurrency",
@@ -1564,7 +1564,7 @@
       ],
       "chapter": "02_enterprise_data_model",
       "anchor": "concept-concurrency",
-      "definition": "写入操作声明读到的状态版本，只有当前版本仍匹配时才执行，避免覆盖其他人较新的修改。"
+      "definition": "写入操作核对当前状态版本是否仍与此前读取的版本一致；只有版本一致时才执行，以免覆盖他人较新的修改。"
     },
     {
       "id": "service-interface",
@@ -1578,7 +1578,7 @@
       ],
       "chapter": "01_intro",
       "anchor": "concept-service-interface",
-      "definition": "系统向外提供数据查询或业务操作的调用约定，规定输入、输出、身份与错误处理；实际操作权限由服务端验证。"
+      "definition": "系统向外提供查询或业务操作的调用约定，包括输入、输出、身份信息和错误处理方式。服务端根据相应授权规则检查调用权限。"
     },
     {
       "id": "work-center",
@@ -1612,7 +1612,7 @@
       ],
       "chapter": "02_enterprise_data_model",
       "anchor": "concept-principal-agent",
-      "definition": "委托人授权代理人执行任务，但难以直接观察其全部努力或信息，因而通过合同、考核和监督影响其行为的模型。"
+      "definition": "研究授权执行任务时双方行为的模型。委托人难以直接观察代理人的全部努力或信息，因而通过合同、考核和监督影响其行为。"
     },
     {
       "id": "information-asymmetry",
@@ -1632,7 +1632,7 @@
       ],
       "chapter": "02_enterprise_data_model",
       "anchor": "concept-risk-aversion",
-      "definition": "在相同期望收入下，至少同样偏好确定收入于有风险收入的偏好。本讲用指数效用刻画严格风险厌恶，风险参数越大表示对给定收入风险越敏感。"
+      "definition": "对于期望值相同的确定收入与随机收入，始终至少同样偏好确定收入的偏好。严格风险厌恶者在随机收入存在实际波动时严格偏好确定收入。"
     },
     {
       "id": "certainty-equivalent",
@@ -1642,7 +1642,7 @@
       ],
       "chapter": "02_enterprise_data_model",
       "anchor": "concept-certainty-equivalent",
-      "definition": "使决策者与某项随机收入同样满意的确定收入金额。"
+      "definition": "使决策者对其与某项随机收入具有相同偏好的确定收入金额。"
     },
     {
       "id": "utility",
@@ -1653,7 +1653,7 @@
       ],
       "chapter": "02_enterprise_data_model",
       "anchor": "concept-utility",
-      "definition": "用数值表达对不同结果偏好次序的函数；本例的指数效用为负指数形式，不等同于收入本身。"
+      "definition": "以数值表示决策者对不同结果偏好次序的函数。负指数效用以收入为自变量，用其函数值表示相应偏好。"
     },
     {
       "id": "participation",
@@ -1663,7 +1663,7 @@
       ],
       "chapter": "02_enterprise_data_model",
       "anchor": "concept-participation",
-      "definition": "合同给代理人的确定性等价不得低于其外部机会所能提供的确定收入。"
+      "definition": "保证代理人愿意接受合同的条件：合同所提供的确定性等价至少达到外部机会所能提供的确定收入。"
     },
     {
       "id": "incentive-intensity",
@@ -1673,7 +1673,7 @@
       ],
       "chapter": "02_enterprise_data_model",
       "anchor": "concept-incentive-intensity",
-      "definition": "报酬随绩效信号变化的幅度，本例为线性合同中的系数 β。"
+      "definition": "报酬随绩效信号变化的幅度，在线性报酬合同中由绩效系数 β 表示。"
     },
     {
       "id": "normal-noise",
@@ -1683,7 +1683,7 @@
       ],
       "chapter": "02_enterprise_data_model",
       "anchor": "concept-normal-noise",
-      "definition": "以正态分布描述、叠加在真实努力之上的随机扰动；本例均值为零、方差为指定参数。"
+      "definition": "服从正态分布的随机扰动。在所用努力模型中，扰动叠加在努力所产生的绩效上，其均值为零，方差由模型参数规定。"
     },
     {
       "id": "quadratic-cost",
@@ -1693,7 +1693,7 @@
       ],
       "chapter": "02_enterprise_data_model",
       "anchor": "concept-quadratic-cost",
-      "definition": "努力增加的代价按努力的平方增长，参数决定增长速度。"
+      "definition": "用努力水平平方的正倍数表示的努力成本，比例系数决定增加努力的代价。"
     },
     {
       "id": "first-order",
@@ -1706,7 +1706,7 @@
       ],
       "chapter": "02_enterprise_data_model",
       "anchor": "concept-first-order",
-      "definition": "内点是未落在可行范围边界的选择；可微目标在内点达到局部最优时，关于选择变量的一阶导数为零。还须结合边界及曲率检查最优性。",
+      "definition": "内点是可行区间内部的选择。单变量可微目标在内点达到局部最优时，一阶导数须为零；判断最优性还需检查边界和函数的曲率。",
       "linkAliases": [
         "一阶条件",
         "严格内点",
@@ -1734,7 +1734,7 @@
       ],
       "chapter": "02_enterprise_data_model",
       "anchor": "concept-manipulation",
-      "definition": "通过提前确认、重复记录等方式提高考核数值，却未相应增加真实经营产出。"
+      "definition": "通过提前确认、重复记录等方式提高考核数值，而真实经营产出没有相应增加的行为。"
     },
     {
       "id": "model",
@@ -1744,7 +1744,7 @@
       ],
       "chapter": "01_intro",
       "anchor": "concept-model",
-      "definition": "为回答特定问题而对对象、关系和机制所作的简化表示，须明确输入、输出与假设。",
+      "definition": "为回答特定问题而对对象、关系或机制所作的简化表示，其输入、输出和假设应明确。",
       "linkAliases": []
     },
     {
@@ -1756,7 +1756,7 @@
       ],
       "chapter": "01_intro",
       "anchor": "concept-data-model",
-      "definition": "对记录哪些对象和属性、对象如何联系、每条记录表示什么以及应满足哪些规则的结构化规定。第二讲进一步讨论其数据库表示与治理。"
+      "definition": "对记录哪些对象和属性、对象如何联系、每条记录表示什么以及记录应满足哪些规则的结构化规定。"
     },
     {
       "id": "information-system",
@@ -1799,7 +1799,7 @@
       ],
       "chapter": "01_intro",
       "anchor": "concept-operations-research",
-      "definition": "用数学模型和计算方法研究组织中的方案选择与资源配置，结论依赖明确的目标和约束。"
+      "definition": "运用数学模型和计算方法，在明确目标与约束条件下研究方案选择和资源配置的学科与方法。"
     },
     {
       "id": "order-line",
@@ -1834,7 +1834,7 @@
       ],
       "chapter": "01_intro",
       "anchor": "concept-lot",
-      "definition": "按规定规则一起追踪或加工的一组生产对象。批次可以拆分或合并，记录须保留相应来源关系。",
+      "definition": "按既定规则共同追踪或加工的一组生产对象。发生拆分或合并时，批次记录还需保存相应来源关系。",
       "linkAliases": []
     },
     {
@@ -1868,7 +1868,7 @@
       ],
       "chapter": "01_intro",
       "anchor": "concept-yield",
-      "definition": "在明确检验阶段、对象和计数规则后，合格数量占相应投入或产出总量的比例；返工前后口径应分开。"
+      "definition": "在规定检验阶段、对象与计数规则后，合格数量占相应总量的比例。返工前后的结果采用各自的计数口径。"
     },
     {
       "id": "proxy-metric",
@@ -1878,7 +1878,7 @@
       ],
       "chapter": "01_intro",
       "anchor": "concept-proxy-metric",
-      "definition": "用可观测量间接反映难以直接测量的目标，如以开户数量近似衡量服务覆盖；需检验其与真实目标的关系。"
+      "definition": "间接反映难以直接测量目标的可观测量，如用开户数量近似衡量服务覆盖。使用代理指标前，应检验它与所关心目标的关系。"
     },
     {
       "id": "reversibility",
@@ -1890,7 +1890,7 @@
       ],
       "chapter": "01_intro",
       "anchor": "concept-reversibility",
-      "definition": "行动实施后能否以可接受的时间和代价撤回或纠正。易于撤回可能降低错误代价，但不取消安全和授权约束。"
+      "definition": "行动实施后以可接受的时间和代价撤回或纠正的可能性。可逆性会影响错误代价，执行时仍须满足安全和授权条件。"
     },
     {
       "id": "governance",
@@ -1910,7 +1910,7 @@
       ],
       "chapter": "01_intro",
       "anchor": "concept-risk-preference",
-      "definition": "组织或个人对于不确定收益、损失及其可接受范围的选择倾向；具体限额须由有权主体确定。"
+      "definition": "组织或个人对不确定收益与损失的选择倾向，以及愿意承担风险的范围。组织的具体风险限额由有权主体确定。"
     },
     {
       "id": "ai",
@@ -1921,7 +1921,7 @@
       ],
       "chapter": "01_intro",
       "anchor": "concept-ai",
-      "definition": "使计算系统执行识别、预测、生成或行动选择等任务的一类研究与技术，简称 AI；具体能力须按任务和条件验证。"
+      "definition": "研究和实现识别、预测、生成或行动选择等计算任务的技术领域，英文为 artificial intelligence，简称 AI。系统的具体能力依任务和使用条件评价。"
     },
     {
       "id": "context",
@@ -1932,7 +1932,7 @@
       ],
       "chapter": "01_intro",
       "anchor": "concept-context",
-      "definition": "模型当前可利用的输入、检索资料和历史信息；上下文长度与系统允许的范围会限制可同时利用的内容。",
+      "definition": "模型当前能够利用的输入、检索资料和历史信息，其范围受到上下文长度及系统配置的限制。",
       "linkAliases": [
         "上下文占用",
         "模型上下文"
@@ -1946,7 +1946,7 @@
       ],
       "chapter": "01_intro",
       "anchor": "concept-structured-output",
-      "definition": "按约定字段、类型或格式组织的结果，如包含订单号和建议行动的记录，仍需检查格式与业务含义。"
+      "definition": "按照约定字段、类型或格式组织的结果，如包含订单号和建议行动的记录。格式是否合规与业务含义是否正确分别需要检查。"
     },
     {
       "id": "oee",
@@ -1961,7 +1961,7 @@
       ],
       "chapter": "02_enterprise_data_model",
       "anchor": "concept-oee",
-      "definition": "overall equipment effectiveness，OEE。时间开动率是运行时间占计划生产时间的比例，性能开动率比较实际产出与运行时间内按理想节拍可达到的产出，质量合格率是良品占总产出的比例；三者之积为 OEE。"
+      "definition": "设备综合效率，英文为 overall equipment effectiveness，简称 OEE，等于时间开动率、性能开动率与质量合格率之积。三者分别比较运行时间与计划生产时间、实际产出与按理想节拍可达到的产出、良品数量与总产出。"
     },
     {
       "id": "wip",
@@ -1972,7 +1972,7 @@
       ],
       "chapter": "02_enterprise_data_model",
       "anchor": "concept-wip",
-      "definition": "work in process，WIP。已进入生产但尚未完成的对象或其数量，须固定计数范围与观察时点。"
+      "definition": "已进入生产过程、尚未完成的对象或其数量。英文为 work in process，简称 WIP；计数范围和观察时点须固定。"
     },
     {
       "id": "cycle-time",
@@ -1983,7 +1983,7 @@
       ],
       "chapter": "02_enterprise_data_model",
       "anchor": "concept-cycle-time",
-      "definition": "Cycle Time。对象从规定起点到终点经历的时间，可包含加工、等待和搬运，不能直接等同于纯加工时长。"
+      "definition": "对象从规定起点到终点经历的时间，英文为 cycle time。周期时间包括范围内的加工、等待和搬运等时间。"
     },
     {
       "id": "otd",
@@ -1994,7 +1994,7 @@
       ],
       "chapter": "01_intro",
       "anchor": "concept-otd",
-      "definition": "on-time delivery，OTD。在指定期间的到期订单中，按照约定承诺版本和完成规则准时交付的订单比例。"
+      "definition": "指定期间的到期订单中，按约定承诺版本及完成规则准时交付的订单所占比例。英文为 on-time delivery，简称 OTD。"
     },
     {
       "id": "utilization",
@@ -2005,7 +2005,7 @@
       ],
       "chapter": "02_enterprise_data_model",
       "anchor": "concept-utilization",
-      "definition": "在规定条件与时期内，实际使用量占相应可用产能的比例；需与设备开动时间和产出效率区分。"
+      "definition": "在规定时期和条件下，实际使用量占相应可用产能的比例。产能利用率、设备开动时间和产出效率分别描述不同的使用情况。"
     },
     {
       "id": "marginal",
@@ -2015,7 +2015,7 @@
       ],
       "chapter": "02_enterprise_data_model",
       "anchor": "concept-marginal",
-      "definition": "其他条件保持不变时，某个量增加一小单位所引起的结果变化；边际价值是这种变化带来的价值增量。",
+      "definition": "其他条件保持不变时，某个量小幅增加所引起的结果变化。边际价值是这一变化所带来的价值增量。",
       "linkAliases": []
     },
     {
@@ -2028,7 +2028,7 @@
       ],
       "chapter": "01_intro",
       "anchor": "concept-weighted-mean",
-      "definition": "把各部分的值按指定权重作平均，权重通常非负且总和为1；等权平均是各项权重相同的特例。汇总同口径、互不重叠各组的比率时，采用各组分母占总分母的份额作为权重。"
+      "definition": "按各项权重计算的平均值，权重通常非负且总和为1；各项权重相同时得到等权平均。汇总同口径、互不重叠各组的比率时，采用各组分母占总分母的份额作为权重。"
     },
     {
       "id": "quantile",
@@ -2038,7 +2038,7 @@
       ],
       "chapter": "02_enterprise_data_model",
       "anchor": "concept-quantile",
-      "definition": "把按大小排列的取值划分到给定比例位置的数。例如，较高分位数可描述多数对象不会超过的周期水平。"
+      "definition": "在按取值大小累计的分布中，对应给定比例的位置值。例如，较高分位数可以描述大多数对象不会超过的周期水平。"
     },
     {
       "id": "schema-evolution",
@@ -2048,7 +2048,7 @@
       "aliases": [
         "模式演化"
       ],
-      "definition": "在兼容规则下调整表的字段名称、类型或结构；此处的模式指数据结构。"
+      "definition": "按照兼容规则调整数据表字段名称、类型或结构的过程，其中模式指数据结构。"
     },
     {
       "id": "join-field",
@@ -2059,7 +2059,7 @@
       ],
       "chapter": "02_enterprise_data_model",
       "anchor": "concept-join-field",
-      "definition": "用于按给定条件配对多表记录的字段组合。连接字段不必是候选键：若一侧存在多个匹配记录，连接可能增加结果行数，须另行检查基数和事实粒度。"
+      "definition": "按规定条件配对多表记录所用的字段组合。连接的一侧存在多个匹配记录时，结果行数可能增加；应据此检查关联基数和事实粒度，连接字段本身可以不构成候选键。"
     },
     {
       "id": "foundation-model",
@@ -2079,7 +2079,7 @@
       ],
       "chapter": "01_intro",
       "anchor": "concept-intervention",
-      "definition": "主动改变对象所处条件或实施指定行动，如发放优惠券、安排维护或采用新的审批规则。干预的结果变化需要与明确的比较方案一起评价。"
+      "definition": "主动改变对象所处条件或实施指定行动，如发放优惠券、安排维护或采用新的审批规则。干预效果依据它与明确比较行动所产生的结果差异评价。"
     },
     {
       "id": "time-kinds",
@@ -2093,7 +2093,7 @@
       ],
       "chapter": "02_enterprise_data_model",
       "anchor": "concept-time-kinds",
-      "definition": "事件发生时间指活动实际发生的时点；状态有效时间指事实在业务世界中成立的时段；数据入库时间指记录进入系统的时点。系统版本的保存时段还决定当时能够查询到什么。"
+      "definition": "事件发生时间是活动实际发生的时点；状态有效时间是事实在业务中成立的时段；数据入库时间是记录进入系统的时点。系统版本的保存区间进一步规定某一时刻能够查询到哪个版本。"
     },
     {
       "id": "analytical-modeling",
@@ -2104,7 +2104,7 @@
       ],
       "chapter": "02_enterprise_data_model",
       "anchor": "concept-analytical-modeling",
-      "definition": "事务型建模主要支持业务操作与一致性维护；分析型建模主要支持跨对象汇总、历史比较和指标查询。星型模型是一种常用分析结构，并非分析型建模的全部。"
+      "definition": "事务型建模主要支持业务操作与一致性维护；分析型建模主要支持跨对象汇总、历史比较和指标查询，星型模型是其中一种常用结构。"
     },
     {
       "id": "table-format",
@@ -2114,7 +2114,7 @@
       ],
       "chapter": "02_enterprise_data_model",
       "anchor": "concept-table-format",
-      "definition": "公开规定分析表如何组织数据文件、元数据、版本以及相关读写规则的格式规范。兼容格式使不同引擎能够互操作，但不自动统一业务指标定义或访问权限。"
+      "definition": "公开规定分析表的数据文件、元数据、版本及相应读写规则的格式规范。采用兼容格式的引擎可以据此互操作；业务指标定义和访问权限还需由相应系统管理。"
     },
     {
       "id": "inference",
@@ -2126,7 +2126,7 @@
       ],
       "chapter": "02_enterprise_data_model",
       "anchor": "concept-inference",
-      "definition": "推理是已训练模型根据新输入计算预测或生成输出的过程；模型服务通过约定接口对外提供这一能力。这里的推理不专指形式逻辑中的证明过程。"
+      "definition": "推理是已训练模型根据新输入计算预测或生成结果的过程。模型服务通过约定接口对外提供这一计算能力；这是机器学习语境中推理一词的含义。"
     },
     {
       "id": "data-product",
@@ -2136,7 +2136,7 @@
       ],
       "chapter": "02_enterprise_data_model",
       "anchor": "concept-data-product",
-      "definition": "为明确使用需求持续交付的数据、查询服务或指标，连同其定义、质量要求、更新方式、权限和维护责任。"
+      "definition": "面向明确使用需求、持续提供的数据、查询服务或指标，以及相应的定义、质量要求、更新方式、访问权限和维护责任。"
     },
     {
       "id": "schema-general",
@@ -2147,7 +2147,7 @@
       ],
       "chapter": "02_enterprise_data_model",
       "anchor": "concept-schema-general",
-      "definition": "对数据结构、字段、类型及相关约束的规定；此处不指统计模型或业务运行方式。"
+      "definition": "对数据结构、字段、类型及相关约束的规定，其中模式指数据的组织结构。"
     },
     {
       "id": "conversion",
@@ -2157,7 +2157,7 @@
       ],
       "chapter": "02_enterprise_data_model",
       "anchor": "concept-conversion",
-      "definition": "在规定对象与时间范围内，完成指定目标行为的对象数占符合纳入条件对象数的比例；比较与汇总前须统一分母及去重规则。"
+      "definition": "在规定对象与时间范围内，完成指定目标行为的对象数占符合纳入条件对象数的比例。比较或汇总时，分母和去重规则须一致。"
     },
     {
       "id": "inventory-turnover",
@@ -2167,7 +2167,7 @@
       ],
       "chapter": "02_enterprise_data_model",
       "anchor": "concept-inventory-turnover",
-      "definition": "规定期间的销售成本与平均库存成本之比，用来刻画库存相对于销售消耗的周转速度；分子分母须采用一致的计价基础。"
+      "definition": "规定期间的销售成本与平均库存成本之比，刻画库存随销售消耗而周转的速度。分子和分母采用一致的计价基础。"
     },
     {
       "id": "stockout",
@@ -2177,7 +2177,7 @@
       ],
       "chapter": "02_enterprise_data_model",
       "anchor": "concept-stockout",
-      "definition": "在约定需求对象或检查时点中，无法按规则满足需求的比例；按订单、品项或时间计数会得到不同口径。"
+      "definition": "在约定需求对象或检查时点中，需求无法按规定得到满足的比例。按订单、品项或时间计数时，应分别说明相应口径。"
     },
     {
       "id": "margin",
@@ -2187,7 +2187,7 @@
       ],
       "chapter": "02_enterprise_data_model",
       "anchor": "concept-margin",
-      "definition": "销售收入扣除相应销售成本后所得毛利，占销售收入的比例；汇总时应先汇总收入与成本再计算。"
+      "definition": "销售收入扣除相应销售成本后所得毛利，占销售收入的比例。汇总毛利率时，先汇总收入和成本，再计算汇总毛利占汇总收入的比例。"
     },
     {
       "id": "slow-inventory",
@@ -2198,7 +2198,7 @@
       ],
       "chapter": "02_enterprise_data_model",
       "anchor": "concept-slow-inventory",
-      "definition": "在规定观察期内销量或周转低于约定标准的库存；判定阈值、库存计价与责任范围须预先明确。"
+      "definition": "在规定观察期内，销量或周转低于约定标准的库存。判定规则须说明阈值、库存计价方式和责任范围。"
     },
     {
       "id": "cara",
@@ -2208,7 +2208,7 @@
       ],
       "chapter": "02_enterprise_data_model",
       "anchor": "concept-cara",
-      "definition": "绝对风险厌恶系数刻画效用函数对收入风险的敏感程度。在本例负指数效用下，该系数等于正参数 r，不随收入水平改变。"
+      "definition": "绝对风险厌恶系数衡量效用函数对收入风险的敏感程度。该系数不随收入水平变化时，称为常数绝对风险厌恶；负指数效用中的系数等于正参数 r。"
     },
     {
       "id": "incentive-compatibility",
@@ -2218,7 +2218,7 @@
       ],
       "chapter": "02_enterprise_data_model",
       "anchor": "concept-incentive-compatibility",
-      "definition": "合同要求的行动与代理人在该合同下按自身目标选择的最优行动一致。例如，给定线性报酬后，努力选择必须是代理人自身的最优回应。"
+      "definition": "合同所要求的行动，也是代理人在该合同下为实现自身目标而作出的最优选择。例如，线性报酬合同所要求的努力水平须是代理人的最优回应。"
     }
   ],
   "background": [
@@ -2229,7 +2229,7 @@
         "OECD",
         "经济合作与发展组织"
       ],
-      "definition": "经济合作与发展组织（Organisation for Economic Co-operation and Development）是开展政策研究与国际合作的政府间组织。文中引用其公司治理原则说明企业责任与监督的制度背景。",
+      "definition": "经济合作与发展组织（Organisation for Economic Co-operation and Development），开展政策研究与国际合作的政府间组织。其公司治理原则讨论企业责任与监督的制度安排。",
       "sourceUrl": "https://www.oecd.org/en/about.html",
       "chapters": [
         "01_intro",
@@ -2243,7 +2243,7 @@
         "Airbus",
         "空中客车"
       ],
-      "definition": "空中客车是航空航天制造企业；本讲引用其航空数据平台Skywise的公开应用材料。",
+      "definition": "空中客车，航空航天制造企业，其航空数据平台 Skywise 用于汇集和分析航空运营与维护资料。",
       "sourceUrl": "https://www.airbus.com/en/newsroom/press-releases/2017-06-airbus-launches-skywise-aviations-open-data-platform",
       "chapters": [
         "01_intro"
@@ -2256,7 +2256,7 @@
         "Palantir",
         "Palantir Technologies"
       ],
-      "definition": "提供数据整合、分析和业务操作平台的技术企业；Skywise 合作与 Ontology 产品用法分别出现在两讲案例中。",
+      "definition": "提供数据整合、分析及业务操作平台的技术企业，与 Airbus 合作推出 Skywise，并以 Ontology 等产品组织业务对象与操作。",
       "sourceUrl": "https://www.airbus.com/en/newsroom/press-releases/2017-06-airbus-launches-skywise-aviations-open-data-platform",
       "chapters": [
         "01_intro",
@@ -2269,7 +2269,7 @@
       "aliases": [
         "Skywise"
       ],
-      "definition": "Airbus与Palantir合作推出的航空数据平台，将航空运营、维护等来源的数据汇集起来，供航空公司及相关主体查询和分析。",
+      "definition": "Airbus 与 Palantir 合作推出的航空数据平台，汇集航空运营、维护等来源的数据，供航空公司及相关主体查询和分析。",
       "sourceUrl": "https://www.airbus.com/en/newsroom/press-releases/2017-06-airbus-launches-skywise-aviations-open-data-platform",
       "chapters": [
         "01_intro"
@@ -2297,7 +2297,7 @@
         "Oracle Red Bull Racing",
         "红牛车队"
       ],
-      "definition": "参加一级方程式赛车（Formula One，F1）赛事的车队。本讲讨论其利用仿真比较比赛策略的公开案例。",
+      "definition": "参加一级方程式赛车（Formula One，F1）赛事的车队，利用仿真比较比赛策略。",
       "sourceUrl": "https://www.oracle.com/news/announcement/oracle-red-bull-racing-doubles-down-on-oracle-cloud-and-ai-2025-03-13/",
       "chapters": [
         "01_intro"
@@ -2323,7 +2323,7 @@
       "aliases": [
         "Anthropic"
       ],
-      "definition": "从事大语言模型研究与产品开发的企业；本讲中的Economic Index是该企业发布的研究材料。",
+      "definition": "从事大语言模型研究与产品开发的企业，Economic Index 是其发布的人工智能使用与经济影响研究。",
       "sourceUrl": "https://www.anthropic.com/research/economic-index-june-2026-report",
       "chapters": [
         "01_intro"
@@ -2336,7 +2336,7 @@
         "Economic Index",
         "Anthropic Economic Index"
       ],
-      "definition": "Anthropic关于人工智能使用与经济影响的系列研究。本讲引用其中的平台使用记录和调查材料，其结论适用范围受样本和研究方法限制。",
+      "definition": "Anthropic 关于人工智能使用与经济影响的系列研究，采用平台使用记录和调查等资料。结论的适用范围由样本和研究方法决定。",
       "sourceUrl": "https://www.anthropic.com/research/economic-index-june-2026-report",
       "chapters": [
         "01_intro"
@@ -2350,7 +2350,7 @@
         "United Parcel Service",
         "联合包裹"
       ],
-      "definition": "从事包裹配送和物流服务的企业；本讲以其路线规划与配送导航说明行动方案如何落实到具体执行位置。",
+      "definition": "从事包裹配送和物流服务的企业，采用路线规划系统与配送导航工具组织车辆访问次序及具体行驶路径。",
       "sourceUrl": "https://about.ups.com/us/en/newsroom/press-releases/innovation-driven/ups-deploys-purpose-built-navigation-for-ups-service-personnel.html",
       "chapters": [
         "01_intro"
@@ -2362,7 +2362,7 @@
       "aliases": [
         "UPSNav"
       ],
-      "definition": "UPS面向配送司机的导航工具，按照路线规划结果为具体收货、取货位置提供逐向行驶指引。",
+      "definition": "UPS 面向配送司机的导航工具，根据路线规划结果，为前往具体收货与取货位置提供逐向行驶指引。",
       "sourceUrl": "https://about.ups.com/us/en/newsroom/press-releases/innovation-driven/ups-deploys-purpose-built-navigation-for-ups-service-personnel.html",
       "chapters": [
         "01_intro"
@@ -2375,7 +2375,7 @@
         "ORION",
         "On-Road Integrated Optimization and Navigation"
       ],
-      "definition": "UPS的路线优化与导航系统，英文全称为On-Road Integrated Optimization and Navigation；本例中它确定车辆访问配送与取件站点的次序。",
+      "definition": "UPS 的路线优化与导航系统，英文全称为 On-Road Integrated Optimization and Navigation，用于确定车辆访问配送和取件站点的次序。",
       "sourceUrl": "https://about.ups.com/us/en/newsroom/press-releases/innovation-driven/ups-deploys-purpose-built-navigation-for-ups-service-personnel.html",
       "chapters": [
         "01_intro"
@@ -2390,7 +2390,7 @@
         "CVS Pharmacy",
         "CVS Caremark"
       ],
-      "definition": "提供健康服务并经营药房业务的企业。CVS Pharmacy为其药房业务名称；本例讨论其2014年在全部CVS Pharmacy门店停售烟草的决定。",
+      "definition": "提供健康服务并经营药房业务的企业，CVS Pharmacy 是其药房业务名称。2014年，CVS Pharmacy 全部门店停售烟草。",
       "sourceUrl": "https://www.cvshealth.com/campaigns/quitting-tobacco.html",
       "chapters": [
         "01_intro"
@@ -2403,7 +2403,7 @@
         "Wells Fargo",
         "富国银行"
       ],
-      "definition": "提供存款、信用卡等金融产品与服务的银行。本讲采用的案例是美国监管机构对其未经客户授权开户行为的调查。",
+      "definition": "富国银行，提供存款、信用卡等金融产品和服务的银行。其未经客户授权开户的行为曾受到美国监管机构调查。",
       "sourceUrl": "https://www.consumerfinance.gov/archive/newsroom/consumer-financial-protection-bureau-fines-wells-fargo-100-million-widespread-illegal-practice-secretly-opening-unauthorized-accounts/",
       "chapters": [
         "01_intro"
@@ -2417,7 +2417,7 @@
         "Consumer Financial Protection Bureau",
         "美国消费者金融保护局"
       ],
-      "definition": "Consumer Financial Protection Bureau的缩写，即美国消费者金融保护局；本案例中它发布了对富国银行未经授权开户行为的监管处罚材料。",
+      "definition": "Consumer Financial Protection Bureau 的缩写，即美国消费者金融保护局，发布了对富国银行未经授权开户行为的监管处罚材料。",
       "sourceUrl": "https://www.consumerfinance.gov/archive/newsroom/consumer-financial-protection-bureau-fines-wells-fargo-100-million-widespread-illegal-practice-secretly-opening-unauthorized-accounts/",
       "chapters": [
         "01_intro"
@@ -2430,7 +2430,7 @@
         "Patagonia",
         "巴塔哥尼亚"
       ],
-      "definition": "经营户外服装与装备的企业；本讲以其“Don’t Buy This Jacket”广告讨论产品寿命、资源代价与评价期限。",
+      "definition": "经营户外服装与装备的企业，其“Don’t Buy This Jacket”广告讨论产品使用寿命、资源消耗和环境代价。",
       "sourceUrl": "https://www.patagonia.com/stories/planet/activism/dont-buy-this-jacket-black-friday-and-the-new-york-times/story-18615.html",
       "chapters": [
         "01_intro"
@@ -2443,7 +2443,7 @@
         "Don’t Buy This Jacket",
         "Don't Buy This Jacket"
       ],
-      "definition": "意为“不要购买这件夹克”，是Patagonia于2011年黑色星期五刊登的广告主题，旨在讨论减少不必要消费与产品生产的环境负担。广告主张本身不是环境效果的因果证据。",
+      "definition": "意为“不要购买这件夹克”，是 Patagonia 于2011年黑色星期五刊登的广告主题，主张减少不必要消费，并讨论产品生产的环境负担。广告的实际环境效果还需要数据和因果分析评价。",
       "sourceUrl": "https://www.patagonia.com/stories/planet/activism/dont-buy-this-jacket-black-friday-and-the-new-york-times/story-18615.html",
       "chapters": [
         "01_intro"
@@ -2456,7 +2456,7 @@
         "黑色星期五",
         "Black Friday"
       ],
-      "definition": "美国感恩节次日的零售促销时点，常被视为年末购物季的重要开始；Patagonia选择这一时点刊登广告，构成案例中的商业背景。",
+      "definition": "美国感恩节次日的零售促销时点，常被视为年末购物季的重要开始。Patagonia 于这一时点刊登“Don’t Buy This Jacket”广告。",
       "sourceUrl": "https://www.patagonia.com/stories/planet/activism/dont-buy-this-jacket-black-friday-and-the-new-york-times/story-18615.html",
       "chapters": [
         "01_intro"
@@ -2469,7 +2469,7 @@
         "Amazon",
         "亚马逊"
       ],
-      "definition": "经营电子商务、云计算等业务的企业。本讲引用其2016年度股东信中关于可逆决策和及时纠错的管理主张。",
+      "definition": "经营电子商务、云计算等业务的企业，其2016年度股东信讨论了可逆决策与及时纠错的管理原则。",
       "sourceUrl": "https://www.aboutamazon.com/news/company-news/2016-letter-to-shareholders",
       "chapters": [
         "01_intro"
@@ -2481,7 +2481,7 @@
       "aliases": [
         "Python"
       ],
-      "definition": "本讲代码使用的程序设计语言，支持用类和类型注解组织业务记录。",
+      "definition": "支持类、类型注解等机制的程序设计语言，可用于组织业务记录和实现数据分析程序。",
       "sourceUrl": "https://docs.python.org/3/tutorial/",
       "chapters": [
         "01_intro",
@@ -2495,7 +2495,7 @@
         "dataclass",
         "dataclasses"
       ],
-      "definition": "Python标准库dataclasses中的装饰器，可根据声明的字段自动生成初始化、显示和比较等常用方法；本例用它组织经营症状的数据。",
+      "definition": "Python 标准库 dataclasses 中的装饰器，依据声明的字段自动生成初始化、显示和相等性比较等常用方法，可用来组织经营症状等数据。",
       "sourceUrl": "https://docs.python.org/3/library/dataclasses.html",
       "chapters": [
         "01_intro",
@@ -2508,7 +2508,7 @@
       "aliases": [
         "frozen=True"
       ],
-      "definition": "dataclass的选项，阻止通常的对象字段重新赋值；它不会自动冻结字段所引用的列表等内部对象，也不负责校验业务规则。",
+      "definition": "dataclass 的选项，禁止通过普通属性赋值语句修改对象字段。字段所引用的列表等内部对象仍可能被修改，业务规则也需要单独校验。",
       "sourceUrl": "https://docs.python.org/3/library/dataclasses.html",
       "chapters": [
         "01_intro",
@@ -2523,7 +2523,7 @@
         "list[str]",
         "str"
       ],
-      "definition": "代码中str表示文本类型，list[str]表示元素为文本的列表类型提示。类型注解说明预期的数据形式，并不自动完成运行时输入校验。",
+      "definition": "说明预期数据类型的代码标注。str 表示字符串类型，list[str] 表示元素为字符串的列表类型；运行时输入是否符合这些类型仍需检查。",
       "sourceUrl": "https://docs.python.org/3/library/typing.html",
       "chapters": [
         "01_intro",
@@ -2577,7 +2577,7 @@
         "自然语言生成 SQL",
         "Text-to-SQL"
       ],
-      "definition": "Natural Language to SQL，指依据自然语言问题及数据库结构生成SQL查询的技术任务。结果仍须核查业务口径、连接关系和访问权限。",
+      "definition": "Natural Language to SQL，根据自然语言问题及数据库结构生成 SQL 查询的技术任务。执行查询前，应核查业务口径、关联关系和访问权限。",
       "sourceUrl": "https://docs.snowflake.com/en/user-guide/snowflake-cortex/cortex-analyst",
       "chapters": [
         "02_enterprise_data_model"
@@ -2591,7 +2591,7 @@
         "OECD/G20",
         "OECD/G20 公司治理原则"
       ],
-      "definition": "G20与经济合作与发展组织（OECD）共同认可的公司治理原则，涉及股东权利、信息披露、董事会责任等；本讲引用2023年修订版。它是原则性框架，不能等同于各法域的具体法律。",
+      "definition": "G20 与经济合作与发展组织（OECD）共同认可的公司治理原则，涉及股东权利、信息披露和董事会责任等内容。2023年修订版属于原则性框架，各法域的具体法律另行规定相应义务。",
       "sourceUrl": "https://www.oecd.org/en/publications/g20-oecd-principles-of-corporate-governance-2023_ed750b30-en.html",
       "chapters": [
         "02_enterprise_data_model"
@@ -2603,7 +2603,7 @@
       "aliases": [
         "COSO"
       ],
-      "definition": "美国反虚假财务报告委员会下属发起人委员会的简称，发布内部控制及企业风险管理框架；本讲借其说明经营、报告和合规相关的控制职责。",
+      "definition": "Committee of Sponsoring Organizations of the Treadway Commission 的简称，发布内部控制与企业风险管理框架，讨论经营、报告和合规目标所对应的控制职责。",
       "sourceUrl": "https://www.coso.org/guidance-on-ic",
       "chapters": [
         "02_enterprise_data_model"
@@ -2616,7 +2616,7 @@
         "ISO/IEC 38500:2024",
         "ISO/IEC 38500"
       ],
-      "definition": "关于组织信息技术治理的国际标准，面向治理机构及支持人员，为组织当前和未来的IT使用提供指导原则。IT是information technology，即信息技术。",
+      "definition": "关于组织信息技术治理的国际标准，面向治理机构及支持人员，为组织当前和未来的信息技术使用提供指导原则。IT 是 information technology 的缩写，即信息技术。",
       "sourceUrl": "https://www.iso.org/standard/81684.html",
       "chapters": [
         "02_enterprise_data_model"
@@ -2628,7 +2628,7 @@
       "aliases": [
         "NIST AI RMF"
       ],
-      "definition": "美国国家标准与技术研究院（NIST）的人工智能风险管理框架；AI RMF是AI Risk Management Framework的缩写，用于组织识别和管理AI相关风险。",
+      "definition": "美国国家标准与技术研究院（NIST）的人工智能风险管理框架，用于组织识别和管理人工智能相关风险。AI RMF 是 AI Risk Management Framework 的缩写。",
       "sourceUrl": "https://www.nist.gov/itl/ai-risk-management-framework",
       "chapters": [
         "02_enterprise_data_model"
@@ -2641,7 +2641,7 @@
         "ISO/IEC 42001",
         "ISO/IEC 42001:2023"
       ],
-      "definition": "规定组织建立、实施、维护和持续改进人工智能管理体系要求的国际标准；本讲引用2023年版。",
+      "definition": "关于组织人工智能管理体系的国际标准，其2023年版规定建立、实施、维护和持续改进这一体系的要求。",
       "sourceUrl": "https://www.iso.org/standard/42001",
       "chapters": [
         "02_enterprise_data_model"
@@ -2655,7 +2655,7 @@
         "AI Act",
         "欧盟 AI Act"
       ],
-      "definition": "欧盟《人工智能法案》，正式文本为Regulation (EU) 2024/1689，对其适用范围内的人工智能实践和系统规定相应规则；具体义务取决于主体、用途、风险类别及适用阶段。",
+      "definition": "欧盟《人工智能法案》，正式文本为 Regulation (EU) 2024/1689，对其适用范围内的人工智能实践与系统规定相应规则。具体义务依主体、用途、风险类别和适用阶段确定。",
       "sourceUrl": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj",
       "chapters": [
         "02_enterprise_data_model"
@@ -2682,7 +2682,7 @@
         "AI Infra",
         "深入理解 AI Infra"
       ],
-      "definition": "李博杰编写的人工智能基础设施著作。Infra是infrastructure的简称；本讲引用其计算、存储与通信分析方法，具体算例为课程自行设定。",
+      "definition": "李博杰编写的人工智能基础设施著作，讨论计算、存储和通信等系统问题。Infra 是 infrastructure 的简称；课程中的具体算例另行给定参数。",
       "sourceUrl": "https://github.com/bojieli/ai-infra-book",
       "chapters": [
         "02_enterprise_data_model"
@@ -2694,7 +2694,7 @@
       "aliases": [
         "OCI Zettascale10"
       ],
-      "definition": "Oracle在2025年公告的AI计算集群架构；公告中的八十万颗GPU表示目标部署上限，不等于某家企业已取得的容量。",
+      "definition": "Oracle 在2025年公告的人工智能计算集群架构。公告提出八十万颗 GPU 的目标部署上限，实际可用容量依具体部署确定。",
       "sourceUrl": "https://www.oracle.com/news/announcement/ai-world-oracle-unveils-next-generation-oci-zettascale10-cluster-for-ai-2025-10-14/",
       "chapters": [
         "02_enterprise_data_model"
@@ -2721,7 +2721,7 @@
         "AWS Bedrock",
         "Bedrock"
       ],
-      "definition": "AWS提供的生成式AI服务平台；其中Guardrails用于按配置检查模型、智能体、知识库或流程的输入与输出。",
+      "definition": "AWS 提供的生成式人工智能服务平台，其中 Guardrails 按配置检查模型、智能体、知识库或流程的输入与输出。",
       "sourceUrl": "https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-use.html",
       "chapters": [
         "02_enterprise_data_model"
@@ -2733,7 +2733,7 @@
       "aliases": [
         "Azure"
       ],
-      "definition": "微软的云服务平台，提供计算、存储、数据和应用服务；网络访问范围与权限须按具体服务配置。",
+      "definition": "微软的云服务平台，提供计算、存储、数据和应用服务。各服务的网络访问范围及权限依具体配置确定。",
       "sourceUrl": "https://azure.microsoft.com/en-us/resources/cloud-computing-dictionary/what-is-azure",
       "chapters": [
         "02_enterprise_data_model"
@@ -2745,7 +2745,7 @@
       "aliases": [
         "Microsoft Foundry"
       ],
-      "definition": "微软用于构建和运行AI应用及智能体的服务平台；本讲关注其私有端点、网络边界及相关依赖的配置。",
+      "definition": "微软用于构建和运行人工智能应用及智能体的服务平台。私有端点、网络边界与相关依赖须按所用服务配置。",
       "sourceUrl": "https://learn.microsoft.com/en-us/azure/foundry/how-to/configure-private-link",
       "chapters": [
         "02_enterprise_data_model"
@@ -2757,7 +2757,7 @@
       "aliases": [
         "Databricks"
       ],
-      "definition": "面向数据处理、分析和AI开发的平台；本讲讨论其表管理及数据治理能力。",
+      "definition": "面向数据处理、分析和人工智能开发的平台，包含表管理与数据治理等能力。",
       "sourceUrl": "https://docs.databricks.com/aws/en/data-governance/unity-catalog",
       "chapters": [
         "02_enterprise_data_model"
@@ -2783,7 +2783,7 @@
         "Delta",
         "Delta 表"
       ],
-      "definition": "为数据湖表提供事务和版本管理机制的开放表技术；Databricks的Iceberg读取功能可按条件为Delta表生成兼容元数据。",
+      "definition": "为数据湖表提供事务与版本管理机制的开放表技术。Databricks 的 Iceberg 读取功能可在规定条件下为 Delta 表生成兼容元数据。",
       "sourceUrl": "https://docs.databricks.com/aws/en/delta/iceberg-reads",
       "chapters": [
         "02_enterprise_data_model"
@@ -2795,7 +2795,7 @@
       "aliases": [
         "Snowflake"
       ],
-      "definition": "提供云端数据存储、查询和分析等服务的平台；本讲以其语义视图和自然语言问数服务说明业务定义的作用。",
+      "definition": "提供云端数据存储、查询和分析服务的平台，其语义视图与自然语言问数服务使用业务定义解释结构化数据。",
       "sourceUrl": "https://docs.snowflake.com/en/user-guide/views-semantic/overview",
       "chapters": [
         "02_enterprise_data_model"
@@ -2819,7 +2819,7 @@
       "aliases": [
         "Cortex Analyst"
       ],
-      "definition": "Snowflake的自然语言问数服务，借助语义定义生成面向结构化数据的SQL查询；生成结果仍需按业务任务验证。",
+      "definition": "Snowflake 的自然语言问数服务，依据语义定义，为结构化数据生成 SQL 查询。生成查询是否符合具体业务任务，须另行检查。",
       "sourceUrl": "https://docs.snowflake.com/en/user-guide/snowflake-cortex/cortex-analyst",
       "chapters": [
         "02_enterprise_data_model"
@@ -2832,7 +2832,7 @@
         "Palantir Ontology",
         "Ontology"
       ],
-      "definition": "Palantir平台中连接数据与业务的建模层，以对象类型、属性、关系和动作表达业务结构及相关操作；这是具体产品用法，不等同于哲学本体论。",
+      "definition": "Palantir 产品中的业务建模层，以对象类型、属性、关系和动作表达业务结构及相关操作，Ontology 在此为产品术语。",
       "sourceUrl": "https://www.palantir.com/docs/foundry/ontology/overview",
       "chapters": [
         "02_enterprise_data_model"
@@ -2844,7 +2844,7 @@
       "aliases": [
         "Action types"
       ],
-      "definition": "Palantir中定义一类业务操作及其参数、规则和允许变更的配置；本讲借其说明建议与受控执行的区别。",
+      "definition": "Palantir 用于定义一类业务操作的配置，包括操作参数、规则和允许的数据变更。",
       "sourceUrl": "https://www.palantir.com/docs/foundry/action-types/rules",
       "chapters": [
         "02_enterprise_data_model"
@@ -2856,7 +2856,7 @@
       "aliases": [
         "SAP"
       ],
-      "definition": "企业应用软件供应商，提供企业资源计划及相关业务系统；本讲将其作为已有交易流程和业务语义的一种平台来源。",
+      "definition": "企业应用软件供应商，提供企业资源计划及相关业务系统，保存交易流程中的业务数据和相应定义。",
       "sourceUrl": "https://www.sap.com/products/erp/what-is-sap-erp.html",
       "chapters": [
         "02_enterprise_data_model"
@@ -2869,7 +2869,7 @@
         "SAP Business Data Cloud",
         "Business Data Cloud"
       ],
-      "definition": "SAP组织企业数据产品、分析和AI相关能力的服务组合；本讲以其说明在已有业务系统基础上共享数据与语义的路径。",
+      "definition": "SAP 组织企业数据产品、分析和人工智能相关能力的服务组合，支持在已有业务系统基础上共享数据与业务定义。",
       "sourceUrl": "https://learning.sap.com/courses/introducing-sap-business-data-cloud/outlining-the-architecture-of-sap-business-data-cloud_e0e3df7e-a215-4d80-8c8f-5f9689293dac",
       "chapters": [
         "02_enterprise_data_model"
@@ -2881,7 +2881,7 @@
       "aliases": [
         "Joule"
       ],
-      "definition": "SAP的AI交互层，将业务用户与相关AI助手、智能体及企业资料连接；具体可用功能取决于所采用的产品和配置。",
+      "definition": "SAP 的人工智能交互层，将业务用户与相关助手、智能体及企业资料连接。可用功能依采用的产品和配置确定。",
       "sourceUrl": "https://learning.sap.com/courses/introducing-sap-business-data-cloud/outlining-the-architecture-of-sap-business-data-cloud_e0e3df7e-a215-4d80-8c8f-5f9689293dac",
       "chapters": [
         "02_enterprise_data_model"
@@ -2905,7 +2905,7 @@
       "aliases": [
         "Collibra"
       ],
-      "definition": "提供数据治理产品的公司；本讲以其代表数据政策、责任及治理工作流的管理工具。",
+      "definition": "提供数据治理产品的公司，其产品用于管理数据政策、责任分工和治理工作流。",
       "sourceUrl": "https://www.collibra.com/products/data-governance",
       "chapters": [
         "02_enterprise_data_model"
@@ -2917,7 +2917,7 @@
       "aliases": [
         "BigID"
       ],
-      "definition": "提供数据发现与分类产品的公司，帮助识别分布于不同来源的敏感或受管数据；发现与分类不等于自动取得访问权限。",
+      "definition": "提供数据发现与分类产品的公司，帮助识别分布于不同来源的敏感或受管数据。对这些数据的访问仍由相应权限规则控制。",
       "sourceUrl": "https://bigid.com/solutions/discovery-classification/",
       "chapters": [
         "02_enterprise_data_model"
@@ -2929,7 +2929,7 @@
       "aliases": [
         "DAMA-DMBOK"
       ],
-      "definition": "DAMA International组织编写的《数据管理知识体系指南》，整理数据治理、建模、质量、元数据等知识领域；本讲引用第二版。",
+      "definition": "DAMA International 组织编写的《数据管理知识体系指南》，第二版整理数据治理、建模、质量和元数据等知识领域。",
       "sourceUrl": "https://dama.org/learning-resources/dama-data-management-body-of-knowledge-dmbok/",
       "chapters": [
         "02_enterprise_data_model"
@@ -2955,7 +2955,7 @@
       "aliases": [
         "Atlan"
       ],
-      "definition": "提供元数据目录及协作治理产品的公司；本讲引用其发布的Nasdaq客户案例说明数据发现、血缘和责任记录。",
+      "definition": "提供元数据目录与协作治理产品的公司，其 Nasdaq 客户案例讨论数据发现、血缘及责任记录。",
       "sourceUrl": "https://atlan.com/success-stories/nasdaq/",
       "chapters": [
         "02_enterprise_data_model"
@@ -2979,7 +2979,7 @@
       "aliases": [
         "dbt"
       ],
-      "definition": "用于组织、测试、记录和执行数据转换模型的工具；通常把SQL转换逻辑作为可维护的项目管理。",
+      "definition": "组织、测试、记录和执行数据转换模型的工具，可把 SQL 转换逻辑组织成持续维护的项目。",
       "sourceUrl": "https://docs.getdbt.com/docs/introduction",
       "chapters": [
         "02_enterprise_data_model"
@@ -3004,7 +3004,7 @@
       "aliases": [
         "Monte Carlo"
       ],
-      "definition": "此处是数据与AI可观测性平台的产品名，用于监测数据问题、告警及相关血缘；不是蒙特卡洛随机模拟方法。",
+      "definition": "用于监测数据问题、发出告警并提供相关血缘信息的数据与人工智能可观测性平台。产品名 Monte Carlo 与蒙特卡洛随机模拟方法同名。",
       "sourceUrl": "https://docs.getmontecarlo.com/docs/monte-carlo-at-a-glance",
       "chapters": [
         "02_enterprise_data_model"
@@ -3016,7 +3016,7 @@
       "aliases": [
         "Shopify"
       ],
-      "definition": "提供电商平台及开发接口的企业；本讲使用其对象全局标识规则说明对象身份和唯一性范围。",
+      "definition": "提供电商平台及开发接口的企业，其对象标识规则规定了身份与唯一性所适用的范围。",
       "sourceUrl": "https://shopify.dev/docs/api/usage/gids",
       "chapters": [
         "02_enterprise_data_model"
@@ -3030,7 +3030,7 @@
         "全局标识",
         "统一资源标识"
       ],
-      "definition": "Shopify 在接口中以统一资源标识（Uniform Resource Identifier，URI）识别对象，标识含对象类型及必要参数。URI 是按统一语法识别资源的字符串；此处“全局”指约定的应用范围，不能推定为脱离范围也不会冲突。",
+      "definition": "Shopify 在接口中采用的对象标识，使用统一资源标识（Uniform Resource Identifier，URI）记录对象类型及必要参数。URI 是按统一语法识别资源的字符串；全局唯一性适用于其约定的应用范围。",
       "sourceUrl": "https://shopify.dev/docs/api/usage/gids",
       "chapters": [
         "02_enterprise_data_model"
@@ -3042,7 +3042,7 @@
       "aliases": [
         "Stripe"
       ],
-      "definition": "提供支付处理及相关软件接口的企业；本讲以其支付对象生命周期说明业务状态和后续行动。",
+      "definition": "提供支付处理及相关软件接口的企业，其支付对象以状态记录支付过程和后续可执行的操作。",
       "sourceUrl": "https://docs.stripe.com/payments/paymentintents/lifecycle",
       "chapters": [
         "02_enterprise_data_model"
@@ -3055,7 +3055,7 @@
         "PaymentIntent",
         "支付意图"
       ],
-      "definition": "Stripe用于跟踪一次支付过程的对象，记录所处状态及下一步所需操作；提交成功不等于资金最终到账。",
+      "definition": "Stripe 用于跟踪一次支付过程的对象，记录支付状态及下一步所需操作。提交请求成功与资金最终到账属于不同阶段。",
       "sourceUrl": "https://docs.stripe.com/payments/paymentintents/lifecycle",
       "chapters": [
         "02_enterprise_data_model"
@@ -3067,7 +3067,7 @@
       "aliases": [
         "Uber"
       ],
-      "definition": "提供出行及配送服务的平台企业；本讲引用其以空间网格分析供需、定价与调度的工程实践。",
+      "definition": "提供出行与配送服务的平台企业，使用空间网格分析供需、定价和调度问题。",
       "sourceUrl": "https://www.uber.com/us/en/blog/h3/",
       "chapters": [
         "02_enterprise_data_model"
@@ -3091,7 +3091,7 @@
       "aliases": [
         "LinkedIn"
       ],
-      "definition": "职业社交网络企业；其工程团队开发DataHub来搜索、发现和理解分布于不同系统的数据资产。",
+      "definition": "职业社交网络企业，其工程团队开发 DataHub，用于搜索、发现和理解分布于不同系统的数据资产。",
       "sourceUrl": "https://www.linkedin.com/blog/engineering/archive/data-hub",
       "chapters": [
         "02_enterprise_data_model"
@@ -3115,7 +3115,7 @@
       "aliases": [
         "Spotify"
       ],
-      "definition": "音频流媒体服务企业；本讲引用其开发者平台实践，讨论软件服务的身份与维护责任。",
+      "definition": "音频流媒体服务企业，其开发者平台实践涉及软件服务的身份、目录组织与维护责任。",
       "sourceUrl": "https://engineering.atspotify.com/2020/3/what-the-heck-is-backstage-anyway",
       "chapters": [
         "02_enterprise_data_model"
@@ -3139,7 +3139,7 @@
       "aliases": [
         "CSV"
       ],
-      "definition": "Comma-Separated Values，逗号分隔值，是用文本行和分隔符保存表格资料的文件格式；文件本身通常不能完整表达业务约束、单位和责任。",
+      "definition": "Comma-Separated Values，逗号分隔值，以文本行和分隔符保存表格资料的文件格式。业务约束、单位与责任等信息通常还需要相应定义文件说明。",
       "sourceUrl": "https://docs.python.org/3/library/csv.html",
       "chapters": [
         "02_enterprise_data_model"
@@ -3153,7 +3153,7 @@
         "CPU",
         "GPU"
       ],
-      "definition": "CPU是中央处理器，负责通用指令执行；GPU是图形处理器，也常用于大规模并行数值计算。本讲以其说明AI系统计算资源。",
+      "definition": "CPU 是中央处理器，执行通用指令；GPU 是图形处理器，也常用于大规模并行数值计算。二者承担人工智能系统中的相应计算任务。",
       "sourceUrl": "https://github.com/bojieli/ai-infra-book",
       "chapters": [
         "02_enterprise_data_model"

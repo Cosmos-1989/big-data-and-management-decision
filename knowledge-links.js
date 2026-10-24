@@ -4,7 +4,7 @@ let registryPromise;
 
 export function loadKnowledgeMap(chapter) {
   if (!chapters.includes(chapter)) return null;
-  return registryPromise ||= fetch('./content/concept-map.json?v=20261024-1').then(response => {
+  return registryPromise ||= fetch('./content/concept-map.json?v=20261024-2').then(response => {
     if (!response.ok) throw new Error('概念释义暂时无法加载，请刷新重试。');
     return response.json();
   });
@@ -27,6 +27,8 @@ export function decorateKnowledgeCases(main, chapter, registry) {
     let left = /^[A-Za-z0-9_]/.test(term) ? '(?<![A-Za-z0-9_])' : '';
     let right = /[A-Za-z0-9_]$/.test(term) ? '(?![A-Za-z0-9_])' : '';
     if (/^[\u3400-\u9fff]$/.test(term)) { left='(?<![\u3400-\u9fff])'; right='(?![\u3400-\u9fff])'; }
+    // Do not split 单元组织/单元组成 into the unrelated database term 元组.
+    if (term==='元组') left+='(?<!单)';
     return left + escapeRegExp(term) + right;
   });
   const matcher = new RegExp(patterns.join('|'), 'g');
@@ -69,6 +71,9 @@ export function decorateKnowledgeCases(main, chapter, registry) {
 
 /** Preserve a visible way back after following either a definition or an endnote. */
 export function focusKnowledgeTarget(main, target) {
+  for(let parent=target.parentElement;parent&&parent!==main;parent=parent.parentElement){
+    if(parent.tagName==='DETAILS')parent.open=true;
+  }
   main.querySelectorAll('.knowledge-target').forEach(node => node.classList.remove('knowledge-target'));
   main.querySelector('.knowledge-return')?.remove();
   const query = new URLSearchParams(location.hash.split('?')[1] || '');

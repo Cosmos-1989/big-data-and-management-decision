@@ -5,7 +5,7 @@ const normalize=value=>String(value||'').replace(/\s+/g,' ').trim();
 export function decorateEnterpriseCases(article,chapterId,cases){
  const headings=[...article.querySelectorAll('h2,h3,h4')];
  for(const item of cases.filter(x=>x.chapterId===chapterId)){
-  const target=headings.find(h=>normalize(h.textContent)===normalize(item.targetHeading));
+  const target=(item.targetAnchor?document.getElementById(item.targetAnchor):null)||headings.find(h=>normalize(h.textContent)===normalize(item.targetHeading));
   if(!target)continue;
   const flow=(item.flow||[]).map((line,i)=>{
    const [label,...rest]=line.split('｜');
@@ -14,8 +14,9 @@ export function decorateEnterpriseCases(article,chapterId,cases){
   const links=(item.sourceRefs||[]).map(key=>`<a href="#/chapter/bibliography?anchor=ref-${encodeURIComponent(key)}">[${esc(key)}]</a>`).join(' ');
   const section=document.createElement('section');section.className='enterprise-case';
   section.setAttribute('aria-label',`${item.organization} 案例图解`);
-  section.innerHTML=`<div class="case-topline"><span class="case-type">企业案例 · 图解</span><span class="case-org">${esc(item.organization)}</span></div><p class="case-context">${esc(item.context)}</p><div class="case-flow">${flow}</div><div class="case-takeaway"><span>分析要点</span><strong>${esc(item.takeaway)}</strong></div><details class="case-evidence"><summary>资料来源与适用范围</summary><p>${esc(item.sourceCaveat)} ${links}</p></details>`;
-  target.after(section);
+  section.innerHTML=item.compact?`<div class="case-topline"><span class="case-type">图解</span><span class="case-org">${esc(item.organization)}</span></div><div class="case-flow">${flow}</div><details class="case-evidence"><summary>案例资料</summary><p>${esc(item.sourceCaveat)} ${links}</p></details>`:`<div class="case-topline"><span class="case-type">企业案例 · 图解</span><span class="case-org">${esc(item.organization)}</span></div><p class="case-context">${esc(item.context)}</p><div class="case-flow">${flow}</div><div class="case-takeaway"><span>分析要点</span><strong>${esc(item.takeaway)}</strong></div><details class="case-evidence"><summary>资料来源与适用范围</summary><p>${esc(item.sourceCaveat)} ${links}</p></details>`;
+  const firstParagraph=target.nextElementSibling;
+  (item.compact&&firstParagraph?.tagName==='P'?firstParagraph:target).after(section);
  }
 }
 

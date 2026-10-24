@@ -3,17 +3,17 @@ import renderMathInElement from './vendor/katex/contrib/auto-render.mjs';
 import {mountLab,cleanupLab,esc,tableHtml} from './lab.js?v=20261017-4';
 import {experiments} from './experiments.js?v=20261017-4';
 import {lectureSlidesHtml,initLectureSlides} from './slides.js?v=20261017-4';
-import {decorateEnterpriseCases,initFigureZoom} from './cases.js?v=20261017-4';
+import {decorateEnterpriseCases,initFigureZoom} from './cases.js?v=20261024-2';
 import {initCourseSearch} from './course-search.js?v=20261017-4';
-import {chapterBusinessCasesHtml} from './business-cases.js?v=20261017-4';
-import {loadKnowledgeMap,decorateKnowledgeCases,focusKnowledgeTarget} from './knowledge-links.js?v=20261024-1';
+import {chapterBusinessCasesHtml} from './business-cases.js?v=20261024-2';
+import {loadKnowledgeMap,decorateKnowledgeCases,focusKnowledgeTarget} from './knowledge-links.js?v=20261024-2';
 const main=document.querySelector('main'),sidebar=document.querySelector('.sidebar'),toc=document.querySelector('.toc');
 const home=main.innerHTML;let catalog,currentRoute='',renderVersion=0;
 const macros={'\\E':'\\mathbb E','\\Prob':'\\mathbb P','\\R':'\\mathbb R','\\N':'\\mathbb N','\\eps':'\\varepsilon','\\dd':'\\,\\mathrm d','\\argmin':'\\operatorname*{arg\\,min}','\\argmax':'\\operatorname*{arg\\,max}','\\abs':'\\left\\lvert #1\\right\\rvert','\\norm':'\\left\\lVert #1\\right\\rVert'};
 const cached=new Map();
 let decorationsPromise;
-function chapterDecorations(){return decorationsPromise ||= Promise.all([fetch('./content/lecture-slides.json?v=20261017-4').then(r=>r.json()),fetch('./content/case-cards.json?v=20261017-4').then(r=>r.json()),fetch('./content/lab-specs.json?v=20261017-4').then(r=>r.json()),fetch('./content/business-cases.json?v=20261017-4').then(r=>r.json())]).then(([slides,cases,specs,business])=>({slides,cases,snippets:specs.snippets,business}));}
-async function doc(id){if(!cached.has(id)){const r=await fetch('./content/'+encodeURIComponent(id)+'.json?v=20261024-1');if(!r.ok)throw new Error('找不到这份课程资料');cached.set(id,await r.json());}return cached.get(id);}
+function chapterDecorations(){return decorationsPromise ||= Promise.all([fetch('./content/lecture-slides.json?v=20261024-2').then(r=>r.json()),fetch('./content/case-cards.json?v=20261024-2').then(r=>r.json()),fetch('./content/lab-specs.json?v=20261017-4').then(r=>r.json()),fetch('./content/business-cases.json?v=20261024-2').then(r=>r.json())]).then(([slides,cases,specs,business])=>({slides,cases,snippets:specs.snippets,business}));}
+async function doc(id){if(!cached.has(id)){const r=await fetch('./content/'+encodeURIComponent(id)+'.json?v=20261024-2');if(!r.ok)throw new Error('找不到这份课程资料');cached.set(id,await r.json());}return cached.get(id);}
 function chapterLink(c){return `<a href="#/chapter/${c.id}"><span class="chapter-number">${/^\d/.test(c.id)?c.id.slice(0,2):'↗'}</span><span>${esc(c.title)}</span><span class="row-arrow">→</span></a>`;}
 function buildNav(){
  const core=catalog.chapters.filter(c=>/^\d/.test(c.id));
@@ -48,7 +48,7 @@ async function chapterPage(id,version){
  const [d,decorations,knowledge]=await Promise.all([doc(id),chapterDecorations(),loadKnowledgeMap(id)]);if(version!==renderVersion)return;
  const chapterDecks=Object.entries(decorations.slides).filter(([key,deck])=>(deck.chapter||key)===id).map(([key,deck],i)=>({...deck,id:key,sectionId:i?'slides-'+deck.lectureNumber:'slides'}));
  title(d.title);const core=catalog.chapters.filter(c=>/^\d/.test(c.id));const idx=core.findIndex(c=>c.id===id);const labs=experiments.filter(e=>e.chapter===id);
- main.innerHTML=`<div class="breadcrumb"><a href="#/">课程讲义</a> / ${d.kind==='textbook'?'课程章节':'课程资料'}</div><div class="chapter-kicker">${/^\d/.test(id)?`第 ${Number(id.slice(0,2))} ${d.kind==='textbook'?'章':'单元'}`:'课程阅读'}</div><h1>${esc(d.title)}</h1><div class="article-actions">${labs.length?`<a href="#/lab/${labs[0].id}">▶ 运行本章实验</a>`:''}${chapterDecks.map(deck=>`<a class="slides-launch" href="#/chapter/${id}?anchor=${deck.sectionId}">${chapterDecks.length>1?`第${deck.lectureNumber}讲幻灯片`:'授课幻灯片'} <span>${deck.slides.length} 页</span> ↗</a>`).join('')}<button class="text-button print-page">打印本页</button></div>${chapterDecks.map(deck=>lectureSlidesHtml(deck)).join('')}<article class="prose">${d.html}</article>${chapterBusinessCasesHtml(id,decorations.business)}${labs.length?`<section class="chapter-labs"><h2>本章交互实验</h2>${labs.map(e=>`<a href="#/lab/${e.id}"><span>▶</span><div><strong>${esc(e.title)}</strong><p>${esc(e.description)}</p></div><span>→</span></a>`).join('')}</section>`:''}<div class="chapter-pagination">${idx>0?`<a href="#/chapter/${core[idx-1].id}"><small>上一章</small>${esc(core[idx-1].title)}</a>`:'<span></span>'}${idx>=0&&idx<core.length-1?`<a href="#/chapter/${core[idx+1].id}"><small>下一章 →</small>${esc(core[idx+1].title)}</a>`:''}</div>${footer()}`;
+ main.innerHTML=`<div class="breadcrumb"><a href="#/">课程讲义</a> / ${d.kind==='textbook'?'课程章节':'课程资料'}</div><div class="chapter-kicker">${/^\d/.test(id)?`第 ${Number(id.slice(0,2))} ${d.kind==='textbook'?'章':'单元'}`:'课程阅读'}</div><h1>${esc(d.title)}</h1><div class="article-actions">${labs.length?`<a href="#/lab/${labs[0].id}">▶ 运行本章实验</a>`:''}${chapterDecks.map(deck=>`<a class="slides-launch" href="#/chapter/${id}?anchor=${deck.sectionId}">${chapterDecks.length>1?`第${deck.lectureNumber}讲幻灯片`:'授课幻灯片'} <span>${deck.slides.length} 页</span> ↗</a>`).join('')}<button class="text-button print-page">打印本页</button></div>${chapterDecks.map(deck=>lectureSlidesHtml(deck)).join('')}<article class="prose${knowledge?' readable-lecture':''}">${d.html}</article>${chapterBusinessCasesHtml(id,decorations.business)}${labs.length?`<section class="chapter-labs"><h2>本章交互实验</h2>${labs.map(e=>`<a href="#/lab/${e.id}"><span>▶</span><div><strong>${esc(e.title)}</strong><p>${esc(e.description)}</p></div><span>→</span></a>`).join('')}</section>`:''}<div class="chapter-pagination">${idx>0?`<a href="#/chapter/${core[idx-1].id}"><small>上一章</small>${esc(core[idx-1].title)}</a>`:'<span></span>'}${idx>=0&&idx<core.length-1?`<a href="#/chapter/${core[idx+1].id}"><small>下一章 →</small>${esc(core[idx+1].title)}</a>`:''}</div>${footer()}`;
  const article=main.querySelector('.prose');decorateEnterpriseCases(article,id,decorations.cases);decorateKnowledgeCases(main,id,knowledge);initFigureZoom(article,main);
  typeset();main.querySelectorAll('.lesson-slides').forEach(initLectureSlides);main.querySelector('.print-page').onclick=()=>window.print();
  for(const pre of main.querySelectorAll('.prose pre')){
@@ -88,7 +88,7 @@ document.querySelector('.menu').onclick=()=>setSidebarOpen(!sidebar.classList.co
 document.querySelector('.sidebar-backdrop').onclick=()=>setSidebarOpen(false);
 window.matchMedia('(min-width:981px)').addEventListener('change',e=>{if(e.matches)setSidebarOpen(false);});
 document.addEventListener('keydown',e=>{if(e.key==='Escape'){setSidebarOpen(false);}});
-try{const r=await fetch('./content/catalog.json?v=20261024-1');if(!r.ok)throw new Error('课程目录加载失败，请刷新重试。');catalog=await r.json();buildNav();initCourseSearch(catalog);window.addEventListener('hashchange',route);await route();}catch(e){main.innerHTML=`<h1>课程内容暂时无法加载</h1><p>${esc(e.message)}</p><button onclick="location.reload()">重新加载</button>`;}
+try{const r=await fetch('./content/catalog.json?v=20261024-2');if(!r.ok)throw new Error('课程目录加载失败，请刷新重试。');catalog=await r.json();buildNav();initCourseSearch(catalog);window.addEventListener('hashchange',route);await route();}catch(e){main.innerHTML=`<h1>课程内容暂时无法加载</h1><p>${esc(e.message)}</p><button onclick="location.reload()">重新加载</button>`;}
 // Optional WebMCP navigation uses the same routes and visible state as the interface.
 const context=document.modelContext;
 if(context?.registerTool){

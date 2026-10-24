@@ -130,7 +130,7 @@
   },
   "conceptLinks": {
     "source": "content-source/concept-links/knowledge.json",
-    "sha256": "3290b74ab792569c0bb90be3402f2e897f3f929c92b73bd8b0380423ddeac3bf",
+    "sha256": "1058a9d329d82671966c2344d6b0ad7a2afcf6c546a6d3d2e8ae3b453295e0e6",
     "build": "scripts/build-concept-links.py",
     "chapters": [
       "01_intro",
@@ -138,5 +138,40 @@
     ],
     "concepts": 189,
     "background": 73
+  },
+  "readabilityEdition": {
+    "date": "2026-10-24",
+    "baseline": "4836fc8",
+    "chapters": [
+      "01_intro",
+      "02_enterprise_data_model"
+    ],
+    "build": "scripts/build-readable-lectures.py",
+    "sources": [
+      {
+        "path": "content-source/readability-20261024/config.json",
+        "sha256": "ae1143dd800793299d0adad9f0252459c405966af37f2be6a39a87ab4e378e1a"
+      },
+      {
+        "path": "content-source/readability-20261024/chapters/01_intro.json",
+        "sha256": "bab6600b8c0c918b7d185f9320741882efe6cb6c667f9657b95b59bae9434983"
+      },
+      {
+        "path": "content-source/readability-20261024/chapters/02_enterprise_data_model.json",
+        "sha256": "1a98e32a393edd4c1871ce273ad3b2d00ce6841bba7021edb8230bd8c580b628"
+      },
+      {
+        "path": "content-source/readability-20261024/business-cases.json",
+        "sha256": "86bd27dea4170bea5f82549b87b855d7b3cc5d8366f76dd842780279c6f8a903"
+      },
+      {
+        "path": "content-source/readability-20261024/case-cards.json",
+        "sha256": "b92aee0c594c91cf81d765ec05baeb8a159b47584ac6f622c54ba8557611e00b"
+      },
+      {
+        "path": "content-source/concept-links/knowledge.json",
+        "sha256": "1058a9d329d82671966c2344d6b0ad7a2afcf6c546a6d3d2e8ae3b453295e0e6"
+      }
+    ]
   }
 }
