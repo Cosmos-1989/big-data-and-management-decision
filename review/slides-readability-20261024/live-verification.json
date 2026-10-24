@@ -1,0 +1,132 @@
+{
+  "canonicalHomeMatches": true,
+  "canonicalHomeSha256": "9979f13c1c0972da3c5dfeb6cd833fd9809b0651e0dfe4f18f7016b6df28001a",
+  "checkedAt": "2026-10-24T03:52:35.752497+00:00",
+  "publishedRevision": "3961b14cde3ad6288a5443acc8a10f49615fb51e",
+  "tls": "curl default certificate validation enabled; no insecure override",
+  "files": [
+    {
+      "path": "index.html",
+      "status": 200,
+      "url": "https://datasci.biz/index.html?verify=3961b14",
+      "bytes": 6219,
+      "sha256": "9979f13c1c0972da3c5dfeb6cd833fd9809b0651e0dfe4f18f7016b6df28001a",
+      "localMatches": true
+    },
+    {
+      "path": "app.js",
+      "status": 200,
+      "url": "https://datasci.biz/app.js?verify=3961b14",
+      "bytes": 19841,
+      "sha256": "178f81a0079868d94a1bbdc385c60be5c6905449b0c41f8189e3e1820bb10439",
+      "localMatches": true
+    },
+    {
+      "path": "slides.js",
+      "status": 200,
+      "url": "https://datasci.biz/slides.js?verify=3961b14",
+      "bytes": 15211,
+      "sha256": "a589f23e3e860092f47252cd46a05cdc240e5651d566cc334fe86c2d3f7c0a75",
+      "localMatches": true
+    },
+    {
+      "path": "slides-refined.css",
+      "status": 200,
+      "url": "https://datasci.biz/slides-refined.css?verify=3961b14",
+      "bytes": 24721,
+      "sha256": "5bd4ba3e08fabb94d56bbfd5436ae33e3a951c53218c56a3a51810472b92acd9",
+      "localMatches": true
+    },
+    {
+      "path": "slide-diagrams.js",
+      "status": 200,
+      "url": "https://datasci.biz/slide-diagrams.js?verify=3961b14",
+      "bytes": 9441,
+      "sha256": "bbcd97f636775d7cb176573564eb3649d135eec8e2ee254143e4181a59dafa4e",
+      "localMatches": true
+    },
+    {
+      "path": "content/02_enterprise_data_model.json",
+      "status": 200,
+      "url": "https://datasci.biz/content/02_enterprise_data_model.json?verify=3961b14",
+      "bytes": 354026,
+      "sha256": "3f7f6ccd8e7b2224c27cd54cc2f1ba7763328bca57bc4076fce5f436dec10dc2",
+      "localMatches": true
+    },
+    {
+      "path": "content/03_sql_kpi.json",
+      "status": 200,
+      "url": "https://datasci.biz/content/03_sql_kpi.json?verify=3961b14",
+      "bytes": 81058,
+      "sha256": "d9c53599e93d8a6de58d2f5fb8fa5bb954c89a6fe3169fa94cb7c0cee8055629",
+      "localMatches": true
+    },
+    {
+      "path": "content/lecture-slides.json",
+      "status": 200,
+      "url": "https://datasci.biz/content/lecture-slides.json?verify=3961b14",
+      "bytes": 1552842,
+      "sha256": "e7efb107aec07f6a353f07c631da55ea7b2a8e61069469c86a768358f54caa84",
+      "localMatches": true
+    },
+    {
+      "path": "content/lecture-terms.json",
+      "status": 200,
+      "url": "https://datasci.biz/content/lecture-terms.json?verify=3961b14",
+      "bytes": 135689,
+      "sha256": "0bf448025808329e4b79e9e9800dca488318de2290978139c46acde16b19ecb1",
+      "localMatches": true
+    },
+    {
+      "path": "content/source-manifest.json",
+      "status": 200,
+      "url": "https://datasci.biz/content/source-manifest.json?verify=3961b14",
+      "bytes": 8373,
+      "sha256": "3688c9abb1c4456adb02bbde83a6055c6794cfd07b688f13c7a664ad80498b46",
+      "localMatches": true
+    },
+    {
+      "path": "assets/fonts/course-song.css",
+      "status": 200,
+      "url": "https://datasci.biz/assets/fonts/course-song.css?verify=3961b14",
+      "bytes": 325,
+      "sha256": "b810af08bc44dc11e7ea98411d5f81c7d08d2563a2a1c17ab108915c842c39fa",
+      "localMatches": true
+    },
+    {
+      "path": "CNAME",
+      "status": 200,
+      "url": "https://datasci.biz/CNAME?verify=3961b14",
+      "bytes": 11,
+      "sha256": "0447c4b8cbdc34baf11c6d5975907b1fabb870a8aa54261212566b2773d7cf5a",
+      "localMatches": true
+    }
+  ],
+  "redirects": [
+    {
+      "requested": "http://datasci.biz/",
+      "final": "https://datasci.biz/",
+      "status": 200,
+      "canonical": true
+    },
+    {
+      "requested": "https://www.datasci.biz/",
+      "final": "https://datasci.biz/",
+      "status": 200,
+      "canonical": true
+    },
+    {
+      "requested": "http://www.datasci.biz/",
+      "final": "https://datasci.biz/",
+      "status": 200,
+      "canonical": true
+    },
+    {
+      "requested": "https://cosmos-1989.github.io/big-data-and-management-decision/",
+      "final": "https://datasci.biz/",
+      "status": 200,
+      "canonical": true
+    }
+  ],
+  "passed": true
+}
