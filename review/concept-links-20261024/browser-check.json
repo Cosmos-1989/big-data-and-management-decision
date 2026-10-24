@@ -1,0 +1,26 @@
+{
+  "checkedAt": "2026-10-24T01:24:36.490Z",
+  "live": true,
+  "exampleConcepts": [
+    "业务对象",
+    "关系约束",
+    "事实粒度"
+  ],
+  "localRoundTripsPassed": true,
+  "liveFactGrainRoundTripPassed": true,
+  "nl2sql": {
+    "url": "https://datasci.biz/#/chapter/02_enterprise_data_model?anchor=term-nl2sql&from=02_enterprise_data_model&at=knowledge-ref-0157",
+    "definition": "Natural Language to SQL，指依据自然语言问题及数据库结构生成SQL查询的技术任务。结果仍须核查业务口径、连接关系和访问权限。资料来源"
+  },
+  "shopify": {
+    "url": "https://datasci.biz/#/chapter/02_enterprise_data_model?anchor=term-shopify&from=02_enterprise_data_model&at=knowledge-runtime-2-1",
+    "definition": "提供电商平台及开发接口的企业；本讲使用其对象全局标识规则说明对象身份和唯一性范围。资料来源"
+  },
+  "caseReturnUrl": "https://datasci.biz/#/chapter/02_enterprise_data_model?anchor=knowledge-runtime-2-1",
+  "consoleErrors": [],
+  "mobileViewport": {
+    "width": 390,
+    "height": 844,
+    "definitionAndReturnPassed": true
+  }
+}

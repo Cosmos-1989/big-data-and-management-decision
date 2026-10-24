@@ -1,0 +1,117 @@
+{
+  "checkedAtUtc": "2026-10-24T01:24:05.079247+00:00",
+  "base": "https://datasci.biz/",
+  "pagesRevision": "43c11f4669c513cea258caf0a922d171178f51d4",
+  "strictTlsValidation": true,
+  "files": [
+    {
+      "path": "index.html",
+      "publicSha256": "bd250077c136bed2aa0cfa1cb90dd4268c1a83ae647060a64dc0ac2a8c1e9f9d",
+      "localSha256": "bd250077c136bed2aa0cfa1cb90dd4268c1a83ae647060a64dc0ac2a8c1e9f9d",
+      "match": true
+    },
+    {
+      "path": "app.js",
+      "publicSha256": "7845fdda98c7da1a2822a093a114d521e38e16e845c3afe1cb96a946b3831dbe",
+      "localSha256": "7845fdda98c7da1a2822a093a114d521e38e16e845c3afe1cb96a946b3831dbe",
+      "match": true
+    },
+    {
+      "path": "knowledge-links.js",
+      "publicSha256": "f0199833ff807b7282664e6bba0e0c16e8e439b7c8f155a6cbdb93db3d1d1b1a",
+      "localSha256": "f0199833ff807b7282664e6bba0e0c16e8e439b7c8f155a6cbdb93db3d1d1b1a",
+      "match": true
+    },
+    {
+      "path": "knowledge-links.css",
+      "publicSha256": "7de51ad2931900271d35a5bc0e754fbaf73435dae425f374767dabf1840df60d",
+      "localSha256": "7de51ad2931900271d35a5bc0e754fbaf73435dae425f374767dabf1840df60d",
+      "match": true
+    },
+    {
+      "path": "content/concept-map.json",
+      "publicSha256": "85843711ffce0b7a548fffcfeb2badce4c80e969448f3ed32f898502925a990e",
+      "localSha256": "85843711ffce0b7a548fffcfeb2badce4c80e969448f3ed32f898502925a990e",
+      "match": true
+    },
+    {
+      "path": "content/01_intro.json",
+      "publicSha256": "060265f924fc36f50a584e6488ceff160aedbe9b7918465ee4a14918316b6f25",
+      "localSha256": "060265f924fc36f50a584e6488ceff160aedbe9b7918465ee4a14918316b6f25",
+      "match": true
+    },
+    {
+      "path": "content/02_enterprise_data_model.json",
+      "publicSha256": "f5ba21083b201997b7f9739e2e90ce19c787e0609778406c6f262139b7629940",
+      "localSha256": "f5ba21083b201997b7f9739e2e90ce19c787e0609778406c6f262139b7629940",
+      "match": true
+    },
+    {
+      "path": "content/catalog.json",
+      "publicSha256": "09bed985f0157a3ee671a026e300023e026cfa01c7180b3690a8fd0fa64ecc0d",
+      "localSha256": "09bed985f0157a3ee671a026e300023e026cfa01c7180b3690a8fd0fa64ecc0d",
+      "match": true
+    },
+    {
+      "path": "content/source-manifest.json",
+      "publicSha256": "4c113fdede261d636f56d5abe957ed9cb1e239184e1a618c24578ab5b105d67a",
+      "localSha256": "4c113fdede261d636f56d5abe957ed9cb1e239184e1a618c24578ab5b105d67a",
+      "match": true
+    },
+    {
+      "path": "slides.js",
+      "publicSha256": "a589f23e3e860092f47252cd46a05cdc240e5651d566cc334fe86c2d3f7c0a75",
+      "localSha256": "a589f23e3e860092f47252cd46a05cdc240e5651d566cc334fe86c2d3f7c0a75",
+      "match": true
+    },
+    {
+      "path": "content/lecture-slides.json",
+      "publicSha256": "5bd9e277a302419905a2c33e42c708301f134a3b1a052a529d2aae9f9268eebd",
+      "localSha256": "5bd9e277a302419905a2c33e42c708301f134a3b1a052a529d2aae9f9268eebd",
+      "match": true
+    },
+    {
+      "path": "content/business-cases.json",
+      "publicSha256": "5e1283cec7a1b3074508208820c0b495e24a64b239cd6fd6b777e485d42744ee",
+      "localSha256": "5e1283cec7a1b3074508208820c0b495e24a64b239cd6fd6b777e485d42744ee",
+      "match": true
+    },
+    {
+      "path": "content/business-casebook.json",
+      "publicSha256": "cacadc2dcc8bf51ae7d21a934f142717efcd910c7caa7de9d3d5d42602fd1d61",
+      "localSha256": "cacadc2dcc8bf51ae7d21a934f142717efcd910c7caa7de9d3d5d42602fd1d61",
+      "match": true
+    },
+    {
+      "path": "content/lecture-terms.json",
+      "publicSha256": "fcfd3789e9ecdaf59fe227b75b2128dbaac1149fe2c55855229050852c1df150",
+      "localSha256": "fcfd3789e9ecdaf59fe227b75b2128dbaac1149fe2c55855229050852c1df150",
+      "match": true
+    },
+    {
+      "path": "assets/fonts/course-song.css",
+      "publicSha256": "b810af08bc44dc11e7ea98411d5f81c7d08d2563a2a1c17ab108915c842c39fa",
+      "localSha256": "b810af08bc44dc11e7ea98411d5f81c7d08d2563a2a1c17ab108915c842c39fa",
+      "match": true
+    },
+    {
+      "path": "assets/fonts/course-song-regular.woff2",
+      "publicSha256": "428f5ce2e170e6f55f4b5620a8d8adb0f3a0656ef8fe7589af4da6ac33f3c68d",
+      "localSha256": "428f5ce2e170e6f55f4b5620a8d8adb0f3a0656ef8fe7589af4da6ac33f3c68d",
+      "match": true
+    },
+    {
+      "path": "assets/fonts/course-song-bold.woff2",
+      "publicSha256": "a8f425ae7a1d5361c97a61ba50174670021c78835643a869bab43ee678222760",
+      "localSha256": "a8f425ae7a1d5361c97a61ba50174670021c78835643a869bab43ee678222760",
+      "match": true
+    },
+    {
+      "path": "CNAME",
+      "publicSha256": "0447c4b8cbdc34baf11c6d5975907b1fabb870a8aa54261212566b2773d7cf5a",
+      "localSha256": "0447c4b8cbdc34baf11c6d5975907b1fabb870a8aa54261212566b2773d7cf5a",
+      "match": true
+    }
+  ],
+  "allMatched": true
+}

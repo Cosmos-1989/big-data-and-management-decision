@@ -20,3 +20,12 @@
 统计：{"concepts": 189, "background": 73, "links": 827, "supplementBlocks": 19, "forwardReferences": 0}。
 
 内容依据与逐项审查见audit-01.md、audit-02.md及final-semantic-audit.md；来源及匹配范围保存在content-source/concept-links/knowledge.json。
+
+## 公开网站复核
+
+2026-10-24 已发布并复核 `https://datasci.biz/`：
+
+- GitHub Pages 部署 `43c11f4669c513cea258caf0a922d171178f51d4` 成功，运行编号 `40049501913`。
+- 通过严格 HTTPS 校验读取的18个核心文件与本地逐字节一致，包含前两讲、概念源、导航代码、样式、原幻灯片、案例、字体及 CNAME。
+- 线上实测第二讲“事实粒度”跳至第一讲精确定义，再回到第二讲原段落；NL2SQL跳至第二讲文末释义；Shopify案例中的公司名跳至释义并返回该案例。
+- 浏览器控制台无错误，保留 `datasci.biz` 主域名配置。线上截图与导航记录见 `live-definition.png`、`live-links.png`、`browser-check.json`；文件哈希与部署证据见 `publication.json`、`deployment.json`。
