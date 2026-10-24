@@ -1,0 +1,27 @@
+{
+  "lecture02": {
+    "conclusions": 0,
+    "documentWidth": 390,
+    "mathErrors": 0,
+    "page": "4",
+    "pageHeight": 920.4921875,
+    "pages": 47,
+    "promptOpen": true,
+    "readable": true,
+    "viewportHeight": 920,
+    "width": 390
+  },
+  "lecture03": {
+    "bodyFont": "17px",
+    "conclusions": 0,
+    "documentWidth": 390,
+    "mathErrors": 0,
+    "page": "26",
+    "pageHeight": 830.0390625,
+    "pages": 52,
+    "readable": true,
+    "title": "480 分钟班次的 OEE",
+    "viewportHeight": 830,
+    "width": 390
+  }
+}

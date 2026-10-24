@@ -1,0 +1,35 @@
+{
+  "decks": {
+    "02_enterprise_data_model": {
+      "pages": 47,
+      "editedPages": 47,
+      "conclusionPanels": 0,
+      "diagrams": 15,
+      "cases": 10
+    },
+    "03_sql_kpi": {
+      "pages": 52,
+      "editedPages": 52,
+      "conclusionPanels": 0,
+      "diagrams": 14,
+      "cases": 10
+    }
+  },
+  "unmodifiedDecks": [
+    "01_intro",
+    "04_data_quality",
+    "05_statistics_dashboard",
+    "06_ab_testing",
+    "07_prediction",
+    "08_causality",
+    "09_optimization",
+    "10_process_mining",
+    "11_modern_data_platform",
+    "12_mlops",
+    "13_ontology_action_scenario",
+    "14_ai_agent",
+    "final_project",
+    "final_project_defense"
+  ],
+  "errors": []
+}

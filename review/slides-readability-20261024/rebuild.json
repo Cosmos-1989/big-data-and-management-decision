@@ -1,0 +1,8 @@
+{
+  "idempotent": true,
+  "files": {
+    "lecture-slides.json": "e7efb107aec07f6a353f07c631da55ea7b2a8e61069469c86a768358f54caa84",
+    "lecture-terms.json": "0bf448025808329e4b79e9e9800dca488318de2290978139c46acde16b19ecb1",
+    "source-manifest.json": "3688c9abb1c4456adb02bbde83a6055c6794cfd07b688f13c7a664ad80498b46"
+  }
+}

@@ -12,7 +12,7 @@ const home=main.innerHTML;let catalog,currentRoute='',renderVersion=0;
 const macros={'\\E':'\\mathbb E','\\Prob':'\\mathbb P','\\R':'\\mathbb R','\\N':'\\mathbb N','\\eps':'\\varepsilon','\\dd':'\\,\\mathrm d','\\argmin':'\\operatorname*{arg\\,min}','\\argmax':'\\operatorname*{arg\\,max}','\\abs':'\\left\\lvert #1\\right\\rvert','\\norm':'\\left\\lVert #1\\right\\rVert'};
 const cached=new Map();
 let decorationsPromise;
-function chapterDecorations(){return decorationsPromise ||= Promise.all([fetch('./content/lecture-slides.json?v=20261024-3').then(r=>r.json()),fetch('./content/case-cards.json?v=20261024-3').then(r=>r.json()),fetch('./content/lab-specs.json?v=20261017-4').then(r=>r.json()),fetch('./content/business-cases.json?v=20261024-3').then(r=>r.json())]).then(([slides,cases,specs,business])=>({slides,cases,snippets:specs.snippets,business}));}
+function chapterDecorations(){return decorationsPromise ||= Promise.all([fetch('./content/lecture-slides.json?v=20261024-4').then(r=>r.json()),fetch('./content/case-cards.json?v=20261024-3').then(r=>r.json()),fetch('./content/lab-specs.json?v=20261017-4').then(r=>r.json()),fetch('./content/business-cases.json?v=20261024-3').then(r=>r.json())]).then(([slides,cases,specs,business])=>({slides,cases,snippets:specs.snippets,business}));}
 async function doc(id){if(!cached.has(id)){const r=await fetch('./content/'+encodeURIComponent(id)+'.json?v=20261024-3');if(!r.ok)throw new Error('找不到这份课程资料');cached.set(id,await r.json());}return cached.get(id);}
 function chapterLink(c){return `<a href="#/chapter/${c.id}"><span class="chapter-number">${/^\d/.test(c.id)?c.id.slice(0,2):'↗'}</span><span>${esc(c.title)}</span><span class="row-arrow">→</span></a>`;}
 function buildNav(){

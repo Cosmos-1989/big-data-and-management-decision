@@ -1,0 +1,37 @@
+{
+  "deckSha256": "df7d30b6a137eca1610549584165cd75bca87de537b68a16450c3f7ca4629e4c",
+  "pages": {
+    "01_intro": 50,
+    "02_enterprise_data_model": 47,
+    "03_sql_kpi": 52,
+    "04_data_quality": 55,
+    "05_statistics_dashboard": 59,
+    "06_ab_testing": 58,
+    "07_prediction": 55,
+    "08_causality": 57,
+    "09_optimization": 50,
+    "10_process_mining": 59,
+    "11_modern_data_platform": 20,
+    "12_mlops": 20,
+    "13_ontology_action_scenario": 20,
+    "14_ai_agent": 65,
+    "final_project": 20,
+    "final_project_defense": 25
+  },
+  "unmodifiedDeckSha256": {
+    "01_intro": "c723f2dc3c00e3792a790cd81ce7768c1e9e3cb6fd5911aebf14e1765783ef5e",
+    "04_data_quality": "e6b1c9f2007796456f1e1977127f0d328a9203763bfdb889a00c27f2402a0670",
+    "05_statistics_dashboard": "bf6696133ea2d3d6ee38674d78d160b99e424968ff553f4cd444676d36905cec",
+    "06_ab_testing": "36df79fbedf9e419589b3f0a1b952e4eea5f6f1b77b866242b546620ff5b0d3e",
+    "07_prediction": "275a58686e39b8eb4cf222954eda65b8ef288c9c6fdbace5d4f51a910572276e",
+    "08_causality": "9498782821ed5edd228d4ed227f94bff2a5e15dcdeb8244ee5b2239220103ad7",
+    "09_optimization": "e1da3bb0ea91c2c55bbcb00bc311f2fa039f41d94d999dd1af36ac43da4f720c",
+    "10_process_mining": "a45faa78ae28ef89b8c28e0e8d2518bd5a851a04de73dd5624b2b00b9f470af9",
+    "11_modern_data_platform": "2d375e702a3c35b720ee8807395729f6e1309420b9d44cfd24a90bc0fe43c552",
+    "12_mlops": "87f710a0ba824ef68ceb680ea2be22ff1c6f13319ee7cc0d40d955c3ea00a701",
+    "13_ontology_action_scenario": "ee68de04c9ed32806b998108ead2da11b43c8848e458be8c28db78b8df18cc28",
+    "14_ai_agent": "a3b0de1a136b9d26f1b78f2b58464af7d3a8c0dbad4809e527ca5b12b1a87c44",
+    "final_project": "9d22aa1a915204cfd0354e5b1d75b7a2da840a24ba76afe2fdb59dcca1367503",
+    "final_project_defense": "58c8ef51609b3436089f2a38fad5c1f72ec0b3ab3299223227afa01a716007d3"
+  }
+}

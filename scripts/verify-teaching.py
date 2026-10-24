@@ -135,7 +135,7 @@ report = {"decks": len(decks), "slides": sum(len(d["slides"]) for d in decks.val
           "cases": len(cases), "caseCountsByLesson": dict(sorted(counts.items())),
           "uniqueSourceUrls": len(source_uses), "reusedSourcesForHumanReview": {u: ids for u, ids in source_uses.items() if len(ids) > 1},
           "terms": term_report, "casePages": case_report, "baseline": baseline_report, "errors": errors}
-target = ROOT / "review/teaching-20261017/teaching-validation.json"
+target = Path(os.environ.get("BDM_TEACHING_REPORT", ROOT / "review/teaching-20261017/teaching-validation.json"))
 target.parent.mkdir(parents=True, exist_ok=True)
 target.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n")
 print(json.dumps({k: report[k] for k in ["decks", "slides", "cases", "caseCountsByLesson", "uniqueSourceUrls", "errors"]}, ensure_ascii=False, indent=2))

@@ -1,0 +1,565 @@
+[
+  {
+    "chapter": "02_enterprise_data_model",
+    "lesson": 2,
+    "term": "CRM",
+    "aliases": [
+      "客户关系管理"
+    ],
+    "firstSlideTitle": "统一身份与业务含义",
+    "definitionSlideTitle": "统一身份与业务含义",
+    "explanation": "记录客户身份、销售交互及服务过程的业务系统。"
+  },
+  {
+    "chapter": "02_enterprise_data_model",
+    "lesson": 2,
+    "term": "主键",
+    "aliases": [],
+    "firstSlideTitle": "数据模型与治理责任",
+    "definitionSlideTitle": "数据模型与治理责任",
+    "explanation": "记录的唯一标识。"
+  },
+  {
+    "chapter": "02_enterprise_data_model",
+    "lesson": 2,
+    "term": "事实粒度",
+    "aliases": [],
+    "firstSlideTitle": "数据模型与治理责任",
+    "definitionSlideTitle": "数据模型与治理责任",
+    "explanation": "每行代表哪项业务事实。"
+  },
+  {
+    "chapter": "02_enterprise_data_model",
+    "lesson": 2,
+    "term": "数据血缘",
+    "aliases": [],
+    "firstSlideTitle": "数据模型与治理责任",
+    "definitionSlideTitle": "数据模型与治理责任",
+    "explanation": "记录源数据与转换步骤。"
+  },
+  {
+    "chapter": "02_enterprise_data_model",
+    "lesson": 2,
+    "term": "元数据",
+    "aliases": [],
+    "firstSlideTitle": "数据模型与治理责任",
+    "definitionSlideTitle": "数据模型与治理责任",
+    "explanation": "描述结构、含义、来源、责任与版本。"
+  },
+  {
+    "chapter": "02_enterprise_data_model",
+    "lesson": 2,
+    "term": "AI",
+    "aliases": [
+      "人工智能"
+    ],
+    "firstSlideTitle": "企业 AI 系统的六项职能",
+    "definitionSlideTitle": "企业 AI 系统的六项职能",
+    "explanation": "以计算方法执行预测、生成或决策等任务。"
+  },
+  {
+    "chapter": "02_enterprise_data_model",
+    "lesson": 2,
+    "term": "快照",
+    "aliases": [],
+    "firstSlideTitle": "快照、模式与表格式",
+    "definitionSlideTitle": "快照、模式与表格式",
+    "explanation": "快照记录数据表在某个版本的状态。"
+  },
+  {
+    "chapter": "02_enterprise_data_model",
+    "lesson": 2,
+    "term": "模式",
+    "aliases": [],
+    "firstSlideTitle": "快照、模式与表格式",
+    "definitionSlideTitle": "快照、模式与表格式",
+    "explanation": "模式规定字段名称、类型及结构。"
+  },
+  {
+    "chapter": "02_enterprise_data_model",
+    "lesson": 2,
+    "term": "模式演化",
+    "aliases": [],
+    "firstSlideTitle": "快照、模式与表格式",
+    "definitionSlideTitle": "快照、模式与表格式",
+    "explanation": "在兼容规则下修改字段名称、类型及结构。"
+  },
+  {
+    "chapter": "02_enterprise_data_model",
+    "lesson": 2,
+    "term": "开放表格式",
+    "aliases": [],
+    "firstSlideTitle": "快照、模式与表格式",
+    "definitionSlideTitle": "快照、模式与表格式",
+    "explanation": "规定文件、快照与模式演化的组织方式，供兼容引擎读取。"
+  },
+  {
+    "chapter": "02_enterprise_data_model",
+    "lesson": 2,
+    "term": "对象存储",
+    "aliases": [],
+    "firstSlideTitle": "快照、模式与表格式",
+    "definitionSlideTitle": "快照、模式与表格式",
+    "explanation": "以带唯一标识的对象保存文件。"
+  },
+  {
+    "chapter": "02_enterprise_data_model",
+    "lesson": 2,
+    "term": "设备综合效率",
+    "aliases": [
+      "OEE"
+    ],
+    "firstSlideTitle": "存储、语义与权限",
+    "definitionSlideTitle": "存储、语义与权限",
+    "explanation": "良品理想工时占计划生产时间的比例。"
+  },
+  {
+    "chapter": "02_enterprise_data_model",
+    "lesson": 2,
+    "term": "实体",
+    "aliases": [],
+    "firstSlideTitle": "企业数据的六类语义",
+    "definitionSlideTitle": "企业数据的六类语义",
+    "explanation": "实体具有稳定身份，属性描述对象，关系表达对象联系。"
+  },
+  {
+    "chapter": "02_enterprise_data_model",
+    "lesson": 2,
+    "term": "超键",
+    "aliases": [],
+    "firstSlideTitle": "键与三类完整性约束",
+    "definitionSlideTitle": "键与三类完整性约束",
+    "explanation": "能在所有合法实例中唯一识别记录。"
+  },
+  {
+    "chapter": "02_enterprise_data_model",
+    "lesson": 2,
+    "term": "候选键",
+    "aliases": [],
+    "firstSlideTitle": "键与三类完整性约束",
+    "definitionSlideTitle": "键与三类完整性约束",
+    "explanation": "不可再删除任何属性的超键。"
+  },
+  {
+    "chapter": "02_enterprise_data_model",
+    "lesson": 2,
+    "term": "自然键",
+    "aliases": [],
+    "firstSlideTitle": "键与三类完整性约束",
+    "definitionSlideTitle": "键与三类完整性约束",
+    "explanation": "使用已有业务属性识别对象。"
+  },
+  {
+    "chapter": "02_enterprise_data_model",
+    "lesson": 2,
+    "term": "代理键",
+    "aliases": [],
+    "firstSlideTitle": "键与三类完整性约束",
+    "definitionSlideTitle": "键与三类完整性约束",
+    "explanation": "另行赋予的编号，仍须配合业务唯一性规则。"
+  },
+  {
+    "chapter": "02_enterprise_data_model",
+    "lesson": 2,
+    "term": "外键",
+    "aliases": [],
+    "firstSlideTitle": "键与三类完整性约束",
+    "definitionSlideTitle": "键与三类完整性约束",
+    "explanation": "把本表记录关联到另一表的键。"
+  },
+  {
+    "chapter": "02_enterprise_data_model",
+    "lesson": 2,
+    "term": "ER",
+    "aliases": [
+      "实体关系"
+    ],
+    "firstSlideTitle": "关系基数与模型层次",
+    "definitionSlideTitle": "关系基数与模型层次",
+    "explanation": "以对象、属性及关系表达业务结构。"
+  },
+  {
+    "chapter": "02_enterprise_data_model",
+    "lesson": 2,
+    "term": "函数依赖",
+    "aliases": [],
+    "firstSlideTitle": "函数依赖与第三范式",
+    "definitionSlideTitle": "函数依赖与第三范式",
+    "explanation": "相同决定属性的值必有相同被决定属性的值，适用于所有合法实例。"
+  },
+  {
+    "chapter": "02_enterprise_data_model",
+    "lesson": 2,
+    "term": "第三范式",
+    "aliases": [],
+    "firstSlideTitle": "函数依赖与第三范式",
+    "definitionSlideTitle": "函数依赖与第三范式",
+    "explanation": "每个非平凡函数依赖的决定项是超键，或被决定属性属于某一候选键。"
+  },
+  {
+    "chapter": "02_enterprise_data_model",
+    "lesson": 2,
+    "term": "事实表",
+    "aliases": [],
+    "firstSlideTitle": "事务模型与星型模型",
+    "definitionSlideTitle": "事务模型与星型模型",
+    "explanation": "以事件或状态保存分析所需业务事实。"
+  },
+  {
+    "chapter": "02_enterprise_data_model",
+    "lesson": 2,
+    "term": "维度",
+    "aliases": [],
+    "firstSlideTitle": "事务模型与星型模型",
+    "definitionSlideTitle": "事务模型与星型模型",
+    "explanation": "客户、产品、日期等说明分析角度的属性。"
+  },
+  {
+    "chapter": "02_enterprise_data_model",
+    "lesson": 2,
+    "term": "KPI",
+    "aliases": [
+      "关键绩效指标"
+    ],
+    "firstSlideTitle": "制造 KPI 的事实基础",
+    "definitionSlideTitle": "制造 KPI 的事实基础",
+    "explanation": "按规定口径衡量关键经营表现的量。"
+  },
+  {
+    "chapter": "02_enterprise_data_model",
+    "lesson": 2,
+    "term": "CT",
+    "aliases": [
+      "生产周期"
+    ],
+    "firstSlideTitle": "制造指标先固定测量对象",
+    "definitionSlideTitle": "制造指标先固定测量对象",
+    "explanation": "规定起点至完工的时长。"
+  },
+  {
+    "chapter": "02_enterprise_data_model",
+    "lesson": 2,
+    "term": "WIP",
+    "aliases": [
+      "在制品存量"
+    ],
+    "firstSlideTitle": "制造指标先固定测量对象",
+    "definitionSlideTitle": "制造指标先固定测量对象",
+    "explanation": "某时点已进入生产、尚未完成的对象数。"
+  },
+  {
+    "chapter": "02_enterprise_data_model",
+    "lesson": 2,
+    "term": "OTD",
+    "aliases": [
+      "准时交付率"
+    ],
+    "firstSlideTitle": "企业数据的六类语义",
+    "definitionSlideTitle": "企业数据的六类语义",
+    "explanation": "比较按承诺完成的对象与规定队列。"
+  },
+  {
+    "chapter": "02_enterprise_data_model",
+    "lesson": 2,
+    "term": "状态机",
+    "aliases": [],
+    "firstSlideTitle": "状态机与幂等请求",
+    "definitionSlideTitle": "状态机与幂等请求",
+    "explanation": "用明确的状态和允许转换描述操作。"
+  },
+  {
+    "chapter": "02_enterprise_data_model",
+    "lesson": 2,
+    "term": "幂等请求",
+    "aliases": [],
+    "firstSlideTitle": "状态机与幂等请求",
+    "definitionSlideTitle": "状态机与幂等请求",
+    "explanation": "重复提交同一操作时不产生额外业务效果。"
+  },
+  {
+    "chapter": "02_enterprise_data_model",
+    "lesson": 2,
+    "term": "语义层",
+    "aliases": [],
+    "firstSlideTitle": "语义层约束自然语言问数",
+    "definitionSlideTitle": "语义层约束自然语言问数",
+    "explanation": "把表、字段与业务对象及指标定义对应起来，供不同工具使用一致口径。"
+  },
+  {
+    "chapter": "02_enterprise_data_model",
+    "lesson": 2,
+    "term": "委托人",
+    "aliases": [],
+    "firstSlideTitle": "绩效合同：为何要同时考虑努力与风险",
+    "definitionSlideTitle": "绩效合同：为何要同时考虑努力与风险",
+    "explanation": "把任务交给代理人但不能完全观察其努力的一方。"
+  },
+  {
+    "chapter": "02_enterprise_data_model",
+    "lesson": 2,
+    "term": "代理人",
+    "aliases": [],
+    "firstSlideTitle": "绩效合同：为何要同时考虑努力与风险",
+    "definitionSlideTitle": "绩效合同：为何要同时考虑努力与风险",
+    "explanation": "接受任务并依据合同选择努力的一方。"
+  },
+  {
+    "chapter": "02_enterprise_data_model",
+    "lesson": 2,
+    "term": "风险厌恶",
+    "aliases": [],
+    "firstSlideTitle": "绩效合同：为何要同时考虑努力与风险",
+    "definitionSlideTitle": "绩效合同：为何要同时考虑努力与风险",
+    "explanation": "在期望收入相同的情况下倾向于较少收入波动。"
+  },
+  {
+    "chapter": "02_enterprise_data_model",
+    "lesson": 2,
+    "term": "CE",
+    "aliases": [
+      "确定性等价"
+    ],
+    "firstSlideTitle": "产出信号、合同与风险成本",
+    "definitionSlideTitle": "产出信号、合同与风险成本",
+    "explanation": "与随机净收入带来相同期望效用的确定金额。"
+  },
+  {
+    "chapter": "02_enterprise_data_model",
+    "lesson": 2,
+    "term": "Ontology",
+    "aliases": [
+      "业务本体"
+    ],
+    "firstSlideTitle": "对象关系与元数据目录",
+    "definitionSlideTitle": "对象关系与元数据目录",
+    "explanation": "规定业务对象、属性、关系及相关规则。"
+  },
+  {
+    "chapter": "03_sql_kpi",
+    "lesson": 3,
+    "term": "SQL",
+    "aliases": [],
+    "firstSlideTitle": "查询正确性与业务语义",
+    "definitionSlideTitle": "查询正确性与业务语义",
+    "explanation": "结构化查询语言声明要查询的数据及其条件，由数据库选择执行步骤。"
+  },
+  {
+    "chapter": "03_sql_kpi",
+    "lesson": 3,
+    "term": "粒度",
+    "aliases": [],
+    "firstSlideTitle": "查询正确性与业务语义",
+    "definitionSlideTitle": "查询正确性与业务语义",
+    "explanation": "一行代表什么事实。"
+  },
+  {
+    "chapter": "03_sql_kpi",
+    "lesson": 3,
+    "term": "主键",
+    "aliases": [],
+    "firstSlideTitle": "查询正确性与业务语义",
+    "definitionSlideTitle": "查询正确性与业务语义",
+    "explanation": "唯一标识该记录。"
+  },
+  {
+    "chapter": "03_sql_kpi",
+    "lesson": 3,
+    "term": "KPI",
+    "aliases": [
+      "关键绩效指标"
+    ],
+    "firstSlideTitle": "查询正确性与业务语义",
+    "definitionSlideTitle": "查询正确性与业务语义",
+    "explanation": "按统一对象、分子分母、时间、单位、权限和责任定义的关键经营量。"
+  },
+  {
+    "chapter": "03_sql_kpi",
+    "lesson": 3,
+    "term": "统计状态",
+    "aliases": [],
+    "firstSlideTitle": "SQL 的逻辑处理顺序",
+    "definitionSlideTitle": "SQL 的逻辑处理顺序",
+    "explanation": "为后续合并保存的和、计数等基础量。"
+  },
+  {
+    "chapter": "03_sql_kpi",
+    "lesson": 3,
+    "term": "关系代数",
+    "aliases": [],
+    "firstSlideTitle": "关系运算与事实集合",
+    "definitionSlideTitle": "关系运算与事实集合",
+    "explanation": "用一组作用于关系的运算表达查询。"
+  },
+  {
+    "chapter": "03_sql_kpi",
+    "lesson": 3,
+    "term": "多重集",
+    "aliases": [],
+    "firstSlideTitle": "SQL 的重复行语义",
+    "definitionSlideTitle": "SQL 的重复行语义",
+    "explanation": "允许相同取值重复出现，并保留出现次数。"
+  },
+  {
+    "chapter": "03_sql_kpi",
+    "lesson": 3,
+    "term": "GMV",
+    "aliases": [],
+    "firstSlideTitle": "Shopify GMV：交易规模与平台收入",
+    "definitionSlideTitle": "Shopify GMV：交易规模与平台收入",
+    "explanation": "平台促成的订单金额，按披露口径扣除退款并含运费、关税及增值税。"
+  },
+  {
+    "chapter": "03_sql_kpi",
+    "lesson": 3,
+    "term": "GPV",
+    "aliases": [],
+    "firstSlideTitle": "Shopify GMV：交易规模与平台收入",
+    "definitionSlideTitle": "Shopify GMV：交易规模与平台收入",
+    "explanation": "由Shopify Payments处理的GMV。"
+  },
+  {
+    "chapter": "03_sql_kpi",
+    "lesson": 3,
+    "term": "MRR",
+    "aliases": [],
+    "firstSlideTitle": "Shopify GMV：交易规模与平台收入",
+    "definitionSlideTitle": "Shopify GMV：交易规模与平台收入",
+    "explanation": "根据期末商户与订阅费率计算的月度经常性收入指标。"
+  },
+  {
+    "chapter": "03_sql_kpi",
+    "lesson": 3,
+    "term": "事实表",
+    "aliases": [],
+    "firstSlideTitle": "事实表与维度表",
+    "definitionSlideTitle": "事实表与维度表",
+    "explanation": "保存交易、事件或状态。"
+  },
+  {
+    "chapter": "03_sql_kpi",
+    "lesson": 3,
+    "term": "维度表",
+    "aliases": [],
+    "firstSlideTitle": "事实表与维度表",
+    "definitionSlideTitle": "事实表与维度表",
+    "explanation": "保存描述事实的属性。"
+  },
+  {
+    "chapter": "03_sql_kpi",
+    "lesson": 3,
+    "term": "外键",
+    "aliases": [],
+    "firstSlideTitle": "区域收入查询：逐层核查",
+    "definitionSlideTitle": "区域收入查询：逐层核查",
+    "explanation": "事实中的引用标识。"
+  },
+  {
+    "chapter": "03_sql_kpi",
+    "lesson": 3,
+    "term": "引用完整性",
+    "aliases": [],
+    "firstSlideTitle": "事实表与维度表",
+    "definitionSlideTitle": "事实表与维度表",
+    "explanation": "非空外键能够找到对应对象。"
+  },
+  {
+    "chapter": "03_sql_kpi",
+    "lesson": 3,
+    "term": "半连接",
+    "aliases": [],
+    "firstSlideTitle": "半连接：只判断是否存在匹配",
+    "definitionSlideTitle": "半连接：只判断是否存在匹配",
+    "explanation": "只保留左侧存在匹配的行，不因右侧多次匹配而复制左行。"
+  },
+  {
+    "chapter": "03_sql_kpi",
+    "lesson": 3,
+    "term": "OTD",
+    "aliases": [
+      "准时交付率"
+    ],
+    "firstSlideTitle": "指标定义的形式化表示",
+    "definitionSlideTitle": "指标定义的形式化表示",
+    "explanation": "规定队列中按承诺完成的对象占比。"
+  },
+  {
+    "chapter": "03_sql_kpi",
+    "lesson": 3,
+    "term": "CT",
+    "aliases": [
+      "生产周期"
+    ],
+    "firstSlideTitle": "良率与周期的权重",
+    "definitionSlideTitle": "良率与周期的权重",
+    "explanation": "预先规定的开始到完工时长。"
+  },
+  {
+    "chapter": "03_sql_kpi",
+    "lesson": 3,
+    "term": "OEE",
+    "aliases": [
+      "设备综合效率"
+    ],
+    "firstSlideTitle": "OEE 的分解与约分",
+    "definitionSlideTitle": "OEE 的分解与约分",
+    "explanation": "良品理想工时占计划生产时间的比例。"
+  },
+  {
+    "chapter": "03_sql_kpi",
+    "lesson": 3,
+    "term": "WIP",
+    "aliases": [
+      "在制品存量"
+    ],
+    "firstSlideTitle": "WIP 的时点与时间平均",
+    "definitionSlideTitle": "WIP 的时点与时间平均",
+    "explanation": "某时点已进入生产但尚未完成的对象数量。"
+  },
+  {
+    "chapter": "03_sql_kpi",
+    "lesson": 3,
+    "term": "NULL",
+    "aliases": [],
+    "firstSlideTitle": "NULL、三值逻辑与条件聚合",
+    "definitionSlideTitle": "NULL、三值逻辑与条件聚合",
+    "explanation": "当前未给出一个普通字段值，其业务原因须另行确定。"
+  },
+  {
+    "chapter": "03_sql_kpi",
+    "lesson": 3,
+    "term": "三值逻辑",
+    "aliases": [],
+    "firstSlideTitle": "NULL、三值逻辑与条件聚合",
+    "definitionSlideTitle": "NULL、三值逻辑与条件聚合",
+    "explanation": "SQL比较有真、假、未知三种结果。"
+  },
+  {
+    "chapter": "03_sql_kpi",
+    "lesson": 3,
+    "term": "变形测试",
+    "aliases": [],
+    "firstSlideTitle": "结果验证与不变量",
+    "definitionSlideTitle": "结果验证与不变量",
+    "explanation": "改变输入并核对输出应保持的关系，以检验程序。"
+  },
+  {
+    "chapter": "03_sql_kpi",
+    "lesson": 3,
+    "term": "参数绑定",
+    "aliases": [],
+    "firstSlideTitle": "受限执行与独立授权",
+    "definitionSlideTitle": "受限执行与独立授权",
+    "explanation": "把用户输入的数据值与SQL结构分开。"
+  },
+  {
+    "chapter": "03_sql_kpi",
+    "lesson": 3,
+    "term": "KV",
+    "aliases": [
+      "键值"
+    ],
+    "firstSlideTitle": "本地部署：位置与资源边界",
+    "definitionSlideTitle": "本地部署：位置与资源边界",
+    "explanation": "注意力计算产生的键和值，后续生成可复用这些中间结果。"
+  }
+]

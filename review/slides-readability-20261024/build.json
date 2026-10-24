@@ -1,0 +1,28 @@
+{
+  "date": "2026-10-24",
+  "build": "scripts/build-readable-slides.mjs",
+  "sourceFiles": [
+    {
+      "path": "content-source/slides-readability-20261024/02_enterprise_data_model.json",
+      "sha256": "769c9425057533b55bffbdcdca4fe10ea1ef786378836c775e32b8a5c0e5e0d4"
+    },
+    {
+      "path": "content-source/slides-readability-20261024/03_sql_kpi.json",
+      "sha256": "71b12f2de2b94e1228b13c0956c182e8bb424b2ad838c8b6fa83c9bea059db3c"
+    },
+    {
+      "path": "content-source/slides-readability-20261024/term-audit.json",
+      "sha256": "705740ff4525d4725eb3e6f704a302f5428c8c0c7fb5eae6068699d87296612b"
+    }
+  ],
+  "decks": {
+    "02_enterprise_data_model": {
+      "pages": 47,
+      "conclusionPanels": 0
+    },
+    "03_sql_kpi": {
+      "pages": 52,
+      "conclusionPanels": 0
+    }
+  }
+}

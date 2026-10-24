@@ -7,7 +7,8 @@
     "dev": "python3 -m http.server 4173 --directory dist --bind 127.0.0.1",
     "build": "node scripts/build.mjs",
     "build:agent": "node scripts/build-agent-extension.mjs && python3 scripts/package-agent-kit.py",
-    "build:teaching": "node scripts/build-teaching-extension.mjs"
+    "build:teaching": "node scripts/build-teaching-extension.mjs && node scripts/build-readable-slides.mjs",
+    "build:slides-reviewed": "node scripts/build-readable-slides.mjs"
   },
   "dependencies": {
     "@duckdb/duckdb-wasm": "1.29.0",

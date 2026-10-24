@@ -1,0 +1,2442 @@
+{
+  "title": "关系查询、指标计算与语义服务",
+  "slides": [
+    {
+      "kind": "opener",
+      "section": "业务问题",
+      "title": "从业务问题到关系查询",
+      "lead": "同一批记录，统计单位不同，结果的含义也会改变。",
+      "body": [
+        "SQL（结构化查询语言）用于说明要查询哪些记录、怎样分组以及计算什么。数据库据此选择执行步骤。一行一个订单时，行数就是订单数；一行一项订单明细时，同一订单可能占多行，须按订单编号计数。",
+        "事实粒度指一行代表的业务事实，主键用于唯一识别该行。指标口径约定对象、时间和计算方法。关键绩效指标（KPI）评价重要经营目标；指标层集中保存定义，使报表和查询采用一致口径。"
+      ],
+      "detailRef": {
+        "chapter": "03_sql_kpi",
+        "section": "先明确指标要统计什么",
+        "anchor": "查询任务与数据模型"
+      },
+      "sourceSection": "查询任务与数据模型",
+      "visual": {
+        "kind": "flow",
+        "items": [
+          "业务对象",
+          "事实粒度",
+          "指标口径",
+          "SQL",
+          "管理解释与审计"
+        ]
+      },
+      "layout": "split",
+      "lessonNumber": 3
+    },
+    {
+      "kind": "concept",
+      "section": "关系查询",
+      "title": "SQL 的逻辑处理顺序",
+      "lead": "先确定参与计算的记录，再形成分组结果。",
+      "body": [
+        "`FROM/JOIN` 确定来源并组合匹配行，`WHERE` 筛选这些行，`GROUP BY` 按指定字段分组，`HAVING` 筛选组。`SELECT` 指定输出字段与表达式，`ORDER BY` 排列结果。",
+        "这是各子句的逻辑依赖。数据库的查询优化器可以调整实际执行顺序，只要保持相同结果。解释查询时，逐步核对哪些记录进入计算、每条记录出现几次，以及输出一行代表什么。"
+      ],
+      "detailRef": {
+        "chapter": "03_sql_kpi",
+        "section": "按地区计算销售额",
+        "anchor": "sql-查询的关系语义"
+      },
+      "sourceSection": "SQL 查询的关系语义",
+      "layout": "split",
+      "diagram": {
+        "type": "graph",
+        "title": "逻辑处理如何改变记录集合",
+        "description": "来源和连接形成候选行，WHERE筛选事实，GROUP BY形成组，HAVING筛选组，SELECT指定结果，ORDER BY排序。图只表达逻辑语义，不代表实际物理计划。",
+        "encoding": "关系查询逻辑顺序示意",
+        "note": "逻辑处理顺序用于核查；优化器可调整物理执行计划。",
+        "nodes": [
+          {
+            "id": "from",
+            "x": 18,
+            "y": 24,
+            "w": 28,
+            "h": 22,
+            "label": "FROM / JOIN",
+            "detail": "来源与关系",
+            "tone": "blue",
+            "shape": "rect"
+          },
+          {
+            "id": "where",
+            "x": 50,
+            "y": 24,
+            "w": 28,
+            "h": 22,
+            "label": "WHERE",
+            "detail": "筛选事实行",
+            "tone": "blue",
+            "shape": "rect"
+          },
+          {
+            "id": "group",
+            "x": 82,
+            "y": 24,
+            "w": 28,
+            "h": 22,
+            "label": "GROUP BY",
+            "detail": "形成统计组",
+            "tone": "blue",
+            "shape": "rect"
+          },
+          {
+            "id": "having",
+            "x": 82,
+            "y": 74,
+            "w": 28,
+            "h": 22,
+            "label": "HAVING",
+            "detail": "筛选已形成的组",
+            "tone": "blue",
+            "shape": "rect"
+          },
+          {
+            "id": "select",
+            "x": 50,
+            "y": 74,
+            "w": 28,
+            "h": 22,
+            "label": "SELECT",
+            "detail": "输出表达式",
+            "tone": "blue",
+            "shape": "rect"
+          },
+          {
+            "id": "order",
+            "x": 18,
+            "y": 74,
+            "w": 28,
+            "h": 22,
+            "label": "ORDER BY",
+            "detail": "结果排序",
+            "tone": "blue",
+            "shape": "rect"
+          }
+        ],
+        "edges": [
+          {
+            "from": "from",
+            "to": "where",
+            "label": ""
+          },
+          {
+            "from": "where",
+            "to": "group",
+            "label": ""
+          },
+          {
+            "from": "group",
+            "to": "having",
+            "label": ""
+          },
+          {
+            "from": "having",
+            "to": "select",
+            "label": ""
+          },
+          {
+            "from": "select",
+            "to": "order",
+            "label": ""
+          }
+        ]
+      },
+      "density": "compact",
+      "lessonNumber": 3
+    },
+    {
+      "kind": "worked",
+      "section": "关系查询",
+      "title": "按地区计算三月订单金额",
+      "lead": "输入一行一个订单，输出一行一个地区。",
+      "body": [
+        "订单表 `orders` 保存客户号、产品号、数量和日期；客户表 `customers` 提供地区，产品表 `products` 提供单价。样例假定每单只有一种产品，考察期内标准价固定。第 \\(i\\) 单数量为 \\(q_i\\)，单价为 \\(p_i\\)，金额为 \\(q_ip_i\\)。",
+        "查询按订单日期选取2026年3月，即3月1日及以后、4月1日以前，再按地区合计金额。实际历史收入应采用交易时的成交价，并依口径处理折扣、退货和税费。"
+      ],
+      "detailRef": {
+        "chapter": "03_sql_kpi",
+        "section": "按地区计算销售额",
+        "anchor": "sql-查询的关系语义"
+      },
+      "sourceSection": "SQL 查询的关系语义",
+      "visual": {
+        "kind": "table",
+        "headers": [
+          "SQL 片段",
+          "业务含义"
+        ],
+        "rows": [
+          [
+            "FROM orders",
+            "候选交易事实"
+          ],
+          [
+            "连接客户与产品",
+            "补地区与价格"
+          ],
+          [
+            "WHERE 三月",
+            "限定订单窗口"
+          ],
+          [
+            "GROUP BY region",
+            "区域级输出"
+          ]
+        ]
+      },
+      "layout": "split",
+      "lessonNumber": 3
+    },
+    {
+      "kind": "worked",
+      "section": "关系查询",
+      "title": "逐句解释区域收入查询",
+      "lead": "连接提供地区和单价，筛选与分组确定统计范围。",
+      "body": [
+        "`o`、`c`、`p` 是订单、客户和产品表的别名。外键保存所引用对象的编号；`USING(customer_id)` 按同名客户号匹配两表。客户号、产品号在各自表中唯一且覆盖订单外键时，每单连接后仍占一行。",
+        "`WHERE` 保留3月订单，`GROUP BY` 按地区分组，`SUM` 累加数量乘单价，`AS revenue` 命名收入列，`DESC` 表示降序。复核时同时检查订单是否齐全、是否重复，以及地区金额之和是否等于订单总额。"
+      ],
+      "detailRef": {
+        "chapter": "03_sql_kpi",
+        "section": "按地区计算销售额",
+        "anchor": "sql-查询的关系语义"
+      },
+      "sourceSection": "SQL 查询的关系语义",
+      "codeBlock": {
+        "language": "sql",
+        "caption": "一行一订单、每单一种产品、期内标准价固定。",
+        "code": "-- 标准价固定；维度键唯一且覆盖订单外键\nSELECT c.region,\n  SUM(o.quantity*p.unit_price) AS revenue\nFROM orders o\nJOIN customers c USING (customer_id)\nJOIN products p USING (product_id)\n-- 左闭右开：覆盖整个自然月\nWHERE o.order_date >= DATE '2026-03-01'\n  AND o.order_date < DATE '2026-04-01'\nGROUP BY c.region\nORDER BY revenue DESC;"
+      },
+      "layout": "split",
+      "density": "compact",
+      "lessonNumber": 3
+    },
+    {
+      "kind": "worked",
+      "section": "关系查询",
+      "title": "三张订单怎样汇总为两个地区",
+      "lead": "分组改变输出单位，订单总金额保持不变。",
+      "body": [
+        "三张3月订单分别按唯一客户号、产品号取得地区和标准价。O01属于北区，2件乘50元得100元；O02属于北区，3件乘30元得90元；O03属于南区，2件乘50元得100元。",
+        "北区汇总为190元，南区为100元，两区合计290元。输入三行订单，输出两行地区结果。把手算金额与查询比较，再检查每张订单只计入所属地区一次，可以定位连接或分组错误。"
+      ],
+      "detailRef": {
+        "chapter": "03_sql_kpi",
+        "section": "按地区计算销售额",
+        "anchor": "sql-查询的关系语义"
+      },
+      "sourceSection": "SQL 查询的关系语义",
+      "layout": "split",
+      "diagram": {
+        "type": "graph",
+        "title": "三张订单合并为两个地区结果",
+        "description": "订单O01为北区2件每件50元，O02为北区3件每件30元，O03为南区2件每件50元。地区聚合把北区两单合为190元，南区一单100元。",
+        "encoding": "订单记录 · 分组结构示意",
+        "note": "输入3个订单事实 → 输出2个地区组；总收入仍为290元。",
+        "nodes": [
+          {
+            "id": "o1",
+            "x": 19,
+            "y": 17,
+            "w": 31,
+            "h": 22,
+            "label": "O01 · 北区",
+            "detail": "\\(2\\times50=100\\) 元",
+            "tone": "blue",
+            "shape": "rect"
+          },
+          {
+            "id": "o2",
+            "x": 19,
+            "y": 51,
+            "w": 31,
+            "h": 22,
+            "label": "O02 · 北区",
+            "detail": "\\(3\\times30=90\\) 元",
+            "tone": "blue",
+            "shape": "rect"
+          },
+          {
+            "id": "o3",
+            "x": 19,
+            "y": 84,
+            "w": 31,
+            "h": 22,
+            "label": "O03 · 南区",
+            "detail": "\\(2\\times50=100\\) 元",
+            "tone": "blue",
+            "shape": "rect"
+          },
+          {
+            "id": "north",
+            "x": 76,
+            "y": 34,
+            "w": 35,
+            "h": 25,
+            "label": "北区",
+            "detail": "\\(100+90=190\\) 元",
+            "tone": "blue",
+            "shape": "rect"
+          },
+          {
+            "id": "south",
+            "x": 76,
+            "y": 84,
+            "w": 35,
+            "h": 22,
+            "label": "南区",
+            "detail": "\\(100\\) 元",
+            "tone": "blue",
+            "shape": "rect"
+          }
+        ],
+        "edges": [
+          {
+            "from": "o1",
+            "to": "north",
+            "label": ""
+          },
+          {
+            "from": "o2",
+            "to": "north",
+            "label": ""
+          },
+          {
+            "from": "o3",
+            "to": "south",
+            "label": ""
+          }
+        ]
+      },
+      "density": "compact",
+      "lessonNumber": 3
+    },
+    {
+      "kind": "concept",
+      "section": "关系查询",
+      "title": "关系代数如何描述查询",
+      "lead": "用明确的表运算解释行、列和分组的变化。",
+      "body": [
+        "关系可看作具有相同列结构的一组行。关系代数用运算描述其变换。选择按条件保留行，投影选取列，连接组合匹配的行；这里还使用分组聚合和排序两类扩展运算。",
+        "`WHERE` 在聚合前筛选原始行，决定哪些事实进入分子、分母；`HAVING` 在聚合后筛选组，只决定哪些分组结果被显示。两者作用的对象不同，即使条件使用同一数值，通常也会得到不同结果。"
+      ],
+      "detailRef": {
+        "chapter": "03_sql_kpi",
+        "section": "表上的基本运算",
+        "anchor": "关系代数视角"
+      },
+      "sourceSection": "关系代数视角",
+      "visual": {
+        "kind": "table",
+        "headers": [
+          "运算",
+          "SQL",
+          "作用对象"
+        ],
+        "rows": [
+          [
+            "选择 \\(\\sigma\\) / 投影 \\(\\pi\\)",
+            "WHERE / SELECT",
+            "保留行 / 选取列"
+          ],
+          [
+            "连接 \\(\\Join\\)",
+            "JOIN",
+            "组合满足条件的行"
+          ],
+          [
+            "分组 \\(\\gamma\\) / 排序 \\(\\tau\\)",
+            "GROUP BY / ORDER BY",
+            "汇总组内事实 / 排列结果"
+          ]
+        ]
+      },
+      "layout": "stack",
+      "lessonNumber": 3
+    },
+    {
+      "kind": "worked",
+      "section": "关系查询",
+      "title": "WHERE 与 HAVING 筛选什么",
+      "lead": "单笔金额与地区总额对应不同的条件对象。",
+      "body": [
+        "设北区有两单，各60元；南区有一单，150元。“金额至少100元的订单在各区合计多少”要求先检查单笔金额。`WHERE amount >= 100` 只保留南区订单，汇总结果为150元。",
+        "“哪些地区总额至少100元”要求先合计地区金额，再用 `HAVING SUM(amount) >= 100` 筛选。北区120元、南区150元均保留。写条件前，先说明约束的是订单还是地区。"
+      ],
+      "detailRef": {
+        "chapter": "03_sql_kpi",
+        "section": "表上的基本运算",
+        "anchor": "关系代数视角"
+      },
+      "sourceSection": "关系代数视角",
+      "layout": "stack",
+      "visual": {
+        "kind": "table",
+        "headers": [
+          "条件",
+          "作用位置",
+          "结果"
+        ],
+        "rows": [
+          [
+            "单笔 amount 至少 100",
+            "WHERE amount >= 100",
+            "南区 150"
+          ],
+          [
+            "地区 SUM(amount) 至少 100",
+            "HAVING SUM(amount) >= 100",
+            "北区 120；南区 150"
+          ]
+        ]
+      },
+      "lessonNumber": 3
+    },
+    {
+      "layout": "split",
+      "title": "相同金额可以属于不同订单",
+      "lead": "去重依据所选字段的值，业务身份由订单编号确定。",
+      "body": [
+        "经典关系代数采用集合语义，相同行只出现一次；SQL默认保留重复取值，称为多重集语义。两项明细即使产品、数量和金额都相同，仍可能由不同主键标识，分别对应独立事实。",
+        "订单A、B各100元，正常合计200元。`SUM(DISTINCT amount)` 只保留不同金额值，得到100元。判断重复采集要检查业务身份与记录规则；连接造成的复制，应修正连接或聚合粒度。"
+      ],
+      "detailRef": {
+        "chapter": "03_sql_kpi",
+        "section": "相同取值与不同业务事实",
+        "anchor": "查询的选择与分组条件"
+      },
+      "kind": "concept",
+      "section": "关系查询",
+      "sourceSection": "查询的选择与分组条件",
+      "diagram": {
+        "type": "graph",
+        "title": "业务身份与相同金额是两种等价关系",
+        "description": "不同订单A、B各100元，按订单身份是两个事实，求和200；按金额值去重只剩数值100，得到100，丢失业务事实。",
+        "encoding": "反例 · 实线按身份，虚线按值",
+        "note": "相同金额并不意味着同一业务事实。",
+        "nodes": [
+          {
+            "id": "a",
+            "x": 18,
+            "y": 24,
+            "w": 28,
+            "h": 22,
+            "label": "订单 A",
+            "detail": "金额100元",
+            "tone": "blue",
+            "shape": "rect"
+          },
+          {
+            "id": "b",
+            "x": 18,
+            "y": 75,
+            "w": 28,
+            "h": 22,
+            "label": "订单 B",
+            "detail": "金额100元",
+            "tone": "blue",
+            "shape": "rect"
+          },
+          {
+            "id": "facts",
+            "x": 54,
+            "y": 24,
+            "w": 30,
+            "h": 22,
+            "label": "按业务身份",
+            "detail": "两个独立事实",
+            "tone": "blue",
+            "shape": "rect"
+          },
+          {
+            "id": "values",
+            "x": 54,
+            "y": 75,
+            "w": 30,
+            "h": 22,
+            "label": "按金额值去重",
+            "detail": "只剩一个数值",
+            "tone": "rose",
+            "shape": "rect"
+          },
+          {
+            "id": "sum",
+            "x": 85,
+            "y": 24,
+            "w": 23,
+            "h": 22,
+            "label": "正确总额",
+            "detail": "200元",
+            "tone": "teal",
+            "shape": "rect"
+          },
+          {
+            "id": "wrong",
+            "x": 85,
+            "y": 75,
+            "w": 23,
+            "h": 22,
+            "label": "错误总额",
+            "detail": "100元",
+            "tone": "rose",
+            "shape": "rect"
+          }
+        ],
+        "edges": [
+          {
+            "from": "a",
+            "to": "facts",
+            "label": ""
+          },
+          {
+            "from": "b",
+            "to": "facts",
+            "label": ""
+          },
+          {
+            "from": "a",
+            "to": "values",
+            "label": "",
+            "dashed": true
+          },
+          {
+            "from": "b",
+            "to": "values",
+            "label": "",
+            "dashed": true
+          },
+          {
+            "from": "facts",
+            "to": "sum",
+            "label": ""
+          },
+          {
+            "from": "values",
+            "to": "wrong",
+            "label": ""
+          }
+        ]
+      },
+      "density": "compact",
+      "lessonNumber": 3
+    },
+    {
+      "kind": "concept",
+      "section": "粒度与连接",
+      "title": "事务、分析与展示粒度",
+      "lead": "每次汇总都要明确一行所代表的对象。",
+      "body": [
+        "事务粒度是源表的记录单位，例如一行一项订单明细；分析粒度是分组结果的单位，例如一行一个地区月份；展示粒度是报表最终呈现的层级，例如一行一个大区。",
+        "一单有三项明细，明细数为三，订单数仍为一。统计订单须按身份识别；合并地区比率须分别加总分子 \\(N\\) 与分母 \\(D\\)，再计算 \\(N/D\\)。不同层级的百分比不能直接等权平均。"
+      ],
+      "detailRef": {
+        "chapter": "03_sql_kpi",
+        "section": "从源记录到结果表的粒度",
+        "anchor": "事实粒度与分析粒度"
+      },
+      "sourceSection": "事实粒度与分析粒度",
+      "layout": "split",
+      "diagram": {
+        "type": "graph",
+        "title": "记录单位逐层转换",
+        "description": "事务表一行一订单明细。先按稳定订单身份识别订单，再按地区月份形成分析组，最后按大区汇总基础分子分母后显示比率。",
+        "encoding": "模型结构示意",
+        "note": "先识别事实，再汇总统计状态；不能直接平均百分比。",
+        "nodes": [
+          {
+            "id": "line",
+            "x": 18,
+            "y": 23,
+            "w": 28,
+            "h": 22,
+            "label": "事务粒度",
+            "detail": "一行一订单明细",
+            "tone": "blue",
+            "shape": "rect"
+          },
+          {
+            "id": "identity",
+            "x": 50,
+            "y": 23,
+            "w": 28,
+            "h": 22,
+            "label": "订单身份",
+            "detail": "三条明细也可为一单",
+            "tone": "blue",
+            "shape": "rect"
+          },
+          {
+            "id": "analysis",
+            "x": 82,
+            "y": 23,
+            "w": 28,
+            "h": 22,
+            "label": "分析粒度",
+            "detail": "地区 × 月份",
+            "tone": "blue",
+            "shape": "rect"
+          },
+          {
+            "id": "state",
+            "x": 82,
+            "y": 74,
+            "w": 28,
+            "h": 22,
+            "label": "可合并状态",
+            "detail": "分子 \\(N\\)、分母 \\(D\\)",
+            "tone": "blue",
+            "shape": "rect"
+          },
+          {
+            "id": "display",
+            "x": 30,
+            "y": 74,
+            "w": 45,
+            "h": 22,
+            "label": "展示粒度",
+            "detail": "大区汇总后计算 \\(N/D\\)",
+            "tone": "blue",
+            "shape": "rect"
+          }
+        ],
+        "edges": [
+          {
+            "from": "line",
+            "to": "identity",
+            "label": ""
+          },
+          {
+            "from": "identity",
+            "to": "analysis",
+            "label": ""
+          },
+          {
+            "from": "analysis",
+            "to": "state",
+            "label": ""
+          },
+          {
+            "from": "state",
+            "to": "display",
+            "label": ""
+          }
+        ]
+      },
+      "density": "compact",
+      "lessonNumber": 3
+    },
+    {
+      "kind": "case",
+      "section": "企业案例",
+      "title": "Shopify 的交易规模与自身收入",
+      "lead": "GMV、GPV、MRR 分别计量不同业务活动。",
+      "body": [
+        "Shopify帮助商户交易，并从订阅和商户服务取得收入。其GMV是平台促成的订单金额，按披露口径扣除退款，包含运费、关税及增值税；GPV是其中由Shopify Payments处理的交易金额。",
+        "MRR（月度经常性收入）由期末商户数与订阅费率计算，描述期末订阅状态。平台自身收入依据期间内的收入确认规则计量。商户交易金额、支付处理额、期末订阅指标与已确认收入，须分别解释。"
+      ],
+      "layout": "split",
+      "detailRef": {
+        "chapter": "03_sql_kpi",
+        "section": "从源记录到结果表的粒度",
+        "anchor": "事实粒度与分析粒度"
+      },
+      "sourceSection": "事实粒度与分析粒度",
+      "visual": {
+        "kind": "flow",
+        "items": [
+          {
+            "label": "GMV",
+            "detail": "平台促成的商户交易金额"
+          },
+          {
+            "label": "GPV",
+            "detail": "经指定支付渠道处理的金额"
+          },
+          {
+            "label": "收入与MRR",
+            "detail": "期间确认金额 / 期末订阅状态"
+          }
+        ]
+      },
+      "caseId": "b03-05",
+      "sources": [
+        {
+          "title": "Shopify Announces Fourth-Quarter and Full-Year 2023 Financial Results",
+          "url": "https://www.shopify.com/news/shopify-announces-fourth-quarter-and-full-year-2023-financial-results"
+        }
+      ],
+      "lessonNumber": 3
+    },
+    {
+      "kind": "case",
+      "section": "企业案例",
+      "title": "为什么 GMV 增长不等于收入增长",
+      "lead": "同为货币金额，统计对象和确认期间仍可不同。",
+      "body": [
+        "GMV反映Shopify促成的商户交易。收入反映平台自身从订阅和商户服务取得的金额。若将GMV增长率写作公司收入增长率，就把商户经营活动替换成了平台收入。",
+        "比较金额还要核对退款、税费及收入确认范围。MRR按期末订阅状态计算，也不能直接当作期间已确认收入。上述定义采用2023年披露口径；跨企业比较时，应逐一核对各公司的定义。"
+      ],
+      "layout": "focus",
+      "detailRef": {
+        "chapter": "03_sql_kpi",
+        "section": "从源记录到结果表的粒度",
+        "anchor": "事实粒度与分析粒度"
+      },
+      "sourceSection": "事实粒度与分析粒度",
+      "caseId": "b03-05",
+      "sources": [
+        {
+          "title": "Shopify Announces Fourth-Quarter and Full-Year 2023 Financial Results",
+          "url": "https://www.shopify.com/news/shopify-announces-fourth-quarter-and-full-year-2023-financial-results"
+        }
+      ],
+      "prompts": [
+        {
+          "question": "同一份报告中，GMV增长率为什么不能直接写作公司收入增长率？",
+          "answer": "GMV的对象是商户交易，收入的对象是平台自身取得的金额。还应分别核对退款、税费、收入确认和订阅状态的范围。"
+        }
+      ],
+      "lessonNumber": 3
+    },
+    {
+      "kind": "concept",
+      "section": "概念与方法",
+      "title": "事实表与维度表怎样连接",
+      "lead": "交易事实与描述属性分别保存，再按身份关联。",
+      "body": [
+        "事实表记录交易、事件或状态，例如每行一项订单明细。维度表保存描述属性，例如客户所属地区。事实中的外键引用维度对象；引用完整性要求非空外键能找到相应对象。",
+        "维度键唯一时，每项事实至多匹配一个维度行。若客户地区保留多个历史版本，还要按订单发生时点选取适用版本。只按客户号匹配全部版本，会复制订单金额，或为历史订单赋予错误地区。"
+      ],
+      "layout": "split",
+      "detailRef": {
+        "chapter": "03_sql_kpi",
+        "section": "连接怎样复制或遗漏记录",
+        "anchor": "连接粒度与重复计数"
+      },
+      "sourceSection": "连接、粒度与重复计数",
+      "visual": {
+        "kind": "flow",
+        "items": [
+          {
+            "label": "事实",
+            "detail": "一项交易或状态"
+          },
+          {
+            "label": "维度",
+            "detail": "对应的描述属性"
+          },
+          {
+            "label": "连接核查",
+            "detail": "身份唯一且时间适用"
+          }
+        ]
+      },
+      "lessonNumber": 3
+    },
+    {
+      "kind": "concept",
+      "section": "粒度与连接",
+      "title": "连接保持原粒度的两个条件",
+      "lead": "每条事实既有匹配，又只有一个匹配。",
+      "body": [
+        "令 \\(F\\) 为事实表，\\(D\\) 为维度表，\\(m_i\\) 为事实 \\(i\\) 的匹配次数。维度连接键唯一给出 \\(m_i\\le1\\)；事实外键非空且完整匹配给出 \\(m_i\\ge1\\)。两者共同保证每条事实在内连接后恰好出现一次。",
+        "竖线表示行数，\\(\\Join\\) 表示按指定键连接。总行数相等仍可能掩盖一条事实遗漏、另一条复制的抵消。因此须按事实主键检查匹配次数，并分别查找重复维度键、未匹配外键及不适用的历史版本。"
+      ],
+      "detailRef": {
+        "chapter": "03_sql_kpi",
+        "section": "连接怎样复制或遗漏记录",
+        "anchor": "连接粒度与重复计数"
+      },
+      "sourceSection": "连接、粒度与重复计数",
+      "equation": "|F\\Join D|=|F|\\quad\\text{当每项事实恰好匹配一次}",
+      "layout": "split",
+      "diagram": {
+        "type": "graph",
+        "title": "每条事实恰好保留一次的两个条件",
+        "description": "事实F引用维度键。唯一性给每条事实至多一次匹配，覆盖性给每条事实至少一次匹配；两者合取才保证恰好一次。单独检查总行数无法排除复制遗漏抵消。",
+        "encoding": "模型结构示意",
+        "note": "逐事实检查同时成立，才能推出连接行数不变。",
+        "nodes": [
+          {
+            "id": "unique",
+            "x": 21,
+            "y": 23,
+            "w": 35,
+            "h": 22,
+            "label": "维度键唯一",
+            "detail": "匹配次数 \\(m_i\\le1\\)",
+            "tone": "blue",
+            "shape": "rect"
+          },
+          {
+            "id": "cover",
+            "x": 21,
+            "y": 76,
+            "w": 35,
+            "h": 22,
+            "label": "外键完整覆盖",
+            "detail": "匹配次数 \\(m_i\\ge1\\)",
+            "tone": "blue",
+            "shape": "rect"
+          },
+          {
+            "id": "once",
+            "x": 73,
+            "y": 49,
+            "w": 39,
+            "h": 30,
+            "label": "每项恰好匹配一次",
+            "detail": "\\(m_i=1\\)",
+            "tone": "blue",
+            "shape": "rect"
+          }
+        ],
+        "edges": [
+          {
+            "from": "unique",
+            "to": "once",
+            "label": ""
+          },
+          {
+            "from": "cover",
+            "to": "once",
+            "label": ""
+          }
+        ]
+      },
+      "density": "compact",
+      "lessonNumber": 3
+    },
+    {
+      "kind": "worked",
+      "section": "粒度与连接",
+      "title": "一对多连接怎样放大金额",
+      "lead": "事实每多匹配一次，其金额就多参与一次求和。",
+      "body": [
+        "一张100元订单匹配两条检验事件后，连接结果有两行，直接求和得到200元。一般地，第 \\(i\\) 项金额为 \\(x_i\\)，匹配次数为 \\(m_i\\)，连接后贡献为 \\(m_ix_i\\)。逐条满足 \\(m_i=1\\) 可保持原金额。",
+        "若只问订单是否有检验，用 `EXISTS` 筛选；若需检验次数，先按订单汇总事件，再连接订单。总额相同也可能来自复制与遗漏抵消，仍须核对各订单的匹配次数。"
+      ],
+      "detailRef": {
+        "chapter": "03_sql_kpi",
+        "section": "连接怎样复制或遗漏记录",
+        "anchor": "连接粒度与重复计数"
+      },
+      "sourceSection": "连接、粒度与重复计数",
+      "equation": "\\begin{aligned}\\text{连接后金额}&=\\sum_i m_i x_i,\\\\m_i=1\\ \\forall i&\\quad\\Longrightarrow\\quad\\sum_i m_ix_i=\\sum_i x_i.\\end{aligned}",
+      "layout": "split",
+      "density": "compact",
+      "diagram": {
+        "type": "bars",
+        "title": "关系扩张会复制订单金额",
+        "description": "100元订单原来1行，直接连接两条检验事件变为2行、求和200元；先把检验按订单聚合再连接回1行、求和100元。",
+        "encoding": "算例 · 同一比例尺",
+        "note": "筛选事件是否存在，可采用 EXISTS 而不扩张订单。",
+        "domain": [
+          0,
+          200
+        ],
+        "unit": "元",
+        "rows": [
+          {
+            "label": "原订单事实",
+            "value": 100,
+            "detail": "1 行；订单金额一次",
+            "tone": "teal"
+          },
+          {
+            "label": "直接连接事件",
+            "value": 200,
+            "detail": "2 行；金额重复两次",
+            "tone": "rose"
+          },
+          {
+            "label": "事件预聚合后连接",
+            "value": 100,
+            "detail": "1 行；恢复目标粒度",
+            "tone": "blue"
+          }
+        ],
+        "ticks": [
+          0,
+          50,
+          100,
+          150,
+          200
+        ]
+      },
+      "lessonNumber": 3
+    },
+    {
+      "kind": "concept",
+      "section": "概念与方法",
+      "title": "半连接只检查匹配是否存在",
+      "lead": "保留符合条件的左表行，不展开右表事件。",
+      "body": [
+        "半连接检查左表每行在右表是否至少有一个匹配。满足条件就保留左行，不输出右表字段，也不因多条匹配而复制它。SQL可用 `EXISTS` 表达，即检查子查询是否返回至少一行。",
+        "一张100元订单对应两条检验事件，普通连接产生两行，半连接只保留一张订单，金额仍为100元。需要检验明细时使用连接；只筛选有检验的订单时使用存在性条件；统计次数则先按订单聚合。"
+      ],
+      "layout": "split",
+      "detailRef": {
+        "chapter": "03_sql_kpi",
+        "section": "连接怎样复制或遗漏记录",
+        "anchor": "连接粒度与重复计数"
+      },
+      "sourceSection": "连接、粒度与重复计数",
+      "visual": {
+        "kind": "flow",
+        "items": [
+          {
+            "label": "左侧订单",
+            "detail": "保存订单身份及金额"
+          },
+          {
+            "label": "右侧检验",
+            "detail": "可能匹配多条事件"
+          },
+          {
+            "label": "存在性筛选",
+            "detail": "至少匹配一次便保留原订单"
+          }
+        ]
+      },
+      "lessonNumber": 3
+    },
+    {
+      "kind": "concept",
+      "section": "指标代数",
+      "title": "把指标定义写完整",
+      "lead": "公式与对象、分组和时间范围共同确定指标含义。",
+      "body": [
+        "记指标为下式。\\(O\\) 是纳入的对象，\\(\\mathcal G\\) 是分组集合，\\(\\mathcal T\\) 是时间范围，\\(N\\) 是度量或分子，\\(D\\) 是分母，\\(u\\) 是单位，\\(\\rho\\) 是维护定义和解释结果的责任。总量指标可约定 \\(D=1\\)。",
+        "准时交付率（OTD）还须确定统计队列，即按预定条件选出的订单集合。已交付队列只含已交付订单；到期队列含窗口内到期的有效承诺。两者分母不同，应分别命名，保存定义版本并对应到实际查询。"
+      ],
+      "detailRef": {
+        "chapter": "03_sql_kpi",
+        "section": "写清对象、时间与计算方法",
+        "anchor": "指标定义的形式化表示"
+      },
+      "sourceSection": "指标定义的形式化表示",
+      "equation": "M=(O,\\mathcal G,\\mathcal T,N,D,u,\\rho)",
+      "layout": "focus",
+      "lessonNumber": 3
+    },
+    {
+      "kind": "case",
+      "section": "企业案例",
+      "title": "Airbnb Minerva 怎样保存指标定义",
+      "lead": "集中定义使不同报告能采用同一业务口径。",
+      "body": [
+        "Airbnb的Minerva用于集中定义指标与维度。指标规定计算规则，维度规定可分组的属性。2021年工程文档说明，这些定义在集中仓库中接受校验并受版本控制，再提供给图表、报告和实验工具。",
+        "业务定义变化后，Minerva跟踪重大数据集变更并支持历史回填，即按指定规则重算旧记录。比较趋势时，须确认各期采用同一版本；否则数值变化可能同时包含经营变化和定义变化。"
+      ],
+      "layout": "split",
+      "detailRef": {
+        "chapter": "03_sql_kpi",
+        "section": "写清对象、时间与计算方法",
+        "anchor": "指标定义的形式化表示"
+      },
+      "sourceSection": "指标定义的形式化表示",
+      "visual": {
+        "kind": "flow",
+        "items": [
+          {
+            "label": "定义版本",
+            "detail": "保存对象与筛选规则"
+          },
+          {
+            "label": "历史回填",
+            "detail": "按指定版本重算旧记录"
+          },
+          {
+            "label": "下游工具",
+            "detail": "读取相同口径的指标"
+          }
+        ]
+      },
+      "caseId": "b03-01",
+      "sources": [
+        {
+          "title": "How Airbnb achieved metric consistency at scale",
+          "url": "https://medium.com/airbnb-engineering/how-airbnb-achieved-metric-consistency-at-scale-f23cc53dea70"
+        }
+      ],
+      "lessonNumber": 3
+    },
+    {
+      "kind": "case",
+      "section": "企业案例",
+      "title": "怎样区分经营变化与口径变化",
+      "lead": "在同一批事实中比较新旧定义，再检查跨期趋势。",
+      "body": [
+        "Minerva保存的指标版本可用于还原计算条件。规则上线当天指标上升时，先固定一批原始记录，分别用旧定义和新定义计算。记录不变时，两次结果之差来自口径变化。",
+        "随后采用同一版本计算不同时期，才有明确的跨期比较依据。若历史已回填，需确认全部比较期间都按新规则重算。版本控制与回填提供复核条件，业务可比性仍须逐项检查。"
+      ],
+      "layout": "focus",
+      "detailRef": {
+        "chapter": "03_sql_kpi",
+        "section": "写清对象、时间与计算方法",
+        "anchor": "指标定义的形式化表示"
+      },
+      "sourceSection": "指标定义的形式化表示",
+      "caseId": "b03-01",
+      "sources": [
+        {
+          "title": "How Airbnb achieved metric consistency at scale",
+          "url": "https://medium.com/airbnb-engineering/how-airbnb-achieved-metric-consistency-at-scale-f23cc53dea70"
+        }
+      ],
+      "prompts": [
+        {
+          "question": "新定义上线当天指标上升，怎样检查变化来自哪里？",
+          "answer": "固定同一批原始事实，分别按新旧定义计算以识别口径影响；再以同一版本计算各期，检查经营变化。历史回填须覆盖全部比较期间。"
+        }
+      ],
+      "lessonNumber": 3
+    },
+    {
+      "kind": "concept",
+      "section": "概念与方法",
+      "title": "为什么均值还要保存样本数",
+      "lead": "各组均值没有说明每组包含多少记录。",
+      "body": [
+        "两个地区的订单数量可能悬殊。将地区平均金额直接等权平均，相当于每个地区权重相同；研究全部订单的平均金额，则每笔订单应占相同权重，需要知道各地区订单数。",
+        "统计状态是汇总时保留的中间信息。均值保存“总金额、订单数”，比率保存“分子、分母”。先分别相加，再求整体均值或比率。这样重新合并分组时，各项事实仍按原有单位参与计算。"
+      ],
+      "layout": "split",
+      "detailRef": {
+        "chapter": "03_sql_kpi",
+        "section": "保存哪些信息才能正确汇总",
+        "anchor": "可合并的统计状态"
+      },
+      "sourceSection": "可合并的统计状态",
+      "visual": {
+        "kind": "flow",
+        "items": [
+          {
+            "label": "局部事实",
+            "detail": "总量与对象数"
+          },
+          {
+            "label": "状态合并",
+            "detail": "各分量分别相加"
+          },
+          {
+            "label": "最终统计",
+            "detail": "用合并状态求比率或均值"
+          }
+        ]
+      },
+      "lessonNumber": 3
+    },
+    {
+      "kind": "concept",
+      "section": "指标代数",
+      "title": "可合并的统计状态",
+      "lead": "分组结果要保留后续合并所需的信息。",
+      "body": [
+        "将事实分为互不重叠的 \\(D_1,D_2\\)，以 \\(S(D)\\) 表示统计状态，\\(\\oplus\\) 表示合并。下式要求先合并事实再统计，与先统计各片再合并，结果一致。结合律保证先合并哪两片不影响最终状态。",
+        "均值保存“总和、个数”。甲组2单均价100元，乙组8单均价200元，合并后均价为 \\((200+1600)/(2+8)=180\\) 元。总量直接相加；比率则合并分子与分母后相除。图中 \\(d_i\\) 是分片分母，区别于事实集合 \\(D_i\\)。"
+      ],
+      "detailRef": {
+        "chapter": "03_sql_kpi",
+        "section": "保存哪些信息才能正确汇总",
+        "anchor": "可合并的统计状态"
+      },
+      "sourceSection": "可合并的统计状态",
+      "equation": "S(D_1\\cup D_2)=S(D_1)\\oplus S(D_2)",
+      "layout": "split",
+      "diagram": {
+        "type": "graph",
+        "title": "保留分子分母后合并比率",
+        "description": "不相交事实分片D1、D2各保存分子Ni与分母di，分量相加后计算整体比率。d_i是图中用来区别事实集合D_i的分母符号。合并须不重叠、满足结合律。",
+        "encoding": "模型结构示意",
+        "note": "事实分片须互不重叠，合并操作须满足结合律。",
+        "nodes": [
+          {
+            "id": "d1",
+            "x": 22,
+            "y": 23,
+            "w": 38,
+            "h": 22,
+            "label": "分片 \\(D_1\\)",
+            "detail": "分子 \\(N_1\\)，分母 \\(d_1\\)",
+            "tone": "blue",
+            "shape": "rect"
+          },
+          {
+            "id": "d2",
+            "x": 22,
+            "y": 75,
+            "w": 38,
+            "h": 22,
+            "label": "分片 \\(D_2\\)",
+            "detail": "分子 \\(N_2\\)，分母 \\(d_2\\)",
+            "tone": "blue",
+            "shape": "rect"
+          },
+          {
+            "id": "merge",
+            "x": 73,
+            "y": 23,
+            "w": 42,
+            "h": 24,
+            "label": "分量分别相加",
+            "detail": "\\((N_1+N_2,d_1+d_2)\\)",
+            "tone": "blue",
+            "shape": "rect"
+          },
+          {
+            "id": "ratio",
+            "x": 73,
+            "y": 75,
+            "w": 42,
+            "h": 22,
+            "label": "目标粒度比率",
+            "detail": "\\(N_{\\rm total}/D_{\\rm total}\\)",
+            "tone": "blue",
+            "shape": "rect"
+          }
+        ],
+        "edges": [
+          {
+            "from": "d1",
+            "to": "merge",
+            "label": ""
+          },
+          {
+            "from": "d2",
+            "to": "merge",
+            "label": ""
+          },
+          {
+            "from": "merge",
+            "to": "ratio",
+            "label": ""
+          }
+        ]
+      },
+      "density": "compact",
+      "lessonNumber": 3
+    },
+    {
+      "kind": "case",
+      "section": "企业案例",
+      "title": "DoorDash Curie 为什么保留事件事实",
+      "lead": "新的分组问题需要原记录的身份和属性。",
+      "body": [
+        "DoorDash的实验分析平台Curie建设了指标层。其公开设计把指标与维度分别定义，保留原始事件级数据，即每行对应一次事件，再按分析需要关联维度。指标定义记录数据来源、字段、SQL聚合及过滤规则。",
+        "只保存全国日均值而丢弃事件数与城市、品类等属性，便难以重算新的分组。保留基础事实，或保存足以支持预定分析的统计状态，才能按新的对象范围进行汇总。"
+      ],
+      "layout": "split",
+      "detailRef": {
+        "chapter": "03_sql_kpi",
+        "section": "保存哪些信息才能正确汇总",
+        "anchor": "可合并的统计状态"
+      },
+      "sourceSection": "可合并的统计状态",
+      "visual": {
+        "kind": "flow",
+        "items": [
+          {
+            "label": "事件级事实",
+            "detail": "保留原始测量及身份"
+          },
+          {
+            "label": "维度关联",
+            "detail": "按分析范围选择对象"
+          },
+          {
+            "label": "指标计算",
+            "detail": "过滤后再聚合"
+          }
+        ]
+      },
+      "caseId": "b03-03",
+      "sources": [
+        {
+          "title": "Using Metrics Layer to Standardize and Scale Experimentation at DoorDash",
+          "url": "https://careersatdoordash.com/blog/using-metrics-layer-to-standardize-and-scale-experimentation-at-doordash-2/"
+        }
+      ],
+      "lessonNumber": 3
+    },
+    {
+      "kind": "case",
+      "section": "企业案例",
+      "title": "全国均值能支持哪些后续比较",
+      "lead": "总体均值没有保留城市和品类的成员归属。",
+      "body": [
+        "Curie把事件级事实与维度分别保存，可按分析任务重新组合。若只剩全国平均值，既无法知道各城市有多少事件，也无法将事件归入品类，因而不能恢复这些分组的均值。",
+        "对于已知分组，保留每组总量与计数即可合并均值；对于尚未确定的分组，还需保留相应属性与关联关系。数据保留范围应按合法用途确定，并兼顾隐私与存储成本。"
+      ],
+      "layout": "focus",
+      "detailRef": {
+        "chapter": "03_sql_kpi",
+        "section": "保存哪些信息才能正确汇总",
+        "anchor": "可合并的统计状态"
+      },
+      "sourceSection": "可合并的统计状态",
+      "caseId": "b03-03",
+      "sources": [
+        {
+          "title": "Using Metrics Layer to Standardize and Scale Experimentation at DoorDash",
+          "url": "https://careersatdoordash.com/blog/using-metrics-layer-to-standardize-and-scale-experimentation-at-doordash-2/"
+        }
+      ],
+      "prompts": [
+        {
+          "question": "已有全国均值，还需要保留什么才能按城市重算？",
+          "answer": "需要城市归属以及每个城市的总量与计数，或保留能够重新归组的事件事实。全国均值本身不含这些信息。"
+        }
+      ],
+      "lessonNumber": 3
+    },
+    {
+      "kind": "calculation",
+      "section": "指标代数",
+      "title": "产线平均良率与整体产品良率",
+      "lead": "先选定统计单位，再确定各组权重。",
+      "body": [
+        "甲线产100件、良品90件，良率90%；乙线产900件、良品720件，良率80%。等概率抽取一条产线，两条线各占一半权重，平均良率为85%。",
+        "若从全部产出中等概率抽取一件产品，1000件中有810件良品，整体良率为81%。此时甲、乙权重为100与900件。两种均值分别描述产线和产品；评价全部产出质量应采用产品件数权重。"
+      ],
+      "detailRef": {
+        "chapter": "03_sql_kpi",
+        "section": "保存哪些信息才能正确汇总",
+        "anchor": "可合并的统计状态"
+      },
+      "sourceSection": "可合并的统计状态",
+      "layout": "split",
+      "density": "compact",
+      "diagram": {
+        "type": "bars",
+        "title": "产线与产品两种抽样单位",
+        "description": "甲线90/100=90%，乙线720/900=80%。对产线等权平均85%，对产品件数加权得到总体810/1000=81%。条形比较比例，件数作为标注显示权重。",
+        "encoding": "算例 · 同一比例尺",
+        "note": "整体产品良率的权重为件数，不是产线数量。",
+        "domain": [
+          0,
+          100
+        ],
+        "unit": "%",
+        "rows": [
+          {
+            "label": "甲线",
+            "value": 90,
+            "detail": "90 / 100 件",
+            "tone": "blue"
+          },
+          {
+            "label": "乙线",
+            "value": 80,
+            "detail": "720 / 900 件",
+            "tone": "blue"
+          },
+          {
+            "label": "等权产线均值",
+            "value": 85,
+            "detail": "每条产线权重均为 1/2",
+            "tone": "muted"
+          },
+          {
+            "label": "整体产品良率",
+            "value": 81,
+            "detail": "810 / 1000 件",
+            "tone": "teal"
+          }
+        ],
+        "ticks": [
+          0,
+          25,
+          50,
+          75,
+          100
+        ]
+      },
+      "lessonNumber": 3
+    },
+    {
+      "kind": "concept",
+      "section": "制造 KPI",
+      "title": "良率与生产周期怎样汇总",
+      "lead": "分子、分母及批次必须采用一致的范围和单位。",
+      "body": [
+        "良率（Yield）是同一检验范围内良品占总件数的比例。\\(G_i,N_i\\) 为第 \\(i\\) 组的良品数、总件数，各组事实互不重叠。首次检验和返工后的最终检验若同时计入，会重复统计部分产品。",
+        "生产周期（CT）是批次从规定开始事件到完工的时长。\\(n_i\\) 为第 \\(i\\) 组完成批次数，\\(\\bar c_i\\) 为其平均周期，总体均值按批次数加权。未完工批次另报已停留时长，称为当前年龄。"
+      ],
+      "detailRef": {
+        "chapter": "03_sql_kpi",
+        "section": "良率与生产周期",
+        "anchor": "制造指标的计算"
+      },
+      "sourceSection": "制造指标的计算",
+      "equation": [
+        "\\mathrm{Yield}=\\frac{\\sum_i G_i}{\\sum_i N_i}",
+        "\\mathrm{CT}=\\frac{\\sum_i n_i\\bar c_i}{\\sum_i n_i}"
+      ],
+      "layout": "focus",
+      "density": "compact",
+      "lessonNumber": 3
+    },
+    {
+      "kind": "concept",
+      "section": "制造 KPI",
+      "title": "设备综合效率的三个因子",
+      "lead": "采用相同设备、时间窗口和产出范围，乘积才能约分。",
+      "body": [
+        "设备综合效率（OEE）衡量计划时间中形成合格产出的有效利用程度。设计划时间 \\(T_p>0\\)、运行时间 \\(T_r>0\\)、总产出 \\(N>0\\)、良品数 \\(G\\)；理想节拍 \\(t_c\\) 是理想条件下加工一件所需时间。此处所有产品节拍相同。",
+        "时间开动率 \\(A\\) 计运行时间占比，性能效率 \\(P\\) 比较理想加工工时与运行时间，质量率 \\(Q\\) 计良品占比。相乘后，运行时间和件数约去，留下良品理想工时占计划时间的比例；各时间单位须一致。"
+      ],
+      "detailRef": {
+        "chapter": "03_sql_kpi",
+        "section": "良率与生产周期",
+        "anchor": "制造指标的计算"
+      },
+      "sourceSection": "制造指标的计算",
+      "equation": [
+        "A=\\frac{T_r}{T_p},\\quad P=\\frac{Nt_c}{T_r},\\quad Q=\\frac GN",
+        "\\mathrm{OEE}=APQ=\\frac{Gt_c}{T_p}"
+      ],
+      "layout": "focus",
+      "density": "compact",
+      "lessonNumber": 3
+    },
+    {
+      "kind": "calculation",
+      "section": "制造 KPI",
+      "title": "480 分钟班次的 OEE",
+      "lead": "先用三个因子计算，再用良品理想工时复算。",
+      "body": [
+        "计划生产480分钟，实际运行400分钟，共加工180件，其中171件合格；理想节拍为每件2分钟。时间开动率 \\(A=400/480=5/6\\)，性能效率 \\(P=180\\times2/400=0.9\\)，质量率 \\(Q=171/180=0.95\\)。",
+        "三者乘积为0.7125，即71.25%。良品理想工时为342分钟，除以480分钟得到同一结果。中间计算保留精确值，仅在最终展示时舍入，便于核对两种算法。"
+      ],
+      "detailRef": {
+        "chapter": "03_sql_kpi",
+        "section": "良率与生产周期",
+        "anchor": "制造指标的计算"
+      },
+      "sourceSection": "制造指标的计算",
+      "equation": [
+        "\\mathrm{OEE}=\\frac56\\times0.9\\times0.95=0.7125",
+        "\\frac{Gt_c}{T_p}=\\frac{171\\times2}{480}=0.7125"
+      ],
+      "layout": "focus",
+      "lessonNumber": 3,
+      "density": "compact"
+    },
+    {
+      "layout": "focus",
+      "title": "多产品 OEE 使用理想工时权重",
+      "lead": "节拍不同的产品，一件产出所代表的理想工时不同。",
+      "body": [
+        "以 \\(i\\) 编号互斥产品或片段，\\(N_i,G_i\\) 为总件数、良品数，\\(t_{c,i}\\) 为理想单件时间，\\(T_{p,i}\\) 为分配且不重叠的计划时间。OEE先合并良品理想工时，再除以总计划时间。",
+        "总运行时间为 \\(T_r\\) 时，\\(A=T_r/\\sum_iT_{p,i}\\)，\\(P=\\sum_it_{c,i}N_i/T_r\\)。要保持 \\(APQ\\) 分解，质量项须按理想工时加权，即下式 \\(Q_{\\rm time}\\)。按件数的质量率一般无法与该性能项约分。"
+      ],
+      "equation": [
+        "\\mathrm{OEE}_{\\rm time}=\\frac{\\sum_i t_{c,i}G_i}{\\sum_i T_{p,i}}",
+        "Q_{\\rm time}=\\frac{\\sum_i t_{c,i}G_i}{\\sum_i t_{c,i}N_i}"
+      ],
+      "kind": "concept",
+      "section": "制造 KPI",
+      "detailRef": {
+        "chapter": "03_sql_kpi",
+        "section": "良率与生产周期",
+        "anchor": "制造指标的计算"
+      },
+      "sourceSection": "制造指标的计算",
+      "density": "compact",
+      "lessonNumber": 3
+    },
+    {
+      "layout": "split",
+      "kind": "worked",
+      "title": "混用件数与工时权重的后果",
+      "lead": "同一批产出，质量率的不同权重会得到不同乘积。",
+      "body": [
+        "计划400分钟、运行300分钟。快产品节拍1分钟，产100件、良品90件；慢产品节拍4分钟，产50件、良品25件。理想总加工工时为300分钟，故 \\(A=0.75\\)、\\(P=1\\)。",
+        "良品理想工时为 \\(90+4\\times25=190\\) 分钟，OEE为47.5%。件数质量率为 \\(115/150\\)，代入却得57.5%。原因在于性能项按工时计量，质量项却按件数计量，二者无法约分。"
+      ],
+      "section": "制造 KPI",
+      "detailRef": {
+        "chapter": "03_sql_kpi",
+        "section": "良率与生产周期",
+        "anchor": "制造指标的计算"
+      },
+      "sourceSection": "制造指标的计算",
+      "density": "compact",
+      "diagram": {
+        "type": "bars",
+        "title": "节拍不同，质量权重也须统一",
+        "description": "总计划时间400分钟、运行300分钟。快产品1分钟一件、100件中90良品，慢产品4分钟一件、50件中25良品。件数质量代入OEE得57.5%，正确良品理想工时190/400=47.5%。",
+        "encoding": "算例 · 同一比例尺",
+        "note": "分母统一为计划时间，质量项统一为理想工时权重。",
+        "domain": [
+          0,
+          75
+        ],
+        "unit": "%",
+        "rows": [
+          {
+            "label": "件数质量代入",
+            "value": 57.5,
+            "detail": "\\(0.75\\times115/150\\)",
+            "tone": "rose"
+          },
+          {
+            "label": "理想工时口径",
+            "value": 47.5,
+            "detail": "\\((90+4\\times25)/400\\)",
+            "tone": "teal"
+          }
+        ],
+        "ticks": [
+          0,
+          25,
+          50,
+          75
+        ]
+      },
+      "equation": "Q_{\\rm time}=\\frac{190}{300},\\qquad\\mathrm{OEE}=0.75\\times1\\times Q_{\\rm time}",
+      "lessonNumber": 3
+    },
+    {
+      "kind": "concept",
+      "section": "制造 KPI",
+      "title": "在制品存量与时间平均",
+      "lead": "存量描述一个时点，期间平均还需考虑持续时间。",
+      "body": [
+        "在制品（WIP）是某时点已进入生产、尚未完成的对象数量。同一工站、同一时点，互斥产品族的件数可以相加；跨日期直接相加，会多次观察同一批尚未完成的产品。",
+        "以 \\(\\mathrm{WIP}(t)\\) 表示时刻 \\(t\\) 的存量。期间 \\([t_0,t_1)\\) 的平均值等于存量曲线下面积除以期间长度。件数乘小时得到件·小时，再除以小时仍为件。由快照近似时，还需规定各快照持续多久或如何插值。"
+      ],
+      "detailRef": {
+        "chapter": "03_sql_kpi",
+        "section": "良率与生产周期",
+        "anchor": "制造指标的计算"
+      },
+      "sourceSection": "制造指标的计算",
+      "equation": "\\overline{\\mathrm{WIP}}=\\frac1{t_1-t_0}\\int_{t_0}^{t_1}\\mathrm{WIP}(t)\\,\\mathrm dt",
+      "layout": "focus",
+      "lessonNumber": 3
+    },
+    {
+      "layout": "split",
+      "kind": "worked",
+      "title": "不等时长的存量怎样平均",
+      "lead": "每个状态的权重是它在观察期内持续的时间。",
+      "body": [
+        "设前1小时WIP恒为50件，后2小时恒为100件。在这3小时内均匀抽取一个时点，观察到100件的机会是50件的两倍，因此时间平均应按1小时与2小时加权。",
+        "曲线下面积为 \\(50\\times1+100\\times2=250\\) 件·小时，平均为 \\(250/3\\approx83.3\\) 件。两数等权平均75件忽略了持续时间。若仅有两次快照，还须规定前向保持或插值方法，才能近似期间均值。"
+      ],
+      "section": "制造 KPI",
+      "detailRef": {
+        "chapter": "03_sql_kpi",
+        "section": "良率与生产周期",
+        "anchor": "制造指标的计算"
+      },
+      "sourceSection": "制造指标的计算",
+      "density": "compact",
+      "diagram": {
+        "type": "plot",
+        "title": "存量曲线的面积给出时间权重",
+        "description": "前三小时内第一小时WIP恒为50件，后两小时恒为100件。曲线下的面积50乘1加100乘2等于250件小时；除以3小时得到250/3件，而两个状态的等权均值为75件。",
+        "encoding": "分段恒定存量 · 面积表示件·小时",
+        "note": "面积 \\(50\\times1+100\\times2=250\\) 件·小时；均值 \\(250/3\\) 件。",
+        "xDomain": [
+          0,
+          3
+        ],
+        "yDomain": [
+          0,
+          120
+        ],
+        "xLabel": "时间 / 小时",
+        "yLabel": "WIP / 件",
+        "xTicks": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "yTicks": [
+          0,
+          50,
+          100
+        ],
+        "series": [
+          {
+            "label": "分段恒定存量",
+            "points": [
+              [
+                0,
+                50
+              ],
+              [
+                1,
+                50
+              ],
+              [
+                1,
+                100
+              ],
+              [
+                3,
+                100
+              ]
+            ],
+            "tone": "blue",
+            "dashed": false
+          }
+        ],
+        "markers": [],
+        "regions": [
+          {
+            "points": [
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                50
+              ],
+              [
+                1,
+                50
+              ],
+              [
+                1,
+                0
+              ]
+            ],
+            "tone": "blue",
+            "label": ""
+          },
+          {
+            "points": [
+              [
+                1,
+                0
+              ],
+              [
+                1,
+                100
+              ],
+              [
+                3,
+                100
+              ],
+              [
+                3,
+                0
+              ]
+            ],
+            "tone": "teal",
+            "label": ""
+          }
+        ]
+      },
+      "lessonNumber": 3
+    },
+    {
+      "kind": "concept",
+      "section": "制造 KPI",
+      "title": "按到期承诺定义准时交付率",
+      "lead": "到期队列保留已逾期且确认未交付的订单。",
+      "body": [
+        "准时交付率（OTD）先固定承诺日期、有效版本和统计截止点，并将记录整理为一单一个有效承诺。到期队列由窗口内到期的订单组成，数量记为 \\(D_{\\rm due}\\)；其中按承诺完成的订单数记为 \\(D_{\\rm on}\\)。",
+        "已到期且确认未交付的订单计入分母，不计入分子；未到期订单属于后续队列。实际日期为空时，须区分尚未交付与回写缺失。承诺调整须保留版本和重约记录；无到期承诺时，分母为零，OTD未定义。"
+      ],
+      "detailRef": {
+        "chapter": "03_sql_kpi",
+        "section": "良率与生产周期",
+        "anchor": "制造指标的计算"
+      },
+      "sourceSection": "制造指标的计算",
+      "equation": "\\mathrm{OTD}=\\frac{D_{\\rm on}}{D_{\\rm due}}",
+      "layout": "focus",
+      "lessonNumber": 3
+    },
+    {
+      "kind": "case",
+      "section": "制造 KPI",
+      "title": "四张到期订单的统计范围",
+      "lead": "观察9月1日至7日到期承诺，截止点为9月8日结束。",
+      "body": [
+        "四张订单均采用统计截止点前已批准的承诺版本。A、D在承诺日期完成；B承诺9月4日，9月6日交付，属于延期；C承诺9月6日，截至9月8日确认仍未交付。",
+        "按到期承诺选对象时，四单全部进入队列。只选已交付订单时，范围为A、B、D。两种范围采用同一份原始记录，却回答不同业务问题，计算前须先固定分母。"
+      ],
+      "detailRef": {
+        "chapter": "03_sql_kpi",
+        "section": "同一批订单的两种准时率",
+        "anchor": "sec:due-cohort-example"
+      },
+      "sourceSection": "一个到期队列的完整计算",
+      "visual": {
+        "kind": "table",
+        "headers": [
+          "订单",
+          "承诺日期",
+          "实际交付",
+          "统计时点状态"
+        ],
+        "rows": [
+          [
+            "\\(\\mathrm A\\)",
+            "9 月 2 日",
+            "9 月 2 日",
+            "准时"
+          ],
+          [
+            "\\(\\mathrm B\\)",
+            "9 月 4 日",
+            "9 月 6 日",
+            "延期"
+          ],
+          [
+            "\\(\\mathrm C\\)",
+            "9 月 6 日",
+            "尚未交付",
+            "到期未交付"
+          ],
+          [
+            "\\(\\mathrm D\\)",
+            "9 月 7 日",
+            "9 月 7 日",
+            "准时"
+          ]
+        ]
+      },
+      "layout": "stack",
+      "lessonNumber": 3
+    },
+    {
+      "kind": "calculation",
+      "section": "制造 KPI",
+      "title": "50% 与 66.7% 各自说明什么",
+      "lead": "到期承诺的履行情况与已交付订单的及时程度使用不同分母。",
+      "body": [
+        "观察9月1日至7日到期承诺，截止9月8日结束。A、D准时，B延期已交付，C到期未交付。到期队列有4单，准时2单，OTD为50%；已交付队列只有A、B、D，准时率为 \\(2/3\\approx66.7\\%\\)。",
+        "前者保留未履行的到期承诺，后者描述已经完成的订单。C以后交付，仍已错过原承诺。报告两种比率时应列出名称、分子分母、承诺版本和截止点，避免把范围改变解释成交付改善。"
+      ],
+      "detailRef": {
+        "chapter": "03_sql_kpi",
+        "section": "同一批订单的两种准时率",
+        "anchor": "sec:due-cohort-example"
+      },
+      "sourceSection": "一个到期队列的完整计算",
+      "layout": "split",
+      "diagram": {
+        "type": "matrix",
+        "title": "统计队列改变了分母",
+        "description": "到期队列含A、B、C、D，A和D准时，B延期已交付，C到期未交付，因此准时2、未按时2。已交付队列排除C，只剩准时2、未按时1。",
+        "encoding": "四张订单 · 色深表示订单数",
+        "note": "到期口径 \\(2/4=50\\%\\)；已交付口径 \\(2/3\\approx66.7\\%\\)。",
+        "columns": [
+          "准时",
+          "未按时"
+        ],
+        "rowLabels": [
+          "到期队列",
+          "已交付队列"
+        ],
+        "cells": [
+          [
+            {
+              "text": "\\(2\\)",
+              "detail": "A、D",
+              "tone": "teal",
+              "value": 2
+            },
+            {
+              "text": "\\(2\\)",
+              "detail": "B、C",
+              "tone": "rose",
+              "value": 2
+            }
+          ],
+          [
+            {
+              "text": "\\(2\\)",
+              "detail": "A、D",
+              "tone": "teal",
+              "value": 2
+            },
+            {
+              "text": "\\(1\\)",
+              "detail": "B；排除未交付C",
+              "tone": "rose",
+              "value": 1
+            }
+          ]
+        ],
+        "scale": [
+          0,
+          2
+        ]
+      },
+      "density": "compact",
+      "lessonNumber": 3
+    },
+    {
+      "kind": "concept",
+      "section": "概念与方法",
+      "title": "NULL 与三值逻辑",
+      "lead": "空日期的业务含义须通过订单状态或事件记录确定。",
+      "body": [
+        "`NULL` 是SQL的空值标记，可表示未知、不适用或尚未发生。普通比较涉及空值时通常返回“未知”，因此条件有真、假、未知三种结果。判断空值应使用 `IS NULL` 或 `IS NOT NULL`。",
+        "`WHERE` 只保留条件为真的行。用实际日期与承诺日期直接比较，会排除实际日期为空的订单。计算到期OTD前，先选定到期队列，再核实空日期是否确为未交付，按业务状态决定其分子、分母贡献。"
+      ],
+      "layout": "split",
+      "detailRef": {
+        "chapter": "03_sql_kpi",
+        "section": "实际日期为空时如何判断",
+        "anchor": "空值未完成事件与业务状态"
+      },
+      "sourceSection": "空值、未完成事件与业务状态",
+      "visual": {
+        "kind": "cards",
+        "items": [
+          {
+            "label": "真",
+            "detail": "条件已得到满足"
+          },
+          {
+            "label": "假",
+            "detail": "条件已被否定"
+          },
+          {
+            "label": "未知",
+            "detail": "缺少足够字段值"
+          }
+        ]
+      },
+      "lessonNumber": 3
+    },
+    {
+      "layout": "split",
+      "kind": "method",
+      "title": "用条件聚合计算到期 OTD",
+      "lead": "WHERE 确定分母，CASE 标记其中准时完成的订单。",
+      "body": [
+        "输入 `valid_commitments` 一行一个有效承诺，已还原至9月8日结束；`due_at` 为承诺日期，`delivered_at` 为实际交付日期，空值已确认表示未交付。`WHERE` 选9月1日及以后、9月8日以前到期的承诺。",
+        "`CASE` 对准时交付记1，其余记0，求和得到分子，`COUNT(*)` 给出全部到期订单数。`*1.0` 避免整数除法，`NULLIF` 将零分母转为空值。实际应用还须确定部分交付及迟到回写规则。"
+      ],
+      "codeBlock": {
+        "language": "sql",
+        "caption": "教学到期窗口：9 月 1 日起，9 月 8 日前。",
+        "code": "-- 一行一有效承诺；已还原至统计截止点\nSELECT COUNT(*) AS due_orders,\n  SUM(CASE WHEN delivered_at <= due_at\n    THEN 1 ELSE 0 END) AS on_time_orders,\n  SUM(CASE WHEN delivered_at <= due_at\n    THEN 1 ELSE 0 END)*1.0\n    / NULLIF(COUNT(*),0) AS otd\nFROM valid_commitments\nWHERE due_at >= DATE '2026-09-01'\n  AND due_at < DATE '2026-09-08';"
+      },
+      "section": "制造 KPI",
+      "detailRef": {
+        "chapter": "03_sql_kpi",
+        "section": "同一批订单的两种准时率",
+        "anchor": "sec:due-cohort-example"
+      },
+      "sourceSection": "一个到期队列的完整计算",
+      "density": "compact",
+      "lessonNumber": 3
+    },
+    {
+      "kind": "concept",
+      "section": "制造 KPI",
+      "title": "零分母、零准时数与记录缺失",
+      "lead": "不同状态需要不同的数值和解释。",
+      "body": [
+        "到期订单数为正、准时数为零时，OTD等于0；没有到期订单时，比率未定义。`NULLIF(denominator,0)` 在分母为零时返回空值，使除法保留这一差异。",
+        "交付日期为空还可能表示回写缺失，应先核实订单状态。成本缺失会使毛利无法完整计算；客户匹配失败可用左连接保留事实并标为未知。结果应同时报告缺失数量和有效对象数，避免用填零掩盖记录缺失。"
+      ],
+      "detailRef": {
+        "chapter": "03_sql_kpi",
+        "section": "实际日期为空时如何判断",
+        "anchor": "空值未完成事件与业务状态"
+      },
+      "sourceSection": "空值、未完成事件与业务状态",
+      "visual": {
+        "kind": "table",
+        "headers": [
+          "状态",
+          "结果",
+          "解释"
+        ],
+        "rows": [
+          [
+            "分母为零",
+            "NULL",
+            "当前比率未定义"
+          ],
+          [
+            "分子零、分母正",
+            "\\(0\\)",
+            "队列内无准时完成"
+          ],
+          [
+            "事实缺失",
+            "质量标记",
+            "相关结果无法判断"
+          ]
+        ]
+      },
+      "layout": "split",
+      "lessonNumber": 3
+    },
+    {
+      "layout": "focus",
+      "title": "COUNT 的两种计数范围",
+      "lead": "COUNT(*) 统计行，COUNT(字段) 只统计非空值。",
+      "body": [
+        "SQL中，`COUNT(*)` 统计输入的全部行；`COUNT(actual_date)` 仅统计实际日期非空的行。到期队列包含确认未交付订单时，后者会缩小分母，使指标变为已交付口径。",
+        "例如实际日期为空的到期订单，`COUNT(*)` 仍计1，`COUNT(actual_date)` 计0。若已确认尚未交付，条件聚合的准时标记也应为0。行数、非空日期数与准时数分别表示不同事实，选取前须核对业务含义。"
+      ],
+      "prompts": [
+        {
+          "question": "含已确认未交付订单的到期队列，应怎样选择计数表达式？",
+          "answer": "用COUNT(*)计全部有效到期承诺，用条件聚合计准时完成。COUNT(actual_date)会排除实际日期为空的对象，改变分母。"
+        }
+      ],
+      "detailRef": {
+        "chapter": "03_sql_kpi",
+        "section": "相同取值与不同业务事实",
+        "anchor": "查询的选择与分组条件"
+      },
+      "kind": "concept",
+      "section": "制造 KPI",
+      "sourceSection": "查询的选择与分组条件",
+      "lessonNumber": 3
+    },
+    {
+      "kind": "worked",
+      "section": "SQL 实现",
+      "title": "先计算订单金额，再按地区汇总",
+      "lead": "公共表表达式为中间查询结果命名。",
+      "body": [
+        "`WITH` 定义公共表表达式 `order_enriched`，供后续查询按名称引用。它每行一单：收入为数量乘标准价；毛利为收入减直接成本，样例按数量乘单价与单位成本 `unit_cost` 之差计算。实际日期非空条件只保留已交付订单。",
+        "外层分别加总各地区毛利与收入，相除得到毛利率，即毛利占收入的比例。样例价格和成本固定；历史计算须采用交易时金额。到期OTD另按到期承诺选对象，须保持名称与范围一致。"
+      ],
+      "detailRef": {
+        "chapter": "03_sql_kpi",
+        "section": "把条件和分母写进 SQL",
+        "anchor": "条件聚合与安全除法"
+      },
+      "sourceSection": "条件聚合与安全除法",
+      "codeBlock": {
+        "language": "sql",
+        "caption": "分母为零时，毛利率报告为未定义。",
+        "code": "-- 单产品、固定标准价；仅已交付订单\nWITH order_enriched AS (\n  SELECT c.region, o.quantity*p.unit_price AS revenue,\n    o.quantity*(p.unit_price-p.unit_cost) AS gross_profit\n  FROM orders o\n  JOIN customers c USING (customer_id)\n  JOIN products p USING (product_id)\n  WHERE o.actual_date IS NOT NULL)\nSELECT region,\n  SUM(gross_profit)/NULLIF(SUM(revenue),0) AS gross_margin\nFROM order_enriched GROUP BY region;"
+      },
+      "layout": "split",
+      "density": "compact",
+      "lessonNumber": 3
+    },
+    {
+      "kind": "calculation",
+      "section": "SQL 实现",
+      "title": "整体毛利率为什么按收入加权",
+      "lead": "总毛利占总收入的比例，需要合并两项金额。",
+      "body": [
+        "两单收入100、900，毛利50、90，金额单位相同。各单毛利率分别为50%、10%。等权平均为30%，描述等概率抽取一张订单时的平均毛利率。",
+        "整体毛利率为 \\((50+90)/(100+900)=14\\%\\)，每单权重按收入分配。先保存毛利和收入，便可在任意分组合并后重算。总收入为零时，该比率未定义，仍应分别报告金额和有效订单数。"
+      ],
+      "detailRef": {
+        "chapter": "03_sql_kpi",
+        "section": "把条件和分母写进 SQL",
+        "anchor": "条件聚合与安全除法"
+      },
+      "sourceSection": "条件聚合与安全除法",
+      "layout": "split",
+      "density": "compact",
+      "diagram": {
+        "type": "bars",
+        "title": "按订单等权与按收入加权",
+        "description": "两单收入100、900，毛利50、90，各单毛利率50%、10%；等权订单均值30%，合并总毛利140与总收入1000后整体毛利率14%。",
+        "encoding": "算例 · 同一比例尺",
+        "note": "金额同一单位；整体毛利率使用收入权重。",
+        "domain": [
+          0,
+          50
+        ],
+        "unit": "%",
+        "rows": [
+          {
+            "label": "订单 1",
+            "value": 50,
+            "detail": "收入 100；毛利 50",
+            "tone": "blue"
+          },
+          {
+            "label": "订单 2",
+            "value": 10,
+            "detail": "收入 900；毛利 90",
+            "tone": "blue"
+          },
+          {
+            "label": "等权订单率",
+            "value": 30,
+            "detail": "每单权重 1/2",
+            "tone": "muted"
+          },
+          {
+            "label": "整体毛利率",
+            "value": 14,
+            "detail": "总毛利 140 / 总收入 1000",
+            "tone": "teal"
+          }
+        ],
+        "ticks": [
+          0,
+          10,
+          20,
+          30,
+          40,
+          50
+        ]
+      },
+      "lessonNumber": 3
+    },
+    {
+      "kind": "case",
+      "section": "企业案例",
+      "title": "Spotify 按播放份额分配版税",
+      "lead": "分配比例以同一市场、月份的总播放量为分母。",
+      "body": [
+        "Spotify公开说明，版税按地区、月份的播放份额（streamshare）分配。某权利人相关播放量除以该市场同期总播放量，得到其份额，再据此参与分配相应版税池。权利人是享有相应音乐版权并收取支付的主体。",
+        "平台先向权利人支付，艺术家和词曲作者最终到账还取决于合同。播放量增加时，份额也受市场总播放量影响；收入还受可分配金额与合同影响，因此没有适用于所有播放的固定统一单价。"
+      ],
+      "layout": "split",
+      "detailRef": {
+        "chapter": "03_sql_kpi",
+        "section": "保存哪些信息才能正确汇总",
+        "anchor": "可合并的统计状态"
+      },
+      "sourceSection": "可合并的统计状态",
+      "visual": {
+        "kind": "flow",
+        "items": [
+          {
+            "label": "市场与月份",
+            "detail": "固定结算范围"
+          },
+          {
+            "label": "播放份额",
+            "detail": "分子与分母共同确定"
+          },
+          {
+            "label": "权利人及合同",
+            "detail": "决定后续分配"
+          }
+        ]
+      },
+      "caseId": "b03-04",
+      "sources": [
+        {
+          "title": "Royalties Guide",
+          "url": "https://artists.spotify.com/en/royalties-guide"
+        }
+      ],
+      "lessonNumber": 3
+    },
+    {
+      "kind": "case",
+      "section": "企业案例",
+      "title": "播放量翻倍为什么未必收入翻倍",
+      "lead": "数量、份额和最终到账金额是不同的量。",
+      "body": [
+        "Spotify按同一市场、月份的播放份额分配。某曲播放量上升时，若市场总播放量也增长，其份额未必按同一比例上升。可分配版税池与权利人合同又会影响最终金额。",
+        "将总支付除以总播放量，只得到特定范围内的事后平均值，不能当作每次播放的固定合同价格。估计某位艺术家收入时，还须确定适用的资格规则、市场和合同条件。"
+      ],
+      "layout": "focus",
+      "detailRef": {
+        "chapter": "03_sql_kpi",
+        "section": "保存哪些信息才能正确汇总",
+        "anchor": "可合并的统计状态"
+      },
+      "sourceSection": "可合并的统计状态",
+      "caseId": "b03-04",
+      "sources": [
+        {
+          "title": "Royalties Guide",
+          "url": "https://artists.spotify.com/en/royalties-guide"
+        }
+      ],
+      "prompts": [
+        {
+          "question": "播放量翻倍，估计到账金额还需要哪些信息？",
+          "answer": "需固定市场与月份，并核对同期总播放量、可分配版税池及权利合同。播放份额和金额会随这些条件改变。"
+        }
+      ],
+      "lessonNumber": 3
+    },
+    {
+      "kind": "concept",
+      "section": "时间窗口",
+      "title": "窗口函数计算最近三笔收入",
+      "lead": "逐单保留输出，同时计算该客户的局部合计。",
+      "body": [
+        "窗口函数为每行选择相关行作计算，`OVER` 声明窗口。`PARTITION BY` 按客户划分，`ORDER BY` 用日期、订单号确定客户内顺序，`ROWS` 选当前行及前两行。输入一行一单，首两笔只使用已有记录。",
+        "“最近三笔”按订单行数定义，“最近七日”按时间定义，两者范围不同。该样例采用固定标准价，历史收入应使用成交价。窗口中的排序决定计算范围，最后的 `ORDER BY` 决定结果展示顺序。"
+      ],
+      "detailRef": {
+        "chapter": "03_sql_kpi",
+        "section": "每张订单的最近三笔收入",
+        "anchor": "窗口函数与经营节奏"
+      },
+      "sourceSection": "窗口函数与经营节奏",
+      "codeBlock": {
+        "language": "sql",
+        "caption": "窗口统计不会像 GROUP BY 那样压缩订单行。",
+        "code": "-- 一行一订单，日期与订单号共同确定客户内顺序\nSELECT o.customer_id, o.order_id,\n  SUM(o.quantity * p.unit_price) OVER (\n    PARTITION BY o.customer_id\n    ORDER BY o.order_date, o.order_id\n    ROWS BETWEEN 2 PRECEDING AND CURRENT ROW\n  ) AS recent_3_revenue\nFROM orders o\nJOIN products p USING (product_id)\nORDER BY o.customer_id, o.order_date, o.order_id;"
+      },
+      "layout": "split",
+      "density": "compact",
+      "lessonNumber": 3
+    },
+    {
+      "kind": "worked",
+      "section": "时间窗口",
+      "title": "移动窗口逐单怎样计算",
+      "lead": "订单行保留，参与求和的历史记录随当前行移动。",
+      "body": [
+        "同一客户四笔订单按日期、订单号排序，收入依次为100、200、300、400元。`ROWS BETWEEN 2 PRECEDING AND CURRENT ROW` 表示当前及前两行。第一笔合计100元，第二笔300元，第三笔600元。",
+        "计算第四笔时，O01退出，窗口包含O02、O03、O04，合计900元；四笔累计则为1000元。图的横轴表示记录顺序，条段标出包含哪些行，不表示订单之间经过了多少时间。"
+      ],
+      "detailRef": {
+        "chapter": "03_sql_kpi",
+        "section": "每张订单的最近三笔收入",
+        "anchor": "窗口函数与经营节奏"
+      },
+      "sourceSection": "窗口函数与经营节奏",
+      "layout": "split",
+      "density": "compact",
+      "diagram": {
+        "type": "timeline",
+        "title": "当前及前两行组成移动窗口",
+        "description": "同一客户四笔订单收入100、200、300、400元，按稳定顺序排列。当前O02窗口包含O01至O02共300；O03包含O01至O03共600；O04包含O02至O04共900，O01退出。",
+        "encoding": "订单记录 · 行数窗口示意",
+        "note": "横轴是记录顺序；条段表示包含的行，不表示时间持续。",
+        "domain": [
+          0.5,
+          4.5
+        ],
+        "unit": "订单顺序",
+        "rows": [
+          {
+            "label": "O02：300元",
+            "segments": [
+              {
+                "start": 0.75,
+                "end": 2.25,
+                "label": "O01 + O02",
+                "tone": "blue"
+              }
+            ],
+            "points": [
+              {
+                "at": 2,
+                "label": "当前",
+                "tone": "blue"
+              }
+            ]
+          },
+          {
+            "label": "O03：600元",
+            "segments": [
+              {
+                "start": 0.75,
+                "end": 3.25,
+                "label": "O01 + O02 + O03",
+                "tone": "blue"
+              }
+            ],
+            "points": [
+              {
+                "at": 3,
+                "label": "当前",
+                "tone": "blue"
+              }
+            ]
+          },
+          {
+            "label": "O04：900元",
+            "segments": [
+              {
+                "start": 1.75,
+                "end": 4.25,
+                "label": "O02 + O03 + O04",
+                "tone": "teal"
+              }
+            ],
+            "points": [
+              {
+                "at": 4,
+                "label": "当前",
+                "tone": "teal"
+              }
+            ]
+          }
+        ],
+        "ticks": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      "lessonNumber": 3
+    },
+    {
+      "kind": "concept",
+      "section": "核查与问数",
+      "title": "从地区指标到经营解释",
+      "lead": "分组差异提供调查方向，行动效果还需另行研究。",
+      "body": [
+        "报告先说明对象、时间范围和比较基准，再列出分子分母、排除规则及异常贡献，并保存查询与数据版本。这样可以从地区结果回到参与计算的订单。",
+        "“南区准时率低”只说明表现差异。可进一步按产品和订单优先级分组，再检查供应商到货、出库与物流记录。选择改善措施还需判断作用机制、估计改善效果和费用，并确认资源约束。"
+      ],
+      "detailRef": {
+        "chapter": "03_sql_kpi",
+        "section": "从分组差异提出具体解释",
+        "anchor": "从指标结果到管理解释"
+      },
+      "sourceSection": "从指标结果到管理解释",
+      "visual": {
+        "kind": "cards",
+        "items": [
+          {
+            "label": "核对事实",
+            "detail": "明确对象、时间与比较基准。"
+          },
+          {
+            "label": "定位差异",
+            "detail": "检查分母及各组贡献。"
+          },
+          {
+            "label": "研究措施",
+            "detail": "结合过程记录、效果与费用。"
+          }
+        ]
+      },
+      "layout": "split",
+      "lessonNumber": 3
+    },
+    {
+      "kind": "case",
+      "section": "企业案例",
+      "title": "Uber uMetric 统一指标来源与计算",
+      "lead": "实时界面和离线报告可能使用不同存储中的记录。",
+      "body": [
+        "Uber公开说明，不同团队曾在不同存储和使用渠道中分别为同一业务逻辑建立指标，例如运营分析与实时服务各自计算“完成行程”。uMetric用统一视图表示不同存储中的同类来源数据。",
+        "指标定义保存SQL聚合与业务规则，并管理查找、计算、质量和使用方式。比较同名结果时，须统一事件定义、截止时点和迟到记录处理；这些条件不同，查询即使分别正确，也会统计不同范围。"
+      ],
+      "layout": "split",
+      "detailRef": {
+        "chapter": "03_sql_kpi",
+        "section": "从分组差异提出具体解释",
+        "anchor": "从指标结果到管理解释"
+      },
+      "sourceSection": "从指标结果到管理解释",
+      "visual": {
+        "kind": "flow",
+        "items": [
+          {
+            "label": "业务定义",
+            "detail": "何谓完成行程"
+          },
+          {
+            "label": "来源与时间",
+            "detail": "统一视图及截止点"
+          },
+          {
+            "label": "计算结果",
+            "detail": "比较同口径的聚合量"
+          }
+        ]
+      },
+      "caseId": "b03-02",
+      "sources": [
+        {
+          "title": "The Journey Towards Metric Standardization",
+          "url": "https://www.uber.com/qa/en/blog/umetric/"
+        }
+      ],
+      "lessonNumber": 3
+    },
+    {
+      "kind": "case",
+      "section": "企业案例",
+      "title": "怎样比较实时与离线结果",
+      "lead": "先对齐事件范围与截止时点，再检查计算差异。",
+      "body": [
+        "实时结果随新记录更新，离线报告可能使用定时保存的数据快照，并在以后补入迟到记录。快照指某一时点保存的数据状态。同名指标出现差异时，先核对双方的数据状态和统计截止点。",
+        "随后检查完成事件定义、迟到处理、定义版本和聚合规则。评价时还要约定数据新鲜度，即业务事实发生后，允许多久反映到查询结果中。按这些条件区分正常更新差异、重复定义与计算错误。"
+      ],
+      "layout": "focus",
+      "detailRef": {
+        "chapter": "03_sql_kpi",
+        "section": "从分组差异提出具体解释",
+        "anchor": "从指标结果到管理解释"
+      },
+      "sourceSection": "从指标结果到管理解释",
+      "caseId": "b03-02",
+      "sources": [
+        {
+          "title": "The Journey Towards Metric Standardization",
+          "url": "https://www.uber.com/qa/en/blog/umetric/"
+        }
+      ],
+      "prompts": [
+        {
+          "question": "实时与离线数字不一致，第一步应检查什么？",
+          "answer": "先核对事件范围、快照与统计截止点，再检查迟到回写和定义版本。对齐这些条件后，才能定位计算是否出错。"
+        }
+      ],
+      "lessonNumber": 3
+    },
+    {
+      "kind": "concept",
+      "section": "核查与问数",
+      "title": "把业务提问写成明确的查询请求",
+      "lead": "指标、时间与比较规则明确后，SQL 才有确定目标。",
+      "body": [
+        "自然语言问数将日常语言提出的数据问题转为查询。“最近良率最差”尚未确定自然周或滚动期间、首次或最终检验、数值最低或偏离目标最多，也缺少最低产量和可见范围。系统须澄清条件，或列明已获批准的默认定义。",
+        "以下请求中，\\(m\\) 是指标，\\(g\\) 是输出粒度，\\(w\\) 是时间范围，\\(f\\) 是筛选条件，\\(v\\) 是定义版本，\\(u\\) 是用户身份，\\(\\mathcal E\\) 是输出要求，如排序、最低样本量及行数上限。SQL在具体表结构上实现这些约定。"
+      ],
+      "detailRef": {
+        "chapter": "03_sql_kpi",
+        "section": "先明确问题，再生成查询",
+        "anchor": "自然语言问题的形式化"
+      },
+      "sourceSection": "自然语言问题的形式化",
+      "equation": "q=(m,g,w,f,v,u,\\mathcal E)",
+      "layout": "focus",
+      "lessonNumber": 3
+    },
+    {
+      "kind": "concept",
+      "section": "核查与问数",
+      "title": "利用不变量验证查询结果",
+      "lead": "不变量是计算在规定条件下必须满足的关系。",
+      "body": [
+        "问数系统把业务问题转为查询，应先取得确认的定义和字段，再执行候选SQL。输出数值时，同时返回分子分母、截止点和查询版本，以核对它是否符合明确后的请求。",
+        "同一检验范围内，良品数 \\(G\\) 与总件数 \\(N\\) 满足 \\(0\\le G\\le N\\)。互斥且覆盖全量的分组计数之和等于总计数；分片合并应还原全量；调换行序不改变良率。变形测试通过改变输入，检查这些预定关系。"
+      ],
+      "detailRef": {
+        "chapter": "03_sql_kpi",
+        "section": "核对工站良率查询",
+        "anchor": "制造查询的验证步骤"
+      },
+      "sourceSection": "制造查询的验证步骤",
+      "visual": {
+        "kind": "cards",
+        "items": [
+          {
+            "label": "计数范围",
+            "detail": "同范围内 \\(0\\le G\\le N\\)。"
+          },
+          {
+            "label": "合并一致",
+            "detail": "互斥分组汇总等于全量。"
+          },
+          {
+            "label": "行序无关",
+            "detail": "调换输入顺序不改变良率。"
+          }
+        ]
+      },
+      "layout": "split",
+      "lessonNumber": 3
+    },
+    {
+      "layout": "split",
+      "title": "查询权限由执行环境落实",
+      "lead": "生成候选 SQL 与授予数据访问权限是两项职责。",
+      "body": [
+        "执行服务限定可用表、列和函数，使用只读账户读取指定快照，并设置行数、时间及资源上限。文件读取、网络和扩展能力也须在运行环境中限制。快照保存指定时点的数据状态，便于复算。",
+        "参数绑定将日期、客户号等值与SQL结构分开传入；表名、列名从许可清单选择。日志记录请求、SQL、参数、角色、快照和结果。数据库实际权限决定可访问范围，模型输出的授权声明不改变这些权限。"
+      ],
+      "visual": {
+        "kind": "cards",
+        "items": [
+          {
+            "label": "对象与语句",
+            "detail": "限定许可表、列和函数。"
+          },
+          {
+            "label": "资源与环境",
+            "detail": "控制时间、行数、文件及网络。"
+          },
+          {
+            "label": "日志与复核",
+            "detail": "保留用户、参数和数据版本。"
+          }
+        ]
+      },
+      "detailRef": {
+        "chapter": "03_sql_kpi",
+        "section": "控制查询能够访问什么",
+        "anchor": "查询执行的权限控制"
+      },
+      "kind": "concept",
+      "section": "核查与问数",
+      "sourceSection": "查询执行的权限控制",
+      "lessonNumber": 3
+    },
+    {
+      "kind": "summary",
+      "section": "核查与问数",
+      "title": "评价问数任务的有效完成比例",
+      "lead": "同时满足结果正确、权限合规和按时返回，才记为完成。",
+      "body": [
+        "本例用下式评价任务完成情况。固定 \\(n>0\\) 个可合法回答的任务。对第 \\(i\\) 题，\\(C_i,P_i,D_i\\) 是0或1指示量，分别表示数值与口径正确、访问符合授权、在期限内返回。乘积仅在三项同时满足时为1，平均得到有效完成比例。",
+        "比较服务须使用同一任务、角色、数据快照、容许误差和期限。测试包括零分母、迟到记录、拆单及重复连接；需澄清与越权请求另评澄清、拒绝行为。报告还应列明样本构成、时延和费用。"
+      ],
+      "detailRef": {
+        "chapter": "03_sql_kpi",
+        "section": "在相同任务上比较服务",
+        "anchor": "多平台问数系统的可比较任务"
+      },
+      "sourceSection": "多平台问数系统的可比较任务",
+      "equation": "\\widehat p_{\\rm valid}=\\frac1n\\sum_{i=1}^{n}C_iP_iD_i",
+      "layout": "focus",
+      "lessonNumber": 3
+    },
+    {
+      "layout": "split",
+      "title": "本地部署要核对哪些位置与资源",
+      "lead": "数据存储、检索、模型计算和日志可能位于不同环境。",
+      "body": [
+        "模型推理指用已训练模型计算输出。分别确认数据、检索、推理、日志的位置与通信。模型参数也称权重。此处 \\(P\\) 表示参数总数，\\(b\\) 是每个权重的位数，纯权重约占 \\(Pb/8\\) 字节，8位等于1字节。",
+        "运行还需中间计算内存。键值（KV）缓存保存模型已算得的键和值，作为上下文的中间表示供后续生成复用。上下文长度指输入及已生成文本的长度，并发量指同时处理的请求数。批处理会合并多个请求；容量测试须固定这些条件，测量准确率、时延、资源和错误损失。"
+      ],
+      "equation": "M_{\\rm weights}\\approx\\frac{Pb}{8}\\quad\\text{字节}",
+      "detailRef": {
+        "chapter": "03_sql_kpi",
+        "section": "数据、模型与日志的部署位置",
+        "anchor": "本地部署的数据与模型服务"
+      },
+      "kind": "concept",
+      "section": "核查与问数",
+      "sourceSection": "本地部署的数据与模型服务",
+      "diagram": {
+        "type": "graph",
+        "title": "模型运行内存不止纯权重",
+        "description": "参数数P及每参数位数b确定纯权重字节Pb/8。运行还需中间计算、批处理与生成历史KV缓存；上下文长度和并发决定额外资源。各组件大小取决于实现，没有给定固定比例。",
+        "encoding": "资源组成示意 · 非定量分解",
+        "note": "各部分大小须实测；框面积不表示内存比例。",
+        "nodes": [
+          {
+            "id": "parameters",
+            "x": 19,
+            "y": 21,
+            "w": 32,
+            "h": 22,
+            "label": "模型参数",
+            "detail": "\\(P\\) 个，每个 \\(b\\) 位",
+            "tone": "blue",
+            "shape": "rect"
+          },
+          {
+            "id": "weights",
+            "x": 73,
+            "y": 21,
+            "w": 38,
+            "h": 22,
+            "label": "纯权重存储",
+            "detail": "\\(Pb/8\\) 字节",
+            "tone": "blue",
+            "shape": "rect"
+          },
+          {
+            "id": "intermediate",
+            "x": 19,
+            "y": 77,
+            "w": 32,
+            "h": 22,
+            "label": "运行中间状态",
+            "detail": "计算与批处理内存",
+            "tone": "blue",
+            "shape": "rect"
+          },
+          {
+            "id": "KV",
+            "x": 73,
+            "y": 77,
+            "w": 38,
+            "h": 22,
+            "label": "生成历史缓存",
+            "detail": "上下文长度与并发",
+            "tone": "blue",
+            "shape": "rect"
+          },
+          {
+            "id": "runtime",
+            "x": 49,
+            "y": 49,
+            "w": 38,
+            "h": 19,
+            "label": "运行资源核查",
+            "detail": "实测容量、时延与错误",
+            "tone": "teal",
+            "shape": "rect"
+          }
+        ],
+        "edges": [
+          {
+            "from": "parameters",
+            "to": "weights",
+            "label": ""
+          },
+          {
+            "from": "weights",
+            "to": "runtime",
+            "label": ""
+          },
+          {
+            "from": "intermediate",
+            "to": "runtime",
+            "label": ""
+          },
+          {
+            "from": "KV",
+            "to": "runtime",
+            "label": ""
+          }
+        ]
+      },
+      "density": "compact",
+      "lessonNumber": 3
+    },
+    {
+      "layout": "split",
+      "kind": "summary",
+      "title": "从业务定义逐步复核查询",
+      "lead": "每一步都能回到具体记录，才便于判断差异来自哪里。",
+      "body": [
+        "先说明源表与结果表各行代表什么，按事实主键检查连接的覆盖范围与匹配次数；随后核对时间、队列、分子分母和合并方式，再检查权限、定义版本与异常状态。",
+        "例如到期OTD从50%变为66.7%，应先确认是否把未交付订单移出分母，再研究交付是否改善。缺失、重复和时间错误都可能改变统计范围及权重，因此复核计算还需结合数据质量检查。"
+      ],
+      "prompts": [
+        {
+          "question": "到期OTD从50%变为66.7%，怎样判断是否存在真实改善？",
+          "answer": "先保持承诺版本、到期队列和截止点一致。若变化仅来自排除未交付订单，应解释为统计范围变化；真实改善需在同口径下另作比较。"
+        }
+      ],
+      "detailRef": {
+        "chapter": "03_sql_kpi",
+        "section": "结果报告的要求",
+        "anchor": "查询结果的核查"
+      },
+      "section": "核查与问数",
+      "sourceSection": "查询结果的核查",
+      "density": "compact",
+      "lessonNumber": 3
+    }
+  ],
+  "id": "03_sql_kpi",
+  "chapter": "03_sql_kpi",
+  "lectureNumber": 3
+}

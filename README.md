@@ -61,6 +61,8 @@ python3 scripts/verify-concept-links.py --baseline-ref 4836fc8 --review-dir revi
 
 ## 运行机制
 
+第二、第三讲页顶幻灯片的最新作者源在 `content-source/slides-readability-20261024/`。执行 `npm run build:slides-reviewed` 单独更新这两讲；`node scripts/verify-readable-slides.mjs` 检查页数、公式、代码、案例和其他讲的保全。每页可省略重复的结论面板。逐页审读及排版记录见 `review/slides-readability-20261024/`。
+
 - Python：本地托管 Pyodide 0.27.7（CPython 3.12），Web Worker 隔离执行，虚拟文件系统装载原课程 Python 文件及数据。
 - 原程序编辑：写入虚拟包，再通过可见的配套示例调用；不改服务器源文件。每次运行恢复原数据与其余源文件。
 - SQL：本地托管 DuckDB WASM 1.29.0，13 份 CSV 注册为视图，预建课程 KPI 视图。多语句脚本显示最后一个查询的结果。

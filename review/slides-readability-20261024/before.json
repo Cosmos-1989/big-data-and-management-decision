@@ -1,0 +1,5165 @@
+{
+  "02_enterprise_data_model": {
+    "title": "企业数据模型与治理机制",
+    "slides": [
+      {
+        "kind": "opener",
+        "section": "对象与责任",
+        "title": "统一身份与业务含义",
+        "lead": "跨系统建模先确定记录指向的对象。",
+        "body": [
+          "同一客户在客户关系管理（CRM，记录客户身份、销售交互及服务过程的业务系统）、订单和售后系统可能有不同编号；同一库存又可能处于在途、可用、锁定或冻结状态。直接拼接记录，可能同时混淆身份、口径和行动对象。",
+          "企业数据模型表达对象、属性、关系、事件、状态与约束。编号映射解决身份对应，“发货”与“签收”的操作定义解决业务含义，两类规则须分别制定。"
+        ],
+        "detailRef": {
+          "chapter": "02_enterprise_data_model",
+          "section": "从订单问题到数据模型",
+          "anchor": "数据模型与组织管理"
+        },
+        "sourceSection": "数据模型与组织管理",
+        "takeaway": "同名字段仍须核对含义，跨表连接后仍须确认可采取的行动。",
+        "layout": "split",
+        "diagram": {
+          "type": "graph",
+          "title": "多个系统中的同一客户",
+          "description": "CRM、订单和售后系统的不同编号经身份映射指向同一客户对象；身份统一后仍须独立统一发货或签收等事实定义。",
+          "encoding": "模型结构示意",
+          "note": "编号映射解决身份对应，操作定义解决事实含义。",
+          "nodes": [
+            {
+              "id": "crm",
+              "x": 18,
+              "y": 20,
+              "w": 28,
+              "h": 22,
+              "label": "CRM 客户号",
+              "detail": "客户资料",
+              "tone": "blue",
+              "shape": "rect"
+            },
+            {
+              "id": "orders",
+              "x": 18,
+              "y": 50,
+              "w": 28,
+              "h": 22,
+              "label": "订单客户号",
+              "detail": "交易记录",
+              "tone": "blue",
+              "shape": "rect"
+            },
+            {
+              "id": "support",
+              "x": 18,
+              "y": 80,
+              "w": 28,
+              "h": 22,
+              "label": "售后客户号",
+              "detail": "服务记录",
+              "tone": "blue",
+              "shape": "rect"
+            },
+            {
+              "id": "identity",
+              "x": 53,
+              "y": 50,
+              "w": 28,
+              "h": 22,
+              "label": "统一客户身份",
+              "detail": "编号映射与核验",
+              "tone": "blue",
+              "shape": "rect"
+            },
+            {
+              "id": "meaning",
+              "x": 84,
+              "y": 50,
+              "w": 26,
+              "h": 22,
+              "label": "统一业务含义",
+              "detail": "发货、签收分别定义",
+              "tone": "blue",
+              "shape": "rect"
+            }
+          ],
+          "edges": [
+            {
+              "from": "crm",
+              "to": "identity",
+              "label": ""
+            },
+            {
+              "from": "orders",
+              "to": "identity",
+              "label": ""
+            },
+            {
+              "from": "support",
+              "to": "identity",
+              "label": ""
+            },
+            {
+              "from": "identity",
+              "to": "meaning",
+              "label": ""
+            }
+          ]
+        },
+        "density": "compact",
+        "lessonNumber": 2
+      },
+      {
+        "kind": "concept",
+        "section": "对象与责任",
+        "title": "数据模型与治理责任",
+        "lead": "定义、实现、批准和复核应分别记录。",
+        "body": [
+          "主键是记录的唯一标识；事实粒度说明每行代表哪项业务事实；指标字典固定公式及范围；数据血缘记录源数据与转换步骤；元数据则描述结构、含义、来源、责任与版本。治理制度规定谁能定义、使用、修改和复核这些规则。",
+          "交期定义变更会影响客户承诺及准时率，应由业务负责人确认含义，平台团队实施规则与权限，复核人员检查记录。职责可由不同岗位承担，但不能仅以表的“所有者”概括。"
+        ],
+        "detailRef": {
+          "chapter": "02_enterprise_data_model",
+          "section": "数据定义与监督责任",
+          "anchor": "数据模型的治理含义"
+        },
+        "sourceSection": "数据模型的治理含义",
+        "visual": {
+          "kind": "cards",
+          "items": [
+            "责任：定义与批准",
+            "透明：公式与来源",
+            "控制：约束与权限",
+            "审计：版本与日志"
+          ]
+        },
+        "takeaway": "治理要求应落实为对象定义、权限、变更版本及复核责任。",
+        "layout": "split",
+        "lessonNumber": 2
+      },
+      {
+        "kind": "case",
+        "section": "企业案例",
+        "title": "Spotify Backstage：服务身份与责任归属",
+        "lead": "技术对象需要可识别的身份与明确的维护关系。",
+        "body": [
+          "服务数量增加后，开发人员需要知道某个服务由谁维护、文档在哪里。Spotify以Backstage的软件目录集中组织服务及其所有权信息。",
+          "Spotify工程文章说明服务所有权信息被记录于软件目录，团队能够查看所负责的服务；文档等开发资料也通过Backstage集中呈现，方便在对象上下文中查找。"
+        ],
+        "takeaway": "服务属于技术对象，团队属于组织对象，“负责维护”是二者的关系。把责任仅写在自由文本里，不利于批量查找和变更核对；结构化关系更便于维护。",
+        "layout": "split",
+        "detailRef": {
+          "chapter": "02_enterprise_data_model",
+          "section": "数据定义与监督责任",
+          "anchor": "数据模型的治理含义"
+        },
+        "sourceSection": "数据模型的治理含义",
+        "visual": {
+          "kind": "flow",
+          "items": [
+            {
+              "label": "服务对象",
+              "detail": "稳定标识与文档"
+            },
+            {
+              "label": "责任关系",
+              "detail": "关联维护团队"
+            },
+            {
+              "label": "操作权限",
+              "detail": "按具体身份另行核验"
+            }
+          ]
+        },
+        "caseId": "b02-05",
+        "sources": [
+          {
+            "title": "What the Heck is Backstage Anyway?",
+            "url": "https://engineering.atspotify.com/2020/3/what-the-heck-is-backstage-anyway"
+          }
+        ],
+        "lessonNumber": 2
+      },
+      {
+        "kind": "case",
+        "section": "企业案例",
+        "title": "Backstage：维护责任与执行权限分开建模",
+        "lead": "把某团队登记为服务负责人，是否等于该团队所有人均可修改生产数据？",
+        "body": [
+          "服务属于技术对象，团队属于组织对象，“负责维护”是二者的关系。把责任仅写在自由文本里，不利于批量查找和变更核对；结构化关系更便于维护。",
+          "目录中的所有权说明联系与维护责任，不自动授予生产系统操作权限，也不证明登记信息始终与组织调整同步。"
+        ],
+        "takeaway": "不等于。责任关系说明由谁维护和答复，实际读取或执行权限仍须由独立授权规则约束。",
+        "layout": "focus",
+        "detailRef": {
+          "chapter": "02_enterprise_data_model",
+          "section": "数据定义与监督责任",
+          "anchor": "数据模型的治理含义"
+        },
+        "sourceSection": "数据模型的治理含义",
+        "caseId": "b02-05",
+        "sources": [
+          {
+            "title": "What the Heck is Backstage Anyway?",
+            "url": "https://engineering.atspotify.com/2020/3/what-the-heck-is-backstage-anyway"
+          }
+        ],
+        "prompts": [
+          {
+            "question": "把某团队登记为服务负责人，是否等于该团队所有人均可修改生产数据？",
+            "answer": "不等于。责任关系说明由谁维护和答复，实际读取或执行权限仍须由独立授权规则约束。"
+          }
+        ],
+        "lessonNumber": 2
+      },
+      {
+        "kind": "concept",
+        "section": "企业 AI 架构",
+        "title": "企业 AI 系统的六项职能",
+        "lead": "模型服务须与数据、运行管理和业务操作衔接。",
+        "body": [
+          "人工智能（AI）系统以计算方法执行预测、生成或决策等任务。计算资源支持运行，数据管理保存记录和版本，业务语义解释对象与规则，模型服务提供预测或生成，任务运行管理工具调用和恢复，业务应用承接工单及审批。",
+          "各项职能均须实施治理与安全控制。解除批次冻结时，模型可提供建议，运行程序保存任务状态，业务服务核验权限并确认最终状态；一个产品可同时承担多项职责。"
+        ],
+        "detailRef": {
+          "chapter": "02_enterprise_data_model",
+          "section": "企业AI系统的实现与平台选择",
+          "anchor": "sec:enterprise-ai-stack"
+        },
+        "sourceSection": "企业人工智能系统的技术构成",
+        "visual": {
+          "kind": "flow",
+          "items": [
+            "计算与网络",
+            "数据管理",
+            "业务语义",
+            "模型服务",
+            "任务运行",
+            "业务应用"
+          ]
+        },
+        "takeaway": "按任务职责评价产品能力，避免把模型输出等同于业务动作。",
+        "layout": "stack",
+        "lessonNumber": 2
+      },
+      {
+        "kind": "concept",
+        "section": "概念与方法",
+        "title": "快照、模式与表格式",
+        "lead": "固定数据版本，才能比较同一批事实。",
+        "body": [
+          "快照记录数据表在某个版本的状态；模式规定字段名称、类型及结构，模式演化是在兼容规则下修改这些约定。字段由“计划交期”改为“有效承诺”时，名称和含义的变更都应留下版本。",
+          "开放表格式规定文件、快照与模式演化的组织方式，供兼容引擎读取。对象存储以带唯一标识的对象保存文件。能读取同一文件仍不表示理解同一业务含义，存储协议与语义规则应分别确认。"
+        ],
+        "takeaway": "同一份可读数据，仍可能被按不同含义计算。",
+        "layout": "split",
+        "detailRef": {
+          "chapter": "02_enterprise_data_model",
+          "section": "共享表数据与保持业务含义",
+          "anchor": "从存储格式到业务含义"
+        },
+        "sourceSection": "从存储格式到业务含义",
+        "visual": {
+          "kind": "flow",
+          "items": [
+            {
+              "label": "快照",
+              "detail": "指定读取的数据版本"
+            },
+            {
+              "label": "模式",
+              "detail": "规定字段结构与类型"
+            },
+            {
+              "label": "业务语义",
+              "detail": "解释对象与经营含义"
+            }
+          ]
+        },
+        "lessonNumber": 2
+      },
+      {
+        "kind": "concept",
+        "section": "企业 AI 架构",
+        "title": "存储、语义与权限",
+        "lead": "数据互操作只是跨系统使用的一项条件。",
+        "body": [
+          "开放表格式规定文件、快照及模式演化的互操作条件。能读取同一快照，并不说明各引擎对“订单完成”或“设备综合效率”（良品理想工时占计划生产时间的比例）有相同定义，也不说明具有相同写入权限。",
+          "企业须分别确认数据版本与读写协议、业务口径及生效范围、授权及最终记录来源。平台比较应采用同一批订单、用户角色和验收条件。"
+        ],
+        "detailRef": {
+          "chapter": "02_enterprise_data_model",
+          "section": "共享表数据与保持业务含义",
+          "anchor": "从存储格式到业务含义"
+        },
+        "sourceSection": "从存储格式到业务含义",
+        "visual": {
+          "kind": "cards",
+          "items": [
+            {
+              "label": "存储契约",
+              "detail": "读取哪个版本，支持何种协议。"
+            },
+            {
+              "label": "语义契约",
+              "detail": "记录代表什么，指标如何计算。"
+            },
+            {
+              "label": "操作契约",
+              "detail": "谁可改变什么，在哪确认状态。"
+            }
+          ]
+        },
+        "takeaway": "数据互通不能自动统一业务定义或授予操作权限。",
+        "layout": "split",
+        "lessonNumber": 2
+      },
+      {
+        "kind": "concept",
+        "section": "测量语义",
+        "title": "从业务概念到可观察记录",
+        "lead": "先定义所需事实，再设计记录与约束。",
+        "body": [
+          "“订单完成”可指生产完成、发运或客户签收；拆分批次后，还须说明全部交付还是部分交付达到标准。字段类型不能代替这些操作定义。",
+          "客户承诺须保存有效版本和变更过程，迟到补录须区分业务发生时点与系统得知时点。数据库约束能够阻止部分违规记录，却不能单独证明记录真实反映业务。"
+        ],
+        "detailRef": {
+          "chapter": "02_enterprise_data_model",
+          "section": "完成事件、记录规则与测量",
+          "anchor": "从业务概念到可观察记录"
+        },
+        "sourceSection": "从业务概念到可观察记录",
+        "takeaway": "业务概念、测量规则、记录机制与技术约束分别需要依据。",
+        "layout": "split",
+        "diagram": {
+          "type": "graph",
+          "title": "由客户承诺反推记录要求",
+          "description": "客户承诺的概念先具体化为完整签收规则，再要求保存交付事件与承诺版本；键、时间、权限约束实现这些记录规则。",
+          "encoding": "模型结构示意",
+          "note": "箭头表示设计依据；技术合法性不自动保证业务真实。",
+          "nodes": [
+            {
+              "id": "concept",
+              "x": 20,
+              "y": 24,
+              "w": 32,
+              "h": 22,
+              "label": "业务概念",
+              "detail": "客户交付承诺",
+              "tone": "blue",
+              "shape": "rect"
+            },
+            {
+              "id": "operation",
+              "x": 78,
+              "y": 24,
+              "w": 32,
+              "h": 22,
+              "label": "操作定义",
+              "detail": "何时算完整签收",
+              "tone": "blue",
+              "shape": "rect"
+            },
+            {
+              "id": "record",
+              "x": 78,
+              "y": 74,
+              "w": 32,
+              "h": 22,
+              "label": "记录规则",
+              "detail": "事件、版本、双时间",
+              "tone": "blue",
+              "shape": "rect"
+            },
+            {
+              "id": "constraint",
+              "x": 20,
+              "y": 74,
+              "w": 32,
+              "h": 22,
+              "label": "技术约束",
+              "detail": "键、时间、权限",
+              "tone": "blue",
+              "shape": "rect"
+            }
+          ],
+          "edges": [
+            {
+              "from": "concept",
+              "to": "operation",
+              "label": ""
+            },
+            {
+              "from": "operation",
+              "to": "record",
+              "label": ""
+            },
+            {
+              "from": "record",
+              "to": "constraint",
+              "label": ""
+            }
+          ]
+        },
+        "density": "compact",
+        "lessonNumber": 2
+      },
+      {
+        "kind": "concept",
+        "section": "测量语义",
+        "title": "企业数据的六类语义",
+        "lead": "先判断记录描述对象、活动、状态还是聚合结果。",
+        "body": [
+          "准时交付率（OTD）是规定队列中按承诺完成的对象占比。实体具有稳定身份，属性描述对象，关系表达对象联系；事件记录一次活动，状态描述某时点或区间，指标按既定规则聚合事件或状态。",
+          "订单创建是事件，“截至某时点未发货”是状态，周准时率是指标。三者虽都涉及日期，但记录单位及跨时间聚合方式不同。"
+        ],
+        "detailRef": {
+          "chapter": "02_enterprise_data_model",
+          "section": "实体、事件、状态与指标",
+          "anchor": "企业运营数据的基本语义"
+        },
+        "sourceSection": "企业运营数据的基本语义",
+        "takeaway": "语义角色确定记录方式及允许的聚合操作。",
+        "visual": {
+          "kind": "table",
+          "headers": [
+            "对象描述",
+            "时间记录",
+            "汇总表达"
+          ],
+          "rows": [
+            [
+              "实体：客户、设备",
+              "事件：下单、停机",
+              "指标：销售额、准时交付率"
+            ],
+            [
+              "属性：地区、类型",
+              "状态：库存、冻结",
+              "计算规则及统计范围"
+            ],
+            [
+              "关系：客户—订单",
+              "事件历史支持状态复原",
+              "需保留基础事实"
+            ]
+          ]
+        },
+        "layout": "stack",
+        "lessonNumber": 2
+      },
+      {
+        "layout": "focus",
+        "title": "关系模式与记录身份",
+        "lead": "属性域说明取值，键说明独立事实的身份。",
+        "body": [
+          "关系模式 \\(R\\) 规定属性 \\(A_j\\) 及其取值域 \\(D_j\\)，元组 \\(t\\) 为一条记录。关系实例是当前满足模式及约束的一组元组；例如客户表规定客户号、姓名和注册地区的类型及范围。",
+          "客户记录 \\((\\text{C01},\\text{华星},\\text{北区})\\) 给各属性一个具体值。两条订单明细即使产品、数量和时间相同，仍可能是独立事实；稳定明细号把业务身份显式保存下来。"
+        ],
+        "equation": [
+          "R(A_1:D_1,\\ldots,A_k:D_k)",
+          "t(A_j)\\in D_j,\\qquad j=1,\\ldots,k"
+        ],
+        "detailRef": {
+          "chapter": "02_enterprise_data_model",
+          "section": "关系模型的基本语言",
+          "anchor": "关系模型的基本语言"
+        },
+        "takeaway": "相同属性值不必表示同一个业务事实。",
+        "kind": "concept",
+        "section": "测量语义",
+        "sourceSection": "关系模型的基本语言",
+        "lessonNumber": 2
+      },
+      {
+        "kind": "concept",
+        "section": "关系与约束",
+        "title": "键与三类完整性约束",
+        "lead": "约束可以阻止特定类型的错误，业务真实性仍须另行核验。",
+        "body": [
+          "超键能在所有合法实例中唯一识别记录；候选键是不可再删除任何属性的超键，主键是其中选定的标识。自然键使用已有业务属性识别对象；代理键是另行赋予的编号，仍须配合业务唯一性规则防止同一事实重复入库。",
+          "外键把本表记录关联到另一表的键，如订单的客户号引用客户表。实体完整性要求主键唯一非空；引用完整性要求非空外键匹配被引用键；业务完整性检查数量、日期及状态规则。"
+        ],
+        "detailRef": {
+          "chapter": "02_enterprise_data_model",
+          "section": "键、外键与完整性约束",
+          "anchor": "键外键与完整性约束"
+        },
+        "sourceSection": "键、外键与完整性约束",
+        "takeaway": "先定义事实身份，再检查唯一性、引用与业务条件。",
+        "layout": "split",
+        "diagram": {
+          "type": "graph",
+          "title": "主键唯一与外键引用",
+          "description": "客户表的客户号唯一非空，订单的非空客户号必须引用合法客户；订单主键也唯一非空，并另检数量及状态规则。箭头从引用记录指向被引用键。",
+          "encoding": "引用约束示意 · 箭头指向被引用键",
+          "note": "图示允许多张订单引用同一客户；不限定真实记录数量。",
+          "nodes": [
+            {
+              "id": "customer",
+              "x": 73,
+              "y": 26,
+              "w": 37,
+              "h": 22,
+              "label": "客户表主键",
+              "detail": "客户号唯一、非空",
+              "tone": "blue",
+              "shape": "rect"
+            },
+            {
+              "id": "order1",
+              "x": 23,
+              "y": 26,
+              "w": 34,
+              "h": 22,
+              "label": "订单记录",
+              "detail": "客户号为外键",
+              "tone": "blue",
+              "shape": "rect"
+            },
+            {
+              "id": "order2",
+              "x": 23,
+              "y": 75,
+              "w": 34,
+              "h": 22,
+              "label": "另一订单记录",
+              "detail": "可引用同一客户",
+              "tone": "blue",
+              "shape": "rect"
+            },
+            {
+              "id": "business",
+              "x": 73,
+              "y": 75,
+              "w": 37,
+              "h": 22,
+              "label": "业务规则",
+              "detail": "数量、日期、状态",
+              "tone": "teal",
+              "shape": "rect"
+            }
+          ],
+          "edges": [
+            {
+              "from": "order1",
+              "to": "customer",
+              "label": "引用"
+            },
+            {
+              "from": "order2",
+              "to": "customer",
+              "label": "引用",
+              "labelX": 43,
+              "labelY": 54
+            },
+            {
+              "from": "order2",
+              "to": "business",
+              "label": "检验"
+            }
+          ]
+        },
+        "density": "compact",
+        "lessonNumber": 2
+      },
+      {
+        "kind": "case",
+        "section": "企业案例",
+        "title": "Shopify：数字编号相同，对象未必相同",
+        "lead": "稳定身份需要明确对象类型与唯一性范围。",
+        "body": [
+          "电商平台同时管理产品、客户、订单和库存位置。Shopify接口为对象提供全局标识，避免仅凭一个数字在不同对象类型之间进行关联。",
+          "Shopify公开文档以统一资源标识区分产品、客户和订单等对象类型；库存层级的某些标识还包含所属库存项信息，不能只取一个局部编号。"
+        ],
+        "takeaway": "连接键必须指向同一种业务对象，并满足规定唯一性。把产品号误当成订单号，即使字符串能匹配，也不会形成有业务意义的关系。",
+        "layout": "split",
+        "detailRef": {
+          "chapter": "02_enterprise_data_model",
+          "section": "键、外键与完整性约束",
+          "anchor": "键外键与完整性约束"
+        },
+        "sourceSection": "键、外键与完整性约束",
+        "visual": {
+          "kind": "flow",
+          "items": [
+            {
+              "label": "对象类型",
+              "detail": "产品、客户或订单"
+            },
+            {
+              "label": "唯一范围",
+              "detail": "全局或父对象范围"
+            },
+            {
+              "label": "连接",
+              "detail": "核对引用是否指向同一对象"
+            }
+          ]
+        },
+        "caseId": "b02-01",
+        "sources": [
+          {
+            "title": "Global IDs in Shopify APIs",
+            "url": "https://shopify.dev/docs/api/usage/gids"
+          }
+        ],
+        "lessonNumber": 2
+      },
+      {
+        "kind": "case",
+        "section": "企业案例",
+        "title": "Shopify：连接前先确认编号的业务身份",
+        "lead": "两张表的编号列都是整数，是否足以作为连接键？",
+        "body": [
+          "连接键必须指向同一种业务对象，并满足规定唯一性。把产品号误当成订单号，即使字符串能匹配，也不会形成有业务意义的关系。",
+          "案例依据真实接口规则；文档中的示例编号用于说明结构，不代表某家商户实际交易，也不证明标识本身保证数据准确。"
+        ],
+        "takeaway": "不足。应先确认它们标识同类对象、具有相同唯一性范围，并处理版本及必要的父对象信息。",
+        "layout": "focus",
+        "detailRef": {
+          "chapter": "02_enterprise_data_model",
+          "section": "键、外键与完整性约束",
+          "anchor": "键外键与完整性约束"
+        },
+        "sourceSection": "键、外键与完整性约束",
+        "caseId": "b02-01",
+        "sources": [
+          {
+            "title": "Global IDs in Shopify APIs",
+            "url": "https://shopify.dev/docs/api/usage/gids"
+          }
+        ],
+        "prompts": [
+          {
+            "question": "两张表的编号列都是整数，是否足以作为连接键？",
+            "answer": "不足。应先确认它们标识同类对象、具有相同唯一性范围，并处理版本及必要的父对象信息。"
+          }
+        ],
+        "lessonNumber": 2
+      },
+      {
+        "kind": "concept",
+        "section": "关系与约束",
+        "title": "关系基数与模型层次",
+        "lead": "基数表示关联范围，连线不表示事件先后。",
+        "body": [
+          "实体关系（ER）模型以对象、属性及关系表达业务结构。零售模型中，客户对订单、订单对明细、产品对明细及库存快照均为一对多。允许零个关联对象与否，还须规定可选性；多对多关系应显式建模。",
+          "概念模型定义对象与关系，逻辑模型规定表、键及约束，物理模型实现索引、分区与存储。分析连接前应先说明它将保留、复制或遗漏哪些事实。"
+        ],
+        "detailRef": {
+          "chapter": "02_enterprise_data_model",
+          "section": "订单、客户、产品与库存的 ER 模型",
+          "anchor": "订单客户产品与库存的-er-模型"
+        },
+        "sourceSection": "订单、客户、产品与库存的 ER 模型",
+        "takeaway": "关系基数与可选性是连接正确性的前提。",
+        "layout": "split",
+        "diagram": {
+          "type": "graph",
+          "title": "交易对象的 ER 关系",
+          "description": "每张订单至多归属一个客户，一名客户可有多个订单；订单可有多条明细，产品可出现在多条明细和库存快照。边上1:N只表示最大关系基数，可选性需要另定。",
+          "encoding": "ER 最大基数示意",
+          "note": "箭头按“一→多”阅读；不表示事件先后，可选性须另定。",
+          "nodes": [
+            {
+              "id": "customer",
+              "x": 18,
+              "y": 23,
+              "w": 28,
+              "h": 22,
+              "label": "客户",
+              "detail": "客户号",
+              "tone": "blue",
+              "shape": "rect"
+            },
+            {
+              "id": "orders",
+              "x": 50,
+              "y": 23,
+              "w": 28,
+              "h": 22,
+              "label": "订单",
+              "detail": "订单号、客户号",
+              "tone": "blue",
+              "shape": "rect"
+            },
+            {
+              "id": "detail",
+              "x": 50,
+              "y": 74,
+              "w": 28,
+              "h": 22,
+              "label": "订单明细",
+              "detail": "订单号、行号、产品号",
+              "tone": "blue",
+              "shape": "rect"
+            },
+            {
+              "id": "product",
+              "x": 82,
+              "y": 23,
+              "w": 28,
+              "h": 22,
+              "label": "产品",
+              "detail": "产品号",
+              "tone": "blue",
+              "shape": "rect"
+            },
+            {
+              "id": "inventory",
+              "x": 82,
+              "y": 74,
+              "w": 28,
+              "h": 22,
+              "label": "库存快照",
+              "detail": "产品、仓库、时点",
+              "tone": "blue",
+              "shape": "rect"
+            }
+          ],
+          "edges": [
+            {
+              "from": "customer",
+              "to": "orders",
+              "label": "\\(1:N\\)",
+              "labelX": 34,
+              "labelY": 7
+            },
+            {
+              "from": "orders",
+              "to": "detail",
+              "label": "\\(1:N\\)",
+              "labelX": 45,
+              "labelY": 48
+            },
+            {
+              "from": "product",
+              "to": "detail",
+              "label": "\\(1:N\\)",
+              "labelX": 76,
+              "labelY": 49
+            },
+            {
+              "from": "product",
+              "to": "inventory",
+              "label": "\\(1:N\\)",
+              "labelX": 89,
+              "labelY": 48
+            }
+          ]
+        },
+        "density": "compact",
+        "lessonNumber": 2
+      },
+      {
+        "kind": "concept",
+        "section": "关系与约束",
+        "title": "制造对象与事件历史",
+        "lead": "批次、工序、设备、质量与承诺共同支持制造指标。",
+        "body": [
+          "简化模型包含产品族、路线工序、批次、设备、质量事件和订单承诺。批次当前所在工序是状态，历史流转须保存过站事件，不能用当前字段覆盖。",
+          "本模型假定一批次服务一订单。若批次供应多订单，应增加分配关系；工序模板跨路线复用时，应增加路线步骤。设备资格与实际加工记录分别表达“能加工”和“已加工”。"
+        ],
+        "detailRef": {
+          "chapter": "02_enterprise_data_model",
+          "section": "半导体制造业务对象",
+          "anchor": "半导体制造业务对象"
+        },
+        "sourceSection": "半导体制造业务对象",
+        "visual": {
+          "kind": "table",
+          "headers": [
+            "关系或记录",
+            "回答的问题"
+          ],
+          "rows": [
+            [
+              "订单—批次分配",
+              "产出服务哪项承诺"
+            ],
+            [
+              "路线—工序与设备资格",
+              "应走哪些步骤、可用哪些设备"
+            ],
+            [
+              "批次过站与质量事件",
+              "实际经过何处、发生何种检验"
+            ]
+          ]
+        },
+        "takeaway": "当前状态、历史事件和资格关系应分别保存。",
+        "layout": "stack",
+        "lessonNumber": 2
+      },
+      {
+        "kind": "concept",
+        "section": "存储与分析",
+        "title": "函数依赖与第三范式",
+        "lead": "规范化依据业务规则控制更新冗余。",
+        "body": [
+          "函数依赖 \\(X\\to Y\\) 表示所有合法实例中，相同 \\(X\\) 值必有相同 \\(Y\\) 值。\\(F^+\\) 是业务规则蕴含的全部函数依赖；样本恰好没有重复值不能证明业务依赖成立。",
+          "第三范式要求 \\(F^+\\) 中每个非平凡依赖 \\(X\\to A\\)（\\(A\\notin X\\)）满足：\\(X\\) 是超键，或 \\(A\\) 是主属性，即属于至少一个候选键。须先列出业务依赖和候选键，才能判断是否满足。"
+        ],
+        "detailRef": {
+          "chapter": "02_enterprise_data_model",
+          "section": "规范化与函数依赖",
+          "anchor": "规范化与函数依赖"
+        },
+        "sourceSection": "规范化与函数依赖",
+        "equation": "X\\to A,\\ A\\notin X\\quad\\Longrightarrow\\quad X\\text{ 为超键，或 }A\\text{ 为主属性}",
+        "takeaway": "规范化改善一致性维护，历史保存仍需独立的时间设计。",
+        "layout": "focus",
+        "lessonNumber": 2
+      },
+      {
+        "kind": "worked",
+        "section": "存储与分析",
+        "title": "订单行中的名称冗余",
+        "lead": "同一产品名称被重复保存时，一次更正需要修改多条订单行。",
+        "body": [
+          "订单行 \\(R(O,L,P,N,Q)\\) 保存订单号、行号、产品号、名称和数量。业务规定 \\((O,L)\\) 为唯一候选键，当前产品号决定名称，即 \\(P\\to N\\)。",
+          "\\(P01\\) 被订单O01行1（数量2）与O02行1（数量3）重复引用，两处都保存“精密轴承”。只更正一处会产生矛盾；\\(P\\) 不是超键，\\(N\\) 不是主属性，因此该非平凡依赖违反第三范式。"
+        ],
+        "takeaway": "规范化控制重复保存的业务依赖，防止不一致更新。",
+        "detailRef": {
+          "chapter": "02_enterprise_data_model",
+          "section": "规范化与函数依赖",
+          "anchor": "规范化与函数依赖"
+        },
+        "sourceSection": "规范化与函数依赖",
+        "layout": "split",
+        "density": "compact",
+        "diagram": {
+          "type": "graph",
+          "title": "同一名称被多个交易行复制",
+          "description": "订单O01行1与O02行1均保存P01产品名称；产品名称更正须同时更新两个位置，遗漏任一位置产生不一致。函数依赖P到N不满足3NF条件。",
+          "encoding": "模型结构示意",
+          "note": "\\(P\\to N\\)：\\(P\\) 非超键，\\(N\\) 非主属性。",
+          "nodes": [
+            {
+              "id": "product",
+              "x": 18,
+              "y": 50,
+              "w": 28,
+              "h": 22,
+              "label": "产品 \\(P01\\)",
+              "detail": "当前名称：精密轴承",
+              "tone": "blue",
+              "shape": "rect"
+            },
+            {
+              "id": "r1",
+              "x": 63,
+              "y": 23,
+              "w": 42,
+              "h": 22,
+              "label": "O01 · 行1",
+              "detail": "保存同一产品名称",
+              "tone": "blue",
+              "shape": "rect"
+            },
+            {
+              "id": "r2",
+              "x": 63,
+              "y": 76,
+              "w": 42,
+              "h": 22,
+              "label": "O02 · 行1",
+              "detail": "再保存一份名称",
+              "tone": "blue",
+              "shape": "rect"
+            }
+          ],
+          "edges": [
+            {
+              "from": "product",
+              "to": "r1",
+              "label": "重复保存",
+              "labelX": 36,
+              "labelY": 25
+            },
+            {
+              "from": "product",
+              "to": "r2",
+              "label": "重复保存",
+              "labelX": 36,
+              "labelY": 80
+            }
+          ]
+        },
+        "lessonNumber": 2
+      },
+      {
+        "kind": "concept",
+        "section": "存储与分析",
+        "title": "无损连接与历史解释",
+        "lead": "键的唯一性与引用的完整覆盖支持记录重建，时间版本支持历史解释。",
+        "body": [
+          "在订单行 \\(R(O,L,P,N,Q)\\) 中，\\(O,L,P,N,Q\\) 依次为订单号、行号、产品号、名称和数量。键为 \\((O,L)\\)，且 \\(P\\to N\\)。分解后，订单行 \\(R_1(O,L,P,Q)\\) 保存交易，产品表 \\(R_2(P,N)\\) 保存当前名称。",
+          "产品表的 \\(P\\) 唯一且覆盖每条订单行引用，便能按 \\(P\\) 恰好匹配一次并重建记录。若需查询下单时的产品名称，还须历史版本或交易快照；连接当前名称不能还原历史名称。"
+        ],
+        "detailRef": {
+          "chapter": "02_enterprise_data_model",
+          "section": "关系分解与准确重建",
+          "anchor": "无损连接分解"
+        },
+        "sourceSection": "无损连接分解",
+        "takeaway": "行数无损与历史语义正确是两个需要分别核查的条件。",
+        "layout": "split",
+        "density": "compact",
+        "diagram": {
+          "type": "graph",
+          "title": "把名称依赖分离后再无损重建",
+          "description": "原关系分解为订单行R1和产品R2，两者公共属性P唯一决定R2的名称。产品键唯一且覆盖每条订单行引用时，连接重建恰好匹配一次。历史名称仍须版本或快照。",
+          "encoding": "模型结构示意",
+          "note": "无复制、无遗漏仅保证重建；历史解释另查有效版本。",
+          "nodes": [
+            {
+              "id": "raw",
+              "x": 50,
+              "y": 17,
+              "w": 47,
+              "h": 20,
+              "label": "原关系 \\(R\\)",
+              "detail": "\\((O,L,P,N,Q)\\)",
+              "tone": "blue",
+              "shape": "rect"
+            },
+            {
+              "id": "r1",
+              "x": 23,
+              "y": 53,
+              "w": 39,
+              "h": 22,
+              "label": "订单行 \\(R_1\\)",
+              "detail": "\\((O,L,P,Q)\\)",
+              "tone": "blue",
+              "shape": "rect"
+            },
+            {
+              "id": "r2",
+              "x": 78,
+              "y": 53,
+              "w": 39,
+              "h": 22,
+              "label": "产品 \\(R_2\\)",
+              "detail": "\\((P,N)\\)，键为 \\(P\\)",
+              "tone": "blue",
+              "shape": "rect"
+            },
+            {
+              "id": "join",
+              "x": 50,
+              "y": 88,
+              "w": 45,
+              "h": 19,
+              "label": "按 \\(P\\) 连接",
+              "detail": "每条订单行恰好匹配一次",
+              "tone": "blue",
+              "shape": "rect"
+            }
+          ],
+          "edges": [
+            {
+              "from": "raw",
+              "to": "r1",
+              "label": ""
+            },
+            {
+              "from": "raw",
+              "to": "r2",
+              "label": ""
+            },
+            {
+              "from": "r1",
+              "to": "join",
+              "label": ""
+            },
+            {
+              "from": "r2",
+              "to": "join",
+              "label": ""
+            }
+          ]
+        },
+        "lessonNumber": 2
+      },
+      {
+        "kind": "concept",
+        "section": "存储与分析",
+        "title": "事务模型与星型模型",
+        "lead": "事务更新与分析查询对数据结构有不同要求。",
+        "body": [
+          "事务型模型支持低延迟写入与一致性维护；分析型星型模型把事件或状态保存为事实表，以客户、产品、日期等维度说明分析角度。适度冗余可以简化查询。",
+          "维度建模依次选择业务过程、声明事实粒度、识别维度、识别度量。维度属性须按时间与事实对齐；简化结构不能以混淆粒度为代价。"
+        ],
+        "detailRef": {
+          "chapter": "02_enterprise_data_model",
+          "section": "事务型建模与分析型建模",
+          "anchor": "事务型建模与分析型建模"
+        },
+        "sourceSection": "事务型建模与分析型建模",
+        "takeaway": "事实表记录度量单位，维度表提供可解释的分析角度。",
+        "layout": "split",
+        "diagram": {
+          "type": "graph",
+          "title": "事实与维度围绕声明的粒度连接",
+          "description": "订单明细事实表以一个交易产品项为粒度，引用客户、产品、日期等维度说明分析角度，事实中保存可按约定聚合的度量。",
+          "encoding": "星型模型教学示意",
+          "note": "维度关系须与事实时间对齐；冗余不能改变事实粒度。",
+          "nodes": [
+            {
+              "id": "fact",
+              "x": 50,
+              "y": 51,
+              "w": 40,
+              "h": 26,
+              "label": "订单明细事实",
+              "detail": "一行一个交易产品项",
+              "tone": "blue",
+              "shape": "rect"
+            },
+            {
+              "id": "customer",
+              "x": 19,
+              "y": 15,
+              "w": 30,
+              "h": 22,
+              "label": "客户维度",
+              "detail": "身份、地区",
+              "tone": "blue",
+              "shape": "rect"
+            },
+            {
+              "id": "product",
+              "x": 83,
+              "y": 15,
+              "w": 30,
+              "h": 22,
+              "label": "产品维度",
+              "detail": "产品、品类",
+              "tone": "blue",
+              "shape": "rect"
+            },
+            {
+              "id": "date",
+              "x": 19,
+              "y": 84,
+              "w": 30,
+              "h": 22,
+              "label": "日期维度",
+              "detail": "日、月、年",
+              "tone": "blue",
+              "shape": "rect"
+            },
+            {
+              "id": "metric",
+              "x": 83,
+              "y": 84,
+              "w": 30,
+              "h": 22,
+              "label": "度量属性",
+              "detail": "数量、交易金额",
+              "tone": "blue",
+              "shape": "rect"
+            }
+          ],
+          "edges": [
+            {
+              "from": "fact",
+              "to": "customer",
+              "label": ""
+            },
+            {
+              "from": "fact",
+              "to": "product",
+              "label": ""
+            },
+            {
+              "from": "fact",
+              "to": "date",
+              "label": ""
+            },
+            {
+              "from": "fact",
+              "to": "metric",
+              "label": ""
+            }
+          ]
+        },
+        "density": "compact",
+        "lessonNumber": 2
+      },
+      {
+        "kind": "concept",
+        "section": "存储与分析",
+        "title": "事实粒度决定指标范围",
+        "lead": "每行的业务含义须在字段及指标之前声明。",
+        "body": [
+          "订单明细一行代表一个交易产品项，库存快照一行代表同一时点的产品—仓库余额。销售额来自交易事实，库存周转率还需销售成本及时间一致的平均库存。",
+          "把交易与状态强行放在同一粒度，可能重复金额或跨期相加库存。粒度声明还须说明单位、状态类别及唯一键，才能判断允许哪些汇总。"
+        ],
+        "detailRef": {
+          "chapter": "02_enterprise_data_model",
+          "section": "事实表粒度",
+          "anchor": "事实表粒度"
+        },
+        "sourceSection": "事实表粒度",
+        "visual": {
+          "kind": "table",
+          "headers": [
+            "事实",
+            "每行代表",
+            "汇总条件"
+          ],
+          "rows": [
+            [
+              "订单明细",
+              "一个交易明细项",
+              "金额口径一致、明细互斥"
+            ],
+            [
+              "库存快照",
+              "某时点产品—仓库余额",
+              "同一时点、统一单位"
+            ],
+            [
+              "批次过站事件",
+              "一次可识别活动",
+              "次数按事件键；时长须防重叠"
+            ]
+          ]
+        },
+        "takeaway": "表名不能替代“每一行代表什么”的明确声明。",
+        "layout": "stack",
+        "lessonNumber": 2
+      },
+      {
+        "kind": "case",
+        "section": "企业案例",
+        "title": "Uber H3：地理汇总先确定空间单位",
+        "lead": "空间粒度与时间粒度一样，会改变汇总结果的解释。",
+        "body": [
+          "出行平台要比较不同地区的供需。行政区大小不一，直接比较订单总数会同时混合区域面积与需求密度。Uber建立H3分层空间网格组织位置资料。",
+          "Uber在2018年公开H3，将地球表面组织为可识别的分层网格；企业说明H3用于市场分析、定价和调度等空间分析任务。"
+        ],
+        "takeaway": "同一行程可按坐标归入指定层级的网格，再与同层级供给资料比较。细网格适合定位局部差异，粗网格适合区域概览；切换层级时须重新合并基础量。",
+        "layout": "split",
+        "detailRef": {
+          "chapter": "02_enterprise_data_model",
+          "section": "事实表粒度",
+          "anchor": "事实表粒度"
+        },
+        "sourceSection": "事实表粒度",
+        "visual": {
+          "kind": "flow",
+          "items": [
+            {
+              "label": "位置记录",
+              "detail": "确定同一空间坐标规则"
+            },
+            {
+              "label": "网格层级",
+              "detail": "选择分析范围与分辨率"
+            },
+            {
+              "label": "汇总",
+              "detail": "保留计数并重新计算比率"
+            }
+          ]
+        },
+        "caseId": "b02-03",
+        "sources": [
+          {
+            "title": "H3: Uber’s Hexagonal Hierarchical Spatial Index",
+            "url": "https://www.uber.com/us/en/blog/h3/"
+          }
+        ],
+        "lessonNumber": 2
+      },
+      {
+        "kind": "case",
+        "section": "企业案例",
+        "title": "Uber H3：换一个观察尺度，就要重新核对权重",
+        "lead": "把较小网格的百分比简单平均，能得到较大地区的总比率吗？",
+        "body": [
+          "同一行程可按坐标归入指定层级的网格，再与同层级供给资料比较。细网格适合定位局部差异，粗网格适合区域概览；切换层级时须重新合并基础量。",
+          "公开资料支持实际用途与网格机制；网格划分本身不保证需求估计准确，也不意味着每个单元具有完全相同面积。"
+        ],
+        "takeaway": "通常不能。应先汇总同口径的分子和分母，再求比率，并保持空间层级与时间窗口一致。",
+        "layout": "focus",
+        "detailRef": {
+          "chapter": "02_enterprise_data_model",
+          "section": "事实表粒度",
+          "anchor": "事实表粒度"
+        },
+        "sourceSection": "事实表粒度",
+        "caseId": "b02-03",
+        "sources": [
+          {
+            "title": "H3: Uber’s Hexagonal Hierarchical Spatial Index",
+            "url": "https://www.uber.com/us/en/blog/h3/"
+          }
+        ],
+        "prompts": [
+          {
+            "question": "把较小网格的百分比简单平均，能得到较大地区的总比率吗？",
+            "answer": "通常不能。应先汇总同口径的分子和分母，再求比率，并保持空间层级与时间窗口一致。"
+          }
+        ],
+        "lessonNumber": 2
+      },
+      {
+        "kind": "concept",
+        "section": "概念与方法",
+        "title": "制造指标先固定测量对象",
+        "lead": "一个百分比需要对应明确的对象、时间和基础量。",
+        "body": [
+          "良率是规定检验范围内的合格件数占比。设备综合效率（OEE）以良品理想加工工时占计划生产时间的比例衡量时间使用效果；生产周期（CT）度量规定起点至完工的时长。不同产品节拍应先统一工时口径。",
+          "在制品存量（WIP）指某时点已进入生产、尚未完成的对象数；准时交付率（OTD）比较按承诺完成的对象与规定队列。库存是时点量，周期是时长，交付率是比率，三类量不能采用相同的跨期汇总方法。"
+        ],
+        "takeaway": "保留基础计数、时长及时间版本，才能重新分组核算。",
+        "layout": "split",
+        "detailRef": {
+          "chapter": "02_enterprise_data_model",
+          "section": "制造指标的记录基础",
+          "anchor": "制造-kpi-的事实粒度"
+        },
+        "sourceSection": "制造 KPI 的事实粒度",
+        "visual": {
+          "kind": "cards",
+          "items": [
+            {
+              "label": "良率与OTD",
+              "detail": "保留同范围的分子、分母"
+            },
+            {
+              "label": "OEE",
+              "detail": "保留理想工时与计划时间"
+            },
+            {
+              "label": "CT与WIP",
+              "detail": "区分持续时长与时点存量"
+            }
+          ]
+        },
+        "lessonNumber": 2
+      },
+      {
+        "kind": "concept",
+        "section": "制造指标",
+        "title": "制造 KPI 的事实基础",
+        "lead": "良率、OEE、周期、WIP 和 OTD 采用不同观察单位。",
+        "body": [
+          "关键绩效指标（KPI）是按规定口径衡量关键经营表现的量。示例日快照的联合粒度是日期、制造区域、工作中心和产品族，适合比较汇总表现。批次等待、设备停机和订单拆分则须追溯明细。",
+          "各指标的分子、分母和时间须对应同一观察范围。数量、时间和队列采用不同的聚合规则；日指标可定位异常，原因识别还须追溯具体事件和状态。"
+        ],
+        "detailRef": {
+          "chapter": "02_enterprise_data_model",
+          "section": "制造指标的记录基础",
+          "anchor": "制造-kpi-的事实粒度"
+        },
+        "sourceSection": "制造 KPI 的事实粒度",
+        "visual": {
+          "kind": "table",
+          "headers": [
+            "指标",
+            "主要基础事实",
+            "需固定的边界"
+          ],
+          "rows": [
+            [
+              "良率（Yield）",
+              "良品与总件数",
+              "检验阶段"
+            ],
+            [
+              "设备综合效率（OEE）",
+              "设备时间与产出",
+              "计划窗口、理想节拍"
+            ],
+            [
+              "生产周期（CT）",
+              "批次开始及完工",
+              "起终点、完成队列"
+            ],
+            [
+              "在制品存量（WIP）",
+              "在制状态快照",
+              "观察时点、单位"
+            ],
+            [
+              "准时交付率（OTD）",
+              "承诺与交付",
+              "有效版本、到期队列"
+            ]
+          ]
+        },
+        "takeaway": "指标选择决定需要哪些粒度和哪些基础记录。",
+        "layout": "stack",
+        "density": "compact",
+        "lessonNumber": 2
+      },
+      {
+        "kind": "concept",
+        "section": "制造指标",
+        "title": "度量的可加性与比率汇总",
+        "lead": "可相加的是同口径基础事实，通常不是比率。",
+        "body": [
+          "第 \\(d\\) 天到期数为 \\(n_d\\)、准时数为 \\(m_d\\)，日率为 \\(r_d=m_d/n_d\\)。两天到期 \\(100,10\\) 单、准时 \\(90,5\\) 单，等权日率为 \\(70\\%\\)，总体率为 \\(95/110\\approx86.4\\%\\)。",
+          "总体率以到期量为权重；等权日均率描述一个平均观察日的表现。金额可对互斥交易求和，存量只可在同一时点对互斥对象求和，比率须先合并基础量。保留计数才能改变维度后重算。"
+        ],
+        "detailRef": {
+          "chapter": "02_enterprise_data_model",
+          "section": "度量的可加性",
+          "anchor": "度量的可加性"
+        },
+        "sourceSection": "度量的可加性",
+        "equation": "\\mathrm{OTD}_{\\rm period}=\\frac{\\sum_d m_d}{\\sum_d n_d}=\\sum_d\\frac{n_d}{\\sum_j n_j}\\,r_d",
+        "takeaway": "保留基础计数，才能在改变时间或维度后正确重算。",
+        "layout": "stack",
+        "density": "compact",
+        "lessonNumber": 2
+      },
+      {
+        "kind": "concept",
+        "section": "时间与行动",
+        "title": "双时间：历史事实与历史知识",
+        "lead": "事后补录不能成为事前可得信息。",
+        "body": [
+          "设备周一停机、周三补录。周四复盘周一发生的事实，可按业务有效时间查询；评价周二排程时，只能使用周二系统已经获知的记录。相对日 \\(1,2,3,4\\) 分别表示周一至周四。",
+          "\\([v_{\\rm from},v_{\\rm to})\\) 表示事实的业务有效区间，\\([s_{\\rm from},s_{\\rm to})\\) 表示版本的系统可知区间。还原系统时点 \\(s\\) 对业务时点 \\(v\\) 的认识，须同时命中两个区间。"
+        ],
+        "detailRef": {
+          "chapter": "02_enterprise_data_model",
+          "section": "双时间与可追溯决策",
+          "anchor": "双时间与可追溯决策"
+        },
+        "sourceSection": "双时间与可追溯决策",
+        "equation": "v_{\\rm from}\\le v<v_{\\rm to},\\qquad s_{\\rm from}\\le s<s_{\\rm to}",
+        "takeaway": "经营复盘与历史决策回放应采用不同的信息截止点。",
+        "layout": "split",
+        "diagram": {
+          "type": "timeline",
+          "title": "发生时点与系统获知时点",
+          "description": "设备周一停机、周三补录。周二的历史决策只能使用周二已有记录；周四复盘周一事实可以使用补录后的历史业务时间。轴用相对天表示，1=周一，2=周二，3=周三，4=周四。",
+          "encoding": "相对时间示意 · 一日为共同间隔",
+          "note": "周二不能使用周三才获知的记录；条段不表示实际停机时长。",
+          "domain": [
+            1,
+            4
+          ],
+          "unit": "相对日",
+          "rows": [
+            {
+              "label": "业务事实",
+              "segments": [],
+              "points": [
+                {
+                  "at": 1,
+                  "label": "周一停机",
+                  "tone": "rose"
+                }
+              ]
+            },
+            {
+              "label": "系统知识",
+              "segments": [
+                {
+                  "start": 3,
+                  "end": 4,
+                  "label": "补录后可知",
+                  "tone": "blue"
+                }
+              ],
+              "points": [
+                {
+                  "at": 3,
+                  "label": "周三补录",
+                  "tone": "blue"
+                }
+              ]
+            },
+            {
+              "label": "评价时点",
+              "segments": [],
+              "points": [
+                {
+                  "at": 2,
+                  "label": "周二排程",
+                  "tone": "muted"
+                },
+                {
+                  "at": 4,
+                  "label": "周四复盘",
+                  "tone": "teal"
+                }
+              ]
+            }
+          ],
+          "ticks": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "reference": 2,
+          "referenceLabel": "历史决策截止"
+        },
+        "density": "compact",
+        "lessonNumber": 2
+      },
+      {
+        "kind": "concept",
+        "section": "概念与方法",
+        "title": "状态机与幂等请求",
+        "lead": "一次操作既有允许条件，也有重复提交的处理规则。",
+        "body": [
+          "状态机用明确的状态和允许转换描述操作。批次由“冻结”到“可投产”必须满足质量批准等条件；写入一个状态名称，并不等于相关控制已经发生。事件日志还应保存转换时点及依据。",
+          "幂等请求要求重复提交同一操作时不产生额外业务效果。例如网络中断后用同一请求号重试创建工单，服务返回既有处理结果，而不再新建。版本检查用于防止旧建议覆盖已改变的对象状态。"
+        ],
+        "takeaway": "许可转换、版本核验与重复保护分别解决不同错误。",
+        "layout": "split",
+        "detailRef": {
+          "chapter": "02_enterprise_data_model",
+          "section": "对象操作与状态转换",
+          "anchor": "对象操作与状态转换"
+        },
+        "sourceSection": "对象操作与状态转换",
+        "visual": {
+          "kind": "flow",
+          "items": [
+            {
+              "label": "状态机",
+              "detail": "规定允许从哪里变到哪里"
+            },
+            {
+              "label": "版本检查",
+              "detail": "确认建议依据仍有效"
+            },
+            {
+              "label": "幂等请求",
+              "detail": "同一操作重试不重复生效"
+            }
+          ]
+        },
+        "lessonNumber": 2
+      },
+      {
+        "kind": "concept",
+        "section": "时间与行动",
+        "title": "授权操作与状态核验",
+        "lead": "读取、建议、批准和执行须分别授权。",
+        "body": [
+          "解除批次冻结须核验质量角色、工厂范围、当前冻结状态及必要批准；逻辑符号表示四项同时满足。业务服务应在提交时重新检查，模型声明不能构成授权证据。",
+          "提交时声明读到的版本；若当前版本已变，服务拒绝用旧建议覆盖新状态。重试携带同一请求号，使服务识别已处理操作并避免重复执行；日志保存对象、前后状态、请求号及身份。"
+        ],
+        "detailRef": {
+          "chapter": "02_enterprise_data_model",
+          "section": "对象操作与状态转换",
+          "anchor": "对象操作与状态转换"
+        },
+        "sourceSection": "对象操作与状态转换",
+        "equation": "\\operatorname{Permit}=\\operatorname{RoleOK}\\land\\operatorname{ScopeOK}\\land\\operatorname{StateOK}\\land\\operatorname{ApprovalOK}",
+        "visual": {
+          "kind": "cards",
+          "items": [
+            {
+              "label": "角色与范围",
+              "detail": "用户有权操作该对象。"
+            },
+            {
+              "label": "状态与批准",
+              "detail": "前置状态及审批有效。"
+            }
+          ]
+        },
+        "takeaway": "授权和状态检查须由实际业务服务落实。",
+        "layout": "split",
+        "density": "compact",
+        "lessonNumber": 2
+      },
+      {
+        "kind": "case",
+        "section": "企业案例",
+        "title": "Stripe PaymentIntent：支付不是一个成功布尔值",
+        "lead": "状态模型应保留业务尚未完成的不同原因。",
+        "body": [
+          "支付可能需要用户补充支付方式或完成额外认证，也可能处于异步处理阶段。Stripe用PaymentIntent（支付意图）对象保存一次支付过程的状态。",
+          "公开生命周期包含待支付方式、待确认、待用户操作、处理中和成功等状态；需要额外认证或异步处理的支付，不会在首次提交后立即成为成功。"
+        ],
+        "takeaway": "把全部非成功状态压为失败，会丢失下一步动作的信息。状态记录说明当前处境，事件记录说明何时转移；两者共同支持重试、客户提示与最终核对。",
+        "layout": "split",
+        "detailRef": {
+          "chapter": "02_enterprise_data_model",
+          "section": "对象操作与状态转换",
+          "anchor": "对象操作与状态转换"
+        },
+        "sourceSection": "对象操作与状态转换",
+        "visual": {
+          "kind": "flow",
+          "items": [
+            {
+              "label": "支付意图",
+              "detail": "保存同一过程身份"
+            },
+            {
+              "label": "状态转换",
+              "detail": "确认、认证与处理"
+            },
+            {
+              "label": "最终核验",
+              "detail": "成功或其他终态"
+            }
+          ]
+        },
+        "caseId": "b02-02",
+        "sources": [
+          {
+            "title": "The PaymentIntent lifecycle",
+            "url": "https://docs.stripe.com/payments/paymentintents/lifecycle"
+          }
+        ],
+        "lessonNumber": 2
+      },
+      {
+        "kind": "case",
+        "section": "企业案例",
+        "title": "Stripe：提交事件与最终业务状态应分别保存",
+        "lead": "“接口已接受请求”能否作为订单已收款的依据？",
+        "body": [
+          "把全部非成功状态压为失败，会丢失下一步动作的信息。状态记录说明当前处境，事件记录说明何时转移；两者共同支持重试、客户提示与最终核对。",
+          "公开状态及允许流程是平台规则，未说明具体商户的内部对账设计；处理中也不表示最终到账。"
+        ],
+        "takeaway": "不能。应依据支付状态及最终确认核对，区分提交、认证、处理和成功，避免提前发货或重复付款。",
+        "layout": "focus",
+        "detailRef": {
+          "chapter": "02_enterprise_data_model",
+          "section": "对象操作与状态转换",
+          "anchor": "对象操作与状态转换"
+        },
+        "sourceSection": "对象操作与状态转换",
+        "caseId": "b02-02",
+        "sources": [
+          {
+            "title": "The PaymentIntent lifecycle",
+            "url": "https://docs.stripe.com/payments/paymentintents/lifecycle"
+          }
+        ],
+        "prompts": [
+          {
+            "question": "“接口已接受请求”能否作为订单已收款的依据？",
+            "answer": "不能。应依据支付状态及最终确认核对，区分提交、认证、处理和成功，避免提前发货或重复付款。"
+          }
+        ],
+        "lessonNumber": 2
+      },
+      {
+        "kind": "concept",
+        "section": "指标与激励",
+        "title": "语义层约束自然语言问数",
+        "lead": "查询应继承已确认的定义与责任。",
+        "body": [
+          "语义层把表、字段与业务对象及指标定义对应起来，供不同工具使用一致口径。指标字典记录公式、范围、粒度、时间和责任；血缘说明源记录及转换。问数系统先识别对象，匹配指标与维度，再生成查询、检验结果并解释。",
+          "“本周哪个工站良率最低”仍需明确检验阶段、自然周或滚动窗口、最小件数及用户范围。缺项应澄清或使用已批准且明确说明的默认值。"
+        ],
+        "detailRef": {
+          "chapter": "02_enterprise_data_model",
+          "section": "自然语言问数的查询条件",
+          "anchor": "语义层与-ai-问数"
+        },
+        "sourceSection": "语义层与 AI 问数",
+        "takeaway": "查询可运行是必要条件，查询是否符合业务定义还需语义检验。",
+        "visual": {
+          "kind": "cards",
+          "items": [
+            {
+              "label": "语义与质量",
+              "detail": "定义、字段、时间和分母一致。"
+            },
+            {
+              "label": "权限与审计",
+              "detail": "限定访问范围，保留查询及版本。"
+            }
+          ]
+        },
+        "layout": "split",
+        "lessonNumber": 2
+      },
+      {
+        "kind": "concept",
+        "section": "概念与方法",
+        "title": "绩效合同：为何要同时考虑努力与风险",
+        "lead": "同一份工资规则，会改变代理人的选择。",
+        "body": [
+          "委托人把任务交给代理人，却不能完全观察其努力，只能观察受到环境影响的产出。绩效工资提高努力回报，也把一部分环境风险转移给代理人；风险厌恶表示人在期望收入相同的情况下倾向于较少收入波动。",
+          "经理可选择努力，企业可选择合同；因此要先求经理面对合同的最优反应，再把该反应代入企业目标。固定工资用于满足参与要求，绩效权重则同时影响激励、风险补偿与企业收益。"
+        ],
+        "takeaway": "最优合同的计算顺序由双方选择的先后关系决定。",
+        "layout": "split",
+        "detailRef": {
+          "chapter": "02_enterprise_data_model",
+          "section": "绩效信号与风险承担",
+          "anchor": "指标测量与激励目标"
+        },
+        "sourceSection": "指标测量与激励目标",
+        "visual": {
+          "kind": "flow",
+          "items": [
+            {
+              "label": "企业",
+              "detail": "选择固定工资及绩效权重"
+            },
+            {
+              "label": "经理",
+              "detail": "据合同选择努力"
+            },
+            {
+              "label": "产出与报酬",
+              "detail": "努力和环境共同产生结果"
+            }
+          ]
+        },
+        "lessonNumber": 2
+      },
+      {
+        "kind": "concept",
+        "section": "指标与激励",
+        "title": "为何准确记录仍不足以保证合理激励",
+        "lead": "指标进入报酬合同后，会反过来改变被测量者的行为。",
+        "body": [
+          "企业是委托人，经理是代理人：企业获得产出收益，经理付出努力并领取报酬。努力不能完全观察，企业只能按含有环境噪声的产出制定合同。",
+          "固定工资满足经理的参与要求，绩效权重鼓励努力，却使经理承担随机工资风险。单任务合同模型包含两层选择：经理选择给定合同下的努力，企业依据该反应选择合同权重。"
+        ],
+        "takeaway": "测量模型、经理的努力选择和企业的合同选择是三个相连但不同的问题。",
+        "detailRef": {
+          "chapter": "02_enterprise_data_model",
+          "section": "绩效信号与风险承担",
+          "anchor": "指标测量与激励目标"
+        },
+        "sourceSection": "指标测量与激励目标",
+        "layout": "stack",
+        "visual": {
+          "kind": "flow",
+          "items": [
+            {
+              "label": "企业定合同",
+              "detail": "固定工资与绩效权重。"
+            },
+            {
+              "label": "经理选努力",
+              "detail": "权衡报酬、成本与风险。"
+            },
+            {
+              "label": "随机产出实现",
+              "detail": "努力叠加环境噪声。"
+            },
+            {
+              "label": "按指标支付",
+              "detail": "合同影响下次行为。"
+            }
+          ]
+        },
+        "lessonNumber": 2
+      },
+      {
+        "kind": "concept",
+        "section": "指标与激励",
+        "title": "产出信号、合同与风险成本",
+        "lead": "可观测绩效包含真实努力和随机环境。",
+        "body": [
+          "经理选择努力 \\(e\\ge0\\)，可观测产出为 \\(y=e+\\varepsilon\\)，环境噪声 \\(\\varepsilon\\sim N(0,\\sigma^2)\\)。工资 \\(w=\\alpha+\\beta y\\) 中，\\(\\alpha\\) 是固定工资，\\(\\beta\\ge0\\) 是绩效权重；努力成本为 \\(ce^2/2\\)，\\(c>0\\)。",
+          "净收入 \\(z\\) 的效用为 \\(U(z)=-e^{-rz}\\)，\\(r>0\\) 为风险厌恶系数。确定性等价（CE）是与随机净收入带来相同期望效用的确定金额；本模型中，它等于期望净收入扣除工资风险折价。"
+        ],
+        "detailRef": {
+          "chapter": "02_enterprise_data_model",
+          "section": "绩效信号与风险承担",
+          "anchor": "指标测量与激励目标"
+        },
+        "sourceSection": "指标测量与激励目标",
+        "equation": "\\operatorname{CE}=\\alpha+\\beta e-\\frac c2e^2-\\frac r2\\beta^2\\sigma^2",
+        "takeaway": "更强绩效激励既改变努力，也增加随机工资的风险负担。",
+        "layout": "split",
+        "density": "compact",
+        "diagram": {
+          "type": "graph",
+          "title": "努力与环境通过合同影响收入",
+          "description": "努力e与环境噪声epsilon共同形成可观测产出y。线性合同w=alpha+beta y将产出变为工资；努力成本降低净收入，工资波动则产生风险折价。",
+          "encoding": "模型结构示意",
+          "note": "风险折价来自正态噪声与指数效用的组合假设。",
+          "nodes": [
+            {
+              "id": "effort",
+              "x": 17,
+              "y": 23,
+              "w": 28,
+              "h": 22,
+              "label": "努力 \\(e\\)",
+              "detail": "经理选择",
+              "tone": "blue",
+              "shape": "rect"
+            },
+            {
+              "id": "noise",
+              "x": 17,
+              "y": 75,
+              "w": 28,
+              "h": 22,
+              "label": "噪声 \\(\\varepsilon\\)",
+              "detail": "\\(N(0,\\sigma^2)\\)",
+              "tone": "muted",
+              "shape": "rect"
+            },
+            {
+              "id": "output",
+              "x": 50,
+              "y": 23,
+              "w": 28,
+              "h": 22,
+              "label": "产出 \\(y\\)",
+              "detail": "\\(e+\\varepsilon\\)",
+              "tone": "blue",
+              "shape": "rect"
+            },
+            {
+              "id": "wage",
+              "x": 82,
+              "y": 23,
+              "w": 28,
+              "h": 22,
+              "label": "工资 \\(w\\)",
+              "detail": "\\(\\alpha+\\beta y\\)",
+              "tone": "blue",
+              "shape": "rect"
+            },
+            {
+              "id": "cost",
+              "x": 50,
+              "y": 75,
+              "w": 28,
+              "h": 22,
+              "label": "努力成本",
+              "detail": "\\(ce^2/2\\)",
+              "tone": "rose",
+              "shape": "rect"
+            },
+            {
+              "id": "CE",
+              "x": 82,
+              "y": 75,
+              "w": 28,
+              "h": 22,
+              "label": "确定性等价",
+              "detail": "均值扣风险折价",
+              "tone": "teal",
+              "shape": "rect"
+            }
+          ],
+          "edges": [
+            {
+              "from": "effort",
+              "to": "output",
+              "label": ""
+            },
+            {
+              "from": "noise",
+              "to": "output",
+              "label": ""
+            },
+            {
+              "from": "output",
+              "to": "wage",
+              "label": ""
+            },
+            {
+              "from": "wage",
+              "to": "CE",
+              "label": ""
+            },
+            {
+              "from": "cost",
+              "to": "CE",
+              "label": ""
+            }
+          ]
+        },
+        "lessonNumber": 2
+      },
+      {
+        "layout": "focus",
+        "kind": "calculation",
+        "title": "确定性等价收入的推导",
+        "lead": "正态变量的指数矩给出风险折价。",
+        "body": [
+          "记 \\(Z=w-ce^2/2\\)。由定义 \\(-e^{-r\\operatorname{CE}}=-\\mathbb E[e^{-rZ}]\\)，约去负号后对两侧取对数。正态变量的指数矩给出下式。",
+          "固定合同与努力时，只有噪声随机，故 \\(\\mathbb E[Z]=\\alpha+\\beta e-ce^2/2\\)、\\(\\operatorname{Var}(Z)=\\beta^2\\sigma^2\\)。除以 \\(-r\\)，即得到均值减去方差折价。"
+        ],
+        "equation": [
+          "-r\\operatorname{CE}=\\log\\mathbb E[e^{-rZ}]=-r\\mathbb E[Z]+\\frac{r^2}{2}\\operatorname{Var}(Z)",
+          "\\operatorname{CE}=\\mathbb E[Z]-\\frac r2\\operatorname{Var}(Z)"
+        ],
+        "takeaway": "风险折价为工资方差与风险厌恶系数乘积的一半。",
+        "section": "指标与激励",
+        "detailRef": {
+          "chapter": "02_enterprise_data_model",
+          "section": "绩效信号与风险承担",
+          "anchor": "指标测量与激励目标"
+        },
+        "sourceSection": "指标测量与激励目标",
+        "density": "compact",
+        "lessonNumber": 2
+      },
+      {
+        "kind": "calculation",
+        "section": "指标与激励",
+        "title": "代理人的最优努力",
+        "lead": "固定合同时，经理权衡预期工资与努力成本。",
+        "body": [
+          "关于努力，确定性等价收入的导数为 \\(\\beta-ce\\)，二阶导数为 \\(-c<0\\)，故目标严格凹。在 \\(\\beta>0\\) 时，一阶条件给出唯一内点解。",
+          "假定 \\(\\beta\\ge0\\)，因此 \\(e^*=\\beta/c\\)；\\(\\beta=0\\) 时 \\(e^*=0\\) 为边界解。若允许负权重，非负努力约束下的解为 \\(\\max\\{0,\\beta/c\\}\\)。"
+        ],
+        "detailRef": {
+          "chapter": "02_enterprise_data_model",
+          "section": "合同如何影响努力",
+          "anchor": "代理人的努力选择"
+        },
+        "sourceSection": "代理人的努力选择",
+        "equation": [
+          "\\frac{\\partial\\operatorname{CE}}{\\partial e}=\\beta-ce,\\qquad\\frac{\\partial^2\\operatorname{CE}}{\\partial e^2}=-c<0",
+          "e^*(\\beta)=\\frac{\\beta}{c}\\quad(\\beta\\ge0)"
+        ],
+        "takeaway": "该解是给定合同下的努力反应，尚未决定最优合同。",
+        "layout": "focus",
+        "lessonNumber": 2
+      },
+      {
+        "kind": "calculation",
+        "section": "指标与激励",
+        "title": "参与约束与企业收益",
+        "lead": "固定工资调整到经理恰好愿意接受合同。",
+        "body": [
+          "经理外部机会的确定性收入为 \\(\\bar u\\)，参与要求 \\(\\operatorname{CE}\\ge\\bar u\\)。固定工资没有额外下界时，企业令约束取等号；把经理反应 \\(e^*=\\beta/c\\) 代入 CE，可解出 \\(\\alpha\\)。",
+          "单位产出价值为 \\(v>0\\)，企业的目标为 \\(v\\mathbb E[y]-\\mathbb E[w]\\)。再代入固定工资，得到 \\(\\Pi(\\beta)\\)：产出价值减去外部机会、努力成本和风险补偿。"
+        ],
+        "detailRef": {
+          "chapter": "02_enterprise_data_model",
+          "section": "参与约束与企业的合同选择",
+          "anchor": "参与约束与最优激励强度"
+        },
+        "sourceSection": "参与约束与最优激励强度",
+        "equation": [
+          "\\alpha=\\bar u-\\frac{\\beta^2}{2c}+\\frac r2\\beta^2\\sigma^2",
+          "\\Pi(\\beta)=\\frac{v\\beta}{c}-\\frac{\\beta^2}{2c}-\\frac r2\\beta^2\\sigma^2-\\bar u"
+        ],
+        "takeaway": "参与约束把努力成本与风险成本传递到企业的合同选择。",
+        "layout": "focus",
+        "density": "compact",
+        "lessonNumber": 2
+      },
+      {
+        "layout": "split",
+        "kind": "calculation",
+        "title": "最优线性激励强度",
+        "lead": "测量噪声通过风险成本影响合同权重。",
+        "body": [
+          "企业收益 \\(\\Pi(\\beta)\\) 的二阶导数为 \\(-(1/c+r\\sigma^2)<0\\)，故一阶条件给出线性合同类中的唯一最优权重。\\(v,c,r\\) 不变时，噪声方差越大，最优权重越小。",
+          "横轴把风险厌恶、努力成本和测量方差合并为 \\(x=rc\\sigma^2\\)，纵轴除以产出价值 \\(v\\)。曲线表达模型内的比较静态；更多数据只有确实降低条件噪声时，才产生这一效应。"
+        ],
+        "takeaway": "信号质量影响激励强度，测量质量与激励合理性仍须分别评价。",
+        "section": "指标与激励",
+        "detailRef": {
+          "chapter": "02_enterprise_data_model",
+          "section": "参与约束与企业的合同选择",
+          "anchor": "参与约束与最优激励强度"
+        },
+        "sourceSection": "参与约束与最优激励强度",
+        "density": "compact",
+        "diagram": {
+          "type": "plot",
+          "title": "归一化噪声如何压低最优权重",
+          "description": "横轴为合成噪声强度rc sigma squared，纵轴为最优激励权重与单位产出价值之比beta star/v，函数为1/(1+x)。参数v,c,r固定时，噪声增大使权重下降。",
+          "encoding": "解析模型 · 曲线同轴",
+          "note": "模型曲线以折线近似；横轴已吸收风险厌恶与努力成本。",
+          "xDomain": [
+            0,
+            4
+          ],
+          "yDomain": [
+            0,
+            1
+          ],
+          "xLabel": "噪声强度 \\(rc\\sigma^2\\)",
+          "yLabel": "相对权重 \\(\\beta^*/v\\)",
+          "xTicks": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "yTicks": [
+            0,
+            0.25,
+            0.5,
+            0.75,
+            1
+          ],
+          "series": [
+            {
+              "label": "\\(1/(1+x)\\)",
+              "points": [
+                [
+                  0,
+                  1
+                ],
+                [
+                  0.1,
+                  0.9090909090909091
+                ],
+                [
+                  0.2,
+                  0.8333333333333334
+                ],
+                [
+                  0.3,
+                  0.7692307692307692
+                ],
+                [
+                  0.4,
+                  0.7142857142857143
+                ],
+                [
+                  0.5,
+                  0.6666666666666666
+                ],
+                [
+                  0.6,
+                  0.625
+                ],
+                [
+                  0.7,
+                  0.5882352941176471
+                ],
+                [
+                  0.8,
+                  0.5555555555555556
+                ],
+                [
+                  0.9,
+                  0.5263157894736842
+                ],
+                [
+                  1,
+                  0.5
+                ],
+                [
+                  1.1,
+                  0.47619047619047616
+                ],
+                [
+                  1.2,
+                  0.45454545454545453
+                ],
+                [
+                  1.3,
+                  0.4347826086956522
+                ],
+                [
+                  1.4,
+                  0.4166666666666667
+                ],
+                [
+                  1.5,
+                  0.4
+                ],
+                [
+                  1.6,
+                  0.3846153846153846
+                ],
+                [
+                  1.7,
+                  0.37037037037037035
+                ],
+                [
+                  1.8,
+                  0.35714285714285715
+                ],
+                [
+                  1.9,
+                  0.3448275862068966
+                ],
+                [
+                  2,
+                  0.3333333333333333
+                ],
+                [
+                  2.1,
+                  0.3225806451612903
+                ],
+                [
+                  2.2,
+                  0.3125
+                ],
+                [
+                  2.3,
+                  0.30303030303030304
+                ],
+                [
+                  2.4,
+                  0.29411764705882354
+                ],
+                [
+                  2.5,
+                  0.2857142857142857
+                ],
+                [
+                  2.6,
+                  0.2777777777777778
+                ],
+                [
+                  2.7,
+                  0.27027027027027023
+                ],
+                [
+                  2.8,
+                  0.2631578947368421
+                ],
+                [
+                  2.9,
+                  0.25641025641025644
+                ],
+                [
+                  3,
+                  0.25
+                ],
+                [
+                  3.1,
+                  0.24390243902439027
+                ],
+                [
+                  3.2,
+                  0.23809523809523808
+                ],
+                [
+                  3.3,
+                  0.23255813953488372
+                ],
+                [
+                  3.4,
+                  0.22727272727272727
+                ],
+                [
+                  3.5,
+                  0.2222222222222222
+                ],
+                [
+                  3.6,
+                  0.2173913043478261
+                ],
+                [
+                  3.7,
+                  0.2127659574468085
+                ],
+                [
+                  3.8,
+                  0.20833333333333334
+                ],
+                [
+                  3.9,
+                  0.2040816326530612
+                ],
+                [
+                  4,
+                  0.2
+                ]
+              ],
+              "tone": "blue",
+              "dashed": false
+            }
+          ],
+          "markers": [
+            {
+              "x": 1,
+              "y": 0.5,
+              "label": "\\(x=1\\)",
+              "tone": "teal"
+            },
+            {
+              "x": 3,
+              "y": 0.25,
+              "label": "\\(x=3\\)",
+              "tone": "rose"
+            }
+          ],
+          "regions": []
+        },
+        "equation": "\\beta^*=\\frac{v}{1+rc\\sigma^2}",
+        "lessonNumber": 2
+      },
+      {
+        "kind": "worked",
+        "section": "指标与激励",
+        "title": "测量噪声与合同权重：数值比较",
+        "lead": "其他条件不变时，噪声下降减少绩效风险。",
+        "body": [
+          "取 \\(v=c=r=1\\)。噪声方差为 \\(3\\) 时，\\(\\beta^*=0.25\\)、\\(e^*=0.25\\)；可信测量使条件方差降为 \\(1\\) 时，\\(\\beta^*=0.5\\)、\\(e^*=0.5\\)。",
+          "条件噪声下降减少相同绩效权重下的工资方差，因此企业愿意加强激励。相关重复测量未必提供等量新信息，记录操纵也不同于随机环境噪声，二者须另行建模。"
+        ],
+        "detailRef": {
+          "chapter": "02_enterprise_data_model",
+          "section": "参与约束与企业的合同选择",
+          "anchor": "参与约束与最优激励强度"
+        },
+        "sourceSection": "参与约束与最优激励强度",
+        "takeaway": "评价测量改进应说明降低了哪一种不确定性。",
+        "layout": "split",
+        "density": "compact",
+        "diagram": {
+          "type": "bars",
+          "title": "两种条件噪声下的最优合同",
+          "description": "取v=c=r=1，条件噪声方差3时最优绩效权重及努力均为0.25；方差1时均为0.5。共同轴比较权重，不表示外部企业测量结果。",
+          "encoding": "教学算例 · 同一比例尺",
+          "note": "固定 \\(v=c=r=1\\)，\\(e^*=\\beta^*/c\\)。",
+          "domain": [
+            0,
+            0.6
+          ],
+          "unit": "权重",
+          "rows": [
+            {
+              "label": "\\(\\sigma^2=3\\)",
+              "value": 0.25,
+              "detail": "\\(\\beta^*=e^*=1/(1+3)\\)",
+              "tone": "muted"
+            },
+            {
+              "label": "\\(\\sigma^2=1\\)",
+              "value": 0.5,
+              "detail": "\\(\\beta^*=e^*=1/(1+1)\\)",
+              "tone": "teal"
+            }
+          ],
+          "ticks": [
+            0,
+            0.2,
+            0.4,
+            0.6
+          ]
+        },
+        "lessonNumber": 2
+      },
+      {
+        "kind": "calculation",
+        "section": "指标与激励",
+        "title": "单一奖励与多任务替代",
+        "lead": "可计量产量的奖励可能挤出预防维护。",
+        "body": [
+          "非负努力 \\(e_1+e_2=1\\) 分别用于产量、维护。经理最大化 \\(\\beta e_1-\\kappa(e_1^2+e_2^2)/2\\)，\\(\\kappa>0\\)。代入 \\(e_2=1-e_1\\)，求导得 \\(\\beta-\\kappa(2e_1-1)=0\\)。",
+          "当 \\(0\\le\\beta\\le\\kappa\\) 时解如下，\\(\\beta\\ge\\kappa\\) 时为 \\((1,0)\\)。若组织价值为 \\(e_1+3e_2\\)，内点解对应的组织价值等于 \\(2-\\beta/\\kappa\\)：奖励增加会把努力从价值更高的维护转向产量。"
+        ],
+        "detailRef": {
+          "chapter": "02_enterprise_data_model",
+          "section": "多任务配置与指标操纵",
+          "anchor": "多任务配置与指标操纵"
+        },
+        "sourceSection": "多任务配置与指标操纵",
+        "equation": "e_1^*=\\frac12+\\frac{\\beta}{2\\kappa},\\qquad e_2^*=\\frac12-\\frac{\\beta}{2\\kappa}\\quad(0\\le\\beta\\le\\kappa)",
+        "takeaway": "任务替代关系和组织边际价值决定单一奖励的后果。",
+        "layout": "split",
+        "density": "compact",
+        "diagram": {
+          "type": "plot",
+          "title": "单一奖励下的努力重新配置",
+          "description": "总努力为1。横轴为奖励比beta/kappa，产量努力从1/2线性升至1，维护努力从1/2降至0；奖励比达到1后非负约束激活，努力固定为(1,0)。",
+          "encoding": "解析模型 · 曲线同轴",
+          "note": "总努力 \\(e_1+e_2=1\\)；\\(\\beta/\\kappa\\ge1\\) 时为边界解。",
+          "xDomain": [
+            0,
+            1.5
+          ],
+          "yDomain": [
+            0,
+            1
+          ],
+          "xLabel": "奖励比 \\(\\beta/\\kappa\\)",
+          "yLabel": "努力份额",
+          "xTicks": [
+            0,
+            0.5,
+            1,
+            1.5
+          ],
+          "yTicks": [
+            0,
+            0.5,
+            1
+          ],
+          "series": [
+            {
+              "label": "产量 \\(e_1^*\\)",
+              "points": [
+                [
+                  0,
+                  0.5
+                ],
+                [
+                  1,
+                  1
+                ],
+                [
+                  1.5,
+                  1
+                ]
+              ],
+              "tone": "blue",
+              "dashed": false
+            },
+            {
+              "label": "维护 \\(e_2^*\\)",
+              "points": [
+                [
+                  0,
+                  0.5
+                ],
+                [
+                  1,
+                  0
+                ],
+                [
+                  1.5,
+                  0
+                ]
+              ],
+              "tone": "teal",
+              "dashed": false
+            }
+          ],
+          "markers": [
+            {
+              "x": 1,
+              "y": 1,
+              "label": "约束开始激活",
+              "tone": "blue"
+            }
+          ],
+          "regions": []
+        },
+        "lessonNumber": 2
+      },
+      {
+        "kind": "calculation",
+        "section": "指标与激励",
+        "title": "真实努力与记录操纵",
+        "lead": "绩效激励可能改变实际努力，也可能诱发记录操纵。",
+        "body": [
+          "记录产量为 \\(y=e+m+\\varepsilon\\)，\\(m\\ge0\\) 表示提前确认或重复报工。线性奖励的可控部分为 \\(\\beta(e+m)\\)，真实努力与操纵成本为 \\(ce^2/2\\)、\\(km^2/2\\)，其中 \\(c,k>0\\)。",
+          "给定合同的风险项与努力无关，经理分别令 \\(\\beta-ce=0\\)、\\(\\beta-km=0\\)。\\(\\beta\\ge0\\) 时得到下式，零权重对应边界零投入；记录产量随奖励增长，不保证全部增长来自真实产出。"
+        ],
+        "detailRef": {
+          "chapter": "02_enterprise_data_model",
+          "section": "多任务配置与指标操纵",
+          "anchor": "多任务配置与指标操纵"
+        },
+        "sourceSection": "多任务配置与指标操纵",
+        "equation": "e^*=\\frac{\\beta}{c},\\qquad m^*=\\frac{\\beta}{k}",
+        "takeaway": "指标变化须同时核对真实产出、记录机制和激励反应。",
+        "layout": "split",
+        "density": "compact",
+        "diagram": {
+          "type": "graph",
+          "title": "合同同时改变产出与记录机制",
+          "description": "绩效奖励beta同时激励真实努力e和记录操纵m；二者与环境噪声epsilon共同形成记录产量y。记录增加不能仅归因为真实产出增加。",
+          "encoding": "模型结构示意",
+          "note": "提高操纵成本需要身份、事件、版本及独立复核。",
+          "nodes": [
+            {
+              "id": "contract",
+              "x": 18,
+              "y": 50,
+              "w": 28,
+              "h": 22,
+              "label": "绩效权重 \\(\\beta\\)",
+              "detail": "给定线性合同",
+              "tone": "blue",
+              "shape": "rect"
+            },
+            {
+              "id": "e",
+              "x": 51,
+              "y": 23,
+              "w": 28,
+              "h": 22,
+              "label": "真实努力",
+              "detail": "\\(e^*=\\beta/c\\)",
+              "tone": "blue",
+              "shape": "rect"
+            },
+            {
+              "id": "m",
+              "x": 51,
+              "y": 77,
+              "w": 28,
+              "h": 22,
+              "label": "记录操纵",
+              "detail": "\\(m^*=\\beta/k\\)",
+              "tone": "rose",
+              "shape": "rect"
+            },
+            {
+              "id": "y",
+              "x": 83,
+              "y": 50,
+              "w": 28,
+              "h": 22,
+              "label": "记录产量",
+              "detail": "\\(y=e+m+\\varepsilon\\)",
+              "tone": "blue",
+              "shape": "rect"
+            }
+          ],
+          "edges": [
+            {
+              "from": "contract",
+              "to": "e",
+              "label": ""
+            },
+            {
+              "from": "contract",
+              "to": "m",
+              "label": ""
+            },
+            {
+              "from": "e",
+              "to": "y",
+              "label": ""
+            },
+            {
+              "from": "m",
+              "to": "y",
+              "label": ""
+            }
+          ]
+        },
+        "lessonNumber": 2
+      },
+      {
+        "kind": "case",
+        "section": "企业应用",
+        "title": "对象关系与元数据目录",
+        "lead": "影响范围与计算依据是两类互补问题。",
+        "body": [
+          "业务本体（Ontology）规定业务对象、属性、关系及相关规则。Palantir 的公开 Ontology 机制联结对象、属性、关系与行动。沿设备、工序、批次及订单关联可以追踪停机影响，并按订单身份去重；此封测对象结构是依据公开背景构造的分析示例，不代表该企业实际设计。",
+          "Atlan 与 Nasdaq 的案例涉及数据发现、血缘及协作治理。目录说明数据含义、来源和责任，不能代替对象关系或本企业的效果测量。"
+        ],
+        "detailRef": {
+          "chapter": "02_enterprise_data_model",
+          "section": "对象和元数据的企业应用",
+          "anchor": "业务对象与元数据管理的企业应用"
+        },
+        "sourceSection": "业务对象与元数据管理的企业应用",
+        "takeaway": "对象图支持定位与操作，目录支持发现、理解及追溯。",
+        "layout": "split",
+        "diagram": {
+          "type": "graph",
+          "title": "沿对象关系定位停机影响",
+          "description": "设备停机事件指向相关工序，工序关联处理中的批次，批次再关联订单。订单需按稳定身份去重；元数据目录提供定义、来源和责任证据。",
+          "encoding": "Ontology 背景 · 教学对象关联",
+          "note": "对象路径用于定位，目录用于解释；二者不能代替效果评价。",
+          "nodes": [
+            {
+              "id": "device",
+              "x": 18,
+              "y": 23,
+              "w": 28,
+              "h": 22,
+              "label": "设备停机",
+              "detail": "设备身份、事件时间",
+              "tone": "blue",
+              "shape": "rect"
+            },
+            {
+              "id": "step",
+              "x": 50,
+              "y": 23,
+              "w": 28,
+              "h": 22,
+              "label": "相关工序",
+              "detail": "工艺路线与设备资格",
+              "tone": "blue",
+              "shape": "rect"
+            },
+            {
+              "id": "lot",
+              "x": 82,
+              "y": 23,
+              "w": 28,
+              "h": 22,
+              "label": "受影响批次",
+              "detail": "在制与过站记录",
+              "tone": "blue",
+              "shape": "rect"
+            },
+            {
+              "id": "order",
+              "x": 82,
+              "y": 73,
+              "w": 28,
+              "h": 22,
+              "label": "相关订单",
+              "detail": "按订单身份去重",
+              "tone": "blue",
+              "shape": "rect"
+            },
+            {
+              "id": "meta",
+              "x": 30,
+              "y": 73,
+              "w": 45,
+              "h": 22,
+              "label": "目录与血缘",
+              "detail": "定义、来源、责任",
+              "tone": "teal",
+              "shape": "rect"
+            }
+          ],
+          "edges": [
+            {
+              "from": "device",
+              "to": "step",
+              "label": ""
+            },
+            {
+              "from": "step",
+              "to": "lot",
+              "label": ""
+            },
+            {
+              "from": "lot",
+              "to": "order",
+              "label": ""
+            },
+            {
+              "from": "meta",
+              "to": "order",
+              "label": "解释依据",
+              "dashed": true,
+              "labelX": 60,
+              "labelY": 67
+            }
+          ]
+        },
+        "density": "compact",
+        "lessonNumber": 2
+      },
+      {
+        "kind": "case",
+        "section": "企业案例",
+        "title": "LinkedIn DataHub：数据集之外还要记录关系",
+        "lead": "可发现性依赖身份、关系和责任共同表达。",
+        "body": [
+          "分析者找到一张表后，仍要判断它如何生成、用于哪些图表以及由谁负责。LinkedIn的DataHub把多类元数据实体及其关联纳入搜索与发现。",
+          "2019年公开说明覆盖数据集、指标、任务、图表、人员等多类实体；其前身已区分位置、模式、所有权等技术元数据与血缘、作业执行等过程元数据。"
+        ],
+        "takeaway": "元数据是描述数据结构、含义、来源及责任的信息。数据集、转换任务和图表有不同身份，血缘关系把它们连接起来，支持沿来源或影响方向追溯。",
+        "layout": "split",
+        "detailRef": {
+          "chapter": "02_enterprise_data_model",
+          "section": "对象和元数据的企业应用",
+          "anchor": "业务对象与元数据管理的企业应用"
+        },
+        "sourceSection": "业务对象与元数据管理的企业应用",
+        "visual": {
+          "kind": "flow",
+          "items": [
+            {
+              "label": "来源数据集",
+              "detail": "保存结构及身份"
+            },
+            {
+              "label": "转换任务",
+              "detail": "说明产生与更新过程"
+            },
+            {
+              "label": "图表与责任人",
+              "detail": "支持使用及复核"
+            }
+          ]
+        },
+        "caseId": "b02-04",
+        "sources": [
+          {
+            "title": "DataHub: A generalized metadata search & discovery tool",
+            "url": "https://www.linkedin.com/blog/engineering/archive/data-hub"
+          }
+        ],
+        "lessonNumber": 2
+      },
+      {
+        "kind": "case",
+        "section": "企业案例",
+        "title": "DataHub：把来源与影响表示为可查询的关系",
+        "lead": "为什么数据目录只列“表名与字段名”还不够？",
+        "body": [
+          "元数据是描述数据结构、含义、来源及责任的信息。数据集、转换任务和图表有不同身份，血缘关系把它们连接起来，支持沿来源或影响方向追溯。",
+          "实体覆盖与元数据机制来自企业工程文档；元数据关系可能不完整，发现一张表也不等于取得明细访问权限。"
+        ],
+        "takeaway": "因为它无法充分回答来源、更新过程、下游影响及责任问题；还需记录相关实体和可追溯关系。",
+        "layout": "focus",
+        "detailRef": {
+          "chapter": "02_enterprise_data_model",
+          "section": "对象和元数据的企业应用",
+          "anchor": "业务对象与元数据管理的企业应用"
+        },
+        "sourceSection": "业务对象与元数据管理的企业应用",
+        "caseId": "b02-04",
+        "sources": [
+          {
+            "title": "DataHub: A generalized metadata search & discovery tool",
+            "url": "https://www.linkedin.com/blog/engineering/archive/data-hub"
+          }
+        ],
+        "prompts": [
+          {
+            "question": "为什么数据目录只列“表名与字段名”还不够？",
+            "answer": "因为它无法充分回答来源、更新过程、下游影响及责任问题；还需记录相关实体和可追溯关系。"
+          }
+        ],
+        "lessonNumber": 2
+      },
+      {
+        "kind": "derivation",
+        "title": "局部加速的总体上界",
+        "lead": "加速比取决于被改善环节的时间占比。",
+        "body": [
+          "总时间 \\(T\\) 分为发现、理解、计算、验证和协调，下标分别为 find、understand、compute、validate、coordinate。固定任务、质量与其他环节，令计算占比 \\(q=T_{\\rm compute}/T\\)，加速倍数为 \\(s\\ge1\\)。",
+          "新计算时间为原来的 \\(1/s\\)，其余 \\(1-q\\) 保持不变。计算再快，总耗时也不低于原来的 \\(1-q\\)；当计算占一成时，总体加速比上界为 \\(10/9\\)。"
+        ],
+        "equation": "\\begin{aligned}T&=T_{\\rm find}+T_{\\rm understand}+T_{\\rm compute}+T_{\\rm validate}+T_{\\rm coordinate},\\\\\\frac{T_{\\rm new}}{T}&=(1-q)+\\frac{q}{s},\\qquad\\frac{T}{T_{\\rm new}}\\le\\frac{1}{1-q}\\quad(0\\le q<1).\\end{aligned}",
+        "takeaway": "资源投入应依据完整任务中的耗时构成。",
+        "layout": "focus",
+        "density": "compact",
+        "detailRef": {
+          "chapter": "02_enterprise_data_model",
+          "section": "对象和元数据的企业应用",
+          "anchor": "业务对象与元数据管理的企业应用"
+        },
+        "sourceSection": "业务对象与元数据管理的企业应用",
+        "lessonNumber": 2
+      },
+      {
+        "kind": "worked",
+        "section": "企业应用",
+        "title": "总任务时间与局部加速",
+        "lead": "计算耗时只是一项分析成本。",
+        "body": [
+          "固定同一任务与质量标准，将原总耗时归一为 \\(1\\)。计算占 \\(0.1\\)，发现、理解、验证及协调合计占 \\(0.9\\)；这里只改善计算，其他环节保持不变。",
+          "计算提速 \\(10\\) 倍后，总耗时为 \\(0.9+0.1/10=0.91\\)，下降 \\(9\\%\\)，总体加速比约 \\(1.099\\)。目录及语义治理可能影响其他环节，须分别测量完整交付时间与错误率。"
+        ],
+        "detailRef": {
+          "chapter": "02_enterprise_data_model",
+          "section": "对象和元数据的企业应用",
+          "anchor": "业务对象与元数据管理的企业应用"
+        },
+        "sourceSection": "业务对象与元数据管理的企业应用",
+        "takeaway": "局部提速的总体贡献受其原有时间占比限制。",
+        "layout": "split",
+        "density": "compact",
+        "diagram": {
+          "type": "timeline",
+          "title": "计算十倍加速后的总任务时间",
+          "description": "原总耗时归一为1，其中非计算环节0.9、计算0.1。只将计算提速十倍后，计算为0.01，总任务耗时0.91，总时间下降9%。",
+          "encoding": "教学算例 · 共同时间轴",
+          "note": "色段表示耗时构成；不声称真实任务按图中顺序串行。",
+          "domain": [
+            0,
+            1
+          ],
+          "unit": "原总时间的份额",
+          "rows": [
+            {
+              "label": "原任务",
+              "segments": [
+                {
+                  "start": 0,
+                  "end": 0.9,
+                  "label": "其余环节 0.90",
+                  "tone": "muted"
+                },
+                {
+                  "start": 0.9,
+                  "end": 1,
+                  "label": "0.10",
+                  "tone": "blue"
+                }
+              ],
+              "points": []
+            },
+            {
+              "label": "计算提速后",
+              "segments": [
+                {
+                  "start": 0,
+                  "end": 0.9,
+                  "label": "其余环节 0.90",
+                  "tone": "muted"
+                },
+                {
+                  "start": 0.9,
+                  "end": 0.91,
+                  "label": "",
+                  "tone": "teal"
+                }
+              ],
+              "points": [
+                {
+                  "at": 0.91,
+                  "label": "总计 0.91",
+                  "tone": "teal"
+                }
+              ]
+            }
+          ],
+          "ticks": [
+            0,
+            0.5,
+            0.9,
+            1
+          ]
+        },
+        "equation": "\\frac{T}{T_{\\rm new}}=\\frac1{0.91}\\approx1.099",
+        "lessonNumber": 2
+      },
+      {
+        "kind": "summary",
+        "section": "数据模型的复核",
+        "title": "由异常指标复核数据模型",
+        "lead": "从汇总结果追溯基础事实及责任。",
+        "body": [
+          "零售交易、库存快照及补货事件分别回答销量、存量和补货流入问题；制造日快照可定位异常，原因研究则须追溯批次、设备、检验与有效承诺。",
+          "复核依次检查行含义、键与基数、时间与聚合、对象追溯、操作授权及结果日志。能够按同一版本复现计算，是模型进入查询和分析的基础。"
+        ],
+        "detailRef": {
+          "chapter": "02_enterprise_data_model",
+          "section": "零售与封测模型的综合复核",
+          "anchor": "建模实例与复核"
+        },
+        "sourceSection": "建模实例与复核",
+        "visual": {
+          "kind": "flow",
+          "items": [
+            "事实与粒度",
+            "指标与时间",
+            "对象与原因",
+            "权限与行动"
+          ]
+        },
+        "takeaway": "数据模型应支持可解释的计算、可追溯的记录和受控的操作。",
+        "prompts": [
+          {
+            "question": "设备 OEE 下降时，日快照足以判断故障原因吗？",
+            "answer": "不足。还须核对计划时间、节拍和产品组合，并查询设备状态及维护事件，提出并检验具体机制。"
+          }
+        ],
+        "layout": "split",
+        "density": "compact",
+        "lessonNumber": 2
+      }
+    ],
+    "id": "02_enterprise_data_model",
+    "chapter": "02_enterprise_data_model",
+    "lectureNumber": 2
+  },
+  "03_sql_kpi": {
+    "title": "关系查询、指标计算与语义服务",
+    "slides": [
+      {
+        "kind": "opener",
+        "section": "查询契约",
+        "title": "查询正确性与业务语义",
+        "lead": "先定义事实和指标，再构造关系查询。",
+        "body": [
+          "SQL（结构化查询语言）声明要查询的数据及其条件，由数据库选择执行步骤。一行一订单时可按行计数；一行一明细时，订单数须按订单身份计算。查询能执行，仍可能采用错误粒度。",
+          "粒度说明一行代表什么事实；主键唯一标识该记录。关键绩效指标（KPI）量化关键经营表现；指标层统一对象、分子分母、时间、单位、权限和责任，使输出量可追溯到业务定义。"
+        ],
+        "detailRef": {
+          "chapter": "03_sql_kpi",
+          "section": "先明确指标要统计什么",
+          "anchor": "查询任务与数据模型"
+        },
+        "sourceSection": "查询任务与数据模型",
+        "visual": {
+          "kind": "flow",
+          "items": [
+            "业务对象",
+            "事实粒度",
+            "指标口径",
+            "SQL",
+            "管理解释与审计"
+          ]
+        },
+        "takeaway": "正确查询须同时满足语法、关系约束与指标定义。",
+        "layout": "split",
+        "lessonNumber": 3
+      },
+      {
+        "kind": "concept",
+        "section": "关系查询",
+        "title": "SQL 的逻辑处理顺序",
+        "lead": "逻辑语义用于解释结果，物理计划用于执行。",
+        "body": [
+          "先由 `FROM/JOIN` 确定来源及关系，`WHERE` 过滤原始事实，`GROUP BY` 形成组，`HAVING` 筛选组，`SELECT` 和 `ORDER BY` 指定输出与顺序。",
+          "查询优化器可以采用不同物理顺序，但必须保持结果语义。查询复核须确认纳入的行、每条事实的出现次数、分组方式及保留的统计状态，即为后续合并保存的和、计数等基础量。"
+        ],
+        "detailRef": {
+          "chapter": "03_sql_kpi",
+          "section": "按地区计算销售额",
+          "anchor": "sql-查询的关系语义"
+        },
+        "sourceSection": "SQL 查询的关系语义",
+        "takeaway": "逻辑处理顺序是理解查询的依据，不等同于实际执行顺序。",
+        "layout": "split",
+        "diagram": {
+          "type": "graph",
+          "title": "逻辑处理如何改变记录集合",
+          "description": "来源和连接形成候选行，WHERE筛选事实，GROUP BY形成组，HAVING筛选组，SELECT指定结果，ORDER BY排序。图只表达逻辑语义，不代表实际物理计划。",
+          "encoding": "关系查询逻辑顺序示意",
+          "note": "逻辑处理顺序用于核查；优化器可调整物理执行计划。",
+          "nodes": [
+            {
+              "id": "from",
+              "x": 18,
+              "y": 24,
+              "w": 28,
+              "h": 22,
+              "label": "FROM / JOIN",
+              "detail": "来源与关系",
+              "tone": "blue",
+              "shape": "rect"
+            },
+            {
+              "id": "where",
+              "x": 50,
+              "y": 24,
+              "w": 28,
+              "h": 22,
+              "label": "WHERE",
+              "detail": "筛选事实行",
+              "tone": "blue",
+              "shape": "rect"
+            },
+            {
+              "id": "group",
+              "x": 82,
+              "y": 24,
+              "w": 28,
+              "h": 22,
+              "label": "GROUP BY",
+              "detail": "形成统计组",
+              "tone": "blue",
+              "shape": "rect"
+            },
+            {
+              "id": "having",
+              "x": 82,
+              "y": 74,
+              "w": 28,
+              "h": 22,
+              "label": "HAVING",
+              "detail": "筛选已形成的组",
+              "tone": "blue",
+              "shape": "rect"
+            },
+            {
+              "id": "select",
+              "x": 50,
+              "y": 74,
+              "w": 28,
+              "h": 22,
+              "label": "SELECT",
+              "detail": "输出表达式",
+              "tone": "blue",
+              "shape": "rect"
+            },
+            {
+              "id": "order",
+              "x": 18,
+              "y": 74,
+              "w": 28,
+              "h": 22,
+              "label": "ORDER BY",
+              "detail": "结果排序",
+              "tone": "blue",
+              "shape": "rect"
+            }
+          ],
+          "edges": [
+            {
+              "from": "from",
+              "to": "where",
+              "label": ""
+            },
+            {
+              "from": "where",
+              "to": "group",
+              "label": ""
+            },
+            {
+              "from": "group",
+              "to": "having",
+              "label": ""
+            },
+            {
+              "from": "having",
+              "to": "select",
+              "label": ""
+            },
+            {
+              "from": "select",
+              "to": "order",
+              "label": ""
+            }
+          ]
+        },
+        "density": "compact",
+        "lessonNumber": 3
+      },
+      {
+        "kind": "worked",
+        "section": "关系查询",
+        "title": "区域收入查询的业务约定",
+        "lead": "时间、关系、度量与输出粒度须相互一致。",
+        "body": [
+          "示例输入含订单表 orders、客户表 customers 和产品表 products。每张订单只包含一种产品；订单存客户号、产品号、数量 \\(q_i\\) 和日期，客户表存地区，产品表存期内固定标准价 \\(p_i\\)。",
+          "目标是按订单日期筛选 \\(2026\\) 年 3 月，并按地区汇总 \\(q_i p_i\\)。自然月用左闭右开区间；真实历史收入须使用交易时成交价，并明确折扣、退货和税费。"
+        ],
+        "detailRef": {
+          "chapter": "03_sql_kpi",
+          "section": "按地区计算销售额",
+          "anchor": "sql-查询的关系语义"
+        },
+        "sourceSection": "SQL 查询的关系语义",
+        "visual": {
+          "kind": "table",
+          "headers": [
+            "SQL 片段",
+            "业务含义"
+          ],
+          "rows": [
+            [
+              "FROM orders",
+              "候选交易事实"
+            ],
+            [
+              "连接客户与产品",
+              "补地区与价格"
+            ],
+            [
+              "WHERE 三月",
+              "限定订单窗口"
+            ],
+            [
+              "GROUP BY region",
+              "区域级输出"
+            ]
+          ]
+        },
+        "takeaway": "每个查询片段须对应明确、可复核的业务约定。",
+        "layout": "split",
+        "lessonNumber": 3
+      },
+      {
+        "kind": "worked",
+        "section": "关系查询",
+        "title": "区域收入查询：逐层核查",
+        "lead": "该查询使用期内固定的标准价格。",
+        "body": [
+          "外键是引用另一张表对象标识的字段，非空值应能找到对应对象。`o`、`c`、`p` 分别是订单、客户、产品表的别名。`USING(customer_id)` 按两表同名客户号连接，产品号同理；维度键唯一且覆盖外键时，每单恰好保留一行。",
+          "`WHERE` 取 3 月订单，`GROUP BY` 为每个地区形成一组，`SUM` 合并订单金额，`AS revenue` 为结果命名，`ORDER BY ... DESC` 按收入降序展示。连接前后订单数及金额应交叉核查。"
+        ],
+        "detailRef": {
+          "chapter": "03_sql_kpi",
+          "section": "按地区计算销售额",
+          "anchor": "sql-查询的关系语义"
+        },
+        "sourceSection": "SQL 查询的关系语义",
+        "takeaway": "清晰的来源、键、范围与聚合方式构成查询审计的一部分。",
+        "codeBlock": {
+          "language": "sql",
+          "caption": "一行一订单、每单一种产品、期内标准价固定。",
+          "code": "-- 标准价固定；维度键唯一且覆盖订单外键\nSELECT c.region,\n  SUM(o.quantity*p.unit_price) AS revenue\nFROM orders o\nJOIN customers c USING (customer_id)\nJOIN products p USING (product_id)\n-- 左闭右开：覆盖整个自然月\nWHERE o.order_date >= DATE '2026-03-01'\n  AND o.order_date < DATE '2026-04-01'\nGROUP BY c.region\nORDER BY revenue DESC;"
+        },
+        "layout": "split",
+        "density": "compact",
+        "lessonNumber": 3
+      },
+      {
+        "kind": "worked",
+        "section": "关系查询",
+        "title": "区域收入：由订单逐步得到结果",
+        "lead": "连接补充价格和地区，聚合把订单行变成地区行。",
+        "body": [
+          "依据唯一客户号、产品号关联三张 3 月订单的记录，金额单位为元。每行仍是一张订单，收入等于数量乘标准价。",
+          "北区两单金额为 \\(100,90\\)，合并为 \\(190\\)；南区一单为 \\(100\\)。输入三行变成地区输出两行，变化来自分组，而不是订单事实被重复或遗漏。"
+        ],
+        "takeaway": "查询应能由少量具体记录手算，并与程序结果一致。",
+        "detailRef": {
+          "chapter": "03_sql_kpi",
+          "section": "按地区计算销售额",
+          "anchor": "sql-查询的关系语义"
+        },
+        "sourceSection": "SQL 查询的关系语义",
+        "layout": "split",
+        "diagram": {
+          "type": "graph",
+          "title": "三张订单合并为两个地区结果",
+          "description": "订单O01为北区2件每件50元，O02为北区3件每件30元，O03为南区2件每件50元。地区聚合把北区两单合为190元，南区一单100元。",
+          "encoding": "原教学记录 · 分组结构示意",
+          "note": "输入3个订单事实 → 输出2个地区组；总收入仍为290元。",
+          "nodes": [
+            {
+              "id": "o1",
+              "x": 19,
+              "y": 17,
+              "w": 31,
+              "h": 22,
+              "label": "O01 · 北区",
+              "detail": "\\(2\\times50=100\\) 元",
+              "tone": "blue",
+              "shape": "rect"
+            },
+            {
+              "id": "o2",
+              "x": 19,
+              "y": 51,
+              "w": 31,
+              "h": 22,
+              "label": "O02 · 北区",
+              "detail": "\\(3\\times30=90\\) 元",
+              "tone": "blue",
+              "shape": "rect"
+            },
+            {
+              "id": "o3",
+              "x": 19,
+              "y": 84,
+              "w": 31,
+              "h": 22,
+              "label": "O03 · 南区",
+              "detail": "\\(2\\times50=100\\) 元",
+              "tone": "blue",
+              "shape": "rect"
+            },
+            {
+              "id": "north",
+              "x": 76,
+              "y": 34,
+              "w": 35,
+              "h": 25,
+              "label": "北区",
+              "detail": "\\(100+90=190\\) 元",
+              "tone": "blue",
+              "shape": "rect"
+            },
+            {
+              "id": "south",
+              "x": 76,
+              "y": 84,
+              "w": 35,
+              "h": 22,
+              "label": "南区",
+              "detail": "\\(100\\) 元",
+              "tone": "blue",
+              "shape": "rect"
+            }
+          ],
+          "edges": [
+            {
+              "from": "o1",
+              "to": "north",
+              "label": ""
+            },
+            {
+              "from": "o2",
+              "to": "north",
+              "label": ""
+            },
+            {
+              "from": "o3",
+              "to": "south",
+              "label": ""
+            }
+          ]
+        },
+        "density": "compact",
+        "lessonNumber": 3
+      },
+      {
+        "kind": "concept",
+        "section": "关系查询",
+        "title": "关系运算与事实集合",
+        "lead": "每一步运算有确定的输入、输出和业务作用。",
+        "body": [
+          "关系代数用一组作用于关系的运算表达查询。选择限定事实范围，投影选择属性，连接关联对象，分组聚合形成分析单位，排序建立输出顺序。关系代数表达式可从内向外逐步核查。",
+          "`WHERE` 在聚合前过滤行，可能改变指标分母；`HAVING` 在聚合后过滤组，决定保留哪些组结果。分组筛选不能代替事实筛选。"
+        ],
+        "detailRef": {
+          "chapter": "03_sql_kpi",
+          "section": "表上的基本运算",
+          "anchor": "关系代数视角"
+        },
+        "sourceSection": "关系代数视角",
+        "visual": {
+          "kind": "table",
+          "headers": [
+            "运算",
+            "SQL",
+            "业务作用"
+          ],
+          "rows": [
+            [
+              "选择 \\(\\sigma\\) / 投影 \\(\\pi\\)",
+              "WHERE / SELECT",
+              "限定行 / 选择输出属性"
+            ],
+            [
+              "连接 \\(\\Join\\)",
+              "JOIN",
+              "关联对象并改变匹配次数"
+            ],
+            [
+              "分组 \\(\\gamma\\) / 排序 \\(\\tau\\)",
+              "GROUP BY / ORDER BY",
+              "汇总事实 / 排列输出"
+            ]
+          ]
+        },
+        "takeaway": "先判断运算怎样改变事实，再解释查询生成的统计量。",
+        "layout": "stack",
+        "lessonNumber": 3
+      },
+      {
+        "kind": "worked",
+        "section": "关系查询",
+        "title": "WHERE 与 HAVING 会保留不同事实",
+        "lead": "筛选单笔订单与筛选地区总额是两个问题。",
+        "body": [
+          "设北区两单金额为 \\(60,60\\)，南区一单为 \\(150\\) 元。问“金额至少 100 元的订单在各区合计多少”时，应先过滤订单；问“哪些地区总额至少 100 元”时，应先合并地区。",
+          "第一种查询排除北区两笔小订单，只得到南区 150 元；第二种保留全部三单，再保留北区 120 元与南区 150 元。条件中的对象不同，所得结果也不同。"
+        ],
+        "takeaway": "明确条件约束的是单条事实还是整个组，再选择筛选位置。",
+        "detailRef": {
+          "chapter": "03_sql_kpi",
+          "section": "表上的基本运算",
+          "anchor": "关系代数视角"
+        },
+        "sourceSection": "关系代数视角",
+        "layout": "stack",
+        "visual": {
+          "kind": "table",
+          "headers": [
+            "条件",
+            "作用位置",
+            "结果"
+          ],
+          "rows": [
+            [
+              "单笔 amount 至少 100",
+              "WHERE amount >= 100",
+              "南区 150"
+            ],
+            [
+              "地区 SUM(amount) 至少 100",
+              "HAVING SUM(amount) >= 100",
+              "北区 120；南区 150"
+            ]
+          ]
+        },
+        "lessonNumber": 3
+      },
+      {
+        "layout": "split",
+        "title": "SQL 的重复行语义",
+        "lead": "业务身份决定合法重复与错误重复。",
+        "body": [
+          "关系代数采用集合语义，SQL默认保留重复行，采用允许相同取值重复出现的多重集语义。两条明细的产品、数量和金额相同，仍可能由不同业务键标识，是两个独立事实。",
+          "例如不同订单各有 \\(100\\) 元收入，正常求和为 \\(200\\)，`SUM(DISTINCT amount)` 却只保留一个金额值，得到 \\(100\\)。去重应依据主键与采集规则；连接扩张应修复关系或聚合粒度。"
+        ],
+        "detailRef": {
+          "chapter": "03_sql_kpi",
+          "section": "相同取值与不同业务事实",
+          "anchor": "查询的选择与分组条件"
+        },
+        "takeaway": "值相同不意味着事实相同，去重应依据业务身份。",
+        "kind": "concept",
+        "section": "关系查询",
+        "sourceSection": "查询的选择与分组条件",
+        "diagram": {
+          "type": "graph",
+          "title": "业务身份与相同金额是两种等价关系",
+          "description": "不同订单A、B各100元，按订单身份是两个事实，求和200；按金额值去重只剩数值100，得到100，丢失业务事实。",
+          "encoding": "教学反例 · 实线按身份，虚线按值",
+          "note": "相同金额并不意味着同一业务事实。",
+          "nodes": [
+            {
+              "id": "a",
+              "x": 18,
+              "y": 24,
+              "w": 28,
+              "h": 22,
+              "label": "订单 A",
+              "detail": "金额100元",
+              "tone": "blue",
+              "shape": "rect"
+            },
+            {
+              "id": "b",
+              "x": 18,
+              "y": 75,
+              "w": 28,
+              "h": 22,
+              "label": "订单 B",
+              "detail": "金额100元",
+              "tone": "blue",
+              "shape": "rect"
+            },
+            {
+              "id": "facts",
+              "x": 54,
+              "y": 24,
+              "w": 30,
+              "h": 22,
+              "label": "按业务身份",
+              "detail": "两个独立事实",
+              "tone": "blue",
+              "shape": "rect"
+            },
+            {
+              "id": "values",
+              "x": 54,
+              "y": 75,
+              "w": 30,
+              "h": 22,
+              "label": "按金额值去重",
+              "detail": "只剩一个数值",
+              "tone": "rose",
+              "shape": "rect"
+            },
+            {
+              "id": "sum",
+              "x": 85,
+              "y": 24,
+              "w": 23,
+              "h": 22,
+              "label": "正确总额",
+              "detail": "200元",
+              "tone": "teal",
+              "shape": "rect"
+            },
+            {
+              "id": "wrong",
+              "x": 85,
+              "y": 75,
+              "w": 23,
+              "h": 22,
+              "label": "错误总额",
+              "detail": "100元",
+              "tone": "rose",
+              "shape": "rect"
+            }
+          ],
+          "edges": [
+            {
+              "from": "a",
+              "to": "facts",
+              "label": ""
+            },
+            {
+              "from": "b",
+              "to": "facts",
+              "label": ""
+            },
+            {
+              "from": "a",
+              "to": "values",
+              "label": "",
+              "dashed": true
+            },
+            {
+              "from": "b",
+              "to": "values",
+              "label": "",
+              "dashed": true
+            },
+            {
+              "from": "facts",
+              "to": "sum",
+              "label": ""
+            },
+            {
+              "from": "values",
+              "to": "wrong",
+              "label": ""
+            }
+          ]
+        },
+        "density": "compact",
+        "lessonNumber": 3
+      },
+      {
+        "kind": "concept",
+        "section": "粒度与连接",
+        "title": "事务、分析与展示粒度",
+        "lead": "改变层级时须明确记录单位的转换。",
+        "body": [
+          "源表一行一订单明细是事务粒度；查询一行一地区—月份是分析粒度；月报一行展示一个大区时，该大区就是展示粒度。三者可不同，但聚合规则必须可追溯。",
+          "一张订单含三条明细时，明细数为三、订单数为一。按地区计订单，应先识别订单身份；高层比率则须合并分子分母，不能直接平均低层百分比。"
+        ],
+        "detailRef": {
+          "chapter": "03_sql_kpi",
+          "section": "从源记录到结果表的粒度",
+          "anchor": "事实粒度与分析粒度"
+        },
+        "sourceSection": "事实粒度与分析粒度",
+        "takeaway": "源事实与目标结果的粒度声明决定连接及聚合方法。",
+        "layout": "split",
+        "diagram": {
+          "type": "graph",
+          "title": "记录单位逐层转换",
+          "description": "事务表一行一订单明细。先按稳定订单身份识别订单，再按地区月份形成分析组，最后按大区汇总基础分子分母后显示比率。",
+          "encoding": "模型结构示意",
+          "note": "先识别事实，再汇总统计状态；不能直接平均百分比。",
+          "nodes": [
+            {
+              "id": "line",
+              "x": 18,
+              "y": 23,
+              "w": 28,
+              "h": 22,
+              "label": "事务粒度",
+              "detail": "一行一订单明细",
+              "tone": "blue",
+              "shape": "rect"
+            },
+            {
+              "id": "identity",
+              "x": 50,
+              "y": 23,
+              "w": 28,
+              "h": 22,
+              "label": "订单身份",
+              "detail": "三条明细也可为一单",
+              "tone": "blue",
+              "shape": "rect"
+            },
+            {
+              "id": "analysis",
+              "x": 82,
+              "y": 23,
+              "w": 28,
+              "h": 22,
+              "label": "分析粒度",
+              "detail": "地区 × 月份",
+              "tone": "blue",
+              "shape": "rect"
+            },
+            {
+              "id": "state",
+              "x": 82,
+              "y": 74,
+              "w": 28,
+              "h": 22,
+              "label": "可合并状态",
+              "detail": "分子 \\(N\\)、分母 \\(D\\)",
+              "tone": "blue",
+              "shape": "rect"
+            },
+            {
+              "id": "display",
+              "x": 30,
+              "y": 74,
+              "w": 45,
+              "h": 22,
+              "label": "展示粒度",
+              "detail": "大区汇总后计算 \\(N/D\\)",
+              "tone": "blue",
+              "shape": "rect"
+            }
+          ],
+          "edges": [
+            {
+              "from": "line",
+              "to": "identity",
+              "label": ""
+            },
+            {
+              "from": "identity",
+              "to": "analysis",
+              "label": ""
+            },
+            {
+              "from": "analysis",
+              "to": "state",
+              "label": ""
+            },
+            {
+              "from": "state",
+              "to": "display",
+              "label": ""
+            }
+          ]
+        },
+        "density": "compact",
+        "lessonNumber": 3
+      },
+      {
+        "kind": "case",
+        "section": "企业案例",
+        "title": "Shopify GMV：交易规模与平台收入",
+        "lead": "指标名称应对应不同的对象与确认规则。",
+        "body": [
+          "电商平台帮助商户完成交易，同时从订阅及商户服务取得自身收入。Shopify在财务披露中分别呈现GMV、GPV、MRR和收入，避免混为同一规模。",
+          "GMV指平台促成的订单金额，按披露口径扣除退款并含运费、关税及增值税；GPV是其中由Shopify Payments处理的部分；MRR根据期末商户与订阅费率计算。"
+        ],
+        "takeaway": "GMV计量商户交易活动，平台收入计量自身取得的收入，二者不是同一金额。MRR是由期末状态计算的月度经常性收入指标，也不能直接当成期间已确认收入。",
+        "layout": "split",
+        "detailRef": {
+          "chapter": "03_sql_kpi",
+          "section": "从源记录到结果表的粒度",
+          "anchor": "事实粒度与分析粒度"
+        },
+        "sourceSection": "事实粒度与分析粒度",
+        "visual": {
+          "kind": "flow",
+          "items": [
+            {
+              "label": "GMV",
+              "detail": "商户交易规模"
+            },
+            {
+              "label": "GPV",
+              "detail": "特定支付渠道处理量"
+            },
+            {
+              "label": "收入与MRR",
+              "detail": "分别核对期间确认与期末状态"
+            }
+          ]
+        },
+        "caseId": "b03-05",
+        "sources": [
+          {
+            "title": "Shopify Announces Fourth-Quarter and Full-Year 2023 Financial Results",
+            "url": "https://www.shopify.com/news/shopify-announces-fourth-quarter-and-full-year-2023-financial-results"
+          }
+        ],
+        "lessonNumber": 3
+      },
+      {
+        "kind": "case",
+        "section": "企业案例",
+        "title": "Shopify：同为金额，业务对象与期间仍可能不同",
+        "lead": "将GMV增长率写成“公司收入增长率”，会错在哪里？",
+        "body": [
+          "GMV计量商户交易活动，平台收入计量自身取得的收入，二者不是同一金额。MRR是由期末状态计算的月度经常性收入指标，也不能直接当成期间已确认收入。",
+          "定义依据2023年业绩披露；跨企业比较须重新核对各家口径，不能仅凭同一缩写判断可比。"
+        ],
+        "takeaway": "把平台促成的交易规模替换成平台自身收入；还可能忽略退款、税费、收入确认及订阅状态等范围差异。",
+        "layout": "focus",
+        "detailRef": {
+          "chapter": "03_sql_kpi",
+          "section": "从源记录到结果表的粒度",
+          "anchor": "事实粒度与分析粒度"
+        },
+        "sourceSection": "事实粒度与分析粒度",
+        "caseId": "b03-05",
+        "sources": [
+          {
+            "title": "Shopify Announces Fourth-Quarter and Full-Year 2023 Financial Results",
+            "url": "https://www.shopify.com/news/shopify-announces-fourth-quarter-and-full-year-2023-financial-results"
+          }
+        ],
+        "prompts": [
+          {
+            "question": "将GMV增长率写成“公司收入增长率”，会错在哪里？",
+            "answer": "把平台促成的交易规模替换成平台自身收入；还可能忽略退款、税费、收入确认及订阅状态等范围差异。"
+          }
+        ],
+        "lessonNumber": 3
+      },
+      {
+        "kind": "concept",
+        "section": "概念与方法",
+        "title": "事实表与维度表",
+        "lead": "连接是在关联记录，也是在改变匹配次数。",
+        "body": [
+          "事实表保存交易、事件或状态，例如每行一笔订单明细；维度表保存描述这些事实的属性，例如客户所属地区。维度键唯一，意味着一项事实最多匹配一个该类描述版本。",
+          "外键是事实中的引用标识；引用完整性要求非空外键能够找到对应对象。维度存在多个历史版本时，还须按事实时点选择适用版本，否则一笔金额可能被复制多次或配上错误地区。"
+        ],
+        "takeaway": "连接条件必须同时约束身份、版本与适用时间。",
+        "layout": "split",
+        "detailRef": {
+          "chapter": "03_sql_kpi",
+          "section": "连接怎样复制或遗漏记录",
+          "anchor": "连接粒度与重复计数"
+        },
+        "sourceSection": "连接、粒度与重复计数",
+        "visual": {
+          "kind": "flow",
+          "items": [
+            {
+              "label": "事实",
+              "detail": "一项交易或状态"
+            },
+            {
+              "label": "维度",
+              "detail": "对应的描述属性"
+            },
+            {
+              "label": "连接核查",
+              "detail": "身份唯一且时间适用"
+            }
+          ]
+        },
+        "lessonNumber": 3
+      },
+      {
+        "kind": "concept",
+        "section": "粒度与连接",
+        "title": "连接的唯一性与覆盖性",
+        "lead": "每条事实恰好匹配一次，才能保持原粒度。",
+        "body": [
+          "\\(F\\) 是事实表，\\(D\\) 是维度表，竖线表示记录数。维度键唯一使每条事实至多匹配一次；外键非空且完整匹配使内连接不遗漏事实。两者共同保证连接前后行数相等。",
+          "仅检查总行数不足以证明安全：事实复制和遗漏可能抵消。还须独立检查重复键、未匹配外键及时间版本，确认每项事实确实被保留一次。"
+        ],
+        "detailRef": {
+          "chapter": "03_sql_kpi",
+          "section": "连接怎样复制或遗漏记录",
+          "anchor": "连接粒度与重复计数"
+        },
+        "sourceSection": "连接、粒度与重复计数",
+        "equation": "|F\\Join D|=|F|\\quad\\text{当每项事实恰好匹配一次}",
+        "takeaway": "行数、键和未匹配记录须结合检查。",
+        "layout": "split",
+        "diagram": {
+          "type": "graph",
+          "title": "每条事实恰好保留一次的两个条件",
+          "description": "事实F引用维度键。唯一性给每条事实至多一次匹配，覆盖性给每条事实至少一次匹配；两者合取才保证恰好一次。单独检查总行数无法排除复制遗漏抵消。",
+          "encoding": "模型结构示意",
+          "note": "逐事实检查同时成立，才能推出连接行数不变。",
+          "nodes": [
+            {
+              "id": "unique",
+              "x": 21,
+              "y": 23,
+              "w": 35,
+              "h": 22,
+              "label": "维度键唯一",
+              "detail": "匹配次数 \\(m_i\\le1\\)",
+              "tone": "blue",
+              "shape": "rect"
+            },
+            {
+              "id": "cover",
+              "x": 21,
+              "y": 76,
+              "w": 35,
+              "h": 22,
+              "label": "外键完整覆盖",
+              "detail": "匹配次数 \\(m_i\\ge1\\)",
+              "tone": "blue",
+              "shape": "rect"
+            },
+            {
+              "id": "once",
+              "x": 73,
+              "y": 49,
+              "w": 39,
+              "h": 30,
+              "label": "每项恰好匹配一次",
+              "detail": "\\(m_i=1\\)",
+              "tone": "blue",
+              "shape": "rect"
+            }
+          ],
+          "edges": [
+            {
+              "from": "unique",
+              "to": "once",
+              "label": ""
+            },
+            {
+              "from": "cover",
+              "to": "once",
+              "label": ""
+            }
+          ]
+        },
+        "density": "compact",
+        "lessonNumber": 3
+      },
+      {
+        "kind": "worked",
+        "section": "粒度与连接",
+        "title": "连接重复为何放大金额",
+        "lead": "聚合函数不能修复错误的关系基数。",
+        "body": [
+          "金额为 \\(100\\) 的订单匹配两条检验事件后，订单行出现两次，直接求和变为 \\(200\\)。一般地，金额 \\(x_i\\) 匹配 \\(m_i\\) 次，会贡献 \\(m_i x_i\\)；每项恰好匹配一次可保证保留原金额。",
+          "只筛选存在检验事件的订单可用 `EXISTS`；需要检验统计时，先按订单聚合事件再连接。复制与遗漏有时数值抵消，故合计相等不能代替逐事实的匹配检查。"
+        ],
+        "detailRef": {
+          "chapter": "03_sql_kpi",
+          "section": "连接怎样复制或遗漏记录",
+          "anchor": "连接粒度与重复计数"
+        },
+        "sourceSection": "连接、粒度与重复计数",
+        "takeaway": "先修正关系或目标粒度，再计算业务金额。",
+        "equation": "\\begin{aligned}\\text{连接后金额}&=\\sum_i m_i x_i,\\\\m_i=1\\ \\forall i&\\quad\\Longrightarrow\\quad\\sum_i m_ix_i=\\sum_i x_i.\\end{aligned}",
+        "layout": "split",
+        "density": "compact",
+        "diagram": {
+          "type": "bars",
+          "title": "关系扩张会复制订单金额",
+          "description": "100元订单原来1行，直接连接两条检验事件变为2行、求和200元；先把检验按订单聚合再连接回1行、求和100元。",
+          "encoding": "教学算例 · 同一比例尺",
+          "note": "筛选事件是否存在，可采用 EXISTS 而不扩张订单。",
+          "domain": [
+            0,
+            200
+          ],
+          "unit": "元",
+          "rows": [
+            {
+              "label": "原订单事实",
+              "value": 100,
+              "detail": "1 行；订单金额一次",
+              "tone": "teal"
+            },
+            {
+              "label": "直接连接事件",
+              "value": 200,
+              "detail": "2 行；金额重复两次",
+              "tone": "rose"
+            },
+            {
+              "label": "事件预聚合后连接",
+              "value": 100,
+              "detail": "1 行；恢复目标粒度",
+              "tone": "blue"
+            }
+          ],
+          "ticks": [
+            0,
+            50,
+            100,
+            150,
+            200
+          ]
+        },
+        "lessonNumber": 3
+      },
+      {
+        "kind": "concept",
+        "section": "概念与方法",
+        "title": "半连接：只判断是否存在匹配",
+        "lead": "存在性筛选保留订单身份，不复制订单金额。",
+        "body": [
+          "半连接只保留左侧存在匹配的行，不输出右表字段，也不因右侧存在多条匹配而复制左行。SQL中的 `EXISTS` 检查子查询是否至少返回一行，适合筛选“存在检验记录的订单”。",
+          "前页金额为 \\(100\\) 元的订单关联两条检验事件。普通连接产生两行；存在性筛选只让该订单通过一次，金额仍为 \\(100\\) 元。若要计算检验次数，应先按订单聚合事件，再与订单事实连接。"
+        ],
+        "takeaway": "选择需要事件存在，还是需要事件明细，决定采用哪一种关系运算。",
+        "layout": "split",
+        "detailRef": {
+          "chapter": "03_sql_kpi",
+          "section": "连接怎样复制或遗漏记录",
+          "anchor": "连接粒度与重复计数"
+        },
+        "sourceSection": "连接、粒度与重复计数",
+        "visual": {
+          "kind": "flow",
+          "items": [
+            {
+              "label": "左侧订单",
+              "detail": "保存订单身份及金额"
+            },
+            {
+              "label": "右侧检验",
+              "detail": "可能匹配多条事件"
+            },
+            {
+              "label": "存在性筛选",
+              "detail": "至少匹配一次便保留原订单"
+            }
+          ]
+        },
+        "lessonNumber": 3
+      },
+      {
+        "kind": "concept",
+        "section": "指标代数",
+        "title": "指标定义的形式化表示",
+        "lead": "名称须与对象、时间和计算规则一起保存。",
+        "body": [
+          "\\(O\\) 为对象集合，\\(\\mathcal G\\) 为分组维度，\\(\\mathcal T\\) 为时间窗口；\\(N,D\\) 为分子和分母，\\(u\\) 为单位，\\(\\rho\\) 为解释责任。指标版本须能映射到实际查询。",
+          "准时交付率（OTD）须说明统计队列：已交付队列以已交付订单为分母，到期队列以窗口内到期承诺为分母。名称相近不代表统计对象相同，两者应分别命名和解释。"
+        ],
+        "detailRef": {
+          "chapter": "03_sql_kpi",
+          "section": "写清对象、时间与计算方法",
+          "anchor": "指标定义的形式化表示"
+        },
+        "sourceSection": "指标定义的形式化表示",
+        "equation": "M=(O,\\mathcal G,\\mathcal T,N,D,u,\\rho)",
+        "takeaway": "指标定义及版本是结果可复核的基本条件。",
+        "layout": "focus",
+        "lessonNumber": 3
+      },
+      {
+        "kind": "case",
+        "section": "企业案例",
+        "title": "Airbnb Minerva：定义变化后，历史应怎样比较",
+        "lead": "指标一致性包含版本及历史重算规则。",
+        "body": [
+          "同一业务指标常被图表、报告与实验共同使用。Airbnb以Minerva集中定义指标与维度，并追踪数据定义版本，支持业务逻辑变化后的历史回填。",
+          "2021年工程文档说明指标与维度在集中仓库中定义并接受校验；定义变更受版本控制，重大数据集变更会被跟踪并执行回填，向多种下游工具提供接口。"
+        ],
+        "takeaway": "同名指标若改变筛选条件，跨期变化就可能混合真实经营变化与口径变化。应保存定义版本，说明是否按新规则重算历史，并用固定版本核对趋势。",
+        "layout": "split",
+        "detailRef": {
+          "chapter": "03_sql_kpi",
+          "section": "写清对象、时间与计算方法",
+          "anchor": "指标定义的形式化表示"
+        },
+        "sourceSection": "指标定义的形式化表示",
+        "visual": {
+          "kind": "flow",
+          "items": [
+            {
+              "label": "定义版本",
+              "detail": "固定对象与过滤条件"
+            },
+            {
+              "label": "历史回填",
+              "detail": "按规则重算旧记录"
+            },
+            {
+              "label": "消费工具",
+              "detail": "读取同一版本的指标"
+            }
+          ]
+        },
+        "caseId": "b03-01",
+        "sources": [
+          {
+            "title": "How Airbnb achieved metric consistency at scale",
+            "url": "https://medium.com/airbnb-engineering/how-airbnb-achieved-metric-consistency-at-scale-f23cc53dea70"
+          }
+        ],
+        "lessonNumber": 3
+      },
+      {
+        "kind": "case",
+        "section": "企业案例",
+        "title": "Minerva：把口径差异与经营差异分开核算",
+        "lead": "新规则上线当天指标上升，能否直接解释为经营改善？",
+        "body": [
+          "同名指标若改变筛选条件，跨期变化就可能混合真实经营变化与口径变化。应保存定义版本，说明是否按新规则重算历史，并用固定版本核对趋势。",
+          "这些是公开平台机制；不能据此假设所有变更都会自动保持业务可比性，也不能把平台使用量当作指标准确率。"
+        ],
+        "takeaway": "不能。应先固定同一批事实，比较新旧定义；若历史已回填，还须确认整条趋势采用同一规则。",
+        "layout": "focus",
+        "detailRef": {
+          "chapter": "03_sql_kpi",
+          "section": "写清对象、时间与计算方法",
+          "anchor": "指标定义的形式化表示"
+        },
+        "sourceSection": "指标定义的形式化表示",
+        "caseId": "b03-01",
+        "sources": [
+          {
+            "title": "How Airbnb achieved metric consistency at scale",
+            "url": "https://medium.com/airbnb-engineering/how-airbnb-achieved-metric-consistency-at-scale-f23cc53dea70"
+          }
+        ],
+        "prompts": [
+          {
+            "question": "新规则上线当天指标上升，能否直接解释为经营改善？",
+            "answer": "不能。应先固定同一批事实，比较新旧定义；若历史已回填，还须确认整条趋势采用同一规则。"
+          }
+        ],
+        "lessonNumber": 3
+      },
+      {
+        "kind": "concept",
+        "section": "概念与方法",
+        "title": "为什么要保留“和与个数”",
+        "lead": "一个均值通常不足以恢复整体均值。",
+        "body": [
+          "两个地区订单规模可能悬殊。只保留各地平均金额，就丢失了每个均值代表多少订单；把它们等权平均，相当于给予两个地区相同权重，而非给予每笔订单相同权重。",
+          "可合并的统计状态是为后续汇总保留的基础量。例如均值保留总金额与订单数，比率保留分子与分母。先按分量合并，再计算最终结果，才可改变分组而保持对象权重。"
+        ],
+        "takeaway": "先合并基础量，再计算目标统计量。",
+        "layout": "split",
+        "detailRef": {
+          "chapter": "03_sql_kpi",
+          "section": "保存哪些信息才能正确汇总",
+          "anchor": "可合并的统计状态"
+        },
+        "sourceSection": "可合并的统计状态",
+        "visual": {
+          "kind": "flow",
+          "items": [
+            {
+              "label": "局部事实",
+              "detail": "总量与对象数"
+            },
+            {
+              "label": "状态合并",
+              "detail": "各分量分别相加"
+            },
+            {
+              "label": "最终统计",
+              "detail": "用合并状态求比率或均值"
+            }
+          ]
+        },
+        "lessonNumber": 3
+      },
+      {
+        "kind": "concept",
+        "section": "指标代数",
+        "title": "保留可合并的统计状态",
+        "lead": "先合并基础量，再在目标粒度计算指标。",
+        "body": [
+          "\\(D_1,D_2\\) 是不相交事实分片，\\(S(D)\\) 保存局部统计信息，\\(\\oplus\\) 表示满足结合律的合并操作：无论先合并哪两片，最终状态相同。分片不可重叠，否则会重复计数。",
+          "总量保存各分片之和，均值保存 \\((\\sum x,n)\\)（\\(n\\) 为记录数），比率保存分子分母 \\((N,D)\\)；合并时各分量分别相加，再相除。只保存均值或百分比会丢失组规模。"
+        ],
+        "detailRef": {
+          "chapter": "03_sql_kpi",
+          "section": "保存哪些信息才能正确汇总",
+          "anchor": "可合并的统计状态"
+        },
+        "sourceSection": "可合并的统计状态",
+        "equation": "S(D_1\\cup D_2)=S(D_1)\\oplus S(D_2)",
+        "takeaway": "可合并统计状态提供跨时间、跨维度重算的依据。",
+        "layout": "split",
+        "diagram": {
+          "type": "graph",
+          "title": "保留分子分母后合并比率",
+          "description": "不相交事实分片D1、D2各保存分子Ni与分母di，分量相加后计算整体比率。d_i是图中用来区别事实集合D_i的分母符号。合并须不重叠、满足结合律。",
+          "encoding": "模型结构示意",
+          "note": "事实分片须互不重叠，合并操作须满足结合律。",
+          "nodes": [
+            {
+              "id": "d1",
+              "x": 22,
+              "y": 23,
+              "w": 38,
+              "h": 22,
+              "label": "分片 \\(D_1\\)",
+              "detail": "分子 \\(N_1\\)，分母 \\(d_1\\)",
+              "tone": "blue",
+              "shape": "rect"
+            },
+            {
+              "id": "d2",
+              "x": 22,
+              "y": 75,
+              "w": 38,
+              "h": 22,
+              "label": "分片 \\(D_2\\)",
+              "detail": "分子 \\(N_2\\)，分母 \\(d_2\\)",
+              "tone": "blue",
+              "shape": "rect"
+            },
+            {
+              "id": "merge",
+              "x": 73,
+              "y": 23,
+              "w": 42,
+              "h": 24,
+              "label": "分量分别相加",
+              "detail": "\\((N_1+N_2,d_1+d_2)\\)",
+              "tone": "blue",
+              "shape": "rect"
+            },
+            {
+              "id": "ratio",
+              "x": 73,
+              "y": 75,
+              "w": 42,
+              "h": 22,
+              "label": "目标粒度比率",
+              "detail": "\\(N_{\\rm total}/D_{\\rm total}\\)",
+              "tone": "blue",
+              "shape": "rect"
+            }
+          ],
+          "edges": [
+            {
+              "from": "d1",
+              "to": "merge",
+              "label": ""
+            },
+            {
+              "from": "d2",
+              "to": "merge",
+              "label": ""
+            },
+            {
+              "from": "merge",
+              "to": "ratio",
+              "label": ""
+            }
+          ]
+        },
+        "density": "compact",
+        "lessonNumber": 3
+      },
+      {
+        "kind": "case",
+        "section": "企业案例",
+        "title": "DoorDash Curie：为何保留事件级事实",
+        "lead": "只存汇总值，可能无法回答新的分组问题。",
+        "body": [
+          "DoorDash为实验分析平台Curie建设指标层。其公开设计要求保留原始事件级数据，将指标与维度分别定义，并在使用时按分析需求关联。",
+          "指标定义记录来源、字段及SQL中的聚合和过滤逻辑；度量尽量定义在最细事件层，维度独立建模，以支持正确过滤和维度分析。"
+        ],
+        "takeaway": "若只保存日均值而丢弃事件数与分组属性，就无法可靠地重算新分组均值。保留基础事实或充分的可合并统计状态，才能在改变问题时维持含义。",
+        "layout": "split",
+        "detailRef": {
+          "chapter": "03_sql_kpi",
+          "section": "保存哪些信息才能正确汇总",
+          "anchor": "可合并的统计状态"
+        },
+        "sourceSection": "可合并的统计状态",
+        "visual": {
+          "kind": "flow",
+          "items": [
+            {
+              "label": "事件级事实",
+              "detail": "保留原始测量及身份"
+            },
+            {
+              "label": "维度关联",
+              "detail": "按分析范围选择对象"
+            },
+            {
+              "label": "指标计算",
+              "detail": "过滤后再聚合"
+            }
+          ]
+        },
+        "caseId": "b03-03",
+        "sources": [
+          {
+            "title": "Using Metrics Layer to Standardize and Scale Experimentation at DoorDash",
+            "url": "https://careersatdoordash.com/blog/using-metrics-layer-to-standardize-and-scale-experimentation-at-doordash-2/"
+          }
+        ],
+        "lessonNumber": 3
+      },
+      {
+        "kind": "case",
+        "section": "企业案例",
+        "title": "DoorDash：先保留分析所需信息，再形成聚合结果",
+        "lead": "一个全国平均值足以支持以后任意城市、品类的比较吗？",
+        "body": [
+          "若只保存日均值而丢弃事件数与分组属性，就无法可靠地重算新分组均值。保留基础事实或充分的可合并统计状态，才能在改变问题时维持含义。",
+          "文章支持平台的数据建模原则；并不意味着任何任务都应无限保存明细，保留范围仍受成本、隐私与合法用途限制。"
+        ],
+        "takeaway": "不足。平均值通常丢失组规模及成员归属，应保留相关基础量和合法可用维度，再按新范围计算。",
+        "layout": "focus",
+        "detailRef": {
+          "chapter": "03_sql_kpi",
+          "section": "保存哪些信息才能正确汇总",
+          "anchor": "可合并的统计状态"
+        },
+        "sourceSection": "可合并的统计状态",
+        "caseId": "b03-03",
+        "sources": [
+          {
+            "title": "Using Metrics Layer to Standardize and Scale Experimentation at DoorDash",
+            "url": "https://careersatdoordash.com/blog/using-metrics-layer-to-standardize-and-scale-experimentation-at-doordash-2/"
+          }
+        ],
+        "prompts": [
+          {
+            "question": "一个全国平均值足以支持以后任意城市、品类的比较吗？",
+            "answer": "不足。平均值通常丢失组规模及成员归属，应保留相关基础量和合法可用维度，再按新范围计算。"
+          }
+        ],
+        "lessonNumber": 3
+      },
+      {
+        "kind": "calculation",
+        "section": "指标代数",
+        "title": "产线平均与产品整体良率",
+        "lead": "抽样单位不同，对应的权重也不同。",
+        "body": [
+          "甲线产出 \\(100\\) 件、良品 \\(90\\) 件；乙线产出 \\(900\\) 件、良品 \\(720\\) 件。两线各自良率为 \\(90\\%\\)、\\(80\\%\\)，合并事实为良品 \\(810\\) 件、总产出 \\(1000\\) 件。",
+          "等概率选一条产线时，平均良率为 \\(85\\%\\)；从全部产出等概率选一件产品时，合格比例为 \\(81\\%\\)。图中百分比共轴，但分母件数不同；研究整体产品质量应使用件数权重。"
+        ],
+        "detailRef": {
+          "chapter": "03_sql_kpi",
+          "section": "保存哪些信息才能正确汇总",
+          "anchor": "可合并的统计状态"
+        },
+        "sourceSection": "可合并的统计状态",
+        "takeaway": "总体比率与分组比率均值通常回答不同问题。",
+        "layout": "split",
+        "density": "compact",
+        "diagram": {
+          "type": "bars",
+          "title": "产线与产品两种抽样单位",
+          "description": "甲线90/100=90%，乙线720/900=80%。对产线等权平均85%，对产品件数加权得到总体810/1000=81%。条形比较比例，件数作为标注显示权重。",
+          "encoding": "教学算例 · 同一比例尺",
+          "note": "整体产品良率的权重为件数，不是产线数量。",
+          "domain": [
+            0,
+            100
+          ],
+          "unit": "%",
+          "rows": [
+            {
+              "label": "甲线",
+              "value": 90,
+              "detail": "90 / 100 件",
+              "tone": "blue"
+            },
+            {
+              "label": "乙线",
+              "value": 80,
+              "detail": "720 / 900 件",
+              "tone": "blue"
+            },
+            {
+              "label": "等权产线均值",
+              "value": 85,
+              "detail": "每条产线权重均为 1/2",
+              "tone": "muted"
+            },
+            {
+              "label": "整体产品良率",
+              "value": 81,
+              "detail": "810 / 1000 件",
+              "tone": "teal"
+            }
+          ],
+          "ticks": [
+            0,
+            25,
+            50,
+            75,
+            100
+          ]
+        },
+        "lessonNumber": 3
+      },
+      {
+        "kind": "concept",
+        "section": "制造 KPI",
+        "title": "良率与周期的权重",
+        "lead": "检验范围和批次队列须与公式一致。",
+        "body": [
+          "良率（Yield）中，\\(G_i,N_i\\) 为同一检验范围的良品数和总件数，先合并计数再相除。首检和返工终检不可混作互斥事实。",
+          "生产周期（CT）为预先规定的开始到完工时长。\\(n_i\\) 为第 \\(i\\) 组完成批次数，\\(\\bar c_i\\) 为同一单位的平均周期，总体均值按批次数加权；未完工批次须另报当前年龄，不能从完成均值推断。"
+        ],
+        "detailRef": {
+          "chapter": "03_sql_kpi",
+          "section": "良率与生产周期",
+          "anchor": "制造指标的计算"
+        },
+        "sourceSection": "制造指标的计算",
+        "equation": [
+          "\\mathrm{Yield}=\\frac{\\sum_i G_i}{\\sum_i N_i}",
+          "\\mathrm{CT}=\\frac{\\sum_i n_i\\bar c_i}{\\sum_i n_i}"
+        ],
+        "takeaway": "公式正确还须确认同一范围、单位和统计队列。",
+        "layout": "focus",
+        "density": "compact",
+        "lessonNumber": 3
+      },
+      {
+        "kind": "concept",
+        "section": "制造 KPI",
+        "title": "OEE 的分解与约分",
+        "lead": "三个因子须来自同一设备、窗口及产出范围。",
+        "body": [
+          "设备综合效率（OEE）比较有效产出与计划生产时间。设计划时间 \\(T_p>0\\)、运行时间 \\(T_r>0\\)、加工件数 \\(N>0\\)、良品数 \\(G\\)；单一理想节拍 \\(t_c\\) 是理想条件下加工一件所需的时间。",
+          "时间开动率 \\(A\\)、性能开动率 \\(P\\)、质量合格率 \\(Q\\) 使用同一设备、窗口和产出范围，且时间单位一致。相乘后约去运行时间与件数，得到良品理想工时占计划时间的比例；零分母时分解未定义。"
+        ],
+        "detailRef": {
+          "chapter": "03_sql_kpi",
+          "section": "良率与生产周期",
+          "anchor": "制造指标的计算"
+        },
+        "sourceSection": "制造指标的计算",
+        "equation": [
+          "A=\\frac{T_r}{T_p},\\quad P=\\frac{Nt_c}{T_r},\\quad Q=\\frac GN",
+          "\\mathrm{OEE}=APQ=\\frac{Gt_c}{T_p}"
+        ],
+        "takeaway": "OEE 的约分依赖三因子采用完全一致的事实范围。",
+        "layout": "focus",
+        "density": "compact",
+        "lessonNumber": 3
+      },
+      {
+        "kind": "calculation",
+        "section": "制造 KPI",
+        "title": "OEE：480 分钟班次算例",
+        "lead": "用分解式和直接式交叉核验。",
+        "body": [
+          "算例条件：计划 \\(480\\) 分钟，运行 \\(400\\) 分钟，加工 \\(180\\) 件，其中良品 \\(171\\) 件，理想单件时间 \\(2\\) 分钟。",
+          "得 \\(A=5/6\\)、\\(P=0.9\\)、\\(Q=0.95\\)，OEE 为 \\(71.25\\%\\)。直接计算良品理想工时得到同一值；应先保留精确值，再对最终结果舍入。"
+        ],
+        "detailRef": {
+          "chapter": "03_sql_kpi",
+          "section": "良率与生产周期",
+          "anchor": "制造指标的计算"
+        },
+        "sourceSection": "制造指标的计算",
+        "takeaway": "中间近似值的舍入误差不应误判为公式不一致。",
+        "equation": [
+          "\\mathrm{OEE}=\\frac56\\times0.9\\times0.95=0.7125",
+          "\\frac{Gt_c}{T_p}=\\frac{171\\times2}{480}=0.7125"
+        ],
+        "layout": "focus",
+        "lessonNumber": 3
+      },
+      {
+        "layout": "focus",
+        "title": "多产品 OEE 的工时权重",
+        "lead": "不同节拍下，件数良率不能无条件代入分解。",
+        "body": [
+          "产品或互斥生产片段以 \\(i\\) 编号；\\(N_i,G_i\\) 为加工、良品件数，\\(t_{c,i}\\) 为理想每件时间，\\(T_{p,i}\\) 为分配的计划时间。不同节拍时，先合并良品理想工时，再除以总计划时间，时间分摊不得重叠。",
+          "保留 \\(APQ\\) 分解时，性能项用理想总加工工时，质量项也须采用理想工时权重 \\(Q_{\\rm time}\\)。按件数计算的合格率采用不同权重，一般不能直接代入这一分解。"
+        ],
+        "equation": [
+          "\\mathrm{OEE}_{\\rm time}=\\frac{\\sum_i t_{c,i}G_i}{\\sum_i T_{p,i}}",
+          "Q_{\\rm time}=\\frac{\\sum_i t_{c,i}G_i}{\\sum_i t_{c,i}N_i}"
+        ],
+        "takeaway": "异质节拍的 OEE 须统一采用理想工时权重。",
+        "kind": "concept",
+        "section": "制造 KPI",
+        "detailRef": {
+          "chapter": "03_sql_kpi",
+          "section": "良率与生产周期",
+          "anchor": "制造指标的计算"
+        },
+        "sourceSection": "制造指标的计算",
+        "density": "compact",
+        "lessonNumber": 3
+      },
+      {
+        "layout": "split",
+        "kind": "worked",
+        "title": "多节拍 OEE：一个反例",
+        "lead": "同一加工记录，改变质量权重会改变乘积。",
+        "body": [
+          "总计划 \\(400\\) 分钟、运行 \\(300\\) 分钟。快产品理想节拍 \\(1\\) 分钟，产出 \\(100\\) 件、良品 \\(90\\) 件；慢产品节拍 \\(4\\) 分钟，产出 \\(50\\) 件、良品 \\(25\\) 件。",
+          "理想总加工工时为 \\(300\\) 分钟，故 \\(A=0.75\\)、\\(P=1\\)。良品理想工时为 \\(190\\) 分钟，正确OEE为 \\(47.5\\%\\)；代入按件数计算的质量合格率后所得 \\(57.5\\%\\) 使用了不同权重，不能用于本例时间分解。"
+        ],
+        "takeaway": "件数良率与理想工时合格率并非同一指标。",
+        "section": "制造 KPI",
+        "detailRef": {
+          "chapter": "03_sql_kpi",
+          "section": "良率与生产周期",
+          "anchor": "制造指标的计算"
+        },
+        "sourceSection": "制造指标的计算",
+        "density": "compact",
+        "diagram": {
+          "type": "bars",
+          "title": "节拍不同，质量权重也须统一",
+          "description": "总计划时间400分钟、运行300分钟。快产品1分钟一件、100件中90良品，慢产品4分钟一件、50件中25良品。件数质量代入OEE得57.5%，正确良品理想工时190/400=47.5%。",
+          "encoding": "教学算例 · 同一比例尺",
+          "note": "分母统一为计划时间，质量项统一为理想工时权重。",
+          "domain": [
+            0,
+            75
+          ],
+          "unit": "%",
+          "rows": [
+            {
+              "label": "件数质量代入",
+              "value": 57.5,
+              "detail": "\\(0.75\\times115/150\\)",
+              "tone": "rose"
+            },
+            {
+              "label": "理想工时口径",
+              "value": 47.5,
+              "detail": "\\((90+4\\times25)/400\\)",
+              "tone": "teal"
+            }
+          ],
+          "ticks": [
+            0,
+            25,
+            50,
+            75
+          ]
+        },
+        "equation": "Q_{\\rm time}=\\frac{190}{300},\\qquad\\mathrm{OEE}=0.75\\times1\\times Q_{\\rm time}",
+        "lessonNumber": 3
+      },
+      {
+        "kind": "concept",
+        "section": "制造 KPI",
+        "title": "WIP 的时点与时间平均",
+        "lead": "存量可同一时点合并，不能跨时点当流量求和。",
+        "body": [
+          "在制品存量（WIP）是在某时点已进入生产但尚未完成的对象数量。同一工站、同一时点的互斥产品族可先求和；跨日期相加会重复观察同一存量。",
+          "窗口 \\([t_0,t_1)\\) 的平均 WIP 是存量曲线面积除以时间长度；若存量以件、时间以小时计，面积为件·小时，均值仍为件。快照可近似曲线，但须说明持续时间或插值规则。"
+        ],
+        "detailRef": {
+          "chapter": "03_sql_kpi",
+          "section": "良率与生产周期",
+          "anchor": "制造指标的计算"
+        },
+        "sourceSection": "制造指标的计算",
+        "equation": "\\overline{\\mathrm{WIP}}=\\frac1{t_1-t_0}\\int_{t_0}^{t_1}\\mathrm{WIP}(t)\\,\\mathrm dt",
+        "takeaway": "先固定对象和时点，再定义时间平均及近似方法。",
+        "layout": "focus",
+        "lessonNumber": 3
+      },
+      {
+        "layout": "split",
+        "kind": "worked",
+        "title": "不等间隔快照如何平均",
+        "lead": "状态持续时间是时间平均的权重。",
+        "body": [
+          "题设明确：前 \\(1\\) 小时WIP恒为 \\(50\\) 件，后 \\(2\\) 小时恒为 \\(100\\) 件。时间均值对应在三小时内均匀抽一个时点观察的平均存量，须按持续时间加权。",
+          "曲线下面积为 \\(250\\) 件·小时，除以 \\(3\\) 小时得 \\(250/3\\approx83.3\\) 件；两个状态值等权平均仅为 \\(75\\) 件。若只知道两次快照，须另说明前向保持或插值规则，不能直接假定恒定区间。"
+        ],
+        "takeaway": "采样间隔不等时，不能无条件使用快照算术平均。",
+        "section": "制造 KPI",
+        "detailRef": {
+          "chapter": "03_sql_kpi",
+          "section": "良率与生产周期",
+          "anchor": "制造指标的计算"
+        },
+        "sourceSection": "制造指标的计算",
+        "density": "compact",
+        "diagram": {
+          "type": "plot",
+          "title": "存量曲线的面积给出时间权重",
+          "description": "前三小时内第一小时WIP恒为50件，后两小时恒为100件。曲线下的面积50乘1加100乘2等于250件小时；除以3小时得到250/3件，而两个状态的等权均值为75件。",
+          "encoding": "原教学恒定区间 · 面积表示件·小时",
+          "note": "面积 \\(50\\times1+100\\times2=250\\) 件·小时；均值 \\(250/3\\) 件。",
+          "xDomain": [
+            0,
+            3
+          ],
+          "yDomain": [
+            0,
+            120
+          ],
+          "xLabel": "时间 / 小时",
+          "yLabel": "WIP / 件",
+          "xTicks": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "yTicks": [
+            0,
+            50,
+            100
+          ],
+          "series": [
+            {
+              "label": "分段恒定存量",
+              "points": [
+                [
+                  0,
+                  50
+                ],
+                [
+                  1,
+                  50
+                ],
+                [
+                  1,
+                  100
+                ],
+                [
+                  3,
+                  100
+                ]
+              ],
+              "tone": "blue",
+              "dashed": false
+            }
+          ],
+          "markers": [],
+          "regions": [
+            {
+              "points": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  50
+                ],
+                [
+                  1,
+                  50
+                ],
+                [
+                  1,
+                  0
+                ]
+              ],
+              "tone": "blue",
+              "label": ""
+            },
+            {
+              "points": [
+                [
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  100
+                ],
+                [
+                  3,
+                  100
+                ],
+                [
+                  3,
+                  0
+                ]
+              ],
+              "tone": "teal",
+              "label": ""
+            }
+          ]
+        },
+        "lessonNumber": 3
+      },
+      {
+        "kind": "concept",
+        "section": "制造 KPI",
+        "title": "OTD 的到期承诺队列",
+        "lead": "已到期且确认未交付的对象仍属于分母。",
+        "body": [
+          "令 \\(D_{\\rm due}\\) 为窗口内到期且有效的承诺数，\\(D_{\\rm on}\\) 为其中按承诺完成的订单数。未到期订单不在该队列内；已到期且确认未交付的订单仍属于分母，属于未按时履约。",
+          "实际日期缺失也可能来自回写缺失，须核对业务状态。承诺版本及截止点应固定并保留重约记录；分母为零时本期 OTD 未定义。"
+        ],
+        "detailRef": {
+          "chapter": "03_sql_kpi",
+          "section": "良率与生产周期",
+          "anchor": "制造指标的计算"
+        },
+        "sourceSection": "制造指标的计算",
+        "equation": "\\mathrm{OTD}=\\frac{D_{\\rm on}}{D_{\\rm due}}",
+        "takeaway": "到期队列、有效承诺与已知交付状态共同决定 OTD。",
+        "layout": "focus",
+        "lessonNumber": 3
+      },
+      {
+        "kind": "case",
+        "section": "制造 KPI",
+        "title": "到期队列：固定对象与截止点",
+        "lead": "算例窗口为 9 月 1–7 日到期承诺，统计截止点为 9 月 8 日结束。",
+        "body": [
+          "四单使用统计时点前已批准的承诺版本。\\(\\mathrm A\\)、\\(\\mathrm D\\) 准时，\\(\\mathrm B\\) 延期后已交付，\\(\\mathrm C\\) 已确认仍未交付。",
+          "四单均属于到期队列，三单属于已交付队列。两种集合回答不同问题，后续计算须保持名称、分母及截止点一致。"
+        ],
+        "detailRef": {
+          "chapter": "03_sql_kpi",
+          "section": "同一批订单的两种准时率",
+          "anchor": "sec:due-cohort-example"
+        },
+        "sourceSection": "一个到期队列的完整计算",
+        "visual": {
+          "kind": "table",
+          "headers": [
+            "订单",
+            "承诺日期",
+            "实际交付",
+            "统计时点状态"
+          ],
+          "rows": [
+            [
+              "\\(\\mathrm A\\)",
+              "9 月 2 日",
+              "9 月 2 日",
+              "准时"
+            ],
+            [
+              "\\(\\mathrm B\\)",
+              "9 月 4 日",
+              "9 月 6 日",
+              "延期"
+            ],
+            [
+              "\\(\\mathrm C\\)",
+              "9 月 6 日",
+              "尚未交付",
+              "到期未交付"
+            ],
+            [
+              "\\(\\mathrm D\\)",
+              "9 月 7 日",
+              "9 月 7 日",
+              "准时"
+            ]
+          ]
+        },
+        "takeaway": "队列由事先规定的对象范围确定，尚未完成的订单仍须按既定范围纳入。",
+        "layout": "stack",
+        "lessonNumber": 3
+      },
+      {
+        "kind": "calculation",
+        "section": "制造 KPI",
+        "title": "同一订单记录的两种准时率",
+        "lead": "到期承诺与已交付队列采用不同分母。",
+        "body": [
+          "固定9月1–7日的到期承诺与9月8日结束的统计截止点：\\(\\mathrm A,\\mathrm D\\) 准时，\\(\\mathrm B\\) 延期后已交付，\\(\\mathrm C\\) 已确认到期未交付。",
+          "到期队列包含四单，已交付队列只含 \\(\\mathrm A,\\mathrm B,\\mathrm D\\)。\\(\\mathrm C\\) 后来交付也不改变原承诺已延期的事实。两个准时率分别描述不同集合，须标明名称、分母、承诺版本和截止点。"
+        ],
+        "detailRef": {
+          "chapter": "03_sql_kpi",
+          "section": "同一批订单的两种准时率",
+          "anchor": "sec:due-cohort-example"
+        },
+        "sourceSection": "一个到期队列的完整计算",
+        "takeaway": "数值无误不保证比较有效，统计队列必须一致。",
+        "layout": "split",
+        "diagram": {
+          "type": "matrix",
+          "title": "统计队列改变了分母",
+          "description": "到期队列含A、B、C、D，A和D准时，B延期已交付，C到期未交付，因此准时2、未按时2。已交付队列排除C，只剩准时2、未按时1。",
+          "encoding": "原四单教学例 · 色深表示订单数",
+          "note": "到期口径 \\(2/4=50\\%\\)；已交付口径 \\(2/3\\approx66.7\\%\\)。",
+          "columns": [
+            "准时",
+            "未按时"
+          ],
+          "rowLabels": [
+            "到期队列",
+            "已交付队列"
+          ],
+          "cells": [
+            [
+              {
+                "text": "\\(2\\)",
+                "detail": "A、D",
+                "tone": "teal",
+                "value": 2
+              },
+              {
+                "text": "\\(2\\)",
+                "detail": "B、C",
+                "tone": "rose",
+                "value": 2
+              }
+            ],
+            [
+              {
+                "text": "\\(2\\)",
+                "detail": "A、D",
+                "tone": "teal",
+                "value": 2
+              },
+              {
+                "text": "\\(1\\)",
+                "detail": "B；排除未交付C",
+                "tone": "rose",
+                "value": 1
+              }
+            ]
+          ],
+          "scale": [
+            0,
+            2
+          ]
+        },
+        "density": "compact",
+        "lessonNumber": 3
+      },
+      {
+        "kind": "concept",
+        "section": "概念与方法",
+        "title": "NULL、三值逻辑与条件聚合",
+        "lead": "未知日期不能被自动解释为准时或延期。",
+        "body": [
+          "NULL表示当前未给出一个普通字段值；它可能源于未知、不适用或尚未发生，具体含义由业务状态确定。SQL中的比较有真、假、未知三种结果；涉及NULL的普通比较通常得到未知。",
+          "WHERE只保留条件为真的行。因此直接比较实际日与承诺日，会排除实际日为空的订单。先固定到期队列，并核对空日期是否确为未交付，再决定每项记录应如何进入分子与分母。"
+        ],
+        "takeaway": "数据库空值的逻辑含义，与未完成业务的状态含义应分别处理。",
+        "layout": "split",
+        "detailRef": {
+          "chapter": "03_sql_kpi",
+          "section": "实际日期为空时如何判断",
+          "anchor": "空值未完成事件与业务状态"
+        },
+        "sourceSection": "空值、未完成事件与业务状态",
+        "visual": {
+          "kind": "cards",
+          "items": [
+            {
+              "label": "真",
+              "detail": "条件已得到满足"
+            },
+            {
+              "label": "假",
+              "detail": "条件已被否定"
+            },
+            {
+              "label": "未知",
+              "detail": "缺少足够字段值"
+            }
+          ]
+        },
+        "lessonNumber": 3
+      },
+      {
+        "layout": "split",
+        "kind": "method",
+        "title": "到期 OTD 的条件聚合",
+        "lead": "先取到期队列，再判定该队列内的准时完成。",
+        "body": [
+          "查询假定一行一个有效承诺，记录已按截止点还原，日期缺失已确认表示未交付。`WHERE` 选到期队列；`CASE` 只给准时记录记 1，其余（含 NULL 比较）记 0，因此未交付订单仍在分母内。",
+          "`*1.0` 避免整数除法，`NULLIF(COUNT(*),0)` 使零分母返回未定义。左闭右开窗口及有效版本由前置规则确定；实际系统还须处理部分交付和迟到回写。"
+        ],
+        "codeBlock": {
+          "language": "sql",
+          "caption": "教学到期窗口：9 月 1 日起，9 月 8 日前。",
+          "code": "-- 一行一有效承诺；已还原至统计截止点\nSELECT COUNT(*) AS due_orders,\n  SUM(CASE WHEN delivered_at <= due_at\n    THEN 1 ELSE 0 END) AS on_time_orders,\n  SUM(CASE WHEN delivered_at <= due_at\n    THEN 1 ELSE 0 END)*1.0\n    / NULLIF(COUNT(*),0) AS otd\nFROM valid_commitments\nWHERE due_at >= DATE '2026-09-01'\n  AND due_at < DATE '2026-09-08';"
+        },
+        "takeaway": "分母筛选与准时判定应分别在查询中显式表达。",
+        "section": "制造 KPI",
+        "detailRef": {
+          "chapter": "03_sql_kpi",
+          "section": "同一批订单的两种准时率",
+          "anchor": "sec:due-cohort-example"
+        },
+        "sourceSection": "一个到期队列的完整计算",
+        "density": "compact",
+        "lessonNumber": 3
+      },
+      {
+        "kind": "concept",
+        "section": "制造 KPI",
+        "title": "零分母、零结果与缺失",
+        "lead": "不可定义、观察到零与无法判断是不同状态。",
+        "body": [
+          "`NULLIF(denominator, 0)` 将零分母标为 `NULL`。存在到期订单但准时数为零时，OTD 才是零；无到期订单时，该比率未定义。",
+          "实际日期或成本缺失须核对业务状态。缺失成本会影响毛利，失配客户可用左连接保留并标为未知；填零不能替代缺失原因及有效样本量说明。"
+        ],
+        "detailRef": {
+          "chapter": "03_sql_kpi",
+          "section": "实际日期为空时如何判断",
+          "anchor": "空值未完成事件与业务状态"
+        },
+        "sourceSection": "空值、未完成事件与业务状态",
+        "visual": {
+          "kind": "table",
+          "headers": [
+            "状态",
+            "结果",
+            "解释"
+          ],
+          "rows": [
+            [
+              "分母为零",
+              "NULL",
+              "当前比率未定义"
+            ],
+            [
+              "分子零、分母正",
+              "\\(0\\)",
+              "队列内无准时完成"
+            ],
+            [
+              "事实缺失",
+              "质量标记",
+              "相关结果无法判断"
+            ]
+          ]
+        },
+        "takeaway": "处理空值前，应说明业务未发生、失败或记录缺失的区别。",
+        "layout": "split",
+        "lessonNumber": 3
+      },
+      {
+        "layout": "focus",
+        "title": "NULL 与三值逻辑",
+        "lead": "WHERE 只保留条件为真的记录。",
+        "body": [
+          "SQL 比较可能返回真、假或未知。`NULL = NULL` 为未知，实际日期缺失时，`actual_date > due_date` 也不会为真。",
+          "因此，直接筛选上述比较只得到有日期的延期记录，无法覆盖已到期却未交付的订单。应先由状态及数据质量确认缺失含义，再对到期队列作条件聚合。"
+        ],
+        "prompts": [
+          {
+            "question": "COUNT(*) 与 COUNT(actual_date) 在含未交付订单时有什么区别？",
+            "answer": "前者统计所有行；后者仅统计实际日期非空的行。使用后者作到期队列分母会排除日期缺失对象。"
+          }
+        ],
+        "detailRef": {
+          "chapter": "03_sql_kpi",
+          "section": "相同取值与不同业务事实",
+          "anchor": "查询的选择与分组条件"
+        },
+        "takeaway": "空值逻辑影响对象范围，须与指标队列共同核查。",
+        "kind": "concept",
+        "section": "制造 KPI",
+        "sourceSection": "查询的选择与分组条件",
+        "lessonNumber": 3
+      },
+      {
+        "kind": "worked",
+        "section": "SQL 实现",
+        "title": "分层查询：订单事实与地区聚合",
+        "lead": "公共表表达式分离行级计算与组级计算。",
+        "body": [
+          "`WITH` 定义临时命名的查询结果 `order_enriched`：每行一单，收入为数量乘标准价，毛利为数量乘售价与成本之差。`actual_date IS NOT NULL` 选已交付队列。",
+          "外层按地区分别合并毛利与收入，再相除。该例仅用固定标准价；历史成交价变化、到期 OTD 或未交付队列须另行确定事实与字段，不能只改结果名称。"
+        ],
+        "detailRef": {
+          "chapter": "03_sql_kpi",
+          "section": "把条件和分母写进 SQL",
+          "anchor": "条件聚合与安全除法"
+        },
+        "sourceSection": "条件聚合与安全除法",
+        "takeaway": "行级事实与组级聚合分层后，可分别定位口径和计算错误。",
+        "codeBlock": {
+          "language": "sql",
+          "caption": "分母为零时，毛利率报告为未定义。",
+          "code": "-- 单产品、固定标准价；仅已交付订单\nWITH order_enriched AS (\n  SELECT c.region, o.quantity*p.unit_price AS revenue,\n    o.quantity*(p.unit_price-p.unit_cost) AS gross_profit\n  FROM orders o\n  JOIN customers c USING (customer_id)\n  JOIN products p USING (product_id)\n  WHERE o.actual_date IS NOT NULL)\nSELECT region,\n  SUM(gross_profit)/NULLIF(SUM(revenue),0) AS gross_margin\nFROM order_enriched GROUP BY region;"
+        },
+        "layout": "split",
+        "density": "compact",
+        "lessonNumber": 3
+      },
+      {
+        "kind": "calculation",
+        "section": "SQL 实现",
+        "title": "毛利率为何使用收入权重",
+        "lead": "整体比率需要合并可加的分子与分母。",
+        "body": [
+          "两单收入为 \\(100\\)、\\(900\\)，毛利为 \\(50\\)、\\(90\\)，金额采用同一单位。各单毛利率为 \\(50\\%\\)、\\(10\\%\\)，总毛利为 \\(140\\)、总收入为 \\(1000\\)。",
+          "对两张订单等权平均得到 \\(30\\%\\)，描述随机选一单的平均毛利率；对收入加权得到 \\(14\\%\\)，描述整体收入的毛利份额。分母收入为零时比率未定义，应另报金额和有效对象数。"
+        ],
+        "detailRef": {
+          "chapter": "03_sql_kpi",
+          "section": "把条件和分母写进 SQL",
+          "anchor": "条件聚合与安全除法"
+        },
+        "sourceSection": "条件聚合与安全除法",
+        "takeaway": "比率的权重由研究对象及分母决定。",
+        "layout": "split",
+        "density": "compact",
+        "diagram": {
+          "type": "bars",
+          "title": "按订单等权与按收入加权",
+          "description": "两单收入100、900，毛利50、90，各单毛利率50%、10%；等权订单均值30%，合并总毛利140与总收入1000后整体毛利率14%。",
+          "encoding": "教学算例 · 同一比例尺",
+          "note": "金额同一单位；整体毛利率使用收入权重。",
+          "domain": [
+            0,
+            50
+          ],
+          "unit": "%",
+          "rows": [
+            {
+              "label": "订单 1",
+              "value": 50,
+              "detail": "收入 100；毛利 50",
+              "tone": "blue"
+            },
+            {
+              "label": "订单 2",
+              "value": 10,
+              "detail": "收入 900；毛利 90",
+              "tone": "blue"
+            },
+            {
+              "label": "等权订单率",
+              "value": 30,
+              "detail": "每单权重 1/2",
+              "tone": "muted"
+            },
+            {
+              "label": "整体毛利率",
+              "value": 14,
+              "detail": "总毛利 140 / 总收入 1000",
+              "tone": "teal"
+            }
+          ],
+          "ticks": [
+            0,
+            10,
+            20,
+            30,
+            40,
+            50
+          ]
+        },
+        "lessonNumber": 3
+      },
+      {
+        "kind": "case",
+        "section": "企业案例",
+        "title": "Spotify streamshare：播放量不是统一单价",
+        "lead": "比率的分母和结算对象决定金额解释。",
+        "body": [
+          "音乐平台需要把版税分配给权利人。Spotify公开说明按地区、月份的播放份额分配，而不是为每次播放设定一个普遍固定的费率。",
+          "播放份额以某权利人相关播放量除以相应市场的总播放量计算；平台先向权利人支付，艺术家和词曲作者最终到账还取决于各自合同。"
+        ],
+        "takeaway": "某曲播放量增加，既可能提高份额，也可能被市场总播放增长抵消；收入还受版税池及合同影响。用总支付除总播放得到的事后均值，不能当成每次播放的固定合同价格。",
+        "layout": "split",
+        "detailRef": {
+          "chapter": "03_sql_kpi",
+          "section": "保存哪些信息才能正确汇总",
+          "anchor": "可合并的统计状态"
+        },
+        "sourceSection": "可合并的统计状态",
+        "visual": {
+          "kind": "flow",
+          "items": [
+            {
+              "label": "市场与月份",
+              "detail": "固定结算范围"
+            },
+            {
+              "label": "播放份额",
+              "detail": "分子与分母共同确定"
+            },
+            {
+              "label": "权利人及合同",
+              "detail": "决定后续分配"
+            }
+          ]
+        },
+        "caseId": "b03-04",
+        "sources": [
+          {
+            "title": "Royalties Guide",
+            "url": "https://artists.spotify.com/en/royalties-guide"
+          }
+        ],
+        "lessonNumber": 3
+      },
+      {
+        "kind": "case",
+        "section": "企业案例",
+        "title": "Spotify：比率变化与单位价格应分别解释",
+        "lead": "播放量翻倍，是否就能保证艺术家到账翻倍？",
+        "body": [
+          "某曲播放量增加，既可能提高份额，也可能被市场总播放增长抵消；收入还受版税池及合同影响。用总支付除总播放得到的事后均值，不能当成每次播放的固定合同价格。",
+          "具体计算受资格规则、市场及合同约束；公开的一般分配机制不足以确定某位艺术家的实际收入。"
+        ],
+        "takeaway": "不能。分母、可分配金额及合同可能同时变化，应按同一市场、月份和权利范围复核。",
+        "layout": "focus",
+        "detailRef": {
+          "chapter": "03_sql_kpi",
+          "section": "保存哪些信息才能正确汇总",
+          "anchor": "可合并的统计状态"
+        },
+        "sourceSection": "可合并的统计状态",
+        "caseId": "b03-04",
+        "sources": [
+          {
+            "title": "Royalties Guide",
+            "url": "https://artists.spotify.com/en/royalties-guide"
+          }
+        ],
+        "prompts": [
+          {
+            "question": "播放量翻倍，是否就能保证艺术家到账翻倍？",
+            "answer": "不能。分母、可分配金额及合同可能同时变化，应按同一市场、月份和权利范围复核。"
+          }
+        ],
+        "lessonNumber": 3
+      },
+      {
+        "kind": "concept",
+        "section": "时间窗口",
+        "title": "窗口函数与最近三笔订单",
+        "lead": "保留订单身份，同时计算客户内的局部统计。",
+        "body": [
+          "`PARTITION BY` 划分客户，日期与订单号建立稳定顺序，`ROWS` 指定当前行及前两行。输入须为一行一订单，首两笔只对可得历史行求和。",
+          "“三笔”按行数定义，并非最近七日。示例收入采用固定标准价；真实历史计算使用成交价，且查询还应指定输出排序。"
+        ],
+        "detailRef": {
+          "chapter": "03_sql_kpi",
+          "section": "每张订单的最近三笔收入",
+          "anchor": "窗口函数与经营节奏"
+        },
+        "sourceSection": "窗口函数与经营节奏",
+        "takeaway": "窗口定义须同时固定分区、顺序和框架。",
+        "codeBlock": {
+          "language": "sql",
+          "caption": "窗口统计不会像 GROUP BY 那样压缩订单行。",
+          "code": "-- 一行一订单，日期与订单号共同确定客户内顺序\nSELECT o.customer_id, o.order_id,\n  SUM(o.quantity * p.unit_price) OVER (\n    PARTITION BY o.customer_id\n    ORDER BY o.order_date, o.order_id\n    ROWS BETWEEN 2 PRECEDING AND CURRENT ROW\n  ) AS recent_3_revenue\nFROM orders o\nJOIN products p USING (product_id)\nORDER BY o.customer_id, o.order_date, o.order_id;"
+        },
+        "layout": "split",
+        "density": "compact",
+        "lessonNumber": 3
+      },
+      {
+        "kind": "worked",
+        "section": "时间窗口",
+        "title": "最近三笔窗口：逐行计算",
+        "lead": "窗口随当前订单移动，仍保留每张订单的身份。",
+        "body": [
+          "同一客户四笔订单按日期、订单号稳定排序，收入依次为 \\(100,200,300,400\\) 元。`ROWS BETWEEN 2 PRECEDING AND CURRENT ROW` 在每行选择当前及前两行，仍保留当前订单身份。",
+          "第一笔窗口和为 \\(100\\) 元，第二笔为 \\(300\\) 元，第三笔为 \\(600\\) 元；到第四笔，O01退出，得到 \\(900\\) 元。累计收入为 \\(1000\\) 元，不能与最近三笔混用；横轴是订单顺序而非日期。"
+        ],
+        "takeaway": "窗口函数的框架决定参与每行计算的历史记录。",
+        "detailRef": {
+          "chapter": "03_sql_kpi",
+          "section": "每张订单的最近三笔收入",
+          "anchor": "窗口函数与经营节奏"
+        },
+        "sourceSection": "窗口函数与经营节奏",
+        "layout": "split",
+        "density": "compact",
+        "diagram": {
+          "type": "timeline",
+          "title": "当前及前两行组成移动窗口",
+          "description": "同一客户四笔订单收入100、200、300、400元，按稳定顺序排列。当前O02窗口包含O01–O02共300；O03包含O01–O03共600；O04包含O02–O04共900，O01退出。",
+          "encoding": "原教学记录 · 行数窗口示意",
+          "note": "横轴是记录顺序；条段表示包含的行，不表示时间持续。",
+          "domain": [
+            0.5,
+            4.5
+          ],
+          "unit": "订单顺序",
+          "rows": [
+            {
+              "label": "O02：300元",
+              "segments": [
+                {
+                  "start": 0.75,
+                  "end": 2.25,
+                  "label": "O01 + O02",
+                  "tone": "blue"
+                }
+              ],
+              "points": [
+                {
+                  "at": 2,
+                  "label": "当前",
+                  "tone": "blue"
+                }
+              ]
+            },
+            {
+              "label": "O03：600元",
+              "segments": [
+                {
+                  "start": 0.75,
+                  "end": 3.25,
+                  "label": "O01 + O02 + O03",
+                  "tone": "blue"
+                }
+              ],
+              "points": [
+                {
+                  "at": 3,
+                  "label": "当前",
+                  "tone": "blue"
+                }
+              ]
+            },
+            {
+              "label": "O04：900元",
+              "segments": [
+                {
+                  "start": 1.75,
+                  "end": 4.25,
+                  "label": "O02 + O03 + O04",
+                  "tone": "teal"
+                }
+              ],
+              "points": [
+                {
+                  "at": 4,
+                  "label": "当前",
+                  "tone": "teal"
+                }
+              ]
+            }
+          ],
+          "ticks": [
+            1,
+            2,
+            3,
+            4
+          ]
+        },
+        "lessonNumber": 3
+      },
+      {
+        "kind": "concept",
+        "section": "核查与问数",
+        "title": "从 KPI 结果到管理解释",
+        "lead": "描述、定位和行动需要不同的证据。",
+        "body": [
+          "进入经营讨论前，先报告对象和时间上的事实及比较基准，再说明口径和异常贡献，随后列出行动对象与约束，最后提供查询和数据版本。",
+          "“南区准时率低”只能定位表现差异。原因研究仍需供应商、出库及物流记录；具体行动还需效果和成本证据，不能由一个排名直接推出。"
+        ],
+        "detailRef": {
+          "chapter": "03_sql_kpi",
+          "section": "从分组差异提出具体解释",
+          "anchor": "从指标结果到管理解释"
+        },
+        "sourceSection": "从指标结果到管理解释",
+        "visual": {
+          "kind": "cards",
+          "items": [
+            {
+              "label": "事实与基准",
+              "detail": "变化及比较对象。"
+            },
+            {
+              "label": "口径与异常",
+              "detail": "分母、排除和贡献。"
+            },
+            {
+              "label": "行动与复核",
+              "detail": "可行方案、查询及版本。"
+            }
+          ]
+        },
+        "takeaway": "经营解释须使数字、定义、推断和行动依据彼此衔接。",
+        "layout": "split",
+        "lessonNumber": 3
+      },
+      {
+        "kind": "case",
+        "section": "企业案例",
+        "title": "Uber uMetric：实时与离线为何算出不同结果",
+        "lead": "同名指标须落实到一致的来源及计算逻辑。",
+        "body": [
+          "Uber公开说明，不同团队曾在不同存储与消费渠道为同一业务逻辑建立指标。例如运营分析与实时服务可能各自计算“完成行程”。",
+          "uMetric通过统一视图表达不同存储上的同类来源数据；指标定义保存SQL聚合与业务逻辑，并结合发现、计算、质量及消费管理。"
+        ],
+        "takeaway": "实时更新与离线补数可以使用不同技术，但若比较同一指标，就须统一事件定义、截止时点和迟到记录处理。否则两个正确执行的查询也可能回答不同问题。",
+        "layout": "split",
+        "detailRef": {
+          "chapter": "03_sql_kpi",
+          "section": "从分组差异提出具体解释",
+          "anchor": "从指标结果到管理解释"
+        },
+        "sourceSection": "从指标结果到管理解释",
+        "visual": {
+          "kind": "flow",
+          "items": [
+            {
+              "label": "业务定义",
+              "detail": "何谓完成行程"
+            },
+            {
+              "label": "来源与时间",
+              "detail": "统一视图及截止点"
+            },
+            {
+              "label": "计算结果",
+              "detail": "比较同口径的聚合量"
+            }
+          ]
+        },
+        "caseId": "b03-02",
+        "sources": [
+          {
+            "title": "The Journey Towards Metric Standardization",
+            "url": "https://www.uber.com/qa/en/blog/umetric/"
+          }
+        ],
+        "lessonNumber": 3
+      },
+      {
+        "kind": "case",
+        "section": "企业案例",
+        "title": "uMetric：先解释时间差异，再定位计算差异",
+        "lead": "离线报表与实时界面数字不一致，是否应立即删除其中一个？",
+        "body": [
+          "实时更新与离线补数可以使用不同技术，但若比较同一指标，就须统一事件定义、截止时点和迟到记录处理。否则两个正确执行的查询也可能回答不同问题。",
+          "工程文章证实标准化问题与机制；不同数据时效下出现差异不必然是故障，仍应按预先约定的统计窗口与新鲜度评价。"
+        ],
+        "takeaway": "不应。先核对事件范围、快照、截止点和补数状态，再判断是合理时效差异还是重复定义或计算错误。",
+        "layout": "focus",
+        "detailRef": {
+          "chapter": "03_sql_kpi",
+          "section": "从分组差异提出具体解释",
+          "anchor": "从指标结果到管理解释"
+        },
+        "sourceSection": "从指标结果到管理解释",
+        "caseId": "b03-02",
+        "sources": [
+          {
+            "title": "The Journey Towards Metric Standardization",
+            "url": "https://www.uber.com/qa/en/blog/umetric/"
+          }
+        ],
+        "prompts": [
+          {
+            "question": "离线报表与实时界面数字不一致，是否应立即删除其中一个？",
+            "answer": "不应。先核对事件范围、快照、截止点和补数状态，再判断是合理时效差异还是重复定义或计算错误。"
+          }
+        ],
+        "lessonNumber": 3
+      },
+      {
+        "kind": "concept",
+        "section": "核查与问数",
+        "title": "将自然语言规范为查询请求",
+        "lead": "含混问题须先澄清或采用经批准的显式默认值。",
+        "body": [
+          "“最近良率最差”尚未确定自然周或滚动窗口、首检或终检、绝对水平或目标偏差、最低产量门槛及可见范围。SQL 可以运行，也仍需明确这些业务条件。",
+          "查询请求 \\(q\\) 中，\\(m\\) 为指标，\\(g\\) 为分组，\\(w\\) 为时间窗口，\\(f\\) 为过滤，\\(v\\) 为定义版本，\\(u\\) 为用户身份，\\(\\mathcal E\\) 为输出要求，如排序方向、最低样本量及行数上限。SQL 实现这一请求。"
+        ],
+        "detailRef": {
+          "chapter": "03_sql_kpi",
+          "section": "先明确问题，再生成查询",
+          "anchor": "自然语言问题的形式化"
+        },
+        "sourceSection": "自然语言问题的形式化",
+        "equation": "q=(m,g,w,f,v,u,\\mathcal E)",
+        "takeaway": "查询请求先规定计算目标，SQL 再实现该目标。",
+        "layout": "focus",
+        "lessonNumber": 3
+      },
+      {
+        "kind": "concept",
+        "section": "核查与问数",
+        "title": "结果验证与不变量",
+        "lead": "独立核查应覆盖单个标准答案之外的错误。",
+        "body": [
+          "问数系统先检索确认的定义及字段，再生成、执行候选 SQL，返回数值、分子分母、截止点和查询版本。结果应与规范化请求一致。",
+          "同范围的良品数 \\(G\\) 与总件数 \\(N\\) 须满足 \\(0\\le G\\le N\\)；各互斥组计数应还原全量计数；不相交分片的状态合并应还原全量状态；改变行顺序不应改变无顺序含义的指标。这类变形测试通过改变输入、核对输出应保持的关系检验程序。"
+        ],
+        "detailRef": {
+          "chapter": "03_sql_kpi",
+          "section": "核对工站良率查询",
+          "anchor": "制造查询的验证步骤"
+        },
+        "sourceSection": "制造查询的验证步骤",
+        "visual": {
+          "kind": "cards",
+          "items": [
+            {
+              "label": "数值范围",
+              "detail": "检查计数和分母。"
+            },
+            {
+              "label": "合并一致性",
+              "detail": "分组、分片与全量一致。"
+            },
+            {
+              "label": "顺序不变性",
+              "detail": "无顺序指标不依赖输入排列。"
+            }
+          ]
+        },
+        "takeaway": "验证应针对业务定义和统计不变量，而非仅检查 SQL 文本。",
+        "layout": "split",
+        "lessonNumber": 3
+      },
+      {
+        "layout": "split",
+        "title": "受限执行与独立授权",
+        "lead": "模型生成候选查询，执行层落实真实权限。",
+        "body": [
+          "执行控制同时约束表、列、函数及外部资源访问，采用只读快照、许可对象、行数和时间预算，并限制文件、网络及扩展能力。",
+          "参数绑定把用户输入的值与 SQL 结构分开；表名和列名从许可清单映射，不直接拼接输入。日志保存请求、查询、参数、角色、快照及结果。授权须由数据库和运行环境实际实施，模型声明或文本黑名单不能代替它。"
+        ],
+        "visual": {
+          "kind": "cards",
+          "items": [
+            {
+              "label": "对象与语句",
+              "detail": "限定许可表、列和函数。"
+            },
+            {
+              "label": "资源与环境",
+              "detail": "控制时间、行数、文件及网络。"
+            },
+            {
+              "label": "日志与复核",
+              "detail": "保留用户、参数和数据版本。"
+            }
+          ]
+        },
+        "detailRef": {
+          "chapter": "03_sql_kpi",
+          "section": "控制查询能够访问什么",
+          "anchor": "查询执行的权限控制"
+        },
+        "takeaway": "授权规则须独立配置，并由实际执行环境实施。",
+        "kind": "concept",
+        "section": "核查与问数",
+        "sourceSection": "查询执行的权限控制",
+        "lessonNumber": 3
+      },
+      {
+        "kind": "summary",
+        "section": "核查与问数",
+        "title": "问数产品的可交付率",
+        "lead": "在相同任务、角色、快照及期限下比较。",
+        "body": [
+          "对 \\(n\\) 个已规范且可合法回答的任务，\\(C_i,P_i,D_i\\) 为 0/1 指示量，分别表示数值及口径正确、权限合规、按时返回。三项同时为 1 时，乘积 \\(C_iP_iD_i=1\\)，才计作有效完成。",
+          "任务、用户角色、数据快照和期限须相同。零分母、迟到、拆单及重复连接应纳入测试；需澄清或越权任务分别评价澄清、拒绝行为，并报告样本构成、时延及费用。"
+        ],
+        "detailRef": {
+          "chapter": "03_sql_kpi",
+          "section": "在相同任务上比较服务",
+          "anchor": "多平台问数系统的可比较任务"
+        },
+        "sourceSection": "多平台问数系统的可比较任务",
+        "equation": "\\widehat p_{\\rm valid}=\\frac1n\\sum_{i=1}^{n}C_iP_iD_i",
+        "takeaway": "单一数值准确率不能概括查询系统的整体可交付性。",
+        "layout": "focus",
+        "lessonNumber": 3
+      },
+      {
+        "layout": "split",
+        "title": "本地部署：位置与资源边界",
+        "lead": "数据库本地保存不意味着所有计算均在本地完成。",
+        "body": [
+          "分别记录数据存储、检索、模型推理和日志遥测的位置，并核对网络通信。模型含 \\(P\\) 个参数、每参数 \\(b\\) 位时，纯权重存储约为下式；8 位等于 1 字节。",
+          "运行还需中间计算及批处理内存，生成模型还需保存注意力计算产生的键和值，即键值（KV）缓存，后续生成可复用这些中间结果。容量测试须固定上下文长度及并发，测量准确率、时延、资源和错误损失，不能只看权重大小。"
+        ],
+        "equation": "M_{\\rm weights}\\approx\\frac{Pb}{8}\\quad\\text{字节}",
+        "detailRef": {
+          "chapter": "03_sql_kpi",
+          "section": "数据、模型与日志的部署位置",
+          "anchor": "本地部署的数据与模型服务"
+        },
+        "takeaway": "数据位置、推理位置和运行资源应分别测量及核查。",
+        "kind": "concept",
+        "section": "核查与问数",
+        "sourceSection": "本地部署的数据与模型服务",
+        "diagram": {
+          "type": "graph",
+          "title": "模型运行内存不止纯权重",
+          "description": "参数数P及每参数位数b确定纯权重字节Pb/8。运行还需中间计算、批处理与生成历史KV缓存；上下文长度和并发决定额外资源。各组件大小取决于实现，没有给定固定比例。",
+          "encoding": "资源组成示意 · 非定量分解",
+          "note": "各部分大小须实测；框面积不表示内存比例。",
+          "nodes": [
+            {
+              "id": "parameters",
+              "x": 19,
+              "y": 21,
+              "w": 32,
+              "h": 22,
+              "label": "模型参数",
+              "detail": "\\(P\\) 个，每个 \\(b\\) 位",
+              "tone": "blue",
+              "shape": "rect"
+            },
+            {
+              "id": "weights",
+              "x": 73,
+              "y": 21,
+              "w": 38,
+              "h": 22,
+              "label": "纯权重存储",
+              "detail": "\\(Pb/8\\) 字节",
+              "tone": "blue",
+              "shape": "rect"
+            },
+            {
+              "id": "intermediate",
+              "x": 19,
+              "y": 77,
+              "w": 32,
+              "h": 22,
+              "label": "运行中间状态",
+              "detail": "计算与批处理内存",
+              "tone": "blue",
+              "shape": "rect"
+            },
+            {
+              "id": "KV",
+              "x": 73,
+              "y": 77,
+              "w": 38,
+              "h": 22,
+              "label": "生成历史缓存",
+              "detail": "上下文长度与并发",
+              "tone": "blue",
+              "shape": "rect"
+            },
+            {
+              "id": "runtime",
+              "x": 49,
+              "y": 49,
+              "w": 38,
+              "h": 19,
+              "label": "运行资源核查",
+              "detail": "实测容量、时延与错误",
+              "tone": "teal",
+              "shape": "rect"
+            }
+          ],
+          "edges": [
+            {
+              "from": "parameters",
+              "to": "weights",
+              "label": ""
+            },
+            {
+              "from": "weights",
+              "to": "runtime",
+              "label": ""
+            },
+            {
+              "from": "intermediate",
+              "to": "runtime",
+              "label": ""
+            },
+            {
+              "from": "KV",
+              "to": "runtime",
+              "label": ""
+            }
+          ]
+        },
+        "density": "compact",
+        "lessonNumber": 3
+      },
+      {
+        "layout": "split",
+        "kind": "summary",
+        "title": "查询复核的依据与步骤",
+        "lead": "从业务定义回到可重复的计算。",
+        "body": [
+          "先声明源表及输出粒度，再检查键和匹配次数；保留可合并的基础量，按统一时间及队列重算指标；最后核对权限、版本和异常状态。",
+          "这些条件共同支持 SQL 查询、人工复核及自然语言问数。缺失、测量误差和规则违反可能改变纳入的记录、聚合权重及统计结论，因此查询复核还需结合数据质量检查。"
+        ],
+        "prompts": [
+          {
+            "question": "到期 OTD 从 50% 变为 66.7%，能直接说明交付改善吗？",
+            "answer": "不能。须先核对承诺版本、队列与截止点；若改为只统计已交付订单，数字上升只是分母改变。"
+          }
+        ],
+        "detailRef": {
+          "chapter": "03_sql_kpi",
+          "section": "结果报告的要求",
+          "anchor": "查询结果的核查"
+        },
+        "takeaway": "可复核查询应使定义、事实、运算和结果保持一致。",
+        "section": "核查与问数",
+        "sourceSection": "查询结果的核查",
+        "density": "compact",
+        "lessonNumber": 3
+      }
+    ],
+    "id": "03_sql_kpi",
+    "chapter": "03_sql_kpi",
+    "lectureNumber": 3
+  }
+}

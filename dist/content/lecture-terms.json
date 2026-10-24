@@ -254,8 +254,8 @@
     "aliases": [
       "客户关系管理"
     ],
-    "firstSlideTitle": "统一身份与业务含义",
-    "definitionSlideTitle": "统一身份与业务含义",
+    "firstSlideTitle": "跨系统记录中的对象与含义",
+    "definitionSlideTitle": "跨系统记录中的对象与含义",
     "explanation": "记录客户身份、销售交互及服务过程的业务系统。"
   },
   {
@@ -263,8 +263,8 @@
     "lesson": 2,
     "term": "主键",
     "aliases": [],
-    "firstSlideTitle": "数据模型与治理责任",
-    "definitionSlideTitle": "数据模型与治理责任",
+    "firstSlideTitle": "数据定义与治理职责",
+    "definitionSlideTitle": "数据定义与治理职责",
     "explanation": "记录的唯一标识。"
   },
   {
@@ -272,8 +272,8 @@
     "lesson": 2,
     "term": "事实粒度",
     "aliases": [],
-    "firstSlideTitle": "数据模型与治理责任",
-    "definitionSlideTitle": "数据模型与治理责任",
+    "firstSlideTitle": "数据定义与治理职责",
+    "definitionSlideTitle": "数据定义与治理职责",
     "explanation": "每行代表哪项业务事实。"
   },
   {
@@ -281,8 +281,8 @@
     "lesson": 2,
     "term": "数据血缘",
     "aliases": [],
-    "firstSlideTitle": "数据模型与治理责任",
-    "definitionSlideTitle": "数据模型与治理责任",
+    "firstSlideTitle": "数据定义与治理职责",
+    "definitionSlideTitle": "数据定义与治理职责",
     "explanation": "记录源数据与转换步骤。"
   },
   {
@@ -290,8 +290,8 @@
     "lesson": 2,
     "term": "元数据",
     "aliases": [],
-    "firstSlideTitle": "数据模型与治理责任",
-    "definitionSlideTitle": "数据模型与治理责任",
+    "firstSlideTitle": "数据定义与治理职责",
+    "definitionSlideTitle": "数据定义与治理职责",
     "explanation": "描述结构、含义、来源、责任与版本。"
   },
   {
@@ -301,8 +301,8 @@
     "aliases": [
       "人工智能"
     ],
-    "firstSlideTitle": "企业 AI 系统的六项职能",
-    "definitionSlideTitle": "企业 AI 系统的六项职能",
+    "firstSlideTitle": "企业 AI 系统的功能分工",
+    "definitionSlideTitle": "企业 AI 系统的功能分工",
     "explanation": "以计算方法执行预测、生成或决策等任务。"
   },
   {
@@ -310,8 +310,8 @@
     "lesson": 2,
     "term": "快照",
     "aliases": [],
-    "firstSlideTitle": "快照、模式与表格式",
-    "definitionSlideTitle": "快照、模式与表格式",
+    "firstSlideTitle": "快照、模式与数据版本",
+    "definitionSlideTitle": "快照、模式与数据版本",
     "explanation": "快照记录数据表在某个版本的状态。"
   },
   {
@@ -319,8 +319,8 @@
     "lesson": 2,
     "term": "模式",
     "aliases": [],
-    "firstSlideTitle": "快照、模式与表格式",
-    "definitionSlideTitle": "快照、模式与表格式",
+    "firstSlideTitle": "快照、模式与数据版本",
+    "definitionSlideTitle": "快照、模式与数据版本",
     "explanation": "模式规定字段名称、类型及结构。"
   },
   {
@@ -328,8 +328,8 @@
     "lesson": 2,
     "term": "模式演化",
     "aliases": [],
-    "firstSlideTitle": "快照、模式与表格式",
-    "definitionSlideTitle": "快照、模式与表格式",
+    "firstSlideTitle": "快照、模式与数据版本",
+    "definitionSlideTitle": "快照、模式与数据版本",
     "explanation": "在兼容规则下修改字段名称、类型及结构。"
   },
   {
@@ -337,8 +337,8 @@
     "lesson": 2,
     "term": "开放表格式",
     "aliases": [],
-    "firstSlideTitle": "快照、模式与表格式",
-    "definitionSlideTitle": "快照、模式与表格式",
+    "firstSlideTitle": "快照、模式与数据版本",
+    "definitionSlideTitle": "快照、模式与数据版本",
     "explanation": "规定文件、快照与模式演化的组织方式，供兼容引擎读取。"
   },
   {
@@ -346,8 +346,8 @@
     "lesson": 2,
     "term": "对象存储",
     "aliases": [],
-    "firstSlideTitle": "快照、模式与表格式",
-    "definitionSlideTitle": "快照、模式与表格式",
+    "firstSlideTitle": "快照、模式与数据版本",
+    "definitionSlideTitle": "快照、模式与数据版本",
     "explanation": "以带唯一标识的对象保存文件。"
   },
   {
@@ -357,8 +357,8 @@
     "aliases": [
       "OEE"
     ],
-    "firstSlideTitle": "存储、语义与权限",
-    "definitionSlideTitle": "存储、语义与权限",
+    "firstSlideTitle": "跨系统使用的三项约定",
+    "definitionSlideTitle": "跨系统使用的三项约定",
     "explanation": "良品理想工时占计划生产时间的比例。"
   },
   {
@@ -366,8 +366,8 @@
     "lesson": 2,
     "term": "实体",
     "aliases": [],
-    "firstSlideTitle": "企业数据的六类语义",
-    "definitionSlideTitle": "企业数据的六类语义",
+    "firstSlideTitle": "实体、事件、状态与指标",
+    "definitionSlideTitle": "实体、事件、状态与指标",
     "explanation": "实体具有稳定身份，属性描述对象，关系表达对象联系。"
   },
   {
@@ -375,8 +375,8 @@
     "lesson": 2,
     "term": "超键",
     "aliases": [],
-    "firstSlideTitle": "键与三类完整性约束",
-    "definitionSlideTitle": "键与三类完整性约束",
+    "firstSlideTitle": "键与完整性约束",
+    "definitionSlideTitle": "键与完整性约束",
     "explanation": "能在所有合法实例中唯一识别记录。"
   },
   {
@@ -384,8 +384,8 @@
     "lesson": 2,
     "term": "候选键",
     "aliases": [],
-    "firstSlideTitle": "键与三类完整性约束",
-    "definitionSlideTitle": "键与三类完整性约束",
+    "firstSlideTitle": "键与完整性约束",
+    "definitionSlideTitle": "键与完整性约束",
     "explanation": "不可再删除任何属性的超键。"
   },
   {
@@ -393,8 +393,8 @@
     "lesson": 2,
     "term": "自然键",
     "aliases": [],
-    "firstSlideTitle": "键与三类完整性约束",
-    "definitionSlideTitle": "键与三类完整性约束",
+    "firstSlideTitle": "键与完整性约束",
+    "definitionSlideTitle": "键与完整性约束",
     "explanation": "使用已有业务属性识别对象。"
   },
   {
@@ -402,8 +402,8 @@
     "lesson": 2,
     "term": "代理键",
     "aliases": [],
-    "firstSlideTitle": "键与三类完整性约束",
-    "definitionSlideTitle": "键与三类完整性约束",
+    "firstSlideTitle": "键与完整性约束",
+    "definitionSlideTitle": "键与完整性约束",
     "explanation": "另行赋予的编号，仍须配合业务唯一性规则。"
   },
   {
@@ -411,8 +411,8 @@
     "lesson": 2,
     "term": "外键",
     "aliases": [],
-    "firstSlideTitle": "键与三类完整性约束",
-    "definitionSlideTitle": "键与三类完整性约束",
+    "firstSlideTitle": "键与完整性约束",
+    "definitionSlideTitle": "键与完整性约束",
     "explanation": "把本表记录关联到另一表的键。"
   },
   {
@@ -449,8 +449,8 @@
     "lesson": 2,
     "term": "事实表",
     "aliases": [],
-    "firstSlideTitle": "事务模型与星型模型",
-    "definitionSlideTitle": "事务模型与星型模型",
+    "firstSlideTitle": "事务模型与星型分析模型",
+    "definitionSlideTitle": "事务模型与星型分析模型",
     "explanation": "以事件或状态保存分析所需业务事实。"
   },
   {
@@ -458,8 +458,8 @@
     "lesson": 2,
     "term": "维度",
     "aliases": [],
-    "firstSlideTitle": "事务模型与星型模型",
-    "definitionSlideTitle": "事务模型与星型模型",
+    "firstSlideTitle": "事务模型与星型分析模型",
+    "definitionSlideTitle": "事务模型与星型分析模型",
     "explanation": "客户、产品、日期等说明分析角度的属性。"
   },
   {
@@ -469,8 +469,8 @@
     "aliases": [
       "关键绩效指标"
     ],
-    "firstSlideTitle": "制造 KPI 的事实基础",
-    "definitionSlideTitle": "制造 KPI 的事实基础",
+    "firstSlideTitle": "制造 KPI 需要哪些事实",
+    "definitionSlideTitle": "制造 KPI 需要哪些事实",
     "explanation": "按规定口径衡量关键经营表现的量。"
   },
   {
@@ -480,8 +480,8 @@
     "aliases": [
       "生产周期"
     ],
-    "firstSlideTitle": "制造指标先固定测量对象",
-    "definitionSlideTitle": "制造指标先固定测量对象",
+    "firstSlideTitle": "制造指标的观察对象",
+    "definitionSlideTitle": "制造指标的观察对象",
     "explanation": "规定起点至完工的时长。"
   },
   {
@@ -491,8 +491,8 @@
     "aliases": [
       "在制品存量"
     ],
-    "firstSlideTitle": "制造指标先固定测量对象",
-    "definitionSlideTitle": "制造指标先固定测量对象",
+    "firstSlideTitle": "制造指标的观察对象",
+    "definitionSlideTitle": "制造指标的观察对象",
     "explanation": "某时点已进入生产、尚未完成的对象数。"
   },
   {
@@ -502,8 +502,8 @@
     "aliases": [
       "准时交付率"
     ],
-    "firstSlideTitle": "企业数据的六类语义",
-    "definitionSlideTitle": "企业数据的六类语义",
+    "firstSlideTitle": "实体、事件、状态与指标",
+    "definitionSlideTitle": "实体、事件、状态与指标",
     "explanation": "比较按承诺完成的对象与规定队列。"
   },
   {
@@ -511,8 +511,8 @@
     "lesson": 2,
     "term": "状态机",
     "aliases": [],
-    "firstSlideTitle": "状态机与幂等请求",
-    "definitionSlideTitle": "状态机与幂等请求",
+    "firstSlideTitle": "状态转换、版本检查与幂等",
+    "definitionSlideTitle": "状态转换、版本检查与幂等",
     "explanation": "用明确的状态和允许转换描述操作。"
   },
   {
@@ -520,8 +520,8 @@
     "lesson": 2,
     "term": "幂等请求",
     "aliases": [],
-    "firstSlideTitle": "状态机与幂等请求",
-    "definitionSlideTitle": "状态机与幂等请求",
+    "firstSlideTitle": "状态转换、版本检查与幂等",
+    "definitionSlideTitle": "状态转换、版本检查与幂等",
     "explanation": "重复提交同一操作时不产生额外业务效果。"
   },
   {
@@ -529,8 +529,8 @@
     "lesson": 2,
     "term": "语义层",
     "aliases": [],
-    "firstSlideTitle": "语义层约束自然语言问数",
-    "definitionSlideTitle": "语义层约束自然语言问数",
+    "firstSlideTitle": "自然语言问数需要明确的查询语义",
+    "definitionSlideTitle": "自然语言问数需要明确的查询语义",
     "explanation": "把表、字段与业务对象及指标定义对应起来，供不同工具使用一致口径。"
   },
   {
@@ -538,8 +538,8 @@
     "lesson": 2,
     "term": "委托人",
     "aliases": [],
-    "firstSlideTitle": "绩效合同：为何要同时考虑努力与风险",
-    "definitionSlideTitle": "绩效合同：为何要同时考虑努力与风险",
+    "firstSlideTitle": "从数据记录到绩效合同",
+    "definitionSlideTitle": "从数据记录到绩效合同",
     "explanation": "把任务交给代理人但不能完全观察其努力的一方。"
   },
   {
@@ -547,8 +547,8 @@
     "lesson": 2,
     "term": "代理人",
     "aliases": [],
-    "firstSlideTitle": "绩效合同：为何要同时考虑努力与风险",
-    "definitionSlideTitle": "绩效合同：为何要同时考虑努力与风险",
+    "firstSlideTitle": "从数据记录到绩效合同",
+    "definitionSlideTitle": "从数据记录到绩效合同",
     "explanation": "接受任务并依据合同选择努力的一方。"
   },
   {
@@ -556,8 +556,8 @@
     "lesson": 2,
     "term": "风险厌恶",
     "aliases": [],
-    "firstSlideTitle": "绩效合同：为何要同时考虑努力与风险",
-    "definitionSlideTitle": "绩效合同：为何要同时考虑努力与风险",
+    "firstSlideTitle": "从数据记录到绩效合同",
+    "definitionSlideTitle": "从数据记录到绩效合同",
     "explanation": "在期望收入相同的情况下倾向于较少收入波动。"
   },
   {
@@ -567,8 +567,8 @@
     "aliases": [
       "确定性等价"
     ],
-    "firstSlideTitle": "产出信号、合同与风险成本",
-    "definitionSlideTitle": "产出信号、合同与风险成本",
+    "firstSlideTitle": "产出、工资与确定性等价",
+    "definitionSlideTitle": "产出、工资与确定性等价",
     "explanation": "与随机净收入带来相同期望效用的确定金额。"
   },
   {
@@ -578,8 +578,8 @@
     "aliases": [
       "业务本体"
     ],
-    "firstSlideTitle": "对象关系与元数据目录",
-    "definitionSlideTitle": "对象关系与元数据目录",
+    "firstSlideTitle": "业务对象关系与元数据目录",
+    "definitionSlideTitle": "业务对象关系与元数据目录",
     "explanation": "规定业务对象、属性、关系及相关规则。"
   },
   {
@@ -587,8 +587,8 @@
     "lesson": 3,
     "term": "SQL",
     "aliases": [],
-    "firstSlideTitle": "查询正确性与业务语义",
-    "definitionSlideTitle": "查询正确性与业务语义",
+    "firstSlideTitle": "从业务问题到关系查询",
+    "definitionSlideTitle": "从业务问题到关系查询",
     "explanation": "结构化查询语言声明要查询的数据及其条件，由数据库选择执行步骤。"
   },
   {
@@ -596,8 +596,8 @@
     "lesson": 3,
     "term": "粒度",
     "aliases": [],
-    "firstSlideTitle": "查询正确性与业务语义",
-    "definitionSlideTitle": "查询正确性与业务语义",
+    "firstSlideTitle": "从业务问题到关系查询",
+    "definitionSlideTitle": "从业务问题到关系查询",
     "explanation": "一行代表什么事实。"
   },
   {
@@ -605,8 +605,8 @@
     "lesson": 3,
     "term": "主键",
     "aliases": [],
-    "firstSlideTitle": "查询正确性与业务语义",
-    "definitionSlideTitle": "查询正确性与业务语义",
+    "firstSlideTitle": "从业务问题到关系查询",
+    "definitionSlideTitle": "从业务问题到关系查询",
     "explanation": "唯一标识该记录。"
   },
   {
@@ -616,8 +616,8 @@
     "aliases": [
       "关键绩效指标"
     ],
-    "firstSlideTitle": "查询正确性与业务语义",
-    "definitionSlideTitle": "查询正确性与业务语义",
+    "firstSlideTitle": "从业务问题到关系查询",
+    "definitionSlideTitle": "从业务问题到关系查询",
     "explanation": "按统一对象、分子分母、时间、单位、权限和责任定义的关键经营量。"
   },
   {
@@ -634,8 +634,8 @@
     "lesson": 3,
     "term": "关系代数",
     "aliases": [],
-    "firstSlideTitle": "关系运算与事实集合",
-    "definitionSlideTitle": "关系运算与事实集合",
+    "firstSlideTitle": "关系代数如何描述查询",
+    "definitionSlideTitle": "关系代数如何描述查询",
     "explanation": "用一组作用于关系的运算表达查询。"
   },
   {
@@ -643,8 +643,8 @@
     "lesson": 3,
     "term": "多重集",
     "aliases": [],
-    "firstSlideTitle": "SQL 的重复行语义",
-    "definitionSlideTitle": "SQL 的重复行语义",
+    "firstSlideTitle": "相同金额可以属于不同订单",
+    "definitionSlideTitle": "相同金额可以属于不同订单",
     "explanation": "允许相同取值重复出现，并保留出现次数。"
   },
   {
@@ -652,8 +652,8 @@
     "lesson": 3,
     "term": "GMV",
     "aliases": [],
-    "firstSlideTitle": "Shopify GMV：交易规模与平台收入",
-    "definitionSlideTitle": "Shopify GMV：交易规模与平台收入",
+    "firstSlideTitle": "Shopify 的交易规模与自身收入",
+    "definitionSlideTitle": "Shopify 的交易规模与自身收入",
     "explanation": "平台促成的订单金额，按披露口径扣除退款并含运费、关税及增值税。"
   },
   {
@@ -661,8 +661,8 @@
     "lesson": 3,
     "term": "GPV",
     "aliases": [],
-    "firstSlideTitle": "Shopify GMV：交易规模与平台收入",
-    "definitionSlideTitle": "Shopify GMV：交易规模与平台收入",
+    "firstSlideTitle": "Shopify 的交易规模与自身收入",
+    "definitionSlideTitle": "Shopify 的交易规模与自身收入",
     "explanation": "由Shopify Payments处理的GMV。"
   },
   {
@@ -670,8 +670,8 @@
     "lesson": 3,
     "term": "MRR",
     "aliases": [],
-    "firstSlideTitle": "Shopify GMV：交易规模与平台收入",
-    "definitionSlideTitle": "Shopify GMV：交易规模与平台收入",
+    "firstSlideTitle": "Shopify 的交易规模与自身收入",
+    "definitionSlideTitle": "Shopify 的交易规模与自身收入",
     "explanation": "根据期末商户与订阅费率计算的月度经常性收入指标。"
   },
   {
@@ -679,8 +679,8 @@
     "lesson": 3,
     "term": "事实表",
     "aliases": [],
-    "firstSlideTitle": "事实表与维度表",
-    "definitionSlideTitle": "事实表与维度表",
+    "firstSlideTitle": "事实表与维度表怎样连接",
+    "definitionSlideTitle": "事实表与维度表怎样连接",
     "explanation": "保存交易、事件或状态。"
   },
   {
@@ -688,8 +688,8 @@
     "lesson": 3,
     "term": "维度表",
     "aliases": [],
-    "firstSlideTitle": "事实表与维度表",
-    "definitionSlideTitle": "事实表与维度表",
+    "firstSlideTitle": "事实表与维度表怎样连接",
+    "definitionSlideTitle": "事实表与维度表怎样连接",
     "explanation": "保存描述事实的属性。"
   },
   {
@@ -697,8 +697,8 @@
     "lesson": 3,
     "term": "外键",
     "aliases": [],
-    "firstSlideTitle": "区域收入查询：逐层核查",
-    "definitionSlideTitle": "区域收入查询：逐层核查",
+    "firstSlideTitle": "逐句解释区域收入查询",
+    "definitionSlideTitle": "逐句解释区域收入查询",
     "explanation": "事实中的引用标识。"
   },
   {
@@ -706,8 +706,8 @@
     "lesson": 3,
     "term": "引用完整性",
     "aliases": [],
-    "firstSlideTitle": "事实表与维度表",
-    "definitionSlideTitle": "事实表与维度表",
+    "firstSlideTitle": "事实表与维度表怎样连接",
+    "definitionSlideTitle": "事实表与维度表怎样连接",
     "explanation": "非空外键能够找到对应对象。"
   },
   {
@@ -715,8 +715,8 @@
     "lesson": 3,
     "term": "半连接",
     "aliases": [],
-    "firstSlideTitle": "半连接：只判断是否存在匹配",
-    "definitionSlideTitle": "半连接：只判断是否存在匹配",
+    "firstSlideTitle": "半连接只检查匹配是否存在",
+    "definitionSlideTitle": "半连接只检查匹配是否存在",
     "explanation": "只保留左侧存在匹配的行，不因右侧多次匹配而复制左行。"
   },
   {
@@ -726,8 +726,8 @@
     "aliases": [
       "准时交付率"
     ],
-    "firstSlideTitle": "指标定义的形式化表示",
-    "definitionSlideTitle": "指标定义的形式化表示",
+    "firstSlideTitle": "把指标定义写完整",
+    "definitionSlideTitle": "把指标定义写完整",
     "explanation": "规定队列中按承诺完成的对象占比。"
   },
   {
@@ -737,8 +737,8 @@
     "aliases": [
       "生产周期"
     ],
-    "firstSlideTitle": "良率与周期的权重",
-    "definitionSlideTitle": "良率与周期的权重",
+    "firstSlideTitle": "良率与生产周期怎样汇总",
+    "definitionSlideTitle": "良率与生产周期怎样汇总",
     "explanation": "预先规定的开始到完工时长。"
   },
   {
@@ -748,8 +748,8 @@
     "aliases": [
       "设备综合效率"
     ],
-    "firstSlideTitle": "OEE 的分解与约分",
-    "definitionSlideTitle": "OEE 的分解与约分",
+    "firstSlideTitle": "设备综合效率的三个因子",
+    "definitionSlideTitle": "设备综合效率的三个因子",
     "explanation": "良品理想工时占计划生产时间的比例。"
   },
   {
@@ -759,8 +759,8 @@
     "aliases": [
       "在制品存量"
     ],
-    "firstSlideTitle": "WIP 的时点与时间平均",
-    "definitionSlideTitle": "WIP 的时点与时间平均",
+    "firstSlideTitle": "在制品存量与时间平均",
+    "definitionSlideTitle": "在制品存量与时间平均",
     "explanation": "某时点已进入生产但尚未完成的对象数量。"
   },
   {
@@ -768,8 +768,8 @@
     "lesson": 3,
     "term": "NULL",
     "aliases": [],
-    "firstSlideTitle": "NULL、三值逻辑与条件聚合",
-    "definitionSlideTitle": "NULL、三值逻辑与条件聚合",
+    "firstSlideTitle": "NULL 与三值逻辑",
+    "definitionSlideTitle": "NULL 与三值逻辑",
     "explanation": "当前未给出一个普通字段值，其业务原因须另行确定。"
   },
   {
@@ -777,8 +777,8 @@
     "lesson": 3,
     "term": "三值逻辑",
     "aliases": [],
-    "firstSlideTitle": "NULL、三值逻辑与条件聚合",
-    "definitionSlideTitle": "NULL、三值逻辑与条件聚合",
+    "firstSlideTitle": "NULL 与三值逻辑",
+    "definitionSlideTitle": "NULL 与三值逻辑",
     "explanation": "SQL比较有真、假、未知三种结果。"
   },
   {
@@ -786,8 +786,8 @@
     "lesson": 3,
     "term": "变形测试",
     "aliases": [],
-    "firstSlideTitle": "结果验证与不变量",
-    "definitionSlideTitle": "结果验证与不变量",
+    "firstSlideTitle": "利用不变量验证查询结果",
+    "definitionSlideTitle": "利用不变量验证查询结果",
     "explanation": "改变输入并核对输出应保持的关系，以检验程序。"
   },
   {
@@ -795,8 +795,8 @@
     "lesson": 3,
     "term": "参数绑定",
     "aliases": [],
-    "firstSlideTitle": "受限执行与独立授权",
-    "definitionSlideTitle": "受限执行与独立授权",
+    "firstSlideTitle": "查询权限由执行环境落实",
+    "definitionSlideTitle": "查询权限由执行环境落实",
     "explanation": "把用户输入的数据值与SQL结构分开。"
   },
   {
@@ -806,8 +806,8 @@
     "aliases": [
       "键值"
     ],
-    "firstSlideTitle": "本地部署：位置与资源边界",
-    "definitionSlideTitle": "本地部署：位置与资源边界",
+    "firstSlideTitle": "本地部署要核对哪些位置与资源",
+    "definitionSlideTitle": "本地部署要核对哪些位置与资源",
     "explanation": "注意力计算产生的键和值，后续生成可复用这些中间结果。"
   },
   {

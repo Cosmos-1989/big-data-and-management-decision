@@ -65,8 +65,11 @@ for (const chapter of chapters) {
   for (const [index, slide] of deck.slides.entries()) {
     const page = index + 1;
     pageCount += 1;
-    if (!slide.title || !slide.lead || !slide.takeaway || !slide.body?.length) {
-      report(chapter, page, '缺少标题、引入、正文或结论');
+    if (!slide.title || !slide.lead || !slide.body?.length) {
+      report(chapter, page, '缺少标题、引入或正文');
+    }
+    if ('takeaway' in slide && (typeof slide.takeaway !== 'string' || !slide.takeaway.trim())) {
+      report(chapter, page, '可选结论必须有实际内容，省略时应删除字段');
     }
     const ref = slide.detailRef;
     if (!ref || ref.chapter !== documentId || !anchors.has(ref.anchor) || !ref.section) {
