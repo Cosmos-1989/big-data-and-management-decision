@@ -1,0 +1,91 @@
+[
+  {
+    "caseId": "snowflake-databricks-semantic-query",
+    "chapterId": "03_sql_kpi",
+    "targetHeading": "Snowflake 与 Databricks 的产品机制",
+    "organization": "Snowflake × Databricks",
+    "context": "Snowflake Cortex Analyst 保存经审核的自然语言问题与 SQL 配对；Databricks Genie 使用问题集及其同义表达检验回答。这些机制为检查指标含义和查询结果提供了依据。",
+    "flow": [
+      "定义｜固定周良率、到期 OTD 等指标的分子、分母与时间窗口",
+      "示例｜保存经过审核的问题、SQL 与反例数据",
+      "测试｜使用未见过的同义表达与不同规模的数据检验回答",
+      "复核｜口径或数据模式变化后重新验证答案"
+    ],
+    "takeaway": "问数结果的核对应包括查询结果、指标定义与统计范围。",
+    "sourceCaveat": "公开产品文档介绍了经审核的问题与 SQL 配对，以及问题集检验机制。图中的制造指标和核对步骤用于说明这些机制的用途，产品效果需在具体数据与问题上测量。",
+    "sourceRefs": [
+      "snowflake03",
+      "genie03"
+    ],
+    "visualHint": "自然语言问题—语义定义—SQL—核对结果的路径图",
+    "targetAnchor": "snowflake-与-databricks-的产品机制",
+    "compact": true
+  },
+  {
+    "caseId": "multi-platform-query-evaluation",
+    "chapterId": "03_sql_kpi",
+    "targetHeading": "多平台问数系统的可比较任务",
+    "organization": "Databricks Genie × Snowflake Cortex",
+    "context": "比较两个企业问数系统时，应使它们面对同一问题集、数据库版本与用户角色。逐题核对数值、统计范围和访问权限，再记录完成时间和费用。",
+    "flow": [
+      "准备｜固定问题集、数据版本、指标定义和访问角色",
+      "查询｜记录返回数值、权限处理与完成时间",
+      "核对｜检查空分母、迟到记录、重复批次和越权请求",
+      "汇总｜分别报告答对比例、拒绝情况、时延与费用"
+    ],
+    "takeaway": "回答的数值、含义和授权范围分别核对，才能解释比较结果。",
+    "sourceCaveat": "比较对象的产品职责依据公开文档。问题集、执行步骤与报告方式为假定比较方案，用于说明如何取得可比结果。",
+    "sourceRefs": [
+      "databricksGenie2026",
+      "snowflakeSemantic2026",
+      "snowflakeAgents2026"
+    ],
+    "visualHint": "四道验收门：答案、口径、权限、时限",
+    "targetAnchor": "多平台问数系统的可比较任务",
+    "compact": true
+  },
+  {
+    "caseId": "collibra-froedtert-catalog",
+    "chapterId": "04_data_quality",
+    "targetHeading": "Collibra 与 Froedtert 的数据目录",
+    "organization": "Collibra × Froedtert / Medical College of Wisconsin",
+    "context": "Collibra 的案例介绍 Froedtert 与 Medical College of Wisconsin 使用数据目录和治理安排，处理系统分散、指标定义差异及责任不清的问题。相关平台在组织内部称为 Data 360。",
+    "flow": [
+      "发现｜列出电子病历、财务和人力资源等数据来源",
+      "定义｜为预约等待天数等指标注明起止事件与用途",
+      "治理｜指定负责人并记录审批、生效和变更",
+      "使用｜分析者读取元数据，敏感明细仍受独立权限控制"
+    ],
+    "takeaway": "指标定义、维护责任和明细访问权限分别记录，使用者才能确认数据的含义与可用范围。",
+    "sourceCaveat": "目录建设及组织实践来自 Collibra 的公开案例。预约等待天数与工厂良率是用于比较指标定义的假定算例。",
+    "sourceRefs": [
+      "collibra04",
+      "collibraGovernance"
+    ],
+    "visualHint": "同一指标的两种时间轴定义，接责任人与权限标签",
+    "targetAnchor": "collibra-与-froedtert-的数据目录",
+    "compact": true
+  },
+  {
+    "caseId": "monte-carlo-assurance-observability",
+    "chapterId": "04_data_quality",
+    "targetHeading": "Monte Carlo 与 Assurance 的数据质量监测",
+    "organization": "Monte Carlo × Assurance",
+    "context": "Monte Carlo 的供应商案例介绍 Assurance 在业务增长过程中引入数据可观测性。持续监测数据量、分布和更新时间等状态，可以帮助发现更新异常，并依据来源与转换记录定位影响范围。",
+    "flow": [
+      "规则｜检查字段有效性、完整性和约束",
+      "监测｜观察数据量、分布、更新时间与血缘变化",
+      "判别｜核对异常源于经营变化还是处理故障",
+      "处置｜记录发现时间、修复时间与错误发布区间"
+    ],
+    "takeaway": "内容检查与更新过程监测结合使用，才能发现旧内容重复到达等问题。",
+    "sourceCaveat": "引入监测的事实来自供应商案例。图中的处置步骤及事件损失模型用于分析检测和修复时间的影响。",
+    "sourceRefs": [
+      "monte04",
+      "unstructured04"
+    ],
+    "visualHint": "数据流时间线叠加更新时间、分布和异常告警",
+    "targetAnchor": "monte-carlo-与-assurance-的数据质量监测",
+    "compact": true
+  }
+]

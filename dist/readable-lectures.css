@@ -1,9 +1,9 @@
-/* The first two lectures use continuous exposition and optional references. */
+/* The reviewed lectures use continuous exposition and optional references. */
 .prose.readable-lecture{font-size:17px;line-height:1.95;color:#303a40;overflow-wrap:break-word}
 .prose.readable-lecture>p{margin:1.15em 0}
 .prose.readable-lecture h2{margin-top:2.8em;margin-bottom:1em;line-height:1.45}
 .prose.readable-lecture h3{margin-top:2em;margin-bottom:.9em;line-height:1.55}
-.prose.readable-lecture a.knowledge-link{color:inherit;text-decoration-color:#afc1cc}
+.prose.readable-lecture a.knowledge-link,.prose.readable-lecture a.course-concept{color:inherit;text-decoration-color:#afc1cc}
 .prose.readable-lecture a.knowledge-link:hover,.prose.readable-lecture a.knowledge-link:focus-visible{color:#235d7c;text-decoration-color:currentColor}
 .prose.readable-lecture .knowledge-supplement{margin:1.4em 0}
 .prose.readable-lecture .knowledge-note,.prose.readable-lecture .knowledge-glossary{border:1px solid #dce5ea;border-radius:7px;background:#f8fafb;padding:0 1.05em}
@@ -29,3 +29,6 @@
  .prose.readable-lecture .knowledge-note,.prose.readable-lecture .knowledge-glossary{background:transparent}
  .prose.readable-lecture details>*{display:block!important}
 }
+
+.prose.readable-lecture details.reading-note{padding:.7em 1em;border:1px solid #dce5ea;border-radius:7px;background:#f8fafb;margin:1.4em 0}
+.prose.readable-lecture details.reading-note>summary{cursor:pointer;font-size:.9em;color:#546c7b}

@@ -54,7 +54,6 @@ python3 scripts/normalize-content.py
 
 ```sh
 python3 scripts/build-readable-lectures.py
-python3 scripts/verify-readable-lectures.py
 python3 scripts/verify-concept-links.py --baseline-ref 4836fc8 --review-dir review/readability-20261024/concepts
 ```
 
@@ -149,3 +148,17 @@ node scripts/verify-diagrams.mjs
 `dist/CNAME` 固定为 `datasci.biz`，每次发布都须保留。域名在GoDaddy管理，根域的四条A记录指向GitHub Pages：185.199.108.153、185.199.109.153、185.199.110.153、185.199.111.153；www的CNAME直接指向Cosmos-1989.github.io，不包含仓库名。DNS和证书核验记录见review/domain-datasci-20261017。不要改动与网站无关的邮件、NS或TXT记录。
 
 2026-10-17 已核验主域与 WWW 的 HTTPS 证书及跳转：`https://www.datasci.biz/` 以 301 跳转至 `https://datasci.biz/`，保留路径、查询参数及课程页面锚点。复查可运行 `python3 review/domain-datasci-20261017/verify-www.py`；详细验收见 `review/domain-datasci-20261017/acceptance.md`。
+
+## 第三、四讲阅读版
+
+第三、四讲的网页作者源位于 `content-source/readability-20261024-03-04/chapters/`。这两讲沿用前两讲的结构与语言审订方法，分别解释查询计算及数据质量问题，保留原程序、公式、引文与公开锚点。十个商业案例与四张图卡的文字同样保存在该作者目录。原始教材和下载版PDF不由阅读版构建修改。
+
+完整重建时，在前述教材、教学内容与中文排版处理之后，按顺序应用两个阅读版：
+
+```sh
+python3 scripts/build-readable-lectures.py
+python3 scripts/build-readable-lectures.py --source-dir content-source/readability-20261024-03-04
+python3 scripts/verify-readable-34.py
+```
+
+新验收以 `aca345c` 为基线，核对第三、四讲作者源、旧材料保留、导航、案例来源、其他章节不变和构建可重复性。`scripts/readability_34_checks.py` 独立执行查询语义及数值算例复核。`source-manifest.json` 中的 `readabilityContinuation` 保存本轮来源哈希；原有 `readabilityEdition` 继续记录前两讲。`review/readability-20261024-03-04/` 保存逐段编辑、交叉审读与发布核验记录。

@@ -2,6 +2,7 @@
 """Publish the reviewed prose edition without rebuilding unrelated lectures."""
 from __future__ import annotations
 
+import argparse
 import hashlib
 import importlib.util
 import json
@@ -14,7 +15,6 @@ from bs4 import BeautifulSoup
 
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / "content-source/readability-20261024"
-REVIEW = ROOT / "review/readability-20261024"
 CONTENT = ROOT / "dist/content"
 spec = importlib.util.spec_from_file_location("concepts", ROOT / "scripts/build-concept-links.py")
 concepts = importlib.util.module_from_spec(spec)
@@ -44,16 +44,24 @@ process.stdout.write(JSON.stringify(Object.fromEntries(JSON.parse(input).map(ite
 
 
 def main():
-    config = read(SOURCE / "config.json")
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--source-dir", type=Path, default=SOURCE)
+    parser.add_argument("--content-dir", type=Path, default=CONTENT)
+    parser.add_argument("--review-dir", type=Path)
+    args = parser.parse_args()
+    source = args.source_dir.resolve()
+    content = args.content_dir.resolve()
+    config = read(source / "config.json")
+    review = args.review_dir or ROOT / config.get("reviewDir", "review/readability-20261024")
     chapters = config["chapters"]
     knowledge = ROOT / config["conceptSource"]
-    REVIEW.mkdir(parents=True, exist_ok=True)
+    review.mkdir(parents=True, exist_ok=True)
     with tempfile.TemporaryDirectory(prefix="bdm-readable-") as directory:
         stage = Path(directory) / "content"
-        shutil.copytree(CONTENT, stage)
+        shutil.copytree(content, stage)
         catalog = read(stage / "catalog.json")
         for chapter in chapters:
-            document = read(SOURCE / "chapters" / (chapter + ".json"))
+            document = read(source / "chapters" / (chapter + ".json"))
             soup = BeautifulSoup(document["html"], "html.parser")
             document["toc"] = [{"id": node["id"], "title": node.get_text("", strip=True), "level": int(node.name[1])}
                                for node in soup.find_all(["h2", "h3"], id=True)]
@@ -61,16 +69,21 @@ def main():
             entry = next(item for item in catalog["chapters"] if item["id"] == chapter)
             entry["toc"] = document["toc"]
         save(stage / "catalog.json", catalog)
-        concept_report = concepts.build(knowledge, stage, REVIEW / "concepts")
+        untouched = {name: sha(stage / (name + ".json"))
+                     for name in read(knowledge)["chapters"] if name not in chapters}
+        concept_report = concepts.build(knowledge, stage, review / "concepts")
+        for name, before in untouched.items():
+            if sha(stage / (name + ".json")) != before:
+                raise ValueError("Concept rebuild changed a lecture outside this edition: " + name)
         if concept_report["counts"]["forwardReferences"]:
             raise ValueError("An earlier lecture uses a concept defined only in a later lecture")
         cases = read(stage / "business-cases.json")
-        changed_cases = read(SOURCE / "business-cases.json")
+        changed_cases = read(source / "business-cases.json")
         replacements = {item["id"]: item for item in changed_cases}
         cases = [replacements.get(item["id"], item) for item in cases]
         save(stage / "business-cases.json", cases)
         cards = read(stage / "case-cards.json")
-        replacements = {item["caseId"]: item for item in read(SOURCE / "case-cards.json")}
+        replacements = {item["caseId"]: item for item in read(source / "case-cards.json")}
         save(stage / "case-cards.json", [replacements.get(item["caseId"], item) for item in cards])
         casebook = read(stage / "business-casebook.json")
         soup = BeautifulSoup(casebook["html"], "html.parser")
@@ -96,17 +109,17 @@ def main():
                     ref["subsection"] = headings[ref["anchor"]]
         save(stage / "lecture-slides.json", decks)
         manifest = read(stage / "source-manifest.json")
-        paths = [SOURCE / "config.json", *sorted((SOURCE / "chapters").glob("*.json")),
-                 SOURCE / "business-cases.json", SOURCE / "case-cards.json", knowledge]
-        manifest["readabilityEdition"] = {"date": config["date"], "baseline": config["baseline"],
+        paths = [source / "config.json", *sorted((source / "chapters").glob("*.json")),
+                 source / "business-cases.json", source / "case-cards.json", knowledge]
+        manifest[config.get("manifestKey", "readabilityEdition")] = {"date": config["date"], "baseline": config["baseline"],
             "chapters": chapters, "build": "scripts/build-readable-lectures.py",
             "sources": [{"path": str(path.relative_to(ROOT)), "sha256": sha(path)} for path in paths]}
         save(stage / "source-manifest.json", manifest)
         outputs = [*(chapter + ".json" for chapter in chapters), "concept-map.json", "catalog.json",
                    "source-manifest.json", "business-cases.json", "case-cards.json", "business-casebook.json", "lecture-slides.json"]
         for filename in outputs:
-            shutil.copy2(stage / filename, CONTENT / filename)
-    save(REVIEW / "build.json", {"chapters": chapters, "concepts": concept_report["counts"],
+            shutil.copy2(stage / filename, content / filename)
+    save(review / "build.json", {"chapters": chapters, "concepts": concept_report["counts"],
         "businessCases": len(changed_cases), "caseDiagrams": len(replacements), "outputs": outputs})
     print(json.dumps({"chapters": chapters, "businessCases": len(changed_cases), "publishedFiles": len(outputs)}))
 

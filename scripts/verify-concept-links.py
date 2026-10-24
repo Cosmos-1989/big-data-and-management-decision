@@ -217,6 +217,17 @@ def verify(source, content_dir, review_dir, baseline_ref, check_idempotence):
         allowed = {"concept-map.json", "catalog.json", "source-manifest.json", *(chapter + ".json" for chapter in chapters)}
         if author_chapters:
             allowed.update({"business-cases.json", "case-cards.json", "business-casebook.json", "lecture-slides.json"})
+        continuation = manifest.get("readabilityContinuation")
+        if continuation:
+            expected_chapters = ["03_sql_kpi", "04_data_quality"]
+            continuation_valid = continuation.get("chapters") == expected_chapters
+            for item in continuation.get("sources", []):
+                path = ROOT / item["path"]
+                continuation_valid = continuation_valid and path.is_file() and stable_hash(path) == item["sha256"]
+            if not continuation.get("sources") or not continuation_valid:
+                errors.append("Continuation edition scope or source hashes are invalid")
+            else:
+                allowed.update(chapter + ".json" for chapter in expected_chapters)
         for name in tracked.stdout.splitlines():
             relative = Path(name).relative_to("dist/content")
             if str(relative) in allowed:

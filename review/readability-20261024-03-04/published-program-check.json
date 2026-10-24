@@ -1,0 +1,20 @@
+{
+  "publishedCatalogSourcesUsed": true,
+  "quality": {
+    "cleanRows": 12,
+    "cleanIssues": 0,
+    "dirtyRows": 9,
+    "dirtyIssues": 10,
+    "severity": {
+      "error": 8,
+      "warning": 2
+    },
+    "duplicateKeyFindings": [
+      {
+        "id": "O103",
+        "message": "order_id=O103 appears 2 times."
+      }
+    ]
+  },
+  "orderRows": 12
+}

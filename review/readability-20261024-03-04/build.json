@@ -1,0 +1,26 @@
+{
+  "chapters": [
+    "03_sql_kpi",
+    "04_data_quality"
+  ],
+  "concepts": {
+    "concepts": 189,
+    "background": 73,
+    "links": 729,
+    "supplementBlocks": 19,
+    "forwardReferences": 0
+  },
+  "businessCases": 10,
+  "caseDiagrams": 4,
+  "outputs": [
+    "03_sql_kpi.json",
+    "04_data_quality.json",
+    "concept-map.json",
+    "catalog.json",
+    "source-manifest.json",
+    "business-cases.json",
+    "case-cards.json",
+    "business-casebook.json",
+    "lecture-slides.json"
+  ]
+}

@@ -1,0 +1,825 @@
+{
+  "passed": true,
+  "baseline": "aca345c",
+  "chapters": {
+    "03_sql_kpi": {
+      "authorSourceMatches": true,
+      "declaredIllustrationTextChanges": [
+        {
+          "chapter": "03_sql_kpi",
+          "old": "\\[\\text{业务对象}\n\\rightarrow\n\\text{事实粒度}\n\\rightarrow\n\\text{指标口径}\n\\rightarrow\n\\text{查询表达}\n\\rightarrow\n\\text{管理解释}\n\\rightarrow\n\\text{行动审计}.\\]",
+          "new": "\\[\\text{业务对象}\n\\rightarrow\n\\text{事实粒度}\n\\rightarrow\n\\text{指标口径}\n\\rightarrow\n\\text{查询表达}\n\\rightarrow\n\\text{管理解释}\n\\rightarrow\n\\text{结果复核}.\\]",
+          "reason": "查询依赖示意的末项改为结果复核；运算符、数学量与计算公式均未修改。"
+        }
+      ],
+      "originalMaterial": {
+        "pre": {
+          "baseline": 4,
+          "current": 4,
+          "missing": [],
+          "passed": true
+        },
+        "math": {
+          "baseline": 82,
+          "current": 115,
+          "missing": [],
+          "coveredAsCompleteFragments": [],
+          "unresolved": [],
+          "passed": true
+        },
+        "images": {
+          "baseline": 1,
+          "current": 1,
+          "missing": [],
+          "passed": true
+        },
+        "citations": {
+          "baseline": 21,
+          "current": 21,
+          "missing": [],
+          "passed": true
+        }
+      },
+      "originalAnchors": 51,
+      "lostAnchors": [],
+      "duplicateAnchors": [],
+      "invalidLinks": [],
+      "footnotes": 7,
+      "readability": {
+        "paragraphChineseLength": {
+          "count": 132,
+          "min": 0,
+          "median": 78,
+          "p90": 125,
+          "max": 210,
+          "bins": {
+            "0-30": 22,
+            "31-60": 21,
+            "61-120": 67,
+            "121-180": 19,
+            "181-220": 3,
+            "221+": 0
+          }
+        },
+        "longParagraphCandidates": [],
+        "headingOrder": [
+          {
+            "level": 2,
+            "id": "查询任务与数据模型",
+            "title": "先明确指标要统计什么"
+          },
+          {
+            "level": 3,
+            "id": "事实粒度与分析粒度",
+            "title": "从源记录到结果表的粒度"
+          },
+          {
+            "level": 2,
+            "id": "关系查询与聚合运算",
+            "title": "SQL 如何把记录变为统计结果"
+          },
+          {
+            "level": 3,
+            "id": "关系代数视角",
+            "title": "表上的基本运算"
+          },
+          {
+            "level": 3,
+            "id": "查询的选择与分组条件",
+            "title": "相同取值与不同业务事实"
+          },
+          {
+            "level": 3,
+            "id": "连接粒度与重复计数",
+            "title": "连接怎样复制或遗漏记录"
+          },
+          {
+            "level": 3,
+            "id": "sql-查询的关系语义",
+            "title": "按地区计算销售额"
+          },
+          {
+            "level": 2,
+            "id": "指标的代数结构与制造口径",
+            "title": "指标定义与分组汇总"
+          },
+          {
+            "level": 3,
+            "id": "指标定义的形式化表示",
+            "title": "写清对象、时间与计算方法"
+          },
+          {
+            "level": 3,
+            "id": "可合并的统计状态",
+            "title": "保存哪些信息才能正确汇总"
+          },
+          {
+            "level": 2,
+            "id": "时间窗口与指标核查",
+            "title": "日期、空值与准时交付率"
+          },
+          {
+            "level": 3,
+            "id": "空值未完成事件与业务状态",
+            "title": "实际日期为空时如何判断"
+          },
+          {
+            "level": 3,
+            "id": "sec:due-population",
+            "title": "按到期承诺确定统计对象"
+          },
+          {
+            "level": 3,
+            "id": "sec:due-cohort-example",
+            "title": "同一批订单的两种准时率"
+          },
+          {
+            "level": 3,
+            "id": "条件聚合与安全除法",
+            "title": "把条件和分母写进 SQL"
+          },
+          {
+            "level": 2,
+            "id": "sec:manufacturing-measures",
+            "title": "制造指标采用怎样的计量方法"
+          },
+          {
+            "level": 3,
+            "id": "制造指标的计算",
+            "title": "良率与生产周期"
+          },
+          {
+            "level": 3,
+            "id": "sec:oee-time",
+            "title": "设备综合效率与理想生产时间"
+          },
+          {
+            "level": 3,
+            "id": "sec:wip-time",
+            "title": "在制品的时点数量与期间平均"
+          },
+          {
+            "level": 2,
+            "id": "sec:window-and-definitions",
+            "title": "逐单窗口与指标复核"
+          },
+          {
+            "level": 3,
+            "id": "窗口函数与经营节奏",
+            "title": "每张订单的最近三笔收入"
+          },
+          {
+            "level": 3,
+            "id": "指标计算的核查",
+            "title": "用指标字典统一计算定义"
+          },
+          {
+            "level": 3,
+            "id": "从指标结果到管理解释",
+            "title": "从分组差异提出具体解释"
+          },
+          {
+            "level": 2,
+            "id": "订单指标的计算实例",
+            "title": "实验：计算订单指标并独立复核"
+          },
+          {
+            "level": 3,
+            "id": "订单指标实例",
+            "title": "问题、输入与输出"
+          },
+          {
+            "level": 3,
+            "id": "配套程序",
+            "title": "SQL 与 Python 分别计算什么"
+          },
+          {
+            "level": 3,
+            "id": "查询结果的核查",
+            "title": "结果报告的要求"
+          },
+          {
+            "level": 2,
+            "id": "自然语言查询与-sql-生成",
+            "title": "把自然语言问题变成可核对的查询"
+          },
+          {
+            "level": 3,
+            "id": "自然语言问题的形式化",
+            "title": "先明确问题，再生成查询"
+          },
+          {
+            "level": 3,
+            "id": "制造查询的验证步骤",
+            "title": "核对工站良率查询"
+          },
+          {
+            "level": 3,
+            "id": "查询执行的权限控制",
+            "title": "控制查询能够访问什么"
+          },
+          {
+            "level": 2,
+            "id": "语义查询与企业数据服务",
+            "title": "企业问数服务的实现"
+          },
+          {
+            "level": 3,
+            "id": "snowflake-与-databricks-的产品机制",
+            "title": "标准查询示例与问题测试"
+          },
+          {
+            "level": 3,
+            "id": "多平台问数系统的可比较任务",
+            "title": "在相同任务上比较服务"
+          },
+          {
+            "level": 3,
+            "id": "本地部署的数据与模型服务",
+            "title": "数据、模型与日志的部署位置"
+          },
+          {
+            "level": 2,
+            "id": "本章小结",
+            "title": "本章小结"
+          },
+          {
+            "level": 3,
+            "id": "文献导读",
+            "title": "文献导读"
+          },
+          {
+            "level": 2,
+            "id": "思考与习题",
+            "title": "思考与习题"
+          },
+          {
+            "level": 2,
+            "id": "03_sql_kpi-notes",
+            "title": "注释"
+          }
+        ],
+        "forbiddenPatterns": []
+      }
+    },
+    "04_data_quality": {
+      "authorSourceMatches": true,
+      "declaredIllustrationTextChanges": [],
+      "originalMaterial": {
+        "pre": {
+          "baseline": 3,
+          "current": 3,
+          "missing": [],
+          "passed": true
+        },
+        "math": {
+          "baseline": 97,
+          "current": 135,
+          "missing": [],
+          "coveredAsCompleteFragments": [],
+          "unresolved": [],
+          "passed": true
+        },
+        "images": {
+          "baseline": 1,
+          "current": 1,
+          "missing": [],
+          "passed": true
+        },
+        "citations": {
+          "baseline": 18,
+          "current": 18,
+          "missing": [],
+          "passed": true
+        }
+      },
+      "originalAnchors": 49,
+      "lostAnchors": [],
+      "duplicateAnchors": [],
+      "invalidLinks": [],
+      "footnotes": 5,
+      "readability": {
+        "paragraphChineseLength": {
+          "count": 150,
+          "min": 9,
+          "median": 72,
+          "p90": 133,
+          "max": 182,
+          "bins": {
+            "0-30": 34,
+            "31-60": 28,
+            "61-120": 68,
+            "121-180": 19,
+            "181-220": 1,
+            "221+": 0
+          }
+        },
+        "longParagraphCandidates": [],
+        "headingOrder": [
+          {
+            "level": 2,
+            "id": "输入数据与分析结果",
+            "title": "从订单准时率看数据质量"
+          },
+          {
+            "level": 2,
+            "id": "数据生成质量维度与统计误差",
+            "title": "数据怎样产生，质量怎样检查"
+          },
+          {
+            "level": 3,
+            "id": "数据质量的基本定义",
+            "title": "按用途确定质量要求"
+          },
+          {
+            "level": 3,
+            "id": "数据生成过程与质量风险",
+            "title": "从业务发生到指标发布"
+          },
+          {
+            "level": 3,
+            "id": "数据质量维度",
+            "title": "质量维度与检查依据"
+          },
+          {
+            "level": 3,
+            "id": "规则符合性与记录准确性",
+            "title": "规则通过与记录准确"
+          },
+          {
+            "level": 3,
+            "id": "数据剖析",
+            "title": "用统计摘要了解数据"
+          },
+          {
+            "level": 2,
+            "id": "质量规则与统计检验",
+            "title": "把质量要求写成可执行规则"
+          },
+          {
+            "level": 3,
+            "id": "质量规则的形式化表达",
+            "title": "规则、违规行与通过比例"
+          },
+          {
+            "level": 3,
+            "id": "质量规则的程序检验",
+            "title": "用SQL定位违规记录"
+          },
+          {
+            "level": 2,
+            "id": "缺失与测量误差",
+            "title": "记录误差怎样影响统计结论"
+          },
+          {
+            "level": 3,
+            "id": "缺失机制与均值估计",
+            "title": "记录缺失与选择偏差"
+          },
+          {
+            "level": 3,
+            "id": "缺失结果的部分识别",
+            "title": "缺失条件下的总体均值范围"
+          },
+          {
+            "level": 3,
+            "id": "经典测量误差与衰减偏差",
+            "title": "测量误差为何改变回归斜率"
+          },
+          {
+            "level": 3,
+            "id": "比率误差的精确传播",
+            "title": "分子与分母的误差"
+          },
+          {
+            "level": 3,
+            "id": "质量问题对指标的影响",
+            "title": "记录错误对指标的影响"
+          },
+          {
+            "level": 3,
+            "id": "决策阈值与误差容限",
+            "title": "比较方案需要多准确的数据"
+          },
+          {
+            "level": 2,
+            "id": "质量风险与治理资源配置",
+            "title": "从质量告警到发布选择"
+          },
+          {
+            "level": 3,
+            "id": "质量影响评估",
+            "title": "先查明影响范围"
+          },
+          {
+            "level": 3,
+            "id": "hard-rules-and-statistical-alerts-04",
+            "title": "确定性规则与统计报警"
+          },
+          {
+            "level": 3,
+            "id": "发布决策与预期损失",
+            "title": "比较暂停与继续发布的损失"
+          },
+          {
+            "level": 3,
+            "id": "quality-budget-allocation-04",
+            "title": "按预期损失减少量分配修复预算"
+          },
+          {
+            "level": 2,
+            "id": "治理组织契约与事件响应",
+            "title": "数据定义、责任与变更管理"
+          },
+          {
+            "level": 3,
+            "id": "数据治理与指标治理",
+            "title": "明确指标定义及负责人"
+          },
+          {
+            "level": 3,
+            "id": "数据契约血缘与变更控制",
+            "title": "约定数据交付，追溯来源与变更"
+          },
+          {
+            "level": 3,
+            "id": "发布控制与问题分级",
+            "title": "按业务影响规定发布条件"
+          },
+          {
+            "level": 3,
+            "id": "质量事件响应",
+            "title": "调查、修复与更正历史结果"
+          },
+          {
+            "level": 2,
+            "id": "数据目录与质量监测的企业应用",
+            "title": "企业中的目录与质量监测"
+          },
+          {
+            "level": 3,
+            "id": "collibra-与-froedtert-的数据目录",
+            "title": "医疗机构怎样统一指标含义"
+          },
+          {
+            "level": 3,
+            "id": "monte-carlo-与-assurance-的数据质量监测",
+            "title": "持续监测数据变化"
+          },
+          {
+            "level": 3,
+            "id": "数据目录治理流程与敏感信息识别",
+            "title": "目录、治理与敏感信息识别"
+          },
+          {
+            "level": 2,
+            "id": "检索增强生成中的数据质量",
+            "title": "文档知识库中的质量要求"
+          },
+          {
+            "level": 2,
+            "id": "数据质量检查实例",
+            "title": "实验：检查一批有问题的订单"
+          },
+          {
+            "level": 3,
+            "id": "质量报告的核查",
+            "title": "形成可以复查的质量报告"
+          },
+          {
+            "level": 2,
+            "id": "本章小结",
+            "title": "本章小结"
+          },
+          {
+            "level": 3,
+            "id": "文献导读",
+            "title": "文献导读"
+          },
+          {
+            "level": 2,
+            "id": "思考与习题",
+            "title": "思考与习题"
+          },
+          {
+            "level": 2,
+            "id": "04_data_quality-notes",
+            "title": "注释"
+          }
+        ],
+        "forbiddenPatterns": []
+      }
+    }
+  },
+  "scope": {
+    "otherContentFilesUnchanged": 40,
+    "businessCases": 10,
+    "otherBusinessCasesUnchanged": 70,
+    "caseCards": 4,
+    "otherSlideDecksUnchanged": 14
+  },
+  "sourceHashes": {
+    "content-source/readability-20261024-03-04/config.json": "ab1b8701bd63783498c30e5f6d50a801e0788fb37eec7ae9d7daa7454f47010c",
+    "content-source/readability-20261024-03-04/chapters/03_sql_kpi.json": "d9c53599e93d8a6de58d2f5fb8fa5bb954c89a6fe3169fa94cb7c0cee8055629",
+    "content-source/readability-20261024-03-04/chapters/04_data_quality.json": "b403e214917ee62320ac19a73b01ecef64c5af731ffce417212cfc67f93df09b",
+    "content-source/readability-20261024-03-04/business-cases.json": "d9bf48fdb0ca1a4f993b431103977014a619596c4b9c675abe38757f4989589d",
+    "content-source/readability-20261024-03-04/case-cards.json": "aa5b56f6db6e9416d7db23bbcd63822fd2fc4501db5a948875d966c330d2b5be",
+    "content-source/concept-links/knowledge.json": "1058a9d329d82671966c2344d6b0ad7a2afcf6c546a6d3d2e8ae3b453295e0e6"
+  },
+  "idempotent": true,
+  "independentChecks": {
+    "passed": true,
+    "checks": [
+      {
+        "id": "due-cohort-and-sql-null",
+        "passed": true
+      },
+      {
+        "id": "join-fanout",
+        "passed": true
+      },
+      {
+        "id": "row-and-calendar-windows",
+        "passed": true
+      },
+      {
+        "id": "pooled-yield",
+        "passed": true
+      },
+      {
+        "id": "time-weighted-wip",
+        "passed": true
+      },
+      {
+        "id": "missing-outcomes",
+        "passed": true
+      },
+      {
+        "id": "classical-measurement-error",
+        "passed": true
+      },
+      {
+        "id": "ratio-error",
+        "passed": true
+      },
+      {
+        "id": "publication-loss-threshold",
+        "passed": true
+      },
+      {
+        "id": "strict-ranking-under-error-bounds",
+        "passed": true
+      },
+      {
+        "id": "mar-population-weights",
+        "passed": true
+      },
+      {
+        "id": "alert-base-rate",
+        "passed": true
+      },
+      {
+        "id": "heterogeneous-oee-quality-weight",
+        "passed": true
+      }
+    ],
+    "details": {
+      "due-cohort-and-sql-null": {
+        "comparison_values": [
+          [
+            "A",
+            1
+          ],
+          [
+            "B",
+            0
+          ],
+          [
+            "C",
+            null
+          ],
+          [
+            "D",
+            1
+          ]
+        ],
+        "all_due": 4,
+        "delivered": 3,
+        "on_time": 2,
+        "due_otd": "1/2",
+        "delivered_otd": "2/3",
+        "where_late_only": [
+          "B"
+        ],
+        "unrecorded_delivery": [
+          "C"
+        ]
+      },
+      "join-fanout": {
+        "source": [
+          2,
+          300
+        ],
+        "joined": [
+          3,
+          400
+        ],
+        "event_preaggregation": [
+          2,
+          300
+        ],
+        "exists_filter": [
+          2,
+          300
+        ]
+      },
+      "row-and-calendar-windows": {
+        "all_rows": [
+          [
+            1,
+            10,
+            10
+          ],
+          [
+            2,
+            30,
+            30
+          ],
+          [
+            3,
+            60,
+            30
+          ],
+          [
+            4,
+            90,
+            70
+          ]
+        ],
+        "last_three_rows": 90,
+        "current_and_previous_two_days": 70
+      },
+      "pooled-yield": {
+        "pooled": "81/100",
+        "unweighted_group_average": "17/20",
+        "group_sizes": [
+          100,
+          900
+        ]
+      },
+      "time-weighted-wip": {
+        "hourly_levels": [
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          30
+        ],
+        "time_average": "12",
+        "snapshot_average": "20"
+      },
+      "missing-outcomes": {
+        "n_observed": 85,
+        "N": 100,
+        "observed_mean": "44/17",
+        "full_mean": "4",
+        "covariance": "-6/5",
+        "mean_bias": "-24/17",
+        "original_bounds": [
+          "11/5",
+          "26/5"
+        ],
+        "bounds_after_five_12day_records": [
+          "14/5",
+          "24/5"
+        ]
+      },
+      "classical-measurement-error": {
+        "equal_probability_pairs": [
+          [
+            "-2",
+            "-1"
+          ],
+          [
+            "-2",
+            "1"
+          ],
+          [
+            "2",
+            "-1"
+          ],
+          [
+            "2",
+            "1"
+          ]
+        ],
+        "true_slope": "2",
+        "observed_population_slope": "8/5",
+        "attenuation_factor": "4/5"
+      },
+      "ratio-error": {
+        "examples": [
+          {
+            "true": "9/10",
+            "reported": "1",
+            "difference": "1/10",
+            "bound": "1/10"
+          },
+          {
+            "true": "9/10",
+            "reported": "10/9",
+            "difference": "19/90",
+            "bound": "19/90"
+          },
+          {
+            "true": "9/10",
+            "reported": "8/11",
+            "difference": "-19/110",
+            "bound": "19/90"
+          },
+          {
+            "true": "9/10",
+            "reported": "9/10",
+            "difference": "0",
+            "bound": "0"
+          }
+        ]
+      },
+      "publication-loss-threshold": {
+        "threshold": "1/50",
+        "choices": [
+          {
+            "probability": "1/100",
+            "expected_losses": {
+              "release": "1",
+              "hold": "2"
+            },
+            "optimal": [
+              "release"
+            ]
+          },
+          {
+            "probability": "1/50",
+            "expected_losses": {
+              "release": "2",
+              "hold": "2"
+            },
+            "optimal": [
+              "release",
+              "hold"
+            ]
+          },
+          {
+            "probability": "3/100",
+            "expected_losses": {
+              "release": "3",
+              "hold": "2"
+            },
+            "optimal": [
+              "hold"
+            ]
+          }
+        ],
+        "exercise_release_loss": "16/5",
+        "exercise_hold_loss": "2",
+        "exercise_optimal": "hold"
+      },
+      "strict-ranking-under-error-bounds": {
+        "initial_intervals": [
+          [
+            "22/25",
+            "23/25"
+          ],
+          [
+            "87/100",
+            "89/100"
+          ]
+        ],
+        "shrink_A_requirement": "epsilon_A < 1/100",
+        "shrink_B_alone": "strict ranking impossible"
+      },
+      "mar-population-weights": {
+        "recorded_mean": "10/3",
+        "standardized_mean": "4",
+        "full_mean": "4"
+      },
+      "alert-base-rate": {
+        "batch_count": 10000,
+        "alerts": 585,
+        "true_alerts": 90,
+        "error_given_alert": "2/13"
+      },
+      "heterogeneous-oee-quality-weight": {
+        "piece_quality": "7/10",
+        "ideal_time_quality": "19/30"
+      }
+    }
+  },
+  "warnings": [],
+  "errors": []
+}

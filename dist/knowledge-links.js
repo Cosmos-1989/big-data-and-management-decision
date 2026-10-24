@@ -1,10 +1,11 @@
 /** Concept references for the first two lectures, including rendered case cards. */
 const chapters = ['01_intro', '02_enterprise_data_model'];
+const referenceChapters = [...chapters, '03_sql_kpi', '04_data_quality'];
 let registryPromise;
 
 export function loadKnowledgeMap(chapter) {
   if (!chapters.includes(chapter)) return null;
-  return registryPromise ||= fetch('./content/concept-map.json?v=20261024-2').then(response => {
+  return registryPromise ||= fetch('./content/concept-map.json?v=20261024-3').then(response => {
     if (!response.ok) throw new Error('概念释义暂时无法加载，请刷新重试。');
     return response.json();
   });
@@ -78,15 +79,15 @@ export function focusKnowledgeTarget(main, target) {
   main.querySelector('.knowledge-return')?.remove();
   const query = new URLSearchParams(location.hash.split('?')[1] || '');
   const from = query.get('from'), at = query.get('at');
-  if (!chapters.includes(from) || !at || !/^[\w:.-]+$/.test(at)) return target;
+  if (!referenceChapters.includes(from) || !at || !/^[\w:.-]+$/.test(at)) return target;
   const current = location.hash.split('?')[0].slice('#/chapter/'.length);
-  if (!chapters.includes(current)) return target;
+  if (!referenceChapters.includes(current)) return target;
   const box = target.closest('.knowledge-definitions>div,aside.statement,li[role="doc-endnote"],p') || target;
   const row = document.createElement('div');
   row.className = 'knowledge-return';
   const link = document.createElement('a');
   link.href = `#/chapter/${from}?${new URLSearchParams({anchor:at})}`;
-  link.textContent = `← 返回第${chapters.indexOf(from)+1}讲阅读位置`;
+  link.textContent = `← 返回第${referenceChapters.indexOf(from)+1}讲阅读位置`;
   row.append(link);
   box.before(row);
   target.classList.add('knowledge-target');

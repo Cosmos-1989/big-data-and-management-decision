@@ -1,0 +1,20 @@
+{
+  "date": "2026-10-24",
+  "baseline": "aca345c",
+  "chapters": [
+    "03_sql_kpi",
+    "04_data_quality"
+  ],
+  "authorSources": "content-source/readability-20261024-03-04/chapters",
+  "conceptSource": "content-source/concept-links/knowledge.json",
+  "manifestKey": "readabilityContinuation",
+  "reviewDir": "review/readability-20261024-03-04",
+  "illustrationTextRevisions": [
+    {
+      "chapter": "03_sql_kpi",
+      "old": "\\[\\text{业务对象}\n\\rightarrow\n\\text{事实粒度}\n\\rightarrow\n\\text{指标口径}\n\\rightarrow\n\\text{查询表达}\n\\rightarrow\n\\text{管理解释}\n\\rightarrow\n\\text{行动审计}.\\]",
+      "new": "\\[\\text{业务对象}\n\\rightarrow\n\\text{事实粒度}\n\\rightarrow\n\\text{指标口径}\n\\rightarrow\n\\text{查询表达}\n\\rightarrow\n\\text{管理解释}\n\\rightarrow\n\\text{结果复核}.\\]",
+      "reason": "查询依赖示意的末项改为结果复核；运算符、数学量与计算公式均未修改。"
+    }
+  ]
+}
