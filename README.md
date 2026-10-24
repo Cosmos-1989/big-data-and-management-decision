@@ -48,6 +48,8 @@ python3 scripts/normalize-content.py
 
 正文转换统一清除中文之间因源文件折行产生的空格，保留英语词间距、混排间距、代码和公式。TeX 的 `\footnote{…}` 和 Markdown 的 `[^term]` 均转为编号注释，支持正文跳转、悬停查看简释和返回原处。企业智能体构建器同样使用 Python 的 `markdown` 与 `beautifulsoup4`，可通过 `PYTHON` 环境变量指定解释器。
 
+前两讲的网页补充定义与概念链接源保存在 `content-source/concept-links/knowledge.json`。重建正文后，最后运行 `python3 scripts/build-concept-links.py`，再运行 `python3 scripts/verify-concept-links.py`。构建保留原脚注、公式、代码和锚点；课程内概念指向精确的定义位置，公司、产品与背景缩写指向本讲文末释义。`linkAliases` 限制自动匹配的明确词形，避免将普通用词误作专门术语。动态企业案例使用相同概念源，跳转后提供返回原阅读位置的入口。
+
 ## 运行机制
 
 - Python：本地托管 Pyodide 0.27.7（CPython 3.12），Web Worker 隔离执行，虚拟文件系统装载原课程 Python 文件及数据。

@@ -2860,6 +2860,1896 @@
       "chapter": "business-casebook",
       "anchor": "b16-05",
       "teachingCase": true
+    },
+    {
+      "term": "经营症状",
+      "sort": "经营症状",
+      "chapter": "01_intro",
+      "anchor": "concept-operating-symptom",
+      "conceptLink": true
+    },
+    {
+      "term": "管理决策问题",
+      "sort": "管理决策问题",
+      "chapter": "01_intro",
+      "anchor": "concept-decision-problem",
+      "conceptLink": true
+    },
+    {
+      "term": "决策分析任务",
+      "sort": "决策分析任务",
+      "chapter": "01_intro",
+      "anchor": "concept-analysis-task",
+      "conceptLink": true
+    },
+    {
+      "term": "业务对象",
+      "sort": "业务对象",
+      "chapter": "01_intro",
+      "anchor": "concept-business-object",
+      "conceptLink": true
+    },
+    {
+      "term": "行动对象",
+      "sort": "行动对象",
+      "chapter": "01_intro",
+      "anchor": "concept-action-object",
+      "conceptLink": true
+    },
+    {
+      "term": "指标口径",
+      "sort": "指标口径",
+      "chapter": "01_intro",
+      "anchor": "concept-metric-definition",
+      "conceptLink": true
+    },
+    {
+      "term": "数据",
+      "sort": "数据",
+      "chapter": "01_intro",
+      "anchor": "concept-data",
+      "conceptLink": true
+    },
+    {
+      "term": "信息",
+      "sort": "信息",
+      "chapter": "01_intro",
+      "anchor": "concept-information",
+      "conceptLink": true
+    },
+    {
+      "term": "数据分析",
+      "sort": "数据分析",
+      "chapter": "01_intro",
+      "anchor": "concept-data-analysis",
+      "conceptLink": true
+    },
+    {
+      "term": "决策分析",
+      "sort": "决策分析",
+      "chapter": "01_intro",
+      "anchor": "concept-decision-analysis",
+      "conceptLink": true
+    },
+    {
+      "term": "实体",
+      "sort": "实体",
+      "chapter": "01_intro",
+      "anchor": "concept-entity",
+      "conceptLink": true
+    },
+    {
+      "term": "属性",
+      "sort": "属性",
+      "chapter": "01_intro",
+      "anchor": "concept-attribute",
+      "conceptLink": true
+    },
+    {
+      "term": "业务关系",
+      "sort": "业务关系",
+      "chapter": "01_intro",
+      "anchor": "concept-business-relation",
+      "conceptLink": true
+    },
+    {
+      "term": "关系约束",
+      "sort": "关系约束",
+      "chapter": "01_intro",
+      "anchor": "concept-relationship-constraint",
+      "conceptLink": true
+    },
+    {
+      "term": "事实粒度",
+      "sort": "事实粒度",
+      "chapter": "01_intro",
+      "anchor": "concept-fact-grain",
+      "conceptLink": true
+    },
+    {
+      "term": "数据表",
+      "sort": "数据表",
+      "chapter": "01_intro",
+      "anchor": "concept-data-table",
+      "conceptLink": true
+    },
+    {
+      "term": "字段",
+      "sort": "字段",
+      "chapter": "01_intro",
+      "anchor": "concept-field",
+      "conceptLink": true
+    },
+    {
+      "term": "时间粒度",
+      "sort": "时间粒度",
+      "chapter": "01_intro",
+      "anchor": "concept-time-grain",
+      "conceptLink": true
+    },
+    {
+      "term": "时间窗口",
+      "sort": "时间窗口",
+      "chapter": "01_intro",
+      "anchor": "concept-time-window",
+      "conceptLink": true
+    },
+    {
+      "term": "库存保有单位",
+      "sort": "库存保有单位",
+      "chapter": "01_intro",
+      "anchor": "concept-sku",
+      "conceptLink": true
+    },
+    {
+      "term": "关键绩效指标",
+      "sort": "关键绩效指标",
+      "chapter": "01_intro",
+      "anchor": "concept-kpi",
+      "conceptLink": true
+    },
+    {
+      "term": "商业智能",
+      "sort": "商业智能",
+      "chapter": "01_intro",
+      "anchor": "concept-bi",
+      "conceptLink": true
+    },
+    {
+      "term": "决策支持系统",
+      "sort": "决策支持系统",
+      "chapter": "01_intro",
+      "anchor": "concept-dss",
+      "conceptLink": true
+    },
+    {
+      "term": "决策智能",
+      "sort": "决策智能",
+      "chapter": "01_intro",
+      "anchor": "concept-decision-intelligence",
+      "conceptLink": true
+    },
+    {
+      "term": "数据仓库",
+      "sort": "数据仓库",
+      "chapter": "01_intro",
+      "anchor": "fn1",
+      "conceptLink": true
+    },
+    {
+      "term": "ETL",
+      "sort": "ETL",
+      "chapter": "01_intro",
+      "anchor": "fn2",
+      "conceptLink": true
+    },
+    {
+      "term": "OLAP",
+      "sort": "OLAP",
+      "chapter": "01_intro",
+      "anchor": "fn3",
+      "conceptLink": true
+    },
+    {
+      "term": "报表系统",
+      "sort": "报表系统",
+      "chapter": "01_intro",
+      "anchor": "fn4",
+      "conceptLink": true
+    },
+    {
+      "term": "元数据",
+      "sort": "元数据",
+      "chapter": "01_intro",
+      "anchor": "fn8",
+      "conceptLink": true
+    },
+    {
+      "term": "数据血缘",
+      "sort": "数据血缘",
+      "chapter": "01_intro",
+      "anchor": "fn8",
+      "conceptLink": true
+    },
+    {
+      "term": "人工介入机制",
+      "sort": "人工介入机制",
+      "chapter": "01_intro",
+      "anchor": "fn9",
+      "conceptLink": true
+    },
+    {
+      "term": "SQL",
+      "sort": "SQL",
+      "chapter": "01_intro",
+      "anchor": "fn10",
+      "conceptLink": true
+    },
+    {
+      "term": "业务本体",
+      "sort": "业务本体",
+      "chapter": "01_intro",
+      "anchor": "fn11",
+      "conceptLink": true
+    },
+    {
+      "term": "数字孪生",
+      "sort": "数字孪生",
+      "chapter": "01_intro",
+      "anchor": "fn11",
+      "conceptLink": true
+    },
+    {
+      "term": "概率校准",
+      "sort": "概率校准",
+      "chapter": "01_intro",
+      "anchor": "fn6",
+      "conceptLink": true
+    },
+    {
+      "term": "决策变量",
+      "sort": "决策变量",
+      "chapter": "01_intro",
+      "anchor": "concept-decision-variable",
+      "conceptLink": true
+    },
+    {
+      "term": "状态",
+      "sort": "状态",
+      "chapter": "01_intro",
+      "anchor": "concept-state",
+      "conceptLink": true
+    },
+    {
+      "term": "可行行动集合",
+      "sort": "可行行动集合",
+      "chapter": "01_intro",
+      "anchor": "concept-feasible-actions",
+      "conceptLink": true
+    },
+    {
+      "term": "约束",
+      "sort": "约束",
+      "chapter": "01_intro",
+      "anchor": "concept-constraint",
+      "conceptLink": true
+    },
+    {
+      "term": "目标函数",
+      "sort": "目标函数",
+      "chapter": "01_intro",
+      "anchor": "concept-objective",
+      "conceptLink": true
+    },
+    {
+      "term": "损失函数",
+      "sort": "损失函数",
+      "chapter": "01_intro",
+      "anchor": "concept-loss",
+      "conceptLink": true
+    },
+    {
+      "term": "机会成本",
+      "sort": "机会成本",
+      "chapter": "01_intro",
+      "anchor": "concept-opportunity-cost",
+      "conceptLink": true
+    },
+    {
+      "term": "随机变量",
+      "sort": "随机变量",
+      "chapter": "01_intro",
+      "anchor": "concept-random-variable",
+      "conceptLink": true
+    },
+    {
+      "term": "概率",
+      "sort": "概率",
+      "chapter": "01_intro",
+      "anchor": "concept-probability",
+      "conceptLink": true
+    },
+    {
+      "term": "概率分布",
+      "sort": "概率分布",
+      "chapter": "01_intro",
+      "anchor": "concept-distribution",
+      "conceptLink": true
+    },
+    {
+      "term": "期望",
+      "sort": "期望",
+      "chapter": "01_intro",
+      "anchor": "concept-expectation",
+      "conceptLink": true
+    },
+    {
+      "term": "条件概率与条件期望",
+      "sort": "条件概率与条件期望",
+      "chapter": "01_intro",
+      "anchor": "concept-conditional-probability",
+      "conceptLink": true
+    },
+    {
+      "term": "潜在结果",
+      "sort": "潜在结果",
+      "chapter": "01_intro",
+      "anchor": "concept-potential-outcome",
+      "conceptLink": true
+    },
+    {
+      "term": "外生状态",
+      "sort": "外生状态",
+      "chapter": "01_intro",
+      "anchor": "concept-exogenous",
+      "conceptLink": true
+    },
+    {
+      "term": "反事实",
+      "sort": "反事实",
+      "chapter": "01_intro",
+      "anchor": "concept-counterfactual",
+      "conceptLink": true
+    },
+    {
+      "term": "因果效应",
+      "sort": "因果效应",
+      "chapter": "01_intro",
+      "anchor": "concept-causal-effect",
+      "conceptLink": true
+    },
+    {
+      "term": "最优解与最优值",
+      "sort": "最优解与最优值",
+      "chapter": "01_intro",
+      "anchor": "concept-argmin",
+      "conceptLink": true
+    },
+    {
+      "term": "先验概率",
+      "sort": "先验概率",
+      "chapter": "01_intro",
+      "anchor": "concept-prior",
+      "conceptLink": true
+    },
+    {
+      "term": "信号",
+      "sort": "信号",
+      "chapter": "01_intro",
+      "anchor": "concept-signal",
+      "conceptLink": true
+    },
+    {
+      "term": "后验概率",
+      "sort": "后验概率",
+      "chapter": "01_intro",
+      "anchor": "concept-posterior",
+      "conceptLink": true
+    },
+    {
+      "term": "全概率公式",
+      "sort": "全概率公式",
+      "chapter": "01_intro",
+      "anchor": "concept-total-probability",
+      "conceptLink": true
+    },
+    {
+      "term": "贝叶斯公式",
+      "sort": "贝叶斯公式",
+      "chapter": "01_intro",
+      "anchor": "concept-bayes",
+      "conceptLink": true
+    },
+    {
+      "term": "行动阈值",
+      "sort": "行动阈值",
+      "chapter": "01_intro",
+      "anchor": "concept-action-threshold",
+      "conceptLink": true
+    },
+    {
+      "term": "完全信息",
+      "sort": "完全信息",
+      "chapter": "01_intro",
+      "anchor": "concept-perfect-information",
+      "conceptLink": true
+    },
+    {
+      "term": "样本信息价值",
+      "sort": "样本信息价值",
+      "chapter": "01_intro",
+      "anchor": "concept-evsi",
+      "conceptLink": true
+    },
+    {
+      "term": "策略",
+      "sort": "策略",
+      "chapter": "01_intro",
+      "anchor": "concept-policy",
+      "conceptLink": true
+    },
+    {
+      "term": "状态转移",
+      "sort": "状态转移",
+      "chapter": "01_intro",
+      "anchor": "concept-transition",
+      "conceptLink": true
+    },
+    {
+      "term": "马尔可夫性质",
+      "sort": "马尔可夫性质",
+      "chapter": "01_intro",
+      "anchor": "concept-markov",
+      "conceptLink": true
+    },
+    {
+      "term": "Bellman 递推",
+      "sort": "Bellman 递推",
+      "chapter": "01_intro",
+      "anchor": "concept-bellman",
+      "conceptLink": true
+    },
+    {
+      "term": "滚动优化",
+      "sort": "滚动优化",
+      "chapter": "01_intro",
+      "anchor": "concept-rolling-optimization",
+      "conceptLink": true
+    },
+    {
+      "term": "递推的正则条件",
+      "sort": "递推的正则条件",
+      "chapter": "01_intro",
+      "anchor": "concept-regularity",
+      "conceptLink": true
+    },
+    {
+      "term": "分析任务分类",
+      "sort": "分析任务分类",
+      "chapter": "01_intro",
+      "anchor": "concept-analysis-types",
+      "conceptLink": true
+    },
+    {
+      "term": "总体与样本",
+      "sort": "总体与样本",
+      "chapter": "01_intro",
+      "anchor": "concept-population",
+      "conceptLink": true
+    },
+    {
+      "term": "统计估计",
+      "sort": "统计估计",
+      "chapter": "01_intro",
+      "anchor": "concept-statistical-estimation",
+      "conceptLink": true
+    },
+    {
+      "term": "相关关系",
+      "sort": "相关关系",
+      "chapter": "01_intro",
+      "anchor": "concept-association",
+      "conceptLink": true
+    },
+    {
+      "term": "实验与准实验",
+      "sort": "实验与准实验",
+      "chapter": "01_intro",
+      "anchor": "concept-experiment",
+      "conceptLink": true
+    },
+    {
+      "term": "因果识别",
+      "sort": "因果识别",
+      "chapter": "01_intro",
+      "anchor": "concept-identification",
+      "conceptLink": true
+    },
+    {
+      "term": "外推",
+      "sort": "外推",
+      "chapter": "01_intro",
+      "anchor": "concept-generalization",
+      "conceptLink": true
+    },
+    {
+      "term": "基线",
+      "sort": "基线",
+      "chapter": "01_intro",
+      "anchor": "concept-baseline",
+      "conceptLink": true
+    },
+    {
+      "term": "误差与偏差",
+      "sort": "误差与偏差",
+      "chapter": "01_intro",
+      "anchor": "concept-bias",
+      "conceptLink": true
+    },
+    {
+      "term": "方差",
+      "sort": "方差",
+      "chapter": "01_intro",
+      "anchor": "concept-variance",
+      "conceptLink": true
+    },
+    {
+      "term": "独立抽样",
+      "sort": "独立抽样",
+      "chapter": "01_intro",
+      "anchor": "concept-independent-sampling",
+      "conceptLink": true
+    },
+    {
+      "term": "数据质量",
+      "sort": "数据质量",
+      "chapter": "01_intro",
+      "anchor": "concept-data-quality",
+      "conceptLink": true
+    },
+    {
+      "term": "数据治理",
+      "sort": "数据治理",
+      "chapter": "01_intro",
+      "anchor": "concept-data-governance",
+      "conceptLink": true
+    },
+    {
+      "term": "可复现性",
+      "sort": "可复现性",
+      "chapter": "01_intro",
+      "anchor": "concept-reproducibility",
+      "conceptLink": true
+    },
+    {
+      "term": "模型漂移",
+      "sort": "模型漂移",
+      "chapter": "01_intro",
+      "anchor": "concept-model-drift",
+      "conceptLink": true
+    },
+    {
+      "term": "审计与可追溯性",
+      "sort": "审计与可追溯性",
+      "chapter": "01_intro",
+      "anchor": "concept-audit",
+      "conceptLink": true
+    },
+    {
+      "term": "权限控制",
+      "sort": "权限控制",
+      "chapter": "01_intro",
+      "anchor": "concept-authorization",
+      "conceptLink": true
+    },
+    {
+      "term": "任务规格",
+      "sort": "任务规格",
+      "chapter": "01_intro",
+      "anchor": "concept-specification",
+      "conceptLink": true
+    },
+    {
+      "term": "原型",
+      "sort": "原型",
+      "chapter": "01_intro",
+      "anchor": "concept-prototype",
+      "conceptLink": true
+    },
+    {
+      "term": "数据类",
+      "sort": "数据类",
+      "chapter": "01_intro",
+      "anchor": "concept-data-class",
+      "conceptLink": true
+    },
+    {
+      "term": "仿真",
+      "sort": "仿真",
+      "chapter": "01_intro",
+      "anchor": "concept-simulation",
+      "conceptLink": true
+    },
+    {
+      "term": "吞吐率",
+      "sort": "吞吐率",
+      "chapter": "01_intro",
+      "anchor": "concept-throughput",
+      "conceptLink": true
+    },
+    {
+      "term": "大语言模型",
+      "sort": "大语言模型",
+      "chapter": "01_intro",
+      "anchor": "concept-llm",
+      "conceptLink": true
+    },
+    {
+      "term": "智能体",
+      "sort": "智能体",
+      "chapter": "01_intro",
+      "anchor": "concept-agent",
+      "conceptLink": true
+    },
+    {
+      "term": "工具",
+      "sort": "工具",
+      "chapter": "01_intro",
+      "anchor": "concept-tool",
+      "conceptLink": true
+    },
+    {
+      "term": "运行环境",
+      "sort": "运行环境",
+      "chapter": "01_intro",
+      "anchor": "concept-harness",
+      "conceptLink": true
+    },
+    {
+      "term": "求解器",
+      "sort": "求解器",
+      "chapter": "01_intro",
+      "anchor": "concept-solver",
+      "conceptLink": true
+    },
+    {
+      "term": "企业数据模型",
+      "sort": "企业数据模型",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "concept-enterprise-model",
+      "conceptLink": true
+    },
+    {
+      "term": "业务事件",
+      "sort": "业务事件",
+      "chapter": "01_intro",
+      "anchor": "concept-event",
+      "conceptLink": true
+    },
+    {
+      "term": "键",
+      "sort": "键",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "concept-key",
+      "conceptLink": true
+    },
+    {
+      "term": "外键",
+      "sort": "外键",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "concept-foreign-key",
+      "conceptLink": true
+    },
+    {
+      "term": "第三范式",
+      "sort": "第三范式",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "concept-third-normal-form",
+      "conceptLink": true
+    },
+    {
+      "term": "事实表与维度表",
+      "sort": "事实表与维度表",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "concept-fact-dimension",
+      "conceptLink": true
+    },
+    {
+      "term": "语义层",
+      "sort": "语义层",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "fn2",
+      "conceptLink": true
+    },
+    {
+      "term": "数据快照",
+      "sort": "数据快照",
+      "chapter": "01_intro",
+      "anchor": "concept-snapshot",
+      "conceptLink": true
+    },
+    {
+      "term": "对象存储",
+      "sort": "对象存储",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "fn4",
+      "conceptLink": true
+    },
+    {
+      "term": "幂等请求",
+      "sort": "幂等请求",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "fn5",
+      "conceptLink": true
+    },
+    {
+      "term": "状态机",
+      "sort": "状态机",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "fn6",
+      "conceptLink": true
+    },
+    {
+      "term": "预填充与上下文",
+      "sort": "预填充与上下文",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "fn7",
+      "conceptLink": true
+    },
+    {
+      "term": "自然键与代理键",
+      "sort": "自然键与代理键",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "fn9",
+      "conceptLink": true
+    },
+    {
+      "term": "宽表",
+      "sort": "宽表",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "fn11",
+      "conceptLink": true
+    },
+    {
+      "term": "数据字典与指标字典",
+      "sort": "数据字典与指标字典",
+      "chapter": "01_intro",
+      "anchor": "concept-data-dictionary",
+      "conceptLink": true
+    },
+    {
+      "term": "实体关系模型",
+      "sort": "实体关系模型",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "concept-er",
+      "conceptLink": true
+    },
+    {
+      "term": "基数与可选性",
+      "sort": "基数与可选性",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "concept-cardinality",
+      "conceptLink": true
+    },
+    {
+      "term": "关系模式",
+      "sort": "关系模式",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "concept-schema",
+      "conceptLink": true
+    },
+    {
+      "term": "元组与取值域",
+      "sort": "元组与取值域",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "concept-tuple",
+      "conceptLink": true
+    },
+    {
+      "term": "完整性约束",
+      "sort": "完整性约束",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "concept-integrity",
+      "conceptLink": true
+    },
+    {
+      "term": "连接、过滤与聚合",
+      "sort": "连接、过滤与聚合",
+      "chapter": "01_intro",
+      "anchor": "concept-query-operations",
+      "conceptLink": true
+    },
+    {
+      "term": "概念、逻辑与物理模型",
+      "sort": "概念、逻辑与物理模型",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "concept-model-levels",
+      "conceptLink": true
+    },
+    {
+      "term": "索引与分区",
+      "sort": "索引与分区",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "concept-index-partition",
+      "conceptLink": true
+    },
+    {
+      "term": "主数据",
+      "sort": "主数据",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "concept-master-data",
+      "conceptLink": true
+    },
+    {
+      "term": "规范化",
+      "sort": "规范化",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "concept-normalization",
+      "conceptLink": true
+    },
+    {
+      "term": "函数依赖",
+      "sort": "函数依赖",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "concept-functional-dependency",
+      "conceptLink": true
+    },
+    {
+      "term": "事务处理",
+      "sort": "事务处理",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "concept-transaction",
+      "conceptLink": true
+    },
+    {
+      "term": "星型模型",
+      "sort": "星型模型",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "concept-star-schema",
+      "conceptLink": true
+    },
+    {
+      "term": "度量",
+      "sort": "度量",
+      "chapter": "01_intro",
+      "anchor": "concept-measure",
+      "conceptLink": true
+    },
+    {
+      "term": "度量的可加性",
+      "sort": "度量的可加性",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "concept-additivity",
+      "conceptLink": true
+    },
+    {
+      "term": "无损连接分解",
+      "sort": "无损连接分解",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "concept-lossless-join",
+      "conceptLink": true
+    },
+    {
+      "term": "交易、周期快照与累计快照",
+      "sort": "交易、周期快照与累计快照",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "concept-snapshot-tables",
+      "conceptLink": true
+    },
+    {
+      "term": "缓慢变化维度",
+      "sort": "缓慢变化维度",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "concept-scd",
+      "conceptLink": true
+    },
+    {
+      "term": "双时间",
+      "sort": "双时间",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "concept-bitemporal",
+      "conceptLink": true
+    },
+    {
+      "term": "半开区间",
+      "sort": "半开区间",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "concept-interval",
+      "conceptLink": true
+    },
+    {
+      "term": "信息泄漏",
+      "sort": "信息泄漏",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "concept-leakage",
+      "conceptLink": true
+    },
+    {
+      "term": "版本检查",
+      "sort": "版本检查",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "concept-concurrency",
+      "conceptLink": true
+    },
+    {
+      "term": "服务接口",
+      "sort": "服务接口",
+      "chapter": "01_intro",
+      "anchor": "concept-service-interface",
+      "conceptLink": true
+    },
+    {
+      "term": "工作中心",
+      "sort": "工作中心",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "concept-work-center",
+      "conceptLink": true
+    },
+    {
+      "term": "工单",
+      "sort": "工单",
+      "chapter": "01_intro",
+      "anchor": "concept-work-order",
+      "conceptLink": true
+    },
+    {
+      "term": "委托代理模型",
+      "sort": "委托代理模型",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "concept-principal-agent",
+      "conceptLink": true
+    },
+    {
+      "term": "信息不对称",
+      "sort": "信息不对称",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "concept-information-asymmetry",
+      "conceptLink": true
+    },
+    {
+      "term": "风险厌恶",
+      "sort": "风险厌恶",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "concept-risk-aversion",
+      "conceptLink": true
+    },
+    {
+      "term": "确定性等价",
+      "sort": "确定性等价",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "concept-certainty-equivalent",
+      "conceptLink": true
+    },
+    {
+      "term": "效用函数",
+      "sort": "效用函数",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "concept-utility",
+      "conceptLink": true
+    },
+    {
+      "term": "参与约束",
+      "sort": "参与约束",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "concept-participation",
+      "conceptLink": true
+    },
+    {
+      "term": "激励强度",
+      "sort": "激励强度",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "concept-incentive-intensity",
+      "conceptLink": true
+    },
+    {
+      "term": "正态噪声",
+      "sort": "正态噪声",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "concept-normal-noise",
+      "conceptLink": true
+    },
+    {
+      "term": "二次努力成本",
+      "sort": "二次努力成本",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "concept-quadratic-cost",
+      "conceptLink": true
+    },
+    {
+      "term": "一阶条件与内点",
+      "sort": "一阶条件与内点",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "concept-first-order",
+      "conceptLink": true
+    },
+    {
+      "term": "多任务配置",
+      "sort": "多任务配置",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "concept-multi-task",
+      "conceptLink": true
+    },
+    {
+      "term": "指标操纵",
+      "sort": "指标操纵",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "concept-manipulation",
+      "conceptLink": true
+    },
+    {
+      "term": "模型",
+      "sort": "模型",
+      "chapter": "01_intro",
+      "anchor": "concept-model",
+      "conceptLink": true
+    },
+    {
+      "term": "数据模型",
+      "sort": "数据模型",
+      "chapter": "01_intro",
+      "anchor": "concept-data-model",
+      "conceptLink": true
+    },
+    {
+      "term": "信息系统",
+      "sort": "信息系统",
+      "chapter": "01_intro",
+      "anchor": "concept-information-system",
+      "conceptLink": true
+    },
+    {
+      "term": "统计学",
+      "sort": "统计学",
+      "chapter": "01_intro",
+      "anchor": "concept-statistics",
+      "conceptLink": true
+    },
+    {
+      "term": "机器学习",
+      "sort": "机器学习",
+      "chapter": "01_intro",
+      "anchor": "concept-machine-learning",
+      "conceptLink": true
+    },
+    {
+      "term": "管理科学与运筹优化",
+      "sort": "管理科学与运筹优化",
+      "chapter": "01_intro",
+      "anchor": "concept-operations-research",
+      "conceptLink": true
+    },
+    {
+      "term": "订单与明细",
+      "sort": "订单与明细",
+      "chapter": "01_intro",
+      "anchor": "concept-order-line",
+      "conceptLink": true
+    },
+    {
+      "term": "产能",
+      "sort": "产能",
+      "chapter": "01_intro",
+      "anchor": "concept-capacity",
+      "conceptLink": true
+    },
+    {
+      "term": "生产批次",
+      "sort": "生产批次",
+      "chapter": "01_intro",
+      "anchor": "concept-lot",
+      "conceptLink": true
+    },
+    {
+      "term": "瓶颈",
+      "sort": "瓶颈",
+      "chapter": "01_intro",
+      "anchor": "concept-bottleneck",
+      "conceptLink": true
+    },
+    {
+      "term": "客户流失",
+      "sort": "客户流失",
+      "chapter": "01_intro",
+      "anchor": "concept-churn",
+      "conceptLink": true
+    },
+    {
+      "term": "良率",
+      "sort": "良率",
+      "chapter": "01_intro",
+      "anchor": "concept-yield",
+      "conceptLink": true
+    },
+    {
+      "term": "代理指标",
+      "sort": "代理指标",
+      "chapter": "01_intro",
+      "anchor": "concept-proxy-metric",
+      "conceptLink": true
+    },
+    {
+      "term": "决策可逆性",
+      "sort": "决策可逆性",
+      "chapter": "01_intro",
+      "anchor": "concept-reversibility",
+      "conceptLink": true
+    },
+    {
+      "term": "公司治理",
+      "sort": "公司治理",
+      "chapter": "01_intro",
+      "anchor": "concept-governance",
+      "conceptLink": true
+    },
+    {
+      "term": "风险偏好",
+      "sort": "风险偏好",
+      "chapter": "01_intro",
+      "anchor": "concept-risk-preference",
+      "conceptLink": true
+    },
+    {
+      "term": "人工智能",
+      "sort": "人工智能",
+      "chapter": "01_intro",
+      "anchor": "concept-ai",
+      "conceptLink": true
+    },
+    {
+      "term": "上下文",
+      "sort": "上下文",
+      "chapter": "01_intro",
+      "anchor": "concept-context",
+      "conceptLink": true
+    },
+    {
+      "term": "结构化输出",
+      "sort": "结构化输出",
+      "chapter": "01_intro",
+      "anchor": "concept-structured-output",
+      "conceptLink": true
+    },
+    {
+      "term": "设备综合效率",
+      "sort": "设备综合效率",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "concept-oee",
+      "conceptLink": true
+    },
+    {
+      "term": "在制品",
+      "sort": "在制品",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "concept-wip",
+      "conceptLink": true
+    },
+    {
+      "term": "周期时间",
+      "sort": "周期时间",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "concept-cycle-time",
+      "conceptLink": true
+    },
+    {
+      "term": "准时交付率",
+      "sort": "准时交付率",
+      "chapter": "01_intro",
+      "anchor": "concept-otd",
+      "conceptLink": true
+    },
+    {
+      "term": "产能利用率",
+      "sort": "产能利用率",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "concept-utilization",
+      "conceptLink": true
+    },
+    {
+      "term": "边际变化",
+      "sort": "边际变化",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "concept-marginal",
+      "conceptLink": true
+    },
+    {
+      "term": "加权平均",
+      "sort": "加权平均",
+      "chapter": "01_intro",
+      "anchor": "concept-weighted-mean",
+      "conceptLink": true
+    },
+    {
+      "term": "分位数",
+      "sort": "分位数",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "concept-quantile",
+      "conceptLink": true
+    },
+    {
+      "term": "模式演化",
+      "sort": "模式演化",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "fn3",
+      "conceptLink": true
+    },
+    {
+      "term": "连接字段",
+      "sort": "连接字段",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "concept-join-field",
+      "conceptLink": true
+    },
+    {
+      "term": "基础模型",
+      "sort": "基础模型",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "concept-foundation-model",
+      "conceptLink": true
+    },
+    {
+      "term": "干预",
+      "sort": "干预",
+      "chapter": "01_intro",
+      "anchor": "concept-intervention",
+      "conceptLink": true
+    },
+    {
+      "term": "三类时间记录",
+      "sort": "三类时间记录",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "concept-time-kinds",
+      "conceptLink": true
+    },
+    {
+      "term": "事务型与分析型建模",
+      "sort": "事务型与分析型建模",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "concept-analytical-modeling",
+      "conceptLink": true
+    },
+    {
+      "term": "开放表格式",
+      "sort": "开放表格式",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "concept-table-format",
+      "conceptLink": true
+    },
+    {
+      "term": "模型服务与推理",
+      "sort": "模型服务与推理",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "concept-inference",
+      "conceptLink": true
+    },
+    {
+      "term": "数据产品",
+      "sort": "数据产品",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "concept-data-product",
+      "conceptLink": true
+    },
+    {
+      "term": "数据模式",
+      "sort": "数据模式",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "concept-schema-general",
+      "conceptLink": true
+    },
+    {
+      "term": "转化率",
+      "sort": "转化率",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "concept-conversion",
+      "conceptLink": true
+    },
+    {
+      "term": "库存周转率",
+      "sort": "库存周转率",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "concept-inventory-turnover",
+      "conceptLink": true
+    },
+    {
+      "term": "缺货率",
+      "sort": "缺货率",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "concept-stockout",
+      "conceptLink": true
+    },
+    {
+      "term": "毛利率",
+      "sort": "毛利率",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "concept-margin",
+      "conceptLink": true
+    },
+    {
+      "term": "滞销库存",
+      "sort": "滞销库存",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "concept-slow-inventory",
+      "conceptLink": true
+    },
+    {
+      "term": "常数绝对风险厌恶",
+      "sort": "常数绝对风险厌恶",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "concept-cara",
+      "conceptLink": true
+    },
+    {
+      "term": "激励相容",
+      "sort": "激励相容",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "concept-incentive-compatibility",
+      "conceptLink": true
+    },
+    {
+      "term": "OECD",
+      "sort": "OECD",
+      "chapter": "01_intro",
+      "anchor": "term-oecd",
+      "conceptLink": true
+    },
+    {
+      "term": "OECD",
+      "sort": "OECD",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "term-oecd",
+      "conceptLink": true
+    },
+    {
+      "term": "Airbus",
+      "sort": "Airbus",
+      "chapter": "01_intro",
+      "anchor": "term-airbus",
+      "conceptLink": true
+    },
+    {
+      "term": "Palantir",
+      "sort": "Palantir",
+      "chapter": "01_intro",
+      "anchor": "term-palantir",
+      "conceptLink": true
+    },
+    {
+      "term": "Palantir",
+      "sort": "Palantir",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "term-palantir",
+      "conceptLink": true
+    },
+    {
+      "term": "Skywise",
+      "sort": "Skywise",
+      "chapter": "01_intro",
+      "anchor": "term-skywise",
+      "conceptLink": true
+    },
+    {
+      "term": "Oracle",
+      "sort": "Oracle",
+      "chapter": "01_intro",
+      "anchor": "term-oracle",
+      "conceptLink": true
+    },
+    {
+      "term": "Oracle",
+      "sort": "Oracle",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "term-oracle",
+      "conceptLink": true
+    },
+    {
+      "term": "Red Bull Racing",
+      "sort": "Red Bull Racing",
+      "chapter": "01_intro",
+      "anchor": "term-red-bull-racing",
+      "conceptLink": true
+    },
+    {
+      "term": "OCI",
+      "sort": "OCI",
+      "chapter": "01_intro",
+      "anchor": "term-oci",
+      "conceptLink": true
+    },
+    {
+      "term": "OCI",
+      "sort": "OCI",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "term-oci",
+      "conceptLink": true
+    },
+    {
+      "term": "Anthropic",
+      "sort": "Anthropic",
+      "chapter": "01_intro",
+      "anchor": "term-anthropic",
+      "conceptLink": true
+    },
+    {
+      "term": "Economic Index",
+      "sort": "Economic Index",
+      "chapter": "01_intro",
+      "anchor": "term-economic-index",
+      "conceptLink": true
+    },
+    {
+      "term": "UPS",
+      "sort": "UPS",
+      "chapter": "01_intro",
+      "anchor": "term-ups",
+      "conceptLink": true
+    },
+    {
+      "term": "UPSNav",
+      "sort": "UPSNav",
+      "chapter": "01_intro",
+      "anchor": "term-upsnav",
+      "conceptLink": true
+    },
+    {
+      "term": "ORION",
+      "sort": "ORION",
+      "chapter": "01_intro",
+      "anchor": "term-orion",
+      "conceptLink": true
+    },
+    {
+      "term": "CVS Health",
+      "sort": "CVS Health",
+      "chapter": "01_intro",
+      "anchor": "term-cvs-health",
+      "conceptLink": true
+    },
+    {
+      "term": "Wells Fargo",
+      "sort": "Wells Fargo",
+      "chapter": "01_intro",
+      "anchor": "term-wells-fargo",
+      "conceptLink": true
+    },
+    {
+      "term": "CFPB",
+      "sort": "CFPB",
+      "chapter": "01_intro",
+      "anchor": "term-cfpb",
+      "conceptLink": true
+    },
+    {
+      "term": "Patagonia",
+      "sort": "Patagonia",
+      "chapter": "01_intro",
+      "anchor": "term-patagonia",
+      "conceptLink": true
+    },
+    {
+      "term": "Don’t Buy This Jacket",
+      "sort": "Don’t Buy This Jacket",
+      "chapter": "01_intro",
+      "anchor": "term-dont-buy-this-jacket",
+      "conceptLink": true
+    },
+    {
+      "term": "黑色星期五",
+      "sort": "黑色星期五",
+      "chapter": "01_intro",
+      "anchor": "term-black-friday",
+      "conceptLink": true
+    },
+    {
+      "term": "Amazon",
+      "sort": "Amazon",
+      "chapter": "01_intro",
+      "anchor": "term-amazon",
+      "conceptLink": true
+    },
+    {
+      "term": "Python",
+      "sort": "Python",
+      "chapter": "01_intro",
+      "anchor": "term-python",
+      "conceptLink": true
+    },
+    {
+      "term": "Python",
+      "sort": "Python",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "term-python",
+      "conceptLink": true
+    },
+    {
+      "term": "dataclass",
+      "sort": "dataclass",
+      "chapter": "01_intro",
+      "anchor": "term-dataclass",
+      "conceptLink": true
+    },
+    {
+      "term": "dataclass",
+      "sort": "dataclass",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "term-dataclass",
+      "conceptLink": true
+    },
+    {
+      "term": "frozen=True",
+      "sort": "frozen=True",
+      "chapter": "01_intro",
+      "anchor": "term-python-frozen",
+      "conceptLink": true
+    },
+    {
+      "term": "frozen=True",
+      "sort": "frozen=True",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "term-python-frozen",
+      "conceptLink": true
+    },
+    {
+      "term": "类型注解",
+      "sort": "类型注解",
+      "chapter": "01_intro",
+      "anchor": "term-python-type-annotation",
+      "conceptLink": true
+    },
+    {
+      "term": "类型注解",
+      "sort": "类型注解",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "term-python-type-annotation",
+      "conceptLink": true
+    },
+    {
+      "term": "CRM",
+      "sort": "CRM",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "term-crm",
+      "conceptLink": true
+    },
+    {
+      "term": "ERP",
+      "sort": "ERP",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "term-erp",
+      "conceptLink": true
+    },
+    {
+      "term": "MES",
+      "sort": "MES",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "term-mes",
+      "conceptLink": true
+    },
+    {
+      "term": "NL2SQL",
+      "sort": "NL2SQL",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "term-nl2sql",
+      "conceptLink": true
+    },
+    {
+      "term": "G20/OECD公司治理原则",
+      "sort": "G20/OECD公司治理原则",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "term-oecd-g20",
+      "conceptLink": true
+    },
+    {
+      "term": "COSO",
+      "sort": "COSO",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "term-coso",
+      "conceptLink": true
+    },
+    {
+      "term": "ISO/IEC 38500:2024",
+      "sort": "ISO/IEC 38500:2024",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "term-iso-38500",
+      "conceptLink": true
+    },
+    {
+      "term": "NIST AI RMF",
+      "sort": "NIST AI RMF",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "term-nist-ai-rmf",
+      "conceptLink": true
+    },
+    {
+      "term": "ISO/IEC 42001",
+      "sort": "ISO/IEC 42001",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "term-iso-42001",
+      "conceptLink": true
+    },
+    {
+      "term": "欧盟AI Act",
+      "sort": "欧盟AI Act",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "term-eu-ai-act",
+      "conceptLink": true
+    },
+    {
+      "term": "Apache Iceberg",
+      "sort": "Apache Iceberg",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "term-apache-iceberg",
+      "conceptLink": true
+    },
+    {
+      "term": "《深入理解AI Infra》",
+      "sort": "《深入理解AI Infra》",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "term-ai-infra-book",
+      "conceptLink": true
+    },
+    {
+      "term": "OCI Zettascale10",
+      "sort": "OCI Zettascale10",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "term-oci-zettascale",
+      "conceptLink": true
+    },
+    {
+      "term": "AWS",
+      "sort": "AWS",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "term-aws",
+      "conceptLink": true
+    },
+    {
+      "term": "Amazon Bedrock",
+      "sort": "Amazon Bedrock",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "term-amazon-bedrock",
+      "conceptLink": true
+    },
+    {
+      "term": "Azure",
+      "sort": "Azure",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "term-azure",
+      "conceptLink": true
+    },
+    {
+      "term": "Microsoft Foundry",
+      "sort": "Microsoft Foundry",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "term-microsoft-foundry",
+      "conceptLink": true
+    },
+    {
+      "term": "Databricks",
+      "sort": "Databricks",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "term-databricks",
+      "conceptLink": true
+    },
+    {
+      "term": "Unity Catalog",
+      "sort": "Unity Catalog",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "term-unity-catalog",
+      "conceptLink": true
+    },
+    {
+      "term": "Delta Lake",
+      "sort": "Delta Lake",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "term-delta-lake",
+      "conceptLink": true
+    },
+    {
+      "term": "Snowflake",
+      "sort": "Snowflake",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "term-snowflake",
+      "conceptLink": true
+    },
+    {
+      "term": "Semantic Views",
+      "sort": "Semantic Views",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "term-semantic-views",
+      "conceptLink": true
+    },
+    {
+      "term": "Cortex Analyst",
+      "sort": "Cortex Analyst",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "term-cortex-analyst",
+      "conceptLink": true
+    },
+    {
+      "term": "Palantir Ontology",
+      "sort": "Palantir Ontology",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "term-palantir-ontology",
+      "conceptLink": true
+    },
+    {
+      "term": "Action types",
+      "sort": "Action types",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "term-action-types",
+      "conceptLink": true
+    },
+    {
+      "term": "SAP",
+      "sort": "SAP",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "term-sap",
+      "conceptLink": true
+    },
+    {
+      "term": "SAP Business Data Cloud",
+      "sort": "SAP Business Data Cloud",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "term-sap-bdc",
+      "conceptLink": true
+    },
+    {
+      "term": "Joule",
+      "sort": "Joule",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "term-joule",
+      "conceptLink": true
+    },
+    {
+      "term": "Alation",
+      "sort": "Alation",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "term-alation",
+      "conceptLink": true
+    },
+    {
+      "term": "Collibra",
+      "sort": "Collibra",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "term-collibra",
+      "conceptLink": true
+    },
+    {
+      "term": "BigID",
+      "sort": "BigID",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "term-bigid",
+      "conceptLink": true
+    },
+    {
+      "term": "DAMA-DMBOK",
+      "sort": "DAMA-DMBOK",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "term-dama-dmbok",
+      "conceptLink": true
+    },
+    {
+      "term": "SEMI E10与SEMI E79",
+      "sort": "SEMI E10与SEMI E79",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "term-semi-e10-e79",
+      "conceptLink": true
+    },
+    {
+      "term": "Atlan",
+      "sort": "Atlan",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "term-atlan",
+      "conceptLink": true
+    },
+    {
+      "term": "Nasdaq",
+      "sort": "Nasdaq",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "term-nasdaq",
+      "conceptLink": true
+    },
+    {
+      "term": "dbt",
+      "sort": "dbt",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "term-dbt",
+      "conceptLink": true
+    },
+    {
+      "term": "Amazon Redshift",
+      "sort": "Amazon Redshift",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "term-redshift",
+      "conceptLink": true
+    },
+    {
+      "term": "Monte Carlo",
+      "sort": "Monte Carlo",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "term-monte-carlo",
+      "conceptLink": true
+    },
+    {
+      "term": "Shopify",
+      "sort": "Shopify",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "term-shopify",
+      "conceptLink": true
+    },
+    {
+      "term": "Shopify全局标识",
+      "sort": "Shopify全局标识",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "term-shopify-global-id",
+      "conceptLink": true
+    },
+    {
+      "term": "Stripe",
+      "sort": "Stripe",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "term-stripe",
+      "conceptLink": true
+    },
+    {
+      "term": "PaymentIntent",
+      "sort": "PaymentIntent",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "term-payment-intent",
+      "conceptLink": true
+    },
+    {
+      "term": "Uber",
+      "sort": "Uber",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "term-uber",
+      "conceptLink": true
+    },
+    {
+      "term": "H3",
+      "sort": "H3",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "term-h3",
+      "conceptLink": true
+    },
+    {
+      "term": "LinkedIn",
+      "sort": "LinkedIn",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "term-linkedin",
+      "conceptLink": true
+    },
+    {
+      "term": "DataHub",
+      "sort": "DataHub",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "term-datahub",
+      "conceptLink": true
+    },
+    {
+      "term": "Spotify",
+      "sort": "Spotify",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "term-spotify",
+      "conceptLink": true
+    },
+    {
+      "term": "Backstage",
+      "sort": "Backstage",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "term-backstage",
+      "conceptLink": true
+    },
+    {
+      "term": "CSV",
+      "sort": "CSV",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "term-csv",
+      "conceptLink": true
+    },
+    {
+      "term": "CPU与GPU",
+      "sort": "CPU与GPU",
+      "chapter": "02_enterprise_data_model",
+      "anchor": "term-cpu-gpu",
+      "conceptLink": true
     }
   ],
   "figures": 19,

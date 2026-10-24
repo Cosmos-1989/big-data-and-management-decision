@@ -1,0 +1,660 @@
+{
+  "documents": 40,
+  "footnotes": 90,
+  "footnoteReferences": 90,
+  "pages": [
+    {
+      "id": "01_intro",
+      "footnotes": 11,
+      "references": 11
+    },
+    {
+      "id": "02_enterprise_data_model",
+      "footnotes": 11,
+      "references": 11
+    },
+    {
+      "id": "03_sql_kpi",
+      "footnotes": 7,
+      "references": 7
+    },
+    {
+      "id": "04_data_quality",
+      "footnotes": 5,
+      "references": 5
+    },
+    {
+      "id": "05_statistics_dashboard",
+      "footnotes": 4,
+      "references": 4
+    },
+    {
+      "id": "06_ab_testing",
+      "footnotes": 6,
+      "references": 6
+    },
+    {
+      "id": "07_prediction",
+      "footnotes": 10,
+      "references": 10
+    },
+    {
+      "id": "08_causality",
+      "footnotes": 4,
+      "references": 4
+    },
+    {
+      "id": "09_optimization",
+      "footnotes": 7,
+      "references": 7
+    },
+    {
+      "id": "10_process_mining",
+      "footnotes": 8,
+      "references": 8
+    },
+    {
+      "id": "11_modern_data_platform",
+      "footnotes": 4,
+      "references": 4
+    },
+    {
+      "id": "12_mlops",
+      "footnotes": 0,
+      "references": 0
+    },
+    {
+      "id": "13_ontology_action_scenario",
+      "footnotes": 0,
+      "references": 0
+    },
+    {
+      "id": "14_ai_agent",
+      "footnotes": 7,
+      "references": 7
+    },
+    {
+      "id": "agent-learning-map",
+      "footnotes": 0,
+      "references": 0
+    },
+    {
+      "id": "ai_question_to_data_case",
+      "footnotes": 0,
+      "references": 0
+    },
+    {
+      "id": "appendix-1",
+      "footnotes": 0,
+      "references": 0
+    },
+    {
+      "id": "appendix-2",
+      "footnotes": 2,
+      "references": 2
+    },
+    {
+      "id": "appendix-3",
+      "footnotes": 1,
+      "references": 1
+    },
+    {
+      "id": "appendix-4",
+      "footnotes": 1,
+      "references": 1
+    },
+    {
+      "id": "assignment_01_data_modeling",
+      "footnotes": 0,
+      "references": 0
+    },
+    {
+      "id": "assignment_02_enterprise_data_model",
+      "footnotes": 0,
+      "references": 0
+    },
+    {
+      "id": "assignment_03_sql_kpi",
+      "footnotes": 0,
+      "references": 0
+    },
+    {
+      "id": "assignment_04_data_quality",
+      "footnotes": 0,
+      "references": 0
+    },
+    {
+      "id": "assignment_05_dashboard",
+      "footnotes": 0,
+      "references": 0
+    },
+    {
+      "id": "assignment_06_statistical_inference",
+      "footnotes": 0,
+      "references": 0
+    },
+    {
+      "id": "assignment_07_prediction",
+      "footnotes": 0,
+      "references": 0
+    },
+    {
+      "id": "assignment_09_causality",
+      "footnotes": 0,
+      "references": 0
+    },
+    {
+      "id": "assignment_11_optimization",
+      "footnotes": 1,
+      "references": 1
+    },
+    {
+      "id": "assignment_12_process_mining",
+      "footnotes": 0,
+      "references": 0
+    },
+    {
+      "id": "bibliography",
+      "footnotes": 0,
+      "references": 0
+    },
+    {
+      "id": "business-casebook",
+      "footnotes": 0,
+      "references": 0
+    },
+    {
+      "id": "data-guide",
+      "footnotes": 0,
+      "references": 0
+    },
+    {
+      "id": "decision_memo_template",
+      "footnotes": 0,
+      "references": 0
+    },
+    {
+      "id": "final_project",
+      "footnotes": 0,
+      "references": 0
+    },
+    {
+      "id": "model_card_template",
+      "footnotes": 0,
+      "references": 0
+    },
+    {
+      "id": "preface",
+      "footnotes": 0,
+      "references": 0
+    },
+    {
+      "id": "project_report_template",
+      "footnotes": 0,
+      "references": 0
+    },
+    {
+      "id": "semiconductor_kpi_m13_case",
+      "footnotes": 1,
+      "references": 1
+    },
+    {
+      "id": "syllabus",
+      "footnotes": 0,
+      "references": 0
+    }
+  ],
+  "terms": [
+    {
+      "document": "01_intro",
+      "id": "fn1",
+      "definition": "数据仓库（data warehouse）是面向查询与分析的数据存储系统，汇集多个业务来源的数据，并按约定组织主题、历史记录和分析口径。 ↩︎"
+    },
+    {
+      "document": "01_intro",
+      "id": "fn2",
+      "definition": "ETL 是 extract, transform, load 的缩写，即抽取、转换、装载：先从源系统取得数据，再完成清洗与结构转换，最后写入目标系统。 ↩︎"
+    },
+    {
+      "document": "01_intro",
+      "id": "fn3",
+      "definition": "OLAP 是 online analytical processing 的缩写，即联机分析处理，支持按时间、地区、产品等维度汇总、切换和细查经营数据。 ↩︎"
+    },
+    {
+      "document": "01_intro",
+      "id": "fn4",
+      "definition": "报表系统按照预先定义或临时指定的查询和版式，将数据组织为表格、图形等输出，供经营汇报、监控或核对使用。 ↩︎"
+    },
+    {
+      "document": "01_intro",
+      "id": "fn5",
+      "definition": "封测是半导体封装与测试的简称。封装将芯片与外部连接和保护结构结合，测试检查器件是否满足规定性能；本例的工厂围绕相应生产批次安排设备与订单。 ↩︎"
+    },
+    {
+      "document": "01_intro",
+      "id": "fn6",
+      "definition": "概率校准考察预测概率与事件发生频率是否相符。例如，在长期重复的可比情形中，预测概率接近某一水平的事件，其实际发生比例也应接近该水平。 ↩︎"
+    },
+    {
+      "document": "01_intro",
+      "id": "fn7",
+      "definition": "CRISP-DM 是 cross-industry standard process for data mining 的缩写，即跨行业数据挖掘标准流程，用于组织 数据分析 项目各阶段的任务及其相互依赖。 ↩︎"
+    },
+    {
+      "document": "01_intro",
+      "id": "fn8",
+      "definition": "元数据（metadata）描述数据的结构、含义、来源、责任和版本；数据血缘（data lineage）记录数据从源头经过哪些转换，形成当前表、指标或模型输入。 ↩︎"
+    },
+    {
+      "document": "01_intro",
+      "id": "fn9",
+      "definition": "人工介入机制在预定步骤由人员审核、批准或纠正系统结果，并明确其判断权限与责任。 ↩︎"
+    },
+    {
+      "document": "01_intro",
+      "id": "fn10",
+      "definition": "SQL 是 structured query language 的缩写，即结构化查询语言，供关系数据库定义、查询及操作数据使用。此处主要使用其查询与 聚合 功能；具体语义见第3章。 ↩︎"
+    },
+    {
+      "document": "01_intro",
+      "id": "fn11",
+      "definition": "业务本体（business ontology）规定 业务对象 、属性、关系及相关规则；数字孪生（digital twin）是与实际对象保持数据联系的数字表示或模型，用于描述其状态或分析其行为。 ↩︎"
+    },
+    {
+      "document": "02_enterprise_data_model",
+      "id": "fn1",
+      "definition": "CRM 是 customer relationship management 的缩写，即客户关系管理。CRM 系统记录客户身份、交互、销售机会和服务过程，支持客户关系的维护与分析。 ↩︎"
+    },
+    {
+      "document": "02_enterprise_data_model",
+      "id": "fn2",
+      "definition": "语义层（semantic layer）把表、字段与 业务对象 、指标和关系对应起来，为不同查询工具提供一致的业务定义；其具体内容仍需由业务负责人确认。 ↩︎"
+    },
+    {
+      "document": "02_enterprise_data_model",
+      "id": "fn3",
+      "definition": "快照（snapshot）记录表在某一版本的状态；模式演化（schema evolution）是在明确兼容规则下调整表的字段名称、类型或结构。此处的“模式”指数据结构，不指统计模型。 ↩︎"
+    },
+    {
+      "document": "02_enterprise_data_model",
+      "id": "fn4",
+      "definition": "对象存储（object storage）将数据作为带有唯一标识和 元数据 的对象保存，计算引擎通过对象 接口 读取相应文件内容。 ↩︎"
+    },
+    {
+      "document": "02_enterprise_data_model",
+      "id": "fn5",
+      "definition": "幂等请求（idempotent request）要求同一操作在重复提交时不产生额外业务效果。例如，使用同一请求标识重试创建 工单 ，不应生成多张工单。 ↩︎"
+    },
+    {
+      "document": "02_enterprise_data_model",
+      "id": "fn6",
+      "definition": "状态机（state machine）以有限或明确规定的状态及允许的转换描述操作过程。例如， 工单 可处于待审批、已批准、已提交或已完成状态，转换须满足相应条件。 ↩︎"
+    },
+    {
+      "document": "02_enterprise_data_model",
+      "id": "fn7",
+      "definition": "预填充（prefill）是模型生成新内容前，对输入序列进行处理并建立相关中间状态的阶段；上下文是模型当前可利用的输入及历史信息。 ↩︎"
+    },
+    {
+      "document": "02_enterprise_data_model",
+      "id": "fn8",
+      "definition": "ERP 是 enterprise resource planning 的缩写，即企业资源计划，通常整合订单、采购、库存、生产计划及财务等业务。 制造执行系统 （manufacturing execution system，MES）则记录并管理生产现场的作业执行和批次状态。 ↩︎"
+    },
+    {
+      "document": "02_enterprise_data_model",
+      "id": "fn9",
+      "definition": "自然键（natural key）使用已有业务属性识别对象，例如受约束的产品编码；代理键（surrogate key）由系统另行分配，通常不承载业务含义，需维护其与业务标识的映射。 ↩︎"
+    },
+    {
+      "document": "02_enterprise_data_model",
+      "id": "fn10",
+      "definition": "NL2SQL 是 natural language to SQL 的缩写，指将自然语言问题转换为 SQL 查询；转换须结合 数据表 结构、业务定义及用户权限。 ↩︎"
+    },
+    {
+      "document": "02_enterprise_data_model",
+      "id": "fn11",
+      "definition": "宽表把多个对象或主题的属性展开到较少的表中，常用于简化查询。若展开关系涉及不同 事实粒度 ，则须检查重复记录和历史属性的处理。 ↩︎"
+    },
+    {
+      "document": "03_sql_kpi",
+      "id": "fn1",
+      "definition": "声明式语言说明所需结果及其条件，具体计算步骤由数据库系统选择；这与逐步规定控制流程的命令式程序有所不同。 ↩︎"
+    },
+    {
+      "document": "03_sql_kpi",
+      "id": "fn2",
+      "definition": "多重集（multiset）允许同一取值重复出现，并保留其出现次数。SQL 中未去重的结果可以包含内容相同但对应不同业务事实的多行。 ↩︎"
+    },
+    {
+      "document": "03_sql_kpi",
+      "id": "fn3",
+      "definition": "SQL 条件的逻辑结果包括真、假和未知。涉及空值的比较通常得到未知；因此，“不是已知为真”不一定等于“已知为假”。 ↩︎"
+    },
+    {
+      "document": "03_sql_kpi",
+      "id": "fn4",
+      "definition": "半连接（semi join）只保留左表中在右表至少有一个匹配的行，不输出右表字段，也不因右表存在多个匹配而复制左表行。 ↩︎"
+    },
+    {
+      "document": "03_sql_kpi",
+      "id": "fn5",
+      "definition": "变形测试（metamorphic testing）通过改变输入并检查输出之间应保持的关系验证程序。例如，调换记录顺序不应改变总销售额；它不要求为每个新输入预先给定完整标准答案。 ↩︎"
+    },
+    {
+      "document": "03_sql_kpi",
+      "id": "fn6",
+      "definition": "参数绑定（parameter binding）把数据值与 SQL 语句结构分开提交，由数据库按参数处理，避免把值直接拼接为语句的一部分。表名、列名等标识符通常须另行按受控映射选择。 ↩︎"
+    },
+    {
+      "document": "03_sql_kpi",
+      "id": "fn7",
+      "definition": "键值缓存保存注意力计算中已生成的键和值，后续逐步生成时可复用这些中间结果，从而减少重复计算；其内存占用随上下文长度和并发等条件变化。 ↩︎"
+    },
+    {
+      "document": "04_data_quality",
+      "id": "fn1",
+      "definition": "SLA 是 service-level agreement 的缩写，即服务水平协议，规定服务方承诺的交付时间、可用性或响应标准，以及相关责任。 ↩︎"
+    },
+    {
+      "document": "04_data_quality",
+      "id": "fn2",
+      "definition": "MTTD 度量从事件发生到被发现的时间，MTTR 此处度量从发现到修复完成的时间；不同组织可能采用其他起止点，跨项目比较时须先统一定义。 ↩︎"
+    },
+    {
+      "document": "04_data_quality",
+      "id": "fn3",
+      "definition": "文档切片（chunking）是按段落、主题或长度等规则，将文档划分为便于检索的片段。切片边界应尽量保留定义、条件及其适用范围，避免片段脱离语境。 ↩︎"
+    },
+    {
+      "document": "04_data_quality",
+      "id": "fn4",
+      "definition": "哈希函数（hash function）把输入内容映射为用于比对的摘要。这里用摘要检查内容是否变化；摘要本身不能证明内容真实或发布主体可信。 ↩︎"
+    },
+    {
+      "document": "04_data_quality",
+      "id": "fn5",
+      "definition": "检索召回率（recall）是被检索出的相关材料占全部应检索相关材料的比例，需相对于已标注或可确认的相关材料集合计算。它不等于最终回答正确的比例。 ↩︎"
+    },
+    {
+      "document": "05_statistics_dashboard",
+      "id": "fn1",
+      "definition": "过度离散是指数据的实际波动大于所用概率模型规定的方差。例如，同批产品缺陷相关时，不良件数的波动可能超过独立二项模型的预测范围。 ↩︎"
+    },
+    {
+      "document": "05_statistics_dashboard",
+      "id": "fn2",
+      "definition": "齐次泊松过程假定不相交时间区间内的到达次数相互独立，且次数服从均值与区间长度成正比的泊松分布；相邻到达间隔独立并服从同一指数分布。 ↩︎"
+    },
+    {
+      "document": "05_statistics_dashboard",
+      "id": "fn3",
+      "definition": "排队模型记号中，GI 表示一般分布且相互独立的到达间隔，G 表示一般服务时间分布，1 表示单个服务台。此处其余独立性、服务次序及稳定性条件由正文另外规定。 ↩︎"
+    },
+    {
+      "document": "05_statistics_dashboard",
+      "id": "fn4",
+      "definition": "token 是模型处理文本的基本单位，由所用分词器划分，可能对应一个字、一个词或词的一部分。TTFT 只度量首次输出的等待，不等于完整回答的生成时间。 ↩︎"
+    },
+    {
+      "document": "06_ab_testing",
+      "id": "fn1",
+      "definition": "CUPED 是 Controlled-experiment Using Pre-Experiment Data 的缩写，指利用实验前数据降低随机实验估计方差的方法。 ↩︎"
+    },
+    {
+      "document": "06_ab_testing",
+      "id": "fn2",
+      "definition": "交叉拟合将样本分组，用其他组的数据估计调整模型，再对留出组计算调整结果，以避免同一观测同时用于拟合和评价。第8章进一步讨论其在因果估计中的作用。 ↩︎"
+    },
+    {
+      "document": "06_ab_testing",
+      "id": "fn3",
+      "definition": "清洗期是切换处理后暂不计入效果比较的时段，用于减弱上一种处理的残留影响；其长度应依据业务机制和处理持续时间确定。 ↩︎"
+    },
+    {
+      "document": "06_ab_testing",
+      "id": "fn4",
+      "definition": "SRM 是 sample ratio mismatch 的缩写，指实际入组比例与实验预设分配比例之间出现统计上难以由随机波动解释的偏离。 ↩︎"
+    },
+    {
+      "document": "06_ab_testing",
+      "id": "fn5",
+      "definition": "序贯检验允许分阶段积累数据并判断是否停止，但检验边界须考虑多次查看结果带来的选择效应，才能维持规定的错误率。 ↩︎"
+    },
+    {
+      "document": "06_ab_testing",
+      "id": "fn6",
+      "definition": "并集界指任意一组事件中至少一个发生的概率，不超过各事件概率之和；该上界不要求事件相互独立。 ↩︎"
+    },
+    {
+      "document": "07_prediction",
+      "id": "fn1",
+      "definition": "伯努利分布描述只有两种结果的单次观测，例如流失与未流失；其参数是目标事件发生的概率。似然将已观察结果视为固定，用于比较不同参数值对该结果的支持程度。 ↩︎"
+    },
+    {
+      "document": "07_prediction",
+      "id": "fn2",
+      "definition": "共线性指多个特征之间存在较强的线性关系，可能使单个系数对样本变化敏感，从而影响系数的稳定解释。 ↩︎"
+    },
+    {
+      "document": "07_prediction",
+      "id": "fn3",
+      "definition": "自助抽样（bootstrap sampling）从原样本中有放回地抽取观测，形成与原样本规模相同或另行指定规模的新样本；随机森林据此训练不同的树。 ↩︎"
+    },
+    {
+      "document": "07_prediction",
+      "id": "fn4",
+      "definition": "早停是依据验证误差等预设标准，在训练误差继续下降而验证表现不再改善时停止训练，以限制过拟合。 ↩︎"
+    },
+    {
+      "document": "07_prediction",
+      "id": "fn5",
+      "definition": "TP、FP、TN、FN 分别表示真阳性、假阳性、真阴性和假阴性的样本数。阳性表示目标事件发生；假阳性是误报，假阴性是漏报。 ↩︎"
+    },
+    {
+      "document": "07_prediction",
+      "id": "fn6",
+      "definition": "ROC 是 receiver operating characteristic 的缩写，中文通常称受试者工作特征曲线。它记录不同分类阈值下的假阳性率与真阳性率；AUC 是该曲线下的面积。参见 https://scikit-learn.org/stable/modules/model_evaluation.html 。 ↩︎"
+    },
+    {
+      "document": "07_prediction",
+      "id": "fn7",
+      "definition": "若事件概率为 \\(p\\) ，优势（odds）为 \\(p/(1-p)\\) ，对数优势为其自然对数。逻辑回归假定对数优势是输入特征的线性函数。 ↩︎"
+    },
+    {
+      "document": "07_prediction",
+      "id": "fn8",
+      "definition": "预训练是在多个既有任务或大规模数据上先估计模型参数；上下文学习则利用当前输入中的示例适应新任务，而不在该次推理中更新模型参数。 ↩︎"
+    },
+    {
+      "document": "07_prediction",
+      "id": "fn9",
+      "definition": "删失指结果发生时间未被完整观察，例如研究结束时设备仍未故障，只能知道寿命超过已观察时长。删失记录不能直接当作从未发生故障。 ↩︎"
+    },
+    {
+      "document": "07_prediction",
+      "id": "fn10",
+      "definition": "Token 是分词器处理文本的基本单位，可能对应一个字、一个词或词的一部分，不等同于固定字数。键值缓存（KV cache）保存注意力计算中已生成位置的键和值，以减少后续解码的重复计算。 ↩︎"
+    },
+    {
+      "document": "08_causality",
+      "id": "fn1",
+      "definition": "因果分析中的敏感性分析考察识别假设偏离到何种程度会改变结论，例如设定遗漏混杂可能造成的偏差范围。它不能证明没有遗漏混杂，而是说明结论对该风险的敏感程度。 ↩︎"
+    },
+    {
+      "document": "08_causality",
+      "id": "fn2",
+      "definition": "双重机器学习（double/debiased machine learning，DML）利用机器学习估计结果回归、倾向得分等辅助函数，再结合正交估计方程与样本分割推断目标效应；“双重”不表示任意两个模型拟合良好就能保证因果识别。 ↩︎"
+    },
+    {
+      "document": "08_causality",
+      "id": "fn3",
+      "definition": "安慰剂检验将同一方法用于理论上不应受处理影响的时期、对象或结果，检查是否仍得到明显偏离零的效应估计。检验通过可增加设计的可信度，但不能证明干预后的平行趋势成立。 ↩︎"
+    },
+    {
+      "document": "08_causality",
+      "id": "fn4",
+      "definition": "双向固定效应回归同时控制组别固定差异与各组共同的时期冲击。分期处理且效应异质时，其回归系数未必是目标处理效应的适当加权平均。 ↩︎"
+    },
+    {
+      "document": "09_optimization",
+      "id": "fn1",
+      "definition": "随机变量可积是指其绝对值的期望有限，因而其期望损失具有有限、明确的数值。 ↩︎"
+    },
+    {
+      "document": "09_optimization",
+      "id": "fn2",
+      "definition": "风险价值（value at risk，VaR）是损失分布在指定置信水平下的分位数；条件风险价值（conditional value at risk，CVaR）综合最坏一部分概率质量的损失。离散分布在分位点可能集中一段概率质量，因此须按定义处理边界。 ↩︎"
+    },
+    {
+      "document": "09_optimization",
+      "id": "fn3",
+      "definition": "矩约束限定均值、方差等分布特征；距离球则收集与参考分布的指定距离不超过给定半径的分布。二者都是表达分布不确定范围的方式。 ↩︎"
+    },
+    {
+      "document": "09_optimization",
+      "id": "fn4",
+      "definition": "某情景下的后悔值，是方案损失与事先知道该情景时可达的最小损失之差。最小最大后悔准则选择最坏情景后悔值最小的方案。 ↩︎"
+    },
+    {
+      "document": "09_optimization",
+      "id": "fn5",
+      "definition": "MILP 是 mixed-integer linear programming 的缩写，指目标和约束为线性、部分变量取整数而其余变量连续的优化模型，常用于选择、排班和生产排程。参见 https://developers.google.com/optimization/mip/mip_example 。 ↩︎"
+    },
+    {
+      "document": "09_optimization",
+      "id": "fn6",
+      "definition": "冻结窗口是计划期内暂不允许常规调整的近期时段，用于保护已经投入准备或执行的任务；紧急变更应另设审批规则。 ↩︎"
+    },
+    {
+      "document": "09_optimization",
+      "id": "fn7",
+      "definition": "最优性间隙衡量当前可行目标值与求解器有效界之间的差距。只有在界有效且间隙满足规定容差时，才能据此评价解距最优值有多远；相对间隙的分母约定应随报告说明。 ↩︎"
+    },
+    {
+      "document": "10_process_mining",
+      "id": "fn1",
+      "definition": "Petri 网是一种描述并发系统的形式模型。库所中的令牌数量组成当前标识，表示系统状态；变迁按输入和输出规则移动令牌，以表达活动的使能条件及其状态变化。 ↩︎"
+    },
+    {
+      "document": "10_process_mining",
+      "id": "fn2",
+      "definition": "日志回放按记录的活动序列检查模型能否逐步执行；对齐则在日志与模型允许的轨迹之间寻找偏离代价较小的对应关系，识别仅出现在日志中、或仅出现在模型路径中的步骤。 ↩︎"
+    },
+    {
+      "document": "10_process_mining",
+      "id": "fn3",
+      "definition": "马尔可夫性质指给定当前状态后，下一步的条件分布不再依赖更早历史。吸收状态一旦进入便不再离开；此处以任务完成作为吸收，因此矩阵仅描述未完成状态间的转移。 ↩︎"
+    },
+    {
+      "document": "10_process_mining",
+      "id": "fn4",
+      "definition": "SOP 是 standard operating procedure 的缩写，指对常规作业的步骤、责任、条件和记录要求作出规定的文件。其适用性取决于对象、版本及生效范围。 ↩︎"
+    },
+    {
+      "document": "10_process_mining",
+      "id": "fn5",
+      "definition": "幂等性指重复执行同一操作不会产生额外的业务影响。幂等键是识别同一逻辑请求的稳定标识，服务端据此返回已有结果或避免重复创建；实际保证仍取决于服务端的实现。 ↩︎"
+    },
+    {
+      "document": "10_process_mining",
+      "id": "fn6",
+      "definition": "JSON 是一种结构化数据表示格式；JSON Schema 用字段类型、必填项、取值范围等规则描述并校验 JSON 数据结构。结构校验不判断业务含义是否正确。参见 https://json-schema.org/overview/what-is-jsonschema 。 ↩︎"
+    },
+    {
+      "document": "10_process_mining",
+      "id": "fn7",
+      "definition": "文本嵌入（embedding）将文本映射到数值向量，使语义相关性可以通过向量距离或相似度近似比较。相似度高不等于证据适用或结论正确。 ↩︎"
+    },
+    {
+      "document": "10_process_mining",
+      "id": "fn8",
+      "definition": "pass@ \\(k\\) 衡量给定任务在至多 \\(k\\) 个候选中至少有一个通过判定的成功情况。它不表示系统能够在不知道标准答案时自动选出成功候选，因此须与单次部署成功率区分。 ↩︎"
+    },
+    {
+      "document": "11_modern_data_platform",
+      "id": "fn:manufacturing-kpi",
+      "definition": "OEE（Overall Equipment Effectiveness）为设备综合效率，WIP（Work in Process）为在制品存量，OTD（On-time Delivery）为准时交付率。下文的 Yield 为良率，Cycle Time 为生产周期。各指标的对象、时间与分子分母必须分别定义；计算基础见第 3 章。 ↩"
+    },
+    {
+      "document": "11_modern_data_platform",
+      "id": "fn:mart",
+      "definition": "数据集市（data mart）面向特定业务领域或分析任务组织数据，例如设备效率或订单交付分析。数据集市须明确覆盖范围、基础事实及指标口径，支持汇总结果的追溯。 ↩"
+    },
+    {
+      "document": "11_modern_data_platform",
+      "id": "fn:medallion",
+      "definition": "bronze、silver、gold 是常见的数据分层命名：bronze 保留原始数据，silver 对数据进行清洗和标准化，gold 组织供业务分析使用的结果。分层名称本身不保证质量；各层仍须有可检验的处理与发布规则。参见 Microsoft 分层架构文档 。 ↩"
+    },
+    {
+      "document": "11_modern_data_platform",
+      "id": "fn:sla",
+      "definition": "服务水平协议（Service Level Agreement）规定供给方与使用方的责任、服务质量及响应要求。在数据服务中，可约定刷新频率、可用性、质量门槛和故障处置期限。参见 NIST 术语定义 。 ↩"
+    },
+    {
+      "document": "14_ai_agent",
+      "id": "fn:llm",
+      "definition": "大语言模型（Large Language Model）从大量文本中学习语言的统计关系，用于理解、生成和转换文本。模型生成的流畅程度不等同于事实正确性；业务结论仍需证据与规则核验。 ↩"
+    },
+    {
+      "document": "14_ai_agent",
+      "id": "fn:invariant",
+      "definition": "不变量是在所有允许状态或状态转移中都必须成立的条件。例如“没有有效批准就不能提交”应由执行机制持续检查，而非仅作为提示词中的要求。 ↩"
+    },
+    {
+      "document": "14_ai_agent",
+      "id": "fn:fail-closed",
+      "definition": "失败关闭（fail closed）指权限、输入或前置条件无法确认时，停止受限操作并保留待核查状态，避免在检查失效时默认允许执行。 ↩"
+    },
+    {
+      "document": "14_ai_agent",
+      "id": "fn:ocr",
+      "definition": "光学字符识别（Optical Character Recognition）将图像中的印刷或手写文字转换为可处理文本。识别结果可能出现数字、符号或阅读顺序错误，因此不能省略与原页的核对。参见 Microsoft OCR 文档 。 ↩"
+    },
+    {
+      "document": "14_ai_agent",
+      "id": "fn:acl",
+      "definition": "访问控制列表（Access Control List）记录哪些主体可访问某项资源，以及各主体具有何种访问权限。检索系统应据此限定候选文档，而不只在生成答案后隐藏敏感文字。参见 NIST 术语定义 。 ↩"
+    },
+    {
+      "document": "14_ai_agent",
+      "id": "fn:plc",
+      "definition": "可编程逻辑控制器（Programmable Logic Controller）是执行逻辑、计时、计数及输入输出控制等工业功能的控制装置。其设备控制职责与语言模型的分析建议职责须分别管理。参见 NIST 术语定义 。 ↩"
+    },
+    {
+      "document": "14_ai_agent",
+      "id": "fn:api",
+      "definition": "应用程序接口（Application Programming Interface）规定软件之间可调用的功能及其输入、输出约定。接口能够被调用，不表示调用方已获业务权限；身份、范围与批准仍须独立核验。 ↩"
+    },
+    {
+      "document": "appendix-2",
+      "id": "fn1",
+      "definition": "文件哈希是由文件内容计算出的摘要，用于检查两份文件内容是否一致以及文件是否发生变化；复现时应同时记录所用算法。 ↩︎"
+    },
+    {
+      "document": "appendix-2",
+      "id": "fn2",
+      "definition": "随机种子用于初始化伪随机数生成器。在相同程序、软件环境和随机数生成算法下固定种子，有助于重复得到同一随机序列；种子本身不能保证跨环境结果完全一致。 ↩︎"
+    },
+    {
+      "document": "appendix-3",
+      "id": "fn1",
+      "definition": "预印本是作者在正式期刊或会议出版之前公开的论文版本，可能尚未经过同行评议，引用时应注明版本及其发表状态。 ↩︎"
+    },
+    {
+      "document": "appendix-4",
+      "id": "fn1",
+      "definition": "预填充阶段处理输入序列并建立后续生成所需的中间状态；生成阶段逐步输出新的 token。两阶段的速度单位相同，但计算方式与资源占用不同。 ↩︎"
+    },
+    {
+      "document": "assignment_11_optimization",
+      "id": "fn:sku",
+      "definition": "库存管理单位（Stock Keeping Unit）是库存核算与补货管理中区分产品规格的单位。不同型号、尺寸或包装可能对应不同 SKU，具体区分规则须由企业定义。 ↩"
+    },
+    {
+      "document": "semiconductor_kpi_m13_case",
+      "id": "fn:m13",
+      "definition": "M13 是本课程采用的制造运营要素分类，用来按需求、产品、路线、设备、产能、在制品、质量、维护、交付与行动等要素组织异常调查。它是诊断的组织框架；某项指标与某个要素关联，不构成因果证据。 ↩"
+    }
+  ],
+  "errors": []
+}

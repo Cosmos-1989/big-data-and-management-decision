@@ -1,0 +1,1316 @@
+{
+  "chapter": "02_enterprise_data_model",
+  "reviewedAt": "2026-10-24",
+  "scope": [
+    "dist/content/02_enterprise_data_model.json",
+    "dist/content/01_intro.json",
+    "dist/content/case-cards.json chapter 02",
+    "dist/content/business-cases.json chapter 02",
+    "content-source/textbook/chapters/02_enterprise_data_model.tex"
+  ],
+  "courseTerms": [
+    {
+      "id": "business-object",
+      "term": "业务对象",
+      "aliases": [],
+      "definition": "业务对象是企业经营中能够被识别、记录和管理的实体或事件，例如订单、客户、设备及维修事件。",
+      "targetChapter": "01_intro",
+      "targetHeading": "数据驱动决策的基本对象",
+      "status": "existing",
+      "placement": "现有“业务对象”定义设精确锚点；第二讲开篇及后续引用反向链接",
+      "boundary": ""
+    },
+    {
+      "id": "relationship-constraint",
+      "term": "关系约束",
+      "aliases": [],
+      "definition": "关系约束规定业务对象之间允许的关联数量、存在条件和一致性规则。例如，一张订单必须属于一位客户，一位客户可以有多张订单。",
+      "targetChapter": "01_intro",
+      "targetHeading": "数据驱动决策的基本对象",
+      "status": "add",
+      "placement": "在现有业务对象定义后补入，与事实粒度共同构成数据表达基础",
+      "boundary": "业务约束不能仅由字段名或偶然样本推出；数据库的具体键约束在第二讲展开。"
+    },
+    {
+      "id": "fact-grain",
+      "term": "事实粒度",
+      "aliases": [
+        "记录粒度",
+        "事实表粒度"
+      ],
+      "definition": "事实粒度规定每条记录表示什么业务事实，以及识别该事实所需的对象组合和时间范围。例如，一行表示一张订单，或一行表示某产品在某仓库某日的库存状态。",
+      "targetChapter": "01_intro",
+      "targetHeading": "数据驱动决策的基本对象",
+      "status": "add",
+      "placement": "在业务对象和关系约束之后补入，先有通用定义，第二讲事实表小节展开实现",
+      "boundary": "粒度不是记录总数，也不由字段数量决定；一个事实可以由多个对象和时间共同确定。"
+    },
+    {
+      "id": "metric-scope",
+      "term": "指标口径",
+      "aliases": [],
+      "definition": "指标口径是对指标的业务含义、计算公式、数据来源、时间范围、排除条件和异常处理的明确约定。",
+      "targetChapter": "01_intro",
+      "targetHeading": "数据驱动决策的基本对象",
+      "status": "existing",
+      "placement": "第一讲现有定义加精确锚点；第二讲各处引用",
+      "boundary": ""
+    },
+    {
+      "id": "data-model",
+      "term": "企业数据模型",
+      "aliases": [
+        "数据模型"
+      ],
+      "definition": "企业数据模型以结构化形式规定业务对象、属性、关系、事件、状态、指标口径及约束规则，使不同记录具有可共同解释的含义。",
+      "targetChapter": "02_enterprise_data_model",
+      "targetHeading": "数据建模的作用",
+      "status": "existing",
+      "placement": "现有企业数据模型定义设锚点；为导言“数据模型”链接至该定义",
+      "boundary": ""
+    },
+    {
+      "id": "data-governance",
+      "term": "数据治理",
+      "aliases": [
+        "治理机制"
+      ],
+      "definition": "数据治理规定数据定义、质量、访问、使用和变更的决策权、执行责任与复核程序。",
+      "targetChapter": "02_enterprise_data_model",
+      "targetHeading": "数据模型的治理含义",
+      "status": "add",
+      "placement": "治理小节第一段，先区分公司治理与数据治理",
+      "boundary": "数据模型表达规则；治理安排谁有权确定、执行和修改规则。"
+    },
+    {
+      "id": "metadata",
+      "term": "元数据",
+      "aliases": [],
+      "definition": "元数据是描述数据的信息，包括数据结构、业务含义、来源、转换过程、责任人、质量和版本。",
+      "targetChapter": "02_enterprise_data_model",
+      "targetHeading": "数据建模的作用",
+      "status": "add",
+      "placement": "企业数据模型定义后，首次“元数据”以前；可与三类字典说明组成短段",
+      "boundary": "“关于数据的数据”不足以说明本讲需要记录的内容。"
+    },
+    {
+      "id": "data-dictionary",
+      "term": "数据字典",
+      "aliases": [],
+      "definition": "数据字典记录表和字段的名称、类型、取值范围、键及业务含义。",
+      "targetChapter": "02_enterprise_data_model",
+      "targetHeading": "数据建模的作用",
+      "status": "add",
+      "placement": "在企业数据模型列举数据字典后就近补短释；后文指标管理再链接",
+      "boundary": ""
+    },
+    {
+      "id": "metric-dictionary",
+      "term": "指标字典",
+      "aliases": [],
+      "definition": "指标字典统一记录指标名称、业务定义、公式、来源、聚合规则、刷新频率、负责人和适用范围。",
+      "targetChapter": "02_enterprise_data_model",
+      "targetHeading": "数据建模的作用",
+      "status": "add",
+      "placement": "与数据字典定义并列；后文已有最小规范表作为展开",
+      "boundary": ""
+    },
+    {
+      "id": "lineage",
+      "term": "数据血缘",
+      "aliases": [
+        "血缘说明",
+        "血缘追踪",
+        "血缘"
+      ],
+      "definition": "数据血缘记录数据或指标从哪些来源经过哪些转换而形成，以及它们与下游结果的依赖关系。",
+      "targetChapter": "02_enterprise_data_model",
+      "targetHeading": "数据模型的治理含义",
+      "status": "add",
+      "placement": "治理要求表之前补短释，为表中的血缘说明及后文真实案例提供链接",
+      "boundary": ""
+    },
+    {
+      "id": "semantic-layer",
+      "term": "语义层",
+      "aliases": [],
+      "definition": "语义层将表、字段及其连接规则对应到业务对象和指标定义，为查询和分析提供一致的业务含义。",
+      "targetChapter": "02_enterprise_data_model",
+      "targetHeading": "数据模型的治理含义",
+      "status": "existing",
+      "placement": "将现有脚注提升为可链接正文定义；“AI问数”小节后续使用链接至此",
+      "boundary": "一致的技术定义仍需业务负责人确认，不能由工具自动保证正确。"
+    },
+    {
+      "id": "snapshot",
+      "term": "快照",
+      "aliases": [
+        "状态快照"
+      ],
+      "definition": "快照记录对象或数据表在指定时点或版本的状态。业务状态快照以业务时点为准，表版本快照以数据版本为准，二者应明确区分。",
+      "targetChapter": "02_enterprise_data_model",
+      "targetHeading": "从存储格式到业务含义",
+      "status": "existing",
+      "placement": "当前脚注可提升为术语定义；后文周期快照链接至此",
+      "boundary": "不要将数据表的版本快照与业务时点快照无条件等同。"
+    },
+    {
+      "id": "schema",
+      "term": "模式",
+      "aliases": [
+        "关系模式"
+      ],
+      "definition": "数据模式规定记录由哪些属性组成，以及各属性的名称、类型和约束；关系模式还规定相关键和完整性条件。",
+      "targetChapter": "02_enterprise_data_model",
+      "targetHeading": "从存储格式到业务含义",
+      "status": "add",
+      "placement": "Apache Iceberg 前的术语短段或其首次脚注",
+      "boundary": "此处“模式”指数据结构，不指统计模型或业务模式。"
+    },
+    {
+      "id": "schema-evolution",
+      "term": "模式演化",
+      "aliases": [],
+      "definition": "模式演化是在明确的兼容规则下修改数据模式，例如调整字段名称、类型或结构。",
+      "targetChapter": "02_enterprise_data_model",
+      "targetHeading": "从存储格式到业务含义",
+      "status": "existing",
+      "placement": "与模式定义一起保留当前脚注内容并设锚点",
+      "boundary": ""
+    },
+    {
+      "id": "open-table-format",
+      "term": "开放表格式",
+      "aliases": [],
+      "definition": "开放表格式规定数据文件、表元数据、快照和版本的组织与访问方式，使兼容的计算引擎能够使用同一组表数据。",
+      "targetChapter": "02_enterprise_data_model",
+      "targetHeading": "从存储格式到业务含义",
+      "status": "add",
+      "placement": "Iceberg 产品介绍前补概念",
+      "boundary": "开放格式不等于任意引擎均可写入，也不统一业务指标口径。"
+    },
+    {
+      "id": "object-storage",
+      "term": "对象存储",
+      "aliases": [],
+      "definition": "对象存储以带有唯一标识和元数据的对象保存内容，应用通过对象接口读写相应数据。",
+      "targetChapter": "02_enterprise_data_model",
+      "targetHeading": "从存储格式到业务含义",
+      "status": "existing",
+      "placement": "保留现有脚注并设精确锚点",
+      "boundary": ""
+    },
+    {
+      "id": "ai-service-basics",
+      "term": "模型服务与推理",
+      "aliases": [
+        "基础模型",
+        "推理服务",
+        "模型服务"
+      ],
+      "definition": "基础模型是在较大规模资料上训练、可适用于多类任务的模型；推理是模型利用输入计算输出的过程；模型服务通过接口提供相应能力。",
+      "targetChapter": "02_enterprise_data_model",
+      "targetHeading": "从推理服务到业务行动",
+      "status": "add",
+      "placement": "小节第一句前或改写第一句",
+      "boundary": "生成文本的推理与修改真实业务状态的操作是不同过程。"
+    },
+    {
+      "id": "idempotency",
+      "term": "幂等请求",
+      "aliases": [],
+      "definition": "幂等请求要求重复提交同一项操作时，不产生超出首次成功执行的额外业务效果。",
+      "targetChapter": "02_enterprise_data_model",
+      "targetHeading": "从推理服务到业务行动",
+      "status": "existing",
+      "placement": "当前脚注加锚点；Stripe案例重试词链接至此",
+      "boundary": "创建类请求通常需请求标识及服务端去重机制支持。"
+    },
+    {
+      "id": "state-machine",
+      "term": "状态机",
+      "aliases": [],
+      "definition": "状态机用明确的状态集合、允许的状态转换及其触发条件描述对象或操作的演变。",
+      "targetChapter": "02_enterprise_data_model",
+      "targetHeading": "从推理服务到业务行动",
+      "status": "existing",
+      "placement": "现有脚注设锚点；支付生命周期案例与对象操作段引用",
+      "boundary": ""
+    },
+    {
+      "id": "prefill",
+      "term": "预填充",
+      "aliases": [],
+      "definition": "预填充是生成模型在逐步生成新内容之前，处理输入序列并建立相关中间状态的阶段。",
+      "targetChapter": "02_enterprise_data_model",
+      "targetHeading": "从推理服务到业务行动",
+      "status": "existing",
+      "placement": "保留现有脚注，说明上下文是当前可利用的输入与历史信息",
+      "boundary": ""
+    },
+    {
+      "id": "entity",
+      "term": "实体",
+      "aliases": [],
+      "definition": "实体是在所讨论的业务范围内具有可持续识别身份的对象，如客户、设备或批次。",
+      "targetChapter": "02_enterprise_data_model",
+      "targetHeading": "企业运营数据的基本语义",
+      "status": "existing",
+      "placement": "现有语义表实体行设锚点",
+      "boundary": ""
+    },
+    {
+      "id": "attribute",
+      "term": "属性",
+      "aliases": [],
+      "definition": "属性描述实体、关系或事件的某一方面，其取值来自规定的范围，例如客户地区、订单数量或事件发生时间。",
+      "targetChapter": "02_enterprise_data_model",
+      "targetHeading": "企业运营数据的基本语义",
+      "status": "existing",
+      "placement": "现有语义表属性行完善后设锚点",
+      "boundary": ""
+    },
+    {
+      "id": "relationship",
+      "term": "关系",
+      "aliases": [],
+      "definition": "业务关系是对象之间具有明确含义的联系，例如客户提交订单、批次使用设备；在关系数据库中，“关系”还专指满足同一模式的元组集合。",
+      "targetChapter": "02_enterprise_data_model",
+      "targetHeading": "企业运营数据的基本语义",
+      "status": "revise",
+      "placement": "语义表关系行及后续关系模型开头明确两种含义",
+      "boundary": "不要把实体关系图的业务联系与数学上的数据库关系混作同一个概念。"
+    },
+    {
+      "id": "business-event",
+      "term": "业务事件",
+      "aliases": [
+        "事件"
+      ],
+      "definition": "业务事件是在特定时间发生、能够改变或记录业务状态的一次活动，通常具有主体、对象、发生时间及数量等属性。",
+      "targetChapter": "02_enterprise_data_model",
+      "targetHeading": "企业运营数据的基本语义",
+      "status": "existing",
+      "placement": "现有定义加锚点",
+      "boundary": ""
+    },
+    {
+      "id": "business-state",
+      "term": "业务状态",
+      "aliases": [
+        "状态"
+      ],
+      "definition": "业务状态是对象在给定时点或时间区间内的条件或属性取值，例如订单待发运、设备停机、库存余额100件。",
+      "targetChapter": "02_enterprise_data_model",
+      "targetHeading": "企业运营数据的基本语义",
+      "status": "revise",
+      "placement": "替换现有语义表“某一时点或区间内对象的状态”的循环定义",
+      "boundary": ""
+    },
+    {
+      "id": "measure",
+      "term": "度量",
+      "aliases": [
+        "指标"
+      ],
+      "definition": "度量是按规定单位和规则得到的数值；指标进一步说明该数值所刻画的业务含义及其计算口径。",
+      "targetChapter": "02_enterprise_data_model",
+      "targetHeading": "企业运营数据的基本语义",
+      "status": "revise",
+      "placement": "现有语义表指标行补充，后文可加性引用",
+      "boundary": ""
+    },
+    {
+      "id": "relational-vocabulary",
+      "term": "关系模式与元组",
+      "aliases": [
+        "元组",
+        "取值域",
+        "关系实例"
+      ],
+      "definition": "元组按属性名给出一条记录的各项取值；取值域规定属性允许的值；关系模式规定属性及约束，关系实例是在某一时点满足该模式的元组集合。",
+      "targetChapter": "02_enterprise_data_model",
+      "targetHeading": "关系模型的基本语言",
+      "status": "revise",
+      "placement": "公式R(A:D)之前用短段统一解释",
+      "boundary": "关系的集合语义不允许相同元组重复；真实SQL的重复记录语义要与之区分。"
+    },
+    {
+      "id": "query-operations",
+      "term": "关系查询运算",
+      "aliases": [
+        "连接",
+        "过滤",
+        "聚合",
+        "排序",
+        "内连接"
+      ],
+      "definition": "连接按指定条件组合不同表的记录；过滤保留满足条件的记录；聚合按分组计算总数、总额等汇总值；排序按指定字段安排结果顺序。内连接只保留在连接两侧均有匹配的组合。",
+      "targetChapter": "02_enterprise_data_model",
+      "targetHeading": "关系模型的基本语言",
+      "status": "add",
+      "placement": "“数据库系统决定如何执行连接、过滤、聚合和排序”前后补短释",
+      "boundary": "第二讲需要先有概念解释，第三讲再给SQL表达与计算细节。"
+    },
+    {
+      "id": "key",
+      "term": "键",
+      "aliases": [
+        "主键",
+        "超键",
+        "候选键"
+      ],
+      "definition": "超键是在每个合法实例中均能唯一识别元组的属性集合；候选键是不含多余属性的超键；主键是选定用作主要记录标识的候选键。",
+      "targetChapter": "02_enterprise_data_model",
+      "targetHeading": "键外键与完整性约束",
+      "status": "existing",
+      "placement": "给现有键定义统一锚点或三个精确术语锚点",
+      "boundary": ""
+    },
+    {
+      "id": "foreign-key",
+      "term": "外键",
+      "aliases": [],
+      "definition": "外键是本关系中用于引用另一关系候选键或主键的属性集合，其允许取值须满足规定的引用完整性规则。",
+      "targetChapter": "02_enterprise_data_model",
+      "targetHeading": "键外键与完整性约束",
+      "status": "existing",
+      "placement": "给现有外键定义加锚点",
+      "boundary": "是否允许空值由规则另定；外键可以引用本关系。现有“另一个关系”可改为“被引用关系”。"
+    },
+    {
+      "id": "integrity",
+      "term": "完整性约束",
+      "aliases": [
+        "实体完整性",
+        "引用完整性",
+        "业务完整性"
+      ],
+      "definition": "完整性约束规定合法记录必须满足的条件：实体完整性要求主键唯一且非空；引用完整性要求非空外键值存在对应被引用记录；业务完整性要求数量、日期等符合业务规则。",
+      "targetChapter": "02_enterprise_data_model",
+      "targetHeading": "键外键与完整性约束",
+      "status": "existing",
+      "placement": "现有三项枚举设共同锚点，治理表中术语链接至此",
+      "boundary": ""
+    },
+    {
+      "id": "key-types",
+      "term": "自然键与代理键",
+      "aliases": [
+        "自然键",
+        "代理键"
+      ],
+      "definition": "自然键使用已有业务属性标识对象；代理键由系统另行赋值、通常不承载业务含义，仍需维护其与业务标识的映射。",
+      "targetChapter": "02_enterprise_data_model",
+      "targetHeading": "键外键与完整性约束",
+      "status": "existing",
+      "placement": "保留现有脚注内容并设置可链接定义",
+      "boundary": ""
+    },
+    {
+      "id": "er",
+      "term": "实体关系模型",
+      "aliases": [
+        "ER 模型",
+        "ER模型",
+        "ER"
+      ],
+      "definition": "实体关系模型以实体、属性及业务关系描述对象结构，并以关系基数和可选性说明允许的关联方式。",
+      "targetChapter": "02_enterprise_data_model",
+      "targetHeading": "订单客户产品与库存的-er-模型",
+      "status": "existing",
+      "placement": "模型现有首句设锚点；前文ER图一词链接至此",
+      "boundary": ""
+    },
+    {
+      "id": "cardinality",
+      "term": "关系基数",
+      "aliases": [
+        "基数",
+        "可选性",
+        "一对多",
+        "多对多"
+      ],
+      "definition": "关系基数规定一个对象至多可关联多少个另一类对象，如一对一、一对多或多对多；可选性规定关联对象是否可以为零。",
+      "targetChapter": "02_enterprise_data_model",
+      "targetHeading": "订单客户产品与库存的-er-模型",
+      "status": "add",
+      "placement": "首句后、首张ER图前补定义",
+      "boundary": "1:N 表示最大关联数量，不自动说明最少数量；图中的边不表示事件先后。"
+    },
+    {
+      "id": "model-levels",
+      "term": "概念模型、逻辑模型与物理模型",
+      "aliases": [
+        "概念模型",
+        "逻辑模型",
+        "物理模型"
+      ],
+      "definition": "概念模型用业务语言描述对象及关系；逻辑模型将其表达为数据结构、键与约束；物理模型规定在具体平台上的存储、索引、分区等实现。",
+      "targetChapter": "02_enterprise_data_model",
+      "targetHeading": "订单客户产品与库存的-er-模型",
+      "status": "existing",
+      "placement": "现有解释设锚点；索引/分区加一句：索引辅助定位记录，分区按规则将表划为可分别管理的部分。",
+      "boundary": ""
+    },
+    {
+      "id": "manufacturing-objects",
+      "term": "制造对象",
+      "aliases": [
+        "批次",
+        "lot",
+        "Lot",
+        "工艺路线",
+        "工作中心",
+        "产品族",
+        "过站",
+        "配方",
+        "BOM"
+      ],
+      "definition": "批次是共同追踪的一组生产对象；工艺路线规定加工步骤及其顺序；过站事件记录批次进入或完成某工序；工作中心是用于计划和核算的一组生产资源；产品族是按相近工艺或管理属性归组的产品。配方规定加工参数，物料清单（BOM）规定产品所需的物料及其数量。",
+      "targetChapter": "02_enterprise_data_model",
+      "targetHeading": "半导体制造业务对象",
+      "status": "add",
+      "placement": "六类对象表之前补必要行业词；BOM首次出现处补释",
+      "boundary": "保留封测是假想算例的边界；设备资格指设备被允许执行特定工艺步骤的条件。"
+    },
+    {
+      "id": "normalization",
+      "term": "规范化",
+      "aliases": [
+        "冗余",
+        "更新异常"
+      ],
+      "definition": "规范化依据键与函数依赖组织关系，减少同一事实的重复保存，并降低插入、删除或更新造成不一致的风险。更新异常是因同一事实散存多处而无法一致修改的情况。",
+      "targetChapter": "02_enterprise_data_model",
+      "targetHeading": "规范化与函数依赖",
+      "status": "existing",
+      "placement": "现有首段设锚点并明确更新异常",
+      "boundary": ""
+    },
+    {
+      "id": "functional-dependency",
+      "term": "函数依赖",
+      "aliases": [],
+      "definition": "函数依赖X→Y要求：在每个合法关系实例中，任意两条元组只要在X上取值相同，就必须在Y上取值相同。",
+      "targetChapter": "02_enterprise_data_model",
+      "targetHeading": "规范化与函数依赖",
+      "status": "revise",
+      "placement": "替换“若X取值确定Y取值”的单句为量词清楚的定义",
+      "boundary": "一次样本中未出现冲突不能证明业务上存在函数依赖。"
+    },
+    {
+      "id": "third-normal-form",
+      "term": "第三范式",
+      "aliases": [
+        "主属性",
+        "非平凡依赖"
+      ],
+      "definition": "主属性是至少属于一个候选键的属性；非平凡依赖X→A满足A不属于X。第三范式要求每个这类依赖的决定项X是超键，或者A是主属性。",
+      "targetChapter": "02_enterprise_data_model",
+      "targetHeading": "规范化与函数依赖",
+      "status": "existing",
+      "placement": "保留现有准确形式定义，增各术语精确锚点",
+      "boundary": ""
+    },
+    {
+      "id": "lossless-decomposition",
+      "term": "无损连接分解",
+      "aliases": [],
+      "definition": "无损连接分解是把一个关系拆为若干投影关系后，对每个合法实例均能通过约定连接准确重建原关系，既不丢失原元组，也不产生额外元组。",
+      "targetChapter": "02_enterprise_data_model",
+      "targetHeading": "无损连接分解",
+      "status": "add",
+      "placement": "本小节首段先给一般定义，再接现有订单行实例",
+      "boundary": "不要将具体样例的键/外键覆盖检查表述为所有无损分解的一般充要条件。"
+    },
+    {
+      "id": "master-data",
+      "term": "主数据",
+      "aliases": [],
+      "definition": "主数据是对客户、产品等核心对象的稳定身份及共享属性所作的统一记录，可按版本保存随时间变化的属性。",
+      "targetChapter": "02_enterprise_data_model",
+      "targetHeading": "规范化与函数依赖",
+      "status": "add",
+      "placement": "“保存于产品表”例子首次出现前后补释",
+      "boundary": ""
+    },
+    {
+      "id": "transaction",
+      "term": "事务处理",
+      "aliases": [],
+      "definition": "事务处理按共同成功或共同撤销的规则执行一组业务数据操作，以维护规定的一致性条件；事务型模型重点支持这类读写和状态更新。",
+      "targetChapter": "02_enterprise_data_model",
+      "targetHeading": "事务型建模与分析型建模",
+      "status": "add",
+      "placement": "小节第一段首次出现时补释",
+      "boundary": "不要把一次业务活动、一个数据库事务、一个分析事实无条件等同。"
+    },
+    {
+      "id": "star-schema",
+      "term": "星型模型",
+      "aliases": [
+        "星型模式"
+      ],
+      "definition": "星型模型以事实表为中心，利用维度表说明客户、产品、日期等分析角度，事实表通过键与各维度关联。",
+      "targetChapter": "02_enterprise_data_model",
+      "targetHeading": "事务型建模与分析型建模",
+      "status": "add",
+      "placement": "星型图公式之前补定义",
+      "boundary": "现有定义中的事实表与维度表可共用此组定义，分别设锚点。"
+    },
+    {
+      "id": "fact-dimension-tables",
+      "term": "事实表与维度表",
+      "aliases": [
+        "事实表",
+        "维度表"
+      ],
+      "definition": "事实表按声明的粒度记录事件或状态，保存用于度量的数值及相关键；维度表描述客户、产品、日期等分析对象或分析角度。",
+      "targetChapter": "02_enterprise_data_model",
+      "targetHeading": "事务型建模与分析型建模",
+      "status": "existing",
+      "placement": "现有定义设锚点，前文首次提及即可链接",
+      "boundary": ""
+    },
+    {
+      "id": "manufacturing-kpi",
+      "term": "制造绩效指标",
+      "aliases": [
+        "Yield",
+        "良率",
+        "OEE",
+        "设备综合效率",
+        "Cycle Time",
+        "生产周期",
+        "WIP",
+        "在制品",
+        "OTD",
+        "准时交付率"
+      ],
+      "definition": "良率是规定检验范围内合格数占基准数量的比例；OEE是时间开动率、性能开动率和质量合格率的乘积；生产周期是规定起点至终点的经过时间；在制品是在某时点已进入生产而尚未完成的对象；准时交付率是到期承诺中按规定准时完成的比例。",
+      "targetChapter": "02_enterprise_data_model",
+      "targetHeading": "制造-kpi-的事实粒度",
+      "status": "existing",
+      "placement": "保留现有详细定义并设各术语独立锚点；更早OEE/WIP/Yield/OTD用词均链接过去",
+      "boundary": "OEE三因子需说明各自分母：运行/计划时间、理想节拍×总产出/运行时间、良品/总产出；还需固定同一时间窗口及产出范围。"
+    },
+    {
+      "id": "measure-additivity",
+      "term": "度量的可加性",
+      "aliases": [
+        "可加度量",
+        "半可加度量",
+        "不可加度量"
+      ],
+      "definition": "可加度量可沿规定维度求和；半可加度量仅能沿部分维度求和；不可加度量须由基础量重新计算，不能直接相加。",
+      "targetChapter": "02_enterprise_data_model",
+      "targetHeading": "度量的可加性",
+      "status": "existing",
+      "placement": "现有表设锚点",
+      "boundary": "求和需对象/时间不重复且单位一致；均值一般需样本量加权，比率需汇总分子分母。"
+    },
+    {
+      "id": "snapshot-tables",
+      "term": "快照表类型",
+      "aliases": [
+        "交易事实表",
+        "周期快照表",
+        "累计快照表",
+        "维度历史表"
+      ],
+      "definition": "交易事实表记录一次次业务活动；周期快照表记录固定时点或周期的状态；累计快照表用里程碑更新跟踪有始终的流程；维度历史表保存描述性属性的版本。",
+      "targetChapter": "02_enterprise_data_model",
+      "targetHeading": "事件状态与时间",
+      "status": "existing",
+      "placement": "现有四类表设锚点",
+      "boundary": ""
+    },
+    {
+      "id": "scd",
+      "term": "缓慢变化维度",
+      "aliases": [
+        "慢变维",
+        "SCD"
+      ],
+      "definition": "缓慢变化维度是处理维度属性随时间变化的一组建模方法，可以覆盖旧值、保留历史版本或并存部分新旧属性。",
+      "targetChapter": "02_enterprise_data_model",
+      "targetHeading": "事件状态与时间",
+      "status": "revise",
+      "placement": "现有“用于保存变化”改为“处理变化”，因为覆盖更新不保存完整历史",
+      "boundary": "名称的“缓慢”不保证变化频率很低，关键是历史追踪策略。"
+    },
+    {
+      "id": "bitemporal",
+      "term": "双时间",
+      "aliases": [
+        "业务时间",
+        "系统时间",
+        "有效时间",
+        "数据入库时间"
+      ],
+      "definition": "业务时间说明事实在业务世界发生或有效的时间；系统时间说明系统何时获知并保存相应版本；双时间模型同时记录这两类时间以还原历史事实与历史知识。",
+      "targetChapter": "02_enterprise_data_model",
+      "targetHeading": "双时间与可追溯决策",
+      "status": "existing",
+      "placement": "小节首段设锚点；事件/状态时间表首次出现词链接至此",
+      "boundary": ""
+    },
+    {
+      "id": "information-leakage",
+      "term": "事后信息泄漏",
+      "aliases": [
+        "信息泄漏"
+      ],
+      "definition": "事后信息泄漏是将决策时点尚不可获得的信息用于重建或评价当时的模型输入，从而高估事前判断能力。",
+      "targetChapter": "02_enterprise_data_model",
+      "targetHeading": "双时间与可追溯决策",
+      "status": "add",
+      "placement": "现有停机补录例子后补短释",
+      "boundary": ""
+    },
+    {
+      "id": "authorization",
+      "term": "授权与访问控制",
+      "aliases": [
+        "授权",
+        "访问控制",
+        "权限控制"
+      ],
+      "definition": "授权规定某个身份可对哪些资源执行哪些操作及其条件；访问控制在实际读取或操作时检查并执行这些规则。",
+      "targetChapter": "02_enterprise_data_model",
+      "targetHeading": "对象操作与状态转换",
+      "status": "add",
+      "placement": "小节首段、Permit公式之前补定义",
+      "boundary": "读取、建议、批准和执行是不同权限，职责登记本身不产生操作权限。"
+    },
+    {
+      "id": "optimistic-version-check",
+      "term": "版本检查",
+      "aliases": [
+        "版本号"
+      ],
+      "definition": "版本号标识对象状态的修订次序；提交操作时检查期望版本是否仍为当前版本，可以阻止依据旧状态覆盖较新的修改。",
+      "targetChapter": "02_enterprise_data_model",
+      "targetHeading": "对象操作与状态转换",
+      "status": "add",
+      "placement": "现有版本号段落设锚点，习题“版本检查”链接到此",
+      "boundary": ""
+    },
+    {
+      "id": "data-product",
+      "term": "数据产品",
+      "aliases": [],
+      "definition": "数据产品是面向明确使用任务、可持续交付和维护的数据集合或数据服务，并同时说明结构、含义、粒度、质量、责任及使用条件。",
+      "targetChapter": "02_enterprise_data_model",
+      "targetHeading": "封测企业的两种实施路径",
+      "status": "add",
+      "placement": "数据产品首次出现时补释，Nasdaq段再链接",
+      "boundary": "单个CSV可以是交付载体，但缺少定义与责任时不能保证可正确使用。"
+    },
+    {
+      "id": "principal-agent",
+      "term": "委托代理",
+      "aliases": [
+        "委托人",
+        "代理人",
+        "信息不对称"
+      ],
+      "definition": "委托人将任务或决策权交给代理人；代理人据自身收益选择行动。双方目标不完全一致、委托人又不能充分观察行动或信息时，便产生委托代理问题。信息不对称是双方可获得的信息不同。",
+      "targetChapter": "02_enterprise_data_model",
+      "targetHeading": "指标测量与激励目标",
+      "status": "add",
+      "placement": "经理/主管例子之后、模型之前补显式定义",
+      "boundary": ""
+    },
+    {
+      "id": "risk-aversion",
+      "term": "风险厌恶",
+      "aliases": [
+        "效用",
+        "期望效用"
+      ],
+      "definition": "效用表示对结果的偏好，期望效用按结果概率加权比较不确定方案。风险厌恶者至少同样偏好获得确定的期望收入，而不是承担具有同一期望收入的随机收入。",
+      "targetChapter": "02_enterprise_data_model",
+      "targetHeading": "指标测量与激励目标",
+      "status": "add",
+      "placement": "常数绝对风险厌恶模型之前补定义",
+      "boundary": "“厌恶波动”只是直观解释；不能仅凭一次选择断定偏好。严格风险厌恶时对非退化风险通常严格偏好确定收入。"
+    },
+    {
+      "id": "ce",
+      "term": "确定性等价",
+      "aliases": [
+        "CE",
+        "确定性等价收入"
+      ],
+      "definition": "确定性等价是在所用效用函数下，与随机净收入具有相同期望效用的确定金额。",
+      "targetChapter": "02_enterprise_data_model",
+      "targetHeading": "指标测量与激励目标",
+      "status": "existing",
+      "placement": "现有U(CE)=E[U(Z)]公式之前先补中文解释并设锚点",
+      "boundary": ""
+    },
+    {
+      "id": "cara",
+      "term": "常数绝对风险厌恶",
+      "aliases": [
+        "CARA"
+      ],
+      "definition": "常数绝对风险厌恶要求绝对风险厌恶系数−U″(z)/U′(z)为常数；本讲指数效用U(z)=−exp(−rz)满足这一条件，系数为r。",
+      "targetChapter": "02_enterprise_data_model",
+      "targetHeading": "指标测量与激励目标",
+      "status": "existing",
+      "placement": "现有公式设锚点，可在公式前补英文全称constant absolute risk aversion",
+      "boundary": ""
+    },
+    {
+      "id": "participation-constraint",
+      "term": "参与约束",
+      "aliases": [
+        "外部机会"
+      ],
+      "definition": "参与约束要求代理人接受合同所得的效用不低于其外部可选机会的效用；本例用确定性等价表示为CE不低于外部机会收入。",
+      "targetChapter": "02_enterprise_data_model",
+      "targetHeading": "参与约束与最优激励强度",
+      "status": "add",
+      "placement": "首句之后、假定约束取等号之前补定义",
+      "boundary": ""
+    },
+    {
+      "id": "incentive-compatibility",
+      "term": "激励相容",
+      "aliases": [
+        "最优反应",
+        "激励强度"
+      ],
+      "definition": "激励相容要求合同预期引导的行动与代理人在该合同下自行选择的最优行动一致；线性工资中，绩效每增加一单位所增加的报酬β称为激励强度。",
+      "targetChapter": "02_enterprise_data_model",
+      "targetHeading": "代理人的努力选择",
+      "status": "add",
+      "placement": "e*(β)=β/c前说明代理人求解何种最优化；后续企业在其最优反应上选择β",
+      "boundary": "当前正文未用“激励相容”可不强行增加该名词，但应解释其逻辑；激励强度属于必须就近解释。"
+    },
+    {
+      "id": "manipulation",
+      "term": "指标操纵",
+      "aliases": [
+        "多任务激励"
+      ],
+      "definition": "多任务激励研究同一行动者在多个任务间分配努力时，报酬规则如何改变其选择。指标操纵是通过调整记录或计算方式提高被考核指标，而未按同等幅度改善真实目标。",
+      "targetChapter": "02_enterprise_data_model",
+      "targetHeading": "多任务配置与指标操纵",
+      "status": "add",
+      "placement": "小节开头或m操纵模型前补定义",
+      "boundary": "指标变化可能由真实努力、环境噪声及操纵共同产生，三者应区分。"
+    },
+    {
+      "id": "conversion-rate",
+      "term": "转化率",
+      "aliases": [],
+      "definition": "转化率是在规定对象、事件和观察窗口内，完成目标行为的对象数占符合条件对象数的比例。",
+      "targetChapter": "02_enterprise_data_model",
+      "targetHeading": "思考与习题",
+      "status": "add",
+      "placement": "月度转化率习题前或题干中给出本题定义，允许学生自行选定具体业务行为",
+      "boundary": "比率汇总需要各天分子分母定义一致、对象归属与重复计数规则清楚。"
+    },
+    {
+      "id": "retail-ratios",
+      "term": "零售库存指标",
+      "aliases": [
+        "缺货率",
+        "库存周转率",
+        "滞销库存金额"
+      ],
+      "definition": "缺货率须指明以商品、订单还是需求数量为计数单位；库存周转率通常是指定期间销售成本与同期平均库存成本之比；滞销库存金额是满足规定未动销时长或周转条件的库存价值。",
+      "targetChapter": "02_enterprise_data_model",
+      "targetHeading": "零售订单数据模型",
+      "status": "add",
+      "placement": "零售案例关键指标表后补短释，明确题目要求自行制定的口径",
+      "boundary": "不要为缺货率或滞销强造唯一全行业公式；本讲考察口径选择。"
+    }
+  ],
+  "externalTerms": [
+    {
+      "id": "crm",
+      "term": "CRM",
+      "aliases": [
+        "客户关系管理"
+      ],
+      "definition": "Customer Relationship Management，客户关系管理；相应系统汇集客户身份、销售交互及服务资料，支持关系维护与分析。",
+      "sourceUrl": "https://www.oracle.com/apac/cx/what-is-crm/"
+    },
+    {
+      "id": "erp",
+      "term": "ERP",
+      "aliases": [
+        "企业资源计划"
+      ],
+      "definition": "Enterprise Resource Planning，企业资源计划；整合订单、采购、库存、生产及财务等核心业务的系统类别。",
+      "sourceUrl": "https://www.sap.com/resources/what-is-erp"
+    },
+    {
+      "id": "mes",
+      "term": "MES",
+      "aliases": [
+        "制造执行系统"
+      ],
+      "definition": "Manufacturing Execution System，制造执行系统；记录、跟踪和管理生产现场的作业执行、资源及批次状态。",
+      "sourceUrl": "https://www.sap.com/products/scm/digital-manufacturing/what-is-mes.html"
+    },
+    {
+      "id": "nl2sql",
+      "term": "NL2SQL",
+      "aliases": [
+        "自然语言生成 SQL",
+        "Text-to-SQL"
+      ],
+      "definition": "Natural Language to SQL，指依据自然语言问题及数据库结构生成SQL查询的技术任务。结果仍须核查业务口径、连接关系和访问权限。",
+      "sourceUrl": "https://docs.snowflake.com/en/user-guide/snowflake-cortex/cortex-analyst"
+    },
+    {
+      "id": "oecd-g20",
+      "term": "G20/OECD公司治理原则",
+      "aliases": [
+        "OECD/G20",
+        "OECD/G20 公司治理原则"
+      ],
+      "definition": "G20与经济合作与发展组织（OECD）共同认可的公司治理原则，涉及股东权利、信息披露、董事会责任等；本讲引用2023年修订版。它是原则性框架，不能等同于各法域的具体法律。",
+      "sourceUrl": "https://www.oecd.org/en/publications/g20-oecd-principles-of-corporate-governance-2023_ed750b30-en.html"
+    },
+    {
+      "id": "coso",
+      "term": "COSO",
+      "aliases": [],
+      "definition": "美国反虚假财务报告委员会下属发起人委员会的简称，发布内部控制及企业风险管理框架；本讲借其说明经营、报告和合规相关的控制职责。",
+      "sourceUrl": "https://www.coso.org/guidance-on-ic"
+    },
+    {
+      "id": "iso-38500",
+      "term": "ISO/IEC 38500:2024",
+      "aliases": [
+        "ISO/IEC 38500"
+      ],
+      "definition": "关于组织信息技术治理的国际标准，面向治理机构及支持人员，为组织当前和未来的IT使用提供指导原则。IT是information technology，即信息技术。",
+      "sourceUrl": "https://www.iso.org/standard/81684.html"
+    },
+    {
+      "id": "nist-ai-rmf",
+      "term": "NIST AI RMF",
+      "aliases": [],
+      "definition": "美国国家标准与技术研究院（NIST）的人工智能风险管理框架；AI RMF是AI Risk Management Framework的缩写，用于组织识别和管理AI相关风险。",
+      "sourceUrl": "https://www.nist.gov/itl/ai-risk-management-framework"
+    },
+    {
+      "id": "iso-42001",
+      "term": "ISO/IEC 42001",
+      "aliases": [
+        "ISO/IEC 42001:2023"
+      ],
+      "definition": "规定组织建立、实施、维护和持续改进人工智能管理体系要求的国际标准；本讲引用2023年版。",
+      "sourceUrl": "https://www.iso.org/standard/42001"
+    },
+    {
+      "id": "eu-ai-act",
+      "term": "欧盟AI Act",
+      "aliases": [
+        "AI Act",
+        "欧盟 AI Act"
+      ],
+      "definition": "欧盟《人工智能法案》，正式文本为Regulation (EU) 2024/1689，对其适用范围内的人工智能实践和系统规定相应规则；具体义务取决于主体、用途、风险类别及适用阶段。",
+      "sourceUrl": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj"
+    },
+    {
+      "id": "apache-iceberg",
+      "term": "Apache Iceberg",
+      "aliases": [
+        "Iceberg"
+      ],
+      "definition": "开放表格式项目，规定表元数据、快照和模式演化等机制，供兼容计算引擎读取和管理大规模分析表。",
+      "sourceUrl": "https://iceberg.apache.org/spec/"
+    },
+    {
+      "id": "ai-infra-book",
+      "term": "《深入理解AI Infra》",
+      "aliases": [
+        "AI Infra",
+        "深入理解 AI Infra"
+      ],
+      "definition": "李博杰编写的人工智能基础设施著作。Infra是infrastructure的简称；本讲引用其计算、存储与通信分析方法，具体算例为课程自行设定。",
+      "sourceUrl": "https://github.com/bojieli/ai-infra-book"
+    },
+    {
+      "id": "oracle-oci",
+      "term": "Oracle与OCI",
+      "aliases": [
+        "Oracle",
+        "OCI",
+        "Oracle Cloud Infrastructure"
+      ],
+      "definition": "Oracle是数据库和企业软件供应商；OCI是Oracle Cloud Infrastructure，即其云基础设施服务，提供计算、网络、存储等资源。",
+      "sourceUrl": "https://docs.oracle.com/en-us/iaas/Content/GSG/Concepts/baremetalintro.htm"
+    },
+    {
+      "id": "oci-zettascale",
+      "term": "OCI Zettascale10",
+      "aliases": [],
+      "definition": "Oracle在2025年公告的AI计算集群架构；公告中的八十万颗GPU表示目标部署上限，不等于某家企业已取得的容量。",
+      "sourceUrl": "https://www.oracle.com/news/announcement/ai-world-oracle-unveils-next-generation-oci-zettascale10-cluster-for-ai-2025-10-14/"
+    },
+    {
+      "id": "aws",
+      "term": "AWS",
+      "aliases": [
+        "Amazon Web Services"
+      ],
+      "definition": "Amazon Web Services，亚马逊云服务，提供计算、存储、数据库和人工智能等按服务使用的云资源。",
+      "sourceUrl": "https://aws.amazon.com/what-is-aws/"
+    },
+    {
+      "id": "amazon-bedrock",
+      "term": "Amazon Bedrock",
+      "aliases": [
+        "AWS Bedrock",
+        "Bedrock"
+      ],
+      "definition": "AWS提供的生成式AI服务平台；其中Guardrails用于按配置检查模型、智能体、知识库或流程的输入与输出。",
+      "sourceUrl": "https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-use.html"
+    },
+    {
+      "id": "azure",
+      "term": "Azure",
+      "aliases": [],
+      "definition": "微软的云服务平台，提供计算、存储、数据和应用服务；网络访问范围与权限须按具体服务配置。",
+      "sourceUrl": "https://azure.microsoft.com/en-us/resources/cloud-computing-dictionary/what-is-azure"
+    },
+    {
+      "id": "microsoft-foundry",
+      "term": "Microsoft Foundry",
+      "aliases": [],
+      "definition": "微软用于构建和运行AI应用及智能体的服务平台；本讲关注其私有端点、网络边界及相关依赖的配置。",
+      "sourceUrl": "https://learn.microsoft.com/en-us/azure/foundry/how-to/configure-private-link"
+    },
+    {
+      "id": "databricks",
+      "term": "Databricks",
+      "aliases": [],
+      "definition": "面向数据处理、分析和AI开发的平台；本讲讨论其表管理及数据治理能力。",
+      "sourceUrl": "https://docs.databricks.com/aws/en/data-governance/unity-catalog"
+    },
+    {
+      "id": "unity-catalog",
+      "term": "Unity Catalog",
+      "aliases": [],
+      "definition": "Databricks的数据与AI治理层，为表、模型等资产提供目录组织、访问控制、血缘和审计记录。",
+      "sourceUrl": "https://docs.databricks.com/aws/en/data-governance/unity-catalog"
+    },
+    {
+      "id": "delta-lake",
+      "term": "Delta Lake",
+      "aliases": [
+        "Delta",
+        "Delta 表"
+      ],
+      "definition": "为数据湖表提供事务和版本管理机制的开放表技术；Databricks的Iceberg读取功能可按条件为Delta表生成兼容元数据。",
+      "sourceUrl": "https://docs.databricks.com/aws/en/delta/iceberg-reads"
+    },
+    {
+      "id": "snowflake",
+      "term": "Snowflake",
+      "aliases": [],
+      "definition": "提供云端数据存储、查询和分析等服务的平台；本讲以其语义视图和自然语言问数服务说明业务定义的作用。",
+      "sourceUrl": "https://docs.snowflake.com/en/user-guide/views-semantic/overview"
+    },
+    {
+      "id": "semantic-views",
+      "term": "Semantic Views",
+      "aliases": [],
+      "definition": "Snowflake的语义视图对象，用于在数据库中规定业务实体、指标及关系，使不同应用复用共同的业务定义。",
+      "sourceUrl": "https://docs.snowflake.com/en/user-guide/views-semantic/overview"
+    },
+    {
+      "id": "cortex-analyst",
+      "term": "Cortex Analyst",
+      "aliases": [],
+      "definition": "Snowflake的自然语言问数服务，借助语义定义生成面向结构化数据的SQL查询；生成结果仍需按业务任务验证。",
+      "sourceUrl": "https://docs.snowflake.com/en/user-guide/snowflake-cortex/cortex-analyst"
+    },
+    {
+      "id": "palantir",
+      "term": "Palantir",
+      "aliases": [],
+      "definition": "开发数据整合、分析及业务操作平台的软件公司；本讲主要引用其Foundry产品文档中的对象和动作建模机制。",
+      "sourceUrl": "https://www.palantir.com/docs/foundry/ontology/overview"
+    },
+    {
+      "id": "palantir-ontology",
+      "term": "Palantir Ontology",
+      "aliases": [
+        "Ontology"
+      ],
+      "definition": "Palantir平台中连接数据与业务的建模层，以对象类型、属性、关系和动作表达业务结构及相关操作；这是具体产品用法，不等同于哲学本体论。",
+      "sourceUrl": "https://www.palantir.com/docs/foundry/ontology/overview"
+    },
+    {
+      "id": "action-types",
+      "term": "Action types",
+      "aliases": [],
+      "definition": "Palantir中定义一类业务操作及其参数、规则和允许变更的配置；本讲借其说明建议与受控执行的区别。",
+      "sourceUrl": "https://www.palantir.com/docs/foundry/action-types/rules"
+    },
+    {
+      "id": "sap",
+      "term": "SAP",
+      "aliases": [],
+      "definition": "企业应用软件供应商，提供企业资源计划及相关业务系统；本讲将其作为已有交易流程和业务语义的一种平台来源。",
+      "sourceUrl": "https://www.sap.com/products/erp/what-is-sap-erp.html"
+    },
+    {
+      "id": "sap-bdc",
+      "term": "SAP Business Data Cloud",
+      "aliases": [
+        "Business Data Cloud"
+      ],
+      "definition": "SAP组织企业数据产品、分析和AI相关能力的服务组合；本讲以其说明在已有业务系统基础上共享数据与语义的路径。",
+      "sourceUrl": "https://learning.sap.com/courses/introducing-sap-business-data-cloud/outlining-the-architecture-of-sap-business-data-cloud_e0e3df7e-a215-4d80-8c8f-5f9689293dac"
+    },
+    {
+      "id": "joule",
+      "term": "Joule",
+      "aliases": [],
+      "definition": "SAP的AI交互层，将业务用户与相关AI助手、智能体及企业资料连接；具体可用功能取决于所采用的产品和配置。",
+      "sourceUrl": "https://learning.sap.com/courses/introducing-sap-business-data-cloud/outlining-the-architecture-of-sap-business-data-cloud_e0e3df7e-a215-4d80-8c8f-5f9689293dac"
+    },
+    {
+      "id": "alation",
+      "term": "Alation",
+      "aliases": [],
+      "definition": "提供企业数据目录产品的公司；相应目录汇集数据资产的定义、来源、血缘、责任及质量信息，帮助使用者发现和理解数据。",
+      "sourceUrl": "https://www.alation.com/product/data-catalog/"
+    },
+    {
+      "id": "collibra",
+      "term": "Collibra",
+      "aliases": [],
+      "definition": "提供数据治理产品的公司；本讲以其代表数据政策、责任及治理工作流的管理工具。",
+      "sourceUrl": "https://www.collibra.com/products/data-governance"
+    },
+    {
+      "id": "bigid",
+      "term": "BigID",
+      "aliases": [],
+      "definition": "提供数据发现与分类产品的公司，帮助识别分布于不同来源的敏感或受管数据；发现与分类不等于自动取得访问权限。",
+      "sourceUrl": "https://bigid.com/solutions/discovery-classification/"
+    },
+    {
+      "id": "dama-dmbok",
+      "term": "DAMA-DMBOK",
+      "aliases": [],
+      "definition": "DAMA International组织编写的《数据管理知识体系指南》，整理数据治理、建模、质量、元数据等知识领域；本讲引用第二版。",
+      "sourceUrl": "https://dama.org/learning-resources/dama-data-management-body-of-knowledge-dmbok/"
+    },
+    {
+      "id": "semi-e10-e79",
+      "term": "SEMI E10与SEMI E79",
+      "aliases": [
+        "SEMI E10",
+        "SEMI E79"
+      ],
+      "definition": "SEMI发布的设备性能相关标准，分别涉及可靠性、可用性、可维护性及利用率，以及设备生产率的度量。本讲采用其公开导读，不声称复核了付费标准的全部条文。",
+      "sourceUrl": "https://www.semi.org/en/products-services/standards/step/equipment-performance-metrics"
+    },
+    {
+      "id": "atlan",
+      "term": "Atlan",
+      "aliases": [],
+      "definition": "提供元数据目录及协作治理产品的公司；本讲引用其发布的Nasdaq客户案例说明数据发现、血缘和责任记录。",
+      "sourceUrl": "https://atlan.com/success-stories/nasdaq/"
+    },
+    {
+      "id": "nasdaq",
+      "term": "Nasdaq",
+      "aliases": [],
+      "definition": "经营证券市场并提供金融技术服务的企业；本讲讨论其数据平台更新案例，不涉及投资评价。",
+      "sourceUrl": "https://atlan.com/success-stories/nasdaq/"
+    },
+    {
+      "id": "dbt",
+      "term": "dbt",
+      "aliases": [],
+      "definition": "用于组织、测试、记录和执行数据转换模型的工具；通常把SQL转换逻辑作为可维护的项目管理。",
+      "sourceUrl": "https://docs.getdbt.com/docs/introduction"
+    },
+    {
+      "id": "redshift",
+      "term": "Amazon Redshift",
+      "aliases": [
+        "Redshift"
+      ],
+      "definition": "AWS提供的托管云数据仓库服务，可使用SQL及分析工具查询和分析数据。",
+      "sourceUrl": "https://docs.aws.amazon.com/redshift/latest/mgmt/welcome.html"
+    },
+    {
+      "id": "monte-carlo",
+      "term": "Monte Carlo",
+      "aliases": [],
+      "definition": "此处是数据与AI可观测性平台的产品名，用于监测数据问题、告警及相关血缘；不是蒙特卡洛随机模拟方法。",
+      "sourceUrl": "https://docs.getmontecarlo.com/docs/monte-carlo-at-a-glance"
+    },
+    {
+      "id": "shopify",
+      "term": "Shopify",
+      "aliases": [],
+      "definition": "提供电商平台及开发接口的企业；本讲使用其对象全局标识规则说明对象身份和唯一性范围。",
+      "sourceUrl": "https://shopify.dev/docs/api/usage/gids"
+    },
+    {
+      "id": "shopify-global-id",
+      "term": "Shopify全局标识",
+      "aliases": [
+        "全局标识",
+        "统一资源标识",
+        "URI"
+      ],
+      "definition": "Shopify在接口中使用应用范围内的统一资源标识（URI）识别对象，标识包含对象类型；“全局”应按指定应用范围理解。",
+      "sourceUrl": "https://shopify.dev/docs/api/usage/gids"
+    },
+    {
+      "id": "stripe",
+      "term": "Stripe",
+      "aliases": [],
+      "definition": "提供支付处理及相关软件接口的企业；本讲以其支付对象生命周期说明业务状态和后续行动。",
+      "sourceUrl": "https://docs.stripe.com/payments/paymentintents/lifecycle"
+    },
+    {
+      "id": "payment-intent",
+      "term": "PaymentIntent",
+      "aliases": [
+        "支付意图"
+      ],
+      "definition": "Stripe用于跟踪一次支付过程的对象，记录所处状态及下一步所需操作；提交成功不等于资金最终到账。",
+      "sourceUrl": "https://docs.stripe.com/payments/paymentintents/lifecycle"
+    },
+    {
+      "id": "uber",
+      "term": "Uber",
+      "aliases": [],
+      "definition": "提供出行及配送服务的平台企业；本讲引用其以空间网格分析供需、定价与调度的工程实践。",
+      "sourceUrl": "https://www.uber.com/us/en/blog/h3/"
+    },
+    {
+      "id": "h3",
+      "term": "H3",
+      "aliases": [],
+      "definition": "由Uber开发并开源的分层空间索引系统，将地球表面组织为可标识的网格单元，便于按指定层级汇总地理资料。",
+      "sourceUrl": "https://www.uber.com/us/en/blog/h3/"
+    },
+    {
+      "id": "linkedin",
+      "term": "LinkedIn",
+      "aliases": [],
+      "definition": "职业社交网络企业；其工程团队开发DataHub来搜索、发现和理解分布于不同系统的数据资产。",
+      "sourceUrl": "https://www.linkedin.com/blog/engineering/archive/data-hub"
+    },
+    {
+      "id": "datahub",
+      "term": "DataHub",
+      "aliases": [],
+      "definition": "由LinkedIn开发并开源的元数据搜索与发现平台，以数据集、任务、指标、图表、人员等实体及其关系组织元数据。",
+      "sourceUrl": "https://www.linkedin.com/blog/engineering/archive/data-hub"
+    },
+    {
+      "id": "spotify",
+      "term": "Spotify",
+      "aliases": [],
+      "definition": "音频流媒体服务企业；本讲引用其开发者平台实践，讨论软件服务的身份与维护责任。",
+      "sourceUrl": "https://engineering.atspotify.com/2020/3/what-the-heck-is-backstage-anyway"
+    },
+    {
+      "id": "backstage",
+      "term": "Backstage",
+      "aliases": [],
+      "definition": "源于Spotify的开源开发者门户平台，通过软件目录等功能组织服务、所有权信息和技术文档。",
+      "sourceUrl": "https://engineering.atspotify.com/2020/3/what-the-heck-is-backstage-anyway"
+    },
+    {
+      "id": "python-dataclass",
+      "term": "Python数据类",
+      "aliases": [
+        "Python",
+        "dataclass",
+        "dataclasses"
+      ],
+      "definition": "Python是本课程示例使用的程序设计语言；dataclasses模块依据字段声明自动生成初始化等常用方法，便于表示具有明确结构的数据。",
+      "sourceUrl": "https://docs.python.org/3/library/dataclasses.html"
+    },
+    {
+      "id": "csv",
+      "term": "CSV",
+      "aliases": [],
+      "definition": "Comma-Separated Values，逗号分隔值，是用文本行和分隔符保存表格资料的文件格式；文件本身通常不能完整表达业务约束、单位和责任。",
+      "sourceUrl": "https://docs.python.org/3/library/csv.html"
+    },
+    {
+      "id": "cpu-gpu",
+      "term": "CPU与GPU",
+      "aliases": [
+        "CPU",
+        "GPU"
+      ],
+      "definition": "CPU是中央处理器，负责通用指令执行；GPU是图形处理器，也常用于大规模并行数值计算。本讲以其说明AI系统计算资源。",
+      "sourceUrl": "https://github.com/bojieli/ai-infra-book"
+    }
+  ],
+  "implementationNotes": [
+    "课程内概念链接应落到具体定义节点；已有定义后仍需保留本文的论证，不能以链接替代核心解释。",
+    "第一讲补关系约束与事实粒度，第二讲首段三项概念均反向链接；第二讲新增专门术语在首次使用前后就近定义。",
+    "外部专名及技术缩写集中于第二讲文末附录；正文首次出现与后续主要使用处可点击到附录，并提供返回引用处。",
+    "图内SVG标签不能只靠文字自动替换。应在图注提供链接词，或为SVG标签提供可访问链接；表格单元格与案例问题/答案同样纳入审查。",
+    "不要在代码块内进行自动超链接。用代码前的解释/字段字典阐释示例标识，保留代码可复制和可运行性。",
+    "只在词语作为专业概念使用时匹配，不替换普通上下文的“关系、状态、模式、对象、模型”等短词。",
+    "第一讲与第二讲已有术语解释是后续的唯一课程定义来源；产品名链接至文末产品释义，不能误跳到某个同名普通概念。"
+  ],
+  "precisionFixes": [
+    {
+      "location": "企业运营数据的基本语义/状态",
+      "issue": "“某一时点或区间内对象的状态”属循环定义",
+      "replacement": "对象在给定时点或区间内的条件或属性取值。"
+    },
+    {
+      "location": "半导体制造数据模型的核心对象表",
+      "issue": "网页Quality Event和Delivery Commitment因shortstack转换丢首词，只剩Event/Commitment",
+      "replacement": "改用完整中文主称“质量事件（Quality Event）”“交付承诺（Delivery Commitment）”。"
+    },
+    {
+      "location": "键、外键与完整性约束/外键",
+      "issue": "外键限定“另一个关系”排除了合法的自引用外键",
+      "replacement": "改为“被引用关系中的候选键或主键”，补说明被引用关系也可为本关系。"
+    },
+    {
+      "location": "事件、状态与时间/慢变维",
+      "issue": "“用于保存变化”与覆盖更新不保留历史有张力",
+      "replacement": "改为“用于处理维度属性变化的一组方法”，分别说明是否保留历史。"
+    },
+    {
+      "location": "指标字典、元数据与治理/后文",
+      "issue": "元数据迟至企业案例才隐含解释，前文多次使用",
+      "replacement": "在首个数据模型小节提前定义，并对元数据目录、血缘、数据字典分别设锚点。"
+    },
+    {
+      "location": "制造 KPI 的事实粒度/OEE",
+      "issue": "因子虽命名但分子分母尚需交代",
+      "replacement": "补A=运行时间/计划生产时间；P=理想节拍×总产出/运行时间；Q=良品数/总产出，限定同一窗口与产出范围。"
+    },
+    {
+      "location": "语义层与 AI 问数/NL2SQL",
+      "issue": "现有脚注已有定义，可保留但应统一至文末外部术语",
+      "replacement": "释义解释自然语言到SQL的转换及结构、口径、权限条件，不描述为自动保证可信的系统。"
+    },
+    {
+      "location": "平台组合与采购对象/SAP链接",
+      "issue": "旧https://www.sap.com/products/data-cloud/artificial-intelligence.html本次访问404",
+      "replacement": "文末释义使用已读取的SAP官方课程架构页，正文原有引用另由主代理决定是否更新。"
+    }
+  ]
+}

@@ -1,0 +1,614 @@
+{
+  "chapter": "01_intro",
+  "basis": [
+    "dist/content/01_intro.json:html",
+    "content-source/textbook/chapters/01_intro.tex"
+  ],
+  "status": "audit_only",
+  "definitionInsertions": [
+    {
+      "term": "业务对象",
+      "anchor": "concept-business-object",
+      "action": "anchor_existing",
+      "section": "数据驱动决策的基本对象",
+      "definition": "业务对象是企业经营中可以被识别、记录、比较和管理的实体或事件，例如客户、订单、产品、供应商、库存批次、工单、审批实例和流程事件。",
+      "usedByChapter02": true,
+      "id": "concept-business-object",
+      "aliases": [
+        "业务实体"
+      ]
+    },
+    {
+      "term": "业务关系",
+      "anchor": "concept-business-relation",
+      "action": "add_definition",
+      "after": "业务对象",
+      "definition": "业务关系是业务对象之间具有明确业务含义的联系，例如订单属于某位客户、订单明细记录某种商品。",
+      "usedByChapter02": true,
+      "id": "concept-business-relation",
+      "aliases": [],
+      "insertAfterDefinition": "业务对象"
+    },
+    {
+      "term": "关系约束",
+      "anchor": "concept-relation-constraint",
+      "action": "add_definition",
+      "after": "业务关系",
+      "definition": "关系约束规定业务对象之间的联系必须满足的条件，包括是否必须存在、可以关联多少个对象，以及关联在何种时间条件下有效。",
+      "example": "在规定每条明细只能属于一张订单的业务制度下，一张订单可以包含多条明细，但每条明细必须且只能关联一张订单。",
+      "caution": "业务约束不等同于外键约束；主键、外键等技术约束只实现其中一部分规则。",
+      "usedByChapter02": true,
+      "id": "concept-relation-constraint",
+      "aliases": [
+        "关联约束"
+      ],
+      "insertAfterDefinition": "业务关系"
+    },
+    {
+      "term": "事实粒度",
+      "anchor": "concept-fact-grain",
+      "action": "add_definition",
+      "after": "关系约束",
+      "definition": "事实粒度规定一条业务事实记录代表什么对象或事件，以及记录所对应的时间范围。",
+      "example": "订单明细表的一条记录表示一张订单中的一种商品明细；库存快照表的一条记录表示某日结束时某商品在某仓库的库存。",
+      "caution": "粒度是记录的业务含义，不等同于主键、时间粒度或唯一性。",
+      "usedByChapter02": true,
+      "id": "concept-fact-grain",
+      "aliases": [
+        "记录粒度",
+        "表粒度"
+      ],
+      "insertAfterDefinition": "关系约束"
+    }
+  ],
+  "existingDefinitionsToAnchor": [
+    [
+      "经营症状",
+      "concept-operating-symptom"
+    ],
+    [
+      "管理决策问题",
+      "concept-decision-problem"
+    ],
+    [
+      "决策分析任务",
+      "concept-analysis-task"
+    ],
+    [
+      "行动对象",
+      "concept-action-object"
+    ],
+    [
+      "指标口径",
+      "concept-metric-definition"
+    ],
+    [
+      "商业智能",
+      "concept-business-intelligence"
+    ],
+    [
+      "决策支持系统",
+      "concept-decision-support"
+    ],
+    [
+      "决策智能",
+      "concept-decision-intelligence"
+    ],
+    [
+      "样本信息价值",
+      "concept-evsi"
+    ],
+    [
+      "马尔可夫性质",
+      "concept-markov-property"
+    ],
+    [
+      "任务规格",
+      "concept-task-specification"
+    ],
+    [
+      "大语言模型",
+      "concept-llm"
+    ],
+    [
+      "智能体",
+      "concept-agent"
+    ],
+    [
+      "运行环境",
+      "concept-harness"
+    ]
+  ],
+  "mustExplainBeforeUse": [
+    "数据",
+    "信息",
+    "模型",
+    "字段",
+    "记录",
+    "数据表",
+    "时间粒度",
+    "决策变量",
+    "概率",
+    "条件概率",
+    "期望",
+    "条件期望",
+    "损失函数",
+    "argmin",
+    "潜在结果",
+    "先验概率",
+    "后验概率",
+    "全概率公式",
+    "贝叶斯公式",
+    "完全信息",
+    "策略",
+    "因果识别",
+    "目标总体",
+    "仿真",
+    "抽样误差",
+    "结构偏差"
+  ],
+  "glossaryExisting": [
+    "SKU",
+    "KPI",
+    "数据仓库",
+    "ETL",
+    "OLAP",
+    "报表系统",
+    "封测",
+    "概率校准",
+    "CRISP-DM",
+    "元数据",
+    "数据血缘",
+    "human-in-the-loop",
+    "SQL",
+    "业务本体",
+    "数字孪生"
+  ],
+  "glossaryMissing": [
+    "OECD",
+    "Airbus",
+    "Palantir",
+    "Skywise",
+    "Oracle",
+    "Red Bull Racing",
+    "Anthropic",
+    "AI",
+    "Economic Index",
+    "Python",
+    "dataclass",
+    "dataclasses",
+    "str",
+    "list[str]",
+    "frozen=True",
+    "上下文",
+    "结构化输出",
+    "求解器"
+  ],
+  "notPresentInChapter": [
+    "NL2SQL"
+  ],
+  "preserveLegacyAnchors": [
+    "fn1",
+    "fn2",
+    "fn3",
+    "fn4",
+    "fn5",
+    "fn6",
+    "fn7",
+    "fn8",
+    "fn9",
+    "fn10",
+    "fn11"
+  ],
+  "criticalRisks": [
+    "事实粒度不等于主键或唯一性",
+    "业务关系与关系模型中的关系需区分",
+    "相关或诊断不等于因果识别",
+    "条件潜在结果之差不能当作已观测个体效果",
+    "免费信息价值非负需要可忽略信号等条件",
+    "frozen=True不使嵌套列表深层不可变",
+    "仿真增样不能消除结构偏差"
+  ],
+  "linkingPolicy": {
+    "skip": [
+      "code",
+      "math",
+      "existing_links",
+      "footnote_backlinks",
+      "self_definition_titles"
+    ],
+    "route": "#/chapter/01_intro?anchor=concept-business-object",
+    "retainFootnoteRoutes": true
+  },
+  "externalTerms": [
+    {
+      "id": "oecd",
+      "term": "OECD",
+      "aliases": [
+        "经济合作与发展组织"
+      ],
+      "definition": "经济合作与发展组织（Organisation for Economic Co-operation and Development）是开展政策研究与国际合作的政府间组织。文中引用其公司治理原则说明企业责任与监督的制度背景。",
+      "sourceUrl": "https://www.oecd.org/en/about.html"
+    },
+    {
+      "id": "airbus",
+      "term": "Airbus",
+      "aliases": [
+        "空中客车"
+      ],
+      "definition": "空中客车是航空航天制造企业；本讲引用其航空数据平台Skywise的公开应用材料。",
+      "sourceUrl": "https://www.airbus.com/en/newsroom/press-releases/2017-06-airbus-launches-skywise-aviations-open-data-platform"
+    },
+    {
+      "id": "palantir",
+      "term": "Palantir",
+      "aliases": [
+        "Palantir Technologies"
+      ],
+      "definition": "提供数据整合与分析软件的平台企业；本讲中是Airbus开发Skywise的合作方。",
+      "sourceUrl": "https://www.airbus.com/en/newsroom/press-releases/2017-06-airbus-launches-skywise-aviations-open-data-platform"
+    },
+    {
+      "id": "skywise",
+      "term": "Skywise",
+      "aliases": [],
+      "definition": "Airbus与Palantir合作推出的航空数据平台，将航空运营、维护等来源的数据汇集起来，供航空公司及相关主体查询和分析。",
+      "sourceUrl": "https://www.airbus.com/en/newsroom/press-releases/2017-06-airbus-launches-skywise-aviations-open-data-platform"
+    },
+    {
+      "id": "oracle",
+      "term": "Oracle",
+      "aliases": [
+        "甲骨文"
+      ],
+      "definition": "提供数据库、企业软件和云服务的技术企业；本讲中是红牛车队使用的云计算服务提供方。",
+      "sourceUrl": "https://www.oracle.com/news/announcement/oracle-red-bull-racing-doubles-down-on-oracle-cloud-and-ai-2025-03-13/"
+    },
+    {
+      "id": "red-bull-racing",
+      "term": "Red Bull Racing",
+      "aliases": [
+        "Oracle Red Bull Racing",
+        "红牛车队"
+      ],
+      "definition": "参加一级方程式赛车（Formula One，F1）赛事的车队。本讲讨论其利用仿真比较比赛策略的公开案例。",
+      "sourceUrl": "https://www.oracle.com/news/announcement/oracle-red-bull-racing-doubles-down-on-oracle-cloud-and-ai-2025-03-13/"
+    },
+    {
+      "id": "oci",
+      "term": "OCI",
+      "aliases": [
+        "Oracle Cloud Infrastructure"
+      ],
+      "definition": "Oracle Cloud Infrastructure的缩写，即Oracle云基础设施服务，为本例中的大规模策略仿真提供计算资源。",
+      "sourceUrl": "https://www.oracle.com/news/announcement/oracle-red-bull-racing-doubles-down-on-oracle-cloud-and-ai-2025-03-13/"
+    },
+    {
+      "id": "anthropic",
+      "term": "Anthropic",
+      "aliases": [],
+      "definition": "从事大语言模型研究与产品开发的企业；本讲中的Economic Index是该企业发布的研究材料。",
+      "sourceUrl": "https://www.anthropic.com/research/economic-index-june-2026-report"
+    },
+    {
+      "id": "economic-index",
+      "term": "Economic Index",
+      "aliases": [
+        "Anthropic Economic Index"
+      ],
+      "definition": "Anthropic关于人工智能使用与经济影响的系列研究。本讲引用其中的平台使用记录和调查材料，其结论适用范围受样本和研究方法限制。",
+      "sourceUrl": "https://www.anthropic.com/research/economic-index-june-2026-report"
+    },
+    {
+      "id": "ups",
+      "term": "UPS",
+      "aliases": [
+        "United Parcel Service",
+        "联合包裹"
+      ],
+      "definition": "从事包裹配送和物流服务的企业；本讲以其路线规划与配送导航说明行动方案如何落实到具体执行位置。",
+      "sourceUrl": "https://about.ups.com/us/en/newsroom/press-releases/innovation-driven/ups-deploys-purpose-built-navigation-for-ups-service-personnel.html"
+    },
+    {
+      "id": "upsnav",
+      "term": "UPSNav",
+      "aliases": [],
+      "definition": "UPS面向配送司机的导航工具，按照路线规划结果为具体收货、取货位置提供逐向行驶指引。",
+      "sourceUrl": "https://about.ups.com/us/en/newsroom/press-releases/innovation-driven/ups-deploys-purpose-built-navigation-for-ups-service-personnel.html"
+    },
+    {
+      "id": "orion",
+      "term": "ORION",
+      "aliases": [
+        "On-Road Integrated Optimization and Navigation"
+      ],
+      "definition": "UPS的路线优化与导航系统，英文全称为On-Road Integrated Optimization and Navigation；本例中它确定车辆访问配送与取件站点的次序。",
+      "sourceUrl": "https://about.ups.com/us/en/newsroom/press-releases/innovation-driven/ups-deploys-purpose-built-navigation-for-ups-service-personnel.html"
+    },
+    {
+      "id": "cvs-health",
+      "term": "CVS Health",
+      "aliases": [
+        "CVS",
+        "CVS Pharmacy",
+        "CVS Caremark"
+      ],
+      "definition": "提供健康服务并经营药房业务的企业。CVS Pharmacy为其药房业务名称；本例讨论其2014年在全部CVS Pharmacy门店停售烟草的决定。",
+      "sourceUrl": "https://www.cvshealth.com/campaigns/quitting-tobacco.html"
+    },
+    {
+      "id": "wells-fargo",
+      "term": "Wells Fargo",
+      "aliases": [
+        "富国银行"
+      ],
+      "definition": "提供存款、信用卡等金融产品与服务的银行。本讲采用的案例是美国监管机构对其未经客户授权开户行为的调查。",
+      "sourceUrl": "https://www.consumerfinance.gov/archive/newsroom/consumer-financial-protection-bureau-fines-wells-fargo-100-million-widespread-illegal-practice-secretly-opening-unauthorized-accounts/"
+    },
+    {
+      "id": "cfpb",
+      "term": "CFPB",
+      "aliases": [
+        "Consumer Financial Protection Bureau",
+        "美国消费者金融保护局"
+      ],
+      "definition": "Consumer Financial Protection Bureau的缩写，即美国消费者金融保护局；本案例中它发布了对富国银行未经授权开户行为的监管处罚材料。",
+      "sourceUrl": "https://www.consumerfinance.gov/archive/newsroom/consumer-financial-protection-bureau-fines-wells-fargo-100-million-widespread-illegal-practice-secretly-opening-unauthorized-accounts/"
+    },
+    {
+      "id": "patagonia",
+      "term": "Patagonia",
+      "aliases": [
+        "巴塔哥尼亚"
+      ],
+      "definition": "经营户外服装与装备的企业；本讲以其“Don’t Buy This Jacket”广告讨论产品寿命、资源代价与评价期限。",
+      "sourceUrl": "https://www.patagonia.com/stories/planet/activism/dont-buy-this-jacket-black-friday-and-the-new-york-times/story-18615.html"
+    },
+    {
+      "id": "dont-buy-this-jacket",
+      "term": "Don’t Buy This Jacket",
+      "aliases": [
+        "Don't Buy This Jacket"
+      ],
+      "definition": "意为“不要购买这件夹克”，是Patagonia于2011年黑色星期五刊登的广告主题，旨在讨论减少不必要消费与产品生产的环境负担。广告主张本身不是环境效果的因果证据。",
+      "sourceUrl": "https://www.patagonia.com/stories/planet/activism/dont-buy-this-jacket-black-friday-and-the-new-york-times/story-18615.html"
+    },
+    {
+      "id": "black-friday",
+      "term": "黑色星期五",
+      "aliases": [
+        "Black Friday"
+      ],
+      "definition": "美国感恩节次日的零售促销时点，常被视为年末购物季的重要开始；Patagonia选择这一时点刊登广告，构成案例中的商业背景。",
+      "sourceUrl": "https://www.patagonia.com/stories/planet/activism/dont-buy-this-jacket-black-friday-and-the-new-york-times/story-18615.html"
+    },
+    {
+      "id": "amazon",
+      "term": "Amazon",
+      "aliases": [
+        "亚马逊"
+      ],
+      "definition": "经营电子商务、云计算等业务的企业。本讲引用其2016年度股东信中关于可逆决策和及时纠错的管理主张。",
+      "sourceUrl": "https://www.aboutamazon.com/news/company-news/2016-letter-to-shareholders"
+    },
+    {
+      "id": "python",
+      "term": "Python",
+      "aliases": [],
+      "definition": "本讲代码使用的程序设计语言，支持用类和类型注解组织业务记录。",
+      "sourceUrl": "https://docs.python.org/3/tutorial/"
+    },
+    {
+      "id": "dataclass",
+      "term": "dataclass",
+      "aliases": [
+        "dataclasses",
+        "数据类"
+      ],
+      "definition": "Python标准库dataclasses中的装饰器，可根据声明的字段自动生成初始化、显示和比较等常用方法；本例用它组织经营症状的数据。",
+      "sourceUrl": "https://docs.python.org/3/library/dataclasses.html"
+    },
+    {
+      "id": "python-frozen",
+      "term": "frozen=True",
+      "aliases": [],
+      "definition": "dataclass的选项，阻止通常的对象字段重新赋值；它不会自动冻结字段所引用的列表等内部对象，也不负责校验业务规则。",
+      "sourceUrl": "https://docs.python.org/3/library/dataclasses.html"
+    },
+    {
+      "id": "python-type-annotation",
+      "term": "类型注解",
+      "aliases": [
+        "list[str]",
+        "str"
+      ],
+      "definition": "代码中str表示文本类型，list[str]表示元素为文本的列表类型提示。类型注解说明预期的数据形式，并不自动完成运行时输入校验。",
+      "sourceUrl": "https://docs.python.org/3/library/typing.html"
+    }
+  ],
+  "newCourseDefinitions": [
+    {
+      "id": "concept-data-information-model",
+      "term": "数据、信息与模型",
+      "aliases": [
+        "数据",
+        "信息",
+        "模型"
+      ],
+      "definition": "数据是对对象、事件或状态的记录；信息是结合业务语境解释记录后形成的认识；模型是为回答特定问题而对对象、关系与假设作出的简化表示。",
+      "insertBeforeHeading": "管理决策的研究对象"
+    },
+    {
+      "id": "concept-record-field-table",
+      "term": "记录、字段与数据表",
+      "aliases": [
+        "记录",
+        "字段",
+        "数据表"
+      ],
+      "definition": "字段对应记录中的一项属性；一条记录组合描述一个规定的业务单位；数据表按相同字段结构组织多条记录。例如，一条订单明细记录可以包含订单编号、商品编号、数量和单价。",
+      "insertBeforeHeading": "数据驱动决策的基本对象"
+    },
+    {
+      "id": "concept-decision-variable",
+      "term": "决策变量",
+      "aliases": [],
+      "definition": "决策变量是由决策者选择或调整、用于表示行动方案的变量。订货数量、加急名单和人员配置都可以成为决策变量。",
+      "insertBeforeHeading": "决策系统的对象与层次"
+    },
+    {
+      "id": "concept-probability-expectation",
+      "term": "概率与期望",
+      "aliases": [
+        "概率",
+        "期望",
+        "期望损失",
+        "条件概率",
+        "条件期望"
+      ],
+      "definition": "概率表示给定模型下事件发生的可能性。期望是按各结果的概率加权得到的平均量；例如损失分别为0和100万元、对应概率为0.8和0.2时，期望损失为20万元。条件概率和条件期望是在已知某些观察或信息后计算的概率与平均量。",
+      "insertBeforeHeading": "状态行动与条件损失"
+    },
+    {
+      "id": "concept-state-action-loss",
+      "term": "状态、行动与损失函数",
+      "aliases": [
+        "状态",
+        "可行行动",
+        "可行行动集合",
+        "损失函数",
+        "行动成本"
+      ],
+      "definition": "状态描述决策时点与任务有关的业务条件；行动是决策者能够采取的操作。满足预算、资源、制度和授权条件的候选行动组成可行行动集合。损失函数把行动及其结果对应到可比较的代价数值，单独列出的行动成本不得与损失重复核算。",
+      "insertBeforeHeading": "状态行动与条件损失"
+    },
+    {
+      "id": "concept-argmin-objective",
+      "term": "最小化与最优行动",
+      "aliases": [
+        "argmin",
+        "目标函数",
+        "最优行动"
+      ],
+      "definition": "目标函数是用于比较候选方案的数值准则。最小化目标函数是从可行行动中寻找目标值最低的方案；argmin表示返回使目标值达到最小的行动，而不是该最小数值。",
+      "insertBeforeHeading": "状态行动与条件损失"
+    },
+    {
+      "id": "concept-potential-outcome",
+      "term": "潜在结果与因果效应",
+      "aliases": [
+        "潜在结果",
+        "干预",
+        "因果效应",
+        "反事实"
+      ],
+      "definition": "潜在结果是规定采取某一行动时将出现的结果。对同一对象通常只能观察实际行动对应的结果，未采取行动对应的结果属于反事实。比较不同潜在结果可定义因果效应，但从观测数据估计这种差异还需要研究设计和明确的识别假设。",
+      "insertBeforeHeading": "状态行动与条件损失"
+    },
+    {
+      "id": "concept-prior-posterior",
+      "term": "先验、信号与后验",
+      "aliases": [
+        "先验概率",
+        "先验",
+        "后验概率",
+        "后验",
+        "检测信号"
+      ],
+      "definition": "先验概率是在获得本次新观察之前对状态的概率判断；信号是在行动前可以获得的观察；后验概率是结合该信号更新后的状态概率。检测阳性表示发出中断预警，阴性表示未预警，两者都不等同于实际中断或正常状态。",
+      "insertBeforeHeading": "贝叶斯更新与条件行动"
+    },
+    {
+      "id": "concept-conditional-update",
+      "term": "全概率公式与贝叶斯公式",
+      "aliases": [
+        "全概率公式",
+        "贝叶斯公式",
+        "贝叶斯更新"
+      ],
+      "definition": "当若干状态互斥且穷尽所有可能时，全概率公式把信号出现的概率写成各状态概率与该状态下信号概率的加权和。贝叶斯公式以这一信号概率为分母，将状态与信号共同发生的概率除以信号概率，得到观察信号后的状态概率；分母须为正。",
+      "insertBeforeHeading": "贝叶斯更新与条件行动"
+    },
+    {
+      "id": "concept-complete-information",
+      "term": "完全信息",
+      "aliases": [
+        "EVPI",
+        "完全信息价值"
+      ],
+      "definition": "完全信息是指在行动前得知本次实际状态。完全信息的期望价值（expected value of perfect information，EVPI）等于无信息时的最小期望损失减去可按实际状态分别选取行动时的期望损失；在同一行动集合与损失模型下，它为其他免费可忽略信息的价值提供上界。",
+      "insertBeforeHeading": "样本信息的期望价值"
+    },
+    {
+      "id": "concept-decision-policy",
+      "term": "多期决策与策略",
+      "aliases": [
+        "多期决策",
+        "策略",
+        "行动规则"
+      ],
+      "definition": "多期决策在多个时点连续选择行动，当前行动还可能改变未来状态。策略是在每个决策时点，根据当时允许使用的信息选择行动的规则。",
+      "insertBeforeHeading": "多期决策的递推关系"
+    },
+    {
+      "id": "concept-causal-identification",
+      "term": "目标总体与因果识别",
+      "aliases": [
+        "目标总体",
+        "因果识别",
+        "识别条件"
+      ],
+      "definition": "目标总体是研究结论拟适用的对象集合。因果识别是在明确假设下，说明目标因果效应如何由可观察数据的分布确定；发现两个变量共同变化本身不足以完成因果识别。",
+      "insertBeforeHeading": "五类分析任务的研究问题"
+    },
+    {
+      "id": "concept-experimental-design",
+      "term": "实验与准实验",
+      "aliases": [
+        "A/B测试",
+        "A/B 测试",
+        "准实验"
+      ],
+      "definition": "A/B测试通过随机分配将可比对象置于不同方案下，再比较预先规定的结果。准实验并非由研究者随机分配处理，而是利用制度或环境产生的变化，在相应识别条件下估计因果效应；简单的实施前后比较不自动构成有效的准实验。",
+      "insertBeforeHeading": "经营问题的定义"
+    },
+    {
+      "id": "concept-simulation-error",
+      "term": "仿真与误差",
+      "aliases": [
+        "仿真",
+        "抽样误差",
+        "结构偏差"
+      ],
+      "definition": "仿真根据规定的模型和情景生成可能结果，用于比较候选方案。有限次随机模拟带来的波动称为抽样误差；模型对真实机制刻画不当带来的系统偏差属于结构偏差。增加模拟次数可减小前者，却不自动消除后者。",
+      "insertBeforeHeading": "oracle-与-red-bull-racing-的赛事仿真"
+    },
+    {
+      "id": "concept-proxy-metric",
+      "term": "代理指标",
+      "aliases": [
+        "代理指标"
+      ],
+      "definition": "代理指标是用来间接反映目标、且能够观测或计算的量。开户数量可以被用来近似反映服务覆盖，但不能独自代表客户价值。评价代理指标时须检查其与目标的关系以及奖励规则如何改变行为。",
+      "insertInCase": "b01-03"
+    },
+    {
+      "id": "concept-decision-reversibility",
+      "term": "决策可逆性",
+      "aliases": [
+        "可逆性",
+        "可逆决策"
+      ],
+      "definition": "决策可逆性表示行动实施后能否以可接受的时间和代价撤回或纠正。较易撤回的行动可能降低等待全部信息的必要性，但安全、监管和授权约束仍须满足。",
+      "insertInCase": "b01-05"
+    }
+  ],
+  "sourceVerificationDate": "2026-10-24",
+  "supplementCasesAudited": [
+    "b01-01",
+    "b01-02",
+    "b01-03",
+    "b01-04",
+    "b01-05"
+  ]
+}

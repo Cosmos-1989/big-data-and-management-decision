@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "chapters": {
+    "01_intro": {
+      "links": 303,
+      "referenceAnchors": 157,
+      "targets": 359,
+      "protectedNodes": 110
+    },
+    "02_enterprise_data_model": {
+      "links": 524,
+      "referenceAnchors": 228,
+      "targets": 446,
+      "protectedNodes": 172
+    }
+  },
+  "outOfScopeFilesUnchanged": 43,
+  "idempotent": true,
+  "errors": []
+}

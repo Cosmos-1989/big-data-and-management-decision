@@ -127,5 +127,16 @@
         "sha256": "b49338205715c26968045502ccef5d6cc9758d5668e29ab06c6c62b84922e4f7"
       }
     ]
+  },
+  "conceptLinks": {
+    "source": "content-source/concept-links/knowledge.json",
+    "sha256": "3290b74ab792569c0bb90be3402f2e897f3f929c92b73bd8b0380423ddeac3bf",
+    "build": "scripts/build-concept-links.py",
+    "chapters": [
+      "01_intro",
+      "02_enterprise_data_model"
+    ],
+    "concepts": 189,
+    "background": 73
   }
 }
