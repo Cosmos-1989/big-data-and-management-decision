@@ -5148,7 +5148,7 @@
         ],
         "detailRef": {
           "chapter": "03_sql_kpi",
-          "section": "查询任务与数据模型",
+          "section": "先明确指标要统计什么",
           "anchor": "查询任务与数据模型"
         },
         "sourceSection": "查询任务与数据模型",
@@ -5177,7 +5177,7 @@
         ],
         "detailRef": {
           "chapter": "03_sql_kpi",
-          "section": "SQL 查询的关系语义",
+          "section": "按地区计算销售额",
           "anchor": "sql-查询的关系语义"
         },
         "sourceSection": "SQL 查询的关系语义",
@@ -5299,7 +5299,7 @@
         ],
         "detailRef": {
           "chapter": "03_sql_kpi",
-          "section": "SQL 查询的关系语义",
+          "section": "按地区计算销售额",
           "anchor": "sql-查询的关系语义"
         },
         "sourceSection": "SQL 查询的关系语义",
@@ -5343,7 +5343,7 @@
         ],
         "detailRef": {
           "chapter": "03_sql_kpi",
-          "section": "SQL 查询的关系语义",
+          "section": "按地区计算销售额",
           "anchor": "sql-查询的关系语义"
         },
         "sourceSection": "SQL 查询的关系语义",
@@ -5369,7 +5369,7 @@
         "takeaway": "查询应能由少量具体记录手算，并与程序结果一致。",
         "detailRef": {
           "chapter": "03_sql_kpi",
-          "section": "SQL 查询的关系语义",
+          "section": "按地区计算销售额",
           "anchor": "sql-查询的关系语义"
         },
         "sourceSection": "SQL 查询的关系语义",
@@ -5469,7 +5469,7 @@
         ],
         "detailRef": {
           "chapter": "03_sql_kpi",
-          "section": "关系代数视角",
+          "section": "表上的基本运算",
           "anchor": "关系代数视角"
         },
         "sourceSection": "关系代数视角",
@@ -5514,7 +5514,7 @@
         "takeaway": "明确条件约束的是单条事实还是整个组，再选择筛选位置。",
         "detailRef": {
           "chapter": "03_sql_kpi",
-          "section": "关系代数视角",
+          "section": "表上的基本运算",
           "anchor": "关系代数视角"
         },
         "sourceSection": "关系代数视角",
@@ -5551,7 +5551,7 @@
         ],
         "detailRef": {
           "chapter": "03_sql_kpi",
-          "section": "查询的选择与分组条件",
+          "section": "相同取值与不同业务事实",
           "anchor": "查询的选择与分组条件"
         },
         "takeaway": "值相同不意味着事实相同，去重应依据业务身份。",
@@ -5681,7 +5681,7 @@
         ],
         "detailRef": {
           "chapter": "03_sql_kpi",
-          "section": "事实粒度与分析粒度",
+          "section": "从源记录到结果表的粒度",
           "anchor": "事实粒度与分析粒度"
         },
         "sourceSection": "事实粒度与分析粒度",
@@ -5789,7 +5789,7 @@
         "layout": "split",
         "detailRef": {
           "chapter": "03_sql_kpi",
-          "section": "事实粒度与分析粒度",
+          "section": "从源记录到结果表的粒度",
           "anchor": "事实粒度与分析粒度"
         },
         "sourceSection": "事实粒度与分析粒度",
@@ -5832,7 +5832,7 @@
         "layout": "focus",
         "detailRef": {
           "chapter": "03_sql_kpi",
-          "section": "事实粒度与分析粒度",
+          "section": "从源记录到结果表的粒度",
           "anchor": "事实粒度与分析粒度"
         },
         "sourceSection": "事实粒度与分析粒度",
@@ -5864,7 +5864,7 @@
         "layout": "split",
         "detailRef": {
           "chapter": "03_sql_kpi",
-          "section": "连接、粒度与重复计数",
+          "section": "连接怎样复制或遗漏记录",
           "anchor": "连接粒度与重复计数"
         },
         "sourceSection": "连接、粒度与重复计数",
@@ -5898,7 +5898,7 @@
         ],
         "detailRef": {
           "chapter": "03_sql_kpi",
-          "section": "连接、粒度与重复计数",
+          "section": "连接怎样复制或遗漏记录",
           "anchor": "连接粒度与重复计数"
         },
         "sourceSection": "连接、粒度与重复计数",
@@ -5973,7 +5973,7 @@
         ],
         "detailRef": {
           "chapter": "03_sql_kpi",
-          "section": "连接、粒度与重复计数",
+          "section": "连接怎样复制或遗漏记录",
           "anchor": "连接粒度与重复计数"
         },
         "sourceSection": "连接、粒度与重复计数",
@@ -6035,7 +6035,7 @@
         "layout": "split",
         "detailRef": {
           "chapter": "03_sql_kpi",
-          "section": "连接、粒度与重复计数",
+          "section": "连接怎样复制或遗漏记录",
           "anchor": "连接粒度与重复计数"
         },
         "sourceSection": "连接、粒度与重复计数",
@@ -6069,7 +6069,7 @@
         ],
         "detailRef": {
           "chapter": "03_sql_kpi",
-          "section": "指标定义的形式化表示",
+          "section": "写清对象、时间与计算方法",
           "anchor": "指标定义的形式化表示"
         },
         "sourceSection": "指标定义的形式化表示",
@@ -6091,7 +6091,7 @@
         "layout": "split",
         "detailRef": {
           "chapter": "03_sql_kpi",
-          "section": "指标定义的形式化表示",
+          "section": "写清对象、时间与计算方法",
           "anchor": "指标定义的形式化表示"
         },
         "sourceSection": "指标定义的形式化表示",
@@ -6134,7 +6134,7 @@
         "layout": "focus",
         "detailRef": {
           "chapter": "03_sql_kpi",
-          "section": "指标定义的形式化表示",
+          "section": "写清对象、时间与计算方法",
           "anchor": "指标定义的形式化表示"
         },
         "sourceSection": "指标定义的形式化表示",
@@ -6166,7 +6166,7 @@
         "layout": "split",
         "detailRef": {
           "chapter": "03_sql_kpi",
-          "section": "可合并的统计状态",
+          "section": "保存哪些信息才能正确汇总",
           "anchor": "可合并的统计状态"
         },
         "sourceSection": "可合并的统计状态",
@@ -6200,7 +6200,7 @@
         ],
         "detailRef": {
           "chapter": "03_sql_kpi",
-          "section": "可合并的统计状态",
+          "section": "保存哪些信息才能正确汇总",
           "anchor": "可合并的统计状态"
         },
         "sourceSection": "可合并的统计状态",
@@ -6293,7 +6293,7 @@
         "layout": "split",
         "detailRef": {
           "chapter": "03_sql_kpi",
-          "section": "可合并的统计状态",
+          "section": "保存哪些信息才能正确汇总",
           "anchor": "可合并的统计状态"
         },
         "sourceSection": "可合并的统计状态",
@@ -6336,7 +6336,7 @@
         "layout": "focus",
         "detailRef": {
           "chapter": "03_sql_kpi",
-          "section": "可合并的统计状态",
+          "section": "保存哪些信息才能正确汇总",
           "anchor": "可合并的统计状态"
         },
         "sourceSection": "可合并的统计状态",
@@ -6366,7 +6366,7 @@
         ],
         "detailRef": {
           "chapter": "03_sql_kpi",
-          "section": "可合并的统计状态",
+          "section": "保存哪些信息才能正确汇总",
           "anchor": "可合并的统计状态"
         },
         "sourceSection": "可合并的统计状态",
@@ -6431,7 +6431,7 @@
         ],
         "detailRef": {
           "chapter": "03_sql_kpi",
-          "section": "制造指标的计算",
+          "section": "良率与生产周期",
           "anchor": "制造指标的计算"
         },
         "sourceSection": "制造指标的计算",
@@ -6455,7 +6455,7 @@
         ],
         "detailRef": {
           "chapter": "03_sql_kpi",
-          "section": "制造指标的计算",
+          "section": "良率与生产周期",
           "anchor": "制造指标的计算"
         },
         "sourceSection": "制造指标的计算",
@@ -6479,7 +6479,7 @@
         ],
         "detailRef": {
           "chapter": "03_sql_kpi",
-          "section": "制造指标的计算",
+          "section": "良率与生产周期",
           "anchor": "制造指标的计算"
         },
         "sourceSection": "制造指标的计算",
@@ -6508,7 +6508,7 @@
         "section": "制造 KPI",
         "detailRef": {
           "chapter": "03_sql_kpi",
-          "section": "制造指标的计算",
+          "section": "良率与生产周期",
           "anchor": "制造指标的计算"
         },
         "sourceSection": "制造指标的计算",
@@ -6528,7 +6528,7 @@
         "section": "制造 KPI",
         "detailRef": {
           "chapter": "03_sql_kpi",
-          "section": "制造指标的计算",
+          "section": "良率与生产周期",
           "anchor": "制造指标的计算"
         },
         "sourceSection": "制造指标的计算",
@@ -6579,7 +6579,7 @@
         ],
         "detailRef": {
           "chapter": "03_sql_kpi",
-          "section": "制造指标的计算",
+          "section": "良率与生产周期",
           "anchor": "制造指标的计算"
         },
         "sourceSection": "制造指标的计算",
@@ -6601,7 +6601,7 @@
         "section": "制造 KPI",
         "detailRef": {
           "chapter": "03_sql_kpi",
-          "section": "制造指标的计算",
+          "section": "良率与生产周期",
           "anchor": "制造指标的计算"
         },
         "sourceSection": "制造指标的计算",
@@ -6719,7 +6719,7 @@
         ],
         "detailRef": {
           "chapter": "03_sql_kpi",
-          "section": "制造指标的计算",
+          "section": "良率与生产周期",
           "anchor": "制造指标的计算"
         },
         "sourceSection": "制造指标的计算",
@@ -6739,7 +6739,7 @@
         ],
         "detailRef": {
           "chapter": "03_sql_kpi",
-          "section": "一个到期队列的完整计算",
+          "section": "同一批订单的两种准时率",
           "anchor": "sec:due-cohort-example"
         },
         "sourceSection": "一个到期队列的完整计算",
@@ -6793,7 +6793,7 @@
         ],
         "detailRef": {
           "chapter": "03_sql_kpi",
-          "section": "一个到期队列的完整计算",
+          "section": "同一批订单的两种准时率",
           "anchor": "sec:due-cohort-example"
         },
         "sourceSection": "一个到期队列的完整计算",
@@ -6864,7 +6864,7 @@
         "layout": "split",
         "detailRef": {
           "chapter": "03_sql_kpi",
-          "section": "空值、未完成事件与业务状态",
+          "section": "实际日期为空时如何判断",
           "anchor": "空值未完成事件与业务状态"
         },
         "sourceSection": "空值、未完成事件与业务状态",
@@ -6905,7 +6905,7 @@
         "section": "制造 KPI",
         "detailRef": {
           "chapter": "03_sql_kpi",
-          "section": "一个到期队列的完整计算",
+          "section": "同一批订单的两种准时率",
           "anchor": "sec:due-cohort-example"
         },
         "sourceSection": "一个到期队列的完整计算",
@@ -6923,7 +6923,7 @@
         ],
         "detailRef": {
           "chapter": "03_sql_kpi",
-          "section": "空值、未完成事件与业务状态",
+          "section": "实际日期为空时如何判断",
           "anchor": "空值未完成事件与业务状态"
         },
         "sourceSection": "空值、未完成事件与业务状态",
@@ -6972,7 +6972,7 @@
         ],
         "detailRef": {
           "chapter": "03_sql_kpi",
-          "section": "查询的选择与分组条件",
+          "section": "相同取值与不同业务事实",
           "anchor": "查询的选择与分组条件"
         },
         "takeaway": "空值逻辑影响对象范围，须与指标队列共同核查。",
@@ -6992,7 +6992,7 @@
         ],
         "detailRef": {
           "chapter": "03_sql_kpi",
-          "section": "条件聚合与安全除法",
+          "section": "把条件和分母写进 SQL",
           "anchor": "条件聚合与安全除法"
         },
         "sourceSection": "条件聚合与安全除法",
@@ -7017,7 +7017,7 @@
         ],
         "detailRef": {
           "chapter": "03_sql_kpi",
-          "section": "条件聚合与安全除法",
+          "section": "把条件和分母写进 SQL",
           "anchor": "条件聚合与安全除法"
         },
         "sourceSection": "条件聚合与安全除法",
@@ -7085,7 +7085,7 @@
         "layout": "split",
         "detailRef": {
           "chapter": "03_sql_kpi",
-          "section": "可合并的统计状态",
+          "section": "保存哪些信息才能正确汇总",
           "anchor": "可合并的统计状态"
         },
         "sourceSection": "可合并的统计状态",
@@ -7128,7 +7128,7 @@
         "layout": "focus",
         "detailRef": {
           "chapter": "03_sql_kpi",
-          "section": "可合并的统计状态",
+          "section": "保存哪些信息才能正确汇总",
           "anchor": "可合并的统计状态"
         },
         "sourceSection": "可合并的统计状态",
@@ -7158,7 +7158,7 @@
         ],
         "detailRef": {
           "chapter": "03_sql_kpi",
-          "section": "窗口函数与经营节奏",
+          "section": "每张订单的最近三笔收入",
           "anchor": "窗口函数与经营节奏"
         },
         "sourceSection": "窗口函数与经营节奏",
@@ -7184,7 +7184,7 @@
         "takeaway": "窗口函数的框架决定参与每行计算的历史记录。",
         "detailRef": {
           "chapter": "03_sql_kpi",
-          "section": "窗口函数与经营节奏",
+          "section": "每张订单的最近三笔收入",
           "anchor": "窗口函数与经营节奏"
         },
         "sourceSection": "窗口函数与经营节奏",
@@ -7277,7 +7277,7 @@
         ],
         "detailRef": {
           "chapter": "03_sql_kpi",
-          "section": "从指标结果到管理解释",
+          "section": "从分组差异提出具体解释",
           "anchor": "从指标结果到管理解释"
         },
         "sourceSection": "从指标结果到管理解释",
@@ -7315,7 +7315,7 @@
         "layout": "split",
         "detailRef": {
           "chapter": "03_sql_kpi",
-          "section": "从指标结果到管理解释",
+          "section": "从分组差异提出具体解释",
           "anchor": "从指标结果到管理解释"
         },
         "sourceSection": "从指标结果到管理解释",
@@ -7358,7 +7358,7 @@
         "layout": "focus",
         "detailRef": {
           "chapter": "03_sql_kpi",
-          "section": "从指标结果到管理解释",
+          "section": "从分组差异提出具体解释",
           "anchor": "从指标结果到管理解释"
         },
         "sourceSection": "从指标结果到管理解释",
@@ -7388,7 +7388,7 @@
         ],
         "detailRef": {
           "chapter": "03_sql_kpi",
-          "section": "自然语言问题的形式化",
+          "section": "先明确问题，再生成查询",
           "anchor": "自然语言问题的形式化"
         },
         "sourceSection": "自然语言问题的形式化",
@@ -7408,7 +7408,7 @@
         ],
         "detailRef": {
           "chapter": "03_sql_kpi",
-          "section": "制造查询的验证步骤",
+          "section": "核对工站良率查询",
           "anchor": "制造查询的验证步骤"
         },
         "sourceSection": "制造查询的验证步骤",
@@ -7460,7 +7460,7 @@
         },
         "detailRef": {
           "chapter": "03_sql_kpi",
-          "section": "查询执行的权限控制",
+          "section": "控制查询能够访问什么",
           "anchor": "查询执行的权限控制"
         },
         "takeaway": "授权规则须独立配置，并由实际执行环境实施。",
@@ -7480,7 +7480,7 @@
         ],
         "detailRef": {
           "chapter": "03_sql_kpi",
-          "section": "多平台问数系统的可比较任务",
+          "section": "在相同任务上比较服务",
           "anchor": "多平台问数系统的可比较任务"
         },
         "sourceSection": "多平台问数系统的可比较任务",
@@ -7500,7 +7500,7 @@
         "equation": "M_{\\rm weights}\\approx\\frac{Pb}{8}\\quad\\text{字节}",
         "detailRef": {
           "chapter": "03_sql_kpi",
-          "section": "本地部署的数据与模型服务",
+          "section": "数据、模型与日志的部署位置",
           "anchor": "本地部署的数据与模型服务"
         },
         "takeaway": "数据位置、推理位置和运行资源应分别测量及核查。",
@@ -7613,7 +7613,7 @@
         ],
         "detailRef": {
           "chapter": "03_sql_kpi",
-          "section": "查询结果的核查",
+          "section": "结果报告的要求",
           "anchor": "查询结果的核查"
         },
         "takeaway": "可复核查询应使定义、事实、运算和结果保持一致。",
@@ -7641,7 +7641,7 @@
         ],
         "detailRef": {
           "chapter": "04_data_quality",
-          "section": "输入数据与分析结果",
+          "section": "从订单准时率看数据质量",
           "anchor": "输入数据与分析结果"
         },
         "sourceSection": "输入数据与分析结果",
@@ -7670,7 +7670,7 @@
         ],
         "detailRef": {
           "chapter": "04_data_quality",
-          "section": "输入数据与分析结果",
+          "section": "从订单准时率看数据质量",
           "anchor": "输入数据与分析结果"
         },
         "sourceSection": "输入数据与分析结果",
@@ -7697,7 +7697,7 @@
         ],
         "detailRef": {
           "chapter": "04_data_quality",
-          "section": "输入数据与分析结果",
+          "section": "从订单准时率看数据质量",
           "anchor": "输入数据与分析结果"
         },
         "sourceSection": "输入数据与分析结果",
@@ -7822,7 +7822,7 @@
         ],
         "detailRef": {
           "chapter": "04_data_quality",
-          "section": "数据质量的基本定义",
+          "section": "按用途确定质量要求",
           "anchor": "数据质量的基本定义"
         },
         "sourceSection": "数据质量的基本定义",
@@ -7854,7 +7854,7 @@
         ],
         "detailRef": {
           "chapter": "04_data_quality",
-          "section": "数据生成过程与质量风险",
+          "section": "从业务发生到指标发布",
           "anchor": "数据生成过程与质量风险"
         },
         "sourceSection": "数据生成过程与质量风险",
@@ -7883,7 +7883,7 @@
         ],
         "detailRef": {
           "chapter": "04_data_quality",
-          "section": "规则符合性与记录准确性",
+          "section": "规则通过与记录准确",
           "anchor": "规则符合性与记录准确性"
         },
         "sourceSection": "规则符合性与记录准确性",
@@ -7958,7 +7958,7 @@
         "layout": "split",
         "detailRef": {
           "chapter": "04_data_quality",
-          "section": "规则符合性与记录准确性",
+          "section": "规则通过与记录准确",
           "anchor": "规则符合性与记录准确性"
         },
         "sourceSection": "规则符合性与记录准确性",
@@ -8001,7 +8001,7 @@
         "layout": "focus",
         "detailRef": {
           "chapter": "04_data_quality",
-          "section": "规则符合性与记录准确性",
+          "section": "规则通过与记录准确",
           "anchor": "规则符合性与记录准确性"
         },
         "sourceSection": "规则符合性与记录准确性",
@@ -8031,7 +8031,7 @@
         ],
         "detailRef": {
           "chapter": "04_data_quality",
-          "section": "数据质量维度",
+          "section": "质量维度与检查依据",
           "anchor": "数据质量维度"
         },
         "sourceSection": "数据质量维度",
@@ -8080,7 +8080,7 @@
         ],
         "detailRef": {
           "chapter": "04_data_quality",
-          "section": "数据质量维度",
+          "section": "质量维度与检查依据",
           "anchor": "数据质量维度"
         },
         "sourceSection": "数据质量维度",
@@ -8126,7 +8126,7 @@
         "layout": "split",
         "detailRef": {
           "chapter": "04_data_quality",
-          "section": "质量事件响应",
+          "section": "调查、修复与更正历史结果",
           "anchor": "质量事件响应"
         },
         "sourceSection": "质量事件响应",
@@ -8169,7 +8169,7 @@
         "layout": "focus",
         "detailRef": {
           "chapter": "04_data_quality",
-          "section": "质量事件响应",
+          "section": "调查、修复与更正历史结果",
           "anchor": "质量事件响应"
         },
         "sourceSection": "质量事件响应",
@@ -8199,7 +8199,7 @@
         ],
         "detailRef": {
           "chapter": "04_data_quality",
-          "section": "数据剖析",
+          "section": "用统计摘要了解数据",
           "anchor": "数据剖析"
         },
         "sourceSection": "数据剖析",
@@ -8233,7 +8233,7 @@
         "layout": "split",
         "detailRef": {
           "chapter": "04_data_quality",
-          "section": "缺失机制与均值估计",
+          "section": "记录缺失与选择偏差",
           "anchor": "缺失机制与均值估计"
         },
         "sourceSection": "缺失机制与均值估计",
@@ -8267,7 +8267,7 @@
         ],
         "detailRef": {
           "chapter": "04_data_quality",
-          "section": "缺失机制与均值估计",
+          "section": "记录缺失与选择偏差",
           "anchor": "缺失机制与均值估计"
         },
         "sourceSection": "缺失机制与均值估计",
@@ -8360,7 +8360,7 @@
         ],
         "detailRef": {
           "chapter": "04_data_quality",
-          "section": "缺失机制与均值估计",
+          "section": "记录缺失与选择偏差",
           "anchor": "缺失机制与均值估计"
         },
         "sourceSection": "缺失机制与均值估计",
@@ -8414,7 +8414,7 @@
         ],
         "detailRef": {
           "chapter": "04_data_quality",
-          "section": "缺失机制与均值估计",
+          "section": "记录缺失与选择偏差",
           "anchor": "缺失机制与均值估计"
         },
         "sourceSection": "缺失机制与均值估计",
@@ -8462,7 +8462,7 @@
         "sourceSection": "缺失机制与均值估计",
         "detailRef": {
           "chapter": "04_data_quality",
-          "section": "缺失机制与均值估计",
+          "section": "记录缺失与选择偏差",
           "anchor": "缺失机制与均值估计"
         },
         "diagram": {
@@ -8529,7 +8529,7 @@
         "layout": "split",
         "detailRef": {
           "chapter": "04_data_quality",
-          "section": "经典测量误差与衰减偏差",
+          "section": "测量误差为何改变回归斜率",
           "anchor": "经典测量误差与衰减偏差"
         },
         "sourceSection": "经典测量误差与衰减偏差",
@@ -8563,7 +8563,7 @@
         ],
         "detailRef": {
           "chapter": "04_data_quality",
-          "section": "经典测量误差与衰减偏差",
+          "section": "测量误差为何改变回归斜率",
           "anchor": "经典测量误差与衰减偏差"
         },
         "sourceSection": "经典测量误差与衰减偏差",
@@ -8704,7 +8704,7 @@
         "sourceSection": "经典测量误差与衰减偏差",
         "detailRef": {
           "chapter": "04_data_quality",
-          "section": "经典测量误差与衰减偏差",
+          "section": "测量误差为何改变回归斜率",
           "anchor": "经典测量误差与衰减偏差"
         },
         "diagram": {
@@ -8759,7 +8759,7 @@
         ],
         "detailRef": {
           "chapter": "04_data_quality",
-          "section": "缺失结果的部分识别",
+          "section": "缺失条件下的总体均值范围",
           "anchor": "缺失结果的部分识别"
         },
         "sourceSection": "缺失结果的部分识别",
@@ -8869,7 +8869,7 @@
         ],
         "detailRef": {
           "chapter": "04_data_quality",
-          "section": "缺失结果的部分识别",
+          "section": "缺失条件下的总体均值范围",
           "anchor": "缺失结果的部分识别"
         },
         "sourceSection": "缺失结果的部分识别",
@@ -8924,7 +8924,7 @@
         "density": "compact",
         "detailRef": {
           "chapter": "04_data_quality",
-          "section": "缺失结果的部分识别",
+          "section": "缺失条件下的总体均值范围",
           "anchor": "缺失结果的部分识别"
         },
         "sourceSection": "缺失结果的部分识别",
@@ -8941,7 +8941,7 @@
         ],
         "detailRef": {
           "chapter": "04_data_quality",
-          "section": "比率误差的精确传播",
+          "section": "分子与分母的误差",
           "anchor": "比率误差的精确传播"
         },
         "sourceSection": "比率误差的精确传播",
@@ -8961,7 +8961,7 @@
         ],
         "detailRef": {
           "chapter": "04_data_quality",
-          "section": "比率误差的精确传播",
+          "section": "分子与分母的误差",
           "anchor": "比率误差的精确传播"
         },
         "sourceSection": "比率误差的精确传播",
@@ -8982,7 +8982,7 @@
         ],
         "detailRef": {
           "chapter": "04_data_quality",
-          "section": "比率误差的精确传播",
+          "section": "分子与分母的误差",
           "anchor": "比率误差的精确传播"
         },
         "sourceSection": "比率误差的精确传播",
@@ -9035,7 +9035,7 @@
         ],
         "detailRef": {
           "chapter": "04_data_quality",
-          "section": "质量规则的形式化表达",
+          "section": "规则、违规行与通过比例",
           "anchor": "质量规则的形式化表达"
         },
         "sourceSection": "质量规则的形式化表达",
@@ -9058,7 +9058,7 @@
         ],
         "detailRef": {
           "chapter": "04_data_quality",
-          "section": "质量规则的程序检验",
+          "section": "用SQL定位违规记录",
           "anchor": "质量规则的程序检验"
         },
         "sourceSection": "质量规则的程序检验",
@@ -9102,7 +9102,7 @@
         ],
         "detailRef": {
           "chapter": "04_data_quality",
-          "section": "质量规则的程序检验",
+          "section": "用SQL定位违规记录",
           "anchor": "质量规则的程序检验"
         },
         "sourceSection": "质量规则的程序检验",
@@ -9128,7 +9128,7 @@
         "layout": "split",
         "detailRef": {
           "chapter": "04_data_quality",
-          "section": "质量规则的程序检验",
+          "section": "用SQL定位违规记录",
           "anchor": "质量规则的程序检验"
         },
         "sourceSection": "质量规则的程序检验",
@@ -9171,7 +9171,7 @@
         "layout": "focus",
         "detailRef": {
           "chapter": "04_data_quality",
-          "section": "质量规则的程序检验",
+          "section": "用SQL定位违规记录",
           "anchor": "质量规则的程序检验"
         },
         "sourceSection": "质量规则的程序检验",
@@ -9201,7 +9201,7 @@
         ],
         "detailRef": {
           "chapter": "04_data_quality",
-          "section": "质量问题对指标的影响",
+          "section": "记录错误对指标的影响",
           "anchor": "质量问题对指标的影响"
         },
         "sourceSection": "质量问题对指标的影响",
@@ -9230,7 +9230,7 @@
         ],
         "detailRef": {
           "chapter": "04_data_quality",
-          "section": "质量影响评估",
+          "section": "先查明影响范围",
           "anchor": "质量影响评估"
         },
         "sourceSection": "质量影响评估",
@@ -9274,7 +9274,7 @@
         ],
         "detailRef": {
           "chapter": "04_data_quality",
-          "section": "发布决策与预期损失",
+          "section": "比较暂停与继续发布的损失",
           "anchor": "发布决策与预期损失"
         },
         "sourceSection": "发布决策与预期损失",
@@ -9366,7 +9366,7 @@
         ],
         "detailRef": {
           "chapter": "04_data_quality",
-          "section": "发布决策与预期损失",
+          "section": "比较暂停与继续发布的损失",
           "anchor": "发布决策与预期损失"
         },
         "sourceSection": "发布决策与预期损失",
@@ -9387,7 +9387,7 @@
         ],
         "detailRef": {
           "chapter": "04_data_quality",
-          "section": "发布决策与预期损失",
+          "section": "比较暂停与继续发布的损失",
           "anchor": "发布决策与预期损失"
         },
         "sourceSection": "发布决策与预期损失",
@@ -9474,7 +9474,7 @@
         ],
         "detailRef": {
           "chapter": "04_data_quality",
-          "section": "决策阈值与误差容限",
+          "section": "比较方案需要多准确的数据",
           "anchor": "决策阈值与误差容限"
         },
         "sourceSection": "决策阈值与误差容限",
@@ -9540,7 +9540,7 @@
         ],
         "detailRef": {
           "chapter": "04_data_quality",
-          "section": "数据治理与指标治理",
+          "section": "明确指标定义及负责人",
           "anchor": "数据治理与指标治理"
         },
         "sourceSection": "数据治理与指标治理",
@@ -9571,7 +9571,7 @@
         "layout": "split",
         "detailRef": {
           "chapter": "04_data_quality",
-          "section": "数据治理与指标治理",
+          "section": "明确指标定义及负责人",
           "anchor": "数据治理与指标治理"
         },
         "sourceSection": "数据治理与指标治理",
@@ -9614,7 +9614,7 @@
         "layout": "focus",
         "detailRef": {
           "chapter": "04_data_quality",
-          "section": "数据治理与指标治理",
+          "section": "明确指标定义及负责人",
           "anchor": "数据治理与指标治理"
         },
         "sourceSection": "数据治理与指标治理",
@@ -9644,7 +9644,7 @@
         ],
         "detailRef": {
           "chapter": "04_data_quality",
-          "section": "数据契约、血缘与变更控制",
+          "section": "约定数据交付，追溯来源与变更",
           "anchor": "数据契约血缘与变更控制"
         },
         "sourceSection": "数据契约、血缘与变更控制",
@@ -9688,7 +9688,7 @@
         ],
         "detailRef": {
           "chapter": "04_data_quality",
-          "section": "发布控制与问题分级",
+          "section": "按业务影响规定发布条件",
           "anchor": "发布控制与问题分级"
         },
         "sourceSection": "发布控制与问题分级",
@@ -9732,7 +9732,7 @@
         ],
         "detailRef": {
           "chapter": "04_data_quality",
-          "section": "质量事件响应",
+          "section": "调查、修复与更正历史结果",
           "anchor": "质量事件响应"
         },
         "sourceSection": "质量事件响应",
@@ -9765,7 +9765,7 @@
         "layout": "split",
         "detailRef": {
           "chapter": "04_data_quality",
-          "section": "质量事件响应",
+          "section": "调查、修复与更正历史结果",
           "anchor": "质量事件响应"
         },
         "sourceSection": "质量事件响应",
@@ -9808,7 +9808,7 @@
         "layout": "focus",
         "detailRef": {
           "chapter": "04_data_quality",
-          "section": "质量事件响应",
+          "section": "调查、修复与更正历史结果",
           "anchor": "质量事件响应"
         },
         "sourceSection": "质量事件响应",
@@ -9838,7 +9838,7 @@
         ],
         "detailRef": {
           "chapter": "04_data_quality",
-          "section": "Collibra 与 Froedtert 的数据目录",
+          "section": "医疗机构怎样统一指标含义",
           "anchor": "collibra-与-froedtert-的数据目录"
         },
         "sourceSection": "Collibra 与 Froedtert 的数据目录",
@@ -9870,7 +9870,7 @@
         ],
         "detailRef": {
           "chapter": "04_data_quality",
-          "section": "Monte Carlo 与 Assurance 的数据质量监测",
+          "section": "持续监测数据变化",
           "anchor": "monte-carlo-与-assurance-的数据质量监测"
         },
         "sourceSection": "Monte Carlo 与 Assurance 的数据质量监测",
@@ -9906,7 +9906,7 @@
         ],
         "detailRef": {
           "chapter": "04_data_quality",
-          "section": "Monte Carlo 与 Assurance 的数据质量监测",
+          "section": "持续监测数据变化",
           "anchor": "monte-carlo-与-assurance-的数据质量监测"
         },
         "sourceSection": "Monte Carlo 与 Assurance 的数据质量监测",
@@ -9985,7 +9985,7 @@
         ],
         "detailRef": {
           "chapter": "04_data_quality",
-          "section": "数据目录、治理流程与敏感信息识别",
+          "section": "目录、治理与敏感信息识别",
           "anchor": "数据目录治理流程与敏感信息识别"
         },
         "sourceSection": "数据目录、治理流程与敏感信息识别",
@@ -10013,7 +10013,7 @@
         ],
         "detailRef": {
           "chapter": "04_data_quality",
-          "section": "检索增强生成中的数据质量",
+          "section": "文档知识库中的质量要求",
           "anchor": "检索增强生成中的数据质量"
         },
         "sourceSection": "检索增强生成中的数据质量",
@@ -10135,7 +10135,7 @@
         ],
         "detailRef": {
           "chapter": "04_data_quality",
-          "section": "数据质量检查实例",
+          "section": "实验：检查一批有问题的订单",
           "anchor": "数据质量检查实例"
         },
         "sourceSection": "数据质量检查实例",
@@ -10179,7 +10179,7 @@
         ],
         "detailRef": {
           "chapter": "04_data_quality",
-          "section": "数据质量检查实例",
+          "section": "实验：检查一批有问题的订单",
           "anchor": "数据质量检查实例"
         },
         "sourceSection": "数据质量检查实例",
@@ -10228,7 +10228,7 @@
         ],
         "detailRef": {
           "chapter": "04_data_quality",
-          "section": "数据质量检查实例",
+          "section": "实验：检查一批有问题的订单",
           "anchor": "数据质量检查实例"
         },
         "sourceSection": "数据质量检查实例",
@@ -10272,7 +10272,7 @@
         ],
         "detailRef": {
           "chapter": "04_data_quality",
-          "section": "质量报告的核查",
+          "section": "形成可以复查的质量报告",
           "anchor": "质量报告的核查"
         },
         "sourceSection": "质量报告的核查",

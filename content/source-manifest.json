@@ -173,5 +173,40 @@
         "sha256": "1058a9d329d82671966c2344d6b0ad7a2afcf6c546a6d3d2e8ae3b453295e0e6"
       }
     ]
+  },
+  "readabilityContinuation": {
+    "date": "2026-10-24",
+    "baseline": "aca345c",
+    "chapters": [
+      "03_sql_kpi",
+      "04_data_quality"
+    ],
+    "build": "scripts/build-readable-lectures.py",
+    "sources": [
+      {
+        "path": "content-source/readability-20261024-03-04/config.json",
+        "sha256": "ab1b8701bd63783498c30e5f6d50a801e0788fb37eec7ae9d7daa7454f47010c"
+      },
+      {
+        "path": "content-source/readability-20261024-03-04/chapters/03_sql_kpi.json",
+        "sha256": "d9c53599e93d8a6de58d2f5fb8fa5bb954c89a6fe3169fa94cb7c0cee8055629"
+      },
+      {
+        "path": "content-source/readability-20261024-03-04/chapters/04_data_quality.json",
+        "sha256": "b403e214917ee62320ac19a73b01ecef64c5af731ffce417212cfc67f93df09b"
+      },
+      {
+        "path": "content-source/readability-20261024-03-04/business-cases.json",
+        "sha256": "d9bf48fdb0ca1a4f993b431103977014a619596c4b9c675abe38757f4989589d"
+      },
+      {
+        "path": "content-source/readability-20261024-03-04/case-cards.json",
+        "sha256": "aa5b56f6db6e9416d7db23bbcd63822fd2fc4501db5a948875d966c330d2b5be"
+      },
+      {
+        "path": "content-source/concept-links/knowledge.json",
+        "sha256": "1058a9d329d82671966c2344d6b0ad7a2afcf6c546a6d3d2e8ae3b453295e0e6"
+      }
+    ]
   }
 }
