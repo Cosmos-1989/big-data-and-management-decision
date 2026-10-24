@@ -1,0 +1,188 @@
+{
+  "checkedAt": "2026-10-24T02:35:37.886600+00:00",
+  "publishedRevision": "1c530bf4c16c797a7d3a2ff6f36619a00b061e18",
+  "deploymentRun": "https://github.com/Cosmos-1989/big-data-and-management-decision/actions/runs/40054656542",
+  "tls": "curl default certificate validation enabled; no insecure TLS override",
+  "files": [
+    {
+      "path": "index.html",
+      "status": 200,
+      "url": "https://datasci.biz/index.html?verify=1c530bf",
+      "bytes": 6219,
+      "sha256": "20964d058155267d4da7b184752bc6755101399c146fdeb695a796edfc221803",
+      "localMatches": true
+    },
+    {
+      "path": "app.js",
+      "status": 200,
+      "url": "https://datasci.biz/app.js?verify=1c530bf",
+      "bytes": 19794,
+      "sha256": "86b14b164f8bbeffb99ad5f88bd7ffbdb8c09a3b862765fdbbf40a03610afd5a",
+      "localMatches": true
+    },
+    {
+      "path": "knowledge-links.js",
+      "status": 200,
+      "url": "https://datasci.biz/knowledge-links.js?verify=1c530bf",
+      "bytes": 5208,
+      "sha256": "708cbd4ae5f063caf78ab610d7cc716336aab29b750dfff1c5a2508f0a6505ed",
+      "localMatches": true
+    },
+    {
+      "path": "knowledge-links.css",
+      "status": 200,
+      "url": "https://datasci.biz/knowledge-links.css?verify=1c530bf",
+      "bytes": 3126,
+      "sha256": "7de51ad2931900271d35a5bc0e754fbaf73435dae425f374767dabf1840df60d",
+      "localMatches": true
+    },
+    {
+      "path": "readable-lectures.css",
+      "status": 200,
+      "url": "https://datasci.biz/readable-lectures.css?verify=1c530bf",
+      "bytes": 2491,
+      "sha256": "d62fb9111169a292b25b58ad2d6427e17ff9bc681cf2f6d5bef544bd1afcab82",
+      "localMatches": true
+    },
+    {
+      "path": "cases.js",
+      "status": 200,
+      "url": "https://datasci.biz/cases.js?verify=1c530bf",
+      "bytes": 3422,
+      "sha256": "450bef2e13584bd3ae7179409d4bc03781c5ea4908f76a667aa26766ba9aa0e8",
+      "localMatches": true
+    },
+    {
+      "path": "business-cases.js",
+      "status": 200,
+      "url": "https://datasci.biz/business-cases.js?verify=1c530bf",
+      "bytes": 3238,
+      "sha256": "1e129962620b8c71bb0401d4da069ee0dad5bc91ebd2e3eb6723710b40590c65",
+      "localMatches": true
+    },
+    {
+      "path": "content/01_intro.json",
+      "status": 200,
+      "url": "https://datasci.biz/content/01_intro.json?verify=1c530bf",
+      "bytes": 206122,
+      "sha256": "6c591aa48a0d0c606098e98e99e438131910965a23234a9087d95565fce5590e",
+      "localMatches": true
+    },
+    {
+      "path": "content/02_enterprise_data_model.json",
+      "status": 200,
+      "url": "https://datasci.biz/content/02_enterprise_data_model.json?verify=1c530bf",
+      "bytes": 354026,
+      "sha256": "3f7f6ccd8e7b2224c27cd54cc2f1ba7763328bca57bc4076fce5f436dec10dc2",
+      "localMatches": true
+    },
+    {
+      "path": "content/concept-map.json",
+      "status": 200,
+      "url": "https://datasci.biz/content/concept-map.json?verify=1c530bf",
+      "bytes": 108210,
+      "sha256": "bbd7d40081b5352af17a73aa809720092ec2ad5749f56f9822e9e8d08b41fd17",
+      "localMatches": true
+    },
+    {
+      "path": "content/catalog.json",
+      "status": 200,
+      "url": "https://datasci.biz/content/catalog.json?verify=1c530bf",
+      "bytes": 332934,
+      "sha256": "58e2d96a42712091fd225385ec1d99963ebb278c7c554944cfc4b8ad623fd237",
+      "localMatches": true
+    },
+    {
+      "path": "content/source-manifest.json",
+      "status": 200,
+      "url": "https://datasci.biz/content/source-manifest.json?verify=1c530bf",
+      "bytes": 6168,
+      "sha256": "58072a5371231aaaa73f3157caf24f6dac9e7dafff22552e223ec6fd5c2416ef",
+      "localMatches": true
+    },
+    {
+      "path": "content/business-cases.json",
+      "status": 200,
+      "url": "https://datasci.biz/content/business-cases.json?verify=1c530bf",
+      "bytes": 167370,
+      "sha256": "956f991d3f0b54e13e10e6111504dde5d3d1eb666a57b4ef9c4023aaf00a5751",
+      "localMatches": true
+    },
+    {
+      "path": "content/case-cards.json",
+      "status": 200,
+      "url": "https://datasci.biz/content/case-cards.json?verify=1c530bf",
+      "bytes": 17410,
+      "sha256": "6c74f08a0e7b08b6fc57509d5e2fe9f364d8b8f1e85137a83327c850b158b923",
+      "localMatches": true
+    },
+    {
+      "path": "content/business-casebook.json",
+      "status": 200,
+      "url": "https://datasci.biz/content/business-casebook.json?verify=1c530bf",
+      "bytes": 211948,
+      "sha256": "12832f29b03ebda43f1a27b5bd5ad4cf68660b34433c781a8f24f516fd43b712",
+      "localMatches": true
+    },
+    {
+      "path": "content/lecture-slides.json",
+      "status": 200,
+      "url": "https://datasci.biz/content/lecture-slides.json?verify=1c530bf",
+      "bytes": 1553061,
+      "sha256": "90cf6e4d66307bc6cfa0188f03b809c74a089142e9e85a7a463c2c9450a2f043",
+      "localMatches": true
+    },
+    {
+      "path": "CNAME",
+      "status": 200,
+      "url": "https://datasci.biz/CNAME?verify=1c530bf",
+      "bytes": 11,
+      "sha256": "0447c4b8cbdc34baf11c6d5975907b1fabb870a8aa54261212566b2773d7cf5a",
+      "localMatches": true
+    }
+  ],
+  "redirects": [
+    {
+      "requested": "http://datasci.biz/",
+      "final": "https://datasci.biz/",
+      "status": 200,
+      "canonical": true
+    },
+    {
+      "requested": "https://www.datasci.biz/",
+      "final": "https://datasci.biz/",
+      "status": 200,
+      "canonical": true
+    },
+    {
+      "requested": "http://www.datasci.biz/",
+      "final": "https://datasci.biz/",
+      "status": 200,
+      "canonical": true
+    },
+    {
+      "requested": "https://cosmos-1989.github.io/big-data-and-management-decision/",
+      "final": "https://datasci.biz/",
+      "status": 200,
+      "canonical": true
+    }
+  ],
+  "passed": true,
+  "deploymentConclusion": "success",
+  "browserChecks": {
+    "firstLectureNewTextVisible": true,
+    "secondLectureNewTextVisible": true,
+    "crossLectureDefinitionAndReturn": true,
+    "collapsedCourseDefinitionAutoOpens": true,
+    "backgroundDefinitionAutoOpens": true,
+    "renderedMathErrors": 0,
+    "desktopPageOverflow": false,
+    "localMobileViewport": "390x844",
+    "localMobilePageOverflow": false,
+    "screenshots": [
+      "live-lecture-01.png",
+      "live-lecture-02.png",
+      "local-mobile.png"
+    ]
+  }
+}
