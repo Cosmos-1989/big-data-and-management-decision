@@ -1,0 +1,458 @@
+[
+  {
+    "id": "b01-01",
+    "lesson": 1,
+    "chapter": "01_intro",
+    "company": "UPS",
+    "title": "UPS 的配送导航与行动条件",
+    "context": "配送司机需要知道站点的访问顺序，也需要找到每个站点实际可用的收货位置。建筑物的地址与装卸口的位置可能相距较远，路线规划因此还要结合车辆能够到达的入口。",
+    "decision": "把配送计划具体到访问顺序、行驶路径和收货位置。",
+    "facts": [
+      "UPS在2018年公布UPSNav接入司机手持终端，按ORION计算的访问顺序提供逐向导航",
+      "导航目标包括装卸平台与收货区等具体位置，而不只使用建筑物正门"
+    ],
+    "analysis": "ORION 给出站点的访问顺序，UPSNav 根据具体收货位置提供导航。评价这项安排时，可以依次查看计划路线、实际停靠位置和交付完成记录，判断偏差发生在哪一步。",
+    "limits": "UPS 的公告介绍了导航功能及其部署安排。定位改进带来的经营收益，需要结合路线样本、实施成本和实际交付结果另行测量。",
+    "questions": [
+      {
+        "question": "路线算法给出最短访问顺序后，任务是否已经完整？",
+        "answer": "完整的配送任务还需规定实际入口、通行道路和收货条件，并根据交付记录确认完成情况。路线顺序解决其中的站点访问安排。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "UPS Deploys Purpose-Built Navigation For UPS Service Personnel",
+        "url": "https://about.ups.com/us/en/newsroom/press-releases/innovation-driven/ups-deploys-purpose-built-navigation-for-ups-service-personnel.html",
+        "publisher": "UPS",
+        "date": "2018-12-04",
+        "support": "支持UPSNav接入手持终端、沿ORION顺序导航至装卸口等具体位置。",
+        "accessed": "2026-10-17"
+      }
+    ],
+    "slideRefs": [
+      {
+        "deck": "01_intro",
+        "page": 3,
+        "sectionId": "slides"
+      },
+      {
+        "deck": "01_intro",
+        "page": 4,
+        "sectionId": "slides"
+      }
+    ],
+    "readabilityEdition": true
+  },
+  {
+    "id": "b01-02",
+    "lesson": 1,
+    "chapter": "01_intro",
+    "company": "CVS Health",
+    "title": "CVS 停售烟草与企业目标",
+    "context": "药房销售烟草能够取得收入，同时又与 CVS 公开提出的健康服务目标发生冲突。2014 年，CVS 决定退出烟草销售，并提供戒烟支持。",
+    "decision": "明确健康服务目标对商品选择的约束，再评价相应的经营后果。",
+    "facts": [
+      "CVS公告将停售与健康服务定位联系起来，并披露当时预期的收入影响",
+      "企业后续资料确认，2014年全部CVS Pharmacy门店已停止销售烟草"
+    ],
+    "analysis": "如果企业把停售烟草确定为必须遵守的经营条件，可行方案就只包括符合这一条件的选择。如果企业允许在健康目标和财务结果之间权衡，就需要说明采用哪些指标及其权重。两种处理对应不同的决策问题。",
+    "limits": "企业资料记录了停售时间及公开理由。品牌、利润和健康结果分别对应不同的评价对象与观察期。",
+    "questions": [
+      {
+        "question": "“该品类仍有收入”足以证明停售决策错误吗？",
+        "answer": "评价停售决策应使用企业确定的目标，同时考察健康服务定位、财务后果和评价期限。销售收入是其中一项结果。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "CVS Health’s commitment to a tobacco-free future",
+        "url": "https://www.cvshealth.com/campaigns/quitting-tobacco.html",
+        "publisher": "CVS Health",
+        "date": "2024",
+        "support": "支持2014年在全部CVS Pharmacy门店停售烟草及企业公开的健康服务定位。",
+        "accessed": "2026-10-17"
+      },
+      {
+        "title": "CVS Caremark to Stop Selling Tobacco Products at all CVS/pharmacy Locations",
+        "url": "https://www.cvs.com/bizcontent/minuteclinic/desktop/pressreleases/020514-stop-tobacco.pdf",
+        "publisher": "CVS Caremark",
+        "date": "2014-02-05",
+        "support": "支持停售公告、戒烟项目安排及当时对收入影响的预期，未将预测当作实绩。",
+        "accessed": "2026-10-17"
+      }
+    ],
+    "slideRefs": [
+      {
+        "deck": "01_intro",
+        "page": 13,
+        "sectionId": "slides"
+      },
+      {
+        "deck": "01_intro",
+        "page": 14,
+        "sectionId": "slides"
+      }
+    ],
+    "readabilityEdition": true
+  },
+  {
+    "id": "b01-03",
+    "lesson": 1,
+    "chapter": "01_intro",
+    "company": "Wells Fargo",
+    "title": "Wells Fargo 的销售考核与客户利益",
+    "context": "银行将产品销售数量与员工奖金挂钩。2016 年，美国监管机构查明，部分员工为完成销售目标，在未经客户授权的情况下开立账户。考核数字增长的同时，客户权益受到损害。",
+    "decision": "把经客户授权的适当服务与单纯开户数量区分开来。",
+    "facts": [
+      "CFPB查明销售目标与奖金激励下存在未经授权开户行为",
+      "Wells Fargo披露自2016年10月取消相关零售产品销售目标，随后调整激励安排"
+    ],
+    "analysis": "开户数量可以作为服务规模的代理指标，但客户是否授权、产品是否适用，也属于评价服务的重要条件。当奖金只随开户数量增加时，员工会有动机追求这一计数。考核制度需要同时规定有效开户的条件、违规处理和独立复核。",
+    "limits": "监管材料记录了本案的违规行为及相关管理问题。销售目标对员工行为的影响，取决于具体报酬、授权和监督制度。",
+    "questions": [
+      {
+        "question": "销售数量之外，还应记录哪些信息来评价客户服务？",
+        "answer": "评价服务应同时查看客户授权、产品适用性与有效业务数量，并检查报酬规则如何影响员工行为。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "CFPB Fines Wells Fargo for Secretly Opening Unauthorized Accounts",
+        "url": "https://www.consumerfinance.gov/archive/newsroom/consumer-financial-protection-bureau-fines-wells-fargo-100-million-widespread-illegal-practice-secretly-opening-unauthorized-accounts/",
+        "publisher": "Consumer Financial Protection Bureau",
+        "date": "2016-09-08",
+        "support": "支持监管查明员工为完成销售目标和获得奖金而未经授权开户的事实。",
+        "accessed": "2026-10-17"
+      },
+      {
+        "title": "Wells Fargo: Commitment to rebuilding trust",
+        "url": "https://www.sec.gov/Archives/edgar/data/72971/000119312517065587/d344612ddefa14a.htm",
+        "publisher": "Wells Fargo / SEC EDGAR",
+        "date": "2017",
+        "support": "支持2016年10月取消相关零售产品销售目标及2017年调整激励安排。",
+        "accessed": "2026-10-17"
+      }
+    ],
+    "slideRefs": [
+      {
+        "deck": "01_intro",
+        "page": 10,
+        "sectionId": "slides"
+      },
+      {
+        "deck": "01_intro",
+        "page": 11,
+        "sectionId": "slides"
+      }
+    ],
+    "readabilityEdition": true
+  },
+  {
+    "id": "b01-04",
+    "lesson": 1,
+    "chapter": "01_intro",
+    "company": "Patagonia",
+    "title": "Patagonia 的产品寿命与资源使用",
+    "context": "服装生产消耗材料与水，使用后的产品还需要处置。2011 年黑色星期五，Patagonia 刊登“Don’t Buy This Jacket”广告，倡导减少不必要的购买，并生产更耐用的产品。",
+    "decision": "把产品的使用、维修和替换纳入同一评价期间。",
+    "facts": [
+      "企业说明广告意在直接讨论消费主义及产品生产的环境负担",
+      "其倡议鼓励客户购买前慎重判断，并主张企业少生产、提高质量"
+    ],
+    "analysis": "购买之后，产品还会经历使用、维修和最终替换。比较这些选择时，应先规定需要提供的使用服务，再计算整个期间的支出和资源消耗。产品寿命延长，即使当期销售减少，也可能符合预先确定的资源目标。",
+    "limits": "广告说明了企业的公开主张。实际环境影响取决于产量、使用寿命、替代购买和处置方式，须按这些环节收集资料。",
+    "questions": [
+      {
+        "question": "若销量下降、使用寿命延长，能否仅由销量判断项目绩效？",
+        "answer": "应按照预先确定的财务与资源目标，比较提供相同使用服务所需的成本和环境投入，并明确观察期。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "Don’t Buy This Jacket, Black Friday and the New York Times",
+        "url": "https://www.patagonia.com/stories/planet/activism/dont-buy-this-jacket-black-friday-and-the-new-york-times/story-18615.html",
+        "publisher": "Patagonia",
+        "date": "2011-11-25（2022年补注）",
+        "support": "支持2011年广告、减少不必要消费及提高产品质量的企业主张，不支持净环境影响的因果结论。",
+        "accessed": "2026-10-17"
+      }
+    ],
+    "slideRefs": [
+      {
+        "deck": "01_intro",
+        "page": 35,
+        "sectionId": "slides"
+      },
+      {
+        "deck": "01_intro",
+        "page": 36,
+        "sectionId": "slides"
+      }
+    ],
+    "readabilityEdition": true
+  },
+  {
+    "id": "b01-05",
+    "lesson": 1,
+    "chapter": "01_intro",
+    "company": "Amazon",
+    "title": "Amazon 的可逆决策与等待成本",
+    "context": "Amazon 的 2016 年度股东信讨论决策速度。对较容易撤回的选择，企业主张简化决策程序，并及时发现和纠正错误；对撤回代价较高的选择，则采用更审慎的程序。",
+    "decision": "比较新增信息的价值、等待代价和事后纠错成本。",
+    "facts": [
+      "股东信区分可逆决策与不能采用同一程序的其他决策",
+      "企业同时强调尽快识别并纠正错误，而非仅追求快速批准"
+    ],
+    "analysis": "当行动能够以较小代价撤回时，部分判断错误可以在实施后修正。等待信息的收益，应与延迟实施所损失的机会一起计算。安全要求、监管条件和授权范围仍决定哪些行动可供选择。",
+    "limits": "股东信表达了企业的管理经验。将这种经验用于具体任务时，需要重新确定信息取得的时间、行动成本和纠错条件。",
+    "questions": [
+      {
+        "question": "怎样确定可逆决策需要等待多少信息？",
+        "answer": "适当速度取决于信息的预期收益、等待代价和纠正错误的成本；安全与监管要求决定允许的行动范围。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "2016 Letter to Shareholders",
+        "url": "https://www.aboutamazon.com/news/company-news/2016-letter-to-shareholders",
+        "publisher": "Amazon",
+        "date": "2017",
+        "support": "支持按可逆性区分决策程序及强调及时纠正错误的管理主张；属于股东信而非对照研究。",
+        "accessed": "2026-10-17"
+      }
+    ],
+    "slideRefs": [
+      {
+        "deck": "01_intro",
+        "page": 32,
+        "sectionId": "slides"
+      },
+      {
+        "deck": "01_intro",
+        "page": 33,
+        "sectionId": "slides"
+      }
+    ],
+    "readabilityEdition": true
+  },
+  {
+    "id": "b02-01",
+    "lesson": 2,
+    "chapter": "02_enterprise_data_model",
+    "company": "Shopify",
+    "title": "Shopify 的对象标识与记录关联",
+    "context": "电商平台分别管理产品、客户、订单和库存位置。Shopify 用含有对象类型的全局标识区分这些对象，部分库存标识还带有所属库存项的信息。",
+    "decision": "先确认编号代表的对象类型和唯一性范围，再建立关联。",
+    "facts": [
+      "Shopify公开文档以统一资源标识区分产品、客户和订单等对象类型",
+      "库存层级的某些标识还包含所属库存项信息，不能只取一个局部编号"
+    ],
+    "analysis": "产品编号与订单编号分别识别不同类型的对象。连接条件应反映实际业务关系，并说明每条记录可能匹配多少条另一表的记录。例如，订单通过客户标识关联客户；如果直接把订单号与产品号配对，即使编号相同，也不能解释为有效关联。",
+    "limits": "案例采用 Shopify 公开的接口标识规则。文档中的编号是结构示例；商户使用时还要核查实际记录及其业务关系。",
+    "questions": [
+      {
+        "question": "两张表的编号列都是整数，是否足以作为连接键？",
+        "answer": "需要确认编号所指的对象类型、唯一性范围和版本，再依据真实关系编写连接条件。字段类型相同只说明数值可以比较。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "Global IDs in Shopify APIs",
+        "url": "https://shopify.dev/docs/api/usage/gids",
+        "publisher": "Shopify",
+        "date": "未标注",
+        "support": "支持应用范围内的全局对象身份、类型区分及库存层级的参数化标识。",
+        "accessed": "2026-10-17"
+      }
+    ],
+    "slideRefs": [
+      {
+        "deck": "02_enterprise_data_model",
+        "page": 12,
+        "sectionId": "slides"
+      },
+      {
+        "deck": "02_enterprise_data_model",
+        "page": 13,
+        "sectionId": "slides"
+      }
+    ],
+    "readabilityEdition": true
+  },
+  {
+    "id": "b02-02",
+    "lesson": 2,
+    "chapter": "02_enterprise_data_model",
+    "company": "Stripe",
+    "title": "Stripe 的支付状态与后续操作",
+    "context": "一次支付可能需要补充支付方式、完成认证或等待异步处理。Stripe 用 PaymentIntent 对象记录支付过程的当前状态，以及下一步需要完成的操作。",
+    "decision": "按支付状态分别确定认证、重试、提示和核对步骤。",
+    "facts": [
+      "公开生命周期包含待支付方式、待确认、待用户操作、处理中和成功等状态",
+      "需要额外认证或异步处理的支付，不会在首次提交后立即成为成功"
+    ],
+    "analysis": "等待认证的支付需要客户操作，处理中的支付需要等待后续确认。两者的下一步不同，因此应分别记录。状态说明当前处境，事件说明状态何时改变；结合这两类记录，系统才能选择合适的后续操作。",
+    "limits": "公开文档规定了 PaymentIntent 的状态与允许转换。商户确认收款时，还需结合最终状态和自身对账规则。",
+    "questions": [
+      {
+        "question": "怎样确认一笔支付已经完成？",
+        "answer": "应根据支付的最终状态与对账结果确认收款。请求被接受、需要认证、正在处理与支付成功分别描述不同阶段。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "The PaymentIntent lifecycle",
+        "url": "https://docs.stripe.com/payments/paymentintents/lifecycle",
+        "publisher": "Stripe",
+        "date": "未标注",
+        "support": "支持支付意图在待补支付方式、待认证、处理中和成功等状态之间转换。",
+        "accessed": "2026-10-17"
+      }
+    ],
+    "slideRefs": [
+      {
+        "deck": "02_enterprise_data_model",
+        "page": 29,
+        "sectionId": "slides"
+      },
+      {
+        "deck": "02_enterprise_data_model",
+        "page": 30,
+        "sectionId": "slides"
+      }
+    ],
+    "readabilityEdition": true
+  },
+  {
+    "id": "b02-03",
+    "lesson": 2,
+    "chapter": "02_enterprise_data_model",
+    "company": "Uber",
+    "title": "Uber H3 的空间粒度与地区比较",
+    "context": "出行平台需要比较不同地区的供需。不同地区的面积和服务范围不同，订单总数也会受这些条件影响。Uber 开发 H3 分层空间网格，用规定层级的单元组织位置资料。",
+    "decision": "确定空间层级和时间范围，再比较供给与需求。",
+    "facts": [
+      "Uber在2018年公开H3，将地球表面组织为可识别的分层网格",
+      "企业说明H3用于市场分析、定价和调度等空间分析任务"
+    ],
+    "analysis": "行程可按坐标归入某个层级的网格，与同层级的供给资料对应。细网格便于查看局部差异，粗网格便于观察较大区域。变更层级后，需要重新汇总订单量等基础数据，再计算比率。H3 单元的面积也应按实际层级和位置核查。",
+    "limits": "Uber 工程资料介绍了 H3 的网格机制及实际应用。需求估计的准确性还取决于位置记录、样本覆盖和所采用的估计方法。",
+    "questions": [
+      {
+        "question": "把较小网格的百分比简单平均，能得到较大地区的总比率吗？",
+        "answer": "先把同一口径的分子和分母分别汇总，再计算总体比率；各项记录还应采用一致的空间层级与时间窗口。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "H3: Uber’s Hexagonal Hierarchical Spatial Index",
+        "url": "https://www.uber.com/us/en/blog/h3/",
+        "publisher": "Uber Engineering",
+        "date": "2018-06-27",
+        "support": "支持Uber以分层网格组织位置数据，用于市场分析、定价与调度；未披露本次分析所需的具体需求样本。",
+        "accessed": "2026-10-17"
+      }
+    ],
+    "slideRefs": [
+      {
+        "deck": "02_enterprise_data_model",
+        "page": 21,
+        "sectionId": "slides"
+      },
+      {
+        "deck": "02_enterprise_data_model",
+        "page": 22,
+        "sectionId": "slides"
+      }
+    ],
+    "readabilityEdition": true
+  },
+  {
+    "id": "b02-04",
+    "lesson": 2,
+    "chapter": "02_enterprise_data_model",
+    "company": "LinkedIn",
+    "title": "LinkedIn DataHub 的元数据与来源追踪",
+    "context": "分析者找到一张表后，还需要了解它的来源、处理过程、使用去向和负责人。LinkedIn 的 DataHub 将数据集、任务、指标、图表和人员作为不同实体，记录它们之间的联系。",
+    "decision": "把数据结构、来源和责任一同保存，方便查找和核对。",
+    "facts": [
+      "2019年公开说明覆盖数据集、指标、任务、图表、人员等多类实体",
+      "其前身已区分位置、模式、所有权等技术元数据与血缘、作业执行等过程元数据"
+    ],
+    "analysis": "数据集与转换任务各有独立身份，血缘关系记录哪些输入经过哪些任务形成哪些输出。沿来源方向查询，可以解释一个指标如何得到；沿影响方向查询，可以查找修改某张表后需要检查哪些图表。明细数据的访问权限由相应授权规则管理。",
+    "limits": "企业工程文档介绍了元数据实体及搜索机制。使用目录时，需要结合采集范围和更新时间判断登记内容是否完整。",
+    "questions": [
+      {
+        "question": "为什么数据目录只列“表名与字段名”还不够？",
+        "answer": "表名与字段名描述数据结构；来源、转换过程、下游影响和责任信息还需通过元数据实体与关系记录。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "DataHub: A generalized metadata search & discovery tool",
+        "url": "https://www.linkedin.com/blog/engineering/archive/data-hub",
+        "publisher": "LinkedIn Engineering",
+        "date": "2019-08-14",
+        "support": "支持元数据实体覆盖数据集、指标、任务、图表、人员及其关联，区别技术与过程元数据。",
+        "accessed": "2026-10-17"
+      }
+    ],
+    "slideRefs": [
+      {
+        "deck": "02_enterprise_data_model",
+        "page": 43,
+        "sectionId": "slides"
+      },
+      {
+        "deck": "02_enterprise_data_model",
+        "page": 44,
+        "sectionId": "slides"
+      }
+    ],
+    "readabilityEdition": true
+  },
+  {
+    "id": "b02-05",
+    "lesson": 2,
+    "chapter": "02_enterprise_data_model",
+    "company": "Spotify",
+    "title": "Spotify Backstage 的服务目录与维护责任",
+    "context": "服务数量增加后，开发人员需要查明某个服务由谁维护、文档存放在哪里。Spotify 通过 Backstage 的软件目录集中登记服务及其维护团队。",
+    "decision": "把技术服务与负责维护的组织建立明确关联。",
+    "facts": [
+      "Spotify工程文章说明服务所有权信息被记录于软件目录，团队能够查看所负责的服务",
+      "文档等开发资料也通过Backstage集中呈现，方便在对象上下文中查找"
+    ],
+    "analysis": "服务是技术对象，团队是组织对象，“负责维护”是二者之间的关系。结构化登记可以按团队查找所负责的服务，也可以在组织调整时统一检查责任变更。生产系统中的读取、修改和执行权限则由授权制度分别规定。",
+    "limits": "Spotify 的文章介绍了服务目录、责任登记及文档组织。责任登记需要随组织调整维护，实际操作还须符合相应权限。",
+    "questions": [
+      {
+        "question": "把某团队登记为服务负责人，是否等于该团队所有人均可修改生产数据？",
+        "answer": "维护责任决定由谁维护和答复问题；修改生产数据所需的权限，应按身份、操作类型和数据范围单独授权。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "What the Heck is Backstage Anyway?",
+        "url": "https://engineering.atspotify.com/2020/3/what-the-heck-is-backstage-anyway",
+        "publisher": "Spotify Engineering",
+        "date": "2020-03",
+        "support": "支持Spotify以软件目录组织服务及所有权信息，并将文档等开发资料集中呈现。",
+        "accessed": "2026-10-17"
+      }
+    ],
+    "slideRefs": [
+      {
+        "deck": "02_enterprise_data_model",
+        "page": 3,
+        "sectionId": "slides"
+      },
+      {
+        "deck": "02_enterprise_data_model",
+        "page": 4,
+        "sectionId": "slides"
+      }
+    ],
+    "readabilityEdition": true
+  }
+]

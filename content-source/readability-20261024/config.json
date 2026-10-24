@@ -1,0 +1,26 @@
+{
+  "date": "2026-10-24",
+  "baseline": "4836fc8",
+  "chapters": [
+    "01_intro",
+    "02_enterprise_data_model"
+  ],
+  "authorSources": "content-source/readability-20261024/chapters",
+  "conceptSource": "content-source/concept-links/knowledge.json",
+  "visibleConcepts": [
+    "concept-business-relation",
+    "concept-relationship-constraint",
+    "concept-fact-grain"
+  ],
+  "stablePlacements": {
+    "evidence-basics": {
+      "beforeAnchor": "knowledge-ref-0094"
+    },
+    "project-governance": {
+      "beforeHeading": "从经营意图到可检验的实现"
+    },
+    "model-primitives": {
+      "beforeHeading": "关系模型的基本语言"
+    }
+  }
+}

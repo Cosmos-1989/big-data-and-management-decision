@@ -13,7 +13,7 @@
         ],
         "detailRef": {
           "chapter": "01_intro",
-          "section": "经营问题的定义",
+          "section": "怎样规定一次分析任务",
           "anchor": "经营问题的定义"
         },
         "sourceSection": "经营问题的定义",
@@ -119,7 +119,7 @@
         ],
         "detailRef": {
           "chapter": "01_intro",
-          "section": "经营问题的定义",
+          "section": "怎样规定一次分析任务",
           "anchor": "经营问题的定义"
         },
         "sourceSection": "经营问题的定义",
@@ -157,7 +157,7 @@
         "layout": "split",
         "detailRef": {
           "chapter": "01_intro",
-          "section": "经营问题的定义",
+          "section": "怎样规定一次分析任务",
           "anchor": "经营问题的定义"
         },
         "sourceSection": "经营问题的定义",
@@ -200,7 +200,7 @@
         "layout": "focus",
         "detailRef": {
           "chapter": "01_intro",
-          "section": "经营问题的定义",
+          "section": "怎样规定一次分析任务",
           "anchor": "经营问题的定义"
         },
         "sourceSection": "经营问题的定义",
@@ -230,7 +230,7 @@
         ],
         "detailRef": {
           "chapter": "01_intro",
-          "section": "相关学科与研究对象",
+          "section": "数据、统计与方案选择",
           "anchor": "相关学科与研究对象"
         },
         "sourceSection": "相关学科与研究对象",
@@ -333,7 +333,7 @@
         "layout": "split",
         "detailRef": {
           "chapter": "01_intro",
-          "section": "商业智能、决策支持与决策智能",
+          "section": "经营信息系统支持哪些任务",
           "anchor": "商业智能决策支持与决策智能"
         },
         "sourceSection": "商业智能、决策支持与决策智能",
@@ -369,7 +369,7 @@
         "layout": "split",
         "detailRef": {
           "chapter": "01_intro",
-          "section": "商业智能、决策支持与决策智能",
+          "section": "经营信息系统支持哪些任务",
           "anchor": "商业智能决策支持与决策智能"
         },
         "sourceSection": "商业智能、决策支持与决策智能",
@@ -399,7 +399,7 @@
         ],
         "detailRef": {
           "chapter": "01_intro",
-          "section": "商业智能、决策支持与决策智能",
+          "section": "经营信息系统支持哪些任务",
           "anchor": "商业智能决策支持与决策智能"
         },
         "sourceSection": "商业智能、决策支持与决策智能",
@@ -426,7 +426,7 @@
         ],
         "detailRef": {
           "chapter": "01_intro",
-          "section": "数据驱动决策的基本对象",
+          "section": "记录对象、行动对象与指标口径",
           "anchor": "数据驱动决策的基本对象"
         },
         "sourceSection": "数据驱动决策的基本对象",
@@ -455,7 +455,7 @@
         "layout": "split",
         "detailRef": {
           "chapter": "01_intro",
-          "section": "数据驱动决策的基本对象",
+          "section": "记录对象、行动对象与指标口径",
           "anchor": "数据驱动决策的基本对象"
         },
         "sourceSection": "数据驱动决策的基本对象",
@@ -502,7 +502,7 @@
         "layout": "focus",
         "detailRef": {
           "chapter": "01_intro",
-          "section": "数据驱动决策的基本对象",
+          "section": "记录对象、行动对象与指标口径",
           "anchor": "数据驱动决策的基本对象"
         },
         "sourceSection": "数据驱动决策的基本对象",
@@ -536,7 +536,7 @@
         ],
         "detailRef": {
           "chapter": "01_intro",
-          "section": "行动方案的比较",
+          "section": "明确比较条件与基准",
           "anchor": "行动方案的比较"
         },
         "sourceSection": "行动方案的比较",
@@ -565,7 +565,7 @@
         "layout": "split",
         "detailRef": {
           "chapter": "01_intro",
-          "section": "行动方案的比较",
+          "section": "明确比较条件与基准",
           "anchor": "行动方案的比较"
         },
         "sourceSection": "行动方案的比较",
@@ -612,7 +612,7 @@
         "layout": "focus",
         "detailRef": {
           "chapter": "01_intro",
-          "section": "行动方案的比较",
+          "section": "明确比较条件与基准",
           "anchor": "行动方案的比较"
         },
         "sourceSection": "行动方案的比较",
@@ -646,7 +646,7 @@
         ],
         "detailRef": {
           "chapter": "01_intro",
-          "section": "状态、行动与条件损失",
+          "section": "状态、行动与条件期望损失",
           "anchor": "状态行动与条件损失"
         },
         "sourceSection": "状态、行动与条件损失",
@@ -667,7 +667,7 @@
         "takeaway": "先检查可行性，再按同一损失标准计算并选择。",
         "detailRef": {
           "chapter": "01_intro",
-          "section": "状态、行动与条件损失",
+          "section": "状态、行动与条件期望损失",
           "anchor": "状态行动与条件损失"
         },
         "sourceSection": "状态、行动与条件损失",
@@ -711,7 +711,7 @@
         ],
         "detailRef": {
           "chapter": "01_intro",
-          "section": "状态、行动与条件损失",
+          "section": "状态、行动与条件期望损失",
           "anchor": "状态行动与条件损失"
         },
         "sourceSection": "状态、行动与条件损失",
@@ -731,7 +731,7 @@
         ],
         "detailRef": {
           "chapter": "01_intro",
-          "section": "状态、行动与条件损失",
+          "section": "状态、行动与条件期望损失",
           "anchor": "状态行动与条件损失"
         },
         "sourceSection": "状态、行动与条件损失",
@@ -776,7 +776,7 @@
         ],
         "detailRef": {
           "chapter": "01_intro",
-          "section": "状态、行动与条件损失",
+          "section": "状态、行动与条件期望损失",
           "anchor": "状态行动与条件损失"
         },
         "sourceSection": "状态、行动与条件损失",
@@ -829,7 +829,7 @@
         ],
         "detailRef": {
           "chapter": "01_intro",
-          "section": "从期望损失到信息价值",
+          "section": "检测信息的决策价值",
           "anchor": "sec:information-value"
         },
         "sourceSection": "从期望损失到信息价值",
@@ -898,7 +898,7 @@
         ],
         "detailRef": {
           "chapter": "01_intro",
-          "section": "先验概率下的行动选择",
+          "section": "检测之前怎样选择",
           "anchor": "先验概率下的行动选择"
         },
         "sourceSection": "先验概率下的行动选择",
@@ -993,7 +993,7 @@
         "layout": "split",
         "detailRef": {
           "chapter": "01_intro",
-          "section": "贝叶斯更新与条件行动",
+          "section": "根据检测结果调整行动",
           "anchor": "贝叶斯更新与条件行动"
         },
         "sourceSection": "贝叶斯更新与条件行动",
@@ -1027,7 +1027,7 @@
         ],
         "detailRef": {
           "chapter": "01_intro",
-          "section": "先验概率下的行动选择",
+          "section": "检测之前怎样选择",
           "anchor": "先验概率下的行动选择"
         },
         "sourceSection": "先验概率下的行动选择",
@@ -1063,7 +1063,7 @@
         ],
         "detailRef": {
           "chapter": "01_intro",
-          "section": "贝叶斯更新与条件行动",
+          "section": "根据检测结果调整行动",
           "anchor": "贝叶斯更新与条件行动"
         },
         "sourceSection": "贝叶斯更新与条件行动",
@@ -1087,7 +1087,7 @@
         "takeaway": "先形成联合概率，再按观测信号归一化。",
         "detailRef": {
           "chapter": "01_intro",
-          "section": "贝叶斯更新与条件行动",
+          "section": "根据检测结果调整行动",
           "anchor": "贝叶斯更新与条件行动"
         },
         "sourceSection": "贝叶斯更新与条件行动",
@@ -1155,7 +1155,7 @@
         ],
         "detailRef": {
           "chapter": "01_intro",
-          "section": "贝叶斯更新与条件行动",
+          "section": "根据检测结果调整行动",
           "anchor": "贝叶斯更新与条件行动"
         },
         "sourceSection": "贝叶斯更新与条件行动",
@@ -1182,7 +1182,7 @@
         ],
         "detailRef": {
           "chapter": "01_intro",
-          "section": "样本信息的期望价值",
+          "section": "计算检测的期望价值",
           "anchor": "样本信息的期望价值"
         },
         "sourceSection": "样本信息的期望价值",
@@ -1292,7 +1292,7 @@
         ],
         "detailRef": {
           "chapter": "01_intro",
-          "section": "样本信息的期望价值",
+          "section": "计算检测的期望价值",
           "anchor": "样本信息的期望价值"
         },
         "sourceSection": "样本信息的期望价值",
@@ -1352,7 +1352,7 @@
         ],
         "detailRef": {
           "chapter": "01_intro",
-          "section": "样本信息的期望价值",
+          "section": "计算检测的期望价值",
           "anchor": "样本信息的期望价值"
         },
         "sourceSection": "样本信息的期望价值",
@@ -1376,7 +1376,7 @@
         ],
         "detailRef": {
           "chapter": "01_intro",
-          "section": "行动阈值与信息采购",
+          "section": "行动阈值与检测采购",
           "anchor": "行动阈值与信息采购"
         },
         "sourceSection": "行动阈值与信息采购",
@@ -1436,7 +1436,7 @@
         "section": "信息价值",
         "detailRef": {
           "chapter": "01_intro",
-          "section": "行动阈值与信息采购",
+          "section": "行动阈值与检测采购",
           "anchor": "行动阈值与信息采购"
         },
         "sourceSection": "行动阈值与信息采购",
@@ -1455,7 +1455,7 @@
         "layout": "split",
         "detailRef": {
           "chapter": "01_intro",
-          "section": "行动阈值与信息采购",
+          "section": "行动阈值与检测采购",
           "anchor": "行动阈值与信息采购"
         },
         "sourceSection": "行动阈值与信息采购",
@@ -1498,7 +1498,7 @@
         "layout": "focus",
         "detailRef": {
           "chapter": "01_intro",
-          "section": "行动阈值与信息采购",
+          "section": "行动阈值与检测采购",
           "anchor": "行动阈值与信息采购"
         },
         "sourceSection": "行动阈值与信息采购",
@@ -1528,7 +1528,7 @@
         ],
         "detailRef": {
           "chapter": "01_intro",
-          "section": "多期决策的递推关系",
+          "section": "把未来成本计入当前选择",
           "anchor": "多期决策的递推关系"
         },
         "sourceSection": "多期决策的递推关系",
@@ -1637,7 +1637,7 @@
         "layout": "split",
         "detailRef": {
           "chapter": "01_intro",
-          "section": "多期决策与分析任务",
+          "section": "多期决策与分析方法",
           "anchor": "多期决策与分析任务"
         },
         "sourceSection": "多期决策与分析任务",
@@ -1680,7 +1680,7 @@
         "layout": "focus",
         "detailRef": {
           "chapter": "01_intro",
-          "section": "多期决策与分析任务",
+          "section": "多期决策与分析方法",
           "anchor": "多期决策与分析任务"
         },
         "sourceSection": "多期决策与分析任务",
@@ -1716,7 +1716,7 @@
         "section": "连续决策",
         "detailRef": {
           "chapter": "01_intro",
-          "section": "多期决策的递推关系",
+          "section": "把未来成本计入当前选择",
           "anchor": "多期决策的递推关系"
         },
         "sourceSection": "多期决策的递推关系",
@@ -1735,7 +1735,7 @@
         "takeaway": "当前行动的成本与它改变的未来状态概率须同时计入。",
         "detailRef": {
           "chapter": "01_intro",
-          "section": "多期决策的递推关系",
+          "section": "把未来成本计入当前选择",
           "anchor": "多期决策的递推关系"
         },
         "sourceSection": "多期决策的递推关系",
@@ -1777,7 +1777,7 @@
         "takeaway": "反向递推使未来成本成为当前行动比较的一部分。",
         "detailRef": {
           "chapter": "01_intro",
-          "section": "多期决策的递推关系",
+          "section": "把未来成本计入当前选择",
           "anchor": "多期决策的递推关系"
         },
         "sourceSection": "多期决策的递推关系",
@@ -1828,7 +1828,7 @@
         ],
         "detailRef": {
           "chapter": "01_intro",
-          "section": "五类分析任务的研究问题",
+          "section": "区分描述、预测与干预评价",
           "anchor": "五类分析任务的研究问题"
         },
         "sourceSection": "五类分析任务的研究问题",
@@ -1883,7 +1883,7 @@
         ],
         "detailRef": {
           "chapter": "01_intro",
-          "section": "数据分析项目的组织",
+          "section": "从分析任务到实际应用",
           "anchor": "数据分析项目的组织"
         },
         "sourceSection": "数据分析项目的组织",
@@ -2021,7 +2021,7 @@
         ],
         "detailRef": {
           "chapter": "01_intro",
-          "section": "从经营意图到可检验的实现",
+          "section": "任务规定与实施检验",
           "anchor": "从经营意图到可检验的实现"
         },
         "sourceSection": "从经营意图到可检验的实现",
@@ -2041,7 +2041,7 @@
         ],
         "detailRef": {
           "chapter": "01_intro",
-          "section": "制造企业的交付延期风险分析",
+          "section": "订单交付任务的完整定义",
           "anchor": "制造企业的交付延期风险分析"
         },
         "sourceSection": "制造企业的交付延期风险分析",
@@ -2070,7 +2070,7 @@
         ],
         "detailRef": {
           "chapter": "01_intro",
-          "section": "Airbus 与 Palantir 的数据整合",
+          "section": "Airbus与Palantir：维护分析的数据整合",
           "anchor": "airbus-与-palantir-的数据整合"
         },
         "sourceSection": "Airbus 与 Palantir 的数据整合",
@@ -2177,7 +2177,7 @@
         "equation": "c_m<pc_f\\quad\\Longrightarrow\\quad \\text{选择立即维护}",
         "detailRef": {
           "chapter": "01_intro",
-          "section": "Airbus 与 Palantir 的数据整合",
+          "section": "Airbus与Palantir：维护分析的数据整合",
           "anchor": "airbus-与-palantir-的数据整合"
         },
         "takeaway": "风险估计须与完整的行动后果及成本口径结合。",
@@ -2196,7 +2196,7 @@
         ],
         "detailRef": {
           "chapter": "01_intro",
-          "section": "Oracle 与 Red Bull Racing 的赛事仿真",
+          "section": "Oracle与Red Bull Racing：比较比赛策略",
           "anchor": "oracle-与-red-bull-racing-的赛事仿真"
         },
         "sourceSection": "Oracle 与 Red Bull Racing 的赛事仿真",
@@ -2237,7 +2237,7 @@
         "equation": "\\widehat R(a)=\\frac1S\\sum_{s=1}^{S}T(a,\\theta_s)",
         "detailRef": {
           "chapter": "01_intro",
-          "section": "Oracle 与 Red Bull Racing 的赛事仿真",
+          "section": "Oracle与Red Bull Racing：比较比赛策略",
           "anchor": "oracle-与-red-bull-racing-的赛事仿真"
         },
         "takeaway": "增加模拟次数改善抽样精度，模型有效性仍须独立检验。",
@@ -2257,7 +2257,7 @@
         "takeaway": "平均优势与逐情景优势不同，策略选择还应检查不利情景与估计误差。",
         "detailRef": {
           "chapter": "01_intro",
-          "section": "Oracle 与 Red Bull Racing 的赛事仿真",
+          "section": "Oracle与Red Bull Racing：比较比赛策略",
           "anchor": "oracle-与-red-bull-racing-的赛事仿真"
         },
         "sourceSection": "Oracle 与 Red Bull Racing 的赛事仿真",
@@ -2358,7 +2358,7 @@
         ],
         "detailRef": {
           "chapter": "01_intro",
-          "section": "人工智能应用的生产率测量",
+          "section": "怎样计算人工智能应用的生产率",
           "anchor": "人工智能应用的生产率测量"
         },
         "sourceSection": "人工智能应用的生产率测量",
@@ -2435,7 +2435,7 @@
         ],
         "detailRef": {
           "chapter": "01_intro",
-          "section": "问题定义的结构化表示",
+          "section": "用程序保存问题定义",
           "anchor": "问题定义的结构化表示"
         },
         "sourceSection": "问题定义的结构化表示",
@@ -2478,7 +2478,7 @@
         ],
         "detailRef": {
           "chapter": "02_enterprise_data_model",
-          "section": "数据模型与组织管理",
+          "section": "从订单问题到数据模型",
           "anchor": "数据模型与组织管理"
         },
         "sourceSection": "数据模型与组织管理",
@@ -2584,7 +2584,7 @@
         ],
         "detailRef": {
           "chapter": "02_enterprise_data_model",
-          "section": "数据模型的治理含义",
+          "section": "数据定义与监督责任",
           "anchor": "数据模型的治理含义"
         },
         "sourceSection": "数据模型的治理含义",
@@ -2614,7 +2614,7 @@
         "layout": "split",
         "detailRef": {
           "chapter": "02_enterprise_data_model",
-          "section": "数据模型的治理含义",
+          "section": "数据定义与监督责任",
           "anchor": "数据模型的治理含义"
         },
         "sourceSection": "数据模型的治理含义",
@@ -2657,7 +2657,7 @@
         "layout": "focus",
         "detailRef": {
           "chapter": "02_enterprise_data_model",
-          "section": "数据模型的治理含义",
+          "section": "数据定义与监督责任",
           "anchor": "数据模型的治理含义"
         },
         "sourceSection": "数据模型的治理含义",
@@ -2687,7 +2687,7 @@
         ],
         "detailRef": {
           "chapter": "02_enterprise_data_model",
-          "section": "企业人工智能系统的技术构成",
+          "section": "企业AI系统的实现与平台选择",
           "anchor": "sec:enterprise-ai-stack"
         },
         "sourceSection": "企业人工智能系统的技术构成",
@@ -2719,7 +2719,7 @@
         "layout": "split",
         "detailRef": {
           "chapter": "02_enterprise_data_model",
-          "section": "从存储格式到业务含义",
+          "section": "共享表数据与保持业务含义",
           "anchor": "从存储格式到业务含义"
         },
         "sourceSection": "从存储格式到业务含义",
@@ -2753,7 +2753,7 @@
         ],
         "detailRef": {
           "chapter": "02_enterprise_data_model",
-          "section": "从存储格式到业务含义",
+          "section": "共享表数据与保持业务含义",
           "anchor": "从存储格式到业务含义"
         },
         "sourceSection": "从存储格式到业务含义",
@@ -2789,7 +2789,7 @@
         ],
         "detailRef": {
           "chapter": "02_enterprise_data_model",
-          "section": "从业务概念到可观察记录",
+          "section": "完成事件、记录规则与测量",
           "anchor": "从业务概念到可观察记录"
         },
         "sourceSection": "从业务概念到可观察记录",
@@ -2879,7 +2879,7 @@
         ],
         "detailRef": {
           "chapter": "02_enterprise_data_model",
-          "section": "企业运营数据的基本语义",
+          "section": "实体、事件、状态与指标",
           "anchor": "企业运营数据的基本语义"
         },
         "sourceSection": "企业运营数据的基本语义",
@@ -3365,7 +3365,7 @@
         ],
         "detailRef": {
           "chapter": "02_enterprise_data_model",
-          "section": "无损连接分解",
+          "section": "关系分解与准确重建",
           "anchor": "无损连接分解"
         },
         "sourceSection": "无损连接分解",
@@ -3687,7 +3687,7 @@
         "layout": "split",
         "detailRef": {
           "chapter": "02_enterprise_data_model",
-          "section": "制造 KPI 的事实粒度",
+          "section": "制造指标的记录基础",
           "anchor": "制造-kpi-的事实粒度"
         },
         "sourceSection": "制造 KPI 的事实粒度",
@@ -3721,7 +3721,7 @@
         ],
         "detailRef": {
           "chapter": "02_enterprise_data_model",
-          "section": "制造 KPI 的事实粒度",
+          "section": "制造指标的记录基础",
           "anchor": "制造-kpi-的事实粒度"
         },
         "sourceSection": "制造 KPI 的事实粒度",
@@ -4030,7 +4030,7 @@
         ],
         "detailRef": {
           "chapter": "02_enterprise_data_model",
-          "section": "语义层与 AI 问数",
+          "section": "自然语言问数的查询条件",
           "anchor": "语义层与-ai-问数"
         },
         "sourceSection": "语义层与 AI 问数",
@@ -4064,7 +4064,7 @@
         "layout": "split",
         "detailRef": {
           "chapter": "02_enterprise_data_model",
-          "section": "指标测量与激励目标",
+          "section": "绩效信号与风险承担",
           "anchor": "指标测量与激励目标"
         },
         "sourceSection": "指标测量与激励目标",
@@ -4099,7 +4099,7 @@
         "takeaway": "测量模型、经理的努力选择和企业的合同选择是三个相连但不同的问题。",
         "detailRef": {
           "chapter": "02_enterprise_data_model",
-          "section": "指标测量与激励目标",
+          "section": "绩效信号与风险承担",
           "anchor": "指标测量与激励目标"
         },
         "sourceSection": "指标测量与激励目标",
@@ -4138,7 +4138,7 @@
         ],
         "detailRef": {
           "chapter": "02_enterprise_data_model",
-          "section": "指标测量与激励目标",
+          "section": "绩效信号与风险承担",
           "anchor": "指标测量与激励目标"
         },
         "sourceSection": "指标测量与激励目标",
@@ -4267,7 +4267,7 @@
         "section": "指标与激励",
         "detailRef": {
           "chapter": "02_enterprise_data_model",
-          "section": "指标测量与激励目标",
+          "section": "绩效信号与风险承担",
           "anchor": "指标测量与激励目标"
         },
         "sourceSection": "指标测量与激励目标",
@@ -4285,7 +4285,7 @@
         ],
         "detailRef": {
           "chapter": "02_enterprise_data_model",
-          "section": "代理人的努力选择",
+          "section": "合同如何影响努力",
           "anchor": "代理人的努力选择"
         },
         "sourceSection": "代理人的努力选择",
@@ -4308,7 +4308,7 @@
         ],
         "detailRef": {
           "chapter": "02_enterprise_data_model",
-          "section": "参与约束与最优激励强度",
+          "section": "参与约束与企业的合同选择",
           "anchor": "参与约束与最优激励强度"
         },
         "sourceSection": "参与约束与最优激励强度",
@@ -4334,7 +4334,7 @@
         "section": "指标与激励",
         "detailRef": {
           "chapter": "02_enterprise_data_model",
-          "section": "参与约束与最优激励强度",
+          "section": "参与约束与企业的合同选择",
           "anchor": "参与约束与最优激励强度"
         },
         "sourceSection": "参与约束与最优激励强度",
@@ -4572,7 +4572,7 @@
         ],
         "detailRef": {
           "chapter": "02_enterprise_data_model",
-          "section": "参与约束与最优激励强度",
+          "section": "参与约束与企业的合同选择",
           "anchor": "参与约束与最优激励强度"
         },
         "sourceSection": "参与约束与最优激励强度",
@@ -4818,7 +4818,7 @@
         ],
         "detailRef": {
           "chapter": "02_enterprise_data_model",
-          "section": "业务对象与元数据管理的企业应用",
+          "section": "对象和元数据的企业应用",
           "anchor": "业务对象与元数据管理的企业应用"
         },
         "sourceSection": "业务对象与元数据管理的企业应用",
@@ -4929,7 +4929,7 @@
         "layout": "split",
         "detailRef": {
           "chapter": "02_enterprise_data_model",
-          "section": "业务对象与元数据管理的企业应用",
+          "section": "对象和元数据的企业应用",
           "anchor": "业务对象与元数据管理的企业应用"
         },
         "sourceSection": "业务对象与元数据管理的企业应用",
@@ -4972,7 +4972,7 @@
         "layout": "focus",
         "detailRef": {
           "chapter": "02_enterprise_data_model",
-          "section": "业务对象与元数据管理的企业应用",
+          "section": "对象和元数据的企业应用",
           "anchor": "业务对象与元数据管理的企业应用"
         },
         "sourceSection": "业务对象与元数据管理的企业应用",
@@ -5005,7 +5005,7 @@
         "density": "compact",
         "detailRef": {
           "chapter": "02_enterprise_data_model",
-          "section": "业务对象与元数据管理的企业应用",
+          "section": "对象和元数据的企业应用",
           "anchor": "业务对象与元数据管理的企业应用"
         },
         "sourceSection": "业务对象与元数据管理的企业应用",
@@ -5022,7 +5022,7 @@
         ],
         "detailRef": {
           "chapter": "02_enterprise_data_model",
-          "section": "业务对象与元数据管理的企业应用",
+          "section": "对象和元数据的企业应用",
           "anchor": "业务对象与元数据管理的企业应用"
         },
         "sourceSection": "业务对象与元数据管理的企业应用",
@@ -5105,7 +5105,7 @@
         ],
         "detailRef": {
           "chapter": "02_enterprise_data_model",
-          "section": "建模实例与复核",
+          "section": "零售与封测模型的综合复核",
           "anchor": "建模实例与复核"
         },
         "sourceSection": "建模实例与复核",

@@ -29,6 +29,58 @@ def stable_hash(path):
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
+def readability_authors(manifest, chapters, errors):
+    """Resolve the rewritten author texts and verify their manifest hashes."""
+    edition = manifest.get("readabilityEdition")
+    if not edition:
+        return {}
+    if not isinstance(edition, dict):
+        errors.append("Readability edition manifest is not an object")
+        return {}
+    entries = edition.get("sources", [])
+    if not isinstance(entries, list):
+        errors.append("Readability edition source list is malformed")
+        return {}
+    source_entries = {}
+    for entry in entries:
+        if not isinstance(entry, dict) or not isinstance(entry.get("path"), str):
+            errors.append("Readability edition contains a malformed source entry")
+            continue
+        path = entry["path"]
+        if path in source_entries:
+            errors.append(f"Readability edition repeats source: {path}")
+        source_entries[path] = entry
+    declared_chapters = edition.get("chapters", [])
+    if not isinstance(declared_chapters, list):
+        errors.append("Readability edition chapter list is malformed")
+        declared_chapters = []
+    authors = {}
+    for chapter in ("01_intro", "02_enterprise_data_model"):
+        if chapter not in chapters:
+            continue
+        if chapter not in declared_chapters:
+            errors.append(f"Readability edition does not declare author chapter: {chapter}")
+        author_path = ROOT / "content-source/readability-20261024/chapters" / (chapter + ".json")
+        source_name = str(author_path.relative_to(ROOT))
+        entry = source_entries.get(source_name)
+        if entry is None:
+            errors.append(f"Readability author source is absent from manifest: {source_name}")
+        try:
+            raw = author_path.read_bytes()
+            actual_hash = hashlib.sha256(raw).hexdigest()
+            author = json.loads(raw)
+        except (OSError, json.JSONDecodeError, UnicodeDecodeError) as exc:
+            errors.append(f"Cannot read readability author source {source_name}: {exc}")
+            continue
+        if entry is not None and entry.get("sha256") != actual_hash:
+            errors.append(f"Readability author source hash differs from manifest: {source_name}")
+        if not isinstance(author, dict) or author.get("id") != chapter or not isinstance(author.get("html"), str):
+            errors.append(f"Malformed readability author chapter: {source_name}")
+            continue
+        authors[chapter] = author
+    return authors
+
+
 def verify(source, content_dir, review_dir, baseline_ref, check_idempotence):
     knowledge = builder.read_json(source)
     chapters = knowledge["chapters"]
@@ -40,6 +92,7 @@ def verify(source, content_dir, review_dir, baseline_ref, check_idempotence):
     manifest = builder.read_json(content_dir / "source-manifest.json")
     if manifest.get("conceptLinks", {}).get("sha256") != stable_hash(source):
         errors.append("Concept source hash differs from the source manifest")
+    author_chapters = readability_authors(manifest, chapters, errors)
     soups = {chapter: BeautifulSoup(builder.read_json(content_dir / (chapter + ".json"))["html"], "html.parser") for chapter in chapters}
     ids = {chapter: Counter(node["id"] for node in soup.find_all(id=True)) for chapter, soup in soups.items()}
     entries = {entry["id"]: ("course", entry) for entry in knowledge["concepts"]}
@@ -97,24 +150,37 @@ def verify(source, content_dir, review_dir, baseline_ref, check_idempotence):
         for item in current["toc"]:
             if ids[chapter][item["id"]] != 1:
                 errors.append(f"{chapter}: TOC target absent/ambiguous: {item['id']}")
-        baseline = git_bytes("dist/content/" + chapter + ".json", baseline_ref)
-        if baseline:
-            old_soup = BeautifulSoup(json.loads(baseline)["html"], "html.parser")
-            builder.clean_generated(old_soup)
-            before_protected = builder.protected(old_soup)
-            if before_protected != builder.original_protected(soup):
-                errors.append(f"{chapter}: code, formula, image or citation differs from {baseline_ref}")
-            missing = set(node["id"] for node in old_soup.find_all(id=True)) - set(ids[chapter])
+        original_current = BeautifulSoup(str(soup), "html.parser")
+        builder.clean_generated(original_current)
+        if chapter in author_chapters:
+            # Rewritten author files already contain their permanent concept and
+            # reading-unit anchors.  clean_generated removes only publication
+            # additions, leaving those unmarked author anchors in place.
+            author_soup = BeautifulSoup(author_chapters[chapter]["html"], "html.parser")
+            if builder.protected(author_soup) != builder.protected(original_current):
+                errors.append(f"{chapter}: code, formula, image or citation differs from readability author source")
+            missing = set(node["id"] for node in author_soup.find_all(id=True)) - set(node["id"] for node in original_current.find_all(id=True))
             if missing:
-                errors.append(f"{chapter}: original anchors lost: {sorted(missing)}")
-            expected_html = str(old_soup)
-            for edit in knowledge.get("edits", []):
-                if edit["chapter"] == chapter:
-                    expected_html = expected_html.replace(edit["old"], edit["new"])
-            original_current = BeautifulSoup(str(soup), "html.parser")
-            builder.clean_generated(original_current)
-            if str(BeautifulSoup(expected_html, "html.parser")) != str(original_current):
-                errors.append(f"{chapter}: original content differs beyond declared text edits")
+                errors.append(f"{chapter}: readability author anchors lost: {sorted(missing)}")
+            if str(author_soup) != str(original_current):
+                errors.append(f"{chapter}: published prose differs from readability author source")
+        else:
+            baseline = git_bytes("dist/content/" + chapter + ".json", baseline_ref)
+            if baseline:
+                old_soup = BeautifulSoup(json.loads(baseline)["html"], "html.parser")
+                builder.clean_generated(old_soup)
+                before_protected = builder.protected(old_soup)
+                if before_protected != builder.original_protected(soup):
+                    errors.append(f"{chapter}: code, formula, image or citation differs from {baseline_ref}")
+                missing = set(node["id"] for node in old_soup.find_all(id=True)) - set(ids[chapter])
+                if missing:
+                    errors.append(f"{chapter}: original anchors lost: {sorted(missing)}")
+                expected_html = str(old_soup)
+                for edit in knowledge.get("edits", []):
+                    if edit["chapter"] == chapter:
+                        expected_html = expected_html.replace(edit["old"], edit["new"])
+                if str(BeautifulSoup(expected_html, "html.parser")) != str(original_current):
+                    errors.append(f"{chapter}: original content differs beyond declared text edits")
         observations[chapter] = {"links": len(links), "referenceAnchors": len(soup.select("[data-knowledge-reference]")), "targets": len(ids[chapter]), "protectedNodes": len(builder.protected(soup))}
     for concept in knowledge["concepts"]:
         if ids[concept["chapter"]][concept["anchor"]] != 1:
@@ -122,14 +188,17 @@ def verify(source, content_dir, review_dir, baseline_ref, check_idempotence):
     # User's concrete example is an acceptance condition, not just a smoke test.
     second = soups.get("02_enterprise_data_model")
     if second:
-        opening = next((node for node in second.find_all("p") if node.get_text("", strip=True).startswith("数据模型规定")), None)
-        if opening is None:
-            errors.append("Second lecture opening data-model paragraph is missing")
-        else:
-            for term in ("业务对象", "关系约束", "事实粒度"):
-                matching = [a for a in opening.select("a.knowledge-link") if a.get_text() == term]
-                if len(matching) != 1 or not matching[0]["href"].startswith("#/chapter/01_intro?"):
-                    errors.append(f"Second lecture opening must link {term} to first lecture")
+        required = {"business-object", "relationship-constraint", "fact-grain"}
+        example_found = False
+        for paragraph in second.find_all("p"):
+            matching = {link.get("data-knowledge-id"): link for link in paragraph.select("a.knowledge-link")
+                        if link.get("data-knowledge-id") in required}
+            if set(matching) == required and all(link.get("href", "").startswith("#/chapter/01_intro?")
+                                                  for link in matching.values()):
+                example_found = True
+                break
+        if not example_found:
+            errors.append("Second lecture must contain a paragraph linking business-object, relationship-constraint and fact-grain to first lecture")
     nl2sql = [entry for entry in knowledge["background"] if "NL2SQL" in [entry["term"], *entry.get("aliases", [])]]
     if not nl2sql:
         errors.append("NL2SQL has no background entry")
@@ -146,6 +215,8 @@ def verify(source, content_dir, review_dir, baseline_ref, check_idempotence):
         errors.append(f"Cannot inspect baseline {baseline_ref}")
     else:
         allowed = {"concept-map.json", "catalog.json", "source-manifest.json", *(chapter + ".json" for chapter in chapters)}
+        if author_chapters:
+            allowed.update({"business-cases.json", "case-cards.json", "business-casebook.json", "lecture-slides.json"})
         for name in tracked.stdout.splitlines():
             relative = Path(name).relative_to("dist/content")
             if str(relative) in allowed:

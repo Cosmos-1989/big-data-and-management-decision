@@ -48,7 +48,17 @@ python3 scripts/normalize-content.py
 
 正文转换统一清除中文之间因源文件折行产生的空格，保留英语词间距、混排间距、代码和公式。TeX 的 `\footnote{…}` 和 Markdown 的 `[^term]` 均转为编号注释，支持正文跳转、悬停查看简释和返回原处。企业智能体构建器同样使用 Python 的 `markdown` 与 `beautifulsoup4`，可通过 `PYTHON` 环境变量指定解释器。
 
-前两讲的网页补充定义与概念链接源保存在 `content-source/concept-links/knowledge.json`。重建正文后，最后运行 `python3 scripts/build-concept-links.py`，再运行 `python3 scripts/verify-concept-links.py`。构建保留原脚注、公式、代码和锚点；课程内概念指向精确的定义位置，公司、产品与背景缩写指向本讲文末释义。`linkAliases` 限制自动匹配的明确词形，避免将普通用词误作专门术语。动态企业案例使用相同概念源，跳转后提供返回原阅读位置的入口。
+前两讲的网页正文采用经过重新组织和逐段审订的阅读版，作者源位于 `content-source/readability-20261024/chapters/`。此版本重排概念和算例的引入次序，补充推导与解释，并保留教材原始公式、图形、代码、引文及公开锚点。原始 TeX 与下载版教材不由此构建修改。前两讲的十个商业案例、四个企业图解及配置也保存在该目录。
+
+概念定义与链接源位于 `content-source/concept-links/knowledge.json`。正文解释主要概念，补充释义按需展开，公司、产品与缩写集中于文末；点击概念自动展开定义并提供返回原阅读位置的入口。`linkAliases` 限制匹配词形，避免将普通用词误作术语。更新其他教材或教学内容后，**最后运行以下构建**，使阅读版覆盖相应两讲，并同步目录、案例与幻灯片的讲义阅读链接。
+
+```sh
+python3 scripts/build-readable-lectures.py
+python3 scripts/verify-readable-lectures.py
+python3 scripts/verify-concept-links.py --baseline-ref 4836fc8 --review-dir review/readability-20261024/concepts
+```
+
+`source-manifest.json` 的 `readabilityEdition` 记录作者源哈希；原教材来源仍保留在原有清单中。验收将发布正文与作者源逐段比较，并检查旧公式、代码、图片、引文、锚点及未涉及章节的保全。`review/readability-20261024/` 保存两讲编辑记录、交叉审读及验证结果。
 
 ## 运行机制
 

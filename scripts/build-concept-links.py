@@ -110,7 +110,12 @@ def locate(soup, location):
 def add_blocks(soup, blocks):
     for block in blocks:
         placement = block["placement"]
-        if "beforeHeading" in placement:
+        if "beforeAnchor" in placement or "afterAnchor" in placement:
+            before = "beforeAnchor" in placement
+            target = soup.find(id=placement.get("beforeAnchor", placement.get("afterAnchor")))
+            if target is None:
+                raise ValueError(f"Missing stable placement anchor: {placement}")
+        elif "beforeHeading" in placement:
             target = soup.find(id=placement["beforeHeading"])
             if target is None or target.name not in {"h2", "h3", "h4"}:
                 raise ValueError(f"Missing block heading: {placement['beforeHeading']}")
@@ -124,7 +129,38 @@ def add_blocks(soup, blocks):
         else:
             raise ValueError(f"Unknown block placement: {placement}")
         wrapper = soup.new_tag("div", attrs={"class": "knowledge-supplement", "data-knowledge-block": block["id"]})
-        for child in list(parse(block["html"]).contents):
+        fragment = parse(block["html"])
+        if block.get("presentation") == "reference":
+            section = fragment.select_one(".knowledge-foundations")
+            if section is None:
+                raise ValueError(f"Reference block has no definition section: {block['id']}")
+            heading = section.find("h4")
+            label = heading.get_text(strip=True) if heading else "相关概念"
+            if heading:
+                heading.decompose()
+            for anchor in block.get("visibleConcepts", []):
+                term = section.find(id=anchor)
+                if term is None:
+                    raise ValueError(f"Missing visible definition: {anchor}")
+                group, definition = term.parent, term.find_next_sibling("dd")
+                aside = soup.new_tag("aside", attrs={"class": "statement definition readable-definition", "id": anchor})
+                title = soup.new_tag("div", attrs={"class": "statement-title"})
+                title.string = "定义 · " + term.get_text()
+                paragraph = soup.new_tag("p")
+                for child in list(definition.contents):
+                    paragraph.append(child)
+                aside.extend([title, paragraph])
+                wrapper.append(aside)
+                group.decompose()
+            note = soup.new_tag("details", attrs={"class": "knowledge-note"})
+            summary = soup.new_tag("summary")
+            summary.string = "术语释义 · " + label
+            note.append(summary)
+            for child in list(section.contents):
+                note.append(child)
+            fragment.clear()
+            fragment.append(note)
+        for child in list(fragment.contents):
             wrapper.append(child)
         if before:
             target.insert_before(wrapper)
@@ -144,6 +180,8 @@ def definition_scope(target):
     if target.parent and target.parent.name in {"p", "td", "aside", "li", "dd"}:
         return target.parent
     sibling = target.find_next_sibling()
+    while sibling and sibling.name == "span" and not sibling.get_text(strip=True):
+        sibling = sibling.find_next_sibling()
     if sibling and sibling.name in {"p", "aside"}:
         return sibling
     return target.parent
@@ -190,7 +228,11 @@ def add_background(soup, chapter, entries):
             a.string = "资料来源"
             dd.append(a)
         listing.extend([dt, dd])
-    section.append(listing)
+    reference = soup.new_tag("details", attrs={"class": "knowledge-glossary"})
+    summary = soup.new_tag("summary")
+    summary.string = "查看机构、产品与缩写释义"
+    reference.extend([summary, listing])
+    section.append(reference)
     soup.append(section)
 
 
@@ -219,6 +261,9 @@ def make_matcher(concepts, background):
         # match normal compounds such as 主键 and 候选键.
         if len(alias) == 1 and "\u3400" <= alias <= "\u9fff":
             left, right = r"(?<![\u3400-\u9fff])", r"(?![\u3400-\u9fff])"
+        # 单元组织/单元组成 contains two ordinary words, not the term 元组.
+        if alias == "元组":
+            left += r"(?<!单)"
         patterns.append(left + re.escape(alias) + right)
     return re.compile("|".join(patterns)) if patterns else re.compile(r"(?!x)x"), aliases
 

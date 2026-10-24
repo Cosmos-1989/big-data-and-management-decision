@@ -65,8 +65,10 @@ for path in sorted(CONTENT.glob("*.json")):
     documents.append({"id": path.stem, "footnotes": len(notes), "references": len(refs)})
 
 intro = BeautifulSoup(json.loads((CONTENT / "01_intro.json").read_text())["html"], "html.parser")
-bi = next(paragraph for paragraph in intro.find_all("p") if "经典 BI" in paragraph.get_text())
-definitions = [intro.find(id=anchor_id(ref["href"])).get_text() for ref in bi.select('a[role="doc-noteref"]')]
+bi = next((paragraph for paragraph in intro.find_all("p") if all(name in paragraph.get_text() for name in ("数据仓库", "ETL", "OLAP", "报表系统"))), None)
+if bi is None:
+    errors.append(["01_intro", "BI paragraph with the four introductory terms is missing"])
+definitions = [intro.find(id=anchor_id(ref["href"])).get_text() for ref in bi.select('a[role="doc-noteref"]')] if bi else []
 for name in ["数据仓库", "ETL", "OLAP", "报表系统"]:
     if not any(name in definition for definition in definitions):
         errors.append(["01_intro", "Requested concept lacks its introductory note", name])

@@ -1,0 +1,86 @@
+[
+  {
+    "caseId": "airbus-skywise-maintenance",
+    "chapterId": "01_intro",
+    "targetHeading": "Airbus 与 Palantir 的数据整合",
+    "organization": "Airbus × Palantir",
+    "context": "Skywise 将航空领域知识与跨系统数据整合用于航空公司和 Airbus 的运营分析。以飞机维护窗口为例，管理者需要把同一架飞机的部件、飞行和维修记录对应起来。",
+    "flow": [
+      "数据｜对齐飞机、部件、飞行小时与维护事件",
+      "估计｜依据已知记录评估下一维护窗口的故障风险",
+      "行动｜比较立即维护、延期维护与更换部件的期望损失",
+      "反馈｜用实际维护与故障记录复核所选方案"
+    ],
+    "takeaway": "比较维护方案，需要把飞机身份、故障风险和维护损失对应起来。",
+    "sourceCaveat": "Skywise 合作与应用情况见 Airbus 公告。维护选择采用简化的故障概率与成本假设，用于说明方案比较。",
+    "sourceRefs": [
+      "airbus01"
+    ],
+    "visualHint": "飞机—部件—维护事件的对象关系图，接三种行动的比较卡",
+    "targetAnchor": "airbus-与-palantir-的数据整合",
+    "compact": true
+  },
+  {
+    "caseId": "oracle-red-bull-simulation",
+    "chapterId": "01_intro",
+    "targetHeading": "Oracle 与 Red Bull Racing 的赛事仿真",
+    "organization": "Oracle × Red Bull Racing",
+    "context": "Oracle 公告介绍 Red Bull Racing 使用 OCI 进行赛前与赛中的情景仿真。进站决策可按天气与对手策略设定情景，比较不同进站时机对应的完赛结果。",
+    "flow": [
+      "情景｜列出天气、赛道与对手策略的可能变化",
+      "仿真｜为每个进站时机重复计算完赛时间",
+      "比较｜同时考察平均结果和不利情景下的表现",
+      "更新｜新信息到来时重新校准输入与策略"
+    ],
+    "takeaway": "仿真次数影响抽样波动，情景与模型的准确性影响结果的实际适用性。",
+    "sourceCaveat": "云端仿真应用见 Oracle 公告。进站时机、情景分布及损失函数采用简化设定，用于说明仿真评价。",
+    "sourceRefs": [
+      "oracle01"
+    ],
+    "visualHint": "天气与对手策略的情景矩阵，连到行动结果分布",
+    "targetAnchor": "oracle-与-red-bull-racing-的赛事仿真",
+    "compact": true
+  },
+  {
+    "caseId": "palantir-ontology-lot",
+    "chapterId": "02_enterprise_data_model",
+    "targetHeading": "Palantir Ontology 的技术含义",
+    "organization": "Palantir",
+    "context": "Palantir 文档以对象类型、属性、关系和行动描述 Ontology。封测批次、设备、工序和订单之间的关系，可用于追踪设备停机所影响的交付承诺。",
+    "flow": [
+      "对象｜为批次、设备、工序和订单确定身份与属性",
+      "关系｜沿设备停机记录追踪相关批次及订单",
+      "口径｜订单关联多个批次时按订单身份去重",
+      "行动｜加急建议进入预算、设备资格与权限检查"
+    ],
+    "takeaway": "订单可能对应多个批次，统计订单数时应按订单身份去重。",
+    "sourceCaveat": "对象与操作的组织方式见 Palantir 文档。封测设备 E7 与关联批次构成假设算例，说明如何查询并执行受控操作。",
+    "sourceRefs": [
+      "palantir02"
+    ],
+    "visualHint": "批次、设备、工序、订单的连线图；读取与执行采用不同颜色",
+    "targetAnchor": "palantir-ontology-的技术含义",
+    "compact": true
+  },
+  {
+    "caseId": "atlan-nasdaq-catalog",
+    "chapterId": "02_enterprise_data_model",
+    "targetHeading": "Atlan 与 Nasdaq 的元数据管理",
+    "organization": "Atlan × Nasdaq",
+    "context": "Atlan 案例介绍 Nasdaq 在平台更新中整合数据转换、存储、监测与目录工具，以改善数据发现、来源追踪和治理协作。",
+    "flow": [
+      "发现｜目录帮助分析者找到所需数据与负责人",
+      "理解｜查看指标定义、来源和血缘",
+      "计算｜转换模型及查询引擎按既定口径产出指标",
+      "复核｜监测质量状态并记录定义变化"
+    ],
+    "takeaway": "查找、理解、计算和核对分别耗时，改善其中一项带来的总收益取决于该项原来所占的时间。",
+    "sourceCaveat": "平台组合与使用者调查见 Atlan 的 Nasdaq 案例。耗时分解及加速计算采用简化数值，用于解释局部改进的总体效果。",
+    "sourceRefs": [
+      "atlan02"
+    ],
+    "visualHint": "发现—理解—计算—复核的任务时间分解图",
+    "targetAnchor": "atlan-与-nasdaq-的元数据管理",
+    "compact": true
+  }
+]
