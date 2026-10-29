@@ -31,6 +31,18 @@ def stable_hash(path):
 
 def readability_authors(manifest, chapters, errors):
     """Resolve the rewritten author texts and verify their manifest hashes."""
+    latest = manifest.get('academicReview20261029')
+    if latest:
+        entries = {item['path']:item for item in latest.get('sources', [])}
+        result = {}
+        for chapter in ('01_intro', '02_enterprise_data_model'):
+            if chapter not in chapters: continue
+            path = ROOT / 'content-source/academic-review-20261029/chapters' / (chapter + '.json')
+            relative = str(path.relative_to(ROOT))
+            if relative not in entries or entries[relative].get('sha256') != stable_hash(path):
+                errors.append(f'Academic author source is missing or changed: {relative}')
+            result[chapter] = builder.read_json(path)
+        return result
     edition = manifest.get("readabilityEdition")
     if not edition:
         return {}
@@ -157,6 +169,8 @@ def verify(source, content_dir, review_dir, baseline_ref, check_idempotence):
             # reading-unit anchors.  clean_generated removes only publication
             # additions, leaving those unmarked author anchors in place.
             author_soup = BeautifulSoup(author_chapters[chapter]["html"], "html.parser")
+            if manifest.get('academicReview20261029'):
+                builder.clean_generated(author_soup)
             if builder.protected(author_soup) != builder.protected(original_current):
                 errors.append(f"{chapter}: code, formula, image or citation differs from readability author source")
             missing = set(node["id"] for node in author_soup.find_all(id=True)) - set(node["id"] for node in original_current.find_all(id=True))
@@ -217,6 +231,8 @@ def verify(source, content_dir, review_dir, baseline_ref, check_idempotence):
         allowed = {"concept-map.json", "catalog.json", "source-manifest.json", *(chapter + ".json" for chapter in chapters)}
         if author_chapters:
             allowed.update({"business-cases.json", "case-cards.json", "business-casebook.json", "lecture-slides.json"})
+        if manifest.get('academicReview20261029'):
+            allowed.update({'03_sql_kpi.json', '04_data_quality.json', '05_statistics_dashboard.json', 'lecture-terms.json'})
         continuation = manifest.get("readabilityContinuation")
         if continuation:
             expected_chapters = ["03_sql_kpi", "04_data_quality"]

@@ -1,0 +1,77 @@
+{
+  "date": "2026-10-29",
+  "sources": [
+    {
+      "path": "content-source/academic-review-20261029/chapters/01_intro.json",
+      "sha256": "a7790c3eac0fe6a50beee2dfc02a8249c07fedddbefb482057a034eb3c5690b2"
+    },
+    {
+      "path": "content-source/academic-review-20261029/slides/01_intro.json",
+      "sha256": "f3aa51a794c5dbf000e1358ccf57a087a1d8c6a20a88b3beef6749ba2f0a0050"
+    },
+    {
+      "path": "content-source/academic-review-20261029/chapters/02_enterprise_data_model.json",
+      "sha256": "e66b4d81c7773c29972dd4179cf8f15af2319fc09db4ea1928faf2205a54a22b"
+    },
+    {
+      "path": "content-source/academic-review-20261029/slides/02_enterprise_data_model.json",
+      "sha256": "a876b0f801ccc25e323fb01c21aad8ed9e7626c69ab7b1b17f4c8a6f73b86b01"
+    },
+    {
+      "path": "content-source/academic-review-20261029/chapters/03_sql_kpi.json",
+      "sha256": "09873732dd218ceebe03525279509c682f75689fee35e727dddd1ab1a9bb925e"
+    },
+    {
+      "path": "content-source/academic-review-20261029/slides/03_sql_kpi.json",
+      "sha256": "e2d1460f6827317f9bb357399cac6e03941805a7303acb5d25e918ef6922f6d1"
+    },
+    {
+      "path": "content-source/academic-review-20261029/chapters/04_data_quality.json",
+      "sha256": "4946b24bd29141ccea2198197e1a3fd93428fdfd80efc57eb7e29f2df5ea4671"
+    },
+    {
+      "path": "content-source/academic-review-20261029/slides/04_data_quality.json",
+      "sha256": "89ea92dee8b591382ab084b8274eed17e27bbd8794ad5969cb3ce7dd13c0fb9f"
+    },
+    {
+      "path": "content-source/academic-review-20261029/chapters/05_statistics_dashboard.json",
+      "sha256": "d980ea3d9f7902037d51714083ca3ee0e33dd3f73ad6f4a597cc52e881ff84da"
+    },
+    {
+      "path": "content-source/academic-review-20261029/slides/05_statistics_dashboard.json",
+      "sha256": "b07e83f6df9959e2a69112d0280d5fdc4aa427c206bd3f3a9a21b160b46f75bc"
+    },
+    {
+      "path": "content-source/academic-review-20261029/business-cases.json",
+      "sha256": "e8692433e37914fb4482be5930342e8e0eecde50220d6039d691682b09200ebb"
+    }
+  ],
+  "lectures": {
+    "01_intro": {
+      "pages": 50,
+      "changedPages": 50,
+      "conclusions": 0
+    },
+    "02_enterprise_data_model": {
+      "pages": 47,
+      "changedPages": 2,
+      "conclusions": 0
+    },
+    "03_sql_kpi": {
+      "pages": 52,
+      "changedPages": 2,
+      "conclusions": 0
+    },
+    "04_data_quality": {
+      "pages": 55,
+      "changedPages": 53,
+      "conclusions": 2
+    },
+    "05_statistics_dashboard": {
+      "pages": 59,
+      "changedPages": 51,
+      "conclusions": 9
+    }
+  },
+  "build": "scripts/build-academic-review-20261029.py"
+}

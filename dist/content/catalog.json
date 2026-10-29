@@ -168,6 +168,12 @@
           "id": "01_intro-notes",
           "title": "注释",
           "level": 2
+        },
+        {
+          "id": "background-terms",
+          "title": "背景术语与名称释义",
+          "level": 2,
+          "knowledgeLink": true
         }
       ]
     },
@@ -422,6 +428,12 @@
           "id": "02_enterprise_data_model-notes",
           "title": "注释",
           "level": 2
+        },
+        {
+          "id": "background-terms",
+          "title": "背景术语与名称释义",
+          "level": 2,
+          "knowledgeLink": true
         }
       ]
     },
@@ -833,7 +845,184 @@
       "title": "统计描述、过程波动与运营规律",
       "source": "docs/textbook/chapters/05_statistics_dashboard.tex",
       "kind": "textbook",
-      "hasSlides": true
+      "hasSlides": true,
+      "toc": [
+        {
+          "id": "经营数据的统计描述",
+          "title": "经营数据的统计描述",
+          "level": 2
+        },
+        {
+          "id": "经验分布与描述统计",
+          "title": "经验分布与描述统计",
+          "level": 2
+        },
+        {
+          "id": "经营指标作为观测变量",
+          "title": "经营指标作为观测变量",
+          "level": 3
+        },
+        {
+          "id": "经验分布与统计量",
+          "title": "经验分布与统计量",
+          "level": 3
+        },
+        {
+          "id": "均值与中位数",
+          "title": "均值与中位数",
+          "level": 3
+        },
+        {
+          "id": "方差标准差与变异系数",
+          "title": "方差、标准差与变异系数",
+          "level": 3
+        },
+        {
+          "id": "分位数iqr-与异常识别",
+          "title": "分位数、IQR 与异常识别",
+          "level": 3
+        },
+        {
+          "id": "结构变化抽样波动与过程信号",
+          "title": "结构变化、抽样波动与过程信号",
+          "level": 2
+        },
+        {
+          "id": "比率指标与分母",
+          "title": "比率指标与分母",
+          "level": 3
+        },
+        {
+          "id": "产品组合与总体指标",
+          "title": "产品组合与总体指标",
+          "level": 3
+        },
+        {
+          "id": "经营波动与移动平均",
+          "title": "经营波动与移动平均",
+          "level": 3
+        },
+        {
+          "id": "统计过程控制图",
+          "title": "统计过程控制图",
+          "level": 3
+        },
+        {
+          "id": "比较基准目标线与经营解释",
+          "title": "比较基准、目标线与经营解释",
+          "level": 3
+        },
+        {
+          "id": "制造系统中的存量流量与等待",
+          "title": "制造系统中的存量、流量与等待",
+          "level": 2
+        },
+        {
+          "id": "little-定律的面积证明",
+          "title": "Little 定律的面积证明",
+          "level": 3
+        },
+        {
+          "id": "利用率与等待时间",
+          "title": "利用率与等待时间",
+          "level": 3
+        },
+        {
+          "id": "sec:queue-cost",
+          "title": "服务能力的经济分析",
+          "level": 3
+        },
+        {
+          "id": "sec:ai-service-operations",
+          "title": "人工智能服务的运营度量",
+          "level": 2
+        },
+        {
+          "id": "图形表达与运营界面",
+          "title": "图形表达与运营界面",
+          "level": 2
+        },
+        {
+          "id": "图表的视觉编码",
+          "title": "图表的视觉编码",
+          "level": 3
+        },
+        {
+          "id": "从统计表到看板",
+          "title": "从统计表到看板",
+          "level": 3
+        },
+        {
+          "id": "看板类型",
+          "title": "看板类型",
+          "level": 3
+        },
+        {
+          "id": "看板的运营节奏",
+          "title": "看板的运营节奏",
+          "level": 3
+        },
+        {
+          "id": "制造企业的运营看板",
+          "title": "制造企业的运营看板",
+          "level": 2
+        },
+        {
+          "id": "rolls-royce-的发动机维护与备件管理",
+          "title": "Rolls-Royce 的发动机维护与备件管理",
+          "level": 3
+        },
+        {
+          "id": "半导体制造看板的分析次序",
+          "title": "半导体制造看板的分析次序",
+          "level": 3
+        },
+        {
+          "id": "人工智能辅助图表解释",
+          "title": "人工智能辅助图表解释",
+          "level": 3
+        },
+        {
+          "id": "看板计算与经营分析",
+          "title": "看板计算与经营分析",
+          "level": 2
+        },
+        {
+          "id": "描述统计计算",
+          "title": "描述统计计算",
+          "level": 3
+        },
+        {
+          "id": "由观察形成管理解释",
+          "title": "由观察形成管理解释",
+          "level": 3
+        },
+        {
+          "id": "看板结果的核查",
+          "title": "看板结果的核查",
+          "level": 3
+        },
+        {
+          "id": "本章小结",
+          "title": "本章小结",
+          "level": 2
+        },
+        {
+          "id": "文献导读",
+          "title": "文献导读",
+          "level": 3
+        },
+        {
+          "id": "思考与习题",
+          "title": "思考与习题",
+          "level": 2
+        },
+        {
+          "id": "05_statistics_dashboard-notes",
+          "title": "注释",
+          "level": 2
+        }
+      ]
     },
     {
       "id": "06_ab_testing",

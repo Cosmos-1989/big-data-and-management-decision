@@ -1,0 +1,2972 @@
+[
+  {
+    "chapter": "01",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 1,
+    "title": "从经营症状到管理决策"
+  },
+  {
+    "chapter": "01",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 2,
+    "title": "决策任务的基本要素"
+  },
+  {
+    "chapter": "01",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 3,
+    "title": "UPSNav：路线顺序如何成为可执行行动"
+  },
+  {
+    "chapter": "01",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": true,
+    "outside": [],
+    "overlap": false,
+    "page": 4,
+    "title": "路线建议与交付完成"
+  },
+  {
+    "chapter": "01",
+    "state": "open",
+    "errors": 0,
+    "hasPrompt": true,
+    "outside": [],
+    "overlap": false,
+    "page": 4,
+    "title": "路线建议与交付完成"
+  },
+  {
+    "chapter": "01",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 5,
+    "title": "记录、估计与选择"
+  },
+  {
+    "chapter": "01",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 6,
+    "title": "数据仓库与ETL：形成分析资料"
+  },
+  {
+    "chapter": "01",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 7,
+    "title": "OLAP与报表：两种阅读数据的方式"
+  },
+  {
+    "chapter": "01",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 8,
+    "title": "商业智能、决策支持与决策智能"
+  },
+  {
+    "chapter": "01",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 9,
+    "title": "对象、行动范围与指标口径"
+  },
+  {
+    "chapter": "01",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 10,
+    "title": "Wells Fargo：开户数量为何偏离客户价值"
+  },
+  {
+    "chapter": "01",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": true,
+    "outside": [],
+    "overlap": false,
+    "page": 11,
+    "title": "开户记录准确与客户授权"
+  },
+  {
+    "chapter": "01",
+    "state": "open",
+    "errors": 0,
+    "hasPrompt": true,
+    "outside": [],
+    "overlap": false,
+    "page": 11,
+    "title": "开户记录准确与客户授权"
+  },
+  {
+    "chapter": "01",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 12,
+    "title": "绩效目标与基准策略"
+  },
+  {
+    "chapter": "01",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 13,
+    "title": "CVS停售烟草：企业目标如何界定行动集合"
+  },
+  {
+    "chapter": "01",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": true,
+    "outside": [],
+    "overlap": false,
+    "page": 14,
+    "title": "收入与停售决策"
+  },
+  {
+    "chapter": "01",
+    "state": "open",
+    "errors": 0,
+    "hasPrompt": true,
+    "outside": [],
+    "overlap": false,
+    "page": 14,
+    "title": "收入与停售决策"
+  },
+  {
+    "chapter": "01",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 15,
+    "title": "条件期望损失与行动选择"
+  },
+  {
+    "chapter": "01",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 16,
+    "title": "期望损失公式的读法"
+  },
+  {
+    "chapter": "01",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 17,
+    "title": "风险预测与干预收益"
+  },
+  {
+    "chapter": "01",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 18,
+    "title": "订单加急：明确比较条件"
+  },
+  {
+    "chapter": "01",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 19,
+    "title": "订单加急：计算预期净收益"
+  },
+  {
+    "chapter": "01",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 20,
+    "title": "以损失矩阵评价信息"
+  },
+  {
+    "chapter": "01",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 21,
+    "title": "从损失矩阵推导行动阈值"
+  },
+  {
+    "chapter": "01",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 22,
+    "title": "先验、信号与后验"
+  },
+  {
+    "chapter": "01",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 23,
+    "title": "先验下的最优基准行动"
+  },
+  {
+    "chapter": "01",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 24,
+    "title": "检测信号的总体概率"
+  },
+  {
+    "chapter": "01",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 25,
+    "title": "状态与检测信号的联合概率"
+  },
+  {
+    "chapter": "01",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": true,
+    "outside": [],
+    "overlap": false,
+    "page": 26,
+    "title": "由后验概率选择条件行动"
+  },
+  {
+    "chapter": "01",
+    "state": "open",
+    "errors": 0,
+    "hasPrompt": true,
+    "outside": [],
+    "overlap": false,
+    "page": 26,
+    "title": "由后验概率选择条件行动"
+  },
+  {
+    "chapter": "01",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 27,
+    "title": "先条件择优，再取平均"
+  },
+  {
+    "chapter": "01",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 28,
+    "title": "样本信息价值与完全信息价值"
+  },
+  {
+    "chapter": "01",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 29,
+    "title": "免费信息价值的非负性"
+  },
+  {
+    "chapter": "01",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 30,
+    "title": "信息采购：净收益与成本结构"
+  },
+  {
+    "chapter": "01",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": true,
+    "outside": [],
+    "overlap": false,
+    "page": 31,
+    "title": "更精确信息何时没有决策价值"
+  },
+  {
+    "chapter": "01",
+    "state": "open",
+    "errors": 0,
+    "hasPrompt": true,
+    "outside": [],
+    "overlap": false,
+    "page": 31,
+    "title": "更精确信息何时没有决策价值"
+  },
+  {
+    "chapter": "01",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 32,
+    "title": "Amazon：可逆性与决策时间"
+  },
+  {
+    "chapter": "01",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": true,
+    "outside": [],
+    "overlap": false,
+    "page": 33,
+    "title": "决策速度与错误成本"
+  },
+  {
+    "chapter": "01",
+    "state": "open",
+    "errors": 0,
+    "hasPrompt": true,
+    "outside": [],
+    "overlap": false,
+    "page": 33,
+    "title": "决策速度与错误成本"
+  },
+  {
+    "chapter": "01",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 34,
+    "title": "当前行动与未来状态"
+  },
+  {
+    "chapter": "01",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 35,
+    "title": "Patagonia：产品使用与资源消耗"
+  },
+  {
+    "chapter": "01",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": true,
+    "outside": [],
+    "overlap": false,
+    "page": 36,
+    "title": "比较产品的长期结果"
+  },
+  {
+    "chapter": "01",
+    "state": "open",
+    "errors": 0,
+    "hasPrompt": true,
+    "outside": [],
+    "overlap": false,
+    "page": 36,
+    "title": "比较产品的长期结果"
+  },
+  {
+    "chapter": "01",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 37,
+    "title": "Bellman 递推：从未来回到当前"
+  },
+  {
+    "chapter": "01",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 38,
+    "title": "两期维护：当期成本与未来故障损失"
+  },
+  {
+    "chapter": "01",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 39,
+    "title": "两期维护：从末期反推今日行动"
+  },
+  {
+    "chapter": "01",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 40,
+    "title": "分析任务与证据边界"
+  },
+  {
+    "chapter": "01",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 41,
+    "title": "CRISP-DM：组织可检验的迭代"
+  },
+  {
+    "chapter": "01",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 42,
+    "title": "任务规格与分层验收"
+  },
+  {
+    "chapter": "01",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 43,
+    "title": "交付决策的记录与评价"
+  },
+  {
+    "chapter": "01",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 44,
+    "title": "Skywise：关联维护事实"
+  },
+  {
+    "chapter": "01",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 45,
+    "title": "维护决策的简化成本比较"
+  },
+  {
+    "chapter": "01",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 46,
+    "title": "赛事仿真：比较候选策略"
+  },
+  {
+    "chapter": "01",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 47,
+    "title": "用蒙特卡罗估计策略损失"
+  },
+  {
+    "chapter": "01",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 48,
+    "title": "配对仿真：平均时间差"
+  },
+  {
+    "chapter": "01",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 49,
+    "title": "生产率改善须固定分母与质量"
+  },
+  {
+    "chapter": "01",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": true,
+    "outside": [],
+    "overlap": false,
+    "page": 50,
+    "title": "检验一个决策任务是否完整"
+  },
+  {
+    "chapter": "01",
+    "state": "open",
+    "errors": 0,
+    "hasPrompt": true,
+    "outside": [],
+    "overlap": false,
+    "page": 50,
+    "title": "检验一个决策任务是否完整"
+  },
+  {
+    "chapter": "02",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 1,
+    "title": "跨系统记录中的对象与含义"
+  },
+  {
+    "chapter": "02",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 2,
+    "title": "数据定义与治理职责"
+  },
+  {
+    "chapter": "02",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 3,
+    "title": "Spotify Backstage 中的服务目录"
+  },
+  {
+    "chapter": "02",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": true,
+    "outside": [],
+    "overlap": false,
+    "page": 4,
+    "title": "维护责任与执行权限"
+  },
+  {
+    "chapter": "02",
+    "state": "open",
+    "errors": 0,
+    "hasPrompt": true,
+    "outside": [],
+    "overlap": false,
+    "page": 4,
+    "title": "维护责任与执行权限"
+  },
+  {
+    "chapter": "02",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 5,
+    "title": "企业 AI 系统的功能分工"
+  },
+  {
+    "chapter": "02",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 6,
+    "title": "快照、模式与数据版本"
+  },
+  {
+    "chapter": "02",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 7,
+    "title": "跨系统使用的三项约定"
+  },
+  {
+    "chapter": "02",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 8,
+    "title": "怎样把业务概念转为记录规则"
+  },
+  {
+    "chapter": "02",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 9,
+    "title": "实体、事件、状态与指标"
+  },
+  {
+    "chapter": "02",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 10,
+    "title": "关系模式如何表示一条记录"
+  },
+  {
+    "chapter": "02",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 11,
+    "title": "键与完整性约束"
+  },
+  {
+    "chapter": "02",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 12,
+    "title": "Shopify 对象标识的唯一性范围"
+  },
+  {
+    "chapter": "02",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": true,
+    "outside": [],
+    "overlap": false,
+    "page": 13,
+    "title": "连接前如何核对标识"
+  },
+  {
+    "chapter": "02",
+    "state": "open",
+    "errors": 0,
+    "hasPrompt": true,
+    "outside": [],
+    "overlap": false,
+    "page": 13,
+    "title": "连接前如何核对标识"
+  },
+  {
+    "chapter": "02",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 14,
+    "title": "关系基数与模型层次"
+  },
+  {
+    "chapter": "02",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 15,
+    "title": "制造对象与生产历史"
+  },
+  {
+    "chapter": "02",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 16,
+    "title": "函数依赖与第三范式"
+  },
+  {
+    "chapter": "02",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 17,
+    "title": "产品名称重复保存的更新问题"
+  },
+  {
+    "chapter": "02",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 18,
+    "title": "分解后的连接与历史名称"
+  },
+  {
+    "chapter": "02",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 19,
+    "title": "事务模型与星型分析模型"
+  },
+  {
+    "chapter": "02",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 20,
+    "title": "事实粒度与允许的汇总"
+  },
+  {
+    "chapter": "02",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 21,
+    "title": "Uber H3 的空间分析单位"
+  },
+  {
+    "chapter": "02",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": true,
+    "outside": [],
+    "overlap": false,
+    "page": 22,
+    "title": "改变网格层级后怎样汇总比率"
+  },
+  {
+    "chapter": "02",
+    "state": "open",
+    "errors": 0,
+    "hasPrompt": true,
+    "outside": [],
+    "overlap": false,
+    "page": 22,
+    "title": "改变网格层级后怎样汇总比率"
+  },
+  {
+    "chapter": "02",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 23,
+    "title": "制造指标的观察对象"
+  },
+  {
+    "chapter": "02",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 24,
+    "title": "制造 KPI 需要哪些事实"
+  },
+  {
+    "chapter": "02",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 25,
+    "title": "比率为何要按分母加权"
+  },
+  {
+    "chapter": "02",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 26,
+    "title": "双时间怎样还原历史认识"
+  },
+  {
+    "chapter": "02",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 27,
+    "title": "状态转换、版本检查与幂等"
+  },
+  {
+    "chapter": "02",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 28,
+    "title": "解除冻结的授权条件"
+  },
+  {
+    "chapter": "02",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 29,
+    "title": "Stripe 的支付状态模型"
+  },
+  {
+    "chapter": "02",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": true,
+    "outside": [],
+    "overlap": false,
+    "page": 30,
+    "title": "请求已接受与支付已成功"
+  },
+  {
+    "chapter": "02",
+    "state": "open",
+    "errors": 0,
+    "hasPrompt": true,
+    "outside": [],
+    "overlap": false,
+    "page": 30,
+    "title": "请求已接受与支付已成功"
+  },
+  {
+    "chapter": "02",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 31,
+    "title": "自然语言问数需要明确的查询语义"
+  },
+  {
+    "chapter": "02",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 32,
+    "title": "从数据记录到绩效合同"
+  },
+  {
+    "chapter": "02",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 33,
+    "title": "合同模型的选择顺序"
+  },
+  {
+    "chapter": "02",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 34,
+    "title": "产出、工资与确定性等价"
+  },
+  {
+    "chapter": "02",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 35,
+    "title": "确定性等价的推导"
+  },
+  {
+    "chapter": "02",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 36,
+    "title": "经理对合同的最优努力"
+  },
+  {
+    "chapter": "02",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 37,
+    "title": "参与约束与企业收益"
+  },
+  {
+    "chapter": "02",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 38,
+    "title": "企业选择的最优绩效权重"
+  },
+  {
+    "chapter": "02",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 39,
+    "title": "测量噪声降低后的合同变化"
+  },
+  {
+    "chapter": "02",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 40,
+    "title": "单项奖励如何改变任务配置"
+  },
+  {
+    "chapter": "02",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 41,
+    "title": "真实产出与记录操纵"
+  },
+  {
+    "chapter": "02",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 42,
+    "title": "业务对象关系与元数据目录"
+  },
+  {
+    "chapter": "02",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 43,
+    "title": "LinkedIn DataHub 中的元数据关系"
+  },
+  {
+    "chapter": "02",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": true,
+    "outside": [],
+    "overlap": false,
+    "page": 44,
+    "title": "从数据表追溯来源和影响"
+  },
+  {
+    "chapter": "02",
+    "state": "open",
+    "errors": 0,
+    "hasPrompt": true,
+    "outside": [],
+    "overlap": false,
+    "page": 44,
+    "title": "从数据表追溯来源和影响"
+  },
+  {
+    "chapter": "02",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 45,
+    "title": "局部提速的总体上界"
+  },
+  {
+    "chapter": "02",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 46,
+    "title": "计算十倍加速能节省多少总时间"
+  },
+  {
+    "chapter": "02",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": true,
+    "outside": [],
+    "overlap": false,
+    "page": 47,
+    "title": "怎样从异常指标检查数据模型"
+  },
+  {
+    "chapter": "02",
+    "state": "open",
+    "errors": 0,
+    "hasPrompt": true,
+    "outside": [],
+    "overlap": false,
+    "page": 47,
+    "title": "怎样从异常指标检查数据模型"
+  },
+  {
+    "chapter": "03",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 1,
+    "title": "从业务问题到关系查询"
+  },
+  {
+    "chapter": "03",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 2,
+    "title": "SQL 的逻辑处理顺序"
+  },
+  {
+    "chapter": "03",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 3,
+    "title": "按地区计算三月订单金额"
+  },
+  {
+    "chapter": "03",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 4,
+    "title": "逐句解释区域收入查询"
+  },
+  {
+    "chapter": "03",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 5,
+    "title": "三张订单怎样汇总为两个地区"
+  },
+  {
+    "chapter": "03",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 6,
+    "title": "关系代数如何描述查询"
+  },
+  {
+    "chapter": "03",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 7,
+    "title": "WHERE 与 HAVING 筛选什么"
+  },
+  {
+    "chapter": "03",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 8,
+    "title": "相同金额可以属于不同订单"
+  },
+  {
+    "chapter": "03",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 9,
+    "title": "事务、分析与展示粒度"
+  },
+  {
+    "chapter": "03",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 10,
+    "title": "Shopify 的交易规模与自身收入"
+  },
+  {
+    "chapter": "03",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": true,
+    "outside": [],
+    "overlap": false,
+    "page": 11,
+    "title": "为什么 GMV 增长不等于收入增长"
+  },
+  {
+    "chapter": "03",
+    "state": "open",
+    "errors": 0,
+    "hasPrompt": true,
+    "outside": [],
+    "overlap": false,
+    "page": 11,
+    "title": "为什么 GMV 增长不等于收入增长"
+  },
+  {
+    "chapter": "03",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 12,
+    "title": "事实表与维度表怎样连接"
+  },
+  {
+    "chapter": "03",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 13,
+    "title": "连接保持原粒度的两个条件"
+  },
+  {
+    "chapter": "03",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 14,
+    "title": "一对多连接怎样放大金额"
+  },
+  {
+    "chapter": "03",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 15,
+    "title": "半连接只检查匹配是否存在"
+  },
+  {
+    "chapter": "03",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 16,
+    "title": "把指标定义写完整"
+  },
+  {
+    "chapter": "03",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 17,
+    "title": "Airbnb Minerva 怎样保存指标定义"
+  },
+  {
+    "chapter": "03",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": true,
+    "outside": [],
+    "overlap": false,
+    "page": 18,
+    "title": "怎样区分经营变化与口径变化"
+  },
+  {
+    "chapter": "03",
+    "state": "open",
+    "errors": 0,
+    "hasPrompt": true,
+    "outside": [],
+    "overlap": false,
+    "page": 18,
+    "title": "怎样区分经营变化与口径变化"
+  },
+  {
+    "chapter": "03",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 19,
+    "title": "为什么均值还要保存样本数"
+  },
+  {
+    "chapter": "03",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 20,
+    "title": "可合并的统计状态"
+  },
+  {
+    "chapter": "03",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 21,
+    "title": "DoorDash Curie 为什么保留事件事实"
+  },
+  {
+    "chapter": "03",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": true,
+    "outside": [],
+    "overlap": false,
+    "page": 22,
+    "title": "全国均值能支持哪些后续比较"
+  },
+  {
+    "chapter": "03",
+    "state": "open",
+    "errors": 0,
+    "hasPrompt": true,
+    "outside": [],
+    "overlap": false,
+    "page": 22,
+    "title": "全国均值能支持哪些后续比较"
+  },
+  {
+    "chapter": "03",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 23,
+    "title": "产线平均良率与整体产品良率"
+  },
+  {
+    "chapter": "03",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 24,
+    "title": "良率与生产周期怎样汇总"
+  },
+  {
+    "chapter": "03",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 25,
+    "title": "设备综合效率的三个因子"
+  },
+  {
+    "chapter": "03",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 26,
+    "title": "480 分钟班次的 OEE"
+  },
+  {
+    "chapter": "03",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 27,
+    "title": "多产品 OEE 使用理想工时权重"
+  },
+  {
+    "chapter": "03",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 28,
+    "title": "混用件数与工时权重的后果"
+  },
+  {
+    "chapter": "03",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 29,
+    "title": "在制品存量与时间平均"
+  },
+  {
+    "chapter": "03",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 30,
+    "title": "不等时长的存量怎样平均"
+  },
+  {
+    "chapter": "03",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 31,
+    "title": "按到期承诺定义准时交付率"
+  },
+  {
+    "chapter": "03",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 32,
+    "title": "四张到期订单的统计范围"
+  },
+  {
+    "chapter": "03",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 33,
+    "title": "50% 与 66.7% 各自说明什么"
+  },
+  {
+    "chapter": "03",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 34,
+    "title": "NULL 与三值逻辑"
+  },
+  {
+    "chapter": "03",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 35,
+    "title": "用条件聚合计算到期 OTD"
+  },
+  {
+    "chapter": "03",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 36,
+    "title": "零分母、零准时数与记录缺失"
+  },
+  {
+    "chapter": "03",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": true,
+    "outside": [],
+    "overlap": false,
+    "page": 37,
+    "title": "COUNT 的两种计数范围"
+  },
+  {
+    "chapter": "03",
+    "state": "open",
+    "errors": 0,
+    "hasPrompt": true,
+    "outside": [],
+    "overlap": false,
+    "page": 37,
+    "title": "COUNT 的两种计数范围"
+  },
+  {
+    "chapter": "03",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 38,
+    "title": "先计算订单金额，再按地区汇总"
+  },
+  {
+    "chapter": "03",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 39,
+    "title": "整体毛利率为什么按收入加权"
+  },
+  {
+    "chapter": "03",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 40,
+    "title": "Spotify 按播放份额分配版税"
+  },
+  {
+    "chapter": "03",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": true,
+    "outside": [],
+    "overlap": false,
+    "page": 41,
+    "title": "播放量翻倍为什么未必收入翻倍"
+  },
+  {
+    "chapter": "03",
+    "state": "open",
+    "errors": 0,
+    "hasPrompt": true,
+    "outside": [],
+    "overlap": false,
+    "page": 41,
+    "title": "播放量翻倍为什么未必收入翻倍"
+  },
+  {
+    "chapter": "03",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 42,
+    "title": "窗口函数计算最近三笔收入"
+  },
+  {
+    "chapter": "03",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 43,
+    "title": "移动窗口逐单怎样计算"
+  },
+  {
+    "chapter": "03",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 44,
+    "title": "从地区指标到经营解释"
+  },
+  {
+    "chapter": "03",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 45,
+    "title": "Uber uMetric 统一指标来源与计算"
+  },
+  {
+    "chapter": "03",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": true,
+    "outside": [],
+    "overlap": false,
+    "page": 46,
+    "title": "怎样比较实时与离线结果"
+  },
+  {
+    "chapter": "03",
+    "state": "open",
+    "errors": 0,
+    "hasPrompt": true,
+    "outside": [],
+    "overlap": false,
+    "page": 46,
+    "title": "怎样比较实时与离线结果"
+  },
+  {
+    "chapter": "03",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 47,
+    "title": "把业务提问写成明确的查询请求"
+  },
+  {
+    "chapter": "03",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 48,
+    "title": "利用不变量验证查询结果"
+  },
+  {
+    "chapter": "03",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 49,
+    "title": "查询权限由执行环境落实"
+  },
+  {
+    "chapter": "03",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 50,
+    "title": "评价问数任务的有效完成比例"
+  },
+  {
+    "chapter": "03",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 51,
+    "title": "本地部署要核对哪些位置与资源"
+  },
+  {
+    "chapter": "03",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": true,
+    "outside": [],
+    "overlap": false,
+    "page": 52,
+    "title": "从业务定义逐步复核查询"
+  },
+  {
+    "chapter": "03",
+    "state": "open",
+    "errors": 0,
+    "hasPrompt": true,
+    "outside": [],
+    "overlap": false,
+    "page": 52,
+    "title": "从业务定义逐步复核查询"
+  },
+  {
+    "chapter": "04",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 1,
+    "title": "数据质量：从记录条件到决策证据"
+  },
+  {
+    "chapter": "04",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": true,
+    "outside": [],
+    "overlap": false,
+    "page": 2,
+    "title": "准时交付率的统计对象"
+  },
+  {
+    "chapter": "04",
+    "state": "open",
+    "errors": 0,
+    "hasPrompt": true,
+    "outside": [],
+    "overlap": false,
+    "page": 2,
+    "title": "准时交付率的统计对象"
+  },
+  {
+    "chapter": "04",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 3,
+    "title": "指标可信度与证据追溯"
+  },
+  {
+    "chapter": "04",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 4,
+    "title": "用途适配的数据质量"
+  },
+  {
+    "chapter": "04",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 5,
+    "title": "数据生成环节与质量风险"
+  },
+  {
+    "chapter": "04",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 6,
+    "title": "规则符合性与记录准确性"
+  },
+  {
+    "chapter": "04",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 7,
+    "title": "Unity：错误数据如何进入模型反馈"
+  },
+  {
+    "chapter": "04",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": true,
+    "outside": [],
+    "overlap": false,
+    "page": 8,
+    "title": "Unity：检查数据含义与使用范围"
+  },
+  {
+    "chapter": "04",
+    "state": "open",
+    "errors": 0,
+    "hasPrompt": true,
+    "outside": [],
+    "overlap": false,
+    "page": 8,
+    "title": "Unity：检查数据含义与使用范围"
+  },
+  {
+    "chapter": "04",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 9,
+    "title": "质量维度：覆盖、取值与关系"
+  },
+  {
+    "chapter": "04",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 10,
+    "title": "质量维度：时间、真实性与来源"
+  },
+  {
+    "chapter": "04",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 11,
+    "title": "GitLab数据库事件：备份存在不等于能够恢复"
+  },
+  {
+    "chapter": "04",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": true,
+    "outside": [],
+    "overlap": false,
+    "page": 12,
+    "title": "GitLab：核对恢复后的数据范围"
+  },
+  {
+    "chapter": "04",
+    "state": "open",
+    "errors": 0,
+    "hasPrompt": true,
+    "outside": [],
+    "overlap": false,
+    "page": 12,
+    "title": "GitLab：核对恢复后的数据范围"
+  },
+  {
+    "chapter": "04",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 13,
+    "title": "数据剖析与规则检验"
+  },
+  {
+    "chapter": "04",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 14,
+    "title": "观察总体、记录概率与协方差"
+  },
+  {
+    "chapter": "04",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 15,
+    "title": "选择性缺失与均值偏差"
+  },
+  {
+    "chapter": "04",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 16,
+    "title": "订单算例：选择性回写低估周期"
+  },
+  {
+    "chapter": "04",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 17,
+    "title": "缺失机制与可用识别条件"
+  },
+  {
+    "chapter": "04",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 18,
+    "title": "按完整类别权重恢复平均周期"
+  },
+  {
+    "chapter": "04",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 19,
+    "title": "回归斜率与测量误差"
+  },
+  {
+    "chapter": "04",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 20,
+    "title": "经典测量误差与斜率衰减"
+  },
+  {
+    "chapter": "04",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 21,
+    "title": "测量噪声如何影响回归斜率"
+  },
+  {
+    "chapter": "04",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 22,
+    "title": "缺失结果的部分识别"
+  },
+  {
+    "chapter": "04",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 23,
+    "title": "识别区间与达标判断"
+  },
+  {
+    "chapter": "04",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 24,
+    "title": "识别边界依赖已经核实的约束"
+  },
+  {
+    "chapter": "04",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 25,
+    "title": "比率误差的精确传播"
+  },
+  {
+    "chapter": "04",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 26,
+    "title": "比率的保守误差界"
+  },
+  {
+    "chapter": "04",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 27,
+    "title": "良率算例：分母漏记造成偏差"
+  },
+  {
+    "chapter": "04",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 28,
+    "title": "质量规则与失败行标识"
+  },
+  {
+    "chapter": "04",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 29,
+    "title": "质量规则的业务解释"
+  },
+  {
+    "chapter": "04",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 30,
+    "title": "程序示范：定位重复订单编号"
+  },
+  {
+    "chapter": "04",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 31,
+    "title": "Amazon Deequ：把数据假设写成可检验约束"
+  },
+  {
+    "chapter": "04",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": true,
+    "outside": [],
+    "overlap": false,
+    "page": 32,
+    "title": "Deequ：怎样确定允许取值"
+  },
+  {
+    "chapter": "04",
+    "state": "open",
+    "errors": 0,
+    "hasPrompt": true,
+    "outside": [],
+    "overlap": false,
+    "page": 32,
+    "title": "Deequ：怎样确定允许取值"
+  },
+  {
+    "chapter": "04",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 33,
+    "title": "从记录失败到管理损失"
+  },
+  {
+    "chapter": "04",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 34,
+    "title": "实际交付日期为空的状态解释"
+  },
+  {
+    "chapter": "04",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 35,
+    "title": "发布决策的预期损失比较"
+  },
+  {
+    "chapter": "04",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 36,
+    "title": "治理预算的风险最小化模型"
+  },
+  {
+    "chapter": "04",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 37,
+    "title": "最优治理投入的边际条件"
+  },
+  {
+    "chapter": "04",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": true,
+    "outside": [],
+    "overlap": false,
+    "page": 38,
+    "title": "确定性误差界与可靠排序"
+  },
+  {
+    "chapter": "04",
+    "state": "open",
+    "errors": 0,
+    "hasPrompt": true,
+    "outside": [],
+    "overlap": false,
+    "page": 38,
+    "title": "确定性误差界与可靠排序"
+  },
+  {
+    "chapter": "04",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 39,
+    "title": "指标治理：定义、实现与责任"
+  },
+  {
+    "chapter": "04",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 40,
+    "title": "Airbnb质量评分：总分如何保留解释性"
+  },
+  {
+    "chapter": "04",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": true,
+    "outside": [],
+    "overlap": false,
+    "page": 41,
+    "title": "Airbnb：综合分数与具体用途"
+  },
+  {
+    "chapter": "04",
+    "state": "open",
+    "errors": 0,
+    "hasPrompt": true,
+    "outside": [],
+    "overlap": false,
+    "page": 41,
+    "title": "Airbnb：综合分数与具体用途"
+  },
+  {
+    "chapter": "04",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 42,
+    "title": "数据契约、血缘与变更控制"
+  },
+  {
+    "chapter": "04",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 43,
+    "title": "发布控制与异常严重级别"
+  },
+  {
+    "chapter": "04",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 44,
+    "title": "数据质量事件响应"
+  },
+  {
+    "chapter": "04",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 45,
+    "title": "Citibank监管整改：数据治理是持续责任"
+  },
+  {
+    "chapter": "04",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": true,
+    "outside": [],
+    "overlap": false,
+    "page": 46,
+    "title": "Citibank：从错误修复到持续控制"
+  },
+  {
+    "chapter": "04",
+    "state": "open",
+    "errors": 0,
+    "hasPrompt": true,
+    "outside": [],
+    "overlap": false,
+    "page": 46,
+    "title": "Citibank：从错误修复到持续控制"
+  },
+  {
+    "chapter": "04",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 47,
+    "title": "Froedtert 案例：统一定义与责任"
+  },
+  {
+    "chapter": "04",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 48,
+    "title": "Assurance 案例：持续质量监测"
+  },
+  {
+    "chapter": "04",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 49,
+    "title": "质量事件持续时间与损失"
+  },
+  {
+    "chapter": "04",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 50,
+    "title": "数据发现、治理流程与敏感信息识别"
+  },
+  {
+    "chapter": "04",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 51,
+    "title": "检索增强生成的证据质量"
+  },
+  {
+    "chapter": "04",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 52,
+    "title": "实验任务：订单质量报告"
+  },
+  {
+    "chapter": "04",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 53,
+    "title": "实验核对：对象、主数据与数量"
+  },
+  {
+    "chapter": "04",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 54,
+    "title": "实验核对：枚举、日期与失败计数"
+  },
+  {
+    "chapter": "04",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 55,
+    "title": "质量报告：从发现到决策依据"
+  },
+  {
+    "chapter": "05",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 1,
+    "title": "描述统计与运营解释"
+  },
+  {
+    "chapter": "05",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 2,
+    "title": "观测单位决定统计量的含义"
+  },
+  {
+    "chapter": "05",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 3,
+    "title": "样本描述与总体推断"
+  },
+  {
+    "chapter": "05",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 4,
+    "title": "经验分布函数"
+  },
+  {
+    "chapter": "05",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 5,
+    "title": "同一样本的三种服务含义"
+  },
+  {
+    "chapter": "05",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 6,
+    "title": "均值与中位数的管理用途"
+  },
+  {
+    "chapter": "05",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 7,
+    "title": "Google SRE：平均时延为什么不够"
+  },
+  {
+    "chapter": "05",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": true,
+    "outside": [],
+    "overlap": false,
+    "page": 8,
+    "title": "平均时延与慢请求体验"
+  },
+  {
+    "chapter": "05",
+    "state": "open",
+    "errors": 0,
+    "hasPrompt": true,
+    "outside": [],
+    "overlap": false,
+    "page": 8,
+    "title": "平均时延与慢请求体验"
+  },
+  {
+    "chapter": "05",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 9,
+    "title": "日收入算例：中心位置与高值影响"
+  },
+  {
+    "chapter": "05",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 10,
+    "title": "离散程度与相对波动"
+  },
+  {
+    "chapter": "05",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 11,
+    "title": "四分位距与描述性异常"
+  },
+  {
+    "chapter": "05",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 12,
+    "title": "收入异常算例：从排序到核查"
+  },
+  {
+    "chapter": "05",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 13,
+    "title": "总体比率与分母权重"
+  },
+  {
+    "chapter": "05",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 14,
+    "title": "产品组合与总体良率"
+  },
+  {
+    "chapter": "05",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 15,
+    "title": "组合反转算例：各族改善而总体下降"
+  },
+  {
+    "chapter": "05",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 16,
+    "title": "总体变化的精确分解"
+  },
+  {
+    "chapter": "05",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 17,
+    "title": "固定组合算例：量化两类变化"
+  },
+  {
+    "chapter": "05",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 18,
+    "title": "Netflix ISP指数：先固定观看结构再比较网络"
+  },
+  {
+    "chapter": "05",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": true,
+    "outside": [],
+    "overlap": false,
+    "page": 19,
+    "title": "Netflix：实际均值与标准化比较"
+  },
+  {
+    "chapter": "05",
+    "state": "open",
+    "errors": 0,
+    "hasPrompt": true,
+    "outside": [],
+    "overlap": false,
+    "page": 19,
+    "title": "Netflix：实际均值与标准化比较"
+  },
+  {
+    "chapter": "05",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 20,
+    "title": "后向移动平均与原始时间序列"
+  },
+  {
+    "chapter": "05",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 21,
+    "title": "Prime Day：活动高峰如何影响经营摘要"
+  },
+  {
+    "chapter": "05",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": true,
+    "outside": [],
+    "overlap": false,
+    "page": 22,
+    "title": "Prime Day：活动高峰与移动平均"
+  },
+  {
+    "chapter": "05",
+    "state": "open",
+    "errors": 0,
+    "hasPrompt": true,
+    "outside": [],
+    "overlap": false,
+    "page": 22,
+    "title": "Prime Day：活动高峰与移动平均"
+  },
+  {
+    "chapter": "05",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 23,
+    "title": "二项模型与过程波动"
+  },
+  {
+    "chapter": "05",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 24,
+    "title": "经营目标与统计控制界限"
+  },
+  {
+    "chapter": "05",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 25,
+    "title": "二项模型下的近似控制界限"
+  },
+  {
+    "chapter": "05",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 26,
+    "title": "控制图算例：越界后调查什么"
+  },
+  {
+    "chapter": "05",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 27,
+    "title": "Toyota Andon：可视化信号需要处置责任"
+  },
+  {
+    "chapter": "05",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": true,
+    "outside": [],
+    "overlap": false,
+    "page": 28,
+    "title": "Andon：异常信号与处置"
+  },
+  {
+    "chapter": "05",
+    "state": "open",
+    "errors": 0,
+    "hasPrompt": true,
+    "outside": [],
+    "overlap": false,
+    "page": 28,
+    "title": "Andon：异常信号与处置"
+  },
+  {
+    "chapter": "05",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 29,
+    "title": "比较基准与经营判断"
+  },
+  {
+    "chapter": "05",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 30,
+    "title": "McDonald’s：同店销售增长不等于客流增长"
+  },
+  {
+    "chapter": "05",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": true,
+    "outside": [],
+    "overlap": false,
+    "page": 31,
+    "title": "McDonald’s：拆分可比销售的变化"
+  },
+  {
+    "chapter": "05",
+    "state": "open",
+    "errors": 0,
+    "hasPrompt": true,
+    "outside": [],
+    "overlap": false,
+    "page": 31,
+    "title": "McDonald’s：拆分可比销售的变化"
+  },
+  {
+    "chapter": "05",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 32,
+    "title": "同一停留面积的两种计数"
+  },
+  {
+    "chapter": "05",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 33,
+    "title": "Little 定律的面积论证"
+  },
+  {
+    "chapter": "05",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": true,
+    "outside": [],
+    "overlap": false,
+    "page": 34,
+    "title": "在制量、吞吐率与平均周期"
+  },
+  {
+    "chapter": "05",
+    "state": "open",
+    "errors": 0,
+    "hasPrompt": true,
+    "outside": [],
+    "overlap": false,
+    "page": 34,
+    "title": "在制量、吞吐率与平均周期"
+  },
+  {
+    "chapter": "05",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 35,
+    "title": "到达、服务与排队模型记号"
+  },
+  {
+    "chapter": "05",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 36,
+    "title": "单服务台模型中的利用率与等待"
+  },
+  {
+    "chapter": "05",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 37,
+    "title": "稳态在制量的推导"
+  },
+  {
+    "chapter": "05",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 38,
+    "title": "负荷算例：利用率与系统时间"
+  },
+  {
+    "chapter": "05",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 39,
+    "title": "变异性与 Kingman 等待近似"
+  },
+  {
+    "chapter": "05",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 40,
+    "title": "同等负荷下，变异性怎样影响等待"
+  },
+  {
+    "chapter": "05",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 41,
+    "title": "能力成本与在制成本的权衡"
+  },
+  {
+    "chapter": "05",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 42,
+    "title": "连续最优服务能力的推导"
+  },
+  {
+    "chapter": "05",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 43,
+    "title": "能力算例：总成本率的比较"
+  },
+  {
+    "chapter": "05",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 44,
+    "title": "人工智能服务的测量边界"
+  },
+  {
+    "chapter": "05",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 45,
+    "title": "无排队服务时间的构成"
+  },
+  {
+    "chapter": "05",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 47,
+    "title": "请求费用与成功任务成本"
+  },
+  {
+    "chapter": "05",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 48,
+    "title": "视觉编码与比较任务"
+  },
+  {
+    "chapter": "05",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 49,
+    "title": "从统计摘要到可下钻看板"
+  },
+  {
+    "chapter": "05",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 50,
+    "title": "看板类型与使用任务"
+  },
+  {
+    "chapter": "05",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 51,
+    "title": "看板的运营维护与复核"
+  },
+  {
+    "chapter": "05",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 52,
+    "title": "Rolls-Royce 案例：服务与备件看板"
+  },
+  {
+    "chapter": "05",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 53,
+    "title": "制造看板的五种测量对象"
+  },
+  {
+    "chapter": "05",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 54,
+    "title": "制造看板的分层分析次序"
+  },
+  {
+    "chapter": "05",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 55,
+    "title": "人工智能辅助图表解释的核查"
+  },
+  {
+    "chapter": "05",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 56,
+    "title": "实验任务：日运营统计与看板"
+  },
+  {
+    "chapter": "05",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 57,
+    "title": "实验核对：完整样本的预期摘要"
+  },
+  {
+    "chapter": "05",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 58,
+    "title": "管理解释的证据层次"
+  },
+  {
+    "chapter": "05",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 59,
+    "title": "可复核的运营看板"
+  },
+  {
+    "chapter": "05",
+    "state": "closed",
+    "errors": 0,
+    "hasPrompt": false,
+    "outside": [],
+    "overlap": false,
+    "page": 46,
+    "title": "平均并发与服务位置占用"
+  }
+]

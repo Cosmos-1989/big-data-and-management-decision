@@ -1,0 +1,318 @@
+[
+  {
+    "id": "b03-01",
+    "lesson": 3,
+    "chapter": "03_sql_kpi",
+    "company": "Airbnb",
+    "title": "Airbnb Minerva 的指标版本与历史比较",
+    "context": "同一项业务指标可能同时出现在经营报表、图表和实验分析中。Airbnb 通过 Minerva 集中定义指标与维度，并保存定义的版本；业务逻辑变化后，还可按相应规则重新计算历史数据。",
+    "decision": "确定指标定义的生效版本，以及新旧时期采用什么规则进行比较。",
+    "facts": [
+      "2021年工程文档说明指标与维度在集中仓库中定义并接受校验",
+      "定义变更受版本控制，重大数据集变更会被跟踪并执行回填，向多种下游工具提供接口"
+    ],
+    "analysis": "设本月调整了“完成订单”的筛选条件。即使经营情况没有变化，符合新条件的订单数也可能增加。分析人员可以先对同一批记录分别执行新旧定义，估计口径变更造成的差异；再确认历史数据是否已经按新版本重算，以便解释跨期变化。",
+    "limits": "Airbnb 的文章披露了定义管理、版本控制和历史回填机制。历史数据经何种规则重算、哪些时期可以比较，仍需查阅具体指标的变更记录。",
+    "questions": [
+      {
+        "question": "新定义上线当天，指标数值明显上升。如何判断这次上升的含义？",
+        "answer": "先对同一批记录按新旧定义分别计算，找出口径变更产生的差异。研究经营变化时，应采用一致的定义版本和统计范围，并确认历史回填情况。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "How Airbnb achieved metric consistency at scale",
+        "url": "https://medium.com/airbnb-engineering/how-airbnb-achieved-metric-consistency-at-scale-f23cc53dea70",
+        "publisher": "Airbnb Engineering",
+        "date": "2021-04-30",
+        "support": "支持指标与维度集中定义、定义版本控制、逻辑变更后的历史回填和统一消费接口。",
+        "accessed": "2026-10-17"
+      }
+    ],
+    "slideRefs": [
+      {
+        "deck": "03_sql_kpi",
+        "page": 17,
+        "sectionId": "slides"
+      },
+      {
+        "deck": "03_sql_kpi",
+        "page": 18,
+        "sectionId": "slides"
+      }
+    ],
+    "readabilityEdition": true
+  },
+  {
+    "id": "b04-03",
+    "lesson": 4,
+    "chapter": "04_data_quality",
+    "company": "Amazon",
+    "title": "Amazon Deequ 的声明式质量规则",
+    "context": "分析程序常要求订单键唯一、字段取值属于指定范围。Amazon 研究团队开发的 Deequ 将这些要求写成声明式约束，即由使用者说明数据应满足的条件，再由程序执行检查。",
+    "decision": "把分析所依赖的数据条件写清楚，并检查具体记录或批次是否满足。",
+    "facts": [
+      "研究论文说明Deequ支持常见质量约束、用户定制检验及质量指标序列监测",
+      "团队说明该库满足Amazon生产用途需求；论文中的商品评论业务演示另属虚构场景"
+    ],
+    "analysis": "例如，订单表要求订单编号唯一。检查不通过后，可以查询重复编号及对应记录。自动规则建议还可能从历史数据发现“数量始终为正”这样的规律。是否将这一规律设为约束，需要结合业务判断；销售记录中的负数若表示退货，就应按事实类型分别规定允许取值。",
+    "limits": "Deequ 论文介绍了 Amazon 生产用途需求及验证能力，文中的商品评论演示采用虚构业务。规则通过说明当前数据满足已检查条件；记录是否符合实际业务，还需对账、凭证或抽样复核。",
+    "questions": [
+      {
+        "question": "历史数量始终为正，制定取值规则前还应确认什么？",
+        "answer": "确认表中记录的是销售、退货还是冲销等事实，以及数量符号的约定。随后按事实类型制定取值规则，保留业务上有效的负数记录。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "Unit Testing Data with Deequ",
+        "url": "https://assets.amazon.science/12/62/7a066bf44199afea06ec73f23ad0/unit-testing-data-with-deequ.pdf",
+        "publisher": "Amazon Research / ACM SIGMOD",
+        "date": "2019",
+        "support": "支持Amazon生产用途、声明式数据约束、定制验证及质量指标序列监测；文中商品评论演示为虚构业务用途。",
+        "accessed": "2026-10-17"
+      }
+    ],
+    "slideRefs": [
+      {
+        "deck": "04_data_quality",
+        "page": 31,
+        "sectionId": "slides"
+      },
+      {
+        "deck": "04_data_quality",
+        "page": 32,
+        "sectionId": "slides"
+      }
+    ],
+    "readabilityEdition": true
+  },
+  {
+    "id": "b05-01",
+    "lesson": 5,
+    "chapter": "05_statistics_dashboard",
+    "company": "Netflix",
+    "title": "Netflix ISP指数：先固定观看结构再比较网络",
+    "context": "不同互联网服务提供商（ISP）的用户可能采用不同的观看设备、分辨率和视频编码。Netflix 的 ISP Speed Index 按会话可达到的最大码率分桶，再采用共同的观看时长结构计算指标。",
+    "decision": "直接总体均值可能混入用户与内容组合差异。",
+    "facts": [
+      "桶内表现按观看时长加权，再按统一的全球时长分布赋予各桶权重",
+      "黄金时段按每个ISP每天Netflix观看最集中的三个小时定义"
+    ],
+    "analysis": "标准化为各观看类型采用共同权重，便于比较相同观看结构下的网络表现。直接计算各网络实际用户的均值，则反映各自的观看组合。解释图表时应说明所用方法和版本。",
+    "limits": "该指标针对Netflix指定时段与会话，不是家庭网络所有用途的最高带宽，也不能单独识别某项网络投资的因果效果。",
+    "questions": [
+      {
+        "question": "甲网络实际均值较低，能否立即认定相同观看条件下也更差？",
+        "answer": "应先按可比观看结构分组或标准化，再核对覆盖范围、时间和计算版本。实际均值还受用户观看组合影响。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "How We Calculate Rankings: Netflix ISP Speed Index",
+        "url": "https://ispspeedindex.netflix.net/about/",
+        "publisher": "Netflix",
+        "date": "未标注",
+        "support": "支持按会话最大码率分桶、桶内按时长计算表现、按统一全球观看时长结构标准化，以及黄金时段定义。",
+        "accessed": "2026-10-17"
+      }
+    ],
+    "slideRefs": [
+      {
+        "deck": "05_statistics_dashboard",
+        "page": 18,
+        "sectionId": "slides"
+      },
+      {
+        "deck": "05_statistics_dashboard",
+        "page": 19,
+        "sectionId": "slides"
+      }
+    ],
+    "readabilityEdition": true
+  },
+  {
+    "id": "b05-02",
+    "lesson": 5,
+    "chapter": "05_statistics_dashboard",
+    "company": "Google",
+    "title": "Google SRE：平均时延为什么不够",
+    "context": "在线服务的多数请求可能很快，少数却等待较长时间。Google 的站点可靠性工程（SRE）实践使用时延分布、直方图和高分位数描述请求表现。",
+    "decision": "典型水平与尾部风险需要不同统计量。",
+    "facts": [
+      "Google文档讨论用时延分桶计数表达请求分布，而非只保留单个均值",
+      "服务目标设计中，中位数与高分位数分别用于呈现典型体验及较慢的一端"
+    ],
+    "analysis": "中位数描述排序中部，高分位数给出较慢请求的时延水平。解释它们时还应说明请求量、错误率和统计窗口；均值相同的服务，其慢请求的时延可能相差很大。",
+    "limits": "分位数是指定样本与窗口的描述，不保证未来每次请求都满足阈值；不同服务或窗口的分位数通常也不能简单平均。",
+    "questions": [
+      {
+        "question": "总体平均时延下降，是否意味着最慢用户的体验改善？",
+        "answer": "不一定。快请求比例增加也会拉低均值；应在相同任务范围内检查高分位时延和超时数量。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "Monitoring Distributed Systems",
+        "url": "https://sre.google/sre-book/monitoring-distributed-systems/",
+        "publisher": "Google SRE",
+        "date": "2016",
+        "support": "支持Google监控实践中的延迟分布、直方图及尾部；提供方法与企业实践背景，不提供逐请求运行数据。",
+        "accessed": "2026-10-17"
+      },
+      {
+        "title": "Service Level Objectives",
+        "url": "https://sre.google/sre-book/service-level-objectives/",
+        "publisher": "Google SRE",
+        "date": "2016",
+        "support": "支持服务指标与目标的区分、分位数呈现典型和尾部体验，不能仅监控平均值。",
+        "accessed": "2026-10-17"
+      }
+    ],
+    "slideRefs": [
+      {
+        "deck": "05_statistics_dashboard",
+        "page": 7,
+        "sectionId": "slides"
+      },
+      {
+        "deck": "05_statistics_dashboard",
+        "page": 8,
+        "sectionId": "slides"
+      }
+    ],
+    "readabilityEdition": true
+  },
+  {
+    "id": "b05-03",
+    "lesson": 5,
+    "chapter": "05_statistics_dashboard",
+    "company": "Toyota",
+    "title": "Toyota Andon：可视化信号需要处置责任",
+    "context": "Toyota 的生产方式强调发现异常时停止过程，防止缺陷继续产生。Andon 用信号显示异常，使现场人员能够呼叫负责人处理。",
+    "decision": "运营界面的价值取决于信号能否进入明确的处置过程。",
+    "facts": [
+      "企业说明设备或现场发生异常时可停止并显示告警",
+      "在没有自动设备的工位，人员也可触发Andon，呼叫负责人处理质量或作业延迟"
+    ],
+    "analysis": "告警提示人员调查与响应。记录涉及的对象、发生时间、处置责任人和恢复标准，才能追踪异常从发现到处理的过程。",
+    "limits": "Andon并不等于统计控制图，也不是所有信号都由三倍标准差规则产生；信号类型与触发条件须分别确认。",
+    "questions": [
+      {
+        "question": "控制图出现越界点，能否直接采用某项维修动作？",
+        "answer": "应先核对统计范围和记录，再调查相关过程；维修选择还取决于原因、操作权限和处置规则。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "Toyota Production System",
+        "url": "https://global.toyota/en/company/vision-and-philosophy/production-system/",
+        "publisher": "Toyota Motor Corporation",
+        "date": "未标注",
+        "support": "支持发现异常时停机防止缺陷继续产生，以及Andon呼叫责任人的机制；未宣称每项告警均来自统计控制图。",
+        "accessed": "2026-10-17"
+      }
+    ],
+    "slideRefs": [
+      {
+        "deck": "05_statistics_dashboard",
+        "page": 27,
+        "sectionId": "slides"
+      },
+      {
+        "deck": "05_statistics_dashboard",
+        "page": 28,
+        "sectionId": "slides"
+      }
+    ],
+    "readabilityEdition": true
+  },
+  {
+    "id": "b05-04",
+    "lesson": 5,
+    "chapter": "05_statistics_dashboard",
+    "company": "Amazon",
+    "title": "Prime Day：活动高峰如何影响经营摘要",
+    "context": "Amazon 披露，2023 年两日 Prime Day 期间，全球 Prime 会员购买超过 3.75 亿件商品。汇总销售数据时，需要明确这一数字对应的活动窗口。",
+    "decision": "活动总量与常态日水平不能互相替代。",
+    "facts": [
+      "公布数值对应两日活动、全球Prime会员及商品件数",
+      "商品件数不同于订单数或顾客数，公告也没有把两日活动量定义为全年日常需求"
+    ],
+    "analysis": "将活动日与普通日期混合计算均值，会改变“典型一天”的含义。趋势图应保留原始活动数据；比较时核对促销、季节和覆盖范围，并注明移动平均的窗口。",
+    "limits": "活动销量不等于促销带来的净增量，可能包含提前购买或跨期转移；利润与长期需求还需相应资料和反事实比较。",
+    "questions": [
+      {
+        "question": "活动后移动平均仍很高，是否证明日常需求永久提高？",
+        "answer": "单个高值会持续影响包含它的后向移动窗口。应检查原始数据，并与活动后的同类日期比较，区分窗口效应和持续变化。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "Prime Day 2023: Stats and some of the top-selling deals",
+        "url": "https://www.aboutamazon.com/news/retail/amazon-prime-day-2023-stats",
+        "publisher": "Amazon",
+        "date": "2023-07-13",
+        "support": "支持2023年两日全球Prime会员购买超过3.75亿件商品；不是订单数、人数或全年常态日销量。",
+        "accessed": "2026-10-17"
+      }
+    ],
+    "slideRefs": [
+      {
+        "deck": "05_statistics_dashboard",
+        "page": 21,
+        "sectionId": "slides"
+      },
+      {
+        "deck": "05_statistics_dashboard",
+        "page": 22,
+        "sectionId": "slides"
+      }
+    ],
+    "readabilityEdition": true
+  },
+  {
+    "id": "b05-05",
+    "lesson": 5,
+    "chapter": "05_statistics_dashboard",
+    "company": "McDonald’s",
+    "title": "McDonald’s：同店销售增长不等于客流增长",
+    "context": "McDonald’s 在 2023 年年报中区分可比销售、客流、系统销售和合并收入。可比销售关注经营至少 13 个月的门店，并采用规定的汇率与范围。",
+    "decision": "判断增长来源，需要拆分对象范围、价格与数量。",
+    "facts": [
+      "年报说明可比销售受顾客交易数及平均客单价变化共同影响，客单价又受定价与产品组合影响",
+      "系统销售覆盖直营与加盟门店，而加盟店全部销售不计为公司的合并收入"
+    ],
+    "analysis": "可比销售额受顾客交易数和平均客单价共同影响；客单价又受到价格与产品组合影响。比较不同时期，应核对可比门店、币值处理和统计范围。",
+    "limits": "年报中的管理解释未独立识别菜单、营销或数字渠道各因素的因果贡献；销售分解仍需与因果评价区分。",
+    "questions": [
+      {
+        "question": "同店销售上升、客流下降，这两项结果是否逻辑矛盾？",
+        "answer": "两者可以同时发生：平均客单价上升可能抵消客流下降。比较前还应核对门店范围、币值、产品组合和统计期间。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "McDonald’s Corporation 2023 Form 10-K",
+        "url": "https://www.sec.gov/Archives/edgar/data/63908/000006390824000072/mcd-20231231.htm",
+        "publisher": "McDonald’s / SEC EDGAR",
+        "date": "2024",
+        "support": "支持可比门店经营至少13个月、汇率处理、销售由客流与客单价共同变化，以及系统销售与合并收入区别。",
+        "accessed": "2026-10-17"
+      }
+    ],
+    "slideRefs": [
+      {
+        "deck": "05_statistics_dashboard",
+        "page": 30,
+        "sectionId": "slides"
+      },
+      {
+        "deck": "05_statistics_dashboard",
+        "page": 31,
+        "sectionId": "slides"
+      }
+    ],
+    "readabilityEdition": true
+  }
+]

@@ -1,0 +1,26 @@
+{
+  "02_enterprise_data_model": {
+    "pageCount": 47,
+    "changedSlides": [
+      2,
+      38
+    ],
+    "anchors": 471,
+    "links": 649,
+    "originalMathRetained": 158,
+    "newMathExpressions": 1,
+    "codeSegments": 32
+  },
+  "03_sql_kpi": {
+    "pageCount": 52,
+    "changedSlides": [
+      27,
+      51
+    ],
+    "anchors": 293,
+    "links": 42,
+    "originalMathRetained": 115,
+    "newMathExpressions": 1,
+    "codeSegments": 87
+  }
+}

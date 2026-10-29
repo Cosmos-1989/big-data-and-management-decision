@@ -1,0 +1,3428 @@
+{
+  "title": "统计描述、过程波动与运营规律",
+  "slides": [
+    {
+      "section": "经营数据的统计描述",
+      "kind": "opener",
+      "title": "描述统计与运营解释",
+      "lead": "从观测事实出发，形成可以进一步检验的经营问题。",
+      "body": [
+        "均值为观测值之和除以个数；分位数按累计比例定位排序位置，高分位数对应较高累计比例。两者分别帮助判断平均工时与长周期风险。在制量是已进入但尚未完成的对象数，吞吐率是单位时间的完成量。",
+        "产品分组用于区分族内水平变化与产品组合变化；存量、流量及等待关系约束运营解释。下钻指从汇总指标返回相关明细，核查变化发生于哪些对象。图表提供描述性线索，干预效果仍须由研究设计检验。"
+      ],
+      "detailRef": {
+        "chapter": "05_statistics_dashboard",
+        "section": "经营数据的统计描述",
+        "anchor": "经营数据的统计描述"
+      },
+      "sourceSection": "经营数据的统计描述",
+      "visual": {
+        "kind": "flow",
+        "items": [
+          "观测单位",
+          "分布与结构",
+          "过程信号",
+          "运营约束",
+          "管理解释"
+        ]
+      },
+      "layout": "stack",
+      "lessonNumber": 5
+    },
+    {
+      "section": "经营指标作为观测变量",
+      "kind": "concept",
+      "title": "观测单位决定统计量的含义",
+      "lead": "一行数据对应的业务对象，必须先于统计计算明确。",
+      "body": [
+        "观测单位可以是日期、订单、客户或客户日期组合。一行一个日期时，日收入均值概括所观察日期的平均收入；一行一个客户时，均值概括客户间的平均水平。",
+        "时间序列记录同一系统随时间变化，横截面比较同一窗口内不同对象。经营日期汇总样例不能直接确定高收入来自哪位客户，客户贡献须通过订单和客户表下钻核查。"
+      ],
+      "detailRef": {
+        "chapter": "05_statistics_dashboard",
+        "section": "经营指标作为观测变量",
+        "anchor": "经营指标作为观测变量"
+      },
+      "sourceSection": "经营指标作为观测变量",
+      "visual": {
+        "kind": "compare",
+        "items": [
+          {
+            "label": "时间序列",
+            "detail": "同一系统在不同时点的变化。"
+          },
+          {
+            "label": "横截面",
+            "detail": "不同对象在同一窗口的差异。"
+          }
+        ]
+      },
+      "layout": "split",
+      "lessonNumber": 5
+    },
+    {
+      "kind": "concept",
+      "section": "概念与方法",
+      "title": "样本描述与总体推断",
+      "lead": "描述已观察对象，与判断未来对象，需要不同条件。",
+      "body": [
+        "经验分布把已有样本各值赋予相同权重，描述这些对象在各阈值以下的比例。分位数沿排序定位：中位数位于中部，高分位数靠近高值端。估计方法不同，有限样本分位数可能略有差异。",
+        "独立同分布要求各观测相互独立且来自同一概率分布。该条件常用于推导估计量的抽样性质。实际订单可能受同一天促销或同一设备故障共同影响；解释未来风险时，还须检查环境与采样范围是否变化。"
+      ],
+      "layout": "split",
+      "detailRef": {
+        "chapter": "05_statistics_dashboard",
+        "section": "经验分布与统计量",
+        "anchor": "经验分布与统计量"
+      },
+      "sourceSection": "经验分布与统计量",
+      "visual": {
+        "kind": "compare",
+        "items": [
+          {
+            "label": "描述",
+            "detail": "这些对象实际怎样分布"
+          },
+          {
+            "label": "推断",
+            "detail": "样本支持怎样的总体判断"
+          }
+        ]
+      },
+      "lessonNumber": 5
+    },
+    {
+      "section": "经验分布与统计量",
+      "kind": "concept",
+      "title": "经验分布函数",
+      "lead": "经验分布回答样本中有多大比例不超过指定阈值。",
+      "body": [
+        "对 \\(n>0\\) 个周期观测 \\(x_1,\\ldots,x_n\\)，经验分布 \\(F_n(u)\\) 是不超过阈值 \\(u\\) 的样本比例。指示函数满足条件取 \\(1\\)，否则取 \\(0\\)。",
+        "以 \\(1,1,2,2,14\\) 天为例，\\(F_5(5)=4/5=0.8\\)。这是对已有样本的描述，不要求独立同分布；解释未来订单概率仍须论证样本覆盖、机制与环境稳定性。"
+      ],
+      "detailRef": {
+        "chapter": "05_statistics_dashboard",
+        "section": "经验分布与统计量",
+        "anchor": "经验分布与统计量"
+      },
+      "sourceSection": "经验分布与统计量",
+      "equation": "F_n(u)=\\frac1n\\sum_{i=1}^n\\mathbf1\\{x_i\\le u\\}",
+      "layout": "split",
+      "diagram": {
+        "type": "plot",
+        "title": "五张订单的经验分布",
+        "description": "周期1、1、2、2、14天产生在1天跳到0.4、在2天跳到0.8、在14天跳到1的经验分布。",
+        "encoding": "解析模型或教材算例 · 同一坐标尺度",
+        "note": "阶梯函数在跳点取上端值；连线显示跳跃，不增加新观测。",
+        "xDomain": [
+          0,
+          15
+        ],
+        "yDomain": [
+          0,
+          1
+        ],
+        "xLabel": "阈值／天",
+        "yLabel": "\\(F_5(u)\\)",
+        "xTicks": [
+          0,
+          1,
+          2,
+          5,
+          10,
+          14
+        ],
+        "yTicks": [
+          0,
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1
+        ],
+        "series": [
+          {
+            "label": "经验分布",
+            "points": [
+              [
+                0,
+                0
+              ],
+              [
+                1,
+                0
+              ],
+              [
+                1,
+                0.4
+              ],
+              [
+                2,
+                0.4
+              ],
+              [
+                2,
+                0.8
+              ],
+              [
+                14,
+                0.8
+              ],
+              [
+                14,
+                1
+              ],
+              [
+                15,
+                1
+              ]
+            ],
+            "tone": "teal",
+            "dashed": false
+          }
+        ],
+        "markers": [
+          {
+            "x": 5,
+            "y": 0.8,
+            "label": "5天内80%",
+            "tone": "blue"
+          }
+        ],
+        "regions": []
+      },
+      "density": "compact",
+      "lessonNumber": 5
+    },
+    {
+      "section": "经验分布与统计量",
+      "kind": "calculation",
+      "title": "同一样本的三种服务含义",
+      "lead": "平均水平、中心位置与承诺达成率对应不同管理问题。",
+      "body": [
+        "五张订单周期为 \\(1,1,2,2,14\\) 天，合计 \\(20\\) 天。平均周期为 \\((1+1+2+2+14)/5=4\\) 天，中位数是排序第三项 \\(Q_2=2\\) 天。",
+        "五天内完成比例为 \\(F_5(5)=4/5=0.8\\)。四张订单两天内完成，一张耗时十四天；典型订单较快与平均周期偏高可以同时成立，承诺评价还需报告具体阈值。"
+      ],
+      "detailRef": {
+        "chapter": "05_statistics_dashboard",
+        "section": "经验分布与统计量",
+        "anchor": "经验分布与统计量"
+      },
+      "sourceSection": "经验分布与统计量",
+      "layout": "split",
+      "density": "compact",
+      "diagram": {
+        "type": "bars",
+        "title": "同一周期样本中的长尾",
+        "description": "共同零点比较五张订单周期，14天长周期使均值4天高于中位数2天。",
+        "encoding": "教材算例 · 共零点同一尺度",
+        "note": "均值4天、中位数2天、5天内完成80%，三项摘要回答不同问题。",
+        "domain": [
+          0,
+          15
+        ],
+        "unit": "天",
+        "rows": [
+          {
+            "label": "订单1",
+            "value": 1,
+            "detail": "两天内完成",
+            "tone": "blue"
+          },
+          {
+            "label": "订单2",
+            "value": 1,
+            "detail": "两天内完成",
+            "tone": "blue"
+          },
+          {
+            "label": "订单3",
+            "value": 2,
+            "detail": "两天内完成",
+            "tone": "blue"
+          },
+          {
+            "label": "订单4",
+            "value": 2,
+            "detail": "两天内完成",
+            "tone": "blue"
+          },
+          {
+            "label": "订单5",
+            "value": 14,
+            "detail": "长周期对象",
+            "tone": "rose"
+          }
+        ],
+        "ticks": [
+          0,
+          5,
+          10,
+          15
+        ]
+      },
+      "lessonNumber": 5
+    },
+    {
+      "section": "均值与中位数",
+      "kind": "concept",
+      "title": "均值与中位数的管理用途",
+      "lead": "统计摘要的选择应与所问的经营量对应。",
+      "body": [
+        "样本均值使用全部观测，并满足总量等于样本数乘均值。对可加的收入、周期总和或工时，它便于预算和规模估算，但对极端值敏感。",
+        "中位数取排序后中间值；偶数样本取中间两值的平均。它较稳健地概括中心位置。均值明显高于中位数可提示高值或右尾影响，具体形态仍需分布图核查。"
+      ],
+      "detailRef": {
+        "chapter": "05_statistics_dashboard",
+        "section": "均值与中位数",
+        "anchor": "均值与中位数"
+      },
+      "sourceSection": "均值与中位数",
+      "equation": "\\bar x=\\frac1n\\sum_{i=1}^n x_i,\\qquad \\sum_{i=1}^n x_i=n\\bar x",
+      "layout": "focus",
+      "lessonNumber": 5
+    },
+    {
+      "kind": "case",
+      "section": "企业案例",
+      "title": "Google SRE：平均时延为什么不够",
+      "lead": "典型水平与尾部风险需要不同统计量。",
+      "body": [
+        "站点可靠性工程（SRE）以工程方法管理服务可靠性。在线服务中，多数请求可能很快，少数却等待很久。Google的SRE实践采用时延分布、直方图及高分位数，避免仅用平均值概括用户体验。",
+        "Google文档讨论用时延分桶计数表达请求分布，而非只保留单个均值；服务目标设计中，中位数与高分位数分别用于呈现典型体验及较慢的一端。"
+      ],
+      "layout": "split",
+      "detailRef": {
+        "chapter": "05_statistics_dashboard",
+        "section": "分位数、IQR 与异常识别",
+        "anchor": "分位数iqr-与异常识别"
+      },
+      "sourceSection": "分位数、IQR 与异常识别",
+      "visual": {
+        "kind": "flow",
+        "items": [
+          {
+            "label": "典型体验",
+            "detail": "中位数描述中部"
+          },
+          {
+            "label": "尾部体验",
+            "detail": "高分位数描述慢请求"
+          },
+          {
+            "label": "任务边界",
+            "detail": "核对窗口、流量与错误"
+          }
+        ]
+      },
+      "caseId": "b05-02",
+      "sources": [
+        {
+          "title": "Monitoring Distributed Systems",
+          "url": "https://sre.google/sre-book/monitoring-distributed-systems/"
+        },
+        {
+          "title": "Service Level Objectives",
+          "url": "https://sre.google/sre-book/service-level-objectives/"
+        }
+      ],
+      "lessonNumber": 5
+    },
+    {
+      "kind": "case",
+      "section": "企业案例",
+      "title": "平均时延与慢请求体验",
+      "lead": "平均时延下降时，慢请求仍可能没有改善。",
+      "body": [
+        "若快请求的占比增加，总体平均时延可能下降，即使最慢请求的时延保持不变。应在相同服务范围和时间窗口内同时查看中位数、高分位数、请求量和超时数量。",
+        "高分位数给出指定样本中较慢请求的阈值。它描述已观察请求；不同窗口的分位数通常不能直接平均，也不能保证未来每次请求都在阈值内。"
+      ],
+      "layout": "focus",
+      "detailRef": {
+        "chapter": "05_statistics_dashboard",
+        "section": "分位数、IQR 与异常识别",
+        "anchor": "分位数iqr-与异常识别"
+      },
+      "sourceSection": "分位数、IQR 与异常识别",
+      "caseId": "b05-02",
+      "sources": [
+        {
+          "title": "Monitoring Distributed Systems",
+          "url": "https://sre.google/sre-book/monitoring-distributed-systems/"
+        },
+        {
+          "title": "Service Level Objectives",
+          "url": "https://sre.google/sre-book/service-level-objectives/"
+        }
+      ],
+      "prompts": [
+        {
+          "question": "总体平均时延下降，是否意味着最慢用户的体验改善？",
+          "answer": "未必。快请求占比增加即可拉低均值，应同时核查相同任务范围内的高分位数及超时数量。"
+        }
+      ],
+      "lessonNumber": 5
+    },
+    {
+      "section": "均值与中位数",
+      "kind": "case",
+      "title": "日收入算例：中心位置与高值影响",
+      "lead": "完整观测序列支持统计结果复核。",
+      "body": [
+        "按文件顺序的 \\(12\\) 项收入（元）为 \\(4800,9000,4600,5400,6750,2300\\) 以及 \\(6000,3600,13500,3600,7200,4600\\)，合计 \\(71350\\)。",
+        "中间两项为 \\(4800,5400\\)，故中位数 \\(5100\\) 元；均值 \\(71350/12\\approx5945.83\\) 元。高收入值抬升均值，需要下钻客户与订单来源；均值与中位数之差不证明经营改善。"
+      ],
+      "detailRef": {
+        "chapter": "05_statistics_dashboard",
+        "section": "均值与中位数",
+        "anchor": "均值与中位数"
+      },
+      "sourceSection": "均值与中位数",
+      "layout": "split",
+      "density": "compact",
+      "diagram": {
+        "type": "plot",
+        "title": "完整收入序列与两种中心",
+        "description": "十二个经营日期依记录序号显示收入，均值5945.83元高于中位数5100元；第九条高收入观测是13500元。",
+        "encoding": "解析模型或教材算例 · 同一坐标尺度",
+        "note": "横轴为文件记录顺序，不假定等距日期；完整数列及均值保留在正文。",
+        "xDomain": [
+          1,
+          12
+        ],
+        "yDomain": [
+          0,
+          15000
+        ],
+        "xLabel": "记录序号",
+        "yLabel": "收入／元",
+        "xTicks": [
+          1,
+          3,
+          5,
+          7,
+          9,
+          12
+        ],
+        "yTicks": [
+          0,
+          5000,
+          10000,
+          15000
+        ],
+        "series": [
+          {
+            "label": "日收入",
+            "points": [
+              [
+                1,
+                4800
+              ],
+              [
+                2,
+                9000
+              ],
+              [
+                3,
+                4600
+              ],
+              [
+                4,
+                5400
+              ],
+              [
+                5,
+                6750
+              ],
+              [
+                6,
+                2300
+              ],
+              [
+                7,
+                6000
+              ],
+              [
+                8,
+                3600
+              ],
+              [
+                9,
+                13500
+              ],
+              [
+                10,
+                3600
+              ],
+              [
+                11,
+                7200
+              ],
+              [
+                12,
+                4600
+              ]
+            ],
+            "tone": "blue",
+            "dashed": false
+          }
+        ],
+        "markers": [
+          {
+            "x": 9,
+            "y": 13500,
+            "label": "高收入观测",
+            "tone": "rose"
+          }
+        ],
+        "regions": []
+      },
+      "lessonNumber": 5
+    },
+    {
+      "section": "方差、标准差与变异系数",
+      "kind": "concept",
+      "title": "离散程度与相对波动",
+      "lead": "相同平均水平的对象，仍可能具有不同波动。",
+      "body": [
+        "标准差是方差的平方根，与原变量具有相同单位。当 \\(n\\ge2\\) 时，样本方差用 \\(n-1\\) 缩放离均差平方和；独立同分布、有限方差条件下，它是总体方差的无偏估计。标准差 \\(s\\) 与原变量同单位，收入样例为 \\(2987.05\\) 元。",
+        "变异系数 \\(CV=s/\\bar x\\) 是无量纲相对离散程度，适用于真实零点且均值为正的比率尺度变量。摄氏温度的零点可平移，均值近零或允许正负的量也不宜机械比较该比值。"
+      ],
+      "detailRef": {
+        "chapter": "05_statistics_dashboard",
+        "section": "方差、标准差与变异系数",
+        "anchor": "方差标准差与变异系数"
+      },
+      "sourceSection": "方差、标准差与变异系数",
+      "equation": [
+        "s^2=\\frac1{n-1}\\sum_{i=1}^n(x_i-\\bar x)^2,\\qquad s=\\sqrt{s^2}",
+        "CV=\\frac{s}{\\bar x}\\qquad(\\bar x>0\\text{，比率尺度})"
+      ],
+      "takeaway": "标准差描述离散程度，风险评价还需明确可能损失。",
+      "layout": "focus",
+      "density": "compact",
+      "lessonNumber": 5
+    },
+    {
+      "section": "分位数、IQR 与异常识别",
+      "kind": "concept",
+      "title": "四分位距与描述性异常",
+      "lead": "异常标记依赖指定经验规则，不能独立判定成因。",
+      "body": [
+        "第一、第三四分位数 \\(Q_1,Q_3\\) 分别概括排序后约四分之一、四分之三处的位置，四分位距 \\(IQR=Q_3-Q_1\\) 描述分布中部跨度。箱线图通常将给定区间之外的观测标为待调查点。",
+        "四分位数采用上下半样本中位数法，奇数样本先排除整体中位数。异常可能来自真实大额交易、对象差异或记录错误，应查业务资料；不同软件比较前须统一分位数约定。"
+      ],
+      "detailRef": {
+        "chapter": "05_statistics_dashboard",
+        "section": "分位数、IQR 与异常识别",
+        "anchor": "分位数iqr-与异常识别"
+      },
+      "sourceSection": "分位数、IQR 与异常识别",
+      "equation": [
+        "IQR=Q_3-Q_1",
+        "[Q_1-1.5IQR,\\ Q_3+1.5IQR]"
+      ],
+      "layout": "focus",
+      "lessonNumber": 5
+    },
+    {
+      "section": "分位数、IQR 与异常识别",
+      "kind": "calculation",
+      "title": "收入异常算例：从排序到核查",
+      "lead": "四分位数约定与阈值均应能由原数据重算。",
+      "body": [
+        "采用上下半样本中位数法计算：\\(Q_1=(3600+4600)/2=4100\\) 元、\\(Q_3=(6750+7200)/2=6975\\) 元，因此 \\(IQR=2875\\) 元。",
+        "上侧阈值 \\(Q_3+1.5IQR=11287.5\\) 元。\\(2026\\) 年 \\(3\\) 月 \\(14\\) 日收入 \\(13500\\) 元应核查客户、促销和重复入账；描述性异常不等于错误或因果解释。"
+      ],
+      "detailRef": {
+        "chapter": "05_statistics_dashboard",
+        "section": "分位数、IQR 与异常识别",
+        "anchor": "分位数iqr-与异常识别"
+      },
+      "sourceSection": "分位数、IQR 与异常识别",
+      "layout": "split",
+      "diagram": {
+        "type": "intervals",
+        "title": "四分位范围与异常高值",
+        "description": "上下半样本中位数法给出Q1为4100元、Q3为6975元、IQR为2875元，上侧阈值11287.5元，13500元在阈值之外。",
+        "encoding": "教材算例 · 共轴区间",
+        "note": "色段表示Q1至Q3，属于描述性分位数范围；不是置信区间。",
+        "domain": [
+          0,
+          14500
+        ],
+        "unit": "元",
+        "ticks": [
+          0,
+          5000,
+          10000,
+          14000
+        ],
+        "reference": 11287.5,
+        "referenceLabel": "IQR上侧阈值",
+        "rows": [
+          {
+            "label": "中央四分位范围",
+            "low": 4100,
+            "high": 6975,
+            "detail": "点为中位数5100元",
+            "tone": "blue",
+            "estimate": 5100
+          },
+          {
+            "label": "待核查观测",
+            "low": 13500,
+            "high": 13500,
+            "detail": "2026年3月14日",
+            "tone": "rose",
+            "estimate": 13500
+          }
+        ]
+      },
+      "density": "compact",
+      "lessonNumber": 5
+    },
+    {
+      "section": "比率指标与分母",
+      "kind": "concept",
+      "title": "总体比率与分母权重",
+      "lead": "合并分子分母相当于按暴露数量加权。",
+      "body": [
+        "把对象划分为互斥且完整的 \\(G\\) 组，第 \\(g\\) 组事件数为 \\(N_g\\)，分母为 \\(D_g>0\\)。例如准时率的事件数是准时订单数，分母是纳入口径的订单数；总体先合并这两种计数。",
+        "把每项 \\(N_g\\) 写为 \\(D_g(N_g/D_g)\\)，即得分母权重恒等式。\\(1/1\\) 与 \\(288/300\\) 的规模和精度不同；简单平均给予两组相同权重，回答的是另一项问题。"
+      ],
+      "detailRef": {
+        "chapter": "05_statistics_dashboard",
+        "section": "比率指标与分母",
+        "anchor": "比率指标与分母"
+      },
+      "sourceSection": "比率指标与分母",
+      "equation": "R=\\frac{\\sum_gN_g}{\\sum_gD_g}=\\sum_g\\frac{D_g}{\\sum_hD_h}\\frac{N_g}{D_g}",
+      "takeaway": "零分母应报告未定义，而不是填成零或百分之百。",
+      "layout": "focus",
+      "lessonNumber": 5
+    },
+    {
+      "section": "产品组合与总体指标",
+      "kind": "concept",
+      "title": "产品组合与总体良率",
+      "lead": "总体指标同时受族内水平和产品占比影响。",
+      "body": [
+        "产品族 \\(g\\) 在时期 \\(t\\) 的受检件数占比为 \\(w_{gt}\\)，有受检记录时的族内良率为 \\(p_{gt}\\)。各族完整且互斥，当期有记录的族按占比加权得到总体良率。",
+        "即使每个产品族良率均上升，低良率产品占比增加仍可能使总体下降。看板应同时展示当期总体、族内良率与件数占比；这些是描述性结构，未识别某项干预的效应。"
+      ],
+      "detailRef": {
+        "chapter": "05_statistics_dashboard",
+        "section": "产品组合与总体指标",
+        "anchor": "产品组合与总体指标"
+      },
+      "sourceSection": "产品组合与总体指标",
+      "equation": "p_t=\\sum_gw_{gt}p_{gt},\\qquad \\sum_gw_{gt}=1",
+      "layout": "focus",
+      "lessonNumber": 5
+    },
+    {
+      "section": "产品组合与总体指标",
+      "kind": "calculation",
+      "title": "组合反转算例：各族改善而总体下降",
+      "lead": "以同一受检件数口径计算各族和总体。",
+      "body": [
+        "初期简单产品合格 \\(90/100\\)，复杂产品 \\(1/10\\)；末期分别为 \\(19/20\\)、\\(40/200\\)。两族良率均提高，但复杂产品受检占比由 \\(1/11\\) 增至 \\(10/11\\)。",
+        "总体良率从 \\(91/110\\approx82.73\\%\\) 降至 \\(59/220\\approx26.82\\%\\)。权重转向低良率产品族决定总体变化方向；不能据此断言每族生产过程恶化。"
+      ],
+      "detailRef": {
+        "chapter": "05_statistics_dashboard",
+        "section": "产品组合与总体指标",
+        "anchor": "产品组合与总体指标"
+      },
+      "sourceSection": "产品组合与总体指标",
+      "takeaway": "实际总体与固定组合的标准化指标应并列解释。",
+      "layout": "split",
+      "density": "compact",
+      "diagram": {
+        "type": "matrix",
+        "title": "组内改善与权重反转",
+        "description": "简单和复杂产品族良率分别提高，但受检权重转向复杂产品，使总体良率下降。",
+        "encoding": "教材算例 · 行列含义见标签",
+        "note": "色深编码族内良率；总体须按各格标明的受检权重加权。",
+        "columns": [
+          "初期",
+          "末期"
+        ],
+        "rowLabels": [
+          "简单产品",
+          "复杂产品"
+        ],
+        "cells": [
+          [
+            {
+              "text": "\\(90/100=90\\%\\)",
+              "detail": "权重10/11",
+              "tone": "blue",
+              "value": 0.9
+            },
+            {
+              "text": "\\(19/20=95\\%\\)",
+              "detail": "权重1/11",
+              "tone": "blue",
+              "value": 0.95
+            }
+          ],
+          [
+            {
+              "text": "\\(1/10=10\\%\\)",
+              "detail": "权重1/11",
+              "tone": "teal",
+              "value": 0.1
+            },
+            {
+              "text": "\\(40/200=20\\%\\)",
+              "detail": "权重10/11",
+              "tone": "teal",
+              "value": 0.2
+            }
+          ]
+        ],
+        "scale": [
+          0,
+          1
+        ]
+      },
+      "lessonNumber": 5
+    },
+    {
+      "section": "产品组合与总体指标",
+      "kind": "concept",
+      "title": "总体变化的精确分解",
+      "lead": "固定初期权重，可分开族内变化与组合变化。",
+      "body": [
+        "比较时期 \\(t=0,1\\)，产品族 \\(g\\) 的良率为 \\(p_{gt}\\)、占比为 \\(w_{gt}\\)。假定分组覆盖两期总体，各组在两期均有受检记录。插入固定初期占比的末期良率 \\(p_1^{\\rm std}=\\sum_gw_{g0}p_{g1}\\)，即可分解总体变化。",
+        "第一项固定初期占比，第二项固定末期族内水平。某组若某期没有观测，其良率需另有依据才能进入分解。换用末期权重会改变交互部分的归属；分解本身尚未识别干预效果。"
+      ],
+      "detailRef": {
+        "chapter": "05_statistics_dashboard",
+        "section": "产品组合与总体指标",
+        "anchor": "产品组合与总体指标"
+      },
+      "sourceSection": "产品组合与总体指标",
+      "equation": "\\begin{aligned}p_1-p_0={}&\\sum_gw_{g0}(p_{g1}-p_{g0})\\\\&+\\sum_gp_{g1}(w_{g1}-w_{g0}).\\end{aligned}",
+      "layout": "split",
+      "density": "compact",
+      "diagram": {
+        "type": "graph",
+        "title": "增加一个固定组合的中间量",
+        "description": "在初期和末期总体之间插入按初期权重汇总的末期水平，将总变化严格分为两项。",
+        "encoding": "模型结构示意",
+        "note": "\\(p_1^{\\rm std}=\\sum_gw_{g0}p_{g1}\\)；两项相加恒等于 \\(p_1-p_0\\)。",
+        "nodes": [
+          {
+            "id": "initial",
+            "x": 17,
+            "y": 27,
+            "w": 28,
+            "h": 24,
+            "label": "初期总体",
+            "detail": "\\(p_0\\)",
+            "tone": "blue",
+            "shape": "rect"
+          },
+          {
+            "id": "std",
+            "x": 50,
+            "y": 27,
+            "w": 28,
+            "h": 24,
+            "label": "固定组合",
+            "detail": "\\(p_1^{\\rm std}\\)",
+            "tone": "teal",
+            "shape": "rect"
+          },
+          {
+            "id": "final",
+            "x": 83,
+            "y": 27,
+            "w": 28,
+            "h": 24,
+            "label": "末期总体",
+            "detail": "\\(p_1\\)",
+            "tone": "blue",
+            "shape": "rect"
+          },
+          {
+            "id": "within",
+            "x": 25,
+            "y": 76,
+            "w": 42,
+            "h": 24,
+            "label": "族内变化",
+            "detail": "\\(p_1^{\\rm std}-p_0\\)",
+            "tone": "teal",
+            "shape": "rect"
+          },
+          {
+            "id": "mix",
+            "x": 75,
+            "y": 76,
+            "w": 42,
+            "h": 24,
+            "label": "组合变化",
+            "detail": "\\(p_1-p_1^{\\rm std}\\)",
+            "tone": "rose",
+            "shape": "rect"
+          }
+        ],
+        "edges": [
+          {
+            "to": "std",
+            "label": "",
+            "from": "initial"
+          },
+          {
+            "to": "final",
+            "label": "",
+            "from": "std"
+          },
+          {
+            "to": "within",
+            "label": "",
+            "from": "initial"
+          },
+          {
+            "to": "within",
+            "label": "",
+            "labelX": 37,
+            "labelY": 51,
+            "from": "std"
+          },
+          {
+            "to": "mix",
+            "label": "",
+            "labelX": 62,
+            "labelY": 51,
+            "from": "std"
+          },
+          {
+            "to": "mix",
+            "label": "",
+            "from": "final"
+          }
+        ]
+      },
+      "lessonNumber": 5
+    },
+    {
+      "section": "产品组合与总体指标",
+      "kind": "calculation",
+      "title": "固定组合算例：量化两类变化",
+      "lead": "保持初期产品占比，比较相同组合下的良率。",
+      "body": [
+        "初期权重为 \\(10/11,1/11\\)；末期族内良率为 \\(0.95,0.20\\)。固定组合的末期良率 \\(p_1^{\\rm std}=(10/11)0.95+(1/11)0.20=97/110\\)。",
+        "初期总体 \\(91/110\\)、末期实际总体 \\(59/220\\)。族内贡献 \\(100(97/110-91/110)\\approx5.45\\) 个百分点；组合贡献约 \\(-61.36\\) 个百分点，合计约 \\(-55.91\\) 个百分点。"
+      ],
+      "detailRef": {
+        "chapter": "05_statistics_dashboard",
+        "section": "产品组合与总体指标",
+        "anchor": "产品组合与总体指标"
+      },
+      "sourceSection": "产品组合与总体指标",
+      "layout": "split",
+      "density": "compact",
+      "diagram": {
+        "type": "bars",
+        "title": "总变化是正向改善与负向组合之和",
+        "description": "以初期组合固定权重计算末期标准化良率97/110；族内改善约5.45个百分点，组合变化约负61.36个百分点，总变化负55.91个百分点。",
+        "encoding": "教材算例 · 共零点同一尺度",
+        "note": "贡献与总变化同轴；百分点表示良率差乘100，不是相对百分比。",
+        "domain": [
+          -70,
+          10
+        ],
+        "unit": "百分点",
+        "rows": [
+          {
+            "label": "族内贡献",
+            "value": 5.454545454545457,
+            "detail": "固定初期组合",
+            "tone": "teal"
+          },
+          {
+            "label": "组合贡献",
+            "value": -61.36363636363637,
+            "detail": "按末期族内水平",
+            "tone": "rose"
+          },
+          {
+            "label": "总体变化",
+            "value": -55.90909090909091,
+            "detail": "两项相加",
+            "tone": "blue"
+          }
+        ],
+        "ticks": [
+          -60,
+          -40,
+          -20,
+          0,
+          10
+        ]
+      },
+      "lessonNumber": 5
+    },
+    {
+      "kind": "case",
+      "section": "企业案例",
+      "title": "Netflix ISP指数：先固定观看结构再比较网络",
+      "lead": "直接总体均值可能混入用户与内容组合差异。",
+      "body": [
+        "互联网服务提供商（ISP）的观看设备、分辨率和视频编码组合可能不同。Netflix的ISP Speed Index按会话可达到的最大码率分桶，并采用共同观看时长结构计算可比指标。",
+        "桶内表现按观看时长加权，再按统一的全球时长分布赋予各桶权重；黄金时段按每个ISP每天Netflix观看最集中的三个小时定义。"
+      ],
+      "layout": "split",
+      "detailRef": {
+        "chapter": "05_statistics_dashboard",
+        "section": "产品组合与总体指标",
+        "anchor": "产品组合与总体指标"
+      },
+      "sourceSection": "产品组合与总体指标",
+      "visual": {
+        "kind": "flow",
+        "items": [
+          {
+            "label": "分桶",
+            "detail": "区分可达码率条件"
+          },
+          {
+            "label": "桶内统计",
+            "detail": "按观看时长加权"
+          },
+          {
+            "label": "标准化",
+            "detail": "使用共同组合权重"
+          }
+        ]
+      },
+      "caseId": "b05-01",
+      "sources": [
+        {
+          "title": "How We Calculate Rankings: Netflix ISP Speed Index",
+          "url": "https://ispspeedindex.netflix.net/about/"
+        }
+      ],
+      "lessonNumber": 5
+    },
+    {
+      "kind": "case",
+      "section": "企业案例",
+      "title": "Netflix：实际均值与标准化比较",
+      "lead": "网络之间的直接均值可能受观看结构影响。",
+      "body": [
+        "Netflix 按会话可达到的最大码率分桶，先按观看时长计算桶内表现，再采用统一的全球观看时长结构汇总。固定权重后的指标用于比较相同观看结构下的表现。",
+        "直接均值描述各网络实际用户及内容组合下的表现，标准化指标回答另一问题。比较时应说明覆盖范围、时间及计算版本；该指数对应 Netflix 指定时段的会话。 该指数不能单独识别网络投资的因果效果。"
+      ],
+      "layout": "focus",
+      "detailRef": {
+        "chapter": "05_statistics_dashboard",
+        "section": "产品组合与总体指标",
+        "anchor": "产品组合与总体指标"
+      },
+      "sourceSection": "产品组合与总体指标",
+      "caseId": "b05-01",
+      "sources": [
+        {
+          "title": "How We Calculate Rankings: Netflix ISP Speed Index",
+          "url": "https://ispspeedindex.netflix.net/about/"
+        }
+      ],
+      "prompts": [
+        {
+          "question": "甲网络实际均值较低，能否立即认定相同观看条件下也更差？",
+          "answer": "不能。应先按可比观看结构分组或标准化，同时核对覆盖、时间与计算版本。"
+        }
+      ],
+      "lessonNumber": 5
+    },
+    {
+      "section": "经营波动与移动平均",
+      "kind": "concept",
+      "title": "后向移动平均与原始时间序列",
+      "lead": "平滑揭示较慢变化，也会延迟或分散突发变化。",
+      "body": [
+        "设 \\(x_t\\) 为按时间顺序编号的观测，\\(k\\) 为正整数。后向 \\(k\\) 期均值使用当前及前 \\(k-1\\) 个值；单个高值会进入连续 \\(k\\) 个窗口，影响被分散到这些窗口。",
+        "最初 \\(k-1\\) 期没有完整窗口，须保留缺失或声明短窗口约定。收入样例的经营日期不连续，所以按记录计算的三期均值不等于连续三天均值；原始值仍用于定位事件。"
+      ],
+      "detailRef": {
+        "chapter": "05_statistics_dashboard",
+        "section": "经营波动与移动平均",
+        "anchor": "经营波动与移动平均"
+      },
+      "sourceSection": "经营波动与移动平均",
+      "equation": "MA_t^{(k)}=\\frac1k\\sum_{j=0}^{k-1}x_{t-j}",
+      "layout": "focus",
+      "lessonNumber": 5
+    },
+    {
+      "kind": "case",
+      "section": "企业案例",
+      "title": "Prime Day：活动高峰如何影响经营摘要",
+      "lead": "活动总量与常态日水平不能互相替代。",
+      "body": [
+        "Amazon披露，2023年两日Prime Day期间，全球Prime会员购买超过3.75亿件商品。集中促销使经营序列出现事件性高峰，汇报时必须保留活动窗口。",
+        "公布数值对应两日活动、全球Prime会员及商品件数；商品件数不同于订单数或顾客数，公告也没有把两日活动量定义为全年日常需求。"
+      ],
+      "layout": "split",
+      "detailRef": {
+        "chapter": "05_statistics_dashboard",
+        "section": "经营波动与移动平均",
+        "anchor": "经营波动与移动平均"
+      },
+      "sourceSection": "经营波动与移动平均",
+      "visual": {
+        "kind": "flow",
+        "items": [
+          {
+            "label": "原始序列",
+            "detail": "保留促销高峰"
+          },
+          {
+            "label": "平滑序列",
+            "detail": "注明记录或日历窗口"
+          },
+          {
+            "label": "同类基准",
+            "detail": "匹配季节、活动与覆盖"
+          }
+        ]
+      },
+      "caseId": "b05-04",
+      "sources": [
+        {
+          "title": "Prime Day 2023: Stats and some of the top-selling deals",
+          "url": "https://www.aboutamazon.com/news/retail/amazon-prime-day-2023-stats"
+        }
+      ],
+      "lessonNumber": 5
+    },
+    {
+      "kind": "case",
+      "section": "企业案例",
+      "title": "Prime Day：活动高峰与移动平均",
+      "lead": "活动结束后，后向移动平均仍会受到活动日影响。",
+      "body": [
+        "2023 年 Prime Day 两日内，全球 Prime 会员购买超过 3.75 亿件商品。若将活动日纳入后向移动平均，该高值会留在随后的多个统计窗口。",
+        "比较活动前后的日常需求时，应同时查看原始值和相近日期，并说明窗口长度。活动销量也可能包括提前购买或跨期转移，净增量需要与适当的反事实比较。 利润和长期需求也需要相应资料。"
+      ],
+      "layout": "focus",
+      "detailRef": {
+        "chapter": "05_statistics_dashboard",
+        "section": "经营波动与移动平均",
+        "anchor": "经营波动与移动平均"
+      },
+      "sourceSection": "经营波动与移动平均",
+      "caseId": "b05-04",
+      "sources": [
+        {
+          "title": "Prime Day 2023: Stats and some of the top-selling deals",
+          "url": "https://www.aboutamazon.com/news/retail/amazon-prime-day-2023-stats"
+        }
+      ],
+      "prompts": [
+        {
+          "question": "活动后移动平均仍很高，是否证明日常需求永久提高？",
+          "answer": "不能。单个高值会在多个后向窗口中持续影响均值，应核查原始值与活动后同类日期，并区分长期变化和窗口效应。"
+        }
+      ],
+      "lessonNumber": 5
+    },
+    {
+      "kind": "concept",
+      "section": "概念与方法",
+      "title": "二项模型与过程波动",
+      "lead": "比例有随机波动，样本量会改变波动幅度。",
+      "body": [
+        "二项分布描述固定次数的独立二元试验中，成功事件出现的次数，各次成功概率相同。把“出现缺陷”作为事件，检验件数是次数，不良概率是该事件在稳定条件下的概率。",
+        "同一批材料或同一设备可能使缺陷相关，造成实际波动大于独立二项模型的方差，这称为过度离散。控制界限由概率模型或稳定基准构造；客户目标是业务要求，即使数值接近也不能互换。"
+      ],
+      "layout": "split",
+      "detailRef": {
+        "chapter": "05_statistics_dashboard",
+        "section": "统计过程控制图",
+        "anchor": "统计过程控制图"
+      },
+      "sourceSection": "统计过程控制图",
+      "visual": {
+        "kind": "cards",
+        "items": [
+          {
+            "label": "业务目标",
+            "detail": "希望过程达到的质量"
+          },
+          {
+            "label": "控制界限",
+            "detail": "相对基准判定异常波动"
+          },
+          {
+            "label": "相关缺陷",
+            "detail": "可能使模型低估波动"
+          }
+        ]
+      },
+      "lessonNumber": 5
+    },
+    {
+      "section": "统计过程控制图",
+      "kind": "concept",
+      "title": "经营目标与统计控制界限",
+      "lead": "目标表达要求，控制界限表达基准模型下的预期波动。",
+      "body": [
+        "第 \\(t\\) 天检验 \\(n_t>0\\) 件产品，不良数为 \\(D_t\\)。假定每件独立，基准不良概率保持为 \\(p_0\\)，则 \\(D_t\\sim\\operatorname{Bin}(n_t,p_0)\\)，日比例的方差如下。",
+        "稳定过程仍会随机波动；控制图用于识别相对该基准的不寻常变化。客户缺陷上限是目标或承诺，不可与统计界限互换；基准通常由已审核的稳定历史估计。"
+      ],
+      "detailRef": {
+        "chapter": "05_statistics_dashboard",
+        "section": "统计过程控制图",
+        "anchor": "统计过程控制图"
+      },
+      "sourceSection": "统计过程控制图",
+      "equation": "\\hat p_t=\\frac{D_t}{n_t},\\qquad \\operatorname{Var}(\\hat p_t)=\\frac{p_0(1-p_0)}{n_t}",
+      "layout": "focus",
+      "lessonNumber": 5
+    },
+    {
+      "section": "统计过程控制图",
+      "kind": "concept",
+      "title": "二项模型下的近似控制界限",
+      "lead": "三标准差界限依赖基准模型和当期样本量。",
+      "body": [
+        "以 \\(p_0\\) 为中心，日比例标准差为 \\(\\sqrt{p_0(1-p_0)/n_t}\\)，上下各延伸 \\(3\\) 倍，并裁到 \\([0,1]\\)。样本量增加，界限收窄。",
+        "小样本、批内相关、基准漂移或历史估计不稳定会使该近似失效，可改用精确二项界限或其他过程模型。长期反复查看还产生累计误报，持续监测须采用与查看机制相容的错误控制。"
+      ],
+      "detailRef": {
+        "chapter": "05_statistics_dashboard",
+        "section": "统计过程控制图",
+        "anchor": "统计过程控制图"
+      },
+      "sourceSection": "统计过程控制图",
+      "equation": "\\begin{aligned}L_t&=\\max\\left\\{0,p_0-3\\sqrt{\\frac{p_0(1-p_0)}{n_t}}\\right\\},\\\\U_t&=\\min\\left\\{1,p_0+3\\sqrt{\\frac{p_0(1-p_0)}{n_t}}\\right\\}.\\end{aligned}",
+      "takeaway": "越界是基于模型的调查信号，不能当作原因诊断。",
+      "layout": "focus",
+      "density": "compact",
+      "lessonNumber": 5
+    },
+    {
+      "section": "统计过程控制图",
+      "kind": "calculation",
+      "title": "控制图算例：越界后调查什么",
+      "lead": "观测偏离基准，需要分层核查而非立即归因。",
+      "body": [
+        "经审核的算例基准为 \\(p_0=0.05\\)，每天检验 \\(500\\) 件。稳定独立二项近似给出 \\(U=0.05+3\\sqrt{0.05(0.95)/500}\\approx0.0792\\)、下界约 \\(0.0208\\)。",
+        "第 \\(6\\) 天 \\(50/500=0.10\\) 越过上界，应核对受检范围，再按产品、批次、设备和班组下钻，并查维护日志。相关缺陷、基准漂移或小样本会使该界限失效。"
+      ],
+      "detailRef": {
+        "chapter": "05_statistics_dashboard",
+        "section": "统计过程控制图",
+        "anchor": "统计过程控制图"
+      },
+      "sourceSection": "统计过程控制图",
+      "layout": "split",
+      "density": "compact",
+      "diagram": {
+        "type": "plot",
+        "title": "第6天不良率越过上控制界限",
+        "description": "模拟序列每天500件，8日不良率为4%、5%、6%、4.4%、5.6%、10%、5.2%、4.8%，第6日超过二项基准上界。",
+        "encoding": "解析模型或教材算例 · 同一坐标尺度",
+        "note": "基准5%；下界约2.08%、上界约7.92%。越界定位调查时点，不识别原因。",
+        "xDomain": [
+          1,
+          8
+        ],
+        "yDomain": [
+          0,
+          0.12
+        ],
+        "xLabel": "日序号",
+        "yLabel": "不良比例",
+        "xTicks": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "yTicks": [
+          0,
+          0.04,
+          0.08,
+          0.12
+        ],
+        "series": [
+          {
+            "label": "日不良率",
+            "points": [
+              [
+                1,
+                0.04
+              ],
+              [
+                2,
+                0.05
+              ],
+              [
+                3,
+                0.06
+              ],
+              [
+                4,
+                0.044
+              ],
+              [
+                5,
+                0.056
+              ],
+              [
+                6,
+                0.1
+              ],
+              [
+                7,
+                0.052
+              ],
+              [
+                8,
+                0.048
+              ]
+            ],
+            "tone": "blue",
+            "dashed": false
+          },
+          {
+            "label": "上控制界限",
+            "points": [
+              [
+                1,
+                0.0792403830344269
+              ],
+              [
+                8,
+                0.0792403830344269
+              ]
+            ],
+            "tone": "rose",
+            "dashed": true
+          }
+        ],
+        "markers": [
+          {
+            "x": 6,
+            "y": 0.1,
+            "label": "第6天50/500",
+            "tone": "rose"
+          }
+        ],
+        "regions": []
+      },
+      "lessonNumber": 5
+    },
+    {
+      "kind": "case",
+      "section": "企业案例",
+      "title": "Toyota Andon：可视化信号需要处置责任",
+      "lead": "运营界面的价值取决于信号能否进入明确的处置过程。",
+      "body": [
+        "Toyota公开的生产方式以发现异常时停止过程、防止缺陷继续产生为原则。Andon把异常显现出来，并让现场人员呼叫相应负责人。",
+        "企业说明设备或现场发生异常时可停止并显示告警；在没有自动设备的工位，人员也可触发Andon，呼叫负责人处理质量或作业延迟。"
+      ],
+      "layout": "split",
+      "detailRef": {
+        "chapter": "05_statistics_dashboard",
+        "section": "看板的运营节奏",
+        "anchor": "看板的运营节奏"
+      },
+      "sourceSection": "看板的运营节奏",
+      "visual": {
+        "kind": "flow",
+        "items": [
+          {
+            "label": "异常显现",
+            "detail": "定位对象与时点"
+          },
+          {
+            "label": "责任响应",
+            "detail": "调查并控制影响"
+          },
+          {
+            "label": "恢复标准",
+            "detail": "确认条件后继续"
+          }
+        ]
+      },
+      "caseId": "b05-03",
+      "sources": [
+        {
+          "title": "Toyota Production System",
+          "url": "https://global.toyota/en/company/vision-and-philosophy/production-system/"
+        }
+      ],
+      "lessonNumber": 5
+    },
+    {
+      "kind": "case",
+      "section": "企业案例",
+      "title": "Andon：异常信号与处置",
+      "lead": "越界信号需要结合现场记录确定后续行动。",
+      "body": [
+        "Toyota 的 Andon 使现场异常可见，并帮助人员呼叫负责人。信号可以来自设备或人工报告；统计控制图的越界点是另一类信号，触发条件需要分别说明。",
+        "收到信号后，先核对对象、时间和记录，再调查工艺、设备或其他可能原因。维修、调整或继续观察的选择，还取决于调查结果、操作权限和处置规则。"
+      ],
+      "layout": "focus",
+      "detailRef": {
+        "chapter": "05_statistics_dashboard",
+        "section": "看板的运营节奏",
+        "anchor": "看板的运营节奏"
+      },
+      "sourceSection": "看板的运营节奏",
+      "caseId": "b05-03",
+      "sources": [
+        {
+          "title": "Toyota Production System",
+          "url": "https://global.toyota/en/company/vision-and-philosophy/production-system/"
+        }
+      ],
+      "prompts": [
+        {
+          "question": "控制图出现越界点，能否直接采用某项维修动作？",
+          "answer": "不能。应先核对统计范围与记录，再调查相关过程；动作取决于根因、权限和处置规则。"
+        }
+      ],
+      "lessonNumber": 5
+    },
+    {
+      "section": "比较基准、目标线与经营解释",
+      "kind": "concept",
+      "title": "比较基准与经营判断",
+      "lead": "同一个数值在不同评价问题下具有不同意义。",
+      "body": [
+        "历史比较判断相对过去的变化，目标比较评价承诺达成，同类比较定位对象差异，统计基准标记分布中的不寻常观测。报告须指明采用哪一种。",
+        "跨期需核查季节和工作日结构；跨对象需核查规模、产品组合和质量状态。收入高于上周并不保证预算达成，准时率高于区域均值也不保证满足客户承诺。"
+      ],
+      "detailRef": {
+        "chapter": "05_statistics_dashboard",
+        "section": "比较基准、目标线与经营解释",
+        "anchor": "比较基准目标线与经营解释"
+      },
+      "sourceSection": "比较基准、目标线与经营解释",
+      "visual": {
+        "kind": "table",
+        "headers": [
+          "基准",
+          "回答的问题"
+        ],
+        "rows": [
+          [
+            "历史值",
+            "相对过去如何？"
+          ],
+          [
+            "计划目标",
+            "是否兑现承诺？"
+          ],
+          [
+            "同类对象",
+            "谁与谁不同？"
+          ],
+          [
+            "统计界限",
+            "偏离是否少见？"
+          ]
+        ]
+      },
+      "layout": "stack",
+      "lessonNumber": 5
+    },
+    {
+      "kind": "case",
+      "section": "企业案例",
+      "title": "McDonald’s：同店销售增长不等于客流增长",
+      "lead": "判断增长来源，需要拆分对象范围、价格与数量。",
+      "body": [
+        "McDonald’s在2023年年报中区分可比销售、客流、系统销售与合并收入。可比销售关注经营至少十三个月的门店，并采用相应汇率与范围规则。",
+        "年报说明可比销售受顾客交易数及平均客单价变化共同影响，客单价又受定价与产品组合影响；系统销售覆盖直营与加盟门店，而加盟店全部销售不计为公司的合并收入。"
+      ],
+      "layout": "split",
+      "detailRef": {
+        "chapter": "05_statistics_dashboard",
+        "section": "比较基准、目标线与经营解释",
+        "anchor": "比较基准目标线与经营解释"
+      },
+      "sourceSection": "比较基准、目标线与经营解释",
+      "visual": {
+        "kind": "flow",
+        "items": [
+          {
+            "label": "可比范围",
+            "detail": "固定门店及期间"
+          },
+          {
+            "label": "数量与价格",
+            "detail": "客流、客单价、组合"
+          },
+          {
+            "label": "收入主体",
+            "detail": "区分系统与公司自身"
+          }
+        ]
+      },
+      "caseId": "b05-05",
+      "sources": [
+        {
+          "title": "McDonald’s Corporation 2023 Form 10-K",
+          "url": "https://www.sec.gov/Archives/edgar/data/63908/000006390824000072/mcd-20231231.htm"
+        }
+      ],
+      "lessonNumber": 5
+    },
+    {
+      "kind": "case",
+      "section": "企业案例",
+      "title": "McDonald’s：拆分可比销售的变化",
+      "lead": "客流下降与同店销售上升可以同时发生。",
+      "body": [
+        "可比销售受顾客交易数和平均客单价共同影响。即使交易数减少，只要平均客单价提高的幅度足以抵消这一变化，销售额仍可能上升。",
+        "解释增长时，应核对可比门店、期间及汇率处理，并进一步分析价格和产品组合。销售分解描述各项变化；判断菜单或营销措施的因果作用还需要相应研究设计。"
+      ],
+      "layout": "focus",
+      "detailRef": {
+        "chapter": "05_statistics_dashboard",
+        "section": "比较基准、目标线与经营解释",
+        "anchor": "比较基准目标线与经营解释"
+      },
+      "sourceSection": "比较基准、目标线与经营解释",
+      "caseId": "b05-05",
+      "sources": [
+        {
+          "title": "McDonald’s Corporation 2023 Form 10-K",
+          "url": "https://www.sec.gov/Archives/edgar/data/63908/000006390824000072/mcd-20231231.htm"
+        }
+      ],
+      "prompts": [
+        {
+          "question": "同店销售上升、客流下降，这两项结果是否逻辑矛盾？",
+          "answer": "不矛盾。平均客单价上升可抵消客流下降；还应核对店群、币值、产品组合及相同期间的定义。"
+        }
+      ],
+      "lessonNumber": 5
+    },
+    {
+      "kind": "worked",
+      "section": "制造系统中的存量、流量与等待",
+      "title": "同一停留面积的两种计数",
+      "lead": "沿时间统计在制量，或按批次累加停留时间，得到同一个面积。",
+      "body": [
+        "算例窗口为第 \\(0\\) 至 \\(3\\) 天。批次 \\(A\\) 在第 \\(0\\) 天进入、第 \\(2\\) 天离开；批次 \\(B\\) 在第 \\(1\\) 天进入、第 \\(3\\) 天离开，没有其他批次。两批的完整停留时间均为 \\(2\\) 天。",
+        "三个长度均为一天的区间内，在制量依次为 \\(1,2,1\\) 批，总停留面积为 \\(4\\) 批天。按批次相加也为 \\(2+2=4\\) 批天；除以窗口长度得到平均在制量 \\(4/3\\) 批。 若批次跨越窗口边界，计算面积还需扣除窗口外停留，并计入窗口内未完成批次的停留。"
+      ],
+      "equation": "\\underbrace{1\\cdot1+2\\cdot1+1\\cdot1}_{\\text{按时间累计}}=\\underbrace{2+2}_{\\text{按批次累计}}=4\\ \\text{批天}",
+      "layout": "split",
+      "density": "compact",
+      "sourceSection": "Little 定律的面积证明",
+      "detailRef": {
+        "chapter": "05_statistics_dashboard",
+        "section": "Little 定律的面积证明",
+        "anchor": "little-定律的面积证明"
+      },
+      "diagram": {
+        "type": "timeline",
+        "title": "两批停留区间的重叠",
+        "description": "A在0到2天停留、B在1到3天停留；三个单位窗口内在制量依次为1、2、1。",
+        "encoding": "教材算例 · 同一时间尺度",
+        "note": "每段长2天；总停留面积2+2=4批天，平均在制量4/3批。",
+        "domain": [
+          0,
+          3
+        ],
+        "unit": "天",
+        "ticks": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "rows": [
+          {
+            "label": "批次A",
+            "segments": [
+              {
+                "start": 0,
+                "end": 2,
+                "label": "停留2天",
+                "tone": "blue"
+              }
+            ],
+            "points": []
+          },
+          {
+            "label": "批次B",
+            "segments": [
+              {
+                "start": 1,
+                "end": 3,
+                "label": "停留2天",
+                "tone": "teal"
+              }
+            ],
+            "points": []
+          }
+        ]
+      },
+      "lessonNumber": 5
+    },
+    {
+      "section": "Little 定律的面积证明",
+      "kind": "concept",
+      "title": "Little 定律的面积论证",
+      "lead": "同一停留面积可以按时间或按批次累计。",
+      "body": [
+        "固定系统边界，\\(L(t)\\) 为在制批次数，窗口长度 \\(T\\)、完成数 \\(N_T>0\\)、每批完整停留时间 \\(W_i\\)。边界修正 \\(B_T\\) 处理窗口外停留及尚未完成批次。",
+        "设 \\(N_T/T\\to\\lambda>0\\)、完成批次平均停留趋于 \\(\\bar W\\)，且 \\(B_T/T\\to0\\)。时间平均取极限即得 \\(\\bar L=\\lambda\\bar W\\)，无需泊松到达或指数服务。 这些量须采用相同的系统边界、对象和单位。"
+      ],
+      "detailRef": {
+        "chapter": "05_statistics_dashboard",
+        "section": "Little 定律的面积证明",
+        "anchor": "little-定律的面积证明"
+      },
+      "sourceSection": "Little 定律的面积证明",
+      "equation": "\\frac1T\\int_0^T L(t)\\,dt=\\frac{N_T}{T}\\left(\\frac{\\sum_iW_i}{N_T}\\right)+\\frac{B_T}{T}",
+      "layout": "split",
+      "density": "compact",
+      "diagram": {
+        "type": "graph",
+        "title": "同一面积，两种累计方向",
+        "description": "时间积分得到平均在制量；按批次累计得到完成率乘平均停留时间，并显式保留窗口边界修正。",
+        "encoding": "模型结构示意",
+        "note": "除以T并取极限；只有 \\(B_T/T\\to0\\) 才能忽略窗口边界贡献。",
+        "nodes": [
+          {
+            "id": "area",
+            "x": 50,
+            "y": 18,
+            "w": 44,
+            "h": 24,
+            "label": "停留总面积",
+            "detail": "\\(\\int_0^T L(t)\\,dt\\)",
+            "tone": "blue",
+            "shape": "rect"
+          },
+          {
+            "id": "time",
+            "x": 25,
+            "y": 58,
+            "w": 40,
+            "h": 24,
+            "label": "按时间累计",
+            "detail": "在制量 × 时间",
+            "tone": "blue",
+            "shape": "rect"
+          },
+          {
+            "id": "batch",
+            "x": 75,
+            "y": 58,
+            "w": 40,
+            "h": 24,
+            "label": "按批次累计",
+            "detail": "停留时间之和",
+            "tone": "teal",
+            "shape": "rect"
+          },
+          {
+            "id": "l",
+            "x": 25,
+            "y": 89,
+            "w": 40,
+            "h": 17,
+            "label": "长期平均",
+            "detail": "\\(\\bar L\\)",
+            "tone": "blue",
+            "shape": "rect"
+          },
+          {
+            "id": "lw",
+            "x": 75,
+            "y": 89,
+            "w": 40,
+            "h": 17,
+            "label": "流量与周期",
+            "detail": "\\(\\lambda\\bar W\\)",
+            "tone": "teal",
+            "shape": "rect"
+          }
+        ],
+        "edges": [
+          {
+            "to": "time",
+            "label": "",
+            "from": "area"
+          },
+          {
+            "to": "batch",
+            "label": "",
+            "from": "area"
+          },
+          {
+            "to": "l",
+            "label": "",
+            "from": "time"
+          },
+          {
+            "to": "lw",
+            "label": "",
+            "from": "batch"
+          }
+        ]
+      },
+      "lessonNumber": 5
+    },
+    {
+      "section": "Little 定律的面积证明",
+      "kind": "calculation",
+      "title": "在制量、吞吐率与平均周期",
+      "lead": "同一系统口径下的存量与流量可以相互校验。",
+      "body": [
+        "稳定工站平均在制量为 \\(240\\) 批，每天完成 \\(60\\) 批。若两个统计量对应相同系统边界和批次定义，平均停留时间为 \\(4\\) 天。",
+        "全厂在制量除以单工站产出会混用边界。集中开工或扩产期间在制品可能持续积累，未完成批次的边界贡献不宜忽略，应先研究过程变化并选取适用期间。"
+      ],
+      "detailRef": {
+        "chapter": "05_statistics_dashboard",
+        "section": "Little 定律的面积证明",
+        "anchor": "little-定律的面积证明"
+      },
+      "sourceSection": "Little 定律的面积证明",
+      "equation": "\\bar W=\\frac{\\bar L}{\\lambda}=\\frac{240\\ \\text{批}}{60\\ \\text{批/天}}=4\\ \\text{天}",
+      "prompts": [
+        {
+          "question": "吞吐率不变而平均在制量翻倍，稳定条件下周期如何变化？",
+          "answer": "由 \\(\\bar W=\\bar L/\\lambda\\)，平均周期也翻倍。"
+        }
+      ],
+      "layout": "focus",
+      "density": "compact",
+      "lessonNumber": 5
+    },
+    {
+      "kind": "concept",
+      "section": "概念与方法",
+      "title": "到达、服务与排队模型记号",
+      "lead": "平均负荷之外，还需说明随机性与服务规则。",
+      "body": [
+        "到达率表示单位时间平均进入系统的对象数，服务率表示持续服务时单位时间平均可完成的对象数。泊松到达模型规定不相交区间的到达数独立，且各区间计数服从均值与区间长度成正比的泊松分布。指数服务模型则对服务时长采用指数分布。",
+        "M/M/1依次表示泊松到达、指数服务时长和单个服务台。GI/G/1允许一般的独立同分布到达间隔与一般服务时长。排队时间只包含服务前的等待，系统时间还包含服务。稳态指状态分布不随观察时刻改变；稳定条件与服务次序须另行声明。"
+      ],
+      "takeaway": "相同到达率与服务率，未必产生相同等待分布。",
+      "layout": "split",
+      "detailRef": {
+        "chapter": "05_statistics_dashboard",
+        "section": "利用率与等待时间",
+        "anchor": "利用率与等待时间"
+      },
+      "sourceSection": "利用率与等待时间",
+      "visual": {
+        "kind": "flow",
+        "items": [
+          {
+            "label": "到达",
+            "detail": "进入系统的过程"
+          },
+          {
+            "label": "排队",
+            "detail": "等待服务的位置"
+          },
+          {
+            "label": "服务",
+            "detail": "实际处理所需时间"
+          }
+        ]
+      },
+      "lessonNumber": 5
+    },
+    {
+      "section": "利用率与等待时间",
+      "kind": "concept",
+      "title": "单服务台模型中的利用率与等待",
+      "lead": "\\(M/M/1\\) 表示泊松到达、指数服务和单服务台。",
+      "body": [
+        "在 \\(M/M/1\\) 模型中，泊松到达率 \\(\\lambda\\) 与独立指数服务率 \\(\\mu\\) 均以单位时间的批次数计量；单服务台、先到先服务、无容量上限，\\(0<\\lambda<\\mu\\)。利用率 \\(\\rho=\\lambda/\\mu\\)。",
+        "稳态平均在制量 \\(\\rho/(1-\\rho)\\)。用 Little 定律得到系统时间，再减去服务时间 \\(1/\\mu\\) 得纯排队时间。真实工站需另核查到达与服务条件。"
+      ],
+      "detailRef": {
+        "chapter": "05_statistics_dashboard",
+        "section": "利用率与等待时间",
+        "anchor": "利用率与等待时间"
+      },
+      "sourceSection": "利用率与等待时间",
+      "equation": "\\bar W=\\frac1{\\mu-\\lambda},\\qquad\\bar W_q=\\frac{\\rho}{\\mu-\\lambda}",
+      "layout": "split",
+      "diagram": {
+        "type": "plot",
+        "title": "利用率逼近1，系统时间非线性增长",
+        "description": "M/M/1模型系统时间除以平均服务时间等于1/(1-rho)，在rho为0.8和0.95时分别为5和20。",
+        "encoding": "解析模型或教材算例 · 同一坐标尺度",
+        "note": "曲线是模型函数，不是工站实测；稳态条件要求 \\(0<\\rho<1\\)。",
+        "xDomain": [
+          0,
+          1
+        ],
+        "yDomain": [
+          0,
+          25
+        ],
+        "xLabel": "利用率 \\(\\rho\\)",
+        "yLabel": "系统时间 / 平均服务时间",
+        "xTicks": [
+          0,
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1
+        ],
+        "yTicks": [
+          0,
+          5,
+          10,
+          15,
+          20,
+          25
+        ],
+        "series": [
+          {
+            "label": "\\(1/(1-\\rho)\\)",
+            "points": [
+              [
+                0,
+                1
+              ],
+              [
+                0.01,
+                1.0101010101010102
+              ],
+              [
+                0.02,
+                1.0204081632653061
+              ],
+              [
+                0.03,
+                1.0309278350515465
+              ],
+              [
+                0.04,
+                1.0416666666666667
+              ],
+              [
+                0.05,
+                1.0526315789473684
+              ],
+              [
+                0.06,
+                1.0638297872340425
+              ],
+              [
+                0.07,
+                1.0752688172043012
+              ],
+              [
+                0.08,
+                1.0869565217391304
+              ],
+              [
+                0.09,
+                1.0989010989010988
+              ],
+              [
+                0.1,
+                1.1111111111111112
+              ],
+              [
+                0.11,
+                1.1235955056179776
+              ],
+              [
+                0.12,
+                1.1363636363636365
+              ],
+              [
+                0.13,
+                1.1494252873563218
+              ],
+              [
+                0.14,
+                1.1627906976744187
+              ],
+              [
+                0.15,
+                1.1764705882352942
+              ],
+              [
+                0.16,
+                1.1904761904761905
+              ],
+              [
+                0.17,
+                1.2048192771084338
+              ],
+              [
+                0.18,
+                1.2195121951219512
+              ],
+              [
+                0.19,
+                1.2345679012345678
+              ],
+              [
+                0.2,
+                1.25
+              ],
+              [
+                0.21,
+                1.2658227848101264
+              ],
+              [
+                0.22,
+                1.282051282051282
+              ],
+              [
+                0.23,
+                1.2987012987012987
+              ],
+              [
+                0.24,
+                1.3157894736842106
+              ],
+              [
+                0.25,
+                1.3333333333333333
+              ],
+              [
+                0.26,
+                1.3513513513513513
+              ],
+              [
+                0.27,
+                1.36986301369863
+              ],
+              [
+                0.28,
+                1.3888888888888888
+              ],
+              [
+                0.29,
+                1.4084507042253522
+              ],
+              [
+                0.3,
+                1.4285714285714286
+              ],
+              [
+                0.31,
+                1.4492753623188408
+              ],
+              [
+                0.32,
+                1.4705882352941178
+              ],
+              [
+                0.33,
+                1.492537313432836
+              ],
+              [
+                0.34,
+                1.5151515151515154
+              ],
+              [
+                0.35,
+                1.5384615384615383
+              ],
+              [
+                0.36,
+                1.5625
+              ],
+              [
+                0.37,
+                1.5873015873015872
+              ],
+              [
+                0.38,
+                1.6129032258064517
+              ],
+              [
+                0.39,
+                1.639344262295082
+              ],
+              [
+                0.4,
+                1.6666666666666667
+              ],
+              [
+                0.41,
+                1.6949152542372878
+              ],
+              [
+                0.42,
+                1.7241379310344827
+              ],
+              [
+                0.43,
+                1.7543859649122806
+              ],
+              [
+                0.44,
+                1.7857142857142856
+              ],
+              [
+                0.45,
+                1.8181818181818181
+              ],
+              [
+                0.46,
+                1.8518518518518516
+              ],
+              [
+                0.47,
+                1.8867924528301885
+              ],
+              [
+                0.48,
+                1.923076923076923
+              ],
+              [
+                0.49,
+                1.9607843137254901
+              ],
+              [
+                0.5,
+                2
+              ],
+              [
+                0.51,
+                2.0408163265306123
+              ],
+              [
+                0.52,
+                2.0833333333333335
+              ],
+              [
+                0.53,
+                2.127659574468085
+              ],
+              [
+                0.54,
+                2.173913043478261
+              ],
+              [
+                0.55,
+                2.2222222222222223
+              ],
+              [
+                0.56,
+                2.272727272727273
+              ],
+              [
+                0.57,
+                2.325581395348837
+              ],
+              [
+                0.58,
+                2.380952380952381
+              ],
+              [
+                0.59,
+                2.4390243902439024
+              ],
+              [
+                0.6,
+                2.5
+              ],
+              [
+                0.61,
+                2.564102564102564
+              ],
+              [
+                0.62,
+                2.6315789473684212
+              ],
+              [
+                0.63,
+                2.7027027027027026
+              ],
+              [
+                0.64,
+                2.7777777777777777
+              ],
+              [
+                0.65,
+                2.857142857142857
+              ],
+              [
+                0.66,
+                2.9411764705882355
+              ],
+              [
+                0.67,
+                3.0303030303030307
+              ],
+              [
+                0.68,
+                3.1250000000000004
+              ],
+              [
+                0.69,
+                3.2258064516129026
+              ],
+              [
+                0.7,
+                3.333333333333333
+              ],
+              [
+                0.71,
+                3.4482758620689653
+              ],
+              [
+                0.72,
+                3.571428571428571
+              ],
+              [
+                0.73,
+                3.7037037037037033
+              ],
+              [
+                0.74,
+                3.846153846153846
+              ],
+              [
+                0.75,
+                4
+              ],
+              [
+                0.76,
+                4.166666666666667
+              ],
+              [
+                0.77,
+                4.347826086956522
+              ],
+              [
+                0.78,
+                4.545454545454546
+              ],
+              [
+                0.79,
+                4.761904761904763
+              ],
+              [
+                0.8,
+                5.000000000000001
+              ],
+              [
+                0.81,
+                5.263157894736843
+              ],
+              [
+                0.82,
+                5.5555555555555545
+              ],
+              [
+                0.83,
+                5.882352941176469
+              ],
+              [
+                0.84,
+                6.249999999999999
+              ],
+              [
+                0.85,
+                6.666666666666666
+              ],
+              [
+                0.86,
+                7.142857142857142
+              ],
+              [
+                0.87,
+                7.692307692307692
+              ],
+              [
+                0.88,
+                8.333333333333334
+              ],
+              [
+                0.89,
+                9.090909090909092
+              ],
+              [
+                0.9,
+                10.000000000000002
+              ],
+              [
+                0.91,
+                11.111111111111114
+              ],
+              [
+                0.92,
+                12.500000000000007
+              ],
+              [
+                0.93,
+                14.285714285714295
+              ],
+              [
+                0.94,
+                16.666666666666654
+              ],
+              [
+                0.95,
+                19.999999999999982
+              ]
+            ],
+            "tone": "blue",
+            "dashed": false
+          }
+        ],
+        "markers": [
+          {
+            "x": 0.8,
+            "y": 5,
+            "label": "80%：5倍",
+            "tone": "teal"
+          },
+          {
+            "x": 0.95,
+            "y": 20,
+            "label": "95%：20倍",
+            "tone": "rose"
+          }
+        ],
+        "regions": []
+      },
+      "density": "compact",
+      "lessonNumber": 5
+    },
+    {
+      "section": "利用率与等待时间",
+      "kind": "derivation",
+      "title": "稳态在制量的推导",
+      "lead": "相邻状态流量平衡给出几何稳态分布。",
+      "body": [
+        "在 \\(M/M/1\\) 模型中，令 \\(\\pi_n\\) 为稳态有 \\(n\\) 批的概率，\\(\\rho=\\lambda/\\mu<1\\)。相邻状态流量平衡为 \\(\\pi_n\\lambda=\\pi_{n+1}\\mu\\)，故 \\(\\pi_n=\\pi_0\\rho^n\\)。",
+        "由 \\(\\sum_{n\\ge0}\\rho^n=(1-\\rho)^{-1}\\) 和概率和为 \\(1\\)，得 \\(\\pi_0=1-\\rho\\)。对该级数求导再乘 \\(\\rho\\)，就得到计算平均在制量的加权级数。"
+      ],
+      "detailRef": {
+        "chapter": "05_statistics_dashboard",
+        "section": "利用率与等待时间",
+        "anchor": "利用率与等待时间"
+      },
+      "sourceSection": "利用率与等待时间",
+      "layout": "focus",
+      "equation": [
+        "\\pi_n=(1-\\rho)\\rho^n,\\qquad n=0,1,\\ldots",
+        "\\bar L=(1-\\rho)\\rho\\frac{\\mathrm d}{\\mathrm d\\rho}\\!\\left(\\frac1{1-\\rho}\\right)=\\frac{\\rho}{1-\\rho}"
+      ],
+      "lessonNumber": 5
+    },
+    {
+      "section": "利用率与等待时间",
+      "kind": "calculation",
+      "title": "负荷算例：利用率与系统时间",
+      "lead": "平均服务能力不变，负荷增加仍会显著拉长停留。",
+      "body": [
+        "系统满足泊松到达、独立指数服务、单服务台、先到先服务和无容量上限。服务率固定 \\(\\mu=10\\) 批/小时，到达率 \\(\\lambda\\) 从 \\(8\\) 增至 \\(9.5\\) 批/小时。",
+        "由 \\(\\bar W=1/(\\mu-\\lambda)\\)，平均系统时间从 \\(1/(10-8)=0.5\\) 小时增至 \\(1/(10-9.5)=2\\) 小时。尾部交期与准时率仍须用分布或仿真评价。"
+      ],
+      "detailRef": {
+        "chapter": "05_statistics_dashboard",
+        "section": "利用率与等待时间",
+        "anchor": "利用率与等待时间"
+      },
+      "sourceSection": "利用率与等待时间",
+      "layout": "split",
+      "density": "compact",
+      "diagram": {
+        "type": "bars",
+        "title": "能力不变，系统时间变成四倍",
+        "description": "服务率固定10批每小时，到达率8和9.5对应系统时间0.5和2小时。",
+        "encoding": "教材算例 · 共零点同一尺度",
+        "note": "系统时间包含排队与服务；两种负载下平均服务时间均为0.1小时。",
+        "domain": [
+          0,
+          2.2
+        ],
+        "unit": "小时",
+        "rows": [
+          {
+            "label": "到达8批/小时",
+            "value": 0.5,
+            "detail": "利用率80%",
+            "tone": "teal"
+          },
+          {
+            "label": "到达9.5批/小时",
+            "value": 2,
+            "detail": "利用率95%",
+            "tone": "rose"
+          }
+        ],
+        "ticks": [
+          0,
+          0.5,
+          1,
+          1.5,
+          2
+        ]
+      },
+      "lessonNumber": 5
+    },
+    {
+      "section": "利用率与等待时间",
+      "kind": "concept",
+      "title": "变异性与 Kingman 等待近似",
+      "lead": "相同平均负荷下，到达和服务的变异仍影响等待。",
+      "body": [
+        "\\(GI/G/1\\) 允许到达间隔与服务时间服从一般分布。两类时间各自独立同分布、相互独立，单服务台先到先服务，\\(\\rho<1\\)，且满足有限二阶矩等条件。",
+        "\\(S\\) 为服务时间，\\(\\lambda\\) 为到达率，\\(\\rho=\\lambda\\mathbb E[S]\\)。\\(c_a,c_s\\) 为到达间隔、服务时间的标准差与均值之比。Kingman 近似分为变异项、拥堵项和服务尺度，可用数据与仿真校准。"
+      ],
+      "detailRef": {
+        "chapter": "05_statistics_dashboard",
+        "section": "利用率与等待时间",
+        "anchor": "利用率与等待时间"
+      },
+      "sourceSection": "利用率与等待时间",
+      "equation": "\\bar W_q\\approx\\frac{c_a^2+c_s^2}{2}\\frac{\\rho}{1-\\rho}\\mathbb E[S]",
+      "takeaway": "负荷与变异性共同影响等待，近似式不能当作普遍恒等式。",
+      "layout": "focus",
+      "lessonNumber": 5
+    },
+    {
+      "kind": "calculation",
+      "section": "利用率与等待时间",
+      "title": "同等负荷下，变异性怎样影响等待",
+      "lead": "减少波动与增加平均能力是两种不同的改善路径。",
+      "body": [
+        "比较满足 Kingman 近似条件的 \\(GI/G/1\\) 单服务台：到达间隔和服务时间各自独立同分布，两序列独立、先到先服务、有限二阶矩。两个系统均有 \\(\\rho=0.8\\)、平均服务 \\(0.1\\) 小时。",
+        "将到达、服务变异系数 \\(c_a,c_s\\) 由均为 \\(1\\) 降为均为 \\(0.5\\)，近似等待从 \\(0.4\\) 小时降为 \\(0.1\\) 小时。此处比较等待，不是完整周期。"
+      ],
+      "takeaway": "评价波动改善时，需确认它是否同时改变平均服务时间或负荷。",
+      "layout": "split",
+      "density": "compact",
+      "sourceSection": "利用率与等待时间",
+      "detailRef": {
+        "chapter": "05_statistics_dashboard",
+        "section": "利用率与等待时间",
+        "anchor": "利用率与等待时间"
+      },
+      "diagram": {
+        "type": "bars",
+        "title": "同一负荷下的变异性比较",
+        "description": "Kingman近似下利用率0.8、平均服务0.1小时相同；到达和服务变异系数均为1时等待24分钟，均为0.5时等待6分钟。",
+        "encoding": "教材算例 · 共零点同一尺度",
+        "note": "近似排队时间降至四分之一；完整系统时间还须加平均服务时间。",
+        "domain": [
+          0,
+          30
+        ],
+        "unit": "分钟",
+        "rows": [
+          {
+            "label": "\\(c_a=c_s=1\\)",
+            "value": 24,
+            "detail": "较大到达与服务波动",
+            "tone": "rose"
+          },
+          {
+            "label": "\\(c_a=c_s=0.5\\)",
+            "value": 6,
+            "detail": "均值不变，波动减少",
+            "tone": "teal"
+          }
+        ],
+        "ticks": [
+          0,
+          6,
+          12,
+          18,
+          24,
+          30
+        ]
+      },
+      "equation": "\\bar W_q\\approx\\frac{c_a^2+c_s^2}{2}\\frac{\\rho}{1-\\rho}\\mathbb E[S]",
+      "lessonNumber": 5
+    },
+    {
+      "section": "服务能力的经济分析",
+      "kind": "concept",
+      "title": "能力成本与在制成本的权衡",
+      "lead": "服务能力具有支出，也通过减少排队降低在制成本。",
+      "body": [
+        "到达率 \\(\\lambda>0\\) 固定，服务率 \\(\\mu>\\lambda\\) 可连续调整，二者用“批/小时”。能力成本率为 \\(k\\mu\\)，\\(k>0\\) 用“元/批”；在制成本 \\(h>0\\) 用“元/(批小时)”。",
+        "稳定 \\(M/M/1\\) 系统平均在制量为 \\(\\lambda/(\\mu-\\lambda)\\)。乘以 \\(h\\)，再加能力成本率，得到 \\(J(\\mu)\\)（元/小时）；因此方案比较的是两种成本之和。"
+      ],
+      "detailRef": {
+        "chapter": "05_statistics_dashboard",
+        "section": "服务能力的经济分析",
+        "anchor": "sec:queue-cost"
+      },
+      "sourceSection": "服务能力的经济分析",
+      "equation": "J(\\mu)=k\\mu+\\frac{h\\lambda}{\\mu-\\lambda},\\qquad \\mu>\\lambda",
+      "layout": "focus",
+      "lessonNumber": 5
+    },
+    {
+      "section": "服务能力的经济分析",
+      "kind": "derivation",
+      "title": "连续最优服务能力的推导",
+      "lead": "最优点的边际能力成本等于增加能力所减少的边际在制成本。",
+      "body": [
+        "总成本率 \\(J(\\mu)=k\\mu+h\\lambda/(\\mu-\\lambda)\\)，其中 \\(k,h,\\lambda>0\\)、\\(\\mu>\\lambda\\)。一阶条件令边际能力成本等于边际在制成本下降。",
+        "二阶导严格为正；\\(\\mu\\downarrow\\lambda\\) 时在制成本发散，\\(\\mu\\to\\infty\\) 时能力成本发散。因此候选唯一且全局最优。整数设备、换型及非线性费用须按实际约束重新比较。"
+      ],
+      "detailRef": {
+        "chapter": "05_statistics_dashboard",
+        "section": "服务能力的经济分析",
+        "anchor": "sec:queue-cost"
+      },
+      "sourceSection": "服务能力的经济分析",
+      "layout": "split",
+      "equation": "\\begin{aligned}J^{\\prime}(\\mu)&=k-\\frac{h\\lambda}{(\\mu-\\lambda)^2},\\\\J^{\\prime\\prime}(\\mu)&=\\frac{2h\\lambda}{(\\mu-\\lambda)^3}>0.\\end{aligned}",
+      "density": "compact",
+      "diagram": {
+        "type": "graph",
+        "title": "最优能力的三步论证",
+        "description": "一阶条件找出候选，严格凸性保证至多一个最优，边界发散排除逃向可行域边缘。",
+        "encoding": "模型结构示意",
+        "note": "论证针对连续 \\(\\mu>\\lambda\\) 及线性能力成本；整数设备需按离散可行集合比较。",
+        "nodes": [
+          {
+            "id": "j",
+            "x": 50,
+            "y": 18,
+            "w": 35,
+            "h": 24,
+            "label": "总成本",
+            "detail": "\\(J(\\mu)\\)",
+            "tone": "blue",
+            "shape": "rect"
+          },
+          {
+            "id": "first",
+            "x": 17,
+            "y": 57,
+            "w": 28,
+            "h": 24,
+            "label": "一阶条件",
+            "detail": "\\(J^{\\prime}(\\mu)=0\\)",
+            "tone": "blue",
+            "shape": "rect"
+          },
+          {
+            "id": "convex",
+            "x": 50,
+            "y": 57,
+            "w": 28,
+            "h": 24,
+            "label": "严格凸",
+            "detail": "\\(J^{\\prime\\prime}(\\mu)>0\\)",
+            "tone": "teal",
+            "shape": "rect"
+          },
+          {
+            "id": "edge",
+            "x": 83,
+            "y": 57,
+            "w": 28,
+            "h": 24,
+            "label": "边界发散",
+            "detail": "\\(J\\to\\infty\\)",
+            "tone": "rose",
+            "shape": "rect"
+          },
+          {
+            "id": "unique",
+            "x": 50,
+            "y": 88,
+            "w": 65,
+            "h": 18,
+            "label": "唯一全局最优",
+            "detail": "\\(\\mu^*=\\lambda+\\sqrt{h\\lambda/k}\\)",
+            "tone": "teal",
+            "shape": "rect"
+          }
+        ],
+        "edges": [
+          {
+            "to": "first",
+            "label": "",
+            "from": "j"
+          },
+          {
+            "to": "convex",
+            "label": "",
+            "from": "j"
+          },
+          {
+            "to": "edge",
+            "label": "",
+            "from": "j"
+          },
+          {
+            "to": "unique",
+            "label": "",
+            "from": "first"
+          },
+          {
+            "to": "unique",
+            "label": "",
+            "from": "convex"
+          },
+          {
+            "to": "unique",
+            "label": "",
+            "from": "edge"
+          }
+        ]
+      },
+      "lessonNumber": 5
+    },
+    {
+      "section": "服务能力的经济分析",
+      "kind": "calculation",
+      "title": "能力算例：总成本率的比较",
+      "lead": "保留富余能力可以是成本最小化的结果。",
+      "body": [
+        "算例参数：\\(\\lambda=8\\) 批/小时、在制成本 \\(h=1\\) 元/(批小时)、能力系数 \\(k=2\\) 元/批。总成本率为 \\(J(\\mu)=2\\mu+8/(\\mu-8)\\)，稳态须 \\(\\mu>8\\)。",
+        "连续最优 \\(\\mu^*=10\\) 批/小时，利用率 \\(80\\%\\)，成本 \\(24\\) 元/小时。能力 \\(9\\) 时成本 \\(18+8=26\\)；能力 \\(12\\) 时成本 \\(24+2=26\\)。两类成本的权衡决定最优。"
+      ],
+      "detailRef": {
+        "chapter": "05_statistics_dashboard",
+        "section": "服务能力的经济分析",
+        "anchor": "sec:queue-cost"
+      },
+      "sourceSection": "服务能力的经济分析",
+      "layout": "split",
+      "density": "compact",
+      "diagram": {
+        "type": "plot",
+        "title": "总成本曲线与可行方案",
+        "description": "到达率8、在制成本1、能力系数2时J(mu)=2mu+8/(mu-8)，在mu=10处唯一最小24元每小时，mu=9或12成本均26。",
+        "encoding": "解析模型或教材算例 · 同一坐标尺度",
+        "note": "曲线为连续能力模型； \\(\\mu\\le8\\) 不满足稳态可行条件。",
+        "xDomain": [
+          8,
+          16
+        ],
+        "yDomain": [
+          20,
+          58
+        ],
+        "xLabel": "服务率／批每小时",
+        "yLabel": "总成本率／元每小时",
+        "xTicks": [
+          8,
+          9,
+          10,
+          12,
+          14,
+          16
+        ],
+        "yTicks": [
+          20,
+          30,
+          40,
+          50
+        ],
+        "series": [
+          {
+            "label": "总成本",
+            "points": [
+              [
+                8.2,
+                56.40000000000014
+              ],
+              [
+                8.299999999999999,
+                43.26666666666676
+              ],
+              [
+                8.399999999999999,
+                36.80000000000007
+              ],
+              [
+                8.5,
+                33
+              ],
+              [
+                8.6,
+                30.53333333333334
+              ],
+              [
+                8.7,
+                28.828571428571436
+              ],
+              [
+                8.799999999999999,
+                27.600000000000012
+              ],
+              [
+                8.899999999999999,
+                26.6888888888889
+              ],
+              [
+                9,
+                26
+              ],
+              [
+                9.1,
+                25.472727272727276
+              ],
+              [
+                9.2,
+                25.06666666666667
+              ],
+              [
+                9.299999999999999,
+                24.753846153846155
+              ],
+              [
+                9.399999999999999,
+                24.514285714285716
+              ],
+              [
+                9.5,
+                24.333333333333332
+              ],
+              [
+                9.6,
+                24.2
+              ],
+              [
+                9.7,
+                24.105882352941176
+              ],
+              [
+                9.799999999999999,
+                24.044444444444444
+              ],
+              [
+                9.899999999999999,
+                24.010526315789473
+              ],
+              [
+                10,
+                24
+              ],
+              [
+                10.1,
+                24.00952380952381
+              ],
+              [
+                10.2,
+                24.036363636363635
+              ],
+              [
+                10.299999999999999,
+                24.078260869565216
+              ],
+              [
+                10.399999999999999,
+                24.133333333333333
+              ],
+              [
+                10.5,
+                24.2
+              ],
+              [
+                10.6,
+                24.276923076923076
+              ],
+              [
+                10.7,
+                24.36296296296296
+              ],
+              [
+                10.799999999999999,
+                24.457142857142856
+              ],
+              [
+                10.899999999999999,
+                24.55862068965517
+              ],
+              [
+                11,
+                24.666666666666668
+              ],
+              [
+                11.1,
+                24.780645161290323
+              ],
+              [
+                11.2,
+                24.9
+              ],
+              [
+                11.299999999999999,
+                25.024242424242424
+              ],
+              [
+                11.399999999999999,
+                25.152941176470588
+              ],
+              [
+                11.5,
+                25.285714285714285
+              ],
+              [
+                11.6,
+                25.42222222222222
+              ],
+              [
+                11.7,
+                25.56216216216216
+              ],
+              [
+                11.799999999999999,
+                25.705263157894734
+              ],
+              [
+                11.899999999999999,
+                25.85128205128205
+              ],
+              [
+                12,
+                26
+              ],
+              [
+                12.1,
+                26.151219512195123
+              ],
+              [
+                12.2,
+                26.304761904761904
+              ],
+              [
+                12.3,
+                26.46046511627907
+              ],
+              [
+                12.399999999999999,
+                26.618181818181817
+              ],
+              [
+                12.5,
+                26.77777777777778
+              ],
+              [
+                12.6,
+                26.93913043478261
+              ],
+              [
+                12.7,
+                27.102127659574467
+              ],
+              [
+                12.8,
+                27.26666666666667
+              ],
+              [
+                12.899999999999999,
+                27.43265306122449
+              ],
+              [
+                13,
+                27.6
+              ],
+              [
+                13.1,
+                27.768627450980393
+              ],
+              [
+                13.2,
+                27.93846153846154
+              ],
+              [
+                13.3,
+                28.109433962264152
+              ],
+              [
+                13.399999999999999,
+                28.281481481481478
+              ],
+              [
+                13.5,
+                28.454545454545453
+              ],
+              [
+                13.6,
+                28.628571428571426
+              ],
+              [
+                13.7,
+                28.803508771929824
+              ],
+              [
+                13.8,
+                28.97931034482759
+              ],
+              [
+                13.899999999999999,
+                29.155932203389828
+              ],
+              [
+                14,
+                29.333333333333332
+              ],
+              [
+                14.1,
+                29.511475409836066
+              ],
+              [
+                14.2,
+                29.69032258064516
+              ],
+              [
+                14.3,
+                29.86984126984127
+              ],
+              [
+                14.399999999999999,
+                30.049999999999997
+              ],
+              [
+                14.5,
+                30.23076923076923
+              ],
+              [
+                14.6,
+                30.41212121212121
+              ],
+              [
+                14.7,
+                30.594029850746267
+              ],
+              [
+                14.8,
+                30.776470588235295
+              ],
+              [
+                14.899999999999999,
+                30.95942028985507
+              ],
+              [
+                15,
+                31.142857142857142
+              ],
+              [
+                15.1,
+                31.32676056338028
+              ],
+              [
+                15.2,
+                31.51111111111111
+              ],
+              [
+                15.3,
+                31.695890410958906
+              ],
+              [
+                15.399999999999999,
+                31.881081081081078
+              ],
+              [
+                15.5,
+                32.06666666666667
+              ],
+              [
+                15.6,
+                32.252631578947366
+              ],
+              [
+                15.7,
+                32.43896103896104
+              ],
+              [
+                15.8,
+                32.62564102564103
+              ],
+              [
+                15.899999999999999,
+                32.8126582278481
+              ],
+              [
+                16,
+                33
+              ]
+            ],
+            "tone": "blue",
+            "dashed": false
+          }
+        ],
+        "markers": [
+          {
+            "x": 9,
+            "y": 26,
+            "label": "9：26",
+            "tone": "muted"
+          },
+          {
+            "x": 10,
+            "y": 24,
+            "label": "\\(\\mu^*=10\\)",
+            "tone": "teal"
+          },
+          {
+            "x": 12,
+            "y": 26,
+            "label": "12：26",
+            "tone": "muted"
+          }
+        ],
+        "regions": []
+      },
+      "lessonNumber": 5
+    },
+    {
+      "section": "人工智能服务的运营度量",
+      "kind": "concept",
+      "title": "人工智能服务的测量边界",
+      "lead": "开始响应、返回答案和完成业务任务是不同终点。",
+      "body": [
+        "一个业务问题可能涉及生成、查询、检索、人工审批与重试。首输出时间（TTFT）从请求到达算到第一段输出；请求完成时间算到完整响应；任务完成时间算到取得通过验收的业务结果。",
+        "最后一项应包含失败、返工和人工等待。服务水平目标须说明起终点，并分别报告分布，不能用快速首输出代表正确完成整个任务。"
+      ],
+      "detailRef": {
+        "chapter": "05_statistics_dashboard",
+        "section": "人工智能服务的运营度量",
+        "anchor": "sec:ai-service-operations"
+      },
+      "sourceSection": "人工智能服务的运营度量",
+      "visual": {
+        "kind": "table",
+        "headers": [
+          "指标",
+          "终点",
+          "用途"
+        ],
+        "rows": [
+          [
+            "首输出时间（TTFT）",
+            "首次输出到达",
+            "感知响应速度"
+          ],
+          [
+            "请求完成时间",
+            "完整响应返回",
+            "单次调用表现"
+          ],
+          [
+            "任务完成时间",
+            "结果通过验收",
+            "业务完成体验"
+          ]
+        ]
+      },
+      "layout": "stack",
+      "lessonNumber": 5
+    },
+    {
+      "section": "人工智能服务的运营度量",
+      "kind": "concept",
+      "title": "无排队服务时间的构成",
+      "lead": "估算服务时间时，需要说明模型、负载与并发条件。",
+      "body": [
+        "token（词元）由分词器划分，是模型处理文本的单位，可能对应一个字、一个词或词的一部分。单次串行调用输入、输出分别为 \\(p,o\\) 个 token，预填充、生成速度为 \\(r_p,r_d\\)（token/秒）；\\(t_0\\) 为网络调度耗时，\\(t_{\\mathrm{query}},t_{\\mathrm{tool}}\\) 为查询与工具耗时，均用秒。",
+        "各阶段时长相加，近似无排队服务时间 \\(s\\)。并行步骤应按执行依赖取关键路径；速度须在指定模型和负载下测量。完整任务还要计入排队、重试与人工审批。"
+      ],
+      "detailRef": {
+        "chapter": "05_statistics_dashboard",
+        "section": "人工智能服务的运营度量",
+        "anchor": "sec:ai-service-operations"
+      },
+      "sourceSection": "人工智能服务的运营度量",
+      "equation": "s\\approx t_0+\\frac{p}{r_p}+\\frac{o}{r_d}+t_{\\mathrm{query}}+t_{\\mathrm{tool}}",
+      "layout": "split",
+      "density": "compact",
+      "diagram": {
+        "type": "graph",
+        "title": "串行执行链的服务时间",
+        "description": "在无排队串行模型中，网络调度、预填充、输出生成、查询及工具时长相加；并行执行要取依赖关键路径。",
+        "encoding": "模型结构示意",
+        "note": "箭头表示串行依赖，不编码各段时长；排队、重试、审批属于完整任务另计。",
+        "nodes": [
+          {
+            "id": "net",
+            "x": 17,
+            "y": 26,
+            "w": 28,
+            "h": 24,
+            "label": "网络调度",
+            "detail": "\\(t_0\\)",
+            "tone": "blue",
+            "shape": "rect"
+          },
+          {
+            "id": "prefill",
+            "x": 50,
+            "y": 26,
+            "w": 28,
+            "h": 24,
+            "label": "输入预填充",
+            "detail": "\\(p/r_p\\)",
+            "tone": "blue",
+            "shape": "rect"
+          },
+          {
+            "id": "decode",
+            "x": 83,
+            "y": 26,
+            "w": 28,
+            "h": 24,
+            "label": "输出生成",
+            "detail": "\\(o/r_d\\)",
+            "tone": "blue",
+            "shape": "rect"
+          },
+          {
+            "id": "query",
+            "x": 83,
+            "y": 76,
+            "w": 28,
+            "h": 24,
+            "label": "数据库查询",
+            "detail": "\\(t_{\\rm query}\\)",
+            "tone": "teal",
+            "shape": "rect"
+          },
+          {
+            "id": "tool",
+            "x": 50,
+            "y": 76,
+            "w": 28,
+            "h": 24,
+            "label": "工具执行",
+            "detail": "\\(t_{\\rm tool}\\)",
+            "tone": "teal",
+            "shape": "rect"
+          },
+          {
+            "id": "sum",
+            "x": 17,
+            "y": 76,
+            "w": 28,
+            "h": 24,
+            "label": "服务时间",
+            "detail": "\\(s\\)",
+            "tone": "blue",
+            "shape": "rect"
+          }
+        ],
+        "edges": [
+          {
+            "to": "prefill",
+            "label": "",
+            "from": "net"
+          },
+          {
+            "to": "decode",
+            "label": "",
+            "from": "prefill"
+          },
+          {
+            "to": "query",
+            "label": "",
+            "from": "decode"
+          },
+          {
+            "to": "tool",
+            "label": "",
+            "from": "query"
+          },
+          {
+            "to": "sum",
+            "label": "",
+            "from": "tool"
+          }
+        ]
+      },
+      "lessonNumber": 5
+    },
+    {
+      "section": "人工智能服务的运营度量",
+      "kind": "concept",
+      "title": "平均并发与服务位置占用",
+      "lead": "在途数量包含排队，服务位置占用取决于实际占用时间。",
+      "body": [
+        "假定稳定系统中所有任务最终离开，\\(\\lambda\\) 为任务进入速率，\\(W\\) 为任务从进入到结束的平均时长，包括失败退出。Little 定律给出在途数量 \\(L=\\lambda W\\)。若每项任务占用服务位置 \\(s\\) 秒，平均占用约为 \\(\\lambda s\\)。",
+        "每小时 \\(900\\) 个请求、\\(s=6.19\\) 秒时，平均占用约 \\(1.55\\) 个位置；\\(4\\) 个等效位置的平均占用比约 \\(0.39\\)。此估计假定查询与工具等待仍占用同一位置。"
+      ],
+      "detailRef": {
+        "chapter": "05_statistics_dashboard",
+        "section": "人工智能服务的运营度量",
+        "anchor": "sec:ai-service-operations"
+      },
+      "sourceSection": "人工智能服务的运营度量",
+      "equation": [
+        "L=\\lambda W",
+        "\\lambda s=\\frac{900}{3600}\\times6.19\\approx1.55,\\qquad \\frac{1.55}{4}\\approx0.39"
+      ],
+      "takeaway": "平均占用比不能给出第95百分位完成时间，尾部延迟须另行测量。",
+      "layout": "focus",
+      "lessonNumber": 5,
+      "density": "compact"
+    },
+    {
+      "section": "人工智能服务的运营度量",
+      "kind": "concept",
+      "title": "请求费用与成功任务成本",
+      "lead": "费用比较需要包含失败尝试、重试和全流程调用。",
+      "body": [
+        "输入与输出各 \\(p,o\\) 个 token，每百万 token 单价为 \\(c_p,c_o\\)，查询与工具直接费用为 \\(c_q,c_t\\)。在相同货币单位下，各项费用相加得到单请求成本。",
+        "完整任务可能多次请求并需返工，应将所有尝试和复核费用汇总后除以成功任务数。价格随服务与合同变化，算例参数仅说明成本结构。"
+      ],
+      "detailRef": {
+        "chapter": "05_statistics_dashboard",
+        "section": "人工智能服务的运营度量",
+        "anchor": "sec:ai-service-operations"
+      },
+      "sourceSection": "人工智能服务的运营度量",
+      "equation": [
+        "c_{\\mathrm{request}}=\\frac{pc_p+oc_o}{10^6}+c_q+c_t",
+        "c_{\\mathrm{success}}=\\frac{\\text{全部尝试与复核成本}}{\\text{通过验收的任务数}}"
+      ],
+      "takeaway": "降低单次生成费用未必降低完成业务任务的成本。",
+      "layout": "focus",
+      "lessonNumber": 5
+    },
+    {
+      "section": "图表的视觉编码",
+      "kind": "concept",
+      "title": "视觉编码与比较任务",
+      "lead": "选择图形是选择读者如何辨认和比较数据。",
+      "body": [
+        "视觉编码把字段映射为位置、长度、颜色、大小或形状。时间趋势需保留时间轴，类别大小宜用共同尺度的位置或条形长度，分布图需呈现位置和尾部。",
+        "共同尺度上的位置通常便于精确比较，面积、角度与颜色深浅较难表达细微差异。颜色应具有一致含义，并配合文字或形状，避免单靠颜色判断状态。"
+      ],
+      "detailRef": {
+        "chapter": "05_statistics_dashboard",
+        "section": "图表的视觉编码",
+        "anchor": "图表的视觉编码"
+      },
+      "sourceSection": "图表的视觉编码",
+      "visual": {
+        "kind": "table",
+        "headers": [
+          "分析任务",
+          "可用编码"
+        ],
+        "rows": [
+          [
+            "时间趋势",
+            "共同时间轴上的位置"
+          ],
+          [
+            "类别比较",
+            "排序条形长度"
+          ],
+          [
+            "分布与尾部",
+            "直方图、箱线图"
+          ],
+          [
+            "目标达成",
+            "目标线与实际值"
+          ]
+        ]
+      },
+      "layout": "stack",
+      "lessonNumber": 5
+    },
+    {
+      "section": "从统计表到看板",
+      "kind": "concept",
+      "title": "从统计摘要到可下钻看板",
+      "lead": "经营界面需要支持由整体到具体对象的查询。",
+      "body": [
+        "概览显示关键指标、范围和质量；比较显示对象规模与基准；趋势保留原始值及平滑定义；分布标记待调查对象。下钻再返回订单、批次或失败记录，核查候选机制。",
+        "每张图注明对象、期间、单位、口径和刷新时间。异常发生后，还须明确查询路径与处理责任；聚合图只能帮助定位，不能独立完成因果解释。"
+      ],
+      "detailRef": {
+        "chapter": "05_statistics_dashboard",
+        "section": "从统计表到看板",
+        "anchor": "从统计表到看板"
+      },
+      "sourceSection": "从统计表到看板",
+      "visual": {
+        "kind": "flow",
+        "items": [
+          "概览",
+          "比较",
+          "解释",
+          "下钻",
+          "行动"
+        ]
+      },
+      "layout": "stack",
+      "lessonNumber": 5
+    },
+    {
+      "section": "看板类型",
+      "kind": "concept",
+      "title": "看板类型与使用任务",
+      "lead": "角色职责和决策周期决定信息层级。",
+      "body": [
+        "战略看板汇总长期目标、目标差距与趋势；分析看板支持分组、过滤和分布探索；运营看板突出当前状态、待处理事项和及时告警。三者可以使用同一数据，但信息密度和更新频率不同。",
+        "收入分布、履约表现与质量问题的比较属于分析型任务，可产生需要下钻核查的候选机制。图表中的差异提供描述性线索，其原因仍须由进一步证据检验。"
+      ],
+      "detailRef": {
+        "chapter": "05_statistics_dashboard",
+        "section": "看板类型",
+        "anchor": "看板类型"
+      },
+      "sourceSection": "看板类型",
+      "visual": {
+        "kind": "table",
+        "headers": [
+          "类型",
+          "主要问题",
+          "关键能力"
+        ],
+        "rows": [
+          [
+            "战略",
+            "目标是否达成？",
+            "目标与趋势"
+          ],
+          [
+            "分析",
+            "差异从何而来？",
+            "分组与下钻"
+          ],
+          [
+            "运营",
+            "现在处理什么？",
+            "状态与任务"
+          ]
+        ]
+      },
+      "layout": "stack",
+      "lessonNumber": 5
+    },
+    {
+      "section": "看板的运营节奏",
+      "kind": "concept",
+      "title": "看板的运营维护与复核",
+      "lead": "刷新、查看、处置和回访需要明确责任。",
+      "body": [
+        "明确刷新频率与失败策略，指定日常查看者和异常负责人。关键质量规则失败时，应决定阻断相关指标、加注警告或使用经过验证的替代资料。",
+        "异常调查和处置记录进入复核，保存当时数据、口径和行动依据。行动后指标变化提供新观察；确认改善由该行动引起，仍需实验或适当的观测性设计。"
+      ],
+      "detailRef": {
+        "chapter": "05_statistics_dashboard",
+        "section": "看板的运营节奏",
+        "anchor": "看板的运营节奏"
+      },
+      "sourceSection": "看板的运营节奏",
+      "visual": {
+        "kind": "flow",
+        "items": [
+          "刷新与检验",
+          "发现偏离",
+          "分派责任",
+          "处置记录",
+          "结果复盘"
+        ]
+      },
+      "layout": "stack",
+      "lessonNumber": 5
+    },
+    {
+      "section": "Rolls-Royce 的发动机维护与备件管理",
+      "kind": "case",
+      "title": "Rolls-Royce 案例：服务与备件看板",
+      "lead": "设备服务风险需要与需求、地点和运输条件关联。",
+      "body": [
+        "Databricks 的公开制造业资料介绍 Rolls-Royce Civil Aerospace 使用发动机及服务网络数据支持库存规划与备件位置安排；企业数字化材料还讨论制造和服务的数据整合。",
+        "在此应用背景下，服务与备件看板可依次呈现服务风险、备件可得率、地点需求、库存及运输时延，并支持调拨或采购比较。该结构属于分析示例；需求预测与资源选择还需各自的模型与输入依据。"
+      ],
+      "detailRef": {
+        "chapter": "05_statistics_dashboard",
+        "section": "Rolls-Royce 的发动机维护与备件管理",
+        "anchor": "rolls-royce-的发动机维护与备件管理"
+      },
+      "sourceSection": "Rolls-Royce 的发动机维护与备件管理",
+      "visual": {
+        "kind": "flow",
+        "items": [
+          "服务风险",
+          "备件需求",
+          "地点库存",
+          "运输约束",
+          "调拨方案"
+        ]
+      },
+      "layout": "stack",
+      "lessonNumber": 5
+    },
+    {
+      "kind": "concept",
+      "section": "概念与方法",
+      "title": "制造看板的五种测量对象",
+      "lead": "同一产线需要从交付、质量、时间与存量共同观察。",
+      "body": [
+        "准时交付率（OTD）衡量规定队列按承诺完成的比例，良率衡量同检验范围内合格件占比。设备综合效率（OEE）用良品理想加工工时除以计划生产时间，混合产品时要统一理想工时口径。",
+        "在制品（WIP）是某时点已投入而未完成的对象；生产周期是指定起点至终点的时长。交付率稳定可能伴随库存缓冲增加，OEE变化也可能来自停机或产品组合变化，需要回到批次和设备记录核对。"
+      ],
+      "layout": "split",
+      "detailRef": {
+        "chapter": "05_statistics_dashboard",
+        "section": "半导体制造看板的分析次序",
+        "anchor": "半导体制造看板的分析次序"
+      },
+      "sourceSection": "半导体制造看板的分析次序",
+      "visual": {
+        "kind": "cards",
+        "items": [
+          {
+            "label": "交付与质量",
+            "detail": "OTD、良率"
+          },
+          {
+            "label": "时间使用",
+            "detail": "OEE、完成周期"
+          },
+          {
+            "label": "状态存量",
+            "detail": "WIP及其时间平均"
+          }
+        ]
+      },
+      "lessonNumber": 5
+    },
+    {
+      "section": "半导体制造看板的分析次序",
+      "kind": "case",
+      "title": "制造看板的分层分析次序",
+      "lead": "先展示系统结果，再分解构成和调查过程。",
+      "body": [
+        "第一层并列到期准时交付率（OTD）、最终良率、设备综合效率（OEE）、平均在制量（WIP）和完成批次周期，注明分母、截止时间与质量状态；OEE 使用理想良品工时口径。",
+        "第二层按产品组合和工站分解，第三层定位批次、停机和工艺路径。OEE 下降且 WIP 上升可能对应故障、换线或需求变化；OTD 暂时稳定可能由缓冲库存维持，应逐项查询证据。"
+      ],
+      "detailRef": {
+        "chapter": "05_statistics_dashboard",
+        "section": "半导体制造看板的分析次序",
+        "anchor": "半导体制造看板的分析次序"
+      },
+      "sourceSection": "半导体制造看板的分析次序",
+      "visual": {
+        "kind": "flow",
+        "items": [
+          "系统指标",
+          "组合与工站分解",
+          "异常批次",
+          "机制验证",
+          "处置"
+        ]
+      },
+      "layout": "stack",
+      "lessonNumber": 5
+    },
+    {
+      "section": "人工智能辅助图表解释",
+      "kind": "concept",
+      "title": "人工智能辅助图表解释的核查",
+      "lead": "观测事实、候选机制与验证查询需要分别陈述。",
+      "body": [
+        "“第 \\(6\\) 天 \\(50/500=10\\%\\)，超过算例控制上界”是可核对事实；“设备或产品组合可能变化”是候选机制；“查询维护日志和同日产线构成”是验证计划。",
+        "输入应包含原始聚合表、单位、口径与版本，并配图。核查数字是否来自表、趋势方向是否正确、是否把相关写成因果；自动注释需要保存对应资料。"
+      ],
+      "detailRef": {
+        "chapter": "05_statistics_dashboard",
+        "section": "人工智能辅助图表解释",
+        "anchor": "人工智能辅助图表解释"
+      },
+      "sourceSection": "人工智能辅助图表解释",
+      "visual": {
+        "kind": "flow",
+        "items": [
+          "观测事实",
+          "候选机制",
+          "验证查询",
+          "结果复核"
+        ]
+      },
+      "layout": "stack",
+      "lessonNumber": 5
+    },
+    {
+      "section": "描述统计计算",
+      "kind": "experiment",
+      "title": "实验任务：日运营统计与看板",
+      "lead": "对同一输入资料完成摘要、异常标记和下钻设计。",
+      "body": [
+        "文件 `daily_operations.csv` 含 \\(2026\\) 年 \\(3\\) 月的 \\(12\\) 个经营日期，字段包括收入、订单数、已交付与准时数、日平均延期、待处理数和质量问题数。日期有间隔，履约统计采用已交付订单口径。",
+        "下表两行用于验算，完整计算使用文件全部记录。输出收入摘要、原始趋势、异常日期、质量状态及明细查询方案；待处理订单是存量，应取最新状态或按时间平均，不能跨日机械加总。"
+      ],
+      "detailRef": {
+        "chapter": "05_statistics_dashboard",
+        "section": "描述统计计算",
+        "anchor": "描述统计计算"
+      },
+      "sourceSection": "描述统计计算",
+      "visual": {
+        "kind": "table",
+        "headers": [
+          "输入记录",
+          "收入/元",
+          "准时数／交付数"
+        ],
+        "rows": [
+          [
+            "3 月 1 日",
+            "\\(4800\\)",
+            "\\(1/1\\)"
+          ],
+          [
+            "3 月 2 日",
+            "\\(9000\\)",
+            "\\(0/1\\)"
+          ],
+          [
+            "两行汇总",
+            "\\(13800\\)",
+            "\\(1/2\\)"
+          ]
+        ]
+      },
+      "layout": "stack",
+      "lessonNumber": 5
+    },
+    {
+      "section": "描述统计计算",
+      "kind": "experiment",
+      "title": "实验核对：完整样本的预期摘要",
+      "lead": "累计量、分布量、比率和最新存量采用不同汇总方式。",
+      "body": [
+        "完整 \\(12\\) 行收入和为 \\(71350\\) 元，中位数 \\(5100\\) 元，四分位距 \\(2875\\) 元；IQR 规则标记 \\(3\\) 月 \\(14\\) 日的 \\(13500\\) 元收入。",
+        "已交付准时率按总准时数除以总交付数计算，延期按交付件数加权。本样例每日交付一单，故日均值与加权值一致；更一般资料不能直接平均每日比率。"
+      ],
+      "detailRef": {
+        "chapter": "05_statistics_dashboard",
+        "section": "描述统计计算",
+        "anchor": "描述统计计算"
+      },
+      "sourceSection": "描述统计计算",
+      "layout": "stack",
+      "visual": {
+        "kind": "table",
+        "headers": [
+          "摘要",
+          "预期值",
+          "口径"
+        ],
+        "rows": [
+          [
+            "收入平均／标准差",
+            "\\(5945.83\\)／\\(2987.05\\) 元",
+            "12 个观测日；样本标准差"
+          ],
+          [
+            "已交付准时率",
+            "\\(7/12\\approx0.5833\\)",
+            "合并准时数与交付数"
+          ],
+          [
+            "平均延期",
+            "\\(0.75\\) 天",
+            "按已交付订单数加权"
+          ],
+          [
+            "最新待处理／质量项",
+            "\\(10\\) 单／\\(6\\) 项",
+            "最新存量／期间问题总数"
+          ]
+        ]
+      },
+      "lessonNumber": 5
+    },
+    {
+      "section": "由观察形成管理解释",
+      "kind": "summary",
+      "title": "管理解释的证据层次",
+      "lead": "已知事实、候选机制和待验证问题应有清楚边界。",
+      "body": [
+        "在本样例中，完整序列显示高收入日影响均值，均值高于中位数；已交付准时率为 \\(7/12\\)，期间质量问题计数合计为 \\(6\\)，但不表示有 \\(6\\) 张不同问题订单。",
+        "下钻可查询高收入日的订单构成，并核对质量问题与延期发生是否重合。即使重合，也只能形成关联线索，不能直接断定质量问题导致履约恶化。"
+      ],
+      "detailRef": {
+        "chapter": "05_statistics_dashboard",
+        "section": "由观察形成管理解释",
+        "anchor": "由观察形成管理解释"
+      },
+      "sourceSection": "由观察形成管理解释",
+      "visual": {
+        "kind": "table",
+        "headers": [
+          "陈述层次",
+          "示例"
+        ],
+        "rows": [
+          [
+            "观测事实",
+            "均值高于中位数"
+          ],
+          [
+            "候选机制",
+            "少数高值订单可能影响分布"
+          ],
+          [
+            "验证行动",
+            "下钻订单并核查重复计数"
+          ],
+          [
+            "解释边界",
+            "尚不能断言因果关系"
+          ]
+        ]
+      },
+      "layout": "stack",
+      "lessonNumber": 5
+    },
+    {
+      "section": "看板结果的核查",
+      "kind": "summary",
+      "title": "可复核的运营看板",
+      "lead": "统计表达、运营机制与界面口径需要相互一致。",
+      "body": [
+        "统计摘要保留中心、离散、尾部与阈值；分组比较说明权重，时间视图保留原值；控制图与排队模型明确其稳定性、独立性和边界条件。每个推断都受相应条件约束。",
+        "看板应注明字段、分子分母、范围、基准与质量，并提供明细下钻。报告将描述事实、未来预测、因果判断和行动建议分别说明，保存可复算资料。"
+      ],
+      "detailRef": {
+        "chapter": "05_statistics_dashboard",
+        "section": "看板结果的核查",
+        "anchor": "看板结果的核查"
+      },
+      "sourceSection": "看板结果的核查",
+      "visual": {
+        "kind": "flow",
+        "items": [
+          "指标口径",
+          "原始与汇总",
+          "基准与质量",
+          "明细下钻",
+          "解释边界"
+        ]
+      },
+      "layout": "stack",
+      "lessonNumber": 5
+    }
+  ],
+  "id": "05_statistics_dashboard",
+  "chapter": "05_statistics_dashboard",
+  "lectureNumber": 5
+}

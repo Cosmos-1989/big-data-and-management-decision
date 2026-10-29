@@ -1,0 +1,4022 @@
+{
+  "decks": 16,
+  "slides": 712,
+  "cases": 80,
+  "caseCountsByLesson": {
+    "1": 5,
+    "2": 5,
+    "3": 5,
+    "4": 5,
+    "5": 5,
+    "6": 5,
+    "7": 5,
+    "8": 5,
+    "9": 5,
+    "10": 5,
+    "11": 5,
+    "12": 5,
+    "13": 5,
+    "14": 5,
+    "15": 5,
+    "16": 5
+  },
+  "uniqueSourceUrls": 84,
+  "reusedSourcesForHumanReview": {},
+  "terms": [
+    {
+      "lesson": 1,
+      "deck": "01_intro",
+      "term": "数据仓库",
+      "firstPage": 6,
+      "definitionPage": 6,
+      "explanation": "数据仓库面向查询与分析，汇集多个业务来源的数据，按主题保存历史记录及约定口径。"
+    },
+    {
+      "lesson": 1,
+      "deck": "01_intro",
+      "term": "ETL",
+      "firstPage": 6,
+      "definitionPage": 6,
+      "explanation": "ETL指抽取、转换、装载：从源系统取得数据，完成清洗及结构转换，再写入目标系统。"
+    },
+    {
+      "lesson": 1,
+      "deck": "01_intro",
+      "term": "OLAP",
+      "firstPage": 7,
+      "definitionPage": 7,
+      "explanation": "联机分析处理（OLAP）支持按时间、地区、产品等维度汇总、切换及细查数据。"
+    },
+    {
+      "lesson": 1,
+      "deck": "01_intro",
+      "term": "报表系统",
+      "firstPage": 7,
+      "definitionPage": 7,
+      "explanation": "报表系统把查询结果按约定版式组织成表格或图形，供汇报、监控与核对。"
+    },
+    {
+      "lesson": 1,
+      "deck": "01_intro",
+      "term": "维度",
+      "firstPage": 7,
+      "definitionPage": 7,
+      "explanation": "维度是用于分组或切换观察角度的业务属性。"
+    },
+    {
+      "lesson": 1,
+      "deck": "01_intro",
+      "term": "BI",
+      "firstPage": 8,
+      "definitionPage": 8,
+      "explanation": "商业智能（BI）汇总、查询与展示经营事实，形成共同信息基础。"
+    },
+    {
+      "lesson": 1,
+      "deck": "01_intro",
+      "term": "DSS",
+      "firstPage": 8,
+      "definitionPage": 8,
+      "explanation": "决策支持系统（DSS）结合数据、模型及交互式情景分析，比较不同预算或排程方案。"
+    },
+    {
+      "lesson": 1,
+      "deck": "01_intro",
+      "term": "KPI",
+      "firstPage": 9,
+      "definitionPage": 9,
+      "explanation": "关键绩效指标（KPI）按明确规则汇总经营表现。"
+    },
+    {
+      "lesson": 1,
+      "deck": "01_intro",
+      "term": "代理指标",
+      "firstPage": 10,
+      "definitionPage": 10,
+      "explanation": "间接反映目标的可观测量。"
+    },
+    {
+      "lesson": 1,
+      "deck": "01_intro",
+      "term": "潜在结果",
+      "firstPage": 15,
+      "definitionPage": 15,
+      "explanation": "采取行动后的潜在结果；同一订单实际只经历所选行动，其他潜在结果无法同时观测。"
+    },
+    {
+      "lesson": 1,
+      "deck": "01_intro",
+      "term": "损失函数",
+      "firstPage": 15,
+      "definitionPage": 15,
+      "explanation": "损失函数把结果换算为业务代价。"
+    },
+    {
+      "lesson": 1,
+      "deck": "01_intro",
+      "term": "条件期望",
+      "firstPage": 15,
+      "definitionPage": 15,
+      "explanation": "条件期望是在状态下，按结果概率加权的平均损失。"
+    },
+    {
+      "lesson": 1,
+      "deck": "01_intro",
+      "term": "封测",
+      "firstPage": 20,
+      "definitionPage": 20,
+      "explanation": "半导体封装与测试简称封测。"
+    },
+    {
+      "lesson": 1,
+      "deck": "01_intro",
+      "term": "先验",
+      "firstPage": 22,
+      "definitionPage": 22,
+      "explanation": "先验概率表示观察本次信号前对未知状态的判断。"
+    },
+    {
+      "lesson": 1,
+      "deck": "01_intro",
+      "term": "似然",
+      "firstPage": 22,
+      "definitionPage": 22,
+      "explanation": "似然表示某状态下出现该信号的概率。"
+    },
+    {
+      "lesson": 1,
+      "deck": "01_intro",
+      "term": "后验",
+      "firstPage": 22,
+      "definitionPage": 22,
+      "explanation": "后验概率表示观察信号后更新的状态判断。"
+    },
+    {
+      "lesson": 1,
+      "deck": "01_intro",
+      "term": "贝叶斯公式",
+      "firstPage": 22,
+      "definitionPage": 22,
+      "explanation": "以先验乘似然得到联合概率，再除以信号总概率完成归一化。"
+    },
+    {
+      "lesson": 1,
+      "deck": "01_intro",
+      "term": "EVSI",
+      "firstPage": 28,
+      "definitionPage": 28,
+      "explanation": "无检测损失减去按样本信号决策的损失，为样本信息价值。"
+    },
+    {
+      "lesson": 1,
+      "deck": "01_intro",
+      "term": "EVPI",
+      "firstPage": 28,
+      "definitionPage": 28,
+      "explanation": "无检测损失减去完全获知状态时的损失，为完全信息价值。"
+    },
+    {
+      "lesson": 1,
+      "deck": "01_intro",
+      "term": "马尔可夫性质",
+      "firstPage": 37,
+      "definitionPage": 37,
+      "explanation": "给定当前状态和行动后，下一期状态分布不再依赖更早历史。"
+    },
+    {
+      "lesson": 1,
+      "deck": "01_intro",
+      "term": "CRISP-DM",
+      "firstPage": 41,
+      "definitionPage": 41,
+      "explanation": "跨行业数据挖掘标准流程，规定分析项目各阶段及其联系。"
+    },
+    {
+      "lesson": 1,
+      "deck": "01_intro",
+      "term": "OCI",
+      "firstPage": 46,
+      "definitionPage": 46,
+      "explanation": "Oracle Cloud Infrastructure，甲骨文云基础设施。"
+    },
+    {
+      "lesson": 1,
+      "deck": "01_intro",
+      "term": "校准",
+      "firstPage": 46,
+      "definitionPage": 46,
+      "explanation": "用真实观测校核、调整情景分布和模拟器。"
+    },
+    {
+      "lesson": 1,
+      "deck": "01_intro",
+      "term": "蒙特卡罗",
+      "firstPage": 47,
+      "definitionPage": 47,
+      "explanation": "蒙特卡罗方法通过随机抽样近似求解。"
+    },
+    {
+      "lesson": 1,
+      "deck": "01_intro",
+      "term": "AI",
+      "firstPage": 49,
+      "definitionPage": 49,
+      "explanation": "人工智能。"
+    },
+    {
+      "lesson": 1,
+      "deck": "01_intro",
+      "term": "SKU",
+      "firstPage": 50,
+      "definitionPage": 50,
+      "explanation": "用于区分可销售产品规格的库存单位。"
+    },
+    {
+      "lesson": 2,
+      "deck": "02_enterprise_data_model",
+      "term": "CRM",
+      "firstPage": 1,
+      "definitionPage": 1,
+      "explanation": "记录客户身份、销售交互及服务过程的业务系统。"
+    },
+    {
+      "lesson": 2,
+      "deck": "02_enterprise_data_model",
+      "term": "主键",
+      "firstPage": 2,
+      "definitionPage": 2,
+      "explanation": "记录的唯一标识。"
+    },
+    {
+      "lesson": 2,
+      "deck": "02_enterprise_data_model",
+      "term": "事实粒度",
+      "firstPage": 2,
+      "definitionPage": 2,
+      "explanation": "每行代表哪项业务事实。"
+    },
+    {
+      "lesson": 2,
+      "deck": "02_enterprise_data_model",
+      "term": "数据血缘",
+      "firstPage": 2,
+      "definitionPage": 2,
+      "explanation": "记录源数据与转换步骤。"
+    },
+    {
+      "lesson": 2,
+      "deck": "02_enterprise_data_model",
+      "term": "元数据",
+      "firstPage": 2,
+      "definitionPage": 2,
+      "explanation": "描述结构、含义、来源、责任与版本。"
+    },
+    {
+      "lesson": 2,
+      "deck": "02_enterprise_data_model",
+      "term": "AI",
+      "firstPage": 5,
+      "definitionPage": 5,
+      "explanation": "以计算方法执行预测、生成或决策等任务。"
+    },
+    {
+      "lesson": 2,
+      "deck": "02_enterprise_data_model",
+      "term": "快照",
+      "firstPage": 6,
+      "definitionPage": 6,
+      "explanation": "快照记录数据表在某个版本的状态。"
+    },
+    {
+      "lesson": 2,
+      "deck": "02_enterprise_data_model",
+      "term": "模式",
+      "firstPage": 6,
+      "definitionPage": 6,
+      "explanation": "模式规定字段名称、类型及结构。"
+    },
+    {
+      "lesson": 2,
+      "deck": "02_enterprise_data_model",
+      "term": "模式演化",
+      "firstPage": 6,
+      "definitionPage": 6,
+      "explanation": "在兼容规则下修改字段名称、类型及结构。"
+    },
+    {
+      "lesson": 2,
+      "deck": "02_enterprise_data_model",
+      "term": "开放表格式",
+      "firstPage": 6,
+      "definitionPage": 6,
+      "explanation": "规定文件、快照与模式演化的组织方式，供兼容引擎读取。"
+    },
+    {
+      "lesson": 2,
+      "deck": "02_enterprise_data_model",
+      "term": "对象存储",
+      "firstPage": 6,
+      "definitionPage": 6,
+      "explanation": "以带唯一标识的对象保存文件。"
+    },
+    {
+      "lesson": 2,
+      "deck": "02_enterprise_data_model",
+      "term": "设备综合效率",
+      "firstPage": 7,
+      "definitionPage": 7,
+      "explanation": "良品理想工时占计划生产时间的比例。"
+    },
+    {
+      "lesson": 2,
+      "deck": "02_enterprise_data_model",
+      "term": "实体",
+      "firstPage": 9,
+      "definitionPage": 9,
+      "explanation": "实体具有稳定身份，属性描述对象，关系表达对象联系。"
+    },
+    {
+      "lesson": 2,
+      "deck": "02_enterprise_data_model",
+      "term": "超键",
+      "firstPage": 11,
+      "definitionPage": 11,
+      "explanation": "能在所有合法实例中唯一识别记录。"
+    },
+    {
+      "lesson": 2,
+      "deck": "02_enterprise_data_model",
+      "term": "候选键",
+      "firstPage": 11,
+      "definitionPage": 11,
+      "explanation": "不可再删除任何属性的超键。"
+    },
+    {
+      "lesson": 2,
+      "deck": "02_enterprise_data_model",
+      "term": "自然键",
+      "firstPage": 11,
+      "definitionPage": 11,
+      "explanation": "使用已有业务属性识别对象。"
+    },
+    {
+      "lesson": 2,
+      "deck": "02_enterprise_data_model",
+      "term": "代理键",
+      "firstPage": 11,
+      "definitionPage": 11,
+      "explanation": "另行赋予的编号，仍须配合业务唯一性规则。"
+    },
+    {
+      "lesson": 2,
+      "deck": "02_enterprise_data_model",
+      "term": "外键",
+      "firstPage": 11,
+      "definitionPage": 11,
+      "explanation": "把本表记录关联到另一表的键。"
+    },
+    {
+      "lesson": 2,
+      "deck": "02_enterprise_data_model",
+      "term": "ER",
+      "firstPage": 14,
+      "definitionPage": 14,
+      "explanation": "以对象、属性及关系表达业务结构。"
+    },
+    {
+      "lesson": 2,
+      "deck": "02_enterprise_data_model",
+      "term": "函数依赖",
+      "firstPage": 16,
+      "definitionPage": 16,
+      "explanation": "相同决定属性的值必有相同被决定属性的值，适用于所有合法实例。"
+    },
+    {
+      "lesson": 2,
+      "deck": "02_enterprise_data_model",
+      "term": "第三范式",
+      "firstPage": 16,
+      "definitionPage": 16,
+      "explanation": "每个非平凡函数依赖的决定项是超键，或被决定属性属于某一候选键。"
+    },
+    {
+      "lesson": 2,
+      "deck": "02_enterprise_data_model",
+      "term": "事实表",
+      "firstPage": 19,
+      "definitionPage": 19,
+      "explanation": "以事件或状态保存分析所需业务事实。"
+    },
+    {
+      "lesson": 2,
+      "deck": "02_enterprise_data_model",
+      "term": "维度",
+      "firstPage": 19,
+      "definitionPage": 19,
+      "explanation": "客户、产品、日期等说明分析角度的属性。"
+    },
+    {
+      "lesson": 2,
+      "deck": "02_enterprise_data_model",
+      "term": "KPI",
+      "firstPage": 24,
+      "definitionPage": 24,
+      "explanation": "按规定口径衡量关键经营表现的量。"
+    },
+    {
+      "lesson": 2,
+      "deck": "02_enterprise_data_model",
+      "term": "CT",
+      "firstPage": 23,
+      "definitionPage": 23,
+      "explanation": "规定起点至完工的时长。"
+    },
+    {
+      "lesson": 2,
+      "deck": "02_enterprise_data_model",
+      "term": "WIP",
+      "firstPage": 23,
+      "definitionPage": 23,
+      "explanation": "某时点已进入生产、尚未完成的对象数。"
+    },
+    {
+      "lesson": 2,
+      "deck": "02_enterprise_data_model",
+      "term": "OTD",
+      "firstPage": 9,
+      "definitionPage": 9,
+      "explanation": "比较按承诺完成的对象与规定队列。"
+    },
+    {
+      "lesson": 2,
+      "deck": "02_enterprise_data_model",
+      "term": "状态机",
+      "firstPage": 27,
+      "definitionPage": 27,
+      "explanation": "用明确的状态和允许转换描述操作。"
+    },
+    {
+      "lesson": 2,
+      "deck": "02_enterprise_data_model",
+      "term": "幂等请求",
+      "firstPage": 27,
+      "definitionPage": 27,
+      "explanation": "重复提交同一操作时不产生额外业务效果。"
+    },
+    {
+      "lesson": 2,
+      "deck": "02_enterprise_data_model",
+      "term": "语义层",
+      "firstPage": 31,
+      "definitionPage": 31,
+      "explanation": "把表、字段与业务对象及指标定义对应起来，供不同工具使用一致口径。"
+    },
+    {
+      "lesson": 2,
+      "deck": "02_enterprise_data_model",
+      "term": "委托人",
+      "firstPage": 32,
+      "definitionPage": 32,
+      "explanation": "把任务交给代理人但不能完全观察其努力的一方。"
+    },
+    {
+      "lesson": 2,
+      "deck": "02_enterprise_data_model",
+      "term": "代理人",
+      "firstPage": 32,
+      "definitionPage": 32,
+      "explanation": "接受任务并依据合同选择努力的一方。"
+    },
+    {
+      "lesson": 2,
+      "deck": "02_enterprise_data_model",
+      "term": "风险厌恶",
+      "firstPage": 32,
+      "definitionPage": 32,
+      "explanation": "在期望收入相同的情况下倾向于较少收入波动。"
+    },
+    {
+      "lesson": 2,
+      "deck": "02_enterprise_data_model",
+      "term": "CE",
+      "firstPage": 34,
+      "definitionPage": 34,
+      "explanation": "与随机净收入带来相同期望效用的确定金额。"
+    },
+    {
+      "lesson": 2,
+      "deck": "02_enterprise_data_model",
+      "term": "Ontology",
+      "firstPage": 42,
+      "definitionPage": 42,
+      "explanation": "规定业务对象、属性、关系及相关规则。"
+    },
+    {
+      "lesson": 3,
+      "deck": "03_sql_kpi",
+      "term": "SQL",
+      "firstPage": 1,
+      "definitionPage": 1,
+      "explanation": "结构化查询语言声明要查询的数据及其条件，由数据库选择执行步骤。"
+    },
+    {
+      "lesson": 3,
+      "deck": "03_sql_kpi",
+      "term": "粒度",
+      "firstPage": 1,
+      "definitionPage": 1,
+      "explanation": "一行代表什么事实。"
+    },
+    {
+      "lesson": 3,
+      "deck": "03_sql_kpi",
+      "term": "主键",
+      "firstPage": 1,
+      "definitionPage": 1,
+      "explanation": "唯一标识该记录。"
+    },
+    {
+      "lesson": 3,
+      "deck": "03_sql_kpi",
+      "term": "KPI",
+      "firstPage": 1,
+      "definitionPage": 1,
+      "explanation": "按统一对象、分子分母、时间、单位、权限和责任定义的关键经营量。"
+    },
+    {
+      "lesson": 3,
+      "deck": "03_sql_kpi",
+      "term": "统计状态",
+      "firstPage": 9,
+      "definitionPage": 2,
+      "explanation": "为后续合并保存的和、计数等基础量。"
+    },
+    {
+      "lesson": 3,
+      "deck": "03_sql_kpi",
+      "term": "关系代数",
+      "firstPage": 6,
+      "definitionPage": 6,
+      "explanation": "用一组作用于关系的运算表达查询。"
+    },
+    {
+      "lesson": 3,
+      "deck": "03_sql_kpi",
+      "term": "多重集",
+      "firstPage": 8,
+      "definitionPage": 8,
+      "explanation": "允许相同取值重复出现，并保留出现次数。"
+    },
+    {
+      "lesson": 3,
+      "deck": "03_sql_kpi",
+      "term": "GMV",
+      "firstPage": 10,
+      "definitionPage": 10,
+      "explanation": "平台促成的订单金额，按披露口径扣除退款并含运费、关税及增值税。"
+    },
+    {
+      "lesson": 3,
+      "deck": "03_sql_kpi",
+      "term": "GPV",
+      "firstPage": 10,
+      "definitionPage": 10,
+      "explanation": "由Shopify Payments处理的GMV。"
+    },
+    {
+      "lesson": 3,
+      "deck": "03_sql_kpi",
+      "term": "MRR",
+      "firstPage": 10,
+      "definitionPage": 10,
+      "explanation": "根据期末商户与订阅费率计算的月度经常性收入指标。"
+    },
+    {
+      "lesson": 3,
+      "deck": "03_sql_kpi",
+      "term": "事实表",
+      "firstPage": 12,
+      "definitionPage": 12,
+      "explanation": "保存交易、事件或状态。"
+    },
+    {
+      "lesson": 3,
+      "deck": "03_sql_kpi",
+      "term": "维度表",
+      "firstPage": 12,
+      "definitionPage": 12,
+      "explanation": "保存描述事实的属性。"
+    },
+    {
+      "lesson": 3,
+      "deck": "03_sql_kpi",
+      "term": "外键",
+      "firstPage": 4,
+      "definitionPage": 4,
+      "explanation": "事实中的引用标识。"
+    },
+    {
+      "lesson": 3,
+      "deck": "03_sql_kpi",
+      "term": "引用完整性",
+      "firstPage": 12,
+      "definitionPage": 12,
+      "explanation": "非空外键能够找到对应对象。"
+    },
+    {
+      "lesson": 3,
+      "deck": "03_sql_kpi",
+      "term": "半连接",
+      "firstPage": 15,
+      "definitionPage": 15,
+      "explanation": "只保留左侧存在匹配的行，不因右侧多次匹配而复制左行。"
+    },
+    {
+      "lesson": 3,
+      "deck": "03_sql_kpi",
+      "term": "OTD",
+      "firstPage": 16,
+      "definitionPage": 16,
+      "explanation": "规定队列中按承诺完成的对象占比。"
+    },
+    {
+      "lesson": 3,
+      "deck": "03_sql_kpi",
+      "term": "CT",
+      "firstPage": 24,
+      "definitionPage": 24,
+      "explanation": "预先规定的开始到完工时长。"
+    },
+    {
+      "lesson": 3,
+      "deck": "03_sql_kpi",
+      "term": "OEE",
+      "firstPage": 25,
+      "definitionPage": 25,
+      "explanation": "良品理想工时占计划生产时间的比例。"
+    },
+    {
+      "lesson": 3,
+      "deck": "03_sql_kpi",
+      "term": "WIP",
+      "firstPage": 29,
+      "definitionPage": 29,
+      "explanation": "某时点已进入生产但尚未完成的对象数量。"
+    },
+    {
+      "lesson": 3,
+      "deck": "03_sql_kpi",
+      "term": "NULL",
+      "firstPage": 34,
+      "definitionPage": 34,
+      "explanation": "当前未给出一个普通字段值，其业务原因须另行确定。"
+    },
+    {
+      "lesson": 3,
+      "deck": "03_sql_kpi",
+      "term": "三值逻辑",
+      "firstPage": 34,
+      "definitionPage": 34,
+      "explanation": "SQL比较有真、假、未知三种结果。"
+    },
+    {
+      "lesson": 3,
+      "deck": "03_sql_kpi",
+      "term": "变形测试",
+      "firstPage": 48,
+      "definitionPage": 48,
+      "explanation": "改变输入并核对输出应保持的关系，以检验程序。"
+    },
+    {
+      "lesson": 3,
+      "deck": "03_sql_kpi",
+      "term": "参数绑定",
+      "firstPage": 49,
+      "definitionPage": 49,
+      "explanation": "把用户输入的数据值与SQL结构分开。"
+    },
+    {
+      "lesson": 3,
+      "deck": "03_sql_kpi",
+      "term": "KV",
+      "firstPage": 51,
+      "definitionPage": 51,
+      "explanation": "注意力计算产生的键和值，后续生成可复用这些中间结果。"
+    },
+    {
+      "lesson": 4,
+      "deck": "04_data_quality",
+      "term": "OTD",
+      "firstPage": 1,
+      "definitionPage": 1,
+      "explanation": "按规定对象队列计算准时交付的比例。"
+    },
+    {
+      "lesson": 4,
+      "deck": "04_data_quality",
+      "term": "数据质量",
+      "firstPage": 1,
+      "definitionPage": 1,
+      "explanation": "对象范围、字段含义、时间、约束与来源足以支持预定用途并满足容许误差。"
+    },
+    {
+      "lesson": 4,
+      "deck": "04_data_quality",
+      "term": "数据血缘",
+      "firstPage": 5,
+      "definitionPage": 5,
+      "explanation": "记录数据的来源和转换关系。"
+    },
+    {
+      "lesson": 4,
+      "deck": "04_data_quality",
+      "term": "数据剖析",
+      "firstPage": 13,
+      "definitionPage": 13,
+      "explanation": "系统汇总数据行数、缺失、不同值、范围、重复及失配等特征。"
+    },
+    {
+      "lesson": 4,
+      "deck": "04_data_quality",
+      "term": "枚举",
+      "firstPage": 9,
+      "definitionPage": 9,
+      "explanation": "字段允许取值的集合。"
+    },
+    {
+      "lesson": 4,
+      "deck": "04_data_quality",
+      "term": "期望",
+      "firstPage": 14,
+      "definitionPage": 14,
+      "explanation": "按概率加权的平均。"
+    },
+    {
+      "lesson": 4,
+      "deck": "04_data_quality",
+      "term": "方差",
+      "firstPage": 14,
+      "definitionPage": 14,
+      "explanation": "围绕期望的平方偏离的平均。"
+    },
+    {
+      "lesson": 4,
+      "deck": "04_data_quality",
+      "term": "协方差",
+      "firstPage": 14,
+      "definitionPage": 14,
+      "explanation": "概括两个变量共同偏离各自期望的方向。"
+    },
+    {
+      "lesson": 4,
+      "deck": "04_data_quality",
+      "term": "MCAR",
+      "firstPage": 17,
+      "definitionPage": 17,
+      "explanation": "记录机会与相关变量无关。"
+    },
+    {
+      "lesson": 4,
+      "deck": "04_data_quality",
+      "term": "MAR",
+      "firstPage": 17,
+      "definitionPage": 17,
+      "explanation": "给定已观测变量后，记录机会不再依赖缺失结果。"
+    },
+    {
+      "lesson": 4,
+      "deck": "04_data_quality",
+      "term": "MNAR",
+      "firstPage": 17,
+      "definitionPage": 17,
+      "explanation": "给定已观测变量后，记录机会仍与缺失结果有关。"
+    },
+    {
+      "lesson": 4,
+      "deck": "04_data_quality",
+      "term": "回归",
+      "firstPage": 19,
+      "definitionPage": 19,
+      "explanation": "用截距和斜率概括变量之间的线性关系。"
+    },
+    {
+      "lesson": 4,
+      "deck": "04_data_quality",
+      "term": "测量误差",
+      "firstPage": 1,
+      "definitionPage": 1,
+      "explanation": "记录值与所研究真值之间的差异。"
+    },
+    {
+      "lesson": 4,
+      "deck": "04_data_quality",
+      "term": "经典误差模型",
+      "firstPage": 19,
+      "definitionPage": 19,
+      "explanation": "测量误差零均值，且独立于真值及结果噪声。"
+    },
+    {
+      "lesson": 4,
+      "deck": "04_data_quality",
+      "term": "识别区间",
+      "firstPage": 22,
+      "definitionPage": 22,
+      "explanation": "与已知资料及约束相容的真值范围。"
+    },
+    {
+      "lesson": 4,
+      "deck": "04_data_quality",
+      "term": "置信区间",
+      "firstPage": 22,
+      "definitionPage": 22,
+      "explanation": "重复抽样程序构造的区间，其置信水平描述该程序覆盖真值的比例。"
+    },
+    {
+      "lesson": 4,
+      "deck": "04_data_quality",
+      "term": "元数据",
+      "firstPage": 28,
+      "definitionPage": 28,
+      "explanation": "描述规则含义、范围和版本的信息。"
+    },
+    {
+      "lesson": 4,
+      "deck": "04_data_quality",
+      "term": "数据契约",
+      "firstPage": 42,
+      "definitionPage": 42,
+      "explanation": "供数方与用数方共同遵守的粒度、单位、空值、取值、刷新及补数约定。"
+    },
+    {
+      "lesson": 4,
+      "deck": "04_data_quality",
+      "term": "数据可观测性",
+      "firstPage": 48,
+      "definitionPage": 48,
+      "explanation": "持续监测数据量、分布、更新时间、模式与血缘等运行状态。"
+    },
+    {
+      "lesson": 4,
+      "deck": "04_data_quality",
+      "term": "MTTD",
+      "firstPage": 49,
+      "definitionPage": 49,
+      "explanation": "发生到发现的平均延迟。"
+    },
+    {
+      "lesson": 4,
+      "deck": "04_data_quality",
+      "term": "MTTR",
+      "firstPage": 49,
+      "definitionPage": 49,
+      "explanation": "发现到恢复的平均耗时。"
+    },
+    {
+      "lesson": 4,
+      "deck": "04_data_quality",
+      "term": "RAG",
+      "firstPage": 51,
+      "definitionPage": 51,
+      "explanation": "把检索材料作为模型回答的上下文。"
+    },
+    {
+      "lesson": 4,
+      "deck": "04_data_quality",
+      "term": "哈希",
+      "firstPage": 51,
+      "definitionPage": 51,
+      "explanation": "内容的计算摘要，可用于检测内容是否变化。"
+    },
+    {
+      "lesson": 5,
+      "deck": "05_statistics_dashboard",
+      "term": "ISP",
+      "firstPage": 18,
+      "definitionPage": 18,
+      "explanation": "互联网服务提供商。"
+    },
+    {
+      "lesson": 5,
+      "deck": "05_statistics_dashboard",
+      "term": "SRE",
+      "firstPage": 7,
+      "definitionPage": 7,
+      "explanation": "以工程方法管理服务可靠性的站点可靠性工程。"
+    },
+    {
+      "lesson": 5,
+      "deck": "05_statistics_dashboard",
+      "term": "均值",
+      "firstPage": 1,
+      "definitionPage": 1,
+      "explanation": "观测值之和除以个数。"
+    },
+    {
+      "lesson": 5,
+      "deck": "05_statistics_dashboard",
+      "term": "分位数",
+      "firstPage": 1,
+      "definitionPage": 1,
+      "explanation": "排序中的位置，高分位数靠近高值端。"
+    },
+    {
+      "lesson": 5,
+      "deck": "05_statistics_dashboard",
+      "term": "在制量",
+      "firstPage": 1,
+      "definitionPage": 1,
+      "explanation": "已进入但尚未完成的对象数。"
+    },
+    {
+      "lesson": 5,
+      "deck": "05_statistics_dashboard",
+      "term": "吞吐率",
+      "firstPage": 1,
+      "definitionPage": 1,
+      "explanation": "单位时间的完成量。"
+    },
+    {
+      "lesson": 5,
+      "deck": "05_statistics_dashboard",
+      "term": "下钻",
+      "firstPage": 1,
+      "definitionPage": 1,
+      "explanation": "从汇总指标返回相关明细。"
+    },
+    {
+      "lesson": 5,
+      "deck": "05_statistics_dashboard",
+      "term": "经验分布",
+      "firstPage": 3,
+      "definitionPage": 3,
+      "explanation": "把已有样本各值赋予相同权重，描述各阈值以下的比例。"
+    },
+    {
+      "lesson": 5,
+      "deck": "05_statistics_dashboard",
+      "term": "独立同分布",
+      "firstPage": 3,
+      "definitionPage": 3,
+      "explanation": "各观测相互独立且来自同一概率分布。"
+    },
+    {
+      "lesson": 5,
+      "deck": "05_statistics_dashboard",
+      "term": "中位数",
+      "firstPage": 3,
+      "definitionPage": 3,
+      "explanation": "排序后的中间位置，偶数样本通常取中间两值平均。"
+    },
+    {
+      "lesson": 5,
+      "deck": "05_statistics_dashboard",
+      "term": "标准差",
+      "firstPage": 10,
+      "definitionPage": 10,
+      "explanation": "离均差平方和经规定缩放得到方差，再取平方根，单位与原变量相同。"
+    },
+    {
+      "lesson": 5,
+      "deck": "05_statistics_dashboard",
+      "term": "CV",
+      "firstPage": 10,
+      "definitionPage": 10,
+      "explanation": "标准差与均值之比，是无量纲相对离散程度。"
+    },
+    {
+      "lesson": 5,
+      "deck": "05_statistics_dashboard",
+      "term": "IQR",
+      "firstPage": 11,
+      "definitionPage": 11,
+      "explanation": "第三四分位数与第一四分位数之差。"
+    },
+    {
+      "lesson": 5,
+      "deck": "05_statistics_dashboard",
+      "term": "移动平均",
+      "firstPage": 20,
+      "definitionPage": 20,
+      "explanation": "当前及规定数量的历史观测的平均。"
+    },
+    {
+      "lesson": 5,
+      "deck": "05_statistics_dashboard",
+      "term": "二项分布",
+      "firstPage": 23,
+      "definitionPage": 23,
+      "explanation": "固定次数的独立二元试验中，同概率事件出现的次数分布。"
+    },
+    {
+      "lesson": 5,
+      "deck": "05_statistics_dashboard",
+      "term": "过度离散",
+      "firstPage": 23,
+      "definitionPage": 23,
+      "explanation": "实际波动大于所用概率模型规定的方差。"
+    },
+    {
+      "lesson": 5,
+      "deck": "05_statistics_dashboard",
+      "term": "控制界限",
+      "firstPage": 23,
+      "definitionPage": 23,
+      "explanation": "由概率模型或稳定基准构造的异常波动判别范围。"
+    },
+    {
+      "lesson": 5,
+      "deck": "05_statistics_dashboard",
+      "term": "泊松",
+      "firstPage": 33,
+      "definitionPage": 33,
+      "explanation": "不相交时间区间的到达数独立，均值与区间长度成正比。"
+    },
+    {
+      "lesson": 5,
+      "deck": "05_statistics_dashboard",
+      "term": "M/M/1",
+      "firstPage": 35,
+      "definitionPage": 35,
+      "explanation": "泊松到达、指数服务时长、单个服务台的排队模型。"
+    },
+    {
+      "lesson": 5,
+      "deck": "05_statistics_dashboard",
+      "term": "GI/G/1",
+      "firstPage": 35,
+      "definitionPage": 35,
+      "explanation": "一般独立同分布到达间隔、一般服务时长、单个服务台。"
+    },
+    {
+      "lesson": 5,
+      "deck": "05_statistics_dashboard",
+      "term": "利用率",
+      "firstPage": 36,
+      "definitionPage": 36,
+      "explanation": "到达率与服务率之比，或到达率乘平均服务时间。"
+    },
+    {
+      "lesson": 5,
+      "deck": "05_statistics_dashboard",
+      "term": "稳态",
+      "firstPage": 35,
+      "definitionPage": 35,
+      "explanation": "状态分布不随观察时刻改变。"
+    },
+    {
+      "lesson": 5,
+      "deck": "05_statistics_dashboard",
+      "term": "TTFT",
+      "firstPage": 44,
+      "definitionPage": 44,
+      "explanation": "从请求到达算到第一段输出的时间。"
+    },
+    {
+      "lesson": 5,
+      "deck": "05_statistics_dashboard",
+      "term": "token",
+      "firstPage": 45,
+      "definitionPage": 45,
+      "explanation": "分词器划分的模型文本处理单位。"
+    },
+    {
+      "lesson": 5,
+      "deck": "05_statistics_dashboard",
+      "term": "OTD",
+      "firstPage": 53,
+      "definitionPage": 53,
+      "explanation": "规定队列中按承诺完成的比例。"
+    },
+    {
+      "lesson": 5,
+      "deck": "05_statistics_dashboard",
+      "term": "OEE",
+      "firstPage": 53,
+      "definitionPage": 53,
+      "explanation": "良品理想加工工时除以计划生产时间。"
+    },
+    {
+      "lesson": 6,
+      "deck": "06_ab_testing",
+      "term": "置信区间",
+      "firstPage": 16,
+      "definitionPage": 16,
+      "explanation": "按重复研究中规定覆盖率构造的参数区间"
+    },
+    {
+      "lesson": 6,
+      "deck": "06_ab_testing",
+      "term": "分位数",
+      "firstPage": 16,
+      "definitionPage": 16,
+      "explanation": "累计概率达到指定水平的位置"
+    },
+    {
+      "lesson": 6,
+      "deck": "06_ab_testing",
+      "term": "中心极限定理",
+      "firstPage": 16,
+      "definitionPage": 16,
+      "explanation": "适当条件下标准化样本和趋近正态分布的极限定理"
+    },
+    {
+      "lesson": 6,
+      "deck": "06_ab_testing",
+      "term": "协变量",
+      "firstPage": 26,
+      "definitionPage": 26,
+      "explanation": "用于解释结果差异的辅助特征"
+    },
+    {
+      "lesson": 6,
+      "deck": "06_ab_testing",
+      "term": "交叉拟合",
+      "firstPage": 26,
+      "definitionPage": 26,
+      "explanation": "在其他样本组拟合函数、在留出组计算评价量"
+    },
+    {
+      "lesson": 6,
+      "deck": "06_ab_testing",
+      "term": "序贯检验",
+      "firstPage": 42,
+      "definitionPage": 42,
+      "explanation": "允许按预定规则逐批查看数据并停止的检验"
+    },
+    {
+      "lesson": 6,
+      "deck": "06_ab_testing",
+      "term": "置信序列",
+      "firstPage": 42,
+      "definitionPage": 42,
+      "explanation": "具有全时点共同覆盖保证的一系列区间"
+    },
+    {
+      "lesson": 6,
+      "deck": "06_ab_testing",
+      "term": "并集界",
+      "firstPage": 42,
+      "definitionPage": 42,
+      "explanation": "至少一项事件发生的概率不超过各项概率之和"
+    },
+    {
+      "lesson": 7,
+      "deck": "07_prediction",
+      "term": "数据泄漏",
+      "firstPage": 4,
+      "definitionPage": 4,
+      "explanation": "使用部署时不可得的信息学习或评价模型"
+    },
+    {
+      "lesson": 7,
+      "deck": "07_prediction",
+      "term": "删失",
+      "firstPage": 4,
+      "definitionPage": 4,
+      "explanation": "结果发生时间未被完整观察"
+    },
+    {
+      "lesson": 7,
+      "deck": "07_prediction",
+      "term": "经验风险",
+      "firstPage": 6,
+      "definitionPage": 6,
+      "explanation": "训练样本上的平均预测损失"
+    },
+    {
+      "lesson": 7,
+      "deck": "07_prediction",
+      "term": "正则化",
+      "firstPage": 6,
+      "definitionPage": 6,
+      "explanation": "限制函数范围或惩罚复杂度的学习约束"
+    },
+    {
+      "lesson": 7,
+      "deck": "07_prediction",
+      "term": "超参数",
+      "firstPage": 6,
+      "definitionPage": 6,
+      "explanation": "控制学习方式、需要在训练外选择的设置"
+    },
+    {
+      "lesson": 7,
+      "deck": "07_prediction",
+      "term": "伯努利分布",
+      "firstPage": 11,
+      "definitionPage": 11,
+      "explanation": "只有发生与不发生两种结果的单次观测分布"
+    },
+    {
+      "lesson": 7,
+      "deck": "07_prediction",
+      "term": "似然",
+      "firstPage": 11,
+      "definitionPage": 11,
+      "explanation": "固定观测结果后比较参数对该结果的支持"
+    },
+    {
+      "lesson": 7,
+      "deck": "07_prediction",
+      "term": "对数优势",
+      "firstPage": 11,
+      "definitionPage": 11,
+      "explanation": "发生与不发生概率之比的自然对数"
+    },
+    {
+      "lesson": 7,
+      "deck": "07_prediction",
+      "term": "梯度",
+      "firstPage": 11,
+      "definitionPage": 11,
+      "explanation": "函数对参数各方向的局部变化率"
+    },
+    {
+      "lesson": 7,
+      "deck": "07_prediction",
+      "term": "混淆矩阵",
+      "firstPage": 27,
+      "definitionPage": 27,
+      "explanation": "按实际类别与预测类别交叉形成的四类计数"
+    },
+    {
+      "lesson": 7,
+      "deck": "07_prediction",
+      "term": "TP",
+      "firstPage": 27,
+      "definitionPage": 27,
+      "explanation": "真阳性计数"
+    },
+    {
+      "lesson": 7,
+      "deck": "07_prediction",
+      "term": "FP",
+      "firstPage": 27,
+      "definitionPage": 27,
+      "explanation": "假阳性即误报计数"
+    },
+    {
+      "lesson": 7,
+      "deck": "07_prediction",
+      "term": "TN",
+      "firstPage": 27,
+      "definitionPage": 27,
+      "explanation": "真阴性计数"
+    },
+    {
+      "lesson": 7,
+      "deck": "07_prediction",
+      "term": "FN",
+      "firstPage": 27,
+      "definitionPage": 27,
+      "explanation": "假阴性即漏报计数"
+    },
+    {
+      "lesson": 7,
+      "deck": "07_prediction",
+      "term": "F1",
+      "firstPage": 27,
+      "definitionPage": 27,
+      "explanation": "精准率和召回率的调和平均"
+    },
+    {
+      "lesson": 7,
+      "deck": "07_prediction",
+      "term": "ROC",
+      "firstPage": 30,
+      "definitionPage": 30,
+      "explanation": "不同阈值下真阳性率与假阳性率组成的曲线"
+    },
+    {
+      "lesson": 7,
+      "deck": "07_prediction",
+      "term": "AUC",
+      "firstPage": 30,
+      "definitionPage": 30,
+      "explanation": "ROC 曲线下面积、正负样本的排序概率"
+    },
+    {
+      "lesson": 7,
+      "deck": "07_prediction",
+      "term": "概率校准",
+      "firstPage": 1,
+      "definitionPage": 1,
+      "explanation": "预测概率与同类对象长期事件频率相符"
+    },
+    {
+      "lesson": 7,
+      "deck": "07_prediction",
+      "term": "基础模型",
+      "firstPage": 42,
+      "definitionPage": 42,
+      "explanation": "从大量数据或多个任务学习可复用关系的模型"
+    },
+    {
+      "lesson": 7,
+      "deck": "07_prediction",
+      "term": "预训练",
+      "firstPage": 42,
+      "definitionPage": 42,
+      "explanation": "面向后续任务的初始参数学习过程"
+    },
+    {
+      "lesson": 7,
+      "deck": "07_prediction",
+      "term": "上下文学习",
+      "firstPage": 42,
+      "definitionPage": 42,
+      "explanation": "利用当前输入示例适应而不更新本次参数"
+    },
+    {
+      "lesson": 7,
+      "deck": "07_prediction",
+      "term": "漂移",
+      "firstPage": 22,
+      "definitionPage": 22,
+      "explanation": "输入分布或输入与结果关系随时间变化"
+    },
+    {
+      "lesson": 8,
+      "deck": "08_causality",
+      "term": "一致性",
+      "firstPage": 2,
+      "definitionPage": 2,
+      "explanation": "观察结果等于实际所接受处理版本的潜在结果"
+    },
+    {
+      "lesson": 8,
+      "deck": "08_causality",
+      "term": "干扰",
+      "firstPage": 2,
+      "definitionPage": 2,
+      "explanation": "一个对象结果受其他对象处理状态影响"
+    },
+    {
+      "lesson": 8,
+      "deck": "08_causality",
+      "term": "选择偏差",
+      "firstPage": 2,
+      "definitionPage": 2,
+      "explanation": "比较组原有构成不同所带来的偏差"
+    },
+    {
+      "lesson": 8,
+      "deck": "08_causality",
+      "term": "混杂",
+      "firstPage": 8,
+      "definitionPage": 8,
+      "explanation": "处理选择和结果受到共同原因影响"
+    },
+    {
+      "lesson": 8,
+      "deck": "08_causality",
+      "term": "因果图",
+      "firstPage": 10,
+      "definitionPage": 10,
+      "explanation": "用有向关系表达假定因果结构的图"
+    },
+    {
+      "lesson": 8,
+      "deck": "08_causality",
+      "term": "后门路径",
+      "firstPage": 10,
+      "definitionPage": 10,
+      "explanation": "由指向处理的边开始的非因果关联路径"
+    },
+    {
+      "lesson": 8,
+      "deck": "08_causality",
+      "term": "中介",
+      "firstPage": 10,
+      "definitionPage": 10,
+      "explanation": "传递处理影响的变量"
+    },
+    {
+      "lesson": 8,
+      "deck": "08_causality",
+      "term": "碰撞点",
+      "firstPage": 10,
+      "definitionPage": 10,
+      "explanation": "受到两个原因共同影响的变量"
+    },
+    {
+      "lesson": 8,
+      "deck": "08_causality",
+      "term": "标准化",
+      "firstPage": 19,
+      "definitionPage": 19,
+      "explanation": "按共同目标人群分布平均各特征层的结果"
+    },
+    {
+      "lesson": 8,
+      "deck": "08_causality",
+      "term": "倾向得分",
+      "firstPage": 19,
+      "definitionPage": 19,
+      "explanation": "给定处理前特征后的处理接受概率"
+    },
+    {
+      "lesson": 8,
+      "deck": "08_causality",
+      "term": "匹配",
+      "firstPage": 19,
+      "definitionPage": 19,
+      "explanation": "选择特征或得分接近的观察作为比较参照"
+    },
+    {
+      "lesson": 8,
+      "deck": "08_causality",
+      "term": "AIPW",
+      "firstPage": 30,
+      "definitionPage": 30,
+      "explanation": "结果回归结合逆概率残差校正的效应估计"
+    },
+    {
+      "lesson": 8,
+      "deck": "08_causality",
+      "term": "双重稳健",
+      "firstPage": 30,
+      "definitionPage": 30,
+      "explanation": "一类辅助模型正确即可支持一致估计的性质"
+    },
+    {
+      "lesson": 8,
+      "deck": "08_causality",
+      "term": "一致估计",
+      "firstPage": 30,
+      "definitionPage": 30,
+      "explanation": "样本增大时估计依概率趋近目标"
+    },
+    {
+      "lesson": 8,
+      "deck": "08_causality",
+      "term": "双向固定效应",
+      "firstPage": 42,
+      "definitionPage": 42,
+      "explanation": "同时控制组别固定差异与共同时间冲击"
+    },
+    {
+      "lesson": 8,
+      "deck": "08_causality",
+      "term": "安慰剂检验",
+      "firstPage": 42,
+      "definitionPage": 42,
+      "explanation": "在理论上不应受处理影响的对象或时期检验设计"
+    },
+    {
+      "lesson": 9,
+      "deck": "09_optimization",
+      "term": "线性规划",
+      "firstPage": 9,
+      "definitionPage": 9,
+      "explanation": "目标和约束为线性的连续优化模型"
+    },
+    {
+      "lesson": 9,
+      "deck": "09_optimization",
+      "term": "整数规划",
+      "firstPage": 9,
+      "definitionPage": 9,
+      "explanation": "指定变量必须取整数的优化模型"
+    },
+    {
+      "lesson": 9,
+      "deck": "09_optimization",
+      "term": "MILP",
+      "firstPage": 9,
+      "definitionPage": 9,
+      "explanation": "连续与整数变量并存的线性优化模型"
+    },
+    {
+      "lesson": 9,
+      "deck": "09_optimization",
+      "term": "松弛",
+      "firstPage": 9,
+      "definitionPage": 9,
+      "explanation": "放宽原约束以获得更易求解的模型与界"
+    },
+    {
+      "lesson": 9,
+      "deck": "09_optimization",
+      "term": "对偶",
+      "firstPage": 10,
+      "definitionPage": 10,
+      "explanation": "通过约束价格构造原目标有效界的对应问题"
+    },
+    {
+      "lesson": 9,
+      "deck": "09_optimization",
+      "term": "弱对偶",
+      "firstPage": 10,
+      "definitionPage": 10,
+      "explanation": "任一原可行目标不超过相应对偶可行界"
+    },
+    {
+      "lesson": 9,
+      "deck": "09_optimization",
+      "term": "影子价格",
+      "firstPage": 10,
+      "definitionPage": 10,
+      "explanation": "有效局部范围内资源上限变化的最优目标边际价值"
+    },
+    {
+      "lesson": 9,
+      "deck": "09_optimization",
+      "term": "排程",
+      "firstPage": 25,
+      "definitionPage": 25,
+      "explanation": "决定任务时刻、资源和加工顺序"
+    },
+    {
+      "lesson": 9,
+      "deck": "09_optimization",
+      "term": "不可抢占",
+      "firstPage": 25,
+      "definitionPage": 25,
+      "explanation": "任务开始后必须连续加工至完成"
+    },
+    {
+      "lesson": 9,
+      "deck": "09_optimization",
+      "term": "大 M",
+      "firstPage": 25,
+      "definitionPage": 25,
+      "explanation": "以有效常数配合二元变量激活条件约束的方法"
+    },
+    {
+      "lesson": 10,
+      "deck": "10_process_mining",
+      "term": "时间戳",
+      "firstPage": 2,
+      "definitionPage": 2,
+      "explanation": "记录规定事件时刻的字段"
+    },
+    {
+      "lesson": 10,
+      "deck": "10_process_mining",
+      "term": "ERP",
+      "firstPage": 2,
+      "definitionPage": 2,
+      "explanation": "整合采购库存生产财务等记录的企业资源计划系统"
+    },
+    {
+      "lesson": 10,
+      "deck": "10_process_mining",
+      "term": "变体",
+      "firstPage": 2,
+      "definitionPage": 2,
+      "explanation": "具有相同活动序列的一组流程实例"
+    },
+    {
+      "lesson": 10,
+      "deck": "10_process_mining",
+      "term": "日志回放",
+      "firstPage": 2,
+      "definitionPage": 2,
+      "explanation": "按事件序列检查参考模型能否逐步执行"
+    },
+    {
+      "lesson": 10,
+      "deck": "10_process_mining",
+      "term": "对齐",
+      "firstPage": 2,
+      "definitionPage": 2,
+      "explanation": "按偏离代价对应日志轨迹与模型路径"
+    },
+    {
+      "lesson": 10,
+      "deck": "10_process_mining",
+      "term": "DFG",
+      "firstPage": 11,
+      "definitionPage": 11,
+      "explanation": "用节点和直接相邻边汇总日志活动关系的图"
+    },
+    {
+      "lesson": 10,
+      "deck": "10_process_mining",
+      "term": "一致性检查",
+      "firstPage": 9,
+      "definitionPage": 9,
+      "explanation": "把实际轨迹与适用参考规则比较"
+    },
+    {
+      "lesson": 10,
+      "deck": "10_process_mining",
+      "term": "文本嵌入",
+      "firstPage": 49,
+      "definitionPage": 49,
+      "explanation": "把文本映射为供距离或相似度比较的数值向量"
+    },
+    {
+      "lesson": 10,
+      "deck": "10_process_mining",
+      "term": "向量检索",
+      "firstPage": 49,
+      "definitionPage": 49,
+      "explanation": "按向量距离或相似度查找候选材料"
+    },
+    {
+      "lesson": 10,
+      "deck": "10_process_mining",
+      "term": "词法检索",
+      "firstPage": 49,
+      "definitionPage": 49,
+      "explanation": "按词项及编号匹配查找材料"
+    },
+    {
+      "lesson": 6,
+      "deck": "06_ab_testing",
+      "term": "均值",
+      "firstPage": 3,
+      "definitionPage": 3,
+      "explanation": "结果按对象等权平均的位置指标"
+    },
+    {
+      "lesson": 6,
+      "deck": "06_ab_testing",
+      "term": "方差",
+      "firstPage": 3,
+      "definitionPage": 3,
+      "explanation": "结果偏离均值的平方的平均"
+    },
+    {
+      "lesson": 6,
+      "deck": "06_ab_testing",
+      "term": "标准差",
+      "firstPage": 3,
+      "definitionPage": 3,
+      "explanation": "方差的平方根，与原结果同单位"
+    },
+    {
+      "lesson": 6,
+      "deck": "06_ab_testing",
+      "term": "独立同分布",
+      "firstPage": 3,
+      "definitionPage": 3,
+      "explanation": "各观测独立且服从相同分布"
+    },
+    {
+      "lesson": 10,
+      "deck": "10_process_mining",
+      "term": "状态机",
+      "firstPage": 43,
+      "definitionPage": 43,
+      "explanation": "用状态和允许转移描述业务进展的模型"
+    },
+    {
+      "lesson": 10,
+      "deck": "10_process_mining",
+      "term": "不变量",
+      "firstPage": 43,
+      "definitionPage": 43,
+      "explanation": "所有允许执行步骤中必须始终保持的性质"
+    },
+    {
+      "lesson": 10,
+      "deck": "10_process_mining",
+      "term": "检查点",
+      "firstPage": 38,
+      "definitionPage": 38,
+      "explanation": "用于恢复任务的已保存程序进度"
+    },
+    {
+      "lesson": 6,
+      "deck": "06_ab_testing",
+      "term": "随机实验",
+      "firstPage": 1,
+      "definitionPage": 1,
+      "explanation": "按预定随机规则为对象分配处理与对照版本"
+    },
+    {
+      "lesson": 6,
+      "deck": "06_ab_testing",
+      "term": "处理效应",
+      "firstPage": 1,
+      "definitionPage": 1,
+      "explanation": "同一目标人群采用两种版本时结果的平均差别"
+    },
+    {
+      "lesson": 6,
+      "deck": "06_ab_testing",
+      "term": "实验单元",
+      "firstPage": 1,
+      "definitionPage": 1,
+      "explanation": "接受处理分配的基本对象"
+    },
+    {
+      "lesson": 6,
+      "deck": "06_ab_testing",
+      "term": "标准误",
+      "firstPage": 4,
+      "definitionPage": 4,
+      "explanation": "估计量在指定重复机制中的标准差"
+    },
+    {
+      "lesson": 6,
+      "deck": "06_ab_testing",
+      "term": "SUTVA",
+      "firstPage": 9,
+      "definitionPage": 9,
+      "explanation": "处理版本明确且没有单元间干扰"
+    },
+    {
+      "lesson": 6,
+      "deck": "06_ab_testing",
+      "term": "p 值",
+      "firstPage": 18,
+      "definitionPage": 18,
+      "explanation": "在原假设与指定统计模型下取得当前或更极端检验统计量的概率"
+    },
+    {
+      "lesson": 6,
+      "deck": "06_ab_testing",
+      "term": "功效",
+      "firstPage": 22,
+      "definitionPage": 22,
+      "explanation": "指定备择效应下拒绝原假设的概率"
+    },
+    {
+      "lesson": 6,
+      "deck": "06_ab_testing",
+      "term": "MDE",
+      "firstPage": 22,
+      "definitionPage": 22,
+      "explanation": "给定方法、样本量和错误率下达到目标功效的可检测效应"
+    },
+    {
+      "lesson": 6,
+      "deck": "06_ab_testing",
+      "term": "CUPED",
+      "firstPage": 27,
+      "definitionPage": 27,
+      "explanation": "利用实验前数据降低结果方差的方法"
+    },
+    {
+      "lesson": 6,
+      "deck": "06_ab_testing",
+      "term": "SRM",
+      "firstPage": 38,
+      "definitionPage": 38,
+      "explanation": "入组比例相对预定分配出现异常偏离"
+    },
+    {
+      "lesson": 6,
+      "deck": "06_ab_testing",
+      "term": "清洗期",
+      "firstPage": 34,
+      "definitionPage": 34,
+      "explanation": "切换后暂不计入比较以减弱上一处理残留的时段"
+    },
+    {
+      "lesson": 7,
+      "deck": "07_prediction",
+      "term": "特征",
+      "firstPage": 1,
+      "definitionPage": 1,
+      "explanation": "预测时点已知的输入"
+    },
+    {
+      "lesson": 7,
+      "deck": "07_prediction",
+      "term": "标签",
+      "firstPage": 1,
+      "definitionPage": 1,
+      "explanation": "任务规定的待预测结果"
+    },
+    {
+      "lesson": 7,
+      "deck": "07_prediction",
+      "term": "损失函数",
+      "firstPage": 1,
+      "definitionPage": 1,
+      "explanation": "规定预测错误代价的函数"
+    },
+    {
+      "lesson": 7,
+      "deck": "07_prediction",
+      "term": "泛化",
+      "firstPage": 1,
+      "definitionPage": 1,
+      "explanation": "模型对未用于学习的新对象或新时期的表现"
+    },
+    {
+      "lesson": 7,
+      "deck": "07_prediction",
+      "term": "自助抽样",
+      "firstPage": 16,
+      "definitionPage": 16,
+      "explanation": "从原样本有放回地抽取观测"
+    },
+    {
+      "lesson": 7,
+      "deck": "07_prediction",
+      "term": "早停",
+      "firstPage": 20,
+      "definitionPage": 20,
+      "explanation": "按验证表现停止训练以限制过拟合"
+    },
+    {
+      "lesson": 7,
+      "deck": "07_prediction",
+      "term": "交叉验证",
+      "firstPage": 24,
+      "definitionPage": 24,
+      "explanation": "轮换留出部分资料评价模型"
+    },
+    {
+      "lesson": 7,
+      "deck": "07_prediction",
+      "term": "ETA",
+      "firstPage": 18,
+      "definitionPage": 18,
+      "explanation": "到达时间估计"
+    },
+    {
+      "lesson": 7,
+      "deck": "07_prediction",
+      "term": "图神经网络",
+      "firstPage": 21,
+      "definitionPage": 21,
+      "explanation": "在相连对象间传递和汇总信息的模型"
+    },
+    {
+      "lesson": 7,
+      "deck": "07_prediction",
+      "term": "交叉熵",
+      "firstPage": 12,
+      "definitionPage": 12,
+      "explanation": "此处指二元概率报告的对数损失"
+    },
+    {
+      "lesson": 7,
+      "deck": "07_prediction",
+      "term": "共形预测",
+      "firstPage": 38,
+      "definitionPage": 38,
+      "explanation": "在可交换等条件下利用校准误差提供边际覆盖保证的方法"
+    },
+    {
+      "lesson": 7,
+      "deck": "07_prediction",
+      "term": "token",
+      "firstPage": 48,
+      "definitionPage": 48,
+      "explanation": "分词器用于编码文本的基本单位"
+    },
+    {
+      "lesson": 7,
+      "deck": "07_prediction",
+      "term": "键值缓存",
+      "firstPage": 48,
+      "definitionPage": 48,
+      "explanation": "保存已处理位置的注意力键和值以避免重复计算"
+    },
+    {
+      "lesson": 7,
+      "deck": "07_prediction",
+      "term": "分位数",
+      "firstPage": 14,
+      "definitionPage": 14,
+      "explanation": "累计概率达到指定水平的位置"
+    },
+    {
+      "lesson": 8,
+      "deck": "08_causality",
+      "term": "反事实",
+      "firstPage": 1,
+      "definitionPage": 1,
+      "explanation": "对象在另一种行动状态下本来会出现的结果"
+    },
+    {
+      "lesson": 8,
+      "deck": "08_causality",
+      "term": "因果识别",
+      "firstPage": 1,
+      "definitionPage": 1,
+      "explanation": "给定设计与假设后由观察资料确定目标因果效应"
+    },
+    {
+      "lesson": 8,
+      "deck": "08_causality",
+      "term": "ATE",
+      "firstPage": 4,
+      "definitionPage": 4,
+      "explanation": "目标总体平均处理效应"
+    },
+    {
+      "lesson": 8,
+      "deck": "08_causality",
+      "term": "ATT",
+      "firstPage": 4,
+      "definitionPage": 4,
+      "explanation": "实际接受处理者的平均处理效应"
+    },
+    {
+      "lesson": 8,
+      "deck": "08_causality",
+      "term": "CATE",
+      "firstPage": 4,
+      "definitionPage": 4,
+      "explanation": "给定特征人群的平均处理效应"
+    },
+    {
+      "lesson": 8,
+      "deck": "08_causality",
+      "term": "条件可交换性",
+      "firstPage": 17,
+      "definitionPage": 17,
+      "explanation": "给定处理前特征后处理分配与潜在结果独立"
+    },
+    {
+      "lesson": 8,
+      "deck": "08_causality",
+      "term": "重叠性",
+      "firstPage": 17,
+      "definitionPage": 17,
+      "explanation": "目标范围中两种处理都有观察机会"
+    },
+    {
+      "lesson": 8,
+      "deck": "08_causality",
+      "term": "IPW",
+      "firstPage": 25,
+      "definitionPage": 25,
+      "explanation": "按实际处理概率之倒数赋权"
+    },
+    {
+      "lesson": 8,
+      "deck": "08_causality",
+      "term": "SMD",
+      "firstPage": 27,
+      "definitionPage": 27,
+      "explanation": "按组内尺度标准化的处理前变量均值差"
+    },
+    {
+      "lesson": 8,
+      "deck": "08_causality",
+      "term": "DID",
+      "firstPage": 39,
+      "definitionPage": 39,
+      "explanation": "两组分别前后作差再相减的比较"
+    },
+    {
+      "lesson": 8,
+      "deck": "08_causality",
+      "term": "有效样本量",
+      "firstPage": 28,
+      "definitionPage": 28,
+      "explanation": "诊断权重代表份额集中程度的量"
+    },
+    {
+      "lesson": 9,
+      "deck": "09_optimization",
+      "term": "可行域",
+      "firstPage": 1,
+      "definitionPage": 1,
+      "explanation": "满足全部约束的允许方案集合"
+    },
+    {
+      "lesson": 9,
+      "deck": "09_optimization",
+      "term": "决策变量",
+      "firstPage": 1,
+      "definitionPage": 1,
+      "explanation": "可以选择的数量或状态"
+    },
+    {
+      "lesson": 9,
+      "deck": "09_optimization",
+      "term": "目标函数",
+      "firstPage": 1,
+      "definitionPage": 1,
+      "explanation": "规定希望最大化的收益或最小化的损失"
+    },
+    {
+      "lesson": 9,
+      "deck": "09_optimization",
+      "term": "硬约束",
+      "firstPage": 7,
+      "definitionPage": 7,
+      "explanation": "必须满足且不可由其他收益抵消的条件"
+    },
+    {
+      "lesson": 9,
+      "deck": "09_optimization",
+      "term": "CVaR",
+      "firstPage": 18,
+      "definitionPage": 18,
+      "explanation": "最差规定概率质量的平均损失"
+    },
+    {
+      "lesson": 9,
+      "deck": "09_optimization",
+      "term": "VaR",
+      "firstPage": 18,
+      "definitionPage": 18,
+      "explanation": "累计概率首次达到指定水平的损失分位数"
+    },
+    {
+      "lesson": 9,
+      "deck": "09_optimization",
+      "term": "冻结窗口",
+      "firstPage": 34,
+      "definitionPage": 34,
+      "explanation": "近期暂不允许常规调整的时段"
+    },
+    {
+      "lesson": 9,
+      "deck": "09_optimization",
+      "term": "最优性间隙",
+      "firstPage": 38,
+      "definitionPage": 38,
+      "explanation": "当前可行目标值与有效求解界的差距"
+    },
+    {
+      "lesson": 9,
+      "deck": "09_optimization",
+      "term": "强化学习",
+      "firstPage": 32,
+      "definitionPage": 32,
+      "explanation": "从状态行动与后续回报中学习连续决策"
+    },
+    {
+      "lesson": 10,
+      "deck": "10_process_mining",
+      "term": "事件日志",
+      "firstPage": 1,
+      "definitionPage": 1,
+      "explanation": "记录业务活动及其规定时刻的资料"
+    },
+    {
+      "lesson": 10,
+      "deck": "10_process_mining",
+      "term": "流程挖掘",
+      "firstPage": 1,
+      "definitionPage": 1,
+      "explanation": "用事件记录重建路径并比较规则时间和资源的方法"
+    },
+    {
+      "lesson": 10,
+      "deck": "10_process_mining",
+      "term": "实例",
+      "firstPage": 1,
+      "definitionPage": 1,
+      "explanation": "一轮需要跟踪的业务流程"
+    },
+    {
+      "lesson": 10,
+      "deck": "10_process_mining",
+      "term": "轨迹",
+      "firstPage": 1,
+      "definitionPage": 1,
+      "explanation": "某一实例的活动序列"
+    },
+    {
+      "lesson": 10,
+      "deck": "10_process_mining",
+      "term": "智能体",
+      "firstPage": 1,
+      "definitionPage": 1,
+      "explanation": "依据任务状态选择工具与下一步行动的计算系统"
+    },
+    {
+      "lesson": 10,
+      "deck": "10_process_mining",
+      "term": "Petri 网",
+      "firstPage": 17,
+      "definitionPage": 17,
+      "explanation": "用库所令牌与变迁表达并发状态和活动条件的形式模型"
+    },
+    {
+      "lesson": 10,
+      "deck": "10_process_mining",
+      "term": "马尔可夫性质",
+      "firstPage": 21,
+      "definitionPage": 21,
+      "explanation": "给定当前状态后下一状态不再依赖更早历史"
+    },
+    {
+      "lesson": 10,
+      "deck": "10_process_mining",
+      "term": "吸收状态",
+      "firstPage": 21,
+      "definitionPage": 21,
+      "explanation": "进入后不再离开的状态"
+    },
+    {
+      "lesson": 10,
+      "deck": "10_process_mining",
+      "term": "幂等性",
+      "firstPage": 38,
+      "definitionPage": 38,
+      "explanation": "同一逻辑请求重复执行不增加业务影响"
+    },
+    {
+      "lesson": 10,
+      "deck": "10_process_mining",
+      "term": "幂等键",
+      "firstPage": 40,
+      "definitionPage": 40,
+      "explanation": "同一逻辑请求的稳定标识"
+    },
+    {
+      "lesson": 10,
+      "deck": "10_process_mining",
+      "term": "MCP",
+      "firstPage": 45,
+      "definitionPage": 45,
+      "explanation": "约定模型应用与工具资源交互方式的模型上下文协议"
+    },
+    {
+      "lesson": 10,
+      "deck": "10_process_mining",
+      "term": "Schema",
+      "firstPage": 45,
+      "definitionPage": 45,
+      "explanation": "用字段类型必填项等规则约束数据结构的模式"
+    },
+    {
+      "lesson": 10,
+      "deck": "10_process_mining",
+      "term": "RAG",
+      "firstPage": 48,
+      "definitionPage": 48,
+      "explanation": "先检索授权证据再据此生成回答"
+    },
+    {
+      "lesson": 10,
+      "deck": "10_process_mining",
+      "term": "RRF",
+      "firstPage": 50,
+      "definitionPage": 50,
+      "explanation": "将多个检索结果的倒数名次合并的排序方法"
+    },
+    {
+      "lesson": 10,
+      "deck": "10_process_mining",
+      "term": "SOP",
+      "firstPage": 52,
+      "definitionPage": 52,
+      "explanation": "规定常规作业步骤责任条件和记录的标准程序"
+    },
+    {
+      "lesson": 8,
+      "deck": "08_causality",
+      "term": "工具变量",
+      "firstPage": 47,
+      "definitionPage": 47,
+      "explanation": "在排除限制下通过处理影响结果的外生变化来源"
+    },
+    {
+      "lesson": 8,
+      "deck": "08_causality",
+      "term": "LATE",
+      "firstPage": 46,
+      "definitionPage": 46,
+      "explanation": "由鼓励改变处理接受状态者的平均处理效应"
+    },
+    {
+      "lesson": 10,
+      "deck": "10_process_mining",
+      "term": "三单匹配",
+      "firstPage": 8,
+      "definitionPage": 8,
+      "explanation": "将采购订单收货和发票按对象与金额核对"
+    },
+    {
+      "lesson": 10,
+      "deck": "10_process_mining",
+      "term": "对象中心",
+      "firstPage": 23,
+      "definitionPage": 23,
+      "explanation": "保留事件与员工工单付款等多个对象关联的分析"
+    },
+    {
+      "lesson": 11,
+      "deck": "11_modern_data_platform",
+      "term": "数据平台",
+      "firstPage": 1,
+      "definitionPage": 1,
+      "explanation": "组织采集、存储、计算与受控使用的系统及规则。"
+    },
+    {
+      "lesson": 11,
+      "deck": "11_modern_data_platform",
+      "term": "语义层",
+      "firstPage": 1,
+      "definitionPage": 1,
+      "explanation": "统一表达业务对象、指标公式、维度和访问规则的逻辑层。"
+    },
+    {
+      "lesson": 11,
+      "deck": "11_modern_data_platform",
+      "term": "数据仓库",
+      "firstPage": 2,
+      "definitionPage": 2,
+      "explanation": "整合业务主题和历史事实以支持跨系统分析。"
+    },
+    {
+      "lesson": 11,
+      "deck": "11_modern_data_platform",
+      "term": "数据湖",
+      "firstPage": 2,
+      "definitionPage": 2,
+      "explanation": "保留多种格式原始及处理后数据，服务多种计算任务。"
+    },
+    {
+      "lesson": 11,
+      "deck": "11_modern_data_platform",
+      "term": "湖仓一体",
+      "firstPage": 2,
+      "definitionPage": 2,
+      "explanation": "在湖存储上增加表管理、事务和分析能力。"
+    },
+    {
+      "lesson": 11,
+      "deck": "11_modern_data_platform",
+      "term": "ETL",
+      "firstPage": 3,
+      "definitionPage": 3,
+      "explanation": "抽取、转换、加载。"
+    },
+    {
+      "lesson": 11,
+      "deck": "11_modern_data_platform",
+      "term": "ELT",
+      "firstPage": 3,
+      "definitionPage": 3,
+      "explanation": "抽取、加载、转换。"
+    },
+    {
+      "lesson": 11,
+      "deck": "11_modern_data_platform",
+      "term": "CDC",
+      "firstPage": 4,
+      "definitionPage": 4,
+      "explanation": "把数据库增改删转换为可处理的变更记录。"
+    },
+    {
+      "lesson": 11,
+      "deck": "11_modern_data_platform",
+      "term": "bronze",
+      "firstPage": 5,
+      "definitionPage": 5,
+      "explanation": "保留原始数据与采集依据的常见分层名称。"
+    },
+    {
+      "lesson": 11,
+      "deck": "11_modern_data_platform",
+      "term": "silver",
+      "firstPage": 5,
+      "definitionPage": 5,
+      "explanation": "清洗和标准化业务事实的常见分层名称。"
+    },
+    {
+      "lesson": 11,
+      "deck": "11_modern_data_platform",
+      "term": "gold",
+      "firstPage": 5,
+      "definitionPage": 5,
+      "explanation": "为特定业务用途组织服务数据的常见分层名称。"
+    },
+    {
+      "lesson": 11,
+      "deck": "11_modern_data_platform",
+      "term": "快照",
+      "firstPage": 4,
+      "definitionPage": 4,
+      "explanation": "记录某一已提交版本的数据边界；分析快照还固定所用输入。"
+    },
+    {
+      "lesson": 11,
+      "deck": "11_modern_data_platform",
+      "term": "粒度",
+      "firstPage": 10,
+      "definitionPage": 10,
+      "explanation": "每行记录代表的业务单位。"
+    },
+    {
+      "lesson": 11,
+      "deck": "11_modern_data_platform",
+      "term": "NL2SQL",
+      "firstPage": 11,
+      "definitionPage": 11,
+      "explanation": "把自然语言问题转为候选SQL查询的技术。"
+    },
+    {
+      "lesson": 11,
+      "deck": "11_modern_data_platform",
+      "term": "数据血缘",
+      "firstPage": 12,
+      "definitionPage": 12,
+      "explanation": "记录数据来源及转换依赖关系。"
+    },
+    {
+      "lesson": 11,
+      "deck": "11_modern_data_platform",
+      "term": "数据产品",
+      "firstPage": 13,
+      "definitionPage": 13,
+      "explanation": "面向明确任务、由责任人维护且有稳定接口的数据资产。"
+    },
+    {
+      "lesson": 11,
+      "deck": "11_modern_data_platform",
+      "term": "SLA",
+      "firstPage": 13,
+      "definitionPage": 13,
+      "explanation": "约定刷新、可用性、质量和故障响应等服务条件。"
+    },
+    {
+      "lesson": 11,
+      "deck": "11_modern_data_platform",
+      "term": "数据洁净室",
+      "firstPage": 14,
+      "definitionPage": 14,
+      "explanation": "在约定规则下协作分析并限制明细暴露的环境。"
+    },
+    {
+      "lesson": 11,
+      "deck": "11_modern_data_platform",
+      "term": "OEE",
+      "firstPage": 16,
+      "definitionPage": 16,
+      "explanation": "计划时间中折算为理想合格产出的比例。"
+    },
+    {
+      "lesson": 11,
+      "deck": "11_modern_data_platform",
+      "term": "WIP",
+      "firstPage": 16,
+      "definitionPage": 16,
+      "explanation": "生产流程中仍未完成的对象存量。"
+    },
+    {
+      "lesson": 11,
+      "deck": "11_modern_data_platform",
+      "term": "OTD",
+      "firstPage": 1,
+      "definitionPage": 1,
+      "explanation": "应交对象中按规定承诺日期准时完成的比例。"
+    },
+    {
+      "lesson": 12,
+      "deck": "12_mlops",
+      "term": "MLOps",
+      "firstPage": 1,
+      "definitionPage": 1,
+      "explanation": "管理数据、代码、模型和服务持续变化的可追溯运维方式。"
+    },
+    {
+      "lesson": 12,
+      "deck": "12_mlops",
+      "term": "部署",
+      "firstPage": 1,
+      "definitionPage": 1,
+      "explanation": "将模型及依赖配置成可调用服务或批处理任务。"
+    },
+    {
+      "lesson": 12,
+      "deck": "12_mlops",
+      "term": "推理",
+      "firstPage": 1,
+      "definitionPage": 1,
+      "explanation": "已训练模型对新输入计算输出。"
+    },
+    {
+      "lesson": 12,
+      "deck": "12_mlops",
+      "term": "特征",
+      "firstPage": 2,
+      "definitionPage": 2,
+      "explanation": "预测当时可使用的输入属性。"
+    },
+    {
+      "lesson": 12,
+      "deck": "12_mlops",
+      "term": "标签",
+      "firstPage": 2,
+      "definitionPage": 2,
+      "explanation": "用于训练和评价的目标结果。"
+    },
+    {
+      "lesson": 12,
+      "deck": "12_mlops",
+      "term": "训练与服务偏差",
+      "firstPage": 5,
+      "definitionPage": 5,
+      "explanation": "训练与实际预测阶段的数据或处理含义不一致。"
+    },
+    {
+      "lesson": 12,
+      "deck": "12_mlops",
+      "term": "特征库",
+      "firstPage": 5,
+      "definitionPage": 5,
+      "explanation": "管理复用特征的定义、物化与获取接口。"
+    },
+    {
+      "lesson": 12,
+      "deck": "12_mlops",
+      "term": "基线",
+      "firstPage": 7,
+      "definitionPage": 7,
+      "explanation": "作为比较的既有流程、简单规则或模型。"
+    },
+    {
+      "lesson": 12,
+      "deck": "12_mlops",
+      "term": "影子",
+      "firstPage": 9,
+      "definitionPage": 9,
+      "explanation": "复制真实输入，候选结果不用于业务行动。"
+    },
+    {
+      "lesson": 12,
+      "deck": "12_mlops",
+      "term": "灰度",
+      "firstPage": 11,
+      "definitionPage": 11,
+      "explanation": "限定用户、对象或流量逐步采用候选版本。"
+    },
+    {
+      "lesson": 12,
+      "deck": "12_mlops",
+      "term": "校准",
+      "firstPage": 12,
+      "definitionPage": 12,
+      "explanation": "同类预测概率与实际发生频率的对应程度。"
+    },
+    {
+      "lesson": 12,
+      "deck": "12_mlops",
+      "term": "数据漂移",
+      "firstPage": 14,
+      "definitionPage": 14,
+      "explanation": "输入的分布随时间改变。"
+    },
+    {
+      "lesson": 12,
+      "deck": "12_mlops",
+      "term": "概念漂移",
+      "firstPage": 14,
+      "definitionPage": 14,
+      "explanation": "给定输入后结果的条件关系改变。"
+    },
+    {
+      "lesson": 12,
+      "deck": "12_mlops",
+      "term": "选择性反馈",
+      "firstPage": 15,
+      "definitionPage": 15,
+      "explanation": "结果可得性受选择或行动影响。"
+    },
+    {
+      "lesson": 12,
+      "deck": "12_mlops",
+      "term": "回滚",
+      "firstPage": 13,
+      "definitionPage": 13,
+      "explanation": "恢复经验证的先前服务状态，并另查实际业务后果。"
+    },
+    {
+      "lesson": 12,
+      "deck": "12_mlops",
+      "term": "分析工程",
+      "firstPage": 18,
+      "definitionPage": 18,
+      "explanation": "用软件工程方式管理数据转换、测试与文档。"
+    },
+    {
+      "lesson": 12,
+      "deck": "12_mlops",
+      "term": "CI",
+      "firstPage": 18,
+      "definitionPage": 18,
+      "explanation": "变更时自动检查代码及依赖。"
+    },
+    {
+      "lesson": 12,
+      "deck": "12_mlops",
+      "term": "CD",
+      "firstPage": 18,
+      "definitionPage": 18,
+      "explanation": "把已验证产物准备为可发布状态。"
+    },
+    {
+      "lesson": 12,
+      "deck": "12_mlops",
+      "term": "LLM",
+      "firstPage": 19,
+      "definitionPage": 19,
+      "explanation": "从大量语言资料学习生成和理解模式的模型。"
+    },
+    {
+      "lesson": 12,
+      "deck": "12_mlops",
+      "term": "RAG",
+      "firstPage": 19,
+      "definitionPage": 19,
+      "explanation": "先检索外部证据再形成生成答复。"
+    },
+    {
+      "lesson": 13,
+      "deck": "13_ontology_action_scenario",
+      "term": "业务本体",
+      "firstPage": 1,
+      "definitionPage": 1,
+      "explanation": "组织业务对象、属性与关系的共同模型。"
+    },
+    {
+      "lesson": 13,
+      "deck": "13_ontology_action_scenario",
+      "term": "行动",
+      "firstPage": 1,
+      "definitionPage": 1,
+      "explanation": "以契约规定允许的状态变化。"
+    },
+    {
+      "lesson": 13,
+      "deck": "13_ontology_action_scenario",
+      "term": "情景",
+      "firstPage": 1,
+      "definitionPage": 1,
+      "explanation": "固定假设及候选行动后比较条件结果。"
+    },
+    {
+      "lesson": 13,
+      "deck": "13_ontology_action_scenario",
+      "term": "事件",
+      "firstPage": 5,
+      "definitionPage": 5,
+      "explanation": "在某一时点发生的业务活动。"
+    },
+    {
+      "lesson": 13,
+      "deck": "13_ontology_action_scenario",
+      "term": "状态",
+      "firstPage": 1,
+      "definitionPage": 1,
+      "explanation": "依据当前有效记录与规则得到的对象判断。"
+    },
+    {
+      "lesson": 13,
+      "deck": "13_ontology_action_scenario",
+      "term": "前置条件",
+      "firstPage": 6,
+      "definitionPage": 6,
+      "explanation": "执行之前必须满足的检查。"
+    },
+    {
+      "lesson": 13,
+      "deck": "13_ontology_action_scenario",
+      "term": "后置条件",
+      "firstPage": 6,
+      "definitionPage": 6,
+      "explanation": "执行之后应能够核验的结果。"
+    },
+    {
+      "lesson": 13,
+      "deck": "13_ontology_action_scenario",
+      "term": "不变量",
+      "firstPage": 8,
+      "definitionPage": 8,
+      "explanation": "所有允许状态转移中都应成立的条件。"
+    },
+    {
+      "lesson": 13,
+      "deck": "13_ontology_action_scenario",
+      "term": "幂等",
+      "firstPage": 9,
+      "definitionPage": 9,
+      "explanation": "同一请求重复执行仍保持相同业务效果。"
+    },
+    {
+      "lesson": 13,
+      "deck": "13_ontology_action_scenario",
+      "term": "数字孪生",
+      "firstPage": 7,
+      "definitionPage": 7,
+      "explanation": "数字模型与实体结构、状态或行为持续对应。"
+    },
+    {
+      "lesson": 13,
+      "deck": "13_ontology_action_scenario",
+      "term": "M13",
+      "firstPage": 16,
+      "definitionPage": 16,
+      "explanation": "按需求、产品、路线、批次、设备、产能、在制品、质量、维护、物料、交付、成本和行动组织制造运营调查的课程教学抽象分类；关联不构成因果证据。"
+    },
+    {
+      "lesson": 13,
+      "deck": "13_ontology_action_scenario",
+      "term": "智能体",
+      "firstPage": 17,
+      "definitionPage": 17,
+      "explanation": "围绕目标维护任务状态、选择步骤并调用工具的软件系统。"
+    },
+    {
+      "lesson": 13,
+      "deck": "13_ontology_action_scenario",
+      "term": "审计",
+      "firstPage": 18,
+      "definitionPage": 18,
+      "explanation": "追查操作者、依据、批准、实际操作与结果的证据。"
+    },
+    {
+      "lesson": 14,
+      "deck": "14_ai_agent",
+      "term": "AI Agent",
+      "firstPage": 1,
+      "definitionPage": 1,
+      "explanation": "面向目标选择步骤、调用工具并维护任务状态的软件系统。"
+    },
+    {
+      "lesson": 14,
+      "deck": "14_ai_agent",
+      "term": "任务契约",
+      "firstPage": 1,
+      "definitionPage": 1,
+      "explanation": "对输入、输出、权限及完成条件的共同约定。"
+    },
+    {
+      "lesson": 14,
+      "deck": "14_ai_agent",
+      "term": "Chatbot",
+      "firstPage": 3,
+      "definitionPage": 3,
+      "explanation": "以答复为主要产物的交互模式。"
+    },
+    {
+      "lesson": 14,
+      "deck": "14_ai_agent",
+      "term": "Copilot",
+      "firstPage": 3,
+      "definitionPage": 3,
+      "explanation": "在人主导工作中检索、起草或建议的交互模式。"
+    },
+    {
+      "lesson": 14,
+      "deck": "14_ai_agent",
+      "term": "LLM",
+      "firstPage": 4,
+      "definitionPage": 4,
+      "explanation": "学习语言序列模式并生成理解与推理候选的模型。"
+    },
+    {
+      "lesson": 14,
+      "deck": "14_ai_agent",
+      "term": "Prompt",
+      "firstPage": 4,
+      "definitionPage": 4,
+      "explanation": "交给模型的任务说明与输入。"
+    },
+    {
+      "lesson": 14,
+      "deck": "14_ai_agent",
+      "term": "上下文",
+      "firstPage": 4,
+      "definitionPage": 4,
+      "explanation": "当前请求内模型可利用的历史、证据和工具结果。"
+    },
+    {
+      "lesson": 14,
+      "deck": "14_ai_agent",
+      "term": "token",
+      "firstPage": 4,
+      "definitionPage": 4,
+      "explanation": "模型分词得到的基本处理单位。"
+    },
+    {
+      "lesson": 14,
+      "deck": "14_ai_agent",
+      "term": "Planning",
+      "firstPage": 5,
+      "definitionPage": 5,
+      "explanation": "组织步骤、依赖、资源及失败出口。"
+    },
+    {
+      "lesson": 14,
+      "deck": "14_ai_agent",
+      "term": "Memory",
+      "firstPage": 5,
+      "definitionPage": 5,
+      "explanation": "保存任务必要信息，并区分来源与时效。"
+    },
+    {
+      "lesson": 14,
+      "deck": "14_ai_agent",
+      "term": "Tools",
+      "firstPage": 1,
+      "definitionPage": 1,
+      "explanation": "连接外部查询与操作的接口能力。"
+    },
+    {
+      "lesson": 14,
+      "deck": "14_ai_agent",
+      "term": "Skills",
+      "firstPage": 5,
+      "definitionPage": 5,
+      "explanation": "复用操作方法及其资源与适用条件。"
+    },
+    {
+      "lesson": 14,
+      "deck": "14_ai_agent",
+      "term": "Harness",
+      "firstPage": 5,
+      "definitionPage": 5,
+      "explanation": "在模型外管理状态、权限、调度及恢复的环境。"
+    },
+    {
+      "lesson": 14,
+      "deck": "14_ai_agent",
+      "term": "槽位",
+      "firstPage": 7,
+      "definitionPage": 7,
+      "explanation": "日期、金额、参与人等任务字段。"
+    },
+    {
+      "lesson": 14,
+      "deck": "14_ai_agent",
+      "term": "副作用",
+      "firstPage": 8,
+      "definitionPage": 8,
+      "explanation": "对外部业务状态产生的实际改变。"
+    },
+    {
+      "lesson": 14,
+      "deck": "14_ai_agent",
+      "term": "幂等",
+      "firstPage": 10,
+      "definitionPage": 10,
+      "explanation": "同一请求重复处理仍保持相同业务效果。"
+    },
+    {
+      "lesson": 14,
+      "deck": "14_ai_agent",
+      "term": "RAG",
+      "firstPage": 11,
+      "definitionPage": 11,
+      "explanation": "先检索外部资料，再据此生成答复。"
+    },
+    {
+      "lesson": 14,
+      "deck": "14_ai_agent",
+      "term": "重排",
+      "firstPage": 11,
+      "definitionPage": 11,
+      "explanation": "按问题相关性重新排列初步候选。"
+    },
+    {
+      "lesson": 14,
+      "deck": "14_ai_agent",
+      "term": "OCR",
+      "firstPage": 13,
+      "definitionPage": 13,
+      "explanation": "将扫描图像中的字符识别为可处理文本。"
+    },
+    {
+      "lesson": 14,
+      "deck": "14_ai_agent",
+      "term": "召回率",
+      "firstPage": 15,
+      "definitionPage": 15,
+      "explanation": "应检出的证据中实际检出的比例。"
+    },
+    {
+      "lesson": 14,
+      "deck": "14_ai_agent",
+      "term": "精确率",
+      "firstPage": 15,
+      "definitionPage": 15,
+      "explanation": "已检出的候选中相关证据的比例。"
+    },
+    {
+      "lesson": 14,
+      "deck": "14_ai_agent",
+      "term": "向量",
+      "firstPage": 11,
+      "definitionPage": 11,
+      "explanation": "由数值组成的表示，用于比较问题与片段。"
+    },
+    {
+      "lesson": 14,
+      "deck": "14_ai_agent",
+      "term": "SQL",
+      "firstPage": 16,
+      "definitionPage": 16,
+      "explanation": "查询关系型数据的语言。"
+    },
+    {
+      "lesson": 14,
+      "deck": "14_ai_agent",
+      "term": "GraphRAG",
+      "firstPage": 20,
+      "definitionPage": 20,
+      "explanation": "利用实体、关系和社区摘要组织检索与汇总。"
+    },
+    {
+      "lesson": 14,
+      "deck": "14_ai_agent",
+      "term": "Chatflow",
+      "firstPage": 22,
+      "definitionPage": 22,
+      "explanation": "围绕多轮输入维护变量并选择处理步骤。"
+    },
+    {
+      "lesson": 14,
+      "deck": "14_ai_agent",
+      "term": "Workflow",
+      "firstPage": 23,
+      "definitionPage": 23,
+      "explanation": "用触发、节点、分支和终止条件组织任务。"
+    },
+    {
+      "lesson": 14,
+      "deck": "14_ai_agent",
+      "term": "多智能体",
+      "firstPage": 27,
+      "definitionPage": 27,
+      "explanation": "多个维护任务状态的执行主体按契约分担工作。"
+    },
+    {
+      "lesson": 14,
+      "deck": "14_ai_agent",
+      "term": "私有化部署",
+      "firstPage": 30,
+      "definitionPage": 30,
+      "explanation": "约定组件在企业控制的基础设施中运行。"
+    },
+    {
+      "lesson": 14,
+      "deck": "14_ai_agent",
+      "term": "控制面",
+      "firstPage": 30,
+      "definitionPage": 30,
+      "explanation": "管理配置、身份与调度的组件。"
+    },
+    {
+      "lesson": 14,
+      "deck": "14_ai_agent",
+      "term": "ERP",
+      "firstPage": 30,
+      "definitionPage": 30,
+      "explanation": "整合采购、生产与财务等业务的系统。"
+    },
+    {
+      "lesson": 14,
+      "deck": "14_ai_agent",
+      "term": "Gateway",
+      "firstPage": 33,
+      "definitionPage": 33,
+      "explanation": "连接消息入口与后端服务的组件。"
+    },
+    {
+      "lesson": 14,
+      "deck": "14_ai_agent",
+      "term": "CLI",
+      "firstPage": 33,
+      "definitionPage": 33,
+      "explanation": "通过文本命令与程序交互的界面。"
+    },
+    {
+      "lesson": 14,
+      "deck": "14_ai_agent",
+      "term": "IDE",
+      "firstPage": 34,
+      "definitionPage": 34,
+      "explanation": "集成编码、运行与调试功能的开发环境。"
+    },
+    {
+      "lesson": 14,
+      "deck": "14_ai_agent",
+      "term": "沙箱",
+      "firstPage": 33,
+      "definitionPage": 33,
+      "explanation": "限制程序可访问资源的执行环境。"
+    },
+    {
+      "lesson": 14,
+      "deck": "14_ai_agent",
+      "term": "MCP",
+      "firstPage": 34,
+      "definitionPage": 34,
+      "explanation": "连接模型应用与外部工具或资源的协议。"
+    },
+    {
+      "lesson": 14,
+      "deck": "14_ai_agent",
+      "term": "API",
+      "firstPage": 36,
+      "definitionPage": 36,
+      "explanation": "软件之间按约定请求与交换结果的接口。"
+    },
+    {
+      "lesson": 14,
+      "deck": "14_ai_agent",
+      "term": "联锁",
+      "firstPage": 29,
+      "definitionPage": 29,
+      "explanation": "按安全条件阻断危险操作的保护机制。"
+    },
+    {
+      "lesson": 14,
+      "deck": "14_ai_agent",
+      "term": "PLC",
+      "firstPage": 49,
+      "definitionPage": 49,
+      "explanation": "现场可编程逻辑控制设备，其作用须服从既有安全体系。"
+    },
+    {
+      "lesson": 14,
+      "deck": "14_ai_agent",
+      "term": "基线",
+      "firstPage": 54,
+      "definitionPage": 54,
+      "explanation": "用于比较的现行业务流程或简单技术方法。"
+    },
+    {
+      "lesson": 14,
+      "deck": "14_ai_agent",
+      "term": "OEE",
+      "firstPage": 61,
+      "definitionPage": 61,
+      "explanation": "计划时间中折算为理想合格产出的比例。"
+    },
+    {
+      "lesson": 14,
+      "deck": "14_ai_agent",
+      "term": "WIP",
+      "firstPage": 61,
+      "definitionPage": 61,
+      "explanation": "指定时点尚在生产流程中的存量。"
+    },
+    {
+      "lesson": 14,
+      "deck": "14_ai_agent",
+      "term": "OTD",
+      "firstPage": 61,
+      "definitionPage": 61,
+      "explanation": "应交对象中按约定口径准时完成的比例。"
+    },
+    {
+      "lesson": 14,
+      "deck": "14_ai_agent",
+      "term": "KPI",
+      "firstPage": 61,
+      "definitionPage": 61,
+      "explanation": "组织跟踪业务表现的明确度量。"
+    },
+    {
+      "lesson": 14,
+      "deck": "14_ai_agent",
+      "term": "CSV",
+      "firstPage": 61,
+      "definitionPage": 61,
+      "explanation": "用分隔符组织表格记录的文本格式。"
+    },
+    {
+      "lesson": 15,
+      "deck": "final_project",
+      "term": "原型",
+      "firstPage": 1,
+      "definitionPage": 1,
+      "explanation": "在限定条件下检验关键机制的可运行系统。"
+    },
+    {
+      "lesson": 15,
+      "deck": "final_project",
+      "term": "概念验证",
+      "firstPage": 1,
+      "definitionPage": 1,
+      "explanation": "检查关键假设能否实现的验证活动。"
+    },
+    {
+      "lesson": 15,
+      "deck": "final_project",
+      "term": "试点",
+      "firstPage": 1,
+      "definitionPage": 1,
+      "explanation": "在有限真实业务范围验证使用与运行。"
+    },
+    {
+      "lesson": 15,
+      "deck": "final_project",
+      "term": "基线",
+      "firstPage": 3,
+      "definitionPage": 3,
+      "explanation": "用于比较的现行流程或明确规则。"
+    },
+    {
+      "lesson": 15,
+      "deck": "final_project",
+      "term": "验收",
+      "firstPage": 2,
+      "definitionPage": 2,
+      "explanation": "按预先规定条件独立核对实际结果。"
+    },
+    {
+      "lesson": 15,
+      "deck": "final_project",
+      "term": "KPI",
+      "firstPage": 8,
+      "definitionPage": 8,
+      "explanation": "按明确口径衡量业务表现的量。"
+    },
+    {
+      "lesson": 15,
+      "deck": "final_project",
+      "term": "接口契约",
+      "firstPage": 10,
+      "definitionPage": 10,
+      "explanation": "规定输入输出、失败状态和副作用的约定。"
+    },
+    {
+      "lesson": 15,
+      "deck": "final_project",
+      "term": "副作用",
+      "firstPage": 10,
+      "definitionPage": 10,
+      "explanation": "对外部状态产生实际改变。"
+    },
+    {
+      "lesson": 15,
+      "deck": "final_project",
+      "term": "端到端",
+      "firstPage": 7,
+      "definitionPage": 7,
+      "explanation": "从业务请求覆盖全部必需环节到最终状态。"
+    },
+    {
+      "lesson": 15,
+      "deck": "final_project",
+      "term": "敏感性分析",
+      "firstPage": 14,
+      "definitionPage": 14,
+      "explanation": "改变关键参数并观察方案选择是否稳定。"
+    },
+    {
+      "lesson": 15,
+      "deck": "final_project",
+      "term": "可复现",
+      "firstPage": 6,
+      "definitionPage": 6,
+      "explanation": "他人按保存记录重建规定结果。"
+    },
+    {
+      "lesson": 15,
+      "deck": "final_project",
+      "term": "随机种子",
+      "firstPage": 15,
+      "definitionPage": 15,
+      "explanation": "控制伪随机过程起点的参数。"
+    },
+    {
+      "lesson": 15,
+      "deck": "final_project",
+      "term": "决策备忘录",
+      "firstPage": 19,
+      "definitionPage": 19,
+      "explanation": "面向授权决策者简明说明方案选择与条件。"
+    },
+    {
+      "lesson": 16,
+      "deck": "final_project_defense",
+      "term": "原型",
+      "firstPage": 1,
+      "definitionPage": 1,
+      "explanation": "在限定条件下验证机制的系统。"
+    },
+    {
+      "lesson": 16,
+      "deck": "final_project_defense",
+      "term": "试点",
+      "firstPage": 1,
+      "definitionPage": 1,
+      "explanation": "在有限真实业务范围检验使用与运行。"
+    },
+    {
+      "lesson": 16,
+      "deck": "final_project_defense",
+      "term": "基线",
+      "firstPage": 4,
+      "definitionPage": 4,
+      "explanation": "用于判断增量价值的真实替代流程或简单规则。"
+    },
+    {
+      "lesson": 16,
+      "deck": "final_project_defense",
+      "term": "证据链",
+      "firstPage": 3,
+      "definitionPage": 3,
+      "explanation": "连接主张、可查依据、推理与范围限制的关系。"
+    },
+    {
+      "lesson": 16,
+      "deck": "final_project_defense",
+      "term": "定性分析",
+      "firstPage": 9,
+      "definitionPage": 9,
+      "explanation": "用具体过程分析作用机制及组织条件。"
+    },
+    {
+      "lesson": 16,
+      "deck": "final_project_defense",
+      "term": "敏感性",
+      "firstPage": 12,
+      "definitionPage": 12,
+      "explanation": "改变未定参数，检查采用建议何时反转。"
+    },
+    {
+      "lesson": 16,
+      "deck": "final_project_defense",
+      "term": "单位成功",
+      "firstPage": 13,
+      "definitionPage": 13,
+      "explanation": "全部相关总成本除以经确认满足约束的成功任务数。"
+    },
+    {
+      "lesson": 16,
+      "deck": "final_project_defense",
+      "term": "可复现",
+      "firstPage": 20,
+      "definitionPage": 20,
+      "explanation": "按记录重建关键结果。"
+    },
+    {
+      "lesson": 16,
+      "deck": "final_project_defense",
+      "term": "可审计",
+      "firstPage": 20,
+      "definitionPage": 20,
+      "explanation": "追查实际操作、依据及责任。"
+    },
+    {
+      "lesson": 16,
+      "deck": "final_project_defense",
+      "term": "决策备忘录",
+      "firstPage": 23,
+      "definitionPage": 23,
+      "explanation": "向有权限决策者说明当前选择、依据和条件。"
+    }
+  ],
+  "casePages": [
+    {
+      "id": "b01-01",
+      "lesson": 1,
+      "company": "UPS",
+      "deck": "01_intro",
+      "pages": [
+        3,
+        4
+      ],
+      "sources": 1
+    },
+    {
+      "id": "b01-02",
+      "lesson": 1,
+      "company": "CVS Health",
+      "deck": "01_intro",
+      "pages": [
+        13,
+        14
+      ],
+      "sources": 2
+    },
+    {
+      "id": "b01-03",
+      "lesson": 1,
+      "company": "Wells Fargo",
+      "deck": "01_intro",
+      "pages": [
+        10,
+        11
+      ],
+      "sources": 2
+    },
+    {
+      "id": "b01-04",
+      "lesson": 1,
+      "company": "Patagonia",
+      "deck": "01_intro",
+      "pages": [
+        35,
+        36
+      ],
+      "sources": 1
+    },
+    {
+      "id": "b01-05",
+      "lesson": 1,
+      "company": "Amazon",
+      "deck": "01_intro",
+      "pages": [
+        32,
+        33
+      ],
+      "sources": 1
+    },
+    {
+      "id": "b02-01",
+      "lesson": 2,
+      "company": "Shopify",
+      "deck": "02_enterprise_data_model",
+      "pages": [
+        12,
+        13
+      ],
+      "sources": 1
+    },
+    {
+      "id": "b02-02",
+      "lesson": 2,
+      "company": "Stripe",
+      "deck": "02_enterprise_data_model",
+      "pages": [
+        29,
+        30
+      ],
+      "sources": 1
+    },
+    {
+      "id": "b02-03",
+      "lesson": 2,
+      "company": "Uber",
+      "deck": "02_enterprise_data_model",
+      "pages": [
+        21,
+        22
+      ],
+      "sources": 1
+    },
+    {
+      "id": "b02-04",
+      "lesson": 2,
+      "company": "LinkedIn",
+      "deck": "02_enterprise_data_model",
+      "pages": [
+        43,
+        44
+      ],
+      "sources": 1
+    },
+    {
+      "id": "b02-05",
+      "lesson": 2,
+      "company": "Spotify",
+      "deck": "02_enterprise_data_model",
+      "pages": [
+        3,
+        4
+      ],
+      "sources": 1
+    },
+    {
+      "id": "b03-01",
+      "lesson": 3,
+      "company": "Airbnb",
+      "deck": "03_sql_kpi",
+      "pages": [
+        17,
+        18
+      ],
+      "sources": 1
+    },
+    {
+      "id": "b03-02",
+      "lesson": 3,
+      "company": "Uber",
+      "deck": "03_sql_kpi",
+      "pages": [
+        45,
+        46
+      ],
+      "sources": 1
+    },
+    {
+      "id": "b03-03",
+      "lesson": 3,
+      "company": "DoorDash",
+      "deck": "03_sql_kpi",
+      "pages": [
+        21,
+        22
+      ],
+      "sources": 1
+    },
+    {
+      "id": "b03-04",
+      "lesson": 3,
+      "company": "Spotify",
+      "deck": "03_sql_kpi",
+      "pages": [
+        40,
+        41
+      ],
+      "sources": 1
+    },
+    {
+      "id": "b03-05",
+      "lesson": 3,
+      "company": "Shopify",
+      "deck": "03_sql_kpi",
+      "pages": [
+        10,
+        11
+      ],
+      "sources": 1
+    },
+    {
+      "id": "b04-01",
+      "lesson": 4,
+      "company": "GitLab",
+      "deck": "04_data_quality",
+      "pages": [
+        11,
+        12
+      ],
+      "sources": 1
+    },
+    {
+      "id": "b04-02",
+      "lesson": 4,
+      "company": "Unity Software",
+      "deck": "04_data_quality",
+      "pages": [
+        7,
+        8
+      ],
+      "sources": 1
+    },
+    {
+      "id": "b04-03",
+      "lesson": 4,
+      "company": "Amazon",
+      "deck": "04_data_quality",
+      "pages": [
+        31,
+        32
+      ],
+      "sources": 1
+    },
+    {
+      "id": "b04-04",
+      "lesson": 4,
+      "company": "Airbnb",
+      "deck": "04_data_quality",
+      "pages": [
+        40,
+        41
+      ],
+      "sources": 1
+    },
+    {
+      "id": "b04-05",
+      "lesson": 4,
+      "company": "Citibank",
+      "deck": "04_data_quality",
+      "pages": [
+        45,
+        46
+      ],
+      "sources": 1
+    },
+    {
+      "id": "b05-01",
+      "lesson": 5,
+      "company": "Netflix",
+      "deck": "05_statistics_dashboard",
+      "pages": [
+        18,
+        19
+      ],
+      "sources": 1
+    },
+    {
+      "id": "b05-02",
+      "lesson": 5,
+      "company": "Google",
+      "deck": "05_statistics_dashboard",
+      "pages": [
+        7,
+        8
+      ],
+      "sources": 2
+    },
+    {
+      "id": "b05-03",
+      "lesson": 5,
+      "company": "Toyota",
+      "deck": "05_statistics_dashboard",
+      "pages": [
+        27,
+        28
+      ],
+      "sources": 1
+    },
+    {
+      "id": "b05-04",
+      "lesson": 5,
+      "company": "Amazon",
+      "deck": "05_statistics_dashboard",
+      "pages": [
+        21,
+        22
+      ],
+      "sources": 1
+    },
+    {
+      "id": "b05-05",
+      "lesson": 5,
+      "company": "McDonald’s",
+      "deck": "05_statistics_dashboard",
+      "pages": [
+        30,
+        31
+      ],
+      "sources": 1
+    },
+    {
+      "id": "b06-01",
+      "lesson": 6,
+      "company": "Netflix",
+      "deck": "06_ab_testing",
+      "pages": [
+        7,
+        8
+      ],
+      "sources": 1
+    },
+    {
+      "id": "b06-02",
+      "lesson": 6,
+      "company": "Airbnb",
+      "deck": "06_ab_testing",
+      "pages": [
+        30,
+        31
+      ],
+      "sources": 1
+    },
+    {
+      "id": "b06-03",
+      "lesson": 6,
+      "company": "Booking.com",
+      "deck": "06_ab_testing",
+      "pages": [
+        36,
+        37
+      ],
+      "sources": 1
+    },
+    {
+      "id": "b06-04",
+      "lesson": 6,
+      "company": "Uber",
+      "deck": "06_ab_testing",
+      "pages": [
+        39,
+        40
+      ],
+      "sources": 1
+    },
+    {
+      "id": "b06-05",
+      "lesson": 6,
+      "company": "DoorDash",
+      "deck": "06_ab_testing",
+      "pages": [
+        33,
+        34
+      ],
+      "sources": 1
+    },
+    {
+      "id": "b07-01",
+      "lesson": 7,
+      "company": "Amazon",
+      "deck": "07_prediction",
+      "pages": [
+        13,
+        14
+      ],
+      "sources": 1
+    },
+    {
+      "id": "b07-02",
+      "lesson": 7,
+      "company": "Uber",
+      "deck": "07_prediction",
+      "pages": [
+        18,
+        19
+      ],
+      "sources": 1
+    },
+    {
+      "id": "b07-03",
+      "lesson": 7,
+      "company": "DoorDash",
+      "deck": "07_prediction",
+      "pages": [
+        36,
+        37
+      ],
+      "sources": 1
+    },
+    {
+      "id": "b07-04",
+      "lesson": 7,
+      "company": "Netflix",
+      "deck": "07_prediction",
+      "pages": [
+        43,
+        44
+      ],
+      "sources": 1
+    },
+    {
+      "id": "b07-05",
+      "lesson": 7,
+      "company": "Google Maps",
+      "deck": "07_prediction",
+      "pages": [
+        21,
+        22
+      ],
+      "sources": 1
+    },
+    {
+      "id": "b08-01",
+      "lesson": 8,
+      "company": "eBay",
+      "deck": "08_causality",
+      "pages": [
+        7,
+        8
+      ],
+      "sources": 1
+    },
+    {
+      "id": "b08-02",
+      "lesson": 8,
+      "company": "Uber",
+      "deck": "08_causality",
+      "pages": [
+        49,
+        50
+      ],
+      "sources": 1
+    },
+    {
+      "id": "b08-03",
+      "lesson": 8,
+      "company": "Google",
+      "deck": "08_causality",
+      "pages": [
+        12,
+        13
+      ],
+      "sources": 1
+    },
+    {
+      "id": "b08-04",
+      "lesson": 8,
+      "company": "Facebook",
+      "deck": "08_causality",
+      "pages": [
+        15,
+        16
+      ],
+      "sources": 1
+    },
+    {
+      "id": "b08-05",
+      "lesson": 8,
+      "company": "Tripadvisor",
+      "deck": "08_causality",
+      "pages": [
+        46,
+        47
+      ],
+      "sources": 1
+    },
+    {
+      "id": "b09-01",
+      "lesson": 9,
+      "company": "Zara",
+      "deck": "09_optimization",
+      "pages": [
+        3,
+        4
+      ],
+      "sources": 1
+    },
+    {
+      "id": "b09-02",
+      "lesson": 9,
+      "company": "Google DeepMind",
+      "deck": "09_optimization",
+      "pages": [
+        6,
+        7
+      ],
+      "sources": 1
+    },
+    {
+      "id": "b09-03",
+      "lesson": 9,
+      "company": "Lufthansa",
+      "deck": "09_optimization",
+      "pages": [
+        26,
+        27
+      ],
+      "sources": 1
+    },
+    {
+      "id": "b09-04",
+      "lesson": 9,
+      "company": "Walmart",
+      "deck": "09_optimization",
+      "pages": [
+        22,
+        23
+      ],
+      "sources": 1
+    },
+    {
+      "id": "b09-05",
+      "lesson": 9,
+      "company": "Uber",
+      "deck": "09_optimization",
+      "pages": [
+        32,
+        33
+      ],
+      "sources": 1
+    },
+    {
+      "id": "b10-01",
+      "lesson": 10,
+      "company": "Vodafone",
+      "deck": "10_process_mining",
+      "pages": [
+        8,
+        9
+      ],
+      "sources": 1
+    },
+    {
+      "id": "b10-02",
+      "lesson": 10,
+      "company": "DHL Group",
+      "deck": "10_process_mining",
+      "pages": [
+        23,
+        24
+      ],
+      "sources": 1
+    },
+    {
+      "id": "b10-03",
+      "lesson": 10,
+      "company": "Deutsche Telekom",
+      "deck": "10_process_mining",
+      "pages": [
+        27,
+        28
+      ],
+      "sources": 1
+    },
+    {
+      "id": "b10-04",
+      "lesson": 10,
+      "company": "ABB",
+      "deck": "10_process_mining",
+      "pages": [
+        34,
+        35
+      ],
+      "sources": 1
+    },
+    {
+      "id": "b10-05",
+      "lesson": 10,
+      "company": "Stripe",
+      "deck": "10_process_mining",
+      "pages": [
+        41,
+        42
+      ],
+      "sources": 1
+    },
+    {
+      "id": "b11-01",
+      "lesson": 11,
+      "company": "Uber",
+      "deck": "11_modern_data_platform",
+      "pages": [
+        7
+      ],
+      "sources": 1
+    },
+    {
+      "id": "b11-02",
+      "lesson": 11,
+      "company": "Netflix",
+      "deck": "11_modern_data_platform",
+      "pages": [
+        9
+      ],
+      "sources": 2
+    },
+    {
+      "id": "b11-03",
+      "lesson": 11,
+      "company": "Shopify",
+      "deck": "11_modern_data_platform",
+      "pages": [
+        4
+      ],
+      "sources": 1
+    },
+    {
+      "id": "b11-04",
+      "lesson": 11,
+      "company": "Walmart",
+      "deck": "11_modern_data_platform",
+      "pages": [
+        19
+      ],
+      "sources": 1
+    },
+    {
+      "id": "b11-05",
+      "lesson": 11,
+      "company": "Disney Advertising × Horizon Media",
+      "deck": "11_modern_data_platform",
+      "pages": [
+        15
+      ],
+      "sources": 1
+    },
+    {
+      "id": "b12-01",
+      "lesson": 12,
+      "company": "Uber",
+      "deck": "12_mlops",
+      "pages": [
+        6
+      ],
+      "sources": 1
+    },
+    {
+      "id": "b12-02",
+      "lesson": 12,
+      "company": "LinkedIn",
+      "deck": "12_mlops",
+      "pages": [
+        13
+      ],
+      "sources": 1
+    },
+    {
+      "id": "b12-03",
+      "lesson": 12,
+      "company": "DoorDash",
+      "deck": "12_mlops",
+      "pages": [
+        10
+      ],
+      "sources": 1
+    },
+    {
+      "id": "b12-04",
+      "lesson": 12,
+      "company": "Netflix",
+      "deck": "12_mlops",
+      "pages": [
+        4
+      ],
+      "sources": 1
+    },
+    {
+      "id": "b12-05",
+      "lesson": 12,
+      "company": "Stripe",
+      "deck": "12_mlops",
+      "pages": [
+        16
+      ],
+      "sources": 1
+    },
+    {
+      "id": "b13-01",
+      "lesson": 13,
+      "company": "BMW Group",
+      "deck": "13_ontology_action_scenario",
+      "pages": [
+        15
+      ],
+      "sources": 1
+    },
+    {
+      "id": "b13-02",
+      "lesson": 13,
+      "company": "Unilever",
+      "deck": "13_ontology_action_scenario",
+      "pages": [
+        13
+      ],
+      "sources": 1
+    },
+    {
+      "id": "b13-03",
+      "lesson": 13,
+      "company": "DHL × Tetra Pak",
+      "deck": "13_ontology_action_scenario",
+      "pages": [
+        7
+      ],
+      "sources": 1
+    },
+    {
+      "id": "b13-04",
+      "lesson": 13,
+      "company": "Rio Tinto",
+      "deck": "13_ontology_action_scenario",
+      "pages": [
+        4
+      ],
+      "sources": 1
+    },
+    {
+      "id": "b13-05",
+      "lesson": 13,
+      "company": "Jaguar Land Rover",
+      "deck": "13_ontology_action_scenario",
+      "pages": [
+        11
+      ],
+      "sources": 1
+    },
+    {
+      "id": "b14-01",
+      "lesson": 14,
+      "company": "Morgan Stanley",
+      "deck": "14_ai_agent",
+      "pages": [
+        12
+      ],
+      "sources": 1
+    },
+    {
+      "id": "b14-02",
+      "lesson": 14,
+      "company": "Box IT",
+      "deck": "14_ai_agent",
+      "pages": [
+        21
+      ],
+      "sources": 1
+    },
+    {
+      "id": "b14-03",
+      "lesson": 14,
+      "company": "Dow",
+      "deck": "14_ai_agent",
+      "pages": [
+        24
+      ],
+      "sources": 1
+    },
+    {
+      "id": "b14-04",
+      "lesson": 14,
+      "company": "Rakuten",
+      "deck": "14_ai_agent",
+      "pages": [
+        35
+      ],
+      "sources": 1
+    },
+    {
+      "id": "b14-05",
+      "lesson": 14,
+      "company": "Wiley",
+      "deck": "14_ai_agent",
+      "pages": [
+        26
+      ],
+      "sources": 1
+    },
+    {
+      "id": "b15-01",
+      "lesson": 15,
+      "company": "Siemens Amberg",
+      "deck": "final_project",
+      "pages": [
+        5
+      ],
+      "sources": 1
+    },
+    {
+      "id": "b15-02",
+      "lesson": 15,
+      "company": "Haier Electronics",
+      "deck": "final_project",
+      "pages": [
+        7
+      ],
+      "sources": 1
+    },
+    {
+      "id": "b15-03",
+      "lesson": 15,
+      "company": "Ocado",
+      "deck": "final_project",
+      "pages": [
+        13
+      ],
+      "sources": 1
+    },
+    {
+      "id": "b15-04",
+      "lesson": 15,
+      "company": "Amazon",
+      "deck": "final_project",
+      "pages": [
+        18
+      ],
+      "sources": 1
+    },
+    {
+      "id": "b15-05",
+      "lesson": 15,
+      "company": "BMW Group",
+      "deck": "final_project",
+      "pages": [
+        11
+      ],
+      "sources": 1
+    },
+    {
+      "id": "b16-01",
+      "lesson": 16,
+      "company": "Zillow Group",
+      "deck": "final_project_defense",
+      "pages": [
+        15,
+        16
+      ],
+      "sources": 1
+    },
+    {
+      "id": "b16-02",
+      "lesson": 16,
+      "company": "Knight Capital",
+      "deck": "final_project_defense",
+      "pages": [
+        18,
+        19
+      ],
+      "sources": 1
+    },
+    {
+      "id": "b16-03",
+      "lesson": 16,
+      "company": "TSB Bank",
+      "deck": "final_project_defense",
+      "pages": [
+        6,
+        7
+      ],
+      "sources": 1
+    },
+    {
+      "id": "b16-04",
+      "lesson": 16,
+      "company": "Microsoft",
+      "deck": "final_project_defense",
+      "pages": [
+        10,
+        11
+      ],
+      "sources": 1
+    },
+    {
+      "id": "b16-05",
+      "lesson": 16,
+      "company": "Amazon Web Services",
+      "deck": "final_project_defense",
+      "pages": [
+        21,
+        22
+      ],
+      "sources": 1
+    }
+  ],
+  "baseline": {},
+  "errors": []
+}

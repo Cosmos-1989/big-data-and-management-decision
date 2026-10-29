@@ -1,0 +1,2415 @@
+{
+  "title": "数据、信息与管理决策",
+  "slides": [
+    {
+      "kind": "opener",
+      "section": "问题定义",
+      "title": "从经营症状到管理决策",
+      "lead": "决策问题须同时规定对象、时点、行动和评价标准。",
+      "body": [
+        "“订单延期增加”是经营症状，尚未确定可干预的订单、行动时点与改进标准。仅预测哪些订单会延期，仍不能回答应如何配置加急资源。",
+        "可将其定义为：在承诺交期前 72 小时评估有效订单，在预算及产能约束下选择加急对象，并以交付结果和新增成本评价方案。由这一任务反推所需记录、估计量和选择方法。"
+      ],
+      "detailRef": {
+        "chapter": "01_intro",
+        "section": "怎样规定一次分析任务",
+        "anchor": "经营问题的定义"
+      },
+      "sourceSection": "经营问题的定义",
+      "layout": "split",
+      "diagram": {
+        "type": "graph",
+        "title": "决策任务的约束结构",
+        "description": "经营症状不能直接推出行动。决策时点与候选对象规定比较范围，资源与授权限制可行行动，结果和新增成本规定评价标准。",
+        "encoding": "模型结构示意",
+        "note": "范围、约束与损失共同定义可比较的方案。",
+        "nodes": [
+          {
+            "id": "symptom",
+            "x": 18,
+            "y": 24,
+            "w": 28,
+            "h": 22,
+            "label": "经营症状",
+            "detail": "延期增加",
+            "tone": "blue",
+            "shape": "rect"
+          },
+          {
+            "id": "scope",
+            "x": 50,
+            "y": 24,
+            "w": 28,
+            "h": 22,
+            "label": "对象与时点",
+            "detail": "有效订单；交期前72小时",
+            "tone": "blue",
+            "shape": "rect"
+          },
+          {
+            "id": "constraint",
+            "x": 82,
+            "y": 24,
+            "w": 28,
+            "h": 22,
+            "label": "资源与授权",
+            "detail": "预算、产能、审批",
+            "tone": "blue",
+            "shape": "rect"
+          },
+          {
+            "id": "choice",
+            "x": 50,
+            "y": 70,
+            "w": 28,
+            "h": 22,
+            "label": "选择可行行动",
+            "detail": "加急、重排或维持",
+            "tone": "blue",
+            "shape": "rect"
+          },
+          {
+            "id": "result",
+            "x": 82,
+            "y": 70,
+            "w": 28,
+            "h": 22,
+            "label": "评价结果",
+            "detail": "交付与新增成本",
+            "tone": "blue",
+            "shape": "rect"
+          }
+        ],
+        "edges": [
+          {
+            "from": "symptom",
+            "to": "scope",
+            "label": ""
+          },
+          {
+            "from": "scope",
+            "to": "choice",
+            "label": ""
+          },
+          {
+            "from": "constraint",
+            "to": "choice",
+            "label": ""
+          },
+          {
+            "from": "choice",
+            "to": "result",
+            "label": ""
+          }
+        ]
+      },
+      "density": "compact",
+      "lessonNumber": 1
+    },
+    {
+      "kind": "concept",
+      "section": "问题定义",
+      "title": "决策任务的基本要素",
+      "lead": "任务定义把经营诉求转化为可检验的约定。",
+      "body": [
+        "以订单加急为例，应说明哪些承诺进入候选集合、何时作出决策，以及该时点可获得哪些记录。候选行动包括维持排程、加急采购、重排产能和客户沟通。",
+        "预算、设备资格与审批权限界定可行性；交付结果、合同损失和加急支出构成评价依据。还须保存建议、批准及执行记录，使事后评价能够复原当时条件。 数据无法取得时，也应重新检查任务能否按原定义实施。"
+      ],
+      "detailRef": {
+        "chapter": "01_intro",
+        "section": "怎样规定一次分析任务",
+        "anchor": "经营问题的定义"
+      },
+      "sourceSection": "经营问题的定义",
+      "visual": {
+        "kind": "cards",
+        "items": [
+          {
+            "label": "对象与时点",
+            "detail": "明确候选订单及决策截止点。"
+          },
+          {
+            "label": "信息、行动与约束",
+            "detail": "只用当时可得记录，核对资源与权限。"
+          },
+          {
+            "label": "结果与验收",
+            "detail": "固定观察窗口及验证方式。"
+          }
+        ]
+      },
+      "layout": "split",
+      "lessonNumber": 1
+    },
+    {
+      "kind": "case",
+      "section": "企业案例",
+      "title": "UPSNav：路线顺序如何成为可执行行动",
+      "lead": "行动规格应一直明确到实际执行对象。",
+      "body": [
+        "快递配送既要确定先去哪个站点，也要确定车辆应驶向建筑物的哪个收货位置。只得到地理地址，仍可能停在与装卸口不同的一侧。",
+        "UPS在2018年公布UPSNav接入司机手持终端，按ORION计算的访问顺序提供逐向导航；导航目标包括装卸平台与收货区等具体位置，而不只使用建筑物正门。 核验时可分别记录路线建议、实际停靠和交付完成情况。"
+      ],
+      "layout": "split",
+      "detailRef": {
+        "chapter": "01_intro",
+        "section": "怎样规定一次分析任务",
+        "anchor": "经营问题的定义"
+      },
+      "sourceSection": "经营问题的定义",
+      "visual": {
+        "kind": "flow",
+        "items": [
+          {
+            "label": "顺序",
+            "detail": "决定访问先后"
+          },
+          {
+            "label": "位置",
+            "detail": "定位实际收货处"
+          },
+          {
+            "label": "执行",
+            "detail": "核验停靠与交付"
+          }
+        ]
+      },
+      "caseId": "b01-01",
+      "sources": [
+        {
+          "title": "UPS Deploys Purpose-Built Navigation For UPS Service Personnel",
+          "url": "https://about.ups.com/us/en/newsroom/press-releases/innovation-driven/ups-deploys-purpose-built-navigation-for-ups-service-personnel.html"
+        }
+      ],
+      "lessonNumber": 1
+    },
+    {
+      "kind": "case",
+      "section": "企业案例",
+      "title": "路线建议与交付完成",
+      "lead": "路径规划之后，还要确认车辆能否到达实际收货位置。",
+      "body": [
+        "路线规划给出访问顺序。导航还需要识别收货地点、可通行道路和装卸限制，才能把顺序转化为司机可执行的路径。",
+        "核验时分别记录建议路线、实际停靠位置和交付结果。这样可以区分导航建议是否被执行，以及交付是否完成。"
+      ],
+      "layout": "focus",
+      "detailRef": {
+        "chapter": "01_intro",
+        "section": "怎样规定一次分析任务",
+        "anchor": "经营问题的定义"
+      },
+      "sourceSection": "经营问题的定义",
+      "caseId": "b01-01",
+      "sources": [
+        {
+          "title": "UPS Deploys Purpose-Built Navigation For UPS Service Personnel",
+          "url": "https://about.ups.com/us/en/newsroom/press-releases/innovation-driven/ups-deploys-purpose-built-navigation-for-ups-service-personnel.html"
+        }
+      ],
+      "prompts": [
+        {
+          "question": "路线算法给出最短访问顺序后，任务是否已经完整？",
+          "answer": "尚需可执行的地点、道路与收货约束，并用真实交付结果核验，数学上的顺序只是行动规格的一部分。"
+        }
+      ],
+      "lessonNumber": 1
+    },
+    {
+      "kind": "concept",
+      "section": "问题定义",
+      "title": "记录、估计与选择",
+      "lead": "信息系统、统计学和管理科学共同支持方案比较。",
+      "body": [
+        "信息系统统一订单身份、承诺版本和库存状态，建立可查询的经营记录。统计学估计延期概率、干预效果及其不确定性。管理科学在目标与资源约束下选择行动组合。",
+        "可靠记录并不自动给出未知结果；准确预测也不自动说明干预效果。优化所用的对象、参数和约束均须有相应依据，三类方法围绕同一决策任务相互衔接。"
+      ],
+      "detailRef": {
+        "chapter": "01_intro",
+        "section": "数据、统计与方案选择",
+        "anchor": "相关学科与研究对象"
+      },
+      "sourceSection": "相关学科与研究对象",
+      "layout": "split",
+      "diagram": {
+        "type": "graph",
+        "title": "三类方法如何共同支持行动",
+        "description": "可信记录提供同一对象和状态；统计分析估计未知后果；管理科学同时使用状态、估计和资源约束选择方案。",
+        "encoding": "模型结构示意",
+        "note": "记录、估计与约束分别提供不同依据。",
+        "nodes": [
+          {
+            "id": "data",
+            "x": 18,
+            "y": 23,
+            "w": 28,
+            "h": 22,
+            "label": "信息系统",
+            "detail": "身份、版本、状态",
+            "tone": "blue",
+            "shape": "rect"
+          },
+          {
+            "id": "estimate",
+            "x": 50,
+            "y": 23,
+            "w": 28,
+            "h": 22,
+            "label": "统计分析",
+            "detail": "风险、效果、不确定性",
+            "tone": "blue",
+            "shape": "rect"
+          },
+          {
+            "id": "constraint",
+            "x": 82,
+            "y": 23,
+            "w": 28,
+            "h": 22,
+            "label": "管理条件",
+            "detail": "目标、资源、权限",
+            "tone": "blue",
+            "shape": "rect"
+          },
+          {
+            "id": "choice",
+            "x": 50,
+            "y": 73,
+            "w": 28,
+            "h": 22,
+            "label": "管理科学",
+            "detail": "约束下比较行动",
+            "tone": "blue",
+            "shape": "rect"
+          }
+        ],
+        "edges": [
+          {
+            "from": "data",
+            "to": "estimate",
+            "label": ""
+          },
+          {
+            "from": "data",
+            "to": "choice",
+            "label": "",
+            "via": [
+              {
+                "x": 18,
+                "y": 73
+              }
+            ]
+          },
+          {
+            "from": "estimate",
+            "to": "choice",
+            "label": ""
+          },
+          {
+            "from": "constraint",
+            "to": "choice",
+            "label": ""
+          }
+        ]
+      },
+      "density": "compact",
+      "lessonNumber": 1
+    },
+    {
+      "kind": "concept",
+      "section": "概念与方法",
+      "title": "数据仓库与ETL：形成分析资料",
+      "lead": "先统一历史记录，再讨论经营指标。",
+      "body": [
+        "数据仓库面向查询与分析，汇集多个业务来源的数据，按主题保存历史记录及约定口径。订单系统关注一笔订单能否可靠写入，仓库还要支持跨月份、产品与地区的比较。",
+        "ETL 是抽取、转换和装载的英文缩写：从源系统取得数据，清洗并转换结构，再写入目标系统。传递过程中可能出现遗漏、重复或时间错位，因此要保存数据来源与处理版本，并检查质量。"
+      ],
+      "layout": "split",
+      "detailRef": {
+        "chapter": "01_intro",
+        "section": "经营信息系统支持哪些任务",
+        "anchor": "商业智能决策支持与决策智能"
+      },
+      "sourceSection": "商业智能、决策支持与决策智能",
+      "visual": {
+        "kind": "flow",
+        "items": [
+          {
+            "label": "业务来源",
+            "detail": "订单、库存与客户记录"
+          },
+          {
+            "label": "ETL",
+            "detail": "抽取、转换、装载"
+          },
+          {
+            "label": "数据仓库",
+            "detail": "面向历史查询与分析"
+          }
+        ]
+      },
+      "lessonNumber": 1
+    },
+    {
+      "kind": "concept",
+      "section": "概念与方法",
+      "title": "OLAP与报表：两种阅读数据的方式",
+      "lead": "固定汇报与多维探索服务于不同问题。",
+      "body": [
+        "联机分析处理（OLAP）支持按时间、地区、产品等维度汇总、切换及细查数据。例如先观察全国周销售，再按地区拆分，并返回异常地区的订单。维度是用于分组或切换观察角度的业务属性。",
+        "报表系统把查询结果按约定版式组织成表格或图形，供汇报、监控与核对。固定报表便于持续比较，交互分析便于追查差异；二者都依赖一致的指标定义。"
+      ],
+      "layout": "split",
+      "detailRef": {
+        "chapter": "01_intro",
+        "section": "经营信息系统支持哪些任务",
+        "anchor": "商业智能决策支持与决策智能"
+      },
+      "sourceSection": "商业智能、决策支持与决策智能",
+      "visual": {
+        "kind": "compare",
+        "items": [
+          {
+            "label": "OLAP",
+            "detail": "切换维度并细查差异"
+          },
+          {
+            "label": "报表系统",
+            "detail": "按版式输出可核对结果"
+          }
+        ]
+      },
+      "lessonNumber": 1
+    },
+    {
+      "kind": "concept",
+      "section": "决策系统",
+      "title": "商业智能、决策支持与决策智能",
+      "lead": "三类系统的关注点不同，实际功能可以交叠。",
+      "body": [
+        "商业智能（BI）汇总、查询与展示经营事实，形成共同信息基础。决策支持系统（DSS）结合数据、模型及交互式情景分析，比较不同预算或排程方案。",
+        "决策智能研究怎样把分析结果用于行动。例如，将订单风险与预算、资格和操作权限结合，形成加急建议；记录批准、执行和交付结果，有助于核对建议与实际操作。"
+      ],
+      "detailRef": {
+        "chapter": "01_intro",
+        "section": "经营信息系统支持哪些任务",
+        "anchor": "商业智能决策支持与决策智能"
+      },
+      "sourceSection": "商业智能、决策支持与决策智能",
+      "visual": {
+        "kind": "cards",
+        "items": [
+          "商业智能：共同事实",
+          "决策支持：方案比较",
+          "决策智能：授权行动与反馈"
+        ]
+      },
+      "layout": "split",
+      "lessonNumber": 1
+    },
+    {
+      "kind": "concept",
+      "section": "决策系统",
+      "title": "对象、行动范围与指标口径",
+      "lead": "身份、可干预范围和度量规则须分别定义。",
+      "body": [
+        "业务对象是可识别、记录和管理的实体或事件，如订单、客户、批次。行动对象是本次决策实际作用的对象或对象集合，如具备加急资格的订单或一组待调拨库存。",
+        "关键绩效指标（KPI）按明确规则汇总经营表现。指标口径规定含义、计算、来源、时间与排除规则；“销售额”按下单、支付、发货或确认收入计算，所得量并不相同。"
+      ],
+      "detailRef": {
+        "chapter": "01_intro",
+        "section": "记录对象、行动对象与指标口径",
+        "anchor": "数据驱动决策的基本对象"
+      },
+      "sourceSection": "数据驱动决策的基本对象",
+      "visual": {
+        "kind": "cards",
+        "items": [
+          "业务对象：有效订单",
+          "行动对象：可加急订单",
+          "指标：按到期承诺定义的准时率"
+        ]
+      },
+      "layout": "split",
+      "lessonNumber": 1
+    },
+    {
+      "kind": "case",
+      "section": "企业案例",
+      "title": "Wells Fargo：开户数量为何偏离客户价值",
+      "lead": "绩效指标须与客户授权、真实需求及质量约束共同设计。",
+      "body": [
+        "代理指标是间接反映目标的可观测量。银行以开户等产品销售数量设定目标并与奖金联系；2016年监管调查发现，员工为完成目标而未经客户授权开立账户。",
+        "CFPB查明销售目标与奖金激励下存在未经授权开户行为；Wells Fargo披露自2016年10月取消相关零售产品销售目标，随后调整激励安排。"
+      ],
+      "layout": "split",
+      "detailRef": {
+        "chapter": "01_intro",
+        "section": "记录对象、行动对象与指标口径",
+        "anchor": "数据驱动决策的基本对象"
+      },
+      "sourceSection": "数据驱动决策的基本对象",
+      "visual": {
+        "kind": "flow",
+        "items": [
+          {
+            "label": "奖励信号",
+            "detail": "产品销售数量"
+          },
+          {
+            "label": "行为响应",
+            "detail": "追逐开户目标"
+          },
+          {
+            "label": "价值核验",
+            "detail": "客户授权及实际需求"
+          }
+        ]
+      },
+      "caseId": "b01-03",
+      "sources": [
+        {
+          "title": "CFPB Fines Wells Fargo for Secretly Opening Unauthorized Accounts",
+          "url": "https://www.consumerfinance.gov/archive/newsroom/consumer-financial-protection-bureau-fines-wells-fargo-100-million-widespread-illegal-practice-secretly-opening-unauthorized-accounts/"
+        },
+        {
+          "title": "Wells Fargo: Commitment to rebuilding trust",
+          "url": "https://www.sec.gov/Archives/edgar/data/72971/000119312517065587/d344612ddefa14a.htm"
+        }
+      ],
+      "lessonNumber": 1
+    },
+    {
+      "kind": "case",
+      "section": "企业案例",
+      "title": "开户记录准确与客户授权",
+      "lead": "准确计数以后，还要核查开户是否得到客户授权。",
+      "body": [
+        "开户数量是间接反映服务覆盖的代理指标。记录即使准确，也不能单独说明账户是否符合客户意愿或实际需求。",
+        "奖励规则以开户数量为依据时，员工可能改变开户行为。评价服务还应核对客户授权、产品适用性和投诉等记录，并检查相应的责任安排。"
+      ],
+      "layout": "focus",
+      "detailRef": {
+        "chapter": "01_intro",
+        "section": "记录对象、行动对象与指标口径",
+        "anchor": "数据驱动决策的基本对象"
+      },
+      "sourceSection": "数据驱动决策的基本对象",
+      "caseId": "b01-03",
+      "sources": [
+        {
+          "title": "CFPB Fines Wells Fargo for Secretly Opening Unauthorized Accounts",
+          "url": "https://www.consumerfinance.gov/archive/newsroom/consumer-financial-protection-bureau-fines-wells-fargo-100-million-widespread-illegal-practice-secretly-opening-unauthorized-accounts/"
+        },
+        {
+          "title": "Wells Fargo: Commitment to rebuilding trust",
+          "url": "https://www.sec.gov/Archives/edgar/data/72971/000119312517065587/d344612ddefa14a.htm"
+        }
+      ],
+      "prompts": [
+        {
+          "question": "提高指标数据的准确性，能否自动修复激励偏差？",
+          "answer": "不能。即使账户记录准确，未经授权开户仍损害客户；还需核查指标与组织价值的关系以及授权和问责机制。"
+        }
+      ],
+      "lessonNumber": 1
+    },
+    {
+      "kind": "concept",
+      "section": "决策模型",
+      "title": "绩效目标与基准策略",
+      "lead": "目标值须与实现路径、代价和比较基准共同说明。",
+      "body": [
+        "“准时交付率达到 \\(95\\%\\)”没有指定行动。增加库存、加班或重排产能会产生不同成本；修改承诺日期还可能改变指标分母和判定标准，而未改善实际交付。",
+        "比较方案前，应固定结果窗口、承诺版本、行动权限与硬约束。基准策略可采用维持原计划或现行人工规则，并记录它在同一对象集合上的损失。"
+      ],
+      "detailRef": {
+        "chapter": "01_intro",
+        "section": "明确比较条件与基准",
+        "anchor": "行动方案的比较"
+      },
+      "sourceSection": "行动方案的比较",
+      "visual": {
+        "kind": "cards",
+        "items": [
+          "基准策略",
+          "允许行动与硬约束",
+          "结果窗口与损失"
+        ]
+      },
+      "layout": "split",
+      "lessonNumber": 1
+    },
+    {
+      "kind": "case",
+      "section": "企业案例",
+      "title": "CVS停售烟草：企业目标如何界定行动集合",
+      "lead": "先明确组织接受哪些结果及约束，再比较可选方案。",
+      "body": [
+        "药房出售烟草可以产生销售收入，但与企业公开的健康服务定位存在冲突。CVS在2014年选择退出烟草品类，并安排戒烟支持。",
+        "CVS公告将停售与健康服务定位联系起来，并披露当时预期的收入影响；企业后续资料确认，2014年全部CVS Pharmacy门店已停止销售烟草。 当健康定位构成经营约束时，继续销售烟草可能不属于可行方案；将其作为目标时，则需要说明与财务指标的权衡。"
+      ],
+      "layout": "split",
+      "detailRef": {
+        "chapter": "01_intro",
+        "section": "明确比较条件与基准",
+        "anchor": "行动方案的比较"
+      },
+      "sourceSection": "行动方案的比较",
+      "visual": {
+        "kind": "flow",
+        "items": [
+          {
+            "label": "目标",
+            "detail": "健康服务定位"
+          },
+          {
+            "label": "备选行动",
+            "detail": "继续销售或退出"
+          },
+          {
+            "label": "评价",
+            "detail": "财务及非财务后果"
+          }
+        ]
+      },
+      "caseId": "b01-02",
+      "sources": [
+        {
+          "title": "CVS Health’s commitment to a tobacco-free future",
+          "url": "https://www.cvshealth.com/campaigns/quitting-tobacco.html"
+        },
+        {
+          "title": "CVS Caremark to Stop Selling Tobacco Products at all CVS/pharmacy Locations",
+          "url": "https://www.cvs.com/bizcontent/minuteclinic/desktop/pressreleases/020514-stop-tobacco.pdf"
+        }
+      ],
+      "lessonNumber": 1
+    },
+    {
+      "kind": "case",
+      "section": "企业案例",
+      "title": "收入与停售决策",
+      "lead": "收入是停售的后果之一，评价还需要组织目标和时间范围。",
+      "body": [
+        "若企业将健康定位作为约束，继续销售烟草可能不在可行方案中；若将它作为目标，则需要说明与财务结果如何权衡。",
+        "停售及公开理由可以从企业资料核实。评价长期利润或健康结果，还需要对应的数据和研究设计，并明确比较期限。"
+      ],
+      "layout": "focus",
+      "detailRef": {
+        "chapter": "01_intro",
+        "section": "明确比较条件与基准",
+        "anchor": "行动方案的比较"
+      },
+      "sourceSection": "行动方案的比较",
+      "caseId": "b01-02",
+      "sources": [
+        {
+          "title": "CVS Health’s commitment to a tobacco-free future",
+          "url": "https://www.cvshealth.com/campaigns/quitting-tobacco.html"
+        },
+        {
+          "title": "CVS Caremark to Stop Selling Tobacco Products at all CVS/pharmacy Locations",
+          "url": "https://www.cvs.com/bizcontent/minuteclinic/desktop/pressreleases/020514-stop-tobacco.pdf"
+        }
+      ],
+      "prompts": [
+        {
+          "question": "“该品类仍有收入”足以证明停售决策错误吗？",
+          "answer": "不足。收入只是一项后果，还需按组织目标考虑健康定位、成本和长期结果，并说明采用何种评价周期。"
+        }
+      ],
+      "lessonNumber": 1
+    },
+    {
+      "kind": "calculation",
+      "section": "决策模型",
+      "title": "条件期望损失与行动选择",
+      "lead": "在可行集合内比较每项行动的预期后果。",
+      "body": [
+        "令 \\(X=x\\) 表示当前可得状态，\\(\\mathcal A(x)\\) 为满足资源及授权条件的行动集合。\\(Y(a)\\) 是采取行动 \\(a\\) 后的潜在结果，例如是否延期；同一订单实际只经历所选行动，其他潜在结果无法同时观测。损失函数 \\(L\\) 把结果换算为业务代价。",
+        "条件期望是在状态 \\(x\\) 下，按结果概率加权的平均损失。独立行动成本为 \\(C(a)\\)，\\(\\lambda\\ge0\\) 用于单位转换或授权权衡；已计入 \\(L\\) 的费用不再重复计入。假定期望有限且最优行动存在。"
+      ],
+      "detailRef": {
+        "chapter": "01_intro",
+        "section": "状态、行动与条件期望损失",
+        "anchor": "状态行动与条件损失"
+      },
+      "sourceSection": "状态、行动与条件损失",
+      "equation": "a^*(x)\\in\\operatorname*{arg\\,min}_{a\\in\\mathcal A(x)}\\left\\{\\mathbb E[L(Y(a),a)\\mid X=x]+\\lambda C(a)\\right\\}",
+      "layout": "focus",
+      "lessonNumber": 1
+    },
+    {
+      "kind": "concept",
+      "section": "决策模型",
+      "title": "期望损失公式的读法",
+      "lead": "固定当前信息，逐项比较可行行动。",
+      "body": [
+        "\\(\\operatorname*{arg\\,min}\\) 返回使目标最小的行动集合；\\(\\min\\) 返回最小损失数值。若多个行动并列，\\(a^*(x)\\) 可以是其中任意一项，不能仅由最小值断言唯一方案。",
+        "计算时，对每个可行行动列出可能结果及概率，算出平均损失，再加入独立成本。预算和资格决定哪些行动可比较，损失函数决定比较标准。"
+      ],
+      "detailRef": {
+        "chapter": "01_intro",
+        "section": "状态、行动与条件期望损失",
+        "anchor": "状态行动与条件损失"
+      },
+      "sourceSection": "状态、行动与条件损失",
+      "layout": "stack",
+      "visual": {
+        "kind": "table",
+        "headers": [
+          "符号或步骤",
+          "含义"
+        ],
+        "rows": [
+          [
+            "\\(X=x\\)",
+            "固定决策时点已知的信息"
+          ],
+          [
+            "\\(\\mathbb E[L\\mid X=x]\\)",
+            "对未知结果按概率加权"
+          ],
+          [
+            "\\(a\\in\\mathcal A(x)\\)",
+            "只比较满足约束的行动"
+          ],
+          [
+            "\\(a^*(x)\\in\\arg\\min\\)",
+            "从最小损失的行动中选择"
+          ]
+        ]
+      },
+      "density": "compact",
+      "lessonNumber": 1
+    },
+    {
+      "kind": "concept",
+      "section": "决策模型",
+      "title": "风险预测与干预收益",
+      "lead": "行动比较需要估计可避免的损失。",
+      "body": [
+        "预测估计给定信息下的结果概率；干预评价比较采取不同动作后的潜在结果。高风险对象可能难以挽回，风险较低的对象也可能具有较大的干预收益。",
+        "令 \\(p_i(0),p_i(1)\\) 分别为订单 \\(i\\) 不加急、加急时的延期概率；\\(v_i,c_i\\) 为同一货币单位的延期损失和加急费。若两单互不影响、均可行且资源占用相同，最多加急一单时比较净收益 \\(B_i\\)，并与不加急的零收益比较。"
+      ],
+      "detailRef": {
+        "chapter": "01_intro",
+        "section": "状态、行动与条件期望损失",
+        "anchor": "状态行动与条件损失"
+      },
+      "sourceSection": "状态、行动与条件损失",
+      "equation": "B_i=[p_i(0)-p_i(1)]v_i-c_i",
+      "layout": "focus",
+      "lessonNumber": 1
+    },
+    {
+      "kind": "worked",
+      "section": "决策模型",
+      "title": "订单加急：明确比较条件",
+      "lead": "算例条件：两单均可加急，但最多选择一单。",
+      "body": [
+        "两单的延期损失均为 \\(10\\) 万元，加急费均为 \\(0.5\\) 万元。表中概率视为已知算例参数，且假定两项行动的效果互不影响。",
+        "两单均满足资格、时点和预算约束。问题是选择预期净收益较高的行动；表中的原风险只是比较所需信息的一部分。"
+      ],
+      "detailRef": {
+        "chapter": "01_intro",
+        "section": "状态、行动与条件期望损失",
+        "anchor": "状态行动与条件损失"
+      },
+      "sourceSection": "状态、行动与条件损失",
+      "visual": {
+        "kind": "table",
+        "headers": [
+          "订单",
+          "原延期概率",
+          "加急后概率",
+          "延期损失",
+          "加急费"
+        ],
+        "rows": [
+          [
+            "\\(\\mathrm A\\)",
+            "\\(0.8\\)",
+            "\\(0.7\\)",
+            "10 万元",
+            "0.5 万元"
+          ],
+          [
+            "\\(\\mathrm B\\)",
+            "\\(0.5\\)",
+            "\\(0.2\\)",
+            "10 万元",
+            "0.5 万元"
+          ]
+        ]
+      },
+      "layout": "stack",
+      "lessonNumber": 1
+    },
+    {
+      "kind": "calculation",
+      "section": "决策模型",
+      "title": "订单加急：计算预期净收益",
+      "lead": "概率降幅与延期损失共同决定可避免损失。",
+      "body": [
+        "两单互不影响、均可加急且资源占用相同，最多选择一单。延期损失均为 \\(10\\) 万元，加急费均为 \\(0.5\\) 万元；概率视为已知算例参数。",
+        "净收益为概率降幅乘延期损失，再扣除加急费。原风险较高的 \\(\\mathrm A\\) 干预效果较小，故 \\(\\mathrm B\\) 的净收益更高；真实应用须通过实验或明确识别条件估计干预后概率。"
+      ],
+      "detailRef": {
+        "chapter": "01_intro",
+        "section": "状态、行动与条件期望损失",
+        "anchor": "状态行动与条件损失"
+      },
+      "sourceSection": "状态、行动与条件损失",
+      "layout": "split",
+      "density": "compact",
+      "diagram": {
+        "type": "bars",
+        "title": "同一损失口径下的净收益",
+        "description": "订单A避免期望损失1万元，扣费0.5万元后净收益0.5万元；订单B避免3万元，扣费后净收益2.5万元。共同零点的条长比较净收益。",
+        "encoding": "教学算例 · 同一比例尺",
+        "note": "最多加急一单且资源占用相同时，选择 B。",
+        "domain": [
+          0,
+          3
+        ],
+        "unit": "万元",
+        "rows": [
+          {
+            "label": "订单 A",
+            "value": 0.5,
+            "detail": "\\((0.8-0.7)\\times10-0.5\\)",
+            "tone": "muted"
+          },
+          {
+            "label": "订单 B",
+            "value": 2.5,
+            "detail": "\\((0.5-0.2)\\times10-0.5\\)",
+            "tone": "teal"
+          }
+        ],
+        "ticks": [
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "equation": "B_i=[p_i(0)-p_i(1)]v_i-c_i",
+      "lessonNumber": 1
+    },
+    {
+      "kind": "case",
+      "section": "信息价值",
+      "title": "以损失矩阵评价信息",
+      "lead": "先规定行动后果，再研究检测能否改善选择。",
+      "body": [
+        "半导体封装与测试简称封测。封测工厂明日可能正常 \\(\\theta=0\\) 或中断 \\(\\theta=1\\)。可维持原计划 \\(a=0\\)，或提前转移批次 \\(a=1\\)。表中损失 \\(L(\\theta,a)\\) 以万元计，已包含转移、停机和延期成本。",
+        "正常时原计划损失较小，中断时转移损失较小。当前只能依据中断概率选择；检测的潜在作用是在行动前提供有关状态的信息，从而允许行动随信号改变。"
+      ],
+      "detailRef": {
+        "chapter": "01_intro",
+        "section": "检测信息的决策价值",
+        "anchor": "sec:information-value"
+      },
+      "sourceSection": "从期望损失到信息价值",
+      "layout": "split",
+      "diagram": {
+        "type": "matrix",
+        "title": "状态 × 行动：损失矩阵",
+        "description": "列表示正常或中断，行表示原计划或提前转移。原计划正常损失0、中断100；转移正常15、中断25，单位为万元。",
+        "encoding": "教学算例 · 色深表示数值",
+        "note": "单位：万元；每格已包含该行动的相关成本。",
+        "columns": [
+          "正常 \\(\\theta=0\\)",
+          "中断 \\(\\theta=1\\)"
+        ],
+        "rowLabels": [
+          "原计划 \\(a=0\\)",
+          "转移 \\(a=1\\)"
+        ],
+        "cells": [
+          [
+            {
+              "text": "\\(0\\)",
+              "detail": "原计划无中断成本",
+              "tone": "teal",
+              "value": 0
+            },
+            {
+              "text": "\\(100\\)",
+              "detail": "中断损失",
+              "tone": "rose",
+              "value": 100
+            }
+          ],
+          [
+            {
+              "text": "\\(15\\)",
+              "detail": "转移费用",
+              "tone": "blue",
+              "value": 15
+            },
+            {
+              "text": "\\(25\\)",
+              "detail": "转移后总损失",
+              "tone": "blue",
+              "value": 25
+            }
+          ]
+        ],
+        "scale": [
+          0,
+          100
+        ]
+      },
+      "density": "compact",
+      "lessonNumber": 1
+    },
+    {
+      "kind": "calculation",
+      "section": "信息价值",
+      "title": "从损失矩阵推导行动阈值",
+      "lead": "管理阈值由行动成本及结果损失决定。",
+      "body": [
+        "令 \\(p=P(\\theta=1)\\)。原计划的期望损失为 \\(100p\\)，转移的期望损失为 \\(15(1-p)+25p=15+10p\\)。比较这两个函数即可得到选择规则。",
+        "当 \\(p>1/6\\) 时转移较优，\\(p<1/6\\) 时维持原计划较优，等于阈值时两者并列。概率模型估计 \\(p\\)，损失矩阵规定应如何使用它。 在其他损失结构下，行动切换的概率阈值也会改变。"
+      ],
+      "detailRef": {
+        "chapter": "01_intro",
+        "section": "检测之前怎样选择",
+        "anchor": "先验概率下的行动选择"
+      },
+      "sourceSection": "先验概率下的行动选择",
+      "equation": "100p>15+10p\\quad\\Longleftrightarrow\\quad p>\\frac16",
+      "layout": "split",
+      "diagram": {
+        "type": "plot",
+        "title": "行动阈值是两条损失曲线的交点",
+        "description": "横轴为中断概率，纵轴为期望损失。原计划为100p，转移为15+10p；交点p=1/6、损失50/3。交点左侧原计划较优，右侧转移较优。",
+        "encoding": "解析模型 · 曲线同轴",
+        "note": "交点左侧维持原计划，右侧转移；交点处并列。",
+        "xDomain": [
+          0,
+          0.4
+        ],
+        "yDomain": [
+          0,
+          40
+        ],
+        "xLabel": "中断概率 \\(p\\)",
+        "yLabel": "期望损失 / 万元",
+        "xTicks": [
+          0,
+          0.1,
+          0.2,
+          0.3,
+          0.4
+        ],
+        "yTicks": [
+          0,
+          10,
+          20,
+          30,
+          40
+        ],
+        "series": [
+          {
+            "label": "原计划 \\(100p\\)",
+            "points": [
+              [
+                0,
+                0
+              ],
+              [
+                0.4,
+                40
+              ]
+            ],
+            "tone": "rose",
+            "dashed": false
+          },
+          {
+            "label": "转移 \\(15+10p\\)",
+            "points": [
+              [
+                0,
+                15
+              ],
+              [
+                0.4,
+                19
+              ]
+            ],
+            "tone": "teal",
+            "dashed": false
+          }
+        ],
+        "markers": [
+          {
+            "x": 0.16666666666666666,
+            "y": 16.666666666666668,
+            "label": "\\(p=1/6\\)",
+            "tone": "blue"
+          }
+        ],
+        "regions": []
+      },
+      "density": "compact",
+      "lessonNumber": 1
+    },
+    {
+      "kind": "concept",
+      "section": "概念与方法",
+      "title": "先验、信号与后验",
+      "lead": "新信息改变判断，行动规则仍由损失决定。",
+      "body": [
+        "先验概率表示观察本次信号前对未知状态的判断；似然表示某状态下出现该信号的概率；后验概率表示观察信号后更新的状态判断。阳性既可能来自真实中断，也可能来自正常时误报。",
+        "贝叶斯公式以“先验乘似然”得到联合概率，再除以该信号的总概率完成归一化。后验提高并不直接规定行动；应把更新后的概率代入同一损失结构。"
+      ],
+      "layout": "split",
+      "detailRef": {
+        "chapter": "01_intro",
+        "section": "根据检测结果调整行动",
+        "anchor": "贝叶斯更新与条件行动"
+      },
+      "sourceSection": "贝叶斯更新与条件行动",
+      "visual": {
+        "kind": "flow",
+        "items": [
+          {
+            "label": "先验",
+            "detail": "观察信号前的状态判断"
+          },
+          {
+            "label": "似然",
+            "detail": "给定状态出现信号的概率"
+          },
+          {
+            "label": "后验",
+            "detail": "给定信号更新状态判断"
+          }
+        ]
+      },
+      "lessonNumber": 1
+    },
+    {
+      "kind": "worked",
+      "section": "信息价值",
+      "title": "先验下的最优基准行动",
+      "lead": "中断先验为 \\(p=0.2\\) 时，应选择转移。",
+      "body": [
+        "代入两种行动的期望损失，原计划为 \\(20\\) 万元，转移为 \\(17\\) 万元。无检测时的合理基准，因而是选择转移。",
+        "信息价值应与当前信息下的最优固定行动比较。若用较差的原计划作为基准，会把本可通过合理决策取得的收益错误归给检测。"
+      ],
+      "detailRef": {
+        "chapter": "01_intro",
+        "section": "检测之前怎样选择",
+        "anchor": "先验概率下的行动选择"
+      },
+      "sourceSection": "先验概率下的行动选择",
+      "workedExample": {
+        "title": "两项固定行动",
+        "steps": [
+          {
+            "label": "原计划",
+            "text": "仅在中断状态损失。",
+            "formula": "100\\times0.2=20"
+          },
+          {
+            "label": "提前转移",
+            "text": "正常与中断均有成本。",
+            "formula": "15\\times0.8+25\\times0.2=17"
+          }
+        ],
+        "result": "无信息时的最小期望损失为 17 万元。"
+      },
+      "layout": "stack",
+      "density": "compact",
+      "lessonNumber": 1
+    },
+    {
+      "kind": "calculation",
+      "section": "信息价值",
+      "title": "检测信号的总体概率",
+      "lead": "全概率公式合并两条可能产生阳性的路径。",
+      "body": [
+        "用 \\(+\\) 表示阳性，\\(-\\) 表示阴性。中断先验为 \\(0.2\\)，检测特征为 \\(P(+\\mid\\theta=1)=0.8\\)、\\(P(+\\mid\\theta=0)=0.1\\)。阳性可能来自中断，也可能是正常状态下的误报。",
+        "检测在行动前返回。全概率公式分别计算“中断且阳性”和“正常且阳性”的概率，再相加；观测到阳性后，还须用贝叶斯公式推断中断概率。"
+      ],
+      "detailRef": {
+        "chapter": "01_intro",
+        "section": "根据检测结果调整行动",
+        "anchor": "贝叶斯更新与条件行动"
+      },
+      "sourceSection": "贝叶斯更新与条件行动",
+      "equation": [
+        "P(+)=0.8\\times0.2+0.1\\times0.8=0.24",
+        "P(-)=1-0.24=0.76"
+      ],
+      "layout": "focus",
+      "lessonNumber": 1
+    },
+    {
+      "kind": "worked",
+      "section": "信息价值",
+      "title": "状态与检测信号的联合概率",
+      "lead": "每个格子的概率等于状态概率乘以该状态下的信号概率。",
+      "body": [
+        "中断先验为 \\(0.2\\)，检测阳性概率在中断时为 \\(0.8\\)、正常时为 \\(0.1\\)。每格为“状态概率 × 该状态下的信号概率”，四格互斥且覆盖全部结果。",
+        "观测到阳性后，只保留阳性列，并除以列和 \\(0.24\\)：中断后验为 \\(0.16/0.24=2/3\\)。阴性时同理得到 \\(0.04/0.76=1/19\\)。"
+      ],
+      "detailRef": {
+        "chapter": "01_intro",
+        "section": "根据检测结果调整行动",
+        "anchor": "贝叶斯更新与条件行动"
+      },
+      "sourceSection": "贝叶斯更新与条件行动",
+      "layout": "split",
+      "density": "compact",
+      "diagram": {
+        "type": "matrix",
+        "title": "四个互斥路径构成联合分布",
+        "description": "行是设备状态、列是检测信号。正常阳性0.08、正常阴性0.72、中断阳性0.16、中断阴性0.04。列和分别为0.24与0.76，行和分别为0.80与0.20。",
+        "encoding": "教学算例 · 色深表示数值",
+        "note": "列和：\\(P(+)=0.24\\)，\\(P(-)=0.76\\)；四格合计 \\(1\\)。",
+        "columns": [
+          "阳性 \\(+\\)",
+          "阴性 \\(-\\)"
+        ],
+        "rowLabels": [
+          "正常 \\(P=0.80\\)",
+          "中断 \\(P=0.20\\)"
+        ],
+        "cells": [
+          [
+            {
+              "text": "\\(0.8\\times0.1=0.08\\)",
+              "detail": "正常且阳性",
+              "tone": "blue",
+              "value": 0.08
+            },
+            {
+              "text": "\\(0.8\\times0.9=0.72\\)",
+              "detail": "正常且阴性",
+              "tone": "blue",
+              "value": 0.72
+            }
+          ],
+          [
+            {
+              "text": "\\(0.2\\times0.8=0.16\\)",
+              "detail": "中断且阳性",
+              "tone": "rose",
+              "value": 0.16
+            },
+            {
+              "text": "\\(0.2\\times0.2=0.04\\)",
+              "detail": "中断且阴性",
+              "tone": "rose",
+              "value": 0.04
+            }
+          ]
+        ],
+        "scale": [
+          0,
+          0.72
+        ]
+      },
+      "lessonNumber": 1
+    },
+    {
+      "kind": "calculation",
+      "section": "信息价值",
+      "title": "由后验概率选择条件行动",
+      "lead": "贝叶斯更新将检测信号转化为状态信息。",
+      "body": [
+        "阳性且中断的联合概率为 \\(0.2\\times0.8=0.16\\)；阴性且中断为 \\(0.2\\times(1-0.8)=0.04\\)。分别除以阳性概率 \\(0.24\\) 和阴性概率 \\(0.76\\)，得到后验。",
+        "阳性后验高于转移阈值 \\(1/6\\)，应转移；阴性后验低于阈值，应维持原计划。同一损失结构下，观测信息不同会改变最优行动。"
+      ],
+      "detailRef": {
+        "chapter": "01_intro",
+        "section": "根据检测结果调整行动",
+        "anchor": "贝叶斯更新与条件行动"
+      },
+      "sourceSection": "贝叶斯更新与条件行动",
+      "equation": "\\begin{aligned}P(\\theta=1\\mid+)&=\\frac{0.16}{0.24}=\\frac23,\\\\P(\\theta=1\\mid-)&=\\frac{0.04}{0.76}=\\frac1{19}.\\end{aligned}",
+      "prompts": [
+        {
+          "question": "为什么不能把 0.8 直接当作阳性后的中断概率？",
+          "answer": "\\(0.8\\) 是似然 \\(P(+\\mid\\theta=1)\\)。后验 \\(P(\\theta=1\\mid+)\\) 还须结合先验与误报率。"
+        }
+      ],
+      "layout": "focus",
+      "density": "compact",
+      "lessonNumber": 1
+    },
+    {
+      "kind": "calculation",
+      "section": "信息价值",
+      "title": "先条件择优，再取平均",
+      "lead": "信息允许动作随信号变化。",
+      "body": [
+        "算例损失以万元计：原计划正常为 \\(0\\)、中断为 \\(100\\)，转移正常为 \\(15\\)、中断为 \\(25\\)。阳性、阴性后验分别为 \\(2/3\\)、\\(1/19\\)，信号概率分别为 \\(0.24\\)、\\(0.76\\)。",
+        "先在各分支择优：阳性转移，损失为 \\(15+10\\times2/3=65/3\\)；阴性维持原计划，损失为 \\(100/19\\)。再对信号加权得 \\(9.2\\) 万元；若先将后验概率平均还原为先验，再选择一个固定行动，仍为 \\(17\\) 万元。"
+      ],
+      "detailRef": {
+        "chapter": "01_intro",
+        "section": "计算检测的期望价值",
+        "anchor": "样本信息的期望价值"
+      },
+      "sourceSection": "样本信息的期望价值",
+      "layout": "split",
+      "diagram": {
+        "type": "graph",
+        "title": "信号分支上的最优行动",
+        "description": "检测返回后，阳性概率0.24时转移，后验中断概率2/3、条件损失65/3；阴性概率0.76时维持计划，后验1/19、条件损失100/19。两分支加权贡献5.2和4.0万元，合计9.2万元。",
+        "encoding": "教学条件决策树 · 枝长不表示概率",
+        "note": "两分支贡献 \\(0.24\\times65/3+0.76\\times100/19=9.2\\) 万元。",
+        "nodes": [
+          {
+            "id": "test",
+            "x": 15,
+            "y": 50,
+            "w": 23,
+            "h": 22,
+            "label": "检测信号",
+            "detail": "行动前获得",
+            "tone": "blue",
+            "shape": "rect"
+          },
+          {
+            "id": "plus",
+            "x": 50,
+            "y": 24,
+            "w": 28,
+            "h": 22,
+            "label": "阳性：转移",
+            "detail": "后验 \\(2/3\\)",
+            "tone": "blue",
+            "shape": "rect"
+          },
+          {
+            "id": "minus",
+            "x": 50,
+            "y": 76,
+            "w": 28,
+            "h": 22,
+            "label": "阴性：原计划",
+            "detail": "后验 \\(1/19\\)",
+            "tone": "blue",
+            "shape": "rect"
+          },
+          {
+            "id": "lp",
+            "x": 83,
+            "y": 24,
+            "w": 27,
+            "h": 22,
+            "label": "\\(65/3\\) 万元",
+            "detail": "条件期望损失",
+            "tone": "rose",
+            "shape": "rect"
+          },
+          {
+            "id": "lm",
+            "x": 83,
+            "y": 76,
+            "w": 27,
+            "h": 22,
+            "label": "\\(100/19\\) 万元",
+            "detail": "条件期望损失",
+            "tone": "teal",
+            "shape": "rect"
+          }
+        ],
+        "edges": [
+          {
+            "from": "test",
+            "to": "plus",
+            "label": "\\(0.24\\)",
+            "labelX": 29,
+            "labelY": 22
+          },
+          {
+            "from": "test",
+            "to": "minus",
+            "label": "\\(0.76\\)",
+            "labelX": 29,
+            "labelY": 79
+          },
+          {
+            "from": "plus",
+            "to": "lp",
+            "label": ""
+          },
+          {
+            "from": "minus",
+            "to": "lm",
+            "label": ""
+          }
+        ]
+      },
+      "density": "compact",
+      "lessonNumber": 1
+    },
+    {
+      "kind": "calculation",
+      "section": "信息价值",
+      "title": "样本信息价值与完全信息价值",
+      "lead": "比较获得信息前后的最小期望损失。",
+      "body": [
+        "采用同一先验、损失矩阵与行动集合。无检测时最优固定行动为转移，损失 \\(17\\) 万元；按检测信号选择时损失 \\(9.2\\) 万元；完全获知状态时损失 \\(5\\) 万元。",
+        "无检测损失减去按样本信号决策的损失，为样本信息价值（EVSI）；减去完全获知状态时的损失，为完全信息价值（EVPI）。完全信息指行动前无误获知相关状态，允许更充分的状态依赖行动，因此构成现实检测价值的上界；采购还须扣除费用及等待成本。"
+      ],
+      "detailRef": {
+        "chapter": "01_intro",
+        "section": "计算检测的期望价值",
+        "anchor": "样本信息的期望价值"
+      },
+      "sourceSection": "样本信息的期望价值",
+      "layout": "split",
+      "diagram": {
+        "type": "bars",
+        "title": "三类信息条件下的最优期望损失",
+        "description": "无新信息的最优固定行动损失17万元，按检测信号行动损失9.2万元，完全信息损失5万元，均未扣信息成本。检测信息价值为7.8、完全信息价值为12万元。",
+        "encoding": "教学算例 · 同一比例尺",
+        "note": "\\(\\operatorname{EVSI}=7.8\\)，\\(\\operatorname{EVPI}=12\\)；均未扣信息成本。",
+        "domain": [
+          0,
+          20
+        ],
+        "unit": "万元",
+        "rows": [
+          {
+            "label": "无新信息",
+            "value": 17,
+            "detail": "先验最优：转移",
+            "tone": "muted"
+          },
+          {
+            "label": "现实检测",
+            "value": 9.2,
+            "detail": "按阳性、阴性分别行动",
+            "tone": "blue"
+          },
+          {
+            "label": "完全信息",
+            "value": 5,
+            "detail": "正常原计划；中断转移",
+            "tone": "teal"
+          }
+        ],
+        "ticks": [
+          0,
+          5,
+          10,
+          15,
+          20
+        ]
+      },
+      "density": "compact",
+      "equation": "0\\le\\operatorname{EVSI}\\le\\operatorname{EVPI}",
+      "lessonNumber": 1
+    },
+    {
+      "kind": "concept",
+      "section": "信息价值",
+      "title": "免费信息价值的非负性",
+      "lead": "取得信号后仍可沿用原行动。",
+      "body": [
+        "\\(S\\) 表示决策前获得的信号，\\(\\theta\\) 表示未知状态。假定行动集合不变、信号可忽略、最优值存在且期望有限；样本信息价值比较有无信号时的最小期望损失。",
+        "记无信号时的最优固定行动为 \\(a_0\\)。每个信号下仍可沿用 \\(a_0\\)，条件最小损失因此不超过沿用它的损失。对信号取期望，利用迭代期望即可得非负性。"
+      ],
+      "detailRef": {
+        "chapter": "01_intro",
+        "section": "计算检测的期望价值",
+        "anchor": "样本信息的期望价值"
+      },
+      "sourceSection": "样本信息的期望价值",
+      "equation": [
+        "\\operatorname{EVSI}=\\min_a\\mathbb E[L(\\theta,a)]-\\mathbb E_S\\!\\left[\\min_a\\mathbb E[L(\\theta,a)\\mid S]\\right]",
+        "\\begin{aligned}\\mathbb E_S\\!\\left[\\min_a\\mathbb E[L(\\theta,a)\\mid S]\\right]&\\le\\mathbb E_S\\mathbb E[L(\\theta,a_0)\\mid S]\\\\&=\\mathbb E[L(\\theta,a_0)].\\end{aligned}"
+      ],
+      "layout": "focus",
+      "density": "compact",
+      "lessonNumber": 1
+    },
+    {
+      "kind": "worked",
+      "section": "信息价值",
+      "title": "信息采购：净收益与成本结构",
+      "lead": "信息价值须扣除获得和使用信息的相关成本。",
+      "body": [
+        "本例检测费为每次 \\(6\\) 万元，且结果能在决策截止前返回。其净期望收益为 \\(1.8\\) 万元；若另有每次 \\(2\\) 万元的集成费，净收益为负。",
+        "一次性集成投资应按评价周期和预计使用次数分析现金流，不应作为每次费用重复扣除。检测若迟于行动截止点，也不能实现前述条件策略。"
+      ],
+      "detailRef": {
+        "chapter": "01_intro",
+        "section": "行动阈值与检测采购",
+        "anchor": "行动阈值与信息采购"
+      },
+      "sourceSection": "行动阈值与信息采购",
+      "layout": "split",
+      "density": "compact",
+      "diagram": {
+        "type": "bars",
+        "title": "额外逐次费用可翻转采购结论",
+        "description": "检测信息价值7.8万元，检测费6万元，净收益1.8万元。若另加每次集成费2万元，净收益为负0.2万元。共同零点区分正负。",
+        "encoding": "教学算例 · 同一比例尺",
+        "note": "费用按次发生；一次性投资须按周期另行评价。",
+        "domain": [
+          -1,
+          2
+        ],
+        "unit": "万元",
+        "rows": [
+          {
+            "label": "仅检测费",
+            "value": 1.8,
+            "detail": "\\(7.8-6=1.8\\)",
+            "tone": "teal"
+          },
+          {
+            "label": "另有逐次集成费",
+            "value": -0.2,
+            "detail": "\\(7.8-6-2=-0.2\\)",
+            "tone": "rose"
+          }
+        ],
+        "ticks": [
+          -1,
+          0,
+          1,
+          2
+        ]
+      },
+      "lessonNumber": 1
+    },
+    {
+      "layout": "focus",
+      "title": "更精确信息何时没有决策价值",
+      "lead": "概率更新未必改变最优行动。",
+      "body": [
+        "令 \\(p_S=P(\\theta=1\\mid S)\\)。若所有后验 \\(p_S\\) 均高于 \\(1/6\\)，每个信号下都选择转移。由于 \\(\\mathbb E[p_S]=p\\)，其平均损失仍为 \\(15+10p\\)，与不检测时相同。",
+        "所有后验均低于阈值时，同理始终维持原计划，平均损失仍为 \\(100p\\)。因此，更精确的概率估计未必产生当前问题的决策价值；价值还取决于行动和损失。"
+      ],
+      "prompts": [
+        {
+          "question": "一项检测让概率估计更精确，是否必然值得购买？",
+          "answer": "未必。若最优行动始终不变，其决策价值为零；即使行动改变，净收益还须扣除相关成本。"
+        }
+      ],
+      "kind": "concept",
+      "section": "信息价值",
+      "detailRef": {
+        "chapter": "01_intro",
+        "section": "行动阈值与检测采购",
+        "anchor": "行动阈值与信息采购"
+      },
+      "sourceSection": "行动阈值与信息采购",
+      "lessonNumber": 1
+    },
+    {
+      "kind": "case",
+      "section": "企业案例",
+      "title": "Amazon：可逆性与决策时间",
+      "lead": "等待信息的收益应与延迟及纠错成本共同比较。",
+      "body": [
+        "Amazon 在2016年度股东信中区分容易撤回和难以撤回的决策：前者可采用较轻的决策程序，后者需要更审慎的处理。",
+        "容易纠正的错误通常具有较低的撤回成本。及时发现并纠正错误仍需要记录和责任安排，等待信息的成本也取决于是否错过行动时机。"
+      ],
+      "layout": "split",
+      "detailRef": {
+        "chapter": "01_intro",
+        "section": "行动阈值与检测采购",
+        "anchor": "行动阈值与信息采购"
+      },
+      "sourceSection": "行动阈值与信息采购",
+      "visual": {
+        "kind": "flow",
+        "items": [
+          {
+            "label": "信息等待",
+            "detail": "可能改进行动选择"
+          },
+          {
+            "label": "时间成本",
+            "detail": "可能错过行动窗口"
+          },
+          {
+            "label": "纠错能力",
+            "detail": "影响错误的持续后果"
+          }
+        ]
+      },
+      "caseId": "b01-05",
+      "sources": [
+        {
+          "title": "2016 Letter to Shareholders",
+          "url": "https://www.aboutamazon.com/news/company-news/2016-letter-to-shareholders"
+        }
+      ],
+      "lessonNumber": 1
+    },
+    {
+      "kind": "case",
+      "section": "企业案例",
+      "title": "决策速度与错误成本",
+      "lead": "可逆性改变错误代价，也可能改变等待信息的价值。",
+      "body": [
+        "可逆的行动可以较低成本撤回，但执行仍需满足安全、权限等约束。新信息只有在行动截止前可用，才可能用于当前选择。",
+        "比较等待与立即行动时，应计入信息可能改善的决策收益、等待成本及发现错误后的纠正成本。股东信提供管理观点，具体成本需要结合决策情境估计。"
+      ],
+      "layout": "focus",
+      "detailRef": {
+        "chapter": "01_intro",
+        "section": "行动阈值与检测采购",
+        "anchor": "行动阈值与信息采购"
+      },
+      "sourceSection": "行动阈值与信息采购",
+      "caseId": "b01-05",
+      "sources": [
+        {
+          "title": "2016 Letter to Shareholders",
+          "url": "https://www.aboutamazon.com/news/company-news/2016-letter-to-shareholders"
+        }
+      ],
+      "prompts": [
+        {
+          "question": "对可逆决策，是不是信息越少、行动越快越好？",
+          "answer": "不是。应比较信息的预期决策收益、等待成本和纠正错误的成本；安全或监管硬约束仍须满足。"
+        }
+      ],
+      "lessonNumber": 1
+    },
+    {
+      "kind": "calculation",
+      "section": "连续决策",
+      "title": "当前行动与未来状态",
+      "lead": "本期选择会改变后续决策的条件。",
+      "body": [
+        "今天的加急可能占用明日产能，今天的维护可能改变后续故障风险。令 \\(s_t\\) 为状态、\\(a_t\\) 为行动、\\(\\xi_t\\) 为随机扰动，以转移函数 \\(F\\) 表示下一期状态。",
+        "单期评价只比较当前损失。多期评价还需计入当前行动改变的未来成本和可行性；若关键状态不能完全观察，应先建立状态估计及其更新规则。"
+      ],
+      "detailRef": {
+        "chapter": "01_intro",
+        "section": "把未来成本计入当前选择",
+        "anchor": "多期决策的递推关系"
+      },
+      "sourceSection": "多期决策的递推关系",
+      "equation": "s_{t+1}=F(s_t,a_t,\\xi_t)",
+      "layout": "split",
+      "diagram": {
+        "type": "graph",
+        "title": "转移将本期选择连接到未来",
+        "description": "当前状态与当前行动共同输入状态转移，随机扰动也影响下一状态。下一状态再决定未来成本与行动条件。",
+        "encoding": "模型结构示意",
+        "note": "图中连线表示转移函数的输入；不表示已识别的因果效果。",
+        "nodes": [
+          {
+            "id": "state",
+            "x": 18,
+            "y": 24,
+            "w": 28,
+            "h": 22,
+            "label": "当前状态 \\(s_t\\)",
+            "detail": "设备、库存、产能",
+            "tone": "blue",
+            "shape": "rect"
+          },
+          {
+            "id": "action",
+            "x": 18,
+            "y": 76,
+            "w": 28,
+            "h": 22,
+            "label": "当前行动 \\(a_t\\)",
+            "detail": "维护、加急、排程",
+            "tone": "blue",
+            "shape": "rect"
+          },
+          {
+            "id": "noise",
+            "x": 50,
+            "y": 13,
+            "w": 25,
+            "h": 18,
+            "label": "扰动 \\(\\xi_t\\)",
+            "detail": "故障、需求等",
+            "tone": "muted",
+            "shape": "rect"
+          },
+          {
+            "id": "F",
+            "x": 50,
+            "y": 53,
+            "w": 28,
+            "h": 22,
+            "label": "状态转移 \\(F\\)",
+            "detail": "模型与条件分布",
+            "tone": "blue",
+            "shape": "rect"
+          },
+          {
+            "id": "next",
+            "x": 82,
+            "y": 53,
+            "w": 28,
+            "h": 22,
+            "label": "下一状态 \\(s_{t+1}\\)",
+            "detail": "后续成本与可行性",
+            "tone": "blue",
+            "shape": "rect"
+          }
+        ],
+        "edges": [
+          {
+            "from": "state",
+            "to": "F",
+            "label": ""
+          },
+          {
+            "from": "action",
+            "to": "F",
+            "label": ""
+          },
+          {
+            "from": "noise",
+            "to": "F",
+            "label": ""
+          },
+          {
+            "from": "F",
+            "to": "next",
+            "label": ""
+          }
+        ]
+      },
+      "density": "compact",
+      "lessonNumber": 1
+    },
+    {
+      "kind": "case",
+      "section": "企业案例",
+      "title": "Patagonia：产品使用与资源消耗",
+      "lead": "评价产品相关决策，需要说明使用期限和资源代价。",
+      "body": [
+        "Patagonia 在2011年黑色星期五刊登“Don’t Buy This Jacket”广告，呼吁减少不必要消费，并主张提高产品质量。服装生产和使用涉及材料、用水及废弃物。",
+        "评价一件产品可以追踪购买、使用、维修和替换。除当期销售额外，还需记录使用寿命和资源消耗，才能比较维修、继续使用与替换的后果。"
+      ],
+      "layout": "split",
+      "detailRef": {
+        "chapter": "01_intro",
+        "section": "多期决策与分析方法",
+        "anchor": "多期决策与分析任务"
+      },
+      "sourceSection": "多期决策与分析任务",
+      "visual": {
+        "kind": "flow",
+        "items": [
+          {
+            "label": "购买",
+            "detail": "取得当前使用服务"
+          },
+          {
+            "label": "使用与维修",
+            "detail": "改变未来替换需要"
+          },
+          {
+            "label": "替换",
+            "detail": "计入资源及费用"
+          }
+        ]
+      },
+      "caseId": "b01-04",
+      "sources": [
+        {
+          "title": "Don’t Buy This Jacket, Black Friday and the New York Times",
+          "url": "https://www.patagonia.com/stories/planet/activism/dont-buy-this-jacket-black-friday-and-the-new-york-times/story-18615.html"
+        }
+      ],
+      "lessonNumber": 1
+    },
+    {
+      "kind": "case",
+      "section": "企业案例",
+      "title": "比较产品的长期结果",
+      "lead": "销量、使用寿命与资源消耗描述产品的不同结果。",
+      "body": [
+        "若维修延长使用寿命，直接用销量评价会遗漏使用阶段的变化；比较时应确定观察期及产品提供的使用服务。",
+        "在同等使用服务下，可按预定的财务与资源目标比较购买、维修和替换的成本及环境结果。企业广告说明其倡议；实际效果需要相应记录和评价设计。"
+      ],
+      "layout": "focus",
+      "detailRef": {
+        "chapter": "01_intro",
+        "section": "多期决策与分析方法",
+        "anchor": "多期决策与分析任务"
+      },
+      "sourceSection": "多期决策与分析任务",
+      "caseId": "b01-04",
+      "sources": [
+        {
+          "title": "Don’t Buy This Jacket, Black Friday and the New York Times",
+          "url": "https://www.patagonia.com/stories/planet/activism/dont-buy-this-jacket-black-friday-and-the-new-york-times/story-18615.html"
+        }
+      ],
+      "prompts": [
+        {
+          "question": "若销量下降、使用寿命延长，能否仅由销量判断项目绩效？",
+          "answer": "不能。应按预先确定的财务及资源目标，比较同等使用服务下的成本与环境结果，并明确观察期。"
+        }
+      ],
+      "lessonNumber": 1
+    },
+    {
+      "layout": "focus",
+      "kind": "calculation",
+      "title": "Bellman 递推：从未来回到当前",
+      "lead": "最优剩余成本将后续行动纳入本期比较。",
+      "body": [
+        "设决策期为 \\(t=1,\\ldots,T\\)，状态完全可观测。马尔可夫性质指：给定当前状态和行动后，下一期状态分布不再依赖更早历史。\\(c_t(s,a)\\) 为本期成本，\\(V_t(s)\\) 为从本期起各期均采用最优行动时的最小期望总成本。",
+        "假定成本可积、最小值可达且策略可测，并取无额外终端成本 \\(V_{T+1}=0\\)。从末期向前计算：本期先固定行动，再对下一期状态的最优剩余成本取平均。"
+      ],
+      "equation": [
+        "V_{T+1}(s)=0",
+        "V_t(s)=\\min_{a\\in\\mathcal A(s)}\\left\\{c_t(s,a)+\\mathbb E[V_{t+1}(F(s,a,\\xi_t))\\mid s,a]\\right\\}"
+      ],
+      "section": "连续决策",
+      "detailRef": {
+        "chapter": "01_intro",
+        "section": "把未来成本计入当前选择",
+        "anchor": "多期决策的递推关系"
+      },
+      "sourceSection": "多期决策的递推关系",
+      "density": "compact",
+      "lessonNumber": 1
+    },
+    {
+      "kind": "worked",
+      "section": "连续决策",
+      "title": "两期维护：当期成本与未来故障损失",
+      "lead": "今日维护需要付费，同时会改变明日的故障概率。",
+      "body": [
+        "两期简化模型中，设备今日可正常运行。今日可不维护或维护；维护费为 8 万元。明日若故障必须修复，成本为 40 万元，正常则为零；明日之后无成本。",
+        "今日不维护时，明日故障概率为 \\(0.30\\)；维护时降为 \\(0.05\\)。其他成本相同，因此明日值函数为 \\(V_2(\\text{故障})=40\\)、\\(V_2(\\text{正常})=0\\)。"
+      ],
+      "detailRef": {
+        "chapter": "01_intro",
+        "section": "把未来成本计入当前选择",
+        "anchor": "多期决策的递推关系"
+      },
+      "sourceSection": "多期决策的递推关系",
+      "layout": "stack",
+      "visual": {
+        "kind": "table",
+        "headers": [
+          "今日行动",
+          "今日成本 / 万元",
+          "明日故障概率",
+          "明日正常概率"
+        ],
+        "rows": [
+          [
+            "不维护",
+            "\\(0\\)",
+            "\\(0.30\\)",
+            "\\(0.70\\)"
+          ],
+          [
+            "维护",
+            "\\(8\\)",
+            "\\(0.05\\)",
+            "\\(0.95\\)"
+          ]
+        ]
+      },
+      "lessonNumber": 1
+    },
+    {
+      "kind": "worked",
+      "section": "连续决策",
+      "title": "两期维护：从末期反推今日行动",
+      "lead": "比较今日成本与明日最优剩余成本之和。",
+      "body": [
+        "两期简化模型中，今日可不维护或付 \\(8\\) 万元维护。明日故障须修复，成本 \\(40\\) 万元，正常为零；明日之后无成本。不维护与维护的故障概率分别为 \\(0.30\\)、\\(0.05\\)。",
+        "先求末期值 \\(V_2(\\text{故障})=40\\)、\\(V_2(\\text{正常})=0\\)，再按每项行动的转移概率加权并加入今日费用。维护的期望总成本低 \\(2\\) 万元，因此当期无需支出的方案未必使跨期总成本最小。"
+      ],
+      "detailRef": {
+        "chapter": "01_intro",
+        "section": "把未来成本计入当前选择",
+        "anchor": "多期决策的递推关系"
+      },
+      "sourceSection": "多期决策的递推关系",
+      "layout": "split",
+      "density": "compact",
+      "diagram": {
+        "type": "bars",
+        "title": "反向递推后的两期期望总成本",
+        "description": "明日故障成本40万元、正常成本0；不维护故障概率0.30且今日免费，总成本12；维护今日8万元、故障概率0.05，总成本10。",
+        "encoding": "教学算例 · 同一比例尺",
+        "note": "\\(V_1=10\\) 万元；今日最优行动为维护。",
+        "domain": [
+          0,
+          15
+        ],
+        "unit": "万元",
+        "rows": [
+          {
+            "label": "不维护",
+            "value": 12,
+            "detail": "\\(0+0.30\\times40=12\\)",
+            "tone": "rose"
+          },
+          {
+            "label": "维护",
+            "value": 10,
+            "detail": "\\(8+0.05\\times40=10\\)",
+            "tone": "teal"
+          }
+        ],
+        "ticks": [
+          0,
+          5,
+          10,
+          15
+        ]
+      },
+      "lessonNumber": 1
+    },
+    {
+      "kind": "concept",
+      "section": "分析任务",
+      "title": "分析任务与证据边界",
+      "lead": "结论的范围须与研究设计一致。",
+      "body": [
+        "描述、诊断、预测、因果和处方分析按研究问题区分，可以相互配合。诊断提供待验证的解释，预测估计未观测结果，因果评价特定干预，处方比较可行方案。",
+        "高延期率不证明原因，高预测风险不证明加急有效。即使平均干预效应为正，具体订单是否值得加急仍取决于异质效果、成本和资源约束。"
+      ],
+      "detailRef": {
+        "chapter": "01_intro",
+        "section": "区分描述、预测与干预评价",
+        "anchor": "五类分析任务的研究问题"
+      },
+      "sourceSection": "五类分析任务的研究问题",
+      "visual": {
+        "kind": "table",
+        "headers": [
+          "任务",
+          "研究问题",
+          "结论边界"
+        ],
+        "rows": [
+          [
+            "描述",
+            "发生了什么",
+            "观察范围内的分布"
+          ],
+          [
+            "诊断",
+            "变化集中在哪里",
+            "分解及待验证机制"
+          ],
+          [
+            "预测",
+            "未知结果是什么",
+            "给定信息下的预测"
+          ],
+          [
+            "因果",
+            "干预改变什么",
+            "识别条件下的效果"
+          ],
+          [
+            "处方",
+            "选择什么行动",
+            "给定目标、参数与约束下的方案"
+          ]
+        ]
+      },
+      "layout": "stack",
+      "density": "compact",
+      "lessonNumber": 1
+    },
+    {
+      "kind": "concept",
+      "section": "项目实施",
+      "title": "CRISP-DM：组织可检验的迭代",
+      "lead": "业务理解、数据、模型与部署可根据证据反复修订。",
+      "body": [
+        "CRISP-DM（跨行业数据挖掘标准流程）规定分析项目各阶段及其联系。业务理解确定目标、行动和评价标准；数据理解与准备检查来源及构造分析数据；建模估计决策所需量；评估检查统计与业务表现；部署接入实际流程。",
+        "若发现交期有多个有效版本，应重新核对对象及标签定义。迭代应由具体质量问题或评价结果触发，并保留修改依据。 治理制度还应明确各阶段的职责。"
+      ],
+      "detailRef": {
+        "chapter": "01_intro",
+        "section": "从分析任务到实际应用",
+        "anchor": "数据分析项目的组织"
+      },
+      "sourceSection": "数据分析项目的组织",
+      "layout": "split",
+      "diagram": {
+        "type": "graph",
+        "title": "由评价证据触发的项目迭代",
+        "description": "业务理解、数据理解、数据准备、建模、评估、部署按活动依赖连接。评估发现对象定义或数据问题时，应返回相应阶段修订并记录原因。",
+        "encoding": "CRISP-DM 教学活动图",
+        "note": "反馈指向需修订的活动，项目不必沿固定顺序只走一次。",
+        "nodes": [
+          {
+            "id": "business",
+            "x": 18,
+            "y": 24,
+            "w": 28,
+            "h": 22,
+            "label": "业务理解",
+            "detail": "目标、行动、标准",
+            "tone": "blue",
+            "shape": "rect"
+          },
+          {
+            "id": "data",
+            "x": 50,
+            "y": 24,
+            "w": 28,
+            "h": 22,
+            "label": "数据理解",
+            "detail": "来源、含义、质量",
+            "tone": "blue",
+            "shape": "rect"
+          },
+          {
+            "id": "prepare",
+            "x": 82,
+            "y": 24,
+            "w": 28,
+            "h": 22,
+            "label": "数据准备",
+            "detail": "对象、标签、样本",
+            "tone": "blue",
+            "shape": "rect"
+          },
+          {
+            "id": "model",
+            "x": 82,
+            "y": 73,
+            "w": 28,
+            "h": 22,
+            "label": "建模",
+            "detail": "估计决策所需量",
+            "tone": "blue",
+            "shape": "rect"
+          },
+          {
+            "id": "evaluate",
+            "x": 50,
+            "y": 73,
+            "w": 28,
+            "h": 22,
+            "label": "评估",
+            "detail": "统计与业务表现",
+            "tone": "blue",
+            "shape": "rect"
+          },
+          {
+            "id": "deploy",
+            "x": 18,
+            "y": 73,
+            "w": 28,
+            "h": 22,
+            "label": "部署",
+            "detail": "接入授权流程",
+            "tone": "blue",
+            "shape": "rect"
+          }
+        ],
+        "edges": [
+          {
+            "from": "business",
+            "to": "data",
+            "label": ""
+          },
+          {
+            "from": "data",
+            "to": "prepare",
+            "label": ""
+          },
+          {
+            "from": "prepare",
+            "to": "model",
+            "label": ""
+          },
+          {
+            "from": "model",
+            "to": "evaluate",
+            "label": ""
+          },
+          {
+            "from": "evaluate",
+            "to": "deploy",
+            "label": ""
+          },
+          {
+            "from": "evaluate",
+            "to": "data",
+            "label": "质量反馈",
+            "dashed": true,
+            "labelX": 47,
+            "labelY": 48
+          },
+          {
+            "from": "deploy",
+            "to": "business",
+            "label": "结果反馈",
+            "dashed": true,
+            "labelX": 13,
+            "labelY": 48
+          }
+        ]
+      },
+      "density": "compact",
+      "lessonNumber": 1
+    },
+    {
+      "kind": "concept",
+      "section": "项目实施",
+      "title": "任务规格与分层验收",
+      "lead": "对象、信息、约束和结果须能够被逐项验证。",
+      "body": [
+        "任务规格中的 \\(\\mathcal U\\)、\\(t_0\\)、\\(\\mathcal O\\) 分别规定对象、时点和可见信息；\\(\\mathcal A\\)、\\(\\mathcal C\\) 规定行动及约束；\\(\\mathcal Y\\)、\\(\\mathcal V\\) 规定结果窗口和验收规则。",
+        "订单加急可先用小样本手算组合，再核对程序目标值与约束，最后模拟提交响应丢失，确认恢复后仅存在一张工单。数值计算和跨系统执行须分别验收。"
+      ],
+      "detailRef": {
+        "chapter": "01_intro",
+        "section": "任务规定与实施检验",
+        "anchor": "从经营意图到可检验的实现"
+      },
+      "sourceSection": "从经营意图到可检验的实现",
+      "equation": "\\mathcal S=(\\mathcal U,t_0,\\mathcal O,\\mathcal A,\\mathcal C,\\mathcal Y,\\mathcal V)",
+      "layout": "focus",
+      "lessonNumber": 1
+    },
+    {
+      "kind": "case",
+      "section": "综合案例",
+      "title": "交付决策的记录与评价",
+      "lead": "记录行动如何确定、批准和实施。",
+      "body": [
+        "订单、批次、库存、排程及物流记录用于描述当前状态。风险与行动效果估计提供方案比较的依据，预算、资格和授权条件限定可行方案。",
+        "执行时记录建议、批准、请求和回执，事后核对交付、成本及投诉。行动日志能够确认执行过程；评价行动是否改善结果，还需要适当的基准和因果研究设计。"
+      ],
+      "detailRef": {
+        "chapter": "01_intro",
+        "section": "订单交付任务的完整定义",
+        "anchor": "制造企业的交付延期风险分析"
+      },
+      "sourceSection": "制造企业的交付延期风险分析",
+      "visual": {
+        "kind": "flow",
+        "items": [
+          "有效承诺与对象身份",
+          "风险及效果估计",
+          "约束下行动",
+          "审批与执行",
+          "结果反馈"
+        ]
+      },
+      "layout": "split",
+      "lessonNumber": 1
+    },
+    {
+      "kind": "case",
+      "section": "企业应用",
+      "title": "Skywise：关联维护事实",
+      "lead": "统一对象身份有助于关联不同来源的维护记录。",
+      "body": [
+        "Airbus 在\\(2017\\)年发布航空数据平台 Skywise，并说明与 Palantir 合作，为航空公司及内部运营整合数据和分析能力。",
+        "以飞机为对象，飞行小时、部件及维护事件可以按身份和时间关联，用于构造维护分析所需的数据。这一维护分析模型是根据公开背景构造的示例。"
+      ],
+      "detailRef": {
+        "chapter": "01_intro",
+        "section": "Airbus与Palantir：维护分析的数据整合",
+        "anchor": "airbus-与-palantir-的数据整合"
+      },
+      "sourceSection": "Airbus 与 Palantir 的数据整合",
+      "layout": "split",
+      "diagram": {
+        "type": "graph",
+        "title": "维护窗口内的对象关联",
+        "description": "飞机和部件的统一身份关联飞行小时与维护事件；库存和维修能力限定可行维护行动。此结构是依据 Skywise 公开应用背景构造的分析示例，不代表企业内部算法。",
+        "encoding": "Skywise 背景 · 教学结构示意",
+        "note": "企业应用背景依据公开资料；对象关联与行动模型属于分析示例。",
+        "nodes": [
+          {
+            "id": "aircraft",
+            "x": 18,
+            "y": 23,
+            "w": 28,
+            "h": 22,
+            "label": "飞机与部件",
+            "detail": "统一对象身份",
+            "tone": "blue",
+            "shape": "rect"
+          },
+          {
+            "id": "records",
+            "x": 50,
+            "y": 23,
+            "w": 28,
+            "h": 22,
+            "label": "运行与维护",
+            "detail": "小时、事件、来源",
+            "tone": "blue",
+            "shape": "rect"
+          },
+          {
+            "id": "resources",
+            "x": 82,
+            "y": 23,
+            "w": 28,
+            "h": 22,
+            "label": "维修资源",
+            "detail": "库存、能力、窗口",
+            "tone": "blue",
+            "shape": "rect"
+          },
+          {
+            "id": "risk",
+            "x": 50,
+            "y": 72,
+            "w": 28,
+            "h": 22,
+            "label": "故障风险估计",
+            "detail": "条件证据与不确定性",
+            "tone": "blue",
+            "shape": "rect"
+          },
+          {
+            "id": "choice",
+            "x": 82,
+            "y": 72,
+            "w": 28,
+            "h": 22,
+            "label": "比较维护行动",
+            "detail": "停场、故障、成本",
+            "tone": "blue",
+            "shape": "rect"
+          }
+        ],
+        "edges": [
+          {
+            "from": "aircraft",
+            "to": "records",
+            "label": ""
+          },
+          {
+            "from": "records",
+            "to": "risk",
+            "label": ""
+          },
+          {
+            "from": "risk",
+            "to": "choice",
+            "label": ""
+          },
+          {
+            "from": "resources",
+            "to": "choice",
+            "label": ""
+          }
+        ]
+      },
+      "density": "compact",
+      "lessonNumber": 1
+    },
+    {
+      "kind": "worked",
+      "section": "企业应用",
+      "title": "维护决策的简化成本比较",
+      "lead": "简化比较假定立即维护能够消除本期故障风险。",
+      "body": [
+        "立即维护成本为 \\(c_m\\)，推迟期间故障概率为 \\(p\\)，故障损失为 \\(c_f\\)。假定维护消除本期风险，正常状态无额外损失，则推迟的期望损失为 \\(pc_f+(1-p)\\times0=pc_f\\)。",
+        "维护成本严格较低时应立即维护，相等时两者并列。若维护后仍有故障概率 \\(p_m\\)，应比较 \\(c_m+p_mc_f\\) 与 \\(pc_f\\)；停场费用和资源竞争也要计入相应行动。"
+      ],
+      "equation": "c_m<pc_f\\quad\\Longrightarrow\\quad \\text{选择立即维护}",
+      "detailRef": {
+        "chapter": "01_intro",
+        "section": "Airbus与Palantir：维护分析的数据整合",
+        "anchor": "airbus-与-palantir-的数据整合"
+      },
+      "layout": "focus",
+      "sourceSection": "Airbus 与 Palantir 的数据整合",
+      "lessonNumber": 1
+    },
+    {
+      "kind": "case",
+      "section": "企业应用",
+      "title": "赛事仿真：比较候选策略",
+      "lead": "候选策略在相同情景下的模拟结果可以直接比较。",
+      "body": [
+        "Oracle 的\\(2025\\)年公告介绍 Red Bull Racing 使用 Oracle Cloud Infrastructure（OCI，甲骨文云基础设施）进行仿真，以分析车辆、赛道和对手行为变化下的策略。",
+        "在共同天气和对手情景中比较进站策略，可计算模拟器内的方案差异。评价真实赛事时，需要用观测数据校准模型与情景分布，并检查策略在不利情景中的表现。"
+      ],
+      "detailRef": {
+        "chapter": "01_intro",
+        "section": "Oracle与Red Bull Racing：比较比赛策略",
+        "anchor": "oracle-与-red-bull-racing-的赛事仿真"
+      },
+      "sourceSection": "Oracle 与 Red Bull Racing 的赛事仿真",
+      "visual": {
+        "kind": "flow",
+        "items": [
+          {
+            "label": "候选策略",
+            "detail": "设定可执行的进站时机。"
+          },
+          {
+            "label": "情景分布",
+            "detail": "纳入天气、赛道与对手变化。"
+          },
+          {
+            "label": "仿真评价",
+            "detail": "比较完赛时间及不利情景。"
+          },
+          {
+            "label": "动态更新",
+            "detail": "赛中信息改变时重新评估。"
+          }
+        ]
+      },
+      "layout": "split",
+      "lessonNumber": 1
+    },
+    {
+      "kind": "worked",
+      "section": "企业应用",
+      "title": "用蒙特卡罗估计策略损失",
+      "lead": "平均完赛时间估计给定模型下的期望结果。",
+      "body": [
+        "令 \\(a\\) 为进站策略，\\(\\theta\\) 为天气及对手行为情景，\\(T(a,\\theta)\\) 为模拟完赛时间。蒙特卡罗方法通过随机抽样近似求解。从设定的情景分布独立抽取 \\(S\\) 个情景，以平均完赛时间 \\(\\widehat R(a)\\) 估计策略的期望损失。",
+        "用同一组情景比较不同策略，可逐情景计算时间差。在有限方差条件下，增大 \\(S\\) 减少抽样误差，却不能修正情景或模拟器错误；新信息改变情景分布时须重新评价。"
+      ],
+      "equation": "\\widehat R(a)=\\frac1S\\sum_{s=1}^{S}T(a,\\theta_s)",
+      "detailRef": {
+        "chapter": "01_intro",
+        "section": "Oracle与Red Bull Racing：比较比赛策略",
+        "anchor": "oracle-与-red-bull-racing-的赛事仿真"
+      },
+      "layout": "focus",
+      "sourceSection": "Oracle 与 Red Bull Racing 的赛事仿真",
+      "lessonNumber": 1
+    },
+    {
+      "kind": "worked",
+      "section": "企业应用",
+      "title": "配对仿真：平均时间差",
+      "lead": "在相同情景中比较两项策略，时间单位为分钟。",
+      "body": [
+        "三组模拟情景中，策略 \\(\\mathrm A\\) 与 \\(\\mathrm B\\) 分别使用相同的天气和对手条件。逐组以 \\(\\mathrm B\\) 的完赛时间减 \\(\\mathrm A\\) 的完赛时间，得到差值 \\(4,-2,-8\\) 分钟，平均为 \\(-2\\) 分钟。",
+        "两策略的样本平均时间分别为 \\(100\\)、\\(98\\) 分钟。\\(\\mathrm B\\) 的样本均值较低，但在情景1较慢。判断实际策略还须考虑样本误差、较不利的情景和模拟器与现实的差异。"
+      ],
+      "detailRef": {
+        "chapter": "01_intro",
+        "section": "Oracle与Red Bull Racing：比较比赛策略",
+        "anchor": "oracle-与-red-bull-racing-的赛事仿真"
+      },
+      "sourceSection": "Oracle 与 Red Bull Racing 的赛事仿真",
+      "layout": "split",
+      "density": "compact",
+      "diagram": {
+        "type": "plot",
+        "title": "相同情景中的配对完赛时间",
+        "description": "同一三组情景下，策略A时间90、100、110分钟；策略B时间94、98、102分钟。A均值100，B均值98，情景1中B反而慢4分钟。点间连线仅辅助比较，不表示情景连续性。",
+        "encoding": "原教学模拟输出 · 共用时间轴",
+        "note": "点间连线仅辅助辨认；情景不具有连续插值意义。",
+        "xDomain": [
+          1,
+          3
+        ],
+        "yDomain": [
+          85,
+          115
+        ],
+        "xLabel": "情景编号",
+        "yLabel": "完赛时间 / 分钟",
+        "xTicks": [
+          1,
+          2,
+          3
+        ],
+        "yTicks": [
+          90,
+          100,
+          110
+        ],
+        "series": [
+          {
+            "label": "策略 A",
+            "points": [
+              [
+                1,
+                90
+              ],
+              [
+                2,
+                100
+              ],
+              [
+                3,
+                110
+              ]
+            ],
+            "tone": "rose",
+            "dashed": false
+          },
+          {
+            "label": "策略 B",
+            "points": [
+              [
+                1,
+                94
+              ],
+              [
+                2,
+                98
+              ],
+              [
+                3,
+                102
+              ]
+            ],
+            "tone": "teal",
+            "dashed": false
+          }
+        ],
+        "markers": [
+          {
+            "x": 1,
+            "y": 94,
+            "label": "B 慢 4 分钟",
+            "tone": "teal"
+          },
+          {
+            "x": 3,
+            "y": 102,
+            "label": "B 快 8 分钟",
+            "tone": "teal"
+          }
+        ],
+        "regions": []
+      },
+      "lessonNumber": 1
+    },
+    {
+      "kind": "worked",
+      "section": "综合案例",
+      "title": "生产率改善须固定分母与质量",
+      "lead": "生成时间不等于完成任务所需的总时间。",
+      "body": [
+        "原任务耗时 \\(100\\) 分钟；人工智能（AI）辅助后，生成与复核返工各 \\(30\\) 分钟，总计 \\(60\\) 分钟。比较须固定任务及质量标准，并计入所有相关部门的耗时。",
+        "时间节省率以原耗时为分母，吞吐提升率以原单位时间产出为分母。错误复核若转移给其他部门，两种局部改善率都会高估组织收益。 报告时应列出指标名称、计算分母、质量要求和投入边界。"
+      ],
+      "detailRef": {
+        "chapter": "01_intro",
+        "section": "怎样计算人工智能应用的生产率",
+        "anchor": "人工智能应用的生产率测量"
+      },
+      "sourceSection": "人工智能应用的生产率测量",
+      "layout": "split",
+      "density": "compact",
+      "diagram": {
+        "type": "timeline",
+        "title": "同等质量任务的完整耗时",
+        "description": "原任务耗时100分钟。AI辅助后生成30分钟、复核返工30分钟，总计60分钟。公共轴强调复核返工仍属于任务时间。",
+        "encoding": "教学总耗时分解 · 共用时间尺度",
+        "note": "相同任务、质量与责任边界；图不代表两个环节必须串行。",
+        "domain": [
+          0,
+          100
+        ],
+        "unit": "分钟",
+        "rows": [
+          {
+            "label": "原任务",
+            "segments": [
+              {
+                "start": 0,
+                "end": 100,
+                "label": "完整任务",
+                "tone": "muted"
+              }
+            ],
+            "points": []
+          },
+          {
+            "label": "AI 辅助",
+            "segments": [
+              {
+                "start": 0,
+                "end": 30,
+                "label": "生成 30",
+                "tone": "blue"
+              },
+              {
+                "start": 30,
+                "end": 60,
+                "label": "复核返工 30",
+                "tone": "teal"
+              }
+            ],
+            "points": [
+              {
+                "at": 60,
+                "label": "总计 60",
+                "tone": "blue"
+              }
+            ]
+          }
+        ],
+        "ticks": [
+          0,
+          30,
+          60,
+          100
+        ]
+      },
+      "equation": "\\frac{100-60}{100}=40\\%,\\qquad\\frac{100}{60}-1\\approx66.7\\%",
+      "lessonNumber": 1
+    },
+    {
+      "kind": "summary",
+      "section": "决策任务的完整性",
+      "title": "检验一个决策任务是否完整",
+      "lead": "用对象、证据、约束与反馈检查方案。",
+      "body": [
+        "先核对决策时点及行动对象，再检查风险和效果估计是否服务于行动比较；随后检验资源与授权约束，最后按原承诺版本核查执行及结果。",
+        "问题定义规定可比较的行动，期望损失评价行动后果，信息价值衡量信息改进带来的收益。对象、键、关系与时间记录共同表达这些分析所需的事实。零售中的SKU是用于区分可销售产品规格的库存单位，不能与客户或订单身份混用。"
+      ],
+      "detailRef": {
+        "chapter": "01_intro",
+        "section": "用程序保存问题定义",
+        "anchor": "问题定义的结构化表示"
+      },
+      "sourceSection": "问题定义的结构化表示",
+      "visual": {
+        "kind": "cards",
+        "items": [
+          "对象与决策时点",
+          "证据与行动比较",
+          "约束与执行",
+          "反馈与责任"
+        ]
+      },
+      "prompts": [
+        {
+          "question": "“库存积压与缺货并存”如何改写为决策任务？",
+          "answer": "以库存保有单位（SKU，即独立识别的型号和规格）与仓库的组合为对象，在固定补货时点使用可得需求及库存记录，在预算约束下选择补货或调拨量，以缺货损失和持有成本评价。"
+        }
+      ],
+      "layout": "split",
+      "density": "compact",
+      "lessonNumber": 1
+    }
+  ],
+  "id": "01_intro",
+  "chapter": "01_intro",
+  "lectureNumber": 1
+}

@@ -1,0 +1,16 @@
+{
+  "idempotent": true,
+  "files": {
+    "lecture-slides.json": "3763df28990eb410d7fcd9035eec9c6718a58758dd62e3846e2df5032f5c3f57",
+    "lecture-terms.json": "0bf448025808329e4b79e9e9800dca488318de2290978139c46acde16b19ecb1",
+    "source-manifest.json": "d690e962e8ac644d2e5cc4351aed68cee6f46b6281ed9055d1913ce071f9728f",
+    "catalog.json": "cf9a0221f549cce4012fcd8b7cb761e0a0a6f43fb53f32e49c6dff941785d5bb",
+    "business-cases.json": "56f7a40fefa2ed1c3e7b0acd12f2704eaf6068349328fcbaaba966e408765f30",
+    "business-casebook.json": "8647c95ea76b1dab84539cf5c7c928d12fcc7f5a4000be3db40d957b5cd05b6e",
+    "01_intro.json": "a7790c3eac0fe6a50beee2dfc02a8249c07fedddbefb482057a034eb3c5690b2",
+    "02_enterprise_data_model.json": "e66b4d81c7773c29972dd4179cf8f15af2319fc09db4ea1928faf2205a54a22b",
+    "03_sql_kpi.json": "09873732dd218ceebe03525279509c682f75689fee35e727dddd1ab1a9bb925e",
+    "04_data_quality.json": "4946b24bd29141ccea2198197e1a3fd93428fdfd80efc57eb7e29f2df5ea4671",
+    "05_statistics_dashboard.json": "d980ea3d9f7902037d51714083ca3ee0e33dd3f73ad6f4a597cc52e881ff84da"
+  }
+}

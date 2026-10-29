@@ -61,7 +61,7 @@ python3 scripts/verify-concept-links.py --baseline-ref 4836fc8 --review-dir revi
 
 ## 运行机制
 
-第二、第三讲页顶幻灯片的最新作者源在 `content-source/slides-readability-20261024/`。执行 `npm run build:slides-reviewed` 单独更新这两讲；`node scripts/verify-readable-slides.mjs` 检查页数、公式、代码、案例和其他讲的保全。每页可省略重复的结论面板。逐页审读及排版记录见 `review/slides-readability-20261024/`。
+第一至第五讲的最新讲义及幻灯片作者源在 `content-source/academic-review-20261029/`。执行 `npm run build:academic-review` 应用这一版本；构建时检查原有锚点、链接、数学、代码和案例资料，并保持各讲幻灯片页数。术语和概念链接使用固定基线校准，以保证重复构建结果一致。审读与页面检查记录见 `review/academic-review-20261029/`。
 
 - Python：本地托管 Pyodide 0.27.7（CPython 3.12），Web Worker 隔离执行，虚拟文件系统装载原课程 Python 文件及数据。
 - 原程序编辑：写入虚拟包，再通过可见的配套示例调用；不改服务器源文件。每次运行恢复原数据与其余源文件。

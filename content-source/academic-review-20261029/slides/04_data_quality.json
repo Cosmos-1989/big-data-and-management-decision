@@ -1,0 +1,2615 @@
+{
+  "title": "数据质量与证据可信度",
+  "slides": [
+    {
+      "section": "输入数据与分析结果",
+      "kind": "opener",
+      "title": "数据质量：从记录条件到决策证据",
+      "lead": "可信的计算结果，需要可信的事实范围与测量过程。",
+      "body": [
+        "测量误差指记录值与所研究真值之间的差异。数据质量指数据对预定用途的适配程度。准时交付率（OTD）的含义由计算公式、订单唯一性、交付日期的业务定义、统计窗口和数据批次共同确定。重复或漏录会改变分子、分母及对象权重，使正确执行的程序产生失真的指标。",
+        "订单数据的质量要求来自分析用途与容许误差。缺失和测量误差可能改变统计结论，检查规则用于定位违反约定的记录；修复与发布决策还须比较发布错误数据的损失与暂停发布的成本。"
+      ],
+      "detailRef": {
+        "chapter": "04_data_quality",
+        "section": "从订单准时率看数据质量",
+        "anchor": "输入数据与分析结果"
+      },
+      "sourceSection": "输入数据与分析结果",
+      "visual": {
+        "kind": "flow",
+        "items": [
+          "业务事件",
+          "记录生成",
+          "质量检验",
+          "指标计算",
+          "管理行动"
+        ]
+      },
+      "layout": "stack",
+      "lessonNumber": 4
+    },
+    {
+      "section": "输入数据与分析结果",
+      "kind": "concept",
+      "title": "准时交付率的统计对象",
+      "lead": "已交付口径与到期承诺口径分别回答不同问题。",
+      "body": [
+        "设纳入窗口内共有 \\(n>0\\) 张已交付订单。第 \\(i\\) 张的实际交付日为 \\(a_i\\)，承诺日为 \\(p_i\\)；指示函数 \\(\\mathbf 1\\{a_i\\le p_i\\}\\) 在准时交付时取 \\(1\\)，否则取 \\(0\\)。",
+        "已交付口径评价完成交付的订单；到期承诺口径评价截至指定时点应兑现的承诺，必须保留已到期但尚未交付的订单。这些订单不能因实际日期为空而从分母删除。"
+      ],
+      "detailRef": {
+        "chapter": "04_data_quality",
+        "section": "从订单准时率看数据质量",
+        "anchor": "输入数据与分析结果"
+      },
+      "sourceSection": "输入数据与分析结果",
+      "equation": "\\mathrm{OTD}_{\\mathrm{delivered}}=\\frac{\\sum_{i=1}^{n}\\mathbf1\\{a_i\\le p_i\\}}{n}",
+      "prompts": [
+        {
+          "question": "到期而未交付的订单被全部删除，会评价到期承诺的履约表现吗？",
+          "answer": "不会。删除改变了统计对象，所计算的只是已完成交付订单的表现。"
+        }
+      ],
+      "layout": "focus",
+      "density": "compact",
+      "lessonNumber": 4
+    },
+    {
+      "section": "输入数据与分析结果",
+      "kind": "concept",
+      "title": "指标可信度与证据追溯",
+      "lead": "指标应能够从管理解释回溯到来源记录。",
+      "body": [
+        "指标可信度要求事实来源、对象范围、质量假设、计算规则、失败记录、刷新时间和责任边界均可说明。数值被质疑时，复核者应能定位输入批次并重现计算。",
+        "复核指标时，可从结果追查输入批次、计算规则和源记录。质量规则通过说明记录满足已检验条件；记录是否反映实际业务，还需要业务凭证等依据。"
+      ],
+      "detailRef": {
+        "chapter": "04_data_quality",
+        "section": "从订单准时率看数据质量",
+        "anchor": "输入数据与分析结果"
+      },
+      "sourceSection": "输入数据与分析结果",
+      "layout": "split",
+      "density": "compact",
+      "diagram": {
+        "type": "graph",
+        "title": "形成结论与反向复核",
+        "description": "上排表示由来源到结论的形成，下排表示逐项复核的凭据。",
+        "encoding": "模型结构示意",
+        "note": "上排说明形成过程；下排凭据分别检验对应环节。",
+        "nodes": [
+          {
+            "id": "event",
+            "x": 17,
+            "y": 25,
+            "w": 29,
+            "h": 24,
+            "label": "业务过程",
+            "detail": "事件与责任",
+            "tone": "blue",
+            "shape": "rect"
+          },
+          {
+            "id": "record",
+            "x": 50,
+            "y": 25,
+            "w": 29,
+            "h": 24,
+            "label": "来源记录",
+            "detail": "批次与时间",
+            "tone": "blue",
+            "shape": "rect"
+          },
+          {
+            "id": "metric",
+            "x": 83,
+            "y": 25,
+            "w": 29,
+            "h": 24,
+            "label": "指标结果",
+            "detail": "口径与计算",
+            "tone": "blue",
+            "shape": "rect"
+          },
+          {
+            "id": "source",
+            "x": 17,
+            "y": 75,
+            "w": 29,
+            "h": 24,
+            "label": "业务凭证",
+            "detail": "核查事实",
+            "tone": "teal",
+            "shape": "rect"
+          },
+          {
+            "id": "rule",
+            "x": 50,
+            "y": 75,
+            "w": 29,
+            "h": 24,
+            "label": "检验记录",
+            "detail": "定位失败行",
+            "tone": "teal",
+            "shape": "rect"
+          },
+          {
+            "id": "version",
+            "x": 83,
+            "y": 75,
+            "w": 29,
+            "h": 24,
+            "label": "发布版本",
+            "detail": "重现计算",
+            "tone": "teal",
+            "shape": "rect"
+          }
+        ],
+        "edges": [
+          {
+            "to": "record",
+            "label": "",
+            "from": "event"
+          },
+          {
+            "to": "metric",
+            "label": "",
+            "from": "record"
+          },
+          {
+            "to": "event",
+            "label": "核对",
+            "dashed": true,
+            "from": "source"
+          },
+          {
+            "to": "record",
+            "label": "核查",
+            "dashed": true,
+            "from": "rule"
+          },
+          {
+            "to": "metric",
+            "label": "复现",
+            "dashed": true,
+            "from": "version"
+          }
+        ]
+      },
+      "lessonNumber": 4
+    },
+    {
+      "section": "数据质量的基本定义",
+      "kind": "concept",
+      "title": "用途适配的数据质量",
+      "lead": "质量要求由分析任务及容许误差共同确定。",
+      "body": [
+        "给定业务问题、指标或模型及检查规则，若数据的对象范围、字段含义、时间、约束与来源足以支持预定分析，并满足任务容许的误差，就称其对该用途具有足够质量。",
+        "月度销售概览可容忍少量非核心字段延迟；实时补货需要当前库存状态，客户服务承诺评价需要可靠的交付日期。同一数据集的质量结论因用途而异。"
+      ],
+      "detailRef": {
+        "chapter": "04_data_quality",
+        "section": "按用途确定质量要求",
+        "anchor": "数据质量的基本定义"
+      },
+      "sourceSection": "数据质量的基本定义",
+      "visual": {
+        "kind": "compare",
+        "items": [
+          {
+            "label": "月度概览",
+            "detail": "关注交易覆盖、金额与归属的稳定性。"
+          },
+          {
+            "label": "实时调度",
+            "detail": "进一步要求状态更新及时、缺失可识别。"
+          }
+        ]
+      },
+      "layout": "split",
+      "lessonNumber": 4
+    },
+    {
+      "section": "数据生成过程与质量风险",
+      "kind": "concept",
+      "title": "数据生成环节与质量风险",
+      "lead": "有效修复需要确定误差首次发生的位置。",
+      "body": [
+        "录入产生缺失，主数据维护引起编码差异，接口可能重复发送，连接键不唯一可能放大事实，口径未版本化则破坏历史可比性。不同环节需要不同的修复责任。",
+        "数据血缘记录数据的来源和转换关系。沿血缘定位误差首次发生的位置，再决定源记录更正、主数据映射、补数或指标重算，才能防止同一错误在下游反复出现。"
+      ],
+      "detailRef": {
+        "chapter": "04_data_quality",
+        "section": "从业务发生到指标发布",
+        "anchor": "数据生成过程与质量风险"
+      },
+      "sourceSection": "数据生成过程与质量风险",
+      "visual": {
+        "kind": "flow",
+        "items": [
+          "录入",
+          "主数据",
+          "接口",
+          "仓库建模",
+          "指标发布"
+        ]
+      },
+      "layout": "stack",
+      "lessonNumber": 4
+    },
+    {
+      "section": "规则符合性与记录准确性",
+      "kind": "case",
+      "title": "规则符合性与记录准确性",
+      "lead": "结构约束与业务真实性需要互补的核查依据。",
+      "body": [
+        "订单实际在下单后第 \\(20\\) 天交付，却被录为第 \\(10\\) 天，仍可能满足日期格式、非空和先后顺序规则。规则全部通过，只说明预先声明的条件未被违反。",
+        "独立对账用签收凭证核对日期，抽样复核检验实际流程；对账依赖参照来源可靠，抽样也受成本和选择机制限制。应结合三类证据评价记录准确性。"
+      ],
+      "detailRef": {
+        "chapter": "04_data_quality",
+        "section": "规则通过与记录准确",
+        "anchor": "规则符合性与记录准确性"
+      },
+      "sourceSection": "规则符合性与记录准确性",
+      "layout": "split",
+      "diagram": {
+        "type": "timeline",
+        "title": "格式正确仍可记录失真",
+        "description": "同一订单下单后第20天真实交付，系统错误记录为第10天，两者都可能通过日期格式与顺序规则。",
+        "encoding": "教材反例 · 同一时间尺度",
+        "note": "两条记录的先后顺序都合法，独立签收凭证才能揭示相差十天。",
+        "domain": [
+          0,
+          22
+        ],
+        "unit": "下单后天数",
+        "ticks": [
+          0,
+          5,
+          10,
+          15,
+          20
+        ],
+        "rows": [
+          {
+            "label": "业务凭证",
+            "segments": [],
+            "points": [
+              {
+                "at": 0,
+                "label": "下单",
+                "tone": "muted"
+              },
+              {
+                "at": 20,
+                "label": "签收",
+                "tone": "teal"
+              }
+            ]
+          },
+          {
+            "label": "系统记录",
+            "segments": [],
+            "points": [
+              {
+                "at": 0,
+                "label": "下单",
+                "tone": "muted"
+              },
+              {
+                "at": 10,
+                "label": "误录交付",
+                "tone": "rose"
+              }
+            ]
+          }
+        ]
+      },
+      "density": "compact",
+      "lessonNumber": 4
+    },
+    {
+      "kind": "case",
+      "section": "企业案例",
+      "title": "Unity：错误数据如何进入模型反馈",
+      "lead": "模型输入错误可能影响变现产品的表现。",
+      "body": [
+        "Unity在2022年度报告中披露，上半年变现产品的效能受到两类问题影响：一个工具的准确性故障，以及从一名大型客户摄入错误数据的后果。",
+        "年报将平台工具准确性问题与错误数据摄入并列列为效能受损因素；企业披露这些问题对2022年上半年的收入增长产生不利影响。"
+      ],
+      "layout": "split",
+      "detailRef": {
+        "chapter": "04_data_quality",
+        "section": "规则通过与记录准确",
+        "anchor": "规则符合性与记录准确性"
+      },
+      "sourceSection": "规则符合性与记录准确性",
+      "visual": {
+        "kind": "flow",
+        "items": [
+          {
+            "label": "来源",
+            "detail": "确认记录如何生成"
+          },
+          {
+            "label": "摄入",
+            "detail": "保留批次与规则"
+          },
+          {
+            "label": "使用",
+            "detail": "核查模型及经营影响"
+          }
+        ]
+      },
+      "caseId": "b04-02",
+      "sources": [
+        {
+          "title": "Unity Software Inc. 2022 Form 10-K",
+          "url": "https://www.sec.gov/Archives/edgar/data/1810806/000181080623000016/unity-20221231.htm"
+        }
+      ],
+      "lessonNumber": 4
+    },
+    {
+      "kind": "case",
+      "section": "企业案例",
+      "title": "Unity：检查数据含义与使用范围",
+      "lead": "字段格式和非空检查能发现哪些问题？",
+      "body": [
+        "字段类型和非空检查能够发现格式或记录缺失，不能确认标签、业务含义与模型用途是否一致。调查时需要核对数据来源、摄入批次及受影响的模型。",
+        "Unity 的年报同时列出工具准确性故障和错误数据摄入两个因素，并未披露客户身份、错误字段及各因素的独立影响。可以比较剔除或重建相关输入前后的模型表现，进一步检查数据问题。"
+      ],
+      "layout": "focus",
+      "detailRef": {
+        "chapter": "04_data_quality",
+        "section": "规则通过与记录准确",
+        "anchor": "规则符合性与记录准确性"
+      },
+      "sourceSection": "规则符合性与记录准确性",
+      "caseId": "b04-02",
+      "sources": [
+        {
+          "title": "Unity Software Inc. 2022 Form 10-K",
+          "url": "https://www.sec.gov/Archives/edgar/data/1810806/000181080623000016/unity-20221231.htm"
+        }
+      ],
+      "prompts": [
+        {
+          "question": "只检查字段类型与非空约束，能否排除这类风险？",
+          "answer": "不能。还需检验数据生成含义、与目标用途的适配性及下游表现，并以来源和版本支持追溯。"
+        }
+      ],
+      "lessonNumber": 4
+    },
+    {
+      "section": "数据质量维度",
+      "kind": "concept",
+      "title": "质量维度：覆盖、取值与关系",
+      "lead": "质量维度将一般性疑问转化为可定位的检查。",
+      "body": [
+        "枚举规定字段允许的取值集合。完整性、唯一性、有效性和一致性分别关注覆盖、重复、取值约定以及跨字段或跨表关系。每项检查规则须依照具体用途确定。",
+        "维度并非互斥。例如客户编号缺失涉及完整性，也妨碍客户分组与跨表匹配。异常的严重级别应根据受影响指标与行动后果确定。"
+      ],
+      "detailRef": {
+        "chapter": "04_data_quality",
+        "section": "质量维度与检查依据",
+        "anchor": "数据质量维度"
+      },
+      "sourceSection": "数据质量维度",
+      "visual": {
+        "kind": "table",
+        "headers": [
+          "维度",
+          "主要问题",
+          "检查示例"
+        ],
+        "rows": [
+          [
+            "完整性",
+            "必要记录或字段是否存在",
+            "缺失数、覆盖核对"
+          ],
+          [
+            "唯一性",
+            "同一事实是否被重复记录",
+            "业务键重复"
+          ],
+          [
+            "有效性",
+            "取值是否满足约定",
+            "枚举、范围、格式"
+          ],
+          [
+            "一致性",
+            "字段和关联表是否相容",
+            "外键、日期顺序"
+          ]
+        ]
+      },
+      "layout": "stack",
+      "lessonNumber": 4
+    },
+    {
+      "section": "数据质量维度",
+      "kind": "concept",
+      "title": "质量维度：时间、真实性与来源",
+      "lead": "除核对结构约束外，还须确认记录何时可用、是否真实及能否复核。",
+      "body": [
+        "及时性关注数据能否在决策需要时到达，准确性关注记录是否吻合业务事实，可追溯性关注来源、批次和处理版本。它们无法仅凭字段格式检验。",
+        "例如交付日期格式正确，却可能晚两周入仓或录错真实签收日。检查更新延迟、凭证和血缘可分别发现这些风险。"
+      ],
+      "detailRef": {
+        "chapter": "04_data_quality",
+        "section": "质量维度与检查依据",
+        "anchor": "数据质量维度"
+      },
+      "sourceSection": "数据质量维度",
+      "layout": "stack",
+      "visual": {
+        "kind": "table",
+        "headers": [
+          "维度",
+          "主要问题",
+          "检查示例"
+        ],
+        "rows": [
+          [
+            "及时性",
+            "记录是否在需要时可用",
+            "更新延迟"
+          ],
+          [
+            "准确性",
+            "是否吻合实际业务",
+            "凭证核对、抽查"
+          ],
+          [
+            "可追溯性",
+            "能否说明来源与处理",
+            "批次、版本、血缘"
+          ]
+        ]
+      },
+      "lessonNumber": 4
+    },
+    {
+      "kind": "case",
+      "section": "企业案例",
+      "title": "GitLab数据库事件：备份存在不等于能够恢复",
+      "lead": "可恢复性必须通过恢复检验与影响核对来证明。",
+      "body": [
+        "2017年1月31日，GitLab.com主数据库数据被误删，服务中断并丢失部分数据库修改。企业复盘同时说明恢复流程、备份验证及数据损失范围。",
+        "事件影响项目、评论、账户等部分数据库记录，代码仓库未遭受同类数据丢失；复盘区分受影响的在线服务与未受同类影响的自托管安装，并提出改进恢复程序。"
+      ],
+      "layout": "split",
+      "detailRef": {
+        "chapter": "04_data_quality",
+        "section": "调查、修复与更正历史结果",
+        "anchor": "质量事件响应"
+      },
+      "sourceSection": "质量事件响应",
+      "visual": {
+        "kind": "flow",
+        "items": [
+          {
+            "label": "故障发生",
+            "detail": "记录数据与时间边界"
+          },
+          {
+            "label": "恢复过程",
+            "detail": "验证备份能否使用"
+          },
+          {
+            "label": "数据核对",
+            "detail": "确认缺失及下游影响"
+          }
+        ]
+      },
+      "caseId": "b04-01",
+      "sources": [
+        {
+          "title": "Postmortem of database outage of January 31",
+          "url": "https://about.gitlab.com/blog/postmortem-of-database-outage-of-january-31/"
+        }
+      ],
+      "lessonNumber": 4
+    },
+    {
+      "kind": "case",
+      "section": "企业案例",
+      "title": "GitLab：核对恢复后的数据范围",
+      "lead": "服务恢复后，还要检查哪些记录？",
+      "body": [
+        "2017 年 GitLab.com 数据库事件涉及项目、评论和账户等部分数据库修改。服务重新上线后，需要核对恢复点、缺失时间段和受影响对象，确认哪些记录已经恢复。",
+        "备份副本可用于恢复的前提是副本可读取、内容覆盖所需时点，并能在业务要求的时间内完成恢复。恢复演练可以检验这些条件；代码仓库与数据库记录应分别核对。"
+      ],
+      "layout": "focus",
+      "detailRef": {
+        "chapter": "04_data_quality",
+        "section": "调查、修复与更正历史结果",
+        "anchor": "质量事件响应"
+      },
+      "sourceSection": "质量事件响应",
+      "caseId": "b04-01",
+      "sources": [
+        {
+          "title": "Postmortem of database outage of January 31",
+          "url": "https://about.gitlab.com/blog/postmortem-of-database-outage-of-january-31/"
+        }
+      ],
+      "prompts": [
+        {
+          "question": "服务重新上线，是否足以宣布数据已完全恢复？",
+          "answer": "不足。应核对恢复点、缺失时间段、对象范围及下游结果，明确哪些记录已恢复、哪些仍不可恢复。"
+        }
+      ],
+      "lessonNumber": 4
+    },
+    {
+      "section": "数据剖析",
+      "kind": "concept",
+      "title": "数据剖析与规则检验",
+      "lead": "探索摘要揭示数据特征，规则检验判断已约定条件。",
+      "body": [
+        "数据剖析系统汇总行数、字段缺失、不同值、数值与日期范围、重复键和失配外键。这些摘要用于发现数据特征并提出待核查问题；业务取值是否正确仍需相应依据。",
+        "渠道新值 `Marketplace` 可能表示新业务，也可能是录入错误。核对后若确认新渠道，应批准枚举（字段允许取值的集合）与指标定义的变更并注明生效时间；若确认错误，则修复源记录或建立受控映射。"
+      ],
+      "detailRef": {
+        "chapter": "04_data_quality",
+        "section": "用统计摘要了解数据",
+        "anchor": "数据剖析"
+      },
+      "sourceSection": "数据剖析",
+      "visual": {
+        "kind": "compare",
+        "items": [
+          {
+            "label": "剖析",
+            "detail": "观察到哪些值、缺失与关系？"
+          },
+          {
+            "label": "测试",
+            "detail": "哪些值违反已批准的规则？"
+          }
+        ]
+      },
+      "layout": "split",
+      "lessonNumber": 4
+    },
+    {
+      "kind": "concept",
+      "section": "概念与方法",
+      "title": "观察总体、记录概率与协方差",
+      "lead": "记录完整的对象，未必代表全部对象。",
+      "body": [
+        "目标总体是希望描述的全部对象，观察样本是实际取得记录的对象。期望表示按概率加权的平均；方差是偏离期望的平方的平均；协方差是两个变量各自偏离期望后乘积的平均，用于描述共同变化方向。",
+        "若长周期订单更少回写，周期与“是否有记录”呈负协方差，已记录订单的平均周期就可能偏低。增加相同采集机制下的记录数，可以降低抽样波动，却不会自动消除这种选择偏差。"
+      ],
+      "layout": "split",
+      "detailRef": {
+        "chapter": "04_data_quality",
+        "section": "记录缺失与选择偏差",
+        "anchor": "缺失机制与均值估计"
+      },
+      "sourceSection": "缺失机制与均值估计",
+      "visual": {
+        "kind": "flow",
+        "items": [
+          {
+            "label": "目标总体",
+            "detail": "全部应评价订单"
+          },
+          {
+            "label": "记录机制",
+            "detail": "不同对象的回写机会"
+          },
+          {
+            "label": "观察样本",
+            "detail": "实际进入计算的订单"
+          }
+        ]
+      },
+      "lessonNumber": 4
+    },
+    {
+      "section": "缺失机制与均值估计",
+      "kind": "concept",
+      "title": "选择性缺失与均值偏差",
+      "lead": "记录概率与结果相关时，仅分析完整记录会改变所研究的分布。",
+      "body": [
+        "设真实结果 \\(Y\\) 可积，\\(R=1\\) 表示结果已记录，记 \\(p=\\Pr(R=1)>0\\)。观察均值针对记录内分布，而目标是全部对象的均值。",
+        "展开协方差，并代入 \\(\\mathbb E[YR]=p\\mathbb E[Y\\mid R=1]\\)，即得下式。长周期订单较少回写时协方差为负，观察均值偏低。 完整率只表示记录的覆盖比例。"
+      ],
+      "detailRef": {
+        "chapter": "04_data_quality",
+        "section": "记录缺失与选择偏差",
+        "anchor": "缺失机制与均值估计"
+      },
+      "sourceSection": "缺失机制与均值估计",
+      "equation": "\\mathbb E[Y\\mid R=1]-\\mathbb E[Y]=\\frac{\\operatorname{Cov}(Y,R)}p",
+      "layout": "split",
+      "density": "compact",
+      "diagram": {
+        "type": "graph",
+        "title": "总体与记录内分布",
+        "description": "记录条件筛选目标总体，观察均值与总体均值的差由结果和记录指示的协方差刻画。",
+        "encoding": "模型结构示意",
+        "note": "\\(p=\\Pr(R=1)>0\\)；箭头表示筛选与计算关系，不表示因果作用。",
+        "nodes": [
+          {
+            "id": "population",
+            "x": 25,
+            "y": 25,
+            "w": 40,
+            "h": 24,
+            "label": "目标总体",
+            "detail": "\\(\\mathbb E[Y]\\)",
+            "tone": "blue",
+            "shape": "rect"
+          },
+          {
+            "id": "record",
+            "x": 75,
+            "y": 25,
+            "w": 40,
+            "h": 24,
+            "label": "记录条件",
+            "detail": "\\(R=1\\)",
+            "tone": "blue",
+            "shape": "rect"
+          },
+          {
+            "id": "observed",
+            "x": 25,
+            "y": 75,
+            "w": 40,
+            "h": 24,
+            "label": "观察均值",
+            "detail": "\\(\\mathbb E[Y\\mid R=1]\\)",
+            "tone": "teal",
+            "shape": "rect"
+          },
+          {
+            "id": "bias",
+            "x": 75,
+            "y": 75,
+            "w": 40,
+            "h": 24,
+            "label": "均值偏差",
+            "detail": "\\(\\operatorname{Cov}(Y,R)/p\\)",
+            "tone": "rose",
+            "shape": "rect"
+          }
+        ],
+        "edges": [
+          {
+            "to": "observed",
+            "label": "条件筛选",
+            "from": "population"
+          },
+          {
+            "to": "observed",
+            "label": "",
+            "labelX": 54,
+            "labelY": 48,
+            "from": "record"
+          },
+          {
+            "to": "bias",
+            "label": "作差",
+            "from": "observed"
+          }
+        ]
+      },
+      "lessonNumber": 4
+    },
+    {
+      "section": "缺失机制与均值估计",
+      "kind": "calculation",
+      "title": "订单算例：选择性回写低估周期",
+      "lead": "高完整率仍可能伴随明显的总体均值偏差。",
+      "body": [
+        "全部 \\(100\\) 张订单中，\\(80\\) 张普通订单周期均为 \\(2\\) 天，\\(20\\) 张问题订单均为 \\(12\\) 天。完整总体平均周期为 \\((80\\cdot2+20\\cdot12)/100=4\\) 天。",
+        "普通订单全部回写，问题订单只回写 \\(5\\) 张。因此观察均值为 \\((80\\cdot2+5\\cdot12)/85=220/85\\approx2.59\\) 天；缺失集中于慢订单。"
+      ],
+      "detailRef": {
+        "chapter": "04_data_quality",
+        "section": "记录缺失与选择偏差",
+        "anchor": "缺失机制与均值估计"
+      },
+      "sourceSection": "缺失机制与均值估计",
+      "layout": "split",
+      "density": "compact",
+      "diagram": {
+        "type": "bars",
+        "title": "覆盖率与平均周期是不同量",
+        "description": "共同尺度比较100张完整订单和85张已记录订单的平均周期；长周期订单少回写使观察均值偏低。",
+        "encoding": "教材算例 · 共零点同一尺度",
+        "note": "已记录周期总和为220天，覆盖率85%，均值仍低估约1.41天。",
+        "domain": [
+          0,
+          5
+        ],
+        "unit": "天",
+        "rows": [
+          {
+            "label": "完整总体",
+            "value": 4,
+            "detail": "普通80张；问题20张",
+            "tone": "teal"
+          },
+          {
+            "label": "已记录对象",
+            "value": 2.588235294117647,
+            "detail": "普通80张；问题5张",
+            "tone": "rose"
+          }
+        ],
+        "ticks": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      "lessonNumber": 4
+    },
+    {
+      "section": "缺失机制与均值估计",
+      "kind": "concept",
+      "title": "缺失机制与可用识别条件",
+      "lead": "机制假设需要记录流程证据，不能仅由观测数据验证。",
+      "body": [
+        "设 \\(X\\) 为已观测协变量，\\(Y\\) 为可能缺失的结果，\\(R=1\\) 表示已记录。完全随机缺失（MCAR）要求记录机会与相关变量无关；条件随机缺失（MAR）允许它依赖 \\(X\\)，但给定 \\(X\\) 后不再依赖 \\(Y\\)。",
+        "在条件随机缺失下，各目标类别还须有正记录概率，才能利用类别内观测恢复总体。直接删除缺失对象会改变类别权重；非随机缺失（MNAR）则还需调查未观测结果与回写机会的关系。"
+      ],
+      "detailRef": {
+        "chapter": "04_data_quality",
+        "section": "记录缺失与选择偏差",
+        "anchor": "缺失机制与均值估计"
+      },
+      "sourceSection": "缺失机制与均值估计",
+      "visual": {
+        "kind": "table",
+        "headers": [
+          "机制",
+          "关键条件",
+          "分析含义"
+        ],
+        "rows": [
+          [
+            "完全随机缺失（MCAR）",
+            "\\(R\\perp(X,Y)\\)",
+            "完整记录保持结果分布"
+          ],
+          [
+            "条件随机缺失（MAR）",
+            "\\(R\\perp Y\\mid X\\)",
+            "需利用协变量及覆盖条件"
+          ],
+          [
+            "非随机缺失（MNAR）",
+            "给定协变量后仍依赖缺失结果",
+            "追加机制假设或敏感性分析"
+          ]
+        ]
+      },
+      "layout": "stack",
+      "lessonNumber": 4
+    },
+    {
+      "kind": "worked",
+      "section": "缺失机制与均值估计",
+      "title": "按完整类别权重恢复平均周期",
+      "lead": "类别内结果可识别时，汇总仍须使用目标总体的权重。",
+      "body": [
+        "全部订单的类别均已知：普通、问题订单分别 \\(80,20\\) 张，周期分别为 \\(2,12\\) 天；已记录数为 \\(80,5\\) 张。每类内记录与未记录的周期一致，两类都有记录。",
+        "类别内均值可识别后，汇总仍须采用目标总体权重。按已记录类别占比加权得到 \\((80/85)2+(5/85)12\\approx2.59\\) 天；总体权重给出 \\(0.8(2)+0.2(12)=4\\) 天。"
+      ],
+      "layout": "split",
+      "density": "compact",
+      "sourceSection": "缺失机制与均值估计",
+      "detailRef": {
+        "chapter": "04_data_quality",
+        "section": "记录缺失与选择偏差",
+        "anchor": "缺失机制与均值估计"
+      },
+      "diagram": {
+        "type": "matrix",
+        "title": "类别不变，汇总权重改变",
+        "description": "两类内部周期相同；记录内比例与目标总体比例不同，造成均值偏差。",
+        "encoding": "教材算例 · 行列含义见标签",
+        "note": "行内权重和均为1；颜色深度表示同一尺度上的类别权重。",
+        "columns": [
+          "普通订单",
+          "问题订单"
+        ],
+        "rowLabels": [
+          "记录内权重",
+          "总体权重"
+        ],
+        "cells": [
+          [
+            {
+              "text": "\\(80/85\\)",
+              "detail": "80张已记录",
+              "tone": "blue",
+              "value": 0.9411764705882353
+            },
+            {
+              "text": "\\(5/85\\)",
+              "detail": "5张已记录",
+              "tone": "blue",
+              "value": 0.058823529411764705
+            }
+          ],
+          [
+            {
+              "text": "\\(80/100\\)",
+              "detail": "周期2天",
+              "tone": "teal",
+              "value": 0.8
+            },
+            {
+              "text": "\\(20/100\\)",
+              "detail": "周期12天",
+              "tone": "teal",
+              "value": 0.2
+            }
+          ]
+        ],
+        "scale": [
+          0,
+          1
+        ]
+      },
+      "lessonNumber": 4
+    },
+    {
+      "kind": "concept",
+      "section": "概念与方法",
+      "title": "回归斜率与测量误差",
+      "lead": "变量记录不准，会改变从数据估计的关系。",
+      "body": [
+        "线性回归用截距和斜率概括一个变量与另一个变量的线性关系。斜率描述解释变量增加一个单位时，线性预测值的变化；仅有回归关系，并不说明干预该变量会产生同等因果效应。",
+        "测量误差指记录值与所研究真值之间的差异。经典误差模型要求误差零均值，且独立于真值及结果噪声。在这些条件下，解释变量的记录方差被额外噪声放大，总体回归斜率向零衰减。"
+      ],
+      "layout": "split",
+      "detailRef": {
+        "chapter": "04_data_quality",
+        "section": "测量误差为何改变回归斜率",
+        "anchor": "经典测量误差与衰减偏差"
+      },
+      "sourceSection": "经典测量误差与衰减偏差",
+      "visual": {
+        "kind": "flow",
+        "items": [
+          {
+            "label": "真值变化",
+            "detail": "携带与结果有关的信息"
+          },
+          {
+            "label": "独立测量噪声",
+            "detail": "增加记录变量的方差"
+          },
+          {
+            "label": "回归斜率",
+            "detail": "在经典条件下发生衰减"
+          }
+        ]
+      },
+      "lessonNumber": 4
+    },
+    {
+      "section": "经典测量误差与衰减偏差",
+      "kind": "concept",
+      "title": "经典测量误差与斜率衰减",
+      "lead": "独立加性测量噪声增加解释变量方差。",
+      "body": [
+        "设 \\(Y=\\alpha+\\beta X+\\varepsilon\\)，但仅记录 \\(W=X+U\\)。假定有限二阶矩、\\(\\operatorname{Var}(X)>0\\)、\\(\\operatorname{Cov}(X,\\varepsilon)=0\\)，且 \\(U\\) 零均值并独立于 \\((X,\\varepsilon)\\)。",
+        "带截距的总体回归斜率等于记录值与结果的协方差除以记录方差。噪声只增加分母，故斜率乘以 \\(\\kappa\\le1\\)；若独立假设不成立，偏差方向未必向零。"
+      ],
+      "detailRef": {
+        "chapter": "04_data_quality",
+        "section": "测量误差为何改变回归斜率",
+        "anchor": "经典测量误差与衰减偏差"
+      },
+      "sourceSection": "经典测量误差与衰减偏差",
+      "equation": "\\beta_W=\\beta\\frac{\\operatorname{Var}(X)}{\\operatorname{Var}(X)+\\operatorname{Var}(U)}",
+      "layout": "split",
+      "density": "compact",
+      "diagram": {
+        "type": "graph",
+        "title": "噪声改变分母，保留协方差",
+        "description": "在经典独立零均值加性误差假设下，测量噪声增加解释变量方差而不改变它与结果的协方差。",
+        "encoding": "模型结构示意",
+        "note": "\\(\\kappa=\\operatorname{Var}(X)/[\\operatorname{Var}(X)+\\operatorname{Var}(U)]\\)。",
+        "nodes": [
+          {
+            "id": "x",
+            "x": 17,
+            "y": 25,
+            "w": 28,
+            "h": 24,
+            "label": "真实变化",
+            "detail": "\\(\\operatorname{Var}(X)\\)",
+            "tone": "blue",
+            "shape": "rect"
+          },
+          {
+            "id": "u",
+            "x": 50,
+            "y": 25,
+            "w": 28,
+            "h": 24,
+            "label": "独立噪声",
+            "detail": "\\(\\operatorname{Var}(U)\\)",
+            "tone": "rose",
+            "shape": "rect"
+          },
+          {
+            "id": "w",
+            "x": 83,
+            "y": 25,
+            "w": 28,
+            "h": 24,
+            "label": "记录方差",
+            "detail": "两项相加",
+            "tone": "blue",
+            "shape": "rect"
+          },
+          {
+            "id": "cov",
+            "x": 17,
+            "y": 75,
+            "w": 28,
+            "h": 24,
+            "label": "协方差",
+            "detail": "\\(\\beta\\operatorname{Var}(X)\\)",
+            "tone": "teal",
+            "shape": "rect"
+          },
+          {
+            "id": "divide",
+            "x": 50,
+            "y": 75,
+            "w": 28,
+            "h": 24,
+            "label": "回归斜率",
+            "detail": "协方差 ÷ 方差",
+            "tone": "blue",
+            "shape": "rect"
+          },
+          {
+            "id": "factor",
+            "x": 83,
+            "y": 75,
+            "w": 28,
+            "h": 24,
+            "label": "衰减因子",
+            "detail": "\\(0<\\kappa\\le1\\)",
+            "tone": "teal",
+            "shape": "rect"
+          }
+        ],
+        "edges": [
+          {
+            "to": "w",
+            "label": "",
+            "via": [
+              {
+                "x": 17,
+                "y": 6
+              },
+              {
+                "x": 83,
+                "y": 6
+              }
+            ],
+            "labelX": 50,
+            "labelY": 6,
+            "from": "x"
+          },
+          {
+            "to": "w",
+            "label": "",
+            "from": "u"
+          },
+          {
+            "to": "divide",
+            "label": "",
+            "from": "cov"
+          },
+          {
+            "to": "divide",
+            "label": "",
+            "labelX": 75,
+            "labelY": 51,
+            "from": "w"
+          },
+          {
+            "to": "factor",
+            "label": "",
+            "from": "divide"
+          }
+        ]
+      },
+      "lessonNumber": 4
+    },
+    {
+      "kind": "calculation",
+      "section": "经典测量误差与衰减偏差",
+      "title": "测量噪声如何影响回归斜率",
+      "lead": "记录值更分散，并不意味着它包含更多关于结果的信息。",
+      "body": [
+        "算例条件：真实加工时间 \\(X\\) 的方差为 \\(4\\) 小时平方，加工成本 \\(Y\\) 对时间的真实斜率为 \\(\\beta=2\\) 百元/小时。测量噪声独立、零均值，满足经典误差模型。",
+        "噪声方差为 \\(4\\) 时，斜率为 \\(2\\cdot4/(4+4)=1\\)；降为 \\(1\\) 时，斜率为 \\(2\\cdot4/(4+1)=1.6\\)。记录方差减小，使与结果有关的真实变化占比提高。"
+      ],
+      "takeaway": "检查数据是否缺失之外，还应调查测量误差与业务负载的关系。",
+      "layout": "split",
+      "density": "compact",
+      "sourceSection": "经典测量误差与衰减偏差",
+      "detailRef": {
+        "chapter": "04_data_quality",
+        "section": "测量误差为何改变回归斜率",
+        "anchor": "经典测量误差与衰减偏差"
+      },
+      "diagram": {
+        "type": "bars",
+        "title": "相同真实关系，不同测量精度",
+        "description": "真实时间方差为4小时平方，真实成本斜率为2百元每小时；比较不同测量噪声下的回归斜率。",
+        "encoding": "教材算例 · 共零点同一尺度",
+        "note": "条长表示同一单位下的斜率；测量条件均为经典独立加性误差。",
+        "domain": [
+          0,
+          2.2
+        ],
+        "unit": "百元/小时",
+        "rows": [
+          {
+            "label": "真实时间",
+            "value": 2,
+            "detail": "无测量误差",
+            "tone": "teal"
+          },
+          {
+            "label": "噪声方差1",
+            "value": 1.6,
+            "detail": "衰减因子4/5",
+            "tone": "blue"
+          },
+          {
+            "label": "噪声方差4",
+            "value": 1,
+            "detail": "衰减因子1/2",
+            "tone": "rose"
+          }
+        ],
+        "ticks": [
+          0,
+          0.5,
+          1,
+          1.5,
+          2
+        ]
+      },
+      "lessonNumber": 4
+    },
+    {
+      "section": "缺失结果的部分识别",
+      "kind": "concept",
+      "title": "缺失结果的部分识别",
+      "lead": "已知取值范围可以约束完整总体均值。",
+      "body": [
+        "有限总体共有 \\(N>0\\) 个对象，已观察 \\(0\\le n\\le N\\) 个结果，其和为 \\(S\\)。若每个遗漏结果均落在已核实的 \\([a,b]\\) 内，则未知项总和位于 \\([(N-n)a,(N-n)b]\\)。",
+        "加上 \\(S\\) 再除以 \\(N\\)，得到总体均值的识别区间。它刻画与已知资料相容的真值范围，来源是缺失值边界；置信区间由重复抽样程序构造，其置信水平描述该程序在重复使用时覆盖真值的比例；它处理抽样不确定性。"
+      ],
+      "detailRef": {
+        "chapter": "04_data_quality",
+        "section": "缺失条件下的总体均值范围",
+        "anchor": "缺失结果的部分识别"
+      },
+      "sourceSection": "缺失结果的部分识别",
+      "layout": "split",
+      "diagram": {
+        "type": "graph",
+        "title": "未知项分别取边界",
+        "description": "观测和固定，遗漏总和从允许的最小值到最大值变化；相加再除以N产生均值上下界。",
+        "encoding": "模型结构示意",
+        "note": "区间由已知值与缺失项取值约束产生，属于识别边界。",
+        "nodes": [
+          {
+            "id": "seen",
+            "x": 17,
+            "y": 25,
+            "w": 28,
+            "h": 24,
+            "label": "已观察",
+            "detail": "\\(S\\)",
+            "tone": "blue",
+            "shape": "rect"
+          },
+          {
+            "id": "miss",
+            "x": 50,
+            "y": 25,
+            "w": 28,
+            "h": 24,
+            "label": "遗漏数量",
+            "detail": "\\(N-n\\)",
+            "tone": "blue",
+            "shape": "rect"
+          },
+          {
+            "id": "range",
+            "x": 83,
+            "y": 25,
+            "w": 28,
+            "h": 24,
+            "label": "单项范围",
+            "detail": "\\([a,b]\\)",
+            "tone": "teal",
+            "shape": "rect"
+          },
+          {
+            "id": "lo",
+            "x": 25,
+            "y": 75,
+            "w": 43,
+            "h": 24,
+            "label": "均值下界",
+            "detail": "\\([S+(N-n)a]/N\\)",
+            "tone": "blue",
+            "shape": "rect"
+          },
+          {
+            "id": "hi",
+            "x": 75,
+            "y": 75,
+            "w": 43,
+            "h": 24,
+            "label": "均值上界",
+            "detail": "\\([S+(N-n)b]/N\\)",
+            "tone": "teal",
+            "shape": "rect"
+          }
+        ],
+        "edges": [
+          {
+            "to": "lo",
+            "label": "",
+            "from": "seen"
+          },
+          {
+            "to": "lo",
+            "label": "",
+            "labelX": 41,
+            "labelY": 48,
+            "from": "miss"
+          },
+          {
+            "to": "hi",
+            "label": "",
+            "from": "range"
+          },
+          {
+            "to": "hi",
+            "label": "",
+            "labelX": 59,
+            "labelY": 48,
+            "from": "miss"
+          }
+        ]
+      },
+      "density": "compact",
+      "lessonNumber": 4
+    },
+    {
+      "section": "缺失结果的部分识别",
+      "kind": "calculation",
+      "title": "识别区间与达标判断",
+      "lead": "管理阈值处于真值相容范围内时，证据不足以判定达标。",
+      "body": [
+        "已结案 \\(100\\) 张订单中，\\(85\\) 张周期总和为 \\(220\\) 天。核查确认余下 \\(15\\) 张各落在 \\([0,20]\\) 天；因此完整总体均值下界为 \\(220/100=2.2\\)，上界为 \\((220+15\\cdot20)/100=5.2\\) 天。",
+        "标准是平均周期不超过 \\(3\\) 天。识别范围同时容许达标和不达标；观察均值 \\(220/85\\approx2.59\\) 天只描述已回写对象，不能消除缺失结果的不确定性。"
+      ],
+      "detailRef": {
+        "chapter": "04_data_quality",
+        "section": "缺失条件下的总体均值范围",
+        "anchor": "缺失结果的部分识别"
+      },
+      "sourceSection": "缺失结果的部分识别",
+      "layout": "split",
+      "density": "compact",
+      "diagram": {
+        "type": "intervals",
+        "title": "阈值落在相容真值范围内",
+        "description": "100张订单中85张周期和为220天，其余15张均在0至20天，完整总体均值范围为2.2至5.2天，三天阈值位于其中。",
+        "encoding": "教材算例 · 共轴区间",
+        "note": "下界 \\(2.2\\) 天不超过 \\(3\\) 天，上界 \\(5.2\\) 天超过 \\(3\\) 天；当前资料不能判定达标。",
+        "domain": [
+          0,
+          6
+        ],
+        "unit": "天",
+        "ticks": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "reference": 3,
+        "referenceLabel": "达标上限3天",
+        "rows": [
+          {
+            "label": "总体均值",
+            "low": 2.2,
+            "high": 5.2,
+            "detail": "相容范围，不是置信区间",
+            "tone": "blue"
+          }
+        ]
+      },
+      "lessonNumber": 4
+    },
+    {
+      "kind": "discussion",
+      "title": "识别边界依赖已经核实的约束",
+      "lead": "缺失结果的界限来自业务信息，而非任意填补。",
+      "body": [
+        "\\(100\\) 张已结案订单中，\\(85\\) 张的周期已记录、总和为 \\(220\\) 天，另 \\(15\\) 张缺失。仅知道周期非负，就能得到均值下界 \\(2.2\\) 天；有限上界还需要遗漏周期的最大值。",
+        "\\(5.2\\) 天的上界依赖已核实的 \\(20\\) 天限制。若该限制只是经验猜测，区间便缺少原有保证；若没有有限上界，当前资料不能排除任意大的总体均值。"
+      ],
+      "equation": "0\\le x_i\\le20\\quad(i\\text{ 为缺失订单})\\quad\\Longrightarrow\\quad2.2\\le\\mu_N\\le5.2\\ \\text{天}",
+      "layout": "focus",
+      "density": "compact",
+      "detailRef": {
+        "chapter": "04_data_quality",
+        "section": "缺失条件下的总体均值范围",
+        "anchor": "缺失结果的部分识别"
+      },
+      "sourceSection": "缺失结果的部分识别",
+      "lessonNumber": 4
+    },
+    {
+      "section": "比率误差的精确传播",
+      "kind": "concept",
+      "title": "比率误差的精确传播",
+      "lead": "分子和分母的误差需要分别建模。",
+      "body": [
+        "设真实比率 \\(q=N/D\\)，观测值为 \\(\\widetilde q=(N+\\delta_N)/(D+\\delta_D)\\)，并假定 \\(D>0\\)、\\(D+\\delta_D>0\\)。通分相减得到下式。",
+        "分母固定时，分子增加会推高比率；分子固定时，分母增加的作用取决于分子符号。误差可以抵消或叠加，单一的记录失败比例无法决定指标偏差。对于良率，应同时核对良品数与全部受检数。"
+      ],
+      "detailRef": {
+        "chapter": "04_data_quality",
+        "section": "分子与分母的误差",
+        "anchor": "比率误差的精确传播"
+      },
+      "sourceSection": "比率误差的精确传播",
+      "equation": "\\widetilde q-q=\\frac{D\\delta_N-N\\delta_D}{D(D+\\delta_D)}",
+      "layout": "focus",
+      "lessonNumber": 4
+    },
+    {
+      "section": "比率误差的精确传播",
+      "kind": "derivation",
+      "title": "比率的保守误差界",
+      "lead": "分母远离零，误差界才具有稳定的数值解释。",
+      "body": [
+        "真实比率为 \\(q=N/D\\)，分子、分母误差为 \\(\\delta_N,\\delta_D\\)，且 \\(D>0\\)、\\(|\\delta_D|<D\\)。精确误差式中的分子绝对值至多为 \\(D|\\delta_N|+|N||\\delta_D|\\)，观测分母至少为 \\(D-|\\delta_D|\\)。",
+        "将这两个界代入即可得到下式。分母误差接近真实分母时，下界趋近零，误差上界迅速增大；少量对象的百分比尤其需要核查覆盖，增加显示小数位不会改善证据。"
+      ],
+      "detailRef": {
+        "chapter": "04_data_quality",
+        "section": "分子与分母的误差",
+        "anchor": "比率误差的精确传播"
+      },
+      "sourceSection": "比率误差的精确传播",
+      "layout": "focus",
+      "equation": "|\\widetilde q-q|\\le\\frac{D|\\delta_N|+|N||\\delta_D|}{D(D-|\\delta_D|)}",
+      "density": "compact",
+      "lessonNumber": 4
+    },
+    {
+      "section": "比率误差的精确传播",
+      "kind": "calculation",
+      "title": "良率算例：分母漏记造成偏差",
+      "lead": "同一批产品的真实质量未变，记录结果却提高。",
+      "body": [
+        "同一批实际受检 \\(1000\\) 件，合格 \\(900\\) 件、不良 \\(100\\) 件，真实良率为 \\(900/1000=0.90\\)。假定仅不良件漏记，合格件计数保持不变。",
+        "观测分母缩至 \\(900\\)，错误良率为 \\(900/900=1\\)，高出 \\(10\\) 个百分点。生产过程没有变化；指标偏差来自不良件漏记，应补核全部受检对象。"
+      ],
+      "detailRef": {
+        "chapter": "04_data_quality",
+        "section": "分子与分母的误差",
+        "anchor": "比率误差的精确传播"
+      },
+      "sourceSection": "比率误差的精确传播",
+      "layout": "split",
+      "density": "compact",
+      "diagram": {
+        "type": "bars",
+        "title": "遗漏不良件使观测良率虚高",
+        "description": "真实1000件中900件合格；漏记全部100件不良后，观测分母为900而合格数不变。",
+        "encoding": "教材算例 · 共零点同一尺度",
+        "note": "同一批产品的真实质量未变；记录覆盖缺陷产生10个百分点虚高。",
+        "domain": [
+          0,
+          100
+        ],
+        "unit": "%",
+        "rows": [
+          {
+            "label": "全部受检件",
+            "value": 90,
+            "detail": "900合格 / 1000受检",
+            "tone": "teal"
+          },
+          {
+            "label": "漏记不良件",
+            "value": 100,
+            "detail": "900合格 / 900记录",
+            "tone": "rose"
+          }
+        ],
+        "ticks": [
+          0,
+          25,
+          50,
+          75,
+          100
+        ]
+      },
+      "lessonNumber": 4
+    },
+    {
+      "section": "质量规则的形式化表达",
+      "kind": "concept",
+      "title": "质量规则与失败行标识",
+      "lead": "规则输出需要支持定位、修复和复核。",
+      "body": [
+        "把数据表表示为带行标识的序列 \\(R=(r_1,\\ldots,r_n)\\)，以保留内容相同的不同记录。\\(\\phi_j(r_i;R,\\mathcal M)\\in\\{0,1\\}\\) 表示规则 \\(j\\) 是否通过，\\(\\mathcal M\\) 包含关联表和规则元数据，即描述规则含义、范围和版本的信息。",
+        "失败集合保存所有违规行标识。唯一性需读取整表，外键需读取主数据；\\(n=0\\) 时单独报告无可评估记录，不能把零分母视为质量满分。 规则通过率还需结合失败记录的业务影响解释。"
+      ],
+      "detailRef": {
+        "chapter": "04_data_quality",
+        "section": "规则、违规行与通过比例",
+        "anchor": "质量规则的形式化表达"
+      },
+      "sourceSection": "质量规则的形式化表达",
+      "equation": [
+        "F_j=\\{i\\in\\{1,\\ldots,n\\}:\\phi_j(r_i;R,\\mathcal M)=0\\}",
+        "Q_j(R)=1-\\frac{|F_j|}{n},\\qquad n>0"
+      ],
+      "layout": "focus",
+      "lessonNumber": 4
+    },
+    {
+      "section": "质量规则的程序检验",
+      "kind": "concept",
+      "title": "质量规则的业务解释",
+      "lead": "技术检验与指标影响需要逐项对应。",
+      "body": [
+        "主键重复可能重复计入收入；客户外键失配可能使内连接丢行，或使区域归属未知；日期倒置会破坏周期与服务承诺的解释。规则应明确适用状态及例外。",
+        "检查结果至少保留规则标识、原始行或业务键、异常字段、数据批次和责任人。对于重复键，还需区分重复记录本身，不能只用该键定位其中一行。"
+      ],
+      "detailRef": {
+        "chapter": "04_data_quality",
+        "section": "用SQL定位违规记录",
+        "anchor": "质量规则的程序检验"
+      },
+      "sourceSection": "质量规则的程序检验",
+      "visual": {
+        "kind": "table",
+        "headers": [
+          "规则",
+          "失败条件",
+          "影响"
+        ],
+        "rows": [
+          [
+            "唯一性",
+            "同一订单编号出现多行",
+            "订单数与销售额可能重复"
+          ],
+          [
+            "外键关系",
+            "客户编号不存在于客户表",
+            "区域汇总可能丢行"
+          ],
+          [
+            "日期顺序",
+            "承诺日早于下单日",
+            "周期与服务承诺失真"
+          ]
+        ]
+      },
+      "layout": "stack",
+      "lessonNumber": 4
+    },
+    {
+      "section": "质量规则的程序检验",
+      "kind": "program",
+      "title": "程序示范：定位重复订单编号",
+      "lead": "聚合查询给出待调查的业务键及其重复次数。",
+      "body": [
+        "订单表约定一行一个订单，且订单编号唯一。先按编号分组计算行数，再保留出现次数大于 \\(1\\) 的编号，便可发现违反约定的业务键。",
+        "查询并不决定哪条应删除。需要根据来源凭证核查是否重复发送、修订版本或粒度误解，再以行标识记录处理。"
+      ],
+      "detailRef": {
+        "chapter": "04_data_quality",
+        "section": "用SQL定位违规记录",
+        "anchor": "质量规则的程序检验"
+      },
+      "sourceSection": "质量规则的程序检验",
+      "layout": "split",
+      "codeBlock": {
+        "language": "sql",
+        "code": "-- 按订单编号计数，定位违反唯一性约定的业务键。\nSELECT order_id, COUNT(*) AS row_count\nFROM orders\nGROUP BY order_id\n-- 仅保留出现多次的编号；不在此步骤删除原始记录。\nHAVING COUNT(*) > 1;",
+        "caption": "业务键用于查找对象，原始行标识用于区分同键记录。"
+      },
+      "lessonNumber": 4
+    },
+    {
+      "kind": "case",
+      "section": "企业案例",
+      "title": "Amazon Deequ：把数据假设写成可检验约束",
+      "lead": "程序正确还要求输入满足已经声明的数据条件。",
+      "body": [
+        "机器学习和分析程序常隐含“键唯一”“变量取值在范围内”等假设。Amazon研究团队的Deequ将这些要求写成声明式约束，用于大规模数据验证。",
+        "研究论文说明Deequ支持常见质量约束、用户定制检验及质量指标序列监测；团队说明该库满足Amazon生产用途需求；论文中的商品评论业务演示另属虚构场景。"
+      ],
+      "layout": "split",
+      "detailRef": {
+        "chapter": "04_data_quality",
+        "section": "用SQL定位违规记录",
+        "anchor": "质量规则的程序检验"
+      },
+      "sourceSection": "质量规则的程序检验",
+      "visual": {
+        "kind": "flow",
+        "items": [
+          {
+            "label": "业务假设",
+            "detail": "明确适用对象与含义"
+          },
+          {
+            "label": "可检验约束",
+            "detail": "唯一性、范围及关系"
+          },
+          {
+            "label": "失败记录",
+            "detail": "调查原因后决定修复"
+          }
+        ]
+      },
+      "caseId": "b04-03",
+      "sources": [
+        {
+          "title": "Unit Testing Data with Deequ",
+          "url": "https://assets.amazon.science/12/62/7a066bf44199afea06ec73f23ad0/unit-testing-data-with-deequ.pdf"
+        }
+      ],
+      "lessonNumber": 4
+    },
+    {
+      "kind": "case",
+      "section": "企业案例",
+      "title": "Deequ：怎样确定允许取值",
+      "lead": "历史记录中的规律需要经过业务核对。",
+      "body": [
+        "自动分析可能发现历史订单数量均为正数，但退货或冲销也可能使用负数。制定约束前，需要先确定一行记录代表订单、退货还是调整事项。",
+        "声明式约束将确认后的允许取值写成可执行规则，验证程序据此定位失败行或批次。历史规律有助于提出候选规则，是否采用仍由业务定义决定。"
+      ],
+      "layout": "focus",
+      "detailRef": {
+        "chapter": "04_data_quality",
+        "section": "用SQL定位违规记录",
+        "anchor": "质量规则的程序检验"
+      },
+      "sourceSection": "质量规则的程序检验",
+      "caseId": "b04-03",
+      "sources": [
+        {
+          "title": "Unit Testing Data with Deequ",
+          "url": "https://assets.amazon.science/12/62/7a066bf44199afea06ec73f23ad0/unit-testing-data-with-deequ.pdf"
+        }
+      ],
+      "prompts": [
+        {
+          "question": "历史数据中数量始终为正，能否直接制定“负数一律删除”？",
+          "answer": "不能。负数可能表示退货或冲销，应先确认事实类型，再决定允许取值和处理规则。"
+        }
+      ],
+      "lessonNumber": 4
+    },
+    {
+      "section": "质量问题对指标的影响",
+      "kind": "concept",
+      "title": "从记录失败到管理损失",
+      "lead": "严重程度取决于下游指标和行动的敏感性。",
+      "body": [
+        "重复改变聚合权重，外键缺失改变可连接对象，枚举不一致改变分组，日期错误改变统计窗口和准时判断。应逐项追踪受影响的分子、分母、权重或分类。",
+        "同样的失败比例，集中于战略客户或财务结算时可能具有更大后果。影响评估应同时报告失败规模、受影响金额、关键对象和自动动作，再确定治理优先级。"
+      ],
+      "detailRef": {
+        "chapter": "04_data_quality",
+        "section": "记录错误对指标的影响",
+        "anchor": "质量问题对指标的影响"
+      },
+      "sourceSection": "质量问题对指标的影响",
+      "visual": {
+        "kind": "flow",
+        "items": [
+          "失败记录",
+          "受影响事实",
+          "指标分子／分母／分组",
+          "管理判断",
+          "行动风险"
+        ]
+      },
+      "layout": "stack",
+      "lessonNumber": 4
+    },
+    {
+      "section": "质量影响评估",
+      "kind": "case",
+      "title": "实际交付日期为空的状态解释",
+      "lead": "相同空值在不同业务状态下具有不同含义。",
+      "body": [
+        "尚未到期且未交付时，实际日期尚不存在；已到期且确认未交付时，是截至时点的未准时事实；已交付但未回写时，是记录滞后或集成失败。",
+        "需要联合承诺时间、业务状态、签收凭证和刷新时间核查。任意填入日期会混淆未完成与已完成订单，可能掩盖履约问题。"
+      ],
+      "detailRef": {
+        "chapter": "04_data_quality",
+        "section": "先查明影响范围",
+        "anchor": "质量影响评估"
+      },
+      "sourceSection": "质量影响评估",
+      "visual": {
+        "kind": "table",
+        "headers": [
+          "状态",
+          "业务解释",
+          "处理依据"
+        ],
+        "rows": [
+          [
+            "尚未到期且未交付",
+            "实际日期尚不存在",
+            "保留状态并持续观察"
+          ],
+          [
+            "已到期且确认未交付",
+            "到期承诺未兑现",
+            "进入到期口径未准时集合"
+          ],
+          [
+            "已交付但未回写",
+            "事实已发生、记录未更新",
+            "凭签收证据补录并追查接口"
+          ]
+        ]
+      },
+      "layout": "stack",
+      "lessonNumber": 4
+    },
+    {
+      "section": "发布决策与预期损失",
+      "kind": "calculation",
+      "title": "发布决策的预期损失比较",
+      "lead": "继续发布与暂停发布应在相同期限、相同货币单位下比较。",
+      "body": [
+        "观察告警 \\(e\\) 后，实质错误概率为 \\(p=\\Pr(Z=1\\mid e)\\)。继续发布在错误时损失 \\(100\\) 万元，无错损失忽略；暂停一小时固定损失 \\(2\\) 万元。",
+        "继续发布的条件期望损失为 \\(100p\\)，暂停为 \\(2\\)。相等点为 \\(p=0.02\\)；高于它时暂停较优，低于它时继续发布较优。模型之外的强制限制仍须满足。"
+      ],
+      "detailRef": {
+        "chapter": "04_data_quality",
+        "section": "比较暂停与继续发布的损失",
+        "anchor": "发布决策与预期损失"
+      },
+      "sourceSection": "发布决策与预期损失",
+      "takeaway": "质量门槛需要与损失估计及其不确定性共同解释。",
+      "layout": "split",
+      "diagram": {
+        "type": "plot",
+        "title": "两项损失在错误概率2%处相交",
+        "description": "继续发布预期损失为100p万元，暂停一小时损失为2万元；相交概率为0.02。",
+        "encoding": "解析模型或教材算例 · 同一坐标尺度",
+        "note": "相同评价期限及金额单位；强制发布限制不由这张成本图决定。",
+        "xDomain": [
+          0,
+          0.08
+        ],
+        "yDomain": [
+          0,
+          8
+        ],
+        "xLabel": "\\(p\\)：错误概率",
+        "yLabel": "损失／万元",
+        "xTicks": [
+          0,
+          0.02,
+          0.04,
+          0.06,
+          0.08
+        ],
+        "yTicks": [
+          0,
+          2,
+          4,
+          6,
+          8
+        ],
+        "series": [
+          {
+            "label": "继续发布",
+            "points": [
+              [
+                0,
+                0
+              ],
+              [
+                0.08,
+                8
+              ]
+            ],
+            "tone": "rose",
+            "dashed": false
+          },
+          {
+            "label": "暂停1小时",
+            "points": [
+              [
+                0,
+                2
+              ],
+              [
+                0.08,
+                2
+              ]
+            ],
+            "tone": "teal",
+            "dashed": true
+          }
+        ],
+        "markers": [
+          {
+            "x": 0.02,
+            "y": 2,
+            "label": "成本相等",
+            "tone": "blue"
+          }
+        ],
+        "regions": []
+      },
+      "density": "compact",
+      "lessonNumber": 4
+    },
+    {
+      "section": "发布决策与预期损失",
+      "kind": "concept",
+      "title": "治理预算的风险最小化模型",
+      "lead": "资金应投向能够降低预期损失的资产。",
+      "body": [
+        "对资产 \\(j\\)，治理投入为 \\(x_j\\ge0\\)，未治理事故概率为 \\(p_{j0}\\in(0,1]\\)，事故损失为 \\(L_j>0\\)。设 \\(p_j(x_j)=p_{j0}e^{-a_jx_j}\\)，\\(a_j>0\\) 表示单位投入降低风险的有效性，\\(a_jx_j\\) 为无量纲。",
+        "投入与预算 \\(B\\ge0\\) 用同一货币单位计量，且投入可连续分配。各项预期损失相加得到下方目标；治理效果参数应由修复记录或专家判断校准，再检验不同参数下的分配是否稳定。"
+      ],
+      "detailRef": {
+        "chapter": "04_data_quality",
+        "section": "比较暂停与继续发布的损失",
+        "anchor": "发布决策与预期损失"
+      },
+      "sourceSection": "发布决策与预期损失",
+      "equation": "\\min_{x_j\\ge0}\\sum_jL_jp_{j0}e^{-a_jx_j}\\quad\\text{s.t.}\\quad\\sum_jx_j\\le B",
+      "layout": "focus",
+      "density": "compact",
+      "lessonNumber": 4
+    },
+    {
+      "section": "发布决策与预期损失",
+      "kind": "concept",
+      "title": "最优治理投入的边际条件",
+      "lead": "正预算下，最优连续分配使受资助资产的边际收益相等。",
+      "body": [
+        "资产 \\(j\\) 的投入为 \\(x_j\\ge0\\)，预期损失为 \\(L_jp_{j0}e^{-a_jx_j}\\)，其中 \\(a_j,L_j>0\\)，事故概率 \\(p_{j0}\\in(0,1]\\)。增加单位投入降低损失 \\(m_j(x_j)=a_jL_jp_{j0}e^{-a_jx_j}\\)。",
+        "若两项正投入资产边际收益不同，向边际收益较高的资产转移小额预算，可进一步减少预期损失。最优共同值为 \\(\\lambda_B\\)；未获投入资产的初始边际收益不超过它。正预算全部用尽；不可分项目须另建约束。"
+      ],
+      "detailRef": {
+        "chapter": "04_data_quality",
+        "section": "比较暂停与继续发布的损失",
+        "anchor": "发布决策与预期损失"
+      },
+      "sourceSection": "发布决策与预期损失",
+      "layout": "split",
+      "density": "compact",
+      "diagram": {
+        "type": "graph",
+        "title": "预算从低边际收益移向高者",
+        "description": "若两项已获正投入资产的边际收益不同，可转移小额预算降低总预期损失；最优时达到共同边际值。",
+        "encoding": "模型结构示意",
+        "note": "\\(m_j(x_j)=a_jL_jp_{j0}e^{-a_jx_j}\\)；连续投入模型，框不表示预算份额。",
+        "nodes": [
+          {
+            "id": "low",
+            "x": 25,
+            "y": 25,
+            "w": 39,
+            "h": 24,
+            "label": "资产 \\(i\\)",
+            "detail": "\\(m_i<m_j\\)",
+            "tone": "muted",
+            "shape": "rect"
+          },
+          {
+            "id": "high",
+            "x": 75,
+            "y": 25,
+            "w": 39,
+            "h": 24,
+            "label": "资产 \\(j\\)",
+            "detail": "接受追加预算",
+            "tone": "teal",
+            "shape": "rect"
+          },
+          {
+            "id": "equal",
+            "x": 25,
+            "y": 75,
+            "w": 39,
+            "h": 24,
+            "label": "正投入资产",
+            "detail": "\\(m_j=\\lambda_B\\)",
+            "tone": "blue",
+            "shape": "rect"
+          },
+          {
+            "id": "zero",
+            "x": 75,
+            "y": 75,
+            "w": 39,
+            "h": 24,
+            "label": "零投入资产",
+            "detail": "\\(m_j(0)\\le\\lambda_B\\)",
+            "tone": "muted",
+            "shape": "rect"
+          }
+        ],
+        "edges": [
+          {
+            "to": "high",
+            "label": "转移",
+            "from": "low"
+          },
+          {
+            "to": "equal",
+            "label": "迭代至均衡",
+            "labelX": 48,
+            "labelY": 49,
+            "from": "high"
+          }
+        ]
+      },
+      "lessonNumber": 4
+    },
+    {
+      "section": "决策阈值与误差容限",
+      "kind": "calculation",
+      "title": "确定性误差界与可靠排序",
+      "lead": "优势大于两侧误差容限之和，才能保证严格排序。",
+      "body": [
+        "良率估计为 \\(\\hat k_A=0.90,\\hat k_B=0.88\\)，确定性误差分别不超过 \\(\\epsilon_A=0.02,\\epsilon_B=0.01\\)，故真值范围为 \\([0.88,0.92]\\) 和 \\([0.87,0.89]\\)。",
+        "若 \\(\\hat k_A-\\epsilon_A>\\hat k_B+\\epsilon_B\\)，则保证 \\(k_A>k_B\\)。本例范围重叠，排序未被保证；这些是确定性误差界，不是抽样置信区间。"
+      ],
+      "detailRef": {
+        "chapter": "04_data_quality",
+        "section": "比较方案需要多准确的数据",
+        "anchor": "决策阈值与误差容限"
+      },
+      "sourceSection": "决策阈值与误差容限",
+      "equation": null,
+      "prompts": [
+        {
+          "question": "若只能改善一条产线的数据，怎样才能保证严格排序？",
+          "answer": "缩小 \\(A\\) 的界至 \\(\\epsilon_A<0.01\\) 即可；仅缩小 \\(B\\) 的界无法保证严格排序，因为 \\(A\\) 下界已等于 \\(B\\) 点估计。"
+        }
+      ],
+      "layout": "split",
+      "density": "compact",
+      "diagram": {
+        "type": "intervals",
+        "title": "误差容限下的真值范围",
+        "description": "A线估计0.90误差不超过0.02，B线估计0.88误差不超过0.01；两条可能真值区间重叠，不能保证A线真实良率更高。",
+        "encoding": "教材算例 · 共轴区间",
+        "note": "严格排序要求A线下界高于B线上界；本例0.88不高于0.89。",
+        "domain": [
+          0.86,
+          0.94
+        ],
+        "unit": "良率",
+        "ticks": [
+          0.86,
+          0.88,
+          0.9,
+          0.92,
+          0.94
+        ],
+        "reference": 0.89,
+        "referenceLabel": "B线可能上界",
+        "rows": [
+          {
+            "label": "产线 \\(A\\)",
+            "low": 0.88,
+            "high": 0.92,
+            "detail": "确定性误差界±0.02",
+            "tone": "blue",
+            "estimate": 0.9
+          },
+          {
+            "label": "产线 \\(B\\)",
+            "low": 0.87,
+            "high": 0.89,
+            "detail": "确定性误差界±0.01",
+            "tone": "teal",
+            "estimate": 0.88
+          }
+        ]
+      },
+      "lessonNumber": 4
+    },
+    {
+      "section": "数据治理与指标治理",
+      "kind": "concept",
+      "title": "指标治理：定义、实现与责任",
+      "lead": "跨部门比较需要共同说明业务事件与确认时间。",
+      "body": [
+        "下单金额、发货金额和开票金额各有业务用途。若全部称为销售额而不说明确认事件与期间，就会把口径差异误认为经营分歧。",
+        "核心指标字典应包括定义、事实范围、分子分母、时间窗口、维度、单位、刷新、质量规则与负责人；变更还须记录生效日期、历史是否重算和复核入口。"
+      ],
+      "detailRef": {
+        "chapter": "04_data_quality",
+        "section": "明确指标定义及负责人",
+        "anchor": "数据治理与指标治理"
+      },
+      "sourceSection": "数据治理与指标治理",
+      "visual": {
+        "kind": "flow",
+        "items": [
+          "业务定义",
+          "技术计算",
+          "变更审批",
+          "审计记录",
+          "失败处置"
+        ]
+      },
+      "layout": "stack",
+      "lessonNumber": 4
+    },
+    {
+      "kind": "case",
+      "section": "企业案例",
+      "title": "Airbnb质量评分：总分如何保留解释性",
+      "lead": "综合评分应能分解到可采取行动的质量维度。",
+      "body": [
+        "Airbnb此前对关键数据实施认证，但严格认证需要跨团队投入。2023年工程文章介绍数据质量评分，让未获认证的资产也能呈现质量差异与改进方向。",
+        "评分采用准确性、可靠性或及时性、责任治理、可用性四类维度；企业在Dataportal展示分项，并区分直接质量证据与有效责任人等间接反映质量的代理信号。"
+      ],
+      "layout": "split",
+      "detailRef": {
+        "chapter": "04_data_quality",
+        "section": "明确指标定义及负责人",
+        "anchor": "数据治理与指标治理"
+      },
+      "sourceSection": "数据治理与指标治理",
+      "visual": {
+        "kind": "flow",
+        "items": [
+          {
+            "label": "质量信号",
+            "detail": "直接检验及代理信息"
+          },
+          {
+            "label": "分项评分",
+            "detail": "保留失效原因"
+          },
+          {
+            "label": "用途判断",
+            "detail": "核查当前任务的必要条件"
+          }
+        ]
+      },
+      "caseId": "b04-04",
+      "sources": [
+        {
+          "title": "Data Quality Score: The next chapter of data quality at Airbnb",
+          "url": "https://medium.com/airbnb-engineering/data-quality-score-the-next-chapter-of-data-quality-at-airbnb-851dccda19c3"
+        }
+      ],
+      "lessonNumber": 4
+    },
+    {
+      "kind": "case",
+      "section": "企业案例",
+      "title": "Airbnb：综合分数与具体用途",
+      "lead": "高总分不能保证数据满足实时调度的要求。",
+      "body": [
+        "Airbnb 的质量评分分别呈现准确性、可靠性或及时性、责任治理及可用性。数据集有明确负责人，并不直接证明字段记录准确；相同总分也可能由不同分项组合而成。",
+        "实时调度需要及时反映当前状态。若更新滞后，其他维度的高分不能弥补这一缺口。选择数据时应检查适用任务所需的各项条件及其依据。 维度及权重由企业按具体用途设定。"
+      ],
+      "layout": "focus",
+      "detailRef": {
+        "chapter": "04_data_quality",
+        "section": "明确指标定义及负责人",
+        "anchor": "数据治理与指标治理"
+      },
+      "sourceSection": "数据治理与指标治理",
+      "caseId": "b04-04",
+      "sources": [
+        {
+          "title": "Data Quality Score: The next chapter of data quality at Airbnb",
+          "url": "https://medium.com/airbnb-engineering/data-quality-score-the-next-chapter-of-data-quality-at-airbnb-851dccda19c3"
+        }
+      ],
+      "prompts": [
+        {
+          "question": "总分较高的数据集，是否一定适用于实时调度？",
+          "answer": "不一定。若及时性不足，其他维度的高分无法补偿当前状态过期；应按任务的必要条件逐项核对。"
+        }
+      ],
+      "lessonNumber": 4
+    },
+    {
+      "section": "数据契约、血缘与变更控制",
+      "kind": "concept",
+      "title": "数据契约、血缘与变更控制",
+      "lead": "约定服务条件、追踪来源、管理变更各有职责。",
+      "body": [
+        "数据契约规定供数方与用数方共同遵守的粒度、字段单位、空值含义、允许取值、刷新和补数方式。可检验条款应形成自动规则，失败须有责任归属。",
+        "血缘记录源表、转换、测试与批次；变更控制记录修改依据、生效时间和受影响下游。三者共同支持历史数值重现与跨期可比性审查。"
+      ],
+      "detailRef": {
+        "chapter": "04_data_quality",
+        "section": "约定数据交付，追溯来源与变更",
+        "anchor": "数据契约血缘与变更控制"
+      },
+      "sourceSection": "数据契约、血缘与变更控制",
+      "visual": {
+        "kind": "table",
+        "headers": [
+          "契约要素",
+          "可审查的问题"
+        ],
+        "rows": [
+          [
+            "粒度与字段",
+            "是否描述同一业务事实？"
+          ],
+          [
+            "更新与补数",
+            "何时可用，历史如何重算？"
+          ],
+          [
+            "规则与责任",
+            "失败由谁修复？"
+          ],
+          [
+            "变更与血缘",
+            "哪些下游指标受影响？"
+          ]
+        ]
+      },
+      "layout": "stack",
+      "lessonNumber": 4
+    },
+    {
+      "section": "发布控制与问题分级",
+      "kind": "concept",
+      "title": "发布控制与异常严重级别",
+      "lead": "不同业务后果需要不同的发布与跟踪动作。",
+      "body": [
+        "在示例发布策略中，主键重复、关键外键失配或核心日期非法可阻断受影响关键指标；少量非核心缺失可在标记后发布；轻微分布变化可用于趋势监测。",
+        "实际级别由用途、受影响金额、客户等级及处置期限确定。新枚举若未经核对并影响核心指标，也可能升级为阻断条件，不能只按字段名固定等级。"
+      ],
+      "detailRef": {
+        "chapter": "04_data_quality",
+        "section": "按业务影响规定发布条件",
+        "anchor": "发布控制与问题分级"
+      },
+      "sourceSection": "发布控制与问题分级",
+      "visual": {
+        "kind": "table",
+        "headers": [
+          "严重级别",
+          "发布策略",
+          "示例"
+        ],
+        "rows": [
+          [
+            "错误（Error）",
+            "阻断相关关键发布",
+            "主键重复"
+          ],
+          [
+            "警告（Warning）",
+            "标记并持续跟踪",
+            "已评估的非核心缺失"
+          ],
+          [
+            "信息（Info）",
+            "记录变化趋势",
+            "轻微分布变化"
+          ]
+        ]
+      },
+      "layout": "stack",
+      "lessonNumber": 4
+    },
+    {
+      "section": "质量事件响应",
+      "kind": "concept",
+      "title": "数据质量事件响应",
+      "lead": "识别、隔离、修复与复核形成可追溯的处置过程。",
+      "body": [
+        "测试产生失败行与批次后，依据客户和指标影响定级，并暂停相关发布或明确标记。调查定位源系统、主数据、管道或指标逻辑，修复后重跑规则并复核下游数值。",
+        "处置记录保存根因、错误发布时长、影响范围和修复证据；必要时更正已发布结果并通知使用方。检测耗时与修复耗时分别评价监测和响应能力。"
+      ],
+      "detailRef": {
+        "chapter": "04_data_quality",
+        "section": "调查、修复与更正历史结果",
+        "anchor": "质量事件响应"
+      },
+      "sourceSection": "质量事件响应",
+      "visual": {
+        "kind": "flow",
+        "items": [
+          "识别",
+          "定级",
+          "隔离",
+          "归因",
+          "修复",
+          "复盘"
+        ]
+      },
+      "layout": "stack",
+      "density": "compact",
+      "lessonNumber": 4
+    },
+    {
+      "kind": "case",
+      "section": "企业案例",
+      "title": "Citibank监管整改：数据治理是持续责任",
+      "lead": "质量控制需要明确责任、检查与升级机制。",
+      "body": [
+        "2020年美国货币监理署对Citibank采取执法行动，指出企业范围的风险管理、数据治理及内部控制长期存在缺陷，并要求综合整改。",
+        "监管公告将数据治理与风险管理、内部控制一并列入缺陷范围；整改要求覆盖持续控制及治理安排，而非仅更正单个报表或购买一套工具。"
+      ],
+      "layout": "split",
+      "detailRef": {
+        "chapter": "04_data_quality",
+        "section": "调查、修复与更正历史结果",
+        "anchor": "质量事件响应"
+      },
+      "sourceSection": "质量事件响应",
+      "visual": {
+        "kind": "flow",
+        "items": [
+          {
+            "label": "当前修复",
+            "detail": "更正受影响记录"
+          },
+          {
+            "label": "根因控制",
+            "detail": "约束产生与变更过程"
+          },
+          {
+            "label": "持续治理",
+            "detail": "责任、检查及升级"
+          }
+        ]
+      },
+      "caseId": "b04-05",
+      "sources": [
+        {
+          "title": "OCC Assesses $400 Million Civil Money Penalty Against Citibank",
+          "url": "https://www.occ.gov/news-issuances/news-releases/2020/nr-occ-2020-132.html"
+        }
+      ],
+      "lessonNumber": 4
+    },
+    {
+      "kind": "case",
+      "section": "企业案例",
+      "title": "Citibank：从错误修复到持续控制",
+      "lead": "修复现有记录后，还需要控制错误再次发生。",
+      "body": [
+        "2020 年美国货币监理署指出，Citibank 在风险管理、数据治理和内部控制方面存在缺陷。单次更正能处理已发现的记录，还需要调查错误产生的原因。",
+        "持续控制包括明确数据定义的责任、检查变更、跟踪规则失败和复核下游结果。监管行动涉及多项管理缺陷，不能将罚款归因于某一个错误字段。"
+      ],
+      "layout": "focus",
+      "detailRef": {
+        "chapter": "04_data_quality",
+        "section": "调查、修复与更正历史结果",
+        "anchor": "质量事件响应"
+      },
+      "sourceSection": "质量事件响应",
+      "caseId": "b04-05",
+      "sources": [
+        {
+          "title": "OCC Assesses $400 Million Civil Money Penalty Against Citibank",
+          "url": "https://www.occ.gov/news-issuances/news-releases/2020/nr-occ-2020-132.html"
+        }
+      ],
+      "prompts": [
+        {
+          "question": "若所有已知错误都已手工修复，治理责任是否就结束了？",
+          "answer": "没有。还需验证根因已受控制，建立持续检查、变更审批、责任升级与复核记录，防止错误再次进入结果。"
+        }
+      ],
+      "lessonNumber": 4
+    },
+    {
+      "section": "Collibra 与 Froedtert 的数据目录",
+      "kind": "case",
+      "title": "Froedtert 案例：统一定义与责任",
+      "lead": "数据目录组织元数据，指标定义仍须由业务负责人确认。",
+      "body": [
+        "Collibra 的公开案例介绍 Froedtert 与 Medical College of Wisconsin 的治理实践：医疗、财务和人力资源系统分散，通过中心协调和业务参与维护定义与责任，相关平台称为 Data 360。",
+        "预约请求日至最早可预约日反映服务供给，请求日至患者选择日反映实际等待。两种指标应分别命名、指定负责人并审批变更，保持各自的业务定义。"
+      ],
+      "detailRef": {
+        "chapter": "04_data_quality",
+        "section": "医疗机构怎样统一指标含义",
+        "anchor": "collibra-与-froedtert-的数据目录"
+      },
+      "sourceSection": "Collibra 与 Froedtert 的数据目录",
+      "visual": {
+        "kind": "compare",
+        "items": [
+          {
+            "label": "最早可预约",
+            "detail": "刻画机构可提供服务的时间。"
+          },
+          {
+            "label": "实际选择日",
+            "detail": "刻画患者最终等待的时间。"
+          }
+        ]
+      },
+      "layout": "split",
+      "lessonNumber": 4
+    },
+    {
+      "section": "Monte Carlo 与 Assurance 的数据质量监测",
+      "kind": "case",
+      "title": "Assurance 案例：持续质量监测",
+      "lead": "字段规则与运行过程监测发现不同类型的异常。",
+      "body": [
+        "Monte Carlo 的 Assurance 公开案例介绍在业务增长中引入数据可观测性，即持续监测数据量、分布、更新时间、模式与血缘，发现预设字段规则之外的变化。",
+        "业务变化和处理故障都可能触发异常。例如订单量下降可能来自需求减少，也可能来自接口漏传，应核查源系统与市场状态。监测及响应可缩短错误暴露时间，具体收益仍需实际事件记录。"
+      ],
+      "detailRef": {
+        "chapter": "04_data_quality",
+        "section": "持续监测数据变化",
+        "anchor": "monte-carlo-与-assurance-的数据质量监测"
+      },
+      "sourceSection": "Monte Carlo 与 Assurance 的数据质量监测",
+      "visual": {
+        "kind": "compare",
+        "items": [
+          {
+            "label": "Assurance 案例",
+            "detail": "在增长中的数据环境引入持续监测。"
+          },
+          {
+            "label": "可迁移方法",
+            "detail": "将字段规则与运行特征监测结合。"
+          },
+          {
+            "label": "证据边界",
+            "detail": "公开实践不构成治理效果的对照估计。"
+          }
+        ]
+      },
+      "layout": "split",
+      "lessonNumber": 4
+    },
+    {
+      "section": "Monte Carlo 与 Assurance 的数据质量监测",
+      "kind": "application",
+      "title": "质量事件持续时间与损失",
+      "lead": "检测能力和修复能力共同决定错误暴露的时间。",
+      "body": [
+        "设错误持续期间每小时损失近似固定为 \\(\\ell\\) 万元，事件从发生到恢复持续 \\(T\\) 小时，则总损失为 \\(\\ell T\\) 万元。本模型把损失率视为常数，实际事件可分阶段记录。",
+        "平均检测时间（MTTD）是发生到发现的平均延迟，平均修复时间（MTTR）是发现到恢复的平均耗时。监测缩短前者，责任划分与修复资源缩短后者；两者都关系到错误持续发布的后果。"
+      ],
+      "detailRef": {
+        "chapter": "04_data_quality",
+        "section": "持续监测数据变化",
+        "anchor": "monte-carlo-与-assurance-的数据质量监测"
+      },
+      "sourceSection": "Monte Carlo 与 Assurance 的数据质量监测",
+      "layout": "split",
+      "equation": "L_{\\mathrm{event}}=\\ell T",
+      "diagram": {
+        "type": "graph",
+        "title": "错误暴露的两段时间",
+        "description": "事件从发生经过检测、修复到恢复；平均检测时间和平均修复时间分别度量两段延迟。",
+        "encoding": "模型结构示意",
+        "note": "位置只表示先后，不编码时长；单次暴露时间为 \\(T=t_2-t_0\\)。",
+        "nodes": [
+          {
+            "id": "start",
+            "x": 17,
+            "y": 46,
+            "w": 28,
+            "h": 27,
+            "label": "事件发生",
+            "detail": "\\(t_0\\)",
+            "tone": "rose",
+            "shape": "rect"
+          },
+          {
+            "id": "detect",
+            "x": 50,
+            "y": 46,
+            "w": 28,
+            "h": 27,
+            "label": "监测发现",
+            "detail": "\\(t_1\\)",
+            "tone": "blue",
+            "shape": "rect"
+          },
+          {
+            "id": "restore",
+            "x": 83,
+            "y": 46,
+            "w": 28,
+            "h": 27,
+            "label": "业务恢复",
+            "detail": "\\(t_2\\)",
+            "tone": "teal",
+            "shape": "rect"
+          }
+        ],
+        "edges": [
+          {
+            "to": "detect",
+            "label": "检测延迟",
+            "labelX": 33,
+            "labelY": 27,
+            "from": "start"
+          },
+          {
+            "to": "restore",
+            "label": "修复耗时",
+            "labelX": 67,
+            "labelY": 27,
+            "from": "detect"
+          }
+        ]
+      },
+      "density": "compact",
+      "lessonNumber": 4
+    },
+    {
+      "section": "数据目录、治理流程与敏感信息识别",
+      "kind": "concept",
+      "title": "数据发现、治理流程与敏感信息识别",
+      "lead": "产品功能需要通过实际部署中的资料与权限验证。",
+      "body": [
+        "Alation 目录组织资产、术语与来源；Collibra 治理流程安排定义审批、生效与责任；BigID 发现和分类敏感信息。这些是公开产品资料中的功能方向，实际覆盖需部署核验。",
+        "解释客户延期时，目录查找订单与口径，血缘定位看板批次，质量规则检查日期，敏感分类辅助确定保护要求。查询与检索服务仍须依当前用户权限限制返回范围。"
+      ],
+      "detailRef": {
+        "chapter": "04_data_quality",
+        "section": "目录、治理与敏感信息识别",
+        "anchor": "数据目录治理流程与敏感信息识别"
+      },
+      "sourceSection": "数据目录、治理流程与敏感信息识别",
+      "visual": {
+        "kind": "flow",
+        "items": [
+          "发现资产与定义",
+          "确认责任与变更",
+          "识别敏感内容",
+          "执行权限检查"
+        ]
+      },
+      "layout": "stack",
+      "lessonNumber": 4
+    },
+    {
+      "section": "检索增强生成中的数据质量",
+      "kind": "concept",
+      "title": "检索增强生成的证据质量",
+      "lead": "用于回答的文档须具有有效来源、适用版本与访问权限。",
+      "body": [
+        "检索增强生成（RAG，retrieval-augmented generation）把检索材料作为模型回答的上下文。旧版规范可能已失效，扫描表格可能遗漏单位；文本提取正确并不保证当前适用。",
+        "片段保存来源、版本、生效时间、责任人、范围与引用位置。哈希是内容的计算摘要，可检测是否发生变化；真实性还须核查发布主体。过期或撤销材料应更新索引，资料不足或冲突时须说明依据的缺口。"
+      ],
+      "detailRef": {
+        "chapter": "04_data_quality",
+        "section": "文档知识库中的质量要求",
+        "anchor": "检索增强生成中的数据质量"
+      },
+      "sourceSection": "检索增强生成中的数据质量",
+      "layout": "split",
+      "density": "compact",
+      "diagram": {
+        "type": "graph",
+        "title": "回答必须回到有效证据",
+        "description": "来源资料经过有效期、权限和提取完整性核验，再检索引用，最终回答保留可定位的依据。",
+        "encoding": "模型结构示意",
+        "note": "哈希检测内容变动；来源真实性、适用性与访问授权仍需分别核查。",
+        "nodes": [
+          {
+            "id": "doc",
+            "x": 17,
+            "y": 25,
+            "w": 29,
+            "h": 24,
+            "label": "来源资料",
+            "detail": "主体与版本",
+            "tone": "blue",
+            "shape": "rect"
+          },
+          {
+            "id": "check",
+            "x": 50,
+            "y": 25,
+            "w": 29,
+            "h": 24,
+            "label": "证据核验",
+            "detail": "有效期与权限",
+            "tone": "blue",
+            "shape": "rect"
+          },
+          {
+            "id": "extract",
+            "x": 83,
+            "y": 25,
+            "w": 29,
+            "h": 24,
+            "label": "完整提取",
+            "detail": "表格与单位",
+            "tone": "blue",
+            "shape": "rect"
+          },
+          {
+            "id": "index",
+            "x": 83,
+            "y": 75,
+            "w": 29,
+            "h": 24,
+            "label": "索引检索",
+            "detail": "撤销及时更新",
+            "tone": "teal",
+            "shape": "rect"
+          },
+          {
+            "id": "citation",
+            "x": 50,
+            "y": 75,
+            "w": 29,
+            "h": 24,
+            "label": "引用定位",
+            "detail": "原文与适用范围",
+            "tone": "teal",
+            "shape": "rect"
+          },
+          {
+            "id": "answer",
+            "x": 17,
+            "y": 75,
+            "w": 29,
+            "h": 24,
+            "label": "回答结论",
+            "detail": "冲突与缺口说明",
+            "tone": "teal",
+            "shape": "rect"
+          }
+        ],
+        "edges": [
+          {
+            "to": "check",
+            "label": "",
+            "from": "doc"
+          },
+          {
+            "to": "extract",
+            "label": "",
+            "from": "check"
+          },
+          {
+            "to": "index",
+            "label": "",
+            "from": "extract"
+          },
+          {
+            "to": "citation",
+            "label": "",
+            "from": "index"
+          },
+          {
+            "to": "answer",
+            "label": "",
+            "from": "citation"
+          }
+        ]
+      },
+      "lessonNumber": 4
+    },
+    {
+      "section": "数据质量检查实例",
+      "kind": "experiment",
+      "title": "实验任务：订单质量报告",
+      "lead": "背景、输入、规则与输出均须明确，结果可复核。",
+      "body": [
+        "订单表本应一行一个订单；模拟数据文件 `orders_quality_issues.csv` 含 \\(9\\) 条故意构造的异常记录，并提供客户、产品主数据及允许枚举。任务是检验业务键、外键、数量、枚举和日期规则。",
+        "逐项输出违反规则的原始行或业务键、异常值、规则名、维度和等级，并说明对收入、分组或交付指标的影响。实际交付日期缺失须联合状态调查，不能机械补值。"
+      ],
+      "detailRef": {
+        "chapter": "04_data_quality",
+        "section": "实验：检查一批有问题的订单",
+        "anchor": "数据质量检查实例"
+      },
+      "sourceSection": "数据质量检查实例",
+      "visual": {
+        "kind": "table",
+        "headers": [
+          "阶段",
+          "要求"
+        ],
+        "rows": [
+          [
+            "输入",
+            "9 条订单；客户与产品主数据；枚举约定"
+          ],
+          [
+            "检查",
+            "非空、唯一、外键、正数量、枚举、日期顺序"
+          ],
+          [
+            "输出",
+            "失败对象、异常值、规则与指标影响"
+          ],
+          [
+            "复核",
+            "保留原值与修复依据，重跑同版规则"
+          ]
+        ]
+      },
+      "layout": "split",
+      "lessonNumber": 4
+    },
+    {
+      "section": "数据质量检查实例",
+      "kind": "experiment",
+      "title": "实验核对：对象、主数据与数量",
+      "lead": "异常规则可能交叠，规则失败数不等于独立问题订单数。",
+      "body": [
+        "模拟样例的对象标识、客户产品引用和数量规则产生下列典型失败。重复编号可能对应两条不同原始行，必须保留其行标识以支持复核。",
+        "本实验把订单数量限定为正数。现实业务中负数可以表示退货，须先区分事实类型，再制定规则，不能未经调查直接删除。"
+      ],
+      "detailRef": {
+        "chapter": "04_data_quality",
+        "section": "实验：检查一批有问题的订单",
+        "anchor": "数据质量检查实例"
+      },
+      "sourceSection": "数据质量检查实例",
+      "layout": "stack",
+      "visual": {
+        "kind": "table",
+        "headers": [
+          "异常",
+          "对象或值",
+          "影响"
+        ],
+        "rows": [
+          [
+            "重复订单编号",
+            "`O103` 两行",
+            "订单数、收入及比率权重"
+          ],
+          [
+            "缺失客户／未知客户",
+            "`O108`／`O103` 的 `C999`",
+            "客户和区域归属"
+          ],
+          [
+            "未知产品",
+            "`O106` 的 `P999`",
+            "价格、成本与毛利"
+          ],
+          [
+            "非正数量",
+            "`O102`：\\(0\\)；`O109`：\\(-2\\)",
+            "订单业务范围与金额"
+          ]
+        ]
+      },
+      "lessonNumber": 4
+    },
+    {
+      "section": "数据质量检查实例",
+      "kind": "experiment",
+      "title": "实验核对：枚举、日期与失败计数",
+      "lead": "规则失败可以交叠，不能直接当作不同问题订单数。",
+      "body": [
+        "渠道、优先级与日期约定还产生下列失败。实际日期缺失需调查状态，不能直接认定违约，也不能填入一个任意日期。",
+        "默认程序报告 \\(10\\) 项失败：\\(8\\) 项错误、\\(2\\) 项警告。同一行可能违反多规则，应区分失败项、受影响行和业务对象；记录依据与责任后，再按同版规则复核。"
+      ],
+      "detailRef": {
+        "chapter": "04_data_quality",
+        "section": "实验：检查一批有问题的订单",
+        "anchor": "数据质量检查实例"
+      },
+      "sourceSection": "数据质量检查实例",
+      "layout": "stack",
+      "visual": {
+        "kind": "table",
+        "headers": [
+          "异常",
+          "对象或值",
+          "影响"
+        ],
+        "rows": [
+          [
+            "无效渠道／优先级",
+            "`O107`：Marketplace；`O108`：Urgent",
+            "分组口径"
+          ],
+          [
+            "承诺日期倒置",
+            "`O105`",
+            "周期与服务承诺"
+          ],
+          [
+            "实际日期缺失",
+            "`O107`",
+            "须辨别未完成或未回写"
+          ]
+        ]
+      },
+      "lessonNumber": 4
+    },
+    {
+      "section": "质量报告的核查",
+      "kind": "summary",
+      "title": "质量报告：从发现到决策依据",
+      "lead": "报告应说明数据是否足以支持预定用途。",
+      "body": [
+        "先声明数据范围、批次和规则，再列示可定位的失败对象。解释缺失、测量和计数误差如何影响均值、分组或比率，必要时报告识别区间及误差界。",
+        "根据这些影响确定发布、补充调查或修复，并明确责任与复核依据。最终结论须区分规则符合、记录准确和用途适配，避免用总体通过率概括数据的全部可信程度。"
+      ],
+      "detailRef": {
+        "chapter": "04_data_quality",
+        "section": "形成可以复查的质量报告",
+        "anchor": "质量报告的核查"
+      },
+      "sourceSection": "质量报告的核查",
+      "visual": {
+        "kind": "flow",
+        "items": [
+          "数据范围",
+          "规则与失败行",
+          "指标影响",
+          "处置责任",
+          "复核证据"
+        ]
+      },
+      "layout": "stack",
+      "lessonNumber": 4
+    }
+  ],
+  "id": "04_data_quality",
+  "chapter": "04_data_quality",
+  "lectureNumber": 4
+}
