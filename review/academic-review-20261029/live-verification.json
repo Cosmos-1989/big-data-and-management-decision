@@ -1,0 +1,172 @@
+{
+  "canonicalHomeMatches": true,
+  "canonicalHomeSha256": "0c8a6b6e09e2f3b96c7bf890e153c423b8a03827ece0bc3eb3497bb2a3f89877",
+  "checkedAt": "2026-10-29T16:08:55.219849+00:00",
+  "publishedRevision": "42bcff1a79b2ed2c5ee3e929ec5ae0f46689e9a9",
+  "tls": "curl default certificate validation enabled; no insecure override",
+  "files": [
+    {
+      "path": "index.html",
+      "status": 200,
+      "url": "https://datasci.biz/index.html?verify=42bcff1",
+      "bytes": 6219,
+      "sha256": "0c8a6b6e09e2f3b96c7bf890e153c423b8a03827ece0bc3eb3497bb2a3f89877",
+      "localMatches": true
+    },
+    {
+      "path": "app.js",
+      "status": 200,
+      "url": "https://datasci.biz/app.js?verify=42bcff1",
+      "bytes": 19841,
+      "sha256": "e129dd64a694297a226a4a761028d1ef1e4c89ef7c81e743ba568b816d8d1ccd",
+      "localMatches": true
+    },
+    {
+      "path": "slides.js",
+      "status": 200,
+      "url": "https://datasci.biz/slides.js?verify=42bcff1",
+      "bytes": 15211,
+      "sha256": "a589f23e3e860092f47252cd46a05cdc240e5651d566cc334fe86c2d3f7c0a75",
+      "localMatches": true
+    },
+    {
+      "path": "slides-refined.css",
+      "status": 200,
+      "url": "https://datasci.biz/slides-refined.css?verify=42bcff1",
+      "bytes": 24721,
+      "sha256": "5bd4ba3e08fabb94d56bbfd5436ae33e3a951c53218c56a3a51810472b92acd9",
+      "localMatches": true
+    },
+    {
+      "path": "slide-diagrams.js",
+      "status": 200,
+      "url": "https://datasci.biz/slide-diagrams.js?verify=42bcff1",
+      "bytes": 9441,
+      "sha256": "bbcd97f636775d7cb176573564eb3649d135eec8e2ee254143e4181a59dafa4e",
+      "localMatches": true
+    },
+    {
+      "path": "content/01_intro.json",
+      "status": 200,
+      "url": "https://datasci.biz/content/01_intro.json?verify=42bcff1",
+      "bytes": 206110,
+      "sha256": "a7790c3eac0fe6a50beee2dfc02a8249c07fedddbefb482057a034eb3c5690b2",
+      "localMatches": true
+    },
+    {
+      "path": "content/02_enterprise_data_model.json",
+      "status": 200,
+      "url": "https://datasci.biz/content/02_enterprise_data_model.json?verify=42bcff1",
+      "bytes": 354266,
+      "sha256": "e66b4d81c7773c29972dd4179cf8f15af2319fc09db4ea1928faf2205a54a22b",
+      "localMatches": true
+    },
+    {
+      "path": "content/03_sql_kpi.json",
+      "status": 200,
+      "url": "https://datasci.biz/content/03_sql_kpi.json?verify=42bcff1",
+      "bytes": 81396,
+      "sha256": "09873732dd218ceebe03525279509c682f75689fee35e727dddd1ab1a9bb925e",
+      "localMatches": true
+    },
+    {
+      "path": "content/04_data_quality.json",
+      "status": 200,
+      "url": "https://datasci.biz/content/04_data_quality.json?verify=42bcff1",
+      "bytes": 87130,
+      "sha256": "4946b24bd29141ccea2198197e1a3fd93428fdfd80efc57eb7e29f2df5ea4671",
+      "localMatches": true
+    },
+    {
+      "path": "content/05_statistics_dashboard.json",
+      "status": 200,
+      "url": "https://datasci.biz/content/05_statistics_dashboard.json?verify=42bcff1",
+      "bytes": 58792,
+      "sha256": "d980ea3d9f7902037d51714083ca3ee0e33dd3f73ad6f4a597cc52e881ff84da",
+      "localMatches": true
+    },
+    {
+      "path": "content/lecture-slides.json",
+      "status": 200,
+      "url": "https://datasci.biz/content/lecture-slides.json?verify=42bcff1",
+      "bytes": 1536920,
+      "sha256": "3763df28990eb410d7fcd9035eec9c6718a58758dd62e3846e2df5032f5c3f57",
+      "localMatches": true
+    },
+    {
+      "path": "content/lecture-terms.json",
+      "status": 200,
+      "url": "https://datasci.biz/content/lecture-terms.json?verify=42bcff1",
+      "bytes": 135689,
+      "sha256": "0bf448025808329e4b79e9e9800dca488318de2290978139c46acde16b19ecb1",
+      "localMatches": true
+    },
+    {
+      "path": "content/catalog.json",
+      "status": 200,
+      "url": "https://datasci.biz/content/catalog.json?verify=42bcff1",
+      "bytes": 348964,
+      "sha256": "cf9a0221f549cce4012fcd8b7cb761e0a0a6f43fb53f32e49c6dff941785d5bb",
+      "localMatches": true
+    },
+    {
+      "path": "content/business-cases.json",
+      "status": 200,
+      "url": "https://datasci.biz/content/business-cases.json?verify=42bcff1",
+      "bytes": 170859,
+      "sha256": "56f7a40fefa2ed1c3e7b0acd12f2704eaf6068349328fcbaaba966e408765f30",
+      "localMatches": true
+    },
+    {
+      "path": "content/business-casebook.json",
+      "status": 200,
+      "url": "https://datasci.biz/content/business-casebook.json?verify=42bcff1",
+      "bytes": 208713,
+      "sha256": "8647c95ea76b1dab84539cf5c7c928d12fcc7f5a4000be3db40d957b5cd05b6e",
+      "localMatches": true
+    },
+    {
+      "path": "content/source-manifest.json",
+      "status": 200,
+      "url": "https://datasci.biz/content/source-manifest.json?verify=42bcff1",
+      "bytes": 11182,
+      "sha256": "d690e962e8ac644d2e5cc4351aed68cee6f46b6281ed9055d1913ce071f9728f",
+      "localMatches": true
+    },
+    {
+      "path": "CNAME",
+      "status": 200,
+      "url": "https://datasci.biz/CNAME?verify=42bcff1",
+      "bytes": 11,
+      "sha256": "0447c4b8cbdc34baf11c6d5975907b1fabb870a8aa54261212566b2773d7cf5a",
+      "localMatches": true
+    }
+  ],
+  "redirects": [
+    {
+      "requested": "http://datasci.biz/",
+      "final": "https://datasci.biz/",
+      "status": 200,
+      "canonical": true
+    },
+    {
+      "requested": "https://www.datasci.biz/",
+      "final": "https://datasci.biz/",
+      "status": 200,
+      "canonical": true
+    },
+    {
+      "requested": "http://www.datasci.biz/",
+      "final": "https://datasci.biz/",
+      "status": 200,
+      "canonical": true
+    },
+    {
+      "requested": "https://cosmos-1989.github.io/big-data-and-management-decision/",
+      "final": "https://datasci.biz/",
+      "status": 200,
+      "canonical": true
+    }
+  ],
+  "passed": true
+}

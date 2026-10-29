@@ -1,0 +1,43 @@
+{
+  "lectures": [
+    {
+      "id": "01_intro",
+      "cases": 5,
+      "heading": "数据、信息与管理决策",
+      "mathErrors": 0,
+      "pages": 50
+    },
+    {
+      "id": "02_enterprise_data_model",
+      "cases": 5,
+      "heading": "企业数据模型与治理机制",
+      "mathErrors": 0,
+      "pages": 47
+    },
+    {
+      "id": "03_sql_kpi",
+      "cases": 5,
+      "heading": "关系查询、指标计算与语义服务",
+      "mathErrors": 0,
+      "pages": 52
+    },
+    {
+      "id": "04_data_quality",
+      "cases": 5,
+      "heading": "数据质量与证据可信度",
+      "mathErrors": 0,
+      "pages": 55
+    },
+    {
+      "id": "05_statistics_dashboard",
+      "cases": 5,
+      "heading": "统计描述、过程波动与运营规律",
+      "mathErrors": 0,
+      "pages": 59
+    }
+  ],
+  "slide": {
+    "page": "16",
+    "title": "总体变化的精确分解"
+  }
+}
