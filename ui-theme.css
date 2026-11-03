@@ -117,6 +117,17 @@ td,th{border-color:#e2e9ed}
 .experiment-bottom p{font-size:12px;color:#8b9ea9;margin-top:5px}
 .section-heading h2{font-family:var(--serif);font-weight:550;font-size:25px}
 .section-heading>a{color:#8b9ca7}
+.course-notices{margin:0 0 54px}
+.course-notice{display:grid;grid-template-columns:minmax(190px, .72fr) minmax(0, 2fr);gap:36px;padding:30px 34px;border:1px solid #d7e5ed;border-radius:11px;background:#f2f7fa}
+.notice-date{display:flex;flex-direction:column;align-items:flex-start;gap:7px;padding:3px 26px 3px 0;border-right:1px solid #d7e5ed;color:#55758a}
+.notice-date span{font-size:12px;font-weight:600;letter-spacing:.04em}
+.notice-date time{font-family:var(--serif);font-size:26px;line-height:1.4;color:#2d4d61}
+.notice-date small{font-size:13px;color:#637b89}
+.notice-content h3{margin:0 0 10px;font-family:var(--serif);font-size:21px;font-weight:600;line-height:1.5;color:#2d4d61}
+.notice-content p{margin:0;color:#415968;font-size:15px;line-height:1.9}
+.notice-content p+p{margin-top:10px}
+.notice-content strong{color:#285b79;font-weight:650}
+@media(max-width:760px){.course-notices{margin-bottom:38px}.course-notice{grid-template-columns:1fr;gap:18px;padding:23px}.notice-date{gap:3px;padding:0 0 16px;border-right:0;border-bottom:1px solid #d7e5ed}.notice-date time{font-size:23px}.notice-content h3{font-size:19px}.notice-content p{font-size:14px;line-height:1.85}}
 #course-groups{gap:17px}
 .course-group{border-color:#e3e9ed;border-radius:10px;background:#fdfdfc;padding:25px 23px 16px}
 .course-group:hover{border-color:#cddce5;box-shadow:none}
